@@ -1,0 +1,89 @@
+\documentclass[a4paper, 11pt, twoside, openright, italian]{memoir}
+
+\usepackage{preamble/mypreamble}
+
+% SVN info for this file
+\svnidlong
+{$HeadURL$}
+{$LastChangedDate$}
+{$LastChangedRevision$}
+{$LastChangedBy$}
+
+\includeonly{%
+  introduction/titlepage,
+  introduction/abstract,
+  introduction/toc,
+  chapters/chap1,
+  %chap2,
+  %chap3,
+  %chap4,
+  %chap5,
+  %chap6,
+  %chap7,
+  %chap8,
+  %chap9,
+  %chap10,
+  %chap11,
+  %chap12,
+  %chap13,
+  %chap14,
+  %chap15,
+  %chap16,
+  %chap17,
+  %chap18,
+  %appendix,
+  %chapA,
+  %chapB,  
+  %chapC,
+  appendix/ringraziaments,  
+  appendix/bibliography,
+}
+
+
+\makeindex
+\begin{document}
+
+\frontmatter
+\include{introduction/titlepage}
+%\include{abstract}
+\include{introduction/toc}
+
+\mainmatter
+
+\part{Topologia generale}
+\labelPart{first}
+\include{chapters/chap1}
+\part{Omotopia}
+\labelPart{second}
+%\include{chap2}
+%\include{chap3}
+%\include{chap4}
+%\include{chap5}
+%\include{chap6}
+%\include{chap7}
+%\include{chap8}
+%\part{Dinamica della materia}
+%\labelPart{third}
+%\include{chap9}
+%\include{chap10}
+%\include{chap11}
+%\include{chap12}
+%\include{chap13}
+%\include{chap14}
+%\include{chap15}
+%\include{chap16}
+%\include{chap17}
+%\include{chap18}
+%\appendix
+%\part{Appendici}
+%\labelPart{appendici}
+%\include{chapA}
+%\include{chapB}
+%\include{chapC}
+%\include{ringraziaments}
+%\include{appendix}
+%\printindex
+%\backmatter
+%\include{bibliography}
+
+\end{document}
