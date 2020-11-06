@@ -8,8 +8,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{mypreamble}
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %    PACKAGES TO LOAD
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -67,10 +65,9 @@
 \RequirePackage[thicklines]{cancel}
 \RequirePackage{bm}
 \RequirePackage{multicol}
-\usepackage{comment}
+%\usepackage{comment}
 % Load hyperref package last
 \RequirePackage{hyperref}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %    PACKAGE SETTINGS
@@ -123,8 +120,6 @@
   -%
 }
 \makeatother
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %    NEW COMMANDS AND ENVIRONMENTS
@@ -703,8 +698,6 @@
 % Command for writing out email addresses
 \newcommand{\email}[1]{\url{#1}}
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %    DOCUMENT CUSTOMIZATIONS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -933,12 +926,21 @@
 \newcommand{\codeCommentsColor}{\color[rgb]{0.251, 0.275, 0.086}}
 \newcommand{\warningColor}{\color[rgb]{1.0, 0.0, 0.0}}
 \newcommand{\todoColor}{\color[rgb]{1.0, 0.0, 0.0}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    CUSTOM ENVIRONMENT, PT. 2: THEOREMS ETC.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Define colors
+
 \definecolor{venetian}{RGB}{114, 1, 15}
 \definecolor{green}{RGB}{0, 128, 0}
 \definecolor{plum}{RGB}{132, 49, 121}
 \definecolor{cinnamon}{rgb}{0.82, 0.41, 0.12}
 \definecolor{timberwolf}{rgb}{0.86, 0.84, 0.82}
 \definecolor{battleshipgrey}{rgb}{0.52, 0.52, 0.51}
+
+% Define boxes
 
 \newmdenv[skipabove=7pt,
 skipbelow=7pt,
@@ -1068,6 +1070,8 @@ leftmargin=0cm,
 rightmargin=0cm,
 linewidth=1pt]{tinBox}
 
+% Define theorem styles from color
+
 \newtheoremstyle{rednumbox}% % Theorem style name
 {0pt}% Space above
 {0pt}% Space below
@@ -1108,44 +1112,60 @@ linewidth=1pt]{tinBox}
 {0.25em}% Space after theorem head
 {\small\bfseries\color{black}\thmname{#1}}
 
+% Define theorem styles from color
+
 \newcounter{dummy} 
 \numberwithin{dummy}{section}
+
 \theoremstyle{rednumbox}
 \newtheorem{exampleT}{\textsc{Esempio.}}[chapter]
+
 \theoremstyle{rednumbox}
 \newtheorem{examplecaputT}{\textsc{Esempio.}}[chapter]
+
 \theoremstyle{rednumbox}
 \newtheorem{examplesT}{\textsc{Esempi.}}[chapter]
+
 \theoremstyle{rednumbox}
 \newtheorem{examplescaputT}{\textsc{Esempi.}}[chapter]
+
 \theoremstyle{rednumbox}
 \newtheorem{exerciseT}{\textsc{Esercizio.}}[chapter]
+
 \theoremstyle{rednumbox}
 \newtheorem{exercisescaputT}{\textsc{Esercizi.}}[chapter]
+
 \theoremstyle{blacknumbox}
 \newtheorem{solutionT}{\textsc{Soluzione.}}[chapter]
+
 \theoremstyle{blacknumbox}
 \newtheorem{solutioncaputT}{\textsc{Soluzione.}}[chapter]
+
 \theoremstyle{blacknumbox}
 \newtheorem{digressionT}{\textsc{Digressione.}}[chapter]
-\theoremstyle{blacknumbox}
 
+\theoremstyle{blacknumbox}
 \newtheorem{demonstrationT}{\textsc{Dimostrazione.}}[chapter]
+
 \theoremstyle{blacknumbox}
 \newtheorem{demonstrationcontT}{}[chapter]
-\theoremstyle{blacknumbox}
 
+\theoremstyle{blacknumbox}
 \newtheorem{digressioncaputT}{\textsc{Digressione.}}[chapter]
+
 \theoremstyle{blacknumbox}
 \newtheorem{attentionT}{\textsc{Attenzione!}}[chapter]
+
 \theoremstyle{blacknumbox}
 \newtheorem{attentioncaputT}{\textsc{Attenzione!}}[chapter]
+
 \theoremstyle{blacknumbox}
 \newtheorem{defoeT}{\textsc{Definizione.}}[chapter]
+
 \theoremstyle{venetiannumbox}
 \newtheorem{observeT}{\textsc{Osservazione.}}[chapter]
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \newcounter{define}
 \newcounter{theorema}
@@ -1273,13 +1293,17 @@ linewidth=1pt]{tinBox}
 
 % definizione di funzione (solo domini)
 
+
 \newcommand{\funz}[3]{
 	\ensuremath{#1\colon #2\rightarrow #3}}
 
 % definizione di funzione (completa)
 
 \newcommand{\funztot}[5]{
-	\ensuremath{\substack{\funz{#1}{#2}{#3}\\#4\mapsto #5}}}
+	\ensuremath{\begin{array}{l}
+			\funz{#1}{#2}{#3}\\
+			#4\mapsto #5
+		\end{array}}}
 
 % inclusione (solo domini)
 
@@ -1289,7 +1313,10 @@ linewidth=1pt]{tinBox}
 % inclusione (completa)
 
 \newcommand{\incltot}[5]{
-	\ensuremath{\substack{\incl{#1}{#2}{#3}\\#4\mapsto #5}}}
+	\ensuremath{\begin{array}{l}
+			\incl{#1}{#2}{#3}\\
+			#4\mapsto #5
+\end{array}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%% altre definizioni  %%%%%%%%%%%%%%%%%%%%%%%%%
 

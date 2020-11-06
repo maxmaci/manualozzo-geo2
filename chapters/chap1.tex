@@ -21,7 +21,7 @@
 %\end{introduction}
 \section{Spazio topologico}
 \begin{define}
-Uno \textbf{spazio topologico}\index{spazio!topologico} $\left(X, \topo\right)$ è un insieme $X$ con una famiglia di sottoinsiemi $\topo\subseteq\setpart{X}$ detta \textbf{topologia}\index{topologia} che soddisfano i seguenti assiomi (detti \textbf{assiomi degli aperti}\index{assiomi!degli aperti}):
+Uno \textbf{spazio topologico}\index{spazio topologico} $\left(X, \topo\right)$ è un insieme $X$ con una famiglia di sottoinsiemi $\topo\subseteq\setpart{X}$ detta \textbf{topologia}\index{topologia} che soddisfano i seguenti assiomi (detti \textbf{assiomi degli aperti}\index{assiomi!degli aperti}):
 \begin{enumerate}
 \item \textit{Il vuoto e l'insieme stesso sono aperti della topologia}: $\emptyset,\ X\in\topo$ .
 \item \textit{L'unione arbitraria di aperti è un aperto}: dati $\left\{A_i\right\}_{i\in I}$ tale che $A_i\in\topo$ $\forall i\in I$ ($|I|\leq \infty$), allora $\displaystyle\union_{i\in I}A_i=A\in\topo$ .
@@ -706,3 +706,65 @@ In particolare una base di aperti di $X_1\times \ldots \times X_n$ è data da:
 \basis=\left\{A_1\times \ldots \times A_n\mid A_i\text{ aperto in } X_i\right\}
 \end{equation*}
 \end{observe}
+\section{Assiomi di separazione: T1 e Hausdorff}\index{assioma di separazione}
+\begin{define}
+Uno spazio topologico $X$ si dice \textbf{T1}\index{assioma di separazione!T1}\index{spazio topologico!T1} se ogni sottoinsieme finito è chiuso, in particolare se e solo se tutti i punti sono chiusi.\\
+In termini di intorni, $X$ è \textbf{T1} se presi due punti distinti $x$ e $y$ esiste un intorno per il punto $x$ che non contiene $y$ e viceversa:
+\begin{equation}
+\forall x,\ y\in X\quad x\neq y\implies
+\begin{array}{l}
+	\exists U\in I\left(x\right)\quad y\notin U\\
+	\exists V\in I\left(y\right)\quad x\notin V
+\end{array}
+\end{equation}
+\end{define}
+\begin{demonstration} Dimostriamo che la definizione di \textbf{T1} implica quella per intorni e viceversa.\\
+$\impliesdx$ Siano $x,\ y\in X\quad x\neq y$. Per ipotesi $\left\{x\right\}$ è chiuso, dunque $V=X\setminus\left\{x\right\}$ è aperto. Poiché $y\neq x$, allora $y\notin\left\{x\right\}\implies y\in V$, ed essendo $V$ aperto, $V\in I\left(y\right)$. Dunque $V$ è intorno di $y$ e banalmente $x\notin V$.\\
+$\impliessx$ Dobbiamo dimostrare che $\forall x\quad \left\{x\right\}$ è chiuso, cioè $A=X\setminus\left\{x\right\}$ è aperto. Sia $y\in A$: $y\notin \left\{x\right\}\implies y\neq x$. Per ipotesi allora esiste un intorno $V$ di $y$ tale che $x\notin V$. Necessariamente si ha che $V\subseteq A$, dunque $A$ è anch'esso intorno di $y$. Per l'arbitrarietà di $y$, $A$ è intorno di ogni suo punto, dunque $A$ è aperto.
+\end{demonstration}
+\begin{observe}~{}
+\begin{enumerate}
+\item $X$ è \textbf{T1} se e solo se per ogni punto $x\in X$ si ha:
+\begin{equation}
+\left\{x\right\}=\inter_{U\in I\left(x\right)}U
+\end{equation}
+\item Ogni spazio metrico è \textbf{T1}
+\end{enumerate}
+\end{observe}
+\begin{demonstration}
+\begin{enumerate}[label=\Roman*]
+\item ...
+\item ...
+\end{enumerate}
+\end{demonstration}
+\begin{define}
+Uno spazio topologico $X$ si dice di \textbf{Hausdorff}\index{assioma di separazione!Hausdorff}\index{spazio topologico!Hausdorff} o \textbf{T2}\seeonlyindex{spazio topologico!T2}{assioma di separazione!Hausdorff}\seeonlyindex{assioma di separazione!T2}{assioma di separazione!Hausdorff} se per ogni coppia di punti distinti esistono due intorni disgiunti:
+\begin{equation}
+	\forall x,\ y\in X\quad x\neq y\implies
+	\begin{array}{l}
+		\exists U\in I\left(x\right)\\
+		\exists V\in I\left(y\right)
+	\end{array}
+\ \colon U\cap V=\emptyset
+\end{equation}
+\end{define}
+\begin{observe}~{}
+	\begin{enumerate}
+		\item $X$ è di \textbf{Hausdorff} se e solo se per ogni punto $x\in X$ si ha:
+		\begin{equation}
+			\left\{x\right\}=\inter_{U\in I\left(x\right)}\overline{U}
+		\end{equation}
+	\item Essere \textbf{Hausdorff} implica essere \textbf{T1}, ma non il viceversa.
+		\item Ogni spazio metrico è di \textbf{Hausdorff}. Infatti:
+	\end{enumerate}
+\end{observe}
+\begin{demonstration}
+\begin{enumerate}[label=\Roman*]
+\item 
+\item $\impliesdx$ Avendo per ogni coppia di punti distinti due intorni disgiunti, banalmente i due intorni verificano la definizione di \textbf{T1} per intorni.
+\item Presi $x\neq y$, allora $\mvf{d}{x}{y}=d>0$. Dunque, per disuguaglianza triangolare si ha sempre che:
+\begin{equation*}
+B_{\nicefrac{d}{4}}\left(Y\right)\cap B_{\nicefrac{d}{4}}\left(Y\right)=\emptyset
+\end{equation*}
+\end{enumerate}
+\end{demonstration}

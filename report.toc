@@ -32,4 +32,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.10}Prodotti topologici}{16}{section.1.10}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\partnumberline {II}Omotopia}{21}{part.2}% 
+\contentsline {section}{\numberline {1.11}Assiomi di separazione: T1 e Hausdorff}{20}{section.1.11}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\partnumberline {II}Omotopia}{23}{part.2}% 
