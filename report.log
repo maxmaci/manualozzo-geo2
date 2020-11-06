@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.11.2)  6 NOV 2020 22:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.11.2)  6 NOV 2020 22:35
 entering extended mode
 **./report.tex
 (report.tex
@@ -3631,10 +3631,10 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 65455 strings out of 492891
- 1378774 string characters out of 3133348
- 2116037 words of memory out of 3000000
- 67663 multiletter control sequences out of 15000+200000
+ 65454 strings out of 492891
+ 1378757 string characters out of 3133348
+ 2116008 words of memory out of 3000000
+ 67662 multiletter control sequences out of 15000+200000
  886005 words of font info for 539 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  81i,14n,129p,1513b,1558s stack positions out of 5000i,500n,10000p,200000b,50000s
