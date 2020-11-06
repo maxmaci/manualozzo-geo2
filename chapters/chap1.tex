@@ -733,8 +733,18 @@ $\impliessx$ Dobbiamo dimostrare che $\forall x\quad \left\{x\right\}$ è chiuso
 \end{observe}
 \begin{demonstration}
 \begin{enumerate}[label=\Roman*]
-\item ...
-\item ...
+\item $\impliesdx$ Se $X$ è \textbf{T1}, allora $\forall \left\{y\right\}\subseteq X$ è chiuso. Fissato $x$, prendiamo $y \in \inter_{U\in I\left(x\right)}U$. Allora $\forall U\in I\left(x\right)\ \left\{y\right\}\cap U\neq \emptyset$. Da ciò segue che $x\in\overline{\left\{y\right\}}=\left\{y\right\}$, cioè $y=x$. Allora $\left\{x\right\}=\inter_{U\in I\left(x\right)}U$.\\
+$\impliessx$ Per dimostrare che $X$ è \textbf{T1} è sufficiente dimostrare che $\left\{x\right\}$ è chiuso, dato che ogni insieme finito in $X$ si può vedere come unione finita di singoletti $\left\{x\right\}$ e per gli assiomi dei chiusi otteniamo un chiuso. In particolare, ci basta dimostrare che $\overline{\left\{x\right\}}\subseteq \left\{x\right\}$, essendo l'altra implicazione ovvia per definizione.\\
+Sia $y\in\overline{\left\{x\right\}}$. Per definizione di chiusura $\forall V\in I\left(y\right)\ V\cap\overline{\left\{x\right\}}\neq\emptyset\implies \forall V\in I\left(y\right)\ V\cap\overline{\left\{x\right\}}=\left\{x\right\}$, cioè l'intersezione dei $V$ deve incontrare $\left\{x\right\}$:
+\begin{equation*}
+\inter_{V\in I\left(y\right)}V\cap\left\{x\right\}=\left\{x\right\}
+\end{equation*}
+Per ipotesi, $\displaystyle \inter_{V\in I\left(y\right)}V=\left\{y\right\}$, dunque $\left\{y\right\}\cap \left\{x\right\}=\left\{x\right\}\implies y\in\left\{x\right\}\implies\overline{\left\{x\right\}}\subseteq \left\{x\right\}$ e vale le ipotesi.
+\item Se $X$ è metrico e $x\in X$, il sistema fondamentale di intorni di $X$ sono gli intorni centrati in $X$ di raggio arbitrario, cioè $B_{\epsilon}\left(x\right)$. Allora:
+\begin{equation*}
+\inter_{U\in I\left(x\right)}U=\inter_{\epsilon > 0}B_{\epsilon}\left(x\right)=\left\{x\right\}
+\end{equation*}
+E per la proposizione precedente si ha che $X$ metrico è \textbf{T1}.
 \end{enumerate}
 \end{demonstration}
 \begin{define}
@@ -758,11 +768,12 @@ Uno spazio topologico $X$ si dice di \textbf{Hausdorff}\index{assioma di separaz
 		\item Ogni spazio metrico è di \textbf{Hausdorff}. Infatti:
 	\end{enumerate}
 \end{observe}
-\begin{demonstration}
+\begin{demonstration}~{}
 \begin{enumerate}[label=\Roman*]
-\item 
-\item $\impliesdx$ Avendo per ogni coppia di punti distinti due intorni disgiunti, banalmente i due intorni verificano la definizione di \textbf{T1} per intorni.\\
-$\impliessx$
+\item $\impliesdx$ Sia $X$ di \textbf{Hausdorff}. Fissato $x$, sia $y\in\overline{U}$, con $U\in I\left(x\right)$. Per definizione di $\overline{U},\ \forall V\in I\left(y\right)\quad V\cap U\neq\emptyset$. Se $y \neq x$, si avrebbe un assurdo, dato che $\nexists V\in I\left(y\right)\ \colon U\cap V=\emptyset$ e dunque $X$ non sarebbe di \textbf{Hausdorff}.\\
+$\impliessx$ Dobbiamo dimostrare che $X$ è di \textbf{Hausdorff}. Sia $x\neq y$. Allora $\displaystyle y\notin\left\{x\right\}=\inter_{U\in I\left(x\right)}\overline{U}$. Allora, per definizione di chiusura si ha che $\forall U\in I\left(x\right)\ \exists V\in I\left(y\right)\ \colon V\cap U=\emptyset$. Segue dunque la tesi.
+\item Avendo per ogni coppia di punti distinti due intorni disgiunti in quanto \textbf{Hausdorff}, banalmente i due intorni verificano la definizione di \textbf{T1} per intorni.\\
+Il viceversa \textit{non} è vero: prendendo la topologia dei complementari finiti $CF$ su uno spazio $X$ \textit{non} finito, essa è \textbf{T1} ma non \textbf{Hausdorff}.
 \item Presi $x\neq y$, allora $\mvf{d}{x}{y}=d>0$. Dunque, per disuguaglianza triangolare si ha sempre che:
 \begin{equation*}
 B_{\nicefrac{d}{4}}\left(Y\right)\cap B_{\nicefrac{d}{4}}\left(Y\right)=\emptyset
