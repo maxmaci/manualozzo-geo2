@@ -24,8 +24,8 @@
 Uno \textbf{spazio topologico}\index{spazio topologico} $\left(X, \topo\right)$ è un insieme $X$ con una famiglia di sottoinsiemi $\topo\subseteq\setpart{X}$ detta \textbf{topologia}\index{topologia} che soddisfano i seguenti assiomi (detti \textbf{assiomi degli aperti}\index{assiomi!degli aperti}):
 		\begin{enumerate}
 	\item \textit{Il vuoto e l'insieme stesso sono aperti della topologia}: $\emptyset,\ X\in\topo$ .
-	\item \textit{L'unione arbitraria di aperti è un aperto}: dati $\left\{A_i\right\}_{i\in I}$ tali che $A_i\in\topo,\forall i\in I$ ($|I|\leq \infty$), allora $\displaystyle\inter_{i\in I}A_i=A\in\topo$ .
-	\item \textit{L'intersezione finita di aperti è aperta}: dati $\left\{A_i\right\}_{i\in I}$ tali che $A_i\in\topo$ $\forall i\in I$ ($|I|< \infty$), allora $\displaystyle\union_{i\in I}A_i=A\in\topo$.
+	\item \textit{L'unione arbitraria di aperti è un aperto}: dati $\left\{A_i\right\}_{i\in I}$ tali che $A_i\in\topo,\ \forall i\in I$ ($|I|\leq \infty$), allora $\displaystyle\union_{i\in I}A_i=A\in\topo$ .
+	\item \textit{L'intersezione finita di aperti è aperta}: dati $\left\{A_i\right\}_{i\in I}$ tali che $A_i\in\topo,\ \forall i\in I$ ($|I|< \infty$), allora $\displaystyle\inter_{i\in I}A_i=A\in\topo$.
 		\end{enumerate}
 Gli elementi di $\topo$ si dicono \textbf{aperti}\index{aperto} della topologia.
 \end{define}
@@ -33,8 +33,8 @@ Gli elementi di $\topo$ si dicono \textbf{aperti}\index{aperto} della topologia.
 \begin{define} Si può definire equivalentemente su X una topologia $\topo$ usando gli \textbf{assiomi dei chiusi}\index{assiomi!dei chiusi}:
 		\begin{enumerate}
 	\item \textit{Il vuoto e l'insieme stesso sono chiusi della topologia}: $\emptyset,\ X\in\topo$.
-	\item \textit{L'unione finita di chiusi è un chiuso}: dati $\left\{C_i\right\}_{i\in I}$ tale che $C_i\in\topo$ $\forall i\in I$ ($|I|< \infty$), allora $\displaystyle\inter_{i\in I}C_i=C\in\topo$ .
-	\item \textit{L'intersezione arbitraria di chiusi è un chiuso}: dati $\left\{C_i\right\}_{i\in I}$ tale che $C_i\in\topo$ $\forall i\in I$ ($|I|\leq \infty$), allora $\displaystyle\union_{i\in I}C_i=C\in\topo$.
+	\item \textit{L'unione finita di chiusi è un chiuso}: dati $\left\{C_i\right\}_{i\in I}$ tale che $C_i\in\topo,\ \forall i\in I$ ($|I|< \infty$), allora $\displaystyle\union_{i\in I}C_i=C\in\topo$ .
+	\item \textit{L'intersezione arbitraria di chiusi è un chiuso}: dati $\left\{C_i\right\}_{i\in I}$ tale che $C_i\in\topo,\ \forall i\in I$ ($|I|\leq \infty$), allora $\displaystyle\inter_{i\in I}C_i=C\in\topo$.
 		\end{enumerate}
 Gli elementi di $\topo$ si dicono \textbf{chiusi}\index{chiuso} della topologia.
 \end{define}
@@ -68,7 +68,7 @@ B_{\epsilon}\left(x\right)=\left\{y\in X\mid \mvf{d}{x}{y}<\epsilon\right\}
 \end{equation}
 Ogni spazio metrico ha una \textbf{topologia} $\topo_d$ \textbf{indotta dalla distanza}, i cui aperti sono definiti come:
 	\begin{equation*}
-A\subseteq X \text{ aperto } \left(A\in\topo\right) \text{ se } \forall x\in A, \exists \epsilon>0\ \colon B_{\epsilon}\left(x\right)\subseteq A.
+A\subseteq X \text{ aperto } \left(A\in\topo\right) \text{ se } \forall x\in A,\ \exists \epsilon>0\ \colon B_{\epsilon}\left(x\right)\subseteq A.
 	\end{equation*}
 \end{define}
 \begin{example}~{}
@@ -88,22 +88,21 @@ In questo modo, ogni punto è una palla aperta e dunque ogni sottoinsieme è un 
 \end{equation}
 nel seguente modo:
 	\begin{equation*}
-A\subseteq \realset \text{ aperto } \left(A\in\mathcal{E_{ucl}}\right) \text{ se } \forall x\in A, \exists \epsilon>0\ \colon B_{\epsilon}\left(x\right)\subseteq A.
+A\subseteq \realset \text{ aperto } \left(A\in\mathcal{E_{ucl}}\right) \text{ se } \forall x\in A,\ \exists \epsilon>0\ \colon B_{\epsilon}\left(x\right)\subseteq A.
 	\end{equation*}
 \item Su $X=\realset^n$ si può definire come distanza la \textit{norma Euclidea}: $\mvf{d}{x}{y}=||x-y||$ che induce la \textit{topologia Euclidea} $\mathcal{E_{ucl}}$ in modo analogo al caso precedente.
 \begin{gather*}
 	B_{\epsilon}\left(x\right)=\left\{y\in \realset^n\mid ||x-y||<\epsilon\right\}\\
-	A\subseteq \realset^n \text{ aperto } \left(A\in\mathcal{E_{ucl}}\right) \text{ se } \forall x\in A, \exists \epsilon>0\ \colon B_{\epsilon}\left(x\right)\subseteq A.
+	A\subseteq \realset^n \text{ aperto } \left(A\in\mathcal{E_{ucl}}\right) \text{ se } \forall x\in A,\ \exists \epsilon>0\ \colon B_{\epsilon}\left(x\right)\subseteq A.
 \end{gather*}
 \end{itemize}
 \end{example}
 \begin{attention}
 Non tutte le topologie sono indotte da una distanza! Definiamo la \textbf{topologia dei complementari finiti} sull'insieme $X$ nel modo seguente:
-\begin{gather*}
-A\subseteq \realset \text{ aperto } \left(A\in CF\right) \text{ se } \forall X\setminus A \text{ è finito.}\\
-C\subseteq \realset \text{ chiuso } \left(C\in CF\right) \text{ se } \forall C \text{ è finito.}
-\end{gather*}
-%perché i \forall?
+	\begin{gather*}
+A\subseteq \realset \text{ aperto } \left(A\in CF\right) \text{ se }  X\setminus A \text{ è finito.}\\
+C\subseteq \realset \text{ chiuso } \left(C\in CF\right) \text{ se }  C \text{ è finito.}
+	\end{gather*}
 Alcune osservazioni:
 \begin{itemize}
 \item Se un aperto $A$ è tale se il suo complementare $\mathcal{C}A$ è finito, si ha che:
