@@ -16,9 +16,12 @@
 \end{introduction}
 
 
+<<<<<<< Updated upstream
 %\begin{introduction}
 %  Tisca.
 %\end{introduction}
+=======
+>>>>>>> Stashed changes
 \section{Spazio topologico}
 \begin{define}
 Uno \textbf{spazio topologico}\index{spazio topologico} $\left(X, \topo\right)$ è un insieme $X$ con una famiglia di sottoinsiemi $\topo\subseteq\setpart{X}$ detta \textbf{topologia}\index{topologia} che soddisfano i seguenti assiomi (detti \textbf{assiomi degli aperti}\index{assiomi!degli aperti}):
@@ -665,7 +668,7 @@ sistema fondamentale di intorni di $x$ e $\mathcal{V} = \left\{V_j\right\}_{j\in
 \item Se $A\subseteq X,\ B\subseteq Y$, allora $\overline{A\times B}=\overline{A}\times \overline{B}$. In particolare, il prodotto di chiusi è chiuso.
 \end{enumerate}
 \end{proposition}
-\begin{demonstration}
+\begin{demonstration}~{}
 \begin{enumerate}[label=\Roman*]
 \item Segue dalla dimostrazione dal primo punto del teorema \ref{topprodotto} (\textsc{Manetti, 3.61}).
 \item Per definizione di sistema fondamentale di intorni si ha:
@@ -731,7 +734,7 @@ $\impliessx$ Dobbiamo dimostrare che $\forall x\quad \left\{x\right\}$ è chiuso
 \item Ogni spazio metrico è \textbf{T1}
 \end{enumerate}
 \end{observe}
-\begin{demonstration}
+\begin{demonstration}~{}
 \begin{enumerate}[label=\Roman*]
 \item $\impliesdx$ Se $X$ è \textbf{T1}, allora $\forall \left\{y\right\}\subseteq X$ è chiuso. Fissato $x$, prendiamo $y \in \inter_{U\in I\left(x\right)}U$. Allora $\forall U\in I\left(x\right)\ \left\{y\right\}\cap U\neq \emptyset$. Da ciò segue che $x\in\overline{\left\{y\right\}}=\left\{y\right\}$, cioè $y=x$. Allora $\left\{x\right\}=\inter_{U\in I\left(x\right)}U$.\\
 $\impliessx$ Per dimostrare che $X$ è \textbf{T1} è sufficiente dimostrare che $\left\{x\right\}$ è chiuso, dato che ogni insieme finito in $X$ si può vedere come unione finita di singoletti $\left\{x\right\}$ e per gli assiomi dei chiusi otteniamo un chiuso. In particolare, ci basta dimostrare che $\overline{\left\{x\right\}}\subseteq \left\{x\right\}$, essendo l'altra implicazione ovvia per definizione.\\
@@ -765,7 +768,7 @@ Uno spazio topologico $X$ si dice di \textbf{Hausdorff}\index{assioma di separaz
 			\left\{x\right\}=\inter_{U\in I\left(x\right)}\overline{U}
 		\end{equation}
 	\item Essere \textbf{Hausdorff} implica essere \textbf{T1}, ma non il viceversa.
-		\item Ogni spazio metrico è di \textbf{Hausdorff}. Infatti:
+		\item Ogni spazio metrico è di \textbf{Hausdorff}.
 	\end{enumerate}
 \end{observe}
 \begin{demonstration}~{}
@@ -779,4 +782,107 @@ Il viceversa \textit{non} è vero: prendendo la topologia dei complementari fini
 B_{\nicefrac{d}{4}}\left(Y\right)\cap B_{\nicefrac{d}{4}}\left(Y\right)=\emptyset
 \end{equation*}
 \end{enumerate}
+<<<<<<< Updated upstream
+=======
+\end{demonstration}
+\begin{proposition}\ref{prodottihause}\textsc{Manetti, 3.6.8}\\
+Sottospazi e prodotti di spazi di \textbf{Hausdorff} sono \textbf{Hausdorff}.
+\end{proposition}
+\begin{demonstration}~{}
+\begin{itemize}
+\item Sia $Y\subseteq X$ con $X$ spazio topologico, $Y$ con la topologia di sottospazio. Prendiamo $x,\ y\in Y$ con $x\neq y$.\\
+$X$ di \textbf{Hausdorff} implica che $\exists U,\ V\subseteq X$ intorni rispettivamente di $x$ e $y$ tali che $U\cap V=\emptyset$. Basta prendere allora $U\cap Y,\ V\cap Y$: sono intorni sempre di $x$ e $y$ in $Y$ che restano comunque disgiunti.
+\item Sia $X\times Y$ con $X,\ Y$ spazi topologici. Prendiamo $\left(x_1,\ y_1\right)\neq\left(x_2,\ y_2\right)$. Questo significa che $x_1\neq x_2$ oppure $y_1\neq y_2$.\\ Scegliamo senza perdita di generalità $x_1\neq x_2$. Essendo $X$ di \textbf{Hausdorff}, $\exists U_1,\ U_2$ (intorni) aperti in $X$  tali che $x_1\in U_1,\ x_2\in U_2\ \colon U_1\cap U_2=\emptyset$. Allora:
+\begin{equation*}
+\begin{array}{l}
+	U_1\times Y\text{ intorno di }\left(x_1,\ y_1\right)\\
+	U_2\times Y\text{ intorno di }\left(x_2,\ y_2\right)
+\end{array}
+\implies U_1\times Y\cap U_2\times Y=\left(U_1\cap U_2\right)\times\left(Y\cap Y\right)=\emptyset 
+\end{equation*}
+\end{itemize}
+\end{demonstration}
+\begin{theorema}\textsc{Manetti, 3.69}\\
+Sia $X$ spazio topologico. La \textbf{diagonale}\index{diagonale} $\Delta\subseteq X\times X$ è l'insieme delle coppie che hanno uguali componenti:
+\begin{equation}
+	\Delta=\left\{\left(x,\ x\right)\mid x\in X\right\}
+\end{equation}
+Si ha:\\
+$X$ di \textbf{Hausdorff} $\iff \Delta$ chiuso in $X\times X$.
+\end{theorema}
+\begin{demonstration}
+$\impliesdx$ Dobbiamo dimostrare che $\Delta$ è chiuso, cioè $X\times X\setminus \Delta$ aperto, ovvero $X\times X\setminus \Delta$ è intorno di ogni suo punto.\\
+Preso $\left(x,\ y\right)\in X\times X\setminus \Delta\implies x\neq y$ dato che \textit{non} appartiene alla diagonale. Essendo $X$ di \textbf{Hausdorff}, $\exists U,\ V:\ x\in U,\ y\in V$ (intorni) aperti  disgiunti. Allora $U\times V\cap \Delta =\emptyset$: se così non fosse, ci potrebbero essere dei valori della diagonale che appartengono ad $U\times V$, cioè esisterebbe almeno una coppia $\left(x',\ y'\right)$ tale che $x'=y'$, ovvero gli intorni non sarebbero disgiunti. Allora $\left(x,\ y\right)\in U\times V\subseteq X\times X\setminus \Delta$.\\
+$\impliessx$ Siano $x,\ y\in X,\ x\neq y$. Allora $\left(x,\ y\right)\in \subseteq X\times X\setminus \Delta$, che è aperto per ipotesi. Necessariamente esiste un aperto della base della topologia prodotto che contiene la coppia: $\left(x,\ y\right)\in U\times V\subseteq X\times X\setminus \Delta$. Per gli stessi ragionamenti dell'altra implicazione, si ha che $x\in U,\ y\in V$ con $U,\ V$ aperti (e dunque intorni) disgiunti. Segue che $X$ è di \textbf{Hausdorff}.
+\end{demonstration}
+\begin{proposition}~{}
+\begin{enumerate}
+\item Siano $\funz{f,\ g}{X}{Y}$ continue, $Y$ di \textbf{Hausdorff}. Sia $C$ il luogo dei punti dove $f$ e $g$ coincidono:
+\begin{equation}
+C=\left\{x\in X\mid f\left(x\right)=g\left(x\right)\right\}
+\end{equation}
+Allora $C$ è chiuso.
+\item  Sia $\funz{f}{X}{X}$ continua, $X$ di \textbf{Hausdorff}.  Sia $F_{ix}\left(f\right)$ il luogo dei \textbf{punti fissi}\index{punto!fisso} di $f$ e $g$ coincidono:
+\begin{equation}
+F_{ix}\left(f\right)=\left\{x\in X\mid f\left(x\right)=x\right\}
+\end{equation}
+Allora $F_{ix}\left(f\right)$ è chiuso.
+\item Siano $\funz{f,\ g}{X}{Y}$ continue, $Y$ di \textbf{Hausdorff} e $A\subseteq X$ \textit{denso} in $X$. Allora
+\begin{equation}
+\forall x\in A\quad f\left(x\right)=g\left(x\right)\implies \forall x\in X\quad f\left(x\right)=g\left(x\right)
+\end{equation}
+\item Sia $\funz{f}{X}{Y}$ continua, $Y$ di \textbf{Hausdorff}. Sia $\Gamma_f$ il \textbf{grafico}\index{grafico} di $f$ le insieme delle coppie $(x,f\left(x\right))$ formate dai punti del dominio e le corrispettive immagini tramite $f$.
+\begin{equation}
+\Gamma_f=\left\{\left(x,\ y\right)\in X\times Y\mid y=f\left(x\right)\right\}
+\end{equation}
+Allora $\Gamma_f$ è chiuso in $X\times Y$.
+\end{enumerate}
+\end{proposition}
+\begin{demonstration}~{}
+\begin{enumerate}[label=\Roman*]
+\item Definiamo la funzione $\funztot{h}{X}{X\times Y}{x}{\left(f\left(x\right),\ g\left(x\right)\right)}$. Essa è continua perché le componenti sono continue; considerata la diagonale $\Delta_{Y}$ di $Y\times Y$, si ha che $C=h^{-1}\left(\Delta_Y\right)$ è la controimmagine tramite una funzione continua di un chiuso e quindi chiuso.
+\item Basta porre al punto 1 $g=Id_{X}$.
+\item Per ipotesi $A\subseteq h^{-1}\left(\Delta_Y\right)$. In quanto $A$ è denso in $X$, $\overline{A}=X$. Dunque:
+\begin{equation*}
+X=\overline{A}\subseteq\overline{h^{-1}\left(\Delta_Y\right)}=h^{-1}\left(\Delta_Y\right)
+\end{equation*}
+Questo è vero in quanto $Y$ è di \textbf{Hausdorff} e la diagonale $\Delta_Y$ è un chiuso: segue che $h^{-1}\left(\Delta_Y\right)$ è chiuso e dunque pari alla sua chiusura. Si ha la tesi.
+\item Definiamo la funzione continua $\funztot{l}{X\times Y}{Y\times Y}{\left(x,\ y\right)}{\left(f\left(x\right),\ y\right)}$. Allora $\Gamma_f=l^{-1}\left(\Delta_Y\right)$ è un chiuso.
+\end{enumerate}
+\end{demonstration}
+\section{Proprietà topologica}
+\begin{define}
+Una \textbf{proprietà topologica}\index{proprietà topologica} $P$ è una caratteristica degli spazi topologici per cui se ogni spazio $X$ che possiede quella proprietà $P$ è omeomorfo ad uno spazio $Y$, allora anche $Y$ ha quella proprietà (e viceversa):
+\begin{equation}
+X\cong Y\implies \left[ X\text{ ha }P\iff Y\text{ ha }P\right]
+\end{equation}
+In altre parole, una proprietà topologica è \textbf{invariante}\index{invariante} rispetto agli omeomorfismi.
+\end{define}
+\begin{observe}
+Per verificare che $P$ è una proprietà topologica dati due spazi omeomorfi $X\cong Y$, basta in realtà verificare solo che se $X$ ha la proprietà $P$ allora anche $Y$ la ha.\\
+Invece, si può verificare che due spazi \textbf{non} sono omeomorfi trovando una proprietà topologica che non condividono tra di loro.
+\end{observe}
+\begin{exercise}\label{hausexercise}\textsc{Manetti, 3.56}\\
+Siano $X,\ Y$ spazi topologici con $Y$ di \textbf{Hausdorff}. Se esiste $\funz{f}{X}{Y}$ continua e iniettiva, allora $X$ è di \textbf{Hausdorff}.
+\end{exercise}
+\begin{demonstration}
+Siano $x,\ y\in X$ con $x\neq y$. Essendo $f$ iniettiva, $f\left(x\right)\neq f\left(y\right)\in Y$: in quanto $Y$ è di \textbf{Hausdorff}, $\exists U,\ V$ (intorni) aperti disgiunti in $Y$ che contengono rispettivamente $f\left(x\right)$ e $f\left(y\right)$.\\
+Per continuità di $f$ le controimmagini di questi intorni aperti sono aperti e per iniettività sono ancora disgiunti: $\exists f^{-1}\left(U\right),\ f^{-1}\left(V\right)$ (intorni) aperti disgiunti che contengono rispettivamente $x$ e $y$. Segue che $X$ è di \textbf{Hausdorff}.
+\end{demonstration}
+\begin{proposition}
+Essere di \textbf{Hausdorff} è una proprietà topologica, ovvero:
+\begin{equation*}
+	X\cong Y\implies \left[ X\text{ è di \textbf{Hausdorff} }\implies Y\text{ è di \textbf{Hausdorff} }\right]
+\end{equation*}
+\end{proposition}
+\begin{demonstration}
+Sia $\funz{f}{X}{Y}$ un omeomorfismo tra i due spazi. Allora $f$ è per definizione continua e iniettiva. Per l'esercizio \ref{hausexercise} (\textsc{Manetti, 3.56}) segue che $X$ di \textbf{Hausdorff}$\implies$ Y di \textbf{Hausdorff}.
+\end{demonstration}
+\begin{theorema}
+$X,\ Y$ di \textbf{Hausdorff}$\iff X\times Y$ di \textbf{Hausdorff}.
+\end{theorema}
+\begin{demonstration}~{}
+$\impliesdx$ Si veda la proprietà \label{prodottihause} (textsc{Manetti, 3.6.8}).\\
+$\impliessx$ Si fissi $y_0\in Y$. Definita la funzione $\funztot{f}{X}{X\times Y}{x}{\left(x,\ y_0\right)}$, essa è continua ed iniettiva, dunque per l'esercizio \ref{hausexercise} (\textsc{Manetti, 3.56}) segue che $X$ è di \textbf{Hausdorff}. Definito $x_0\in X$ e $\funztot{f}{Y}{X\times Y}{y}{\left(x_0,\ y\right)}$, allo stesso modo si verifica che $Y$ è di \textbf{Hausdorff}.
+>>>>>>> Stashed changes
 \end{demonstration}
