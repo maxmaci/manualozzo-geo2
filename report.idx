@@ -1,54 +1,3 @@
-<<<<<<< Updated upstream
-\indexentry{spazio topologico|hyperpage}{3}
-\indexentry{topologia|hyperpage}{3}
-\indexentry{assiomi!degli aperti|hyperpage}{3}
-\indexentry{aperto|hyperpage}{3}
-\indexentry{assiomi!dei chiusi|hyperpage}{3}
-\indexentry{chiuso|hyperpage}{3}
-\indexentry{topologia!discreta|hyperpage}{4}
-\indexentry{topologia!banale|hyperpage}{4}
-\indexentry{distanza|hyperpage}{4}
-\indexentry{disuguaglianza triangolare|hyperpage}{4}
-\indexentry{spazio!metrico|hyperpage}{4}
-\indexentry{palla aperta|hyperpage}{4}
-\indexentry{topologia!Euclidea|hyperpage}{4}
-\indexentry{norma|hyperpage}{5}
-\indexentry{finezza|hyperpage}{6}
-\indexentry{finezza!meno fine|hyperpage}{6}
-\indexentry{finezza!pi\IeC {\`u} fine|hyperpage}{6}
-\indexentry{base|hyperpage}{7}
-\indexentry{teorema!delle basi|hyperpage}{8}
-\indexentry{chiusura|hyperpage}{9}
-\indexentry{aderenza|hyperpage}{9}
-\indexentry{interno|hyperpage}{9}
-\indexentry{frontiera|hyperpage}{9}
-\indexentry{densit\IeC {\`a}|hyperpage}{10}
-\indexentry{intorno|hyperpage}{10}
-\indexentry{sistema fondamentale di intorni|hyperpage}{11}
-\indexentry{continuit\IeC {\`a}|hyperpage}{11}
-\indexentry{continuit\IeC {\`a}!per aperti o chiusi|hyperpage}{11}
-\indexentry{funzione!continua@funzione!continua\gobbleone |seeonly{continuit\IeC {\`a}!per aperti o chiusi}}{11}
-\indexentry{continuit\IeC {\`a}!per intorni|hyperpage}{12}
-\indexentry{funzione!aperta|hyperpage}{13}
-\indexentry{funzione!chiusa|hyperpage}{13}
-\indexentry{omeomorfismo|hyperpage}{13}
-\indexentry{topologia!indotta|hyperpage}{14}
-\indexentry{sottospazio!topologico|hyperpage}{14}
-\indexentry{topologia!di sottospazio|hyperpage}{14}
-\indexentry{inclusione|hyperpage}{14}
-\indexentry{immersione|hyperpage}{15}
-\indexentry{immersione!aperta|hyperpage}{16}
-\indexentry{immersione!chiusa|hyperpage}{16}
-\indexentry{proiezione|hyperpage}{16}
-\indexentry{topologia!prodotto|hyperpage}{17}
-\indexentry{assioma di separazione|hyperpage}{20}
-\indexentry{assioma di separazione!T1|hyperpage}{20}
-\indexentry{spazio topologico!T1|hyperpage}{20}
-\indexentry{assioma di separazione!Hausdorff|hyperpage}{21}
-\indexentry{spazio topologico!Hausdorff|hyperpage}{21}
-\indexentry{spazio topologico!T2@spazio topologico!T2\gobbleone |seeonly{assioma di separazione!Hausdorff}}{21}
-\indexentry{assioma di separazione!T2@assioma di separazione!T2\gobbleone |seeonly{assioma di separazione!Hausdorff}}{21}
-=======
 \indexentry{spazio topologico|hyperpage}{3}
 \indexentry{topologia|hyperpage}{3}
 \indexentry{assiomi!degli aperti|hyperpage}{3}
@@ -103,4 +52,3 @@
 \indexentry{grafico|hyperpage}{23}
 \indexentry{propriet\IeC {\`a} topologica|hyperpage}{23}
 \indexentry{invariante|hyperpage}{23}
->>>>>>> Stashed changes
