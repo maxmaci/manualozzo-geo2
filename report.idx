@@ -11,39 +11,53 @@
 \indexentry{spazio!metrico|hyperpage}{4}
 \indexentry{palla aperta|hyperpage}{4}
 \indexentry{topologia!Euclidea|hyperpage}{4}
-\indexentry{norma|hyperpage}{5}
-\indexentry{finezza|hyperpage}{6}
-\indexentry{finezza!meno fine|hyperpage}{6}
-\indexentry{finezza!pi\IeC {\`u} fine|hyperpage}{6}
-\indexentry{base|hyperpage}{7}
-\indexentry{teorema!delle basi|hyperpage}{8}
-\indexentry{chiusura|hyperpage}{9}
-\indexentry{aderenza|hyperpage}{9}
-\indexentry{interno|hyperpage}{9}
-\indexentry{frontiera|hyperpage}{9}
-\indexentry{densit\IeC {\`a}|hyperpage}{10}
-\indexentry{intorno|hyperpage}{10}
-\indexentry{sistema fondamentale di intorni|hyperpage}{11}
-\indexentry{continuit\IeC {\`a}|hyperpage}{11}
-\indexentry{continuit\IeC {\`a}!per aperti o chiusi|hyperpage}{11}
-\indexentry{funzione!continua@funzione!continua\gobbleone |seeonly{continuit\IeC {\`a}!per aperti o chiusi}}{11}
-\indexentry{continuit\IeC {\`a}!per intorni|hyperpage}{12}
-\indexentry{funzione!aperta|hyperpage}{13}
-\indexentry{funzione!chiusa|hyperpage}{13}
-\indexentry{omeomorfismo|hyperpage}{13}
-\indexentry{topologia!indotta|hyperpage}{14}
-\indexentry{sottospazio!topologico|hyperpage}{14}
-\indexentry{topologia!di sottospazio|hyperpage}{14}
-\indexentry{inclusione|hyperpage}{14}
-\indexentry{immersione|hyperpage}{15}
-\indexentry{immersione!aperta|hyperpage}{16}
-\indexentry{immersione!chiusa|hyperpage}{16}
-\indexentry{proiezione|hyperpage}{16}
-\indexentry{topologia!prodotto|hyperpage}{17}
-\indexentry{assioma di separazione|hyperpage}{20}
-\indexentry{assioma di separazione!T1|hyperpage}{20}
-\indexentry{spazio topologico!T1|hyperpage}{20}
-\indexentry{assioma di separazione!Hausdorff|hyperpage}{21}
-\indexentry{spazio topologico!Hausdorff|hyperpage}{21}
-\indexentry{spazio topologico!T2@spazio topologico!T2\gobbleone |seeonly{assioma di separazione!Hausdorff}}{21}
-\indexentry{assioma di separazione!T2@assioma di separazione!T2\gobbleone |seeonly{assioma di separazione!Hausdorff}}{21}
+\indexentry{assiomi!dei chiusi|hyperpage}{5}
+\indexentry{chiuso|hyperpage}{5}
+\indexentry{topologia!discreta|hyperpage}{5}
+\indexentry{topologia!banale|hyperpage}{5}
+\indexentry{distanza|hyperpage}{6}
+\indexentry{disuguaglianza triangolare|hyperpage}{6}
+\indexentry{spazio!metrico|hyperpage}{6}
+\indexentry{palla aperta|hyperpage}{6}
+\indexentry{topologia!Euclidea|hyperpage}{6}
+\indexentry{norma|hyperpage}{7}
+\indexentry{finezza|hyperpage}{8}
+\indexentry{finezza!meno fine|hyperpage}{8}
+\indexentry{finezza!pi\IeC {\`u} fine|hyperpage}{8}
+\indexentry{base|hyperpage}{9}
+\indexentry{teorema!delle basi|hyperpage}{9}
+\indexentry{chiusura|hyperpage}{11}
+\indexentry{aderenza|hyperpage}{11}
+\indexentry{interno|hyperpage}{11}
+\indexentry{frontiera|hyperpage}{11}
+\indexentry{densit\IeC {\`a}|hyperpage}{11}
+\indexentry{intorno|hyperpage}{12}
+\indexentry{sistema fondamentale di intorni|hyperpage}{12}
+\indexentry{continuit\IeC {\`a}|hyperpage}{13}
+\indexentry{continuit\IeC {\`a}!per aperti o chiusi|hyperpage}{13}
+\indexentry{funzione!continua@funzione!continua\gobbleone |seeonly{continuit\IeC {\`a}!per aperti o chiusi}}{13}
+\indexentry{continuit\IeC {\`a}!per intorni|hyperpage}{14}
+\indexentry{funzione!aperta|hyperpage}{14}
+\indexentry{funzione!chiusa|hyperpage}{15}
+\indexentry{omeomorfismo|hyperpage}{15}
+\indexentry{topologia!indotta|hyperpage}{16}
+\indexentry{sottospazio!topologico|hyperpage}{16}
+\indexentry{topologia!di sottospazio|hyperpage}{16}
+\indexentry{inclusione|hyperpage}{16}
+\indexentry{immersione|hyperpage}{17}
+\indexentry{immersione!aperta|hyperpage}{18}
+\indexentry{immersione!chiusa|hyperpage}{18}
+\indexentry{proiezione|hyperpage}{18}
+\indexentry{topologia!prodotto|hyperpage}{18}
+\indexentry{assioma di separazione|hyperpage}{21}
+\indexentry{assioma di separazione!T1|hyperpage}{21}
+\indexentry{spazio topologico!T1|hyperpage}{21}
+\indexentry{assioma di separazione!Hausdorff|hyperpage}{22}
+\indexentry{spazio topologico!Hausdorff|hyperpage}{22}
+\indexentry{spazio topologico!T2@spazio topologico!T2\gobbleone |seeonly{assioma di separazione!Hausdorff}}{22}
+\indexentry{assioma di separazione!T2@assioma di separazione!T2\gobbleone |seeonly{assioma di separazione!Hausdorff}}{22}
+\indexentry{diagonale|hyperpage}{24}
+\indexentry{punto!fisso|hyperpage}{24}
+\indexentry{grafico|hyperpage}{24}
+\indexentry{propriet\IeC {\`a} topologica|hyperpage}{25}
+\indexentry{invariante|hyperpage}{25}
