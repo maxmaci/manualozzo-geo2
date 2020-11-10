@@ -641,7 +641,7 @@ Sia $\funz{f}{X}{Y}$ funzione tra $X,\ Y$ spazi topologici.
 \item $f$ si dice \textbf{immersione chiusa}\index{immersione!chiusa} se $f$ è aperta.
 \end{itemize}
 \end{define}
-\begin{lemming}\textsc{Manetti, 3.59}\\
+\begin{lemming}\textsc{(Manetti, 3.59)}\\
 Sia $\funz{f}{X}{Y}$ funzione \textit{continua} tra $X,\ Y$ spazi topologici.
 \begin{enumerate}
 \item $f$ iniettiva e aperta $\implies f$ è immersione (aperta)
@@ -667,7 +667,7 @@ Siano $P,\ Q$ spazi topologici e $P\times Q$ il suo prodotto cartesiano. Definit
 \end{gather}
 La \textbf{topologia prodotto}\index{topologia!prodotto} $\mathcal{P}$ è la topologia \textit{meno fine} fra quelli che rendono $p$ e $q$ \textit{continue}. In particolare, ricordando l'osservazione \ref{intersezionetopo}, la topologia prodotto è l'intersezione di \textit{tutte} le topologia che rendono continue $p$ e $q$.
 \end{define}
-\begin{theorema}\textsc{Manetti, 3.61}\label{topprodotto}
+\begin{theorema}\textsc{(Manetti, 3.61)}\label{topprodotto}
 \begin{enumerate}
 \item Una \textit{base} della topologia $\mathcal{P}$ è data dagli insiemi della forma $U\times V$ dove $U\subseteq P$ aperto, $V\subseteq Q$ aperto.
 \item $p,\ q$ sono aperte; inoltre $\forall \left(x,\ y\right)\in P\times Q$ le restrizioni:
@@ -681,6 +681,7 @@ Sono \textit{omeomorfismi}.\\
 f\text{ continua}\iff f_1=p\circ f,\ f_2=q\circ f\text{ continue}
 \end{equation}
 \end{enumerate}
+\vspace{-8mm}
 \end{theorema}
 \begin{demonstration}~{}
 \begin{enumerate}[label=\Roman*]
@@ -752,7 +753,7 @@ sistema fondamentale di intorni di $x$ e $\mathcal{V} = \left\{V_j\right\}_{j\in
 \end{proposition}
 \begin{demonstration}~{}
 \begin{enumerate}[label=\Roman*]
-\item Segue dalla dimostrazione dal primo punto del teorema \ref{topprodotto} (\textsc{Manetti, 3.61}).
+\item Segue dalla dimostrazione dal primo punto del teorema \ref{topprodotto} (\textsc{(Manetti, 3.61)}).
 \item Per definizione di sistema fondamentale di intorni si ha:
 \begin{gather*}
 \forall U\in I\left(x\right)\ \exists U_i\in\mathcal{U}\ \colon U_i\in U\\
@@ -865,7 +866,7 @@ B_{\nicefrac{d}{4}}\left(Y\right)\cap B_{\nicefrac{d}{4}}\left(Y\right)=\emptyse
 \end{equation*}
 \end{enumerate}
 \end{demonstration}
-\begin{proposition}\ref{prodottihause}\textsc{Manetti, 3.6.8}\\
+\begin{proposition}\ref{prodottihause}\textsc{(Manetti, 3.6.8)}\\
 Sottospazi e prodotti di spazi di \textbf{Hausdorff} sono \textbf{Hausdorff}.
 \end{proposition}
 \begin{demonstration}~{}
@@ -882,7 +883,7 @@ $X$ di \textbf{Hausdorff} implica che $\exists U,\ V\subseteq X$ intorni rispett
 \end{equation*}
 \end{itemize}
 \end{demonstration}
-\begin{theorema}\textsc{Manetti, 3.69}\\
+\begin{theorema}\textsc{(Manetti, 3.69)}\\
 Sia $X$ spazio topologico. La \textbf{diagonale}\index{diagonale} $\Delta\subseteq X\times X$ è l'insieme delle coppie che hanno uguali componenti:
 \begin{equation}
 	\Delta=\left\{\left(x,\ x\right)\mid x\in X\right\}
@@ -942,7 +943,7 @@ In altre parole, una proprietà topologica è \textbf{invariante}\index{invarian
 Per verificare che $P$ è una proprietà topologica dati due spazi omeomorfi $X\cong Y$, basta in realtà verificare solo che se $X$ ha la proprietà $P$ allora anche $Y$ la ha.\\
 Invece, si può verificare che due spazi \textbf{non} sono omeomorfi trovando una proprietà topologica che non condividono tra di loro.
 \end{observe}
-\begin{exercise}\label{hausexercise}\textsc{Manetti, 3.56}\\
+\begin{exercise}\label{hausexercise}\textsc{(Manetti, 3.56)}\\
 Siano $X,\ Y$ spazi topologici con $Y$ di \textbf{Hausdorff}. Se esiste $\funz{f}{X}{Y}$ continua e iniettiva, allora $X$ è di \textbf{Hausdorff}.
 \end{exercise}
 \begin{demonstration}
@@ -951,17 +952,18 @@ Per continuità di $f$ le controimmagini di questi intorni aperti sono aperti e 
 \end{demonstration}
 \begin{proposition}
 Essere di \textbf{Hausdorff} è una proprietà topologica, ovvero:
-\begin{equation*}
+\begin{equation}
 	X\cong Y\implies \left[ X\text{ è di \textbf{Hausdorff} }\implies Y\text{ è di \textbf{Hausdorff} }\right]
-\end{equation*}
+\end{equation}
+\vspace{-8mm}
 \end{proposition}
 \begin{demonstration}
-Sia $\funz{f}{X}{Y}$ un omeomorfismo tra i due spazi. Allora $f$ è per definizione continua e iniettiva. Per l'esercizio \ref{hausexercise} (\textsc{Manetti, 3.56}) segue che $X$ di \textbf{Hausdorff}$\implies$ Y di \textbf{Hausdorff}.
+Sia $\funz{f}{X}{Y}$ un omeomorfismo tra i due spazi. Allora $f$ è per definizione continua e iniettiva. Per l'esercizio \ref{hausexercise} \textsc{(Manetti, 3.56)} segue che $X$ di \textbf{Hausdorff}$\implies$ Y di \textbf{Hausdorff}.
 \end{demonstration}
 \begin{theorema}
 $X,\ Y$ di \textbf{Hausdorff}$\iff X\times Y$ di \textbf{Hausdorff}.
 \end{theorema}
-\begin{demonstration}~{}
-$\impliesdx$ Si veda la proprietà \label{prodottihause} (textsc{Manetti, 3.6.8}).\\
-$\impliessx$ Si fissi $y_0\in Y$. Definita la funzione $\funztot{f}{X}{X\times Y}{x}{\left(x,\ y_0\right)}$, essa è continua ed iniettiva, dunque per l'esercizio \ref{hausexercise} (\textsc{Manetti, 3.56}) segue che $X$ è di \textbf{Hausdorff}. Definito $x_0\in X$ e $\funztot{f}{Y}{X\times Y}{y}{\left(x_0,\ y\right)}$, allo stesso modo si verifica che $Y$ è di \textbf{Hausdorff}.
+\begin{demonstration}~{}\\
+$\impliesdx$ Si veda la proprietà \label{prodottihause} \textsc{(Manetti, 3.6.8)}.\\
+$\impliessx$ Si fissi $y_0\in Y$. Definita la funzione $\funztot{f}{X}{X\times Y}{x}{\left(x,\ y_0\right)}$, essa è continua ed iniettiva, dunque per l'esercizio \ref{hausexercise} \textsc{(Manetti, 3.56)} segue che $X$ è di \textbf{Hausdorff}. Definito $x_0\in X$ e $\funztot{f}{Y}{X\times Y}{y}{\left(x_0,\ y\right)}$, allo stesso modo si verifica che $Y$ è di \textbf{Hausdorff}.
 \end{demonstration}

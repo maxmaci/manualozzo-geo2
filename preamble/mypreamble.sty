@@ -1213,7 +1213,7 @@ linewidth=1pt]{tinBox}
 
 %%% theorema %%%
 
-\newenvironment{theorema}{\begin{tinBox}\begin{theoremaT}}{\refstepcounter{theorema}\hfill{\color{timberwolf}}	\end{theoremaT}\end{tinBox}}\numberwithin{theorema}{section}
+\newenvironment{theorema}{\begin{tinBox}\begin{theoremaT}}{\refstepcounter{theorema}\hfill{\color{timberwolf}}\end{theoremaT}\end{tinBox}}\numberwithin{theorema}{section}
 
 \newenvironment{lemming}{\begin{tinBox}\begin{lemmingT}}{\refstepcounter{lemming}\hfill{\color{timberwolf}}	\end{lemmingT}\end{tinBox}}\numberwithin{lemming}{section}
 
@@ -1295,27 +1295,30 @@ linewidth=1pt]{tinBox}
 
 
 \newcommand{\funz}[3]{
-	\ensuremath{#1\colon #2\rightarrow #3}}
+	\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{llll}
+			#1\colon& #2&\rightarrow& #3\end{array}}}
 
 % definizione di funzione (completa)
 
 \newcommand{\funztot}[5]{
-	\ensuremath{\begin{array}{l}
-			\funz{#1}{#2}{#3}\\
-			#4\mapsto #5
+	\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{llll}
+			#1\colon& #2&\rightarrow& #3\\
+			&#4&\mapsto& #5
 		\end{array}}}
 
 % inclusione (solo domini)
 
 \newcommand{\incl}[3]{
-	\ensuremath{#1\colon #2\hookrightarrow #3}}
+	\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{llll}
+		#1\colon& #2&\hookrightarrow& #3\end{array}}}
+
 
 % inclusione (completa)
 
 \newcommand{\incltot}[5]{
-	\ensuremath{\begin{array}{l}
-			\incl{#1}{#2}{#3}\\
-			#4\mapsto #5
+	\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{llll}
+			#1\colon& #2&\hookrightarrow& #3\\
+			&#4&\mapsto& #5
 \end{array}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%% altre definizioni  %%%%%%%%%%%%%%%%%%%%%%%%%
