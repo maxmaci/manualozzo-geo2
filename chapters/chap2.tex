@@ -30,8 +30,8 @@ Uno spazio non \textit{connesso} si dice \textbf{sconnesso} oppure \textbf{non c
 \end{lemming}
 \begin{demonstration}~{}\\
 $2\iff3)$ Sono equivalenti: se $A$ è aperto e disgiunto da $B$ tale che $X=A\cup B$ significa che $B=\mathcal{C}A=X\setminus A$ e dunque chiuso; analogamente per $B$ aperto si ha che $A$ è chiuso: allora $A,\ B$ chiusi e aperti propri.\\
-$1\implies2)$ Esiste $\emptyset\subsetneqq A \subsetneqq X$ con $A$ aperto e chiuso. Allora basta porre $B=\mathcal{C}A=X\setminus A$: essendo il complementare di $A$ è aperto e chiuso, sono disgiunti e tali per cui $B\neq X,\ B\neq \emptyset$. $A$ e $B$ soddisfano la tesi.
-$2\implies2)$ $A$ aperto, $B$ aperto $\implies A$ chiuso perché $A=\mathcal{C}X=X\setminus B$. Inoltre $A$ non vuoto, $B$ non vuoto $\implies A\neq X$. Dunque $A$ è aperto, chiuso e $A\neq \emptyset,\ X$ e pertanto soddisfa la tesi: esiste un sottoinsieme aperto e chiuso che non il vuoto o l'insieme stesso.
+$1\implies2)$ Esiste $\emptyset\subsetneqq A \subsetneqq X$ con $A$ aperto e chiuso. Allora basta porre $B=\mathcal{C}A=X\setminus A$: essendo il complementare di $A$ è aperto e chiuso, sono disgiunti e tali per cui $B\neq X,\ B\neq \emptyset$. $A$ e $B$ soddisfano la tesi.\\
+$1\implies2)$ $A$ aperto, $B$ aperto $\implies A$ chiuso perché $A=\mathcal{C}X=X\setminus B$. Inoltre $A$ non vuoto, $B$ non vuoto $\implies A\neq X$. Dunque $A$ è aperto, chiuso e $A\neq \emptyset,\ X$ e pertanto soddisfa la tesi: esiste un sottoinsieme aperto e chiuso che non il vuoto o l'insieme stesso.
 \end{demonstration}
 \begin{observe}
 	Il lemma \ref{sconnesso} \textsc{(Manetti, 4.2)} ci dice che è sufficiente trovare solo due aperti (o chiusi) che soddisfano la condizione di cui sopra per affermare la sconnessione. Viceversa, per dimostrare la connessione, dobbiamo dimostrare che per ogni coppia di aperti (o chiusi) non vuoti, la cui unione è $X$, essi non siano disgiunti.
@@ -183,10 +183,61 @@ In $\realset^n$, un \textbf{segmento}\index{segmento} $\overline{PQ}$ è la comb
 	\item Ogni insieme \textit{convesso} è anche \textit{stellato} per $P$, basta fissare un qualunque punto come nostro $P$. In generale, un insieme è convesso se e solo se è stellato per ogni suo punto.
 \end{itemize}
 \end{examples}
-
-
-
 %RICKROLLED
+Vediamo ora che conseguenze hanno questi teoremi in $\realset$ con la topologia euclidea.
 \begin{theorema}
 	Sia $I\subseteq \realset$ . Le seguenti affermazioni sono equivalenti:
 		\begin{enumerate}
+	\item $I$ è un intervallo, ovvero $I$ è convesso
+	\item $I$ è c.p.a.
+	\item $I$ è connesso			
+		\end{enumerate}
+\end{theorema}
+\begin{demonstration}
+	$1) \implies 2)$ Siccome $I$ è convesso $\Rightarrow$ $I$ stellato $\Rightarrow$ $I$ c.p.a. $\Rightarrow$ $I$ connesso. \\
+	$2) \implies 3)$ Vale in generale che c.p.a. $\Rightarrow$ connesso.\\
+	$3) \implies 1)$ Per contronominale mostriamo che $I$ non intervallo $\Rightarrow$ $I$ sconnesso. $I$ non intervallo significa che 
+		\begin{gather*}
+			\exists a<b<c,\ a,c\in I,\ b\notin I \\
+			b\notin I \Rightarrow I= \left(\underbrace{ I\cap \left(-\infty ,b\right)}_{\in a}\ \right) \cup \left( \underbrace{I\cap \left(b ,+\infty\right)}_{\in c}\ \right)
+		\end{gather*}
+	ovvero $I$ è unione di aperti, non vuoti e disgiunti $\Rightarrow$ $I$ sconnesso.	
+\end{demonstration}
+\begin{observe}~{}\label{teorema esistenza zeri funzioni continue, s^n cpa}
+		\begin{itemize}
+	\item Come conseguenza immediata di questo teorema si ha il teorema di esistenza degli zeri per funzioni continue da $\realset$ in $\realset$, infatti se l'immagine continua di un connesso è un connesso, per tali funzioni vale che l'immagine continua di un intervallo è un intervallo.
+	\item Per $n\geq 1$ la sfera $S^n := \left\{ \left(x_1,\dots,x_{n+1}\right) \mid \sum_{i=1}^{n+1}x_i^2=1 \right\}$ è c.p.a., infatti $\forall x,y\in S^n$ si trova sempre un arco come intersezione di $S^n$ e del piano $H$ passante per il centro della sfera, $x$ e $y$.
+		\end{itemize}
+\end{observe}
+
+Vediamo ora un risultato per funzioni continue da $S^n$ in $\realset$
+\begin{theorema}~{}\label{non iniettività S^n in realset}
+	Sia $\funz f {S^n} \realset$ una funzione continua, Allora $\exists x\in S^n \ \colon f(x)=f(-x)$. In particolare $f$ non è iniettiva.
+\end{theorema}
+\begin{demonstration}
+	Costruiamo una funzione $g(x)=f(x)-f(-x)$, essa è continua perché somma di funzioni continue. Siccome $S^n$ è connesso allora $g\left( S^n\right)\subseteq\realset$ è connesso $\Rightarrow$ per il teorema precedente $g\left(S^n\right)$ è un intervallo.\\
+	Si considerino un punto $y\in S^n$ arbitrario e le sue immagini $g(y)$ e $g(-y)$: esse appartengono all'intervallo dell'immagine $g\left( S^n\right)$, quindi se ne può considerare il loro punto medio:
+		\begin{gather*}
+			\frac{1}{2}\left[ g(y) - g(-y)\right]=\frac{1}{2} \left[ f(y) -f(-y) - f(y) +f(-y) \right]= 0\\
+			\Rightarrow \exists x\in S^n \colon g(x)=0, \text{ ovvero } f(x)=f(-x)
+		\end{gather*}
+\end{demonstration}
+
+
+Come conseguenza di questo teorema si ha che un aperto di $\realset$ non sarà mai omeomorfo ad un aperto di $\realset^n$, vediamolo più precisamente.
+\begin{theorema}
+Sia $I\subseteq\realset$ e $U\subseteq\realset^n$, con $n\geq 2$. Se $I,U$ sono aperti allora $I$ non è omeomorfo a $U$.	
+\end{theorema}	
+\begin{demonstration}
+	Si consideri un omeomorfismo $\funz g U I$. Siccome $U\subseteq\realset^n$ aperto allora esiste una palla aperta di raggio $\epsilon$ contenuta in $U$, se ne considera il bordo $S^n\subseteq U$. Si considera dunque la restrizione $\funz {g_{|_{S^n}}} {S^n} I$, che per il teorema precedente non è iniettiva. Dunque $g$ non è un omeomorfismo.	
+\end{demonstration}
+
+\begin{observe}
+	Il teorema appana visto è un caso particolare del \textsc{teorema dell'invarianza della dimensione}, che cita: \newline
+	Siano $U\subseteq\realset^n, V\subseteq\realset^m$ aperti. Se $U\cong V \Rightarrow n=m$. Equivalentemente $n\neq m\Rightarrow U\cancel\cong V$
+\end{observe}
+
+%LEZ 08
+
+
+\end{document}
