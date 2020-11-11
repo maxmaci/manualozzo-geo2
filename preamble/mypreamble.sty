@@ -65,9 +65,11 @@
 \RequirePackage[thicklines]{cancel}
 \RequirePackage{bm}
 \RequirePackage{multicol}
+\RequirePackage{preamble/tikz-cd}
 \usepackage{preamble/comment}
 % Load hyperref package last
 \RequirePackage{hyperref}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %    PACKAGE SETTINGS
@@ -1261,6 +1263,19 @@ linewidth=1pt]{tinBox}
 \newcommand{\realset}{\mathbb{R}}
 \newcommand{\irrationalset}{\realset\setminus\rationalset}
 \newcommand{\complexset}{\mathbb{C}}
+
+% inclusione sinistra
+
+\newcommand{\includedx}{%
+	\ensuremath{\subseteq)\quad}%
+}
+
+% inclusione sinistra
+
+\newcommand{\includesx}{%
+	\ensuremath{\supseteq)\quad}%
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%% definizioni topologiche %%%%%%%%%%%%%%%%%%%%%%%%%
 
