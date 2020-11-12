@@ -155,7 +155,7 @@ Ma $g_i^{-1}g_j \in G$, dunque $U\cap \left(g_i^{-1}g_j\right)\ldotp V=\emptyset
 	\begin{equation}
 		m\ldotp x = x+m
 	\end{equation}
-Se mettiamo ad $\realset$ la topologia Euclidea, allora l'azione è per omeomorfismo, dato che fissato $m\in \integerset$ $\funztot{\theta_m}{\realset}{\realset}{x}{x+m}$ è continua.
+Se mettiamo ad $\realset$ la topologia Euclidea, allora l'azione è per omeomorfismi, dato che fissato $m\in \integerset$: $\funztot{\theta_m}{\realset}{\realset}{x}{x+m}$ è continua.
 \begin{itemize}
 	\item \textit{Orbite}: $O\left(x\right)=\left\{x+m\mid m\in \integerset\right\}$ rappresenta tutti i numeri che hanno mantissa uguale (ad esempio, preso $x=1.5$, nella sua orbita abbiamo $1.5,\ 2.5,\ -1.5,\ 25.5,\ \ldots$).
 	\item \textit{Stabilizzatore}: $H_x=\left\{m\in Z\mid x+m=x\right\}=\left\{0\right\}$ è banale, dunque l'azione è libera.
@@ -190,8 +190,53 @@ Inoltre, essendo $\nicefrac{\realset}{\integerset}$ compatto ed $S^1$ di \textbf
 	\vspace{-8mm}
 \end{digression}
 \begin{example}
-$G=GL\left(n,\ \realset\right)$ agisce su $\realset^n$ con l'azione:
+$G=GL\left(n,\ \realset\right)$ agisce su $\realset^n$ con l'azione di moltiplicazione matrice per vettore:
 \begin{equation}
 	A\ldotp \underline{v} = A\underline{v}
 \end{equation}
+L'azione è per omeomorfismi, dato che fissato $A\in G$: $\funztot{\theta_A}{\realset^n}{\realset^n}{\underline{v}}{A\underline{v}}$ è continua.
+\begin{itemize}
+	\item \textit{Orbite}: definite $O\left(\underline{v}\right)=\left\{A\underline{v}\mid A\in G\right\}$ ci sono solo due orbite, $\left[\underline{0}\right]$ e $\left[\underline{v}\right]$ con $\underline{v}\neq\underline{0}$, dato che ogni vettore può essere scritto come prodotto di un vettore per un'opportuna matrice di cambiamento di base.
+	\item \textit{Spazio delle orbite}: $\nicefrac{\realset^n}{G}=\left\{\left[\underline{0}\right],\ \left[\underline{v}\right]\right\}$. Considerando la proiezione al quoziente $\funz{\pi}{\realset^n}{\nicefrac{\realset^n}{G}}$, si ha che $\pi^{-1}\left(\left[\underline{v}\right]\right)=\realset^n\setminus\left\{0\right\}$, che è un aperto ma \textit{non} è un chiuso. Per definizione di aperto della topologia quoziente $\left\{\left[\underline{v}\right]\right\}$ è aperto ma non chiuso in $\nicefrac{\realset^n}{G}$, dunque non tutti i punti nello spazio delle orbite son chiusi. Segue che $\nicefrac{\realset^n}{G}$ non è \textbf{T1} e tanto meno è di \textbf{Hausdorff}.
+\end{itemize}
 \end{example}
+\begin{example}
+	$G=\realset^{\ast}=\realset\setminus\left\{0\right\}$, inteso come gruppo moltiplicativo, agisce su $X=\realset^{n+1}\setminus\left\{0\right\}$ con l'azione di moltiplicazione per uno scalare:
+	\begin{equation}
+		\lambda\ldotp \underline{x} = \lambda\underline{x}
+	\end{equation}
+L'azione è per omeomorfismi, dato che fissato $\lambda\in G$: $\funztot{\theta_\lambda}{\realset^{n+1}\setminus\left\{0\right\}}{\realset^{n+1}\setminus\left\{0\right\}}{\underline{x}}{\lambda \underline{x}}$ è continua.
+\begin{itemize}
+	\item \textit{Orbite}: $O\left(\underline{x}\right)=\left\{\lambda \underline{x}\mid \lambda\in G\right\}$ rappresentano tutte le rette vettoriali passanti per l'origine in $\realset^{n+1}$ a cui son state tolte l'origine.
+	\item \textit{Spazio delle orbite}: $\frac{\realset^{n+1}\setminus\left\{0\right\}}{G}=\mathbb{P}^n\left(\realset\right)$ è lo \textbf{spazio proiettivo reale}, spazio topologico rispetto alla topologia quoziente indotta dall'azione. $\mathbb{P}^n\left(\realset\right)$ è di \textbf{Hausdorff} e \textit{compatto}.
+\end{itemize}
+\end{example}
+\begin{define}
+	Lo \textbf{spazio proiettivo reale}\index{spazio!proiettivo reale} $\mathbb{P}^n\left(\realset\right)$ (o $\realset\mathbb{P}^n$) di dimensione $n$ \index{spazio!proiettivo reale} è lo spazio topologico delle rette vettoriali passanti origine in $\realset^{n+1}$, a cui son state tolte l'origine. È definito come lo spazio quoziente rispetto all'azione del gruppo moltiplicativo $\realset^{\ast}$:
+	\begin{equation}
+		\mathbb{P}^n\left(\realset\right)= \frac{\realset^{n+1}\setminus \left\{0\right\}}{\realset^{\ast}}
+	\end{equation}
+\end{define}
+\begin{proposition}
+$\mathbb{P}^n\left(\realset\right)$ è di \textbf{Hausdorff}, \textit{compatto} e \textbf{c.p.a.}.
+\end{proposition}
+\begin{demonstration}
+\begin{enumerate}[label=\Roman*]
+\item Dati $p,\ q\in\mathbb{P}^n\left(\realset\right)$, $p\neq q$ essi sono della forma $p=\left[\underline{x}\right]$ e $q=\left[\underline{y}\right]$. Allora:
+\begin{equation*}
+\left[\underline{x}\right]\neq\left[\underline{y}\right]\mathcal{L}_0\left(\underline{x}\right)\neq\mathcal{L}_0\left(\underline{y}\right)
+\end{equation*}
+Con $\mathcal{L}_0\left(\underline{x}\right),\ \mathcal{L}_0\left(\underline{y}\right)$ le rette vettoriali descritte da $\underline{x}$ e $\underline{y}$.\\
+Prendiamo gli (intorni) aperti disgiunti $U\setminus{0}\in I\left(\underline{x}\right)$, $V\setminus{0}\in I\left(\underline{y}\right)$ in $\realset^{n+1}\setminus\left\{0\right\}$. Allora, passando al quoziente, $\pi\left(U\setminus{0}\right)$ e $\pi\left(V\setminus{0}\right)$ formano due fasci di rette a forma di ‘‘doppio cono infinito'' con vertice nell'origine; questi due coni sono (intorni) aperti in quanto
+\begin{equation*}
+\pi^{-1}\left(\pi\left(U\setminus{0}\right)\right)=U\setminus{0}\qquad\pi^{-1}\left(\pi\left(V\setminus{0}\right)\right)=V\setminus{0}
+\end{equation*}
+Inoltre sono intorni disgiunti di $p$ e $q$, dunque $\mathbb{P}^n\left(\realset\right)$ è di \textbf{Hausdorff}.
+\item Per dimostrare che $\mathbb{P}^n\left(\realset\right)$ è compatto, mostreremo che $\pi\left(S^n\right)=\mathbb{P}^n\left(\realset\right)$, dato che $S^n\subseteq R^{n+1}\setminus\left\{0\right\}$ è compatto.\\
+Notiamo che, presa l'orbita di un vettore $\underline{v}$, si ha:
+\begin{equation*}
+\left[\underline{v}\right]=\left\{\lambda \underline{v}\mid \lambda\in \realset^{\ast}\right\}=\left\{\underbrace{\lambda \lvert\lvert\underline{v}\rvert\rvert}_{=\mu\in \realset^{\ast}}\underbrace{\frac{\underline{v}}{\lvert\lvert\underline{v}\rvert\rvert}}_{\in S^1}\mid \lambda\in \realset^{\ast}\right\}=\left\{\mu \underline{x}\mid \mu\in \realset^{\ast}\right\}=\left[\underline{x}\right]
+\end{equation*}
+Dunque ogni orbita dello spazio proiettivo reale si può scrivere come l'orbita di un vettore appartenente alla sfera $S^n$. Segue che non solo $\pi$ è suriettiva, ma anche $\pi_{\mid S^n}$ è suriettiva, cioè $\pi_{\mid S^n}\left(S^n\right)=\mathbb{P}^n\left(\realset\right)$; segue dunque che $\pi\left(S^n\right)=\mathbb{P}^n\left(\realset\right)$. Dato che $S^n$ è compatto e \textbf{c.p.a.}, segue che anche lo spazio proiettivo reale è compatto e \textbf{c.p.a.} (in quanto immagine continua tramite $\pi$ di $S^n$).
+\end{enumerate}
+\end{demonstration}
