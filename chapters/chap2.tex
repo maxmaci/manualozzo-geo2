@@ -233,11 +233,26 @@ Sia $I\subseteq\realset$ e $U\subseteq\realset^n$, con $n\geq 2$. Se $I,U$ sono 
 \end{demonstration}
 
 \begin{observe}
-	Il teorema appana visto è un caso particolare del \textsc{teorema dell'invarianza della dimensione}, che cita: \newline
+	Il teorema appena visto è un caso particolare del \textsc{teorema dell'invarianza della dimensione}, che cita: \newline
 	Siano $U\subseteq\realset^n, V\subseteq\realset^m$ aperti. Se $U\cong V \Rightarrow n=m$. Equivalentemente $n\neq m\Rightarrow U\cancel\cong V$
 \end{observe}
 
 %LEZ 08
-
-
+\begin{theorema}~{unione sottospazi connessi}
+	Siano $\left\{ X_i \right\}_{i\in I}$ una famiglia di sottoinsiemi di uno spazio topologico $X$. Se ogni $X_i$ è connesso e $\inter_{i\in I}X_i\neq\emptyset$ allora $\union_{i\in I}X_i$ è connesso.	
+\end{theorema}
+\begin{demonstration}
+	Sia $Z\subseteq Y:= \union_{i\in I}X_i$ un aperto, chiuso non vuoto. Vogliamo dimostrare che $Z=X$, cosicché $X$ risulti connesso. Basta l'inclusione $Y\subseteq Z$.\newline
+	Si considera l'intersezione di $Z$ e di un connesso, dunque essa sarà banale
+	\begin{gather*}
+		X_i \cap Z = \begin{cases}
+			\emptyset & \\
+			X_i	&		
+		\end{cases}
+	\end{gather*}
+	Dimostriamo ora che non è vuota, infatti siccome $Z$ non è vuoto ed è contenuto nell'unione ci sarà un connesso per cui l'intersezione non è vuota:
+		\begin{gather*}
+			Z\neq\emptyset, \ Z\subseteq \union_{i\in I}X_i \Rightarrow \exists i_0 \ \colon X_{i_0}\cap Z\neq \emptyset		
+		\end{gather*}	
+\end{demonstration}
 \end{document}
