@@ -9,8 +9,177 @@
 \labelChapter{Connessocompatto}
 
 \begin{introduction}
-‘‘BEEP BOOP INSERIRE CITAZIONE QUA BEEP BOOP.''
-\begin{flushright}
-	\textsc{NON UN ROBOT,} UN UMANO IN CARNE ED OSSA BEEP BOOP.
-\end{flushright}
+	‘‘BEEP BOOP INSERIRE CITAZIONE QUA BEEP BOOP.''
+	\begin{flushright}
+		\textsc{NON UN ROBOT,} UN UMANO IN CARNE ED OSSA BEEP BOOP.
+	\end{flushright}
 \end{introduction}
+
+\section{Connessione}
+\begin{define}
+	Uno spazio topologico $X$ si dice \textbf{connesso}\index{connessione} se gli unici sottoinsiemi aperti e chiusi sono $\emptyset,\ X$.\\
+	Uno spazio non \textit{connesso} si dice \textbf{sconnesso} oppure \textbf{non connesso}.
+\end{define}
+\begin{lemming}\label{sconnesso}\textsc{(Manetti, 4.2)}\\
+	Sono condizioni equivalenti:
+	\begin{enumerate}
+		\item $X$ è \textit{sconnesso}.
+		\item $X=A\cup B$ con $A,\ B$ aperti, non vuoti, disgiunti
+		\item $X=A\cup B$ con $A,\ B$ chiusi, non vuoti, disgiunti
+	\end{enumerate}
+\end{lemming}
+\begin{demonstration}~{}\\
+	$2\iff3)$ Sono equivalenti: se $A$ è aperto e disgiunto da $B$ tale che $X=A\cup B$ significa che $B=\mathcal{C}A=X\setminus A$ e dunque chiuso; analogamente per $B$ aperto si ha che $A$ è chiuso: allora $A,\ B$ chiusi e aperti propri.\\
+	$1\implies2)$ Esiste $\emptyset\subsetneqq A \subsetneqq X$ con $A$ aperto e chiuso. Allora basta porre $B=\mathcal{C}A=X\setminus A$: essendo il complementare di $A$ è aperto e chiuso, sono disgiunti e tali per cui $B\neq X,\ B\neq \emptyset$. $A$ e $B$ soddisfano la tesi.
+	$2\implies2)$ $A$ aperto, $B$ aperto $\implies A$ chiuso perché $A=\mathcal{C}X=X\setminus B$. Inoltre $A$ non vuoto, $B$ non vuoto $\implies A\neq X$. Dunque $A$ è aperto, chiuso e $A\neq \emptyset,\ X$ e pertanto soddisfa la tesi: esiste un sottoinsieme aperto e chiuso che non il vuoto o l'insieme stesso.
+\end{demonstration}
+\begin{observe}
+	Il lemma \ref{sconnesso} \textsc{(Manetti, 4.2)} ci dice che è sufficiente trovare solo due aperti (o chiusi) che soddisfano la condizione di cui sopra per affermare la sconnessione. Viceversa, per dimostrare la connessione, dobbiamo dimostrare che per ogni coppia di aperti (o chiusi) non vuoti, la cui unione è $X$, essi non siano disgiunti.
+\end{observe}
+\begin{examples} Esempi di spazi topologici \textit{sconnessi} in topologia Euclidea.
+	\begin{itemize}
+		\item $X=\realset\setminus\left\{0\right\}=\left(-\infty,\ 0\right)\cup \left(0,\ +\infty\right)$
+		\item $X=\left[0,\ 1\right]\cup \left(2,\ 3\right)$
+	\end{itemize}
+\end{examples}
+\begin{lemming}\textsc{(Manetti, 4.4)}\\
+	Sia $X$ spazio topologico e $A\subseteq X$ con $A$ aperto e chiuso. Sia $Y\subseteq X,\ Y$ \textit{connesso}. Allora $Y\cap A=\emptyset$ (cioè $Y\subseteq Y\setminus A$) oppure $Y\subseteq A$. 
+\end{lemming}
+\begin{demonstration}
+	Consideriamo $Y\cap A$: esso è intersezione di due aperti e chiusi per ipotesi ($Y$ è aperto e chiuso perché \textit{connesso}), cioè è aperto e chiuso. Essendo $Y$ \textit{connesso}, un suo sottoinsieme aperto e chiuso o è l'insieme vuoto oppure è l'insieme stesso, cioè $Y\cap A=\emptyset$ (cioè $Y\subseteq Y\setminus A$) oppure $Y\cap A=Y$ (cioè $Y\subseteq A)$.
+\end{demonstration}
+\begin{theorema}\textsc{(Manetti, 4.6)}\\
+	Con la topologia Euclidea, $X=\left[0,\ 1\right]$ è \textit{connesso}.
+\end{theorema}
+\begin{demonstration}
+	Supponiamo $X=\left[0,\ 1\right]=C\cup D$ con:
+	\begin{itemize}
+		\item $C,\ D$ entrambi chiusi.
+		\item $C,\ D$ entrambi aperti.
+	\end{itemize}
+	Dobbiamo dimostrare che $C,\ D$ \textit{non} sono disgiunti, ovvero $C\cap D\neq 0$. Supponiamo sia $0\in C$ e poniamo $d=\inf D$. Essendo $D$ un chiuso, $d\in \overline{D}=D$.
+	\begin{itemize}
+		\item Se $d=0$, $d\in C\cap D\neq \emptyset$.
+		\item Se $d>0$ allora $\left[0,\ d\right)\subseteq C$ perché \textit{non sta} in $D$. Il passaggio alla chiusura mantiene l'inclusione, dunque $\left[0,\ d\right]\subseteq \overline{C}=C$. Segue che $d\in C$ e dunque $C\cap D\neq \emptyset$.
+	\end{itemize}
+\end{demonstration}
+\begin{theorema}\textsc{(Manetti, 4.7)}\\
+	L'immagine continua di un \textit{connesso} è un \textit{connesso}:
+	\begin{equation}
+		\funz{f}{X}{Y}\text{ continua},\ X\text{ connesso}\implies f\left(X\right)\text{ connesso}
+	\end{equation}
+\end{theorema}
+\begin{theorema}
+	Sia $Z\subseteq f\left(X\right)$, $Z$ aperto, chiuso in $f\left(X\right)$ non vuoto. Per dimostrare che $f\left(X\right)$ sia connesso ci è sufficiente dimostrare che $Z=f\left(X\right)$: in questo modo gli unici aperti e chiusi sono i sottoinsiemi impropri:
+	\begin{itemize}
+		\item $Z$ aperto: $\exists A$ aperto in $Y\ \colon Z=A\cap f\left(X\right)$.
+		\item $Z$ chiuso: $\exists C$ chiuso in $Y\ \colon Z=C\cap f\left(X\right)$.
+	\end{itemize}
+	Allora:
+	\begin{itemize}
+		\item $f^{-1}\left(Z\right)=f^{-1}\left(A\right)\cap f^{-1}\left(f\left(X\right)\right)=f^{-1}\left(A\right)\implies f^{-1}\left(Z\right)$ è uguale alla controimmagine continua di un aperto in $Y$, cioè è uguale ad un aperto di $X$.
+		\item $f^{-1}\left(Z\right)=f^{-1}\left(C\right)\cap f^{-1}\left(f\left(X\right)\right)=f^{-1}\left(C\right)\implies f^{-1}\left(Z\right)$ è uguale alla controimmagine continua di un chiuso in $Y$, cioè è uguale ad un chiuso di $X$
+	\end{itemize}
+	Segue che $f^{-1}\left(Z\right)$ è aperto e chiuso in $X$. Notiamo inoltre che, essendo $Z\neq \emptyset$, allora $f^{-1}\left(Z\right)\neq \emptyset$: essendo $X$ \textit{connesso} per ipotesi, necessariamente $f^{-1}\left(Z\right)=X$.
+\end{theorema}
+\begin{observe}
+	Dal teorema precedente segue che essere \textit{connesso} è una proprietà topologica! Infatti, se vale per una qualunque funzione continua $\funz{f}{X}{Y}$, allora varrà anche per omeomorfismi tra $X$ e $Y$; in particolare, si avrà per suriettività che $f\left(X\right)=Y$ connesso.
+\end{observe}
+\begin{define}
+	Un \textbf{arco}\seeonlyindex{arco}{cammino} o \textbf{cammino}\index{cammino} $\alpha$ da un punto $x$ a un punto $y$ in uno spazio topologico $X$ è una funzione continua che parametrizza un \textit{percorso} finito fra gli estremi $x$ e $y$:
+	\begin{equation}
+		\funz{\alpha}{\left[0,\ 1\right]}{X} \text{ continua}\ \colon \alpha\left(0\right)=x,\ \alpha\left(1\right)=y
+	\end{equation}
+\end{define}
+\begin{define}
+	Uno spazio topologico $X$ si dice \textbf{connesso per archi} o \textbf{c.p.a.}\index{connessione!per archi}\seeonlyindex{c.p.a.}{connessione!per archi} o \textit{path-connected} se per ogni coppia di punti in $X$ esiste un arco che li collega:
+	\begin{equation}
+		\forall x,\ y\in X\ \exists \funz{\alpha}{\left[0,\ 1\right]}{X} \text{ continua}\ \colon \alpha\left(0\right)=x,\ \alpha\left(1\right)=y
+	\end{equation}
+\end{define}
+\begin{theorema}\textsc{(Manetti, 4.7)}\\
+	$X$ \textbf{c.p.a.} $\implies X$ \textit{connesso}.
+\end{theorema}
+\begin{demonstration}
+	Sia $X=A\cup B$, con $A,\ B$ aperti non vuoti. Vogliamo dimostrare che $A\cap B\neq \emptyset$. Essendo non vuoti, prendiamo $a\in A,\ b\in B$. In quanto $X$ è \textbf{c.p.a.}, esiste il cammino (continuo) $\funz{\alpha}{\left[0,\ 1\right]}{X}$ tale che $\alpha\left(a\right)=a,\ \alpha\left(1\right)=b$.\\
+	Studiamo la controimmagine di $\alpha$:
+	\begin{gather*}
+		\alpha^{-1}\left(X\right)=\alpha^{-1}\left(A\cup B\right)=\left[0,\ 1\right]\\
+		\left[0,\ 1\right]=\alpha^{-1}\left(A\cup B\right)=\alpha^{-1}\left(A\right)\cup \alpha^{-1}\left(B\right)
+	\end{gather*}
+	$\alpha^{-1}\left(A\right),\ \alpha^{-1}\left(B\right)$ sono entrambi aperti e non vuoti in quanto controimmagini (continue) di aperti non vuoti ($0\in \alpha^{-1}\left(A\right),\ 1\in \alpha^{-1}\left(B\right)$).\\
+	Poiché $\left[0,\ 1\right]$ è connesso, allora le controimmagini trovate non sono disgiunte. Segue allora:
+	\begin{equation*}
+		\exists t\in \alpha^{-1}\left(A\right)\cap \alpha^{-1}\left(B\right)\implies \alpha\left(t\right)\alpha\left(\alpha^{-1}\left(A\right)\cap \alpha^{-1}\left(B\right)\right)\subset\alpha\left(\alpha^{-1}\left(A\right)\right)\cap\alpha\left(\alpha^{-1}\left(B\right)\right)=A\cap B
+	\end{equation*}
+\end{demonstration}
+\begin{define}
+	Dati due cammini in uno spazio $X$:
+	\begin{gather*}
+		\funz{\alpha}{\left[0,\ 1\right]}{X}\quad \alpha\left(0\right)=x,\ \alpha\left(1\right)=y\\
+		\funz{\beta}{\left[0,\ 1\right]}{X}\quad \beta\left(0\right)=y,\ \beta\left(1\right)=z\\	
+	\end{gather*}
+	Allora possiamo creare un cammino $\alpha \ast \beta$ con la \textbf{congiunzione di cammini}\index{cammino!congiunzione di cammini}:
+	\begin{equation}
+		\left(\alpha\ast\beta\right)\left(t\right)=\begin{cases}
+			\alpha\left(2t\right)\quad\text{se }0\leq t\leq \frac{1}{2}\\
+			\beta\left(2t-1\right)\quad\text{se }\frac{1}{2}\leq t\leq 1\\	
+		\end{cases}
+	\end{equation}
+\end{define}
+\begin{lemming}
+	Sia $A,\ B$ \textbf{c.p.a}, $A\cap B\neq \emptyset\implies A\cup B$ \textbf{c.p.a.}
+\end{lemming}
+\begin{demonstration}
+	Se $x, y\in A$ oppure $x,\ y\in B$ esiste per ipotesi un arco che li collega. Dobbiamo allora trovare un arco in $A\cup B$ da $x$ a $y$ $\forall x\in A, y\in B$. Preso $z\in A\cap B$, per ipotesi esistono due cammini ad esso:
+	\begin{gather*}
+		\funz{\alpha}{\left[0,\ 1\right]}{A}\quad \alpha\left(0\right)=x,\ \alpha\left(1\right)=z\\
+		\funz{\beta}{\left[0,\ 1\right]}{B}\quad \beta\left(0\right)=z,\ \beta\left(1\right)=z\\	
+	\end{gather*}
+	Usando la \textit{giunzione di cammini}, si ha:
+	\begin{equation}
+		\left(\alpha\ast\beta\right)\left(t\right)=\begin{cases}
+			\alpha\left(2t\right)\quad\text{se }0\leq t\leq \frac{1}{2}\\
+			\beta\left(2t-1\right)\quad\text{se }\frac{1}{2}\leq t\leq 1\\	
+		\end{cases}
+	\end{equation}
+	Il cammino $\funz{\alpha\ast\beta}{\left[0,\ 1\right]}{A\cup B}$ è quello richiesto.
+\end{demonstration}
+\begin{observe}~{}\label{giunzionecpa}
+	\begin{itemize}
+		\item Usando la giunzione di cammini, si ha che:
+		\begin{equation*}
+			X\text{ è \textbf{c.p.a.}}\iff \exists z\in X\ \colon \forall x\in X\quad
+			\exists \funz{\alpha}{\left[0,\ 1\right]}{X}\ \colon \alpha\left(0\right)=z,\ \alpha\left(1\right)=x
+		\end{equation*}
+		In altre parole, uno spazio è \textbf{c.p.a.} se e solo se esiste un punto per cui ogni altro punto è collegato tramite un arco.
+		\item Per ogni arco $\alpha$ esiste l'arco inverso, percorso al contrario: $\overline{\alpha}\left(t\right)=\alpha\left(1-t\right)$
+	\end{itemize}
+\end{observe}
+\begin{define}
+	In $\realset^n$, un \textbf{segmento}\index{segmento} $\overline{PQ}$ è la combinazione lineare tra i punti $P$ e $Q$, parametrizzato come:
+	\begin{equation}
+		\overline{PQ}=\left\{P+tQ\mid t\in\left[0,\ 1\right]\right\}
+	\end{equation}
+\end{define}
+\begin{define}
+	Un sottoinsieme $Y\subseteq\realset^n$ è \textbf{convesso}\index{convessità} se per ogni coppia di punti esiste un segmento che li collega contenuto interamente in $Y$.
+	\begin{equation}
+		\forall P,\ Q\in Y\quad \overline{PQ}\subseteq Y
+	\end{equation}
+\end{define}
+\begin{define}
+	Un sottoinsieme $Y\subseteq\realset^n$ è \textbf{stellato}\index{stellato} per $P$ se esiste un $P\in Y$ tale che per ogni altro punto esiste un segmento che li collega contenuto interamente in $Y$.
+	\begin{equation}
+		\exists P \in Y\ \colon \forall Q\in Y\quad \overline{PQ}\subseteq Y
+	\end{equation}
+\end{define}
+\begin{examples}~{}
+	\begin{itemize}
+		\item Gli intervalli aperti e semiaperti sono \textbf{c.p.a}, dunque sono \textit{connessi}: l'arco $\alpha$ è banalmente il segmento pari all'intervallo aperto.
+		\item Preso $X\subseteq\realset^n$ \textit{convesso}, qualunque segmento è anche per costruzione un arco: $X$ è anche \textbf{c.p.a} e dunque \textit{connesso}.
+		\item $X=\realset^{2}\setminus\left\{0\right\}$ \textit{non} è \textit{convesso} (per $\left(0,\ 1\right)$ e $\left(0,\ -1\right)$ non si hanno segmenti interni ad $X$) ma è \textbf{c.p.a.} (basta prendere un cammino che ‘‘giri attorno'' all'origine) e dunque è \textit{connesso}.
+		\item Preso $X\subseteq\realset^n$ \textit{stellato} per $P\in X$, qualunque segmento con $P$ è anche per costruzione un arco: $X$ è anche \textbf{c.p.a} per l'osservazione \ref{giunzionecpa} e dunque {connesso}.
+		\item Ogni insieme \textit{convesso} è anche \textit{stellato} per $P$, basta fissare un qualunque punto come nostro $P$. In generale, un insieme è convesso se e solo se è stellato per ogni suo punto.
+	\end{itemize}
+\end{examples}
