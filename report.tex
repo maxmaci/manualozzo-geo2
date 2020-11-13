@@ -18,7 +18,7 @@
   %chapters/chap3,
   %chapters/chap4,
   chapters/chap5,
-  %chapters/chap6,
+  chapters/chap6,
   %chapters/chap7,
   %chapters/chap8,
   %chapters/chap9,
@@ -35,6 +35,7 @@
   %appendix/chapA,
   %appendix/chapB,  
   %appendix/chapC,
+  appendix/footnotes,
   appendix/ringraziaments,  
   appendix/bibliography,
 }
@@ -54,12 +55,12 @@
 \labelPart{first}
 \include{chapters/chap1}
 \include{chapters/chap2}
+\include{chapters/chap5}
+\include{chapters/chap6}
 \part{Omotopia}
 \labelPart{second}
 %\include{chapters/chap3}
 %\include{chapters/chap4}
-\include{chapters/chap5}
-%\include{chapters/chap6}
 %\include{chapters/chap7}
 %\include{chapters/chap8}
 %\part{Dinamica della materia}
@@ -75,15 +76,15 @@
 %\include{chap17}
 %\include{chap18}
 %\appendix
-%\part{Appendici}
-%\labelPart{appendici}
-%\include{chapA}
+\part{Appendici}
+\labelPart{appendici}
+\include{appendix/footnotes}
 %\include{chapB}
 %\include{chapC}
 %\include{ringraziaments}
 %\include{appendix}
-%\printindex
-%\backmatter
-%\include{bibliography}
+\printindex
+\backmatter
+\include{appendix/bibliography}
 
 \end{document}

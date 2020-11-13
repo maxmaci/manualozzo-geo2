@@ -1,0 +1,109 @@
+% SVN info for this file
+\svnidlong
+{$HeadURL$}
+{$LastChangedDate$}
+{$LastChangedRevision$}
+{$LastChangedBy$}
+
+\chapter{Successioni}
+\labelChapter{successioni}
+
+\begin{introduction}
+‘‘BEEP BOOP INSERIRE CITAZIONE QUA BEEP BOOP.''
+\begin{flushright}
+	\textsc{NON UN ROBOT,} UN UMANO IN CARNE ED OSSA BEEP BOOP.
+\end{flushright}
+\end{introduction}
+
+\section{Numerabilità}
+\begin{define}
+Un insieme $X$ è \textbf{numerabile}\index{numerabile} se è finito oppure esiste una biezione tra l'insieme $X$ e i naturali $\naturalset$.
+\end{define}
+\begin{define}
+Uno spazio topologico $X$ è \textbf{a base numerabile}\seeonlyindex{a base numerabile}{assioma di numerabilità!secondo} se esiste una base $\basis$ della topologia tale che $\basis$ sia numerabile. %sia di cardinalità numerabile??
+Si dice anche che $X$ soddisfa il \textbf{secondo assioma di numerabilità}\index{assioma di numerabilità!secondo}.
+\end{define}
+\begin{define}
+Uno spazio topologico $X$ è \textit{primo-numerabile}\seeonlyindex{primo-numerabile}{assioma di numerabilità!primo} se ogni punto ammette un sistema fondamentale di intorni che sia numerabile. Si dice anche che $X$ soddisfa il \textbf{primo assioma di numerabilità}\index{assioma di numerabilità!primo}.
+\end{define}
+\begin{observe}~{}
+\begin{enumerate}
+\item Il secondo assioma di numerabilità implica il primo.
+\item Se $X$ è finito, $X$ soddisfa sempre i due assiomi.
+\item Se $X$ è spazio metrico, $X$ è sempre primo-numerabile.
+\item Se $X$ è a base numerabile, ogni sottospazio $Y$ di $X$ è a base numerabile. In particolare $Y$ è primo-numerabile.
+\item Se $X$ e $Y$ sono a base numerabile, allora $X\times Y$ è a base numerabile. In particolare $X\times Y$ è primo-numerabile.
+\item Non è vero che il quoziente di $X$ spazio a base numerabile (o primo-numerabile) è sempre a base numerabile (o primo-numerabile).
+\end{enumerate}
+\end{observe}
+\begin{demonstration}~{}
+\begin{enumerate}[label=\Roman*]
+	\item Se $X$ ha base numerabile $\basis$ e $x\in X$, allora $\left\{A\in \basis\mid x\in A\right\}$ è un sistema fondamentali di intorni di $x$ ed è chiaramente numerabile.
+	\item Ogni base e sistema fondamentale di intorni contiene necessariamente un numero finito di elementi.
+	\item Preso $x\in X$, allora $\left\{B_{\nicefrac{1}{n}}\left(x\right)\right\}_{n\in\naturalset}$ è un sistema fondamentale di intorni ed è numerabile.
+	\item Se $\basis$ è una base numerabile per $X$, $\left\{A\cap Y\mid A\in \basis\right\}$ è base numerabile per $Y$.
+	\item Se $\basis_X$ è una base numerabile per $X$ e $\basis_Y$ base numerabile per $Y$, allora $\left\{A\times B\mid A\in \basis_X,\ B\in\basis_Y\right\}$ è base di $X\times Y$ numerabile: il prodotto cartesiano di due insiemi numerabili rimane numerabile.
+	\item La contrazione di $\integerset$ in $\realset$ ad un punto, cioè il quoziente $\nicefrac{\realset}{\integerset}$, non è primo-numerabile nè tanto meno a base numerabile, pur essendo $\realset$ a base numerabile in quanto metrico\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{dimostrazionenonnumerabilità}, si può trovare la dimostrazione di ciò.}.
+\end{enumerate}
+\end{demonstration}
+\begin{example}
+	$\realset$ con la topologia Euclidea è a base numerabile. Presa infatti:
+	\begin{equation*}
+		\basis=\left\{\left(a,\ b\right)\mid a,\ b\in \rationalset,\ a<b\right\}
+	\end{equation*}
+	\begin{itemize}
+		\item È numerabile (è definita con i razionali $\rationalset$, che sono numerabili)
+		\item È una base perché, dati $x,\ y\in\realset,\ x<y$:
+		\begin{equation*}
+			\left(x,\ y\right)=\union_{\substack{a, b\in\rationalset\\ x<a<b<y}}\left(a,\ b\right)
+		\end{equation*}
+	\end{itemize}
+\end{example}
+\begin{proposition}
+Sia $X$ a base numerabile. Allora ogni ricoprimento aperto di $X$ ammette un sottoricoprimento numerabile.
+\end{proposition}
+\begin{demonstration}
+Sia $\mathcal{A}$ un ricoprimento aperto di $X$, $\basis$ una base numerabile per $X$ e $x\in X$. Allora $\exists U_x\in\mathcal{A}$ tale che $x\in U_x$. Essendo $\basis$ base, $\exists B_x\in\basis$ tale che $x\in B_x\subseteq U_x$.\\
+Abbiamo così determinato un sottoinsieme numerabile della base $\basis$:
+\begin{equation*}
+\tilde{\basis}\coloneqq\left\{B_x\mid x\in X\right\}
+\end{equation*}
+Allora esiste in particolare $E\subseteq X$ numerabile tale che:
+\begin{equation*}
+\tilde{\basis}\coloneqq\left\{B_x\mid x\in E\right\}
+\end{equation*}
+Se consideriamo ora $\tilde{\mathcal{A}}\coloneqq\left\{U_x\mid x\in E\right\}$, notiamo che:
+\begin{itemize}
+	\item $\tilde{A}\subseteq A$
+	\item $\tilde{A}$ è numerabile perché lo è $E$.
+	\item $X=\union_{B_x\in\tilde{\basis}}B_x=\union_{x\in E}B_x\subseteq \union_{x\in E}U_x $.
+	%controllare pagina 2 lezione 14, secondo me è X\subseteq\union_{B_x\in\tilde{\basis}}B_x e non =
+\end{itemize}
+Segue che $\tilde{\mathcal{A}}$ è un sottoricoprimento numerabile di $A$.
+\end{demonstration}
+\begin{define}
+Uno spazio topologico $X$ si dice \textbf{separabile}\index{spazio topologico!separabile} se contiene un sottoinsieme $E$ \textit{denso} e \textit{numerabile}.
+\end{define}
+\begin{examples}
+	\item Se $X$ è numerabile, allora è separabile perché l'insieme stesso è un sottoinsieme numerabile e denso.
+	\item $\realset^n$ con la topologia euclidea è separabile perché si ha $E=\rationalset^n$ denso in $\realset^n$.
+\end{examples}
+\begin{lemming}
+Se $X$ è a base numerabile, allora è separabile.
+\end{lemming}
+\begin{demonstration}
+	Sia $\basis$ una base numerabile. Per ogni $U\in\basis$ sia $x_U\in U$ un punto e sia:
+	\begin{equation*}
+		E=\left\{x_U\mid U\in \basis\right\}
+	\end{equation*}
+\begin{itemize}
+	\item $E$ è numerabile perché lo è $\basis$: abbiamo preso un punto per ogni elemento della base numerabile.
+	\item $E$ è denso: se $A\subseteq X$ è aperto \textit{non} vuoto, allora $\exists U\in\basis$ tale che $x_u\in U\subseteq A\implies x_U\in A\implies E\cap A\neq \emptyset$.
+\end{itemize}
+\end{demonstration}
+
+%%%%%%%%%%%%%%
+%
+% inserire schemino base numerabile, primo-numerabile, separabile (iff solo se metrico)
+%
+%%%%%%%%%%%%%%%%

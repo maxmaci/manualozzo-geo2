@@ -1,0 +1,34 @@
+% SVN info for this file
+\svnidlong
+{$HeadURL$}
+{$LastChangedDate$}
+{$LastChangedRevision$}
+{$LastChangedBy$}
+
+\chapter{Note aggiuntive}
+\labelChapter{footnotes}
+
+\begin{introduction}
+‘‘BEEP BOOP INSERIRE CITAZIONE QUA BEEP BOOP.''
+\begin{flushright}
+	\textsc{NON UN ROBOT,} UN UMANO IN CARNE ED OSSA BEEP BOOP.
+\end{flushright}
+\end{introduction}
+
+\noindent Riportiamo alcune note e dimostrazioni aggiuntive che possono risultare utili al lettore.
+
+\section{Capitolo 6: successioni}
+La dimostrazione seguente sulla non prima-numerabilità del quoziente $\nicefrac{\realset}{\naturalset}$ è adattata da Brian M. Scott~\cite{scott:nonum} su Mathematics Stack Exchange.
+\begin{demonstration}\label{dimostrazionenonnumerabilità}
+Si consideri la contrazione di $\integerset$ in $\realset$ ad un punto, cioè il quoziente $\nicefrac{\realset}{\integerset}$ e si definisca la classe di equivalenza degli interi come $[0]$.\\
+Sia $\left\{U_n:n\in\naturalset\right\}$ una famiglia di intorni aperti di $[0]$; cerchiamo un intorno aperto di $[0]$ che non ne contiene nessuno come sottoinsieme, mostrano in tal modo che non formano un sistema fondamentale di intorni di $[0]$ e pertanto che $\nicefrac{\realset}{\integerset}$ non è primo-numerabile per $[0]$.\\
+Sia $\pi$ la mappa quoziente. Per ogni $n\in\naturalset$ e $k\in\integerset$ esiste un $\epsilon_{n,k}\in(0,1)$ tale che: 
+\begin{equation*}
+U_n\supseteq \pi\left[\inter_{k\in\integerset}(k-\epsilon_{n,k},k+\epsilon_{n,k})\right]\
+\end{equation*}
+Per $k\in\integerset$ sia $\delta_k=\frac12\epsilon_{k,k}$, e sia:
+\begin{equation*}
+V=\pi\left[\bigcup_{k\in\integerset}(k-\delta_k,k+\delta_k)\right]
+\end{equation*}
+Chiaramente $V$ è un intorno aperto di $[0]$, e vogliamo dimostrare che $U_n\nsubseteq V$ per ogni $n\in\naturalset$. Per mostrare ciò, fissiamo $n\in\naturalset$; si ha $\delta_n<\epsilon_{n,n}$, quindi possiamo sceglie un numero reale $x\in(n+\delta_n,n+\epsilon_{n,n})$. Ma allora $\pi(x)\in U_n\setminus V$, e dunque $U_n\nsubseteq V$.
+\end{demonstration}

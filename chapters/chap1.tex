@@ -45,6 +45,7 @@
 		\item \textbf{Topologia banale}\index{topologia!banale}: $\topo={\emptyset,\ X}$, gli \textit{unici} aperti sono \textit{banali}.
 	\end{itemize}
 \end{example}
+\begin{comment}
 \section{Distanza e spazi metrici}
 \begin{define}
 	Su un insieme $X$ una funzione $\funz{d}{X\times X}{\realset}$ è una \textbf{distanza}\index{distanza} se:
@@ -55,7 +56,7 @@
 	\end{enumerate}
 \end{define}
 \begin{define}
-	Uno \textbf{spazio metrico}\index{spazio!metrico} $\left(X, d\right)$ è un insieme su cui è definita una distanza.
+	Uno \textbf{spazio metrico}\index{spazio topologico!spazio metrico} $\left(X, d\right)$ è un insieme su cui è definita una distanza.
 \end{define}
 \begin{define}
 	Definita la \textbf{palla aperta di centro}\index{palla aperta} $x$ come l'insieme degli elementi di $X$ che soddisfano la seguente condizione:
@@ -110,26 +111,7 @@
 		\item Se $X$ è infinito, ad esempio $\realset$, la topologia \textit{non} è quella discreta: $[0,\ 1]$ per la topologia discreta è un chiuso ma per quella $CF$ non lo è in quanto \textit{non} è finito.
 	\end{itemize}
 \end{attention}
-
-\begin{define} Si può definire equivalentemente su X una topologia $\topo$ usando gli \textbf{assiomi dei chiusi}\index{assiomi!dei chiusi}:
-	\begin{enumerate}
-		\item \textit{Il vuoto e l'insieme stesso sono chiusi della topologia}: $\emptyset,\ X\in\topo$.
-		\item \textit{L'unione finita di chiusi è un chiuso}: dati $\left\{C_i\right\}_{i\in I}$ tale che $C_i\in\topo,\ \forall i\in I$ ($|I|< \infty$), allora $\displaystyle\union_{i\in I}C_i=C\in\topo$ .
-		\item \textit{L'intersezione arbitraria di chiusi è un chiuso}: dati $\left\{C_i\right\}_{i\in I}$ tale che $C_i\in\topo,\ \forall i\in I$ ($|I|\leq \infty$), allora $\displaystyle\inter_{i\in I}C_i=C\in\topo$.
-	\end{enumerate}
-	Gli elementi di $\topo$ si dicono \textbf{chiusi}\index{chiuso} della topologia.
-\end{define}
-
-\begin{observe}
-	Per verificare il terzo assioma degli aperti (o, equivalentemente, il secondo dei chiusi) è sufficiente verificare che sia vero per soli due sottoinsiemi qualunque, in quanto poi è verificato per induzione.
-\end{observe}
-
-\begin{example}~{}
-	\begin{itemize}
-		\item \textbf{Topologia discreta}\index{topologia!discreta}: $\topo=\setpart{X}$, \textit{tutti} gli insiemi sono \textit{aperti}.
-		\item \textbf{Topologia banale}\index{topologia!banale}: $\topo={\emptyset,\ X}$, gli \textit{unici} aperti sono \textit{banali}.
-	\end{itemize}
-\end{example}
+\end{comment}
 \section{Distanza e spazi metrici}
 \begin{define}
 	Su un insieme $X$ una funzione $\funz{d}{X\times X}{\realset}$ è una \textbf{distanza}\index{distanza} se:
@@ -140,7 +122,7 @@
 	\end{enumerate}
 \end{define}
 \begin{define}
-	Uno \textbf{spazio metrico}\index{spazio!metrico} $\left(X, d\right)$ è un insieme su cui è definita una distanza.
+	Uno \textbf{spazio metrico}\index{spazio topologico!metrico} $\left(X, d\right)$ è un insieme su cui è definita una distanza.
 \end{define}
 \begin{define}
 	Definita la \textbf{palla aperta di centro}\index{palla aperta} $x$ come l'insieme degli elementi di $X$ che soddisfano la seguente condizione:
