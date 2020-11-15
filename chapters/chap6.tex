@@ -172,11 +172,16 @@ Notiamo che se $x\neq y$, allora $U\left(x\right)\neq U\left(y\right)$: preso $y
 \end{itemize}
 è iniettiva, dunque $\tilde{\basis}$ non è in iniezione con i naturali e pertanto $\tilde{\basis}$ \textit{non} è numerabile.
 \end{example}
-%%%%%%%%%%%%%%
-%
-% inserire schemino base numerabile, primo-numerabile, separabile (iff solo se metrico)
-%
-%%%%%%%%%%%%%%%%
+\begin{center}
+	\begin{tikzcd}
+		&  & \begin{array}{c}
+			\text{Primo}\\\text{numerabile}\end{array} \arrow[color=red, lld, "\text{se }X\text{ è metrico}"' six, shift right, below] \\
+		\begin{array}{c}
+			\text{A base}\\\text{numerabile}
+		\end{array} \arrow[rrd, shift left, shorten >= 1em] \arrow[rru, shift right] &  &                                                                                      \\
+		&  & \text{Separabile}                                                                   
+	\end{tikzcd}
+\end{center}
 \section{Successioni}
 \begin{define}
 Una \textbf{successione}\index{successione} in uno spazio topologico $X$ è una funzione $\funz{a}{\naturalset}{X}$ che indichiamo con $\left\{a_n\right\}_{n\in\naturalset}=\left\{a_n\right\}$.
@@ -456,11 +461,17 @@ Sia $X$ spazio metrico. Allora:
 	X\text{ compatto}\iff X\text{ compatto per successioni}
 \end{equation}
 \end{theorema}
-%%%%%%%%%%%%%%
-%
-% inserire schemino compattezza e successioni
-%
-%%%%%%%%%%%%%%%%
+\begin{center}
+\begin{tikzcd}
+	&  & \begin{array}{c}
+		\text{Compatto per}\\ \text{successioni}
+	\end{array}  \arrow[color=red, lld, "X\text{ a base numerabile}"' sixslant2, shift right, shorten <= 0.5em] \arrow[dd] \arrow[color=red, lld, "X\text{ metrico}" sixslant1, shift right, below, shorten <= 0.5em] \\
+	\text{Compatto} \arrow[rrd, shift left, ] &  &                                                                                                                                                 \\
+	&  & \begin{array}{c}
+		\text{Ogni successione ha}\\ \text{un punto di accumulazione}
+	\end{array} \arrow[color=red, uu, "\substack{\text{primo}\\\text{numerabile}}"' nine, shift right=4]                                     
+\end{tikzcd}
+\end{center}
 \section{Spazi metrici completi}
 \begin{define}
 	Sia $\left(X,\ d\right)$ uno spazio metrico. Una successione $\left\{a_n\right\}$ si dice \textbf{di Cauchy}\index{successione!di Cauchy} se:
@@ -491,11 +502,11 @@ Sia $X$ spazio metrico. Allora:
 		\mvf{d}{a_n}{a_m}\leq \mvf{d}{a_n}{p}+\mvf{d}{p}{a_n}< 2\epsilon
 	\end{equation}
 Per l'arbitrarietà di $\epsilon$ vale la convergenza.
-\item $\impliesdx$ Sempre vera per  \ref{lemmatriangolino} $\textcolor{blue}{\circled{{\large \blacktriangle}}}$ (pag. \pageref{lemmatriangolino}).
+\item $\impliesdx$ Sempre vera per  \ref{lemmatriangolino} $\textcolor{blue}{\circled{{\large \blacktriangle}}}$ (pag. \pageref{lemmatriangolino}).\\
 $\impliessx$ Sia $\left\{a_n\right\}$ una successione di Cauchy e sia $p$ un punto di accumulazione. Sia $\epsilon>0$: dalla definizione di successione di Cauchy $\exists n_0$ tale per cui $\mvf{d}{a_n}{a_m}<\epsilon\ \forall n,\ m\geq n_0$.\\
 Essendo $p$ di accumulazione, $\exists n_1\geq n_0$ tale per cui $\mvf{d}{p}{a_{n_1}}<\epsilon$. Allora, se $n\geq n_0$ si ha:
 	\begin{equation*}
-	\mvf{d}{a_n}{p}\leq \mvf{d}{a_n}{a_{n_1}}+\mvf{a_{n_1}}{p}{a_n}< 2\epsilon
+	\mvf{d}{a_n}{p}\leq \mvf{d}{a_n}{a_{n_1}}+\mvf{d}{a_{n_1}}{p}< 2\epsilon
 \end{equation*}
 Dunque $\left\{a_n\right\}$ converge a $p$.
 \item Poiché $X$ è metrico, $X$ è primo-numerabile, dunque avere un punto di accumulazione è equivalente ad avere una sottosuccessione convergente.
@@ -519,5 +530,5 @@ Sia $M\coloneqq \max_{n_0,\ \ldots,\ n_0}\lvert\lvert a_n\rvert\rvert$. Se $n\ge
 Questo significa che $\left\{a_n\right\}\subseteq\overline{B_{1+M}\left(0\right)}$. Questa palla chiusa è uno spazio metrico \textit{indotto} in $\realset^n$ e compatto, cioè è uno \textit{spazio metrico completo}. Allora la successione di Cauchy, trovandosi in uno spazio metrico completo, converge in esso, e dunque converge anche in $\realset^n$.
 \end{demonstration}
 \begin{attention}
-La \textbf{completezza} \textit{non} è una proprietà topologica! Per esempio, $\realset$ e $\left(0,\ 1\right)$ con metrica euclidea sono omeomorfi rispetto alla topologia indotta dalla metrica, ma $\realset$ abbiamo appena dimostrato che è completo, mentre $\left(0,\ 1\right)$ no!
+La \textbf{completezza} \textit{non} è una proprietà topologica! Per esempio, $\realset$ e $\left(0,\ 1\right)$ con metrica euclidea sono omeomorfi rispetto alla topologia indotta dalla metrica, ma $\realset$ abbiamo appena dimostrato che è completo, mentre $\left(0,\ 1\right)$ si può vedere che non lo è!
 \end{attention}
