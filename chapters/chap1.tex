@@ -45,74 +45,7 @@
 		\item \textbf{Topologia banale}\index{topologia!banale}: $\topo={\emptyset,\ X}$, gli \textit{unici} aperti sono \textit{banali}.
 	\end{itemize}
 \end{example}
-\begin{comment}
-\section{Distanza e spazi metrici}
-\begin{define}
-	Su un insieme $X$ una funzione $\funz{d}{X\times X}{\realset}$ è una \textbf{distanza}\index{distanza} se:
-	\begin{enumerate}
-		\item \textit{Positività della distanza}: $\forall x,\ y\in X\quad \mvf{d}{x}{y}\geq 0$ e $\mvf{d}{x}{y}=0\iff x=y$
-		\item \textit{Simmetria}: $\forall x,\ y\in X\quad \mvf{d}{x}{y}=\mvf{d}{y}{x}$
-		\item \textbf{Disuguaglianza triangolare}\index{disuguaglianza triangolare}: $\forall x,\ y,\ z\in X\quad \mvf{d}{x}{z}\leq\mvf{d}{x}{y}+\mvf{d}{y}{z}$
-	\end{enumerate}
-\end{define}
-\begin{define}
-	Uno \textbf{spazio metrico}\index{spazio topologico!spazio metrico} $\left(X, d\right)$ è un insieme su cui è definita una distanza.
-\end{define}
-\begin{define}
-	Definita la \textbf{palla aperta di centro}\index{palla aperta} $x$ come l'insieme degli elementi di $X$ che soddisfano la seguente condizione:
-	\begin{equation}
-		B_{\epsilon}\left(x\right)=\left\{y\in X\mid \mvf{d}{x}{y}<\epsilon\right\}
-	\end{equation}
-	Ogni spazio metrico ha una \textbf{topologia} $\topo_d$ \textbf{indotta dalla distanza}, i cui aperti sono definiti come:
-	\begin{equation*}
-		A\subseteq X \text{ aperto } \left(A\in\topo\right) \text{ se } \forall x\in A,\ \exists \epsilon>0\ \colon B_{\epsilon}\left(x\right)\subseteq A.
-	\end{equation*}
-\end{define}
-\begin{example}~{}
-	\begin{itemize}
-		\item Su un qualunque insieme $X$ si può definire la \textit{distanza banale}:
-		\begin{equation}
-			\mvf{d}{x}{y}=\begin{cases} 
-				0 & \text{se }x=y\\
-				1 & \text{se }x\neq y
-			\end{cases}
-		\end{equation}
-		In questo modo, ogni punto è una palla aperta e dunque ogni sottoinsieme è un aperto, dando allo spazio la \textit{topologia discreta}. In particolare, ogni insieme può essere uno spazio metrico.
-		\item Su $X=\realset$ si può definire come distanza il \textit{valore assoluto} $\mvf{d}{x}{y}=|x-y|$, che induce la \textbf{topologia Euclidea}\index{topologia!Euclidea} $\mathcal{E_{ucl}}$, definita con le palle aperte di raggio $\epsilon$:
-		%sicuro di voler indicare la topologia euclidea con il pedice?
-		\begin{equation}
-			B_{\epsilon}\left(x\right)=\left\{y\in \realset\mid |x-y|<\epsilon\right\}
-		\end{equation}
-		nel seguente modo:
-		\begin{equation*}
-			A\subseteq \realset \text{ aperto } \left(A\in\mathcal{E_{ucl}}\right) \text{ se } \forall x\in A,\ \exists \epsilon>0\ \colon B_{\epsilon}\left(x\right)\subseteq A.
-		\end{equation*}
-		\item Su $X=\realset^n$ si può definire come distanza la \textit{norma Euclidea}: $\mvf{d}{x}{y}=||x-y||$ che induce la \textit{topologia Euclidea} $\mathcal{E_{ucl}}$ in modo analogo al caso precedente.
-		\begin{gather*}
-			B_{\epsilon}\left(x\right)=\left\{y\in \realset^n\mid ||x-y||<\epsilon\right\}\\
-			A\subseteq \realset^n \text{ aperto } \left(A\in\mathcal{E_{ucl}}\right) \text{ se } \forall x\in A,\ \exists \epsilon>0\ \colon B_{\epsilon}\left(x\right)\subseteq A.
-		\end{gather*}
-	\end{itemize}
-\end{example}
-\begin{attention}
-	Non tutte le topologie sono indotte da una distanza! Definiamo la \textbf{topologia dei complementari finiti} sull'insieme $X$ nel modo seguente:
-	\begin{gather*}
-		A\subseteq \realset \text{ aperto } \left(A\in CF\right) \text{ se }  X\setminus A \text{ è finito.}\\
-		C\subseteq \realset \text{ chiuso } \left(C\in CF\right) \text{ se }  C \text{ è finito.}
-	\end{gather*}
-	Alcune osservazioni:
-	\begin{itemize}
-		\item Se un aperto $A$ è tale se il suo complementare $\mathcal{C}A$ è finito, si ha che:
-		\begin{equation}
-			A=\mathcal{C}\left(\mathcal{C}A\right)=X\setminus\left(X\setminus A\right)=X\setminus\left\{\text{un numero finito di punti}\right\}
-		\end{equation}
-		In altre parole $A$ è aperto è pari ad $X$ privato al più di un numero finito di punti.
-		\item Se $X$ è finito, la topologia $CF$ coincide con la topologia discreta: ogni sottoinsieme di $X$ è finito e dunque un aperto.
-		\item Se $X$ è infinito, ad esempio $\realset$, la topologia \textit{non} è quella discreta: $[0,\ 1]$ per la topologia discreta è un chiuso ma per quella $CF$ non lo è in quanto \textit{non} è finito.
-	\end{itemize}
-\end{attention}
-\end{comment}
-\section{Distanza e spazi metrici}
+\subsection{Distanza e spazi metrici}
 \begin{define}
 	Su un insieme $X$ una funzione $\funz{d}{X\times X}{\realset}$ è una \textbf{distanza}\index{distanza} se:
 	\begin{enumerate}
@@ -177,7 +110,7 @@
 		\item Se $X$ è infinito, ad esempio $\realset$, la topologia \textit{non} è quella discreta: $[0,\ 1]$ per la topologia discreta è un chiuso ma per quella $CF$ non lo è in quanto \textit{non} è finito.
 	\end{itemize}
 \end{attention}
-\subsection{Norme esotiche}
+\subsubsection{Norme esotiche}
 Possiamo definire su $\realset^n$ una famiglia di distanze dette \textbf{norme}\index{norma}; qui di seguito ne elenchiamo alcune. Definiti i punti $x=\left(x_1,\ldots, x_n\right),\ y=\left(y_1,\ldots, y_n\right)\in\realset^n$ abbiamo:
 \begin{itemize}
 	\item \textbf{Norma infinito}: $\displaystyle\mvf{d_\infty}{x}{y}=\max_{i}{|x_i-y_i|}$
@@ -219,7 +152,7 @@ Preso adesso $X=\mathcal{C}\left([0,\ 1]\right)=\left\{\funz{f}{[0,\ 1]}{\realse
 	\item \textbf{Norma p}: $\displaystyle\mvf{d_p}{f}{g}=\sqrt[\leftroot{1}\uproot{3}p]{\int_{0}^{1}|f(\left(x\right)-\left(y\right)|^p}$
 \end{itemize}
 A differenza del caso su $\realset^n$, ogni norma genera in realtà una topologia distinta!
-\section{Finezza: confronto di topologia}
+\subsection{Finezza: confronto di topologia}
 \begin{define}\index{finezza}
 	Sia $X$ un insieme e $\topo_1$, $\topo_2$ due topologie di $X$. Si dice che $\topo_1$ è \textbf{meno fine}\index{finezza!meno fine} di $\topo_2$ se tutti gli aperti della prima topologia sono aperti della seconda:
 	\begin{equation}
@@ -242,7 +175,7 @@ In altre parole, una topologia più fine ha più aperti rispetto a quella confro
 \begin{observe}\label{intersezionetopo}
 	Se definiamo due topologie $\topo_1$ e $\topo_2$ sono due topologie di un insieme $X$, l'intersezione $\topo_1\cap\topo_2$ è anch'essa una topologia di $X$ e, per costruzione, è \textit{meno fine} di $\topo_1$ e $\topo_2$.
 \end{observe}
-\section{Base della topologia}
+\subsection{Base della topologia}
 \begin{define}
 	Sia $\left(X, \topo\right)$ uno spazio topologico. $\basis$ è una \textbf{base}\index{base} per $\topo$ se:
 	\begin{enumerate}
@@ -313,7 +246,7 @@ In altre parole, una topologia più fine ha più aperti rispetto a quella confro
 	Esiste dunque una topologia su $\realset$ che ha base $\basis$; questa \textit{non} è base per la topologia Euclidea, ad esempio, dato che gli intervalli semiaperti non sono inclusi in $\mathcal{E_{ucl}}$.\\
 	Notiamo inoltre che $\displaystyle\left(a,\ b\right)=\union_{n\in \naturalset}\left[a+\frac{1}{n},\ b\right)$, dunque la topologia definita $\basis$ comprende gli aperti della topologia Euclidea: $\mathcal{E_{ucl}}$ è meno fine di questa topologia.
 \end{example}
-\section{Altri concetti topologici: chiusura, interno, frontiera e densità}
+\subsection{Altri concetti topologici: chiusura, interno, frontiera e densità}
 Ricordiamo che, dato uno spazio topologico $\left(X,\ \topo\right)$ e un sottoinsieme $A\subseteq X$, si ha:
 \begin{itemize}
 	\item $A$ \textit{aperto} della topologia se $A\in\topo$.
@@ -369,7 +302,7 @@ Ricordiamo che, dato uno spazio topologico $\left(X,\ \topo\right)$ e un sottoin
 \begin{example}
 	Il più piccolo chiuso contenente $\rationalset$ è $\realset$, poiché ogni reale è aderente ai razionali. Dunque $\rationalset$ è denso in $\realset$.
 \end{example}
-\section{Intorni}
+\subsection{Intorni}
 \begin{define}
 	Sia $X$ spazio topologico e $x\in X$. $V$ è un \textbf{intorno}\index{intorno} di $x$ se $\exists A$ aperto tale che $x\in A\subseteq V$ o, in altri termini, se $x$ è interno ad $U$.
 	Definiamo inoltre la \textbf{famiglia degli intorni} di $x$ $I\left(x\right)\subseteq\setpart{X}$:
@@ -528,7 +461,7 @@ Ricordiamo che, dato uno spazio topologico $\left(X,\ \topo\right)$ e un sottoin
 	$\impliesdx$ Un omeomorfismo è biettiva per definizione. Dimostriamo dunque che $f$ sia aperta, cioè $\forall A\in X$ aperto $f\left(A\right)\in Y$ è aperto. Ma definita $\funz{g}{Y}{X}$ l'inversa continua dell'omeomorfismo $f$ (cioè $f^{-1}=g$), si ha che $\forall A\in X$ $g^{-1}\left(A\right)=f\left(A\right)$ è aperto.\\
 	$\impliessx$ $f$ è già biettiva e continua per ipotesi. Dobbiamo dimostrare che l'inversa $\funz{g}{Y}{X}$ sia continua, cioè $\forall A\in X$ aperto $g^{-1}\left(A\right)\in Y$ è aperto. Ma $g^{-1}\left(A\right)=f\left(A\right)$ che è aperto perché $f$ è aperta.
 \end{demonstration}
-\section{Topologia indotta}\index{topologia!indotta}
+\subsection{Topologia indotta}\index{topologia!indotta}
 \begin{define}
 	Dati:
 	\begin{itemize}

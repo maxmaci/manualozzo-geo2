@@ -66,7 +66,7 @@
 \RequirePackage{bm}
 \RequirePackage{multicol}
 \RequirePackage{preamble/tikz-cd}
-\usepackage{preamble/comment}
+\RequirePackage{preamble/comment}
 % Load hyperref package last
 \RequirePackage{hyperref}
 
@@ -1310,31 +1310,43 @@ linewidth=1pt]{tinBox}
 
 
 \newcommand{\funz}[3]{
-	\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{llll}
-			#1\colon& #2&\rightarrow& #3\end{array}}}
+	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{lll}
+			#2&\rightarrow& #3\end{array}}}
+		{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{llll}
+				#1\colon& #2&\rightarrow& #3\end{array}}}}
 
 % definizione di funzione (completa)
 
 \newcommand{\funztot}[5]{
-	\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{llll}
+	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{lll}
+					#2&\rightarrow& #3\\
+					#4&\mapsto& #5
+			\end{array}}}
+		{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{llll}
 			#1\colon& #2&\rightarrow& #3\\
 			&#4&\mapsto& #5
-		\end{array}}}
+		\end{array}}}}
 
 % inclusione (solo domini)
 
 \newcommand{\incl}[3]{
-	\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{llll}
-		#1\colon& #2&\hookrightarrow& #3\end{array}}}
+	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{lll}
+			#2&\hookrightarrow& #3\end{array}}}
+{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{llll}
+			#1\colon& #2&\hookrightarrow& #3\end{array}}}}
 
 
 % inclusione (completa)
 
 \newcommand{\incltot}[5]{
-	\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{llll}
+	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{lll}
+			#2&\hookrightarrow& #3\\
+			#4&\mapsto& #5
+\end{array}}}
+{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{llll}
 			#1\colon& #2&\hookrightarrow& #3\\
 			&#4&\mapsto& #5
-\end{array}}}
+\end{array}}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%% altre definizioni  %%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1349,6 +1361,23 @@ linewidth=1pt]{tinBox}
 \newcommand{\textoverbrace}[2]{%
 	\ensuremath{\overbrace{\text{#1}}^{\text{#2}}}%
 }
+
+% testo cerchiato
+
+\newcommand{\circled}[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {\ensuremath{#1}};}}
+
+% testo in un riquadro ad angoli smussati
+
+\newcommand{\ovaled}[1]{%
+	\tikz[baseline=(char.base)]\node[anchor=south west, draw,rectangle, rounded corners, inner sep=2pt, minimum size=7mm,
+	text height=2mm](char){\ensuremath{#1}} ;}
+
+% testo trasparente
+
+\newtcbox{\invis}{blank, on line, opacitytext=0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \newcommand{\minusD}{\hbox{\tikz{\draw[line width=0.6pt,line cap=round] (3pt,0) -- (0,6pt);}}}
@@ -1485,8 +1514,5 @@ linewidth=1pt]{tinBox}
 \usepackage{wrapfig}
 
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
-
-\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
-		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
 
 %\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
