@@ -1,0 +1,71 @@
+% SVN info for this file
+\svnidlong
+{$HeadURL$}
+{$LastChangedDate$}
+{$LastChangedRevision$}
+{$LastChangedBy$}
+
+\chapter{Omotopia}
+\labelChapter{omotopia}
+
+\begin{introduction}
+	‘‘BEEP BOOP INSERIRE CITAZIONE QUA BEEP BOOP.''
+	\begin{flushright}
+		\textsc{NON UN ROBOT,} UN UMANO IN CARNE ED OSSA BEEP BOOP.
+	\end{flushright}
+\end{introduction}
+
+\section{Lemma di incollamento}
+\begin{lemming}\textsc{Lemma di incollamento}\label{lemmaincollamento}\\
+	Siano $X,\ Y$ spazi topologici e $X=A\cup B$. Siano $\funz{f}{A}{Y}$ e $\funz{g}{B}{Y}$ continue tali che $f\left(x\right)=g\left(x\right)\ \forall x\in A\cap B$, cioè $f_{\mid A\cap B}=g_{\mid A\cap B}$.\\
+	Consideriamo l'\textbf{incollamento}\index{incollamento} $\funz{h}{X}{Y}$ definito da:
+	\begin{equation}
+		h\left(x\right)=\begin{cases}
+			f\left(x\right)\ x\in A\\
+			g\left(x\right)\ x\in B
+		\end{cases}
+	\end{equation}
+	Se $A$ e $B$ sono entrambi aperti in $X$, oppure se $A$ e $B$ sono entrambi chiusi in $X$, allora $h$ è continua.
+\end{lemming}
+\begin{demonstration}
+	Supponiamo $A$ e $B$ aperti. Sia $U\subseteq Y$ aperto. Allora:
+	\begin{equation*}
+		h^{-1}\left(U\right)=\underbrace{f^{-1}\left(U\right)}_{\subseteq B}\cap \underbrace{g^{-1}\left(U\right)}_{\subseteq B}
+	\end{equation*}
+Essendo $f,\ g$ continue, segue che $f^{-1}\left(U\right)$ è aperto in $A$ e $g^{-1}\left(U\right)$ è aperto in $B$.\\
+In quanto $A,\ B$ aperti, per definizione di aperto del sottospazio\footnote{Poichè un aperto del sottospazio è dato dall'intersezione del sottospazio con un aperto di $X$, se abbiamo che anche il sottospazio è aperto di $X$, l'intersezione è aperta: in questo caso ogni aperto del sottospazio è anche aperto di $X$.} $f^{-1}\left(U\right)$ e $g^{-1}\left(U\right)$ sono aperti su $X\implies h^{-1}\left(U\right)$ aperto.\\
+Il caso di $A$ e $B$ chiuso è esattamente analogo. 
+\end{demonstration}
+\section{Componente connessa e componente c.p.a.}
+Riprendiamo la trattazione delle componenti connesse e \textbf{c.p.a.} introdotte nel capitolo \textbf{XXX}.
+\begin{define}
+	Una \textbf{componente connessa}\index{componente!connessa} di $X$ spazio topologico è uno spazio $C\subseteq X$ \textit{connesso} tale per cui:
+	\begin{equation}
+		C\subseteq A\subseteq X\text{ con }A\text{ connesso}\implies C=A 
+	\end{equation} 
+\end{define}
+\begin{observe}~{}
+\begin{itemize}
+	\item Le componenti connesse formano una \textit{partizione} di $X$.
+	\item Se $x\in X$ si può definire la componente connessa che contiene $x$:
+	\begin{equation}
+		C\left(x\right)=\union\left\{C\subseteq X\mid x\in C,\ C\text{ connesso}\right\}
+	\end{equation}
+\ item Le componenti connesse possono essere viste come classi di equivalenza per la seguente relazione di equivalenza su $ X $:
+	\begin{equation}
+		x,\ y\in X\qquad x\sim_C y\iff \exists C\subseteq X\text{ connesso}\ \colon x,\ y\in C
+	\end{equation}
+\end{itemize}
+\end{observe}
+\begin{demonstration}
+Innanzitutto mostriamo che la relazione è di equivalenza:
+\begin{itemize}
+\item \textsc{Riflessiva}: $x\sim_C x$ è vero, dato che $\left\{x\right\}$ è sempre un connesso.
+\item \textsc{Simmetrica}: ovvia dalla definizione.
+\item \textsc{Transitiva}: Supponiamo $x\sim_C y,\ y\sim_C z$. Allora $\exists C,\ D\subseteq X$ connessi tale che $x,\ y\in C$ e $y,\ z\in D$. Allora $C\cup D$ contiene sia $x$ che $z$. Inoltre, essendo $y\in C\cap D\implies C\cap D\neq \emptyset$, dunque $C\cup D$ è un connesso: vale $x\sim_C z$.\\
+Mostriamo che le classi di equivalenza sono le componenti connesse per $x$.\\
+$\includedx$ Se $C\subseteq X$ è una componente connessa, allora $\forall x, y\in C$ si ha $x\sim_C y$, cioè $C$ è interamente contenuta in $C_0=[x]=[y]$ classe di equivalenza per $\sim_C$: $C\subseteq C_0$.\\
+$\includesx$ Sia $z\in C_0$ classe di equivalenza e sia $x\in C$ componente connessa. Allora: $x\sim_C z\implies \exists T\subseteq X \text{ connesso}\ \colon x,\ z\in T$.\\
+Consideriamo $C\cup T$. $C$ e $T$ sono connessi, $x\in C\cap T\implies C\cap T\neq \emptyset$: $C\cup T$ è ancora connessa. In quanto $C$ è componente connessa, dato che $C\subseteq C\cup T$ per definizione segue che $C=C\cup T$, cioè $T\subseteq C$. Ma allora $z\in C$ e segue che $C_0\subseteq C$.\\
+\end{itemize}
+\end{demonstration}
