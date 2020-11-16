@@ -941,7 +941,9 @@
 \definecolor{cinnamon}{rgb}{0.82, 0.41, 0.12}
 \definecolor{timberwolf}{rgb}{0.86, 0.84, 0.82}
 \definecolor{battleshipgrey}{rgb}{0.52, 0.52, 0.51}
-
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\definecolor{coolblack}{rgb}{0.0, 0.18, 0.39}
+	
 % Define boxes
 
 \newmdenv[skipabove=7pt,
@@ -1072,6 +1074,22 @@ leftmargin=0cm,
 rightmargin=0cm,
 linewidth=1pt]{tinBox}
 
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
+backgroundcolor=airforceblue!15,
+linecolor=airforceblue,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+innerbottommargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=1pt]{blueBox}
+
 % Define theorem styles from color
 
 \newtheoremstyle{rednumbox}% % Theorem style name
@@ -1094,6 +1112,16 @@ linewidth=1pt]{tinBox}
 {0.25em}% Space after theorem head
 {\small\bfseries\color{black}\thmname{#1}}
 
+\newtheoremstyle{venetiannumbox}% % Theorem style name
+{0pt}% Space above
+{0pt}% Space below
+{\normalfont}% % Body font
+{}% Indent amount
+{\small\bfseries\color{venetian!75}}% % Theorem head font
+{\;}% Punctuation after theorem head
+{0.25em}% Space after theorem head
+{\small\bfseries\color{venetian}\thmname{#1}}
+
 \newtheoremstyle{cinnamonnumbox}% % Theorem style name
 {0pt}% Space above
 {0pt}% Space below
@@ -1102,7 +1130,7 @@ linewidth=1pt]{tinBox}
 {\small\bfseries\color{cinnamon!75}}% % Theorem head font
 {\;}% Punctuation after theorem head
 {0.25em}% Space after theorem head
-{\small\bfseries\color{black}\thmname{#1}}
+{\small\bfseries\color{cinnamon}\thmname{#1}}
 
 \newtheoremstyle{timberwolfnumbox}% % Theorem style name
 {0pt}% Space above
@@ -1113,6 +1141,16 @@ linewidth=1pt]{tinBox}
 {\;}% Punctuation after theorem head
 {0.25em}% Space after theorem head
 {\small\bfseries\color{black}\thmname{#1}}
+
+\newtheoremstyle{airforcebluenumbox}% % Theorem style name
+{0pt}% Space above
+{0pt}% Space below
+{\normalfont}% % Body font
+{}% Indent amount
+{\small\bfseries\color{airforceblue!75}}% % Theorem head font
+{\;}% Punctuation after theorem head
+{0.25em}% Space after theorem head
+{\small\bfseries\color{coolblack}\thmname{#1}}
 
 % Define theorem styles from color
 
@@ -1186,42 +1224,67 @@ linewidth=1pt]{tinBox}
 \theoremstyle{timberwolfnumbox}
 \newtheorem{propositionT}{\textsc{Proposizione \theproposition.}}[chapter]
 
+\theoremstyle{airforcebluenumbox}
+\newtheorem{intuitT}{\textsc{Intuitivamente...}}[chapter]
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% esempio/esempio %%%
 
 \newenvironment{example}{\begin{eBox}\begin{exampleT}}{\hfill{\color{reddo}}\end{exampleT}\end{eBox}}
 \newenvironment{examples}{\begin{eBox}\begin{examplesT}~}{\hfill{\color{reddo}}	\end{examplesT}\end{eBox}}
 \newenvironment{examplescaput}{\begin{eBox}\begin{examplescaputT}~}{\hfill{\color{reddo}}	\end{examplescaputT}\end{eBox}}
 \newenvironment{examplecaput}{\begin{eBox}\begin{examplecaputT}~}{\hfill{\color{reddo}}	\end{examplecaputT}\end{eBox}}
+
+%%% esercizio %%%
+
 \newenvironment{exercise}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{reddo}}	\end{exerciseT}\end{eBox}}
 \newenvironment{exercisescaput}{\begin{eBox}\begin{exercisescaputT}~}{\hfill{\color{reddo}}	\end{exercisescaputT}\end{eBox}}
+
+%%% soluzione %%%
+
 \newenvironment{solution}{\begin{bBox}\begin{solutionT}}{\hfill{\color{gray}}	\end{solutionT}\end{bBox}}
 \newenvironment{solutioncaput}{\begin{bBox}\begin{solutioncaputT}~}{\hfill{\color{gray}}	\end{solutioncaputT}\end{bBox}}
+
+%%% digressione %%%
+
 \newenvironment{digression}{\begin{gBox}\begin{digressionT}}{\hfill{\color{green}}	\end{digressionT}\end{gBox}}
 \newenvironment{digressioncaput}{\begin{gBox}\begin{digressioncaputT}~}{\hfill{\color{green}}	\end{digressioncaputT}\end{gBox}}
+
+%%% attenzione %%%
+
 \newenvironment{attention}{\begin{pBox}\begin{attentionT}}{\hfill{\color{plum}}	\end{attentionT}\end{pBox}}
+
 \newenvironment{attentioncaput}{\begin{pBox}\begin{attentioncaputT}~}{\hfill{\color{plum}}\end{attentioncaputT}\end{pBox}}
+
+%%% osservazione %%%
+
 \newenvironment{observe}{\begin{sBox}\begin{observeT}}{\hfill{\color{venetian}}	\end{observeT}\end{sBox}}
 
-%%% demonstration %%%
+%%% dimostrazione %%%
 
 \newenvironment{demonstration}{\begin{yBox}\begin{demonstrationT}}{\hfill{\color{BurntOrange}}	\end{demonstrationT}\end{yBox}}
 \newenvironment{demonstrationcont}{\begin{yBox}\begin{demonstrationcontT}}{\hfill{\color{BurntOrange}}\end{demonstrationcontT}\end{yBox}}
 
-%%% definition %%%
+%%% definizione %%%
 
 \newenvironment{define}{\begin{cinBox}\begin{defineT}}{\refstepcounter{define}\hfill{\color{cinnamon}}	\end{defineT}\end{cinBox}}\numberwithin{define}{section}
 
 \newenvironment{defoe}{\begin{bBox}\begin{defoeT}}{\hfill{\color{gray}}	\end{defoeT}\end{bBox}}
 
-%%% theorema %%%
+%%% teorema %%%
 
 \newenvironment{theorema}{\begin{tinBox}\begin{theoremaT}}{\refstepcounter{theorema}\hfill{\color{timberwolf}}\end{theoremaT}\end{tinBox}}\numberwithin{theorema}{section}
 
 \newenvironment{lemming}{\begin{tinBox}\begin{lemmingT}}{\refstepcounter{lemming}\hfill{\color{timberwolf}}	\end{lemmingT}\end{tinBox}}\numberwithin{lemming}{section}
 
-%%% demonstration %%%
+%%% proposizione %%%
 
 \newenvironment{proposition}{\begin{tinBox}\begin{propositionT}}{\refstepcounter{proposition}\hfill{\color{timberwolf}}	\end{propositionT}\end{tinBox}}\numberwithin{proposition}{section}
+
+%%% intuitivamente %%%
+
+\newenvironment{intuit}{\begin{blueBox}\begin{intuitT}}{\hfill{\color{timberwolf}}	\end{intuitT}\end{blueBox}}
 
 %%%%%%%%%%%%%%%%%%%%%%%% definizioni logiche %%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1310,19 +1373,19 @@ linewidth=1pt]{tinBox}
 
 
 \newcommand{\funz}[3]{
-	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{lll}
+	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
 			#2&\rightarrow& #3\end{array}}}
-		{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{llll}
+		{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
 				#1\colon& #2&\rightarrow& #3\end{array}}}}
 
 % definizione di funzione (completa)
 
 \newcommand{\funztot}[5]{
-	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{lll}
+	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
 					#2&\rightarrow& #3\\
 					#4&\mapsto& #5
 			\end{array}}}
-		{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{llll}
+		{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
 			#1\colon& #2&\rightarrow& #3\\
 			&#4&\mapsto& #5
 		\end{array}}}}
@@ -1330,20 +1393,20 @@ linewidth=1pt]{tinBox}
 % inclusione (solo domini)
 
 \newcommand{\incl}[3]{
-	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{lll}
+	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
 			#2&\hookrightarrow& #3\end{array}}}
-{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{llll}
+{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
 			#1\colon& #2&\hookrightarrow& #3\end{array}}}}
 
 
 % inclusione (completa)
 
 \newcommand{\incltot}[5]{
-	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{lll}
+	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
 			#2&\hookrightarrow& #3\\
 			#4&\mapsto& #5
 \end{array}}}
-{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{llll}
+{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
 			#1\colon& #2&\hookrightarrow& #3\\
 			&#4&\mapsto& #5
 \end{array}}}}

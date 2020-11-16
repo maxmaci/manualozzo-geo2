@@ -37,7 +37,7 @@ In quanto $A,\ B$ aperti, per definizione di aperto del sottospazio\footnote{Poi
 Il caso di $A$ e $B$ chiuso è esattamente analogo. 
 \end{demonstration}
 \section{Componente connessa e componente c.p.a.}
-Riprendiamo la trattazione delle componenti connesse e \textbf{c.p.a.} introdotte nel capitolo \textbf{XXX}.
+Riprendiamo la trattazione delle componenti connesse e \textbf{c.p.a.} introdotte nel capitolo \autoref{chap:Connessocompatto}.
 \begin{define}
 	Una \textbf{componente connessa}\index{componente!connessa} di $X$ spazio topologico è uno spazio $C\subseteq X$ \textit{connesso} tale per cui:
 	\begin{equation}
@@ -66,6 +66,191 @@ Innanzitutto mostriamo che la relazione è di equivalenza:
 Mostriamo che le classi di equivalenza sono le componenti connesse per $x$.\\
 $\includedx$ Se $C\subseteq X$ è una componente connessa, allora $\forall x, y\in C$ si ha $x\sim_C y$, cioè $C$ è interamente contenuta in $C_0=[x]=[y]$ classe di equivalenza per $\sim_C$: $C\subseteq C_0$.\\
 $\includesx$ Sia $z\in C_0$ classe di equivalenza e sia $x\in C$ componente connessa. Allora: $x\sim_C z\implies \exists T\subseteq X \text{ connesso}\ \colon x,\ z\in T$.\\
-Consideriamo $C\cup T$. $C$ e $T$ sono connessi, $x\in C\cap T\implies C\cap T\neq \emptyset$: $C\cup T$ è ancora connessa. In quanto $C$ è componente connessa, dato che $C\subseteq C\cup T$ per definizione segue che $C=C\cup T$, cioè $T\subseteq C$. Ma allora $z\in C$ e segue che $C_0\subseteq C$.\\
+Consideriamo $C\cup T$. $C$ e $T$ sono connessi, $x\in C\cap T\implies C\cap T\neq \emptyset$: $C\cup T$ è ancora connessa. In quanto $C$ è componente connessa, dato che $C\subseteq C\cup T$ per definizione segue che $C=C\cup T$, cioè $T\subseteq C$. Ma allora $z\in C$ e segue che $C_0\subseteq C$.
 \end{itemize}
+\end{demonstration}
+\begin{define}
+Una \textbf{componente c.p.a.} di $X$ è una classe di equivalenza per la relazione $\sim_A$ così definita:
+	\begin{equation}
+	x,\ y\in X\qquad x\sim_A y\iff \exists \alpha\textsc{ cammino in }X\ \colon \alpha\left(0\right)=x,\ \alpha\left(1\right)=y
+\end{equation}
+\end{define}
+\begin{demonstration}
+	Mostriamo che sia una relazione di equivalenza:
+	\begin{itemize}
+		\item \textsc{Riflessiva}: $x\sim_A x$ è vero, dato che esiste sempre il \textbf{cammino costante}\index{cammino!costante} nel punto $x$: \begin{equation}
+			\funztot{c_x}{I}{X}{t}{x}
+		\end{equation}.
+		\item \textsc{Simmetrica}: se $x\sim_A y$ sappiamo che $\exists\ \funz{\alpha}{I}{X}$ tale per cui $\alpha\left(0\right)=x,\ \alpha\left(1\right)=y$. Possiamo definire il \textbf{cammino inverso}\index{cammino!inverso}:
+		\begin{equation}
+			\funztot{\overline{\alpha}}{I}{X}{t}{\alpha\left(1-t\right)}
+		\end{equation}
+	\begin{itemize}
+		\item $\overline{\alpha}$ è continuo, perché composizione di applicazioni continue:\\
+		\begin{center}
+			\begin{tikzcd}
+				I \arrow[r]          & I \arrow[r, "\alpha"]  & X                      \\[-25pt]
+				t \arrow[r, maps to] & 1+t \arrow[r, maps to] & \alpha\left(1-t\right)
+			\end{tikzcd}
+		\end{center}
+	\item $\overline{\alpha}\left(0\right)=\alpha\left(1\right)=y,\ \overline{\alpha}\left(1\right)=\alpha\left(0\right)=x$.
+	\end{itemize}
+Allora il cammino $\overline{\alpha}$ definisce $y\sim_A x$.
+		\item \textsc{Transitiva}: Supponiamo $x\sim_A y,\ y\sim_A z$. Allora $\exists \funz{\alpha,\ beta}{I}{X}$ tale che $\alpha\left(0\right)=x,\ \alpha\left(1\right)=y, \beta\left(0\right)=y,\ \beta\left(1\right)=z$. Usando la \textbf{giunzione di cammini}\index{cammino!giunzione di cammini}:
+	\begin{equation}
+	\left(\alpha\ast\beta\right)\left(t\right)=\begin{cases}
+		\begin{array}{lc}
+					\alpha\left(2t\right) & \text{se }0\leq t\leq \frac{1}{2}\\
+			\beta\left(2t-1\right) & \text{se }\frac{1}{2}\leq t\leq 1	
+		\end{array}
+	\end{cases}
+\end{equation}
+In particolare:
+\begin{equation*}
+	\begin{cases}
+	\left(\alpha\ast\beta\right)\left(0\right)=\alpha\left(0\right)\\
+	\left(\alpha\ast\beta\right)\left(1\right)=\beta\left(1\right)
+		\end{cases}
+\end{equation*}
+Poichè $\alpha\ast\beta$ soddisfa le ipotesi del lemma di incollamento, essa è continua e collega con un cammino unico $x$ e $z$, dunque vale $x\sim_A z$.
+	\end{itemize}
+\end{demonstration}
+\begin{observe}~{}
+	\begin{enumerate}
+		\item Le componenti \textbf{c.p.a.} formano una partizione di $X$
+		\item Sia $C\subseteq X$ un sottospazio \textbf{c.p.a.} per cui vale che $C\subseteq A\subseteq X$ con $A$ \textbf{c.p.a.}$\implies C=A$, allora $C$ è una componente \textbf{c.p.a.}.
+		\item In generale le componenti \textbf{c.p.a.} non sono né aperte né chiuse.
+		\item Se $A$ è una componente \textbf{c.p.a.}, allora $A$ è \textbf{c.p.a.} e dunque \textit{connessa}: $A$ è allora interamente contenuta in una componente connessa, cioè le componenti connesse sono unioni di componenti \textbf{c.p.a.}.
+	\end{enumerate}
+\end{observe}
+\begin{demonstration}
+	\textbf{INSERIRE DIM PUNTO 2}
+\end{demonstration}
+\begin{example}
+	Ricordiamo l'esempio della \textit{pulce e il pettine}, cioè lo spazio $X\subseteq \realset^2$ descritto da:
+	\begin{gather*}
+		X=Y\cup \left\{p\right\}\\
+		Y=\left(I\times \left\{0\right\}\right)\cup \union_{r\in\integerset}\left(\left\{r\right\}\times I\right)\\
+		p=\left(\frac{\sqrt{2}}{2},\ 1\right)
+	\end{gather*}
+Questo spazio $X$ è connesso, non \textbf{c.p.a.}: infatti, le componenti \textbf{c.p.a.} sono due, $Y$ e $\left\{p\right\}$.
+\end{example}
+\section{Omotopia tra funzioni continue}
+\begin{intuit}
+	Dati due spazi topologici $X,\ Y$ e due funzioni $\funz{f,\ g}{X}{Y}$, si ha un'\textbf{omotopia} tra le due funzioni se una funzione può essere ‘‘\textit{deformata in modo continuo}'' nell'altra (e viceversa).\\
+	Per far ciò vogliamo trovare una famiglia di funzioni $\left\{f_t\right\}_{t\in\left[0,\ 1\right]}$ tale che ogni funzione $\funz{f_t}{X}{Y}$ sia continua e vari ‘‘\textit{con continuità}'' al variare di $t\in\left[0,\ 1\right]$ fra $f_0=f$ e $f_1=g$.
+\end{intuit}
+\begin{define}
+	Due funzioni continue $\funz{f,\ g}{X}{Y}$ si dicono \textbf{omotope} se \\ $\exists \funz{F}{X\times I}{Y}$ \textit{continua} tale che:
+	\begin{equation}
+		\mvf{F}{x}{0}=f\left(x\right)\qquad \mvf{F}{x}{1}=g\left(x\right)\ \forall x\in X
+	\end{equation}
+La funzione $F$ è detta \textbf{omotopia}\index{omotopia} tra $f$ e $g$; denotiamo che le funzioni sono omotope con $f\sim g$.\\
+Inoltre, definiamo gli elementi della famiglia di funzioni $\left\{f_t\right\}_{t\in\left[0,\ 1\right]}$ nel  seguente modo:
+\begin{equation}
+\forall t\ f_t\coloneqq \funz{\mvf{F}{\bullet}{t}}{X}{Y}\ \colon f_0=f,\ f_1=g
+\end{equation}
+\end{define}
+\begin{observe}
+Ricordando la definizione di \textit{segmento} (\pageref{segmento}, \autoref{segmento}), la funzione $\funztot{\ }{I}{\overline{PQ}}{t}{tA+\left(1-t\right)B}$ è biunivoca ed, in particolare, è omeomorfismo.
+\end{observe}
+\begin{example}
+	Dato un sottospazio $Y\subseteq \realset^n$ \textit{convesso}, allora spazio topologico $X$ e per ogni funzione $\funz{f,\ g}{X}{Y}$ continua, allora $f$ e $g$ sono \textit{omotope}.
+\end{example}
+\begin{demonstration}
+	L'omotopia è:
+	\begin{equation*}
+		\funz{F}{X\times I}{Y},\ \mvf{F}{x}{y}=\left(1-t\right)f\left(x\right)+tf\left(x\right)
+	\end{equation*}
+\begin{itemize}
+	\item $F$ è ben definita. Se $x\in X$ abbiamo $f\left(x\right),\ g\left(x\right)\in Y$ convesso: esiste allora $\overline{f\left(x\right)g\left(x\right)}\subseteq Y$, cioè $\left(1-t\right)f\left(x\right)+tg\left(x\right)\in Y\ \forall x\in X,\ t\in I$.
+	\item $F$ è continua perché composizione di funzioni continue:
+	\begin{center}
+		\begin{tikzcd}
+			X\times I \arrow[r]            & Y\times Y\times I\subseteq \realset^{2n+1} \arrow[r]           & Y\subseteq \realset^n                            \\[-25pt]
+			{\left(x,\ t\right)} \arrow[r, maps to] & {\left(f\left(x\right),\ g\left(x\right),\ t\right)} \arrow[r, maps to] & \left(1-t\right)f\left(x\right)+tg\left(x\right)
+		\end{tikzcd}
+	\end{center}
+\item $F\left(x,\ 0\right)=f\left(x\right),\ F\left(x,\ 1\right)=g\left(x\right)\ \forall x\in X$.
+\end{itemize}
+\end{demonstration}
+\begin{observe}
+	Sia $Y\subseteq \realset^n$ (non necessariamente convesso!) e $\funz{f,\ g}{X}{Y}$ continua tale che $\overline{f\left(x\right)g\left(x\right)}\subseteq Y\ \forall x\in X$. Allora $f$ è omotopa a $g$ con la stessa omotopia $F$ definita nel caso di $Y$ convesso.
+\end{observe}
+\begin{attention}
+Nel parlare di omotopie è estremamente importante verificare che siano ben definite! Infatti, prendiamo ad esempio $Y=S^1\subseteq \realset^2$ e le funzioni costanti in $p$ e in $q$, rispettivamente $\funztot{f}{X}{S^1}{x}{p}$ e $\funztot{g}{X}{S^1}{x}{q}$.\\
+Considerata $\funz{F}{X\times I}{\realset^2}$ tale che $\mvf{F}{x}{y}=\left(1-t\right)f\left(x\right)+tg\left(x\right)=\left(1-t\right)p+tq$, essa non è ben definita in $Y$: presi due punti della sfera $S^1$ il segmento non è \textit{mai} contenuto in essa!
+\end{attention}
+\begin{lemming}
+	Siano $X,\ Y$ due spazi topologici. L'omotopia è una relazione di equivalenza sull'insieme delle funzioni continue da $X$ e $Y$.
+\end{lemming}
+\begin{demonstration}~{}
+	\begin{itemize}
+		\item \textsc{Riflessiva}: Sia $\funz{f}{X}{Y}$ continua. Consideriamo:
+		\begin{equation*}
+			\funz{F}{X\times I}{Y}
+		\end{equation*}
+	Tale che $\mvf{F}{x}{t}=f\left(x\right)$. Essa è:
+		\begin{itemize}
+			\item Continua perché lo è $f$.
+			\item $\mvf{F}{x}{0}=\mvf{F}{x}{1}=f\left(x\right)\ \forall x\in X$.	\end{itemize}
+		Allora $f\sim f$.
+		\item \textsc{Simmetrica}: Supponiamo $f\sim g$, cioè $\exists \funz{F}{X\times I}{Y}$ tale che:
+		\begin{equation*}
+			\mvf{F}{x}{0}=f\left(x\right),\ \mvf{F}{x}{1}=g\left(x\right)\ \forall x\in X
+		\end{equation*}
+	Consideriamo $\funz{G}{X\times I}{Y}$ tale che $G\left(x,\ t\right)=F\left(x,\ 1-t\right)$. Essa è:
+	\begin{itemize}
+		\item Continua perché composizione di funzioni continue.
+		\item $\mvf{G}{x}{0}=\mvf{F}{x}{1}=g\left(x\right),\ \mvf{G}{x}{1}=\mvf{F}{x}{0}=f\left(x\right)\ \forall x\in X$.
+	\end{itemize}
+Allora $g\sim f$.
+\item \textsc{Transitiva}: Siano $\funz{f,\ g,\ h}{X}{Y}$ continue, $f\sim g$ e $g\sim h$, cioè:
+\begin{gather*}
+	\exists \funz{F}{X\times I}{Y},\ \funz{G}{X\times I}{Y}\\
+	\begin{array}{cc}
+		\mvf{F}{x}{0}=f\left(x\right) & \mvf{G}{x}{0}=g\left(x\right)\\
+		\mvf{F}{x}{1}=g\left(x\right) & \mvf{G}{x}{1}=h\left(x\right)
+	\end{array}
+\forall x\in X
+\end{gather*}
+Consideriamo $\funz{H}{X\times I}{Y}$:
+\begin{equation*}
+	\mvf{H}{x}{t}=\begin{cases}
+		\begin{array}{lc}
+			\mvf{F}{x}{2t} & t\in\left[0,\ \frac{1}{2}\right] \\
+			\mvf{G}{x}{2t-1} & t\in\left[\frac{1}{2},\ 1\right]
+		\end{array}	
+	\end{cases}
+\end{equation*}
+\begin{itemize}
+	\item $H$ è continua per il lemma di incollamento:
+	\begin{itemize}
+		\item È ben definita per $t=\frac{1}{2}$.
+		\item $H$ è continua separatamente su $X\times \left[0,\ \frac{1}{2}\right]$ e $X\times \left[\frac{1}{2},\ 1\right]$, entrambi chiusi.
+	\end{itemize}
+\item $\mvf{H}{x}{0}=\mvf{F}{x}{0}=f\left(x\right),\ \mvf{H}{x}{1}=\mvf{G}{x}{1}=h\left(x\right)\ \forall x\in X$.
+\end{itemize}
+Allora $f\sim h$.
+\end{itemize}
+\end{demonstration}
+\begin{lemming}\textsc{Composizione di omotopie}\\
+	Siano $X,\ Y,\ Z$ spazi topologici e siano $\funz{f_1,\ f_2}{X}{Y}$ continue ed omotope, $\funz{g_1,\ g_2}{Y}{Z}$ continue ed omotope. Allora $\funz{g_1\circ f_1,  g_2\circ f_2}{X}{Z}$ sono omotope:
+	\begin{equation}
+		f_1\sim f_2,\ g_1\sim g_2\implies g_1\circ f_1\sim g_2\circ f_2
+	\end{equation}
+\end{lemming}
+\begin{demonstration}
+	Sappiamo che:
+	\begin{itemize}
+		\item $\exists \funz{F}{X\times I}{Y}$ continua tale che $\mvf{F}{x}{0}=f_1\left(x\right),\ \mvf{F}{x}{1}=f_2\left(x\right)\ \forall x\in X$. 
+		\item $\exists \funz{G}{Y\times I}{Z}$ continua tale che $\mvf{G}{y}{0}=g_1\left(y\right),\ \mvf{G}{y}{1}=g_2\left(y\right)\ \forall y\in Y$.
+	\end{itemize}
+Sia $\funz{H}{X\times I}{Z}$ data da $\mvf{H}{x}{t}=\mvf{G}{\mvf{F}{x}{t}}{t}$.
+\begin{itemize}
+	\item $H$ è continua perché composizione di funzioni continue.
+	\item $\mvf{H}{x}{0}=\mvf{G}{\mvf{F}{x}{0}}{0}=\mvf{G}{f_1\left(x\right)}{0}=g_1\left(f_1\left(x\right)\right)\ \forall x\in X$
+	\item $\mvf{H}{x}{1}=\mvf{G}{\mvf{F}{x}{1}}{1}=\mvf{G}{f_2\left(x\right)}{1}=g_2\left(f_2\left(x\right)\right)\ \forall x\in X$
+\end{itemize}
+Allora $H$ è l'omotopia cercata.
 \end{demonstration}
