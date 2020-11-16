@@ -434,3 +434,143 @@ L'importanza della definizione risiede nel fatto che non si chiede che esista un
 			X=f^{-1}(A_1) \cup	\dots \cup f^{-1}(A_n) \implies f(X)\subseteq A_1\cup \dots \cup A_n \implies f(X) \text{ compatto}
 		\end{gather*}
 \end{demonstration}
+Da questo teorema segue che essere compatti è una proprietà topologica.
+
+%LEZ 09
+
+\begin{theorema}
+	L'intervallo $[0,\ 1]\subseteq\realset$ con la topologia euclidea è compatto.
+\end{theorema}
+\begin{demonstration}
+	Sia $\mathcal{A}=\{ A_i\}\}_{i\in I}$un ricoprimento aperto di $[0,\ 1]$ con $A_i$ aperti in $\realset$, quindi $\displaystyle [0,\ 1]\subseteq\union_{i\in I}A_i$.\newline 
+	Sia $X=\{ t\in\realset \mid [0,t] \text{ è coperto da un numero finito di } A_i \}$. Mostriamo che non è vuoto
+		\begin{gather*}
+			t=0, [0,\ 0]=\{0\}\} \subseteq A_{i=0} \implies 0\in X\implies X\neq\emptyset
+		\end{gather*}
+	Siccome $X$ non è vuoto per la completezza dei reali ne posso considerare l'estremo superiore $b=\sup X$. Ci sono due casi: $b>1$  e $b\leq 1$, dimostriamo che il primo è possibile e che il secondo è assurdo sfruttando le proprietà dell'estremo superiore:
+		\begin{itemize}
+			\item $b>1 \implies \exists t\in X \colon 1<t<b \implies [0,\ 1]\subseteq [0,\ t] \subseteq A_1\cup \dots \cup A_n$
+			\item $b\leq 1 \implies b\in [0,\ 1] \implies \exists A_0\in\mathcal{A} \colon b\in A_0$, visto che $\mathcal{A}$ è un ricoprimento aperto $A_0$ è aperto, dunque contiene $b$ con tutto un suo intorno, ovvero \\ $\exists \delta >0 \colon B_\delta (b)=(b-\delta, \ b+\delta )\subseteq A_0$. Mostriamo ora che $A_0$ non copre solo $[0,\ b]$ ma va oltre, quindi si ottiene l'assurdo che $b\neq\sup X$. Sia dunque $0<h<\delta$, allora 
+				\begin{gather*}
+					[0,\b+h]=[0,\ t]\cup [t,\ b+h]\subseteq \underbrace{A_1\cup\dots\cup A_n}_{t\in X}\cup \underbrace{A_0}_{B_\delta (b)\subseteq A_0}
+				\end{gather*}	
+			Quindi $b+h$ è coperto da un numero finito di aperti, il che implica che $b+h\in X$, il che è assurdo perché $b=\sup X$.
+		\end{itemize}
+\end{demonstration}
+
+Notiamo che questo teorema implica che un intervallo $[a,\ b]\subseteq\realset$ è compatto, infatti è omeomorfo a $[0,\ 1]$ e la compattezza è una proprietà topologica. \newline
+Vediamo ora un esempio di spazio compatto che non abbia la topologia euclidea.
+\begin{example}
+	Uno spazio $X$ con la topologia cofinita è compatto.\newline 
+	Ricordiamo che gli aperti nella topologia cofinita sono i sottoinsiemi il cui complementare è finito, quindi un ricoprimento aperto sarà della forma:
+		\begin{gather*}
+			\mathcal{A}=\{A_i\}, \ A_0=X\setminus\{x_1,\dots,x_n\}			
+		\end{gather*}
+	Si considerino gli $A_i$ che contengano i punti $x_i$ che non sono in $A_0$, ovvero:
+		\begin{gather*}
+			A_i\in\mathcal{A}\colon x_i\in A_i\implies X=A_0\cup A_1\cup A_n
+		\end{gather*}
+\end{example}
+
+\begin{observe}
+Notiamo che se $X$ è finito allora $X$ è compatto per qualsiasi topologia, in quanto se la sua cardinalità è finita allora lo sarà anche quella del suo insieme delle parti, dai cui elementi scelgo gli aperti di una topologia. Dunque i casi interessanti di spazi compatti sono quelli il cui insieme di sostegno non è finito.\newline
+Inoltre se $X$ ha la topologia discreta vale anche il viceversa ovvero
+	\begin{gather*}
+		X \text{ top. discreta } \implies \left( X \text{ compatto } \iff X \text{ finito}\right)
+	\end{gather*}
+Sia $\mathcal{A}=\left\{ A_x\right\}_{x\in X}, \ A_x\coloneqq \{x\}$, che è aperto in quanto $X$ ha la topologia discreta. Siccome $X$ è compatto allora esiste un sottoricoprimento finito, ovvero un numero finito di aperti di $\mathcal{A}$ che lo ricopra, ossia $X=\{x_1\}\cup\{x_2\}\cup\dots\{x_n\}\implies X$ finito.
+\end{observe}
+
+\begin{theorema}\textsc{Manetti 4.41.1} \label{chiuso in compatto}\\
+	Un chiuso in un compatto è un compatto, ovvero se $X$ è uno spazio topologico compatto, $C\subseteq X$ chiuso allora $C$ è compatto.
+\end{theorema}
+\begin{demonstration}
+	Sia $\mathcal{A}=\{A_i \}_{i\in I}$ un ricoprimento di $X$, sia $C\subseteq X$ chiuso, allora $A\coloneqq X\setminus C$ è aperto in $X$.\newline
+	Sia $\mathcal{A}'=\{A_i, A\}$ ricoprimento aperto di $X$. Siccome $X$ è compatto esiste un suo sottoricoprimento finito 
+		\begin{gather*}
+			X=A_1\cup\dots\cup A_n\cup A \implies C=X\setminus A=A_1\cup\dots\cup A_n
+		\end{gather*}
+	ovvero $C$ è compatto.
+\end{demonstration}
+
+\begin{observe}\textsc{Manetti, 4.41.2}
+	L'unione finita di compatti è un compatto, ovvero se $K_1,\dots,K_n$ sono compatti allora $K=K_1\cup\dots\cup K_n$ è compatto, infatti basta prendere l'unione dei sottoricoprimenti finiti.
+\end{observe}
+
+Vediamo ora che relazione c'è fra le due proprietà topologiche di essere uno spazio $T_2$ e compatto.
+\begin{theorema}\textsc{Manetti, 4.48}\\
+	Un compatto in un Hausdorff è chiuso, ovvero se $X$ è di Hausdorff, $K\subseteq X$ è compatto allora $K$ è chiuso.
+\end{theorema}
+\begin{demonstration}
+	Per dimostrare che $K$ è chiuso mostriamo che il suo complementare è aperto, ovvero che è intorno di ogni suo punto, in modo tale da poter usare agilmente l'essere $T_2$.
+		\begin{gather*}
+			K \text{ chiuso } \iff X\setminus K \text{ aperto } \iff \exists A\subseteq X\setminus K \text{ aperto } \colon x_0\in A \\
+			A\subseteq X\setminus K \iff A\cap K=\emptyset
+		\end{gather*}
+	Per poter sfruttare che $X$ è $T_2$ scriviamo $A$ come intorno di $x_=$ e $K$ come intorno di $y$:
+		\begin{gather*}
+			x_0\in X\setminus K, y\in K \stackrel{!}{\implies} x\neq y\implies \exists U_y\in I(x_0), \ \exists V_y\in I(y) \colon U_y\cap V_y=\emptyset \\
+			\text{Sia } V=\union_{y\in K}V_y \implies V\supseteq K \stackrel{!!}{\implies} V=V_{y_1}\cup\dots\cup V_{y_n} \\
+			\text{Sia } U=U_{y_1}\cap\dots\cap U_{y_n} \in I(x_0)\\
+			\implies V_{y_i}\cap U_{y_i}=\emptyset \implies V\cap K=\emptyset \implies U\subseteq X\setminus K
+		\end{gather*}
+	dove (!) indica che $X$ è $T_2$ e (!!) che $K$ è compatto.
+\end{demonstration}
+
+\begin{theorema}\textsc{Manetti, 4.42}\\
+	Un sottospazio $K\subseteq \realset$ è compatto $\iff K$ chiuso e limitato.
+\end{theorema}
+\begin{demonstration}
+	$\impliesdx)$ Siccome $\realset$ è $T_2$ e $K$ è compatto allora per il teorema precedente $K$ è chiuso.\newline
+	Per vedere che è limitato consideriamo un ricoprimento aperto $\mathcla{A}=\left\{ (-n,\ n)\cap K\right\}_{n\in\naturalset}$ di $K$. Siccome è compatto allora esiste un sottoricoprimento finito, ovvero:
+	\begin{gather*}
+		K\subseteq (-n_1,\ n_1)\cup\dots\cup(-n_m,\ n_m) \implies K\subseteq (-M,\ M), \ M\coloneqq \max m_i
+	\end{gather*}
+	quindi $K$ è limitato.
+	$\impliessx )$ $K$ è limitato, quindi $K\subseteq [-n, \ n]$, che è compatto e $K$ è chiuso per ipotesi, dunque per il teorema \ref{chiuso in compatto} è compatto.
+\end{demonstration}
+\begin{observe}
+	Da notare che il teorema precedente non afferma he gli unici compatti di $\realset$ sono gli intervalli chiusi e limitati, ma anche una loro unione finita potrebbe esserlo.
+\end{observe}
+
+\begin{theorema} \textsc{Manetti, 4.43} \label{weierstrass} \\
+	Sia $\funz f X \realset$ con $X$ compatto e $\realset$ con la topologia euclidea. Se $f$ è continua allora ammette massimo e minimo.
+\end{theorema}
+\begin{demonstration}
+	$f$ continua e $X$ compatto $\implies f(X)$ compatto, e per il teorema precedente ciò equivale al fatto che $f(X)$ è chiuso e limitato.
+	\begin{equation*}
+		\left.
+		\begin{array}{lcl}
+			f\left(x\right)\text{ limitata}&\implies& \sup \left\{f\left(x\right)\right\}<+\infty\\
+			f\left(x\right)\text{ chiusa}&\implies& \sup \left\{f\left(x\right)\right\}=\max \left\{f\left(x\right)\right\}\\
+		\end{array}
+		\right\}
+		\implies f\left(x\right)\text{ ammette massimo.}
+	\end{equation*}
+	Analogamente per il minimo.
+\end{demonstration}
+
+\begin{observe}
+	Per poter parlare di massimo e minimo c'è bisogno di n ordinamento sul codominio, mentre il dominio $X$ potrebbe anche non averne uno!
+\end{observe}
+
+\begin{lemming}\textsc{Tube lemma} \label{tube lemma}\\
+	
+	
+	
+\end{lemming}
+\begin{demonstration}
+	
+	
+\end{demonstration}
+\begin{theorema}\textsc{Manetti, 4.49.2} \label{prodotto compatti}\\
+	$X,Y$ compatti $\iff X\times \y$ è compatto.
+\end{theorema}
+\begin{demonstration}
+	$\impliessx )$ Si considerino le proiezioni, che sono funzioni continue. Essendo $X\times Y$ compatto allora le immagini delle proiezioni saranno compatte, ed essendo le proiezioni suriettive allora $X,Y$ sono compatti. \newline
+	$\impliesdx )$ Sia $\mathcal{A}=\{A_i\}$ un ricoprimento aperto di $X\times Y$, cerchiamo un sottoricoprimento finito.\newline
+	Per sfruttare la compattezza di $Y$ notiamo che $Y\cong \{x\}\times Y\subseteq A_{x_1}\cup\dots\cup A_{x_n}=A_x$, che possiamo pensare come sottoricoprimento "verticale" finito. Notiamo inoltre che gli $A_{x_i}$ dipendono dalla $\{x\}$ scelta.\newline
+	Per il Tube Lemma dimostrato sopra allora 
+	
+	
+\end{demonstration}
