@@ -394,3 +394,43 @@ Vediamo ora qualche proprietà delle componenti connesse, in particolare che son
 
 
 		\section{Compattezza}
+		
+\begin{define}
+	Sia $X$ uno spazio topologico. Un \textbf{ricoprimento aperto} di $X$ è una famiglia $\mathcal{A}=\{A_i \}_{i\in I}$ di aperti di $X$ tali che $X=\union_{i\in I} A_i$. \newline
+	Un \textbf{sottoricoprimento} $\mathcal{B}$ di un ricoprimento aperto $\mathcal{A}$ è una famiglia di aperti di $\mathcal{A}$ la cui unione è ancora tutto $X$.
+\end{define}		
+
+\begin{examples} \textsc{ricoprimenti aperti}
+	\begin{itemize}
+		\item $\displaystyle \realset=(-\infty ,\ 2)\cup(0,\ +\infty)$ è un ricoprimento aperto
+		\item $\displaystyle \realset =\union_{n\in\naturalset}(n,\ -n)$ è un ricoprimento aperto
+		\item $\displaystyle \realset=\union_{p \text{ primo}}(-p,p)$ è un ricoprimento aperto
+	\end{itemize}
+\end{examples}
+
+\begin{define} \textsc{ricoprimento aperto}\\
+	Uno spazio topologico $X$ si dice \textbf{compatto} se dato un qualsiasi ricoprimento aperto $\mathcal{A}$ si può sempre estrarre un sottoricoprimento \textit{finito} $\mathcal{B}$.
+\end{define}
+L'importanza della definizione risiede nel fatto che non si chiede che esista un ricoprimento $\mathcal{A}$ finito, infatti basterebbe banalmente $X$ stesso che è aperto, bensì che da $\mathcal{A}$ si possa sempre estrarre un numero finito di aperti che ricopra ancora $X$.
+
+\begin{examples} \textsc{spazi non compatti}\\
+	\begin{itemize}
+		\item $\realset$ con la topologia euclidea: si consideri il ricoprimento aperto $\displaystyle \realset=(-\infty , 2)\cup(0,+\infty)$, esso non ammette sottoricoprimento finito.
+		\item Gli intervalli aperti o semiaperti della forma $[a,\ b)$ hanno come ricoprimento aperto $\mathcal{A}=\left\{ \left[ a, \ b-\frac{1}{n}\right) \right\}$ che non ammette un sottoricoprimento finito.
+	\end{itemize}
+\end{examples}
+
+\begin{theorema}
+	L'immagine continua di un compatto è un compatto, ovvero dati $X,Y$ spazi toplogici, $\funz f X Y$ continua, allora
+		\begin{gather*}
+			X \text{ comaptto } \implies f(X) \text{ compatto}
+		\end{gather*}
+\end{theorema}
+\begin{demonstration}
+	Si considera un ricoprimento aperto di $f(X)$ e se ne vuole trovare un sottoricoprimento finito tramite le controimmagini, sfruttando così la compattezza di $X$. \newline
+	Sia  $\mathcal{A}=\{A_i\}$ ricomprimanto di $f(X)$, allora $\forall i\in I, A_i\subseteq Y$ aperto e $\displaystyle \union_{i\in I}A_i \supseteq f(X)$. \newline
+	Si considerino ora le controimmagini, che saranno aperte perché $f$ è continua:\\ $\mathcal{B}=\left\{f^{-1}(A_i)\right\}$ è un ricoprimento aperto di $X$. Tuttavia $X$ è compatto, quindi posso estrarre un sottoricoprimento finito 
+		\begin{gather*}
+			X=f^{-1}(A_1) \cup	\dots \cup f^{-1}(A_n) \implies f(X)\subseteq A_1\cup \dots \cup A_n \implies f(X) \text{ compatto}
+		\end{gather*}
+\end{demonstration}
