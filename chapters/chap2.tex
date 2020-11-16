@@ -36,12 +36,12 @@ $1\implies2)$ $A$ aperto, $B$ aperto $\implies A$ chiuso perché $A=\mathcal{C}X
 \begin{observe}
 	Il lemma \ref{sconnesso} \textsc{(Manetti, 4.2)} ci dice che è sufficiente trovare solo due aperti (o chiusi) che soddisfano la condizione di cui sopra per affermare la sconnessione. Viceversa, per dimostrare la connessione, dobbiamo dimostrare che per ogni coppia di aperti (o chiusi) non vuoti, la cui unione è $X$, essi non siano disgiunti.
 \end{observe}
-\begin{examples} Esempi di spazi topologici \textit{sconnessi} in topologia Euclidea.
+\begin{example} Esempi di spazi topologici \textit{sconnessi} in topologia Euclidea.
 	\begin{itemize}
 		\item $X=\realset\setminus\left\{0\right\}=\left(-\infty,\ 0\right)\cup \left(0,\ +\infty\right)$
 		\item $X=\left[0,\ 1\right]\cup \left(2,\ 3\right)$
 	\end{itemize}
-\end{examples}
+\end{example}
 \begin{lemming}\textsc{(Manetti, 4.4)}\\
 Sia $X$ spazio topologico e $A\subseteq X$ con $A$ aperto e chiuso. Sia $Y\subseteq X,\ Y$ \textit{connesso}. Allora $Y\cap A=\emptyset$ (cioè $Y\subseteq Y\setminus A$) oppure $Y\subseteq A$. 
 \end{lemming}
@@ -174,7 +174,7 @@ In $\realset^n$, un \textbf{segmento}\index{segmento} $\overline{PQ}$ è la comb
 		\exists P \in Y\ \colon \forall Q\in Y\quad \overline{PQ}\subseteq Y
 	\end{equation}
 \end{define}
-\begin{examples}~{}
+\begin{example}~{}
 \begin{itemize}
 	\item Gli intervalli aperti e semiaperti sono \textbf{c.p.a}, dunque sono \textit{connessi}: l'arco $\alpha$ è banalmente il segmento pari all'intervallo aperto.
 	\item Preso $X\subseteq\realset^n$ \textit{convesso}, qualunque segmento è anche per costruzione un arco: $X$ è anche \textbf{c.p.a} e dunque \textit{connesso}.
@@ -182,7 +182,7 @@ In $\realset^n$, un \textbf{segmento}\index{segmento} $\overline{PQ}$ è la comb
 	\item Preso $X\subseteq\realset^n$ \textit{stellato} per $P\in X$, qualunque segmento con $P$ è anche per costruzione un arco: $X$ è anche \textbf{c.p.a} per l'osservazione \ref{giunzionecpa} e dunque {connesso}.
 	\item Ogni insieme \textit{convesso} è anche \textit{stellato} per $P$, basta fissare un qualunque punto come nostro $P$. In generale, un insieme è convesso se e solo se è stellato per ogni suo punto.
 \end{itemize}
-\end{examples}
+\end{example}
 %RICKROLLED
 Vediamo ora che conseguenze hanno questi teoremi in $\realset$ con la topologia euclidea.
 \begin{theorema}
@@ -252,6 +252,148 @@ Sia $I\subseteq\realset$ e $U\subseteq\realset^n$, con $n\geq 2$. Se $I,U$ sono 
 	\end{gather*}
 	Dimostriamo ora che non è vuota, infatti siccome $Z$ non è vuoto ed è contenuto nell'unione ci sarà un connesso per cui l'intersezione non è vuota:
 		\begin{gather*}
-			Z\neq\emptyset, \ Z\subseteq \union_{i\in I}X_i \Rightarrow \exists i_0 \ \colon X_{i_0}\cap Z\neq \emptyset		
-		\end{gather*}	
+			Z\neq\emptyset, \ Z\subseteq \union_{i\in I}X_i \Rightarrow \exists i_0 \ \colon X_{i_0}\cap Z\neq \emptyset	\\
+			\text{$X_{i_0}$ è connesso } \Rightarrow X_{i_0}\cap Z=X_{i_0} \Rightarrow X_{i_0}\subseteq Z \\
+			\text{Siccome } \inter_{i\in I}X_i\neq\emptyset \Rightarrow \exists x\in\inter_{i\in I}X_i \Rightarrow x\in X_{i_0}\subseteq Z \Rightarrow x\in Z	\\
+			\text{Siccome } x\in\inter_{i\in I}X_i$ e $x\in Z \Rightarrow \forall i\in I, \ X_i\cap Z\neq\emptyset
+		\end{gather*}
+	Quindi per $\forall i, \ X_i\subseteq Z \Rightarrow Y\subseteq Z \Rightarrow Y=Z$, quindi $Y$ è connesso perché l'unico aperto e chiuso non vuoto è banale ($Y$).
 \end{demonstration}
+
+\begin{theorema}~{}\label{prodotto connessi}
+	$X, Y$ sono spazi topologici connessi $\iff X\times Y$ è connesso.	
+\end{theorema}
+\begin{demonstration}
+	$\impliessx$ Si sfrutta la continuità delle proiezioni e che l'immagine continua di un connesos è connessa:
+		\begin{gather*}
+			\funz p {X\times Y} X \text{continua e suriettiva } \Rightarrow p(X)=X \text{ connesso} \\
+			\funz q {X\times Y} Y \text{continua e suriettiva } \Rightarrow q(Y)=Y \text{ connesso}	
+		\end{gather*}	
+	$\impliesdx$ Si vuole sfruttare il teorema sull'unione di connessi, prestando attenzione che la loro intersezione non sia vuota, quindi si scrive il prodotto come unione di connessi già noti:
+	$X\times Y=\union_{y\in Y}X\times\{y\}$, infatti $X\times\{y\}\cong X$ che per ipotesi è connesso , tuttavia $\inter_{y\in Y}X\times\{y\}=\emptyset$ !\newline
+	Cerchiamo dunque di unire un insieme in modo tale che l'intersezione non sia vuota: sia $x_0\in X$ e $Y_{x_0}=\{x_0\}\times Y$ e poniamo $X_y=X\times\{y\}$ e si ha quanto voluto:
+		\begin{gather*}
+			X\times Y=\union_{y\in Y}X_y \cup Y_{x_0} \text{ e } X_y\cap Y_{x_0}=(x_0,y)\\
+			\Rightarrow \inter_{y\in Y}\left( X_y  \cup Y_{x_0}\right)\neq\emptyset		
+		\end{gather*}
+	Dunque $X\times Y$ è unione di connessi la cui intersezione non è vuota, quindi per il teorema precedente è connesso.
+%WELP COME CITO I TEOREMI%
+\end{demonstration}
+
+Approfondiamo ora la differenza fra essere spazio connesso o cpa mostrando esempi di un tipo ma non dell'altro. Prima però dimostreremo un teorema sulla caratterizzazione di un insieme denso che ci tornerà utile.
+\begin{theorema}
+	Sia $X$ uno spazio topologico e $A\subseteq X$ un suo sottoinsieme, allora
+		\begin{gather*}
+			A \text{ è denso }\iff \forall U\subseteq X \text{ aperto e } \ U\neq\epmtyset, \ \ U\cap A\neq\emptyset	
+		\end{gather*}
+\end{theorema}
+\begin{demonstration}
+	$\impliesdx$ Se $A$ è denso allora $\overline{A}=X$. Supponiamo che $\exists V$ aperto $\colon V\cap A=\emptyset$. Siccome $V$ è aperto allora $X\setminus V$ è chiuso, inoltre $V\cap A=\emptyset$, quindi $A\subseteq X\setminus V$. Essendo $A$ contenuto in un chiuso allora lo sarà anche la sua chiusura, siccome è il più piccolo chiuso che lo contiene:
+		\begin{gather*}
+			\overline{A}=X\subseteq X\setminus V \Rightarrow V=\emptyset
+		\end{gather*}
+	Ne segue che l'unico aperto che non interseca $A$ è l'insieme vuoto. \newline 
+	$\impliessx$ Consideriamo un chiuso $K\supseteq A$. Siccome è chiuso allora il suo complementare $X\setminus K$ è aperto. Per ipotesi dunque si ha che $V\cap A\neq \emptyset$ oppure $V=\emptyset$, passando al complementare si ottiene che:
+		\begin{gather*}
+			A\subseteq K \Rightarrow X\setminus K \subseteq X\setminus A \Rightarrow V\subseteq X\setminus A \Rightarrow V\cap A=\emptyset \Rightarrow V=\emptyset \Rightarrow K=X \Rightarrow \overline{A}=X
+		\end{gather*}
+	L'ultima implicazione è dovuta al fatto che ogni chiuso che contiene $A$ si è dimostrato essere solo $X$ per cui esso sarà la sua chiusura.
+\end{demonstration}
+
+\begin{theorema}
+	Sia $X$ uno spazio toplogico e $Y\subseteq X$ connesso, allora 
+		\begin{equation*}
+			\forall W \colon Y\subseteq W \subseteq \overline{Y} \Rightarrow W \text{ connesso}
+		\end{equation*}
+	In particolare la chiusura di un connesso è connessa.
+\end{theorema}
+\begin{demonstration}
+	Per dimostrare che $W$ è connesso si considera un suo sottinsieme $Z\subseteq W$ aperto, chiuso e non vuoto e si mostra che è pari a $W$
+		\begin{gather*}
+			Z\subseteq W \text{ aperto } \Rightarrow \esists A\subseteq X \text{ aperto } \colon Z=W\cap A \\
+			Z\subseteq W \text{ chiuso } \Rightarrow \esists C\subseteq X \text{ chiuso } \colon Z=W\cap C
+		\end{gather*}
+	Si vuole sfruttare il fatto che $Y$ è connesso:
+		\begin{gather*}
+			Z\cap Y=A\cap W\cap Y \stackrel{!}{=} A\cap Y \text{ aperto in Y}
+			Z\cap Y=C\cap W\cap Y \stackrel{!}{=} C\cap Y \text{ aperto in Y}			
+		\end{gather*}
+	dove il passaggio indicato con (!) è dovuto al fatto che $Y\subseteq W$. Per poter sfruttare la connessione di $Y$ e dedurre che $Z\cap Y=Y$ dobbiamo prima provare che tale intersezione non è vuota e per farlo sfruttiamo il teorema precedente:
+		\begin{gather*}
+			Y \text{ denso in W, infatti  } \mathcal{cl}_W(Y)=\mathcal{cl}_X(Y)\cap W=\overline{Y}\cap W=W\\
+			Z \text{ aperto in } W \Rightarrow Z\cap Y \neq \emptyset \Rightarrow Z\cap Y=Y \Rightarrow Y\subseteq Z
+		\end{gather*}
+	Tuttavia $Y$ è denso in $W$ e $Z$ è chiuso in $W$ che contiene $Y$, quindi 
+		\begin{equation*}
+			\mathcal{cl}_W(Y)=W\subseteq Z \Rightarrow W=Z \Rightarrow W \text{ connesso}
+		\end{equation*}
+\end{demonstration}
+
+Vediamo ora degli esempi di spazi connessi ma non c.p.a.
+\begin{example}~{seno del topologo}
+	Sia $Y\subseteq \realset^2$ con la topologia euclidea e $Y=\left\{ \left( x, \frac{1}{x} \right) \mid x>0 \right\}$, detto anche seno del topologo. Esso è c.p.a. perché per connettere due punti basta percorrere la curva stessa del grafico. Quindi $Y$ è connesso, dunque per teorema 27 $\overline{Y}$ è connesso. 
+	%DA AGGIUSTARE IL RIFERIMENTO AL TEOREMA, 27 SECONDO I MIEI APPUNTI
+	Tuttavia $\overline{Y}$ non è c.p.a. in quanto $\overline{Y}=Y\cup \left\{ (0,y) \mid -1\leq y \geq 1 \right\}$ ed i punti sull'asse delle y  e sulla curva $Y$ non si possono connettere tramite un arco continuo.
+\end{example}
+\begin{example}~{la pulce ed il pettine}
+	Si consideri il "pettine" come il seguente sottospazio di $\realset ^2$ con la topologia euclidea:
+		\begin{equation*}
+			Y= \left\{ (x,0) \mid 0\leq x\geq 1 \right\} \cup \union_{r\in\rationalset, 0\leq r\geq 1} \left\{ (r,y) \mid 0\leq y \leq 1 \right\}
+		\end{equation*}
+	Presi due punti su $Y$ si possono collegare fra loro scendendo alla base del pettine $[0,1]$ e risalendo sui "denti" di ascissa razionale. Quindi $Y$ è c.p.a., allora $Y$ è connesso e $\overline{Y}=[0,1]\times [0,1]$.\newline 
+	Si consideri ora la "pulce", ovvero un punto $P$ di ascissa irrazionale ed ordinata 1, ad esempio $P=\left(\frac{\sqrt{2}}{2}, 1\right)$. Sia $Z=Y\cap P$, per il teorema precedente segue che $Z$ è connesso, infatti:
+		\begin{gather*}
+			Y\subseteq Z \subseteq \overline{Y}=[0,1]\times [0,1]	
+		\end{gather*}
+	Tuttavia $Z$ non è c.p.a., infatti preso un cammino $\funz \alpha {[0,1]} {Z\subseteq \realset^2}$ tale che $\alpha(t)= \left( x(t), y(t)\right)$ con $\alpha (0)=(0,0)$ e $\alpha(1)=P$, per continuità $y(t)\neq 0 \Rightarrow x(t)\in\rationalset$, che non è vero per $P$ che ha ascissa irrazionale, dunque non esiste un cammino continuo che colleghi l'origine e $P$. dunque $Z$ non è c.p.a.
+\end{example}
+
+\begin{observe}
+	L'immagine continua di uno spazio c.p.a. è c.p.a., ovvero dato $X$ c.p.a.,$\funz f X Y$ continua, allora $f(X)$ è c.p.a.\newline
+	Dati $a,b\in X$ si vuole trovare un cammino fra $f(a)$ e $f(b)$ in $f(X)$. Si consideri la composizione seguente fra il cammino $\alpha$ fra $a$ e $b$ con la funzione $f$ stessa. Siccome ha come dominio $[0,1]$ ed è continua essendo composizione di funzione continue è in effetti un cammino fra le due immagini:
+		\begin{equation*}
+			f\circ\alpha [0,1]\stackrel{\alpha}{rightarrow}X\stackrel{f}{rightarrow}Y
+		\end{equation*}
+\end{observe}
+
+L'intuizione geometrica che ci ha portati alla definizione di connessione è stata "di quanti pezzi è fatto uno spazio?". Se uno spazio è connesso è fatto di un solo "pezzo", cerchiamo ora di definire cosa sono i "pezzi" e come sono fatti.
+\begin{define}
+	Sia $X$ uno spazio topologico e $C\subseteq X$. Si dice che $C$ è una \textbf{componente connessa} se 
+		\begin{itemize}
+			\item $C$ è connesso
+			\item $C$ è massimale, ovvero $C\subseteq A$, $A$ connesso $\Rightarrow C=A$
+		\end{itemize}
+	Scelto $x\in X$ si può definire la \textbf{componente connessa di un punto}, ovvero $C(x)=\union \{C \mid C\text{connesso}, x\in C\}$
+\end{define}
+La componente connessa di un punto è effettivamente una componente connessa, infatti è connessa perché unione di connessi con intersezione non vuota ($x$ stesso) e se $C(x)\subseteq A \Rightarrow x\in A \Rightarrow A\subseteq C(x) \Rightarrow A=C(x)$.\newline
+Vediamo ora qualche proprietà delle componenti connesse, in particolare che sono chiuse e formano una partizione.
+\begin{theorema}
+	Sia $X$ uno spazio topologico, allora
+		\begin{enumerate}
+			\item le componenti connesse sono chiuse
+			\item le componenti connesse formano una partizione di $X$
+		\end{enumerate}
+\end{theorema}
+\begin{demonstration}
+	~{}
+	\begin{enumerate}[label=\Roman*]
+		\item Sia$C$ una componente connessa. Per ogni insieme vale che $C\subseteq\overline{C}$, ma $C$ è connesso, quindi $\overline{C}$ è connesso. Siccome $C$ è massimale allora $C=\overline{C}$, ovvero è chiuso.
+		\item Per dimostrare che le componenti connesse formano una partizione di $X$ dobbiamo mostrare che $X$ è unione disgiunta delle componenti connesse. Prima di tutto dimostriamo che sono un ricoprimento
+			\begin{equation*}
+				\forall x\in X, x\in C(x) \Rightarrow X=\union_{x\in X}C(x)
+			\end{equation*}
+		Mostriamo ora che sono disgiunti prendendo due componenti connesse $C$ e $D$ ed analizzando il caso in cui la loro intersezione non è vuota, in particolare sfruttiamo la massimalità:
+		\begin{gather*}
+			C\cap D\neq\emptyset \Rightarrow C\cup D \text{ connesso } \Rightarrow C=C\cup D=D
+		\end{gather*}
+	\end{enumerate}
+\end{demonstration}
+
+\begin{example}
+	Sia $\rationalset\subseteq\realset$ con la tpoplogia euclidea. La componenti connesse di $\rationalset$ sono i punti, quindi i punti sono chiusi in $\rationalset$, il che è una riconferma dato che sappiamo che $\rationalset$ è Hausdorff. Tuttavia non possono essere aperti altrimenti avremmo la topologia discreta!\newline
+	Inoltre siccome $\rationalset$ ha più di una componente connessa significa che non è connesso! Invece $\realset$ è connesso grazie all'assimoa di completezza.
+\end{example}
+
+\begin{observe}
+	Dati due spazi omeomorfi si ha che hanno lo stesso numero di componenti connesse in quanto l'immagine continua di connessi è connessa. Quindi il numero di componenti connesse ci fornisce un criterio per determinare quando due spazi non sono omeomorfi!
+\end{observe}
