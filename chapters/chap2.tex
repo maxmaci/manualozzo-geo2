@@ -420,7 +420,7 @@ L'importanza della definizione risiede nel fatto che non si chiede che esista un
 	\end{itemize}
 \end{examples}
 
-\begin{theorema}
+\begin{theorema}\label{immagine compatto}
 	L'immagine continua di un compatto è un compatto, ovvero dati $X,Y$ spazi toplogici, $\funz f X Y$ continua, allora
 		\begin{gather*}
 			X \text{ comaptto } \implies f(X) \text{ compatto}
@@ -498,7 +498,7 @@ Sia $\mathcal{A}=\left\{ A_x\right\}_{x\in X}, \ A_x\coloneqq \{x\}$, che è ape
 \end{observe}
 
 Vediamo ora che relazione c'è fra le due proprietà topologiche di essere uno spazio $T_2$ e compatto.
-\begin{theorema}\textsc{Manetti, 4.48}\\
+\begin{theorema}\textsc{Manetti, 4.48} \label{compatto in hausdorff chiuso} \\ 
 	Un compatto in un Hausdorff è chiuso, ovvero se $X$ è di Hausdorff, $K\subseteq X$ è compatto allora $K$ è chiuso.
 \end{theorema}
 \begin{demonstration}
@@ -517,17 +517,17 @@ Vediamo ora che relazione c'è fra le due proprietà topologiche di essere uno s
 	dove (!) indica che $X$ è $T_2$ e (!!) che $K$ è compatto.
 \end{demonstration}
 
-\begin{theorema}\textsc{Manetti, 4.42}\\
+\begin{theorema}\textsc{Manetti, 4.42} \label{compatto chiuso e limitato R}\\
 	Un sottospazio $K\subseteq \realset$ è compatto $\iff K$ chiuso e limitato.
 \end{theorema}
 \begin{demonstration}
-	$\impliesdx)$ Siccome $\realset$ è $T_2$ e $K$ è compatto allora per il teorema precedente $K$ è chiuso.\newline
-	Per vedere che è limitato consideriamo un ricoprimento aperto $\mathcla{A}=\left\{ (-n,\ n)\cap K\right\}_{n\in\naturalset}$ di $K$. Siccome è compatto allora esiste un sottoricoprimento finito, ovvero:
+	$\impliesdx$ Siccome $\realset$ è $T_2$ e $K$ è compatto allora per il teorema precedente $K$ è chiuso.\newline
+	Per vedere che è limitato consideriamo un ricoprimento aperto $\mathcal{A}=\left\{ (-n,\ n)\cap K\right\}_{n\in\naturalset}$ di $K$. Siccome è compatto allora esiste un sottoricoprimento finito, ovvero:
 	\begin{gather*}
 		K\subseteq (-n_1,\ n_1)\cup\dots\cup(-n_m,\ n_m) \implies K\subseteq (-M,\ M), \ M\coloneqq \max m_i
 	\end{gather*}
-	quindi $K$ è limitato.
-	$\impliessx )$ $K$ è limitato, quindi $K\subseteq [-n, \ n]$, che è compatto e $K$ è chiuso per ipotesi, dunque per il teorema \ref{chiuso in compatto} è compatto.
+	quindi $K$ è limitato. \newline
+	$\impliessx $ $K$ è limitato, quindi $K\subseteq [-n, \ n]$, che è compatto e $K$ è chiuso per ipotesi, dunque per il teorema \ref{chiuso in compatto} è compatto.
 \end{demonstration}
 \begin{observe}
 	Da notare che il teorema precedente non afferma he gli unici compatti di $\realset$ sono gli intervalli chiusi e limitati, ma anche una loro unione finita potrebbe esserlo.
@@ -554,23 +554,81 @@ Vediamo ora che relazione c'è fra le due proprietà topologiche di essere uno s
 	Per poter parlare di massimo e minimo c'è bisogno di n ordinamento sul codominio, mentre il dominio $X$ potrebbe anche non averne uno!
 \end{observe}
 
+Vogliamo ora vedere come si comporta la compattezza rispetto al prodotto, prima però va dimostrato un lemma che ci tornerà utile nella dimostrazione del teorema.
 \begin{lemming}\textsc{Tube lemma} \label{tube lemma}\\
-	
-	
-	
+	Siano $X,Y$ spazi topologici con $Y$ compatto, $x_0\in X$, $A\subseteq X\times Y\colon A$ aperto e $\{x_0\}\times Y\subseteq A$. Allora $\exists U\subseteq X$ con $x_0\in U$, aperto tale che $\{x_0\}\times Y \subseteq U\times Y \subseteq A$
 \end{lemming}
 \begin{demonstration}
-	
-	
+	$A$ aperto in $\displaystyle X\times Y \implies A=\union_{i\in I}\left( U_i\times V_i \right)$ aperti della base, quindi $\{U_i\times V_i\}$ è un ricoprimento aperto di $\{x_0\}\times Y \cong Y$ compatto, dunque esiste un sottoricoprimento finito $\{x_0\}\times Y\subseteq (U_1\times V_1)	\cup\dots\cup (U_n\times V_n)$. Se necessario si eliminano gli aperti che sono disgiunti da $\{x_0\}\times Y$ e poniamo $U=U_1\cap\dots\cap U_n$, allora
+		\begin{equation*}
+			\{x_0\}\times Y\subseteq U\times Y \subseteq (U_1\times V_1)	\cup\dots\cup (U_n\times V_n) \subseteq A
+		\end{equation*}
 \end{demonstration}
 \begin{theorema}\textsc{Manetti, 4.49.2} \label{prodotto compatti}\\
-	$X,Y$ compatti $\iff X\times \y$ è compatto.
+	$X,Y$ compatti $\iff X\times Y$ è compatto.
 \end{theorema}
 \begin{demonstration}
-	$\impliessx )$ Si considerino le proiezioni, che sono funzioni continue. Essendo $X\times Y$ compatto allora le immagini delle proiezioni saranno compatte, ed essendo le proiezioni suriettive allora $X,Y$ sono compatti. \newline
-	$\impliesdx )$ Sia $\mathcal{A}=\{A_i\}$ un ricoprimento aperto di $X\times Y$, cerchiamo un sottoricoprimento finito.\newline
+	$\impliessx $ Si considerino le proiezioni, che sono funzioni continue. Essendo $X\times Y$ compatto allora le immagini delle proiezioni saranno compatte, ed essendo le proiezioni suriettive allora $X,Y$ sono compatti. \newline
+	$\impliesdx $ Sia $\mathcal{A}=\{A_i\}$ un ricoprimento aperto di $X\times Y$, cerchiamo un sottoricoprimento finito.\newline
 	Per sfruttare la compattezza di $Y$ notiamo che $Y\cong \{x\}\times Y\subseteq A_{x_1}\cup\dots\cup A_{x_n}=A_x$, che possiamo pensare come sottoricoprimento "verticale" finito. Notiamo inoltre che gli $A_{x_i}$ dipendono dalla $\{x\}$ scelta.\newline
 	Per il Tube Lemma dimostrato sopra allora 
-	
-	
+		\begin{gather*}
+			\exists U_x\subseteq X \text{ aperto }\colon \{ x\}\times Y \subseteq U_x\times Y \subseteq A_x=A_{x_1}\cup\dots\cup A_{x_n}
+		\end{gather*}
+	Tuttavia $X$ è compatto, dunque $X=U_{x_1}\cup\dots\cup U_{x_n}$ unione finita, sfruttando le proiezioni si ottiene la tesi:
+		\begin{gather*}
+			X\times Y =p^{-1}(X)=p^{-1}\left( U_{x_1}\cup\dots\cup U_{x_n}\right)= (U_{x_1}\times Y)\cup\dots\cup (U_{x_n}\times Y)\subseteq \\
+			\subseteq \left( A_{x_1 , 1}\cup\dots\cup A_{x_1, n_1}\right) \cup\dots\cup \left( A_{x_m, 1}\cup\dots\cup A_{x_m, n_m} \right)
+		\end{gather*}
+\end{demonstration}
+
+Sfruttiamo ora che il prodotto di compatti è compatto per generalizzare il teorema \ref{compatto chiuso e limitato R} allo spazio $\realset ^n$.
+\begin{theorema}
+	$K\subseteq \realset^n$ compatto $\iff K$ chiuso e limitato.
+\end{theorema}
+\begin{demonstration} ~{} \\
+	$\impliesdx$ $K$ è compatto in $\realset^n$ che è un Hausdorff, quindi $K$ è chiuso per il teorema \ref{compatto in hausdorff chiuso}. Per dimostrare che è limitato  consideriamo un ricoprimento di palle aperte centrate nell'origine e si sfrutta subito che $K$ è compatto
+		\begin{gather*}
+			K\subseteq \union_{n\in\naturalset} B_n(\mathbf{0}) \implies K\subseteq B_{n_1}(\mathbf{0})\cup\dots\cup B_{n_m}(\mathbf{0}) \subseteq B_M (\mathbf{0})
+		\end{gather*}
+	con $M=\max n_i$.\newline
+	$\impliessx$ $K$ è limitato, quindi $K\subseteq [-a,\ a]^n$ che è compatto perché prodotto di compatti, ma $K$ è anche chiuso, quindi per il teorema \ref{chiuso in compatto} è compatto.
+\end{demonstration}
+
+
+%%% DA ATTIVARE CON IL NUOVO MAIN \begin{digression}
+In realtà vale un teorema più generale, che si dimostrerà poi nel corso di Istituzioni di Analisi.\newline
+\textsc{Teorema:} Sia $X$ uno spazio metrico completo, allora $K\subseteq X$ compatto $\iff K$ chiuso e totalmente limitato, ovvero $\forall\epsilon >0, \ K$ è contenuto in un'unione finita di palle di raggio $\epsilon$.\newline 
+In $\realset^n$ vale limitato $\iff$ totalmente limitato, ma ad esempio considerato lo spazio metrico 
+	\begin{gather*}
+		\mathcal{C}\left( [0, \ 1] \right) \coloneqq \left\{ \funz f {[0,\ 1]} \realset \mid f \text{ continua } \right\},  \ \ \text{con } \mvf{d}{f}{g} =\sup_{x\in [0, \ 1]} |f(x)-g(x)|
+	\end{gather*}
+Una palla di centro $\mathbf{0}$ e raggio $1$ quale $B_1(\mathbf{0})=\left\{ \funz f {[0,\ 1]} \realset \mid f \text{ continua }, -1\geq f(x) \leq 1 \ \right\}$ è chiusa e limitata, tuttavia in $	\mathcal{C}\left( [0, \ 1] \right)$ non è compatta.\newline
+
+\begin{theorema} \textsc{Manetti 4. 52} \label{da compatto in T_2 è chiuso} \\
+	Sia $\funz f X Y$ continua con $X$ è compatto e $Y$ $T_2$, \ allora $f$ è chiusa.
+\end{theorema}
+\begin{demonstration}
+	Per dimostrare che $f$ è chiusa consideriamo $C\subseteq X$ chiuso e mostriamo che $f(C)$ è chiuso sfruttando rispettivamente i teoremi \ref{chiuso in compatto}, \ref{immagine compatto} e \ref{compatto in hausdorff chiuso}:
+		\begin{equation*}
+			C\subseteq X \text{ chiuso in compatto } \implies C \text{ compatto } \implies f(C) \text{ compatto in } T_2 \implies f(C) \text{ chiuso}
+		\end{equation*}
+\end{demonstration}
+
+In generale vale il teorema di Kuratowsi-Mròwka, che dice che $Y$ è compatto se e solo se per qualsiasi spazio topologico $X$ la proiezione $\funz {p_X} {X\times Y} X$ è chiusa, ne dimostreremo una versione più debole.
+% LEZ 10
+\begin{theorema} \textsc{Manetti, 4.49.1} \\
+	Siano $X,Y$ spazi topologici con $Y$ compatto, allora la proiezione $\funz p {X\times Y} X$ è chiusa.
+\end{theorema}
+\begin{demonstration}
+	Per dimostrare che $p$ è chiusa mostriamo che preso un $C\subseteq X\times Y$ chiuso allora $p(C)\subseteq X$ è chiuso, ovvero che il suo complementare $X\setminus p(C)$ è intorno di ogni suo punto.\newline
+	Se $p(C)=X$ allora è già chiuso, se invece $p(C)\neq X$ allora $\exists x_0\in X\setminus p(C)$, dimostriamo che quest'ultimo insieme è intorno di $x_0$. Si consideri la fibra di $x_0$:
+		\begin{gather*}
+			p^{-1}(\{x_0\} )=\{x_0\}\times Y \subseteq (X\times Y)\setminus C=A 
+		\end{gather*}
+	con $A$ aperto perché complementare di un chiuso. \newline
+	Si rientra dunque nelle ipotesi del Tube lemma e si ottiene che
+		\begin{gather*}
+			\exists U\subseteq X \text{ aperto } \colon p^{-1}(U)=U\times Y\subseteq A \implies U\cap p(C)=\emptyset \implies x_0\in U\subseteq X\setminus p(C)
+		\end{gather*}
 \end{demonstration}

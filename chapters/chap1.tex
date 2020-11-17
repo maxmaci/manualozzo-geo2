@@ -152,7 +152,7 @@ Ogni spazio metrico ha una \textbf{topologia} $\topo_d$ \textbf{indotta dalla di
 	A\subseteq X \text{ aperto } \left(A\in\topo\right) \text{ se } \forall x\in A,\ \exists \epsilon>0\ \colon B_{\epsilon}\left(x\right)\subseteq A.
 \end{equation*}
 \end{define}
-\begin{example}~{}
+\begin{examples}~{}
 \begin{itemize}
 	\item Su un qualunque insieme $X$ si può definire la \textit{distanza banale}:
 	\begin{equation}
@@ -177,7 +177,7 @@ Ogni spazio metrico ha una \textbf{topologia} $\topo_d$ \textbf{indotta dalla di
 		A\subseteq \realset^n \text{ aperto } \left(A\in\mathcal{E_{ucl}}\right) \text{ se } \forall x\in A,\ \exists \epsilon>0\ \colon B_{\epsilon}\left(x\right)\subseteq A.
 	\end{gather*}
 \end{itemize}
-\end{example}
+\end{examples}
 \begin{attention}
 Non tutte le topologie sono indotte da una distanza! Definiamo la \textbf{topologia dei complementari finiti} sull'insieme $X$ nel modo seguente:
 \begin{gather*}
@@ -246,7 +246,7 @@ Sia $X$ un insieme e $\topo_1$, $\topo_2$ due topologie di $X$. Si dice che $\to
 In modo analogo si dice anche che $\topo_2$ è \textbf{più fine}\index{finezza!più fine} di $\topo_1$.
 \end{define}
 In altre parole, una topologia più fine ha più aperti rispetto a quella confrontata.
-\begin{example}~{}
+\begin{examples}~{}
 \begin{itemize}
 \item La \textit{topologia banale} è la \textit{meno fine} di tutte, dato che ogni topologia contiene $\emptyset$, $X$.
 \item La \textit{topologia discreta} è la \textit{più fine} di tutte, dato che ogni topologia è contenuta in $\setpart{X}$.
@@ -256,7 +256,7 @@ A=\left(-\infty,\ x_1\right)\cup\left(x_1,\ x_2\right)\cup\ldots\cup\left(x_n,\ 
 \end{equation*}
 Per $n$ punti gli $n+1$ intervalli ottenuti sono aperti della topologia euclidea; essendo unione di aperti, anche $A$ è un aperto di $\mathcal{E_{ucl}}$
 \end{itemize}
-\end{example}
+\end{examples}
 \begin{observe}\label{intersezionetopo}
 	Se definiamo due topologie $\topo_1$ e $\topo_2$ sono due topologie di un insieme $X$, l'intersezione $\topo_1\cap\topo_2$ è anch'essa una topologia di $X$ e, per costruzione, è \textit{meno fine} di $\topo_1$ e $\topo_2$.
 \end{observe}
@@ -272,7 +272,7 @@ $A\in\topo\implies\exists B_i\in\basis,\ i\in I\colon A=\union_{i\in I}B_i$.
 \begin{attention}
 La base $\basis$ non è detto che sia una topologia! Ad esempio, le unioni sono aperti della topologia, ma non è detto che siano interni alla base $\basis$.
 \end{attention}
-\begin{example}~{}
+\begin{examples}~{}
 \begin{itemize}
 \item Nella \textit{topologia euclidea} di $\realset^n$ una base è
 \begin{equation}
@@ -293,7 +293,7 @@ Dato $x\in\realset$, esiste sempre una successione $\left\{x_n\right\}\in\ration
 \end{equation*}
 Questa base con estremi razionali ha \textit{infiniti elementi}, ma in \textit{misura minore} rispetto a quella ad estremi reali.
 \end{itemize}
-\end{example}
+\end{examples}
 \begin{theorema}\textsc{Teorema delle basi. (Manetti, 3.7)}\index{teorema!delle basi}\label{teoremabasi}\\
 Sia $X$ un insieme e $\basis\subseteq\setpart{X}$ una famiglia di sottoinsiemi di $X$. $\basis$ è la base di un'\textit{unica} topologia \textit{se e solo se}:
 \begin{enumerate}
@@ -578,13 +578,13 @@ Dimostriamo la continuità dell'inclusione. Se $A$ aperto in $X$, $i^{-1}\left(A
 \begin{observe}
 	Se $A\subseteq Y$ è aperto della topologia di $X$, allora $A$ è aperto in $Y$ poiché $A=A\cap Y$.
 \end{observe}
-\begin{example} Sia $Y=\left[0,\ 1\right]\subset\realset=X$ in topologia Euclidea.
+\begin{examples} Sia $Y=\left[0,\ 1\right]\subset\realset=X$ in topologia Euclidea.
 	\begin{itemize}
 		\item $A=\left(\frac{1}{2},\ 1\right)$ è aperto in $Y$ in quanto è già aperto in $X$.
 		\item $A=\left[\frac{1}{2},\ 1\right]$ è chiuso in $Y$ in quanto è già chiuso in $X$.
 		\item $B=\left(\frac{1}{2},\ 1\right]$ è aperto in $Y$ in quanto si ha, ad esempio, $A=\left(\frac{1}{2},\ \frac{3}{2}\right)\cap Y$.
 	\end{itemize}
-\end{example}
+\end{examples}
 \begin{lemming}\textsc{(Manetti, 3.55)}\\
 Sia $A\subseteq Y\subseteq X$ con $X$ spazio topologico e $Y$ sottospazio topologico. Definiamo:
 \begin{itemize}
