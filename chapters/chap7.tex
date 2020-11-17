@@ -152,9 +152,13 @@ Inoltre, definiamo gli elementi della famiglia di funzioni $\left\{f_t\right\}_{
 \end{equation}
 \end{define}
 \begin{observe}
-Ricordando la definizione di \textit{segmento} (\pageref{segmento}, \autoref{segmento}), la funzione $\funztot{\ }{I}{\overline{PQ}}{t}{tA+\left(1-t\right)B}$ è biunivoca ed, in particolare, è omeomorfismo.
+Ricordando la definizione di \textit{segmento} (\pageref{segmento}, \autoref{segmento}), la funzione:
+\begin{center}
+	\funztot{\ }{I}{\overline{PQ}}{t}{tA+\left(1-t\right)B}
+\end{center}
+È biunivoca ed, in particolare, è omeomorfismo.
 \end{observe}
-\begin{example}
+\begin{example}\label{convessoomotope}
 	Dato un sottospazio $Y\subseteq \realset^n$ \textit{convesso}, allora spazio topologico $X$ e per ogni funzione $\funz{f,\ g}{X}{Y}$ continua, allora $f$ e $g$ sono \textit{omotope}.
 \end{example}
 \begin{demonstration}
@@ -249,8 +253,211 @@ Allora $f\sim h$.
 Sia $\funz{H}{X\times I}{Z}$ data da $\mvf{H}{x}{t}=\mvf{G}{\mvf{F}{x}{t}}{t}$.
 \begin{itemize}
 	\item $H$ è continua perché composizione di funzioni continue.
-	\item $\mvf{H}{x}{0}=\mvf{G}{\mvf{F}{x}{0}}{0}=\mvf{G}{f_1\left(x\right)}{0}=g_1\left(f_1\left(x\right)\right)\ \forall x\in X$
-	\item $\mvf{H}{x}{1}=\mvf{G}{\mvf{F}{x}{1}}{1}=\mvf{G}{f_2\left(x\right)}{1}=g_2\left(f_2\left(x\right)\right)\ \forall x\in X$
+	\item $\mvf{H}{x}{0}=\mvf{G}{\mvf{F}{x}{0}}{0}=\mvf{G}{f_1\left(x\right)}{0}=g_1\left(f_1\left(x\right)\right)\ \forall x\in X$.
+	\item $\mvf{H}{x}{1}=\mvf{G}{\mvf{F}{x}{1}}{1}=\mvf{G}{f_2\left(x\right)}{1}=g_2\left(f_2\left(x\right)\right)\ \forall x\in X$.
 \end{itemize}
 Allora $H$ è l'omotopia cercata.
 \end{demonstration}
+\section{Equivalenza omotopica}
+\begin{define}
+	Siano $X,\ Y$ due spazi topologici. Diciamo che $X$ e $Y$ sono \textbf{omotopicamente equivalenti}\seeonlyindex{omotopicamente equivalenti}{tipo di omotopia}, o che hanno lo stesso \textbf{tipo di omotopia}\index{tipo di omotopia}, se esistono due applicazioni continue:
+	\begin{equation}
+		\funz{f}{X}{Y}\text{ e }\funz{g}{Y}{X}
+	\end{equation}
+Tali che:
+\begin{equation}
+	g\circ f\sim Id_X\text{ e }f\circ g\sim Id_Y
+\end{equation}
+In tal caso $f$ e $g$ si dicono \textbf{equivalenze omotopiche}\index{equivalenze omotopiche}.
+\end{define}
+\begin{observe}~{}
+\begin{enumerate}
+	\item Se $X$ e $Y$ sono \textit{omeomorfi}, allora sono anche \textit{omotopicamente} equivalenti.
+	\item Consideriamo $X=\realset^n$ in topologia Euclidea e $Y=\left\{1\text{ punto}\right\}$. Allora $X$ e $Y$ sono omotopicamente equivalenti.
+\end{enumerate}
+\end{observe}
+\begin{demonstration}
+	\begin{enumerate}[label=\Roman*]
+		\item L'omotopia è una relazione riflessiva, dunque se abbiamo $h=k$ e $h\sim h$, allora si ha $h\sim k$. Nel caso di un isomorfismo, preso $f$ e la sua inversa $g$, possiamo affermare:
+		\begin{equation*}
+			\begin{cases}
+				g\circ f=Id_X\\
+				f\circ g=Id_Y
+			\end{cases}\implies
+		\begin{cases}
+			g\circ f\sim Id_X\\
+			f\circ g\sim Id_Y
+		\end{cases}
+		\end{equation*}
+	\item Consideriamo $\funz{f}{\realset^n}{Y=\left\{1\text{ punto}\right\}}$ e $\funz{g}{Y=\left\{1\text{ punto}\right\}}{\realset^n}$, ponendo $g\left(\text{punto}\right)=\underline{0}$.\\
+	$f$ e $g$ sono \textit{continue}, inoltre:
+	\begin{gather*}
+		\funz{f\circ g}{Y=\left\{1\text{ punto}\right\}}{Y=\left\{1\text{ punto}\right\}}\implies f\circ g= Id_Y\\
+		\funztot{g\circ f}{\realset^n}{\realset^n}{\underline{x}}{\underline{0}}\implies g\circ f=O_{\realset^n} \text{(applicazione nulla)} 
+	\end{gather*}
+Per l'osservazione $1)$ da $f\circ g= Id_Y$ a $f\circ g\sim Id_Y$.\\
+Abbiamo che $g\circ f=O_{\realset^n}$ è omotopa a $Id_{\realset^n}$, poiché $\realset^n$ è \textit{convesso} e due applicazioni continue a valori in $\realset^n$ sono sempre omotope, come dimostrato nell'esempio \ref{convessoomotope}, pag. \pageref{convessoomotope}. Una di queste, ad esempio, è la seguente:
+\begin{equation*}
+\funz{F}{\realset^n\times I}{\realset^n},\ \mvf{F}{\overline{x}}{t}=t\cdot \overline{x}
+\end{equation*}
+\begin{itemize}
+	\item $F$ è continua.
+	\item $\mvf{F}{\overline{x}}{0}=\overline{0}=\left(g\circ f\right)\left(x\right)$.
+	\item $\mvf{F}{\overline{x}}{1}=\overline{x}=Id_\realset^n\left(\overline{x}\right)$.
+\end{itemize}
+\end{enumerate}
+\end{demonstration}
+\begin{attention}
+	Se $n>0$, $\realset^n$ e $\left\{1\text{ punto}\right\}$ \textit{non} è sono omeomorfi, dato che \textit{non} possono essere in corrispondenza biunivoca.
+\end{attention}
+\begin{exercise}
+	Essere omotopicamente equivalenti è una relazione di equivalenza sull'insieme degli spazi topologici.
+\end{exercise}
+\begin{demonstration}
+	\begin{itemize}
+	\item \textsc{Riflessiva}: $X\sim X\iff \exists f,\ g$ continue per cui $g\circ f\sim Id_X,\ f\circ g\sim Id_X$. Ponendo $f\equiv Id_X\equiv g$ vale banalmente $g\circ f=f\circ g=Id_X\sim Id_X$.
+	\item \textsc{Simmetrica}: Da $X\sim Y$ sappiamo che $\exists \funz{f}{X}{Y},\ \funz{g}{Y}{X}$ continue per cui $g\circ f\sim Id_X,\ f\circ g\sim Id_Y$; se vogliamo mostrare $Y\sim X$ dobbiamo cercare $\funz{h}{Y}{X},\ \funz{k}{X}{Y}$ per cui $k\circ h\sim Id_Y,\ h\circ k\sim Id_X$. Ponendo $h\equiv g$ e $k\equiv h$, esse soddisfano la richiesta.  
+	\item \textsc{Transitiva}: Da $X\sim Y$ e $Y\sim Z$:
+	\begin{itemize}
+		\item $\funz{f}{X}{Y},\ \funz{g}{Y}{X}$ continue tali che $g\circ f\sim Id_X,\ f\circ g\sim Id_Y$.
+			\item $\funz{h}{Y}{Z},\ \funz{k}{Z}{Y}$ continue tali che $k\circ h\sim Id_Y,\ h\circ k\sim Id_Z$.
+	\end{itemize}
+	Vogliamo trovare $\funz{a}{X}{Z},\ \funz{b}{Z}{X}$ continue tali che $b\circ a\sim Id_X,\ a\circ b\sim Id_Z$. Se definiamo:
+	\begin{gather*}
+		a\coloneqq \funz{h\circ f}{X}{Z}\\
+		b\coloneqq \funz{g\circ k}{Z}{X}
+	\end{gather*}
+	Si ha allora:
+	\begin{gather*}
+		b\circ a=\left(g\circ k\right)\circ\left(h\circ f\right)=g\circ \left(k\circ h\right)\circ f\\
+		a\circ b=\left(h\circ f\right)\circ \left(g\circ k\right)=h\circ\left(f\circ g\right)\circ k
+	\end{gather*}
+	Dalla composizione di funzioni omotope:
+	\begin{equation*}
+		\begin{array}{cccccc}
+			f\sim f & & & &\\
+			& \implies & \left(k\circ h\right)\circ f\sim Id_y\circ f& &\\
+			k\circ h\sim Id_Y& & &\implies &g\circ \left(k\circ h\right)\circ f\sim g\circ Id_y\circ f \\
+			& & g\sim g & &\\
+		\end{array}
+	\end{equation*}
+	\begin{equation*}
+	\begin{array}{ccc}
+		g\circ \left(k\circ h\right)\circ f& \sim & g\circ Id_Y\circ f\\
+		\shortparallel & & \shortparallel\\
+		b\circ a & \sim & g\circ f\\
+		& & \rotatebox{90}{$\sim$}\\
+		& & Id_X
+	\end{array}
+	\end{equation*}
+$\implies b\circ a\sim Id_X$. In modo analogo:
+\begin{equation*}
+	\begin{array}{cccccc}
+		k\sim k & & & &\\
+		& \implies & \left(f\circ g\right)\circ k\sim Id_y\circ k& &\\
+		f\circ g\sim Id_Y& & &\implies &h\circ \left(f\circ g\right)\circ k\sim g\circ Id_y\circ f \\
+		& & h\sim h & &\\
+	\end{array}
+\end{equation*}
+\begin{equation*}
+	\begin{array}{ccc}
+		h\circ \left(f\circ g\right)\circ k& \sim & h\circ Id_Y\circ k\\
+		\shortparallel & & \shortparallel\\
+		a\circ b & \sim & h\circ k\\
+		& & \rotatebox{90}{$\sim$}\\
+		& & Id_Z
+	\end{array}
+\end{equation*}
+$\implies a\circ b\sim Id_Z$.
+\end{itemize}
+\end{demonstration}
+\begin{define}
+	Una spazio topologico è \textbf{contraibile}\index{contraibile} o \textit{contrattile}\seeonlyindex{contrattile}{contraibile} se hanno lo stesso tipo di omotopia di un punto.
+\end{define}
+\begin{examples}~{}
+	\begin{enumerate}
+		\item $\realset^n$ è contraibile: si veda l'osservazione precedente.
+		\item Dall'esempio seguente, per transitività del tipo di equivalenza, si può affermare che \textit{tutti} i $\realset^n$ sono tutti omotopicamente equivalenti tra di loro.
+		\item Ogni sottospazio $X\subseteq \realset^n$ \textit{convesso} di è contraibile.
+		\item Ogni sottospazio $X\subseteq \realset^n$ \textit{stellato} di è contraibile.
+	\end{enumerate}
+\end{examples}
+\begin{demonstration}
+	Dimostriamo l'esempio $4)$: l'esempio $3)$ è automaticamente dimostrato perché un convesso è stellato per ogni suo punto.\\
+	Sia $P_0\in X$ il punto rispetto al quale $X$ è stellato e consideriamo l'inclusione del singoletto $\left\{P_0\right\}$ in $X$ e la funzione costante da $X$ al punto, entrambe costanti:
+	\begin{equation*}
+		\incl{i}{\left\{P_0\right\}}{X}\quad \funz{g}{X}{\left\{P_0\right\}}
+	\end{equation*}
+Allora consideriamo:
+\begin{itemize}
+	\item $\funz{g\circ i}{\left\{P_0\right\}}{\left\{P_0\right\}}$ è pari all'identità $Id_{\left\{P_0\right\}}$ del singoletto e dunque ovviamente omotopa ad essa.
+	\item $\funztot{\phi\coloneqq i\circ g}{X}{X}{P}{P_0}$ è una funzione costante. Vogliamo dimostrare che $\phi$ è omotopa a $Id_X$. Siccome $X$ è stellato rispetto a $P_0$, $\forall P\in X$ si ha $\overline{PP_0}\subseteq X$. Allora definiamo la funzione:
+	\begin{equation*}
+		\funztot{F}{X\times I}{X}{\left(P,\ t\right)}{tP+\left(1-t\right)P_0}
+	\end{equation*}
+Ha senso definire ciò proprio perché su $X\subseteq \realset^n$ ci sono le operazioni di somma e prodotto per scalari. Oltre ad essere ben definita per quanto detto prima ($\mvf{F}{P}{t}\in X$), $F$ è continua e $\mvf{F}{P}{0}=P_0=\phi\left(0\right)$, $\mvf{F}{P}{1}=P=Id_X\left(P\right)$. Si ha l'omotopia cercata.
+\end{itemize}
+\end{demonstration}
+\begin{example}
+$\realset^2\setminus\left\{\left(0,\ 0\right)\right\}$ non è nè convesso, nè stellato.
+\end{example}
+\begin{lemming}
+Se $X$ è contraibile, allora $X$ è \textbf{c.p.a.}.
+\end{lemming}
+\begin{demonstration} Con il seguente diagramma ricordiamo le funzioni in gioco con la comprimibilità.\\
+\begin{center}
+	\begin{tikzcd}
+		\left\{1\text{ punto}\right\} \arrow[r, "g", bend left] & X \arrow[l, "f\text{ (costante)}", bend left]
+	\end{tikzcd}
+\end{center}
+Necessariamente dobbiamo mappare $g$ ad un punto di $X$, ad esempio $x_0$.  \\
+Il singoletto e $X$ sono in equivalenze omotopica, in particolare da ciò si ha una funzione costante in $x_0$:
+\begin{equation*}
+	\funztot{\phi\coloneqq g\circ f}{X}{X}{x}{x_0}
+\end{equation*}
+In quanto $f$ e $g$ sono in equivalenza omotopica, si ha che $\phi\sim Id_X$, cioè esiste un omotopia fra le due funzioni:
+\begin{equation*}
+	\funz{F}{X\times I}{X}\text{ continua}\ \colon \mvf{F}{x}{0}=\phi\left(x\right)=x_0,\ \mvf{F}{x}{1}=Id_X\left(x\right)=x\ \forall x\in X
+\end{equation*}
+Fissato $x\in X$ sia $\funz{\alpha}{I}{X}$ dato da $\alpha\left(t\right)=\mvf{F}{x}{t}$:
+\begin{itemize}
+	\item $\alpha$ è continua perché lo è $f$.
+	\item $\alpha\left(0\right)=\mvf{F}{x}{0}=x_0$, $\alpha\left(1\right)=\mvf{F}{x}{1}=x$.
+\end{itemize}
+Segue che $\alpha$ è un cammino da $x_0$ a un qualunque punto $x$ in $X$, dunque $X$ è \textbf{c.p.a.}.
+\end{demonstration}
+\begin{exercise}
+Se $X$ e $Y$ sono omotopicamente equivalenti, allora:
+\begin{enumerate}
+\item $X$ è \textbf{c.p.a.} $\iff Y$ è \textbf{c.p.a.}.
+\item $X$ è connesso $\iff Y$ è connesso.
+\end{enumerate}
+\end{exercise}
+\begin{demonstration} Siano $f,\ g$ le equivalenze omotopiche.
+	\begin{center}
+		\begin{tikzcd}
+			X \arrow[r, "f", bend left] & Y \arrow[l, "g", bend left]
+		\end{tikzcd}
+	\end{center}
+	\begin{enumerate}[label=\Roman*]
+		\item Se consideriamo $f\circ g\sim Id_Y$, l'omotopia che la definisce è:
+		\begin{equation*}
+			\funz{F}{Y\times I}{Y}\ \colon \mvf{F}{y}{0}=f\left(g\left(y\right)\right), \mvf{F}{y}{1}=y\ \forall y\in Y
+		\end{equation*}
+		Possiamo usare $F$ per costruire, ad $y\in Y$ fissato, un arco in $Y$ che collega $y$ ad un punto di $f\left(X\right)\subseteq Y$. Infatti, consideriamo $\funz{\alpha}{I}{Y}$ dato da $\alpha\left(t\right)=\mvf{F}{y}{t}$:
+\begin{itemize}
+\item $\alpha$ è continua perché lo sono $f$ e $g$.
+\item $\alpha\left(0\right)=\mvf{F}{y}{0}=f\left(g\left(y\right)\right)\in f\left(X\right)\subseteq Y$, $\alpha\left(1\right)=\mvf{F}{y}{1}=y$.
+\end{itemize}
+$\impliesdx$ Supponendo $X$ \textbf{c.p.a.}, allora $f\left(X\right)$ è \textbf{c.p.a.}. Per i ragionamenti appena fatti abbiamo che ogni punto di $Y$ ha un arco che lo collega ad un punto di $f\left(X\right)$, dunque per giunzione di cammini anche $Y$ è \textbf{c.p.a.}.\\
+$\impliessx$ Supponendo che $Y$ sia \textbf{c.p.a.}, applicando all'equivalenza omotopica $\funz{g}{Y}{X}$ un procedimento analogo a $\impliesdx$ si ha che $X$ è \textbf{c.p.a.}\footnote{In realtà è sufficiente, per i ragionamenti visti sopra, dire che se $X$ e $Y$ sono omotopicamente equivalenti, allora $X$ è \textbf{c.p.a.} $\iff$ $f\left(X\right)$ è \textbf{c.p.a.}.}.
+\item Sia $X$ connesso (ma non \textbf{c.p.a.}, altrimenti ricadiamo nel punto $1)$ dell'esercizio), mentre supponiamo che $Y$ si può scrivere come unione disgiunta di due aperti $A$ e $B$: $Y=A\cup B$.
+Ma allora:
+\begin{equation*}
+	X=f^{-1}\left(Y\right)=f^{-1}\left(A\cup B\right)=f^{-1}\left(A\right)\cup f^{-1}\left(B\right)
+\end{equation*}
+Per continuità di $f$ anche $f^{-1}\left(A\right)$ e $f^{-1}\left(B\right)$ sono aperti disgiunti in $X$ connesso. Segue che necessariamente uno dei due deve essere vuoto\footnote{In quanto se non fosse così, $X$ non sarebbe connesso.}, ad esempio $f^{-1}\left(A\right)=\emptyset$, cosicché $X=f^{-1}\left(B\right)$. \\
+Per i ragionamenti visti nel punto $1)$ possiamo trovare un arco che collega un qualsiasi punto $y\in Y$ con $f\left(g\left(y\right)\right)\in f\left(X\right)$. In particolare, dato che $f\circ g$ mappa $Y$ in $B$, si avrà $f\left(g\left(y\right)\right)\in B$: ma allora $y\in B$ necessariamente, dato che se fosse in $A$ i due aperti non sarebbero disgiunti! Per l'arbitrarietà di $y$ segue che $A=\emptyset$ e dunque anche $Y$ è connesso.\\
+Il viceversa è assolutamente analogo.
+\end{enumerate}
+	\end{demonstration}

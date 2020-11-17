@@ -1369,8 +1369,20 @@ linewidth=1pt]{blueBox}
 \let\oldepsilon\epsilon
 \let\epsilon\varepsilon
 
+% phi
+
+\let\oldphi\phi
+\let\phi\varphi
+
 % definizione di funzione (solo domini)
 
+\newcommand{\funzvar}[3]{
+	\IfEq{#1}{\ }{\begin{tikzcd}
+				#2 & #3
+	\end{tikzcd}}
+	{\begin{tikzcd}
+			#1\ \colon & #2 \arrow[r] & #3
+		\end{tikzcd}}}
 
 \newcommand{\funz}[3]{
 	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
@@ -1379,6 +1391,16 @@ linewidth=1pt]{blueBox}
 				#1\colon& #2&\rightarrow& #3\end{array}}}}
 
 % definizione di funzione (completa)
+
+\newcommand{\funztotvar}[5]{
+	\IfEq{#1}{\ }{\begin{tikzcd}
+				#2 \arrow[r]          & #3 \\[-25pt]
+				#4 \arrow[r, maps to] & #5
+	\end{tikzcd}}
+	{\begin{tikzcd}
+				#1\ \colon & #2 \arrow[r]          & #3 \\[-25pt]
+				& #4 \arrow[r, maps to] & #5
+		\end{tikzcd}}}
 
 \newcommand{\funztot}[5]{
 	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
@@ -1392,14 +1414,31 @@ linewidth=1pt]{blueBox}
 
 % inclusione (solo domini)
 
+\newcommand{\inclvar}[3]{
+	\IfEq{#1}{\ }{\begin{tikzcd}
+			#2 & #3
+	\end{tikzcd}}
+	{\begin{tikzcd}
+				#1\ \colon & #2 \arrow[r, hook] & #3
+		\end{tikzcd}}}
+
 \newcommand{\incl}[3]{
 	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
 			#2&\hookrightarrow& #3\end{array}}}
 {\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
 			#1\colon& #2&\hookrightarrow& #3\end{array}}}}
 
-
 % inclusione (completa)
+
+\newcommand{\incltotvar}[5]{
+	\IfEq{#1}{\ }{\begin{tikzcd}
+				#2 \arrow[r]          & #3 \\[-25pt]
+			#4 \arrow[r, maps to] & #5
+	\end{tikzcd}}
+	{\begin{tikzcd}
+			#1\ \colon & #2 \arrow[r, hook]          & #3 \\[-25pt]
+			& #4 \arrow[r, maps to] & #5
+		\end{tikzcd}}}
 
 \newcommand{\incltot}[5]{
 	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
