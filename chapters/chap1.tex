@@ -45,7 +45,7 @@
 		\item \textbf{Topologia banale}\index{topologia!banale}: $\topo={\emptyset,\ X}$, gli \textit{unici} aperti sono \textit{banali}.
 	\end{itemize}
 \end{example}
-\section{Distanza e spazi metrici}
+\subsection{Distanza e spazi metrici}
 \begin{define}
 	Su un insieme $X$ una funzione $\funz{d}{X\times X}{\realset}$ è una \textbf{distanza}\index{distanza} se:
 	\begin{enumerate}
@@ -55,7 +55,7 @@
 	\end{enumerate}
 \end{define}
 \begin{define}
-	Uno \textbf{spazio metrico}\index{spazio!metrico} $\left(X, d\right)$ è un insieme su cui è definita una distanza.
+	Uno \textbf{spazio metrico}\index{spazio topologico!metrico} $\left(X, d\right)$ è un insieme su cui è definita una distanza.
 \end{define}
 \begin{define}
 	Definita la \textbf{palla aperta di centro}\index{palla aperta} $x$ come l'insieme degli elementi di $X$ che soddisfano la seguente condizione:
@@ -130,7 +130,6 @@ Per verificare il terzo assioma degli aperti (o, equivalentemente, il secondo de
 	\item \textbf{Topologia banale}\index{topologia!banale}: $\topo={\emptyset,\ X}$, gli \textit{unici} aperti sono \textit{banali}.
 \end{itemize}
 \end{example}
-\section{Distanza e spazi metrici}
 \begin{define}
 Su un insieme $X$ una funzione $\funz{d}{X\times X}{\realset}$ è una \textbf{distanza}\index{distanza} se:
 \begin{enumerate}
@@ -195,7 +194,8 @@ Alcune osservazioni:
 	\item Se $X$ è infinito, ad esempio $\realset$, la topologia \textit{non} è quella discreta: $[0,\ 1]$ per la topologia discreta è un chiuso ma per quella $CF$ non lo è in quanto \textit{non} è finito.
 \end{itemize}
 \end{attention}
-\subsection{Norme esotiche}
+
+\subsubsection{Norme esotiche}
 Possiamo definire su $\realset^n$ una famiglia di distanze dette \textbf{norme}\index{norma}; qui di seguito ne elenchiamo alcune. Definiti i punti $x=\left(x_1,\ldots, x_n\right),\ y=\left(y_1,\ldots, y_n\right)\in\realset^n$ abbiamo:
 \begin{itemize}
 \item \textbf{Norma infinito}: $\displaystyle\mvf{d_\infty}{x}{y}=\max_{i}{|x_i-y_i|}$
@@ -237,7 +237,7 @@ Preso adesso $X=\mathcal{C}\left([0,\ 1]\right)=\left\{\funz{f}{[0,\ 1]}{\realse
 	\item \textbf{Norma p}: $\displaystyle\mvf{d_p}{f}{g}=\sqrt[\leftroot{1}\uproot{3}p]{\int_{0}^{1}|f(\left(x\right)-\left(y\right)|^p}$
 \end{itemize}
 A differenza del caso su $\realset^n$, ogni norma genera in realtà una topologia distinta!
-\section{Finezza: confronto di topologia}
+\subsection{Finezza: confronto di topologia}
 \begin{define}\index{finezza}
 Sia $X$ un insieme e $\topo_1$, $\topo_2$ due topologie di $X$. Si dice che $\topo_1$ è \textbf{meno fine}\index{finezza!meno fine} di $\topo_2$ se tutti gli aperti della prima topologia sono aperti della seconda:
 \begin{equation}
@@ -260,7 +260,7 @@ Per $n$ punti gli $n+1$ intervalli ottenuti sono aperti della topologia euclidea
 \begin{observe}\label{intersezionetopo}
 	Se definiamo due topologie $\topo_1$ e $\topo_2$ sono due topologie di un insieme $X$, l'intersezione $\topo_1\cap\topo_2$ è anch'essa una topologia di $X$ e, per costruzione, è \textit{meno fine} di $\topo_1$ e $\topo_2$.
 \end{observe}
-\section{Base della topologia}
+\subsection{Base della topologia}
 \begin{define}
 Sia $\left(X, \topo\right)$ uno spazio topologico. $\basis$ è una \textbf{base}\index{base} per $\topo$ se:
 \begin{enumerate}
@@ -331,7 +331,7 @@ Sia $X=\realset$ e $\basis=\left\{[a,\ b)\mid a,\ b\in\realset\right\}$. Verific
 Esiste dunque una topologia su $\realset$ che ha base $\basis$; questa \textit{non} è base per la topologia Euclidea, ad esempio, dato che gli intervalli semiaperti non sono inclusi in $\mathcal{E_{ucl}}$.\\
 Notiamo inoltre che $\displaystyle\left(a,\ b\right)=\union_{n\in \naturalset}\left[a+\frac{1}{n},\ b\right)$, dunque la topologia definita $\basis$ comprende gli aperti della topologia Euclidea: $\mathcal{E_{ucl}}$ è meno fine di questa topologia.
 \end{example}
-\section{Altri concetti topologici: chiusura, interno, frontiera e densità}
+\subsection{Altri concetti topologici: chiusura, interno, frontiera e densità}
 Ricordiamo che, dato uno spazio topologico $\left(X,\ \topo\right)$ e un sottoinsieme $A\subseteq X$, si ha:
 \begin{itemize}
 \item $A$ \textit{aperto} della topologia se $A\in\topo$.
@@ -387,7 +387,7 @@ Sia $X$ spazio topologico e $A\subseteq X$. A è \textbf{denso}\index{densità} 
 \begin{example}
 Il più piccolo chiuso contenente $\rationalset$ è $\realset$, poiché ogni reale è aderente ai razionali. Dunque $\rationalset$ è denso in $\realset$.
 \end{example}
-\section{Intorni}
+\subsection{Intorni}
 \begin{define}
 Sia $X$ spazio topologico e $x\in X$. $V$ è un \textbf{intorno}\index{intorno} di $x$ se $\exists A$ aperto tale che $x\in A\subseteq V$ o, in altri termini, se $x$ è interno ad $U$.
 Definiamo inoltre la \textbf{famiglia degli intorni} di $x$ $I\left(x\right)\subseteq\setpart{X}$:
@@ -530,10 +530,16 @@ Siano $X$, $Y$ spazi topologici e $\funz{f}{X}{Y}$ funzione.
 		Si ha dunque $f\left(C\right)=\realset\setminus\left\{0\right\}$, che tuttavia non è un chiuso della topologia Euclidea in quanto non contiene infiniti punti (una base della $\mathcal{E_{ucl}}$ è formata da intervalli, che dunque contengono infiniti punti).
 	\end{itemize}
 \end{attention}
+\section{Omeomorfismi}
 \begin{define}
 Siano $X$, $Y$ spazi topologici e $\funz{f}{X}{Y}$ funzione. $f$ è un \textbf{omeomorfismo}\index{omeomorfismo} se è \textit{biunivoca}, \textit{continua} e la sua inversa è \textit{continua}; più precisamente, esiste $g\colon Y\rightarrow X$ continua tale per cui $g\circ f = Id_{X}$ e $f\circ g = Id_{Y}$.\\
 Due spazi topologici si dicono \textbf{omeomorfi} se esiste un omeomorfismo fra i due; in notazione $X\cong Y$.
 \end{define}
+\begin{intuit}
+	Possiamo immaginare l'omeomorfismo come una \textit{deformazione} che \textit{piega} e \textit{allunga} uno spazio senza formare \textit{strappi} ($f$ continua), creare \textit{nuovi punti} ($f$ iniettiva), \textit{sovrapposizioni} ($f$ suriettiva) o \textit{incollamenti} ()$f^{-1}$ continua): in questo modo si può trasformare lo spazio in un altro che mantenga le stesse \textit{proprietà topologiche} dell'originale.\\
+	Si vede allora facilmente che un \textit{quadrato} ed un \textit{cerchio} sono omeomorfi, mentre una \textit{sfera} ed un \textit{toro} (la versione ‘‘topologica'' di una ciambella col buco, si veda pag. \pageref{cambiella}) non lo sono, dato che non posso creare né far sparire quel buco; allo stesso modo una \textit{retta} non è omeomorfa ad un \textit{punto}, dato che non posso ‘‘accumulare'' tutti i punti della retta in uno solo!\\
+	Seppur questa ‘‘visualizzazione'' è una buona intuizione del funzionamento degli omeomorfismi, \textbf{non è completamente accurata}. Ad esempio, un \textit{nastro di Möbius} (per la si veda \pageref{nastromobius}) con un mezzo-giro ed uno con tre mezzi-giri sono omeomorfi, ma con la nostra intuizione non si arriva a dire perché.
+\end{intuit}
 \begin{lemming}\textsc{(Manetti, 3.31)}\\
 Siano $X$, $Y$ spazi topologici e $\funz{f}{X}{Y}$ funzione \textit{continua}. Allora vale:
 \begin{enumerate}

@@ -943,7 +943,9 @@
 \definecolor{battleshipgrey}{rgb}{0.52, 0.52, 0.51}
 \definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
 \definecolor{coolblack}{rgb}{0.0, 0.18, 0.39}
-	
+\definecolor{neoncarrot}{rgb}{1.0, 0.64, 0.26}
+\definecolor{burntorange}{rgb}{0.8, 0.33, 0.0}
+
 % Define boxes
 
 \newmdenv[skipabove=7pt,
@@ -1090,6 +1092,22 @@ leftmargin=0cm,
 rightmargin=0cm,
 linewidth=1pt]{blueBox}
 
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
+backgroundcolor=neoncarrot!15,
+linecolor=neoncarrot,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+innerbottommargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=1pt]{neoncarrotBox}
+
 % Define theorem styles from color
 
 \newtheoremstyle{rednumbox}% % Theorem style name
@@ -1141,6 +1159,16 @@ linewidth=1pt]{blueBox}
 {\;}% Punctuation after theorem head
 {0.25em}% Space after theorem head
 {\small\bfseries\color{black}\thmname{#1}}
+
+\newtheoremstyle{neoncarrotnumbox}% % Theorem style name
+{0pt}% Space above
+{0pt}% Space below
+{\normalfont}% % Body font
+{}% Indent amount
+{\small\bfseries\color{neoncarrot!75}}% % Theorem head font
+{\;}% Punctuation after theorem head
+{0.25em}% Space after theorem head
+{\small\bfseries\color{burntorange}\thmname{#1}}
 
 \newtheoremstyle{airforcebluenumbox}% % Theorem style name
 {0pt}% Space above
@@ -1211,6 +1239,7 @@ linewidth=1pt]{blueBox}
 \newcounter{theorema}
 \newcounter{lemming}
 \newcounter{proposition}
+\newcounter{corollary}
 
 \theoremstyle{cinnamonnumbox}
 \newtheorem{defineT}{\textsc{Definizione \thedefine.}}[chapter]
@@ -1223,6 +1252,9 @@ linewidth=1pt]{blueBox}
 
 \theoremstyle{timberwolfnumbox}
 \newtheorem{propositionT}{\textsc{Proposizione \theproposition.}}[chapter]
+
+\theoremstyle{neoncarrotnumbox}
+\newtheorem{corollaryT}{\textsc{Corollario \thecorollary.}}[chapter]
 
 \theoremstyle{airforcebluenumbox}
 \newtheorem{intuitT}{\textsc{Intuitivamente...}}[chapter]
@@ -1281,6 +1313,10 @@ linewidth=1pt]{blueBox}
 %%% proposizione %%%
 
 \newenvironment{proposition}{\begin{tinBox}\begin{propositionT}}{\refstepcounter{proposition}\hfill{\color{timberwolf}}	\end{propositionT}\end{tinBox}}\numberwithin{proposition}{section}
+
+%%% corollary %%%
+
+\newenvironment{corollary}{\begin{neoncarrotBox}\begin{corollaryT}}{\refstepcounter{corollary}\hfill{\color{neoncarrot}}	\end{corollaryT}\end{neoncarrotBox}}\numberwithin{corollary}{section}
 
 %%% intuitivamente %%%
 
@@ -1369,8 +1405,20 @@ linewidth=1pt]{blueBox}
 \let\oldepsilon\epsilon
 \let\epsilon\varepsilon
 
+% phi
+
+\let\oldphi\phi
+\let\phi\varphi
+
 % definizione di funzione (solo domini)
 
+\newcommand{\funzvar}[3]{
+	\IfEq{#1}{\ }{\begin{tikzcd}
+				#2 & #3
+	\end{tikzcd}}
+	{\begin{tikzcd}
+			#1\ \colon & #2 \arrow[r] & #3
+		\end{tikzcd}}}
 
 \newcommand{\funz}[3]{
 	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
@@ -1379,6 +1427,16 @@ linewidth=1pt]{blueBox}
 				#1\colon& #2&\rightarrow& #3\end{array}}}}
 
 % definizione di funzione (completa)
+
+\newcommand{\funztotvar}[5]{
+	\IfEq{#1}{\ }{\begin{tikzcd}
+				#2 \arrow[r]          & #3 \\[-25pt]
+				#4 \arrow[r, maps to] & #5
+	\end{tikzcd}}
+	{\begin{tikzcd}
+				#1\ \colon & #2 \arrow[r]          & #3 \\[-25pt]
+				& #4 \arrow[r, maps to] & #5
+		\end{tikzcd}}}
 
 \newcommand{\funztot}[5]{
 	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
@@ -1392,14 +1450,31 @@ linewidth=1pt]{blueBox}
 
 % inclusione (solo domini)
 
+\newcommand{\inclvar}[3]{
+	\IfEq{#1}{\ }{\begin{tikzcd}
+			#2 & #3
+	\end{tikzcd}}
+	{\begin{tikzcd}
+				#1\ \colon & #2 \arrow[r, hook] & #3
+		\end{tikzcd}}}
+
 \newcommand{\incl}[3]{
 	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
 			#2&\hookrightarrow& #3\end{array}}}
 {\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
 			#1\colon& #2&\hookrightarrow& #3\end{array}}}}
 
-
 % inclusione (completa)
+
+\newcommand{\incltotvar}[5]{
+	\IfEq{#1}{\ }{\begin{tikzcd}
+				#2 \arrow[r]          & #3 \\[-25pt]
+			#4 \arrow[r, maps to] & #5
+	\end{tikzcd}}
+	{\begin{tikzcd}
+			#1\ \colon & #2 \arrow[r, hook]          & #3 \\[-25pt]
+			& #4 \arrow[r, maps to] & #5
+		\end{tikzcd}}}
 
 \newcommand{\incltot}[5]{
 	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}

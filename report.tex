@@ -19,9 +19,9 @@
   %chapters/chap3,
   %chapters/chap4,
   chapters/chap5,
-  %chapters/chap6,
-  %chapters/chap7,
-  %chapters/chap8,
+  chapters/chap6,
+  chapters/chap7,
+  chapters/chap8,
   %chapters/chap9,
   %chapters/chap10,
   %chapters/chap11,
@@ -36,6 +36,7 @@
   %appendix/chapA,
   %appendix/chapB,  
   %appendix/chapC,
+  appendix/footnotes,
   appendix/ringraziaments,  
   appendix/bibliography,
 }
@@ -55,36 +56,40 @@
 \labelPart{first}
 \include{chapters/chap1}
 \include{chapters/chap2}
-\part{Omotopia}
-\labelPart{second}
 %\include{chapters/chap3}
 %\include{chapters/chap4}
 \include{chapters/chap5}
-%\include{chapters/chap6}
-%\include{chapters/chap7}
-%\include{chapters/chap8}
-%\part{Dinamica della materia}
+\include{chapters/chap6}
+\part{Omotopia}
+\labelPart{second}
+\include{chapters/chap7}
+\include{chapters/chap8}
+%\part{Classificazione delle superfici topologiche}
 %\labelPart{third}
-%\include{chap9}
-%\include{chap10}
-%\include{chap11}
-%\include{chap12}
-%\include{chap13}
-%\include{chap14}
-%\include{chap15}
-%\include{chap16}
-%\include{chap17}
-%\include{chap18}
+%\include{chapters/chap9}
+%\include{chapters/chap10}
+%\part{Forma canonica di Jordan}
+%\labelPart{fourth}
+%\include{chapters/chap11}
+%\include{chapters/chap12}
+%\include{chapters/chap13}
+%\part{Geometria proiettiva}
+%\labelPart{fourth}
+%\include{chapters/chap14}
+%\include{chapters/chap15}
+%\include{chapters/chap16}
+%\include{chapters/chap17}
+%\include{chapters/chap18}
 %\appendix
-%\part{Appendici}
-%\labelPart{appendici}
-%\include{chapA}
+\part{Appendici}
+\labelPart{appendici}
+\include{appendix/footnotes}
 %\include{chapB}
 %\include{chapC}
 %\include{ringraziaments}
 %\include{appendix}
-%\printindex
-%\backmatter
-%\include{bibliography}
+\printindex
+\backmatter
+\include{appendix/bibliography}
 
 \end{document}
