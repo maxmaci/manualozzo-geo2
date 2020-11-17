@@ -17,7 +17,7 @@
 
 	\section{Spazio topologico}
 \begin{define}
-	Uno \textbf{spazio topologico}\index{spazio topologico} $\left(X, \topo\right)$ è un insieme $X$ con una famiglia di sottoinsiemi $\topo\subseteq\setpart{X}$ detta \textbf{topologia}\index{topologia} che soddisfano i seguenti assiomi (detti \textbf{assiomi degli aperti}\index{assiomi!degli aperti}):
+	Uno \textbf{spazio topologico}\index{spazio topologico} $\left(X, \topo\right)$ è un insieme $X$ con una famiglia di sottoinsiemi $\topo\subseteq\setpart{X}$ detta \textbf{topologia}\index{topologia} che soddisfano i seguenti assiomi (detti \textbf{assiomi degli aperti}\index{assiomi topologici!degli aperti}):
 	\begin{enumerate}
 		\item \textit{Il vuoto e l'insieme stesso sono aperti della topologia}: $\emptyset,\ X\in\topo$ .
 		\item \textit{L'unione arbitraria di aperti è un aperto}: dati $\left\{A_i\right\}_{i\in I}$ tali che $A_i\in\topo,\ \forall i\in I$ ($|I|\leq \infty$), allora $\displaystyle\union_{i\in I}A_i=A\in\topo$ .
@@ -26,7 +26,7 @@
 	Gli elementi di $\topo$ si dicono \textbf{aperti}\index{aperto} della topologia.
 \end{define}
 
-\begin{define} Si può definire equivalentemente su X una topologia $\topo$ usando gli \textbf{assiomi dei chiusi}\index{assiomi!dei chiusi}:
+\begin{define} Si può definire equivalentemente su X una topologia $\topo$ usando gli \textbf{assiomi dei chiusi}\index{assiomi topologici!dei chiusi}:
 	\begin{enumerate}
 		\item \textit{Il vuoto e l'insieme stesso sono chiusi della topologia}: $\emptyset,\ X\in\topo$.
 		\item \textit{L'unione finita di chiusi è un chiuso}: dati $\left\{C_i\right\}_{i\in I}$ tale che $C_i\in\topo,\ \forall i\in I$ ($|I|< \infty$), allora $\displaystyle\union_{i\in I}C_i=C\in\topo$ .
@@ -109,90 +109,6 @@
 		\item Se $X$ è finito, la topologia $CF$ coincide con la topologia discreta: ogni sottoinsieme di $X$ è finito e dunque un aperto.
 		\item Se $X$ è infinito, ad esempio $\realset$, la topologia \textit{non} è quella discreta: $[0,\ 1]$ per la topologia discreta è un chiuso ma per quella $CF$ non lo è in quanto \textit{non} è finito.
 	\end{itemize}
-\end{attention}
-
-\begin{define} Si può definire equivalentemente su X una topologia $\topo$ usando gli \textbf{assiomi dei chiusi}\index{assiomi!dei chiusi}:
-\begin{enumerate}
-	\item \textit{Il vuoto e l'insieme stesso sono chiusi della topologia}: $\emptyset,\ X\in\topo$.
-	\item \textit{L'unione finita di chiusi è un chiuso}: dati $\left\{C_i\right\}_{i\in I}$ tale che $C_i\in\topo,\ \forall i\in I$ ($|I|< \infty$), allora $\displaystyle\union_{i\in I}C_i=C\in\topo$ .
-	\item \textit{L'intersezione arbitraria di chiusi è un chiuso}: dati $\left\{C_i\right\}_{i\in I}$ tale che $C_i\in\topo,\ \forall i\in I$ ($|I|\leq \infty$), allora $\displaystyle\inter_{i\in I}C_i=C\in\topo$.
-\end{enumerate}
-Gli elementi di $\topo$ si dicono \textbf{chiusi}\index{chiuso} della topologia.
-\end{define}
-
-\begin{observe}
-Per verificare il terzo assioma degli aperti (o, equivalentemente, il secondo dei chiusi) è sufficiente verificare che sia vero per soli due sottoinsiemi qualunque, in quanto poi è verificato per induzione.
-\end{observe}
-
-\begin{example}~{}
-\begin{itemize}
-	\item \textbf{Topologia discreta}\index{topologia!discreta}: $\topo=\setpart{X}$, \textit{tutti} gli insiemi sono \textit{aperti}.
-	\item \textbf{Topologia banale}\index{topologia!banale}: $\topo={\emptyset,\ X}$, gli \textit{unici} aperti sono \textit{banali}.
-\end{itemize}
-\end{example}
-\begin{define}
-Su un insieme $X$ una funzione $\funz{d}{X\times X}{\realset}$ è una \textbf{distanza}\index{distanza} se:
-\begin{enumerate}
-	\item \textit{Positività della distanza}: $\forall x,\ y\in X\quad \mvf{d}{x}{y}\geq 0$ e $\mvf{d}{x}{y}=0\iff x=y$
-	\item \textit{Simmetria}: $\forall x,\ y\in X\quad \mvf{d}{x}{y}=\mvf{d}{y}{x}$
-	\item \textbf{Disuguaglianza triangolare}\index{disuguaglianza triangolare}: $\forall x,\ y,\ z\in X\quad \mvf{d}{x}{z}\leq\mvf{d}{x}{y}+\mvf{d}{y}{z}$
-\end{enumerate}
-\end{define}
-\begin{define}
-Uno \textbf{spazio metrico}\index{spazio!metrico} $\left(X, d\right)$ è un insieme su cui è definita una distanza.
-\end{define}
-\begin{define}
-Definita la \textbf{palla aperta di centro}\index{palla aperta} $x$ come l'insieme degli elementi di $X$ che soddisfano la seguente condizione:
-\begin{equation}
-	B_{\epsilon}\left(x\right)=\left\{y\in X\mid \mvf{d}{x}{y}<\epsilon\right\}
-\end{equation}
-Ogni spazio metrico ha una \textbf{topologia} $\topo_d$ \textbf{indotta dalla distanza}, i cui aperti sono definiti come:
-\begin{equation*}
-	A\subseteq X \text{ aperto } \left(A\in\topo\right) \text{ se } \forall x\in A,\ \exists \epsilon>0\ \colon B_{\epsilon}\left(x\right)\subseteq A.
-\end{equation*}
-\end{define}
-\begin{examples}~{}
-\begin{itemize}
-	\item Su un qualunque insieme $X$ si può definire la \textit{distanza banale}:
-	\begin{equation}
-		\mvf{d}{x}{y}=\begin{cases} 
-			0 & \text{se }x=y\\
-			1 & \text{se }x\neq y
-		\end{cases}
-	\end{equation}
-	In questo modo, ogni punto è una palla aperta e dunque ogni sottoinsieme è un aperto, dando allo spazio la \textit{topologia discreta}. In particolare, ogni insieme può essere uno spazio metrico.
-	\item Su $X=\realset$ si può definire come distanza il \textit{valore assoluto} $\mvf{d}{x}{y}=|x-y|$, che induce la \textbf{topologia Euclidea}\index{topologia!Euclidea} $\mathcal{E_{ucl}}$, definita con le palle aperte di raggio $\epsilon$:
-	%sicuro di voler indicare la topologia euclidea con il pedice?
-	\begin{equation}
-		B_{\epsilon}\left(x\right)=\left\{y\in \realset\mid |x-y|<\epsilon\right\}
-	\end{equation}
-	nel seguente modo:
-	\begin{equation*}
-		A\subseteq \realset \text{ aperto } \left(A\in\mathcal{E_{ucl}}\right) \text{ se } \forall x\in A,\ \exists \epsilon>0\ \colon B_{\epsilon}\left(x\right)\subseteq A.
-	\end{equation*}
-	\item Su $X=\realset^n$ si può definire come distanza la \textit{norma Euclidea}: $\mvf{d}{x}{y}=||x-y||$ che induce la \textit{topologia Euclidea} $\mathcal{E_{ucl}}$ in modo analogo al caso precedente.
-	\begin{gather*}
-		B_{\epsilon}\left(x\right)=\left\{y\in \realset^n\mid ||x-y||<\epsilon\right\}\\
-		A\subseteq \realset^n \text{ aperto } \left(A\in\mathcal{E_{ucl}}\right) \text{ se } \forall x\in A,\ \exists \epsilon>0\ \colon B_{\epsilon}\left(x\right)\subseteq A.
-	\end{gather*}
-\end{itemize}
-\end{examples}
-\begin{attention}
-Non tutte le topologie sono indotte da una distanza! Definiamo la \textbf{topologia dei complementari finiti} sull'insieme $X$ nel modo seguente:
-\begin{gather*}
-	A\subseteq \realset \text{ aperto } \left(A\in CF\right) \text{ se }  X\setminus A \text{ è finito.}\\
-	C\subseteq \realset \text{ chiuso } \left(C\in CF\right) \text{ se }  C \text{ è finito.}
-\end{gather*}
-Alcune osservazioni:
-\begin{itemize}
-	\item Se un aperto $A$ è tale se il suo complementare $\mathcal{C}A$ è finito, si ha che:
-	\begin{equation}
-		A=\mathcal{C}\left(\mathcal{C}A\right)=X\setminus\left(X\setminus A\right)=X\setminus\left\{\text{un numero finito di punti}\right\}
-	\end{equation}
-	In altre parole $A$ è aperto è pari ad $X$ privato al più di un numero finito di punti.
-	\item Se $X$ è finito, la topologia $CF$ coincide con la topologia discreta: ogni sottoinsieme di $X$ è finito e dunque un aperto.
-	\item Se $X$ è infinito, ad esempio $\realset$, la topologia \textit{non} è quella discreta: $[0,\ 1]$ per la topologia discreta è un chiuso ma per quella $CF$ non lo è in quanto \textit{non} è finito.
-\end{itemize}
 \end{attention}
 
 \subsubsection{Norme esotiche}
@@ -382,7 +298,7 @@ Sia $X$ spazio topologico e $A\subseteq X$. La \textbf{frontiera}\index{frontier
 \end{itemize}
 \end{define}
 \begin{define}
-Sia $X$ spazio topologico e $A\subseteq X$. A è \textbf{denso}\index{densità} è denso in $X$ se $\overline{A}=X$ o, in altri termini, tutti i punti di $X$ sono aderenti ad $A$.
+Sia $X$ spazio topologico e $A\subseteq X$. A è \textbf{denso}\index{spazio topologico!denso} è denso in $X$ se $\overline{A}=X$ o, in altri termini, tutti i punti di $X$ sono aderenti ad $A$.
 \end{define}
 \begin{example}
 Il più piccolo chiuso contenente $\rationalset$ è $\realset$, poiché ogni reale è aderente ai razionali. Dunque $\rationalset$ è denso in $\realset$.

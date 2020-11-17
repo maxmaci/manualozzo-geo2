@@ -6,7 +6,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{mypreamble}
+\ProvidesPackage{preamble/mypreamble}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %    PACKAGES TO LOAD
@@ -76,8 +76,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % BibLaTeX
-\bibliography{bibliography} % Specify file
-\defbibheading{bibliography}{\bibsection} % Fix header problem
+\bibliography{appendix/bibliography} % Specify file
+\defbibheading{appendix/bibliography}{\bibsection} % Fix header problem
 
 % Hyperref: settings
 \hypersetup{pdfborder={0 0 0}, colorlinks=false}
@@ -1392,6 +1392,11 @@ linewidth=1pt]{neoncarrotBox}
 \newcommand{\interior}[1]{%
 	{\kern0pt#1}^{\mathrm{o}}%
 }
+
+% intervallo [0, 1]
+
+\newcommand{\intv}{\ensuremath{\left[0,\ 1\right]}}
+
 %%%%%%%%%%%%%%%%%%%%%%%% definizioni funzioni %%%%%%%%%%%%%%%%%%%%%%%%%
 
 % funzioni a due variabili
