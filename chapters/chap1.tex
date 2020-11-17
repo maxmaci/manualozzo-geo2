@@ -445,10 +445,16 @@ Ricordiamo che, dato uno spazio topologico $\left(X,\ \topo\right)$ e un sottoin
 		Si ha dunque $f\left(C\right)=\realset\setminus\left\{0\right\}$, che tuttavia non è un chiuso della topologia Euclidea in quanto non contiene infiniti punti (una base della $\mathcal{E_{ucl}}$ è formata da intervalli, che dunque contengono infiniti punti).
 	\end{itemize}
 \end{attention}
+\section{Omeomorfismi}
 \begin{define}
 	Siano $X$, $Y$ spazi topologici e $\funz{f}{X}{Y}$ funzione. $f$ è un \textbf{omeomorfismo}\index{omeomorfismo} se è \textit{biunivoca}, \textit{continua} e la sua inversa è \textit{continua}; più precisamente, esiste $g\colon Y\rightarrow X$ continua tale per cui $g\circ f = Id_{X}$ e $f\circ g = Id_{Y}$.\\
 	Due spazi topologici si dicono \textbf{omeomorfi} se esiste un omeomorfismo fra i due; in notazione $X\cong Y$.
 \end{define}
+\begin{intuit}
+	Possiamo immaginare l'omeomorfismo come una \textit{deformazione} che \textit{piega} e \textit{allunga} uno spazio senza formare \textit{strappi} ($f$ continua), creare \textit{nuovi punti} ($f$ iniettiva), \textit{sovrapposizioni} ($f$ suriettiva) o \textit{incollamenti} ()$f^{-1}$ continua): in questo modo si può trasformare lo spazio in un altro che mantenga le stesse \textit{proprietà topologiche} dell'originale.\\
+	Si vede allora facilmente che un \textit{quadrato} ed un \textit{cerchio} sono omeomorfi, mentre una \textit{sfera} ed un \textit{toro} (la versione ‘‘topologica'' di una ciambella col buco, si veda pag. \pageref{cambiella}) non lo sono, dato che non posso creare né far sparire quel buco; allo stesso modo una \textit{retta} non è omeomorfa ad un \textit{punto}, dato che non posso ‘‘accumulare'' tutti i punti della retta in uno solo!\\
+	Seppur questa ‘‘visualizzazione'' è una buona intuizione del funzionamento degli omeomorfismi, \textbf{non è completamente accurata}. Ad esempio, un \textit{nastro di Möbius} (per la si veda \pageref{nastromobius}) con un mezzo-giro ed uno con tre mezzi-giri sono omeomorfi, ma con la nostra intuizione non si arriva a dire perché.
+\end{intuit}
 \begin{lemming}\textsc{(Manetti, 3.31)}\\
 	Siano $X$, $Y$ spazi topologici e $\funz{f}{X}{Y}$ funzione \textit{continua}. Allora vale:
 	\begin{enumerate}
@@ -461,7 +467,7 @@ Ricordiamo che, dato uno spazio topologico $\left(X,\ \topo\right)$ e un sottoin
 	$\impliesdx$ Un omeomorfismo è biettiva per definizione. Dimostriamo dunque che $f$ sia aperta, cioè $\forall A\in X$ aperto $f\left(A\right)\in Y$ è aperto. Ma definita $\funz{g}{Y}{X}$ l'inversa continua dell'omeomorfismo $f$ (cioè $f^{-1}=g$), si ha che $\forall A\in X$ $g^{-1}\left(A\right)=f\left(A\right)$ è aperto.\\
 	$\impliessx$ $f$ è già biettiva e continua per ipotesi. Dobbiamo dimostrare che l'inversa $\funz{g}{Y}{X}$ sia continua, cioè $\forall A\in X$ aperto $g^{-1}\left(A\right)\in Y$ è aperto. Ma $g^{-1}\left(A\right)=f\left(A\right)$ che è aperto perché $f$ è aperta.
 \end{demonstration}
-\subsection{Topologia indotta}\index{topologia!indotta}
+\section{Topologia indotta}\index{topologia!indotta}
 \begin{define}
 	Dati:
 	\begin{itemize}

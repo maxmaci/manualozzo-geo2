@@ -37,7 +37,7 @@ In quanto $A,\ B$ aperti, per definizione di aperto del sottospazio\footnote{Poi
 Il caso di $A$ e $B$ chiuso è esattamente analogo. 
 \end{demonstration}
 \section{Componente connessa e componente c.p.a.}
-Riprendiamo la trattazione delle componenti connesse e \textbf{c.p.a.} introdotte nel capitolo \autoref{chap:Connessocompatto}.
+Riprendiamo la trattazione delle componenti connesse e \textbf{c.p.a.} introdotte nel \autoref{chap:Connessocompatto}.
 \begin{define}
 	Una \textbf{componente connessa}\index{componente!connessa} di $X$ spazio topologico è uno spazio $C\subseteq X$ \textit{connesso} tale per cui:
 	\begin{equation}
@@ -178,7 +178,7 @@ Ricordando la definizione di \textit{segmento} (\pageref{segmento}, \autoref{seg
 \item $F\left(x,\ 0\right)=f\left(x\right),\ F\left(x,\ 1\right)=g\left(x\right)\ \forall x\in X$.
 \end{itemize}
 \end{demonstration}
-\begin{observe}
+\begin{observe}\label{omotopiasegmento}
 	Sia $Y\subseteq \realset^n$ (non necessariamente convesso!) e $\funz{f,\ g}{X}{Y}$ continua tale che $\overline{f\left(x\right)g\left(x\right)}\subseteq Y\ \forall x\in X$. Allora $f$ è omotopa a $g$ con la stessa omotopia $F$ definita nel caso di $Y$ convesso.
 \end{observe}
 \begin{attention}
@@ -404,7 +404,7 @@ $\realset^2\setminus\left\{\left(0,\ 0\right)\right\}$ non è nè convesso, nè 
 \begin{lemming}
 Se $X$ è contraibile, allora $X$ è \textbf{c.p.a.}.
 \end{lemming}
-\begin{demonstration} Con il seguente diagramma ricordiamo le funzioni in gioco con la comprimibilità.\\
+\begin{demonstration} Con il seguente diagramma ricordiamo le funzioni in gioco con la comprimibilità.
 \begin{center}
 	\begin{tikzcd}
 		\left\{1\text{ punto}\right\} \arrow[r, "g", bend left] & X \arrow[l, "f\text{ (costante)}", bend left]
@@ -458,6 +458,94 @@ Ma allora:
 \end{equation*}
 Per continuità di $f$ anche $f^{-1}\left(A\right)$ e $f^{-1}\left(B\right)$ sono aperti disgiunti in $X$ connesso. Segue che necessariamente uno dei due deve essere vuoto\footnote{In quanto se non fosse così, $X$ non sarebbe connesso.}, ad esempio $f^{-1}\left(A\right)=\emptyset$, cosicché $X=f^{-1}\left(B\right)$. \\
 Per i ragionamenti visti nel punto $1)$ possiamo trovare un arco che collega un qualsiasi punto $y\in Y$ con $f\left(g\left(y\right)\right)\in f\left(X\right)$. In particolare, dato che $f\circ g$ mappa $Y$ in $B$, si avrà $f\left(g\left(y\right)\right)\in B$: ma allora $y\in B$ necessariamente, dato che se fosse in $A$ i due aperti non sarebbero disgiunti! Per l'arbitrarietà di $y$ segue che $A=\emptyset$ e dunque anche $Y$ è connesso.\\
-Il viceversa è assolutamente analogo.
+Il viceversa è analogo.
 \end{enumerate}
 	\end{demonstration}
+\begin{example}
+	Le sfere $S^n\ \forall n\geq 1$ sono spazi topologici \textbf{c.p.a.} \textit{non} contraibili.
+\end{example}
+\section{Retratti e retratti di deformazione}
+\begin{define}
+	Sia $X$ uno spazio topologico e $A\subseteq X$ un suo sottospazio. Diciamo che $A$ è un \textbf{retratto} di $X$ se:
+	\begin{equation}
+		\exists \funz{r}{X}{A}\text{ continua}\ \colon r_{\mid A}=Id_A,\ \text{cioè}\ \colon r\left(a\right)=a\ \forall a\in A
+	\end{equation}
+In tal caso $r$ è detta \textbf{retrazione}.
+\end{define}
+\begin{observe}
+Se $r$ è una retrazione, per costruzione è suriettiva, dunque $A$ \textbf{eredita} da $X$ tutte le proprietà topologiche che si trasmettono per mappe continue (ad esempio connesso, \textbf{c.p.a.}, compatto).
+\end{observe}
+\begin{examples}~{}
+	\begin{itemize}
+		\item Dato $x_0\in X$, $\left\{x_0\right\}$ è sempre un retratto: infatti la mappa costante $\funz{\ }{X}{\left(x_0\right)}$ soddisfa banalmente le ipotesi di retrazione.
+		\item Presi $X=\left[0,\ 1\right]$, $A=\left(0,\ 1\right]$ \textit{non} è un retratto di $X$ (non è compatto!).
+		\item Presi $X=\left[0, 1\right]$, $\tilde{A}=\left\{0,\ 1\right\}$ \textit{non} è un retratto (non è \textit{connesso}!).
+	\end{itemize}
+\end{examples}
+\begin{example}\textsc{La retrazione radiale.}\label{retrazioneradiale}\\
+	Sia $X=\realset^n\setminus \left\{\underline{0}\right\}$ e $A=S^{n-1}\subseteq X$. Vogliamo definire una retrazione di $X$ su $A$, cioè una funzione continua $\funz{r}{\realset^n\setminus\left\{\underline{0}\right\}}{A=S^{n-1}}$ tale che $r_{\mid S^{n-1}}=Id_{S^{n-1}}$. Definiamo allora la \textbf{retrazione radiale}\index{retrazione radiale}:
+	\begin{equation}
+		\funztot{r}{\realset^n\setminus\left\{\underline{0}\right\}}{S^{n-1}}{\underline{x}}{r\left(\underline{x}\right)=\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}}
+	\end{equation}
+\begin{itemize}
+	\item $r$ è ben definita perché $\underline{x}\neq\underline{0}\implies \lvert\lvert \underline{x}\rvert\rvert\neq 0$.
+	\item $r$ continua.
+	\item Se $\underline{x}\in S^{n-1}$, allora $\lvert\lvert \underline{x}\rvert\rvert=1$, cioè $\forall \underline{x}\in S^{n-1}\ r\left(\underline{x}\right)=\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}=\underline{x}$.
+\end{itemize}
+\end{example}
+\begin{define}
+	Sia $X$ uno spazio topologico e $A\subseteq X$ un suo sottospazio. Diciamo che $A$ è un \textbf{retratto di deformazione}\index{retratto!di deformazione} se:
+		\begin{itemize}
+			\item $r_{\mid A}=Id_A$, cioè $r$ è un retratto.
+			\item Se $\incl{i}{A}{X}$ è l'inclusione di $A$ in $X$, allora $\funz{i\circ r}{X}{X}$ è omotopa all'identità di $X$ ($i\circ f\sim Id_X$).
+		\end{itemize}
+\end{define}
+\begin{observe}
+	Se $A$ è un retratto di deformazione di $X$, allora $A$ e $X$ hanno lo stesso \textbf{tipo di omotopia}.
+\end{observe}
+\begin{demonstration}~{}
+	\begin{itemize}
+		\item $\funz{r}{X}{A}$ e $\incl{i}{A}{X}$ sono continue.
+		\item $i\circ r\sim Id_X$ per ipotesi.
+		\item $\funz{r\circ i}{A}{A}$ è la restrizione di $r$ ad $A$ che, per ipotesi, è proprio l'identità di $A$, cioè $r\circ i=r_{\mid A}=Id_A$ e banalmente sono omotope.
+	\end{itemize}
+\end{demonstration}
+\begin{example}
+	Mostriamo che $S^{n-1}\subseteq \realset^n\setminus\left\{\underline{0}\right\}$ è un retratto di deformazione. Sfruttiamo la retrazione radiale definita a pag. \pageref{retrazioneradiale}:
+		\begin{equation*}
+		\funztot{r}{\realset^n\setminus\left\{\underline{0}\right\}}{S^{n-1}}{\underline{x}}{r\left(\underline{x}\right)=\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}}
+	\end{equation*}
+Considero ora l'inclusionee, definendo per comodità $X=\realset^n\setminus\left\{\underline{0}\right\}$:
+\begin{equation*}
+	\funz{i}{S^{n-1}}{X}
+\end{equation*}
+	\begin{equation*}
+		\funztot{f}{X}{X}{\underline{x}}{\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}}
+	%\funz{\tilde{r}\coloneqq i\circ r}{\realset^n\setminus\left\{\underline{0}\right\}}{\realset^n\setminus\left\{\underline{0}\right\}}{\underline{x}}{\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}}
+\end{equation*}
+Vogliamo che $\tilde{r}$ sia omotopa a $Id_X$.
+Osserviamo che $\forall \underline{x}\in\realset^n\setminus\left\{\underline{0}\right\}=X$ il segmento da $\underline{x}$ a $\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}$ non contiene, per costruzione, l'origine: allora esso è interamente contenuto in $\realset^n\setminus \left\{\underline{0}\right\}=X$. Dunque, riprendendo l'osservazione di pag. \pageref{omotopiasegmento} definiamo l'omotopia:
+\begin{equation*}
+	\funztot{F}{X\times I}{X}{\left(\underline{x},\ t\right)}{\left(1-t\right)\underline{x}+t\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}}
+\end{equation*}
+Infatti $F$ è ben definita, continua e $\mvf{F}{\underline{x}}{0}=\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}=\tilde{r}\left(\overline{x}\right),\ \mvf{F}{x}{1}=\overline{x}=Id_X\left(\overline{x}\right)$.
+\end{example}
+\begin{corollary}
+	In generale vale che $S^{n-1}$ è retratto di deformazione di $\realset^n\setminus\left\{1\text{ punto}\right\}$; in particolare hanno lo stesso tipo di omotopia.
+\end{corollary}
+\begin{intuit}
+	Se l'omeomorfismo permette di deformare uno spazio \textit{mantenendo certe qualità}, l'equivalenza omotopica risulta essere una forma \textbf{più debole} di trasformazione, in cui posso sempre deformare uno spazio \textit{perdendo} tuttavia certe qualità.\\
+	Riprendendo l'intuizione (non sempre corretta) di omeomorfismo enunciata nel \autoref{chap:spazitopologici}, possiamo vedere allora l'equivalenza omotopica come una deformazione che \textit{piega} e \textit{allunga} uno spazio senza formare \textit{strappi} ($f$ continua) ma che \textit{permette} fino ad un certo punto \textit{sovrapposizioni} e \textit{incollamenti} (ad esempio, non posso far sparire alcuni fori né ammassare indiscriminatamente troppi punti).\\
+	Dunque, sotto queste condizioni, posso rendere la \textit{retta} un \textit{punto}, mentre il \textit{piano} senza un punto si può trasformare un una \textit{circonferenza}. Allo stesso tempo però, non posso ‘‘concentrare'' la \textit{sfera} in uno solo \textit{punto}.\\
+	Ancor più che con il ragionamento intuitivo sull'omeomorfismo è necessario esercitare \textbf{estrema cautela} nell'applicare questa nozione euristica di omotopia.
+\end{intuit}
+\begin{define}
+Un \textbf{bouquet}\index{bouquet di circonferenze} \textbf{di} $n$ \textbf{circonferenze} è uno spazio topologico ottenuto unendo in un punto $n$ copie di $S^1$.
+\end{define}
+\begin{examples}\textsc{Altri esempi di equivalenze omotopiche}
+	\begin{enumerate}
+		\item $\realset^2\setminus\left\{2\text{ punti}\right\}$ ha lo stesso tipo di omotopia di un bouquet di due circonferenze: si può ottenere attraverso una composizione (continua) di omotopie radiali e lineari.
+		\item $\realset^2\setminus\left\{n\text{ punti}\right\}$ ha lo stesso tipo di omotopia di un bouquet di $n$ circonferenze.
+		\item $\realset^3\setminus\left\{1\text{ retta}\right\}$ ha lo stesso tipo di omotopia di $\realset^2\setminus\left\{1\text{ punto}\right\}$ per omotopie lineari, dunque ha la stessa omotopia di $S^1$ per i ragionamenti precedenti.
+	\end{enumerate}
+\end{examples}
