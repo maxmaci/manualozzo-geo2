@@ -16,4 +16,125 @@
 \end{introduction}
 
 \section{Gruppi topologici}
-Conoscendo le strutture
+Conoscendo le strutture di gruppo e spazio topologico su un insieme vogliamo vedere come possono essere compatibili fra loro.
+\begin{define}
+	Un insieme $G$ si dice gruppo topologico se
+		\begin{itemize}
+			\item $G$ è un gruppo
+			\item $G$ è uno spazio topologico
+			\item Le operazioni sono continue, ovvero le mappe \  $\funztot \mu {G\times G} G {(x,\ y)} {xy}$ \ e \ $\funztot i G G x {x^{-1}}$ sono funzioni continue.
+		\end{itemize}
+\end{define}
+Vediamo ora degli esempi noti di gruppi topologici.
+\begin{examples}
+	\begin{itemize}
+		\item $\left( \realset^n, \ +, \ \mathcal{E_{ucl}} \right), \left( \complexset ^n, \ +, \ \mathcal{E_{ucl}} \right)$
+		\item $\left( \realset^*, \ \bullet,\ \mathcal{E_{ucl}} \right), \left( \realset^*, \ \bullet, \ \mathcal{E_{ucl}} \right)$ con la topologia indotta di sottospazio
+		\item $\left( M_{n,m}(\realset),\ \bullet, \mathcal{E_{ucl}} \right)$ con la topologia indotta di sottospazio di $\realset^{n,m}$, ad esempio $\intv$
+	\end{itemize}	
+\end{examples}
+\begin{observe}
+	I gruppi topologici $\gl (n,\realset )$ e $\gl (n, \realset )$ sono aperti di $M_{n,n}$.\newline
+	Infatti considerata la funzione determinante $\funz \det {\realset^{n,n}} \realset$ essa è continua in quanto per calcolare il determinante si opera solo con somme e prodotti. Si ha che $\gl(n, \realset)$ è il complementare dell'insieme delle matrici che hanno determinante nullo, il quale è un chiuso in quanto controimmagine di un chiuso quale $\{0\}$ di una funzione continua. Dunque tale gruppo topologico è aperto, analogamente per $\complexset$.
+\end{observe}
+Vediamo ora altri sottoinsiemi di $M_{n,n}$:
+	\begin{itemize}
+		\item $\Sl$ dato da $\{\det A=1\} $ è il \textit{gruppo speciale lineare}
+		\item $\Or$ determinato dall'equazione $A^{t}A=I$ è il \textit{gruppo ortogonale}
+		\item $\So=\Or\cap\Sl$ è il \textit{gruppo speciale ortogonale}
+		\item $\U$ determinato dall'equazione $A^{t*}\overline{A}=I$ è il \textit{gruppo unitario}
+		\item $\Su=\U\cap\Sl$ è il \textit{gruppo speciale unitario}
+	\end{itemize}
+
+Ci sono delle operazioni sulle matrici che sono continue:
+	\begin{itemize}
+		\item \textit{moltiplicazione matriciale}: continua perché definita tramite somme e prodotti di elementi delle matrici
+		\item \textit{inversa}: è una funzione che ad una matrice $A$ associa $\displaystyle \frac{1}{\det A}$ per prodotti e somme di elementi della matrice, dunque è continua
+	\end{itemize}
+
+\begin{observe}
+	Per i gruppi topologici in generale vale la moltiplicazione destra e sinistra sono omeomorfismi:
+		\begin{gather*}
+			\funztot {L_h} G G g {hg} \text{   e   } \funztot {R_n}  G G g {gh} \\
+			(L_h)^{-1}=L_{h^{-1}} \text{   e   } (R_h)^{-1}=R_{h^-1}
+		\end{gather*}
+	Ne segue che un gruppo topologico è \textbf{omogeneo}, ovvero
+		\begin{gather*}
+			\forall g,h\in G \ \exists \funz \phi G G \text{ omeomorfismo t.c.} \phi(g)=h
+		\end{gather*}
+	infatti basta porre $\phi=L_{hg^{-1}}$ oppure $\phi=R_{g^{-1}h}$
+\end{observe}
+Il seguente teorema ci permette di caratterizzare i gruppi topologici Hausdorff grazie alla chiusura dell'elemento neutro. 
+%vorei mettere un punto esclamativo, è una cosa figa
+\begin{theorema}
+	Sia $G$ un gruppo topologico, $e\in G$ il suo elemento neutro, si ha che 
+		\begin{gather*}
+			G \ T_2 \iff \{e\} \text{ chiuso }
+		\end{gather*}
+\end{theorema}
+\begin{demonstration}~{}\\
+	$\impliesdx G \ T_2 \implies G \ T_1 \implies$ tutti i punti sono chiusi, in particolare anche $\{e\}$. \newline
+	$\impliessx$ Per dimostrare che $G \ T_2$ si utilizza la caratterizzazione con la diagonale chiusa, sfruttando l'omogeneità dei gruppi topologici:
+		\begin{gather*}
+			\funztot \phi {G\times G} G {(g,h)} {gh^{-1}} \ \ , \ \ (g,h)=(h,g) \iff g=h\iff \phi\left( (g,h)\right)=gh^{-1}=e \\
+			\implies \Delta_G =\phi^{-1}\left(\{e\}\right)
+		\end{gather*}
+	Per ipotesi $\{e\}$ è chiusa, quindi $\Delta_G$ è chiuso e dunque $G \ \ T_2$.
+\end{demonstration}
+
+\begin{observe}
+	$\gl(n,\realset)$ è sconnesso. Mostriamo che è unione di due aperti non vuoti disgiunti sfruttando la funzione determinante $\funz \det {\gl(n,\realset)} {\realset^*}$, infatti essendo continua  le controimmagini di aperti saranno aperti:
+		\begin{gather*}
+			\begin{array}{lcl}
+				\det^{-1} \left( (0,+\infty)\right) & = & \gl ^+ (n,\realset) \\ 
+				\det^{-1} \left( (-\infty,0)\right) & = & \gl ^- (n,\realset) \\
+			\end{array}
+		\implies \gl(n,\realset)=\gl^+(n,\realset) \sqcup \gl^-(n,\realset)
+		\end{gather*}
+\end{observe}
+ Dimostriamo un lemma che generalizza il teorema \ref{unione sottospazi connessi}
+ e che ci sarà utile nella dimostrazione successiva sulla connessione di alcuni gruppi topologici.
+\begin{lemming} \textsc{Manetti 4.18} \\
+	Sia $\funz f X Y$ continua. Se $f$ è suriettiva aperta o chiusa, $Y$ è connesso e le fibre sono connesse, ovvero se $\forall y\in Y \ f^{-1}(y)$ è connesso, allora $X$ è connesso.
+\end{lemming}
+\begin{demonstration}
+	Supponiamo che $f$ sia aperta e consideriamo $A_1\neq\emptyset\neq A_2$ aperti (per $f$ chiusa si considerano dei chiusi e si procede in modo analogo) t.c. $X=A_1\cup A_2$. Per dimostrare che $X$ è connesso mostriamo che $A_1\cap A_2\neq\emptyset$:
+		\begin{gather*}
+			\begin{array}{lcl}
+				f \text{ aperta } & \implies & f(A_1), f(A_2) \text{ aperti}\\
+				f \text{ suriettiva} & \implies & f(X)=Y \implies f(A_1\cup A_2)=f(A_1)\cup f(A_2)=Y \\
+				Y \text{ connesso } & \implies & f(A_1)\cap f(A_2)\neq\emptyset \implies \exists y_0\in f(A_1)\cap f(A_2) \implies \begin{cases} 
+					f^{-1}(y_0) \cap A_1\neq \emptyset \\
+					f^{-1}(y_0) \cap A_2\neq \emptyset 
+				\end{cases}
+			\end{array} \\
+				\begin{cases}
+					\left( f^{-1}(y_0)\cap A_1 \right)\cup \left( f^{-1}(y_0)\cap A_2 \right)=f^{-1}(y_0) \\
+					\text{fibre connesse }
+				\end{cases}
+				 \implies  f^{-1}(y_0)\cap A_1\cap A_2\neq\emptyset \implies A_1\cap A_2\neq\emptyset
+		\end{gather*}
+\end{demonstration}
+
+\begin{theorema}
+	$\forall n\geq 1, \gl^+(n,\realset)$ e $\gl(n,\complexset)$ sono connessi.
+\end{theorema}
+\begin{demonstration}
+	
+\end{demonstration}
+
+%\LEZ 11
+\begin{observe}
+	
+\end{observe}
+
+\begin{theorema}
+	
+\end{theorema}
+\begin{demonstration}
+	
+\end{demonstration}
+
+\begin{observe}
+	
+\end{observe}
