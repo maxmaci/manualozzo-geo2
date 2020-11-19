@@ -53,14 +53,13 @@
 \RequirePackage[rgb,hyperref,dvipsnames]{xcolor}
 \RequirePackage[most]{tcolorbox}
 \RequirePackage{tikz}
-\usetikzlibrary{calc,angles,positioning,intersections,quotes}
+\usetikzlibrary{calc,angles,positioning,intersections,quotes,arrows,decorations.pathreplacing}
 \RequirePackage{venndiagram}
 \RequirePackage{pgfplots}
 \RequirePackage{pgf}
 \RequirePackage{mathrsfs}
 \RequirePackage{xparse}
 \RequirePackage[framemethod=default]{mdframed}
-\usetikzlibrary{arrows}
 \RequirePackage{makeidx}
 \RequirePackage[thicklines]{cancel}
 \RequirePackage{bm}
@@ -1256,6 +1255,9 @@ linewidth=1pt]{neoncarrotBox}
 \theoremstyle{neoncarrotnumbox}
 \newtheorem{corollaryT}{\textsc{Corollario \thecorollary.}}[chapter]
 
+\theoremstyle{neoncarrotnumbox}
+\newtheorem{rememberT}{\textsc{Ricordiamo...}}[chapter]
+
 \theoremstyle{airforcebluenumbox}
 \newtheorem{intuitT}{\textsc{Intuitivamente...}}[chapter]
 
@@ -1317,6 +1319,10 @@ linewidth=1pt]{neoncarrotBox}
 %%% corollary %%%
 
 \newenvironment{corollary}{\begin{neoncarrotBox}\begin{corollaryT}}{\refstepcounter{corollary}\hfill{\color{neoncarrot}}	\end{corollaryT}\end{neoncarrotBox}}\numberwithin{corollary}{section}
+
+%%% remember %%%
+
+\newenvironment{remember}{\begin{neoncarrotBox}\begin{rememberT}}{\hfill{\color{neoncarrot}}	\end{rememberT}\end{neoncarrotBox}}
 
 %%% intuitivamente %%%
 
@@ -1491,7 +1497,40 @@ linewidth=1pt]{neoncarrotBox}
 			&#4&\mapsto& #5
 \end{array}}}}
 
+%%%%%%%%%%%%%%%%%%%%%%%% definizioni omotopia %%%%%%%%%%%%%%%%%%%%%%%%%
+
+% insieme dei cammini
+
+\newcommand{\inscam}[3]{%
+	\ensuremath{\Omega\left(#1;\ #2,\ #3\right)}%
+}
+
+% gruppo fondamentale
+
+\newcommand{\gruf}[2]{%
+		\IfEq{#2}{\ }{\ensuremath{\pi_{1}\left(#1\right)}}
+		{\ensuremath{\pi_{1}\left(#1,\ #2\right)}}%
+}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%% altre definizioni  %%%%%%%%%%%%%%%%%%%%%%%%%
+
+% parentesi attorno ad elementi di itemize: indicare la riga in fondo con \tikzmark{...} e poi infine, dopo \endd{itemize}, usare \brackitem
+
+	\newcommand{\tikzmark}[1]{\tikz[baseline={(#1.base)},overlay,remember picture] \node[outer sep=0pt, inner sep=0pt] (#1) {\phantom{A}};}
+	
+	\NewDocumentCommand\brackitem{mmo}{%
+	\IfValueTF {#3}{%
+	\begin{tikzpicture}[overlay, remember picture,decoration={brace,amplitude=1ex}]
+	\draw[decorate,thick] (#1.north east) -- (#2.south east) node[midway, right=0.1cm] {$=$}node[midway, right=0.5cm,text=black,text width = 2in,] {{#3}};
+	\end{tikzpicture}%
+	}%
+	{%
+	\begin{tikzpicture}[overlay, remember picture,decoration={brace,amplitude=1ex}]
+	\draw[decorate,thick] (#1.north east) -- (#2.south east);
+	\end{tikzpicture}%
+	}%
+	}%
 
 % parentesi graffa per sottolineare testo sotto
 

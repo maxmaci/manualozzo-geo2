@@ -16,3 +16,356 @@
 \end{introduction}
 
 \section{Omotopie fra cammini}
+Ove non specificato differentemente, useremo $I$ per indicare l'intervallo $\intv$.
+\begin{define}
+	Siano $\funz{\alpha,\ \beta}{I}{X}$ due cammini da $a$ a $b$, cioè con \textit{stessi estremi}. Allora $\alpha\,\beta$ sono \textbf{cammini omotopi}\index{cammino!omotopo} se $\exists \funz{F}{I \times I}{X}$ tale che:
+	\begin{equation}
+		\begin{array}{ll}
+			\begin{cases}
+							\mvf{F}{t}{0}=\alpha\left(t\right)\\
+				\mvf{F}{t}{1}=\beta\left(t\right)
+			\end{cases}&
+		\forall t\in I\ \text{ è omotopia tra } \alpha \text{ e }\beta\\
+			\begin{cases}
+			\mvf{F}{0}{s}=a\\
+			\mvf{F}{1}{s}=b
+		\end{cases}&
+		\forall s\in I\ \mvf{F}{\bullet}{s} \text{ è sempre un cammino tra } a \text{ e }b
+		\end{array}
+	\end{equation}
+$F$ è detta \textbf{omotopia di cammini}\index{omotopia!di cammini} o \textbf{omotopia a estremi fissi} \seeonlyindex{omotopia!a estremi fissi}{omotopia!di cammini}.
+\end{define}
+\begin{define}
+	Indichiamo con $\inscam{X}{a}{b}$ l'insieme dei cammini in $X$ da $a$ a $b$.
+\end{define}
+\begin{observe}
+	L'omotopia di cammini è una relazione di equivalenza su $\inscam{X}{a}{b}$.
+\end{observe}
+\begin{demonstration}~{}
+	\begin{itemize}
+		\item \textsc{Riflessiva}: ...
+		\item \textsc{Simmetrica}: ...
+		\item \textsc{Transitiva}: ...
+	\end{itemize}
+\end{demonstration}
+\begin{remember}
+Abbiamo già definito due ‘‘operazioni'' fra insiemi di cammini, senza averle necessariamente formalizzate:
+\begin{itemize}
+\item \textsc{Prodotto di cammini}: $\funztot{\ }{\inscam{X}{a}{b}\times\inscam{X}{b}{c}}{\inscam{X}{a}{c}}{\left(\alpha,\ \beta\right)}{\alpha\ast\beta}$
+\item \textbf{Inversione di cammini}: $\funztot{\ }{\inscam{X}{a}{b}}{\times\inscam{X}{b}{a}}{\alpha}{\overline{\alpha}}$
+\end{itemize}
+\end{remember}
+\begin{observe}
+Si ha $\overline{\overline{\alpha}}=\alpha$. Infatti:
+\begin{equation*}
+	\overline{\alpha}\left(t\right)=\alpha\left(1-t\right)\implies\overline{\overline{\alpha}}\left(t\right)=\overline{\alpha}\left(1-t\right)=\alpha\left(t\right)
+\end{equation*}
+\end{observe}
+\begin{lemming}\textsc{Composizioni di omotopie di cammini (Kosniowski, 14.2)\label{compoomotopecammini}}\\
+	Dati $\alpha,\ \alpha'\in\inscam{X}{a}{b}$ e $b,\ b'\in\inscam{X}{b}{c}$, parlando in termini di omotopie di cammini:
+	\begin{equation}
+		\alpha\sim \alpha'\text{ e }\beta\sim \beta'\implies \alpha\ast\beta\sim\alpha'\ast\beta'
+	\end{equation}
+\vspace{-8mm}
+\end{lemming}
+\begin{demonstration}
+	Esistono $\funz{F,\ G}{I\times I}{X}$ tali che:
+	\begin{gather*}
+		\begin{array}{ll}
+			\mvf{F}{t}{0}=\alpha\left(t\right)&\mvf{F}{0}{s}=a\\
+			\mvf{F}{t}{1}=\alpha'\left(t\right)&\mvf{F}{1}{s}=b
+		\end{array}
+	\forall t,\ s\in I\\
+		\begin{array}{ll}
+	\mvf{G}{t}{0}=\beta\left(t\right)&\mvf{G}{0}{s}=b\\
+	\mvf{G}{t}{1}=\beta'\left(t\right)&\mvf{G}{1}{s}=c
+\end{array}	
+	\forall t,\ s\in I
+	\end{gather*}
+Consideriamo $\funz{H}{I\times I}{X}$ data da:
+\begin{equation*}
+	\mvf{H}{t}{s})\begin{cases}
+				\begin{array}{lc}
+			\mvf{F}{2t}{s} & \text{se }0\leq t\leq \frac{1}{2}\\
+			\mvf{F}{2t-1}{s} & \text{se }\frac{1}{2}\leq t\leq 1	
+		\end{array}
+	\end{cases}
+\end{equation*}
+\begin{itemize}
+	\item $H$ è ben definita per $t=\frac{1}{2}$
+	\item $H$ è continua per il lemma di incollamento, essendo definito sui chiusi $\left[0,\ \frac{1}{2}\right]\times I$ e $\left[\frac{1}{2},\ 1\right]\times I$ è continua su di essi.
+\item \parbox[t]{0.25\textwidth}{$\mvf{H}{t}{0}=\left(\alpha\ast\beta\right)\left(t\right)$}\tikzmark{a}
+\item \parbox[t]{0.25\textwidth}{$\mvf{H}{t}{1}=\left(\alpha'\ast\beta'\right)\left(t\right)\ $}\tikzmark{b}
+\item \parbox[t]{0.25\textwidth}{$\mvf{H}{0}{s}=\mvf{F}{0}{0}=a$}\tikzmark{c}
+\item \parbox[t]{0.25\textwidth}{$\mvf{H}{1}{s}=\mvf{G}{1}{0}=c$}\tikzmark{d}
+\end{itemize}
+\brackitem{a}{b}[$\forall t\in I$ è omotopia]
+\brackitem{c}{d}[$\forall s\in I$ ha estremi fissi]
+$H$ è l'omotopia a estremi fissi cercata.
+\end{demonstration}
+\begin{lemming}\textsc{Cambiamento di parametri (Manetti, 11.3)}\\
+	Sia $\funz{\alpha}{I}{X}$ un cammino e $\funz{\varphi}{I}{I}$ una funzione continua tale che $\varphi\left(0\right)=0$ e $\varphi\left(1\right)=1$. Allora $\alpha\circ \varphi\sim\alpha$.
+\end{lemming}
+\begin{demonstration}
+	Sia $\funz{F}{I\times I}{X}$ data da $\mvf{F}{t}{s}=\alpha\left(s\varphi\left(t\right)+\left(1-s\right)t\right)$.
+	\begin{itemize}
+		\item $s\varphi\left(t\right)+\left(1-s\right)t$ è una combinazione lineare che è contenuta in $I\subseteq \realset\ \forall t,\ s\in I$ per convessità dell'intervallo $I$, da cui segue che $F$ è ben definita.
+		\item $F$ continua perché composizione di funzioni continue.
+		\item \parbox[t]{0.38\textwidth}{$\mvf{F}{t}{0}=\alpha\left(t\right)$}\tikzmark{a}
+		\item \parbox[t]{0.38\textwidth}{$\mvf{F}{t}{1}=\alpha\left(\varphi\left(t\right)\right)$}\tikzmark{b}
+		\item \parbox[t]{0.38\textwidth}{$\mvf{F}{0}{s}=\alpha\left(0\right)$}\tikzmark{c}
+		\item \parbox[t]{0.38\textwidth}{$\mvf{F}{1}{s}=\alpha\left(s+1-s\right)=\alpha\left(1\right)$}\tikzmark{d}
+	\end{itemize}
+\brackitem{a}{b}[$\forall t\in I$ è omotopia]
+\brackitem{c}{d}[$\forall s\in I$ ha estremi fissi]
+$H$ è l'omotopia a estremi fissi cercata tra $\alpha$ e $\alpha\circ\varphi$.
+\end{demonstration}
+\begin{define}
+	Il \textbf{cammino costante} $C_a$\index{cammino!costante} nel punto $a$ è un cammino che non si sposta mai da esso, cioè è descritto da una funzione costante nel punto:
+	\begin{equation}
+		\funztot{C_a}{I}{X}{t}{a}
+	\end{equation}
+\end{define}
+\begin{proposition}\textsc{(Manetti, 11.4 e 11.6)\label{propcammini}}\\
+	Sia $X$ spazio topologico e si considerino i cammini:
+	\begin{equation*}
+	\alpha\in\inscam{X}{a}{b}\quad\beta\in\inscam{X}{b}{c}\quad\gamma\in\inscam{X}{c}{d}
+	\end{equation*}
+Valgono le seguenti proprietà:
+\begin{enumerate}
+	\item \textsc{Associatività}: $\left(\alpha\ast\beta\right)\ast \gamma \sim \alpha\ast\left(\beta\ast\gamma\right)$.
+	\item \textsc{Rapporto coi cammini costanti}: $C_a\ast \alpha \sim \alpha \sim \alpha \ast C_b$. 
+	\item \textsc{Inverso}: $\alpha\ast\overline{\alpha}\sim C_a$ e $\overline{\alpha}\ast\alpha\sim C_a$.
+\end{enumerate}
+\end{proposition}
+\begin{demonstration}~{}
+\begin{enumerate}[label=\Roman*]
+	\item Scriviamo i due cammini:
+	\begin{gather*}
+\left(\left(\alpha\ast\beta\right)\ast\gamma\right)\left(t\right)=\begin{cases}
+	\begin{array}{ll}
+		\alpha\left(4t\right)&t\in\left[0,\ \frac{1}{4}\right]\\
+		\beta\left(4t-1\right)&t\in\left[\frac{1}{4},\ \frac{1}{2}\right]\\
+		\gamma\left(2t-1\right)&t\in\left[\frac{1}{2},\ 1\right]
+	\end{array}
+\end{cases}\\
+\left(\left(\alpha\ast\left(\beta\gamma\right)\right)\right)\left(t\right)=\begin{cases}
+\begin{array}{ll}
+	\alpha\left(2t\right)&t\in\left[0,\ \frac{1}{2}\right]\\
+	\beta\left(4t-2\right)&t\in\left[\frac{1}{2},\ \frac{3}{4}\right]\\
+	\gamma\left(2t-3\right)&t\in\left[\frac{3}{4},\ 1\right]
+\end{array}
+\end{cases}
+	\end{gather*}
+I due cammini differiscono per una \textit{riparametrizzazione} $\funz{\oldphi}{I}{I}$ di $\alpha\ast\left(\beta\ast\gamma\right)$ definita in questo modo:
+\begin{gather*}
+	\begin{cases}
+		\begin{array}{l}
+			2s=4t\\
+			4s-2=4t-2\\
+			4s-3=4t-1
+		\end{array}
+\implies
+\begin{cases}
+\begin{array}{ll}
+	s=2t&t\in\left[0,\ \frac{1}{2}\right]\\
+	s=t+\frac{1}{4}&t\in\left[\frac{1}{4},\ \frac{1}{2}\right]\\
+	s=\frac{t}{2}+\frac{1}{2}&t\in\left[\frac{1}{2},\ 1\right]
+\end{array}
+		\end{cases}
+	\end{cases}\\
+\oldphi\left(t\right)=	\begin{cases}
+\begin{array}{ll}
+	2t&t\in\left[0,\ \frac{1}{2}\right]\\
+	t+\frac{1}{4}&t\in\left[\frac{1}{4},\ \frac{1}{2}\right]\\
+	\frac{t}{2}+\frac{1}{2}&t\in\left[\frac{1}{2},\ 1\right]
+\end{array}
+		\end{cases}
+\end{gather*}
+\begin{itemize}
+	\item $\oldphi$ è ben definita e continua per lemma di incollamento.
+	\item $\oldphi\left(0\right)=0$ e $\oldphi\left(1\right)=1$.
+	\item $\left(\left(\alpha\ast\left(\beta\ast\gamma\right)\right)\right)\left(\oldphi\left(t\right)\right)=\left(\left(\alpha\ast\beta\right)\ast\gamma\right)\left(t\right)$.
+\end{itemize}
+Per il lemma del cambiamento di variabile i due cammini sono omotopi.
+\item Scriviamo i due cammini:
+\begin{gather*}
+	\left(C_a\ast \alpha\right)\left(t\right)=\begin{cases}
+		\begin{array}{ll}
+			a&t\in\left[0,\ \frac{1}{2}\right]\\
+			\alpha\left(2t-1\right)&t\in\left[\frac{1}{2},\ 1\right]
+		\end{array}
+	\end{cases}\\
+	\left(\alpha\ast C_b\right)\left(t\right)=\begin{cases}
+		\begin{array}{ll}
+			\alpha\left(2t\right)&t\in\left[0,\ \frac{1}{2}\right]\\
+			b&t\in\left[\frac{1}{2},\ 1\right]
+		\end{array}
+	\end{cases}
+\end{gather*}
+I due cammini differiscono per delle \textit{riparametrizzazioni} di $\alpha$ $\funz{\oldphi}{I}{I}$ e $\funz{\psi}{I}{I}$ definite così:
+\begin{equation*}
+	\oldphi\left(t\right)=
+	\begin{cases}
+		\begin{array}{ll}
+			0&t\in\left[0,\ \frac{1}{2}\right]\\
+			2t-1&t\in\left[\frac{1}{2},\ 1\right]
+		\end{array}
+	\end{cases}
+\qquad	\psi\left(t\right)=
+\begin{cases}
+	\begin{array}{ll}
+		2t&t\in\left[0,\ \frac{1}{2}\right]\\
+		1&t\in\left[\frac{1}{2},\ 1\right]
+	\end{array}
+\end{cases}
+\end{equation*}
+\begin{itemize}
+	\item $\oldphi$ e $\psi$ son ben definite e continue per lemma di incollamento.
+	\item $\oldphi\left(0\right)=0,\ \psi\left(0\right)=0$ e $\oldphi\left(1\right)=1,\psi\left(1\right)=1 $.
+	\item $\left(C_a\ast \alpha\right)\left(t\right)=\alpha\left(\oldphi\left(t\right)\right)$ e $\left(\alpha\ast C_b\right)\left(t\right)=\alpha\left(\psi\left(t\right)\right)$.
+\end{itemize}
+Per il lemma del cambiamento di variabile i due cammini sono entrambi omotopi a $\alpha$, si hanno quindi le equivalenze omotopiche cercate.
+\item È sufficiente dimostrare che $\alpha\ast\overline{\alpha}\sim C_a$. Possiamo immaginare di rappresentare tutte le parametrizzazioni di cammini definiti da un omotopia sul piano $I\times I$, con $t$ sulle ascisse e $s$ sulle ordinate.\\
+In questo modo i punti $a$ di inizio e $b$ di fine sono rappresentati dai segmenti verticali in $t=0$ e in $t=1$, mentre i cammini $\alpha$ di inizio e $\beta$ fine sono segmenti orizzontali in $s=0$ e $s=1$. Dunque, all'interno di $I\times I$ possiamo  trovare (fissato $s$) tutti i cammini $\mvf{F}{\bullet}{s}$ di estremi $a$ e $b$ compresi tra i cammini $\alpha$ e $\beta$: essi sono rappresentati da segmenti orizzontali.
+\begin{center}
+	\textbf{[IMMAGINE]}
+\end{center}
+Nel nostro caso, possiamo considerare il punto $a$ di inizio e il punto $b$ di fine del cammino $\alpha$. Nei due cammini ‘‘esterni'' o il cammino non si sposta mai da $a$ ( $C_a$ ), oppure percorre tutto il cammino $\alpha$ fino a $b$ (che è raggiunto per $t=\frac{1}{2}$) e torna poi indietro per lo \textit{stesso cammino} ( $\alpha\ast\overline{\alpha}$). Tuttavia, dobbiamo considerare anche cammini che percorrono $\alpha$ fino ad un punto $c$ \textit{intermedio} fra $a$ e $b$, stanno fermi in $c$ per poi tornare indietro. Definiamo la seguente omotopia:
+\begin{equation}
+	\mvf{F}{t}{s}=\begin{cases}
+		\begin{array}{ll}
+			\alpha\left(2t\right)&\text{se }0\leq t\leq \frac{s}{2}\\
+			\alpha\left(s\right)&\text{se }\frac{s}{2}\leq t\leq 1-\frac{s}{2}\\
+			\alpha\left(2-2t\right)&\text{se }1-\frac{s}{2}\leq t\leq 1
+		\end{array}
+	\end{cases}
+\end{equation}
+Verifichiamo che lo sia:
+\begin{itemize}
+\item $F$ è ben definita grazie alla ben definizione di $\alpha$: tutti i valori di $F$ risultano interni ad $X$.
+\item $F$ è continua per il lemma di incollamento.
+\item $\mvf{F}{t}{0}=\alpha\left(0\right)=C_a\left(t\right),\ \mvf{F}{t}{1}=\alpha\ast\overline{\alpha}\left(t\right)$ e $\mvf{F}{0}{s}=a=\mvf{F}{1}{s}$.
+\end{itemize}
+In questo modo teniamo conto della possibilità del cammino di ‘‘fermarsi'' per un certo tempo in un particolare punto $\alpha\left(s\right)$. 
+\end{enumerate}
+\end{demonstration}
+\section{Gruppo fondamentale}
+\begin{define}
+	Sia $X$ uno spazio topologico e fissiamo un punto $x_0\in X$. I \textbf{lacci}\index{laccio} o \textbf{cappi}\seeonlyindex{cappio}{laccio} sono i cammini chiusi in $X$, cioè tutti i cammini il cui punto iniziale e finale coincidono. Il loro insieme si denota dunque come $\inscam{X}{x_0}{x_0}$.
+\end{define}
+\begin{observe}
+	Possiamo notare come $\forall\alpha,\ \beta\in\inscam{X}{x_0}{x_0}$ si ha:
+	\begin{equation*}
+		\alpha\ast\beta\in\inscam{X}{x_0}{x_0}\qquad \overline{\alpha}\in\inscam{X}{x_0}{x_0}
+	\end{equation*}
+Allora, se quozientiamo l'insieme dei lacci rispetto alla relazione di equivalenza data dall'omotopia di cammini, esso possiede una struttura di \textit{gruppo}:
+\begin{equation}
+	\begin{array}{cc}
+	\gruf{X}{x_0}=&\frac{\inscam{X}{x_0}{x_0}}{\sim}
+	\end{array}	
+\end{equation}
+Preso un laccio $\alpha$, indichiamo la sua classe di equivalenza in $\gruf{X}{x_0}$ con $\left[\alpha\right]$. Allora:
+\begin{itemize}
+	\item Il prodotto di cammini dà un operazione ben definita su $\gruf{X}{x_0}$ grazie al lemma \ref{compoomotopecammini} (Kosniowski, 14.2):
+	\begin{equation}
+		\left[\alpha\right]\cdot\left[\beta\right]=\left[\alpha\ast\beta\right]
+	\end{equation}
+\item L'operazione appena definita è associativa per il primo punto della proposizione \ref{propcammini} (Manetti, 11.4 e 11.6).
+\item $\left[C_{x_0}\right]$ è l'elemento neutro, sempre per la proposizione \ref{propcammini} (Manetti, 11.4 e 11.6):
+\begin{equation}
+	\left[C_{x_0}\right]\cdot\left[\alpha\right]=\left[\alpha\right]=\left[\alpha\right]\cdot\left[C_{x_0}\right]
+\end{equation} 
+\item $\left[\overline{\alpha}\right]$ è l'inverso di $\left[\alpha\right]$, cioè $\left[\alpha\right]^{-1}\coloneqq\left[\overline{\alpha}\right]$, per la proposizione \ref{propcammini} (Manetti, 11.4 e 11.6):
+\begin{equation}
+\left[\overline{\alpha}\right]\cdot\left[\alpha\right]=\left[C_{x_0}\right]=\left[\alpha\right]\cdot\left[\overline{\alpha}\right]
+\end{equation}
+\end{itemize}
+\end{observe}
+\begin{attention}
+	La proposizione \ref{propcammini} (Manetti, 11.4 e 11.6) ci garantisce che la composizione di cammini omotopi è omotopa ($\left(\alpha\ast\beta\right)\ast \gamma \sim \alpha\ast\left(\beta\ast\gamma\right)$), dunque possiamo parlare della \textit{classe} $\left[\alpha\ast\beta\ast\gamma\right]$. Tuttavia, al di fuori del quoziente non ha senso $\alpha\ast\beta\ast\gamma$!\\
+	L'ordine con cui congiungiamo i cammini dà luogo a due cammini certamente omotopi, \textit{ma non uguali}, dato che la parametrizzazione varia\footnote{Questo si vede chiaramente nella dimostrazione della proposizione.}.
+\end{attention}
+\begin{define}
+	Dato uno spazio topologico $X$ e fissato un punto (detto \textbf{punto base}\index{punto!base}) $x_0$, il \textbf{gruppo fondamentale}\index{gruppo!fondamentale} con punto base $x_0$ è il gruppo $\gruf{X}{x_0}$ definito nell'osservazione precedente.\\
+	Si chiama anche \textbf{primo gruppo fondamentale}\index{gruppo!fondamentale!primo} o \textbf{gruppo di Poincaré}\seeonlyindex{gruppo!di Poicaré}{gruppo!fondamentale}.
+\end{define}
+\subsection{Dipendenza dal punto base}
+\begin{theorema}
+	Il gruppo fondamentale dipende \textit{solo} dalla componente \textit{c.p.a.} contente il punto base $x_0$.\\
+	In altre parole, se $x,\ y\in X$ appartengono alla stessa componente \textbf{c.p.a.}, preso un arco $\gamma$ da $x$ a $y$ e costruito:
+	\begin{equation}
+		\funztot{\gamma_{\#}}{\gruf{X}{x}}{\gruf{X}{y}}{\left[\alpha\right]}{\left[\overline{\gamma}\ast\alpha\ast\gamma\right]}
+	\end{equation}
+	È ben definito ed è un \textit{isomorfismo} di gruppi, cioè:
+	\begin{equation}
+		\gruf{X}{x}\cong\gruf{X}{y}
+	\end{equation}
+\end{theorema}
+\begin{remember}
+	Una funzione fra due gruppi $\funz{f}{\left(G,\ \cdot_G\right)}{\left(H,\ \cdot_H\right)}$ è un \textbf{omomorfismo di gruppi}\index{omomorfismo di gruppi} se:
+	\begin{gather*}
+		f\left(a\cdot_G b\right)=f\left(a\right)\cdot_H f\left(b\right)\quad \forall a,\ b\in G
+	\end{gather*}
+	Se $f$ è \textit{biettiva}, allora parliamo di \textbf{isomorfismo di gruppi}\index{isomorfismo di gruppi}.
+\end{remember}
+\begin{demonstration}~{}
+	\begin{itemize}
+		\item $\gamma_{\#}$ è ben definito in quanto la classe $\left[\overline{\gamma}\ast\alpha\ast\gamma\right]$ è ben definita per la composizione dei cammini ed è la classe di equivalenza di un cappio di $y$ ($\overline{\gamma}$ parte da $y$ e raggiunge $x$, con $\alpha$ compie un cammino chiuso in $x$ per tornare al punto di partenza $y$).
+		\item $\gamma_{\#}$ è un omomorfismo di gruppi:
+		\begin{equation*}
+			\begin{array}{lll}
+				\gamma_{\#}\left(\left[\alpha\right]\ast\left[\beta\right]\right)&=&\gamma_{\#}\left(\left[\alpha\ast\beta\right]\right)=\left[\overline{\gamma}\ast\alpha\ast\beta\ast\gamma\right]=\left[\overline{\gamma}\ast\alpha\ast C_x\ast\beta\ast\gamma\right]=\left[\overline{\gamma}\ast\alpha\ast \gamma\ast\overline{\gamma}\ast\beta\ast\gamma\right]\\
+				&=&\left[\overline{\gamma}\ast\alpha\ast\gamma\right]\cdot\left[\overline{\gamma}\ast\beta\ast\gamma\right]=\gamma_{\#}\left(\left[\alpha\right]\right)\cdot \gamma_{\#}\left(\left[\beta\right]\right)
+			\end{array}
+		\end{equation*}
+	Infatti, anche l'elemento neutro viene mappato all'elemento neutro del codominio:
+	\begin{equation*}
+		\gamma_{\#}\left(\left[C_x\right]\right)=\left[\overline{\gamma}\ast C_x\ast\gamma\right]=\left[\overline{\gamma}\ast\gamma\right]=\left[C_y\right]
+	\end{equation*}
+	\item Possiamo associare in modo analogo al cammino $\overline{\gamma}$ il cammino:
+	\begin{equation*}
+		\funztot{\overline{\gamma}_{\#}}{\gruf{X}{y}}{\gruf{X}{x}}{\left[\alpha\right]}{\left[\gamma\ast\alpha\ast\overline{\gamma}\right]}
+	\end{equation*}
+In modo assolutamente analogo a come visto sopra, si vede che è un omeomorfismo; verifichiamo ora che $\gamma_{\#}$ e $\overline{\gamma}_{\#}$ siano l'uno l'inverso dell'altro:
+\begin{gather*}
+	\overline{\gamma}_{\#}\left(\gamma_{\#}\left(\left[\alpha\right]\right)\right)=\overline{\gamma}_{\#}\left(\left[\overline{\gamma}\ast\alpha\ast\gamma\right]\right)=\left[\gamma\ast\overline{\gamma}\ast\alpha\ast\gamma\ast\overline{\gamma}\right]=\left[C_x\ast\alpha\ast C_x\right]=\left[\alpha\right]\\
+	\gamma_{\#}\left(\overline{\gamma}\left(\left[\alpha\right]\right)\right)=
+	\gamma_{\#}\left(\left[\gamma\ast\alpha\ast\overline{\gamma}\right]\right)=\left[\overline{\gamma}\ast\gamma\ast\alpha\ast\overline{\gamma}\ast\gamma\right]=\left[C_y\ast\alpha\ast C_y\right]=\left[\alpha\right]
+\end{gather*}
+Segue che allora $\gamma_{\#}$ è biettiva.
+\end{itemize}
+\end{demonstration}
+\begin{observe}~{}
+	\begin{itemize}
+		\item Se due punto $x_1$ e $x_2$ stanno in componenti connesse per archi diverse, \textit{non} c'è alcuna relazione tra $\gruf{X}{x_1}$ e $\gruf{X}{x_2}$.
+		\item Se $X$ è \textbf{c.p.a.}, il suo gruppo fondamentale è \textit{unico} a meno di isomorfismo.
+	\end{itemize}
+\end{observe}
+\begin{example}
+	Sia $Y\subseteq \realset^n$ un sottospazio convesso e $y_0\in Y$.
+	Allora $\gruf{Y}{y_0}=0$ è \textbf{banale}; in particolare, allora $\gruf{\realset^n}{y_0}$ è banale per ogni $n$.
+\end{example}
+\begin{demonstration}
+	Sia $\left[\alpha\right]\in\gruf{Y}{y_0}$. Vogliamo mostrare che $\left[\alpha\right]=\left[C_{y_0}\right]$, cioè che $\alpha\sim C_{y_0}$.\\
+	Consideriamo $\funz{F}{X\times I}{Y}$ tale che:
+	\begin{equation*}
+		\mvf{F}{t}{s}=s\left(\alpha\left(t\right)\right)+\left(1-s\right)y_0
+	\end{equation*}
+\begin{itemize}
+	\item $F$ risulta ben definita: è una combinazione convessa al variare di $s\in\intv$ tra $\alpha\left(t\right)\in Y$ (per $t$ fissato) e $y_0\in Y$.
+	\item $F$ è continua perché composizione di applicazioni continue.
+	\item $\mvf{F}{t}{0}=y_0=C_{y_0}\left(t\right),\ \mvf{F}{t}{1}=\alpha\left(t\right)$.
+	\item $\mvf{F}{0}{s}=s\alpha\left(0\right)+\left(1-s\right)y_0=sy_0+\left(1-s\right)y_0=y_0,\ \mvf{F}{1}{s}=s\alpha\left(1\right)+\left(1-s\right)y_0=sy_0+\left(1-s\right)y_0=y_0$.
+\end{itemize}
+Segue che $F$ è un omotopia tra $C_{y_0}$ e $\alpha$, dunque segue la tesi.
+\end{demonstration}
+\begin{define}
+	Uno spazio topologico $X$ è \textbf{semplicemente connesso}\index{semplicemente connesso} se è \textbf{c.p.a.} e ha gruppo fondamentale \textbf{banale}.
+\end{define}
+\begin{examples}~{}
+	\begin{itemize}
+		\item $\realset^n$ è semplicemente connesso.
+		\item Ogni convesso di $\realset^n$ è semplicemente connesso.
+	\end{itemize}
+\end{examples}

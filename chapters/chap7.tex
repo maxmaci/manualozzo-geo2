@@ -276,7 +276,7 @@ In tal caso $f$ e $g$ si dicono \textbf{equivalenze omotopiche}\index{equivalenz
 	\item Consideriamo $X=\realset^n$ in topologia Euclidea e $Y=\left\{1\text{ punto}\right\}$. Allora $X$ e $Y$ sono omotopicamente equivalenti.
 \end{enumerate}
 \end{observe}
-\begin{demonstration}
+\begin{demonstration}~{}
 	\begin{enumerate}[label=\Roman*]
 		\item L'omotopia è una relazione riflessiva, dunque se abbiamo $h=k$ e $h\sim h$, allora si ha $h\sim k$. Nel caso di un isomorfismo, preso $f$ e la sua inversa $g$, possiamo affermare:
 		\begin{equation*}
@@ -289,8 +289,7 @@ In tal caso $f$ e $g$ si dicono \textbf{equivalenze omotopiche}\index{equivalenz
 			f\circ g\sim Id_Y
 		\end{cases}
 		\end{equation*}
-	\item Consideriamo $\funz{f}{\realset^n}{Y=\left\{1\text{ punto}\right\}}$ e $\funz{g}{Y=\left\{1\text{ punto}\right\}}{\realset^n}$, ponendo $g\left(\text{punto}\right)=\underline{0}$.\\
-	$f$ e $g$ sono \textit{continue}, inoltre:
+	\item Consideriamo $\funz{f}{\realset^n}{Y=\left\{1\text{ punto}\right\}}$ e $\funztot{g}{Y=\left\{1\text{ punto}\right\}}{\realset^n}{\text{punto}}{g\left(\text{punto}\right)=\underline{0}}$.	$f$ e $g$ sono \textit{continue}, inoltre:
 	\begin{gather*}
 		\funz{f\circ g}{Y=\left\{1\text{ punto}\right\}}{Y=\left\{1\text{ punto}\right\}}\implies f\circ g= Id_Y\\
 		\funztot{g\circ f}{\realset^n}{\realset^n}{\underline{x}}{\underline{0}}\implies g\circ f=O_{\realset^n} \text{(applicazione nulla)} 
@@ -313,7 +312,7 @@ Abbiamo che $g\circ f=O_{\realset^n}$ è omotopa a $Id_{\realset^n}$, poiché $\
 \begin{exercise}
 	Essere omotopicamente equivalenti è una relazione di equivalenza sull'insieme degli spazi topologici.
 \end{exercise}
-\begin{demonstration}
+\begin{demonstration}~{}
 	\begin{itemize}
 	\item \textsc{Riflessiva}: $X\sim X\iff \exists f,\ g$ continue per cui $g\circ f\sim Id_X,\ f\circ g\sim Id_X$. Ponendo $f\equiv Id_X\equiv g$ vale banalmente $g\circ f=f\circ g=Id_X\sim Id_X$.
 	\item \textsc{Simmetrica}: Da $X\sim Y$ sappiamo che $\exists \funz{f}{X}{Y},\ \funz{g}{Y}{X}$ continue per cui $g\circ f\sim Id_X,\ f\circ g\sim Id_Y$; se vogliamo mostrare $Y\sim X$ dobbiamo cercare $\funz{h}{Y}{X},\ \funz{k}{X}{Y}$ per cui $k\circ h\sim Id_Y,\ h\circ k\sim Id_X$. Ponendo $h\equiv g$ e $k\equiv h$, esse soddisfano la richiesta.  
@@ -372,7 +371,7 @@ $\implies a\circ b\sim Id_Z$.
 \end{itemize}
 \end{demonstration}
 \begin{define}
-	Una spazio topologico è \textbf{contraibile}\index{contraibile} o \textit{contrattile}\seeonlyindex{contrattile}{contraibile} se hanno lo stesso tipo di omotopia di un punto.
+	Uno spazio topologico è \textbf{contraibile}\index{contraibile} o \textit{contrattile}\seeonlyindex{contrattile}{contraibile} se ha lo stesso tipo di omotopia di un punto.
 \end{define}
 \begin{examples}~{}
 	\begin{enumerate}
@@ -511,6 +510,7 @@ Se $r$ è una retrazione, per costruzione è suriettiva, dunque $A$ \textbf{ered
 	\end{itemize}
 \end{demonstration}
 \begin{example}
+	\label{retrattosfera}
 	Mostriamo che $S^{n-1}\subseteq \realset^n\setminus\left\{\underline{0}\right\}$ è un retratto di deformazione. Sfruttiamo la retrazione radiale definita a pag. \pageref{retrazioneradiale}:
 		\begin{equation*}
 		\funztot{r}{\realset^n\setminus\left\{\underline{0}\right\}}{S^{n-1}}{\underline{x}}{r\left(\underline{x}\right)=\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}}
@@ -520,8 +520,10 @@ Considero ora l'inclusionee, definendo per comodità $X=\realset^n\setminus\left
 	\funz{i}{S^{n-1}}{X}
 \end{equation*}
 	\begin{equation*}
-		\funztot{f}{X}{X}{\underline{x}}{\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}}
-	%\funz{\tilde{r}\coloneqq i\circ r}{\realset^n\setminus\left\{\underline{0}\right\}}{\realset^n\setminus\left\{\underline{0}\right\}}{\underline{x}}{\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}}
+		\funztot{r}{X}{X}{\underline{x}}{\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}}
+	\end{equation*}
+			\begin{equation*}
+	\tilde{r}\coloneqq\funztot{ i\circ r}{X}{X}{\underline{x}}{\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}}
 \end{equation*}
 Vogliamo che $\tilde{r}$ sia omotopa a $Id_X$.
 Osserviamo che $\forall \underline{x}\in\realset^n\setminus\left\{\underline{0}\right\}=X$ il segmento da $\underline{x}$ a $\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}$ non contiene, per costruzione, l'origine: allora esso è interamente contenuto in $\realset^n\setminus \left\{\underline{0}\right\}=X$. Dunque, riprendendo l'osservazione di pag. \pageref{omotopiasegmento} definiamo l'omotopia:
@@ -542,10 +544,37 @@ Infatti $F$ è ben definita, continua e $\mvf{F}{\underline{x}}{0}=\frac{\underl
 \begin{define}
 Un \textbf{bouquet}\index{bouquet di circonferenze} \textbf{di} $n$ \textbf{circonferenze} è uno spazio topologico ottenuto unendo in un punto $n$ copie di $S^1$.
 \end{define}
-\begin{examples}\textsc{Altri esempi di equivalenze omotopiche}
+\begin{examples}\textsc{Altri esempi di equivalenze omotopiche.}
 	\begin{enumerate}
-		\item $\realset^2\setminus\left\{2\text{ punti}\right\}$ ha lo stesso tipo di omotopia di un bouquet di due circonferenze: si può ottenere attraverso una composizione (continua) di omotopie radiali e lineari.
-		\item $\realset^2\setminus\left\{n\text{ punti}\right\}$ ha lo stesso tipo di omotopia di un bouquet di $n$ circonferenze.
-		\item $\realset^3\setminus\left\{1\text{ retta}\right\}$ ha lo stesso tipo di omotopia di $\realset^2\setminus\left\{1\text{ punto}\right\}$ per omotopie lineari, dunque ha la stessa omotopia di $S^1$ per i ragionamenti precedenti.
+		\item $\realset^2\setminus\left\{2\text{ punti}\right\}$ ha lo stesso tipo di omotopia di un \textit{bouquet di due circonferenze}: si può ottenere attraverso una composizione (continua) di retrazioni radiali e lineari.
+		\item $\realset^2\setminus\left\{n\text{ punti}\right\}$ ha lo stesso tipo di omotopia di un \textit{bouquet di} $n$ \textit{circonferenze}.
+		\item $\realset^3\setminus\left\{1\text{ retta}\right\}$ ha lo stesso tipo di omotopia di $\realset^2\setminus\left\{1\text{ punto}\right\}$ per retrazioni lineari, dunque ha la stessa omotopia di $S^1$ per i ragionamenti precedenti.
+		\item Per $\realset^3\setminus\left\{2\text{ rette}\right\}$ dobbiamo distinguere a seconda della relazione fra le due rette.
+		\begin{itemize}
+			\item Se le rette sono \textbf{disgiunte}, $X$ è sempre omeomorfo a:
+			\begin{equation*}
+				\realset^3\setminus\left\{\text{asse z}\right\}\setminus\left\{x=y=1\right\}=\tilde{X}
+			\end{equation*}
+		Cioè lo spazio $\realset^3$ privato di due rette perpendicolari al piano e distinte.\\
+			Considerato ora il piano $Y=\left\{\text{piano xy}\right\}\setminus\left\{\left(0,0\right),\ \left(1,1\right)\right\}$, questo risulta un retratto di deformazione di $\tilde{X}$ con retrazione:
+			\begin{equation*}
+				\funztot{r}{\tilde{X}}{Y}{\left(x,\ y,\ z\right)}{\left(x,\ y, 0\right)}
+			\end{equation*}
+		Infatti la funzione è sempre ben definita e continua e, considerata la restrizione di $r$ ad $Y$, segue che banalmente che è l'identità di $Y$ in quanto tutti i punti di $Y$ hanno già la forma $\left(x,\ y, 0\right)$. Guardando invece $\tilde{r}=i\circ r$ con $\incl{i}{Y}{\tilde{X}}$, un'omotopia con $Id_{\tilde{X}}$ è:
+		\begin{equation*}
+			\funz{F}{\tilde{X}\times I}{\tilde{X}}\ \colon \mvf{F}{\left(x,\ y,\ z\right)}{t}=\left(x,\ y,\ tz\right)
+		\end{equation*}
+		Infatti $F$ è banalmente ben definita continua, con $\mvf{F}{\underline{x}}{0}=\left(x,\ y,\ 0\right)=\tilde{r}\left(\underline{x}\right)$ e $\mvf{F}{\underline{x}}{1}=\left(x,\ y,\ z\right)=Id_{\tilde{X}}\left(\underline{x}\right)$.\\
+		Segue che $\tilde{X}$, e dunque anche $X$ per omeomorfismo, ha la stessa omotopia di $\realset^2\setminus\left\{2\text{ punti}\right\}$ e di un \textit{bouquet di due circonferenze}.
+		\item Se le due rette sono incidenti, a meno di omeomorfismi si intersecano nell'origine. Consideriamo dunque $X=\realset^3\left\{r_1\cup r_2\right\}$ e lo spazio $A=S^2\setminus\left\{P_1,\ P_2,\ Q_1,\ Q_2\right\}$. Se prendiamo la retrazione:
+		\begin{equation*}
+			\funztot{r}{X}{A}{\underline{x}}{\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}}.\\
+		\end{equation*}
+		e l'omotopia:
+		\begin{equation*}
+			\tilde{r}\coloneqq\funztot{ i\circ r}{X}{X}{\underline{x}}{\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}}
+		\end{equation*}
+	Si verifica in modo analogo a come visto nel caso della sfera e dello spazio privato dell'origine (esempio a pagina \ref{retrattosfera}), trattando con una \textit{retrazione radiale} ben definita e la sua omotopia nota, che $A$ è retratto di deformazione di $X$. Segue allora che hanno lo stesso tipo di omotopia.
+		\end{itemize}
 	\end{enumerate}
 \end{examples}
