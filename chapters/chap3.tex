@@ -160,17 +160,59 @@ Il seguente teorema ci permette di caratterizzare i gruppi topologici Hausdorff 
 %WELP LA FORMATTAZIONE DEL GATHER* è ORRIBILE MA NON SO COME MIGLIORARLA
 
 %\LEZ 11
-\begin{observe}
-	
-\end{observe}
+\begin{corollary}
+	$\Sl(n,\realset)$ e $\Sl(n,\complexset)$ sono connessi.
+\end{corollary}
+\begin{demonstration}
+	Siccome $\gl^+(n,\realset)$ e $\gl(n,\complexset)$ sono connessi, basta considerare la seguente funzione:
+		\begin{gather*}
+			\funztot f {\gl^+(n,\realset)} {\Sl(n,\realset)} A {
+				\begin{pmatrix}
+					\frac{a_{1,1}}{\det A} & a_{1,2} & \cdots  & a_{1,n} \\
+					\vdots                 & \vdots  & \ddots  & \vdots \\
+					\frac{a_{n,1}}{\det A} & a_{n,2} & \cdots  & a_{n,n}
+				\end{pmatrix}
+			}			
+		\end{gather*}
+	Siccome $f$ è continua e suriettiva e $\gl^+(n,\realset)$ è connesso allora $f(\gl^+)=\Sl$ è connesso.
+\end{demonstration}
+
+\begin{corollary}
+	$\Or$ non è connesso.	
+\end{corollary}
+\begin{demonstration}
+	Siccome $\Or$ è sottogruppo di $\gl$ e la connessione è una proprietà topologica allora $\Or$ non è connesso. In particolare si può dividere in base a $\det =+1$ e $\det =-1$.
+\end{demonstration}
 
 \begin{theorema}
-	
+	$\So(n), \U(n)	$ e $\Su(n)$ sono compatti e connessi.
 \end{theorema}
 \begin{demonstration}
-	
+	Per dimostrare che sono \textit{compatti} essendo sottospazi di $\realset^{n\times n}$ per il teorema \ref{compatto chiuso e limitato R^n} basta dimostrare che sono chiusi e limitati. In particolare essendo definiti tramite equazioni che sono luoghi di zeri di polinomi in $a_{ij}$ allora sono chiusi:
+		\begin{gather*}
+			\So(n):\begin{cases}
+					A^{t}A=I\\
+					\det A=1
+				\end{cases}, \ \
+			U(n): A^{t}\overline{A}=I, \ \
+			\Su(n): \begin{cases}
+				A^{t}\overline{A}=I\\
+				\det A=1
+			\end{cases}
+		\end{gather*}
+	Siccome $\Su(n)\subseteq \U(n)\subseteq \So(n)$ basta dimostrare che $\So(n)$ è limitato:
+		\begin{gather*}
+			A\in\So(n) \implies \sum_{i=1}^n a_{ij}^2=1, \forall i=1,\dots,n \implies \sum_{i=1}^n a_{ij}^2=n \implies \So(n)\subseteq S_{\sqrt{n}}\subseteq\realset^{n\times n}\\
+		\end{gather*}
+	dove $S_{\sqrt{n}}$ è la sfera di raggio $\sqrt{n}$, dunque $\So(n)$ è limitato. Ne segue che anche $\U(n)$ e $\Su(n)$ lo sono, dunque sono tutti chiusi e limitati in $\realset^{n\times n}$, quindi compatti. \newline
+	Per dimostrare che sono \textit{connessi} si procede analogamente al teorema precedente sfruttando il lemma che lo precede. Si consideri $\funz p {\So(n)} {S^{n-1}\subseteq \realset^n}$ funzione prima colonna, essa è continua, suriettiva e chiusa in quanto è un compatto (appena dimostrati) in un $T_2$, e le sue fibra sono connesse $\displaystyle p^{-1}\left( \begin{psmallmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{psmallmatrix} \right) = \begin{psmallmatrix}
+		1      & 0 & \cdots & 0\\
+		0      &   &       &  \\
+		\vdots &   & A     &  \\
+		0      &   &       &
+	\end{psmallmatrix}$ con $A\in \So(n-1)$, dunque per il lemma precedente $\So(n)$ è connesso.
 \end{demonstration}
 
 \begin{observe}
-	
+	$\gl$ e $\Sl$ \textit{non} sono compatti perché non sono limitati, inoltre $\gl$ è aperto e non chiuso.
 \end{observe}
