@@ -120,8 +120,44 @@ Il seguente teorema ci permette di caratterizzare i gruppi topologici Hausdorff 
 	$\forall n\geq 1, \gl^+(n,\realset)$ e $\gl(n,\complexset)$ sono connessi.
 \end{theorema}
 \begin{demonstration}
-	
+	Si procede per induzione su $n$ per $\gl^+(n,\realset)$, il caso $\gl(n,\complexset)$ è analogo.\newline
+	$n=1 \ )$ \ \ $\begin{cases}
+			\gl^+(1,\realset)=(0,+\infty) \\
+			\gl(n,\complexset)=\complexset\setminus\{0\}=\realset^2\setminus{0}
+		\end{cases}$ connessi.\newline
+	$n>1 \ )$ \ \ Supponiamo che $\gl^+(n-1,\realset)$ sia connesso e dimostriamo che lo è anche $\gl(n,\realset)$. Cerchiamo dunque una funzione continua da $\gl^+(n,\realset)$  a $\gl(n-1,\realset)$ che soddisfi le ipotesi del lemma precedente. Pertanto si considera la funzione prima colonna $\displaystyle \funztot p {\realset^{n,n}} {\realset^n} A {p(A)}$ che mappa la prima colonna di $A$. Siccome $\realset^{n,n}=\realset^n\times\realset^{n,n-1}$ allora $p$ è una proiezione, dunque per il punto 2 della proposizione \ref{topprodotto}	è aperta. Restringiamo ora $p$ a $\gl^+(n,\realset)$ nel modo seguente $\funz p {\gl^+(n,\realset)} {\realset^n\setminus\{\mathbf{0}\}}$ che è una funzione continua, suriettiva e aperta, inoltre $\realset^n\setminus\{\mathbf{0}\}$ è connesso per $n>1$. Calcoliamo ora le fibre e mostriamo che sono tutte omeomorfe fra loro e connesse, quindi prima ne troviamo una, mostriamo che è connessa poi dimostriamo che sono tutte omeomorfe. A questo scopo consideriamo il seguente vettore e la sua fibra
+		\begin{gather*}
+			y_0=\begin{pmatrix}
+					1 \\ 0 \\ \vdots \\ 0
+				\end{pmatrix}\in \realset^n\setminus\{\mathbf{0}\} \implies p^{-1}	(y_0)=\begin{pmatrix}
+						1      & * & \cdots & *\\
+						0      &   &       &  \\
+						\vdots &   & A     &  \\
+						0      &   &       &
+					\end{pmatrix}
+		\end{gather*}
+	con $(*,\dots, *)\in\realset^{n-1}$ arbitrario in quanto non influisce nel calcolo del determinante e con $A\in\gl^+(n-1,\realset)$, da cui segue che $p^{-1}(y_0)=\realset^{n-1}\times\gl^+(n-1,\realset)$, dunque $p^{-1}(y_0)$ è conness visto che i due fattori lo sono per ipotesi.\newline
+	Mostriamo ora che tutte le fibre sono omeomorfe a $p^{-1}(y_0)$. Sia $y\in\realset^n\setminus\{\mathbf{0}\}$ e sia $A\in\gl^+(n,\realset)$ tale che $p(A)=y$, ovvero $y$ è la prima colonna di $A$. In generale vale la relazione $p(AB)=Ap(B)$ e la moltiplicazione sinistra $\displaystyle \funztot {L_A} {\gl^+(n,\realset)} {\gl^+(n,\realset)} B {AB}$ è un omeomorfismo. Dimostriamo che vale $p^{-1}(y)=L_A\left( p^{-1}(y_0)\right)=Ap^{-1}(y_0)$, in modo tale da avere tutte le fibre omeomorfe fra loro:
+		\begin{gather*}
+			\supseteq ) \ \ B\in p^{-1}(y_0) \implies B=\begin{pmatrix}
+				1	   & \cdots  & \cdot  \\
+				0 	   & \cdots  & \cdot   \\
+				\vdots & \ddots  & \vdots   \\
+				0      & \cdots  & \cdot
+			\end{pmatrix} \implies	p(AB)=Ap(B)=A\begin{psmallmatrix}
+					1 \\ 0 \\ \vdots \\ 0
+				\end{psmallmatrix}= p(A)=y \\
+			\\
+			\subseteq ) \ \  C\in p^{-1}(y) \implies C=\begin{pmatrix}
+				y & * & \cdots & *
+				\end{pmatrix}\\
+			\text{Poniamo } B=A^{-1}C\implies p(B)=p(A^{-1}C)=A^{-1}p(C)=A^{-1}y=A^{-1}p(A)=\\
+			=p(A^{-1}A)=p(I)=y_0\\
+			\text{Siccome } C=AB \implies B\in p^{-1}(y_0)
+		\end{gather*}
+	Quindi siccome tutte le fibre sono tutte omeomorfe ad una fibra connessa allora sono tutte connesse e valgono le ipotesi del lemma precedente, per cui $\gl^+(n,\realset)$ è connesso.
 \end{demonstration}
+%WELP LA FORMATTAZIONE DEL GATHER* è ORRIBILE MA NON SO COME MIGLIORARLA
 
 %\LEZ 11
 \begin{observe}
