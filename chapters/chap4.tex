@@ -138,3 +138,32 @@ Riprendiamo l'esempio precedente ed esaminiamolo in termini di spazio quoziente.
 \end{example}
 	
 %LEZ 12
+	\subsection{Quozienti tipici}
+Vedremo ora degli esempi di spazi quoziente usati frequentemente.
+\subsubsection{Contrazione di $A$ ad un punto}
+Sia $X$ uno spazio topologico, $A\subseteq X$, $\forall x,y\in X \ x\sim y\iff x=y$ oppure $x,y\in A$, ovvero ogni punto è in relazione con sé stesso e tutti i punti di $A$ sono in relazione fra loro, dunque quozientando si "contraggono" ad un unico punto.
+\begin{example} $\nicefrac{D^n}{S^{n-1}}\cong S^n$ \\
+	Cerchiamo ora di generalizzare l'esempio precedente. Ricordiamo che relazione c'è fra i dischi e le sfere:
+		\begin{gather*}
+			D^n=\text{ disco in } \realset^n=\{x\in\realset^n \mid \| x \| \leq 1 \}\\
+			S^{n-1}=\text{ bordo di } D^n=\{x\in\realset^n \mid \| x \| = 1 \}
+		\end{gather*}
+	Considerando $\sim$ come la contrazione di $S^{n-1}$ ad un punto, si ha che $\nicefrac{D^n}{S^{n-1}} \cong S^n$	
+\end{example}
+
+\begin{attention}
+	Anche se $X$ è $T_2$ non è detto che $\nicefrac{X}{A}$ è $T_2$!\newline
+	Se $A$ non è chiuso allora $\nicefrac{X}{A}$ non è neanche $T_1$, infatti $\pi^{-1}([A])=A$ non chiuso implica che $[A]$ non lo è, quindi per la caratterizzazione degli spazi $T_1$ (vedasi %AAA TEOREMA CERCASI) 
+	$\nicefrac{X}{A}$ non è $T_1$.\newline 
+	Tuttavia se $X$ è $T_2$, $K\subseteq X$ è compatto allora $\nicefrac{X}{K}$ è $T_2$
+\end{attention}
+
+\subsubsection{Cono su uno spazio}
+\begin{define}
+	Sia $X$ uno spazio topologico, si definisce \textbf{cilindro} su $X$ lo spazio $X\times \intv$.\newline 
+	Il \textbf{cono} su $X$ invece è il quoziente $\displaystyle \nicefrac{X\times\intv}{X\times\{1\}}$ oppure $\displaystyle \nicefrac{X\times\intv}{X\times\{0\}}$.
+\end{define}
+
+\begin{observe}
+	Un cono è sempre c.p.a. rispetto al "vertice".
+\end{observe}
