@@ -54,7 +54,7 @@
 \RequirePackage[rgb,hyperref,dvipsnames]{xcolor}
 \RequirePackage[most]{tcolorbox}
 \RequirePackage{tikz}
-\usetikzlibrary{calc,angles,positioning,intersections,quotes,arrows,decorations.pathreplacing,graphs,decorations.pathmorphing,decorations.markings}
+\usetikzlibrary{calc,angles,positioning,intersections,quotes,arrows,decorations.pathreplacing,graphs,decorations.pathmorphing,decorations.markings,fit,matrix}
 \RequirePackage{venndiagram}
 \RequirePackage{pgfplots}
 \RequirePackage{pgf}
@@ -1485,6 +1485,14 @@ linewidth=1pt]{neoncarrotBox}
 
 \newcommand{\nicecat}[1]{%
 	\ensuremath{\textbf{\textsc{\underline{#1}}}}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%% definizioni jordan  %%%%%%%%%%%%%%%%%%%%%%%%%
+
+% rango
+
+\newcommand{\rk}{%
+	\ensuremath{\mathrm{rk}\ }%
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%% altre definizioni  %%%%%%%%%%%%%%%%%%%%%%%%%

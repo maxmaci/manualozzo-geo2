@@ -42,10 +42,62 @@ $F$ è detta \textbf{omotopia di cammini}\index{omotopia!di cammini} o \textbf{o
 	L'omotopia di cammini è una relazione di equivalenza su $\inscam{X}{a}{b}$.
 \end{observe}
 \begin{demonstration}~{}
-	\begin{itemize}
-		\item \textsc{Riflessiva}: ...
-		\item \textsc{Simmetrica}: ...
-		\item \textsc{Transitiva}: ...
+		\begin{itemize}
+		\item \textsc{Riflessiva}: $\alpha\sim \alpha ?$. Presa $\mvf{F}{t}{s}=\alpha\left(t\right)$, essa è ben definita, continua e:
+		\begin{equation*}
+			\mvf{F}{t}{0}=\alpha\left(t\right),\ \mvf{F}{t}{1}=\alpha\left(t\right),\ \mvf{F}{0}{s}=\alpha\left(0\right)=a,\ \mvf{F}{1}{s}=\alpha\left(1\right)=b
+		\end{equation*}
+	Cioè è omotopia di cammini tra $\alpha$ e se stessa.
+		\item \textsc{Simmetrica}: Da $\alpha\sim \beta$ sappiamo che esiste $F$ omotopia di cammini per cui:
+		\begin{equation*}
+			\mvf{F}{t}{0}=\alpha\left(t\right),\ \mvf{F}{t}{1}=\beta\left(t\right),\ \mvf{F}{0}{s}=a,\ \mvf{F}{1}{s}=b
+		\end{equation*}
+		Per avere $\beta\sim \alpha$, basta prendere $\mvf{\tilde{F}}{t}{s}=\mvf{F}{t}{1-s}$: essa è ben definita, continua e:
+		\begin{gather*}
+			\mvf{\tilde{F}}{t}{0}=\mvf{F}{t}{1}=\beta\left(t\right),\ \mvf{\tilde{F}}{t}{1}=\mvf{F}{t}{0}=\alpha\left(t\right)\\ \mvf{\tilde{F}}{0}{s}=\mvf{F}{0}{s}=a,\ \mvf{\tilde{F}}{1}{s}=\mvf{F}{1}{s}=b
+		\end{gather*}
+		Cioè è omotopia di cammini tra $\beta$ e $\alpha$.
+		\item \textsc{Transitiva}: Da $\alpha\sim \beta$ abbiamo:
+	\begin{equation*}
+			\begin{array}{ll}
+			\begin{cases}
+				\mvf{F}{t}{0}=\alpha\left(t\right)\\
+				\mvf{F}{t}{1}=\beta\left(t\right)
+			\end{cases}&
+		\begin{cases}
+				\mvf{F}{0}{s}=a\\
+				\mvf{F}{1}{s}=b
+		\end{cases}
+			\end{array}
+	\end{equation*}
+Mentre da $\beta\sim \gamma$:
+	\begin{equation*}
+	\begin{array}{ll}
+		\begin{cases}
+			\mvf{G}{t}{0}=\beta\left(t\right)\\
+			\mvf{G}{t}{1}=\gamma\left(t\right)
+		\end{cases}&
+	\begin{cases}
+			\mvf{G}{0}{s}=a\\
+			\mvf{G}{1}{s}=b
+	\end{cases}
+	\end{array}
+\end{equation*}
+Definita allora la seguente funzione:
+\begin{equation*}
+	\mvf{H}{t}{s}=\begin{cases}
+		\begin{array}{ll}
+			\mvf{F}{t}{2s}&\text{se }s\in\left[0,\ \frac{1}{2}\right]\\
+			\mvf{G}{t}{2s-1}&\text{se }s\in\left[\frac{1}{2},\ 1\right]
+		\end{array}
+	\end{cases}
+\end{equation*}
+Essa è ben definita, continua per il lemma di incollamento e tale per cui:
+\begin{gather*}
+	\mvf{H}{t}{0}=\mvf{F}{t}{0}=\alpha\left(t\right),\ \mvf{H}{t}{1}=\mvf{G}{t}{1}=\gamma\left(t\right)\\
+	\mvf{H}{0}{s}=a,\ \mvf{H}{1}{s}=b
+\end{gather*}
+		Cioè è omotopia di cammini tra $\alpha$ e $\gamma$.
 	\end{itemize}
 \end{demonstration}
 \begin{remember}
