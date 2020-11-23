@@ -16,9 +16,44 @@
 \end{introduction}
 
 \section{Azione di un gruppo su un insieme}
-\begin{center}
-	[...]
-\end{center}
+\begin{define}
+	Sia $G$ un gruppo e $X$ un insieme. Si definisce il \textit{gruppo simmetrico} sull'insieme $X$ come $S(X)\coloneqq \{\funz f X X \mid f \text{ biunivoca}\}$. Un'\textit{azione} di $G$ su $X$ è
+		\begin{itemize}
+			\item  $\funz \Phi G {S(X)}$ morfismo di gruppi, ovvero $\Phi(g.h)=\phi(g)\Phi(h)$
+			\item $\funztot \phi {G\times X} X {(g,\ x)} {g.x}$ t.c. $e.x=x, \forall x\in X$ e $g.(h.x)=(gh).x$
+		\end{itemize}
+	Se ho $\Phi$ definisco $\phi(g,\ x)=\underbrace{\Phi(g)}_{\in S(X)}(x)$.\newline
+	Se ho $\phi$ definsco $\funztot {\Phi(g)} X X x {\phi(g,\ x)}$
+\end{define}
+
+\begin{define}
+	Su $X$ definiamo una relazione che dimostreremo essere di equivalenza: $x\sim y\iff \exists g\in G \colon y=g.x$
+\end{define}
+Dimostrimo che è una relazione di equivalenza:
+	\begin{itemize}
+		\item riflessiva: $x=e.x$
+		\item simmetrica: $y=g.x \implies x=g^{-1}.y$
+		\item transitiva: $y=g.x,\ z=h.y \implies z=(hg).x$
+	\end{itemize}
+\begin{define}
+	Le classi di equivalenza date da questa relazione sono dette \textit{orbite}
+		\begin{gather*}
+			[x]=G.x=\{y\in X \mid \exists y \colon y=g.x\}=\{ g.x\mid g\in G \}
+		\end{gather*}
+	L'insieme quoziente detto \textit{spazio delle orbite} si scrive come $\nicefrac{X}{G}$
+\end{define}
+
+Vediamo ora un esempio di azione e di orbite.
+\begin{example}
+	\begin{enumerate}
+		\item $X=\realset^n, G=\gl(n,\ \realset), \ \phi(A,\mathbf{v})=A\mathbf{v}$ è la moltiplicazione matrice per vettore.\newline
+		Analizziamo le orbite: $G.\mathbf{0}=\{\mathbf{0}\}$, ovvero il vettore nullo è un'orbita. Siano ora $\mathbf{v\neq 0\neq w}$. Esiste $A\in\gl(n,\ \realset) \colon \mathbf{w}=A\mathbf{v}$? Sì, se $\mathbf{v\neq 0}, G.\mathbf{v}=\realset^n\setminus\{\mathbf{0}\}$. \newline 
+		Quindi $\nicefrac{\realset^n}{\gl(n, \realset)}=\{ a,\ b\}$ con $a=[\mathbf{0}]$ e $b=[\mathbf{v}], \mathbf{v\neq 0}$
+	\end{enumerate}
+\end{example}
+
+%non ho scritto l'altro esempio perché l'ha ripreso CC, vedasi equazione 5.7
+
 \section{Stabilizzatore di un elemento}
 \begin{define}
 Lo \textbf{stabilizzatore di un elemento}\index{stabilizzatore di un elemento} è l'insieme degli elementi di $G$ che fissano $x$:
