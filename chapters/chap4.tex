@@ -18,8 +18,7 @@
 		\section{Topologia Quoziente}
 %AAA INTRODUZIONE BELLA CERCASI
 Torniamo ora a parlare di costruzioni topologiche, in particolare ci domandiamo quale sia la topologia più adatta per un insieme quoziente. Ne diamo prima una definizione come topologia indotta da una funzione fra uno spazio topologico ed un insieme, poi vedremo altre definizioni equivalenti tramite una funzione fra spazi topologici e con insiemi quozienti.\newline
-Accenniamo fin da subito che la situazione è \textit{duale} rispetto a quella dei sottospazi, analizzati nella sezione 
-%AAA SEZIONE CERCASI
+Accenniamo fin da subito che la situazione è \textit{duale} rispetto a quella dei sottospazi, analizzati nella sezione \ref{sottospazi}.
 \begin{define}
 	Dato $X$ uno spazio topologico, $Y$ un \textit{insieme} e $\funz f X Y$ funzione suriettiva, la \textbf{topologia quoziente} su $Y$ indotta da $f$ è la topologia \textit{più fine} che rende $f$ continua.
 \end{define}
@@ -84,10 +83,9 @@ Vediamo ora che relazione c'è fra le identificazioni ed i quozienti dati da rel
 	\end{minipage}
 	\begin{minipage}[t]{0.13\textwidth}\vspace{-10pt}
 		\begin{tikzcd}
-			X \arrow[r, "f"] \arrow[d, "g"']                                   & Y \\
-			Z \arrow[ur, "\exists !h"', dotted] &    
-		\end{tikzcd} 
-%LA FRECCIA è AL CONTRARIO
+			X \arrow[r, "f"] \arrow[d, "g"'] & Y \arrow[ld, "\exists ! h", dotted] \\
+			Z  &    
+		\end{tikzcd}
 	\end{minipage}
 \end{theorema}
 \begin{demonstration}
@@ -103,7 +101,7 @@ Vediamo ora che relazione c'è fra le identificazioni ed i quozienti dati da rel
 %SENZA ENVIRONMENT SBORDA ED INIZIA PIù A DESTRA
 	\begin{minipage}[t]{0.83\textwidth}
 		Come conseguenza si ha che data $f$ continua, $\sim$ relazione di equivalenza e $\nicefrac{X}{\sim}$ spazio topologico con la topologia quoziente indotta dalla proiezione $\pi$ si ha che $\exists g$ continua $\iff \left( x\sim y \implies f(x)=f(y) \right)$, ovvero $\pi$ è costante sulle fibre di $f$.
-	 	\end{minipage}
+	\end{minipage}
  	\begin{minipage}[t]{0.13\textwidth}\vspace{-10pt}
  		\begin{tikzcd}
 		 	X \arrow[r, "f"] \arrow[d, "\pi"']                                   & Y \\
@@ -167,3 +165,69 @@ Sia $X$ uno spazio topologico, $A\subseteq X$, $\forall x,y\in X \ x\sim y\iff x
 \begin{observe}
 	Un cono è sempre c.p.a. rispetto al "vertice".
 \end{observe}
+
+
+%AAA DISEGNI CERCASI
+\begin{example} Cono su $S^n \cong D^{n+1}$\\
+	$n=0)$ $S^0=\{-1, \ 1\}=X \rightsquigarrow X\times\intv \rightsquigarrow \nicefrac{X\times\intv}{X\times \{1\}} \cong D^1$ \\
+	$n=1)$ $S^1=X \rightsquigarrow X\times\intv \rightsquigarrow \nicefrac{X\times\intv}{X\times \{1\}} \cong D^2$
+	$\funztot f {S^n\times\intv} {D^{n+1}} {(\mathbf{x}, \ t)} {t\mathbf{x}}$ è continua, suriettiva, chiusa (compatto in $T_2$), dunque $f$ è identificazione.\\
+	Verifichiamo che la relazione di equivalenza indotta da $f$ è proprio quella di contrazione:
+		\begin{gather*}
+			(\mathbf{x}, \ t)\sim (\mathbf{y}, \ s) \iff f(\mathbf{x}, \ t)=f(\mathbf{y}, \ s) \iff t\mathbf{x}=s\mathbf{y} \iff \begin{cases} 
+				\mathbf{x=y}, t=s \\ 
+				t=s=0 
+			\end{cases}\\
+			\text{Se } t\neq 0 \implies \mathbf{x}=\frac{s}{t}\mathbf{y}, \text{ ma } \|\mathbf{x}\|=1 \implies \lvert \frac{s}{t} \rvert \underbrace{\|\mathbf{y}\|}_{=1}=1 \implies \lvert \frac{s}{t} \rvert=1 \implies s=t \implies \mathbf{x=y}
+		\end{gather*}
+\end{example}
+%PROBLEMA: I VALORI ASSOLUTI NON COPRONO TUTTA LA FRAZIONE
+
+\subsubsection{Retta con 2 origini}
+Analizziamo un particolare spazio topologico che spesso fungerà da controesempio, in particolare per le varietà topologiche (vedi sezione   ): la retta con $2$ origini. \newline
+Sia $X=\realset\times\{a,b\}$ 
+%AAA SEZIONE CERCASI
+%AAA DISEGNO CERCASI
+Vogliamo definire una relazione di equivalenza che lasci "separate" solo le origini:
+	\begin{gather*}
+		(x, \ \alpha)\sim (y, \ \beta) \iff 
+			\begin{cases}
+				x=y, \alpha=\beta \\
+				x=y\neq 0
+			\end{cases}		
+	\end{gather*}
+
+\textsc{Proprietà}
+\begin{enumerate}
+	\item $Y\coloneqq \nicefrac{X}{\sim}$ è c.p.a., infatti se i punti $(x, \ \alpha)$ e $(y, \ \beta)$ sono tali che $x\neq 0 \neq y$ basta prendere il segmento $\overline{xy}$ sulla retta $\realset\times\{a\}$ e proiettarlo. Per unire $(0,\ a)$ e $(0, \ b)$ basta unire entrambi con un cammino al punto $(1, \ a)=(1, \ b)$
+	\item $Y$ non è $T_2$: tutti gli intorni di $(0, \ a)$ si intersecano con tutti gli 	intorni di $(0, \ b)$ 
+	\item $Y$ è localmente omeomorfo a $\realset$, infatti ogni punto ha un intorno omeomorfo ad un intervallo aperto di $\realset$
+	\item $\exists K_1, K_2\subseteq Y$ compatti t.c. $K_1\cap K_2$ non è compatto: basta prendere $K_1=\pi\left([-1, \ 1]\times \{a\} \right)$ e $K_1=\pi\left([-1, \ 1]\times \{a\} \right)$ compatti in $Y$, ma $K_1\cap K_2= [-1,\ 0) \cup (0,\ 1]$ non è compatto in $Y$
+\end{enumerate}
+
+	\subsection{Quoziente $T_2$}
+Cerchiamo ora delle condizioni per avere un quoziente Hausdorff.
+\begin{theorema}
+	Sia $\funz f X Y$ continua e identificazione con $X$ compatto e $T_2$, allora sono equivalenti:
+		\begin{enumerate}
+			\item $Y$ è $T_2$
+			\item $f$ chiusa
+			\item $K=\left\{ (x_1,\ x_2)\in X\times X \mid f(x_1)=f(x_2) \right\}$ chiuso in $X\times X$
+		\end{enumerate}
+\end{theorema}
+\begin{demonstration}
+	$1 \implies 3)$  Si vuole utilizzare la caratterizzazione di essere $T_2$ con la chiusura della diagonale $\Delta_Y$, ovvero il teorema \ref{hausdorff diagonale chiusa}. Bisogna dunque vedere $K$ come controimmagine continua di $\Delta_Y$: si consideri	 $\funztot {h\coloneqq f\times f} {X\times X} {Y\times Y} {(x_1,\ x_2)} {\left( f(x_1), \ f(x_2) \right) }$ continua perché lo è $f$. Inoltre $K=h^{-1}(\Delta_Y)$ e $Y$ è $T_2 \implies K$ chiuso in quanto controimmagine di un chiuso tramite una funzione continua.
+		\begin{tikzcd}
+				X \arrow[rrrr, "f"] &                                                                          &  &                                                       & Y \\
+				& X\times X \arrow[rr, "h=f\times f" ,dotted] \arrow[lu, two heads] \arrow[ld, two heads] &  & Y\times Y \arrow[ru, two heads] \arrow[rd, two heads] &   \\
+				X \arrow[rrrr, "f"] &                                                                          &  &                                                       & Y	
+			\end{tikzcd}	
+	$3\implies 2)$ Per dimostrare che $f$ è chiusa bisogna far vedere che $\forall C\subseteq X, C$ chiuso $\implies f(C)\subseteq Y$ chiuso, ma $f$ è identificazione $\iff f^{-1}\left( f(C) \right)\subseteq X$ chiuso. Notiamo che $f^{-1}\left( f(C) \right)= p_1(k\cap p_2^{-1}(C))$, infatti 
+		\begin{gather*}
+			p_2^{-1}(C)=X\times C \implies K\cap p_2^{-1}(C)= \left\{ (x_1,\ x_2)\in X\times X \mid f(x_2)\in C \right\}\\
+			p_2 \text{ continua e $C$ chiuso } \implies p_2^{-1}(C) \text{ chiuso} \\
+			K \text{ chiuso }\implies p_2^{-1}(C)\cap K \text{ chiuso}\\
+			X \text{ compatto e } T_2 \implies p_1 \text{ chiuso}\implies p_1 \left( K\cap p_2^{-1}(C) \right) \text{ chiuso}
+		\end{gather*}
+	$2\implies 1)$ Serve il teorema di Wallace, pertanto non affronteremo la dimostrazione.
+\end{demonstration}
