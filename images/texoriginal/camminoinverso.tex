@@ -1,0 +1,44 @@
+\documentclass[tikz,border=2]{standalone}
+
+\usepackage{imagepreamble}
+
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+		axis x line=center,
+		axis y line=center,
+		xtick={0,1},
+		ytick={0,1},
+		xlabel={$t$},
+		ylabel={$s$},
+xlabel style={
+	anchor=west,
+	at={(ticklabel* cs:1.0)},
+	xshift=-20pt
+},
+ylabel style={
+	anchor=south,
+	at={(ticklabel* cs:1.0)},
+	yshift=-17pt
+},
+		xmin=-0.1,
+		xmax=1.2,
+		ymin=-0.1,
+		ymax=1.2,
+		scale only axis,
+		axis line style={shorten >=20pt, shorten <=15pt}]
+		\draw[black] (0,0) rectangle (1,1);
+		\draw[line width=1.5pt,battleshipgrey,-stealth](0,0)--(0.5,1) node [midway, left] {$\alpha$};
+		\draw[line width=1.5pt,battleshipgrey,-stealth](1,0)--(0.5,1) node [midway, right] {$\alpha$};
+		\draw[line width=1.5pt,-stealth](0,0)--(1,0) node [midway, above] {$C_a$};
+		\draw[line width=1.5pt,-stealth](0,1)--(0.5,1) node [midway, above] {$\alpha$};
+		\draw[line width=1.5pt,-stealth](1,1)--(0.5,1) node [midway, above] {$\alpha$};
+		\draw[line width=1.5pt,red](0,0.3)--(0.15,0.3);
+		\node[label={[yshift=-4pt, xshift=-1pt,below right]$\color{red}{\alpha\left(2t_0\right)}$},circle,fill,inner sep=1.25pt,red] at (axis cs:0.15,0.3) {};
+		\draw[line width=1.5pt,dashed,red](0.15,0.3)--(0.85,0.3) node [midway, above] {il punto sta fermo};
+		\node[circle,fill,inner sep=1.25pt,red] at (axis cs:0.85,0.3) {};
+		\draw[line width=1.5pt,red](0.85,0.3)--(1,0.3);
+		%\addplot [mark=none,domain=-4:4] {x};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,475 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This package takes care of setting up the preamble for the entire
+% document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{imagepreamble}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    PACKAGES TO LOAD
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\RequirePackage[margin=3cm]{geometry}
+\newcommand\hmmax{0}
+\newcommand\bmmax{0}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[style=numeric-comp,sortcites=true]{biblatex}
+\RequirePackage[italian]{babel}
+\RequirePackage{csquotes}
+\RequirePackage[oldstylenums]{kpfonts}
+\RequirePackage{microtype}
+\RequirePackage{textcase}
+\RequirePackage[inline]{enumitem}
+\RequirePackage{xspace}
+\RequirePackage{graphicx}
+\RequirePackage{ifthen}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{wasysym}
+\RequirePackage{amsthm}
+\RequirePackage{pifont}
+\RequirePackage{array}
+\RequirePackage{arydshln}
+\RequirePackage{varioref}
+\RequirePackage{lettrine}
+\RequirePackage{lipsum}
+\RequirePackage{relsize}
+\RequirePackage{svn-multi}
+%\RequirePackage{siunitx}
+\RequirePackage[bottom]{footmisc}
+\RequirePackage{xstring}
+\RequirePackage{multirow}
+\RequirePackage{datetime}
+\RequirePackage{etoolbox}
+\RequirePackage{ragged2e}
+\RequirePackage{nicefrac}
+\RequirePackage{listings}
+\RequirePackage{tabularx}
+\RequirePackage{enumitem}
+\RequirePackage{mathtools}
+%\RequirePackage[rgb,hyperref,dvipsnames]{xcolor}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{tikz}
+\usetikzlibrary{calc,angles,positioning,intersections,quotes,arrows,decorations.pathreplacing,graphs,decorations.pathmorphing,decorations.markings,shapes}
+\RequirePackage{venndiagram}
+\RequirePackage{pgfplots}
+\RequirePackage{pgf}
+\RequirePackage{mathrsfs}
+\RequirePackage{xparse}
+\RequirePackage[framemethod=default]{mdframed}
+\RequirePackage{makeidx}
+\RequirePackage[thicklines]{cancel}
+\RequirePackage{bm}
+\RequirePackage{multicol}
+% Load hyperref package last
+\RequirePackage{hyperref}
+
+% Define colors
+\newcommand{\titleColor}{\color[rgb]{0.616, 0.0627, 0.176}}
+\newcommand{\partChapterNumColor}{\titleColor}
+\newcommand{\dropCapColor}{\titleColor}
+\newcommand{\tocPageColor}{\color[rgb]{0.0980, 0.329, 0.651}}
+\definecolor{reddo}{rgb}{0.616, 0.0627, 0.176 }
+\definecolor{shade0}{rgb}{1.0 , 1.0 , 1.0 }
+\definecolor{shade1}{rgb}{0.9 , 0.9 , 0.9 }
+\definecolor{shade2}{rgb}{0.8 , 0.8 , 0.8 }
+\definecolor{shade3}{rgb}{0.65, 0.65, 0.65}
+\definecolor{shade4}{rgb}{0.45, 0.45, 0.45}
+\definecolor{shade5}{rgb}{0.0 , 0.0 , 0.0 }
+\definecolor{nodeColor}{named}{shade1}
+\definecolor{nodeInnerColor}{named}{shade5}
+\definecolor{portColor}{named}{shade5}
+\definecolor{processColor}{named}{shade1}
+\definecolor{networkColor}{named}{shade0}
+\newcommand{\codeBackgroundColor}{\color[rgb]{0.95, 0.95, 0.95}}
+\newcommand{\codeKeywordsColor}{\color[rgb]{0.498, 0.557, 0.167}}
+\newcommand{\codeCommentsColor}{\color[rgb]{0.251, 0.275, 0.086}}
+\newcommand{\warningColor}{\color[rgb]{1.0, 0.0, 0.0}}
+\newcommand{\todoColor}{\color[rgb]{1.0, 0.0, 0.0}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    CUSTOM ENVIRONMENT, PT. 2: THEOREMS ETC.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Define colors
+
+\definecolor{venetian}{RGB}{114, 1, 15}
+\definecolor{green}{RGB}{0, 128, 0}
+\definecolor{plum}{RGB}{132, 49, 121}
+\definecolor{cinnamon}{rgb}{0.82, 0.41, 0.12}
+\definecolor{timberwolf}{rgb}{0.86, 0.84, 0.82}
+\definecolor{battleshipgrey}{rgb}{0.52, 0.52, 0.51}
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\definecolor{coolblack}{rgb}{0.0, 0.18, 0.39}
+\definecolor{neoncarrot}{rgb}{1.0, 0.64, 0.26}
+\definecolor{burntorange}{rgb}{0.8, 0.33, 0.0}
+
+%%%%%%%%%%%%%%%%%%%%%%%% definizioni logiche %%%%%%%%%%%%%%%%%%%%%%%%%
+
+% implicazione destra
+
+\newcommand{\impliesdx}{%
+	\ensuremath{\implies)\quad}%
+}
+
+% implicazione sinistra
+
+\newcommand{\impliessx}{%
+	\ensuremath{\impliedby)\quad}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%% definizioni insiemistiche %%%%%%%%%%%%%%%%%%%%%%%%%
+
+% insieme delle parti
+
+\newcommand{\setpart}[1]{%
+	\ensuremath{\mathcal{P}\left(#1\right)}%
+}
+
+% insieme vuoto
+
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+
+% unioni/intersezioni arbitrarie
+
+\newcommand{\inter}{\mathop{{\bigcap}}\displaylimits}
+\newcommand{\union}{\mathop{{\bigcup}}\displaylimits}
+
+% naturali, interi, razionali, irrazionali, reali, complessi
+
+\newcommand{\naturalset}{\mathbb{N}}
+\newcommand{\integerset}{\mathbb{Z}}
+\newcommand{\rationalset}{\mathbb{Q}}
+\newcommand{\realset}{\mathbb{R}}
+\newcommand{\irrationalset}{\realset\setminus\rationalset}
+\newcommand{\complexset}{\mathbb{C}}
+
+% inclusione sinistra
+
+\newcommand{\includedx}{%
+	\ensuremath{\subseteq)\quad}%
+}
+
+% inclusione sinistra
+
+\newcommand{\includesx}{%
+	\ensuremath{\supseteq)\quad}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% definizioni topologiche %%%%%%%%%%%%%%%%%%%%%%%%%
+
+% topo
+
+\DeclareSymbolFont{topology}{OMS}{cmsy}{m}{n} 
+\DeclareMathSymbol{\topo}{\mathord}{topology}{`T}
+
+% base
+
+\newcommand{\basis}{\mathcal{B}}
+
+% interno
+
+\newcommand{\interior}[1]{%
+	{\kern0pt#1}^{\mathrm{o}}%
+}
+
+% intervallo [0, 1]
+
+\newcommand{\intv}{\ensuremath{\left[0,\ 1\right]}}
+
+%%%%%%%%%%%%%%%%%%%%%%%% definizioni funzioni %%%%%%%%%%%%%%%%%%%%%%%%%
+
+% funzioni a due variabili
+
+\newcommand{\mvf}[3]{%
+	\ensuremath{#1\left(#2,\ #3\right)}%
+}
+
+% epsilon
+
+\let\oldepsilon\epsilon
+\let\epsilon\varepsilon
+
+% phi
+
+\let\oldphi\phi
+\let\phi\varphi
+
+% definizione di funzione (solo domini)
+
+\newcommand{\funz}[3]{
+	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
+			#2&\rightarrow& #3\end{array}}}
+		{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
+				#1\colon& #2&\rightarrow& #3\end{array}}}}
+
+% definizione di funzione (completa)
+
+\newcommand{\funztot}[5]{
+	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
+					#2&\rightarrow& #3\\
+					#4&\mapsto& #5
+			\end{array}}}
+		{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
+			#1\colon& #2&\rightarrow& #3\\
+			&#4&\mapsto& #5
+		\end{array}}}}
+
+% inclusione (solo domini)
+
+\newcommand{\incl}[3]{
+	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
+			#2&\hookrightarrow& #3\end{array}}}
+{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
+			#1\colon& #2&\hookrightarrow& #3\end{array}}}}
+
+% inclusione (completa)
+
+\newcommand{\incltot}[5]{
+	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
+			#2&\hookrightarrow& #3\\
+			#4&\mapsto& #5
+\end{array}}}
+{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
+			#1\colon& #2&\hookrightarrow& #3\\
+			&#4&\mapsto& #5
+\end{array}}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%% definizioni omotopia %%%%%%%%%%%%%%%%%%%%%%%%%
+
+% insieme dei cammini
+
+\newcommand{\inscam}[3]{%
+	\ensuremath{\Omega\left(#1;\ #2,\ #3\right)}%
+}
+
+% gruppo fondamentale
+
+\newcommand{\gruf}[2]{%
+		\IfEq{#2}{\ }{\ensuremath{\pi_{1}\left(#1\right)}}
+		{\ensuremath{\pi_{1}\left(#1,\ #2\right)}}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%% definizioni categoria %%%%%%%%%%%%%%%%%%%%%%%%%
+
+% categoria in generale
+
+\newcommand{\cat}{\mathcal{C}}
+
+% omomorfismi
+
+\newcommand{\homo}[3]{%
+	\ensuremath{\mathrm{Hom}_{#1}\left(#2,\ #3\right)}%
+}
+
+% categoria sottolineata bella
+
+\newcommand{\nicecato}[1]{%
+	\ensuremath{\mathbf{\textsc{\underline{#1}}}}%
+}
+
+\newcommand{\nicecat}[1]{%
+	\ensuremath{\textbf{\textsc{\underline{#1}}}}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%% altre definizioni  %%%%%%%%%%%%%%%%%%%%%%%%%
+
+% parentesi attorno ad elementi di itemize: indicare la riga in fondo con \tikzmark{...} e poi infine, dopo \endd{itemize}, usare \brackitem
+
+	\newcommand{\tikzmark}[1]{\tikz[baseline={(#1.base)},overlay,remember picture] \node[outer sep=0pt, inner sep=0pt] (#1) {\phantom{A}};}
+	
+	\NewDocumentCommand\brackitem{mmo}{%
+	\IfValueTF {#3}{%
+	\begin{tikzpicture}[overlay, remember picture,decoration={brace,amplitude=1ex}]
+	\draw[decorate,thick] (#1.north east) -- (#2.south east) node[midway, right=0.1cm] {$=$}node[midway, right=0.5cm,text=black,text width = 2in,] {{#3}};
+	\end{tikzpicture}%
+	}%
+	{%
+	\begin{tikzpicture}[overlay, remember picture,decoration={brace,amplitude=1ex}]
+	\draw[decorate,thick] (#1.north east) -- (#2.south east);
+	\end{tikzpicture}%
+	}%
+	}%
+
+% parentesi graffa per sottolineare testo sotto
+
+\newcommand{\textunderbrace}[2]{%
+	\ensuremath{\underbrace{\text{#1}}_{\text{#2}}}%
+}
+
+% parentesi graffa per sottolineare testo sopra
+
+\newcommand{\textoverbrace}[2]{%
+	\ensuremath{\overbrace{\text{#1}}^{\text{#2}}}%
+}
+
+% testo cerchiato
+
+\newcommand{\circled}[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {\ensuremath{#1}};}}
+
+% testo in un riquadro ad angoli smussati
+
+\newcommand{\ovaled}[1]{%
+	\tikz[baseline=(char.base)]\node[anchor=south west, draw,rectangle, rounded corners, inner sep=2pt, minimum size=7mm,
+	text height=2mm](char){\ensuremath{#1}} ;}
+
+% testo trasparente
+
+\newtcbox{\invis}{blank, on line, opacitytext=0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\minusD}{\hbox{\tikz{\draw[line width=0.6pt,line cap=round] (3pt,0) -- (0,6pt);}}}
+\newcommand{\minusT}{\minusD}
+\newcommand{\minusS}{\hbox{\tikz{\draw[line width=0.45pt,line cap=round] (2pt,0) -- (0,4pt);}}}
+\newcommand{\minusSS}{\hbox{\tikz{\draw[line width=0.4pt,line cap=round] (1.5pt,0) -- (0,3pt);}}}
+\newcommand{\minus}{\mathbin{\mathchoice{\minusD}{\minusT}{\minusS}{\minusSS}}}
+
+%\newcommand{\sse}{\Leftrightarrow}
+%\newcommand{\se}{\Rightarrow}
+%\newcommand{\sesx}{\Leftarrow}
+%\newcommand{\et}{\wedge}
+%\newcommand{\vel}{\vee}
+%\newcommand{\noth}{\varnothing}
+%\newcommand{\sset}{\subseteq}
+%\newcommand{\deq}{\coloneqq}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{uququq}{rgb}{0.25098039215686274,0.25098039215686274,0.25098039215686274}
+
+% font
+
+\makeatletter
+\DeclareFontEncoding{LS1}{}{}
+\DeclareFontSubstitution{LS1}{stix}{m}{n}
+\DeclareMathAlphabet{\mathcal}{LS1}{stixscr}{m}{n}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\gobbleone[1]{}
+\newcommand{\seeonly}[2]{\ (\emph{\seename} #1)}
+\newcommand{\also}[2]{\unskip(\emph{\alsoname} #1)}
+\newcommand{\Also}[2]{\unskip\emph{Si veda anche} #1}
+\let\oldindex\index
+\renewcommand{\index}[1]{\def\exptoindex{#1}\expandafter\oldindex\expandafter{\exptoindex}}
+
+\newcommand{\seeonlyindex}[2]{\index{#1@#1\protect\gobbleone|seeonly{#2}}}
+\newcommand{\alsoindex}[2]{\index{#1!zzzz@\protect\gobbleone|also{#2}}}
+\newcommand{\Alsoindex}[2]{\index{#1!zzzz@\protect\gobbleone|Also{#2}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newcommand\myeq{\stackrel{\mathclap{\normalfont\mbox{def}}}{=}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{scalerel,stackengine}
+\stackMath
+\newcommand\what[1]{%
+	\savestack{\tmpbox}{\stretchto{%
+			\scaleto{%
+				\scalerel*[\widthof{\ensuremath{#1}}]{\kern.1pt\mathchar"0362\kern.1pt}%
+				{\rule{0ex}{\textheight}}%WIDTH-LIMITED CIRCUMFLEX
+			}{\textheight}% 
+		}{2.0ex}}%
+	\stackon[-6.9pt]{#1}{\tmpbox}%
+}
+
+\newcommand*{\vv}[1]{\vec{\mkern0mu#1}}
+
+
+\makeatletter
+\newcommand{\vect}[1]{%
+	\vbox{\m@th \ialign {##\crcr
+			\vectfill\crcr\noalign{\kern-\p@ \nointerlineskip}
+			$\hfil\displaystyle{#1}\hfil$\crcr}}}
+\def\vectfill{%
+	$\m@th\smash-\mkern-7mu%
+	\cleaders\hbox{$\mkern-1.8mu\smash-\mkern-2mu$}\hfill
+	\mkern-7mu\raisebox{-3.81pt}[\p@][\p@]{$\mathord\mathchar"017E$}$}
+
+\newcommand{\amsvect}{%
+	\mathpalette {\overarrow@\vectfill@}}
+\def\vectfill@{\arrowfill@\relbar\relbar{\raisebox{-3.81pt}[\p@][\p@]{\scalebox{0.99}{$\mathord\mathchar"017E$}}}}
+
+\newcommand{\amsvectb}{%
+	\mathpalette {\overarrow@\vectfillb@}}
+\newcommand{\vecbar}{%
+	\scalebox{0.8}{$\relbar$}}
+\def\vectfillb@{\arrowfill@\vecbar\vecbar{\raisebox{-4.564pt}[\p@][\p@]{\scalebox{0.95}{$\mathord\mathchar"017E$}}}}
+\makeatother
+
+
+\newcommand{\bvo}[1]{\overrightarrow{\bm{#1}}}
+\newcommand{\vers}[1]{\what{\mathbf{#1}}}
+\newcommand{\bv}[1]{\amsvectb{\bm{\mathrm{#1}}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\Ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+\def\smallunderbrace#1{\mathop{\vtop{\m@th\ialign{##\crcr
+				$\hfil\displaystyle{#1}\hfil$\crcr
+				\noalign{\kern3\p@\nointerlineskip}%
+				\tiny\upbracefill\crcr\noalign{\kern3\p@}}}}\limits}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\para}{\mathbin{\!{\scriptscriptstyle/}\mkern-2mu{\scriptscriptstyle/}\!}}
+\newcommand{\parallelo}{\mathbin{\!{/}\mkern-2mu{/}\!}}
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+\pgfplotsset{compat=1.16}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{lightgray}{RGB}{93,93,93}
+
+
+\newsavebox{\barra}
+\newsavebox{\somma}
+\newsavebox{\diffe}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{tikz-3dplot}
+\usepackage{wrapfig}
+
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+%\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+
+%%%%%%%%%%%%%%%%%%%%%%%% stili tikzcd %%%%%%%%%%%%%%%%%%%%%%%%%
+
+% stile inclinato di 60
+%\tikzcdset{%arrow style=tikz, diagrams={>={Stealth[round,length=4pt,width=4.95pt,inset=2.75pt]}},
+%	six/.style={anchor=south, rotate=23, inner sep=.5mm, yshift=1mm},
+%	nine/.style={anchor=south, rotate=90, inner sep=.5mm, yshift=-6.5mm},
+%	sixslant1/.style={anchor=south, rotate=17, inner sep=.5mm, yshift=-4mm},
+%		sixslant2/.style={anchor=south, rotate=17, inner sep=.5mm, yshift=1mm}		
+%}

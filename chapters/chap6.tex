@@ -230,7 +230,7 @@ Se $X$ spazio metrico:
 \end{demonstration}
 \subsection{Punti di accumulazione}
 \begin{define}
-	Un punto $p\in X$ è \textbf{punto di accumulazione per la successione}\index{punto di accumulazione!per una successione} $\left\{a_n\right\}$ se:
+	Un punto $p\in X$ è \textbf{punto di accumulazione per la successione}\index{punto!di accumulazione!per una successione} $\left\{a_n\right\}$ se:
 	\begin{equation}
 		\forall U\in I\left(p\right),\ \forall N\in\naturalset\ \exists n\geq N\ \colon a_n\in U
 	\end{equation}
@@ -244,7 +244,7 @@ Se $X$ spazio metrico:
 \end{exercise}
 \vspace{-8mm}
 \begin{define}
-	Un punto $p\in X$ è \textbf{punto di accumulazione per il sottoinsieme}\index{punto di accumulazione!per un sottoinsieme} $B\subseteq X$ se:
+	Un punto $p\in X$ è \textbf{punto di accumulazione per il sottoinsieme}\index{punto!di accumulazione!per un sottoinsieme} $B\subseteq X$ se:
 	\begin{equation}
 		\forall U\in I\left(p\right), \exists b\in B \colon b\in U\setminus \left\{ p\right\}
 	\end{equation}
@@ -450,7 +450,7 @@ Costruisco così una successione $\left\{x_n\right\}$ successione in $X$ tale pe
 Mostriamo che $\left\{x_n\right\}$ non ha sottosuccessioni convergenti. Sia $\left\{x_{k\left(n\right)}\right\}$ una sottosuccessione arbitraria di $\left\{x_n\right\}$ e sia $p\in X$, mostriamo che essa non converga ad un qualunque $p$.\\
 \begin{itemize}
 	\item $\mathcal{A}$ è un (sotto)ricoprimento di $X\implies \exists N\ \colon p\in A_N$
-	\item Da $\textcolor{red}{{\large \frownie{}}}$ (pag. \pageref{notatriste}) abbiamo che $x_n\notin A_N\ \forall n\geq N$ (dato che $x_n\not A_j\ \forall j\leq n$, in particolare in $A_N$ per ogni $n\geq N$); si ha allora $x_{k\left(n\right)}\notin A_n\ \forall n\ \colon k\left(n\right)\geq N$
+	\item Da $\textcolor{red}{{\large \frownie{}}}$ (pag. \pageref{notatriste}) abbiamo che $x_n \notin A_N \ \forall n\geq N$  (dato che $x_n \notin A_j \ \forall j\leq n$, in particolare in $A_N$ per ogni $n\geq N$); si ha allora $x_{k\left(n\right)}\notin A_n\ \forall n\ \colon k\left(n\right)\geq N$.
 \end{itemize}
 Essendo $k\left(n\right)$ crescente, $\exists n_0\ \colon k\left(n\right)\geq N\ \forall n\geq n_0$. Segue che se $n\geq n_0$ allora $x_k\left(n\right)\notin A_N$ 
 Poiché $A_N$ è intorno di $p$, segue che $\left\{x_{k\left(n\right)}\right\}$ non converge a $p$.

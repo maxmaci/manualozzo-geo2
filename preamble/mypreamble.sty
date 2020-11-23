@@ -31,11 +31,12 @@
 \RequirePackage{amssymb}
 \RequirePackage{wasysym}
 \RequirePackage{amsthm}
-\RequirePackage{pifont}
+\RequirePackage{pifont} % aggiunge dingbat per itemize
 \RequirePackage{array}
+%\RequirePackage{arydshln}
 \RequirePackage{varioref}
 \RequirePackage{lettrine}
-\RequirePackage{lipsum}
+%\RequirePackage{lipsum}
 \RequirePackage{relsize}
 \RequirePackage{svn-multi}
 %\RequirePackage{siunitx}
@@ -53,18 +54,20 @@
 \RequirePackage[rgb,hyperref,dvipsnames]{xcolor}
 \RequirePackage[most]{tcolorbox}
 \RequirePackage{tikz}
-\usetikzlibrary{calc,angles,positioning,intersections,quotes}
-\RequirePackage{venndiagram}
-\RequirePackage{pgfplots}
-\RequirePackage{pgf}
-\RequirePackage{mathrsfs}
-\RequirePackage{xparse}
-\RequirePackage[framemethod=default]{mdframed}
-\usetikzlibrary{arrows}
-\RequirePackage{makeidx}
+\usetikzlibrary{calc,angles,positioning,intersections,quotes,arrows,decorations.pathreplacing,graphs,decorations.pathmorphing,decorations.markings,fit,matrix,bending}
+%\RequirePackage{venndiagram}
+%\RequirePackage{pgfplots}
+%\RequirePackage{pgf}
+%\RequirePackage{mathrsfs}
+%\RequirePackage{xparse}
+\RequirePackage[framemethod=default]{mdframed} % necessario per environments
+%\RequirePackage{makeidx}
 \RequirePackage[thicklines]{cancel}
-\RequirePackage{bm}
-\RequirePackage{multicol}
+%\RequirePackage{bm}
+%\RequirePackage{multicol}
+%\usepackage[font=small,labelfont=bf]{caption}
+%\usepackage{tikz-3dplot}
+%\usepackage{wrapfig}
 \RequirePackage{preamble/tikz-cd}
 \RequirePackage{preamble/comment}
 % Load hyperref package last
@@ -76,8 +79,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % BibLaTeX
-\bibliography{bibliography} % Specify file
-\defbibheading{bibliography}{\bibsection} % Fix header problem
+\bibliography{appendix/bibliography} % Specify file
+\defbibheading{appendix/bibliography}{\bibsection} % Fix header problem
 
 % Hyperref: settings
 \hypersetup{pdfborder={0 0 0}, colorlinks=false}
@@ -1189,25 +1192,13 @@ linewidth=1pt]{neoncarrotBox}
 \newtheorem{exampleT}{\textsc{Esempio.}}[chapter]
 
 \theoremstyle{rednumbox}
-\newtheorem{examplecaputT}{\textsc{Esempio.}}[chapter]
-
-\theoremstyle{rednumbox}
 \newtheorem{examplesT}{\textsc{Esempi.}}[chapter]
-
-\theoremstyle{rednumbox}
-\newtheorem{examplescaputT}{\textsc{Esempi.}}[chapter]
 
 \theoremstyle{rednumbox}
 \newtheorem{exerciseT}{\textsc{Esercizio.}}[chapter]
 
-\theoremstyle{rednumbox}
-\newtheorem{exercisescaputT}{\textsc{Esercizi.}}[chapter]
-
 \theoremstyle{blacknumbox}
 \newtheorem{solutionT}{\textsc{Soluzione.}}[chapter]
-
-\theoremstyle{blacknumbox}
-\newtheorem{solutioncaputT}{\textsc{Soluzione.}}[chapter]
 
 \theoremstyle{blacknumbox}
 \newtheorem{digressionT}{\textsc{Digressione.}}[chapter]
@@ -1216,16 +1207,7 @@ linewidth=1pt]{neoncarrotBox}
 \newtheorem{demonstrationT}{\textsc{Dimostrazione.}}[chapter]
 
 \theoremstyle{blacknumbox}
-\newtheorem{demonstrationcontT}{}[chapter]
-
-\theoremstyle{blacknumbox}
-\newtheorem{digressioncaputT}{\textsc{Digressione.}}[chapter]
-
-\theoremstyle{blacknumbox}
 \newtheorem{attentionT}{\textsc{Attenzione!}}[chapter]
-
-\theoremstyle{blacknumbox}
-\newtheorem{attentioncaputT}{\textsc{Attenzione!}}[chapter]
 
 \theoremstyle{blacknumbox}
 \newtheorem{defoeT}{\textsc{Definizione.}}[chapter]
@@ -1253,35 +1235,39 @@ linewidth=1pt]{neoncarrotBox}
 \theoremstyle{timberwolfnumbox}
 \newtheorem{propositionT}{\textsc{Proposizione \theproposition.}}[chapter]
 
+\theoremstyle{timberwolfnumbox}
+\newtheorem{notateT}{\textsc{Notazione}}[chapter]
+
 \theoremstyle{neoncarrotnumbox}
 \newtheorem{corollaryT}{\textsc{Corollario \thecorollary.}}[chapter]
+
+\theoremstyle{neoncarrotnumbox}
+\newtheorem{rememberT}{\textsc{Ricordiamo...}}[chapter]
 
 \theoremstyle{airforcebluenumbox}
 \newtheorem{intuitT}{\textsc{Intuitivamente...}}[chapter]
 
+\theoremstyle{blacknumbox}
+\newtheorem{tipsT}{\textsc{Tips \& Tricks!}}[chapter]
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% esempio/esempio %%%
+%%% esempio/esempi %%%
 
 \newenvironment{example}{\begin{eBox}\begin{exampleT}}{\hfill{\color{reddo}}\end{exampleT}\end{eBox}}
 \newenvironment{examples}{\begin{eBox}\begin{examplesT}~}{\hfill{\color{reddo}}	\end{examplesT}\end{eBox}}
-\newenvironment{examplescaput}{\begin{eBox}\begin{examplescaputT}~}{\hfill{\color{reddo}}	\end{examplescaputT}\end{eBox}}
-\newenvironment{examplecaput}{\begin{eBox}\begin{examplecaputT}~}{\hfill{\color{reddo}}	\end{examplecaputT}\end{eBox}}
 
 %%% esercizio %%%
 
 \newenvironment{exercise}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{reddo}}	\end{exerciseT}\end{eBox}}
-\newenvironment{exercisescaput}{\begin{eBox}\begin{exercisescaputT}~}{\hfill{\color{reddo}}	\end{exercisescaputT}\end{eBox}}
 
 %%% soluzione %%%
 
 \newenvironment{solution}{\begin{bBox}\begin{solutionT}}{\hfill{\color{gray}}	\end{solutionT}\end{bBox}}
-\newenvironment{solutioncaput}{\begin{bBox}\begin{solutioncaputT}~}{\hfill{\color{gray}}	\end{solutioncaputT}\end{bBox}}
 
 %%% digressione %%%
 
 \newenvironment{digression}{\begin{gBox}\begin{digressionT}}{\hfill{\color{green}}	\end{digressionT}\end{gBox}}
-\newenvironment{digressioncaput}{\begin{gBox}\begin{digressioncaputT}~}{\hfill{\color{green}}	\end{digressioncaputT}\end{gBox}}
 
 %%% attenzione %%%
 
@@ -1296,7 +1282,6 @@ linewidth=1pt]{neoncarrotBox}
 %%% dimostrazione %%%
 
 \newenvironment{demonstration}{\begin{yBox}\begin{demonstrationT}}{\hfill{\color{BurntOrange}}	\end{demonstrationT}\end{yBox}}
-\newenvironment{demonstrationcont}{\begin{yBox}\begin{demonstrationcontT}}{\hfill{\color{BurntOrange}}\end{demonstrationcontT}\end{yBox}}
 
 %%% definizione %%%
 
@@ -1308,29 +1293,42 @@ linewidth=1pt]{neoncarrotBox}
 
 \newenvironment{theorema}{\begin{tinBox}\begin{theoremaT}}{\refstepcounter{theorema}\hfill{\color{timberwolf}}\end{theoremaT}\end{tinBox}}\numberwithin{theorema}{section}
 
+%%% lemma %%%
 \newenvironment{lemming}{\begin{tinBox}\begin{lemmingT}}{\refstepcounter{lemming}\hfill{\color{timberwolf}}	\end{lemmingT}\end{tinBox}}\numberwithin{lemming}{section}
 
 %%% proposizione %%%
 
 \newenvironment{proposition}{\begin{tinBox}\begin{propositionT}}{\refstepcounter{proposition}\hfill{\color{timberwolf}}	\end{propositionT}\end{tinBox}}\numberwithin{proposition}{section}
 
-%%% corollary %%%
+%%% notazione %%%
+
+\newenvironment{notate}{\begin{tinBox}\begin{notateT}}{\hfill{\color{timberwolf}}\end{notateT}\end{tinBox}}
+
+%%% corollario %%%
 
 \newenvironment{corollary}{\begin{neoncarrotBox}\begin{corollaryT}}{\refstepcounter{corollary}\hfill{\color{neoncarrot}}	\end{corollaryT}\end{neoncarrotBox}}\numberwithin{corollary}{section}
+
+%%% ricorda %%%
+
+\newenvironment{remember}{\begin{neoncarrotBox}\begin{rememberT}}{\hfill{\color{neoncarrot}}	\end{rememberT}\end{neoncarrotBox}}
 
 %%% intuitivamente %%%
 
 \newenvironment{intuit}{\begin{blueBox}\begin{intuitT}}{\hfill{\color{timberwolf}}	\end{intuitT}\end{blueBox}}
 
+%%% suggerimenti per gli esercizi %%%
+
+\newenvironment{tips}{\begin{gBox}\begin{tipsT}}{\hfill{\color{green}}	\end{tipsT}\end{gBox}}
+
 %%%%%%%%%%%%%%%%%%%%%%%% definizioni logiche %%%%%%%%%%%%%%%%%%%%%%%%%
 
-% implic. destra
+% implicazione destra
 
 \newcommand{\impliesdx}{%
 	\ensuremath{\implies)\quad}%
 }
 
-% implic. sinistra
+% implicazione sinistra
 
 \newcommand{\impliessx}{%
 	\ensuremath{\impliedby)\quad}%
@@ -1397,7 +1395,8 @@ linewidth=1pt]{neoncarrotBox}
 
 \newcommand{\intv}{\ensuremath{\left[0,\ 1\right]}}
 
-% RICKROLL
+%%%%%%%%%%%%%%%%%%%%%%%% definizioni gruppi %%%%%%%%%%%%%%%%%%%%%%%%%
+
 % gruppo lineare GL
 \DeclareMathOperator{\gl}{GL}
 
@@ -1438,14 +1437,6 @@ linewidth=1pt]{neoncarrotBox}
 
 % definizione di funzione (solo domini)
 
-\newcommand{\funzvar}[3]{
-	\IfEq{#1}{\ }{\begin{tikzcd}
-				#2 & #3
-	\end{tikzcd}}
-	{\begin{tikzcd}
-			#1\ \colon & #2 \arrow[r] & #3
-		\end{tikzcd}}}
-
 \newcommand{\funz}[3]{
 	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
 			#2&\rightarrow& #3\end{array}}}
@@ -1453,16 +1444,6 @@ linewidth=1pt]{neoncarrotBox}
 				#1\colon& #2&\rightarrow& #3\end{array}}}}
 
 % definizione di funzione (completa)
-
-\newcommand{\funztotvar}[5]{
-	\IfEq{#1}{\ }{\begin{tikzcd}
-				#2 \arrow[r]          & #3 \\[-25pt]
-				#4 \arrow[r, maps to] & #5
-	\end{tikzcd}}
-	{\begin{tikzcd}
-				#1\ \colon & #2 \arrow[r]          & #3 \\[-25pt]
-				& #4 \arrow[r, maps to] & #5
-		\end{tikzcd}}}
 
 \newcommand{\funztot}[5]{
 	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
@@ -1476,14 +1457,6 @@ linewidth=1pt]{neoncarrotBox}
 
 % inclusione (solo domini)
 
-\newcommand{\inclvar}[3]{
-	\IfEq{#1}{\ }{\begin{tikzcd}
-			#2 & #3
-	\end{tikzcd}}
-	{\begin{tikzcd}
-				#1\ \colon & #2 \arrow[r, hook] & #3
-		\end{tikzcd}}}
-
 \newcommand{\incl}[3]{
 	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
 			#2&\hookrightarrow& #3\end{array}}}
@@ -1491,16 +1464,6 @@ linewidth=1pt]{neoncarrotBox}
 			#1\colon& #2&\hookrightarrow& #3\end{array}}}}
 
 % inclusione (completa)
-
-\newcommand{\incltotvar}[5]{
-	\IfEq{#1}{\ }{\begin{tikzcd}
-				#2 \arrow[r]          & #3 \\[-25pt]
-			#4 \arrow[r, maps to] & #5
-	\end{tikzcd}}
-	{\begin{tikzcd}
-			#1\ \colon & #2 \arrow[r, hook]          & #3 \\[-25pt]
-			& #4 \arrow[r, maps to] & #5
-		\end{tikzcd}}}
 
 \newcommand{\incltot}[5]{
 	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
@@ -1512,7 +1475,69 @@ linewidth=1pt]{neoncarrotBox}
 			&#4&\mapsto& #5
 \end{array}}}}
 
+%%%%%%%%%%%%%%%%%%%%%%%% definizioni omotopia %%%%%%%%%%%%%%%%%%%%%%%%%
+
+% insieme dei cammini
+
+\newcommand{\inscam}[3]{%
+	\ensuremath{\Omega\left(#1;\ #2,\ #3\right)}%
+}
+
+% gruppo fondamentale
+
+\newcommand{\gruf}[2]{%
+		\IfEq{#2}{\ }{\ensuremath{\pi_{1}\left(#1\right)}}
+		{\ensuremath{\pi_{1}\left(#1,\ #2\right)}}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%% definizioni categoria %%%%%%%%%%%%%%%%%%%%%%%%%
+
+% categoria in generale
+
+\newcommand{\cat}{\mathcal{C}}
+
+% omomorfismi
+
+\newcommand{\homo}[3]{%
+	\ensuremath{\mathrm{Hom}_{#1}\left(#2,\ #3\right)}%
+}
+
+% categoria sottolineata bella
+
+\newcommand{\nicecato}[1]{%
+	\ensuremath{\mathbf{\textsc{\underline{#1}}}}%
+}
+
+\newcommand{\nicecat}[1]{%
+	\ensuremath{\textbf{\textsc{\underline{#1}}}}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%% definizioni jordan  %%%%%%%%%%%%%%%%%%%%%%%%%
+
+% rango
+
+\newcommand{\rk}{%
+	\ensuremath{\mathrm{rk}\ }%
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%% altre definizioni  %%%%%%%%%%%%%%%%%%%%%%%%%
+
+% parentesi attorno ad elementi di itemize: indicare la riga in fondo con \tikzmark{...} e poi infine, dopo \endd{itemize}, usare \brackitem
+
+	\newcommand{\tikzmark}[1]{\tikz[baseline={(#1.base)},overlay,remember picture] \node[outer sep=0pt, inner sep=0pt] (#1) {\phantom{A}};}
+	
+	\NewDocumentCommand\brackitem{mmo}{%
+	\IfValueTF {#3}{%
+	\begin{tikzpicture}[overlay, remember picture,decoration={brace,amplitude=1ex}]
+	\draw[decorate,thick] (#1.north east) -- (#2.south east) node[midway, right=0.1cm] {$=$}node[midway, right=0.5cm,text=black,text width = 2in,] {{#3}};
+	\end{tikzpicture}%
+	}%
+	{%
+	\begin{tikzpicture}[overlay, remember picture,decoration={brace,amplitude=1ex}]
+	\draw[decorate,thick] (#1.north east) -- (#2.south east);
+	\end{tikzpicture}%
+	}%
+	}%
 
 % parentesi graffa per sottolineare testo sotto
 
@@ -1550,14 +1575,14 @@ linewidth=1pt]{neoncarrotBox}
 \newcommand{\minusSS}{\hbox{\tikz{\draw[line width=0.4pt,line cap=round] (1.5pt,0) -- (0,3pt);}}}
 \newcommand{\minus}{\mathbin{\mathchoice{\minusD}{\minusT}{\minusS}{\minusSS}}}
 
-\newcommand{\sse}{\Leftrightarrow}
-\newcommand{\se}{\Rightarrow}
-\newcommand{\sesx}{\Leftarrow}
-\newcommand{\et}{\wedge}
-\newcommand{\vel}{\vee}
-\newcommand{\noth}{\varnothing}
-\newcommand{\sset}{\subseteq}
-\newcommand{\deq}{\coloneqq}
+%\newcommand{\sse}{\Leftrightarrow}
+%\newcommand{\se}{\Rightarrow}
+%\newcommand{\sesx}{\Leftarrow}
+%\newcommand{\et}{\wedge}
+%\newcommand{\vel}{\vee}
+%\newcommand{\noth}{\varnothing}
+%\newcommand{\sset}{\subseteq}
+%\newcommand{\deq}{\coloneqq}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1665,17 +1690,13 @@ linewidth=1pt]{neoncarrotBox}
 
 
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
-\pgfplotsset{compat=1.16}
-\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
-\definecolor{lightgray}{RGB}{93,93,93}
-
+%\pgfplotsset{compat=1.16}
+%\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+%\definecolor{lightgray}{RGB}{93,93,93}
 
 \newsavebox{\barra}
 \newsavebox{\somma}
 \newsavebox{\diffe}
-\usepackage[font=small,labelfont=bf]{caption}
-\usepackage{tikz-3dplot}
-\usepackage{wrapfig}
 
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 
@@ -1684,7 +1705,7 @@ linewidth=1pt]{neoncarrotBox}
 %%%%%%%%%%%%%%%%%%%%%%%% stili tikzcd %%%%%%%%%%%%%%%%%%%%%%%%%
 
 % stile inclinato di 60
-\tikzcdset{
+\tikzcdset{%arrow style=tikz, diagrams={>={Stealth[round,length=4pt,width=4.95pt,inset=2.75pt]}},
 	six/.style={anchor=south, rotate=23, inner sep=.5mm, yshift=1mm},
 	nine/.style={anchor=south, rotate=90, inner sep=.5mm, yshift=-6.5mm},
 	sixslant1/.style={anchor=south, rotate=17, inner sep=.5mm, yshift=-4mm},

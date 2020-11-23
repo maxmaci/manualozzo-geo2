@@ -1,0 +1,202 @@
+% SVN info for this file
+\svnidlong
+{$HeadURL$}
+{$LastChangedDate$}
+{$LastChangedRevision$}
+{$LastChangedBy$}
+
+\chapter{Forma canonica di Jordan}
+\labelChapter{jordan}
+
+\begin{introduction}
+	‘‘BEEP BOOP INSERIRE CITAZIONE QUA BEEP BOOP.''
+	\begin{flushright}
+		\textsc{NON UN ROBOT,} UN UMANO IN CARNE ED OSSA BEEP BOOP.
+	\end{flushright}
+\end{introduction}
+
+\section{Teorema di Cayley-Hamilton}
+[...]\\
+\begin{theorema}
+	Sia $A\in \mathbb{K}^{n,\ n}$ e $m_A\left(t\right)$ il suo polinomio minimo. Allora, preso $\lambda\in\mathbb{K}$:
+	\begin{equation}
+		m_A\left(\lambda\right)=0\iff \lambda\text{ è un autovalore di }A
+	\end{equation}
+\vspace{-6mm}
+\end{theorema}
+\begin{demonstration}~{}\\
+	$\impliesdx$ Segue dal teorema di Cayley-Hamilton perché $m_A\left(\lambda\right)=0\implies C_A\left(\lambda\right)=0\implies \lambda$ autovalore.\\
+	$\impliessx$ Sia $\lambda$ un autovalore di $A$ con autovettore associato $\underline{v}$. Si ha:
+	\begin{gather*}
+		A\underline{v}=\lambda \underline{v}\\
+		A^2\underline{v}=A\left(A\underline{v}\right)=A\left(\lambda \underline{v}\right)=\lambda A\underline{v}=\lambda^2 \underline{v}\\
+	\end{gather*}
+Allo stesso modo si arriva a $A^k\underline{v}=\lambda^n\underline{v}$. Preso un generico polinomio $p\left(t\right)\in\mathbb{K}\left[t\right]$, esso si può esprimere come:
+\begin{equation*}
+	p=\sum_{i=0}^{d}c_i t_i\quad c_i\in\mathbb{K}
+\end{equation*}
+Allora $\displaystyle p\left(A\right)=\sum_{i=0}^{d}c_i A^i$ e dunque:
+\begin{align*}
+	p\left(A\right)\underline{v}&=\left(\sum_{i=0}^{d}c_i A^i\right)\underline{v}=\sum_{i=0}^{d}c_i\left( A^i\underline{v}\right)=\sum_{i=0}^{d}c_i\left( \lambda^i\underline{v}\right)=\underbrace{\left(\sum_{i=0}^{d}c_i \lambda^i\right)}_{\in\mathbb{K}}\underline{v}=p\left(\lambda\right)\underline{v}
+\end{align*}
+Consideriamo ora un polinomio $p\in I_A$. Per sua definizione $p\left(A\right)=0$; in particolare, da quanto scritto sopra:
+\begin{equation*}
+	O\underline{v}=p\left(\lambda\right)\underline{v}
+\end{equation*}
+Ed essendo $v$ un autovettore, $v\neq 0$; dall'equazione sopra necessariamente segue $p\left(\lambda\right)=0$. In particolare, essendo $p\in I_A$ generato dal polinomio minimo $m_A$ (cioè $p\left(t\right)=m_A\left(t\right)q\left(t\right)$ con $q\left(t\right)\neq 0$), segue che $m_A\left(\lambda\right)=0$.
+\end{demonstration}
+\section{Forma canonica di Jordan}
+D'ora in poi, se non altresì specificato, considereremo $\mathbb{K}=\complexset$, cioè tratteremo di matrici $A\in \complexset^{n,\ n}$ e endomorfismi fra spazi vettoriali complessi.
+\begin{observe}
+Poichè $\complexset$ è algebricamente chiuso, ogni polinomio $p\in\complexset\left[t\right]$ si fattorizza completamente come prodotto di fattori lineari:
+\begin{equation}
+	C_A\left(t\right)=\left(t-\lambda_1\right)^{m_1}\ldots\left(t-\lambda_r\right)^{m_r}\text{ con } m_i \text{ molteplicità algebrica di } \lambda_i
+\end{equation}
+Nel caso del polinomio minimo, si ha:
+Poichè $\complexset$ è algebricamente chiuso, ogni polinomio $p\in\complexset\left[t\right]$ si fattorizza completamente come prodotto di fattori lineari:
+\begin{equation}
+	m_A\left(t\right)=\left(t-\lambda_1\right)^{h_1}\ldots\left(t-\lambda_r\right)^{h_r}\text{ con } 1\leq h_i\leq m_i \forall i=1,\ldots,\ r
+\end{equation}
+\end{observe}
+Sia $A\in \complexset^{n,\ n}$ una matrice associata a un endomorfismo $\funz{f}{V}{V}$. Se $f$ è diagonalizzabile, esiste una base in cui la matrice di $f$ è diagonale. Anche quando tuttavia la matrice non è diagonalizzabile, vogliamo cercare una base in cui la matrice di $f$ è \textit{particolarmente semplice}.
+\begin{define}
+	Un \textbf{blocco di Jordan}\index{blocco di Jordan} $J=J_k\left(\lambda\right)$, di autovalore $\lambda\in\complexset$ e dimensione $K$, è una matrice quadrata $k\times k$ con sulla diagonale solo l'autovalore e sopra ogni elemento della diagonale $1$:
+	\begin{equation}%\setlength\arraycolsep{0.5mm}
+		    J=J_k\left(\lambda\right) = \left(
+		\begin{array}{ccccc}
+\lambda	& 1 		&  0		& \ldots 	& 0 \\
+0		& \lambda 	& \ddots	& 			& \vdots\\
+\vdots	&  			& \ddots	& 1 		& 0\\
+\vdots	& 			&   		& \lambda 	& 1\\
+0		&  \dots  	&  \dots 	&  0 		& \lambda
+		\end{array}
+		\right)
+	\end{equation}
+\end{define}
+\begin{observe}~{}
+	\begin{itemize}
+		\item $J$ è determinato da $\lambda$ e $k$.
+		\item Il polinomio caratteristico di $J$ è $C_J\left(t\right)=\left(t-\lambda\right)^k$, cioè $\lambda$ è l'unico autovalore di $J$ con molteplicità algebrica $k$.
+	\end{itemize}	
+\end{observe}
+\begin{observe}
+Definiamo il blocco di Jordan di dimensione $k$ con autovalore zero, necessario per calcolare l'autospazio $V_\lambda$:
+		\begin{equation}\setlength\arraycolsep{0.5mm}
+			N=J-\lambda I= \left(
+				\begin{array}{ccccc}
+				0	& 1 		&  0		& \ldots 	& 0 \\
+				0		& 0 	& \ddots	& 			& \vdots\\
+				\vdots	&  			& \ddots	& 1 		& 0\\
+				\vdots	& 			&   		& 0 	& 1\\
+				0		&  \dots  	&  \dots 	&  0 		& 0
+			\end{array}
+			\right)
+		\end{equation}
+Si ha che $\rk N=k-1\implies \dim V_{\lambda}=\dim \ker N=k-\rk N= 1$, cioè $J$ \textit{non} è \textit{mai} diagonalizzabile se $k>1$, dato che $1=\dim V_{\lambda}\leq m_\lambda = k$.\\
+Se la base $\basis$ dello spazio $V$ (in cui stiamo operando con l'endomorfismo associato a $J$) è $\left\{\underline{e}_1,\ \ldots,\ \underline{e}_k\right\}$, notiamo che $\underline{e}_1$ è l'unico autovettore di $N$ e $V_\lambda=\mathcal{L}\left(\underline{e}_1\right)$. Si vede che $J$ agisce in modo particolare sui vettori di $\basis$:
+\begin{equation*}
+\begin{cases}
+J\underline{e}_1=\lambda \underline{e}_1\\
+J\underline{e}_2=\underline{e}_1+\lambda \underline{e}_2\\
+\ldots\\
+J\underline{e}_k=\underline{e}_{k-1}+\lambda \underline{e}_k
+\end{cases}
+\end{equation*}
+Anche $N$ agisce in modo altrettanto particolare sui vettori di $\basis$:
+\begin{equation*}
+	\begin{cases}
+		N\underline{e}_1=\underline{0}\\
+		N\underline{e}_2=\underline{e}_1\\
+		\ldots\\
+		N\underline{e}_k=\underline{e}_{k-1}
+	\end{cases}
+\end{equation*}
+Cioè, cominciando da $\underline{e}_k$ e applicando $N$ ripetutamente otteniamo gli altri vettori della base.
+\begin{center}
+	\begin{tikzcd}
+		\underline{e}_{1} & \underline{e}_{2} \arrow[l, "N", bend left] & \dots \arrow[l, "N", bend left] & \underline{e}_{k-1} \arrow[l, "N", bend left] & \underline{e}_k \arrow[l, "N", bend left]
+	\end{tikzcd}
+\end{center}
+Ad esempio, con $N^2$ si ha:
+\begin{equation*}
+	\begin{cases}
+		N^2\underline{e}_1=\underline{0}\\
+		N^2\underline{e}_2=N\left(N\underline{e}_2\right)=N\underline{e}_1=\underline{0}\\
+		\ldots\\
+		N^2\underline{e}_k=N\left(N\underline{e}_k\right)=N\underline{e}_{k-1}=\underline{0}
+	\end{cases}
+\end{equation*}
+Infatti, se guardiamo la matrice $N^2$, si ha:
+		\begin{equation*}
+	N^2=\left(J-\lambda I\right)^2= \left(
+	\begin{array}{ccccc}
+		0		& 0 		&  1		& \ldots 	& 0 \\
+		\vdots	& \ddots 	& 0			& 1			& \vdots\\
+				&  			& \ddots	& 1 		& 0\\
+		\vdots	& 			&   		& 0 		& 1\\
+		0		&  \dots  	&  \dots 	& \dots 		& 0
+	\end{array}
+	\right)
+\end{equation*}
+Si ha dunque, ad ogni potenza successiva di $N$, lo ‘‘spostamento'' della diagonale di $1$ verso destra. In particolare:
+		\begin{equation*}
+	N^{k-1}=\left(J-\lambda I\right)^{k-1}= \left(
+	\begin{array}{ccccc}
+		0		& \dots 	&  	\dots		& 0 	& 1 \\
+		\vdots	& \ddots 	& 			& 		& 0\\
+				&  			& 			&  		& \vdots \\
+		\vdots	& 			&   		& \ddots 		& \vdots\\
+		0		&  \dots  	&  \dots 	& \dots & 0
+	\end{array}
+	\right)
+\end{equation*}
+E in questo caso si ha la relazione con i vettori della base:
+\begin{equation*}
+	\begin{cases}
+		N^{k-1}\underline{e}_i=\underline{0}\ \forall i=1,\ldots,\ k-1\\
+		\ldots\\
+		N^{k-1}\underline{e}_k=\underline{e}_1
+	\end{cases}
+\end{equation*}
+Studiando l'immagine dell'applicazione associata ad $N$, essendo la base dell'immagine i vettori colonna l.i., si ha $\Im N^{k-1}=\mathcal{L}\left(e_1\right)$.\\
+Come già affermato dunque, è $\underline{e}_k$ a determinare l'\textit{intera} base di $V$ tramite la moltiplicazione per $N$.\\
+Come ultima osservazione fondamentale, notiamo inoltre che $N^k=O$, cioè $N$ è una matrice \textbf{nilpotente}\index{matrice!nilpotente} di ordine $k$.
+\end{observe}
+\begin{define}
+	Una matrice quadrata si dice in \textbf{forma di Jordan}\index{forma di Jordan} se ha solo blocchi di Jordan lungo la diagonale, mentre altrove è nulla.
+\end{define}
+\begin{example}
+La seguente matrice $9\times 9$  è in forma di Jordan, con blocchi $J_3\left(2\right)$, $J_2\left(i\right)$, $J_3\left(i\right)$ e $J_1\left(-4\right)$:
+	\begin{equation*}
+		A=
+		\tikz[baseline]{%
+			\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+				2 	\& 1 	\& 0	\& \color{gray}{0}	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\\
+				0	\& 2 	\& 1 	\& \color{gray}{0}	\&	\color{gray}{0}	\&	 \color{gray}{0}	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\\
+				0	\& 0 	\& 2 	\& \color{gray}{0}	\& \color{gray}{0}	\&	\color{gray}{0}	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\\
+				\color{gray}{0}	\& \color{gray}{0} 	\& \color{gray}{0}  	\& i	\& 1	\&	\color{gray}{0}	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\\
+				\color{gray}{0}	\& \color{gray}{0} 	\& \color{gray}{0} 	\& 0	\& i	\&	\color{gray}{0}	\&	\color{gray}{0}	\&	\color{gray}{0}	\&	\color{gray}{0}	\\
+				\color{gray}{0}	\&  \color{gray}{0}	\& \color{gray}{0} 	\& \color{gray}{0}	\& \color{gray}{0}	\&	i	\&	1	\&	0	\&	\color{gray}{0}	\\
+				\color{gray}{0}	\& \color{gray}{0} 	\& \color{gray}{0}  	\& 	\color{gray}{0}	\& \color{gray}{0}	\&	0	\&	i	\&	1 	\&	\color{gray}{0}	\\
+				\color{gray}{0}	\&  \color{gray}{0}	\&  \color{gray}{0} 	\& \color{gray}{0}		\& \color{gray}{0}	\&	0	\&	0	\&	i 	\&	\color{gray}{0}	\\
+				\color{gray}{0}	\& \color{gray}{0} 	\&  \color{gray}{0} 	\& \color{gray}{0}		\& \color{gray}{0}	\&	\color{gray}{0}	\&	\color{gray}{0}	\&	\color{gray}{0} 	\&	-4	\\				
+			};
+			\draw (M-1-1.north west) rectangle (M-3-3.south east);
+			\draw (M-3-3.south east) rectangle (M-5-5.south east);
+			\draw (M-5-5.south east) rectangle (M-8-8.south east);
+			\draw (M-8-8.south east) rectangle (M-9-9.south east);
+		}
+	\end{equation*}
+\end{example}
+
+\begin{observe}
+	Una matrice \textit{diagonale} è in forma di Jordan, con un unico blocco di ordine $1$ (cioè senza alcun $1$ nell'elemento sopra).
+\end{observe}
+\begin{observe}
+	Se $A$ è in forma di Jordan, sulla diagonale compaiono tutti gli autovalori con la loro \textit{molteplicità}. Dunque, se $\lambda$ è un autovalore, la somma delle \textit{dimensioni} dei blocchi relativi a $\lambda$ è uguale alla \textit{molteplicità algebrica} $m_\lambda$ di $\lambda$.
+\end{observe}
+\begin{theorema}
+	Sia $V$ uno spazio vettoriale complesso di $\dim n$ e $f$ un endomorfismo di $V$. Allora esiste una base di $V$ in cui la matrice di $f$ è in forma di Jordan. Inoltre, la forma di Jordan è unica a meno dell'ordine dei blocchi.\\
+	\textit{In termini matriciali}, ogni $A\in\complexset^{n,\ n}$ è simile ad una matrice in forma di Jordan, unica a meno dell'ordine dei blocchi.
+\end{theorema}
+Per agevolare la dimostrazione, faremo uso di un lemma importante. Tuttavia, prima di dimostrarlo, facciamo alcune osservazioni per comprendere meglio ciò di cui parliamo.
