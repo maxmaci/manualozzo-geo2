@@ -6,7 +6,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{mypreamble}
+\ProvidesPackage{preamble/mypreamble}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %    PACKAGES TO LOAD
@@ -1392,6 +1392,32 @@ linewidth=1pt]{neoncarrotBox}
 \newcommand{\interior}[1]{%
 	{\kern0pt#1}^{\mathrm{o}}%
 }
+
+% intervallo [0, 1]
+
+\newcommand{\intv}{\ensuremath{\left[0,\ 1\right]}}
+
+% RICKROLL
+% gruppo lineare GL
+\DeclareMathOperator{\gl}{GL}
+
+%gruppo speciale lineare
+\DeclareMathOperator{\Sl}{SL}
+
+% gruppo ortogonale O
+\DeclareMathOperator{\Or}{O}
+
+% gruppo speciale ortogonale
+\DeclareMathOperator{\So}{SO}
+
+% gruppo unitario
+\DeclareMathOperator{\U}{U}
+
+% gruppo speciale unitario
+\DeclareMathOperator{\Su}{SU}
+
+% FINE RICKROLL
+
 %%%%%%%%%%%%%%%%%%%%%%%% definizioni funzioni %%%%%%%%%%%%%%%%%%%%%%%%%
 
 % funzioni a due variabili
