@@ -200,3 +200,102 @@ La seguente matrice $9\times 9$  è in forma di Jordan, con blocchi $J_3\left(2\
 	\textit{In termini matriciali}, ogni $A\in\complexset^{n,\ n}$ è simile ad una matrice in forma di Jordan, unica a meno dell'ordine dei blocchi.
 \end{theorema}
 Per agevolare la dimostrazione, faremo uso di un lemma importante. Tuttavia, prima di dimostrarlo, facciamo alcune osservazioni per comprendere meglio ciò di cui parliamo.
+\begin{define}
+Un sottospazio vettoriale $V$ si dice \textbf{invariante}\index{spazio!invariante} per un endomorfismo $f$ se:
+\begin{equation}
+	f\left(V\right)\subseteq V
+\end{equation}
+Se $A$ è la matrice associata all'endomorfismo rispetto ad una base fissata, si scrive anche $AV\subseteq V$.
+\end{define}
+\begin{observe}
+Supponiamo che $V=U\oplus W$, con $U$ e $W $sottospazi di $V$; supponiamo inoltre i due sottospazi $U$ e $W$ siano \textbf{invarianti} per $f$ endomorfismo, dunque $f\left(U\right)\subseteq U$ e $f\left(W\right)\subseteq W$. Prese una base $\basis_U$ di $U$ e una base $\basis_W$ di $W$, la base $\basis=\basis_U\cup \basis_W$ è una base di $V$ e la matrice di $f$ rispetto a questa base è a blocchi.
+\begin{equation*}
+	    A = \left(
+	\begin{array}{c|c}
+		B & 0\\
+		\hline
+		0 & C
+	\end{array}
+	\right)
+\end{equation*}
+\begin{itemize}
+	\item $B$ è quadrata, di ordine $\dim U$ ed è la matrice associata a $\funz{f_{\mid U}}{U}{U}$ rispetto a $\basis_U$.
+	\item $C$ è quadrata, di ordine $\dim W$ ed è la matrice associata a $\funz{f_{\mid W}}{W}{W}$ rispetto a $\basis_W$.
+\end{itemize}
+\end{observe}
+\begin{define}
+Data una funzione $\funz{f}{V}{V}$ e $A$ una matrice associata ad $f$; sia $\lambda$ un autovalore di $f$ (di cui ne esiste almeno uno perché in $\complexset$), $V_{\lambda}=\ker \left(f-\lambda Id\right)=\ker \left(A-\lambda I\right)$ l'autospazio di $\lambda$ e $m_{\lambda}$ la molteplicità algebrica di $\lambda$.\\
+Allora l'\textbf{autospazio generalizzato}\index{autospazio!generalizzato} di $\lambda$ è:
+\begin{equation}
+	\tilde{V}=\ker\left(f-\lambda Id\right)^{m_{\lambda}}=\ker\left(A-\lambda I\right)^{m_{\lambda}}
+\end{equation}
+\end{define}
+\begin{lemming}\textsc{Proprietà degli autospazi generalizzati}
+	\begin{enumerate}
+		\item $V_\lambda\subseteq \tilde{V}_{\lambda}$.
+		\item $\tilde{V}_{\lambda}$ è invariante per $A$, cioè $A\tilde{V}_{\lambda}\subseteq \tilde{V}_{\lambda}$.
+		\item $\dim \tilde{V}_{\lambda}=m_{\lambda}$.
+		\item $\funz{f}{\tilde{V}_{\lambda}}{\tilde{V}_{\lambda}}$ ha polinomio caratteristico $\left(t-\lambda\right)^{m_{\lambda}}$.
+		\item Se $\lambda_1,\ \ldots,\ \lambda_r$ sono tutti gli autovalori di $A$, si ha:
+		\begin{equation}
+			V=\tilde{V}_{\lambda_1}\oplus\dots\tilde{V}_{\lambda_r}
+		\end{equation}
+	\end{enumerate}
+\vspace{-6mm}
+\end{lemming}
+\begin{demonstration}~{}
+	Fissiamo un autovalore $\lambda$ di $A$. Analizziamo le potenze $\left(A-\lambda I\right)$, i loro nuclei e le loro immagini.
+\begin{enumerate}[label=\Roman*]
+	\item Se $\underline{v}\in \ker \left(A-\lambda I\right)^h$, allora, per definizione:
+	\begin{equation*}
+		\begin{array}{l}
+					\left(A-\lambda I\right)^h\underline{v}=\underline{0}\\
+			\implies\left(A-\lambda I\right)^{h+1}\underline{v}=\left(A-\lambda I\right)\left(A-\lambda I\right)^h\underline{v}=\underline{0}\\
+			\implies \underline{v}\in \ker \left(A-\lambda I\right)^{h+1}
+			\implies \ker \left(A-\lambda I\right)^h\subseteq \ker \left(A-\lambda I\right)^{h+1}
+		\end{array}
+	\end{equation*}
+Al crescere di $h$:
+\begin{equation}
+\left\{0\right\}\subseteq \ker \left(A-\lambda I\right)\subseteq\ker \left(A-\lambda I\right)^2\subseteq\ldots \qquad\textcolor{red}{\circled{\ast}} 
+\end{equation}
+Cioè il nucleo della potenza $h$ è contenuto in tutti quelli successivi. In particolare:
+\begin{equation*}
+V_{\lambda}=\ker\left(A-\lambda I\right)\subseteq \ker\left(A-\lambda I\right)^{m_{\lambda}}\implies V_{\lambda}\subseteq \tilde{V}_{\lambda}
+\end{equation*}
+Dimostrando così la prima proprietà.
+\item In modo analogo, se $\underline{w}\in\Im \left(A-\lambda I\right)^h$, per definizione $\exists\underline{v}\in\left(A-\lambda I\right)^h$ tale che:
+	\begin{equation*}
+	\begin{array}{l}
+		w=\left(A-\lambda I\right)^h\underline{v}=\left(A-\lambda I\right)^{h-1}\left(\left(A-\lambda I\right)\underline{v}\right)\\
+		\implies w\in\Im\left(A-\lambda I\right)^{h-1}\\
+		\implies \left(A-\lambda I\right)^{h-1}\supseteq\Im\left(A-\lambda I\right)^{h-1}
+		\implies \ker \left(A-\lambda I\right)^h\subseteq \ker \left(A-\lambda I\right)^{h+1}
+	\end{array}
+\end{equation*}
+Al crescere di $h$:
+\begin{equation}
+	V\supseteq \Im \left(A-\lambda I\right)\subseteq\Im \left(A-\lambda I\right)^2\subseteq\ldots \qquad\textcolor{green}{\circled{\ast}} 
+\end{equation}
+Cioè l'immagine della potenza $h$ contiene tutte quelle successive. Possiamo mostrare come tutti gli spazi finora visti (nuclei e immagini delle potenze $\left(A-\lambda I\right)^h$) sono invarianti:
+\begin{itemize}
+\item Se $\underline{v}\in\ker\left(A-\lambda I\right)^h$:
+	\begin{equation*}
+		\begin{array}{l}
+		\underline{0}=A\underline{0}=A\left(\left(A-\lambda I\right)^h\underline{v}\right)\stackrel{\footnote{\label{note1}$A$ e $A-\lambda I$ commutano.}}{=}\left(A-\lambda I\right)^hA\underline{v}\\
+		\implies A\underline{v}\in \ker\left(A-\lambda I\right)^h\\
+		\implies A\left(\ker\left(A-\lambda I\right)^h\right)\subseteq \ker\left(A-\lambda I\right)^h
+	\end{array}
+	\end{equation*}
+Abbiamo appena dimostrato l'invarianza dello spazio $\tilde{V}_{\lambda}$.
+\item Se $\underline{w}\in\Im\left(A-\lambda I\right)^h$ esiste $\underline{v}$ tale che:
+	\begin{equation*}
+	\begin{array}{l}
+		\underline{w}=\left(A-\lambda I\right)^h\underline{v}\implies A\underline{w}=A\left(A-\lambda I\right)^h\underline{v}\stackrel{\footnote{Si veda la nota precedente.}}{=}\left(A-\lambda I\right)^h\left(A\underline{v}\right)\\
+		\implies A\underline{w}\in \Im\left(A-\lambda I\right)^h\\
+		\implies A\left(\Im\left(A-\lambda I\right)^h\right)\subseteq \Im\left(A-\lambda I\right)^h
+	\end{array}
+\end{equation*}
+\end{itemize}
+\end{enumerate}
+\end{demonstration}

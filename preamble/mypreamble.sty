@@ -1438,6 +1438,14 @@ linewidth=1pt]{neoncarrotBox}
 % definizione di funzione (solo domini)
 
 \newcommand{\funz}[3]{
+	\IfEq{#1}{\ }{\begin{tikzcd}[ampersand replacement=\&]
+			#2 \arrow[r] \& #3
+	\end{tikzcd}}
+	{\begin{tikzcd}[ampersand replacement=\&]
+			#1\ \colon \&[-36.21pt] #2 \arrow[r] \& #3
+\end{tikzcd}}}
+
+\newcommand{\funzold}[3]{
 	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
 			#2&\rightarrow& #3\end{array}}}
 		{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
@@ -1446,6 +1454,16 @@ linewidth=1pt]{neoncarrotBox}
 % definizione di funzione (completa)
 
 \newcommand{\funztot}[5]{
+	\IfEq{#1}{\ }{\begin{tikzcd}[ampersand replacement=\&]
+			#2 \arrow[r]          \& #3 \\[-25pt]
+			#4 \arrow[r, maps to] \& #5
+	\end{tikzcd}}
+	{\begin{tikzcd}[ampersand replacement=\&]
+			#1\ \colon \&[-36.21pt] #2 \arrow[r]          \& #3 \\[-25pt]
+			\& #4 \arrow[r, maps to] \& #5
+\end{tikzcd}}}
+
+\newcommand{\funztotold}[5]{
 	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
 					#2&\rightarrow& #3\\
 					#4&\mapsto& #5
@@ -1458,6 +1476,14 @@ linewidth=1pt]{neoncarrotBox}
 % inclusione (solo domini)
 
 \newcommand{\incl}[3]{
+	\IfEq{#1}{\ }{\begin{tikzcd}[ampersand replacement=\&]
+			#2 \arrow[r, hook] \& #3
+	\end{tikzcd}}
+	{\begin{tikzcd}[ampersand replacement=\&]
+			#1\ \colon \&[-36.21pt] #2 \arrow[r, hook] \& #3
+\end{tikzcd}}}
+
+\newcommand{\inclold}[3]{
 	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
 			#2&\hookrightarrow& #3\end{array}}}
 {\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
@@ -1466,6 +1492,16 @@ linewidth=1pt]{neoncarrotBox}
 % inclusione (completa)
 
 \newcommand{\incltot}[5]{
+	\IfEq{#1}{\ }{\begin{tikzcd}[ampersand replacement=\&]
+			#2 \arrow[r, hook]          \& #3 \\[-25pt]
+			#4 \arrow[r, maps to] \& #5
+	\end{tikzcd}}
+	{\begin{tikzcd}[ampersand replacement=\&]
+			#1\ \colon \&[-36.21pt] #2 \arrow[r, hook]          \& #3 \\[-25pt]
+			\& #4 \arrow[r, maps to] \& #5
+\end{tikzcd}}}
+
+\newcommand{\incltotold}[5]{
 	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
 			#2&\hookrightarrow& #3\\
 			#4&\mapsto& #5
