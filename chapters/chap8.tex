@@ -623,7 +623,7 @@ $F\left(f\right)\in\homo{\mathcal{A}}{F\left(Y\right)}{F\left(X\right)}$ è isom
 		Oggetti:  &${\left(G,\ \cdot\right)}\mapsto {G}$\\
 		Morfismi: &$\funz{f}{G}{H}\mapsto\funz{f}{G}{H}$
 	\end{tabular*}\\
-Questo \textit{funtore covariante} si chiama anche \textbf{funtore dimenticante}\index{funtore!dimenticamente}, in quanto associa un gruppo all'insieme su cui si base.\\
+Questo \textit{funtore covariante} si chiama anche \textbf{funtore dimenticante}\index{funtore!dimenticamente}, in quanto associa un gruppo all'insieme su cui si basa.\\
 \begin{tabular*}{6cm}[t]{>{\bfseries}lc}
 	& $\funz{F}{\nicecat{TOP}}{\nicecat{SET}}$\\
 	Oggetti:  &$\left(G,\ \topo\right)\mapsto {G}$\\
@@ -793,7 +793,7 @@ Applicando il ragionamento insiemistico ricordato in precedenza (pag. \pageref{b
 	\end{equation*}
 	Essendo $X$ contraibile, $X$ è anche \textbf{c.p.a.}, dunque vale la tesi.
 \end{demonstration}
-\begin{corollary}
+\begin{corollary} \label{inclusione rdd isomorfismo}
 	Sia $\incl{i}{A}{X}$ un retratto di deformazione. Allora $\forall a\in A$:
 	\begin{equation}
 		\funz{i_{\ast}}{\gruf{A}{a}}{\gruf{X}{a}}\qquad\funz{r_{\ast}}{\gruf{X}{a}}{\gruf{A}{a}}
@@ -801,3 +801,83 @@ Applicando il ragionamento insiemistico ricordato in precedenza (pag. \pageref{b
 Sono isomorfismi di gruppi.
 \vspace{-6mm}
 \end{corollary}
+
+%RICKROLL
+	\subsection{Gruppo fondamentale sfere}
+Per poter poter calcolare il gruppo fondamentale delle sfere $S^n$ con $n\geq 2$ abbiamo prima bisogno di qualche risultato preliminare
+\begin{define} \textsc{distanza di un punto da un insieme in uno spazio metrico} \\
+	Sia $\left(X, d\right)$ uno spazio metrico, $C\subseteq X$ un sottoinsieme non vuoto, $x\in X$, la \textit{distanza di $x$ da $C$} è definita come $d(x,\ C)\coloneqq \inf_{y\in C} d(x,y)$
+\end{define}
+\textsc{Proprietà} \\
+\begin{enumerate}
+	\item $d(x,\ C)\geq 0$ e $d(x,\ C)=0 \stackrel{def. inf}{\iff} \forall\epsilon >0, \exists y\in C \colon d(x,x)<\epsilon \iff x\in\overline{C}$
+	\item fissato il sottoinsieme $C$ e facendo variare il punto $x$ si vede che la funzione "distanza da $C$" $\funztot d X \realset x {d(x,\ C)}$ è continua, infatti presi $x,z\in X$ e $y\in C$ si ha che
+	\begin{gather*}
+		d(x,\ C)\stackrel{def. d}{\leq} d(x,\ y) \leq d(x,\ z) + d(z,\ y) \implies d(x,\ C) - d(x,\ z) \leq d(z,\ y), \forall y\in C\\
+		\text{al variare di $y$ } d(x,\ C) - d(x,\ z) \leq \inf_{y\in C} d = d(z,\ C) \implies d(x,\ C) - d(z,\ C) \leq d(x,\ z) \\
+	\end{gather*}
+	Simmetricamente scambiando $x$ e $z$ si ottiene  $\lvert d(x,\ C) - d(z,\ C) \rvert \leq d(x,\ z) \implies d$ continua.
+\end{enumerate}
+
+\begin{lemming} \textsc{del numero di Lebesgue, Kosniowski, teorema 23.4}\\
+	Sia $\left(X, d\right)$ uno spazio metrico compatto e sia $\mathcal{A}$ un ricoprimento aperto di $X$. Allora $\exists \delta >0$ tale che per ogni palla aperta $B$ in $X$ di diametro minore di $\delta \ \exists U\in\mathcal{A} \colon B\subseteq U$.	
+\end{lemming}
+\begin{define}
+	Il numero $\delta$ descritto nell'enunciato del lemma è detto \textit{numero di Lebesgue} del ricoprimento $\mathcal{A}$
+\end{define}
+\begin{demonstration}
+	Siccome $X$ è compatto allora $\mathcal{A}$ ammette un sottoricoprimento finito $\left\{ U_1,\dots,U_n \right\}$ aperti. Si considerano i complementari $C_j\coloneqq X\setminus U_j$ che sono chiusi in $X$:
+		\begin{gather*}
+			 C_1\cap\cdots\cap C_n=(X\setminus U_1)\cap \cdots\cap(X\setminus U_n)=X\setminus(U_1\cup\cdots\cup U_n)=X\setminus X=\emptyset
+		\end{gather*}	
+	Per ogni $j=1,\dots,n$ sia $\funz {f_j} X \realset$ la funzione distanza da $C_j$: è continua, positiva $f_j\geq 0$ e si annulla su $C_j$ chiuso. Sia $F\coloneqq \max(f_1,\dots,f_n)$, si ha che è continua perché è il massimo di funzioni continue. Mostriamo che vale sempre $F>0$:
+		\begin{gather*}
+			f_j\geq 0, \forall j \implies F\geq 0 \\
+			\text{Se } \exists x_0\in X \colon F(x_0)=0 \implies f_j(x_0)=0, \forall j \implies x_0\in C_j, \forall j\\
+			\text{Ma } C_1\cap\cdots\cap C_n=\emptyset \implies F>0 \text{ su } X
+		\end{gather*}
+	Quindi siccome $F$ è continua e positiva su un compatto allora $F$ ammette minimo $\delta>0$.\newline
+	Sia $B$ una palla aperta in $X$ con diametro minore di $\delta$ e sia $x_1\in B$, allora 
+		\begin{gather*}
+			\max\left( f_1(x_1)\dots,f_n(x_1) \right)=F(x_1)\geq \delta \implies \exists j\in\{1,\dots,n\}\colon f_j(x_1)\geq \delta 
+		\end{gather*}
+	cioé tale che $d(x_1,\ C_j)\geq \delta > \text{diam}B$. Mostriamo che $B\subseteq U_j$, ovvero che $B\cap C_j=\emptyset$:
+		\begin{gather*}
+			y\in B \implies d(y,\ x_1)< \text{diam}B<\delta \leq d(x_1,\ C_j) \implies y\notin C_j \implies B\cap C_j=\emptyset 
+		\end{gather*}
+\end{demonstration}
+\begin{corollary} \label{suddivisione}
+	Sia $X$ uno spazio topologico e $\funz \alpha I X$ un cammino. Sia $\mathcal{A}$ un ricoprimento di $X$. Allora esiste una suddivisione finita $0=t_0\leq t_1\leq \dots\leq t_k=1$ di $\intv$ t.c. $\forall i=0,\dots,k-1 \ \exists U_i\in\mathcal{A} \colon \alpha([t_i,\ t_{i+1}])\subseteq U_i$, ovvero l'immagine di ogni intervallino della suddivisione è contenuta nel corrispettivo aperto del ricoprimento.
+\end{corollary}
+\begin{demonstration}
+	$I$ è uno spazio metrico compatto e sia $\widetilde{\mathcal{A}}\coloneqq \{ \alpha^{-1}(U)\mid U\in\mathcal{A}\}$ ricoprimento aperto di $I$. Sia $\delta$ il numero di Lebesgue del ricoprimento $\mathcal{A}$. Allora basta scegliere una partizione nel modo seguente per poter applicare il lemma precedente:
+		\begin{gather*}
+			|t_{i+1} - t_i|<\delta \implies \forall i, \ \exists\epsilon \colon t_{i+1}-t_i+2\epsilon <\delta \implies \text{diam}(t_i -\epsilon,\ t_{i+1}+\epsilon)<\delta\\
+			\implies \exists U_i\in\mathcal{A}\colon [t-i,\ t_{i+1}]\subseteq \alpha^{-1}(U_1) \implies \alpha([t_i,\ t_{i+1}])\subseteq U_i
+		\end{gather*}
+\end{demonstration}
+
+\begin{observe}
+	Sia $X$ uno spazio topologico, $x_0\in A\subseteq X$ e $\incl i A X$ inclusione induce un morfismo di gruppi $\funztot {i_*} {\pi_1(A,\ x_0)} {\pi_1(X,\ x_0)} {[\alpha]} {[i\circ\alpha]}$ che ad un laccio in $A$ con punto base $x_0$ associa lo stesso laccio ma in $X$, sempre con lo stesso punto base $x_0$. Ricordiamo (corollario \ref{inclusione rdd isomorfismo}) che se $A$ è un retratto allora $i_*$ è iniettivo, se $A$ è un retratto di deformazione allora $i_*$ è un isomorfismo di gruppi.\newline
+%AAA COMANDO PER IM CERCASI
+	Vogliamo ora calcolare l'immagine di $i_*$, ovvero $G_A\coloneqq 	IM		 i_*=i_*(\pi_1(A,\ x_0))\subseteq \pi_1(X,\ x_0)$. Esso infatti è il sottogruppo di $\pi_1(X,\ x_0)$ dei cammini $\gamma$ che hanno almeno un rappresentante che abbia l'immagine interamente contenuta in $A$, ovvero:
+		\begin{gather*}
+			G_A=\{ [\gamma] \in \pi_1(X,\ x_0) \mid \exists \tilde{\gamma} \text{ con } [\tilde{\gamma}] =[\gamma]\in \pi_1(X,\ x_0) \colon \tilde{\gamma}(\intv)\subseteq A \}
+		\end{gather*}
+	Quindi ad ogni sottoinsieme di $X$ possiamo associare un sottogruppo del gruppo fondamentale quale l'immagine del morfismo indotto dall'inclusione ed è formato esattamente dalle classi di cammini che ammettono rappresentante la cui immagine è interamente contenuta nel sottoinsieme.
+\end{observe}
+
+Ricordiamo cosa vuol dire che un insieme genera un gruppo: sia $G$ un gruppo qualsiasi, $S\subseteq G$ sottoinsieme, si dice che $S$ genera il gruppo $G$ se ogni $g\in G$ si può scrivere come prodotto finito di elementi di $S$ e di loro inversi. \newline
+
+Vediamo ora un risultato generale per poter calcolare un gruppo fondamentale sfruttando proprio la nozione di generatore. Si determinerà il gruppo fondamentale $\pi_1(X,\ x_0)$ nel corso di \textit{Geometria 4}
+\begin{theorema} \textsc{Van Kampfen su generatori, Manetti 11.25} \label{van kampfen} \\
+	Sia $X$ uno spazio topologico e siano $A,B\subseteq X$ aperti tali che $A,B,A\cap B$ sono c.p.a e $A\cap B\neq\emptyset, X=A\cup B$ (per il teorema	 questo implica che $X$ è c.p.a.)
+%AAA TEOREMA CERCASI
+	Sia $x_0\in A\cap B$ e le inclusioni $\incl i A X$ e $\incl j B X$ con i loro morfismi indotti $\funz {i_*} {\pi_1(A,\ x_0)} {\pi_1(X,\ x_0)}$ e $\funz {j_*} {\pi_1(B,\ x_0)} {\pi_1(X,\ x_0)}$. Siano inoltre $G_A\coloneqq 	IM i_*$ e $G_B\coloneqq IM j_*$\newline
+	Allora $\pi_1(X,\ x_0)$ è generato da $G_A\cup G_B$
+%AAA COMANDO PER IM CERCASI
+\end{theorema}
+\begin{demonstration}
+	Sia $[\alpha]\in\pi_1(X,\ x_0)$. Mostriamo che $[\alpha]$ si può scrivere come prodotto finito di elementi di $G_A\cup G_B$.\newline
+	Siccome $\{A,B\}$ è un ricoprimento aperto di $X$ per il corollario \ref{suddivisione} esiste una partizione $0=t_0\leq t_i\leq\dots\leq t_k=1$ t.c. $\forall i=0,\dots,k-1, \alpha([t_i,\ t_{i+1}]) \subseteq A$ o $B$
+\end{demonstration}
