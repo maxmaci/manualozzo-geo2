@@ -31,12 +31,12 @@
 \RequirePackage{amssymb}
 \RequirePackage{wasysym}
 \RequirePackage{amsthm}
-\RequirePackage{pifont}
+\RequirePackage{pifont} % aggiunge dingbat per itemize
 \RequirePackage{array}
-\RequirePackage{arydshln}
+%\RequirePackage{arydshln}
 \RequirePackage{varioref}
 \RequirePackage{lettrine}
-\RequirePackage{lipsum}
+%\RequirePackage{lipsum}
 \RequirePackage{relsize}
 \RequirePackage{svn-multi}
 %\RequirePackage{siunitx}
@@ -54,17 +54,20 @@
 \RequirePackage[rgb,hyperref,dvipsnames]{xcolor}
 \RequirePackage[most]{tcolorbox}
 \RequirePackage{tikz}
-\usetikzlibrary{calc,angles,positioning,intersections,quotes,arrows,decorations.pathreplacing,graphs,decorations.pathmorphing,decorations.markings,fit,matrix}
-\RequirePackage{venndiagram}
-\RequirePackage{pgfplots}
-\RequirePackage{pgf}
-\RequirePackage{mathrsfs}
-\RequirePackage{xparse}
-\RequirePackage[framemethod=default]{mdframed}
-\RequirePackage{makeidx}
+\usetikzlibrary{calc,angles,positioning,intersections,quotes,arrows,decorations.pathreplacing,graphs,decorations.pathmorphing,decorations.markings,fit,matrix,bending}
+%\RequirePackage{venndiagram}
+%\RequirePackage{pgfplots}
+%\RequirePackage{pgf}
+%\RequirePackage{mathrsfs}
+%\RequirePackage{xparse}
+\RequirePackage[framemethod=default]{mdframed} % necessario per environments
+%\RequirePackage{makeidx}
 \RequirePackage[thicklines]{cancel}
-\RequirePackage{bm}
-\RequirePackage{multicol}
+%\RequirePackage{bm}
+%\RequirePackage{multicol}
+%\usepackage[font=small,labelfont=bf]{caption}
+%\usepackage{tikz-3dplot}
+%\usepackage{wrapfig}
 \RequirePackage{preamble/tikz-cd}
 \RequirePackage{preamble/comment}
 % Load hyperref package last
@@ -1665,17 +1668,13 @@ linewidth=1pt]{neoncarrotBox}
 
 
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
-\pgfplotsset{compat=1.16}
-\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
-\definecolor{lightgray}{RGB}{93,93,93}
-
+%\pgfplotsset{compat=1.16}
+%\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+%\definecolor{lightgray}{RGB}{93,93,93}
 
 \newsavebox{\barra}
 \newsavebox{\somma}
 \newsavebox{\diffe}
-\usepackage[font=small,labelfont=bf]{caption}
-\usepackage{tikz-3dplot}
-\usepackage{wrapfig}
 
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 

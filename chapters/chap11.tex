@@ -77,7 +77,10 @@ Sia $A\in \complexset^{n,\ n}$ una matrice associata a un endomorfismo $\funz{f}
 	\begin{itemize}
 		\item $J$ è determinato da $\lambda$ e $k$.
 		\item Il polinomio caratteristico di $J$ è $C_J\left(t\right)=\left(t-\lambda\right)^k$, cioè $\lambda$ è l'unico autovalore di $J$ con molteplicità algebrica $k$.
-		\item Definiamo il blocco di Jordan di dimensione $k$ con autovalore zero, necessario per calcolare l'autospazio $V_\lambda$:
+	\end{itemize}	
+\end{observe}
+\begin{observe}
+Definiamo il blocco di Jordan di dimensione $k$ con autovalore zero, necessario per calcolare l'autospazio $V_\lambda$:
 		\begin{equation}\setlength\arraycolsep{0.5mm}
 			N=J-\lambda I= \left(
 				\begin{array}{ccccc}
@@ -158,7 +161,6 @@ E in questo caso si ha la relazione con i vettori della base:
 Studiando l'immagine dell'applicazione associata ad $N$, essendo la base dell'immagine i vettori colonna l.i., si ha $\Im N^{k-1}=\mathcal{L}\left(e_1\right)$.\\
 Come già affermato dunque, è $\underline{e}_k$ a determinare l'\textit{intera} base di $V$ tramite la moltiplicazione per $N$.\\
 Come ultima osservazione fondamentale, notiamo inoltre che $N^k=O$, cioè $N$ è una matrice \textbf{nilpotente}\index{matrice!nilpotente} di ordine $k$.
-\end{itemize}
 \end{observe}
 \begin{define}
 	Una matrice quadrata si dice in \textbf{forma di Jordan}\index{forma di Jordan} se ha solo blocchi di Jordan lungo la diagonale, mentre altrove è nulla.
@@ -167,30 +169,34 @@ Come ultima osservazione fondamentale, notiamo inoltre che $N^k=O$, cioè $N$ è
 La seguente matrice $9\times 9$  è in forma di Jordan, con blocchi $J_3\left(2\right)$, $J_2\left(i\right)$, $J_3\left(i\right)$ e $J_1\left(-4\right)$:
 	\begin{equation*}
 		A=
-		\tikz[baseline=(M.west)]{%
+		\tikz[baseline]{%
 			\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
-				2 	\& 1 	\& 0	\& 		\&	 	\&	 	\&	 	\&	 	\&	 	\\
-					\& 2 	\& 1 	\&		\&		\&	 	\&	 	\&	 	\&	 	\\
-					\&  	\& 2 	\& 		\&		\&	 	\&	 	\&	 	\&	 	\\
-					\&  	\&   	\& i	\& 1	\&	 	\&	 	\&	 	\&	 	\\
-					\&  	\&   	\& 		\& i	\&	 	\&	 	\&	 	\&	 	\\
-					\&  	\&   	\& 		\&  	\&	i	\&	1	\&	 	\&	 	\\
-					\&  	\&   	\& 		\&  	\&	 	\&	i	\&	1 	\&	 	\\
-					\&  	\&   	\& 		\&  	\&	 	\&	 	\&	i 	\&	 	\\
-					\&  	\&   	\& 		\&  	\&	 	\&	 	\&	  	\&	-4	\\				
+				2 	\& 1 	\& 0	\& \color{gray}{0}	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\\
+				0	\& 2 	\& 1 	\& \color{gray}{0}	\&	\color{gray}{0}	\&	 \color{gray}{0}	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\\
+				0	\& 0 	\& 2 	\& \color{gray}{0}	\& \color{gray}{0}	\&	\color{gray}{0}	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\\
+				\color{gray}{0}	\& \color{gray}{0} 	\& \color{gray}{0}  	\& i	\& 1	\&	\color{gray}{0}	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\\
+				\color{gray}{0}	\& \color{gray}{0} 	\& \color{gray}{0} 	\& 0	\& i	\&	\color{gray}{0}	\&	\color{gray}{0}	\&	\color{gray}{0}	\&	\color{gray}{0}	\\
+				\color{gray}{0}	\&  \color{gray}{0}	\& \color{gray}{0} 	\& \color{gray}{0}	\& \color{gray}{0}	\&	i	\&	1	\&	0	\&	\color{gray}{0}	\\
+				\color{gray}{0}	\& \color{gray}{0} 	\& \color{gray}{0}  	\& 	\color{gray}{0}	\& \color{gray}{0}	\&	0	\&	i	\&	1 	\&	\color{gray}{0}	\\
+				\color{gray}{0}	\&  \color{gray}{0}	\&  \color{gray}{0} 	\& \color{gray}{0}		\& \color{gray}{0}	\&	0	\&	0	\&	i 	\&	\color{gray}{0}	\\
+				\color{gray}{0}	\& \color{gray}{0} 	\&  \color{gray}{0} 	\& \color{gray}{0}		\& \color{gray}{0}	\&	\color{gray}{0}	\&	\color{gray}{0}	\&	\color{gray}{0} 	\&	-4	\\				
 			};
-			\node[draw,fit=(M-1-1)(M-3-3),inner sep=-0.25pt] {};
-			\node[draw,fit=(M-4-4)(M-5-5),inner sep=-0.25pt] {};
-			\node[draw,fit=(M-6-6)(M-8-8),inner sep=-0.25pt] {};
-			\node[draw,fit=(M-9-9),inner sep=-0.25pt] {};
+			\draw (M-1-1.north west) rectangle (M-3-3.south east);
+			\draw (M-3-3.south east) rectangle (M-5-5.south east);
+			\draw (M-5-5.south east) rectangle (M-8-8.south east);
+			\draw (M-8-8.south east) rectangle (M-9-9.south east);
 		}
 	\end{equation*}
 \end{example}
-% https://github.com/MartinThoma/LaTeX-examples/blob/master/tikz/jordan-normal-form-block/jordan-normal-form-block.tex (check it out)
-% https://tex.stackexchange.com/questions/481978/how-to-write-the-block-matrix-in-latex
+
 \begin{observe}
-	Una matrice \textit{diagonale} è in forma di Jordan, con un unico blocco di ordine 1 (cioè senza alcun $1$ nell'elemento sopra).
+	Una matrice \textit{diagonale} è in forma di Jordan, con un unico blocco di ordine $1$ (cioè senza alcun $1$ nell'elemento sopra).
 \end{observe}
 \begin{observe}
 	Se $A$ è in forma di Jordan, sulla diagonale compaiono tutti gli autovalori con la loro \textit{molteplicità}. Dunque, se $\lambda$ è un autovalore, la somma delle \textit{dimensioni} dei blocchi relativi a $\lambda$ è uguale alla \textit{molteplicità algebrica} $m_\lambda$ di $\lambda$.
 \end{observe}
+\begin{theorema}
+	Sia $V$ uno spazio vettoriale complesso di $\dim n$ e $f$ un endomorfismo di $V$. Allora esiste una base di $V$ in cui la matrice di $f$ è in forma di Jordan. Inoltre, la forma di Jordan è unica a meno dell'ordine dei blocchi.\\
+	\textit{In termini matriciali}, ogni $A\in\complexset^{n,\ n}$ è simile ad una matrice in forma di Jordan, unica a meno dell'ordine dei blocchi.
+\end{theorema}
+Per agevolare la dimostrazione, faremo uso di un lemma importante. Tuttavia, prima di dimostrarlo, facciamo alcune osservazioni per comprendere meglio ciò di cui parliamo.
