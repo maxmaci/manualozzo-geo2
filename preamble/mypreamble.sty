@@ -1475,6 +1475,31 @@ linewidth=1pt]{neoncarrotBox}
 			&#4&\mapsto& #5
 \end{array}}}}
 
+%RICKROLL
+% suriettiva
+
+\newcommand{\surr}[3]{
+    \IfEq{#1}{\ }{\begin{tikzcd}[ampersand replacement=\&]
+            #2 \arrow[r, two heads] \& #3
+    \end{tikzcd}}
+    {\begin{tikzcd}[ampersand replacement=\&]
+            #1\ \colon \&[-36.21pt] #2 \arrow[r, two heads] \& #3
+\end{tikzcd}}}
+
+% suriettiva (completa)
+
+\newcommand{\surrtot}[5]{
+    \IfEq{#1}{\ }{\begin{tikzcd}[ampersand replacement=\&]
+            #2 \arrow[r, two heads]          \& #3 \\[-25pt]
+            #4 \arrow[r, maps to] \& #5
+    \end{tikzcd}}
+    {\begin{tikzcd}[ampersand replacement=\&]
+            #1\ \colon \&[-36.21pt] #2 \arrow[r, two heads]          \& #3 \\[-25pt]
+            \& #4 \arrow[r, maps to] \& #5
+\end{tikzcd}}}
+
+%FINE RICKROLL
+
 %%%%%%%%%%%%%%%%%%%%%%%% definizioni omotopia %%%%%%%%%%%%%%%%%%%%%%%%%
 
 % insieme dei cammini

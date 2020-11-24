@@ -492,7 +492,7 @@ Tali che questi oggetti soddisfino i seguenti assiomi:
 Si dimostra che $Id_X$ è unico per ogni oggetto $X$.
 \end{enumerate} 
 \end{define}
-\begin{define}
+\begin{define} 
 	Un morfismo $f\in\homo{\cat}{X}{Y}$ si dice \textbf{isomorfismo} se:
 	\begin{equation}
 		 \exists g\in \homo{\cat}{Y}{X} \text{ tale che } g\circ f=Id_X\qquad f\circ g=Id_Y
@@ -544,7 +544,7 @@ Nello specifico, se $U,\ V\subseteq X$ aperti, allora:
 \begin{attention}
 	Come si evince dall'esempio 6, i morfismi delle categorie possono anche \textit{non} essere funzioni!
 \end{attention}
-\subsection{Funtori}
+\subsection{Funtori} 
 \begin{define}
 Siano $\mathcal{A},\ \mathcal{B}$ due categorie. Un \textbf{funtore}\index{funtore} $\funz{F}{\mathcal{A}}{\mathcal{B}}$ consiste di due funzioni:
 \begin{enumerate}
@@ -803,8 +803,8 @@ Sono isomorfismi di gruppi.
 \end{corollary}
 
 %RICKROLL
-	\subsection{Gruppo fondamentale sfere}
-Per poter poter calcolare il gruppo fondamentale delle sfere $S^n$ con $n\geq 2$ abbiamo prima bisogno di qualche risultato preliminare
+		\section{Gruppo fondamentale sfere}
+Per poter poter calcolare il gruppo fondamentale delle sfere $S^n$ con $n\geq 2$ abbiamo prima bisogno di qualche risultato preliminare.
 \begin{define} \textsc{distanza di un punto da un insieme in uno spazio metrico} \\
 	Sia $\left(X, d\right)$ uno spazio metrico, $C\subseteq X$ un sottoinsieme non vuoto, $x\in X$, la \textit{distanza di $x$ da $C$} è definita come $d(x,\ C)\coloneqq \inf_{y\in C} d(x,y)$
 \end{define}
@@ -823,7 +823,7 @@ Per poter poter calcolare il gruppo fondamentale delle sfere $S^n$ con $n\geq 2$
 	Sia $\left(X, d\right)$ uno spazio metrico compatto e sia $\mathcal{A}$ un ricoprimento aperto di $X$. Allora $\exists \delta >0$ tale che per ogni palla aperta $B$ in $X$ di diametro minore di $\delta \ \exists U\in\mathcal{A} \colon B\subseteq U$.	
 \end{lemming}
 \begin{define}
-	Il numero $\delta$ descritto nell'enunciato del lemma è detto \textit{numero di Lebesgue} del ricoprimento $\mathcal{A}$
+	Il numero $\delta$ descritto nell'enunciato del lemma è detto \textit{numero di Lebesgue} \index{numero di Lebesgue} del ricoprimento $\mathcal{A}$
 \end{define}
 \begin{demonstration}
 	Siccome $X$ è compatto allora $\mathcal{A}$ ammette un sottoricoprimento finito $\left\{ U_1,\dots,U_n \right\}$ aperti. Si considerano i complementari $C_j\coloneqq X\setminus U_j$ che sono chiusi in $X$:
@@ -869,15 +869,87 @@ Per poter poter calcolare il gruppo fondamentale delle sfere $S^n$ con $n\geq 2$
 
 Ricordiamo cosa vuol dire che un insieme genera un gruppo: sia $G$ un gruppo qualsiasi, $S\subseteq G$ sottoinsieme, si dice che $S$ genera il gruppo $G$ se ogni $g\in G$ si può scrivere come prodotto finito di elementi di $S$ e di loro inversi. \newline
 
-Vediamo ora un risultato generale per poter calcolare un gruppo fondamentale sfruttando proprio la nozione di generatore. Si determinerà il gruppo fondamentale $\pi_1(X,\ x_0)$ nel corso di \textit{Geometria 4}
+Vediamo ora un risultato generale per poter avere qualche informazione in più su un gruppo fondamentale sfruttando proprio la nozione di generatore. Si riscirà a calcolare il gruppo fondamentale $\pi_1(X,\ x_0)$ nel corso di \textit{Geometria 4}.
+\index{Van Kampfen}
 \begin{theorema} \textsc{Van Kampfen su generatori, Manetti 11.25} \label{van kampfen} \\
-	Sia $X$ uno spazio topologico e siano $A,B\subseteq X$ aperti tali che $A,B,A\cap B$ sono c.p.a e $A\cap B\neq\emptyset, X=A\cup B$ (per il teorema	 questo implica che $X$ è c.p.a.)
-%AAA TEOREMA CERCASI
-	Sia $x_0\in A\cap B$ e le inclusioni $\incl i A X$ e $\incl j B X$ con i loro morfismi indotti $\funz {i_*} {\pi_1(A,\ x_0)} {\pi_1(X,\ x_0)}$ e $\funz {j_*} {\pi_1(B,\ x_0)} {\pi_1(X,\ x_0)}$. Siano inoltre $G_A\coloneqq 	IM i_*$ e $G_B\coloneqq IM j_*$\newline
-	Allora $\pi_1(X,\ x_0)$ è generato da $G_A\cup G_B$
+	Sia $X$ uno spazio topologico e siano $A,B\subseteq X$ aperti tali che $A,B,A\cap B$ sono c.p.a e $A\cap B\neq\emptyset, X=A\cup B$ (per il teorema \ref{unione sottospazi connessi} questo implica che $X$ è c.p.a.).	Sia $x_0\in A\cap B$ e le inclusioni $\incl i A X$ e $\incl j B X$ con i loro morfismi indotti $\funz {i_*} {\pi_1(A,\ x_0)} {\pi_1(X,\ x_0)}$ e $\funz {j_*} {\pi_1(B,\ x_0)} {\pi_1(X,\ x_0)}$. Siano inoltre $G_A\coloneqq 	IM i_*$ e $G_B\coloneqq IM j_*$\newline
+	Allora $\pi_1(X,\ x_0)$ è generato da $G_A\cup G_B$.
 %AAA COMANDO PER IM CERCASI
 \end{theorema}
 \begin{demonstration}
 	Sia $[\alpha]\in\pi_1(X,\ x_0)$. Mostriamo che $[\alpha]$ si può scrivere come prodotto finito di elementi di $G_A\cup G_B$.\newline
-	Siccome $\{A,B\}$ è un ricoprimento aperto di $X$ per il corollario \ref{suddivisione} esiste una partizione $0=t_0\leq t_i\leq\dots\leq t_k=1$ t.c. $\forall i=0,\dots,k-1, \alpha([t_i,\ t_{i+1}]) \subseteq A$ o $B$
+	Siccome $\{A,B\}$ è un ricoprimento aperto di $X$ per il corollario \ref{suddivisione} esiste una partizione $0=t_0\leq t_i\leq\dots\leq t_k=1$ t.c. $\forall i=0,\dots,k-1, \alpha([t_i,\ t_{i+1}]) \subseteq A$ o $B$. \newline 
+	Sia $\funz {\alpha_1\coloneqq \alpha_{|_{[t_{i-1},\ t_i]}}} {[t_{i-1},\ t_i]} X, \forall i=1,\dots,k$, che si può pensare come un cammino in $X$ riparametrizzandolo su $\intv$. Per il lemma sul cambiamento di parametro si ottiene $\alpha\sim \left( (\alpha_1 \ast \alpha_2)\ast \alpha_3 \right)\ast \alpha_k$ giunzione di cammini. Si utilizza la connessione per archi: $A,B,A\cap B$ sono c.p.a., quindi $\forall i=1,\dots,k-1$ si sceglie con i seguenti criteri:
+		\begin{itemize}
+			\item Se $\alpha(t_i)\in A\cap B$ si sceglie un arco $\funz {\gamma_i} I {A\cap B}$ da $x_0$ a $\alpha(t_i)$
+			\item Se $\alpha(t_i)\in A\setminus B$ si sceglie un arco $\funz {\gamma_i} I {A}$ da $x_0$ a $\alpha(t_i)$
+			\item Se $\alpha(t_i)\in B\setminus A$ si sceglie un arco $\funz {\gamma_i} I {B}$ da $x_0$ a $\alpha(t_i)$
+		\end{itemize}
+	Grazie a $\gamma$ ora si può fare il prodotto per ottenere un cammino chiuso: $\forall i=1,\dots,k$ sia $\beta_i\coloneqq (\gamma_{i-1}\ast \alpha_i)\ast\overline{\gamma_i}$, che è ben definito ed è un cammino chiuso con punto base $x_0$, quindi $[\beta_i]\in \pi_1(X,\ x_0)$. Mostriamo ora che $IM \beta_i$ è contenuta o in $A$ o in $B$. Fissato $i\in\{1,\dots,k\}, \ IM\alpha_i=\alpha([t_{i-1},\ t_i])$ è contenuto o in $A$ o in $B$, supponiamo quanto segue:
+		\begin{gather*}
+			IM\alpha_i \subseteq A \implies \alpha(t_{i-1})\in A,\ \alpha(t_i)\in A \implies \gamma_{i-1} \text{ e } \gamma_i \text{ sono entrambi a valori in }A \\ 
+			\implies IM\beta_i \subseteq A \implies [\beta_i]\in G_A\\  
+			\text{Quindi }[\beta_i]\in G_A\cup G_B, \forall \text{ e } [\alpha]=[\alpha_1 \ast \dots \ast\alpha_k]=[\beta_1\ast\dots\ast\beta_k]=[\beta_1]\dots [\beta_k]\\
+			\implies G_A\cup G_B \text{ generano } \pi_1(X,\ x_0)
+		\end{gather*}
+%AAA COMANDO PER IM CERCASI
+\end{demonstration}
+\begin{corollary} \textsc{Manetti, 11.26} \label{corollario van kampfen} \\ 
+	Sia $X$ uno spazio topologico e siano $A,B\subseteq X$ aperti tali che
+		\begin{enumerate}
+			\item $A$ e $B$ sono semplicemente connessi
+			\item $A\cap B\neq\emptyset$ è c.p.a.
+			\item $X=A\cup B$
+		\end{enumerate}
+	Allora $X$ è semplicemente connesso.
+\end{corollary}
+\begin{demonstration}
+	Per il teorema \ref{unione sottospazi connessi} $X$ è connesso, infatti è unione di c.p.a. con intersezione non vuota.\newline
+	Siccome l'intersezione non è vuota, sia $x_0\in A\cap B$, le ipotesi del teorema di Van Kampfen appena dimostrato sono soddisfatte, quindi $\pi_1(X,\ x_0)$ è generato da $G_A$ e $G_B$. Tuttavia $A$ è semplicemente connesso $\implies \pi_1(A,\ x_0)=\{1\}$ e considerando $\surr {L_\ast} {\pi_1(A,\ x_0)} {G_A}$ suriettiva $\implies G_A=\{1\}$. Allo stesso modo per $G_B=\{1\}$. Siccome $\pi_1(X,\ x_0)$ è generato da $G_A\cup G_B=\{1\}$ allora $\pi_1(X,\ x_0)=\{1\}$.
+\end{demonstration}
+
+\begin{observe} \index{proiezione stereografica} \index{polo nord}
+	Consideriamo $S^n\subseteq \realset^{n+1}$ sfera $n$-dimensionale. Si ha che $\forall p\in S^n,\ S^n\setminus \{1 \ pt.\}\cong \realset^n$\newline
+	Ciò si verifica tramite la \textit{proiezione stereografica} che opera nel seguente modo: si consideri la sfera con $n=2$ centrata nell'origine e privata del punto $N=(0,\ 0,\ 1)$ detto anche polo nord, la proiezione sterografica sarà il morfismo $\funz \pi {S^2\setminus\{N\}} H$ con $H=\realset^2$ e con $\pi(Q)$ pari all'intersezione della retta passante per $N$ e $Q$ e del piano $H$, si dimostra che è un omeomorfsimo.
+\end{observe}
+
+\begin{corollary} \textsc{Manetti, 11.27} \label{sfere sempl. connesse} \\
+	$\forall n\geq 2$, la sfera $S^n$ è semplicemente connessa.
+\end{corollary}
+\begin{demonstration}
+	Volendo applicare il teorema di Van Kampfen scegliamo degli aperti adatti.\newline
+	Sia $N=(0,\dots,0,\ 1)\in S^n$ il polonord e $S=(0,\dots,\ -1)\in S^n$ il polo sud, e sia $A\coloneqq S^n\setminus\{N\}$, esso è aperto, c.p.a., omeomorfo a $\realset^n$ per l'osservazione precedente e siccome $\realset^n$ è contraibile allora lo è anche $A$, che dunque sarà semplicemente connesso. Idem per $B\coloneqq S^n\setminus\{S\}$. Si ha che $A\cap B=S^n\setminus\{N, S\}$ che è c.p.a. se $n\geq 2$, non vuoto e inoltre $S^n=A\cup B$, quindi per il corollario \ref{corollario van kampfen} si ha che $S^n$ è semplicemente connesso.
+\end{demonstration}
+
+\begin{attention}
+	$X$ contraibile $\implies X$ semplicemente connesso, ma non vale il viceversa: le sfere $S^n, n\geq 2$ sono semplicemente connesse ma non sono contraibili perché non sono omotopicamente equivalenti ad un punto.\newline
+	Quindi vale il principio per cui il tipo di omotopia di $X$ determina il gruppo fondamentale di $X$ ma non vale il viceversa!
+\end{attention}
+
+		\section{Gruppo fondamentale della circonferenza}
+Nella sezione precedente abbiamo analizzato il gruppo fondamentale delle sfere $S^n$ per $n\geq 2$, ci domandiamo ora cosa succede per la circonferenza $S^1$. Siccome la dimostrazione sarà lunga e articolata preannunciamo che $\pi_1(S^1)\cong \integerset$: l'isomorfsimo conta il numero di giri con segno che il cammino chiuso fa intorno alla circonferenza, per fare ciò si utilizzerà la mappa esponenziale \index{mappa esponenziale} $\funztot e \realset {S^1} t {e^{2\pi i t}}$ che è il quoziente per l'azione di $\integerset$ su $\realset$ per traslazione, dunque $e$ è continua e aperta e $e^{-1}(P)=\{t_0,\ t_0\pm n \in\realset \mid n\in\integerset\}$.\newline
+
+
+
+	\subsection{Conseguenze}
+Osserviamo ora tramite un esempio sulla circonferenza che il corollario \ref{corollario van kampfen} non vale se $A$ e $B$ non sono aperti.
+\begin{observe}
+	Siano $X=S^1, A=(s^1\cap\{y>0\})\cup \{(1,0)\}$ e $B=S^1\cap\{y\leq 0\}$ che non sono aperti in $X$. Siccome $A\cong (0,\ 1]\subseteq \realset$ che è convesso in $\realset$ allora $A$ è contraibile e dunque semplicemente connesso. Analogamente per $B\cong\intv$. Dunque si ha che $X=A\cup B, A\cap B=\{(1,\ 0)\}\neq\emptyset$ e c.p.a., ma $X=S^1$ non è semplicemente connesso.
+\end{observe}
+
+\begin{corollary} \textsc{Manetti, 12.38} \label{circonferenza non retratto disco} \\
+	Sia $D\subseteq\realset^2$ il disco unitario e $A=\partial{D}$ il bordo, ovvero $A=S^1$. Allora $A$ non è un retratto di $D$.
+\end{corollary}
+\begin{demonstration}
+	Se $A$ fosse un retratto allora $\pi_1(A)$ dovrebbe essere isomorfo ad un sottogruppo di $\pi_1(D)$. Tuttavia $\pi_1(A)=\pi_1(S^1)=\integerset$ e $D\subseteq\realset^2$ convesso $\implies \pi_1(D)=\{1\}$, il che non è possibile.
+\end{demonstration}
+\begin{observe}
+	Allo stesso modo se $X$ è uno spazio topologico semplicemente connesso e $A\subseteq X$ con $A\cong S^1$, allora $A$ non può essere un retratto di $X$.
+\end{observe}
+
+\begin{corollary} \textsc{Teorema del punto fisso di Brouwer, Manetti 12.39} \label{punto fisso B} \index{punto fisso} \index{Brouwer} \\
+	Sia $D\subseteq \realset^2$ il disco unitario e sia $\funz f D D$ continua. Allora $f$ ha un punto fisso, ovvero $\exists x_0\in D \colon f(x_0)=x_0$.
+\end{corollary}
+\begin{demonstration}
+	Ragionando per assurdo supponiamo che $f$ non abbia punti fissi, ovvero $f(x_0)\neq x_0, \forall x_0\in D$. Utilizziamo $f$ per costruire una retrazione che non può esistere per motivi topologici: sia $\funz r D {\partial{D}}$ retrazione continua con $r_{\partial{D}}=Id_{\partial{D}}$ definita nel modo seguente. Sia $S$ la semiretta aperta uscente da $f(x)$ (essendo aperta il punto $f(x)$ è escluso) e passante per $x$, essa esiste perché $x\neq f(x)$ per ipotesi assurda, e si ponga $r(x)=S\cap\partial{D}$. Se $x\in\partial{D} \implies x=r(x) \implies r_{|_{\partial{D}}}= Id_{\partial{D}} \implies r$ retrazione, il che è assurdo per il corollario precedente.
 \end{demonstration}
