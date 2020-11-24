@@ -61,13 +61,14 @@
 %\RequirePackage{mathrsfs}
 %\RequirePackage{xparse}
 \RequirePackage[framemethod=default]{mdframed} % necessario per environments
-%\RequirePackage{makeidx}
+\RequirePackage{makeidx}
 \RequirePackage[thicklines]{cancel}
 %\RequirePackage{bm}
 %\RequirePackage{multicol}
 %\usepackage[font=small,labelfont=bf]{caption}
 %\usepackage{tikz-3dplot}
 %\usepackage{wrapfig}
+%\RequirePackage{accents}
 \RequirePackage{preamble/tikz-cd}
 \RequirePackage{preamble/comment}
 % Load hyperref package last
@@ -1510,6 +1511,28 @@ linewidth=1pt]{neoncarrotBox}
 			#1\colon& #2&\hookrightarrow& #3\\
 			&#4&\mapsto& #5
 \end{array}}}}
+
+% suriettiva
+
+\newcommand{\surr}[3]{
+	\IfEq{#1}{\ }{\begin{tikzcd}[ampersand replacement=\&]
+			#2 \arrow[r, two heads] \& #3
+	\end{tikzcd}}
+	{\begin{tikzcd}[ampersand replacement=\&]
+			#1\ \colon \&[-36.21pt] #2 \arrow[r, two heads] \& #3
+\end{tikzcd}}}
+
+% suriettiva (completa)
+
+\newcommand{\surrtot}[5]{
+	\IfEq{#1}{\ }{\begin{tikzcd}[ampersand replacement=\&]
+			#2 \arrow[r, two heads]          \& #3 \\[-25pt]
+			#4 \arrow[r, maps to] \& #5
+	\end{tikzcd}}
+	{\begin{tikzcd}[ampersand replacement=\&]
+			#1\ \colon \&[-36.21pt] #2 \arrow[r, two heads]          \& #3 \\[-25pt]
+			\& #4 \arrow[r, maps to] \& #5
+\end{tikzcd}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%% definizioni omotopia %%%%%%%%%%%%%%%%%%%%%%%%%
 

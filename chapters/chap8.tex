@@ -104,7 +104,7 @@ Essa è ben definita, continua per il lemma di incollamento e tale per cui:
 Abbiamo già definito due ‘‘operazioni'' fra insiemi di cammini, senza averle necessariamente formalizzate:
 \begin{itemize}
 \item \textsc{Prodotto di cammini}: $\funztot{\ }{\inscam{X}{a}{b}\times\inscam{X}{b}{c}}{\inscam{X}{a}{c}}{\left(\alpha,\ \beta\right)}{\alpha\ast\beta}$
-\item \textbf{Inversione di cammini}: $\funztot{\ }{\inscam{X}{a}{b}}{\times\inscam{X}{b}{a}}{\alpha}{\overline{\alpha}}$
+\item \textbf{Inversione di cammini}: $\funztot{\ }{\inscam{X}{a}{b}}{\inscam{X}{b}{a}}{\alpha}{\overline{\alpha}}$
 \end{itemize}
 \end{remember}
 \begin{observe}
@@ -669,15 +669,17 @@ Questo funtore \textit{covariante} si basa sull'omomorfismo tra gruppi fondament
 \end{demonstration}
 \section{Isomorfismi e gruppi fondamentali}
 \begin{corollary}
-	Se $\funz{f}{X}{Y}$ è un omeomorfismo, allora $\funz{f_{\ast}}{\gruf{X}{x_0}}{\gruf{Y}{y_0}}$ è isomorfismo di gruppi, $\forall x_0\in X$.
+	Se $\funz{f}{X}{Y}$ è un omeomorfismo, allora:\\ $\funz{f_{\ast}}{\gruf{X}{x_0}}{\gruf{Y}{y_0}}$ è isomorfismo di gruppi, $\forall x_0\in X$.
 \end{corollary}
 \begin{remember}
 	Se $g\circ f$ è una funzione biunivoca, allora $f$ è iniettiva e $g$ è suriettiva.
 \end{remember}
 \begin{corollary}
-	Se $A\subseteq X$ è un retratto, allora sia $\incl{i}{A}{X}$. Si ha che:\\
-	$\forall a\in A\ \funz{i_{\ast}}{\gruf{A}{a}}{\gruf{X}{a}}$ è un omomorfismo \textit{iniettivo}, mentre se $\funz{r}{X}{A}$ è la retrazione, allora:\\
-	$\forall a\in A\ \funz{r_{\ast}}{\gruf{X}{a}}{\gruf{A}{a}}$ è un omomorfismo \textit{suriettivo}.
+	Sia $A\subseteq X$ è un retratto con retrazione $\funz{r}{X}{A}$, e sia $\incl{i}{A}{X}$. Si ha che:
+	\begin{itemize}
+		\item $\forall a\in A\ \funz{i_{\ast}}{\gruf{A}{a}}{\gruf{X}{a}}$ è un omomorfismo \textit{iniettivo}.
+		\item $\forall a\in A\ \funz{r_{\ast}}{\gruf{X}{a}}{\gruf{A}{a}}$ è un omomorfismo \textit{suriettivo}.
+	\end{itemize}
 \end{corollary}
 \begin{demonstration}
 	Sappiamo dalla definizione che $r_{\mid A}=Id_A$; poiché $\funztot{r\circ i}{A}{X}{x}{r\left(x\right)}$, si ha $r\circ i=r_{\mid A}=Id_A$. Allora, passando con il funtore all'omomorfismo di gruppi:

@@ -16,7 +16,9 @@
 \end{introduction}
 
 \section{Teorema di Cayley-Hamilton}
-[...]\\
+\begin{center}
+	[...]
+\end{center}
 \begin{theorema}
 	Sia $A\in \mathbb{K}^{n,\ n}$ e $m_A\left(t\right)$ il suo polinomio minimo. Allora, preso $\lambda\in\mathbb{K}$:
 	\begin{equation}
@@ -47,16 +49,16 @@ Ed essendo $v$ un autovettore, $v\neq 0$; dall'equazione sopra necessariamente s
 \end{demonstration}
 \section{Forma canonica di Jordan}
 D'ora in poi, se non altresì specificato, considereremo $\mathbb{K}=\complexset$, cioè tratteremo di matrici $A\in \complexset^{n,\ n}$ e endomorfismi fra spazi vettoriali complessi.
-\begin{observe}
-Poichè $\complexset$ è algebricamente chiuso, ogni polinomio $p\in\complexset\left[t\right]$ si fattorizza completamente come prodotto di fattori lineari:
+\begin{observe}\label{complessichiusi}
+Poichè $\complexset$ è \textbf{algebricamente chiuso}, ogni polinomio $p\in\complexset\left[t\right]$ si fattorizza completamente come prodotto di fattori lineari:
 \begin{equation}
 	C_A\left(t\right)=\left(t-\lambda_1\right)^{m_1}\ldots\left(t-\lambda_r\right)^{m_r}\text{ con } m_i \text{ molteplicità algebrica di } \lambda_i
 \end{equation}
 Nel caso del polinomio minimo, si ha:
-Poichè $\complexset$ è algebricamente chiuso, ogni polinomio $p\in\complexset\left[t\right]$ si fattorizza completamente come prodotto di fattori lineari:
 \begin{equation}
 	m_A\left(t\right)=\left(t-\lambda_1\right)^{h_1}\ldots\left(t-\lambda_r\right)^{h_r}\text{ con } 1\leq h_i\leq m_i \forall i=1,\ldots,\ r
 \end{equation}
+Come altra conseguenza, ogni matrice $n\times n$ ammette $n$ autovalori complessi, contati con la loro molteplicità.
 \end{observe}
 Sia $A\in \complexset^{n,\ n}$ una matrice associata a un endomorfismo $\funz{f}{V}{V}$. Se $f$ è diagonalizzabile, esiste una base in cui la matrice di $f$ è diagonale. Anche quando tuttavia la matrice non è diagonalizzabile, vogliamo cercare una base in cui la matrice di $f$ è \textit{particolarmente semplice}.
 \begin{define}
@@ -194,12 +196,17 @@ La seguente matrice $9\times 9$  è in forma di Jordan, con blocchi $J_3\left(2\
 \end{observe}
 \begin{observe}
 	Se $A$ è in forma di Jordan, sulla diagonale compaiono tutti gli autovalori con la loro \textit{molteplicità}. Dunque, se $\lambda$ è un autovalore, la somma delle \textit{dimensioni} dei blocchi relativi a $\lambda$ è uguale alla \textit{molteplicità algebrica} $m_\lambda$ di $\lambda$.
+	\begin{equation}
+		m_\lambda=\sum\text{dimensioni dei blocchi relativi a }\lambda
+	\end{equation}
+\vspace{-6mm}
 \end{observe}
-\begin{theorema}
-	Sia $V$ uno spazio vettoriale complesso di $\dim n$ e $f$ un endomorfismo di $V$. Allora esiste una base di $V$ in cui la matrice di $f$ è in forma di Jordan. Inoltre, la forma di Jordan è unica a meno dell'ordine dei blocchi.\\
+\begin{theorema}\textsc{Esistenza e unicità della forma di Jordan}
+	Sia $V$ uno spazio vettoriale complesso di $\dim n$ e $f$ un endomorfismo di $V$. Allora \textit{esiste} una base di $V$ in cui la matrice di $f$ è in forma di Jordan. Inoltre, la forma di Jordan è \textit{unica} a meno dell'ordine dei blocchi.\\
 	\textit{In termini matriciali}, ogni $A\in\complexset^{n,\ n}$ è simile ad una matrice in forma di Jordan, unica a meno dell'ordine dei blocchi.
 \end{theorema}
-Per agevolare la dimostrazione, faremo uso di un lemma importante. Tuttavia, prima di dimostrarlo, facciamo alcune osservazioni per comprendere meglio ciò di cui parliamo.
+\subsection{Autospazi generalizzati}
+Per dimostrare il teorema appena enunciato, faremo uso di un concetto nuovo: quello di \textit{autospazio generalizzato}. Prima di definirlo, ricordiamo alcune proprietà legate agli endomorfismi che ci torneranno utili.
 \begin{define}
 Un sottospazio vettoriale $V$ si dice \textbf{invariante}\index{spazio!invariante} per un endomorfismo $f$ se:
 \begin{equation}
@@ -207,14 +214,14 @@ Un sottospazio vettoriale $V$ si dice \textbf{invariante}\index{spazio!invariant
 \end{equation}
 Se $A$ è la matrice associata all'endomorfismo rispetto ad una base fissata, si scrive anche $AV\subseteq V$.
 \end{define}
-\begin{observe}
+\begin{observe}\label{observejordan}
 Supponiamo che $V=U\oplus W$, con $U$ e $W $sottospazi di $V$; supponiamo inoltre i due sottospazi $U$ e $W$ siano \textbf{invarianti} per $f$ endomorfismo, dunque $f\left(U\right)\subseteq U$ e $f\left(W\right)\subseteq W$. Prese una base $\basis_U$ di $U$ e una base $\basis_W$ di $W$, la base $\basis=\basis_U\cup \basis_W$ è una base di $V$ e la matrice di $f$ rispetto a questa base è a blocchi.
 \begin{equation*}
 	    A = \left(
 	\begin{array}{c|c}
-		B & 0\\
+		\mathbf{B} & \mathbf{0}\\
 		\hline
-		0 & C
+		\mathbf{0} & \mathbf{C}
 	\end{array}
 	\right)
 \end{equation*}
@@ -229,13 +236,14 @@ Allora l'\textbf{autospazio generalizzato}\index{autospazio!generalizzato} di $\
 \begin{equation}
 	\tilde{V}=\ker\left(f-\lambda Id\right)^{m_{\lambda}}=\ker\left(A-\lambda I\right)^{m_{\lambda}}
 \end{equation}
+\vspace{-6mm}
 \end{define}
 \begin{lemming}\textsc{Proprietà degli autospazi generalizzati}
 	\begin{enumerate}
 		\item $V_\lambda\subseteq \tilde{V}_{\lambda}$.
 		\item $\tilde{V}_{\lambda}$ è invariante per $A$, cioè $A\tilde{V}_{\lambda}\subseteq \tilde{V}_{\lambda}$.
 		\item $\dim \tilde{V}_{\lambda}=m_{\lambda}$.
-		\item $\funz{f}{\tilde{V}_{\lambda}}{\tilde{V}_{\lambda}}$ ha polinomio caratteristico $\left(t-\lambda\right)^{m_{\lambda}}$.
+		\item $f_{\mid\tilde V_{\lambda}}\ \colon\funz{\ }{\tilde{V}_{\lambda}}{\tilde{V}_{\lambda}}$ ha polinomio caratteristico $\left(t-\lambda\right)^{m_{\lambda}}$.
 		\item Se $\lambda_1,\ \ldots,\ \lambda_r$ sono tutti gli autovalori di $A$, si ha:
 		\begin{equation}
 			V=\tilde{V}_{\lambda_1}\oplus\dots\tilde{V}_{\lambda_r}
@@ -243,7 +251,7 @@ Allora l'\textbf{autospazio generalizzato}\index{autospazio!generalizzato} di $\
 	\end{enumerate}
 \vspace{-6mm}
 \end{lemming}
-\begin{demonstration}~{}
+\begin{demonstration}~{}\label{lemmamichelegiordano}
 	Fissiamo un autovalore $\lambda$ di $A$. Analizziamo le potenze $\left(A-\lambda I\right)$, i loro nuclei e le loro immagini.
 \begin{enumerate}[label=\Roman*]
 	\item Se $\underline{v}\in \ker \left(A-\lambda I\right)^h$, allora, per definizione:
@@ -251,7 +259,7 @@ Allora l'\textbf{autospazio generalizzato}\index{autospazio!generalizzato} di $\
 		\begin{array}{l}
 					\left(A-\lambda I\right)^h\underline{v}=\underline{0}\\
 			\implies\left(A-\lambda I\right)^{h+1}\underline{v}=\left(A-\lambda I\right)\left(A-\lambda I\right)^h\underline{v}=\underline{0}\\
-			\implies \underline{v}\in \ker \left(A-\lambda I\right)^{h+1}
+			\implies \underline{v}\in \ker \left(A-\lambda I\right)^{h+1}\\
 			\implies \ker \left(A-\lambda I\right)^h\subseteq \ker \left(A-\lambda I\right)^{h+1}
 		\end{array}
 	\end{equation*}
@@ -260,7 +268,7 @@ Al crescere di $h$:
 \left\{0\right\}\subseteq \ker \left(A-\lambda I\right)\subseteq\ker \left(A-\lambda I\right)^2\subseteq\ldots \qquad\textcolor{red}{\circled{\ast}} 
 \end{equation}
 Cioè il nucleo della potenza $h$ è contenuto in tutti quelli successivi. In particolare:
-\begin{equation*}
+\begin{equation*}\label{kernelsucc}
 V_{\lambda}=\ker\left(A-\lambda I\right)\subseteq \ker\left(A-\lambda I\right)^{m_{\lambda}}\implies V_{\lambda}\subseteq \tilde{V}_{\lambda}
 \end{equation*}
 Dimostrando così la prima proprietà.
@@ -268,21 +276,20 @@ Dimostrando così la prima proprietà.
 	\begin{equation*}
 	\begin{array}{l}
 		w=\left(A-\lambda I\right)^h\underline{v}=\left(A-\lambda I\right)^{h-1}\left(\left(A-\lambda I\right)\underline{v}\right)\\
-		\implies w\in\Im\left(A-\lambda I\right)^{h-1}\\
-		\implies \left(A-\lambda I\right)^{h-1}\supseteq\Im\left(A-\lambda I\right)^{h-1}
-		\implies \ker \left(A-\lambda I\right)^h\subseteq \ker \left(A-\lambda I\right)^{h+1}
+		\implies \underline{w}\in\Im\left(A-\lambda I\right)^{h-1}\\
+		\implies \Im\left(A-\lambda I\right)^{h-1}\supseteq\Im\left(A-\lambda I\right)^h
 	\end{array}
 \end{equation*}
 Al crescere di $h$:
 \begin{equation}
-	V\supseteq \Im \left(A-\lambda I\right)\subseteq\Im \left(A-\lambda I\right)^2\subseteq\ldots \qquad\textcolor{green}{\circled{\ast}} 
+	V\supseteq \Im \left(A-\lambda I\right)\supseteq\Im \left(A-\lambda I\right)^2\supseteq\ldots \qquad\textcolor{green}{\circled{\ast}} 
 \end{equation}
-Cioè l'immagine della potenza $h$ contiene tutte quelle successive. Possiamo mostrare come tutti gli spazi finora visti (nuclei e immagini delle potenze $\left(A-\lambda I\right)^h$) sono invarianti:
+Cioè l'immagine della potenza $h$ contiene tutte quelle successive.\\ Possiamo mostrare come tutti gli spazi finora visti (nuclei e immagini delle potenze $\left(A-\lambda I\right)^h$) sono invarianti:
 \begin{itemize}
 \item Se $\underline{v}\in\ker\left(A-\lambda I\right)^h$:
 	\begin{equation*}
 		\begin{array}{l}
-		\underline{0}=A\underline{0}=A\left(\left(A-\lambda I\right)^h\underline{v}\right)\stackrel{\footnote{\label{note1}$A$ e $A-\lambda I$ commutano.}}{=}\left(A-\lambda I\right)^hA\underline{v}\\
+		\underline{0}=A\underline{0}=A\left(\left(A-\lambda I\right)^h\underline{v}\right)\stackrel{\footnote{$A$ e $A-\lambda I$ commutano.}}{=}\left(A-\lambda I\right)^hA\underline{v}\\
 		\implies A\underline{v}\in \ker\left(A-\lambda I\right)^h\\
 		\implies A\left(\ker\left(A-\lambda I\right)^h\right)\subseteq \ker\left(A-\lambda I\right)^h
 	\end{array}
@@ -297,5 +304,164 @@ Abbiamo appena dimostrato l'invarianza dello spazio $\tilde{V}_{\lambda}$.
 	\end{array}
 \end{equation*}
 \end{itemize}
+\item Per trovare la dimensione dell'autospazio generalizzato, sappiamo che:
+\begin{gather*}
+	\ker \left(A-\lambda I\right)^h\subseteq \ker \left(A-\lambda I\right)^{h+1}\\
+	\Im\left(A-\lambda I\right)^h\supseteq\Im\left(A-\lambda I\right)^{h+1}
+\end{gather*}
+Allora, se consideriamo il teorema nullità più rango sulle applicazioni $\left(A-\lambda I\right)^h$ e $\left(A-\lambda I\right)^{h+1}$ in $V$:
+\begin{equation*}
+		\begin{array}{c}
+			\dim \ker \left(A-\lambda I\right)^h + \dim \Im\left(A-\lambda I\right)^{h}\\
+			\shortparallel\\
+			n=\dim V\\
+			\shortparallel\\
+			\dim \ker \left(A-\lambda I\right)^{h+1} + \dim \Im\left(A-\lambda I\right)^{h+1}
+	\end{array}
+\end{equation*}
+Ne consegue che:
+\begin{equation}
+	\ker \left(A-\lambda I\right)^h=\ker \left(A-\lambda I\right)^{h+1}\iff \Im\left(A-\lambda I\right)^{h}=\Im\left(A-\lambda I\right)^{h+1}
+\end{equation}
+Siccome $V$ ha dimensione finita, la successione crescente $\textcolor{red}{\circled{\ast}}$ dei nuclei delle potenze (eq. \ref{kernelsucc}, pag. \pageref{kernelsucc}) ad un certo punto deve \textit{stabilizzarsi}, cioè deve esserci un'uguaglianza per tutti gli elementi successivi\footnote{Infatti, ogni inclusione potrebbe essere stretta e dunque la dimensione di questi sottospazi può aumentare; tuttavia, essendo $V$ finito questi sottospazio non possono avere dimensione maggiore di $n$.}. Denotiamo con $p$ il più piccolo intero tale che:
+\begin{equation*}
+	\ker \left(A-\lambda I\right)^p=\ker \left(A-\lambda I\right)^{p+1}
+\end{equation*}
+Mostriamo che $\forall h\geq p$ valgano le seguenti relazioni:
+\begin{gather*}
+	\ker \left(A-\lambda I\right)^h= \ker \left(A-\lambda I\right)^p\\
+	\Im\left(A-\lambda I\right)^h=\Im\left(A-\lambda I\right)^p
+\end{gather*}
+È sufficiente mostrarlo per i nuclei, dato che vale anche per le immagini per nullità più rango.\\
+Sia $\underline{v}\in\ker \left(A-\lambda I\right)^h\supseteq \left(A-\lambda I\right)^h$ con $h\geq p+2$.\footnote{Poiché $p$ è tale per cui $\ker \left(A-\lambda I\right)^p=\ker \left(A-\lambda I\right)^{p+1}$, il caso $h=p+1$ è banalmente vero.} Allora:
+\begin{equation*}
+\begin{array}{l}
+\underline{0}=\left(A-\lambda I\right)^p\underline{v}=\left(A-\lambda I\right)^{p
++1}\underbrace{\left(\left(A-\lambda I\right)^{h-p-1}\underline{v}\right)}_{\in \ker \left(A-\lambda I\right)^h=\ker\left(A-\lambda I\right)^p}\\
+\implies\underline{0}=\left(A-\lambda I\right)^p\left(\left(A-\lambda I\right)^{h-p-1}\underline{v}\right)=\left(A-\lambda I\right)^{h-1}\underline{v}\\
+\implies \underline{v}\in\ker \left(A-\lambda I\right)^{h-1}
+	\end{array}
+\end{equation*}
+Iterando in questo modo, otterremo $v\in\ker\left(A-\lambda I\right)^{p+1}=\ker\left(A-\lambda I\right)^{p}$. Dunque, come conseguenza del termine stabilizzatore, tutti i sottospazi $\ker \left(A-\lambda I\right)^k$ (con $k<p$) sono strettamente contenuti in quelli successivi fino al termine $p$-esimo, mentre $\Im \left(A-\lambda I\right)^k$ contengono strettamente quelli successivi fino al $p$-esimo.
+\begin{gather}\label{successionejordan}
+\left\{0\right\}\subsetneqq \ker \left(A-\lambda I\right)\subsetneqq\ldots\subsetneqq\ker \left(A-\lambda I\right)^p\\
+V\supsetneqq \Im \left(A-\lambda I\right)\supsetneqq\ldots\supsetneqq\Im \left(A-\lambda I\right)^p
+\end{gather}
+\begin{itemize}
+\item Si ha $p\geq 1$ : se fosse $p=0$, si avrebbe $\ker \left(A-\lambda I\right)=\left\{0\right\}$ e dunque nessun autovettore o autovalore.
+\item SI ha $\dim \ker\left(A-\lambda I\right)^p\geq p$ : poiché nella successione abbiamo delle inclusioni strette, fra un termine e il suo successivo la dimensione deve aumentare di almeno $1$.
+\end{itemize}
+Mostriamo ora che i termini $p$-esimi delle due successioni sono in somma diretta, in particolare dobbiamo solo dimostrare:
+\begin{equation*}
+	\ker\left(A-\lambda I\right)^p\cap\Im\left(A-\lambda I\right)^p=\left\{0\right\}
+\end{equation*}
+Infatti, preso $\underline{u}\in\ker\left(A-\lambda I\right)^p\cap\Im\left(A-\lambda I\right)^p$, $\exists\underline{v}\in V\ \colon \underline{u}=\left(A-\lambda I\right)^p\underline{v}$. Ma:
+\begin{equation*}
+\begin{array}{l}
+	\underline{0}=\left(A-\lambda I\right)^p\underline{u}=\left(A-\lambda I\right)^p\left(A-\lambda I\right)^p\underline{v}=\left(A-\lambda I\right)^2p\underline {v}\\
+	\implies \underline{v}\in\ker\left(A-\lambda I\right)^2p=\ker\left(A-\lambda I\right)^p\implies \underline{u}=\underline{0}
+\end{array}
+\end{equation*}
+Per nullità più rango si ha $\dim \ker \left(A-\lambda I\right)^p + \dim \Im\left(A-\lambda I\right)^p)=\dim V$; segue che:
+\begin{equation}
+V=\ker\left(A-\lambda I\right)^p\oplus\Im \left(A-\lambda I\right)^p
+\end{equation}
+In particolare sappiamo che, per l'osservazione a pag. \pageref{observejordan}, rispetto ad una base di $V$ opportuna la matrice associata $A$ è \textit{a blocchi}, di cui i due non nulli sono uno \textit{codificato} dalla restrizione dell'endomorfismo a $\ker\left(A-\lambda I\right)^p$, mentre l'altro dalla restrizione a $\Im \left(A-\lambda I\right)^p$. Consideriamo allora queste due restrizioni ai sottospazi:
+\begin{gather*}
+\funz{\phi}{\ker\left(A-\lambda I\right)^p}{\ker\left(A-\lambda I\right)^p}\\
+\funz{\psi}{\Im\left(A-\lambda I\right)^p}{\Im\left(A-\lambda I\right)^p}
+\end{gather*}
+Facciamo le seguenti considerazioni.
+\begin{itemize}
+\item \textbf{\underline{$\lambda$ è l'unico autovalore di $\phi$.}} Definiamo la matrice $B$ associata a $\phi$. Sappiamo che $\left(A-\lambda I\right)^p$ annulla tutti i vettori di $\ker\left(A-\lambda I\right)^p$. Dunque, la \textit{restrizione} di $A-\lambda I$ su di esso, ovvero $B-\lambda I$ (associata all'applicazione $\phi-\lambda Id$), è \textit{endomorfismo nilpotente} di ordine $p$.\\
+In altre parole, l'applicazione $\left(\phi-\lambda Id\right)^p$ si \textit{annulla} se valutata su un vettore (non nullo) $\underline{v}$ appartenente al \textit{dominio} $\ker\left(A-\lambda I\right)^p$. Ciò equivale a dire che:
+\begin{equation*}
+\left(B-\lambda I\right)^p\underline{v}=\underline{0}
+\end{equation*}
+Ma ciò significa: $\left(B-\lambda I\right)^p=\underline{0}$.\\
+Preso allora il polinomio $p\left(t\right)=\left(t-\lambda\right)^p$ appartiene all'ideale di $B$ (cioè all'ideale di $\phi$), in particolare $\lambda$ è autovalore di $\phi$ (perché $p\left(\lambda\right)=0\implies m_B\left(\lambda\right)=0$).\\
+Conseguentemente, se supponiamo di avere $\mu$ come altro autovalore di $\phi$, si ha che $m_B\left(\mu\right)=0\implies p\left(\mu\right)=0\implies \left(\mu-\lambda\right)^p\implies \mu=\lambda$. Si ha dunque l'unicità.
+\item \textbf{\underline{$\lambda$ \textit{non} è autovalore di $\psi$.}} Infatti, sia $\underline{v}\in \Im\left(A-\lambda I\right)$ per cui $\lambda$ è il suo autovalore. Allora:
+\begin{equation*}
+		\begin{array}{l}
+	\psi\left(\underline{v}\right)=\lambda\underline{v}\stackrel{\footnote{$A\underline{v}$ segue dalla definizione di $\psi$ come restrizione dell'endomorfismo $f$.}}{\iff} A\underline{v}=\lambda\underline{v}\iff \left(A-\lambda I\right)\underline{v}=0\\
+	\implies \underline{v}\in\ker\left(A-\lambda I\right)\subseteq \ker\left(A-\lambda\right)^p\\
+	\implies \underline{v}\in\ker\left(A-\lambda I\right)^p\cap\Im\left(A-\lambda I\right)^p=\left\{0\right\}
+	\end{array}
+\end{equation*}
+Ma sapendo che $\ker\left(A-\lambda I\right)^p\cap\Im\left(A-\lambda I\right)^p=\left\{0\right\}=\left\{0\right\}$, si ha $\underline{v}=\underline{0}$, dunque \textit{non} può $\lambda$ autovalore di $\psi$.
+\end{itemize}
+Riprendendo l'osservazione a pag. \pageref{observejordan}, scelte delle opportune basi, definiamo $\mathbf{B}$ la matrice associata a $\phi$ e $\mathbf{A}$ la matrice associata a $\psi$ in modo da avere la matrice $A$ associata a $f$ a blocchi.
+\begin{equation*}
+	A = \left(
+	\begin{array}{c|c}
+		\mathbf{B} & \mathbf{0}\\
+		\hline
+		\mathbf{0} & \mathbf{C}
+	\end{array}
+	\right)
+\end{equation*}
+Usiamo questa matrice per calcolare il polinomio caratteristico:\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{dimostrazionedeterminantematriceblocchi}, si può trovare la dimostrazione della formula del determinante di una matrice a blocchi, su cui si basa la seguente formula.}
+\begin{equation*}
+C_A\left(t\right)=C_B\left(t\right)C_C\left(t\right)
+\end{equation*}
+\begin{itemize}
+	\item $C_B\left(t\right)$ è il polinomio caratteristico di $\mathbf{B}$, il cui unico autovalore è $\lambda$; grazie all'osservazione a pag. \ref{complessichiusi}, possiamo dire che la molteplicità algebrica di $\lambda$ come autovalore di $\mathbf{B}$ è esattamente la dimensione dello spazio $\mathbf{B}$. Il polinomio caratteristico risulta:
+	\begin{equation*}
+		\left(t-\lambda\right)^{\dim\ker\left(A-\lambda I\right)^p}
+	\end{equation*}
+	\item $C_C\left(t\right)$, in quanto $\psi$ non ha l'autovalore $\lambda$, non è divisibile per $t-\lambda$: $	\left(t-\lambda\right) \nmid C_C\left(t\right)$.
+\end{itemize}
+Segue che la molteplicità algebrica di $\lambda$ come autovalore della matrice $\mathbf{B}$ è la stessa di quella come autovalore della matrice $A$:
+\begin{equation*}
+	m_{\lambda}=\dim\ker\left(A-\lambda I\right)^p\geq p
+\end{equation*}
+Da cui segue:
+\begin{equation*}
+	\ker\left(A-\lambda I\right)^p=\ker\left(A-\lambda I\right)^{m_\lambda}=\tilde{V}_{\lambda}
+\end{equation*}
+Dunque, sapendo che $\dim \tilde{V}_{\lambda} = \dim \ker\left(A-\lambda I\right)^p=m_{\lambda}$, segue la proprietà $3$.
+\item Notiamo che l'endomorfismo $\phi$ definito nella dimostrazione precedente altro non è che $f_{\mid\tilde V_{\lambda}}\ \colon\funz{\ }{\tilde{V}_{\lambda}}{\tilde{V}_{\lambda}}$, e abbiamo visto come il suo polinomio caratteristico debba essere $\left(t-\lambda\right)^m_{\lambda}$. Si conclude il punto $4$.
+\item Non dimostreremo quest'ultimo punto.
 \end{enumerate}
+\end{demonstration}
+Riassumendo, sappiamo ora che gli autospazi generalizzati sono invarianti e sono in somma diretta tra loro.
+\begin{equation}
+	V=\tilde{V}_{\lambda_1}\oplus\ldots\oplus\tilde{V}_{\lambda_r}
+\end{equation}
+Ora, per trovare una base che mette la matrice $A$ associata ad $f$ in forma di Jordan, basta farlo in \textit{ogni autospazio generalizzato} $\tilde{V}_{\lambda_i}$, in cui l'unico autovalore è $\lambda_i$ per le osservazioni precedenti. In sostanza, quello che vogliamo fare è compiere una \textit{‘‘separazione degli autovalori''}.\\
+Per calcolare l'autospazio generalizzato dovremmo calcolare $\tilde{V}_{\lambda}=\left(A-\lambda I\right)^{m_{\lambda}}$, ma basterà calcolare invece $\tilde{V}_{\lambda}=\left(A-\lambda I\right)^{p}$. \\
+Nella sezione seguente dimostreremo l'esistenza della base di $\tilde{V}_{\lambda}$ che dà la forma di Jordan.
+\subsection{Esistenza della base dell'autospazio generalizzato che dà la forma di Jordan}
+Prima di procedere una piccola osservazione che servirà più avanti.
+\begin{observe}
+Se $p\left(t\right),\ q\left(t\right)\in\mathbb{K}\left[t\right]$, allora:
+\begin{equation}
+p\left(A\right)q\left(A\right)=q\left(A\right)p\left(A\right)
+\end{equation}
+\vspace{-6mm}
+\end{observe}
+\begin{demonstration}
+	Ricordando la successione delle immagini (equazione \ref{successionejordan}):
+	\begin{gather*}
+		V\supsetneqq \Im \left(A-\lambda I\right)\supsetneqq\ldots\supsetneqq\Im \left(A-\lambda I\right)^p
+	\end{gather*}
+	Intersechiamo ogni termine con $V_{\lambda}=\ker\left(A-\lambda I\right)$:
+	\begin{equation*}
+		\ker\left(A-\lambda I\right)\cap V\supseteq \ker\left(A-\lambda I\right)\cap\Im \left(A-\lambda I\right)\supseteq\ldots\supseteq\ker\left(A-\lambda I\right)\cap\Im \left(A-\lambda I\right)^p
+	\end{equation*}
+	E poniamo:
+	\begin{equation}
+		S_i\coloneqq \ker\left(A-\lambda I\right)\cap \Im\left(A-\lambda I\right)^{i-1}
+	\end{equation}
+	In particolare, notiamo che:
+	\begin{itemize}
+		\item $S_1=\ker\left(A-\lambda I\right)\cap V=\ker\left(A-\lambda I\right)$.
+		\item $S_{p+1}=\ker\left(A-\lambda I\right)\cap \Im\left(A-\lambda I\right)^{p}=\left\{\underline{0}\right\}$ perché $\ker\left(A-\lambda I\right)\subsetneqq \ker\left(A-\lambda I\right)^p$ e dunque $S_{p+1}\subseteq \ker\left(A-\lambda I\right)^p\cap \Im\left(A-\lambda I\right)^{p}=\left\{\underline{0}\right\}$.
+		\item Può benissimo capitare che $S_i=S_{i+1}$.
+	\end{itemize}
+Riscriviamo con questa nuova denominazione la successione creata.
+	\begin{equation}
+	S_1\cap S_2\supseteq\ldots\supseteq S_p
+\end{equation}
 \end{demonstration}

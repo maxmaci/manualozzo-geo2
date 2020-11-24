@@ -18,7 +18,7 @@
 \noindent Riportiamo alcune note e dimostrazioni aggiuntive che possono risultare utili al lettore.
 
 \section{Capitolo 6: successioni}
-La dimostrazione seguente sulla non prima-numerabilità del quoziente $\nicefrac{\realset}{\integerset}$ è adattata da Brian M. Scott~\cite{scott:nonum} su Mathematics Stack Exchange.
+La seguente dimostrazione sulla non prima-numerabilità del quoziente $\nicefrac{\realset}{\integerset}$ è adattata da Brian M. Scott~\cite{scott:nonum} su Mathematics Stack Exchange.
 \begin{demonstration}\label{dimostrazionenonnumerabilità}
 Si consideri la contrazione di $\integerset$ in $\realset$ ad un punto, cioè il quoziente $\nicefrac{\realset}{\integerset}$ e si definisca la classe di equivalenza degli interi come $[0]$.\\
 Sia $\left\{U_n:n\in\naturalset\right\}$ una famiglia di intorni aperti di $[0]$; cerchiamo un intorno aperto di $[0]$ che non ne contiene nessuno come sottoinsieme, mostrano in tal modo che non formano un sistema fondamentale di intorni di $[0]$ e pertanto che $\nicefrac{\realset}{\integerset}$ non è primo-numerabile per $[0]$.\\
@@ -31,4 +31,193 @@ Per $k\in\integerset$ sia $\delta_k=\frac12\epsilon_{k,k}$, e sia:
 V=\pi\left[\bigcup_{k\in\integerset}(k-\delta_k,k+\delta_k)\right]
 \end{equation*}
 Chiaramente $V$ è un intorno aperto di $[0]$, e vogliamo dimostrare che $U_n\nsubseteq V$ per ogni $n\in\naturalset$. Per mostrare ciò, fissiamo $n\in\naturalset$; si ha $\delta_n<\epsilon_{n,n}$, quindi possiamo sceglie un numero reale $x\in(n+\delta_n,n+\epsilon_{n,n})$. Ma allora $\pi(x)\in U_n\setminus V$, e dunque $U_n\nsubseteq V$.
+\end{demonstration}
+\section{Capitolo 11: forma canonica di Jordan}
+La seguente dimostrazione sul determinante di una matrice a blocchi e del suo polinomio caratteristico si basa su integrazioni proprie da Jean Marie ~\cite{jeanmarie:blockdet} e da Ben Grossmann ~\cite{bengrossman:blockdet}su Mathematics Stack Exchange. \label{dimostrazionedeterminantematriceblocchi}
+\begin{demonstration}
+	Data una matrice quadrata $\left(
+	\begin{array}{c|c}
+		\mathbf{A} & \mathbf{B}\\
+		\hline
+		\mathbf{C} & \mathbf{D}
+	\end{array}
+	\right)$
+	definita dai blocchi $\mathbf{A}$ di dimensione $n\times n$, $\mathbf{B}$ di dimensione $n\times m$, $\mathbf{C}$ di dimensione $m\times n$ e $\mathbf{D}$ di dimensione $m\times m$. Supponendo $\mathbf{A}$ blocco invertibile, si può scomporre la matrice nel seguente modo:
+	\begin{equation}
+		\left(
+		\begin{array}{c|c}
+			\mathbf{A} & \mathbf{B}\\
+			\hline
+			\mathbf{C} & \mathbf{D}
+		\end{array}
+		\right)=\left(
+		\begin{array}{c|c}
+			\mathbf{I_n} & \mathbf{0}\\
+			\hline
+			\mathbf{CA^{-1}} & \mathbf{I_m}
+		\end{array}
+		\right)\left(
+		\begin{array}{c|c}
+			\mathbf{A} & \mathbf{0}\\
+			\hline
+			\mathbf{0} & \mathbf{D-CA^{-1}B}
+		\end{array}
+		\right)
+		\left(
+		\begin{array}{c|c}
+			\mathbf{I_n} & \mathbf{A^{-1}B}\\
+			\hline
+			\mathbf{0} & \mathbf{I_m}
+		\end{array}
+		\right)
+	\end{equation}
+	Calcoliamo il determinante di $\left(
+	\begin{array}{c|c}
+		\mathbf{A} & \mathbf{B}\\
+		\hline
+		\mathbf{C} & \mathbf{D}
+	\end{array}
+	\right)$, notando che $\left(
+	\begin{array}{c|c}
+		\mathbf{I_n} & \mathbf{0}\\
+		\hline
+		\mathbf{CA^{-1}} & \mathbf{I_m}
+	\end{array}
+	\right)$ e $\left(
+	\begin{array}{c|c}
+		\mathbf{I_n} & \mathbf{A^{-1}B}\\
+		\hline
+		\mathbf{0} & \mathbf{I_m}
+	\end{array}
+	\right)$ sono triangolari con diagonale di $1$.
+	\begin{equation*}
+		\begin{array}{ll}
+			\det\left(\begin{array}{c|c}
+				\mathbf{A} & \mathbf{B}\\
+				\hline
+				\mathbf{C} & \mathbf{D}
+			\end{array}\right)&=\det\left(\left(
+		\begin{array}{c|c}
+		\mathbf{I_n} & \mathbf{0}\\
+		\hline
+		\mathbf{CA^{-1}} & \mathbf{I_m}
+	\end{array}
+\right)\left(
+\begin{array}{c|c}
+\mathbf{A} & \mathbf{0}\\
+\hline
+\mathbf{0} & \mathbf{D-CA^{-1}B}
+\end{array}
+\right)
+\left(
+\begin{array}{c|c}
+\mathbf{I_n} & \mathbf{A^{-1}B}\\
+\hline
+\mathbf{0} & \mathbf{I_m}
+\end{array}
+\right)\right)=\\&=
+			\det\left(
+			\begin{array}{c|c}
+				\mathbf{I_n} & \mathbf{0}\\
+				\hline
+				\mathbf{CA^{-1}} & \mathbf{I_m}
+			\end{array}
+			\right)\det\left(
+			\begin{array}{c|c}
+				\mathbf{A} & \mathbf{0}\\
+				\hline
+				\mathbf{0} & \mathbf{D-CA^{-1}B}
+			\end{array}
+			\right)
+			\det\left(
+			\begin{array}{c|c}
+				\mathbf{I_n} & \mathbf{A^{-1}B}\\
+				\hline
+				\mathbf{0} & \mathbf{I_m}
+			\end{array}
+			\right)=\\&=
+\det\left(
+\begin{array}{c|c}
+	\mathbf{A} & \mathbf{0}\\
+	\hline
+	\mathbf{0} & \mathbf{D-CA^{-1}B}
+\end{array}
+\right)
+		\end{array}
+	\end{equation*}
+Ci serve calcolare il determinante di una \textit{matrice diagonale a blocchi}. Presa allora:
+\begin{equation*}
+	\left(
+	\begin{array}{c|c}
+		\mathbf{P} & \mathbf{0}\\
+		\hline
+		\mathbf{0} & \mathbf{Q}
+	\end{array}
+	\right)
+\end{equation*}
+Possiamo riscriverla come:
+\begin{equation*}
+	\left(
+	\begin{array}{c|c}
+		\mathbf{P} & \mathbf{0}\\
+		\hline
+		\mathbf{0} & \mathbf{I_m}
+	\end{array}
+	\right)\left(
+	\begin{array}{c|c}
+		\mathbf{I_n} & \mathbf{0}\\
+		\hline
+		\mathbf{0} & \mathbf{Q}
+	\end{array}
+	\right)
+\end{equation*}
+Grazie alle formule di Laplace, possiamo calcolare il determinante delle due matrici sfruttando le matrici identità presenti. Ad esempio, sviluppando rispetto le righe o le colonne sulla seconda:
+\begin{equation*}
+\det\left(
+\begin{array}{c|c}
+	\mathbf{I_n} & \mathbf{0}\\
+	\hline
+	\mathbf{0} & \mathbf{Q}
+\end{array}
+\right)=1\cdot \det\left(
+\begin{array}{c|c}
+	\mathbf{I_{n-1}} & \mathbf{0}\\
+	\hline
+	\mathbf{0} & \mathbf{Q}
+\end{array}
+\right)=1\cdot 1\cdot \det\left(
+\begin{array}{c|c}
+	\mathbf{I_{n-2}} & \mathbf{0}\\
+	\hline
+	\mathbf{0} & \mathbf{Q}
+\end{array}
+\right)=\ldots = 1^n\cdot \det Q =\det Q
+\end{equation*}
+Il risultato è analogo per la prima. Dunque, concludendo:
+\begin{gather}
+\det\left(
+\begin{array}{c|c}
+	\mathbf{A} & \mathbf{B}\\
+	\hline
+	\mathbf{C} & \mathbf{D}
+\end{array}
+\right)=\det\left(\mathbf{A}\right)\det\left(\mathbf{D-CA^{-1}B}\right)\\
+\det\left(
+\begin{array}{c|c}
+	\mathbf{A} & \mathbf{0}\\
+	\hline
+	\mathbf{0} & \mathbf{D}
+\end{array}
+\right)=\det\left(\mathbf{A}\right)\det\left(\mathbf{D}\right)
+\end{gather}
+Come ultima conseguenza, se vogliamo studiare il polinomio caratteristico $C_A\left(t\right)$ di una matrice $\mathbf{A}$ a blocchi diagonali $\mathbb{B}$ e $\mathbb{C}$, abbiamo che:
+\begin{equation}
+C_A\left(t\right)=\det\left(
+\begin{array}{c|c}
+	\mathbf{B}-t I & \mathbf{0}\\
+	\hline
+	\mathbf{0} & \mathbf{C}-t I
+\end{array}
+\right)=\det\left(\mathbf{B}-t I\right)\det\left(\mathbf{C}-t I\right)=C_B\left(t\right)C_C\left(t\right)
+\end{equation}
 \end{demonstration}
