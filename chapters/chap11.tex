@@ -56,7 +56,7 @@ Poichè $\complexset$ è \textbf{algebricamente chiuso}, ogni polinomio $p\in\co
 \end{equation}
 Nel caso del polinomio minimo, si ha:
 \begin{equation}
-	m_A\left(t\right)=\left(t-\lambda_1\right)^{h_1}\ldots\left(t-\lambda_r\right)^{h_r}\text{ con } 1\leq h_i\leq m_i \forall i=1,\ldots,\ r
+	m_A\left(t\right)=\left(t-\lambda_1\right)^{h_1}\ldots\left(t-\lambda_r\right)^{h_r}\text{ con } 1\leq h_i\leq m_i\ \forall i=1,\ldots,\ r
 \end{equation}
 Come altra conseguenza, ogni matrice $n\times n$ ammette $n$ autovalori complessi, contati con la loro molteplicità.
 \end{observe}
@@ -81,7 +81,7 @@ Sia $A\in \complexset^{n,\ n}$ una matrice associata a un endomorfismo $\funz{f}
 		\item Il polinomio caratteristico di $J$ è $C_J\left(t\right)=\left(t-\lambda\right)^k$, cioè $\lambda$ è l'unico autovalore di $J$ con molteplicità algebrica $k$.
 	\end{itemize}	
 \end{observe}
-\begin{observe}
+\begin{observe}\label{bloccojordanbase}
 Definiamo il blocco di Jordan di dimensione $k$ con autovalore zero, necessario per calcolare l'autospazio $V_\lambda$:
 		\begin{equation}\setlength\arraycolsep{0.5mm}
 			N=J-\lambda I= \left(
@@ -194,7 +194,7 @@ La seguente matrice $9\times 9$  è in forma di Jordan, con blocchi $J_3\left(2\
 \begin{observe}
 	Una matrice \textit{diagonale} è in forma di Jordan, con un unico blocco di ordine $1$ (cioè senza alcun $1$ nell'elemento sopra).
 \end{observe}
-\begin{observe}
+\begin{observe}\label{molteplicitàalgebrichedijordan}
 	Se $A$ è in forma di Jordan, sulla diagonale compaiono tutti gli autovalori con la loro \textit{molteplicità}. Dunque, se $\lambda$ è un autovalore, la somma delle \textit{dimensioni} dei blocchi relativi a $\lambda$ è uguale alla \textit{molteplicità algebrica} $m_\lambda$ di $\lambda$.
 	\begin{equation}
 		m_\lambda=\sum\text{dimensioni dei blocchi relativi a }\lambda
@@ -433,14 +433,41 @@ Ora, per trovare una base che mette la matrice $A$ associata ad $f$ in forma di 
 Per calcolare l'autospazio generalizzato dovremmo calcolare $\tilde{V}_{\lambda}=\left(A-\lambda I\right)^{m_{\lambda}}$, ma basterà calcolare invece $\tilde{V}_{\lambda}=\left(A-\lambda I\right)^{p}$. \\
 Nella sezione seguente dimostreremo l'esistenza della base di $\tilde{V}_{\lambda}$ che dà la forma di Jordan.
 \subsection{Esistenza della base dell'autospazio generalizzato che dà la forma di Jordan}
-Prima di procedere una piccola osservazione che servirà più avanti.
-\begin{observe}
-Se $p\left(t\right),\ q\left(t\right)\in\mathbb{K}\left[t\right]$, allora:
+Prima di procedere dimostriamo un lemma che servirà più avanti.
+\begin{lemming}\label{lemmadimjordan}
+Siano $\funz{f}{U}{V}$ e $\funz{g}{V}{W}$ due applicazioni lineari. Si ha:
 \begin{equation}
-p\left(A\right)q\left(A\right)=q\left(A\right)p\left(A\right)
+\dim\left(\Im f\cap \ker g\right)=\dim\Im f-\dim\Im \left(g\circ f\right)=\dim \ker\left(g\circ f\right)-\dim\ker f
 \end{equation}
 \vspace{-6mm}
-\end{observe}
+\end{lemming}
+\begin{demonstration}
+\[\begin{tikzcd}
+	{U} & {V} & {W}
+	\arrow["{f}", from=1-1, to=1-2]
+	\arrow["{g}", from=1-2, to=1-3]
+\end{tikzcd}\]
+Sia $h\coloneqq \funz{g_{\mid \Im f}}{\Im f}{W}$:
+\begin{equation*}
+	\dim \ker h=\dim \Im f-\dim h
+\end{equation*}
+Ma $\ker h=\Im f\cap\ker g$ e $\Im h=g\left(\Im f\right)=\Im \left(g\circ f\right)$, dunque:
+\begin{equation*}
+	\begin{array}{l}
+	\ker h=\dim \Im f-\dim \Im h\\
+	\dim \left(\Im f\cap\ker g\right) =\dim \Im f-\dim \Im\left(g\circ f\right)
+	\end{array}
+\end{equation*}
+Per dimostrare la seconda uguaglianza, abbiamo:
+\begin{equation*}
+	\begin{array}{l}
+		\dim \Im f=\dim U-\dim \ker f\\
+		\dim \Im \left(g\circ f\right)=\dim U-\dim \ker\left(g\circ f\right)\\
+		\implies \dim \Im f-\dim \Im\left(g\circ f\right)=\dim \ker\left(g\circ f\right)-\dim \ker f
+	\end{array}
+\end{equation*}
+\vspace{-6mm}
+\end{demonstration}
 \begin{demonstration}
 	Ricordando la successione delle immagini (equazione \ref{successionejordan}):
 	\begin{gather*}
@@ -456,12 +483,308 @@ p\left(A\right)q\left(A\right)=q\left(A\right)p\left(A\right)
 	\end{equation}
 	In particolare, notiamo che:
 	\begin{itemize}
-		\item $S_1=\ker\left(A-\lambda I\right)\cap V=\ker\left(A-\lambda I\right)$.
+		\item $S_1=\ker\left(A-\lambda I\right)\cap V=\ker\left(A-\lambda I\right)=V_{\lambda}$.
 		\item $S_{p+1}=\ker\left(A-\lambda I\right)\cap \Im\left(A-\lambda I\right)^{p}=\left\{\underline{0}\right\}$ perché $\ker\left(A-\lambda I\right)\subsetneqq \ker\left(A-\lambda I\right)^p$ e dunque $S_{p+1}\subseteq \ker\left(A-\lambda I\right)^p\cap \Im\left(A-\lambda I\right)^{p}=\left\{\underline{0}\right\}$.
 		\item Può benissimo capitare che $S_i=S_{i+1}$.
 	\end{itemize}
 Riscriviamo con questa nuova denominazione la successione creata.
 	\begin{equation}
-	S_1\cap S_2\supseteq\ldots\supseteq S_p
+	V_{\lambda}=S_1\supseteq S_2\supseteq\ldots\supseteq S_p
 \end{equation}
+Costruiamo la base di $\tilde{V}_{\lambda}$.\\
+Innanzitutto, scegliamo una base $\left\{x_1^1,\ \ldots,\ x_r^1\right\}$ del sottospazio più piccolo $S_p$. Per costruzione, $x^1_i\in\Im\left(A-\lambda I\right)^{p-1}$, cioè:
+\begin{equation*}
+	\forall i=1,\ \ldots,\ r\ \exists x_1^p\in V\quad x_i^1=\left(A-\lambda I\right)^{p-1}x_i^p
+\end{equation*}
+È lecito definire i vettori ‘‘intermedi'' fra $x_i^p$ e $x_i^1$, ottenuti da moltiplicazioni successive della matrice $A-\lambda I$ al vettore $x_i^p$:
+\begin{equation}
+\begin{array}{l}
+	x_i^{p-1}\coloneqq\left(A-\lambda I\right)x_i^p\\
+	x_i^{p-2}\coloneqq\left(A-\lambda I\right)x_i^{p-1}=\left(A-\lambda I\right)^2x_i^p\\
+	\dots
+\end{array}
+\end{equation}
+% bibliografia albano
+Per capire meglio le relazioni fra questi vettori ed altri che vedremo successivamente nella dimostrazione, utilizziamo il seguente schema \cite{albano:2017jordan}:
+% https://q.uiver.app/?q=WzAsMjMsWzEsMSwieF9pXnAiXSxbMSwyLCJ4X2lee3AtMX0iXSxbMSwzLCJ4X2lee3AtMn0iXSxbMSw1LCJ4X2leMiJdLFsyLDddLFsxLDQsIlxcdmRvdHMiXSxbMiw1LCJ5X2peMiJdLFsyLDIsInlfal57cC0xfSJdLFsyLDMsInlfal57cC0yfSJdLFsyLDQsIlxcdmRvdHMiXSxbMyw1LCJ6X2teMiJdLFszLDMsInpfa157cC0yfSJdLFszLDQsIlxcdmRvdHMiXSxbNCw1LCJcXGRvdHMiXSxbNCw0LCJcXGRkb3RzIl0sWzUsNiwiYV90XjEiXSxbMSw2LCJ4X2leMSJdLFsyLDYsInlfal4yIl0sWzMsNiwiel9rXjEiXSxbNSw1LCJhX3ReMiJdLFs2LDYsImJfdV4xIl0sWzQsNiwiXFxkb3RzIl0sWzAsMF0sWzAsMSwiQS1cXGxhbWJkYSBJIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFsxLDIsIkEtXFxsYW1iZGEgSSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XSxbMiw1LCJBLVxcbGFtYmRhIEkiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtYXBzIHRvIn19fV0sWzUsMywiQS1cXGxhbWJkYSBJIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFs3LDgsIkEtXFxsYW1iZGEgSSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XSxbOCw5LCJBLVxcbGFtYmRhIEkiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtYXBzIHRvIn19fV0sWzksNiwiQS1cXGxhbWJkYSBJIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFsxMSwxMiwiQS1cXGxhbWJkYSBJIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFsxMiwxMCwiQS1cXGxhbWJkYSBJIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFszLDE2LCJBLVxcbGFtYmRhIEkiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtYXBzIHRvIn19fV0sWzYsMTcsIkEtXFxsYW1iZGEgSSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XSxbMTksMTUsIkEtXFxsYW1iZGEgSSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XSxbMTAsMTgsIkEtXFxsYW1iZGEgSSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XV0=
+\begin{center}
+	\begin{tikzcd}
+		{} \\[-5pt]
+		& {x_i^p} \\[-5pt]
+		& {x_i^{p-1}} &[-15pt] {y_j^{p-1}} \\[-5pt]
+		& {x_i^{p-2}} &[-15pt] {y_j^{p-2}} &[-15pt] {z_k^{p-2}} \\[-5pt]
+		& {\vdots} &[-15pt] {\vdots} &[-15pt] {\vdots} &[-15pt] {\ddots} \\[-5pt]
+		& {x_i^2} &[-15pt] {y_j^2} &[-15pt] {z_k^2} &[-15pt] {\dots} &[-15pt] {a_t^2} \\[-5pt]
+		& {x_i^1} &[-15pt] {y_j^2} &[-15pt] {z_k^1} &[-15pt] {\dots} &[-15pt] {a_t^1} &[-15pt] {b_u^1} \\[-5pt]
+		&& {}
+		\arrow["{A-\lambda I}", from=2-2, to=3-2, maps to]
+		\arrow["{A-\lambda I}", from=3-2, to=4-2, maps to]
+		\arrow["{A-\lambda I}", from=4-2, to=5-2, maps to]
+		\arrow["{A-\lambda I}", from=5-2, to=6-2, maps to]
+		\arrow["{A-\lambda I}", from=3-3, to=4-3, maps to]
+		\arrow["{A-\lambda I}", from=4-3, to=5-3, maps to]
+		\arrow["{A-\lambda I}", from=5-3, to=6-3, maps to]
+		\arrow["{A-\lambda I}", from=4-4, to=5-4, maps to]
+		\arrow["{A-\lambda I}", from=5-4, to=6-4, maps to]
+		\arrow["{A-\lambda I}", from=6-2, to=7-2, maps to]
+		\arrow["{A-\lambda I}", from=6-3, to=7-3, maps to]
+		\arrow["{A-\lambda I}", from=6-6, to=7-6, maps to]
+		\arrow["{A-\lambda I}", from=6-4, to=7-4, maps to]
+	\end{tikzcd}
+\end{center}
+\vspace{-6mm}
+Notiamo che i vettori $\left\{x_i^1,\ \ldots,\ x_i^P\right\}$ dà origine ad un \textit{blocco di Jordan} $J_p\left(\lambda\right)$ di dimensione $p$ e relativo all'autovalore $\lambda$, poiché questi vettori soddisfano la costruzione vista nell'osservazione di pag. \pageref{bloccojordanbase}: infatti, si ha $x_i^1\in S_p\subseteq V_{\lambda}$, dunque $x_i^1$ è un autovettore di $V_\lambda$ e gli altri vettori sono ottenuti dall'applicazione ripetuta di una matrice all'ultimo vettore della base\footnote{Chiaramente ciò non implica che il blocco di Jordan in esame sia proprio $A$! $A$ ha sempre ordine $n\times n$, mentre il blocco ottenuto dalla base in questione ha ordine $p\times p$, con $p\leq n$. }. Lo stesso vale $\forall i=1,\ \ldots,\ r$.\\
+Consideriamo ora lo spazio $S_{p-1}$, che ricordiamo contiene $S_{p-1}$ cioè ($S_p\subseteq S_{p-1}$). Vogliamo completare $\left\{x_1^1,\ \ldots,\ x_r^1\right\}$ ad una base di $S_{p-1}$ con dei vettori $y_1^1,\ \ldots,\ y_s^1$:
+\begin{equation*}
+	\left\{x_1^1,\ \ldots,\ x_r^1,\ y_1^1,\ \ldots,\ y_s^1\right\}
+\end{equation*}
+Per costruzione, $y_j^1\in S_{p-1}\subseteq \Im\left(A-\lambda I\right)^{p-2}$, dunque:
+\begin{equation*}
+	\forall j=1,\ \ldots,\ s\ \exists y_1^{p-1}\in V\quad y_j^1=\left(A-\lambda I\right)^{p-2}y_j^{p-1}
+\end{equation*}
+Per ogni $j$ otteniamo $p-1$ vettori  $\left\{j_i^1,\ \ldots,\ j_i^{p-1}\right\}$ tali che $y^s_j\in V_{\lambda}$ e $j_i^{i-1}\coloneqq\left(A-\lambda I\right)y_j^i$ $\forall i=2,\ \ldots,\ p-1$. Analogamente al caso precedente, questo gruppo di vettori dà origine ad un \textit{blocco di Jordan} di ordine $p-1$.\\
+Procediamo in questo modo: prendiamo la base ottenuta per $S_{i}$ e la completiamo ad una di $S_{i-1}\supseteq S_{i}$; poiché ogni vettore aggiunto appartiene a $\Im\left(A-\lambda I\right)^{i-2}$, applicando $i-2$ volte la matrice $A_\lambda I$ al vettore $z_k^{i-1}$ (fino ad ottenere $z_k^1$) otteniamo un'insieme di vettori che generano un blocco di Jordan di dimensioni $i$ e di autovalore $\lambda$.\\
+Chiaramente, poiché potrebbe anche accadere che $S_{i-1}= S_{i}$, si prosegue senza aggiungere vettori alla base e si passa al sottospazio successivo.\\
+Arriviamo con queste iterazioni fino a $S_2=V_\lambda\cap \Im \left(A-\lambda I\right)$: completiamo la base da $S_3$ ad una di $S_2$ aggiungendo i vettori $\left\{a_1^1,\ \ldots,\ a_t^1\right\}$. Sappiamo che $\exists a_t^2\ \colon a_t^1=\left(A-\lambda I\right)^{p-2}a_t^2$, dunque abbiamo i due vettori che formano il blocco di Jordan di dimensione $2$.\\
+Infine, completiamo ad una base di $S_1$ aggiungendo i vettori $\left\{b_1^1,\ \ldots,\ b_u^1\right\}$. In questo caso, non abbiamo bisogno di calcolare altri vettori $b_u^i\ \forall u$ (al variare di $i$) come prima, in quanto i vettori, per definizione di $S_1$, appartengono anche a $\ker\left(A-\lambda I\right)$. Allora, $\forall u\ b_u^1$ generano blocchi di Jordan di dimensione $1$.\\
+Al variare di $i,\ j,\ k,\ \ldots,\ t,\ u$ abbiamo costruito un insieme di vettori tutti appartenenti a $\tilde{V}_{\lambda}=\ker\left(A.\lambda I\right)$: nello schema precedente essi sono tutti i vettori appartenenti a tutte le colonne, da quella di $x_i$ a quella di $b_u$.\\
+\textbf{Vogliamo contare quanti sono questi vettori.} Innanzitutto, dobbiamo considerare che lo schema, per compattezza, rappresenta \textit{solo una colonna} per ciascun $x_i,\ y_j,\ \ldots$, ma in realtà c'è una colonna analoga alla prima \textit{per ogni vettore} della base di $S_p$, una colonna analoga alla seconda per ogni vettore della base di $S_{p-1}$ e così via. In pratica, abbiamo $\dim S_p=r$ colonne con $x_i$, $\dim S_{p-1}-\dim S_{p}=s$ colonne con $y_j$ e così via.\\
+Contiamo adesso gli elementi per \textit{righe}. L'\textit{ultima riga}, quella di $x_i^1,\ y_j^1\, z_k^1\, \ldots,\ a_t^1,\ b_u^1$ al variare di $i,\ j,\ k,\ \ldots,\ t,\ u$, sono per costruzione i vettori di una base di $S_1$, e quindi il loro numero sono $\dim S_1$.\\
+Sulla \textit{penultima riga} non abbiamo i vettori $b_u$ e i vettori $x_i^2,\ y_j^2\, z_k^2\, \ldots,\ a_t^2$ presenti sono in numero uguale ai vettori $x_i^1,\ y_j^1\, z_k^1\, \ldots,\ a_t^1$ al variare di $i,\ j,\ k,\ \ldots,\ t$, base di $S_2$ e quindi ne abbiamo $\dim S_2$.\\
+Proseguendo così, il numero di vettori della $i$-esima riga è pari alla dimensione dello spazio $S_i$; in totale l'insieme è formato da $N$ vettori, con:
+\begin{equation}
+	N=\sum_{i=1}^{p}\dim S_i
+\end{equation}
+Usando il lemma \ref{lemmadimjordan} (pag. \pageref{lemmadimjordan}), otteniamo che:
+\begin{gather*}
+	\begin{array}{ll}
+		\dim S_i&=\dim \left(\ker\left(A-\lambda I\right)\cap \Im\left(A-\lambda I\right)^{i-1}\right)=\\
+		&=\dim\ker\left(A-\lambda I\right)^i-\dim\ker\left(A-\lambda I\right)^{i-1}\\
+	\end{array}\\
+\implies\\
+	\begin{array}{ll}
+	N=\sum_{i=1}^{p}\dim S_i&=\sum_{i=1}^{p}\left(\dim\ker\left(A-\lambda I\right)^i-\dim\ker\left(A-\lambda I\right)^{i-1}\right)=\\
+	&=\dim\ker\left(A-\lambda I\right)^p-\dim\ker\left(A-\lambda I\right)^0=\\&
+	=\dim\ker\left(A-\lambda I\right)^p=\tilde{V}_{\lambda}
+\end{array}
+\end{gather*}
+L'insieme dei vettori, che ricordiamo essere tutti contenuti in $\tilde{V}_{\lambda}$, ha \textit{cardinalità} pari alla \textit{dimensione dell'autospazio generalizzato}. Ci resta dunque da dimostrare che i vettori siano \textit{linearmente indipendenti} per verificare che essi siano a tutti gli effetti la base cercata di $\tilde{V}_{\lambda}$.\\
+Per dimostrarlo, prendiamo la combinazione lineare seguente:
+\begin{equation*}
+\sum_{i}\alpha_ix_i^p+\sum_{i}\beta_ix_i^{p-1}+\ldots+\sum_{i}\gamma_{j}y_{j}^{p-1}+\ldots+\sum_{u}\delta_{u}b_{u}^1=0
+\end{equation*}
+Applicando $\left(A-\lambda I\right)^{p-1}$ tutti i termini si \textit{annullano} eccetto $x_i^p$ e coefficienti al variare di $i$, ovvero:
+\begin{equation*}
+\sum_{i}\alpha_i\left(A-\lambda I\right)x_i^p=0\implies \sum_{i}\alpha_ix_i^1=0
+\end{equation*}
+Poichè $x_i^1$ al variare di $i$ sono \textit{linearmente indipendenti} (sono base di $S_p$!), i loro coefficienti devono necessariamente \textit{tutti} nulli: $\alpha_i=0\forall i$. La combinazione lineare sopra diventa:
+\begin{equation*}
+	\sum_{i}\beta_ix_i^{p-1}+\ldots+\sum_{i}\gamma_{j}y_{j}^{p-1}+\ldots+\sum_{u}\delta_{u}b_{u}^1=0
+\end{equation*}
+Applicando $\left(A-\lambda I\right)^{p-2}$, nella combinazione lineare rimangono solo $x_i^{p-1}$ e $y_j^{p-1}$ al variare di $i$ e $j$ con i loro coefficienti. Complessivamente, i vettori formano la base già vista di $S_{p-1}$, dunque i coefficienti risultano nulli: $\beta_i=0,\ \gamma_j=0\ \forall i,\ j$.\\
+Allo stesso modo, applicando $\left(A-\lambda I\right)^{p-3},\ \ldots$ si vede che tutti i coefficienti della combinazione lineare sono nulli, ovvero i vettori dell'insieme sono \textbf{linearmente indipendenti}. 
 \end{demonstration}
+\subsection{Unicità della forma di Jordan}
+\begin{demonstration}
+Per ultima cosa osserviamo come la forma di Jordan di $A$ sia unica.\\
+Sulla sua diagonale compaiono, per definizione, gli \textit{autovalori con molteplicità}: questo dipende esclusivamente dalle radici del polinomio caratteristico e dunque da $A$ stessa.\\
+Per un dato autovalore $\lambda$, abbiamo ottenuto dei blocchi di Jordan corrispondenti agli spazi $S_k$ di dimensione $k$ e di numero pari ai vettori aggiunti per completare la base dello spazio $S_{k+1}$ passo per passo (ovvero $\dim S_{k-1}-\dim S_k$, dato che ogni vettore aggiunto $x_i^1$ genera la successione $x_i^1,\ \ldots,\ x_i^k$). Poiché il \textit{numero dei blocchi} dipende esclusivamente da $A-\lambda I$, dunque da $A$ stessa, e \textit{non} dal procedimento, la forma di Jordan di $A$ è unica.
+\end{demonstration}
+Il corollario seguente è immediato.
+\begin{corollary}
+Due matrici in forma di Jordan sono simili se e solo se hanno gli stessi blocchi (a meno dell'ordine).
+\end{corollary}
+\subsection{Polinomio minimo e forma di Jordan}
+\begin{proposition}
+Sia $A$ una matrice complessa $n\times n$ e siano $\lambda_1,\ \ldots,\ \lambda_r$ gli autovalore distinti di $A$ e, per ogni $i=1,\ \ldots,\ r$, sia $p_i$ l'ordine del più grande blocco di Jordan di $A$ relativo a $\lambda_i$. Allora il polinomio minimo di $A$ è:
+\begin{equation}
+m_A\left(t\right)=\left(t-\lambda_i\right)^{p_1}\ldots\left(t-\lambda\right)^{p_r}
+\end{equation}
+\end{proposition}
+L'osservazione che qui facciamo ci servirà nella dimostrazione della proposizione.
+\begin{observe}
+	Se $p\left(t\right),\ q\left(t\right)\in\mathbb{K}\left[t\right]$, allora:
+	\begin{equation}
+		p\left(A\right)q\left(A\right)=q\left(A\right)p\left(A\right)
+	\end{equation}
+	\vspace{-6mm}
+\end{observe}
+\begin{demonstration}
+	Possiamo supporre che $A$ sia già in forma di Jordan.\\
+	 Consideriamo $A-\lambda_1I$, rappresentata in figura: ha, nella parte rossa, dei blocchi di Jordan relativi all'autovalore zero. Poichè la parte rossa è una sottomatrice nilpotente di ordine $p_1$, ne consegue che $\left(A-\lambda_1I\right)^{p_1}$ ha la matrice nulla nella parte zero.\\
+	 In generale, $\left(A-\lambda_iI\right)^{p_i}$ è nullo nel blocco $m_i\times m_i$ corrispondente a $\lambda_i$.
+	 \begin{equation*}
+	 	\tikz[baseline]{%
+	 		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+	 			~\& \& \& \& \& \& 	\\
+	 			~\& \& \& \& \& \& 	\\
+	 			~\& \& ~ \& \& \& \& 	\\
+	 			~\& \& \& \& \& \& 	\\
+	 			~\& \& \& \& \& \& 	\\
+	 			~\& \& \& \& \& \& 	\\
+	 			~\&~ \&~ \&~ \&~ \&~ \&~ \\
+	 		};
+	 		\draw[ultra thick, draw = red] (M-1-1.north west) rectangle (M-3-3.south east);
+	 	}
+	 \end{equation*}
+Ne segue che $\left(A-\lambda_1I\right)^{p_1}\ldots\left(A-\lambda_rI\right)^{p_r}$ è la matrice nulla, perché ha ogni blocco nullo. Ciò significa che il seguente polinomio si annulla su $A$ e dunque appartiene al suo ideale:
+\begin{equation*}
+f\left(t\right)=\left(t-\lambda_1\right)^{p_1}\ldots\left(t-\lambda_r\right)^{p_r}\in I_A
+\end{equation*}
+Perciò il polinomio minimo divide $f$: $m_A\left(t\right)\mid f\left(t\right)$.\\
+Consideriamo ora $\left(A-\lambda_1I\right)^h$ con $h<p_1$: come abbiamo visto nello studio delle proprietà dei blocchi di Jordan, esso ha nel primo blocco una colonna uguale a $\underline{e}_1=\left(1,\ 0,\ \ldots\, 0\right)^\mathsf{T}$, diciamo ad esempio la colonna $s\in\left\{1,\ \ldots,\ m_1\right\}$.\\
+Posto $d_i\geq 1$, $\left(A-\lambda_iI\right)^{d_i}$ nel posto $\left(1,\ 1\right)$ ha $\left(\lambda_1-\lambda_i\right)^{d_i}\neq 0$ se $i=2,\ \ldots, \ r$. Infatti, $A$ (presa in forma di Jordan) è triangolare superiore e ha $\lambda_1$ al posto $\left(1,\ 1\right)$; allo stesso modo $A-\lambda_i I$ è triangolare superiore e ha $\lambda_1-\lambda_i$ al posto $\left(1,\ 1\right)$.\\
+Ne consegue che $\displaystyle\prod_{i=2}^{r}\left(A-\lambda_iI\right)^{d_i}$ ha un numero $\neq 0$ nel posto $\left(1,\ 1\right)$. Allora, utilizzando l'osservazione ad inizio sezione che garantisce la commutatività del prodotto:
+\begin{equation*}
+\left(A-\lambda_1I\right)^h\prod_{i=2}^{r}\left(A-\lambda_iI\right)^{d_i}=\prod_{i=2}^{r}\left(A-\lambda_1I\right)^{d_i}\left(A-\lambda_iI\right)^h
+\end{equation*}
+Rappresentando visivamente il prodotto di queste due matrici:
+	 \begin{equation*}
+	\tikz[baseline]{%
+		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+			\ast\neq 0\& \& \& \& \& \& 	\\
+			~\& \& \& \& \& \& 	\\
+			~\& \& ~ \& \& \& \& 	\\
+			~\& \& \& \& \& \& 	\\
+			~\& \& \& \& \& \& 	\\
+			~\& \& \& \& \& \& 	\\
+			~\&~ \&~ \&~ \&~ \&~ \&~ \\
+		};
+	}	\tikz[baseline]{%
+	\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (m) {%
+		~\& \& 1\& \& \& \& 	\\
+		~\& \& 0\& \& \& \& 	\\
+		~\& \& \vdots \& \& \& \& 	\\
+		~\&~ \& 0 \&~ \&~ \&~ \&~ \\
+	};
+}
+\end{equation*}
+Al posto $\left(1,\ s\right)$ otteniamo il valore $\ast\neq 0$, dunque il prodotto complessivo è diverso da zero. Si ha:
+\begin{equation*}
+\left(t-\lambda_1\right)^h\prod_{i=2}^r\left(t-\lambda_i\right)^{d_i}\notin I_A\text{ se }h<p_1
+\end{equation*}
+Segue che qualunque blocco di Jordan di ordine non massimo fa sì che il polinomio scritto sopra non appartenga all'ideale di $A$, e dunque il più piccolo polinomio che è diviso da $m_A\left(t\right)$ (al quale dunque deve coincidere necessariamente) è $f\left(t\right)$ visto sopra.
+\end{demonstration}
+\begin{corollary}
+Sia $A\in\complexset^{n,\ n}$. Allora $A$ è \textbf{diagonalizzabile} se e solo se il suo polinomio minimo ha tutte radici di molteplicità $1$.
+\end{corollary}
+\begin{demonstration}
+Per la proposizione precedente, la molteplicità delle radici del polinomio minimo corrisponde alla dimensione del più grande blocco di Jordan di $A$ relativo a $\lambda_i$.\\ Segue chiaramente che se $m_{\lambda_i}=1\ \forall i$ l'ordine di tutti i blocchi è $1$, dunque $A$ è diagonalizzabile.\\
+Viceversa, se $A$ è diagonalizzabile, tutti i blocchi sono di dimensione $1$ e questa, per la stessa proposizione di prima, corrisponde alla molteplicità delle radici del polinomio caratteristico.
+\end{demonstration}
+\subsection{Impratichiamoci! Forma canonica di Jordan.}
+\begin{tips}\textsc{Alcune nozioni utili per il calcolo della base e della forma di Jordan.}
+	\begin{enumerate}
+		\item Per calcolare l'autospazio generalizzato $\tilde{V}_{\lambda}=\ker\left(A-\lambda I\right)^{m_{\lambda}}$ è sufficiente calcolare, \textit{se conosco il massimo ordine} $p$ \textit{dei blocchi di Jordan relativi a }$\lambda$:
+		\begin{equation}
+			\tilde{V}_{\lambda}=\ker\left(A-\lambda I\right)^{p}
+		\end{equation}
+		\item Si ha, per le osservazioni fatte nella dimostrazione precedente:
+		\begin{equation}
+			\dim S_i-\dim S_{i+1}=\#\text{ blocchi di Jordan di dimensione }i
+		\end{equation}
+		\item L'autospazio $V_{\lambda}=S_1$ ha come base tutti i vettori aggiunti a partire dalla base di $S_p$, compresi i vettori di quest'ultima base; poiché per ognuno di questi vettori abbiamo, per costruzione, un blocco di Jordan relativo a $\lambda$, il numero di questi vettori corrisponde al numero totale di blocchi di Jordan, cioè \textit{la molteplicità geometrica di} $\lambda$: 
+		\begin{equation}
+		\dim V_{\lambda}=\#\text{ blocchi di Jordan relativi a }\lambda
+		\end{equation}
+		\item Per l'osservazione a pag. \pageref{molteplicitàalgebrichedijordan}:
+		\begin{equation}
+			m_\lambda=\sum\text{dimensioni dei blocchi relativi a }\lambda
+		\end{equation}
+		\item \textit{Se conosco già le dimensioni dei blocchi di Jordan} di $\lambda$:
+		\begin{equation*}
+			a_1<\ldots< a_r=p
+		\end{equation*}
+		\textit{mi basta calcolare i sottospazi:}
+		\begin{equation*}
+			S_{a_1}\supseteq\ldots\supseteq S_{a_r}=S_p
+		\end{equation*}
+		\item Se $A$ ha un'\textit{unico} autovalore $\lambda$, allora $V=\tilde{V}_{\lambda}$ e $\left(A-\lambda I\right)^p=0$. In particolare segue che:
+		\begin{equation*}
+			\begin{array}{l}
+				\forall \underline{v}\in\Im\left(A-\lambda I\right)^{p-1}\ \exists\underline{u}\in\left(A-\lambda I\right)^{p-1}\ \colon \left(A-\lambda I\right)^{p-1}\underline{u}=\underline{v}\\
+				\implies \underline{0}=\left(A-\lambda I\right)^{p}\underline{u}=\left(A-\lambda I\right)\underline{v}\\
+				\implies\underline{v}\in\ker\left(A-\lambda I\right)\\
+				\implies \Im\left(A-\lambda I\right)^{p-1}\subseteq \ker\left(A-\lambda I\right)\\
+				\implies S_p=\Im\left(A-\lambda I\right)^{p-1}\cap \ker\left(A-\lambda I\right)=\Im\left(A-\lambda I\right)^{p-1}
+			\end{array}
+		\end{equation*}	
+		\textit{Pertanto, nel caso} $S_p$ \textit{non c'è bisogno di intersecare con} $V_{\lambda}$! Questo tuttavia \textit{non} si applica agli altri $S_i$, dato che \textit{non} vale la relazione $\Im\left(A-\lambda I\right)^{i}\subseteq \ker\left(A-\lambda I\right)$.
+		\item Se so che per $\lambda$ tutti i blocchi di Jordan hanno la stessa dimensione $p$, \textit{possiamo calcolare direttamente} $S_p=\Im\left(A-\lambda I\right)^{p-1}\cap V_{\lambda}$ (dato che $S_p=S_{p-1}=\ldots=S_1$ e dunque non ci sono blocchi di altre dimensioni).
+	\end{enumerate}
+\end{tips}
+\begin{example}
+Sia data la matrice:
+\begin{equation*}
+	A= \left(
+	\begin{array}{ccc}
+		8 & 6 & -4 \\
+		0 & 2 & 0  \\
+		9 & 9 & -4
+	\end{array}
+	\right)
+\end{equation*}
+Il suo polinomio caratteristico è $C_A\left(t\right)=\left(t-2\right)^3$ e $\lambda=2$ è l'unico autovalore, con molteplicità algebrica $m_{\lambda}=3$. Studiamo l'autospazio:
+\begin{equation*}
+	A-2I= \left(
+\begin{array}{ccc}
+	6 & 6 & -4 \\
+	0 & 0 & 0  \\
+	9 & 9 & -6
+\end{array}
+\right)
+\end{equation*}
+Il rango è $\rk \left(A-2I\right)=1$ e la molteplicità geometrica è pertanto $\dim V_2=2$. Notiamo che le possibili forme di Jordan di una matrice $3\times 3$ con unico autovalore $2$ sono:
+	\begin{equation*}
+	\underset{\tikz[baseline]{%
+			\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+				2 	\&	\color{gray}{0}	\& \color{gray}{0} 	\\
+				\color{gray}{0} 	\& 2	\& \color{gray}{0} 	\\
+				\color{gray}{0}	\& \color{gray}{0}	\& 2 	\\
+			};
+			\draw (M-1-1.north west) rectangle (M-1-1.south east);
+			\draw (M-1-1.south east) rectangle (M-2-2.south east);
+			\draw (M-2-2.south east) rectangle (M-3-3.south east);
+	}}{3\text{ blocchi},\ \dim V_2=3}
+	\underset{\tikz[baseline]{%
+		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+			2 	\&	1	\& \color{gray}{0} 	\\
+			0 	\& 2	\& \color{gray}{0} 	\\
+			\color{gray}{0}	\& \color{gray}{0}	\& 2 	\\
+		};
+		\draw (M-1-1.north west) rectangle (M-2-2.south east);
+		\draw (M-2-2.south east) rectangle (M-3-3.south east);
+}}{2\text{ blocchi},\ \dim V_2=2}
+	\underset{\tikz[baseline]{%
+		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+			2 	\&	1	\& 0 	\\
+			0 	\& 2	\& 1 	\\
+			0	\& 0	\& 2 	\\
+		};
+		\draw (M-1-1.north west) rectangle (M-3-3.south east);
+}}{1\text{ blocco},\ \dim V_2=1}
+\end{equation*}
+Come osservato precedentemente, la molteplicità geometrica di $\lambda$ dà il numero di blocchi di Jordan della matrice, pertanto ho sicuramente due blocchi di Jordan e, avendo fatto tutti i casi, sappiamo senza altri calcoli che il blocco massimo ha ordine $p=2$. La situazione in termini di spazi $S_i$, è:
+\begin{equation*}
+V_2=S_1\supseteq S_2=\Im\left(A-2 I\right)
+\end{equation*}
+Avendo un unico autovalore, nel caso $S_2$ non abbiamo bisogno di calcolare l'intersezione con l'autospazio. Dunque, cerchiamo una base di $S_2=\Im\left(A-2 I\right)$. Sappiamo già che la sua base è di un solo vettore, dato che $\rk\left(A-2 I\right)=1=\dim\Im\left(A-2 I\right)$. Essendo l'immagine, possiamo prendere un vettore colonna della matrice $A-2 I$, che definiremo $x_1^1$; ad esempio, prendiamo la prima colonna:
+\begin{equation*}
+x_1^1=\left(6,\ 0,\ 9\right)
+\end{equation*} 
+Per la scelta effettuata, per costruire $x_1^2$ ci è sufficiente prendere il vettore $\left(1,\ 0,\ 0\right)$:
+\begin{equation*}
+	\begin{array}{l}
+		x_1^1=\left(6,\ 0,\ 9\right)=\left(A-2I\right)\left(1,\ 0,\ 0\right)\\
+		x_1^2=\left(1,\ 0,\ 0\right)
+	\end{array}
+\end{equation*}
+Allora $\left\{x_1^1,\ x_1^2\right\}$ dà il blocco di Jordan di ordine $2$. \\Completiamo $\left\{x_1^1\right\}$ ad una base di $V_2$. Esplicitando l'autospazio:
+\begin{equation*}
+V_2=\ker\left(A-2I\right)=\left\{3x+3y+2z=0\right\}
+\end{equation*}
+Possiamo scegliere ad esempio $\left(-1,\ 1,\ 0\right)$, ottenendo allo stesso tempo il vettore che dà il blocco di ordine $1$ di Jordan. La base che rende $A$ in forma di Jordan è:
+\begin{equation*}
+\left\{\left(6,\ 0,\ 9\right), \ \left(1,\ 0,\ 0\right), \ \left(-1,\ 1,\ 0\right)\right\}
+\end{equation*}
+\end{example}

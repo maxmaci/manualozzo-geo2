@@ -17,7 +17,7 @@
 \newcommand\bmmax{0}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
-\RequirePackage[style=numeric-comp,sortcites=true]{biblatex}
+\RequirePackage[style=numeric-comp,sorting=none,backend=bibtex]{biblatex} % old: sortcites=true
 \RequirePackage[italian]{babel}
 \RequirePackage{csquotes}
 \RequirePackage[oldstylenums]{kpfonts}
@@ -69,7 +69,8 @@
 %\usepackage{tikz-3dplot}
 %\usepackage{wrapfig}
 %\RequirePackage{accents}
-\RequirePackage{preamble/tikz-cd}
+\RequirePackage{tikz-cd}
+%\RequirePackage{preamble/quiver}
 \RequirePackage{preamble/comment}
 % Load hyperref package last
 \RequirePackage{hyperref}

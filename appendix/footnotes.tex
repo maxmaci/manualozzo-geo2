@@ -18,7 +18,7 @@
 \noindent Riportiamo alcune note e dimostrazioni aggiuntive che possono risultare utili al lettore.
 
 \section{Capitolo 6: successioni}
-La seguente dimostrazione sulla non prima-numerabilità del quoziente $\nicefrac{\realset}{\integerset}$ è adattata da Brian M. Scott~\cite{scott:nonum} su Mathematics Stack Exchange.
+La seguente dimostrazione sulla non prima-numerabilità del quoziente $\nicefrac{\realset}{\integerset}$ è adattata da Brian M. Scott \cite{scott:nonum} su Mathematics Stack Exchange.
 \begin{demonstration}\label{dimostrazionenonnumerabilità}
 Si consideri la contrazione di $\integerset$ in $\realset$ ad un punto, cioè il quoziente $\nicefrac{\realset}{\integerset}$ e si definisca la classe di equivalenza degli interi come $[0]$.\\
 Sia $\left\{U_n:n\in\naturalset\right\}$ una famiglia di intorni aperti di $[0]$; cerchiamo un intorno aperto di $[0]$ che non ne contiene nessuno come sottoinsieme, mostrano in tal modo che non formano un sistema fondamentale di intorni di $[0]$ e pertanto che $\nicefrac{\realset}{\integerset}$ non è primo-numerabile per $[0]$.\\
@@ -33,7 +33,7 @@ V=\pi\left[\bigcup_{k\in\integerset}(k-\delta_k,k+\delta_k)\right]
 Chiaramente $V$ è un intorno aperto di $[0]$, e vogliamo dimostrare che $U_n\nsubseteq V$ per ogni $n\in\naturalset$. Per mostrare ciò, fissiamo $n\in\naturalset$; si ha $\delta_n<\epsilon_{n,n}$, quindi possiamo sceglie un numero reale $x\in(n+\delta_n,n+\epsilon_{n,n})$. Ma allora $\pi(x)\in U_n\setminus V$, e dunque $U_n\nsubseteq V$.
 \end{demonstration}
 \section{Capitolo 11: forma canonica di Jordan}
-La seguente dimostrazione sul determinante di una matrice a blocchi e del suo polinomio caratteristico si basa su integrazioni proprie da Jean Marie ~\cite{jeanmarie:blockdet} e da Ben Grossmann ~\cite{bengrossman:blockdet}su Mathematics Stack Exchange. \label{dimostrazionedeterminantematriceblocchi}
+La seguente dimostrazione sul determinante di una matrice a blocchi e del suo polinomio caratteristico si basa su integrazioni proprie da Jean Marie \cite{jeanmarie:blockdet} e da Ben Grossmann \cite{bengrossman:blockdet} su Mathematics Stack Exchange. \label{dimostrazionedeterminantematriceblocchi}
 \begin{demonstration}
 	Data una matrice quadrata $\left(
 	\begin{array}{c|c}
@@ -191,7 +191,7 @@ Grazie alle formule di Laplace, possiamo calcolare il determinante delle due mat
 	\hline
 	\mathbf{0} & \mathbf{Q}
 \end{array}
-\right)=\ldots = 1^n\cdot \det Q =\det Q
+\right)=\ldots = 1^n\cdot \det \mathbf{Q} =\det \mathbf{Q}
 \end{equation*}
 Il risultato è analogo per la prima. Dunque, concludendo:
 \begin{gather}
@@ -210,7 +210,7 @@ Il risultato è analogo per la prima. Dunque, concludendo:
 \end{array}
 \right)=\det\left(\mathbf{A}\right)\det\left(\mathbf{D}\right)
 \end{gather}
-Come ultima conseguenza, se vogliamo studiare il polinomio caratteristico $C_A\left(t\right)$ di una matrice $\mathbf{A}$ a blocchi diagonali $\mathbb{B}$ e $\mathbb{C}$, abbiamo che:
+Come ultima conseguenza, se vogliamo studiare il polinomio caratteristico $C_A\left(t\right)$ di una matrice $A$ a blocchi diagonali $\mathbf{B}$ e $\mathbf{C}$, abbiamo che:
 \begin{equation}
 C_A\left(t\right)=\det\left(
 \begin{array}{c|c}
