@@ -221,3 +221,27 @@ C_A\left(t\right)=\det\left(
 \right)=\det\left(\mathbf{B}-t I\right)\det\left(\mathbf{C}-t I\right)=C_B\left(t\right)C_C\left(t\right)
 \end{equation}
 \end{demonstration}
+\subsection{Convergenza}\label{convergenzauniforme}
+Tutti i ragionamenti qui presenti si applicano anche alle successioni e serie di potenze.
+\begin{define}
+	Dato un insieme $E$ e un successione $\left(f_n\right)_{n\in\naturalset}$ con $\funz{f_n}{E}{X}$ con $X$ metrico, si dice che la successione è uniformemente convergente \index{convergenza!uniforme} su $E$ con limite $\funz{f}{E}{X}$ se:
+	\begin{equation}
+		\forall\epsilon>0\ \exists N\in\naturalset\ \colon \forall n\geq N,\ x\in E \mvf{d}{f_n\left(x\right)}{f\left(x\right)}<\epsilon
+	\end{equation}
+\vspace{-6mm}
+\end{define}
+\begin{define}\textsc{Criterio di Weierstrass o M-test}\\
+	Sia $\left(f_n\right)_{n\in\naturalset}$ una successione di funzioni \textit{reali} o \textit{complesse} definite su un insieme $A$ e che esista una successione di numeri \textit{non negativi} $\left(M_n\right)_{n\in\naturalset}$ che soddisfino la seguente relazione:
+	\begin{equation}
+		\forall n\geq 1,\ x\in A\ \colon \lvert f_n\left(x\right)\rvert \leq M_n,\ \sum_{n=1}^{\infty}M_n<\infty
+	\end{equation}
+Allora la serie:
+\begin{equation}
+	\sum_{n=1}^{\infty}f_n
+\end{equation}
+Converge \textit{assolutamente} e \textit{uniformemente} su $A$
+\end{define}
+Si usa spesso l'\textit{M-test} assieme al \textbf{teorema del limite uniforme}.
+\begin{define}
+Sia $\left(f_n\right)_{n\in\naturalset}$ una successione di funzioni \textit{reali} o \textit{complesse} continue sullo spazio topologico $A$ nel quale sono definite; se la successione converge uniformemente su $A$ allora il limite converge ad una funzione continua. In particolare, lo stesso si ha nel caso di una serie.
+\end{define}

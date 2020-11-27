@@ -521,11 +521,11 @@ Dunque $\left\{a_n\right\}$ converge a $p$.
 	Sia $\left\{a_n\right\}$ di Cauchy in $\realset^n$. Mostriamo che $\left\{a_n\right\}$ è eventualmente limitata\footnote{Supponendo chiaramente che la successione sia ben definita, ci interessa solamente che la successione sia limitata dopo un $n_0$: prima di ciò ho un numero finito di termini $a_0,\ \ldots,\ a_{n_0}<\infty$ e posso chiaramente prendere una palla (chiusa) che li contenga, ad esempio di raggio $M+1$ con $M$ definito come nella dimostrazione.}.\\
 	Poiché la successione di Cauchy è definita per ogni $\epsilon$, fissiamo $\epsilon=1$. Allora:
 	\begin{equation*}
-	\exists n_0\ \colon \lvert\lvert a_n-a_m\rvert\rvert\leq 1\ \forall n,\ m\geq n_0
+	\exists n_0\ \colon \labs a_n-a_m\rabs\leq 1\ \forall n,\ m\geq n_0
 	\end{equation*}
-Sia $M\coloneqq \max_{n_0,\ \ldots,\ n_0}\lvert\lvert a_n\rvert\rvert$. Se $n\geq n_0$ si ha:
+Sia $M\coloneqq \max_{n_0,\ \ldots,\ n_0}\labs a_n\rabs$. Se $n\geq n_0$ si ha:
 \begin{equation*}
-\lvert\lvert a_n\rvert\rvert=\lvert\lvert a_n - a_{n_0}+ a_{n_0}\rvert\rvert=\leq \lvert\lvert a_n - a_{n_0}\rvert\rvert+\lvert\lvert a_{n_0}\rvert\rvert\leq 1+M
+\labs a_n\rabs=\labs a_n - a_{n_0}+ a_{n_0}\rabs=\leq \labs a_n - a_{n_0}\rabs+\labs a_{n_0}\rabs\leq 1+M
 \end{equation*}
 Questo significa che $\left\{a_n\right\}\subseteq\overline{B_{1+M}\left(0\right)}$. Questa palla chiusa è uno spazio metrico \textit{indotto} in $\realset^n$ e compatto, cioè è uno \textit{spazio metrico completo}. Allora la successione di Cauchy, trovandosi in uno spazio metrico completo, converge in esso, e dunque converge anche in $\realset^n$.
 \end{demonstration}

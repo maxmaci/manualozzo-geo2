@@ -485,12 +485,12 @@ Se $r$ è una retrazione, per costruzione è suriettiva, dunque $A$ \textbf{ered
 \begin{example}\textsc{La retrazione radiale.}\label{retrazioneradiale}\\
 	Sia $X=\realset^n\setminus \left\{\underline{0}\right\}$ e $A=S^{n-1}\subseteq X$. Vogliamo definire una retrazione di $X$ su $A$, cioè una funzione continua $\funz{r}{\realset^n\setminus\left\{\underline{0}\right\}}{A=S^{n-1}}$ tale che $r_{\mid S^{n-1}}=Id_{S^{n-1}}$. Definiamo allora la \textbf{retrazione radiale}\index{retrazione radiale}:
 	\begin{equation}
-		\funztot{r}{\realset^n\setminus\left\{\underline{0}\right\}}{S^{n-1}}{\underline{x}}{r\left(\underline{x}\right)=\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}}
+		\funztot{r}{\realset^n\setminus\left\{\underline{0}\right\}}{S^{n-1}}{\underline{x}}{r\left(\underline{x}\right)=\frac{\underline{x}}{\labs \underline{x}\rabs}}
 	\end{equation}
 \begin{itemize}
-	\item $r$ è ben definita perché $\underline{x}\neq\underline{0}\implies \lvert\lvert \underline{x}\rvert\rvert\neq 0$.
+	\item $r$ è ben definita perché $\underline{x}\neq\underline{0}\implies \labs \underline{x}\rabs\neq 0$.
 	\item $r$ continua.
-	\item Se $\underline{x}\in S^{n-1}$, allora $\lvert\lvert \underline{x}\rvert\rvert=1$, cioè $\forall \underline{x}\in S^{n-1}\ r\left(\underline{x}\right)=\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}=\underline{x}$.
+	\item Se $\underline{x}\in S^{n-1}$, allora $\labs \underline{x}\rabs=1$, cioè $\forall \underline{x}\in S^{n-1}\ r\left(\underline{x}\right)=\frac{\underline{x}}{\labs \underline{x}\rabs}=\underline{x}$.
 \end{itemize}
 \end{example}
 \begin{define}
@@ -514,24 +514,24 @@ Se $r$ è una retrazione, per costruzione è suriettiva, dunque $A$ \textbf{ered
 	\label{retrattosfera}
 	Mostriamo che $S^{n-1}\subseteq \realset^n\setminus\left\{\underline{0}\right\}$ è un retratto di deformazione. Sfruttiamo la retrazione radiale definita a pag. \pageref{retrazioneradiale}:
 		\begin{equation*}
-		\funztot{r}{\realset^n\setminus\left\{\underline{0}\right\}}{S^{n-1}}{\underline{x}}{r\left(\underline{x}\right)=\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}}
+		\funztot{r}{\realset^n\setminus\left\{\underline{0}\right\}}{S^{n-1}}{\underline{x}}{r\left(\underline{x}\right)=\frac{\underline{x}}{\labs \underline{x}\rabs}}
 	\end{equation*}
 Considero ora l'inclusionee, definendo per comodità $X=\realset^n\setminus\left\{\underline{0}\right\}$:
 \begin{equation*}
 	\funz{i}{S^{n-1}}{X}
 \end{equation*}
 	\begin{equation*}
-		\funztot{r}{X}{X}{\underline{x}}{\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}}
+		\funztot{r}{X}{X}{\underline{x}}{\frac{\underline{x}}{\labs \underline{x}\rabs}}
 	\end{equation*}
 			\begin{equation*}
-	\tilde{r}\coloneqq\funztot{ i\circ r}{X}{X}{\underline{x}}{\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}}
+	\tilde{r}\coloneqq\funztot{ i\circ r}{X}{X}{\underline{x}}{\frac{\underline{x}}{\labs \underline{x}\rabs}}
 \end{equation*}
 Vogliamo che $\tilde{r}$ sia omotopa a $Id_X$.
-Osserviamo che $\forall \underline{x}\in\realset^n\setminus\left\{\underline{0}\right\}=X$ il segmento da $\underline{x}$ a $\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}$ non contiene, per costruzione, l'origine: allora esso è interamente contenuto in $\realset^n\setminus \left\{\underline{0}\right\}=X$. Dunque, riprendendo l'osservazione di pag. \pageref{omotopiasegmento} definiamo l'omotopia:
+Osserviamo che $\forall \underline{x}\in\realset^n\setminus\left\{\underline{0}\right\}=X$ il segmento da $\underline{x}$ a $\frac{\underline{x}}{\labs \underline{x}\rabs}$ non contiene, per costruzione, l'origine: allora esso è interamente contenuto in $\realset^n\setminus \left\{\underline{0}\right\}=X$. Dunque, riprendendo l'osservazione di pag. \pageref{omotopiasegmento} definiamo l'omotopia:
 \begin{equation*}
-	\funztot{F}{X\times I}{X}{\left(\underline{x},\ t\right)}{\left(1-t\right)\underline{x}+t\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}}
+	\funztot{F}{X\times I}{X}{\left(\underline{x},\ t\right)}{\left(1-t\right)\underline{x}+t\frac{\underline{x}}{\labs \underline{x}\rabs}}
 \end{equation*}
-Infatti $F$ è ben definita, continua e $\mvf{F}{\underline{x}}{0}=\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}=\tilde{r}\left(\overline{x}\right),\ \mvf{F}{x}{1}=\overline{x}=Id_X\left(\overline{x}\right)$.
+Infatti $F$ è ben definita, continua e $\mvf{F}{\underline{x}}{0}=\frac{\underline{x}}{\labs \underline{x}\rabs}=\tilde{r}\left(\overline{x}\right),\ \mvf{F}{x}{1}=\overline{x}=Id_X\left(\overline{x}\right)$.
 \end{example}
 \begin{corollary}
 	In generale vale che $S^{n-1}$ è retratto di deformazione di $\realset^n\setminus\left\{1\text{ punto}\right\}$; in particolare hanno lo stesso tipo di omotopia.
@@ -569,11 +569,11 @@ Un \textbf{bouquet}\index{bouquet di circonferenze} \textbf{di} $n$ \textbf{circ
 		Segue che $\tilde{X}$, e dunque anche $X$ per omeomorfismo, ha la stessa omotopia di $\realset^2\setminus\left\{2\text{ punti}\right\}$ e di un \textit{bouquet di due circonferenze}.
 		\item Se le due rette sono incidenti, a meno di omeomorfismi si intersecano nell'origine. Consideriamo dunque $X=\realset^3\left\{r_1\cup r_2\right\}$ e lo spazio $A=S^2\setminus\left\{P_1,\ P_2,\ Q_1,\ Q_2\right\}$. Se prendiamo la retrazione:
 		\begin{equation*}
-			\funztot{r}{X}{A}{\underline{x}}{\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}}.\\
+			\funztot{r}{X}{A}{\underline{x}}{\frac{\underline{x}}{\labs \underline{x}\rabs}}.\\
 		\end{equation*}
 		e l'omotopia:
 		\begin{equation*}
-			\tilde{r}\coloneqq\funztot{ i\circ r}{X}{X}{\underline{x}}{\frac{\underline{x}}{\lvert\lvert \underline{x}\rvert\rvert}}
+			\tilde{r}\coloneqq\funztot{ i\circ r}{X}{X}{\underline{x}}{\frac{\underline{x}}{\labs \underline{x}\rabs}}
 		\end{equation*}
 	Si verifica in modo analogo a come visto nel caso della sfera e dello spazio privato dell'origine (esempio a pagina \ref{retrattosfera}), trattando con una \textit{retrazione radiale} ben definita e la sua omotopia nota, che $A$ è retratto di deformazione di $X$. Segue allora che hanno lo stesso tipo di omotopia.
 		\end{itemize}

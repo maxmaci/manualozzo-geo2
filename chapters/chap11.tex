@@ -203,7 +203,11 @@ La seguente matrice $9\times 9$  è in forma di Jordan, con blocchi $J_3\left(2\
 \end{observe}
 \begin{theorema}\textsc{Esistenza e unicità della forma di Jordan}
 	Sia $V$ uno spazio vettoriale complesso di $\dim n$ e $f$ un endomorfismo di $V$. Allora \textit{esiste} una base di $V$ in cui la matrice di $f$ è in forma di Jordan. Inoltre, la forma di Jordan è \textit{unica} a meno dell'ordine dei blocchi.\\
-	\textit{In termini matriciali}, ogni $A\in\complexset^{n,\ n}$ è simile ad una matrice in forma di Jordan, unica a meno dell'ordine dei blocchi.
+	\textit{In termini matriciali}, ogni $A\in\complexset^{n,\ n}$ è simile ad una matrice in forma di Jordan, unica a meno dell'ordine dei blocchi:
+	\begin{equation}
+		J=P^{-1}AP
+	\end{equation}
+	$P$ è la matrice del cambiamento di base che presenta, nelle colonne, la base che mette $A$ in forma di Jordan.
 \end{theorema}
 \subsection{Autospazi generalizzati}
 Per dimostrare il teorema appena enunciato, faremo uso di un concetto nuovo: quello di \textit{autospazio generalizzato}. Prima di definirlo, ricordiamo alcune proprietà legate agli endomorfismi che ci torneranno utili.
@@ -595,7 +599,7 @@ Il corollario seguente è immediato.
 Due matrici in forma di Jordan sono simili se e solo se hanno gli stessi blocchi (a meno dell'ordine).
 \end{corollary}
 \subsection{Polinomio minimo e forma di Jordan}
-\begin{proposition}
+\begin{proposition}\label{polinomiominimojordan}
 Sia $A$ una matrice complessa $n\times n$ e siano $\lambda_1,\ \ldots,\ \lambda_r$ gli autovalore distinti di $A$ e, per ogni $i=1,\ \ldots,\ r$, sia $p_i$ l'ordine del più grande blocco di Jordan di $A$ relativo a $\lambda_i$. Allora il polinomio minimo di $A$ è:
 \begin{equation}
 m_A\left(t\right)=\left(t-\lambda_i\right)^{p_1}\ldots\left(t-\lambda\right)^{p_r}
@@ -672,6 +676,45 @@ Sia $A\in\complexset^{n,\ n}$. Allora $A$ è \textbf{diagonalizzabile} se e solo
 Per la proposizione precedente, la molteplicità delle radici del polinomio minimo corrisponde alla dimensione del più grande blocco di Jordan di $A$ relativo a $\lambda_i$.\\ Segue chiaramente che se $m_{\lambda_i}=1\ \forall i$ l'ordine di tutti i blocchi è $1$, dunque $A$ è diagonalizzabile.\\
 Viceversa, se $A$ è diagonalizzabile, tutti i blocchi sono di dimensione $1$ e questa, per la stessa proposizione di prima, corrisponde alla molteplicità delle radici del polinomio caratteristico.
 \end{demonstration}
+\begin{observe}
+La forma di Jordan determina il polinomio minimo e il polinomio caratteristico, ma \textit{non} vale il viceversa. Per esempio, prendiamo le seguenti matrici:
+\begin{equation*}
+\tikz[baseline]{%
+	\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+		2 \& 1	\& 0 \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0}  \\
+		0 \& 2	\& 1 \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0}  \\
+		0 \& 0	\& 1 \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0}  \\
+		\color{gray}{0} \& \color{gray}{0}	\& \color{gray}{0} \& 2	\& 1 \& 0  \& \color{gray}{0}  \\
+		\color{gray}{0} \& \color{gray}{0}	\& \color{gray}{0} \& 0	\& 2 \& 1  \& \color{gray}{0} \\
+		\color{gray}{0} \& \color{gray}{0}	\& \color{gray}{0} \& 0	\& 0 \& 2  \& \color{gray}{0} \\
+		\color{gray}{0} \& \color{gray}{0}	\& \color{gray}{0} \& \color{gray}{0}\& \color{gray}{0} \& \color{gray}{0} \& 2 \\
+	};
+	\draw (M-1-1.north west) rectangle (M-3-3.south east);
+	\draw (M-3-3.south east) rectangle (M-6-6.south east);
+	\draw (M-6-6.south east) rectangle (M-7-7.south east);
+}
+\tikz[baseline]{%
+	\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+		2 \& 1	\& 0 \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0}  \\
+		0 \& 2	\& 1 \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0}  \\
+		0 \& 0	\& 1 \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0}  \\
+		\color{gray}{0} \& \color{gray}{0}	\& \color{gray}{0} \& 2	\& 1 \& \color{gray}{0}  \& \color{gray}{0}  \\
+		\color{gray}{0} \& \color{gray}{0}	\& \color{gray}{0} \& 0	\& 2 \& \color{gray}{0}  \& \color{gray}{0} \\
+		\color{gray}{0} \& \color{gray}{0}	\& \color{gray}{0} \& 0	\& 0 \& 2  \& 1 \\
+		\color{gray}{0} \& \color{gray}{0}	\& \color{gray}{0} \& \color{gray}{0}\& \color{gray}{0} \& 0 \& 2 \\
+	};
+	\draw (M-1-1.north west) rectangle (M-3-3.south east);
+	\draw (M-3-3.south east) rectangle (M-5-5.south east);
+	\draw (M-5-5.south east) rectangle (M-7-7.south east);
+}
+\end{equation*}
+Queste due matrici hanno forme di Jordan \textit{diverse}, ma hanno entrambe:
+\begin{equation*}
+	C_A=\left(t-2\right)^7\qquad m_A=\left(t-2\right)^3 \dim V_2=3
+\end{equation*}
+\vspace{-6mm}
+\end{observe}
+
 \subsection{Impratichiamoci! Forma canonica di Jordan.}
 \begin{tips}\textsc{Alcune nozioni utili per il calcolo della base e della forma di Jordan.}
 	\begin{enumerate}
@@ -683,13 +726,17 @@ Viceversa, se $A$ è diagonalizzabile, tutti i blocchi sono di dimensione $1$ e 
 		\begin{equation}
 			\dim S_i-\dim S_{i+1}=\#\text{ blocchi di Jordan di dimensione }i
 		\end{equation}
-		\item L'autospazio $V_{\lambda}=S_1$ ha come base tutti i vettori aggiunti a partire dalla base di $S_p$, compresi i vettori di quest'ultima base; poiché per ognuno di questi vettori abbiamo, per costruzione, un blocco di Jordan relativo a $\lambda$, il numero di questi vettori corrisponde al numero totale di blocchi di Jordan, cioè \textit{la molteplicità geometrica di} $\lambda$: 
+		\item L'autospazio $V_{\lambda}=S_1$ ha come base tutti i vettori aggiunti a partire dalla base di $S_p$, compresi i vettori di quest'ultima base; poiché per ognuno di questi vettori abbiamo, per costruzione, un blocco di Jordan relativo a $\lambda$, il numero di questi vettori corrisponde al \textit{numero totale di blocchi di Jordan, cioè la molteplicità geometrica di} $\lambda$: 
 		\begin{equation}
 		\dim V_{\lambda}=\#\text{ blocchi di Jordan relativi a }\lambda
 		\end{equation}
 		\item Per l'osservazione a pag. \pageref{molteplicitàalgebrichedijordan}:
 		\begin{equation}
 			m_\lambda=\sum\text{dimensioni dei blocchi relativi a }\lambda
+		\end{equation}
+		\item Per l'osservazione a pag. \pageref{polinomiominimojordan}, l'\textit{esponente di} $t-\lambda$ \textit{nel polinomio minimo} $m_A$ \textit{è la dimensione del blocco più grande relativo a} $\lambda$.
+		\begin{equation}
+		m_\lambda=\sum\text{dimensioni dei blocchi relativi a }\lambda
 		\end{equation}
 		\item \textit{Se conosco già le dimensioni dei blocchi di Jordan} di $\lambda$:
 		\begin{equation*}
@@ -713,7 +760,7 @@ Viceversa, se $A$ è diagonalizzabile, tutti i blocchi sono di dimensione $1$ e 
 		\item Se so che per $\lambda$ tutti i blocchi di Jordan hanno la stessa dimensione $p$, \textit{possiamo calcolare direttamente} $S_p=\Im\left(A-\lambda I\right)^{p-1}\cap V_{\lambda}$ (dato che $S_p=S_{p-1}=\ldots=S_1$ e dunque non ci sono blocchi di altre dimensioni).
 	\end{enumerate}
 \end{tips}
-\begin{example}
+\begin{exercise}
 Sia data la matrice:
 \begin{equation*}
 	A= \left(
@@ -724,6 +771,9 @@ Sia data la matrice:
 	\end{array}
 	\right)
 \end{equation*}
+Calcolare la sua forma di Jordan e la base per cui essa è in tale forma.
+\end{exercise}
+\begin{solution}
 Il suo polinomio caratteristico è $C_A\left(t\right)=\left(t-2\right)^3$ e $\lambda=2$ è l'unico autovalore, con molteplicità algebrica $m_{\lambda}=3$. Studiamo l'autospazio:
 \begin{equation*}
 	A-2I= \left(
@@ -787,4 +837,344 @@ Possiamo scegliere ad esempio $\left(-1,\ 1,\ 0\right)$, ottenendo allo stesso t
 \begin{equation*}
 \left\{\left(6,\ 0,\ 9\right), \ \left(1,\ 0,\ 0\right), \ \left(-1,\ 1,\ 0\right)\right\}
 \end{equation*}
+\end{solution}
+\section{Funzione esponenziale nei complessi}
+La \textbf{funzione esponenziale} $e^x$ ($x\in \realset$) si può \textit{caratterizzare} in diversi modi; sia con il concetto di limite:
+\begin{equation*}
+	e^x=\lim_{n \to +\infty}\left(1+\frac{x}{n}\right)^n
+\end{equation*}
+Oppure come il valore della serie di potenze:
+\begin{equation*}
+	e^x=\sum_{n=0}^{+\infty}\frac{x^n}{n!}=1+x+\frac{x^2}{2}+\frac{x^3}{3!}+\ldots
+\end{equation*}
+Vogliamo ora definire una funzione analoga anche in campo complesso.
+\begin{define}
+Sia $z\in\complexset$. Definiamo come \textbf{funzione esponenziale sui numeri complessi}\index{funzione!esponeziale sui numeri complessi} la seguente serie:
+\begin{equation}
+	\exp\left(z\right)=e^z\coloneqq\sum_{n=0}^{+\infty}\frac{z^n}{n!}
+\end{equation}
+Essa è una funzione continua
+\end{define}
+\begin{demonstration}
+	Dimostriamo che sia ben definita la funzione mostrando la convergenza della serie. In realtà possiamo mostrare che la serie \textbf{converge assolutamente}\index{convergenza!assoluta}\footnote{Si può parlare di convergenza assoluta in spazi topologici dotati di una \textit{norma}; si ha che la convergenza implica la convergenza ‘‘classica'' se lo spazio è completo rispetto alla metrica indotta dalla norma.} Dunque, con i complessi consideriamo il \textit{modulo} $\lvert\cdot\rvert$:
+	\begin{equation}
+		\lvert \frac{z^n}{n!}\rvert =\frac{\lvert z \rvert^n}{n!}\in\realset\implies\sum_{n=0}^{+\infty}\frac{\lvert z \rvert^n}{n!}
+	\end{equation}
+Questa serie nei reali converge ad $e^{\lvert z\rvert}$: la serie pertanto converge assolutamente e dunque la funzione è ben definita; se $z\in \realset$ allora l'esponenziale è in tutto e per tutto quello noto nei reali.\\
+Studiamo ora la continuità, dimostrando che \textbf{converga uniformemente}\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{convergenzauniforme}, si può trovare la definizione della convergenza uniforme e alcune osservazioni a riguardo.} in qualunque sottoinsieme limitato, utilizzando l'M-test di Weierstrass. Se $S\subseteq \complexset$ è un sottoinsieme limitato, sicuramente esso è sottoinsieme di un disco nel piano complesso di centro l'origine e raggio $\epsilon$. Dunque, $\exists\epsilon\in\realset\ \colon \lvert z\rvert<\epsilon\ \forall z\in S$. Allora varrà:
+\begin{equation*}
+\lvert\frac{z^n}{n!}\rvert=\frac{\lvert z\rvert^n}{n!}\leq\frac{a^n}{n!}
+\end{equation*}
+Passando alle serie:
+\begin{equation*}
+\sum_{n=0}^{+\infty}\frac{a^n}{n!}<\infty
+\end{equation*}
+Allora la funzione esponenziale converge uniformemente su $S$, dunque $\funz{e^z}{\complexset}{\complexset}$ è continua.
+\end{demonstration}
+\begin{proposition}\label{proposizioneeWeZ=eW+Z}
+L'esponenziale in campo complesso gode delle seguenti proprietà:
+\begin{enumerate}
+	\item $e^z\cdot e^w=e^{z+w}$.
+	\item $e^z\neq 0\ \forall z\in \complexset$.
+	\item Se $t\in\realset$, si ha $e^{it}=\cos t+i\sin t$.
+\end{enumerate}
+\end{proposition}
+\begin{demonstration}~{}
+	\begin{enumerate}[label=\Roman*]
+		\item Dati $z,\ w\in\complexset$:
+		\begin{equation*}
+			\begin{array}{ll}
+				\displaystyle e^z\cdot e^w&\displaystyle =\sum_{k=0}^{\infty}\frac{z^k}{k!}\cdot\sum_{m=0}^{\infty}\frac{w^m}{m!}\stackrel{\footnote{Il prodotto è lecito in quanto si ha la convergenza assoluta della serie.}}{=}\underbrace{\sum_{n=0}^{\infty}}_{n=k+m}\sum_{k=0}^{n}\frac{z^k}{k!}\frac{w^{n-k}}{\left(n-k\right)!}=\\
+				&\displaystyle =\sum_{n=0}^{+\infty}\underbrace{\frac{1}{n!}\sum_{k=0}^{n}{n \choose k}z^kw^{n-k}}_{\text{Binomio di Newton}}=\sum_{n=0}^{+\infty}\frac{1}{n!}\left(z+w\right)^n=e^{z+w}\\
+				&\displaystyle \implies  e^z\cdot e^w=e^{z+w}
+			\end{array}
+		\end{equation*}
+	\item $e^z\cdot e^{-z}=e^{z-z}=e^0=1$.
+	\item Si ha:
+	\begin{equation*}
+		\begin{array}{ll}
+			\displaystyle e^{it}=&\displaystyle=\sum_{n=0}^{+\infty}\frac{\left(it\right)^n}{n!}=\sum_{m=0}^{+\infty}\frac{\left(it\right)^{2m}}{\left(2m\right)!}+\sum_{m=0}^{+\infty}\frac{\left(it\right)^{2m+1}}{\left(2m+1\right)!}=\\
+			&\displaystyle=\sum_{m=0}^{+\infty}\frac{\left(-1\right)^m\left(t\right)^{2m}}{\left(2m\right)!}+i\sum_{m=0}^{+\infty}\frac{\left(-1\right)^m\left(t\right)^{2m+1}}{\left(2m+1\right)!}=\cos t + i\sin t
+		\end{array}
+	\end{equation*}
+	\end{enumerate}
+\end{demonstration}
+\begin{observe}~{}
+	\begin{itemize}
+		\item $e^z=e^{x+iy}=e^x\cdot e^{iy}=e^x\left(\cos y+i\sin y\right)\implies \lvert e^z\rvert = e^x = e^{\Re z}$\\
+		L'argomento di $e^z$ è, per costruzione, $y=\Im z$ % immagine complessa
+		\item $e^{2\pi i}=1$, mentre $e^{z+2\pi i}=e^z\cdot e^{2\pi i}=e^{z}$
+		\item $e^z\neq 0$, dunque $\forall w\in \complexset\setminus \left\{0\right\}\ \exists z\in \complexset\ \colon e^z=w$, cioè $\funz{e^z}{\complexset}{\complexset\setminus\left\{0\right\}}$. Infatti, se $w=x+iy$ si può scrivere in forma polare come:
+		\begin{equation*}
+			w=\lvert w\rvert\left(\cos y+i\sin y\right)
+		\end{equation*}
+		Notiamo che:
+		\begin{itemize}
+			\item $w=0\iff x=0 \wedge y=0$, dunque anche il modulo è zero se e solo se $x$ e $y$ sono entrambi zero.
+			\item $\lvert w\rvert=\sqrt{x^2+y^2}\in\realset^{+}$, dunque per suriettività dell'esponenziale reale $\exists a\in\realset$ tale per cui $e^a=\sqrt{x^2+y^2}$.
+			\item L'argomento di $w$ è $\arg\left(w\right)=y$
+			\item $\left(\cos y+i\sin y\right)=e^{iy}$.
+		\end{itemize}
+		Allora, esiste $z=a+iy$ tale che:
+		\begin{equation*}
+			w=x+iy=\lvert w\rvert\left(\cos y+i\sin y\right)=e^a\left(\cos y+i\sin y\right)=e^{a+iy}=e^z
+		\end{equation*}
+	\end{itemize}
+\end{observe}
+\subsection{Esponenziale di una matrice quadrata complessa}
+\begin{define}
+Sia $A\in\complexset^{n,\ n}$. Definiamo l'\textbf{esponenziale di una matrice quadrata complessa} come:
+\begin{equation}
+	e^A\coloneqq \sum_{k=0}^{+\infty}\frac{A^k}{k!}=\lim_{n \to +\infty}\sum_{k=0}^{n}\underbrace{\frac{A^k}{k!}}_{\text{matrice }n\times n}\qquad e^A\in\complexset^{n,\ n}
+\end{equation}
+\end{define}
+Questa serie di matrici converge se e solo se convergono \textit{tutte} le serie che danno origine ai suoi $n^2$ elementi. Per dimostrare la convergenza, usiamo una norma particolare.
+\begin{define}
+La \textbf{norma infinito di una matrice}\index{norma!infinito di una matrice} $A\in C^{n,\ n}$ è:
+\begin{equation}
+\labs A\rabs_{\infty}=\max_{i,\ j=1,\ \ldots,\ n}\lvert a_{ij}\rvert
+\end{equation}
+\vspace{-6mm}
+\end{define}
+\begin{lemming}\textsc{Proprietà della norma infinito di una matrice.}\\
+	Date le matrici $n\times n$ $A$ e $B$:
+	\begin{enumerate}
+		\item $\labs A+B \rabs_{\infty}\leq \labs A\rabs_{\infty}+\labs B\rabs_{\infty}$.
+		\item $\labs A\cdot B\rabs_{\infty}\leq n\labs A\rabs_{\infty}\labs B\rabs_{\infty}$.
+	\end{enumerate}
+\end{lemming}
+\begin{demonstration}~{}
+	\begin{enumerate}[label=\Roman*]
+		\item $\forall i,\ j$ $\lvert a_{ij}+b_{ij}\rvert\leq \lvert a_{ij}\rvert + \lvert b_{ij}\rvert\leq \labs A\rabs_{\infty}+\labs B\rabs_{\infty}$.
+		Per l'arbitrarietà di $i$ e $j$, vale la tesi.
+		\item Sia $C=AB$. Allora:
+		\begin{equation*}
+			\begin{array}{rl}
+				\displaystyle c_{ij}&\displaystyle=\sum_{k=1}^{n}a_{ik}b_{kj}\\
+				\displaystyle\implies \lvert c_{ij}\rvert &\displaystyle\leq \sum_{k=1}^{n}\lvert a_{ik}\rvert \lvert b_{kj}\rvert\leq n\labs A \rabs_{\infty}\labs B \rabs_{\infty}\quad \forall i,\ j
+				\implies \labs C \rabs_{\infty}\leq n\labs A \rabs_{\infty}\labs B \rabs_{\infty}   
+			\end{array}
+		\end{equation*}
+	\end{enumerate}
+	\vspace{-6mm}
+\end{demonstration}
+\begin{demonstration}
+	Dimostriamo che l'esponenziale di una matrice complessa sia ben definito. Consideriamo la serie:
+	\begin{equation*}
+		\sum_{k=0}^{+\infty}\frac{A^k}{k!}
+	\end{equation*}
+Si ha:
+\begin{equation*}
+	\begin{array}{l}
+			\labs A^2\rabs_{\infty}\leq n\labs A\rabs^2_{\infty}\\
+			\labs A^3\rabs_{\infty}\leq n\labs A^2\cdot A\rabs_{\infty}\leq n\labs A\rabs^2_{\infty}\labs A\rabs_{\infty}\leq n^2\labs A\rabs^3_{\infty}\\
+	\end{array}
+\end{equation*}
+Per induzione in questo modo otteniamo:
+\begin{gather*}
+	\begin{array}{rl}
+		\displaystyle\labs A^k\rabs_{\infty}&\leq n^{k-1}\labs A\rabs^k_{\infty}\\
+	\end{array}\\
+	\begin{array}{ll}
+		\displaystyle\implies \labs \sum_{k=0}^{N}\frac{A^k}{k!}\rabs_{\infty}&\displaystyle\leq\sum_{k=0}^{N}\frac{\labs A^k\rabs_{\infty}}{k!}\leq\sum_{k=0}^{N}\frac{n^{k-1}\labs A\rabs^k_{\infty}}{k!}=\\
+		&\displaystyle=\frac{1}{n}\sum_{k=0}^{N}\frac{\left(n\labs A\rabs_{\infty}\right)^k}{k!}\stackrel{\longrightarrow}{N\to \infty} \frac{1}{n}\sum_{k=0}^{\infty}\frac{\left(n\labs A\rabs_{\infty}\right)^k}{k!}=\frac{1}{n}e^{n\labs A\rabs_{\infty}}
+	\end{array}
+\end{gather*}
+Allora $\displaystyle \sum_{k=0}^{\infty}\frac{A^k}{k!}$ converge assolutamente, pertanto $e^A$ è ben definito.
+\end{demonstration}
+\begin{attention}
+	In generale si ha $e^{A+B}\neq e^A\cdot e^B$! Infatti, il prodotto di matrici non è \textit{commutativo}, pertanto in generale non vale la formula del \textit{binomio di Newton}, necessaria nella dimostrazione della proprietà di cui sopra.
+\end{attention}
+\begin{example}
+	Siano $A= \left(
+		\begin{array}{cc}
+			1 & 0 \\
+			0 & 2
+		\end{array}
+		\right)$ e $B= \left(
+		\begin{array}{cc}
+			0 & 1 \\
+			0 & 0
+		\end{array}
+		\right)$. \\
+$A$ è una \textit{matrice diagonale}, dunque $e^A$ è facile da calcolare; infatti, presa una qualunque matrice diagonale $D$:
+\begin{equation*}
+\displaystyle	D=\left(\begin{array}{ccc}
+		d_1 & \dots & 0 \\
+		\vdots & \ddots & \vdots \\
+		0 & \dots & d_n
+	\end{array}\right)
+\implies D^k=\left(\begin{array}{ccc}
+	d_1^k & \dots & 0 \\
+	\vdots & \ddots & \vdots \\
+	0 & \dots & d_n^k
+\end{array}\right)
+\end{equation*}
+\begin{equation}
+	 e^D=\left(\begin{array}{ccc}\displaystyle
+		\sum_{k=0}^{+\infty}\frac{d_1^k}{k!} & \dots & 0 \\
+		\vdots & \ddots & \vdots \\
+		0 & \dots &\displaystyle \sum_{k=0}^{+\infty}\frac{d_n^k}{k!}
+	\end{array}\right)=\left(\begin{array}{ccc}
+	e^{d_1} & \dots & 0 \\
+	\vdots & \ddots & \vdots \\
+	0 & \dots & e^{d_n}
+\end{array}\right)
+\end{equation}
+Dunque, nel nostro caso:
+\begin{equation*}
+	A= \left(
+	\begin{array}{cc}
+		1 & 0 \\
+		0 & 2
+	\end{array}
+	\right)\implies e^A=\left(
+	\begin{array}{cc}
+		e & 0 \\
+		0 & e^2
+	\end{array}
+	\right)
+\end{equation*}
+Invece, $B$ è \textit{nilpotente} di ordine due, dato che $B^2=O$. Allora, scrivendo la serie che caratterizza $e^B$, tutti i termini successivi al secondo sono nulli! Pertanto:
+\begin{equation*}
+	B= \left(
+	\begin{array}{cc}
+		0 & 1 \\
+		0 & 0
+	\end{array}
+	\right)\implies e^B=\sum_{k=0}^{+\infty}\frac{B^k}{k!}=I+B=\left(
+	\begin{array}{cc}
+		1 & 1 \\
+		0 & 1
+	\end{array}
+	\right)
+\end{equation*}
+Allora:
+\begin{equation*}
+	e^A\cdot e^B=\left(
+	\begin{array}{cc}
+		e & e \\
+		0 & e^2
+	\end{array}
+	\right)
+\end{equation*}
+D'altro canto, abbiamo che:
+\begin{equation*}
+	A+B=\left(
+	\begin{array}{cc}
+		1 & 1 \\
+		0 & 2
+	\end{array}
+	\right)
+\end{equation*}
+Verificheremo successivamente (pag. \ref{esponenzialechenoncommuta}), quando mostreremo come calcolare in generale l'esponenziale di una matrice, che $e^{A+B}\neq e^A\cdot e^B$.
 \end{example}
+\begin{lemming}
+	Se $A,\ B\in\complexset^{n,\ n}$ \textit{commutano}, cioè $AB=BA$, allora:
+	\begin{equation}
+		e^{A+B}=e^A\cdot e^B
+	\end{equation}
+\vspace{-6mm}
+\end{lemming}
+\begin{demonstration}
+	La dimostrazione è assolutamente analoga a quella vista per dimostrare la proprietà parallela dell'esponenziale dei numeri complessi (lemma \ref{proposizioneeWeZ=eW+Z}, pag. \pageref{proposizioneeWeZ=eW+Z}), dato che, se commutano, vale il \textit{binomio di Newton matriciale}:
+	\begin{equation}
+		\left(A+B\right)^k=\sum_{i=0}^{k}{k \choose i}A^i\cdot B^{k-1}
+	\end{equation}
+\vspace{-4mm}
+\end{demonstration}
+\begin{observe}
+	\textit{Matrici simili hanno esponenziali simili}. Più precisamente, se $A=P^{-1}BP$ per una opportuna matrice ortogonale $P$, allora $e^A=P^{-1}e^BP$, cioè $e^A$ e $e^B$ sono simili tramite la stessa matrice $P$ di $A$ e $B$.
+\end{observe}
+\begin{demonstration}
+Si ha:
+\begin{equation*}
+	\begin{array}{l}
+A=P^{-1}BP\\
+A^2=\left(P^{-1}BP\right)\left(P^{-1}BP\right)=P^{-1}B^2P
+	\end{array}
+\end{equation*}
+Per induzione in questo modo otteniamo:
+\begin{equation*}
+	\displaystyle \begin{array}{rl}
+		A^k&=P^{-1}B^kP\\
+		\displaystyle\implies e^A&\displaystyle=\sum_{k=0}^{N}\frac{A^k}{k!}=\sum_{k=0}^{N}\frac{P^{-1}B^kP}{k!}=P^{-1}\sum_{k=0}^{N}\frac{B^k}{k!}P=P^{-1}e^BP
+	\end{array}
+\end{equation*}
+\end{demonstration}
+\begin{theorema}
+	Si ha:
+	\begin{equation}
+		\det\left(e^A\right)=e^{\tr\left(A\right)}
+	\end{equation}
+In particolare, $e^A$ è sempre una matrice invertibile.
+\end{theorema}
+\begin{demonstration}
+	Una qualunque matrice $A$ complessa è simile alla sua forma di Jordan $J$. La traccia di matrici simili, per commutatività interna della traccia\footnote{Per ogni matrice $A$ di dimensioni $n\times m$ e $B$ di dimensioni $m\times n$ si ha $\tr\left(AB\right)=\tr\left(BA\right)$.}, è uguale:
+	\begin{equation*}
+		\tr\left(A\right)=\tr\left(J\right)=\lambda_1+\ldots+\lambda_n
+	\end{equation*}
+Per la dimostrazione precedente, $e^A$ è simile a $e^J$; in particolare, i determinanti sono uguali:
+\begin{equation*}
+	\det\left(e^A\right)=\det\left(e^J\right)
+\end{equation*}
+Allora è sufficiente dimostrare che $\det\left(e^J\right)=e^{\lambda_1+\ldots+\lambda_n}=e^{\lambda_1}\ldots e^{\lambda_n}$. $J$ è una matrice triangolare superiore. Le osservazioni seguenti sono vere anche per una qualsiasi matrice triangolare superiore:
+\begin{equation*}
+	\displaystyle J=\left(\begin{array}{ccc}
+		\lambda_1 & \dots & \ast \\
+		\vdots & \ddots & \vdots \\
+		0 & \dots & \lambda_n
+	\end{array}\right)
+	 \implies \forall k\geq 1\ J^k=\left(\begin{array}{ccc}
+		\lambda_1^k & \dots & \ast \\
+		\vdots & \ddots & \vdots \\
+		0 & \dots & \lambda_n^k
+	\end{array}\right)
+\end{equation*}
+\begin{equation}
+	 e^J=\left(\begin{array}{ccc}\displaystyle
+		\sum_{k=0}^{+\infty}\frac{\lambda_1^k}{k!} & \dots & \ast \\
+		\vdots & \ddots & \vdots \\
+		0 & \dots & \displaystyle \sum_{k=0}^{+\infty}\frac{\lambda_n^k}{k!}
+	\end{array}\right)=\left(\begin{array}{ccc}
+		e^{\lambda_1} & \dots & \ast \\
+		\vdots & \ddots & \vdots \\
+		0 & \dots & e^{\lambda_n}
+	\end{array}\right)
+\end{equation}
+Il determinante di una matrice triangolare è il prodotto sulle colonne, dunque vale $\det\left(e^J\right)=e^{\lambda_1}\ldots e^{\lambda_n}$ come cercato. In particolare, questo prodotto, in quanto \textit{prodotto di esponenziali}, \textit{non è mai null}o e dunque il determinante è \textit{diverso da zero}.
+\end{demonstration}
+\subsection{Calcolo dell'esponenziale di una matrice tramite la forma di Jordan}
+Abbiamo già calcolato alcuni esponenziali di matrici in diverse delle precedenti dimostrazioni, sfruttando tuttavia sempre matrici particolari:
+\begin{itemize}
+	\item \textbf{Matrice diagonale}: 
+\begin{equation}
+D=\left(\begin{array}{ccc}
+d_1 & \dots & 0 \\
+\vdots & \ddots & \vdots \\
+0 & \dots & d_n
+\end{array}\right)\implies
+e^D=\left(\begin{array}{ccc}
+e^{d_1} & \dots & 0 \\
+\vdots & \ddots & \vdots \\
+0 & \dots & e^{d_n}
+\end{array}\right)
+\end{equation}
+	\item \textbf{Matrice nilpotente}: se la matrice è nilpotente di ordine $k$ ($B^k=O$) si calcolano i primi $k$ termini della serie caratterizzante $e^B$:
+	\begin{equation}
+		e^B=I+B+\ldots + B^{k-1}
+	\end{equation}
+\end{itemize}
+In generale, tuttavia, come possiamo calcolare l'esponenziale di una generica matrice $A$? A questo proposito ci viene in aiuto la tanto faticata forma di Jordan. Il seguente processo costruttivo ci permette di calcolare, in modo (relativamente) facile, un qualsiasi esponenziale $e^A$.
+\begin{enumerate}
+	\item $A$ \textbf{è simile alla sua forma di Jordan} $J$:
+	\begin{equation*}
+		A=PJP^{-1}
+	\end{equation*}
+	Con $P$ è la matrice del cambiamento di base che presenta, nelle colonne, la base che mette $A$ in forma di Jordan. Sappiamo allora che per la stessa matrice $P$ gli esponenziali sono simili: 
+	\begin{equation*}
+		e^A=Pe^JP^{-1}
+	\end{equation*}
+	Allora è sufficiente calcolare $P$, $J$ e $e^J$.
+	\item $J$ è una matrice a blocchi:
+\end{enumerate}
