@@ -700,7 +700,7 @@ La forma di Jordan determina il polinomio minimo e il polinomio caratteristico, 
 		0 \& 0	\& 1 \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0}  \\
 		\color{gray}{0} \& \color{gray}{0}	\& \color{gray}{0} \& 2	\& 1 \& \color{gray}{0}  \& \color{gray}{0}  \\
 		\color{gray}{0} \& \color{gray}{0}	\& \color{gray}{0} \& 0	\& 2 \& \color{gray}{0}  \& \color{gray}{0} \\
-		\color{gray}{0} \& \color{gray}{0}	\& \color{gray}{0} \& 0	\& 0 \& 2  \& 1 \\
+		\color{gray}{0} \& \color{gray}{0}	\& \color{gray}{0} \& \color{gray}{0}	\& \color{gray}{0} \& 2  \& 1 \\
 		\color{gray}{0} \& \color{gray}{0}	\& \color{gray}{0} \& \color{gray}{0}\& \color{gray}{0} \& 0 \& 2 \\
 	};
 	\draw (M-1-1.north west) rectangle (M-3-3.south east);
@@ -714,8 +714,7 @@ Queste due matrici hanno forme di Jordan \textit{diverse}, ma hanno entrambe:
 \end{equation*}
 \vspace{-6mm}
 \end{observe}
-
-\subsection{Impratichiamoci! Forma canonica di Jordan.}
+\subsection{Impratichiamoci! Forma canonica di Jordan}
 \begin{tips}\textsc{Alcune nozioni utili per il calcolo della base e della forma di Jordan.}
 	\begin{enumerate}
 		\item Per calcolare l'autospazio generalizzato $\tilde{V}_{\lambda}=\ker\left(A-\lambda I\right)^{m_{\lambda}}$ è sufficiente calcolare, \textit{se conosco il massimo ordine} $p$ \textit{dei blocchi di Jordan relativi a }$\lambda$:
@@ -740,7 +739,7 @@ Queste due matrici hanno forme di Jordan \textit{diverse}, ma hanno entrambe:
 		\end{equation}
 		\item \textit{Se conosco già le dimensioni dei blocchi di Jordan} di $\lambda$:
 		\begin{equation*}
-			a_1<\ldots< a_r=p
+			a_1\leq\ldots\leq a_r=p
 		\end{equation*}
 		\textit{mi basta calcolare i sottospazi:}
 		\begin{equation*}
@@ -757,7 +756,7 @@ Queste due matrici hanno forme di Jordan \textit{diverse}, ma hanno entrambe:
 			\end{array}
 		\end{equation*}	
 		\textit{Pertanto, nel caso} $S_p$ \textit{non c'è bisogno di intersecare con} $V_{\lambda}$! Questo tuttavia \textit{non} si applica agli altri $S_i$, dato che \textit{non} vale la relazione $\Im\left(A-\lambda I\right)^{i}\subseteq \ker\left(A-\lambda I\right)$.
-		\item Se so che per $\lambda$ tutti i blocchi di Jordan hanno la stessa dimensione $p$, \textit{possiamo calcolare direttamente} $S_p=\Im\left(A-\lambda I\right)^{p-1}\cap V_{\lambda}$ (dato che $S_p=S_{p-1}=\ldots=S_1$ e dunque non ci sono blocchi di altre dimensioni).
+		\item Se so che per $\lambda$ tutti i blocchi di Jordan hanno la stessa dimensione $p$, \textit{possiamo calcolare direttamente} $S_p=\Im\left(A-\lambda I\right)^{p-1}\cap V_{\lambda}$. %(dato che $S_p=S_{p-1}=\ldots=S_1$ e dunque non ci sono blocchi di altre dimensioni)?
 	\end{enumerate}
 \end{tips}
 \begin{exercise}
@@ -837,6 +836,72 @@ Possiamo scegliere ad esempio $\left(-1,\ 1,\ 0\right)$, ottenendo allo stesso t
 \begin{equation*}
 \left\{\left(6,\ 0,\ 9\right), \ \left(1,\ 0,\ 0\right), \ \left(-1,\ 1,\ 0\right)\right\}
 \end{equation*}
+\vspace{-6mm}
+\end{solution}
+\begin{exercise}\textsc{Esercizio 4, scritto Luglio 2018}\\
+	Sia $A$ matrice quadrata complessa $6\times 6$. Dire quali delle seguenti affermazioni possono verificarsi, motivando la risposta.
+	\begin{enumerate}
+		\item Il polinomio minimo di $A$ è $\left(t-2\right)^5$, l'autospazio relativo a $2$ ha dimensione $3$.
+		\item Il polinomio minimo di $A$ è $\left(t-2\right)\left(t-3\right)^3$, l'autospazio relativo a $2$ ha dimensione $3$.
+		\item $A$ ha polinomio caratteristico è $\left(t-2\right)^6$ e $A^2-A-I=O$.
+		\item $A^2-A-I=O$ e $A$ ha autovalori \textit{non} reali.
+	\end{enumerate}
+\end{exercise}
+\begin{solution}~{}
+\begin{enumerate}[label=\Roman*]
+\item $A$ ha un unico autovalore $2$, di \textit{molteplicità algebrica} $6$, dunque il \textit{più grande} blocco di Jordan nella forma di Jordan di $A$ ha dimensione $5$; poiché la dimensione dell'autospazio relativo a $2$ è la molteplicità geometrica, segue che il numero di blocchi relativi a $2$ sono $3$.\\
+\textit{Non si può dunque verificare}, in quanto con la condizione di avere un blocco di dimensione $5$ non ci può essere più di un solo blocco di dimensione $1$.
+\item  $A$ ha autovalori $2$ e $3$, di \textit{molteplicità algebrica} rispettivamente $1$ e $3$, dunque il \textit{più grande} blocco di Jordan nella forma di Jordan di $A$ riferito a $2$ ha dimensione $1$, mentre quello riferito a $3$ è $3$; poiché la dimensione dell'autospazio relativo a $2$ è la molteplicità geometrica, segue che il numero di blocchi relativi a $2$ sono $3$.
+\begin{equation*}
+	\tikz[baseline]{%
+		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+			2 	\&	 	\&   \&   \&   \&  	\\
+			  	\& 2	\&   \&   \&   \&  	\\
+			 	\&  	\& 2 \&   \&   \&  	\\
+			 	\&  	\&   \& 3 \& 1 \& 0	\\
+			 	\&  	\&   \& 0 \& 3 \& 1	\\
+				\&  	\&   \& 0 \& 0 \& 3	\\ 	
+		};
+		\draw (M-1-1.north west) rectangle (M-1-1.south east);
+		\draw (M-1-1.south east) rectangle (M-2-2.south east);
+		\draw (M-2-2.south east) rectangle (M-3-3.south east);
+		\draw (M-3-3.south east) rectangle (M-6-6.south east);
+	}
+\end{equation*}
+\item Si ha:
+\begin{itemize}
+	\item \parbox[t]{0.18\textwidth}{$f\left(t\right)=t^2-t-1$}\tikzmark{a}
+	\item \parbox[t]{0.18\textwidth}{$f\left(A\right)=O$}\tikzmark{b}
+\end{itemize}
+\brackitem{a}{b}[$f\left(t\right)\in I_A$]
+Tuttavia $f\left(t\right)=\left(t-\lambda_1\right)\left(t-\lambda_1\right)$. Dunque, consideriamo:
+\begin{equation*}
+	m_A\left(t\right)\mid f\left(t\right)\implies m_A\left(t\right)=\begin{cases}
+		t-\lambda_1\\
+		t-\lambda_2\\
+		f\left(t\right)
+	\end{cases}
+\end{equation*}
+Inoltre, $m_A\left(t\right)\mid C_A\left(t\right)=\left(t-2\right)^6$.\\
+Notiamo che:
+\begin{equation*}
+	f\left(2\right)=4-2-1=1\neq 0
+\end{equation*}
+Poiché $\lambda=2$ è l'unico autovalore di $A$ ed $f\in I_A$, si avrebbe $f\left(2\right)=0$, cioè abbiamo un assurdo.
+\item Si ha $f\left(t\right)=t^2-t-1\in I_A$:
+\begin{equation*}
+	\lambda_{1,\ 2}=\frac{1\pm \sqrt{1+4}}{2}=\frac{1\pm\sqrt{5}}{2}\text{ sono entrambe \textit{non} reali.}
+\end{equation*}
+Allora $f\left(t\right)=\left(t-\lambda_1\right)\left(t-\lambda_1\right)$ e, per le osservazioni del punto precedente:
+\begin{equation*}
+	m_A\left(t\right)=\begin{cases}
+		t-\lambda_1\\
+		t-\lambda_2\\
+		f\left(t\right)
+	\end{cases}
+\end{equation*}
+Allora, gli autovalori di $A$ possono essere solo $\frac{1\pm\sqrt{5}}{2}$, dunque $A$ non può avere autovalori complessi.
+\end{enumerate}
 \end{solution}
 \section{Funzione esponenziale nei complessi}
 La \textbf{funzione esponenziale} $e^x$ ($x\in \realset$) si può \textit{caratterizzare} in diversi modi; sia con il concetto di limite:
@@ -920,6 +985,7 @@ L'esponenziale in campo complesso gode delle seguenti proprietà:
 			w=x+iy=\lvert w\rvert\left(\cos y+i\sin y\right)=e^a\left(\cos y+i\sin y\right)=e^{a+iy}=e^z
 		\end{equation*}
 	\end{itemize}
+\vspace{-6mm}
 \end{observe}
 \subsection{Esponenziale di una matrice quadrata complessa}
 \begin{define}
@@ -985,7 +1051,7 @@ Allora $\displaystyle \sum_{k=0}^{\infty}\frac{A^k}{k!}$ converge assolutamente,
 \begin{attention}
 	In generale si ha $e^{A+B}\neq e^A\cdot e^B$! Infatti, il prodotto di matrici non è \textit{commutativo}, pertanto in generale non vale la formula del \textit{binomio di Newton}, necessaria nella dimostrazione della proprietà di cui sopra.
 \end{attention}
-\begin{example}
+\begin{example}\label{esponenzialechenoncommutap1}
 	Siano $A= \left(
 		\begin{array}{cc}
 			1 & 0 \\
@@ -1067,7 +1133,7 @@ D'altro canto, abbiamo che:
 	\end{array}
 	\right)
 \end{equation*}
-Verificheremo successivamente (pag. \ref{esponenzialechenoncommuta}), quando mostreremo come calcolare in generale l'esponenziale di una matrice, che $e^{A+B}\neq e^A\cdot e^B$.
+Verificheremo successivamente (pag. \pageref{esponenzialechenoncommutap2}), quando mostreremo come calcolare in generale l'esponenziale di una matrice, che $e^{A+B}\neq e^A\cdot e^B$.
 \end{example}
 \begin{lemming}
 	Se $A,\ B\in\complexset^{n,\ n}$ \textit{commutano}, cioè $AB=BA$, allora:
@@ -1162,12 +1228,12 @@ e^{d_1} & \dots & 0 \\
 \end{equation}
 	\item \textbf{Matrice nilpotente}: se la matrice è nilpotente di ordine $k$ ($B^k=O$) si calcolano i primi $k$ termini della serie caratterizzante $e^B$:
 	\begin{equation}
-		e^B=I+B+\ldots + B^{k-1}
+		e^B=\sum_{i=0}^{i-1}\frac{B^{i}}{i!}=I+B+\ldots + \frac{B^{k-1}}{\left(k-1\right)!}
 	\end{equation}
 \end{itemize}
 In generale, tuttavia, come possiamo calcolare l'esponenziale di una generica matrice $A$? A questo proposito ci viene in aiuto la tanto faticata forma di Jordan. Il seguente processo costruttivo ci permette di calcolare, in modo (relativamente) facile, un qualsiasi esponenziale $e^A$.
 \begin{enumerate}
-	\item $A$ \textbf{è simile alla sua forma di Jordan} $J$:
+	\item $A$ è simile alla sua forma di Jordan $J$:
 	\begin{equation*}
 		A=PJP^{-1}
 	\end{equation*}
@@ -1176,5 +1242,316 @@ In generale, tuttavia, come possiamo calcolare l'esponenziale di una generica ma
 		e^A=Pe^JP^{-1}
 	\end{equation*}
 	Allora è sufficiente calcolare $P$, $J$ e $e^J$.
-	\item $J$ è una matrice a blocchi:
+	\item $J$ è una matrice a blocchi diagonali, dunque la potenza $k$-esima è una matrice con le potenze $k$-esime dei blocchi sulla diagonale:
+	\begin{equation*}
+		J=\tikz[baseline]{%
+			\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+				\mathbf{B_1} 	\&	\dots	\& 0 	\\
+				\vdots 	\& \ldots	\& \vdots 	\\
+				0	\& \dots	\& \mathbf{B_r} 	\\
+			};
+			\draw (M-1-1.north west) rectangle (M-1-1.south east);
+			\draw (M-3-3.north west) rectangle (M-3-3.south east);
+		}
+	J^k=\tikz[baseline]{%
+		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+			\mathbf{B_1}^k 	\&	\dots	\& 0 	\\
+			\vdots 	\& \ldots	\& \vdots 	\\
+			0	\& \dots	\& \mathbf{B_r}^k	\\
+		};
+		\draw (M-1-1.north west) rectangle (M-1-1.south east);
+		\draw (M-3-3.north west) rectangle (M-3-3.south east);
+	}
+	\end{equation*}
+Dunque usando la definizione , segue che, l'esponenziale è anch'essa una matrice a blocchi:
+\begin{equation*}
+	e^J=\tikz[baseline]{%
+		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+			e^\mathbf{B_1} 	\&	\dots	\& 0 	\\
+			\vdots 	\& \ldots	\& \vdots 	\\
+			0	\& \dots	\& e^\mathbf{B_r}	\\
+		};
+		\draw (M-1-1.north west) rectangle (M-1-1.south east);
+		\draw (M-3-3.north west) rectangle (M-3-3.south east);
+	}
+\end{equation*}
+Dunque, per calcolare l'esponenziale di una matrice in forma di Jordan basta saper calcolare l'esponenziale di un blocco di Jordan.
+\item Notiamo che un blocco di ordine $p$ si può sempre scomporre in una matrice diagonale $\lambda I_p$ e una matrice nilpotente $N$ di soli $1$.
+	\begin{equation*}
+	\mathbf{B} = \left(
+	\begin{array}{ccccc}
+		\lambda	& 1 		&  0		& \ldots 	& 0 \\
+		0		& \lambda 	& \ddots	& 			& \vdots\\
+		\vdots	&  			& \ddots	& 1 		& 0\\
+		\vdots	& 			&   		& \lambda 	& 1\\
+		0		&  \dots  	&  \dots 	&  0 		& \lambda
+	\end{array}
+	\right) = \left(
+	\begin{array}{ccccc}
+		\lambda	& 0 		&  0		& \ldots 	& 0 \\
+		0		& \lambda 	& \ddots	& 			& \vdots\\
+		\vdots	&  			& \ddots	& 0 		& 0\\
+		\vdots	& 			&   		& \lambda 	& 0\\
+		0		&  \dots  	&  \dots 	&  0 		& \lambda
+	\end{array}
+	\right) + \left(
+	\begin{array}{ccccc}
+		0		& 1 		&  0		& \ldots 	& 0 \\
+		\vdots	& 0			& \ddots	& 			& \vdots\\
+				&  			& 0			&  1 		& 0\\
+		\vdots	& 			&   		&  0	 	& 1\\
+		0		&  \dots  	&  \dots 	&  0 		& 0
+	\end{array}
+	\right)=\lambda I_p+N
+\end{equation*}
+Poiché $N$ e $\lambda I_p$ commutano, vale:
+\begin{equation}
+e^\mathbf{B}=e^{\lambda I+N}=e^{\lambda I}e^N
+\end{equation}
+Dunque basta calcolare $e^{\lambda I}$ e $e^N$, ma sono due matrici di sappiamo già come calcolare l'esponenziale:
+\begin{itemize}
+	\item $e^{\lambda I}$ è una \textit{matrice diagonale}: 
+	\begin{equation}
+		e^{\lambda I}=\left(\begin{array}{ccc}
+			e^{\lambda} & \dots & 0 \\
+			\vdots & \ddots & \vdots \\
+			0 & \dots & e^{\lambda}
+		\end{array}\right)=e^{\lambda}I
+	\end{equation}
+	\item $e^N$ è una \textit{matrice nilpotente} di ordine $p$: 
+	\begin{equation}
+		e^N=\sum_{k=0}^{p-1}\frac{N^{k}}{k!}=I+N+\ldots + \frac{N^{p-1}}{\left(p-1\right)!}
+	\end{equation}
+\end{itemize}
 \end{enumerate}
+\begin{example}\label{esponenzialechenoncommutap2}
+Riprendiamo l'esempio di pagina \pageref{esponenzialechenoncommutap1}. Prendiamo $A=\left(\begin{array}{ccc}
+	1 & 0 \\
+	0 & 2 \\
+\end{array}\right)$, $B=\left(\begin{array}{ccc}
+0 & 1 \\
+0 & 0 \\
+\end{array}\right)$ e consideriamo $C=A+B=A=\left(\begin{array}{ccc}
+1 & 1 \\
+0 & 2 \\
+\end{array}\right)$.\\
+$C$ ha autovalori $1$ e $2$ ed è diagonalizzabile con $D=\left(\begin{array}{ccc}
+	1 & 0 \\
+	0 & 2 \\
+\end{array}\right)$; una base di una autovettori di $C$ è $\left(1,\ 0\right)$ e $\left(1,\ 1\right)$ e la matrice del cambiamento di basi è $P=\left(\begin{array}{ccc}
+1 & 1 \\
+0 & 1 \\
+\end{array}\right)$. Allora, considerata l'inversa $P^{-1}=\left(\begin{array}{ccc}
+1 & -1 \\
+0 & 1 \\
+\end{array}\right)$:
+\begin{equation*}
+	\begin{array}{ll}
+C=PDP^{-1}\implies& e^C=Pe^DP^{-1}=\left(\begin{array}{ccc}
+	1 & 1 \\
+	0 & 1 \\
+\end{array}\right)\left(\begin{array}{ccc}
+e & 0 \\
+0 & e^2 \\
+\end{array}\right)\left(\begin{array}{ccc}
+	1 & -1 \\
+	0 & 1 \\
+\end{array}\right)=\left(\begin{array}{ccc}
+e & -e+e^2 \\
+0 & e^2 \\
+\end{array}\right)\\
+& e^Ae^B=\left(\begin{array}{ccc}
+	e & 0 \\
+	0 & e^2 \\
+\end{array}\right)\left(I+B\right)=\left(\begin{array}{ccc}
+e & 0 \\
+0 & e^2 \\
+\end{array}\right)\left(\begin{array}{ccc}
+1 & 1 \\
+0 & 1 \\
+\end{array}\right)=\left(\begin{array}{ccc}
+e & e \\
+0 & e^2 \\
+\end{array}\right)\neq e^C
+\end{array}
+\end{equation*}
+\end{example}
+\subsection{Impratichiamoci! Funzione esponenziale nei complessi}
+\begin{exercise}\textsc{Esercizio 4, scritto Febbraio 2018}\\
+Sia $A =
+	e^{\lambda I}=\left(\begin{array}{ccc}
+		-3 & 4 \\
+		-1 & 1 \\
+	\end{array}\right)$. Calcolare $\exp\left(A\right)=e^A$
+\end{exercise}
+\begin{solution}
+Il polinomio minimo è $C_A\left(t\right)=\left(t+1\right)^2$, l'unico autovalore della matrice è $\lambda = -1$ con molteplicità $m_\lambda= 2$. Troviamo la forma di Jordan.
+\begin{equation*}
+	V_\lambda=\ker \left(A+I\right)=\ker\left(\begin{array}{ccc}
+		-2 & 4 \\
+		-1 & 2 \\
+	\end{array}\right)=\ker\left(\begin{array}{ccc}
+	1 & -2 \\
+	0 & 0 \\
+\end{array}\right)=\left\{\left(x,\ y\right)\mid x-2y=0\right\}=\left<\left(2,\ 1\right) \right>
+\end{equation*}
+Poiché $\dim V_{\lambda}=1$, segue che la forma di Jordan è un unico blocco di ordine $p=2$:
+\begin{equation*}
+	J=\left(\begin{array}{ccc}
+		-1 & 1 \\
+		0 & -1 \\
+	\end{array}\right)
+\end{equation*}
+Cerchiamo ora una matrice $P$, e dunque una base $\basis$, che mette $A$ in forma di Jordan ($A=PJP^{-1}$). Poichè abbiamo un unico autovalore, $\left(A-\lambda I\right)^2=O$ e $\Im \left(A-\lambda I\right)\subseteq \ker \left(A-\lambda I\right)$.\\ Studiamo $S_2=\ker\left(A+I\right)\cap \Im\left(A+I\right)^{p-1}=\Im \left(A+I\right)$; esso ha $\dim S_2=1$ e per trovarne una base basta prendere una colonna di $A+I$:
+\begin{equation*}
+v_2 = \left(2,\ 1\right)=
+\end{equation*}
+Per costruire $v_1$ è sufficiente prendere $\left(-1,\ 0\right)$:
+\begin{equation*}
+	\begin{array}{l}
+		v_2 = \left(2,\ 1\right) = \left(A+I\right)\left(-1,\ 0\right)\\
+		v_1 = \left(-1,\ 0\right)
+	\end{array}
+\end{equation*}
+Una base che mette $A$ in forma di Jordan è dunque $\basis=\left\{\left(2,\ 1\right),\ \left(-1,\ 0\right)\right\}$ e dunque abbiamo $P$:
+\begin{equation*}
+P=\left(\begin{array}{ccc}
+	2 & -1 \\
+	1 & 0 \\
+\end{array}\right)
+\end{equation*}
+L'inversa è, noto il determinante $\det P= 1$:
+\begin{equation*}
+P^{-1}=\left(\begin{array}{ccc}
+	0 & 1 \\
+	-1 & 2 \\
+\end{array}\right)
+\end{equation*}
+Ora calcoliamo $e^J$:
+\begin{equation*}
+J=\left(\begin{array}{ccc}
+	-1 & 1 \\
+	 0 & -1 \\
+\end{array}\right)=\left(\begin{array}{ccc}
+-1 & 0 \\
+0 & -1 \\
+\end{array}\right)+\left(\begin{array}{ccc}
+0 & 1 \\
+0 & 0 \\
+\end{array}\right)=-I+N
+\end{equation*}
+Dunque:
+\begin{equation*}
+	\begin{array}{rl}
+			e^J&=e^{-I+N}=e^{-I}e^N=e^{-1}I\left(I+N\right)=e^{-1}\left(\begin{array}{ccc}
+			1 & 1 \\
+			0 & 1 \\
+		\end{array}\right)\\
+		\implies e^A&=e^{-1}P\left(\begin{array}{ccc}
+			1 & 1 \\
+			0 & 1 \\
+		\end{array}\right)P^{-1}=e^{-1}\left(\begin{array}{ccc}
+		-1 & 4 \\
+		-1 & 3 \\
+	\end{array}\right)
+	\end{array}
+\end{equation*}
+Un metodo alternativo per calcolare la base $\basis$ che rende $A$ in forma di Jordan è il seguente. Nota la forma di Jordan $J$ consideriamo l'applicazione lineare $f$ associata ad essa rispetto alla base $\basis$ e l'applicazione $g=f+Id$; esse devono soddisfare:
+\begin{equation*}
+	\begin{cases}
+		f\left(v_1\right)=-v_1\\
+		f\left(v_2\right)=v_1-v_2\\
+	\end{cases}\quad
+	\begin{cases}
+	g\left(v_1\right)=0\\
+	g\left(v_2\right)=v_1\\
+\end{cases}
+\end{equation*}
+Cerchiamo dei vettori tali che:
+\begin{equation*}
+\begin{array}{l}
+	v_2\in\ker\left(A+I\right)^2\setminus\ker\left(A+I\right)\\
+	v_1\in\ker\left(A+I\right)\\
+\end{array}
+\end{equation*}
+Poichè $v_2\in\ker\left(A+I\right)^2=V$, basta prendere un vettore della base canonica di $V$, ad esempio $e_1=\left(1,\ 0,\ 0\right)$, che non appartenga a $\ker\left(A+I\right)$. Allora:
+\begin{equation*}
+	\begin{array}{l}
+		v_2\coloneqq e_1=\left(1,\ 0\right)\\
+		v_1=g\left(v_2\right)=\left(A+I\right)v_2=g\left(v_2\right)=\left(-2,\ -1\right)\neq 0\\
+	\end{array}
+\end{equation*}
+La matrice $P$ risulta:
+\begin{equation*}
+	P=\left(\begin{array}{ccc}
+		-2 & 1 \\
+		-1 & 0 \\
+	\end{array}\right)
+\end{equation*}
+Si verifica facilmente che usando questa matrice $P$ si arriva comunque allo stesso esponenziale visto prima.\\
+In questo problema si può anche evitare il calcolo della forma di Jordan. Infatti, notando che la matrice $B=A+I$ è nilpotente di ordine $2$, ovvero $B^2=O$, e commuta con $-I$. Allora possiamo calcolare $e^A$ in questo modo:
+\begin{equation*}
+	e^A=e^{B-I}=e^B\cdot e^{-I}=e^{-1}\left(I+B\right)=e^{-1}\left(\begin{array}{ccc}
+		-1 & 4 \\
+		-1 & 3 \\
+	\end{array}\right)
+\end{equation*}
+\vspace{-6mm}
+\end{solution}
+\section{Matrici reali e forma di Jordan}
+Abbiamo studiamo le forme di Jordan in $\complexset^{n,\ n}$, dato che abbiamo la sicurezza dell'esistenza di tutti gli autovalori e dunque anche della forma di Jordan. E se la matrice fosse a valori reali, possiamo parlare di forma di Jordan in $\realset^{n\, n}$?\\
+Dato che la forma di Jordan associata ad una matrice ha sulla diagonale gli autovalori di $A$ con molteplicità e al di fuori di essa o zero o uno, possiamo fare la seguente osservazione.
+\begin{observe}
+Sia $A\in\realset^{n\, n}$ e $J$ la forma di Jordan di $A$. Allora $J$ è \textit{reale} se e solo se gli autovalori di $A$ sono \textit{reali}.
+\end{observe}
+Supponiamo che $A$ abbia autovalori reali e $J$ sia la sua forma di Jordan. Allora $\exists P\in\gl\left(n,\ \complexset\right)$ tale che esse siano simili per $P$ in campo complesso: $A=PJP^{-1}$. In realtà, si può dimostrare come $A$ e $J$ siano simili come matrici reali, cioè $\exists Q\in\gl\left(n,\ \realset\right)$ tale che $A=QJQ^{-1}$
+\begin{theorema}
+Siano $A,\ B\in\realset{n\, n}$ tali che $\exists P\in\gl\left(n,\ \complexset\right)\ \colon A=PBP{-1}$. Allora $\exists Q\in\gl\left(n,\ \realset\right)\ \colon A=QBQ{-1}$.
+\end{theorema}
+\begin{demonstration}
+Innanzitutto, $A=PBP{-1}$ se e solo se $AP=PB$. Consideriamo le soluzioni $X$, matrice $n\times n$ a coefficienti reali, del sistema lineare omogeneo in $n^2$ equazioni in $n^2$ incognite.
+\begin{equation*}
+	AX=XB
+\end{equation*}
+Sia $W\subseteq \complexset^{n\, n}$ il sottospazio \textit{vettoriale} delle soluzioni (\textit{complesse}) del sistema. Sappiamo già che $P\in W$, dunque $W\ne\left\{O\right\}$.\\
+Sia allora $k=\dim W\geq 1$ e sia $C_1,\ \ldots,\ C_k\in\complexset^{k,\ k}$ una base di $W$. Esse sono matrici complesse, dunque possiamo scomporla nella sua parte reale e immaginaria.
+\begin{equation*}
+\forall j=1,\ \ldots,\ k\quad C_j=X_j+iY_j,\ X_j,\ Y_j\in\realset^{n,\ n}
+\end{equation*}
+Mostriamo che anche $X_j$ e $Y_j$ sono soluzioni del sistema. Dunque, presa $C_j$:
+\begin{equation*}
+	\begin{array}{ccc}
+		AC_j&=&C_jB\\
+		\shortparallel&&\shortparallel\\
+		A\left(X_j+iY_j\right)&&\left(X_j+iY_j\right)B\\
+		\shortparallel&&\shortparallel\\
+		AX_j+AY_j&&X_jB+iY_jB
+	\end{array}
+\end{equation*}
+Le matrici $AX_j,\ AY_j,\ X_jB$ e $Y_jB$ sono tutte in $\realset^{n,\ n}$. Due matrici complesse scomposte come in precedenza sono uguali se e solo se la parte reale e l'argomento sono uguali:
+\begin{gather*}
+	AX_j=X_jB\\
+	AY_j=Y_jB
+\end{gather*}
+Ma allora $X_j\, Y_j\in W\ \forall j$; poiché $C_1,\ ldots, C_k$ è una base di $W$, allora lo generano. Per costruzione $C_j=X_j+iY_j$, dunque anche $X_1,\ \ldots, X_k,\ Y_1,\ \ldots Y_k$ generano $W$ (come spazio vettoriale \textit{complesso}).\\
+Sappiamo sicuramente che $\left\{X_1,\ \ldots, X_k,\ Y_1,\ \ldots Y_k\right\}$ contiene una base di $W$, cioè $\exists D_1,\ \ldots,\ D_k$ base $\mathcal{D}$ di $W$ con $D_j\in\realset^{n,\ n}\ \forall j$.\\
+Dalle condizioni in cui ci siamo posti, la matrice $Q$ cercate deve soddisfare i seguenti requisiti:
+\begin{itemize}
+	\item $Q\in W$.
+	\item $Q\in\realset^{n,\ n}$.
+	\item $Q$ invertibile.
+\end{itemize}
+Rispetto alla base $\mathcal{D}$,  Ogni $D\in W$ è della forma:
+\begin{equation*}
+	D=t_1D_1+\ldots +t_kD_k\quad\text{con }t_1,\ \ldots,\ t_k\in\complexset^{n,\ n}
+\end{equation*}
+Nel caso di matrici reali, i coefficienti $t_1,\ \ldots,\ t_k$ saranno \textit{tutti reali}. Poniamo:
+\begin{equation*}
+	f\left(t_1,\ \ldots, t_k\right)\coloneqq\det\left(t_1D_1+\ldots+t_kD_k\right)
+\end{equation*}
+La funzione, di variabili $t_1,\ \ldots, t_k$, è un polinomio che presenta \textit{solo coefficienti reali} (essendo $D_1,\ \ldots,\ D_k$ matrici reali) e non è \textit{identicamente nulla} (Per ipotesi $P\in W$ è invertibile, dunque $\det P\neq 0$). In particolare, esistono sicuramente dei valori \textit{reali} $\hat{t}_1,\ \ldots,\ \hat{t}_k$ per cui $f$ non si annulla\footnote{Infatti, presa una combinazione lineare degli elementi di una base come $\mathcal{D}$ con coefficienti reali non nulli, allora essa non sarà mai nulla.}, cioè esiste la matrice reale:
+\begin{equation*}
+	Q\coloneqq \hat{t}_1D_1+\ldots+\hat{t}_kD_k
+\end{equation*}
+Che soddisfa la tesi.
+\end{demonstration}
