@@ -511,7 +511,7 @@ $\nicecat{GR}$ ~\footnote{Indicata anche con \nicecat{GRP}.}&Oggetti:  & gruppi.
 &Morfismi: & omomorfismi di gruppi.
 \end{tabular*} 
 \item \begin{tabular*}{6cm}[t]{l>{\bfseries}ll}
-$\nicecat{VECT}_{\mathbb{K}}$ su campo $\mathbb{K}$ &Oggetti:  & spazi vettoriali su $\mathbb{K}$. \\
+$\nicecat{VECT}_{\kamp}$ su campo $\kamp$ &Oggetti:  & spazi vettoriali su $\kamp$. \\
 &Morfismi: & applicazioni lineari.
 \end{tabular*} 
 \item \begin{tabular*}{6cm}[t]{p{1cm}>{\bfseries}ll}
@@ -631,13 +631,13 @@ Questo \textit{funtore covariante} si chiama anche \textbf{funtore dimenticante}
 \end{tabular*}\\
 In modo analogo, si definisce il funtore dimenticante fra \nicecat{TOP} e \nicecat{SET}, che associa lo spazio topologico all'insieme sui cui abbiamo definito la topologia.
 \item \begin{tabular*}{6cm}[t]{>{\bfseries}lc}
-	& $\funz{F}{\nicecat{VECT}_{\mathbb{K}}}{\nicecat{VECT}_{\mathbb{K}}}$\\
-	Oggetti: & $V\mapsto V^{\ast}=\left\{\text{applicazioni lineari} \funz{\ }{V}{\mathbb{K}}\right\}$\\
+	& $\funz{F}{\nicecat{VECT}_{\kamp}}{\nicecat{VECT}_{\kamp}}$\\
+	Oggetti: & $V\mapsto V^{\ast}=\left\{\text{applicazioni lineari} \funz{\ }{V}{\kamp}\right\}$\\
 	Morfismi: & $\funz{f}{V}{W}$ lineare $\mapsto\funztot{f^t}{W^{\ast}}{V^{\ast}}{\phi}{\phi\circ f}$
 \end{tabular*}\\
 \begin{center}
 	\begin{tikzcd}
-		V \arrow[r, "f"] & W \arrow[r, "\phi"] & \mathbb{K}
+		V \arrow[r, "f"] & W \arrow[r, "\phi"] & \kamp
 	\end{tikzcd}
 \end{center}
 Questo \textit{funtore controvariante} è chiamata \textbf{funzione trasposta}\index{funzione!trasposta}.

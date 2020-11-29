@@ -1363,6 +1363,10 @@ linewidth=1pt]{neoncarrotBox}
 \newcommand{\irrationalset}{\realset\setminus\rationalset}
 \newcommand{\complexset}{\mathbb{C}}
 
+% campo generico
+
+\newcommand{\kamp}{\mathbb{K}}
+
 % inclusione sinistra
 
 \newcommand{\includedx}{%
@@ -1406,21 +1410,27 @@ linewidth=1pt]{neoncarrotBox}
 %%%%%%%%%%%%%%%%%%%%%%%% definizioni gruppi %%%%%%%%%%%%%%%%%%%%%%%%%
 
 % gruppo lineare GL
+
 \DeclareMathOperator{\gl}{GL}
 
 %gruppo speciale lineare
+
 \DeclareMathOperator{\Sl}{SL}
 
 % gruppo ortogonale O
+
 \DeclareMathOperator{\Or}{O}
 
 % gruppo speciale ortogonale
+
 \DeclareMathOperator{\So}{SO}
 
 % gruppo unitario
+
 \DeclareMathOperator{\U}{U}
 
 % gruppo speciale unitario
+
 \DeclareMathOperator{\Su}{SU}
 
 %%%%%%%%%%%%%%%%%%%%%%%% definizioni funzioni %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1587,6 +1597,31 @@ linewidth=1pt]{neoncarrotBox}
 % traccia
 
 \newcommand{\tr}{\ensuremath{\mathrm{tr}}}
+
+% immagine
+
+\DeclareMathOperator{\im}{Im}
+
+%\let\Im\Im
+%\let\Im\im
+
+%%%%%%%%%%%%%%%%%%%%%%%% definizioni proiettiva  %%%%%%%%%%%%%%%%%%%%%%%%%
+
+% spazio proiettivo associato a V
+
+\newcommand{\proj}[2][n]{
+	\IfEq{#2}{\ }{\ensuremath{\mathbb{P}^{#1}}}
+		{\ensuremath{\mathbb{P}^{#1}\left(#2\right)}}
+}
+
+% combinazione lineare di v
+
+\newcommand{\lin}[1]{\ensuremath{\mathcal{L}\left(#1\right)}}
+
+% codimensione
+
+\DeclareMathOperator{\codim}{Codim}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%% altre definizioni  %%%%%%%%%%%%%%%%%%%%%%%%%
 

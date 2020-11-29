@@ -20,7 +20,7 @@
 Torniamo ora a parlare di costruzioni topologiche, in particolare ci domandiamo quale sia la topologia più adatta per un insieme quoziente. Ne diamo prima una definizione come topologia indotta da una funzione fra uno spazio topologico ed un insieme, poi vedremo altre definizioni equivalenti tramite una funzione fra spazi topologici e con insiemi quozienti.\newline
 Accenniamo fin da subito che la situazione è \textit{duale} rispetto a quella dei sottospazi, analizzati nella sezione \ref{sottospazi}.
 \begin{define}
-	Dato $X$ uno spazio topologico, $Y$ un \textit{insieme} e $\funz f X Y$ funzione suriettiva, la \textbf{topologia quoziente} su $Y$ indotta da $f$ è la topologia \textit{più fine} che rende $f$ continua.
+	Dato $X$ uno spazio topologico, $Y$ un \textit{insieme} e $\funz f X Y$ funzione suriettiva, la \textbf{topologia quoziente}\index{topologia!quoziente} su $Y$ indotta da $f$ è la topologia \textit{più fine} che rende $f$ continua.
 \end{define}
 Analizziamo ora chi sono i suoi aperti: $\displaystyle A\subseteq Y \text{ aperto } \iff f^{-1}(A)\subseteq X$ aperto. Notiamo che l'implicazione $\Rightarrow)$ è necessaria perchè $f$ sia continua, mentre l'implicazione $\Leftarrow)$ è quella che caratterizza la topologia quoziente, infatti se si considera un insieme $B\subseteq Y$ che non è aperto allora la sua controimmagine $f^{-1}(B)\subseteq X$ non sarà aperta, dunque la topologia su $Y$ è la più fine.\newline
 %AAA NUOVO ENVIRONMENT CERCASI
@@ -28,7 +28,7 @@ Per verificare che un sottoinsieme sia aperto in $Y$ con la topologia quoziente 
 
 Vediamo ora un esempio che giustifica la terminologia "topologia quoziente".
 \begin{example}
-	Sia $X$ uno spazio topologico e $\sim$ una relazione di equivalenza su $X$. Posto $Y=\nicefrac{X}{\sim}$ insieme quoziente e $\funztot \pi X Y x {[x]_\sim}$ proiezione al quoziente, la topologia quoziente su $Y$ è quella che rende la proiezione continua.
+	Sia $X$ uno spazio topologico e $\sim$ una relazione di equivalenza su $X$. Posto $Y=\nicefrac{X}{\sim}$ insieme quoziente e $\funztot \pi X Y x {[x]_\sim}$ \textbf{proiezione al quoziente}\index{proiezione!al quoziente}, la topologia quoziente su $Y$ è quella che rende la proiezione continua.
 \end{example}
 
 

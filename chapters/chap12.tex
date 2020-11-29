@@ -1,0 +1,257 @@
+% SVN info for this file
+\svnidlong
+{$HeadURL$}
+{$LastChangedDate$}
+{$LastChangedRevision$}
+{$LastChangedBy$}
+
+\chapter{Geometria proiettiva}
+\labelChapter{geoproiettiva}
+
+\begin{introduction}
+	‘‘BEEP BOOP INSERIRE CITAZIONE QUA BEEP BOOP.''
+	\begin{flushright}
+		\textsc{NON UN ROBOT,} UN UMANO IN CARNE ED OSSA BEEP BOOP.
+	\end{flushright}
+\end{introduction}
+
+\section{Spazi proiettivi}
+% mettere superfici
+Abbiamo già approfondito, a livello \textit{topologico}, lo \textbf{spazio proiettivo reale} e le sue caratteristiche nel \autoref{chap:superfici}. In questo capitolo, ci dedicheremo a \textit{generalizzare} il concetto per un \textit{qualsiasi} spazio vettoriale su campo $\kamp$, utilizzando gli strumenti dell'algebra lineare. 
+\begin{define}
+Sia $\kamp$ un campo e $V$ uno spazio vettoriale di dimensione \textit{finita} su $\kamp$. Lo \textbf{spazio proiettivo}\index{spazio!proiettivo} associato a $V$ è l'insieme quoziente:
+\begin{equation}
+	\proj{V}=\frac{V\setminus\left\{0\right\}}{\sim}
+\end{equation}
+Dove $\sim$ è la relazione di equivalenza data su $V\setminus\left\{0\right\}$ definita dall'azione del gruppo moltiplicativo $\kamp\setminus\left\{0\right\}$:
+\begin{equation}
+	\forall v,\ w\in V\setminus\left\{0\right\}\ v\sim w \iff \exists \lambda\in\kamp\setminus\left\{0\right\}\ \colon v=\lambda w
+\end{equation}
+Lo spazio proiettivo $\proj{V}$ si dice anche il \textbf{proiettivizzato}\seeonlyindex{proiettivizzato}{spazio!proiettivo} di $V$.
+\end{define}
+% finire dimostrazione
+\begin{demonstration}
+~{}
+\begin{itemize}
+	\item \textsc{Riflessiva}: ...
+	\item \textsc{Simmetrica}: ...
+	\item \textsc{Transitiva}: ...
+\end{itemize}
+\end{demonstration}
+\begin{define}
+La \textbf{dimensione}\index{dimensione di uno spazio proiettivo} di $\proj{V}$ è:
+\begin{equation}
+	\dim\proj{V}=\dim V-1
+\end{equation}
+Se $V=\left\{0\right\}$, allora $\proj{V}=\emptyset$ e si pone $\dim\emptyset\coloneqq -1$.
+\end{define}
+\begin{define}
+Si denota con $\funz{\pi}{V\setminus\left\{0\right\}}{\proj{V}}$ la \textbf{proiezione al quoziente}\index{proiezione!al quoziente} e con $\left[v\right]\in\proj{V}$ la \textbf{classe}\index{classe!dello spazio proiettivo} di $v\in V\setminus\left\{0\right\}$.
+\end{define}
+\begin{observe}
+	Si ha una corrispondenza biunivoca:
+	\begin{equation}
+		\begin{array}{c}
+			\proj{V}\leftrightarrow\left\{\text{sottospazi vettoriali }1\text{-dimensionali di }V\right\}\\
+			\left[v\right]\leftrightarrow\lin{v}
+		\end{array}
+	\end{equation}
+In altre parole, possiamo pensare a $\proj{V}$ come l'insieme delle \textbf{rette vettoriali} in $V$.
+\end{observe}
+\begin{define}~{}
+	\begin{itemize}
+		\item Se $\dim V=1$, allora $\proj{V}$ è un \textbf{punto}\index{punto!proiettivo} e $\dim\proj{V}=0$.
+		\item Se $\dim \proj{V}=1$, si parla di \textbf{retta proiettiva}\index{retta!proiettiva}.
+		\item Se $\dim \proj{V}=2$, si parla di \textbf{piano proiettivo}\index{piano!proiettivo}.
+		\item Se $\kamp=\realset$ o $\kamp=\complexset$, si parla rispettivamente di \textbf{spazio proiettivo reale}\index{spazio!proiettivo!reale} o di \textbf{spazio proiettivo complesso}\index{spazio!proiettivo!complesso}.
+	\end{itemize}
+\end{define}
+Gli esempi più frequenti di spazi proiettivi si ottengono considerando $V=\kamp^{n+1}$.
+\begin{define}
+	Lo \textbf{spazio proiettivo numerico}\index{spazio!proiettivo!numerico} o \textbf{spazio proiettivo standard}\seeonlyindex{spazio!proiettivo!standard}{spazio!proiettivo!numerico} è lo spazio proiettivo su $\kamp^{n+1}$:
+\begin{equation}
+	\proj{\ }=\proj[n]{\kamp}=\proj{\kamp^{n+1}}
+\end{equation}
+Essi sono spazi di dimensione $\dim\proj[n]{\ }=n$.
+\subsection{Sottospazi proiettivi}
+\end{define}
+Sia $W\subseteq V$ un sottospazio vettoriale. Allora $W\setminus\left\{0\right\}\subseteq V\setminus\left\{0\right\}$ è chiuso rispetto alla relazione di equivalenza $\sim$ precedentemente definita e $\proj{W}$ è naturalmente un sottoinsieme di $\proj{V}$.
+\begin{define}
+	Se $W\subseteq V$ è un sottospazio vettoriale, allora $\proj{W}$ è detto \textbf{sottospazio proiettivo}\index{sottospazio!proiettivo}:
+	\begin{equation*}
+		\begin{array}{rl}
+			\proj{W}&=\pi\left(W\setminus\left\{0\right\}\right)=\left\{\left[w\right]\in\proj{V}\mid w\in W\right\}\\
+			&=\left\{\text{sottospazi vettoriale }1\text{-dimensione di }V\text{ contenuti in }W\right\}
+		\end{array}
+	\end{equation*}
+La dimensione del sottospazio proiettivo è $\dim\proj{W}=\dim W-1$.
+\end{define}
+	\begin{itemize}
+	\item Se $W=\left\{0\right\}$, allora $\proj{W}=\emptyset$.
+	\item Se $\dim W=1$, allora $\proj{W}$ è un punto, che indichiamo con $\left[w\right]$ per un $w\in W$.
+	\item Se $\dim W=2$ ($\dim\proj{W}=1$), allora $\proj{W}$ è \textbf{retta proiettiva}\index{retta!proiettiva} in $\proj{V}$.
+	\item Se $\dim W=3$ ($\dim\proj{W}=2$), allora $\proj{W}$ è \textbf{piano proiettivo}\index{piano!proiettivo} in $\proj{V}$.
+	\item Se $\dim\proj{W}=\dim \proj{V}-1$, allora $\proj{W}$ è \textbf{iperpiano (proiettivo)}\index{iperpiano!proiettivo} in $\proj{V}$.
+\end{itemize}
+\begin{define}
+Si definisce la \textbf{codimensione}\index{codimensione} di $\proj{W}$ sottospazio proiettivo come:
+\begin{equation}
+	\codim\proj{W}=\dim\proj{V}-\dim\proj{W}
+\end{equation}
+\end{define}
+\begin{example}
+	Gli iperpiani sono sottospazi di codimensione $1$.
+\end{example}
+\subsection{Coordinate omogenee e sistemi di riferimento proiettivo}
+Consideriamo $\proj[n]{\kamp}=\proj{\kamp^{n+1}}$. Se $v=\left(x_0,\ \ldots,\ x_n\right)\in\kamp^{n+1}\setminus\left\{0\right\}$, denotiamo la corrispettiva classe in questa forma:
+\begin{equation}
+\left[v\right]=\left(x_0\colon \ldots\colon x_n\right)\in\proj[n]{\kamp},\ x_i\in\kamp
+\end{equation}
+\begin{observe}
+	\begin{enumerate}
+		\item Le $x_i$ non possono mai essere tutte nulle, dato che $v\neq 0$.
+		\item Due classi sono uguali se le componenti sono tutte in proporzione per uno scalare $\lambda\in\kamp$.\footnote{La notazione con i $\colon$ viene utilizzata per mettere in evidenza che la relazione fra classi e vettori è di proporzione.}
+		\begin{equation*}
+			\left(x_0:\ldots:x_n\right)=\left(y_0:\ldots:y_n\right)\iff\left(x_0,\ \ldots,\ x_n\right)\sim\left(y_0,\ \ldots,\ y_n\right)\iff \exists \lambda\in\kamp\setminus\left\{0\right\}\ \colon y_0=\lambda x_0,\ \ldots,\ y_n=\lambda x_n
+		\end{equation*}
+	\end{enumerate}
+\end{observe}
+\begin{examples}
+	In $\proj[2]{\realset}$:
+	\begin{gather*}
+		\left(1\colon1\colon2\right) = \left(-2\colon-2\colon-4\right)\\
+		\left(1\colon0\colon2\right) = \left(\frac{1}{3}\colon0\colon\frac{1}{3}\right)
+	\end{gather*}
+\end{examples}
+\begin{define}
+	Sia $\basis=\left\{e_0,\ \ldots,\ e_n\right\}$ una base di $V$, con $\dim V=n+1$. Se $v\in V\setminus\left\{0\right\}$, si ha:
+	\begin{equation*}
+		v=x_0e_0+\ldots+x_ee_n,\ \text{con}\ x_i\in\kamp
+	\end{equation*}
+Diciamo che $\left(x_0\colon\ldots\colon x_n\right)$ sono le \textbf{coordinate omogenee}\index{coordinate omogenee} di $\left[v\right]\in\proj{V}$ definite dalla base $\basis$ e scriviamo:
+\begin{equation}
+	\left[v\right]=\left(x_0\colon\ldots\colon x_n\right)
+\end{equation}
+La base $\basis$ definisce su $\proj{V}$ un \textbf{sistema di riferimento proiettivo}, cioè ad ogni punto vengono assegnate delle coordinate omogenee. 
+\end{define}
+\begin{observe}~{}
+		\begin{itemize}
+		\item Le coordinate omogenee non possono \textit{mai} essere \textit{tutte nulle}.
+		\item Le coordinate omogenee sono definite \textit{solo a meno di multipli}.
+		\item $\proj[n]{\kamp}$ ha delle coordinate omogenee ‘‘naturali'' date dalla base canonica di $\kamp^{n+1}$.
+		\item Basi \textit{multiple} definiscono lo stesso riferimento proiettivo di $\proj{V}$, cioè le stesse coordinate omogenee.
+	\end{itemize}
+\end{observe}
+\begin{demonstration}
+	Dimostriamo l'ultimo punto. Siano:
+	\begin{equation*}
+		\basis=\left\{e_0,\ \ldots,\ e_n\right\}\quad\basis'=\left\{\mu e_0,\ \ldots,\ \mu e_n\right\}
+	\end{equation*}
+Con $\mu\in\kamp\setminus\left\{0\right\}$. Si ha:
+\begin{equation*}
+	v=x_0e_0+\ldots+x_ne_n=\frac{x_0}{\mu}\left(\mu e_0\right)+\ldots + \frac{x_n}{\mu}\left(\mu e_n\right)
+\end{equation*}
+Passando allo spazio proiettivo:
+\begin{equation*}
+\substack{\left(x_0\colon\ldots\colon x_n\right)}_{\text{coordinate omogenee rispetto a }\basis}=\substack{\left(\frac{x_0}{\mu}\colon\ldots\colon \frac{x_n}{\mu}\right)}_{\text{coordinate omogenee rispetto a }\basis'}
+\end{equation*}
+\end{demonstration}
+\begin{define}
+	Data la base $\basis$, i punti:
+	\begin{equation}
+		\begin{array}{l}
+			P_0=\left[e_0\right]=\left(1\colon0\colon\ldots\colon0\right)\\			P_1=\left[e_1\right]=\left(0\colon1\colon\ldots\colon0\right)\\
+			\ldots\\
+			P_n=\left[e_n\right]=\left(0\colon0\colon\ldots\colon1\right)\\
+		\end{array}
+	\end{equation}
+Sono detti \textbf{punti fondamentali}\index{punto!fondamentale} o \textbf{punti coordinati}\seeonlyindex{punto!coordinato}{punto!fondamentale}, mentre il punto:
+\begin{equation*}
+	U=\left[e_0+e_1+\ldots+e_n\right]=\left(1\colon1\colon\ldots\colon1\right)
+\end{equation*}
+è detto \textbf{punto unità}\index{punto!unità}.
+\end{define}
+\subsubsection{Descrizione dei sottospazi proiettivi in coordinate}
+Siano $\left(x_0\colon\ldots\colon x_n\right)$ coordinate omogenee su $\proj{V}$, indotte da una base $\basis$, e consideriamo l'equazione lineare omogenea:
+\begin{equation*}
+	\textcolor{green}{\circled{\ast}}\quad a_0x_0+a_1x_1+\ldots+a_nx_n=0
+\end{equation*}
+Con $a_i\in\kamp$ non tutti nulli.
+\begin{itemize}
+	\item In $V$ l'equazione omogenea rappresenta un \textit{iperpiano vettoriale} $H$.
+	\item I punti $P=\left[v\right]\in\proj{V}$, le cui coordinate soddisfano l'equazioni, sono quelli tali per cui $v\in H$, cioè sono tutti e soli i punti dell'iperpiano proiettivo $\proj{H}\subseteq\proj{V}$. L'equazione lineare $\textcolor{green}{\circled{\ast}}$ è l'\textbf{equazione (cartesiana) dell'iperpiano proiettivo} $\proj{H}$.
+\end{itemize}
+\begin{define}
+	Gli iperpiani di equazione cartesiana $x_i=0$, cioè tutti i punti la cui $i$-esima coordinata omogenea è nulla, si dicono $i$\textbf{-esimi iperpiani coordinati}\index{iperpiano!proiettivo!coordinato}.
+\end{define}
+\begin{example}
+	In $\proj[1]{\kamp}$, cioè una \textit{retta proiettiva} ($\dim \proj[1]{\kamp}=1$), i sottospazi proiettivi sono:
+	\begin{itemize}
+		\item $\emptyset$.
+		\item I punti, che in questo caso sono gli iperpiani.
+		\item Tutto $\proj[1]{\kamp}$.
+	\end{itemize}
+Il punto $\left(a\colon b\right)$ ha equazione cartesiana:
+\begin{equation}
+	bx_0-ax_1=0
+\end{equation}
+Ovvero l'equazione della retta in $\kamp^2$ generata da $\left(a,\ b\right)$, ottenuta pertanto dal determinante $\left| \begin{array}{cc}
+	a & b \\
+	x_0 & x_1
+\end{array} \right|$.
+\end{example}
+\begin{attention}
+	In $\proj{V}$ un sottospazio proiettivo di \textit{dimensione zero} è un singolo punto $\left[v\right]=\proj{\lin{v}}$.
+\end{attention}
+Più in generale: fissata una base $\basis$ di $V$, ogni \textit{sottospazio vettoriale} $W$ di $V$ può essere visto, in \textit{coordinate} rispetto alla base, come l'\textit{insieme delle soluzioni} di un \textit{sistema lineare omogeneo}.
+\begin{equation*}
+	Ax=O
+\end{equation*}
+Dove $A=\left(a_{ij}\right)$ è di dimensioni $t\times \left(n+1\right)$ a elementi in $\kamp$, mentre si ha:
+\begin{gather*}
+	x=\left(\begin{array}{c}
+		x_0 \\
+		\vdots \\
+		x_n
+	\end{array}\right)\\
+\textcolor{green}{\circled{\ast}}\begin{cases}
+	a_{1,\ 0}x_0+\ldots+a_{1,\ n}x_n\\
+	\qquad\vdots\\
+	a_{t,\ 0}x_0+\ldots+a_{t,\ n}x_n\\
+\end{cases}
+\end{gather*}
+Il sistema $\textcolor{green}{\circled{\ast}}$ dà delle \textit{equazioni cartesiane} per il sottospazio proiettivo $\proj{W}$ nelle coordinate omogenee $\left(x_0\colon\ldots\colon x_n\right)$.\\
+Posto dunque $t$ come il numero delle \textit{equazioni}, notiamo che:
+\begin{equation*}
+	\begin{array}{cc}
+		\dim W=n+1-\rk A \\
+\begin{array}{ccc}
+	\codim W &=&\rk A \\
+	\shortparallel &  \\
+	\dim V-\dim W &=&\dim\proj{V}-\dim\proj{W}=\codim\proj{W}
+\end{array}\\
+	\implies t\geq \rk\left(A\right)=\codim\proj{W}
+	\end{array}
+\end{equation*}
+\textit{Scartando} delle equazioni possiamo sempre ricondurci ad un sistema in cui $t)\rk A=\codim\proj{W}$.
+\begin{examples}~{}
+	%completare con le note della fino
+	\begin{itemize}
+		\item Il piano proiettivo $\proj[2]{\kamp}$ ha, come sottospazi \textit{non banali}, i punti e le rette.
+		\begin{itemize}
+			\item Una \textit{retta} sarà data da un'equazione: $a_0x_0+a_1x_0+a_2x_2=0$.
+			\item Un \textit{punto} servono due equazioni, in sostanza vedendolo come \textit{intersezione di due rette proiettive}; ad esempio $\left(1\colon0\colon0\right)$ ha equazioni $x_1=x_2=0$, mentre $\left(1\colon2\colon3\right)$ ha equazioni $\begin{cases}
+				x_1=2x_0\\
+				x_2=3x_0
+			\end{cases}$.
+		\end{itemize}
+	\item Il piano proiettivo reale $\proj[2]{\realset}$ ha un modello piano nel \textit{disco} $D$ con i punti antipodali, omeomorfo alla sfera $S^2$ in cui \textit{punti antipodali} sono identificati. \\
+	Le \textit{rette proiettive} vengono da \textit{piani vettoriali} in $\realset^3$; utilizzando la sfera unitaria precedentemente identificata, la retta proiettiva si visualizza facilmente come l'\textit{intersezione} della sfera in un \textit{cerchio massimo}: in questo modo, la \textbf{proiezione} dell'intersezione sulla \textit{semisfera superiore} sul disco unitario $D$ è la rappresentazione della retta proiettiva sul modello. Dunque, guardando le rette proiettive nel \textit{modello piano}, se ne hanno tre tipi:
+	\begin{enumerate}
+		\item La retta con equazione $z=0$, ovvero al piano $xy$ in $\realset^3$: sul modello piano corrisponde all'intero bordo del disco $D$ (cioè $S^1$).
+		\item Le rette con equazione $ax+by=0$, ovvero ai \textit{piani perpendicolari} in $\realset^3$ passanti per le rette con quell'equazione $ax+by=0$:  sul modello piano corrisponde a diametri colleganti due punti sul bordo.
+		\item Nel caso generale $ax+by+cz=0$, proiettando l'\textit{arco di cerchio massimo} viene un \textit{arco di ellisse} in $D$.
+	\end{enumerate}
+	\item Notiamo che $\proj[1]{\realset}\cong S^1$
+	\end{itemize}
+\end{examples}

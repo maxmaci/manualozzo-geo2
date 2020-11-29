@@ -20,7 +20,7 @@
 	[...]
 \end{center}
 \begin{theorema}
-	Sia $A\in \mathbb{K}^{n,\ n}$ e $m_A\left(t\right)$ il suo polinomio minimo. Allora, preso $\lambda\in\mathbb{K}$:
+	Sia $A\in \kamp^{n,\ n}$ e $m_A\left(t\right)$ il suo polinomio minimo. Allora, preso $\lambda\in\kamp$:
 	\begin{equation}
 		m_A\left(\lambda\right)=0\iff \lambda\text{ è un autovalore di }A
 	\end{equation}
@@ -33,13 +33,13 @@
 		A\underline{v}=\lambda \underline{v}\\
 		A^2\underline{v}=A\left(A\underline{v}\right)=A\left(\lambda \underline{v}\right)=\lambda A\underline{v}=\lambda^2 \underline{v}\\
 	\end{gather*}
-Allo stesso modo si arriva a $A^k\underline{v}=\lambda^n\underline{v}$. Preso un generico polinomio $p\left(t\right)\in\mathbb{K}\left[t\right]$, esso si può esprimere come:
+Allo stesso modo si arriva a $A^k\underline{v}=\lambda^n\underline{v}$. Preso un generico polinomio $p\left(t\right)\in\kamp\left[t\right]$, esso si può esprimere come:
 \begin{equation*}
-	p=\sum_{i=0}^{d}c_i t_i\quad c_i\in\mathbb{K}
+	p=\sum_{i=0}^{d}c_i t_i\quad c_i\in\kamp
 \end{equation*}
 Allora $\displaystyle p\left(A\right)=\sum_{i=0}^{d}c_i A^i$ e dunque:
 \begin{align*}
-	p\left(A\right)\underline{v}&=\left(\sum_{i=0}^{d}c_i A^i\right)\underline{v}=\sum_{i=0}^{d}c_i\left( A^i\underline{v}\right)=\sum_{i=0}^{d}c_i\left( \lambda^i\underline{v}\right)=\underbrace{\left(\sum_{i=0}^{d}c_i \lambda^i\right)}_{\in\mathbb{K}}\underline{v}=p\left(\lambda\right)\underline{v}
+	p\left(A\right)\underline{v}&=\left(\sum_{i=0}^{d}c_i A^i\right)\underline{v}=\sum_{i=0}^{d}c_i\left( A^i\underline{v}\right)=\sum_{i=0}^{d}c_i\left( \lambda^i\underline{v}\right)=\underbrace{\left(\sum_{i=0}^{d}c_i \lambda^i\right)}_{\in\kamp}\underline{v}=p\left(\lambda\right)\underline{v}
 \end{align*}
 Consideriamo ora un polinomio $p\in I_A$. Per sua definizione $p\left(A\right)=0$; in particolare, da quanto scritto sopra:
 \begin{equation*}
@@ -48,7 +48,7 @@ Consideriamo ora un polinomio $p\in I_A$. Per sua definizione $p\left(A\right)=0
 Ed essendo $v$ un autovettore, $v\neq 0$; dall'equazione sopra necessariamente segue $p\left(\lambda\right)=0$. In particolare, essendo $p\in I_A$ generato dal polinomio minimo $m_A$ (cioè $p\left(t\right)=m_A\left(t\right)q\left(t\right)$ con $q\left(t\right)\neq 0$), segue che $m_A\left(\lambda\right)=0$.
 \end{demonstration}
 \section{Forma canonica di Jordan}
-D'ora in poi, se non altresì specificato, considereremo $\mathbb{K}=\complexset$, cioè tratteremo di matrici $A\in \complexset^{n,\ n}$ e endomorfismi fra spazi vettoriali complessi.
+D'ora in poi, se non altresì specificato, considereremo $\kamp=\complexset$, cioè tratteremo di matrici $A\in \complexset^{n,\ n}$ e endomorfismi fra spazi vettoriali complessi.
 \begin{observe}\label{complessichiusi}
 Poichè $\complexset$ è \textbf{algebricamente chiuso}, ogni polinomio $p\in\complexset\left[t\right]$ si fattorizza completamente come prodotto di fattori lineari:
 \begin{equation}
@@ -160,7 +160,7 @@ E in questo caso si ha la relazione con i vettori della base:
 		N^{k-1}\underline{e}_k=\underline{e}_1
 	\end{cases}
 \end{equation*}
-Studiando l'immagine dell'applicazione associata ad $N$, essendo la base dell'immagine i vettori colonna l.i., si ha $\Im N^{k-1}=\mathcal{L}\left(e_1\right)$.\\
+Studiando l'immagine dell'applicazione associata ad $N$, essendo la base dell'immagine i vettori colonna l.i., si ha $\im N^{k-1}=\mathcal{L}\left(e_1\right)$.\\
 Come già affermato dunque, è $\underline{e}_k$ a determinare l'\textit{intera} base di $V$ tramite la moltiplicazione per $N$.\\
 Come ultima osservazione fondamentale, notiamo inoltre che $N^k=O$, cioè $N$ è una matrice \textbf{nilpotente}\index{matrice!nilpotente} di ordine $k$.
 \end{observe}
@@ -276,17 +276,17 @@ Cioè il nucleo della potenza $h$ è contenuto in tutti quelli successivi. In pa
 V_{\lambda}=\ker\left(A-\lambda I\right)\subseteq \ker\left(A-\lambda I\right)^{m_{\lambda}}\implies V_{\lambda}\subseteq \tilde{V}_{\lambda}
 \end{equation*}
 Dimostrando così la prima proprietà.
-\item In modo analogo, se $\underline{w}\in\Im \left(A-\lambda I\right)^h$, per definizione $\exists\underline{v}\in\left(A-\lambda I\right)^h$ tale che:
+\item In modo analogo, se $\underline{w}\in\im \left(A-\lambda I\right)^h$, per definizione $\exists\underline{v}\in\left(A-\lambda I\right)^h$ tale che:
 	\begin{equation*}
 	\begin{array}{l}
 		w=\left(A-\lambda I\right)^h\underline{v}=\left(A-\lambda I\right)^{h-1}\left(\left(A-\lambda I\right)\underline{v}\right)\\
-		\implies \underline{w}\in\Im\left(A-\lambda I\right)^{h-1}\\
-		\implies \Im\left(A-\lambda I\right)^{h-1}\supseteq\Im\left(A-\lambda I\right)^h
+		\implies \underline{w}\in\im\left(A-\lambda I\right)^{h-1}\\
+		\implies \im\left(A-\lambda I\right)^{h-1}\supseteq\im\left(A-\lambda I\right)^h
 	\end{array}
 \end{equation*}
 Al crescere di $h$:
 \begin{equation}
-	V\supseteq \Im \left(A-\lambda I\right)\supseteq\Im \left(A-\lambda I\right)^2\supseteq\ldots \qquad\textcolor{green}{\circled{\ast}} 
+	V\supseteq \im \left(A-\lambda I\right)\supseteq\im \left(A-\lambda I\right)^2\supseteq\ldots \qquad\textcolor{green}{\circled{\ast}} 
 \end{equation}
 Cioè l'immagine della potenza $h$ contiene tutte quelle successive.\\ Possiamo mostrare come tutti gli spazi finora visti (nuclei e immagini delle potenze $\left(A-\lambda I\right)^h$) sono invarianti:
 \begin{itemize}
@@ -299,33 +299,33 @@ Cioè l'immagine della potenza $h$ contiene tutte quelle successive.\\ Possiamo 
 	\end{array}
 	\end{equation*}
 Abbiamo appena dimostrato l'invarianza dello spazio $\tilde{V}_{\lambda}$.
-\item Se $\underline{w}\in\Im\left(A-\lambda I\right)^h$ esiste $\underline{v}$ tale che:
+\item Se $\underline{w}\in\im\left(A-\lambda I\right)^h$ esiste $\underline{v}$ tale che:
 	\begin{equation*}
 	\begin{array}{l}
 		\underline{w}=\left(A-\lambda I\right)^h\underline{v}\implies A\underline{w}=A\left(A-\lambda I\right)^h\underline{v}\stackrel{\footnote{Si veda la nota precedente.}}{=}\left(A-\lambda I\right)^h\left(A\underline{v}\right)\\
-		\implies A\underline{w}\in \Im\left(A-\lambda I\right)^h\\
-		\implies A\left(\Im\left(A-\lambda I\right)^h\right)\subseteq \Im\left(A-\lambda I\right)^h
+		\implies A\underline{w}\in \im\left(A-\lambda I\right)^h\\
+		\implies A\left(\im\left(A-\lambda I\right)^h\right)\subseteq \im\left(A-\lambda I\right)^h
 	\end{array}
 \end{equation*}
 \end{itemize}
 \item Per trovare la dimensione dell'autospazio generalizzato, sappiamo che:
 \begin{gather*}
 	\ker \left(A-\lambda I\right)^h\subseteq \ker \left(A-\lambda I\right)^{h+1}\\
-	\Im\left(A-\lambda I\right)^h\supseteq\Im\left(A-\lambda I\right)^{h+1}
+	\im\left(A-\lambda I\right)^h\supseteq\im\left(A-\lambda I\right)^{h+1}
 \end{gather*}
 Allora, se consideriamo il teorema nullità più rango sulle applicazioni $\left(A-\lambda I\right)^h$ e $\left(A-\lambda I\right)^{h+1}$ in $V$:
 \begin{equation*}
 		\begin{array}{c}
-			\dim \ker \left(A-\lambda I\right)^h + \dim \Im\left(A-\lambda I\right)^{h}\\
+			\dim \ker \left(A-\lambda I\right)^h + \dim \im\left(A-\lambda I\right)^{h}\\
 			\shortparallel\\
 			n=\dim V\\
 			\shortparallel\\
-			\dim \ker \left(A-\lambda I\right)^{h+1} + \dim \Im\left(A-\lambda I\right)^{h+1}
+			\dim \ker \left(A-\lambda I\right)^{h+1} + \dim \im\left(A-\lambda I\right)^{h+1}
 	\end{array}
 \end{equation*}
 Ne consegue che:
 \begin{equation}
-	\ker \left(A-\lambda I\right)^h=\ker \left(A-\lambda I\right)^{h+1}\iff \Im\left(A-\lambda I\right)^{h}=\Im\left(A-\lambda I\right)^{h+1}
+	\ker \left(A-\lambda I\right)^h=\ker \left(A-\lambda I\right)^{h+1}\iff \im\left(A-\lambda I\right)^{h}=\im\left(A-\lambda I\right)^{h+1}
 \end{equation}
 Siccome $V$ ha dimensione finita, la successione crescente $\textcolor{red}{\circled{\ast}}$ dei nuclei delle potenze (eq. \ref{kernelsucc}, pag. \pageref{kernelsucc}) ad un certo punto deve \textit{stabilizzarsi}, cioè deve esserci un'uguaglianza per tutti gli elementi successivi\footnote{Infatti, ogni inclusione potrebbe essere stretta e dunque la dimensione di questi sottospazi può aumentare; tuttavia, essendo $V$ finito questi sottospazio non possono avere dimensione maggiore di $n$.}. Denotiamo con $p$ il più piccolo intero tale che:
 \begin{equation*}
@@ -334,7 +334,7 @@ Siccome $V$ ha dimensione finita, la successione crescente $\textcolor{red}{\cir
 Mostriamo che $\forall h\geq p$ valgano le seguenti relazioni:
 \begin{gather*}
 	\ker \left(A-\lambda I\right)^h= \ker \left(A-\lambda I\right)^p\\
-	\Im\left(A-\lambda I\right)^h=\Im\left(A-\lambda I\right)^p
+	\im\left(A-\lambda I\right)^h=\im\left(A-\lambda I\right)^p
 \end{gather*}
 È sufficiente mostrarlo per i nuclei, dato che vale anche per le immagini per nullità più rango.\\
 Sia $\underline{v}\in\ker \left(A-\lambda I\right)^h\supseteq \left(A-\lambda I\right)^h$ con $h\geq p+2$.\footnote{Poiché $p$ è tale per cui $\ker \left(A-\lambda I\right)^p=\ker \left(A-\lambda I\right)^{p+1}$, il caso $h=p+1$ è banalmente vero.} Allora:
@@ -346,10 +346,10 @@ Sia $\underline{v}\in\ker \left(A-\lambda I\right)^h\supseteq \left(A-\lambda I\
 \implies \underline{v}\in\ker \left(A-\lambda I\right)^{h-1}
 	\end{array}
 \end{equation*}
-Iterando in questo modo, otterremo $v\in\ker\left(A-\lambda I\right)^{p+1}=\ker\left(A-\lambda I\right)^{p}$. Dunque, come conseguenza del termine stabilizzatore, tutti i sottospazi $\ker \left(A-\lambda I\right)^k$ (con $k<p$) sono strettamente contenuti in quelli successivi fino al termine $p$-esimo, mentre $\Im \left(A-\lambda I\right)^k$ contengono strettamente quelli successivi fino al $p$-esimo.
+Iterando in questo modo, otterremo $v\in\ker\left(A-\lambda I\right)^{p+1}=\ker\left(A-\lambda I\right)^{p}$. Dunque, come conseguenza del termine stabilizzatore, tutti i sottospazi $\ker \left(A-\lambda I\right)^k$ (con $k<p$) sono strettamente contenuti in quelli successivi fino al termine $p$-esimo, mentre $\im \left(A-\lambda I\right)^k$ contengono strettamente quelli successivi fino al $p$-esimo.
 \begin{gather}\label{successionejordan}
 \left\{0\right\}\subsetneqq \ker \left(A-\lambda I\right)\subsetneqq\ldots\subsetneqq\ker \left(A-\lambda I\right)^p\\
-V\supsetneqq \Im \left(A-\lambda I\right)\supsetneqq\ldots\supsetneqq\Im \left(A-\lambda I\right)^p
+V\supsetneqq \im \left(A-\lambda I\right)\supsetneqq\ldots\supsetneqq\im \left(A-\lambda I\right)^p
 \end{gather}
 \begin{itemize}
 \item Si ha $p\geq 1$ : se fosse $p=0$, si avrebbe $\ker \left(A-\lambda I\right)=\left\{0\right\}$ e dunque nessun autovettore o autovalore.
@@ -357,23 +357,23 @@ V\supsetneqq \Im \left(A-\lambda I\right)\supsetneqq\ldots\supsetneqq\Im \left(A
 \end{itemize}
 Mostriamo ora che i termini $p$-esimi delle due successioni sono in somma diretta, in particolare dobbiamo solo dimostrare:
 \begin{equation*}
-	\ker\left(A-\lambda I\right)^p\cap\Im\left(A-\lambda I\right)^p=\left\{0\right\}
+	\ker\left(A-\lambda I\right)^p\cap\im\left(A-\lambda I\right)^p=\left\{0\right\}
 \end{equation*}
-Infatti, preso $\underline{u}\in\ker\left(A-\lambda I\right)^p\cap\Im\left(A-\lambda I\right)^p$, $\exists\underline{v}\in V\ \colon \underline{u}=\left(A-\lambda I\right)^p\underline{v}$. Ma:
+Infatti, preso $\underline{u}\in\ker\left(A-\lambda I\right)^p\cap\im\left(A-\lambda I\right)^p$, $\exists\underline{v}\in V\ \colon \underline{u}=\left(A-\lambda I\right)^p\underline{v}$. Ma:
 \begin{equation*}
 \begin{array}{l}
 	\underline{0}=\left(A-\lambda I\right)^p\underline{u}=\left(A-\lambda I\right)^p\left(A-\lambda I\right)^p\underline{v}=\left(A-\lambda I\right)^2p\underline {v}\\
 	\implies \underline{v}\in\ker\left(A-\lambda I\right)^2p=\ker\left(A-\lambda I\right)^p\implies \underline{u}=\underline{0}
 \end{array}
 \end{equation*}
-Per nullità più rango si ha $\dim \ker \left(A-\lambda I\right)^p + \dim \Im\left(A-\lambda I\right)^p)=\dim V$; segue che:
+Per nullità più rango si ha $\dim \ker \left(A-\lambda I\right)^p + \dim \im\left(A-\lambda I\right)^p)=\dim V$; segue che:
 \begin{equation}
-V=\ker\left(A-\lambda I\right)^p\oplus\Im \left(A-\lambda I\right)^p
+V=\ker\left(A-\lambda I\right)^p\oplus\im \left(A-\lambda I\right)^p
 \end{equation}
-In particolare sappiamo che, per l'osservazione a pag. \pageref{observejordan}, rispetto ad una base di $V$ opportuna la matrice associata $A$ è \textit{a blocchi}, di cui i due non nulli sono uno \textit{codificato} dalla restrizione dell'endomorfismo a $\ker\left(A-\lambda I\right)^p$, mentre l'altro dalla restrizione a $\Im \left(A-\lambda I\right)^p$. Consideriamo allora queste due restrizioni ai sottospazi:
+In particolare sappiamo che, per l'osservazione a pag. \pageref{observejordan}, rispetto ad una base di $V$ opportuna la matrice associata $A$ è \textit{a blocchi}, di cui i due non nulli sono uno \textit{codificato} dalla restrizione dell'endomorfismo a $\ker\left(A-\lambda I\right)^p$, mentre l'altro dalla restrizione a $\im \left(A-\lambda I\right)^p$. Consideriamo allora queste due restrizioni ai sottospazi:
 \begin{gather*}
 \funz{\phi}{\ker\left(A-\lambda I\right)^p}{\ker\left(A-\lambda I\right)^p}\\
-\funz{\psi}{\Im\left(A-\lambda I\right)^p}{\Im\left(A-\lambda I\right)^p}
+\funz{\psi}{\im\left(A-\lambda I\right)^p}{\im\left(A-\lambda I\right)^p}
 \end{gather*}
 Facciamo le seguenti considerazioni.
 \begin{itemize}
@@ -385,15 +385,15 @@ In altre parole, l'applicazione $\left(\phi-\lambda Id\right)^p$ si \textit{annu
 Ma ciò significa: $\left(B-\lambda I\right)^p=\underline{0}$.\\
 Preso allora il polinomio $p\left(t\right)=\left(t-\lambda\right)^p$ appartiene all'ideale di $B$ (cioè all'ideale di $\phi$), in particolare $\lambda$ è autovalore di $\phi$ (perché $p\left(\lambda\right)=0\implies m_B\left(\lambda\right)=0$).\\
 Conseguentemente, se supponiamo di avere $\mu$ come altro autovalore di $\phi$, si ha che $m_B\left(\mu\right)=0\implies p\left(\mu\right)=0\implies \left(\mu-\lambda\right)^p\implies \mu=\lambda$. Si ha dunque l'unicità.
-\item \textbf{\underline{$\lambda$ \textit{non} è autovalore di $\psi$.}} Infatti, sia $\underline{v}\in \Im\left(A-\lambda I\right)$ per cui $\lambda$ è il suo autovalore. Allora:
+\item \textbf{\underline{$\lambda$ \textit{non} è autovalore di $\psi$.}} Infatti, sia $\underline{v}\in \im\left(A-\lambda I\right)$ per cui $\lambda$ è il suo autovalore. Allora:
 \begin{equation*}
 		\begin{array}{l}
 	\psi\left(\underline{v}\right)=\lambda\underline{v}\stackrel{\footnote{$A\underline{v}$ segue dalla definizione di $\psi$ come restrizione dell'endomorfismo $f$.}}{\iff} A\underline{v}=\lambda\underline{v}\iff \left(A-\lambda I\right)\underline{v}=0\\
 	\implies \underline{v}\in\ker\left(A-\lambda I\right)\subseteq \ker\left(A-\lambda\right)^p\\
-	\implies \underline{v}\in\ker\left(A-\lambda I\right)^p\cap\Im\left(A-\lambda I\right)^p=\left\{0\right\}
+	\implies \underline{v}\in\ker\left(A-\lambda I\right)^p\cap\im\left(A-\lambda I\right)^p=\left\{0\right\}
 	\end{array}
 \end{equation*}
-Ma sapendo che $\ker\left(A-\lambda I\right)^p\cap\Im\left(A-\lambda I\right)^p=\left\{0\right\}=\left\{0\right\}$, si ha $\underline{v}=\underline{0}$, dunque \textit{non} può $\lambda$ autovalore di $\psi$.
+Ma sapendo che $\ker\left(A-\lambda I\right)^p\cap\im\left(A-\lambda I\right)^p=\left\{0\right\}=\left\{0\right\}$, si ha $\underline{v}=\underline{0}$, dunque \textit{non} può $\lambda$ autovalore di $\psi$.
 \end{itemize}
 Riprendendo l'osservazione a pag. \pageref{observejordan}, scelte delle opportune basi, definiamo $\mathbf{B}$ la matrice associata a $\phi$ e $\mathbf{A}$ la matrice associata a $\psi$ in modo da avere la matrice $A$ associata a $f$ a blocchi.
 \begin{equation*}
@@ -441,7 +441,7 @@ Prima di procedere dimostriamo un lemma che servirà più avanti.
 \begin{lemming}\label{lemmadimjordan}
 Siano $\funz{f}{U}{V}$ e $\funz{g}{V}{W}$ due applicazioni lineari. Si ha:
 \begin{equation}
-\dim\left(\Im f\cap \ker g\right)=\dim\Im f-\dim\Im \left(g\circ f\right)=\dim \ker\left(g\circ f\right)-\dim\ker f
+\dim\left(\im f\cap \ker g\right)=\dim\im f-\dim\im \left(g\circ f\right)=\dim \ker\left(g\circ f\right)-\dim\ker f
 \end{equation}
 \vspace{-6mm}
 \end{lemming}
@@ -451,23 +451,23 @@ Siano $\funz{f}{U}{V}$ e $\funz{g}{V}{W}$ due applicazioni lineari. Si ha:
 	\arrow["{f}", from=1-1, to=1-2]
 	\arrow["{g}", from=1-2, to=1-3]
 \end{tikzcd}\]
-Sia $h\coloneqq \funz{g_{\mid \Im f}}{\Im f}{W}$:
+Sia $h\coloneqq \funz{g_{\mid \mathrm{Im} f}}{\mathrm{Im} f}{W}$. Si ha:
 \begin{equation*}
-	\dim \ker h=\dim \Im f-\dim h
+	\dim \ker h=\dim \im f-\dim h
 \end{equation*}
-Ma $\ker h=\Im f\cap\ker g$ e $\Im h=g\left(\Im f\right)=\Im \left(g\circ f\right)$, dunque:
+Ma $\ker h=\im f\cap\ker g$ e $\im h=g\left(\im f\right)=\im \left(g\circ f\right)$, dunque:
 \begin{equation*}
 	\begin{array}{l}
-	\ker h=\dim \Im f-\dim \Im h\\
-	\dim \left(\Im f\cap\ker g\right) =\dim \Im f-\dim \Im\left(g\circ f\right)
+	\ker h=\dim \im f-\dim \im h\\
+	\dim \left(\im f\cap\ker g\right) =\dim \im f-\dim \im\left(g\circ f\right)
 	\end{array}
 \end{equation*}
 Per dimostrare la seconda uguaglianza, abbiamo:
 \begin{equation*}
 	\begin{array}{l}
-		\dim \Im f=\dim U-\dim \ker f\\
-		\dim \Im \left(g\circ f\right)=\dim U-\dim \ker\left(g\circ f\right)\\
-		\implies \dim \Im f-\dim \Im\left(g\circ f\right)=\dim \ker\left(g\circ f\right)-\dim \ker f
+		\dim \im f=\dim U-\dim \ker f\\
+		\dim \im \left(g\circ f\right)=\dim U-\dim \ker\left(g\circ f\right)\\
+		\implies \dim \im f-\dim \im\left(g\circ f\right)=\dim \ker\left(g\circ f\right)-\dim \ker f
 	\end{array}
 \end{equation*}
 \vspace{-6mm}
@@ -475,20 +475,20 @@ Per dimostrare la seconda uguaglianza, abbiamo:
 \begin{demonstration}
 	Ricordando la successione delle immagini (equazione \ref{successionejordan}):
 	\begin{gather*}
-		V\supsetneqq \Im \left(A-\lambda I\right)\supsetneqq\ldots\supsetneqq\Im \left(A-\lambda I\right)^p
+		V\supsetneqq \im \left(A-\lambda I\right)\supsetneqq\ldots\supsetneqq\im \left(A-\lambda I\right)^p
 	\end{gather*}
 	Intersechiamo ogni termine con $V_{\lambda}=\ker\left(A-\lambda I\right)$:
 	\begin{equation*}
-		\ker\left(A-\lambda I\right)\cap V\supseteq \ker\left(A-\lambda I\right)\cap\Im \left(A-\lambda I\right)\supseteq\ldots\supseteq\ker\left(A-\lambda I\right)\cap\Im \left(A-\lambda I\right)^p
+		\ker\left(A-\lambda I\right)\cap V\supseteq \ker\left(A-\lambda I\right)\cap\im \left(A-\lambda I\right)\supseteq\ldots\supseteq\ker\left(A-\lambda I\right)\cap\im \left(A-\lambda I\right)^p
 	\end{equation*}
 	E poniamo:
 	\begin{equation}
-		S_i\coloneqq \ker\left(A-\lambda I\right)\cap \Im\left(A-\lambda I\right)^{i-1}
+		S_i\coloneqq \ker\left(A-\lambda I\right)\cap \im\left(A-\lambda I\right)^{i-1}
 	\end{equation}
 	In particolare, notiamo che:
 	\begin{itemize}
 		\item $S_1=\ker\left(A-\lambda I\right)\cap V=\ker\left(A-\lambda I\right)=V_{\lambda}$.
-		\item $S_{p+1}=\ker\left(A-\lambda I\right)\cap \Im\left(A-\lambda I\right)^{p}=\left\{\underline{0}\right\}$ perché $\ker\left(A-\lambda I\right)\subsetneqq \ker\left(A-\lambda I\right)^p$ e dunque $S_{p+1}\subseteq \ker\left(A-\lambda I\right)^p\cap \Im\left(A-\lambda I\right)^{p}=\left\{\underline{0}\right\}$.
+		\item $S_{p+1}=\ker\left(A-\lambda I\right)\cap \im\left(A-\lambda I\right)^{p}=\left\{\underline{0}\right\}$ perché $\ker\left(A-\lambda I\right)\subsetneqq \ker\left(A-\lambda I\right)^p$ e dunque $S_{p+1}\subseteq \ker\left(A-\lambda I\right)^p\cap \im\left(A-\lambda I\right)^{p}=\left\{\underline{0}\right\}$.
 		\item Può benissimo capitare che $S_i=S_{i+1}$.
 	\end{itemize}
 Riscriviamo con questa nuova denominazione la successione creata.
@@ -496,7 +496,7 @@ Riscriviamo con questa nuova denominazione la successione creata.
 	V_{\lambda}=S_1\supseteq S_2\supseteq\ldots\supseteq S_p
 \end{equation}
 Costruiamo la base di $\tilde{V}_{\lambda}$.\\
-Innanzitutto, scegliamo una base $\left\{x_1^1,\ \ldots,\ x_r^1\right\}$ del sottospazio più piccolo $S_p$. Per costruzione, $x^1_i\in\Im\left(A-\lambda I\right)^{p-1}$, cioè:
+Innanzitutto, scegliamo una base $\left\{x_1^1,\ \ldots,\ x_r^1\right\}$ del sottospazio più piccolo $S_p$. Per costruzione, $x^1_i\in\im\left(A-\lambda I\right)^{p-1}$, cioè:
 \begin{equation*}
 	\forall i=1,\ \ldots,\ r\ \exists x_1^p\in V\quad x_i^1=\left(A-\lambda I\right)^{p-1}x_i^p
 \end{equation*}
@@ -542,14 +542,14 @@ Consideriamo ora lo spazio $S_{p-1}$, che ricordiamo contiene $S_{p-1}$ cioè ($
 \begin{equation*}
 	\left\{x_1^1,\ \ldots,\ x_r^1,\ y_1^1,\ \ldots,\ y_s^1\right\}
 \end{equation*}
-Per costruzione, $y_j^1\in S_{p-1}\subseteq \Im\left(A-\lambda I\right)^{p-2}$, dunque:
+Per costruzione, $y_j^1\in S_{p-1}\subseteq \im\left(A-\lambda I\right)^{p-2}$, dunque:
 \begin{equation*}
 	\forall j=1,\ \ldots,\ s\ \exists y_1^{p-1}\in V\quad y_j^1=\left(A-\lambda I\right)^{p-2}y_j^{p-1}
 \end{equation*}
 Per ogni $j$ otteniamo $p-1$ vettori  $\left\{j_i^1,\ \ldots,\ j_i^{p-1}\right\}$ tali che $y^s_j\in V_{\lambda}$ e $j_i^{i-1}\coloneqq\left(A-\lambda I\right)y_j^i$ $\forall i=2,\ \ldots,\ p-1$. Analogamente al caso precedente, questo gruppo di vettori dà origine ad un \textit{blocco di Jordan} di ordine $p-1$.\\
-Procediamo in questo modo: prendiamo la base ottenuta per $S_{i}$ e la completiamo ad una di $S_{i-1}\supseteq S_{i}$; poiché ogni vettore aggiunto appartiene a $\Im\left(A-\lambda I\right)^{i-2}$, applicando $i-2$ volte la matrice $A_\lambda I$ al vettore $z_k^{i-1}$ (fino ad ottenere $z_k^1$) otteniamo un'insieme di vettori che generano un blocco di Jordan di dimensioni $i$ e di autovalore $\lambda$.\\
+Procediamo in questo modo: prendiamo la base ottenuta per $S_{i}$ e la completiamo ad una di $S_{i-1}\supseteq S_{i}$; poiché ogni vettore aggiunto appartiene a $\im\left(A-\lambda I\right)^{i-2}$, applicando $i-2$ volte la matrice $A_\lambda I$ al vettore $z_k^{i-1}$ (fino ad ottenere $z_k^1$) otteniamo un'insieme di vettori che generano un blocco di Jordan di dimensioni $i$ e di autovalore $\lambda$.\\
 Chiaramente, poiché potrebbe anche accadere che $S_{i-1}= S_{i}$, si prosegue senza aggiungere vettori alla base e si passa al sottospazio successivo.\\
-Arriviamo con queste iterazioni fino a $S_2=V_\lambda\cap \Im \left(A-\lambda I\right)$: completiamo la base da $S_3$ ad una di $S_2$ aggiungendo i vettori $\left\{a_1^1,\ \ldots,\ a_t^1\right\}$. Sappiamo che $\exists a_t^2\ \colon a_t^1=\left(A-\lambda I\right)^{p-2}a_t^2$, dunque abbiamo i due vettori che formano il blocco di Jordan di dimensione $2$.\\
+Arriviamo con queste iterazioni fino a $S_2=V_\lambda\cap \im \left(A-\lambda I\right)$: completiamo la base da $S_3$ ad una di $S_2$ aggiungendo i vettori $\left\{a_1^1,\ \ldots,\ a_t^1\right\}$. Sappiamo che $\exists a_t^2\ \colon a_t^1=\left(A-\lambda I\right)^{p-2}a_t^2$, dunque abbiamo i due vettori che formano il blocco di Jordan di dimensione $2$.\\
 Infine, completiamo ad una base di $S_1$ aggiungendo i vettori $\left\{b_1^1,\ \ldots,\ b_u^1\right\}$. In questo caso, non abbiamo bisogno di calcolare altri vettori $b_u^i\ \forall u$ (al variare di $i$) come prima, in quanto i vettori, per definizione di $S_1$, appartengono anche a $\ker\left(A-\lambda I\right)$. Allora, $\forall u\ b_u^1$ generano blocchi di Jordan di dimensione $1$.\\
 Al variare di $i,\ j,\ k,\ \ldots,\ t,\ u$ abbiamo costruito un insieme di vettori tutti appartenenti a $\tilde{V}_{\lambda}=\ker\left(A.\lambda I\right)$: nello schema precedente essi sono tutti i vettori appartenenti a tutte le colonne, da quella di $x_i$ a quella di $b_u$.\\
 \textbf{Vogliamo contare quanti sono questi vettori.} Innanzitutto, dobbiamo considerare che lo schema, per compattezza, rappresenta \textit{solo una colonna} per ciascun $x_i,\ y_j,\ \ldots$, ma in realtà c'è una colonna analoga alla prima \textit{per ogni vettore} della base di $S_p$, una colonna analoga alla seconda per ogni vettore della base di $S_{p-1}$ e così via. In pratica, abbiamo $\dim S_p=r$ colonne con $x_i$, $\dim S_{p-1}-\dim S_{p}=s$ colonne con $y_j$ e così via.\\
@@ -562,7 +562,7 @@ Proseguendo così, il numero di vettori della $i$-esima riga è pari alla dimens
 Usando il lemma \ref{lemmadimjordan} (pag. \pageref{lemmadimjordan}), otteniamo che:
 \begin{gather*}
 	\begin{array}{ll}
-		\dim S_i&=\dim \left(\ker\left(A-\lambda I\right)\cap \Im\left(A-\lambda I\right)^{i-1}\right)=\\
+		\dim S_i&=\dim \left(\ker\left(A-\lambda I\right)\cap \im\left(A-\lambda I\right)^{i-1}\right)=\\
 		&=\dim\ker\left(A-\lambda I\right)^i-\dim\ker\left(A-\lambda I\right)^{i-1}\\
 	\end{array}\\
 \implies\\
@@ -607,7 +607,7 @@ m_A\left(t\right)=\left(t-\lambda_i\right)^{p_1}\ldots\left(t-\lambda\right)^{p_
 \end{proposition}
 L'osservazione che qui facciamo ci servirà nella dimostrazione della proposizione.
 \begin{observe}
-	Se $p\left(t\right),\ q\left(t\right)\in\mathbb{K}\left[t\right]$, allora:
+	Se $p\left(t\right),\ q\left(t\right)\in\kamp\left[t\right]$, allora:
 	\begin{equation}
 		p\left(A\right)q\left(A\right)=q\left(A\right)p\left(A\right)
 	\end{equation}
@@ -748,15 +748,15 @@ Queste due matrici hanno forme di Jordan \textit{diverse}, ma hanno entrambe:
 		\item Se $A$ ha un'\textit{unico} autovalore $\lambda$, allora $V=\tilde{V}_{\lambda}$ e $\left(A-\lambda I\right)^p=0$. In particolare segue che:
 		\begin{equation*}
 			\begin{array}{l}
-				\forall \underline{v}\in\Im\left(A-\lambda I\right)^{p-1}\ \exists\underline{u}\in\left(A-\lambda I\right)^{p-1}\ \colon \left(A-\lambda I\right)^{p-1}\underline{u}=\underline{v}\\
+				\forall \underline{v}\in\im\left(A-\lambda I\right)^{p-1}\ \exists\underline{u}\in\left(A-\lambda I\right)^{p-1}\ \colon \left(A-\lambda I\right)^{p-1}\underline{u}=\underline{v}\\
 				\implies \underline{0}=\left(A-\lambda I\right)^{p}\underline{u}=\left(A-\lambda I\right)\underline{v}\\
 				\implies\underline{v}\in\ker\left(A-\lambda I\right)\\
-				\implies \Im\left(A-\lambda I\right)^{p-1}\subseteq \ker\left(A-\lambda I\right)\\
-				\implies S_p=\Im\left(A-\lambda I\right)^{p-1}\cap \ker\left(A-\lambda I\right)=\Im\left(A-\lambda I\right)^{p-1}
+				\implies \im\left(A-\lambda I\right)^{p-1}\subseteq \ker\left(A-\lambda I\right)\\
+				\implies S_p=\im\left(A-\lambda I\right)^{p-1}\cap \ker\left(A-\lambda I\right)=\im\left(A-\lambda I\right)^{p-1}
 			\end{array}
 		\end{equation*}	
-		\textit{Pertanto, nel caso} $S_p$ \textit{non c'è bisogno di intersecare con} $V_{\lambda}$! Questo tuttavia \textit{non} si applica agli altri $S_i$, dato che \textit{non} vale la relazione $\Im\left(A-\lambda I\right)^{i}\subseteq \ker\left(A-\lambda I\right)$.
-		\item Se so che per $\lambda$ tutti i blocchi di Jordan hanno la stessa dimensione $p$, \textit{possiamo calcolare direttamente} $S_p=\Im\left(A-\lambda I\right)^{p-1}\cap V_{\lambda}$. %(dato che $S_p=S_{p-1}=\ldots=S_1$ e dunque non ci sono blocchi di altre dimensioni)?
+		\textit{Pertanto, nel caso} $S_p$ \textit{non c'è bisogno di intersecare con} $V_{\lambda}$! Questo tuttavia \textit{non} si applica agli altri $S_i$, dato che \textit{non} vale la relazione $\im\left(A-\lambda I\right)^{i}\subseteq \ker\left(A-\lambda I\right)$.
+		\item Se so che per $\lambda$ tutti i blocchi di Jordan hanno la stessa dimensione $p$, \textit{possiamo calcolare direttamente} $S_p=\im\left(A-\lambda I\right)^{p-1}\cap V_{\lambda}$. %(dato che $S_p=S_{p-1}=\ldots=S_1$ e dunque non ci sono blocchi di altre dimensioni)?
 	\end{enumerate}
 \end{tips}
 \begin{exercise}
@@ -815,9 +815,9 @@ Il rango è $\rk \left(A-2I\right)=1$ e la molteplicità geometrica è pertanto 
 \end{equation*}
 Come osservato precedentemente, la molteplicità geometrica di $\lambda$ dà il numero di blocchi di Jordan della matrice, pertanto ho sicuramente due blocchi di Jordan e, avendo fatto tutti i casi, sappiamo senza altri calcoli che il blocco massimo ha ordine $p=2$. La situazione in termini di spazi $S_i$, è:
 \begin{equation*}
-V_2=S_1\supseteq S_2=\Im\left(A-2 I\right)
+V_2=S_1\supseteq S_2=\im\left(A-2 I\right)
 \end{equation*}
-Avendo un unico autovalore, nel caso $S_2$ non abbiamo bisogno di calcolare l'intersezione con l'autospazio. Dunque, cerchiamo una base di $S_2=\Im\left(A-2 I\right)$. Sappiamo già che la sua base è di un solo vettore, dato che $\rk\left(A-2 I\right)=1=\dim\Im\left(A-2 I\right)$. Essendo l'immagine, possiamo prendere un vettore colonna della matrice $A-2 I$, che definiremo $x_1^1$; ad esempio, prendiamo la prima colonna:
+Avendo un unico autovalore, nel caso $S_2$ non abbiamo bisogno di calcolare l'intersezione con l'autospazio. Dunque, cerchiamo una base di $S_2=\im\left(A-2 I\right)$. Sappiamo già che la sua base è di un solo vettore, dato che $\rk\left(A-2 I\right)=1=\dim\im\left(A-2 I\right)$. Essendo l'immagine, possiamo prendere un vettore colonna della matrice $A-2 I$, che definiremo $x_1^1$; ad esempio, prendiamo la prima colonna:
 \begin{equation*}
 x_1^1=\left(6,\ 0,\ 9\right)
 \end{equation*} 
@@ -1402,7 +1402,7 @@ Poiché $\dim V_{\lambda}=1$, segue che la forma di Jordan è un unico blocco di
 		0 & -1 \\
 	\end{array}\right)
 \end{equation*}
-Cerchiamo ora una matrice $P$, e dunque una base $\basis$, che mette $A$ in forma di Jordan ($A=PJP^{-1}$). Poichè abbiamo un unico autovalore, $\left(A-\lambda I\right)^2=O$ e $\Im \left(A-\lambda I\right)\subseteq \ker \left(A-\lambda I\right)$.\\ Studiamo $S_2=\ker\left(A+I\right)\cap \Im\left(A+I\right)^{p-1}=\Im \left(A+I\right)$; esso ha $\dim S_2=1$ e per trovarne una base basta prendere una colonna di $A+I$:
+Cerchiamo ora una matrice $P$, e dunque una base $\basis$, che mette $A$ in forma di Jordan ($A=PJP^{-1}$). Poichè abbiamo un unico autovalore, $\left(A-\lambda I\right)^2=O$ e $\im \left(A-\lambda I\right)\subseteq \ker \left(A-\lambda I\right)$.\\ Studiamo $S_2=\ker\left(A+I\right)\cap \im\left(A+I\right)^{p-1}=\im \left(A+I\right)$; esso ha $\dim S_2=1$ e per trovarne una base basta prendere una colonna di $A+I$:
 \begin{equation*}
 v_2 = \left(2,\ 1\right)=
 \end{equation*}
