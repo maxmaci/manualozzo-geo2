@@ -51,7 +51,7 @@ Si vuole formalizzare il concetto di avere la topologia euclidea localmente.
 	Sia $X$ uno spazio topologico compatto, connesso, $T_2$ e localmente euclideo di dimensione $n$. Allora $X$ è a base numerabile, dunque $X$ è una varietà topologica di dimensione $n$.
 \end{theorema}
  
-	\subsection{dimensione $1$}
+	\subsection{Dimensione $1$}
 Analizziamo il caso di varietà topologiche di dimensione $1$, per esempio $\realset$ e $S^1$.
 \begin{theorema}
 	Ogni varietà topologica di dimensione 1 è omeomorf a $\realset$ se non è compatta, oppure a $S^1$ se compatta.
@@ -59,7 +59,7 @@ Analizziamo il caso di varietà topologiche di dimensione $1$, per esempio $\rea
 \begin{example} 
 Riconsideriamo l'esempio della retta con 2 origini, vedasi la sezione \ref{retta 2 origini}, essa è un quoziente non $T_2$, dunque non è una varietà topologica.
 \end{example}
-	\subsection{dimensione $2$}
+	\subsection{Dimensione $2$}
 \begin{define} 
 	Una varietà topologica di dimensione 2 si dice \textbf{superficie topologica}.
 \end{define}
@@ -75,9 +75,39 @@ Vogliamo dare una classificazione delle superfici topologiche \textit{compatte}.
 %BIBLIOGRAFIA
 \begin{examples} \textsc{modelli piani}\\
 	\begin{itemize}
-		\item Siccome $\mathbb{P}^2(\realset)$ è un quoziente del disco allora a meno di omeomorfismo lo si può anche vedere come un quoziente di $I\times I$ con una relazione di equivalenza sul bordo.
-		\item Anche il toro si può vedere come quoziente di $I\times I$
-		\item Vediamo $S^2$ come quoziente di $I\times I$
+		\item Siccome $\mathbb{P}^2(\realset)$ è un quoziente del disco allora a meno di omeomorfismo lo si può anche vedere come un quoziente di $I\times I$ con una relazione di equivalenza sul bordo con parola $abab$
+		% https://q.uiver.app/?q=WzAsNCxbMCwwLCJcXGJ1bGxldCJdLFsyLDAsIlxcYnVsbGV0Il0sWzIsMiwiXFxidWxsZXQiXSxbMCwyLCJcXGJ1bGxldCJdLFswLDEsImEiXSxbMSwyLCJiIl0sWzIsMywiYSJdLFszLDAsImIiXV0=
+		\[\begin{tikzcd}
+			{\bullet} && {\bullet} \\
+			\\
+			{\bullet} && {\bullet}
+			\arrow["{a}", from=1-1, to=1-3]
+			\arrow["{b}", from=1-3, to=3-3]
+			\arrow["{a}", from=3-3, to=3-1]
+			\arrow["{b}", from=3-1, to=1-1]
+		\end{tikzcd}\]
+		\item Anche il toro si può vedere come quoziente di $I\times I$ con parola $aba^{-1}b^{-1}$
+		% https://q.uiver.app/?q=WzAsNCxbMCwwLCJcXGJ1bGxldCJdLFsyLDAsIlxcYnVsbGV0Il0sWzIsMiwiXFxidWxsZXQiXSxbMCwyLCJcXGJ1bGxldCJdLFswLDEsImIiXSxbMywwLCJhIl0sWzIsMSwiYSIsMl0sWzMsMiwiYiIsMl1d
+		\[\begin{tikzcd}
+			{\bullet} && {\bullet} \\
+			\\
+			{\bullet} && {\bullet}
+			\arrow["{b}", from=1-1, to=1-3]
+			\arrow["{a}", from=3-1, to=1-1]
+			\arrow["{a}"', from=3-3, to=1-3]
+			\arrow["{b}"', from=3-1, to=3-3]
+		\end{tikzcd}\]
+		\item Vediamo $S^2$ come quoziente di $I\times I$ con parola $bb^{-1}a^{-1}a$
+		% https://q.uiver.app/?q=WzAsNCxbMCwwLCJcXGJ1bGxldCJdLFsyLDAsIlxcYnVsbGV0Il0sWzIsMiwiXFxidWxsZXQiXSxbMCwyLCJcXGJ1bGxldCJdLFswLDEsImIiXSxbMywwLCJhIl0sWzIsMSwiYiIsMl0sWzMsMiwiYSIsMl1d
+		\[\begin{tikzcd}
+			{\bullet} && {\bullet} \\
+			\\
+			{\bullet} && {\bullet}
+			\arrow["{b}", from=1-1, to=1-3]
+			\arrow["{a}", from=3-1, to=1-1]
+			\arrow["{b}"', from=3-3, to=1-3]
+			\arrow["{a}"', from=3-1, to=3-3]
+		\end{tikzcd}\]
 	\end{itemize}
 \end{examples}
 
@@ -89,19 +119,80 @@ Vogliamo dare una classificazione delle superfici topologiche \textit{compatte}.
 			\item $S$ è $T_2$.
 		\end{enumerate}
 	Osserviamo che nella relazione di equivalenza due lati vengono identificati nel modo seguente: $l_i\cong\intv$, dunque scelgo un omeomorfismo $l_1\stackrel{\stackrel{\phi}{\sim}}{\longrightarrow} l_2$, $p_1\in l_1 \sim \phi(p)\in l_2$ e $\phi$ manda vertici in vertici.
-	Il poligono $P$ con la relazione di equivalenza sui lati è detto un \textbf{modello piano} della superficie $S$ e può essere schematizzato con una sequenza di lettere detta \textbf{parola}. Inoltre il modello piano di una superficie compatta non è unico.
+	Il poligono $P$ con la relazione di equivalenza sui lati è detto un \textbf{modello piano} della superficie $S$ e può essere schematizzato con una sequenza di lettere detta \textbf{parola}. Ad essempio per la parola $aba^{-1}cbc^{-1}$ si ottiene il modello piano sguente
+	% https://q.uiver.app/?q=WzAsNixbMSwwLCJcXGJ1bGxldCJdLFsyLDAsIlxcYnVsbGV0Il0sWzMsMSwiXFxidWxsZXQiXSxbMCwxLCJcXGJ1bGxldCJdLFsxLDIsIlxcYnVsbGV0Il0sWzIsMiwiXFxidWxsZXQiXSxbMCwxLCJhIl0sWzEsMiwiYiJdLFswLDMsImMiLDJdLFs0LDMsImIiXSxbNSwyLCJhIiwyXSxbNSw0LCJjIl1d
+	\[\begin{tikzcd}
+		& {\bullet} & {\bullet} \\
+		{\bullet} &&& {\bullet} \\
+		& {\bullet} & {\bullet}
+		\arrow["{a}", from=1-2, to=1-3]
+		\arrow["{b}", from=1-3, to=2-4]
+		\arrow["{c}"', from=1-2, to=2-1]
+		\arrow["{b}", from=3-2, to=2-1]
+		\arrow["{a}"', from=3-3, to=2-4]
+		\arrow["{c}", from=3-3, to=3-2]
+	\end{tikzcd}\]
+ Inoltre il modello piano di una superficie compatta non è unico.
 \end{observe}
+
+
 
 \begin{examples}
 	\begin{itemize}
 		\item $S^2$
+		% https://q.uiver.app/?q=WzAsMixbMCwwLCJcXGJ1bGxldCJdLFswLDIsIlxcYnVsbGV0Il0sWzAsMSwiYSIsMix7ImN1cnZlIjozfV0sWzAsMSwiYSIsMCx7ImN1cnZlIjotM31dXQ==
+		\[\begin{tikzcd}
+			{\bullet} \\
+			\\
+			{\bullet}
+			\arrow["{a}"', from=1-1, to=3-1, curve={height=18pt}]
+			\arrow["{a}", from=1-1, to=3-1, curve={height=-18pt}]
+		\end{tikzcd}\]
 		\item $\mathbb{P}^2(\realset)$
+		% https://q.uiver.app/?q=WzAsMixbMCwwLCJcXGJ1bGxldCJdLFswLDIsIlxcYnVsbGV0Il0sWzAsMSwiYSIsMix7ImN1cnZlIjozfV0sWzEsMCwiYSIsMix7ImN1cnZlIjozfV1d
+		\[\begin{tikzcd}
+			{\bullet} \\
+			\\
+			{\bullet}
+			\arrow["{a}"', from=1-1, to=3-1, curve={height=18pt}]
+			\arrow["{a}"', from=3-1, to=1-1, curve={height=18pt}]
+		\end{tikzcd}\]
 		\item bottiglia di Klein $K$, essa è la superficie compatta data dal modello piano. Confrontiamolo con il toro. Incolliamo entrambi i modelli: prima si ottiene $S^1\times I$ con la relazione di equivalenza sul bordo.
+		% https://q.uiver.app/?q=WzAsMTYsWzAsNCwiXFxidWxsZXQiXSxbMCw2LCJcXGJ1bGxldCJdLFsyLDQsIlxcYnVsbGV0Il0sWzIsNiwiXFxidWxsZXQiXSxbNSw0LCJcXGJ1bGxldCJdLFs3LDQsIlxcYnVsbGV0Il0sWzUsNiwiXFxidWxsZXQiXSxbNyw2LCJcXGJ1bGxldCJdLFswLDIsIlxcYnVsbGV0Il0sWzAsMCwiXFxidWxsZXQiXSxbMiwwLCJcXGJ1bGxldCJdLFsyLDIsIlxcYnVsbGV0Il0sWzUsMiwiXFxidWxsZXQiXSxbNSwwLCJcXGJ1bGxldCJdLFs3LDAsIlxcYnVsbGV0Il0sWzcsMiwiXFxidWxsZXQiXSxbMCwxLCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsMywiIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFswLDIsImIiLDIseyJjdXJ2ZSI6Mn1dLFswLDIsIiIsMSx7ImN1cnZlIjotMiwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDEsImIiLDAseyJjdXJ2ZSI6LTJ9XSxbMSwzLCIiLDAseyJjdXJ2ZSI6LTIsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNSwiYiIsMix7ImN1cnZlIjoyfV0sWzQsNSwiIiwwLHsiY3VydmUiOi0yLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsNywiYiIsMix7ImN1cnZlIjoyfV0sWzYsNywiIiwwLHsiY3VydmUiOi0yLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDYsIiIsMSx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNSw3LCIiLDEseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzgsOSwiYSJdLFs5LDEwLCJiIl0sWzExLDEwLCJhIiwyXSxbMTEsOCwiYiJdLFsxMiwxMywiYSJdLFsxMywxNCwiYiJdLFsxMiwxNSwiYiIsMl0sWzE1LDE0LCJhIiwyXV0=
+		\[\begin{tikzcd}
+			{\bullet} && {\bullet} &&& {\bullet} && {\bullet} \\
+			\\
+			{\bullet} && {\bullet} &&& {\bullet} && {\bullet} \\
+			\\
+			{\bullet} && {\bullet} &&& {\bullet} && {\bullet} \\
+			\\
+			{\bullet} && {\bullet} &&& {\bullet} && {\bullet}
+			\arrow[from=5-1, to=7-1, no head]
+			\arrow[from=5-3, to=7-3, no head]
+			\arrow["{b}"', from=5-1, to=5-3, curve={height=12pt}]
+			\arrow[from=5-1, to=5-3, curve={height=-12pt}, no head]
+			\arrow["{b}", from=7-3, to=7-1, curve={height=-12pt}]
+			\arrow[from=7-1, to=7-3, curve={height=-12pt}, dotted, no head]
+			\arrow["{b}"', from=5-6, to=5-8, curve={height=12pt}]
+			\arrow[from=5-6, to=5-8, curve={height=-12pt}, no head]
+			\arrow["{b}"', from=7-6, to=7-8, curve={height=12pt}]
+			\arrow[from=7-6, to=7-8, curve={height=-12pt}, dotted, no head]
+			\arrow[from=5-6, to=7-6, no head]
+			\arrow[from=5-8, to=7-8, no head]
+			\arrow["{a}", from=3-1, to=1-1]
+			\arrow["{b}", from=1-1, to=1-3]
+			\arrow["{a}"', from=3-3, to=1-3]
+			\arrow["{b}", from=3-3, to=3-1]
+			\arrow["{a}", from=3-6, to=1-6]
+			\arrow["{b}", from=1-6, to=1-8]
+			\arrow["{b}"', from=3-6, to=3-8]
+			\arrow["{a}"', from=3-8, to=1-8]
+		\end{tikzcd}\]
 	\end{itemize}
 \end{examples}
 
 	\subsection{Somma connessa}
-Siano $S_1$ e $S_2$ superfici compatte e siano $x\in S_1$ e $y\in S_2$. Siano $D_x\subset S_1$ e $D_y\subset S_2$ intorni di $x$ e $y$ rispettivamente, omeomorfi ad un disco chiuso $D\subset\realset^2$, dunque $D_x\stackrel{\stackrel{h}{\sim}}{\longrightarrow} D_y$. Togliamo dalle due superfici gli intorni dei dischetti, sia $Y\coloneqq (S_1\setminus \interior{D_x)}\amalg (S_2\setminus \interior{D_y})$, incolliamo i due pezzi di $Y$ lungo i bordi dei dischi, cioé mettiamo su $Y$ la relazione di equivalenza $x_1\sim y_1 \iff x_1=y_1$ oppure $x_1\in\partial{D},\ y_1\in\partial{D}$ e $y_1=h(x_1)$ o viceversa.\newline
+Siano $S_1$ e $S_2$ superfici compatte e siano $x\in S_1$ e $y\in S_2$. Siano $D_x\subset S_1$ e $D_y\subset S_2$ intorni di $x$ e $y$ rispettivamente, omeomorfi ad un disco chiuso $D\subset\realset^2$, dunque $D_x\stackrel{\stackrel{h}{\sim}}{\longrightarrow} D_y$. Togliamo dalle due superfici gli intorni dei dischetti, sia $Y\coloneqq (S_1\setminus \interior{D_x})\amalg (S_2\setminus \interior{D_y})$, incolliamo i due pezzi di $Y$ lungo i bordi dei dischi, cioé mettiamo su $Y$ la relazione di equivalenza $x_1\sim y_1 \iff x_1=y_1$ oppure $x_1\in\partial{D},\ y_1\in\partial{D}$ e $y_1=h(x_1)$ o viceversa.\newline
 Vediamo ora qualche fatto che non dimostriamo:
 	\begin{itemize}
 		\item il quoziente è ancora una superficie topologica, che denotiamo con $S_1\# S_2$ \textbf{somma connessa} di $S_1$ e $S_2$
