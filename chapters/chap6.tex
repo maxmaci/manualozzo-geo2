@@ -107,7 +107,7 @@ Se $X$ è \textit{a base numerabile}, allora è \textit{separabile}.
 	\begin{center}
 		\textit{a base numerabile} $\iff$ \textit{separabile}
 	\end{center}
-\vspace{-8mm}
+\vspace{-6mm}
 \end{proposition}
 \begin{demonstration}~{}\\
 $\impliesdx$ Sempre vera per ogni spazio anche non metrico (lemma \ref{basenumseparabile}).\\
@@ -184,7 +184,8 @@ Notiamo che se $x\neq y$, allora $U\left(x\right)\neq U\left(y\right)$: preso $y
 \end{center}
 \section{Successioni}
 \begin{define}
-Una \textbf{successione}\index{successione} in uno spazio topologico $X$ è una funzione $\funz{a}{\naturalset}{X}$ che indichiamo con $\left\{a_n\right\}_{n\in\naturalset}=\left\{a_n\right\}$.
+Una \textbf{successione}\index{successione} in uno spazio topologico $X$ è una funzione:
+$\funz{a}{\naturalset}{X}$ che indichiamo con $\left\{a_n\right\}_{n\in\naturalset}=\left\{a_n\right\}$.
 \end{define}
 \begin{define}
 Sia $\left\{a_n\right\}$ una successione in $X$. Diciamo che $\left\{a_n\right\}$ \textbf{converge}\index{convergenza} a $p\in X$ se $\forall U\in I\left(p\right)\ \exists n_0\in \naturalset\ \colon a_n\in U,\ \forall n\geq n_0$.
@@ -222,7 +223,7 @@ Se $X$ spazio metrico:
 \begin{equation}
 	a_n\textsc{ converge a } p\iff \forall \epsilon>0\ \exists n_0\ \colon \mvf{d}{x}{y}<\epsilon,\ \forall n\geq n_0
 \end{equation}
-\vspace{-8mm}
+\vspace{-6mm}
 \end{observe}
 \begin{demonstration}~{}\\
 	$\impliesdx$ $U=B_{\epsilon}\left(p\right)$ è l'intorno di convergenza che soddisfa l'implicazione.\\
@@ -234,7 +235,7 @@ Se $X$ spazio metrico:
 	\begin{equation}
 		\forall U\in I\left(p\right),\ \forall N\in\naturalset\ \exists n\geq N\ \colon a_n\in U
 	\end{equation}
-\vspace{-8mm}
+\vspace{-6mm}
 \end{define}
 \begin{exercise}
 	Se $X$ è spazio metrico, allora:
@@ -242,7 +243,7 @@ Se $X$ spazio metrico:
 		p\textsc{ punto di accumulazione per } a_n\iff \forall \epsilon>0\ \exists n_0\ \colon \mvf{d}{x}{y}<\epsilon,\ \forall n\geq n_0
 	\end{equation}
 \end{exercise}
-\vspace{-8mm}
+\vspace{-6mm}
 \begin{define}
 	Un punto $p\in X$ è \textbf{punto di accumulazione per il sottoinsieme}\index{punto!di accumulazione!per un sottoinsieme} $B\subseteq X$ se:
 	\begin{equation}
@@ -521,11 +522,11 @@ Dunque $\left\{a_n\right\}$ converge a $p$.
 	Sia $\left\{a_n\right\}$ di Cauchy in $\realset^n$. Mostriamo che $\left\{a_n\right\}$ è eventualmente limitata\footnote{Supponendo chiaramente che la successione sia ben definita, ci interessa solamente che la successione sia limitata dopo un $n_0$: prima di ciò ho un numero finito di termini $a_0,\ \ldots,\ a_{n_0}<\infty$ e posso chiaramente prendere una palla (chiusa) che li contenga, ad esempio di raggio $M+1$ con $M$ definito come nella dimostrazione.}.\\
 	Poiché la successione di Cauchy è definita per ogni $\epsilon$, fissiamo $\epsilon=1$. Allora:
 	\begin{equation*}
-	\exists n_0\ \colon \lvert\lvert a_n-a_m\rvert\rvert\leq 1\ \forall n,\ m\geq n_0
+	\exists n_0\ \colon \labs a_n-a_m\rabs\leq 1\ \forall n,\ m\geq n_0
 	\end{equation*}
-Sia $M\coloneqq \max_{n_0,\ \ldots,\ n_0}\lvert\lvert a_n\rvert\rvert$. Se $n\geq n_0$ si ha:
+Sia $M\coloneqq \max_{n_0,\ \ldots,\ n_0}\labs a_n\rabs$. Se $n\geq n_0$ si ha:
 \begin{equation*}
-\lvert\lvert a_n\rvert\rvert=\lvert\lvert a_n - a_{n_0}+ a_{n_0}\rvert\rvert=\leq \lvert\lvert a_n - a_{n_0}\rvert\rvert+\lvert\lvert a_{n_0}\rvert\rvert\leq 1+M
+\labs a_n\rabs=\labs a_n - a_{n_0}+ a_{n_0}\rabs=\leq \labs a_n - a_{n_0}\rabs+\labs a_{n_0}\rabs\leq 1+M
 \end{equation*}
 Questo significa che $\left\{a_n\right\}\subseteq\overline{B_{1+M}\left(0\right)}$. Questa palla chiusa è uno spazio metrico \textit{indotto} in $\realset^n$ e compatto, cioè è uno \textit{spazio metrico completo}. Allora la successione di Cauchy, trovandosi in uno spazio metrico completo, converge in esso, e dunque converge anche in $\realset^n$.
 \end{demonstration}

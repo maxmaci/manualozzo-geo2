@@ -16,9 +16,11 @@
 \end{introduction}
 
 \section{Teorema di Cayley-Hamilton}
-[...]\\
+\begin{center}
+	[...]
+\end{center}
 \begin{theorema}
-	Sia $A\in \mathbb{K}^{n,\ n}$ e $m_A\left(t\right)$ il suo polinomio minimo. Allora, preso $\lambda\in\mathbb{K}$:
+	Sia $A\in \kamp^{n,\ n}$ e $m_A\left(t\right)$ il suo polinomio minimo. Allora, preso $\lambda\in\kamp$:
 	\begin{equation}
 		m_A\left(\lambda\right)=0\iff \lambda\text{ è un autovalore di }A
 	\end{equation}
@@ -31,13 +33,13 @@
 		A\underline{v}=\lambda \underline{v}\\
 		A^2\underline{v}=A\left(A\underline{v}\right)=A\left(\lambda \underline{v}\right)=\lambda A\underline{v}=\lambda^2 \underline{v}\\
 	\end{gather*}
-Allo stesso modo si arriva a $A^k\underline{v}=\lambda^n\underline{v}$. Preso un generico polinomio $p\left(t\right)\in\mathbb{K}\left[t\right]$, esso si può esprimere come:
+Allo stesso modo si arriva a $A^k\underline{v}=\lambda^n\underline{v}$. Preso un generico polinomio $p\left(t\right)\in\kamp\left[t\right]$, esso si può esprimere come:
 \begin{equation*}
-	p=\sum_{i=0}^{d}c_i t_i\quad c_i\in\mathbb{K}
+	p=\sum_{i=0}^{d}c_i t_i\quad c_i\in\kamp
 \end{equation*}
 Allora $\displaystyle p\left(A\right)=\sum_{i=0}^{d}c_i A^i$ e dunque:
 \begin{align*}
-	p\left(A\right)\underline{v}&=\left(\sum_{i=0}^{d}c_i A^i\right)\underline{v}=\sum_{i=0}^{d}c_i\left( A^i\underline{v}\right)=\sum_{i=0}^{d}c_i\left( \lambda^i\underline{v}\right)=\underbrace{\left(\sum_{i=0}^{d}c_i \lambda^i\right)}_{\in\mathbb{K}}\underline{v}=p\left(\lambda\right)\underline{v}
+	p\left(A\right)\underline{v}&=\left(\sum_{i=0}^{d}c_i A^i\right)\underline{v}=\sum_{i=0}^{d}c_i\left( A^i\underline{v}\right)=\sum_{i=0}^{d}c_i\left( \lambda^i\underline{v}\right)=\underbrace{\left(\sum_{i=0}^{d}c_i \lambda^i\right)}_{\in\kamp}\underline{v}=p\left(\lambda\right)\underline{v}
 \end{align*}
 Consideriamo ora un polinomio $p\in I_A$. Per sua definizione $p\left(A\right)=0$; in particolare, da quanto scritto sopra:
 \begin{equation*}
@@ -46,17 +48,17 @@ Consideriamo ora un polinomio $p\in I_A$. Per sua definizione $p\left(A\right)=0
 Ed essendo $v$ un autovettore, $v\neq 0$; dall'equazione sopra necessariamente segue $p\left(\lambda\right)=0$. In particolare, essendo $p\in I_A$ generato dal polinomio minimo $m_A$ (cioè $p\left(t\right)=m_A\left(t\right)q\left(t\right)$ con $q\left(t\right)\neq 0$), segue che $m_A\left(\lambda\right)=0$.
 \end{demonstration}
 \section{Forma canonica di Jordan}
-D'ora in poi, se non altresì specificato, considereremo $\mathbb{K}=\complexset$, cioè tratteremo di matrici $A\in \complexset^{n,\ n}$ e endomorfismi fra spazi vettoriali complessi.
-\begin{observe}
-Poichè $\complexset$ è algebricamente chiuso, ogni polinomio $p\in\complexset\left[t\right]$ si fattorizza completamente come prodotto di fattori lineari:
+D'ora in poi, se non altresì specificato, considereremo $\kamp=\complexset$, cioè tratteremo di matrici $A\in \complexset^{n,\ n}$ e endomorfismi fra spazi vettoriali complessi.
+\begin{observe}\label{complessichiusi}
+Poichè $\complexset$ è \textbf{algebricamente chiuso}, ogni polinomio $p\in\complexset\left[t\right]$ si fattorizza completamente come prodotto di fattori lineari:
 \begin{equation}
 	C_A\left(t\right)=\left(t-\lambda_1\right)^{m_1}\ldots\left(t-\lambda_r\right)^{m_r}\text{ con } m_i \text{ molteplicità algebrica di } \lambda_i
 \end{equation}
 Nel caso del polinomio minimo, si ha:
-Poichè $\complexset$ è algebricamente chiuso, ogni polinomio $p\in\complexset\left[t\right]$ si fattorizza completamente come prodotto di fattori lineari:
 \begin{equation}
-	m_A\left(t\right)=\left(t-\lambda_1\right)^{h_1}\ldots\left(t-\lambda_r\right)^{h_r}\text{ con } 1\leq h_i\leq m_i \forall i=1,\ldots,\ r
+	m_A\left(t\right)=\left(t-\lambda_1\right)^{h_1}\ldots\left(t-\lambda_r\right)^{h_r}\text{ con } 1\leq h_i\leq m_i\ \forall i=1,\ldots,\ r
 \end{equation}
+Come altra conseguenza, ogni matrice $n\times n$ ammette $n$ autovalori complessi, contati con la loro molteplicità.
 \end{observe}
 Sia $A\in \complexset^{n,\ n}$ una matrice associata a un endomorfismo $\funz{f}{V}{V}$. Se $f$ è diagonalizzabile, esiste una base in cui la matrice di $f$ è diagonale. Anche quando tuttavia la matrice non è diagonalizzabile, vogliamo cercare una base in cui la matrice di $f$ è \textit{particolarmente semplice}.
 \begin{define}
@@ -79,7 +81,7 @@ Sia $A\in \complexset^{n,\ n}$ una matrice associata a un endomorfismo $\funz{f}
 		\item Il polinomio caratteristico di $J$ è $C_J\left(t\right)=\left(t-\lambda\right)^k$, cioè $\lambda$ è l'unico autovalore di $J$ con molteplicità algebrica $k$.
 	\end{itemize}	
 \end{observe}
-\begin{observe}
+\begin{observe}\label{bloccojordanbase}
 Definiamo il blocco di Jordan di dimensione $k$ con autovalore zero, necessario per calcolare l'autospazio $V_\lambda$:
 		\begin{equation}\setlength\arraycolsep{0.5mm}
 			N=J-\lambda I= \left(
@@ -158,7 +160,7 @@ E in questo caso si ha la relazione con i vettori della base:
 		N^{k-1}\underline{e}_k=\underline{e}_1
 	\end{cases}
 \end{equation*}
-Studiando l'immagine dell'applicazione associata ad $N$, essendo la base dell'immagine i vettori colonna l.i., si ha $\Im N^{k-1}=\mathcal{L}\left(e_1\right)$.\\
+Studiando l'immagine dell'applicazione associata ad $N$, essendo la base dell'immagine i vettori colonna l.i., si ha $\im N^{k-1}=\mathcal{L}\left(e_1\right)$.\\
 Come già affermato dunque, è $\underline{e}_k$ a determinare l'\textit{intera} base di $V$ tramite la moltiplicazione per $N$.\\
 Come ultima osservazione fondamentale, notiamo inoltre che $N^k=O$, cioè $N$ è una matrice \textbf{nilpotente}\index{matrice!nilpotente} di ordine $k$.
 \end{observe}
@@ -192,11 +194,1364 @@ La seguente matrice $9\times 9$  è in forma di Jordan, con blocchi $J_3\left(2\
 \begin{observe}
 	Una matrice \textit{diagonale} è in forma di Jordan, con un unico blocco di ordine $1$ (cioè senza alcun $1$ nell'elemento sopra).
 \end{observe}
-\begin{observe}
+\begin{observe}\label{molteplicitàalgebrichedijordan}
 	Se $A$ è in forma di Jordan, sulla diagonale compaiono tutti gli autovalori con la loro \textit{molteplicità}. Dunque, se $\lambda$ è un autovalore, la somma delle \textit{dimensioni} dei blocchi relativi a $\lambda$ è uguale alla \textit{molteplicità algebrica} $m_\lambda$ di $\lambda$.
+	\begin{equation}
+		m_\lambda=\sum\text{dimensioni dei blocchi relativi a }\lambda
+	\end{equation}
+\vspace{-6mm}
 \end{observe}
-\begin{theorema}
-	Sia $V$ uno spazio vettoriale complesso di $\dim n$ e $f$ un endomorfismo di $V$. Allora esiste una base di $V$ in cui la matrice di $f$ è in forma di Jordan. Inoltre, la forma di Jordan è unica a meno dell'ordine dei blocchi.\\
-	\textit{In termini matriciali}, ogni $A\in\complexset^{n,\ n}$ è simile ad una matrice in forma di Jordan, unica a meno dell'ordine dei blocchi.
+\begin{theorema}\textsc{Esistenza e unicità della forma di Jordan}
+	Sia $V$ uno spazio vettoriale complesso di $\dim n$ e $f$ un endomorfismo di $V$. Allora \textit{esiste} una base di $V$ in cui la matrice di $f$ è in forma di Jordan. Inoltre, la forma di Jordan è \textit{unica} a meno dell'ordine dei blocchi.\\
+	\textit{In termini matriciali}, ogni $A\in\complexset^{n,\ n}$ è simile ad una matrice in forma di Jordan, unica a meno dell'ordine dei blocchi:
+	\begin{equation}
+		J=P^{-1}AP
+	\end{equation}
+	$P$ è la matrice del cambiamento di base che presenta, nelle colonne, la base che mette $A$ in forma di Jordan.
 \end{theorema}
-Per agevolare la dimostrazione, faremo uso di un lemma importante. Tuttavia, prima di dimostrarlo, facciamo alcune osservazioni per comprendere meglio ciò di cui parliamo.
+\subsection{Autospazi generalizzati}
+Per dimostrare il teorema appena enunciato, faremo uso di un concetto nuovo: quello di \textit{autospazio generalizzato}. Prima di definirlo, ricordiamo alcune proprietà legate agli endomorfismi che ci torneranno utili.
+\begin{define}
+Un sottospazio vettoriale $V$ si dice \textbf{invariante}\index{spazio!invariante} per un endomorfismo $f$ se:
+\begin{equation}
+	f\left(V\right)\subseteq V
+\end{equation}
+Se $A$ è la matrice associata all'endomorfismo rispetto ad una base fissata, si scrive anche $AV\subseteq V$.
+\end{define}
+\begin{observe}\label{observejordan}
+Supponiamo che $V=U\oplus W$, con $U$ e $W $sottospazi di $V$; supponiamo inoltre i due sottospazi $U$ e $W$ siano \textbf{invarianti} per $f$ endomorfismo, dunque $f\left(U\right)\subseteq U$ e $f\left(W\right)\subseteq W$. Prese una base $\basis_U$ di $U$ e una base $\basis_W$ di $W$, la base $\basis=\basis_U\cup \basis_W$ è una base di $V$ e la matrice di $f$ rispetto a questa base è a blocchi.
+\begin{equation*}
+	    A = \left(
+	\begin{array}{c|c}
+		\mathbf{B} & \mathbf{0}\\
+		\hline
+		\mathbf{0} & \mathbf{C}
+	\end{array}
+	\right)
+\end{equation*}
+\begin{itemize}
+	\item $B$ è quadrata, di ordine $\dim U$ ed è la matrice associata a $\funz{f_{\mid U}}{U}{U}$ rispetto a $\basis_U$.
+	\item $C$ è quadrata, di ordine $\dim W$ ed è la matrice associata a $\funz{f_{\mid W}}{W}{W}$ rispetto a $\basis_W$.
+\end{itemize}
+\end{observe}
+\begin{define}
+Data una funzione $\funz{f}{V}{V}$ e $A$ una matrice associata ad $f$; sia $\lambda$ un autovalore di $f$ (di cui ne esiste almeno uno perché in $\complexset$), $V_{\lambda}=\ker \left(f-\lambda Id\right)=\ker \left(A-\lambda I\right)$ l'autospazio di $\lambda$ e $m_{\lambda}$ la molteplicità algebrica di $\lambda$.\\
+Allora l'\textbf{autospazio generalizzato}\index{autospazio!generalizzato} di $\lambda$ è:
+\begin{equation}
+	\tilde{V}=\ker\left(f-\lambda Id\right)^{m_{\lambda}}=\ker\left(A-\lambda I\right)^{m_{\lambda}}
+\end{equation}
+\vspace{-6mm}
+\end{define}
+\begin{lemming}\textsc{Proprietà degli autospazi generalizzati}
+	\begin{enumerate}
+		\item $V_\lambda\subseteq \tilde{V}_{\lambda}$.
+		\item $\tilde{V}_{\lambda}$ è invariante per $A$, cioè $A\tilde{V}_{\lambda}\subseteq \tilde{V}_{\lambda}$.
+		\item $\dim \tilde{V}_{\lambda}=m_{\lambda}$.
+		\item $f_{\mid\tilde V_{\lambda}}\ \colon\funz{\ }{\tilde{V}_{\lambda}}{\tilde{V}_{\lambda}}$ ha polinomio caratteristico $\left(t-\lambda\right)^{m_{\lambda}}$.
+		\item Se $\lambda_1,\ \ldots,\ \lambda_r$ sono tutti gli autovalori di $A$, si ha:
+		\begin{equation}
+			V=\tilde{V}_{\lambda_1}\oplus\dots\tilde{V}_{\lambda_r}
+		\end{equation}
+	\end{enumerate}
+\vspace{-6mm}
+\end{lemming}
+\begin{demonstration}~{}\label{lemmamichelegiordano}
+	Fissiamo un autovalore $\lambda$ di $A$. Analizziamo le potenze $\left(A-\lambda I\right)$, i loro nuclei e le loro immagini.
+\begin{enumerate}[label=\Roman*]
+	\item Se $\underline{v}\in \ker \left(A-\lambda I\right)^h$, allora, per definizione:
+	\begin{equation*}
+		\begin{array}{l}
+					\left(A-\lambda I\right)^h\underline{v}=\underline{0}\\
+			\implies\left(A-\lambda I\right)^{h+1}\underline{v}=\left(A-\lambda I\right)\left(A-\lambda I\right)^h\underline{v}=\underline{0}\\
+			\implies \underline{v}\in \ker \left(A-\lambda I\right)^{h+1}\\
+			\implies \ker \left(A-\lambda I\right)^h\subseteq \ker \left(A-\lambda I\right)^{h+1}
+		\end{array}
+	\end{equation*}
+Al crescere di $h$:
+\begin{equation}
+\left\{0\right\}\subseteq \ker \left(A-\lambda I\right)\subseteq\ker \left(A-\lambda I\right)^2\subseteq\ldots \qquad\textcolor{red}{\circled{\ast}} 
+\end{equation}
+Cioè il nucleo della potenza $h$ è contenuto in tutti quelli successivi. In particolare:
+\begin{equation*}\label{kernelsucc}
+V_{\lambda}=\ker\left(A-\lambda I\right)\subseteq \ker\left(A-\lambda I\right)^{m_{\lambda}}\implies V_{\lambda}\subseteq \tilde{V}_{\lambda}
+\end{equation*}
+Dimostrando così la prima proprietà.
+\item In modo analogo, se $\underline{w}\in\im \left(A-\lambda I\right)^h$, per definizione $\exists\underline{v}\in\left(A-\lambda I\right)^h$ tale che:
+	\begin{equation*}
+	\begin{array}{l}
+		w=\left(A-\lambda I\right)^h\underline{v}=\left(A-\lambda I\right)^{h-1}\left(\left(A-\lambda I\right)\underline{v}\right)\\
+		\implies \underline{w}\in\im\left(A-\lambda I\right)^{h-1}\\
+		\implies \im\left(A-\lambda I\right)^{h-1}\supseteq\im\left(A-\lambda I\right)^h
+	\end{array}
+\end{equation*}
+Al crescere di $h$:
+\begin{equation}
+	V\supseteq \im \left(A-\lambda I\right)\supseteq\im \left(A-\lambda I\right)^2\supseteq\ldots \qquad\textcolor{green}{\circled{\ast}} 
+\end{equation}
+Cioè l'immagine della potenza $h$ contiene tutte quelle successive.\\ Possiamo mostrare come tutti gli spazi finora visti (nuclei e immagini delle potenze $\left(A-\lambda I\right)^h$) sono invarianti:
+\begin{itemize}
+\item Se $\underline{v}\in\ker\left(A-\lambda I\right)^h$:
+	\begin{equation*}
+		\begin{array}{l}
+		\underline{0}=A\underline{0}=A\left(\left(A-\lambda I\right)^h\underline{v}\right)\stackrel{\footnote{$A$ e $A-\lambda I$ commutano.}}{=}\left(A-\lambda I\right)^hA\underline{v}\\
+		\implies A\underline{v}\in \ker\left(A-\lambda I\right)^h\\
+		\implies A\left(\ker\left(A-\lambda I\right)^h\right)\subseteq \ker\left(A-\lambda I\right)^h
+	\end{array}
+	\end{equation*}
+Abbiamo appena dimostrato l'invarianza dello spazio $\tilde{V}_{\lambda}$.
+\item Se $\underline{w}\in\im\left(A-\lambda I\right)^h$ esiste $\underline{v}$ tale che:
+	\begin{equation*}
+	\begin{array}{l}
+		\underline{w}=\left(A-\lambda I\right)^h\underline{v}\implies A\underline{w}=A\left(A-\lambda I\right)^h\underline{v}\stackrel{\footnote{Si veda la nota precedente.}}{=}\left(A-\lambda I\right)^h\left(A\underline{v}\right)\\
+		\implies A\underline{w}\in \im\left(A-\lambda I\right)^h\\
+		\implies A\left(\im\left(A-\lambda I\right)^h\right)\subseteq \im\left(A-\lambda I\right)^h
+	\end{array}
+\end{equation*}
+\end{itemize}
+\item Per trovare la dimensione dell'autospazio generalizzato, sappiamo che:
+\begin{gather*}
+	\ker \left(A-\lambda I\right)^h\subseteq \ker \left(A-\lambda I\right)^{h+1}\\
+	\im\left(A-\lambda I\right)^h\supseteq\im\left(A-\lambda I\right)^{h+1}
+\end{gather*}
+Allora, se consideriamo il teorema nullità più rango sulle applicazioni $\left(A-\lambda I\right)^h$ e $\left(A-\lambda I\right)^{h+1}$ in $V$:
+\begin{equation*}
+		\begin{array}{c}
+			\dim \ker \left(A-\lambda I\right)^h + \dim \im\left(A-\lambda I\right)^{h}\\
+			\shortparallel\\
+			n=\dim V\\
+			\shortparallel\\
+			\dim \ker \left(A-\lambda I\right)^{h+1} + \dim \im\left(A-\lambda I\right)^{h+1}
+	\end{array}
+\end{equation*}
+Ne consegue che:
+\begin{equation}
+	\ker \left(A-\lambda I\right)^h=\ker \left(A-\lambda I\right)^{h+1}\iff \im\left(A-\lambda I\right)^{h}=\im\left(A-\lambda I\right)^{h+1}
+\end{equation}
+Siccome $V$ ha dimensione finita, la successione crescente $\textcolor{red}{\circled{\ast}}$ dei nuclei delle potenze (eq. \ref{kernelsucc}, pag. \pageref{kernelsucc}) ad un certo punto deve \textit{stabilizzarsi}, cioè deve esserci un'uguaglianza per tutti gli elementi successivi\footnote{Infatti, ogni inclusione potrebbe essere stretta e dunque la dimensione di questi sottospazi può aumentare; tuttavia, essendo $V$ finito questi sottospazio non possono avere dimensione maggiore di $n$.}. Denotiamo con $p$ il più piccolo intero tale che:
+\begin{equation*}
+	\ker \left(A-\lambda I\right)^p=\ker \left(A-\lambda I\right)^{p+1}
+\end{equation*}
+Mostriamo che $\forall h\geq p$ valgano le seguenti relazioni:
+\begin{gather*}
+	\ker \left(A-\lambda I\right)^h= \ker \left(A-\lambda I\right)^p\\
+	\im\left(A-\lambda I\right)^h=\im\left(A-\lambda I\right)^p
+\end{gather*}
+È sufficiente mostrarlo per i nuclei, dato che vale anche per le immagini per nullità più rango.\\
+Sia $\underline{v}\in\ker \left(A-\lambda I\right)^h\supseteq \left(A-\lambda I\right)^h$ con $h\geq p+2$.\footnote{Poiché $p$ è tale per cui $\ker \left(A-\lambda I\right)^p=\ker \left(A-\lambda I\right)^{p+1}$, il caso $h=p+1$ è banalmente vero.} Allora:
+\begin{equation*}
+\begin{array}{l}
+\underline{0}=\left(A-\lambda I\right)^p\underline{v}=\left(A-\lambda I\right)^{p
++1}\underbrace{\left(\left(A-\lambda I\right)^{h-p-1}\underline{v}\right)}_{\in \ker \left(A-\lambda I\right)^h=\ker\left(A-\lambda I\right)^p}\\
+\implies\underline{0}=\left(A-\lambda I\right)^p\left(\left(A-\lambda I\right)^{h-p-1}\underline{v}\right)=\left(A-\lambda I\right)^{h-1}\underline{v}\\
+\implies \underline{v}\in\ker \left(A-\lambda I\right)^{h-1}
+	\end{array}
+\end{equation*}
+Iterando in questo modo, otterremo $v\in\ker\left(A-\lambda I\right)^{p+1}=\ker\left(A-\lambda I\right)^{p}$. Dunque, come conseguenza del termine stabilizzatore, tutti i sottospazi $\ker \left(A-\lambda I\right)^k$ (con $k<p$) sono strettamente contenuti in quelli successivi fino al termine $p$-esimo, mentre $\im \left(A-\lambda I\right)^k$ contengono strettamente quelli successivi fino al $p$-esimo.
+\begin{gather}\label{successionejordan}
+\left\{0\right\}\subsetneqq \ker \left(A-\lambda I\right)\subsetneqq\ldots\subsetneqq\ker \left(A-\lambda I\right)^p\\
+V\supsetneqq \im \left(A-\lambda I\right)\supsetneqq\ldots\supsetneqq\im \left(A-\lambda I\right)^p
+\end{gather}
+\begin{itemize}
+\item Si ha $p\geq 1$ : se fosse $p=0$, si avrebbe $\ker \left(A-\lambda I\right)=\left\{0\right\}$ e dunque nessun autovettore o autovalore.
+\item SI ha $\dim \ker\left(A-\lambda I\right)^p\geq p$ : poiché nella successione abbiamo delle inclusioni strette, fra un termine e il suo successivo la dimensione deve aumentare di almeno $1$.
+\end{itemize}
+Mostriamo ora che i termini $p$-esimi delle due successioni sono in somma diretta, in particolare dobbiamo solo dimostrare:
+\begin{equation*}
+	\ker\left(A-\lambda I\right)^p\cap\im\left(A-\lambda I\right)^p=\left\{0\right\}
+\end{equation*}
+Infatti, preso $\underline{u}\in\ker\left(A-\lambda I\right)^p\cap\im\left(A-\lambda I\right)^p$, $\exists\underline{v}\in V\ \colon \underline{u}=\left(A-\lambda I\right)^p\underline{v}$. Ma:
+\begin{equation*}
+\begin{array}{l}
+	\underline{0}=\left(A-\lambda I\right)^p\underline{u}=\left(A-\lambda I\right)^p\left(A-\lambda I\right)^p\underline{v}=\left(A-\lambda I\right)^2p\underline {v}\\
+	\implies \underline{v}\in\ker\left(A-\lambda I\right)^2p=\ker\left(A-\lambda I\right)^p\implies \underline{u}=\underline{0}
+\end{array}
+\end{equation*}
+Per nullità più rango si ha $\dim \ker \left(A-\lambda I\right)^p + \dim \im\left(A-\lambda I\right)^p)=\dim V$; segue che:
+\begin{equation}
+V=\ker\left(A-\lambda I\right)^p\oplus\im \left(A-\lambda I\right)^p
+\end{equation}
+In particolare sappiamo che, per l'osservazione a pag. \pageref{observejordan}, rispetto ad una base di $V$ opportuna la matrice associata $A$ è \textit{a blocchi}, di cui i due non nulli sono uno \textit{codificato} dalla restrizione dell'endomorfismo a $\ker\left(A-\lambda I\right)^p$, mentre l'altro dalla restrizione a $\im \left(A-\lambda I\right)^p$. Consideriamo allora queste due restrizioni ai sottospazi:
+\begin{gather*}
+\funz{\phi}{\ker\left(A-\lambda I\right)^p}{\ker\left(A-\lambda I\right)^p}\\
+\funz{\psi}{\im\left(A-\lambda I\right)^p}{\im\left(A-\lambda I\right)^p}
+\end{gather*}
+Facciamo le seguenti considerazioni.
+\begin{itemize}
+\item \textbf{\underline{$\lambda$ è l'unico autovalore di $\phi$.}} Definiamo la matrice $B$ associata a $\phi$. Sappiamo che $\left(A-\lambda I\right)^p$ annulla tutti i vettori di $\ker\left(A-\lambda I\right)^p$. Dunque, la \textit{restrizione} di $A-\lambda I$ su di esso, ovvero $B-\lambda I$ (associata all'applicazione $\phi-\lambda Id$), è \textit{endomorfismo nilpotente} di ordine $p$.\\
+In altre parole, l'applicazione $\left(\phi-\lambda Id\right)^p$ si \textit{annulla} se valutata su un vettore (non nullo) $\underline{v}$ appartenente al \textit{dominio} $\ker\left(A-\lambda I\right)^p$. Ciò equivale a dire che:
+\begin{equation*}
+\left(B-\lambda I\right)^p\underline{v}=\underline{0}
+\end{equation*}
+Ma ciò significa: $\left(B-\lambda I\right)^p=\underline{0}$.\\
+Preso allora il polinomio $p\left(t\right)=\left(t-\lambda\right)^p$ appartiene all'ideale di $B$ (cioè all'ideale di $\phi$), in particolare $\lambda$ è autovalore di $\phi$ (perché $p\left(\lambda\right)=0\implies m_B\left(\lambda\right)=0$).\\
+Conseguentemente, se supponiamo di avere $\mu$ come altro autovalore di $\phi$, si ha che $m_B\left(\mu\right)=0\implies p\left(\mu\right)=0\implies \left(\mu-\lambda\right)^p\implies \mu=\lambda$. Si ha dunque l'unicità.
+\item \textbf{\underline{$\lambda$ \textit{non} è autovalore di $\psi$.}} Infatti, sia $\underline{v}\in \im\left(A-\lambda I\right)$ per cui $\lambda$ è il suo autovalore. Allora:
+\begin{equation*}
+		\begin{array}{l}
+	\psi\left(\underline{v}\right)=\lambda\underline{v}\stackrel{\footnote{$A\underline{v}$ segue dalla definizione di $\psi$ come restrizione dell'endomorfismo $f$.}}{\iff} A\underline{v}=\lambda\underline{v}\iff \left(A-\lambda I\right)\underline{v}=0\\
+	\implies \underline{v}\in\ker\left(A-\lambda I\right)\subseteq \ker\left(A-\lambda\right)^p\\
+	\implies \underline{v}\in\ker\left(A-\lambda I\right)^p\cap\im\left(A-\lambda I\right)^p=\left\{0\right\}
+	\end{array}
+\end{equation*}
+Ma sapendo che $\ker\left(A-\lambda I\right)^p\cap\im\left(A-\lambda I\right)^p=\left\{0\right\}=\left\{0\right\}$, si ha $\underline{v}=\underline{0}$, dunque \textit{non} può $\lambda$ autovalore di $\psi$.
+\end{itemize}
+Riprendendo l'osservazione a pag. \pageref{observejordan}, scelte delle opportune basi, definiamo $\mathbf{B}$ la matrice associata a $\phi$ e $\mathbf{A}$ la matrice associata a $\psi$ in modo da avere la matrice $A$ associata a $f$ a blocchi.
+\begin{equation*}
+	A = \left(
+	\begin{array}{c|c}
+		\mathbf{B} & \mathbf{0}\\
+		\hline
+		\mathbf{0} & \mathbf{C}
+	\end{array}
+	\right)
+\end{equation*}
+Usiamo questa matrice per calcolare il polinomio caratteristico:\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{dimostrazionedeterminantematriceblocchi}, si può trovare la dimostrazione della formula del determinante di una matrice a blocchi, su cui si basa la seguente formula.}
+\begin{equation*}
+C_A\left(t\right)=C_B\left(t\right)C_C\left(t\right)
+\end{equation*}
+\begin{itemize}
+	\item $C_B\left(t\right)$ è il polinomio caratteristico di $\mathbf{B}$, il cui unico autovalore è $\lambda$; grazie all'osservazione a pag. \ref{complessichiusi}, possiamo dire che la molteplicità algebrica di $\lambda$ come autovalore di $\mathbf{B}$ è esattamente la dimensione dello spazio $\mathbf{B}$. Il polinomio caratteristico risulta:
+	\begin{equation*}
+		\left(t-\lambda\right)^{\dim\ker\left(A-\lambda I\right)^p}
+	\end{equation*}
+	\item $C_C\left(t\right)$, in quanto $\psi$ non ha l'autovalore $\lambda$, non è divisibile per $t-\lambda$: $	\left(t-\lambda\right) \nmid C_C\left(t\right)$.
+\end{itemize}
+Segue che la molteplicità algebrica di $\lambda$ come autovalore della matrice $\mathbf{B}$ è la stessa di quella come autovalore della matrice $A$:
+\begin{equation*}
+	m_{\lambda}=\dim\ker\left(A-\lambda I\right)^p\geq p
+\end{equation*}
+Da cui segue:
+\begin{equation*}
+	\ker\left(A-\lambda I\right)^p=\ker\left(A-\lambda I\right)^{m_\lambda}=\tilde{V}_{\lambda}
+\end{equation*}
+Dunque, sapendo che $\dim \tilde{V}_{\lambda} = \dim \ker\left(A-\lambda I\right)^p=m_{\lambda}$, segue la proprietà $3$.
+\item Notiamo che l'endomorfismo $\phi$ definito nella dimostrazione precedente altro non è che $f_{\mid\tilde V_{\lambda}}\ \colon\funz{\ }{\tilde{V}_{\lambda}}{\tilde{V}_{\lambda}}$, e abbiamo visto come il suo polinomio caratteristico debba essere $\left(t-\lambda\right)^m_{\lambda}$. Si conclude il punto $4$.
+\item Non dimostreremo quest'ultimo punto.
+\end{enumerate}
+\end{demonstration}
+Riassumendo, sappiamo ora che gli autospazi generalizzati sono invarianti e sono in somma diretta tra loro.
+\begin{equation}
+	V=\tilde{V}_{\lambda_1}\oplus\ldots\oplus\tilde{V}_{\lambda_r}
+\end{equation}
+Ora, per trovare una base che mette la matrice $A$ associata ad $f$ in forma di Jordan, basta farlo in \textit{ogni autospazio generalizzato} $\tilde{V}_{\lambda_i}$, in cui l'unico autovalore è $\lambda_i$ per le osservazioni precedenti. In sostanza, quello che vogliamo fare è compiere una \textit{‘‘separazione degli autovalori''}.\\
+Per calcolare l'autospazio generalizzato dovremmo calcolare $\tilde{V}_{\lambda}=\left(A-\lambda I\right)^{m_{\lambda}}$, ma basterà calcolare invece $\tilde{V}_{\lambda}=\left(A-\lambda I\right)^{p}$. \\
+Nella sezione seguente dimostreremo l'esistenza della base di $\tilde{V}_{\lambda}$ che dà la forma di Jordan.
+\subsection{Esistenza della base dell'autospazio generalizzato che dà la forma di Jordan}
+Prima di procedere dimostriamo un lemma che servirà più avanti.
+\begin{lemming}\label{lemmadimjordan}
+Siano $\funz{f}{U}{V}$ e $\funz{g}{V}{W}$ due applicazioni lineari. Si ha:
+\begin{equation}
+\dim\left(\im f\cap \ker g\right)=\dim\im f-\dim\im \left(g\circ f\right)=\dim \ker\left(g\circ f\right)-\dim\ker f
+\end{equation}
+\vspace{-6mm}
+\end{lemming}
+\begin{demonstration}
+\[\begin{tikzcd}
+	{U} & {V} & {W}
+	\arrow["{f}", from=1-1, to=1-2]
+	\arrow["{g}", from=1-2, to=1-3]
+\end{tikzcd}\]
+Sia $h\coloneqq \funz{g_{\mid \mathrm{Im} f}}{\mathrm{Im} f}{W}$. Si ha:
+\begin{equation*}
+	\dim \ker h=\dim \im f-\dim h
+\end{equation*}
+Ma $\ker h=\im f\cap\ker g$ e $\im h=g\left(\im f\right)=\im \left(g\circ f\right)$, dunque:
+\begin{equation*}
+	\begin{array}{l}
+	\ker h=\dim \im f-\dim \im h\\
+	\dim \left(\im f\cap\ker g\right) =\dim \im f-\dim \im\left(g\circ f\right)
+	\end{array}
+\end{equation*}
+Per dimostrare la seconda uguaglianza, abbiamo:
+\begin{equation*}
+	\begin{array}{l}
+		\dim \im f=\dim U-\dim \ker f\\
+		\dim \im \left(g\circ f\right)=\dim U-\dim \ker\left(g\circ f\right)\\
+		\implies \dim \im f-\dim \im\left(g\circ f\right)=\dim \ker\left(g\circ f\right)-\dim \ker f
+	\end{array}
+\end{equation*}
+\vspace{-6mm}
+\end{demonstration}
+\begin{demonstration}
+	Ricordando la successione delle immagini (equazione \ref{successionejordan}):
+	\begin{gather*}
+		V\supsetneqq \im \left(A-\lambda I\right)\supsetneqq\ldots\supsetneqq\im \left(A-\lambda I\right)^p
+	\end{gather*}
+	Intersechiamo ogni termine con $V_{\lambda}=\ker\left(A-\lambda I\right)$:
+	\begin{equation*}
+		\ker\left(A-\lambda I\right)\cap V\supseteq \ker\left(A-\lambda I\right)\cap\im \left(A-\lambda I\right)\supseteq\ldots\supseteq\ker\left(A-\lambda I\right)\cap\im \left(A-\lambda I\right)^p
+	\end{equation*}
+	E poniamo:
+	\begin{equation}
+		S_i\coloneqq \ker\left(A-\lambda I\right)\cap \im\left(A-\lambda I\right)^{i-1}
+	\end{equation}
+	In particolare, notiamo che:
+	\begin{itemize}
+		\item $S_1=\ker\left(A-\lambda I\right)\cap V=\ker\left(A-\lambda I\right)=V_{\lambda}$.
+		\item $S_{p+1}=\ker\left(A-\lambda I\right)\cap \im\left(A-\lambda I\right)^{p}=\left\{\underline{0}\right\}$ perché $\ker\left(A-\lambda I\right)\subsetneqq \ker\left(A-\lambda I\right)^p$ e dunque $S_{p+1}\subseteq \ker\left(A-\lambda I\right)^p\cap \im\left(A-\lambda I\right)^{p}=\left\{\underline{0}\right\}$.
+		\item Può benissimo capitare che $S_i=S_{i+1}$.
+	\end{itemize}
+Riscriviamo con questa nuova denominazione la successione creata.
+	\begin{equation}
+	V_{\lambda}=S_1\supseteq S_2\supseteq\ldots\supseteq S_p
+\end{equation}
+Costruiamo la base di $\tilde{V}_{\lambda}$.\\
+Innanzitutto, scegliamo una base $\left\{x_1^1,\ \ldots,\ x_r^1\right\}$ del sottospazio più piccolo $S_p$. Per costruzione, $x^1_i\in\im\left(A-\lambda I\right)^{p-1}$, cioè:
+\begin{equation*}
+	\forall i=1,\ \ldots,\ r\ \exists x_1^p\in V\quad x_i^1=\left(A-\lambda I\right)^{p-1}x_i^p
+\end{equation*}
+È lecito definire i vettori ‘‘intermedi'' fra $x_i^p$ e $x_i^1$, ottenuti da moltiplicazioni successive della matrice $A-\lambda I$ al vettore $x_i^p$:
+\begin{equation}
+\begin{array}{l}
+	x_i^{p-1}\coloneqq\left(A-\lambda I\right)x_i^p\\
+	x_i^{p-2}\coloneqq\left(A-\lambda I\right)x_i^{p-1}=\left(A-\lambda I\right)^2x_i^p\\
+	\dots
+\end{array}
+\end{equation}
+% bibliografia albano
+Per capire meglio le relazioni fra questi vettori ed altri che vedremo successivamente nella dimostrazione, utilizziamo il seguente schema \cite{albano:2017jordan}:
+% https://q.uiver.app/?q=WzAsMjMsWzEsMSwieF9pXnAiXSxbMSwyLCJ4X2lee3AtMX0iXSxbMSwzLCJ4X2lee3AtMn0iXSxbMSw1LCJ4X2leMiJdLFsyLDddLFsxLDQsIlxcdmRvdHMiXSxbMiw1LCJ5X2peMiJdLFsyLDIsInlfal57cC0xfSJdLFsyLDMsInlfal57cC0yfSJdLFsyLDQsIlxcdmRvdHMiXSxbMyw1LCJ6X2teMiJdLFszLDMsInpfa157cC0yfSJdLFszLDQsIlxcdmRvdHMiXSxbNCw1LCJcXGRvdHMiXSxbNCw0LCJcXGRkb3RzIl0sWzUsNiwiYV90XjEiXSxbMSw2LCJ4X2leMSJdLFsyLDYsInlfal4yIl0sWzMsNiwiel9rXjEiXSxbNSw1LCJhX3ReMiJdLFs2LDYsImJfdV4xIl0sWzQsNiwiXFxkb3RzIl0sWzAsMF0sWzAsMSwiQS1cXGxhbWJkYSBJIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFsxLDIsIkEtXFxsYW1iZGEgSSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XSxbMiw1LCJBLVxcbGFtYmRhIEkiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtYXBzIHRvIn19fV0sWzUsMywiQS1cXGxhbWJkYSBJIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFs3LDgsIkEtXFxsYW1iZGEgSSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XSxbOCw5LCJBLVxcbGFtYmRhIEkiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtYXBzIHRvIn19fV0sWzksNiwiQS1cXGxhbWJkYSBJIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFsxMSwxMiwiQS1cXGxhbWJkYSBJIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFsxMiwxMCwiQS1cXGxhbWJkYSBJIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFszLDE2LCJBLVxcbGFtYmRhIEkiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtYXBzIHRvIn19fV0sWzYsMTcsIkEtXFxsYW1iZGEgSSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XSxbMTksMTUsIkEtXFxsYW1iZGEgSSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XSxbMTAsMTgsIkEtXFxsYW1iZGEgSSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XV0=
+\begin{center}
+	\begin{tikzcd}
+		{} \\[-5pt]
+		& {x_i^p} \\[-5pt]
+		& {x_i^{p-1}} &[-15pt] {y_j^{p-1}} \\[-5pt]
+		& {x_i^{p-2}} &[-15pt] {y_j^{p-2}} &[-15pt] {z_k^{p-2}} \\[-5pt]
+		& {\vdots} &[-15pt] {\vdots} &[-15pt] {\vdots} &[-15pt] {\ddots} \\[-5pt]
+		& {x_i^2} &[-15pt] {y_j^2} &[-15pt] {z_k^2} &[-15pt] {\dots} &[-15pt] {a_t^2} \\[-5pt]
+		& {x_i^1} &[-15pt] {y_j^2} &[-15pt] {z_k^1} &[-15pt] {\dots} &[-15pt] {a_t^1} &[-15pt] {b_u^1} \\[-5pt]
+		&& {}
+		\arrow["{A-\lambda I}", from=2-2, to=3-2, maps to]
+		\arrow["{A-\lambda I}", from=3-2, to=4-2, maps to]
+		\arrow["{A-\lambda I}", from=4-2, to=5-2, maps to]
+		\arrow["{A-\lambda I}", from=5-2, to=6-2, maps to]
+		\arrow["{A-\lambda I}", from=3-3, to=4-3, maps to]
+		\arrow["{A-\lambda I}", from=4-3, to=5-3, maps to]
+		\arrow["{A-\lambda I}", from=5-3, to=6-3, maps to]
+		\arrow["{A-\lambda I}", from=4-4, to=5-4, maps to]
+		\arrow["{A-\lambda I}", from=5-4, to=6-4, maps to]
+		\arrow["{A-\lambda I}", from=6-2, to=7-2, maps to]
+		\arrow["{A-\lambda I}", from=6-3, to=7-3, maps to]
+		\arrow["{A-\lambda I}", from=6-6, to=7-6, maps to]
+		\arrow["{A-\lambda I}", from=6-4, to=7-4, maps to]
+	\end{tikzcd}
+\end{center}
+\vspace{-6mm}
+Notiamo che i vettori $\left\{x_i^1,\ \ldots,\ x_i^P\right\}$ dà origine ad un \textit{blocco di Jordan} $J_p\left(\lambda\right)$ di dimensione $p$ e relativo all'autovalore $\lambda$, poiché questi vettori soddisfano la costruzione vista nell'osservazione di pag. \pageref{bloccojordanbase}: infatti, si ha $x_i^1\in S_p\subseteq V_{\lambda}$, dunque $x_i^1$ è un autovettore di $V_\lambda$ e gli altri vettori sono ottenuti dall'applicazione ripetuta di una matrice all'ultimo vettore della base\footnote{Chiaramente ciò non implica che il blocco di Jordan in esame sia proprio $A$! $A$ ha sempre ordine $n\times n$, mentre il blocco ottenuto dalla base in questione ha ordine $p\times p$, con $p\leq n$. }. Lo stesso vale $\forall i=1,\ \ldots,\ r$.\\
+Consideriamo ora lo spazio $S_{p-1}$, che ricordiamo contiene $S_{p-1}$ cioè ($S_p\subseteq S_{p-1}$). Vogliamo completare $\left\{x_1^1,\ \ldots,\ x_r^1\right\}$ ad una base di $S_{p-1}$ con dei vettori $y_1^1,\ \ldots,\ y_s^1$:
+\begin{equation*}
+	\left\{x_1^1,\ \ldots,\ x_r^1,\ y_1^1,\ \ldots,\ y_s^1\right\}
+\end{equation*}
+Per costruzione, $y_j^1\in S_{p-1}\subseteq \im\left(A-\lambda I\right)^{p-2}$, dunque:
+\begin{equation*}
+	\forall j=1,\ \ldots,\ s\ \exists y_1^{p-1}\in V\quad y_j^1=\left(A-\lambda I\right)^{p-2}y_j^{p-1}
+\end{equation*}
+Per ogni $j$ otteniamo $p-1$ vettori  $\left\{j_i^1,\ \ldots,\ j_i^{p-1}\right\}$ tali che $y^s_j\in V_{\lambda}$ e $j_i^{i-1}\coloneqq\left(A-\lambda I\right)y_j^i$ $\forall i=2,\ \ldots,\ p-1$. Analogamente al caso precedente, questo gruppo di vettori dà origine ad un \textit{blocco di Jordan} di ordine $p-1$.\\
+Procediamo in questo modo: prendiamo la base ottenuta per $S_{i}$ e la completiamo ad una di $S_{i-1}\supseteq S_{i}$; poiché ogni vettore aggiunto appartiene a $\im\left(A-\lambda I\right)^{i-2}$, applicando $i-2$ volte la matrice $A_\lambda I$ al vettore $z_k^{i-1}$ (fino ad ottenere $z_k^1$) otteniamo un'insieme di vettori che generano un blocco di Jordan di dimensioni $i$ e di autovalore $\lambda$.\\
+Chiaramente, poiché potrebbe anche accadere che $S_{i-1}= S_{i}$, si prosegue senza aggiungere vettori alla base e si passa al sottospazio successivo.\\
+Arriviamo con queste iterazioni fino a $S_2=V_\lambda\cap \im \left(A-\lambda I\right)$: completiamo la base da $S_3$ ad una di $S_2$ aggiungendo i vettori $\left\{a_1^1,\ \ldots,\ a_t^1\right\}$. Sappiamo che $\exists a_t^2\ \colon a_t^1=\left(A-\lambda I\right)^{p-2}a_t^2$, dunque abbiamo i due vettori che formano il blocco di Jordan di dimensione $2$.\\
+Infine, completiamo ad una base di $S_1$ aggiungendo i vettori $\left\{b_1^1,\ \ldots,\ b_u^1\right\}$. In questo caso, non abbiamo bisogno di calcolare altri vettori $b_u^i\ \forall u$ (al variare di $i$) come prima, in quanto i vettori, per definizione di $S_1$, appartengono anche a $\ker\left(A-\lambda I\right)$. Allora, $\forall u\ b_u^1$ generano blocchi di Jordan di dimensione $1$.\\
+Al variare di $i,\ j,\ k,\ \ldots,\ t,\ u$ abbiamo costruito un insieme di vettori tutti appartenenti a $\tilde{V}_{\lambda}=\ker\left(A.\lambda I\right)$: nello schema precedente essi sono tutti i vettori appartenenti a tutte le colonne, da quella di $x_i$ a quella di $b_u$.\\
+\textbf{Vogliamo contare quanti sono questi vettori.} Innanzitutto, dobbiamo considerare che lo schema, per compattezza, rappresenta \textit{solo una colonna} per ciascun $x_i,\ y_j,\ \ldots$, ma in realtà c'è una colonna analoga alla prima \textit{per ogni vettore} della base di $S_p$, una colonna analoga alla seconda per ogni vettore della base di $S_{p-1}$ e così via. In pratica, abbiamo $\dim S_p=r$ colonne con $x_i$, $\dim S_{p-1}-\dim S_{p}=s$ colonne con $y_j$ e così via.\\
+Contiamo adesso gli elementi per \textit{righe}. L'\textit{ultima riga}, quella di $x_i^1,\ y_j^1\, z_k^1\, \ldots,\ a_t^1,\ b_u^1$ al variare di $i,\ j,\ k,\ \ldots,\ t,\ u$, sono per costruzione i vettori di una base di $S_1$, e quindi il loro numero sono $\dim S_1$.\\
+Sulla \textit{penultima riga} non abbiamo i vettori $b_u$ e i vettori $x_i^2,\ y_j^2\, z_k^2\, \ldots,\ a_t^2$ presenti sono in numero uguale ai vettori $x_i^1,\ y_j^1\, z_k^1\, \ldots,\ a_t^1$ al variare di $i,\ j,\ k,\ \ldots,\ t$, base di $S_2$ e quindi ne abbiamo $\dim S_2$.\\
+Proseguendo così, il numero di vettori della $i$-esima riga è pari alla dimensione dello spazio $S_i$; in totale l'insieme è formato da $N$ vettori, con:
+\begin{equation}
+	N=\sum_{i=1}^{p}\dim S_i
+\end{equation}
+Usando il lemma \ref{lemmadimjordan} (pag. \pageref{lemmadimjordan}), otteniamo che:
+\begin{gather*}
+	\begin{array}{ll}
+		\dim S_i&=\dim \left(\ker\left(A-\lambda I\right)\cap \im\left(A-\lambda I\right)^{i-1}\right)=\\
+		&=\dim\ker\left(A-\lambda I\right)^i-\dim\ker\left(A-\lambda I\right)^{i-1}\\
+	\end{array}\\
+\implies\\
+	\begin{array}{ll}
+	N=\sum_{i=1}^{p}\dim S_i&=\sum_{i=1}^{p}\left(\dim\ker\left(A-\lambda I\right)^i-\dim\ker\left(A-\lambda I\right)^{i-1}\right)=\\
+	&=\dim\ker\left(A-\lambda I\right)^p-\dim\ker\left(A-\lambda I\right)^0=\\&
+	=\dim\ker\left(A-\lambda I\right)^p=\tilde{V}_{\lambda}
+\end{array}
+\end{gather*}
+L'insieme dei vettori, che ricordiamo essere tutti contenuti in $\tilde{V}_{\lambda}$, ha \textit{cardinalità} pari alla \textit{dimensione dell'autospazio generalizzato}. Ci resta dunque da dimostrare che i vettori siano \textit{linearmente indipendenti} per verificare che essi siano a tutti gli effetti la base cercata di $\tilde{V}_{\lambda}$.\\
+Per dimostrarlo, prendiamo la combinazione lineare seguente:
+\begin{equation*}
+\sum_{i}\alpha_ix_i^p+\sum_{i}\beta_ix_i^{p-1}+\ldots+\sum_{i}\gamma_{j}y_{j}^{p-1}+\ldots+\sum_{u}\delta_{u}b_{u}^1=0
+\end{equation*}
+Applicando $\left(A-\lambda I\right)^{p-1}$ tutti i termini si \textit{annullano} eccetto $x_i^p$ e coefficienti al variare di $i$, ovvero:
+\begin{equation*}
+\sum_{i}\alpha_i\left(A-\lambda I\right)x_i^p=0\implies \sum_{i}\alpha_ix_i^1=0
+\end{equation*}
+Poichè $x_i^1$ al variare di $i$ sono \textit{linearmente indipendenti} (sono base di $S_p$!), i loro coefficienti devono necessariamente \textit{tutti} nulli: $\alpha_i=0\forall i$. La combinazione lineare sopra diventa:
+\begin{equation*}
+	\sum_{i}\beta_ix_i^{p-1}+\ldots+\sum_{i}\gamma_{j}y_{j}^{p-1}+\ldots+\sum_{u}\delta_{u}b_{u}^1=0
+\end{equation*}
+Applicando $\left(A-\lambda I\right)^{p-2}$, nella combinazione lineare rimangono solo $x_i^{p-1}$ e $y_j^{p-1}$ al variare di $i$ e $j$ con i loro coefficienti. Complessivamente, i vettori formano la base già vista di $S_{p-1}$, dunque i coefficienti risultano nulli: $\beta_i=0,\ \gamma_j=0\ \forall i,\ j$.\\
+Allo stesso modo, applicando $\left(A-\lambda I\right)^{p-3},\ \ldots$ si vede che tutti i coefficienti della combinazione lineare sono nulli, ovvero i vettori dell'insieme sono \textbf{linearmente indipendenti}. 
+\end{demonstration}
+\subsection{Unicità della forma di Jordan}
+\begin{demonstration}
+Per ultima cosa osserviamo come la forma di Jordan di $A$ sia unica.\\
+Sulla sua diagonale compaiono, per definizione, gli \textit{autovalori con molteplicità}: questo dipende esclusivamente dalle radici del polinomio caratteristico e dunque da $A$ stessa.\\
+Per un dato autovalore $\lambda$, abbiamo ottenuto dei blocchi di Jordan corrispondenti agli spazi $S_k$ di dimensione $k$ e di numero pari ai vettori aggiunti per completare la base dello spazio $S_{k+1}$ passo per passo (ovvero $\dim S_{k-1}-\dim S_k$, dato che ogni vettore aggiunto $x_i^1$ genera la successione $x_i^1,\ \ldots,\ x_i^k$). Poiché il \textit{numero dei blocchi} dipende esclusivamente da $A-\lambda I$, dunque da $A$ stessa, e \textit{non} dal procedimento, la forma di Jordan di $A$ è unica.
+\end{demonstration}
+Il corollario seguente è immediato.
+\begin{corollary}
+Due matrici in forma di Jordan sono simili se e solo se hanno gli stessi blocchi (a meno dell'ordine).
+\end{corollary}
+\subsection{Polinomio minimo e forma di Jordan}
+\begin{proposition}\label{polinomiominimojordan}
+Sia $A$ una matrice complessa $n\times n$ e siano $\lambda_1,\ \ldots,\ \lambda_r$ gli autovalore distinti di $A$ e, per ogni $i=1,\ \ldots,\ r$, sia $p_i$ l'ordine del più grande blocco di Jordan di $A$ relativo a $\lambda_i$. Allora il polinomio minimo di $A$ è:
+\begin{equation}
+m_A\left(t\right)=\left(t-\lambda_i\right)^{p_1}\ldots\left(t-\lambda\right)^{p_r}
+\end{equation}
+\end{proposition}
+L'osservazione che qui facciamo ci servirà nella dimostrazione della proposizione.
+\begin{observe}
+	Se $p\left(t\right),\ q\left(t\right)\in\kamp\left[t\right]$, allora:
+	\begin{equation}
+		p\left(A\right)q\left(A\right)=q\left(A\right)p\left(A\right)
+	\end{equation}
+	\vspace{-6mm}
+\end{observe}
+\begin{demonstration}
+	Possiamo supporre che $A$ sia già in forma di Jordan.\\
+	 Consideriamo $A-\lambda_1I$, rappresentata in figura: ha, nella parte rossa, dei blocchi di Jordan relativi all'autovalore zero. Poichè la parte rossa è una sottomatrice nilpotente di ordine $p_1$, ne consegue che $\left(A-\lambda_1I\right)^{p_1}$ ha la matrice nulla nella parte zero.\\
+	 In generale, $\left(A-\lambda_iI\right)^{p_i}$ è nullo nel blocco $m_i\times m_i$ corrispondente a $\lambda_i$.
+	 \begin{equation*}
+	 	\tikz[baseline]{%
+	 		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+	 			~\& \& \& \& \& \& 	\\
+	 			~\& \& \& \& \& \& 	\\
+	 			~\& \& ~ \& \& \& \& 	\\
+	 			~\& \& \& \& \& \& 	\\
+	 			~\& \& \& \& \& \& 	\\
+	 			~\& \& \& \& \& \& 	\\
+	 			~\&~ \&~ \&~ \&~ \&~ \&~ \\
+	 		};
+	 		\draw[ultra thick, draw = red] (M-1-1.north west) rectangle (M-3-3.south east);
+	 	}
+	 \end{equation*}
+Ne segue che $\left(A-\lambda_1I\right)^{p_1}\ldots\left(A-\lambda_rI\right)^{p_r}$ è la matrice nulla, perché ha ogni blocco nullo. Ciò significa che il seguente polinomio si annulla su $A$ e dunque appartiene al suo ideale:
+\begin{equation*}
+f\left(t\right)=\left(t-\lambda_1\right)^{p_1}\ldots\left(t-\lambda_r\right)^{p_r}\in I_A
+\end{equation*}
+Perciò il polinomio minimo divide $f$: $m_A\left(t\right)\mid f\left(t\right)$.\\
+Consideriamo ora $\left(A-\lambda_1I\right)^h$ con $h<p_1$: come abbiamo visto nello studio delle proprietà dei blocchi di Jordan, esso ha nel primo blocco una colonna uguale a $\underline{e}_1=\left(1,\ 0,\ \ldots\, 0\right)^\mathsf{T}$, diciamo ad esempio la colonna $s\in\left\{1,\ \ldots,\ m_1\right\}$.\\
+Posto $d_i\geq 1$, $\left(A-\lambda_iI\right)^{d_i}$ nel posto $\left(1,\ 1\right)$ ha $\left(\lambda_1-\lambda_i\right)^{d_i}\neq 0$ se $i=2,\ \ldots, \ r$. Infatti, $A$ (presa in forma di Jordan) è triangolare superiore e ha $\lambda_1$ al posto $\left(1,\ 1\right)$; allo stesso modo $A-\lambda_i I$ è triangolare superiore e ha $\lambda_1-\lambda_i$ al posto $\left(1,\ 1\right)$.\\
+Ne consegue che $\displaystyle\prod_{i=2}^{r}\left(A-\lambda_iI\right)^{d_i}$ ha un numero $\neq 0$ nel posto $\left(1,\ 1\right)$. Allora, utilizzando l'osservazione ad inizio sezione che garantisce la commutatività del prodotto:
+\begin{equation*}
+\left(A-\lambda_1I\right)^h\prod_{i=2}^{r}\left(A-\lambda_iI\right)^{d_i}=\prod_{i=2}^{r}\left(A-\lambda_1I\right)^{d_i}\left(A-\lambda_iI\right)^h
+\end{equation*}
+Rappresentando visivamente il prodotto di queste due matrici:
+	 \begin{equation*}
+	\tikz[baseline]{%
+		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+			\ast\neq 0\& \& \& \& \& \& 	\\
+			~\& \& \& \& \& \& 	\\
+			~\& \& ~ \& \& \& \& 	\\
+			~\& \& \& \& \& \& 	\\
+			~\& \& \& \& \& \& 	\\
+			~\& \& \& \& \& \& 	\\
+			~\&~ \&~ \&~ \&~ \&~ \&~ \\
+		};
+	}	\tikz[baseline]{%
+	\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (m) {%
+		~\& \& 1\& \& \& \& 	\\
+		~\& \& 0\& \& \& \& 	\\
+		~\& \& \vdots \& \& \& \& 	\\
+		~\&~ \& 0 \&~ \&~ \&~ \&~ \\
+	};
+}
+\end{equation*}
+Al posto $\left(1,\ s\right)$ otteniamo il valore $\ast\neq 0$, dunque il prodotto complessivo è diverso da zero. Si ha:
+\begin{equation*}
+\left(t-\lambda_1\right)^h\prod_{i=2}^r\left(t-\lambda_i\right)^{d_i}\notin I_A\text{ se }h<p_1
+\end{equation*}
+Segue che qualunque blocco di Jordan di ordine non massimo fa sì che il polinomio scritto sopra non appartenga all'ideale di $A$, e dunque il più piccolo polinomio che è diviso da $m_A\left(t\right)$ (al quale dunque deve coincidere necessariamente) è $f\left(t\right)$ visto sopra.
+\end{demonstration}
+\begin{corollary}
+Sia $A\in\complexset^{n,\ n}$. Allora $A$ è \textbf{diagonalizzabile} se e solo se il suo polinomio minimo ha tutte radici di molteplicità $1$.
+\end{corollary}
+\begin{demonstration}
+Per la proposizione precedente, la molteplicità delle radici del polinomio minimo corrisponde alla dimensione del più grande blocco di Jordan di $A$ relativo a $\lambda_i$.\\ Segue chiaramente che se $m_{\lambda_i}=1\ \forall i$ l'ordine di tutti i blocchi è $1$, dunque $A$ è diagonalizzabile.\\
+Viceversa, se $A$ è diagonalizzabile, tutti i blocchi sono di dimensione $1$ e questa, per la stessa proposizione di prima, corrisponde alla molteplicità delle radici del polinomio caratteristico.
+\end{demonstration}
+\begin{observe}
+La forma di Jordan determina il polinomio minimo e il polinomio caratteristico, ma \textit{non} vale il viceversa. Per esempio, prendiamo le seguenti matrici:
+\begin{equation*}
+\tikz[baseline]{%
+	\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+		2 \& 1	\& 0 \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0}  \\
+		0 \& 2	\& 1 \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0}  \\
+		0 \& 0	\& 1 \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0}  \\
+		\color{gray}{0} \& \color{gray}{0}	\& \color{gray}{0} \& 2	\& 1 \& 0  \& \color{gray}{0}  \\
+		\color{gray}{0} \& \color{gray}{0}	\& \color{gray}{0} \& 0	\& 2 \& 1  \& \color{gray}{0} \\
+		\color{gray}{0} \& \color{gray}{0}	\& \color{gray}{0} \& 0	\& 0 \& 2  \& \color{gray}{0} \\
+		\color{gray}{0} \& \color{gray}{0}	\& \color{gray}{0} \& \color{gray}{0}\& \color{gray}{0} \& \color{gray}{0} \& 2 \\
+	};
+	\draw (M-1-1.north west) rectangle (M-3-3.south east);
+	\draw (M-3-3.south east) rectangle (M-6-6.south east);
+	\draw (M-6-6.south east) rectangle (M-7-7.south east);
+}
+\tikz[baseline]{%
+	\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+		2 \& 1	\& 0 \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0}  \\
+		0 \& 2	\& 1 \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0}  \\
+		0 \& 0	\& 1 \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0}  \\
+		\color{gray}{0} \& \color{gray}{0}	\& \color{gray}{0} \& 2	\& 1 \& \color{gray}{0}  \& \color{gray}{0}  \\
+		\color{gray}{0} \& \color{gray}{0}	\& \color{gray}{0} \& 0	\& 2 \& \color{gray}{0}  \& \color{gray}{0} \\
+		\color{gray}{0} \& \color{gray}{0}	\& \color{gray}{0} \& \color{gray}{0}	\& \color{gray}{0} \& 2  \& 1 \\
+		\color{gray}{0} \& \color{gray}{0}	\& \color{gray}{0} \& \color{gray}{0}\& \color{gray}{0} \& 0 \& 2 \\
+	};
+	\draw (M-1-1.north west) rectangle (M-3-3.south east);
+	\draw (M-3-3.south east) rectangle (M-5-5.south east);
+	\draw (M-5-5.south east) rectangle (M-7-7.south east);
+}
+\end{equation*}
+Queste due matrici hanno forme di Jordan \textit{diverse}, ma hanno entrambe:
+\begin{equation*}
+	C_A=\left(t-2\right)^7\qquad m_A=\left(t-2\right)^3 \dim V_2=3
+\end{equation*}
+\vspace{-6mm}
+\end{observe}
+\subsection{Impratichiamoci! Forma canonica di Jordan}
+\begin{tips}\textsc{Alcune nozioni utili per il calcolo della base e della forma di Jordan.}
+	\begin{enumerate}
+		\item Per calcolare l'autospazio generalizzato $\tilde{V}_{\lambda}=\ker\left(A-\lambda I\right)^{m_{\lambda}}$ è sufficiente calcolare, \textit{se conosco il massimo ordine} $p$ \textit{dei blocchi di Jordan relativi a }$\lambda$:
+		\begin{equation}
+			\tilde{V}_{\lambda}=\ker\left(A-\lambda I\right)^{p}
+		\end{equation}
+		\item Si ha, per le osservazioni fatte nella dimostrazione precedente:
+		\begin{equation}
+			\dim S_i-\dim S_{i+1}=\#\text{ blocchi di Jordan di dimensione }i
+		\end{equation}
+		\item L'autospazio $V_{\lambda}=S_1$ ha come base tutti i vettori aggiunti a partire dalla base di $S_p$, compresi i vettori di quest'ultima base; poiché per ognuno di questi vettori abbiamo, per costruzione, un blocco di Jordan relativo a $\lambda$, il numero di questi vettori corrisponde al \textit{numero totale di blocchi di Jordan, cioè la molteplicità geometrica di} $\lambda$: 
+		\begin{equation}
+		\dim V_{\lambda}=\#\text{ blocchi di Jordan relativi a }\lambda
+		\end{equation}
+		\item Per l'osservazione a pag. \pageref{molteplicitàalgebrichedijordan}:
+		\begin{equation}
+			m_\lambda=\sum\text{dimensioni dei blocchi relativi a }\lambda
+		\end{equation}
+		\item Per l'osservazione a pag. \pageref{polinomiominimojordan}, l'\textit{esponente di} $t-\lambda$ \textit{nel polinomio minimo} $m_A$ \textit{è la dimensione del blocco più grande relativo a} $\lambda$.
+		\begin{equation}
+		m_\lambda=\sum\text{dimensioni dei blocchi relativi a }\lambda
+		\end{equation}
+		\item \textit{Se conosco già le dimensioni dei blocchi di Jordan} di $\lambda$:
+		\begin{equation*}
+			a_1\leq\ldots\leq a_r=p
+		\end{equation*}
+		\textit{mi basta calcolare i sottospazi:}
+		\begin{equation*}
+			S_{a_1}\supseteq\ldots\supseteq S_{a_r}=S_p
+		\end{equation*}
+		\item Se $A$ ha un'\textit{unico} autovalore $\lambda$, allora $V=\tilde{V}_{\lambda}$ e $\left(A-\lambda I\right)^p=0$. In particolare segue che:
+		\begin{equation*}
+			\begin{array}{l}
+				\forall \underline{v}\in\im\left(A-\lambda I\right)^{p-1}\ \exists\underline{u}\in\left(A-\lambda I\right)^{p-1}\ \colon \left(A-\lambda I\right)^{p-1}\underline{u}=\underline{v}\\
+				\implies \underline{0}=\left(A-\lambda I\right)^{p}\underline{u}=\left(A-\lambda I\right)\underline{v}\\
+				\implies\underline{v}\in\ker\left(A-\lambda I\right)\\
+				\implies \im\left(A-\lambda I\right)^{p-1}\subseteq \ker\left(A-\lambda I\right)\\
+				\implies S_p=\im\left(A-\lambda I\right)^{p-1}\cap \ker\left(A-\lambda I\right)=\im\left(A-\lambda I\right)^{p-1}
+			\end{array}
+		\end{equation*}	
+		\textit{Pertanto, nel caso} $S_p$ \textit{non c'è bisogno di intersecare con} $V_{\lambda}$! Questo tuttavia \textit{non} si applica agli altri $S_i$, dato che \textit{non} vale la relazione $\im\left(A-\lambda I\right)^{i}\subseteq \ker\left(A-\lambda I\right)$.
+		\item Se so che per $\lambda$ tutti i blocchi di Jordan hanno la stessa dimensione $p$, \textit{possiamo calcolare direttamente} $S_p=\im\left(A-\lambda I\right)^{p-1}\cap V_{\lambda}$. %(dato che $S_p=S_{p-1}=\ldots=S_1$ e dunque non ci sono blocchi di altre dimensioni)?
+	\end{enumerate}
+\end{tips}
+\begin{exercise}
+Sia data la matrice:
+\begin{equation*}
+	A= \left(
+	\begin{array}{ccc}
+		8 & 6 & -4 \\
+		0 & 2 & 0  \\
+		9 & 9 & -4
+	\end{array}
+	\right)
+\end{equation*}
+Calcolare la sua forma di Jordan e la base per cui essa è in tale forma.
+\end{exercise}
+\begin{solution}
+Il suo polinomio caratteristico è $C_A\left(t\right)=\left(t-2\right)^3$ e $\lambda=2$ è l'unico autovalore, con molteplicità algebrica $m_{\lambda}=3$. Studiamo l'autospazio:
+\begin{equation*}
+	A-2I= \left(
+\begin{array}{ccc}
+	6 & 6 & -4 \\
+	0 & 0 & 0  \\
+	9 & 9 & -6
+\end{array}
+\right)
+\end{equation*}
+Il rango è $\rk \left(A-2I\right)=1$ e la molteplicità geometrica è pertanto $\dim V_2=2$. Notiamo che le possibili forme di Jordan di una matrice $3\times 3$ con unico autovalore $2$ sono:
+	\begin{equation*}
+	\underset{\tikz[baseline]{%
+			\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+				2 	\&	\color{gray}{0}	\& \color{gray}{0} 	\\
+				\color{gray}{0} 	\& 2	\& \color{gray}{0} 	\\
+				\color{gray}{0}	\& \color{gray}{0}	\& 2 	\\
+			};
+			\draw (M-1-1.north west) rectangle (M-1-1.south east);
+			\draw (M-1-1.south east) rectangle (M-2-2.south east);
+			\draw (M-2-2.south east) rectangle (M-3-3.south east);
+	}}{3\text{ blocchi},\ \dim V_2=3}
+	\underset{\tikz[baseline]{%
+		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+			2 	\&	1	\& \color{gray}{0} 	\\
+			0 	\& 2	\& \color{gray}{0} 	\\
+			\color{gray}{0}	\& \color{gray}{0}	\& 2 	\\
+		};
+		\draw (M-1-1.north west) rectangle (M-2-2.south east);
+		\draw (M-2-2.south east) rectangle (M-3-3.south east);
+}}{2\text{ blocchi},\ \dim V_2=2}
+	\underset{\tikz[baseline]{%
+		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+			2 	\&	1	\& 0 	\\
+			0 	\& 2	\& 1 	\\
+			0	\& 0	\& 2 	\\
+		};
+		\draw (M-1-1.north west) rectangle (M-3-3.south east);
+}}{1\text{ blocco},\ \dim V_2=1}
+\end{equation*}
+Come osservato precedentemente, la molteplicità geometrica di $\lambda$ dà il numero di blocchi di Jordan della matrice, pertanto ho sicuramente due blocchi di Jordan e, avendo fatto tutti i casi, sappiamo senza altri calcoli che il blocco massimo ha ordine $p=2$. La situazione in termini di spazi $S_i$, è:
+\begin{equation*}
+V_2=S_1\supseteq S_2=\im\left(A-2 I\right)
+\end{equation*}
+Avendo un unico autovalore, nel caso $S_2$ non abbiamo bisogno di calcolare l'intersezione con l'autospazio. Dunque, cerchiamo una base di $S_2=\im\left(A-2 I\right)$. Sappiamo già che la sua base è di un solo vettore, dato che $\rk\left(A-2 I\right)=1=\dim\im\left(A-2 I\right)$. Essendo l'immagine, possiamo prendere un vettore colonna della matrice $A-2 I$, che definiremo $x_1^1$; ad esempio, prendiamo la prima colonna:
+\begin{equation*}
+x_1^1=\left(6,\ 0,\ 9\right)
+\end{equation*} 
+Per la scelta effettuata, per costruire $x_1^2$ ci è sufficiente prendere il vettore $\left(1,\ 0,\ 0\right)$:
+\begin{equation*}
+	\begin{array}{l}
+		x_1^1=\left(6,\ 0,\ 9\right)=\left(A-2I\right)\left(1,\ 0,\ 0\right)\\
+		x_1^2=\left(1,\ 0,\ 0\right)
+	\end{array}
+\end{equation*}
+Allora $\left\{x_1^1,\ x_1^2\right\}$ dà il blocco di Jordan di ordine $2$. \\Completiamo $\left\{x_1^1\right\}$ ad una base di $V_2$. Esplicitando l'autospazio:
+\begin{equation*}
+V_2=\ker\left(A-2I\right)=\left\{3x+3y+2z=0\right\}
+\end{equation*}
+Possiamo scegliere ad esempio $\left(-1,\ 1,\ 0\right)$, ottenendo allo stesso tempo il vettore che dà il blocco di ordine $1$ di Jordan. La base che rende $A$ in forma di Jordan è:
+\begin{equation*}
+\left\{\left(6,\ 0,\ 9\right), \ \left(1,\ 0,\ 0\right), \ \left(-1,\ 1,\ 0\right)\right\}
+\end{equation*}
+\vspace{-6mm}
+\end{solution}
+\begin{exercise}\textsc{Esercizio 4, scritto Luglio 2018}\\
+	Sia $A$ matrice quadrata complessa $6\times 6$. Dire quali delle seguenti affermazioni possono verificarsi, motivando la risposta.
+	\begin{enumerate}
+		\item Il polinomio minimo di $A$ è $\left(t-2\right)^5$, l'autospazio relativo a $2$ ha dimensione $3$.
+		\item Il polinomio minimo di $A$ è $\left(t-2\right)\left(t-3\right)^3$, l'autospazio relativo a $2$ ha dimensione $3$.
+		\item $A$ ha polinomio caratteristico è $\left(t-2\right)^6$ e $A^2-A-I=O$.
+		\item $A^2-A-I=O$ e $A$ ha autovalori \textit{non} reali.
+	\end{enumerate}
+\end{exercise}
+\begin{solution}~{}
+\begin{enumerate}[label=\Roman*]
+\item $A$ ha un unico autovalore $2$, di \textit{molteplicità algebrica} $6$, dunque il \textit{più grande} blocco di Jordan nella forma di Jordan di $A$ ha dimensione $5$; poiché la dimensione dell'autospazio relativo a $2$ è la molteplicità geometrica, segue che il numero di blocchi relativi a $2$ sono $3$.\\
+\textit{Non si può dunque verificare}, in quanto con la condizione di avere un blocco di dimensione $5$ non ci può essere più di un solo blocco di dimensione $1$.
+\item  $A$ ha autovalori $2$ e $3$, di \textit{molteplicità algebrica} rispettivamente $1$ e $3$, dunque il \textit{più grande} blocco di Jordan nella forma di Jordan di $A$ riferito a $2$ ha dimensione $1$, mentre quello riferito a $3$ è $3$; poiché la dimensione dell'autospazio relativo a $2$ è la molteplicità geometrica, segue che il numero di blocchi relativi a $2$ sono $3$.
+\begin{equation*}
+	\tikz[baseline]{%
+		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+			2 	\&	 	\&   \&   \&   \&  	\\
+			  	\& 2	\&   \&   \&   \&  	\\
+			 	\&  	\& 2 \&   \&   \&  	\\
+			 	\&  	\&   \& 3 \& 1 \& 0	\\
+			 	\&  	\&   \& 0 \& 3 \& 1	\\
+				\&  	\&   \& 0 \& 0 \& 3	\\ 	
+		};
+		\draw (M-1-1.north west) rectangle (M-1-1.south east);
+		\draw (M-1-1.south east) rectangle (M-2-2.south east);
+		\draw (M-2-2.south east) rectangle (M-3-3.south east);
+		\draw (M-3-3.south east) rectangle (M-6-6.south east);
+	}
+\end{equation*}
+\item Si ha:
+\begin{itemize}
+	\item \parbox[t]{0.18\textwidth}{$f\left(t\right)=t^2-t-1$}\tikzmark{a}
+	\item \parbox[t]{0.18\textwidth}{$f\left(A\right)=O$}\tikzmark{b}
+\end{itemize}
+\brackitem{a}{b}[$f\left(t\right)\in I_A$]
+Tuttavia $f\left(t\right)=\left(t-\lambda_1\right)\left(t-\lambda_1\right)$. Dunque, consideriamo:
+\begin{equation*}
+	m_A\left(t\right)\mid f\left(t\right)\implies m_A\left(t\right)=\begin{cases}
+		t-\lambda_1\\
+		t-\lambda_2\\
+		f\left(t\right)
+	\end{cases}
+\end{equation*}
+Inoltre, $m_A\left(t\right)\mid C_A\left(t\right)=\left(t-2\right)^6$.\\
+Notiamo che:
+\begin{equation*}
+	f\left(2\right)=4-2-1=1\neq 0
+\end{equation*}
+Poiché $\lambda=2$ è l'unico autovalore di $A$ ed $f\in I_A$, si avrebbe $f\left(2\right)=0$, cioè abbiamo un assurdo.
+\item Si ha $f\left(t\right)=t^2-t-1\in I_A$:
+\begin{equation*}
+	\lambda_{1,\ 2}=\frac{1\pm \sqrt{1+4}}{2}=\frac{1\pm\sqrt{5}}{2}\text{ sono entrambe \textit{non} reali.}
+\end{equation*}
+Allora $f\left(t\right)=\left(t-\lambda_1\right)\left(t-\lambda_1\right)$ e, per le osservazioni del punto precedente:
+\begin{equation*}
+	m_A\left(t\right)=\begin{cases}
+		t-\lambda_1\\
+		t-\lambda_2\\
+		f\left(t\right)
+	\end{cases}
+\end{equation*}
+Allora, gli autovalori di $A$ possono essere solo $\frac{1\pm\sqrt{5}}{2}$, dunque $A$ non può avere autovalori complessi.
+\end{enumerate}
+\end{solution}
+\section{Funzione esponenziale nei complessi}
+La \textbf{funzione esponenziale} $e^x$ ($x\in \realset$) si può \textit{caratterizzare} in diversi modi; sia con il concetto di limite:
+\begin{equation*}
+	e^x=\lim_{n \to +\infty}\left(1+\frac{x}{n}\right)^n
+\end{equation*}
+Oppure come il valore della serie di potenze:
+\begin{equation*}
+	e^x=\sum_{n=0}^{+\infty}\frac{x^n}{n!}=1+x+\frac{x^2}{2}+\frac{x^3}{3!}+\ldots
+\end{equation*}
+Vogliamo ora definire una funzione analoga anche in campo complesso.
+\begin{define}
+Sia $z\in\complexset$. Definiamo come \textbf{funzione esponenziale sui numeri complessi}\index{funzione!esponeziale sui numeri complessi} la seguente serie:
+\begin{equation}
+	\exp\left(z\right)=e^z\coloneqq\sum_{n=0}^{+\infty}\frac{z^n}{n!}
+\end{equation}
+Essa è una funzione continua
+\end{define}
+\begin{demonstration}
+	Dimostriamo che sia ben definita la funzione mostrando la convergenza della serie. In realtà possiamo mostrare che la serie \textbf{converge assolutamente}\index{convergenza!assoluta}\footnote{Si può parlare di convergenza assoluta in spazi topologici dotati di una \textit{norma}; si ha che la convergenza implica la convergenza ‘‘classica'' se lo spazio è completo rispetto alla metrica indotta dalla norma.} Dunque, con i complessi consideriamo il \textit{modulo} $\lvert\cdot\rvert$:
+	\begin{equation}
+		\lvert \frac{z^n}{n!}\rvert =\frac{\lvert z \rvert^n}{n!}\in\realset\implies\sum_{n=0}^{+\infty}\frac{\lvert z \rvert^n}{n!}
+	\end{equation}
+Questa serie nei reali converge ad $e^{\lvert z\rvert}$: la serie pertanto converge assolutamente e dunque la funzione è ben definita; se $z\in \realset$ allora l'esponenziale è in tutto e per tutto quello noto nei reali.\\
+Studiamo ora la continuità, dimostrando che \textbf{converga uniformemente}\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{convergenzauniforme}, si può trovare la definizione della convergenza uniforme e alcune osservazioni a riguardo.} in qualunque sottoinsieme limitato, utilizzando l'M-test di Weierstrass. Se $S\subseteq \complexset$ è un sottoinsieme limitato, sicuramente esso è sottoinsieme di un disco nel piano complesso di centro l'origine e raggio $\epsilon$. Dunque, $\exists\epsilon\in\realset\ \colon \lvert z\rvert<\epsilon\ \forall z\in S$. Allora varrà:
+\begin{equation*}
+\lvert\frac{z^n}{n!}\rvert=\frac{\lvert z\rvert^n}{n!}\leq\frac{a^n}{n!}
+\end{equation*}
+Passando alle serie:
+\begin{equation*}
+\sum_{n=0}^{+\infty}\frac{a^n}{n!}<\infty
+\end{equation*}
+Allora la funzione esponenziale converge uniformemente su $S$, dunque $\funz{e^z}{\complexset}{\complexset}$ è continua.
+\end{demonstration}
+\begin{proposition}\label{proposizioneeWeZ=eW+Z}
+L'esponenziale in campo complesso gode delle seguenti proprietà:
+\begin{enumerate}
+	\item $e^z\cdot e^w=e^{z+w}$.
+	\item $e^z\neq 0\ \forall z\in \complexset$.
+	\item Se $t\in\realset$, si ha $e^{it}=\cos t+i\sin t$.
+\end{enumerate}
+\end{proposition}
+\begin{demonstration}~{}
+	\begin{enumerate}[label=\Roman*]
+		\item Dati $z,\ w\in\complexset$:
+		\begin{equation*}
+			\begin{array}{ll}
+				\displaystyle e^z\cdot e^w&\displaystyle =\sum_{k=0}^{\infty}\frac{z^k}{k!}\cdot\sum_{m=0}^{\infty}\frac{w^m}{m!}\stackrel{\footnote{Il prodotto è lecito in quanto si ha la convergenza assoluta della serie.}}{=}\underbrace{\sum_{n=0}^{\infty}}_{n=k+m}\sum_{k=0}^{n}\frac{z^k}{k!}\frac{w^{n-k}}{\left(n-k\right)!}=\\
+				&\displaystyle =\sum_{n=0}^{+\infty}\underbrace{\frac{1}{n!}\sum_{k=0}^{n}{n \choose k}z^kw^{n-k}}_{\text{Binomio di Newton}}=\sum_{n=0}^{+\infty}\frac{1}{n!}\left(z+w\right)^n=e^{z+w}\\
+				&\displaystyle \implies  e^z\cdot e^w=e^{z+w}
+			\end{array}
+		\end{equation*}
+	\item $e^z\cdot e^{-z}=e^{z-z}=e^0=1$.
+	\item Si ha:
+	\begin{equation*}
+		\begin{array}{ll}
+			\displaystyle e^{it}=&\displaystyle=\sum_{n=0}^{+\infty}\frac{\left(it\right)^n}{n!}=\sum_{m=0}^{+\infty}\frac{\left(it\right)^{2m}}{\left(2m\right)!}+\sum_{m=0}^{+\infty}\frac{\left(it\right)^{2m+1}}{\left(2m+1\right)!}=\\
+			&\displaystyle=\sum_{m=0}^{+\infty}\frac{\left(-1\right)^m\left(t\right)^{2m}}{\left(2m\right)!}+i\sum_{m=0}^{+\infty}\frac{\left(-1\right)^m\left(t\right)^{2m+1}}{\left(2m+1\right)!}=\cos t + i\sin t
+		\end{array}
+	\end{equation*}
+	\end{enumerate}
+\end{demonstration}
+\begin{observe}~{}
+	\begin{itemize}
+		\item $e^z=e^{x+iy}=e^x\cdot e^{iy}=e^x\left(\cos y+i\sin y\right)\implies \lvert e^z\rvert = e^x = e^{\Re z}$\\
+		L'argomento di $e^z$ è, per costruzione, $y=\Im z$ % immagine complessa
+		\item $e^{2\pi i}=1$, mentre $e^{z+2\pi i}=e^z\cdot e^{2\pi i}=e^{z}$
+		\item $e^z\neq 0$, dunque $\forall w\in \complexset\setminus \left\{0\right\}\ \exists z\in \complexset\ \colon e^z=w$, cioè $\funz{e^z}{\complexset}{\complexset\setminus\left\{0\right\}}$. Infatti, se $w=x+iy$ si può scrivere in forma polare come:
+		\begin{equation*}
+			w=\lvert w\rvert\left(\cos y+i\sin y\right)
+		\end{equation*}
+		Notiamo che:
+		\begin{itemize}
+			\item $w=0\iff x=0 \wedge y=0$, dunque anche il modulo è zero se e solo se $x$ e $y$ sono entrambi zero.
+			\item $\lvert w\rvert=\sqrt{x^2+y^2}\in\realset^{+}$, dunque per suriettività dell'esponenziale reale $\exists a\in\realset$ tale per cui $e^a=\sqrt{x^2+y^2}$.
+			\item L'argomento di $w$ è $\arg\left(w\right)=y$
+			\item $\left(\cos y+i\sin y\right)=e^{iy}$.
+		\end{itemize}
+		Allora, esiste $z=a+iy$ tale che:
+		\begin{equation*}
+			w=x+iy=\lvert w\rvert\left(\cos y+i\sin y\right)=e^a\left(\cos y+i\sin y\right)=e^{a+iy}=e^z
+		\end{equation*}
+	\end{itemize}
+\vspace{-6mm}
+\end{observe}
+\subsection{Esponenziale di una matrice quadrata complessa}
+\begin{define}
+Sia $A\in\complexset^{n,\ n}$. Definiamo l'\textbf{esponenziale di una matrice quadrata complessa} come:
+\begin{equation}
+	e^A\coloneqq \sum_{k=0}^{+\infty}\frac{A^k}{k!}=\lim_{n \to +\infty}\sum_{k=0}^{n}\underbrace{\frac{A^k}{k!}}_{\text{matrice }n\times n}\qquad e^A\in\complexset^{n,\ n}
+\end{equation}
+\end{define}
+Questa serie di matrici converge se e solo se convergono \textit{tutte} le serie che danno origine ai suoi $n^2$ elementi. Per dimostrare la convergenza, usiamo una norma particolare.
+\begin{define}
+La \textbf{norma infinito di una matrice}\index{norma!infinito di una matrice} $A\in C^{n,\ n}$ è:
+\begin{equation}
+\labs A\rabs_{\infty}=\max_{i,\ j=1,\ \ldots,\ n}\lvert a_{ij}\rvert
+\end{equation}
+\vspace{-6mm}
+\end{define}
+\begin{lemming}\textsc{Proprietà della norma infinito di una matrice.}\\
+	Date le matrici $n\times n$ $A$ e $B$:
+	\begin{enumerate}
+		\item $\labs A+B \rabs_{\infty}\leq \labs A\rabs_{\infty}+\labs B\rabs_{\infty}$.
+		\item $\labs A\cdot B\rabs_{\infty}\leq n\labs A\rabs_{\infty}\labs B\rabs_{\infty}$.
+	\end{enumerate}
+\end{lemming}
+\begin{demonstration}~{}
+	\begin{enumerate}[label=\Roman*]
+		\item $\forall i,\ j$ $\lvert a_{ij}+b_{ij}\rvert\leq \lvert a_{ij}\rvert + \lvert b_{ij}\rvert\leq \labs A\rabs_{\infty}+\labs B\rabs_{\infty}$.
+		Per l'arbitrarietà di $i$ e $j$, vale la tesi.
+		\item Sia $C=AB$. Allora:
+		\begin{equation*}
+			\begin{array}{rl}
+				\displaystyle c_{ij}&\displaystyle=\sum_{k=1}^{n}a_{ik}b_{kj}\\
+				\displaystyle\implies \lvert c_{ij}\rvert &\displaystyle\leq \sum_{k=1}^{n}\lvert a_{ik}\rvert \lvert b_{kj}\rvert\leq n\labs A \rabs_{\infty}\labs B \rabs_{\infty}\quad \forall i,\ j
+				\implies \labs C \rabs_{\infty}\leq n\labs A \rabs_{\infty}\labs B \rabs_{\infty}   
+			\end{array}
+		\end{equation*}
+	\end{enumerate}
+	\vspace{-6mm}
+\end{demonstration}
+\begin{demonstration}
+	Dimostriamo che l'esponenziale di una matrice complessa sia ben definito. Consideriamo la serie:
+	\begin{equation*}
+		\sum_{k=0}^{+\infty}\frac{A^k}{k!}
+	\end{equation*}
+Si ha:
+\begin{equation*}
+	\begin{array}{l}
+			\labs A^2\rabs_{\infty}\leq n\labs A\rabs^2_{\infty}\\
+			\labs A^3\rabs_{\infty}\leq n\labs A^2\cdot A\rabs_{\infty}\leq n\labs A\rabs^2_{\infty}\labs A\rabs_{\infty}\leq n^2\labs A\rabs^3_{\infty}\\
+	\end{array}
+\end{equation*}
+Per induzione in questo modo otteniamo:
+\begin{gather*}
+	\begin{array}{rl}
+		\displaystyle\labs A^k\rabs_{\infty}&\leq n^{k-1}\labs A\rabs^k_{\infty}\\
+	\end{array}\\
+	\begin{array}{ll}
+		\displaystyle\implies \labs \sum_{k=0}^{N}\frac{A^k}{k!}\rabs_{\infty}&\displaystyle\leq\sum_{k=0}^{N}\frac{\labs A^k\rabs_{\infty}}{k!}\leq\sum_{k=0}^{N}\frac{n^{k-1}\labs A\rabs^k_{\infty}}{k!}=\\
+		&\displaystyle=\frac{1}{n}\sum_{k=0}^{N}\frac{\left(n\labs A\rabs_{\infty}\right)^k}{k!}\stackrel{\longrightarrow}{N\to \infty} \frac{1}{n}\sum_{k=0}^{\infty}\frac{\left(n\labs A\rabs_{\infty}\right)^k}{k!}=\frac{1}{n}e^{n\labs A\rabs_{\infty}}
+	\end{array}
+\end{gather*}
+Allora $\displaystyle \sum_{k=0}^{\infty}\frac{A^k}{k!}$ converge assolutamente, pertanto $e^A$ è ben definito.
+\end{demonstration}
+\begin{attention}
+	In generale si ha $e^{A+B}\neq e^A\cdot e^B$! Infatti, il prodotto di matrici non è \textit{commutativo}, pertanto in generale non vale la formula del \textit{binomio di Newton}, necessaria nella dimostrazione della proprietà di cui sopra.
+\end{attention}
+\begin{example}\label{esponenzialechenoncommutap1}
+	Siano $A= \left(
+		\begin{array}{cc}
+			1 & 0 \\
+			0 & 2
+		\end{array}
+		\right)$ e $B= \left(
+		\begin{array}{cc}
+			0 & 1 \\
+			0 & 0
+		\end{array}
+		\right)$. \\
+$A$ è una \textit{matrice diagonale}, dunque $e^A$ è facile da calcolare; infatti, presa una qualunque matrice diagonale $D$:
+\begin{equation*}
+\displaystyle	D=\left(\begin{array}{ccc}
+		d_1 & \dots & 0 \\
+		\vdots & \ddots & \vdots \\
+		0 & \dots & d_n
+	\end{array}\right)
+\implies D^k=\left(\begin{array}{ccc}
+	d_1^k & \dots & 0 \\
+	\vdots & \ddots & \vdots \\
+	0 & \dots & d_n^k
+\end{array}\right)
+\end{equation*}
+\begin{equation}
+	 e^D=\left(\begin{array}{ccc}\displaystyle
+		\sum_{k=0}^{+\infty}\frac{d_1^k}{k!} & \dots & 0 \\
+		\vdots & \ddots & \vdots \\
+		0 & \dots &\displaystyle \sum_{k=0}^{+\infty}\frac{d_n^k}{k!}
+	\end{array}\right)=\left(\begin{array}{ccc}
+	e^{d_1} & \dots & 0 \\
+	\vdots & \ddots & \vdots \\
+	0 & \dots & e^{d_n}
+\end{array}\right)
+\end{equation}
+Dunque, nel nostro caso:
+\begin{equation*}
+	A= \left(
+	\begin{array}{cc}
+		1 & 0 \\
+		0 & 2
+	\end{array}
+	\right)\implies e^A=\left(
+	\begin{array}{cc}
+		e & 0 \\
+		0 & e^2
+	\end{array}
+	\right)
+\end{equation*}
+Invece, $B$ è \textit{nilpotente} di ordine due, dato che $B^2=O$. Allora, scrivendo la serie che caratterizza $e^B$, tutti i termini successivi al secondo sono nulli! Pertanto:
+\begin{equation*}
+	B= \left(
+	\begin{array}{cc}
+		0 & 1 \\
+		0 & 0
+	\end{array}
+	\right)\implies e^B=\sum_{k=0}^{+\infty}\frac{B^k}{k!}=I+B=\left(
+	\begin{array}{cc}
+		1 & 1 \\
+		0 & 1
+	\end{array}
+	\right)
+\end{equation*}
+Allora:
+\begin{equation*}
+	e^A\cdot e^B=\left(
+	\begin{array}{cc}
+		e & e \\
+		0 & e^2
+	\end{array}
+	\right)
+\end{equation*}
+D'altro canto, abbiamo che:
+\begin{equation*}
+	A+B=\left(
+	\begin{array}{cc}
+		1 & 1 \\
+		0 & 2
+	\end{array}
+	\right)
+\end{equation*}
+Verificheremo successivamente (pag. \pageref{esponenzialechenoncommutap2}), quando mostreremo come calcolare in generale l'esponenziale di una matrice, che $e^{A+B}\neq e^A\cdot e^B$.
+\end{example}
+\begin{lemming}
+	Se $A,\ B\in\complexset^{n,\ n}$ \textit{commutano}, cioè $AB=BA$, allora:
+	\begin{equation}
+		e^{A+B}=e^A\cdot e^B
+	\end{equation}
+\vspace{-6mm}
+\end{lemming}
+\begin{demonstration}
+	La dimostrazione è assolutamente analoga a quella vista per dimostrare la proprietà parallela dell'esponenziale dei numeri complessi (lemma \ref{proposizioneeWeZ=eW+Z}, pag. \pageref{proposizioneeWeZ=eW+Z}), dato che, se commutano, vale il \textit{binomio di Newton matriciale}:
+	\begin{equation}
+		\left(A+B\right)^k=\sum_{i=0}^{k}{k \choose i}A^i\cdot B^{k-1}
+	\end{equation}
+\vspace{-4mm}
+\end{demonstration}
+\begin{observe}
+	\textit{Matrici simili hanno esponenziali simili}. Più precisamente, se $A=P^{-1}BP$ per una opportuna matrice ortogonale $P$, allora $e^A=P^{-1}e^BP$, cioè $e^A$ e $e^B$ sono simili tramite la stessa matrice $P$ di $A$ e $B$.
+\end{observe}
+\begin{demonstration}
+Si ha:
+\begin{equation*}
+	\begin{array}{l}
+A=P^{-1}BP\\
+A^2=\left(P^{-1}BP\right)\left(P^{-1}BP\right)=P^{-1}B^2P
+	\end{array}
+\end{equation*}
+Per induzione in questo modo otteniamo:
+\begin{equation*}
+	\displaystyle \begin{array}{rl}
+		A^k&=P^{-1}B^kP\\
+		\displaystyle\implies e^A&\displaystyle=\sum_{k=0}^{N}\frac{A^k}{k!}=\sum_{k=0}^{N}\frac{P^{-1}B^kP}{k!}=P^{-1}\sum_{k=0}^{N}\frac{B^k}{k!}P=P^{-1}e^BP
+	\end{array}
+\end{equation*}
+\end{demonstration}
+\begin{theorema}
+	Si ha:
+	\begin{equation}
+		\det\left(e^A\right)=e^{\tr\left(A\right)}
+	\end{equation}
+In particolare, $e^A$ è sempre una matrice invertibile.
+\end{theorema}
+\begin{demonstration}
+	Una qualunque matrice $A$ complessa è simile alla sua forma di Jordan $J$. La traccia di matrici simili, per commutatività interna della traccia\footnote{Per ogni matrice $A$ di dimensioni $n\times m$ e $B$ di dimensioni $m\times n$ si ha $\tr\left(AB\right)=\tr\left(BA\right)$.}, è uguale:
+	\begin{equation*}
+		\tr\left(A\right)=\tr\left(J\right)=\lambda_1+\ldots+\lambda_n
+	\end{equation*}
+Per la dimostrazione precedente, $e^A$ è simile a $e^J$; in particolare, i determinanti sono uguali:
+\begin{equation*}
+	\det\left(e^A\right)=\det\left(e^J\right)
+\end{equation*}
+Allora è sufficiente dimostrare che $\det\left(e^J\right)=e^{\lambda_1+\ldots+\lambda_n}=e^{\lambda_1}\ldots e^{\lambda_n}$. $J$ è una matrice triangolare superiore. Le osservazioni seguenti sono vere anche per una qualsiasi matrice triangolare superiore:
+\begin{equation*}
+	\displaystyle J=\left(\begin{array}{ccc}
+		\lambda_1 & \dots & \ast \\
+		\vdots & \ddots & \vdots \\
+		0 & \dots & \lambda_n
+	\end{array}\right)
+	 \implies \forall k\geq 1\ J^k=\left(\begin{array}{ccc}
+		\lambda_1^k & \dots & \ast \\
+		\vdots & \ddots & \vdots \\
+		0 & \dots & \lambda_n^k
+	\end{array}\right)
+\end{equation*}
+\begin{equation}
+	 e^J=\left(\begin{array}{ccc}\displaystyle
+		\sum_{k=0}^{+\infty}\frac{\lambda_1^k}{k!} & \dots & \ast \\
+		\vdots & \ddots & \vdots \\
+		0 & \dots & \displaystyle \sum_{k=0}^{+\infty}\frac{\lambda_n^k}{k!}
+	\end{array}\right)=\left(\begin{array}{ccc}
+		e^{\lambda_1} & \dots & \ast \\
+		\vdots & \ddots & \vdots \\
+		0 & \dots & e^{\lambda_n}
+	\end{array}\right)
+\end{equation}
+Il determinante di una matrice triangolare è il prodotto sulle colonne, dunque vale $\det\left(e^J\right)=e^{\lambda_1}\ldots e^{\lambda_n}$ come cercato. In particolare, questo prodotto, in quanto \textit{prodotto di esponenziali}, \textit{non è mai null}o e dunque il determinante è \textit{diverso da zero}.
+\end{demonstration}
+\subsection{Calcolo dell'esponenziale di una matrice tramite la forma di Jordan}
+Abbiamo già calcolato alcuni esponenziali di matrici in diverse delle precedenti dimostrazioni, sfruttando tuttavia sempre matrici particolari:
+\begin{itemize}
+	\item \textbf{Matrice diagonale}: 
+\begin{equation}
+D=\left(\begin{array}{ccc}
+d_1 & \dots & 0 \\
+\vdots & \ddots & \vdots \\
+0 & \dots & d_n
+\end{array}\right)\implies
+e^D=\left(\begin{array}{ccc}
+e^{d_1} & \dots & 0 \\
+\vdots & \ddots & \vdots \\
+0 & \dots & e^{d_n}
+\end{array}\right)
+\end{equation}
+	\item \textbf{Matrice nilpotente}: se la matrice è nilpotente di ordine $k$ ($B^k=O$) si calcolano i primi $k$ termini della serie caratterizzante $e^B$:
+	\begin{equation}
+		e^B=\sum_{i=0}^{i-1}\frac{B^{i}}{i!}=I+B+\ldots + \frac{B^{k-1}}{\left(k-1\right)!}
+	\end{equation}
+\end{itemize}
+In generale, tuttavia, come possiamo calcolare l'esponenziale di una generica matrice $A$? A questo proposito ci viene in aiuto la tanto faticata forma di Jordan. Il seguente processo costruttivo ci permette di calcolare, in modo (relativamente) facile, un qualsiasi esponenziale $e^A$.
+\begin{enumerate}
+	\item $A$ è simile alla sua forma di Jordan $J$:
+	\begin{equation*}
+		A=PJP^{-1}
+	\end{equation*}
+	Con $P$ è la matrice del cambiamento di base che presenta, nelle colonne, la base che mette $A$ in forma di Jordan. Sappiamo allora che per la stessa matrice $P$ gli esponenziali sono simili: 
+	\begin{equation*}
+		e^A=Pe^JP^{-1}
+	\end{equation*}
+	Allora è sufficiente calcolare $P$, $J$ e $e^J$.
+	\item $J$ è una matrice a blocchi diagonali, dunque la potenza $k$-esima è una matrice con le potenze $k$-esime dei blocchi sulla diagonale:
+	\begin{equation*}
+		J=\tikz[baseline]{%
+			\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+				\mathbf{B_1} 	\&	\dots	\& 0 	\\
+				\vdots 	\& \ldots	\& \vdots 	\\
+				0	\& \dots	\& \mathbf{B_r} 	\\
+			};
+			\draw (M-1-1.north west) rectangle (M-1-1.south east);
+			\draw (M-3-3.north west) rectangle (M-3-3.south east);
+		}
+	J^k=\tikz[baseline]{%
+		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+			\mathbf{B_1}^k 	\&	\dots	\& 0 	\\
+			\vdots 	\& \ldots	\& \vdots 	\\
+			0	\& \dots	\& \mathbf{B_r}^k	\\
+		};
+		\draw (M-1-1.north west) rectangle (M-1-1.south east);
+		\draw (M-3-3.north west) rectangle (M-3-3.south east);
+	}
+	\end{equation*}
+Dunque usando la definizione , segue che, l'esponenziale è anch'essa una matrice a blocchi:
+\begin{equation*}
+	e^J=\tikz[baseline]{%
+		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+			e^\mathbf{B_1} 	\&	\dots	\& 0 	\\
+			\vdots 	\& \ldots	\& \vdots 	\\
+			0	\& \dots	\& e^\mathbf{B_r}	\\
+		};
+		\draw (M-1-1.north west) rectangle (M-1-1.south east);
+		\draw (M-3-3.north west) rectangle (M-3-3.south east);
+	}
+\end{equation*}
+Dunque, per calcolare l'esponenziale di una matrice in forma di Jordan basta saper calcolare l'esponenziale di un blocco di Jordan.
+\item Notiamo che un blocco di ordine $p$ si può sempre scomporre in una matrice diagonale $\lambda I_p$ e una matrice nilpotente $N$ di soli $1$.
+	\begin{equation*}
+	\mathbf{B} = \left(
+	\begin{array}{ccccc}
+		\lambda	& 1 		&  0		& \ldots 	& 0 \\
+		0		& \lambda 	& \ddots	& 			& \vdots\\
+		\vdots	&  			& \ddots	& 1 		& 0\\
+		\vdots	& 			&   		& \lambda 	& 1\\
+		0		&  \dots  	&  \dots 	&  0 		& \lambda
+	\end{array}
+	\right) = \left(
+	\begin{array}{ccccc}
+		\lambda	& 0 		&  0		& \ldots 	& 0 \\
+		0		& \lambda 	& \ddots	& 			& \vdots\\
+		\vdots	&  			& \ddots	& 0 		& 0\\
+		\vdots	& 			&   		& \lambda 	& 0\\
+		0		&  \dots  	&  \dots 	&  0 		& \lambda
+	\end{array}
+	\right) + \left(
+	\begin{array}{ccccc}
+		0		& 1 		&  0		& \ldots 	& 0 \\
+		\vdots	& 0			& \ddots	& 			& \vdots\\
+				&  			& 0			&  1 		& 0\\
+		\vdots	& 			&   		&  0	 	& 1\\
+		0		&  \dots  	&  \dots 	&  0 		& 0
+	\end{array}
+	\right)=\lambda I_p+N
+\end{equation*}
+Poiché $N$ e $\lambda I_p$ commutano, vale:
+\begin{equation}
+e^\mathbf{B}=e^{\lambda I+N}=e^{\lambda I}e^N
+\end{equation}
+Dunque basta calcolare $e^{\lambda I}$ e $e^N$, ma sono due matrici di sappiamo già come calcolare l'esponenziale:
+\begin{itemize}
+	\item $e^{\lambda I}$ è una \textit{matrice diagonale}: 
+	\begin{equation}
+		e^{\lambda I}=\left(\begin{array}{ccc}
+			e^{\lambda} & \dots & 0 \\
+			\vdots & \ddots & \vdots \\
+			0 & \dots & e^{\lambda}
+		\end{array}\right)=e^{\lambda}I
+	\end{equation}
+	\item $e^N$ è una \textit{matrice nilpotente} di ordine $p$: 
+	\begin{equation}
+		e^N=\sum_{k=0}^{p-1}\frac{N^{k}}{k!}=I+N+\ldots + \frac{N^{p-1}}{\left(p-1\right)!}
+	\end{equation}
+\end{itemize}
+\end{enumerate}
+\begin{example}\label{esponenzialechenoncommutap2}
+Riprendiamo l'esempio di pagina \pageref{esponenzialechenoncommutap1}. Prendiamo $A=\left(\begin{array}{ccc}
+	1 & 0 \\
+	0 & 2 \\
+\end{array}\right)$, $B=\left(\begin{array}{ccc}
+0 & 1 \\
+0 & 0 \\
+\end{array}\right)$ e consideriamo $C=A+B=A=\left(\begin{array}{ccc}
+1 & 1 \\
+0 & 2 \\
+\end{array}\right)$.\\
+$C$ ha autovalori $1$ e $2$ ed è diagonalizzabile con $D=\left(\begin{array}{ccc}
+	1 & 0 \\
+	0 & 2 \\
+\end{array}\right)$; una base di una autovettori di $C$ è $\left(1,\ 0\right)$ e $\left(1,\ 1\right)$ e la matrice del cambiamento di basi è $P=\left(\begin{array}{ccc}
+1 & 1 \\
+0 & 1 \\
+\end{array}\right)$. Allora, considerata l'inversa $P^{-1}=\left(\begin{array}{ccc}
+1 & -1 \\
+0 & 1 \\
+\end{array}\right)$:
+\begin{equation*}
+	\begin{array}{ll}
+C=PDP^{-1}\implies& e^C=Pe^DP^{-1}=\left(\begin{array}{ccc}
+	1 & 1 \\
+	0 & 1 \\
+\end{array}\right)\left(\begin{array}{ccc}
+e & 0 \\
+0 & e^2 \\
+\end{array}\right)\left(\begin{array}{ccc}
+	1 & -1 \\
+	0 & 1 \\
+\end{array}\right)=\left(\begin{array}{ccc}
+e & -e+e^2 \\
+0 & e^2 \\
+\end{array}\right)\\
+& e^Ae^B=\left(\begin{array}{ccc}
+	e & 0 \\
+	0 & e^2 \\
+\end{array}\right)\left(I+B\right)=\left(\begin{array}{ccc}
+e & 0 \\
+0 & e^2 \\
+\end{array}\right)\left(\begin{array}{ccc}
+1 & 1 \\
+0 & 1 \\
+\end{array}\right)=\left(\begin{array}{ccc}
+e & e \\
+0 & e^2 \\
+\end{array}\right)\neq e^C
+\end{array}
+\end{equation*}
+\end{example}
+\subsection{Impratichiamoci! Funzione esponenziale nei complessi}
+\begin{exercise}\textsc{Esercizio 4, scritto Febbraio 2018}\\
+Sia $A =
+	e^{\lambda I}=\left(\begin{array}{ccc}
+		-3 & 4 \\
+		-1 & 1 \\
+	\end{array}\right)$. Calcolare $\exp\left(A\right)=e^A$
+\end{exercise}
+\begin{solution}
+Il polinomio minimo è $C_A\left(t\right)=\left(t+1\right)^2$, l'unico autovalore della matrice è $\lambda = -1$ con molteplicità $m_\lambda= 2$. Troviamo la forma di Jordan.
+\begin{equation*}
+	V_\lambda=\ker \left(A+I\right)=\ker\left(\begin{array}{ccc}
+		-2 & 4 \\
+		-1 & 2 \\
+	\end{array}\right)=\ker\left(\begin{array}{ccc}
+	1 & -2 \\
+	0 & 0 \\
+\end{array}\right)=\left\{\left(x,\ y\right)\mid x-2y=0\right\}=\left<\left(2,\ 1\right) \right>
+\end{equation*}
+Poiché $\dim V_{\lambda}=1$, segue che la forma di Jordan è un unico blocco di ordine $p=2$:
+\begin{equation*}
+	J=\left(\begin{array}{ccc}
+		-1 & 1 \\
+		0 & -1 \\
+	\end{array}\right)
+\end{equation*}
+Cerchiamo ora una matrice $P$, e dunque una base $\basis$, che mette $A$ in forma di Jordan ($A=PJP^{-1}$). Poichè abbiamo un unico autovalore, $\left(A-\lambda I\right)^2=O$ e $\im \left(A-\lambda I\right)\subseteq \ker \left(A-\lambda I\right)$.\\ Studiamo $S_2=\ker\left(A+I\right)\cap \im\left(A+I\right)^{p-1}=\im \left(A+I\right)$; esso ha $\dim S_2=1$ e per trovarne una base basta prendere una colonna di $A+I$:
+\begin{equation*}
+v_2 = \left(2,\ 1\right)=
+\end{equation*}
+Per costruire $v_1$ è sufficiente prendere $\left(-1,\ 0\right)$:
+\begin{equation*}
+	\begin{array}{l}
+		v_2 = \left(2,\ 1\right) = \left(A+I\right)\left(-1,\ 0\right)\\
+		v_1 = \left(-1,\ 0\right)
+	\end{array}
+\end{equation*}
+Una base che mette $A$ in forma di Jordan è dunque $\basis=\left\{\left(2,\ 1\right),\ \left(-1,\ 0\right)\right\}$ e dunque abbiamo $P$:
+\begin{equation*}
+P=\left(\begin{array}{ccc}
+	2 & -1 \\
+	1 & 0 \\
+\end{array}\right)
+\end{equation*}
+L'inversa è, noto il determinante $\det P= 1$:
+\begin{equation*}
+P^{-1}=\left(\begin{array}{ccc}
+	0 & 1 \\
+	-1 & 2 \\
+\end{array}\right)
+\end{equation*}
+Ora calcoliamo $e^J$:
+\begin{equation*}
+J=\left(\begin{array}{ccc}
+	-1 & 1 \\
+	 0 & -1 \\
+\end{array}\right)=\left(\begin{array}{ccc}
+-1 & 0 \\
+0 & -1 \\
+\end{array}\right)+\left(\begin{array}{ccc}
+0 & 1 \\
+0 & 0 \\
+\end{array}\right)=-I+N
+\end{equation*}
+Dunque:
+\begin{equation*}
+	\begin{array}{rl}
+			e^J&=e^{-I+N}=e^{-I}e^N=e^{-1}I\left(I+N\right)=e^{-1}\left(\begin{array}{ccc}
+			1 & 1 \\
+			0 & 1 \\
+		\end{array}\right)\\
+		\implies e^A&=e^{-1}P\left(\begin{array}{ccc}
+			1 & 1 \\
+			0 & 1 \\
+		\end{array}\right)P^{-1}=e^{-1}\left(\begin{array}{ccc}
+		-1 & 4 \\
+		-1 & 3 \\
+	\end{array}\right)
+	\end{array}
+\end{equation*}
+Un metodo alternativo per calcolare la base $\basis$ che rende $A$ in forma di Jordan è il seguente. Nota la forma di Jordan $J$ consideriamo l'applicazione lineare $f$ associata ad essa rispetto alla base $\basis$ e l'applicazione $g=f+Id$; esse devono soddisfare:
+\begin{equation*}
+	\begin{cases}
+		f\left(v_1\right)=-v_1\\
+		f\left(v_2\right)=v_1-v_2\\
+	\end{cases}\quad
+	\begin{cases}
+	g\left(v_1\right)=0\\
+	g\left(v_2\right)=v_1\\
+\end{cases}
+\end{equation*}
+Cerchiamo dei vettori tali che:
+\begin{equation*}
+\begin{array}{l}
+	v_2\in\ker\left(A+I\right)^2\setminus\ker\left(A+I\right)\\
+	v_1\in\ker\left(A+I\right)\\
+\end{array}
+\end{equation*}
+Poichè $v_2\in\ker\left(A+I\right)^2=V$, basta prendere un vettore della base canonica di $V$, ad esempio $e_1=\left(1,\ 0,\ 0\right)$, che non appartenga a $\ker\left(A+I\right)$. Allora:
+\begin{equation*}
+	\begin{array}{l}
+		v_2\coloneqq e_1=\left(1,\ 0\right)\\
+		v_1=g\left(v_2\right)=\left(A+I\right)v_2=g\left(v_2\right)=\left(-2,\ -1\right)\neq 0\\
+	\end{array}
+\end{equation*}
+La matrice $P$ risulta:
+\begin{equation*}
+	P=\left(\begin{array}{ccc}
+		-2 & 1 \\
+		-1 & 0 \\
+	\end{array}\right)
+\end{equation*}
+Si verifica facilmente che usando questa matrice $P$ si arriva comunque allo stesso esponenziale visto prima.\\
+In questo problema si può anche evitare il calcolo della forma di Jordan. Infatti, notando che la matrice $B=A+I$ è nilpotente di ordine $2$, ovvero $B^2=O$, e commuta con $-I$. Allora possiamo calcolare $e^A$ in questo modo:
+\begin{equation*}
+	e^A=e^{B-I}=e^B\cdot e^{-I}=e^{-1}\left(I+B\right)=e^{-1}\left(\begin{array}{ccc}
+		-1 & 4 \\
+		-1 & 3 \\
+	\end{array}\right)
+\end{equation*}
+\vspace{-6mm}
+\end{solution}
+\section{Matrici reali e forma di Jordan}
+Abbiamo studiamo le forme di Jordan in $\complexset^{n,\ n}$, dato che abbiamo la sicurezza dell'esistenza di tutti gli autovalori e dunque anche della forma di Jordan. E se la matrice fosse a valori reali, possiamo parlare di forma di Jordan in $\realset^{n\, n}$?\\
+Dato che la forma di Jordan associata ad una matrice ha sulla diagonale gli autovalori di $A$ con molteplicità e al di fuori di essa o zero o uno, possiamo fare la seguente osservazione.
+\begin{observe}
+Sia $A\in\realset^{n\, n}$ e $J$ la forma di Jordan di $A$. Allora $J$ è \textit{reale} se e solo se gli autovalori di $A$ sono \textit{reali}.
+\end{observe}
+Supponiamo che $A$ abbia autovalori reali e $J$ sia la sua forma di Jordan. Allora $\exists P\in\gl\left(n,\ \complexset\right)$ tale che esse siano simili per $P$ in campo complesso: $A=PJP^{-1}$. In realtà, si può dimostrare come $A$ e $J$ siano simili come matrici reali, cioè $\exists Q\in\gl\left(n,\ \realset\right)$ tale che $A=QJQ^{-1}$
+\begin{theorema}
+Siano $A,\ B\in\realset{n\, n}$ tali che $\exists P\in\gl\left(n,\ \complexset\right)\ \colon A=PBP{-1}$. Allora $\exists Q\in\gl\left(n,\ \realset\right)\ \colon A=QBQ{-1}$.
+\end{theorema}
+\begin{demonstration}
+Innanzitutto, $A=PBP{-1}$ se e solo se $AP=PB$. Consideriamo le soluzioni $X$, matrice $n\times n$ a coefficienti reali, del sistema lineare omogeneo in $n^2$ equazioni in $n^2$ incognite.
+\begin{equation*}
+	AX=XB
+\end{equation*}
+Sia $W\subseteq \complexset^{n\, n}$ il sottospazio \textit{vettoriale} delle soluzioni (\textit{complesse}) del sistema. Sappiamo già che $P\in W$, dunque $W\ne\left\{O\right\}$.\\
+Sia allora $k=\dim W\geq 1$ e sia $C_1,\ \ldots,\ C_k\in\complexset^{k,\ k}$ una base di $W$. Esse sono matrici complesse, dunque possiamo scomporla nella sua parte reale e immaginaria.
+\begin{equation*}
+\forall j=1,\ \ldots,\ k\quad C_j=X_j+iY_j,\ X_j,\ Y_j\in\realset^{n,\ n}
+\end{equation*}
+Mostriamo che anche $X_j$ e $Y_j$ sono soluzioni del sistema. Dunque, presa $C_j$:
+\begin{equation*}
+	\begin{array}{ccc}
+		AC_j&=&C_jB\\
+		\shortparallel&&\shortparallel\\
+		A\left(X_j+iY_j\right)&&\left(X_j+iY_j\right)B\\
+		\shortparallel&&\shortparallel\\
+		AX_j+AY_j&&X_jB+iY_jB
+	\end{array}
+\end{equation*}
+Le matrici $AX_j,\ AY_j,\ X_jB$ e $Y_jB$ sono tutte in $\realset^{n,\ n}$. Due matrici complesse scomposte come in precedenza sono uguali se e solo se la parte reale e l'argomento sono uguali:
+\begin{gather*}
+	AX_j=X_jB\\
+	AY_j=Y_jB
+\end{gather*}
+Ma allora $X_j\, Y_j\in W\ \forall j$; poiché $C_1,\ ldots, C_k$ è una base di $W$, allora lo generano. Per costruzione $C_j=X_j+iY_j$, dunque anche $X_1,\ \ldots, X_k,\ Y_1,\ \ldots Y_k$ generano $W$ (come spazio vettoriale \textit{complesso}).\\
+Sappiamo sicuramente che $\left\{X_1,\ \ldots, X_k,\ Y_1,\ \ldots Y_k\right\}$ contiene una base di $W$, cioè $\exists D_1,\ \ldots,\ D_k$ base $\mathcal{D}$ di $W$ con $D_j\in\realset^{n,\ n}\ \forall j$.\\
+Dalle condizioni in cui ci siamo posti, la matrice $Q$ cercate deve soddisfare i seguenti requisiti:
+\begin{itemize}
+	\item $Q\in W$.
+	\item $Q\in\realset^{n,\ n}$.
+	\item $Q$ invertibile.
+\end{itemize}
+Rispetto alla base $\mathcal{D}$,  Ogni $D\in W$ è della forma:
+\begin{equation*}
+	D=t_1D_1+\ldots +t_kD_k\quad\text{con }t_1,\ \ldots,\ t_k\in\complexset^{n,\ n}
+\end{equation*}
+Nel caso di matrici reali, i coefficienti $t_1,\ \ldots,\ t_k$ saranno \textit{tutti reali}. Poniamo:
+\begin{equation*}
+	f\left(t_1,\ \ldots, t_k\right)\coloneqq\det\left(t_1D_1+\ldots+t_kD_k\right)
+\end{equation*}
+La funzione, di variabili $t_1,\ \ldots, t_k$, è un polinomio che presenta \textit{solo coefficienti reali} (essendo $D_1,\ \ldots,\ D_k$ matrici reali) e non è \textit{identicamente nulla} (Per ipotesi $P\in W$ è invertibile, dunque $\det P\neq 0$). In particolare, esistono sicuramente dei valori \textit{reali} $\hat{t}_1,\ \ldots,\ \hat{t}_k$ per cui $f$ non si annulla\footnote{Infatti, presa una combinazione lineare degli elementi di una base come $\mathcal{D}$ con coefficienti reali non nulli, allora essa non sarà mai nulla.}, cioè esiste la matrice reale:
+\begin{equation*}
+	Q\coloneqq \hat{t}_1D_1+\ldots+\hat{t}_kD_k
+\end{equation*}
+Che soddisfa la tesi.
+\end{demonstration}

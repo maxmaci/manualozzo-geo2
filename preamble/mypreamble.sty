@@ -17,7 +17,7 @@
 \newcommand\bmmax{0}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
-\RequirePackage[style=numeric-comp,sortcites=true]{biblatex}
+\RequirePackage[style=numeric-comp, backend=bibtex]{biblatex}
 \RequirePackage[italian]{babel}
 \RequirePackage{csquotes}
 \RequirePackage[oldstylenums]{kpfonts}
@@ -61,14 +61,16 @@
 %\RequirePackage{mathrsfs}
 %\RequirePackage{xparse}
 \RequirePackage[framemethod=default]{mdframed} % necessario per environments
-%\RequirePackage{makeidx}
+\RequirePackage{makeidx}
 \RequirePackage[thicklines]{cancel}
 %\RequirePackage{bm}
 %\RequirePackage{multicol}
 %\usepackage[font=small,labelfont=bf]{caption}
 %\usepackage{tikz-3dplot}
 %\usepackage{wrapfig}
-\RequirePackage{preamble/tikz-cd}
+%\RequirePackage{accents}
+\RequirePackage{tikz-cd}
+%\RequirePackage{preamble/quiver}
 \RequirePackage{preamble/comment}
 % Load hyperref package last
 \RequirePackage{hyperref}
@@ -79,8 +81,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % BibLaTeX
-\bibliography{appendix/bibliography} % Specify file
-\defbibheading{appendix/bibliography}{\bibsection} % Fix header problem
+\bibliography{appendix/bibliography.bib} % Specify file
+\defbibheading{appendix/bibliography.bib}{\bibsection} % Fix header problem
 
 % Hyperref: settings
 \hypersetup{pdfborder={0 0 0}, colorlinks=false}
@@ -1361,6 +1363,10 @@ linewidth=1pt]{neoncarrotBox}
 \newcommand{\irrationalset}{\realset\setminus\rationalset}
 \newcommand{\complexset}{\mathbb{C}}
 
+% campo generico
+
+\newcommand{\kamp}{\mathbb{K}}
+
 % inclusione sinistra
 
 \newcommand{\includedx}{%
@@ -1395,27 +1401,37 @@ linewidth=1pt]{neoncarrotBox}
 
 \newcommand{\intv}{\ensuremath{\left[0,\ 1\right]}}
 
+% valore assoluto (parentesi destra e sinistra)
+
+\newcommand{\labs}{\ensuremath{\left|\left|}}
+
+\newcommand{\rabs}{\ensuremath{\right|\right|}}
+
 %%%%%%%%%%%%%%%%%%%%%%%% definizioni gruppi %%%%%%%%%%%%%%%%%%%%%%%%%
 
 % gruppo lineare GL
+
 \DeclareMathOperator{\gl}{GL}
 
 %gruppo speciale lineare
+
 \DeclareMathOperator{\Sl}{SL}
 
 % gruppo ortogonale O
+
 \DeclareMathOperator{\Or}{O}
 
 % gruppo speciale ortogonale
+
 \DeclareMathOperator{\So}{SO}
 
 % gruppo unitario
+
 \DeclareMathOperator{\U}{U}
 
 % gruppo speciale unitario
-\DeclareMathOperator{\Su}{SU}
 
-% FINE RICKROLL
+\DeclareMathOperator{\Su}{SU}
 
 %%%%%%%%%%%%%%%%%%%%%%%% definizioni funzioni %%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1438,42 +1454,68 @@ linewidth=1pt]{neoncarrotBox}
 % definizione di funzione (solo domini)
 
 \newcommand{\funz}[3]{
-	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
-			#2&\rightarrow& #3\end{array}}}
-		{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
-				#1\colon& #2&\rightarrow& #3\end{array}}}}
+	\IfEq{#1}{\ }{\begin{tikzcd}[ampersand replacement=\&]
+			#2 \arrow[r] \& #3
+	\end{tikzcd}}
+	{\begin{tikzcd}[ampersand replacement=\&]
+			#1\ \colon \&[-36.21pt] #2 \arrow[r] \& #3
+\end{tikzcd}}}
 
 % definizione di funzione (completa)
 
 \newcommand{\funztot}[5]{
-	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
-					#2&\rightarrow& #3\\
-					#4&\mapsto& #5
-			\end{array}}}
-		{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
-			#1\colon& #2&\rightarrow& #3\\
-			&#4&\mapsto& #5
-		\end{array}}}}
+	\IfEq{#1}{\ }{\begin{tikzcd}[ampersand replacement=\&]
+			#2 \arrow[r]          \& #3 \\[-25pt]
+			#4 \arrow[r, maps to] \& #5
+	\end{tikzcd}}
+	{\begin{tikzcd}[ampersand replacement=\&]
+			#1\ \colon \&[-36.21pt] #2 \arrow[r]          \& #3 \\[-25pt]
+			\& #4 \arrow[r, maps to] \& #5
+\end{tikzcd}}}
 
 % inclusione (solo domini)
 
 \newcommand{\incl}[3]{
-	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
-			#2&\hookrightarrow& #3\end{array}}}
-{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
-			#1\colon& #2&\hookrightarrow& #3\end{array}}}}
+	\IfEq{#1}{\ }{\begin{tikzcd}[ampersand replacement=\&]
+			#2 \arrow[r, hook] \& #3
+	\end{tikzcd}}
+	{\begin{tikzcd}[ampersand replacement=\&]
+			#1\ \colon \&[-36.21pt] #2 \arrow[r, hook] \& #3
+\end{tikzcd}}}
 
 % inclusione (completa)
 
 \newcommand{\incltot}[5]{
-	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
-			#2&\hookrightarrow& #3\\
-			#4&\mapsto& #5
-\end{array}}}
-{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
-			#1\colon& #2&\hookrightarrow& #3\\
-			&#4&\mapsto& #5
-\end{array}}}}
+	\IfEq{#1}{\ }{\begin{tikzcd}[ampersand replacement=\&]
+			#2 \arrow[r, hook]          \& #3 \\[-25pt]
+			#4 \arrow[r, maps to] \& #5
+	\end{tikzcd}}
+	{\begin{tikzcd}[ampersand replacement=\&]
+			#1\ \colon \&[-36.21pt] #2 \arrow[r, hook]          \& #3 \\[-25pt]
+			\& #4 \arrow[r, maps to] \& #5
+\end{tikzcd}}}
+
+% suriettiva
+
+\newcommand{\surr}[3]{
+	\IfEq{#1}{\ }{\begin{tikzcd}[ampersand replacement=\&]
+			#2 \arrow[r, two heads] \& #3
+	\end{tikzcd}}
+	{\begin{tikzcd}[ampersand replacement=\&]
+			#1\ \colon \&[-36.21pt] #2 \arrow[r, two heads] \& #3
+\end{tikzcd}}}
+
+% suriettiva (completa)
+
+\newcommand{\surrtot}[5]{
+	\IfEq{#1}{\ }{\begin{tikzcd}[ampersand replacement=\&]
+			#2 \arrow[r, two heads]          \& #3 \\[-25pt]
+			#4 \arrow[r, maps to] \& #5
+	\end{tikzcd}}
+	{\begin{tikzcd}[ampersand replacement=\&]
+			#1\ \colon \&[-36.21pt] #2 \arrow[r, two heads]          \& #3 \\[-25pt]
+			\& #4 \arrow[r, maps to] \& #5
+\end{tikzcd}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%% definizioni omotopia %%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1519,6 +1561,41 @@ linewidth=1pt]{neoncarrotBox}
 \newcommand{\rk}{%
 	\ensuremath{\mathrm{rk}\ }%
 }
+
+% traccia
+
+\newcommand{\tr}{\ensuremath{\mathrm{tr}}}
+
+% immagine
+
+\DeclareMathOperator{\im}{Im}
+
+%\let\Im\Im
+%\let\Im\im
+
+%%%%%%%%%%%%%%%%%%%%%%%% definizioni proiettiva  %%%%%%%%%%%%%%%%%%%%%%%%%
+
+% spazio proiettivo associato a V
+
+\newcommand{\proj}[2][n]{
+	\IfEq{#2}{\ }{\ensuremath{\mathbb{P}^{#1}}}
+		{\ensuremath{\mathbb{P}^{#1}\left(#2\right)}}
+}
+
+% gruppo lineare proiettivo a V
+
+\newcommand{\projgl}[2][n]{
+	\IfEq{#2}{\ }{\ensuremath{\mathbb{P}\mathcal{Gl}_{#1}}}
+	{\ensuremath{\mathbb{P}\mathcal{G\! l}_{#1}\left(#2\right)}}
+}
+
+% combinazione lineare di v
+
+\newcommand{\lin}[1]{\ensuremath{\mathcal{L}\left(#1\right)}}
+
+% codimensione
+
+\DeclareMathOperator{\codim}{Codim}
 
 %%%%%%%%%%%%%%%%%%%%%%%% altre definizioni  %%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1566,8 +1643,39 @@ linewidth=1pt]{neoncarrotBox}
 
 \newtcbox{\invis}{blank, on line, opacitytext=0}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% definizioni vecchie (da eliminare) %%%%%%%%%%%%%%%%%%%
 
+% \newcommand{\funzold}[3]{
+%	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
+%				#2&\rightarrow& #3\end{array}}}
+%	{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
+%				#1\colon& #2&\rightarrow& #3\end{array}}}}
+
+%\newcommand{\funztotold}[5]{
+%\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
+%			#2&\rightarrow& #3\\
+%			#4&\mapsto& #5
+%\end{array}}}
+%{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
+%			#1\colon& #2&\rightarrow& #3\\
+%			&#4&\mapsto& #5
+%\end{array}}}}
+
+%\newcommand{\inclold}[3]{
+%	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
+%				#2&\hookrightarrow& #3\end{array}}}
+%	{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
+%				#1\colon& #2&\hookrightarrow& #3\end{array}}}}
+
+%\newcommand{\incltotold}[5]{
+%	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
+%				#2&\hookrightarrow& #3\\
+%				#4&\mapsto& #5
+%	\end{array}}}
+%	{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
+%				#1\colon& #2&\hookrightarrow& #3\\
+%				&#4&\mapsto& #5
+%\end{array}}}}
 
 \newcommand{\minusD}{\hbox{\tikz{\draw[line width=0.6pt,line cap=round] (3pt,0) -- (0,6pt);}}}
 \newcommand{\minusT}{\minusD}
@@ -1596,7 +1704,7 @@ linewidth=1pt]{neoncarrotBox}
 \DeclareMathAlphabet{\mathcal}{LS1}{stixscr}{m}{n}
 \makeatother
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%% index commands %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand\gobbleone[1]{}
 \newcommand{\seeonly}[2]{\ (\emph{\seename} #1)}

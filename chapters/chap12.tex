@@ -1,0 +1,868 @@
+% SVN info for this file
+\svnidlong
+{$HeadURL$}
+{$LastChangedDate$}
+{$LastChangedRevision$}
+{$LastChangedBy$}
+
+\chapter{Geometria proiettiva}
+\labelChapter{geoproiettiva}
+
+\begin{introduction}
+	‘‘BEEP BOOP INSERIRE CITAZIONE QUA BEEP BOOP.''
+	\begin{flushright}
+		\textsc{NON UN ROBOT,} UN UMANO IN CARNE ED OSSA BEEP BOOP.
+	\end{flushright}
+\end{introduction}
+
+\section{Spazi proiettivi}
+% mettere superfici
+Abbiamo già approfondito, a livello \textit{topologico}, lo \textbf{spazio proiettivo reale} e le sue caratteristiche nel \autoref{chap:superfici}. In questo capitolo, ci dedicheremo a \textit{generalizzare} il concetto per un \textit{qualsiasi} spazio vettoriale su campo $\kamp$, utilizzando gli strumenti dell'algebra lineare. 
+\begin{define}
+Sia $\kamp$ un campo e $V$ uno spazio vettoriale di dimensione \textit{finita} su $\kamp$. Lo \textbf{spazio proiettivo}\index{spazio!proiettivo} associato a $V$ è l'insieme quoziente:
+\begin{equation}
+	\proj{V}=\frac{V\setminus\left\{0\right\}}{\sim}
+\end{equation}
+Dove $\sim$ è la relazione di equivalenza data su $V\setminus\left\{0\right\}$ definita dall'azione del gruppo moltiplicativo $\kamp\setminus\left\{0\right\}$:
+\begin{equation}
+	\forall v,\ w\in V\setminus\left\{0\right\}\ v\sim w \iff \exists \lambda\in\kamp\setminus\left\{0\right\}\ \colon v=\lambda w
+\end{equation}
+Lo spazio proiettivo $\proj{V}$ si dice anche il \textbf{proiettivizzato}\seeonlyindex{proiettivizzato}{spazio!proiettivo} di $V$.
+\end{define}
+% finire dimostrazione
+\begin{demonstration}
+~{}
+\begin{itemize}
+	\item \textsc{Riflessiva}: ...
+	\item \textsc{Simmetrica}: ...
+	\item \textsc{Transitiva}: ...
+\end{itemize}
+\end{demonstration}
+\begin{define}
+La \textbf{dimensione}\index{dimensione di uno spazio proiettivo} di $\proj{V}$ è:
+\begin{equation}
+	\dim\proj{V}=\dim V-1
+\end{equation}
+Se $V=\left\{0\right\}$, allora $\proj{V}=\emptyset$ e si pone $\dim\emptyset\coloneqq -1$.
+\end{define}
+\begin{define}
+Si denota con $\funz{\pi}{V\setminus\left\{0\right\}}{\proj{V}}$ la \textbf{proiezione al quoziente}\index{proiezione!al quoziente} e con $\left[v\right]\in\proj{V}$ la \textbf{classe}\index{classe!dello spazio proiettivo} di $v\in V\setminus\left\{0\right\}$.
+\end{define}
+\begin{observe}
+	Si ha una corrispondenza biunivoca:
+	\begin{equation}
+		\begin{array}{c}
+			\proj{V}\leftrightarrow\left\{\text{sottospazi vettoriali }1\text{-dimensionali di }V\right\}\\
+			\left[v\right]\leftrightarrow\lin{v}
+		\end{array}
+	\end{equation}
+In altre parole, possiamo pensare a $\proj{V}$ come l'insieme delle \textbf{rette vettoriali} in $V$.
+\end{observe}
+\begin{define}~{}
+	\begin{itemize}
+		\item Se $\dim V=1$, allora $\proj{V}$ è un \textbf{punto}\index{punto!proiettivo} e $\dim\proj{V}=0$.
+		\item Se $\dim \proj{V}=1$, si parla di \textbf{retta proiettiva}\index{retta!proiettiva}.
+		\item Se $\dim \proj{V}=2$, si parla di \textbf{piano proiettivo}\index{piano!proiettivo}.
+		\item Se $\kamp=\realset$ o $\kamp=\complexset$, si parla rispettivamente di \textbf{spazio proiettivo reale}\index{spazio!proiettivo!reale} o di \textbf{spazio proiettivo complesso}\index{spazio!proiettivo!complesso}.
+	\end{itemize}
+\end{define}
+Gli esempi più frequenti di spazi proiettivi si ottengono considerando $V=\kamp^{n+1}$.
+\begin{define}
+	Lo \textbf{spazio proiettivo numerico}\index{spazio!proiettivo!numerico} o \textbf{spazio proiettivo standard}\seeonlyindex{spazio!proiettivo!standard}{spazio!proiettivo!numerico} è lo spazio proiettivo su $\kamp^{n+1}$:
+\begin{equation}
+	\proj{\ }=\proj[n]{\kamp}=\proj{\kamp^{n+1}}
+\end{equation}
+Essi sono spazi di dimensione $\dim\proj[n]{\ }=n$.
+\end{define}
+\section{Sottospazi proiettivi}
+Sia $W\subseteq V$ un sottospazio vettoriale. Allora $W\setminus\left\{0\right\}\subseteq V\setminus\left\{0\right\}$ è chiuso rispetto alla relazione di equivalenza $\sim$ precedentemente definita e $\proj{W}$ è naturalmente un sottoinsieme di $\proj{V}$.
+\begin{define}
+	Se $W\subseteq V$ è un sottospazio vettoriale, allora $\proj{W}$ è detto \textbf{sottospazio proiettivo}\index{sottospazio!proiettivo}:
+	\begin{equation*}
+		\begin{array}{rl}
+			\proj{W}&=\pi\left(W\setminus\left\{0\right\}\right)=\left\{\left[w\right]\in\proj{V}\mid w\in W\right\}\\
+			&=\left\{\text{sottospazi vettoriale }1\text{-dimensione di }V\text{ contenuti in }W\right\}
+		\end{array}
+	\end{equation*}
+La dimensione del sottospazio proiettivo è $\dim\proj{W}=\dim W-1$.
+\end{define}
+	\begin{itemize}
+	\item Se $W=\left\{0\right\}$, allora $\proj{W}=\emptyset$.
+	\item Se $\dim W=1$, allora $\proj{W}$ è un punto, che indichiamo con $\left[w\right]$ per un $w\in W$.
+	\item Se $\dim W=2$ ($\dim\proj{W}=1$), allora $\proj{W}$ è \textbf{retta proiettiva}\index{retta!proiettiva} in $\proj{V}$.
+	\item Se $\dim W=3$ ($\dim\proj{W}=2$), allora $\proj{W}$ è \textbf{piano proiettivo}\index{piano!proiettivo} in $\proj{V}$.
+	\item Se $\dim\proj{W}=\dim \proj{V}-1$, allora $\proj{W}$ è \textbf{iperpiano (proiettivo)}\index{iperpiano!proiettivo} in $\proj{V}$.
+\end{itemize}
+\begin{define}
+Si definisce la \textbf{codimensione}\index{codimensione} di $\proj{W}$ sottospazio proiettivo come:
+\begin{equation}
+	\codim\proj{W}=\dim\proj{V}-\dim\proj{W}
+\end{equation}
+\end{define}
+\begin{example}
+	Gli iperpiani sono sottospazi di codimensione $1$.
+\end{example}
+\section{Coordinate omogenee e sistemi di riferimento proiettivo}
+Consideriamo $\proj[n]{\kamp}=\proj{\kamp^{n+1}}$. Se $v=\left(x_0,\ \ldots,\ x_n\right)\in\kamp^{n+1}\setminus\left\{0\right\}$, denotiamo la corrispettiva classe in questa forma:
+\begin{equation}
+\left[v\right]=\left(x_0\colon \ldots\colon x_n\right)\in\proj[n]{\kamp},\ x_i\in\kamp
+\end{equation}
+\begin{observe}~{}
+	\begin{enumerate}
+		\item Le $x_i$ non possono mai essere tutte nulle, dato che $v\neq 0$.
+		\item Due classi sono uguali se le componenti sono tutte in proporzione per uno scalare $\lambda\in\kamp$.\footnote{La notazione con i $\colon$ viene utilizzata per mettere in evidenza che la relazione fra classi e vettori è di proporzione.}
+		\begin{equation*}
+			\begin{array}{ccc}
+			\left(x_0:\ldots:x_n\right)=\left(y_0:\ldots:y_n\right)&\iff&\left(x_0,\ \ldots,\ x_n\right)\sim\left(y_0,\ \ldots,\ y_n\right)\\&\iff& \exists \lambda\in\kamp\setminus\left\{0\right\}\ \colon y_0=\lambda x_0,\ \ldots,\ y_n=\lambda x_n
+			\end{array}
+		\end{equation*}
+	\end{enumerate}
+\end{observe}
+\begin{examples}
+	In $\proj[2]{\realset}$:
+	\begin{gather*}
+		\left(1\colon1\colon2\right) = \left(-2\colon-2\colon-4\right)\\
+		\left(1\colon0\colon2\right) = \left(\frac{1}{3}\colon0\colon\frac{1}{3}\right)
+	\end{gather*}
+\end{examples}
+\begin{define}
+	Sia $\basis=\left\{e_0,\ \ldots,\ e_n\right\}$ una base di $V$, con $\dim V=n+1$. Se $v\in V\setminus\left\{0\right\}$, si ha:
+	\begin{equation*}
+		v=x_0e_0+\ldots+x_ee_n,\ \text{con}\ x_i\in\kamp
+	\end{equation*}
+Diciamo che $\left(x_0\colon\ldots\colon x_n\right)$ sono le \textbf{coordinate omogenee}\index{coordinate omogenee} di $\left[v\right]\in\proj{V}$ definite dalla base $\basis$ e scriviamo:
+\begin{equation}
+	\left[v\right]=\left(x_0\colon\ldots\colon x_n\right)
+\end{equation}
+La base $\basis$ definisce su $\proj{V}$ un \textbf{sistema di riferimento proiettivo}, cioè ad ogni punto vengono assegnate delle coordinate omogenee. 
+\end{define}
+\begin{observe}~{}
+		\begin{itemize}
+		\item Le coordinate omogenee non possono \textit{mai} essere \textit{tutte nulle}.
+		\item Le coordinate omogenee sono definite \textit{solo a meno di multipli}.
+		\item $\proj[n]{\kamp}$ ha delle coordinate omogenee ‘‘naturali'' date dalla base canonica di $\kamp^{n+1}$.
+		\item Basi \textit{multiple} definiscono lo stesso riferimento proiettivo di $\proj{V}$, cioè le stesse coordinate omogenee.
+	\end{itemize}
+\end{observe}
+\begin{demonstration}
+	Dimostriamo l'ultimo punto. Siano:
+	\begin{equation*}
+		\basis=\left\{e_0,\ \ldots,\ e_n\right\}\quad\basis'=\left\{\mu e_0,\ \ldots,\ \mu e_n\right\}
+	\end{equation*}
+Con $\mu\in\kamp\setminus\left\{0\right\}$. Si ha:
+\begin{equation*}
+	v=x_0e_0+\ldots+x_ne_n=\frac{x_0}{\mu}\left(\mu e_0\right)+\ldots + \frac{x_n}{\mu}\left(\mu e_n\right)
+\end{equation*}
+Passando allo spazio proiettivo:
+\begin{equation*}
+\underbrace{\left(x_0\colon\ldots\colon x_n\right)}_{\text{coordinate omogenee rispetto a }\basis}=\underbrace{\left(\frac{x_0}{\mu}\colon\ldots\colon \frac{x_n}{\mu}\right)}_{\text{coordinate omogenee rispetto a }\basis'}
+\end{equation*}
+\end{demonstration}
+\begin{define}
+	Data la base $\basis$, i punti:
+	\begin{equation}
+		\begin{array}{l}
+			P_0=\left[e_0\right]=\left(1\colon0\colon\ldots\colon0\right)\\			P_1=\left[e_1\right]=\left(0\colon1\colon\ldots\colon0\right)\\
+			\ldots\\
+			P_n=\left[e_n\right]=\left(0\colon0\colon\ldots\colon1\right)\\
+		\end{array}
+	\end{equation}
+Sono detti \textbf{punti fondamentali}\index{punto!fondamentale} o \textbf{punti coordinati}\seeonlyindex{punto!coordinato}{punto!fondamentale}, mentre il punto:
+\begin{equation*}
+	U=\left[e_0+e_1+\ldots+e_n\right]=\left(1\colon1\colon\ldots\colon1\right)
+\end{equation*}
+è detto \textbf{punto unità}\index{punto!unità}.
+\end{define}
+\subsubsection{Descrizione dei sottospazi proiettivi in coordinate}
+Siano $\left(x_0\colon\ldots\colon x_n\right)$ coordinate omogenee su $\proj{V}$, indotte da una base $\basis$, e consideriamo l'equazione lineare omogenea:
+\begin{equation*}
+	\textcolor{green}{\circled{\ast}}\quad a_0x_0+a_1x_1+\ldots+a_nx_n=0
+\end{equation*}
+Con $a_i\in\kamp$ non tutti nulli.
+\begin{itemize}
+	\item In $V$ l'equazione omogenea rappresenta un \textit{iperpiano vettoriale} $H$.
+	\item I punti $P=\left[v\right]\in\proj{V}$, le cui coordinate soddisfano l'equazioni, sono quelli tali per cui $v\in H$, cioè sono tutti e soli i punti dell'iperpiano proiettivo $\proj{H}\subseteq\proj{V}$. L'equazione lineare $\textcolor{green}{\circled{\ast}}$ è l'\textbf{equazione (cartesiana) dell'iperpiano proiettivo} $\proj{H}$.
+\end{itemize}
+\begin{define}
+	Gli iperpiani di equazione cartesiana $x_i=0$, cioè tutti i punti la cui $i$-esima coordinata omogenea è nulla, si dicono $i$\textbf{-esimi iperpiani coordinati}\index{iperpiano!proiettivo!coordinato}.
+\end{define}
+\begin{example}\item
+	In $\proj[1]{\kamp}$, cioè una \textit{retta proiettiva} ($\dim \proj[1]{\kamp}=1$), i sottospazi proiettivi sono:
+	\begin{itemize}
+		\item $\emptyset$.
+		\item I punti, che in questo caso sono gli iperpiani.
+		\item Tutto $\proj[1]{\kamp}$.
+	\end{itemize}
+Il punto $\left(a\colon b\right)$ ha equazione cartesiana:
+\begin{equation}
+	bx_0-ax_1=0
+\end{equation}
+Ovvero l'equazione della retta in $\kamp^2$ generata dal vettore $\left(a,\ b\right)$, ottenuta pertanto dal determinante $\left| \begin{array}{cc}
+	a & b \\
+	x_0 & x_1
+\end{array} \right|=0$.
+\end{example}
+\begin{attention}
+	In $\proj{V}$ un sottospazio proiettivo di \textit{dimensione zero} è un singolo punto $\left[v\right]=\proj{\lin{v}}$.
+\end{attention}
+Più in generale: fissata una base $\basis$ di $V$, ogni \textit{sottospazio vettoriale} $W$ di $V$ può essere visto, in \textit{coordinate} rispetto alla base, come l'\textit{insieme delle soluzioni} di un \textit{sistema lineare omogeneo}.
+\begin{equation*}
+	Ax=O
+\end{equation*}
+Dove $A=\left(a_{ij}\right)$ è di dimensioni $t\times \left(n+1\right)$ a elementi in $\kamp$, mentre si ha:
+\begin{gather}
+	x=\left(\begin{array}{c}
+		x_0 \\
+		\vdots \\
+		x_n
+	\end{array}\right)\\
+\textcolor{green}{\circled{\ast}}\begin{cases}
+	a_{1,0}x_0+\ldots+a_{1,n}x_n=0\\
+	\qquad\qquad\vdots\\
+	a_{t,0}x_0+\ldots+a_{t,n}x_n=0\\
+\end{cases}
+\end{gather}
+Il sistema $\textcolor{green}{\circled{\ast}}$ dà delle \textit{equazioni cartesiane} per il sottospazio proiettivo $\proj{W}$ nelle coordinate omogenee $\left(x_0\colon\ldots\colon x_n\right)$.\\
+Posto dunque $t$ come il numero delle \textit{equazioni}, notiamo che:
+\begin{equation*}
+	\begin{array}{cc}
+		\dim W=n+1-\rk A \\
+\begin{array}{ccc}
+	\codim W &=&\rk A \\
+	\shortparallel &  \\
+	\dim V-\dim W &=&\dim\proj{V}-\dim\proj{W}=\codim\proj{W}
+\end{array}\\
+	\implies t\geq \rk\left(A\right)=\codim\proj{W}
+	\end{array}
+\end{equation*}
+\textit{Scartando} delle equazioni possiamo sempre ricondurci ad un sistema in cui $t=\rk A=\codim\proj{W}$.
+\begin{intuit}
+	Per facilitare la visualizzazione degli spazi proiettivi possiamo pensare allo spazio $\kamp^{n+1}$ come lo \textbf{spazio affine} $\mathcal{A}\left(\kamp^{n+1}\right)$ in cui sia fissato un punto $O$ come origine: in questo modo, le classi di $\proj[n]{\kamp}$ corrispondono alle \textit{rette affini passanti per} $O$ (identificate con le rette vettoriali di $\kamp^{n+1}$):
+	\begin{equation*}
+		\left(x_0\colon\ldots\colon x_n\right)\leftrightarrow\text{retta affine di }\mathcal{A}\left(\kamp^{n+1}\right)\text{formata dai punti }\left(tx_0,\ \ldots,\ tx_n\right)\text{ al variare di t}\in\realset
+	\end{equation*}
+	Approfondiremo formalmente la relazione tra gli spazi affini e gli spazi proiettivi più avanti, a pag. \ref{spaziaffini}.
+\end{intuit}
+\begin{examples}~{}
+	%completare con le note della fino
+	\begin{itemize}
+		\item Il piano proiettivo $\proj[2]{\kamp}$ ha, come sottospazi \textit{non banali}, i punti e le rette.
+		\begin{itemize}
+			\item Una \textit{retta proiettiva} viene da un \textit{piano}, che nel riferimento \textit{affine} possiamo prendere passante per l'origine: $a_0x_0+a_1x_0+a_2x_2=0$.
+			\item Un \textit{punto} servono due equazioni, in sostanza vedendolo come \textit{intersezione di due rette proiettive}; ad esempio, $\left(1\colon0\colon0\right)$ ha equazioni $x_1=x_2=0$, mentre $\left(1\colon2\colon3\right)$ ha equazioni $\begin{cases}
+				x_1=2x_0\\
+				x_2=3x_0
+			\end{cases}$
+		\end{itemize}
+	\item Nel piano proiettivo reale $\proj[2]{\realset}$, le \textit{rette proiettive} vengono da \textit{piani vettoriali}, mentre nel modello affine di $\mathcal{A}\left(\realset^3\right)$ essi sono passanti per l'\textit{origine}; utilizzando la \textit{sfera unitaria} ai quali identifichiamo i punti antipodali in una relazione di equivalenza, la retta proiettiva si visualizza facilmente come l'\textit{intersezione} della sfera in un \textit{cerchio massimo}.\\
+	In questo modo, considerando la \textit{semisfera superiore}, la \textbf{proiezione} dell'intersezione su di essa sul disco unitario $D$ è la rappresentazione della retta proiettiva sul \textit{modello piano} ben noto. Dunque, guardando le rette proiettive nel \textit{modello piano}, se ne hanno di \textit{tre tipi}:
+	\begin{enumerate}
+		\item La \textit{retta} con equazione $z=0$, ovvero al piano $xy$ in $\realset^3$: sul modello piano corrisponde al \textbf{bordo del disco} $D$ (cioè $S^1$).
+		\item Le \textit{rette} con equazione $ax+by=0$, ovvero ai \textit{piani perpendicolari} in $\realset^3$ passanti per le rette con quell'equazione $ax+by=0$:  sul modello piano corrisponde a \textbf{diametri colleganti due punti} sul bordo.
+		\item Nel caso generale $ax+by+cz=0$, proiettando l'\textit{arco di cerchio massimo} viene un \textbf{arco di ellisse} in $D$.
+	\end{enumerate}
+	\item Riprendiamo l'esempio della retta proiettiva e vediamolo in $\realset^2$, sfruttando il modello affine. Le rette in $\mathcal{A}\left(\realset^2\right)$ possono anche essere scrivere in forma \textit{implicita}. In questo modo allora, si può vedere la retta proiettiva come:
+	\begin{equation*}
+		\proj[1]{\realset}=\left\{\text{rette } x_1=\lambda x_0\mid \lambda\in\realset\right\}\cup \left\{\text{retta } x_0=0\mid \lambda\in\realset\right\}
+	\end{equation*}
+	In questo modo, identifichiamo i punti $\left(a\colon b\right)$ (con $a\neq 0$), corrispondenti alla rette per l'origine generate dai vettori $\left(a,\ b\right)$ e dunque tale che $\lambda=\frac{b}{a}$, e il punto $\left(0\colon 1\right)$, corrispondente invece all'asse verticale di $\mathcal{A}\left(\realset^2\right)$.\\ Ne consegue che $\proj[1]{\realset}$ è in corrispondenza \textit{biunivoca} con la \textit{retta dei reali} $\realset$ unita ad un \textit{punto}: ogni punto definito dalla retta $x_1=\lambda x_0$ è in corrispondenza con $\lambda\in\realset$, mentre il punto $\left(0\colon 1\right)$ corrisponde all'infinito $\infty$ di $\realset$, dato che soddisferebbe l'equazione $1=\lambda 0$ con $\lambda=\infty$. In altre parole, possiamo scrivere $\proj[1]{\realset}$ come:
+	\begin{equation*}
+		\proj[1]{\realset}=\realset\cup\left\{\infty\right\}
+	\end{equation*}
+    \textit{Intuitivamente}, questo corrisponde a prende la retta dei reali e ‘‘congiungere'' gli estremi infiniti in un unico punto, formando così una \textit{circonferenza}, cioè: $\proj[1]{\realset}\approx S^1$.
+    % inserire immagine pagine 7 console fino, spostare dopo
+	\end{itemize}
+\end{examples}
+\section{Operazioni con i sottospazi}
+Se $W_1,\ W_2\subseteq V$ sono sottospazi vettoriali, allora $W_1\cap W_2$ è un sottospazio vettoriale e si ha che l'\textbf{intersezione}\index{sottospazio!intersezione} dei corrispettivi spazi proiettivi è ancora un sottospazio proiettivo.
+\begin{equation*}
+	\proj{W_1\cap W_2}=\proj{W_1}\cap\proj{W_2}
+\end{equation*}
+\begin{observe}
+	Si ha:
+	\begin{equation*}
+		\proj{W_1}\cap\proj{W_2}=\emptyset\iff W_1\cap W_2=\left\{0\right\}
+	\end{equation*}
+In tal caso diciamo che i due sottospazi sono \textbf{sghembi}\index{sottospazio!proiettivo!sghembo} o \textbf{disgiunti}\seeonlyindex{sottospazio!proiettivo!disgiunto}{sottospazio!proiettivo!sghembo}.
+\end{observe}
+Come per i sottospazi vettoriali, in generale l'\textbf{unione} di due sottospazi proiettivi \textit{non} è un sottospazio proiettivo.
+\begin{define}
+	Sia $S\subseteq \proj{V}$ un sottoinsieme non vuoto. Il \textbf{sottospazio generato}\index{sottospazio!proiettivo!generato} da $S$, denotato con $\left<S\right>$, è l'intersezione in $\proj{V}$ di tutti i sottospazi proiettivi contenenti $S$, ed è il più piccolo sottospazio contenente $S$.
+\end{define}
+\begin{itemize}
+	\item $\left<S\right>=S\iff S$ è un sottospazio proiettivo.
+	\item Se $S=\left\{P_1,\ \ldots,\ P_m\right\}$ è finito, scriviamo $\left<P_1,\ \ldots,\ P_m\right>$ per il sottospazio generato da $P_1,\ \ldots,\ P_m$.
+\end{itemize}
+\begin{define}
+	Dati due sottospazi proiettivi $T_1,\ T_2\subseteq \proj{V}$, cioè:
+	\begin{equation*}
+		T_i=\proj{W_i}\quad W_i\subseteq V,\ i=1,\ 2
+	\end{equation*}
+	Allora il sottospazio generato da $T_1\cup T_2$ è denotato con $T_1+T_2=\left<T_1,\ T_2\right>$ e si chiama \textbf{sottospazio somma}\index{sottospazio!somma}. In particolare, si ha:
+	\begin{equation}
+		\left<T_1,\ T_2\right>=\proj{W_1+W_2}
+	\end{equation}
+\end{define}
+\begin{demonstration}~{}
+	$\includedx$ $\proj{W_1+W_2}$ è un sottospazio proiettivo che contiene, in quanto $W_1\subseteq W_1+W_2,\ W_2\subseteq W_1+W_2$ vettorialmente, sia $T_1=\proj{W_1}$ sia $T_2=\proj{W_2}$. In particolare, contiene la loro unione\footnote{Ricordiamo che non è essa un sottospazio, ma un sottoinsieme.}, dunque $\left<T_1,\ T_2\right>\left<T_1\cup T_2\right>\subseteq \proj{W_1+W_2}$.\\
+	$\includesx$ Abbiamo che $T_i\subseteq \left<T_1,\ T_2\right>=\proj{U}$, con $U$ un sottospazio vettoriale di $V$. In particolare, si ha che $W_1,\ W_2\subseteq U$, da cui $W_1+W_2\subseteq U$. Passando allo spazio proiettivo:
+	\begin{equation*}
+		\left<T_1,\ T_2\right>=\proj{U}\subseteq \proj{W_1+W_2}
+	\end{equation*}
+\end{demonstration}
+\begin{proposition}\textsc{Formula di Grassmann proiettiva}\\
+	Siano $T_1,\ T_2$ sottospazi proiettivi di $\proj{V}$. Si ha:
+	\begin{equation}
+				\dim\left<T_1,\ R_2\right>+\dim\left(T_1\cap T_2\right)=\dim T_1+\dim T_2
+	\end{equation}
+\end{proposition}
+\begin{demonstration}
+	Posti $T_i=\proj{W_i}$, con $W_i\subseteq V$ sottospazi vettoriali. Dalla \textit{formula di Grassmann vettoriale}:
+	\begin{equation*}
+		\dim\left(W_1+W_2\right)+\dim\left(W_1\cap W_2\right)=\dim W_1+\dim W_2
+	\end{equation*}
+Sottraendo $1$ a tutte le dimensioni, otteniamo le dimensioni dei corrispettivi spazi proiettivi e dunque la formula proiettiva.
+\end{demonstration}
+\begin{corollary}
+	Siano $T_1,\ T_2$ sottospazi proiettivi di $\proj{V}$ con $\dim\proj{P}=n$. Allora:
+	\begin{equation}
+		\dim \left(T_1\cap T_2\right)\leq \dim T_1+\dim T_2-n
+	\end{equation}
+In particolare $T_1\cap T_2\neq \emptyset$ se $\dim T_1+\dim T_2\geq n$.
+\end{corollary}
+\begin{demonstration}
+	\begin{equation*}
+		\dim\left(T_1\cap T_2\right)=\dim T_1+\dim T_2-\dim\left<T_1,\ T_2\right>\leq \dim T_1+\dim T_2-n
+	\end{equation*}
+Chiaramente se $\dim T_1+\dim T_2\geq n$, allora $\dim \left(T_1\cap T_2\right)\geq 0$ e dunque $T_1\cap T_2\neq \emptyset$.
+\end{demonstration}
+\begin{example}
+	Nel piano proiettivo, due rette sono \textit{sempre incidenti}. Infatti, le rette hanno dimensione $1$, mentre $\dim\proj[2]{\kamp}=2$, dunque vale $1+1\leq 2$, pertanto due rette si incontrano sempre.
+\end{example}
+\begin{observe}
+	Se consideriamo l'insieme \textit{finito di punti}, possiamo considerare lo spazio $S$ \textit{generato} da $P_1,\ \ldots,\ P_m$, cioè $S=\left<P_1,\ \ldots,\ P_m\right>$; inoltre, si ha:
+	\begin{equation*}
+		\dim S\leq m-1
+	\end{equation*}
+	Infatti, se $P_i=\left[v_i\right]$ con $v_i\in V$, allora:
+	\begin{equation*}
+		S=\underbrace{\proj{\lin{v_1,\ \ldots,\ v_m}}}_{\dim \mathcal{L} \leq m}
+	\end{equation*}
+\end{observe}
+\section{Punti linearmente indipendenti e in posizione generale}
+\begin{define}
+	Siano $P_1,\ \ldots, P_m\in\proj{V}$. Diciamo che i punti $P_1,\ \ldots,\ P_m$ sono \textbf{linearmente indipendenti}\index{linearmente indipendenti} se, scelti $v_1,\ \ldots,\ v_m\in V\setminus\left\{0\right\}$ tali che $P_i=\left[v_i\right]\ \forall i$, i vettori $v_1,\ \ldots,\ v_m$ sono \textit{linearmente indipendenti} in $V$.\\
+	Se così non è, diciamo che $P_1,\ \ldots, P_m$ sono linearmente dipendenti.
+\end{define}
+\begin{observe}~{}
+	\begin{itemize}
+		\item La definizione è \textit{ben posta}. Dati $\lambda_1,\ \ldots,\ \lambda_m\in\kamp\setminus\left\{0\right\}$, si ha che:
+		\begin{equation*}
+			v_1,\ \ldots,\ v_m\text{ sono indipendenti}\iff\lambda_1 v_1,\ \ldots,\ \lambda_m v_m\text{ sono indipendenti.}
+		\end{equation*}
+		\item Se $\dim \proj{V}=n$, $\proj{V}$ contiene al più $n+1$ punti indipendenti.
+		\item $P_1,\ \ldots,\ P_m$ sono indipendenti se e solo se $\dim\left<P_1,\ \ldots,\ P_m\right>=m-1$.
+	\end{itemize}
+\end{observe}
+\begin{examples}~{}
+	\begin{itemize}
+		\item \textit{Due} punti $P,\ Q$ sono indipendenti se e solo se $P\neq Q$. Infatti, se $P=\left[v\right]$ e $Q=\left[w\right]$, allora:
+		\begin{equation*}
+			P\text{ e }Q\text{ sono indipendenti}\iff v\text{ e }w\text{ sono indipendenti}\iff v\nsim w\iff P\neq Q
+		\end{equation*}
+		In tal caso $\left<P,\ Q\right>$ è l'unico \textit{retta} contenente $P$ e $Q$, che indicheremo anche con $\overline{PQ}$.
+		\item \textit{Tre} punti $P_1,\ P_2,\ P_3$ sono indipendenti se e solo se sono \textit{distinti} e \textit{non} sono \textit{allineati}, cioè appartenenti alla stessa retta. In tal caso $\left<P_1,\ P_2,\ P_3\right>$ è l'unico \textit{piano} contenente i tre punti.
+	\end{itemize}
+\end{examples}
+\begin{define}
+	Dati dei punti $P_1,\ \ldots,\ P_m\in\proj{V}$, diciamo che sono \textbf{in posizione generale}\index{in posizione generale}\index{posizione generale} se vale una delle due condizioni seguenti:
+	\begin{itemize}
+		\item $m\leq n+1$ e i punti sono \textit{linearmente indipendenti}.
+		\item $m>n+1$ e ogni scelta di $n+1$ punti tra loro sono linearmente indipendenti.
+	\end{itemize}
+\end{define}
+\begin{example}~{}
+		\begin{itemize}
+		\item Se $n=1$, cioè $\proj{V}$ è una \textit{retta proiettiva}, allora $P_1,\ \ldots,\ P_m$ sono in posizione generale se e solo se $P_1,\ \ldots,\ P_m$ sono \textit{tutti distinti}.
+		\item Se $n=2$, cioè $\proj{V}$ è una \textit{piano proiettivo}, allora $P_1,\ \ldots,\ P_m$ sono in posizione generale se e solo se $P_1,\ \ldots,\ P_m$ sono a $3$ a $3$ \textit{non} allineati.
+	\end{itemize}
+\end{example}
+\subsection{Impratichiamoci! Punti linearmente indipendenti}
+\begin{exercise}\textsc{F.F.P., 2.1.}\\
+	Si mostri che i punti del piano proiettivo reale:
+	\begin{equation}
+		\left(\frac{1}{2}\colon 1 \colon 1\right)\quad \left(1\colon \frac{1}{3} \colon \frac{4}{3}\right)\quad \left(2\colon -1 \colon 2\right)
+	\end{equation}
+Sono allineati, e si determini un'equazione della retta che li contiene.
+\end{exercise}
+\begin{solution}
+	Per verificare che i $3$ punti sono allineati, dobbiamo verificare che i corrispondenti vettori di $\realset^3$ sono dipendenti. Riscriviamo i seguenti punti per facilitarci i calcoli:
+\begin{equation*}
+	\left(\frac{1}{2}\colon 1 \colon 1\right)=\left(1\colon 2 \colon 2\right)\quad \left(1\colon \frac{1}{3} \colon \frac{4}{3}\right)=\left(3\colon 1 \colon 4\right)
+\end{equation*}
+Verifichiamolo la dipendenza con il determinante.
+	\begin{equation*}
+		\det\left|\begin{array}{ccc}
+			1 & 2 & 2\\
+			3 & 1 & 4\\
+			2 & -1 & 2
+		\end{array}\right|=0
+	\end{equation*}
+L'equazione della retta è data dall'equazione del piano vettoriale in $\realset^3$ generate da $2$ dei $3$ vettori:
+\begin{equation*}
+	0=\left|\begin{array}{ccc}
+		x_0 & x_1 & x_2\\
+		1 & 2 & 2\\
+		3 & 1 & 4
+	\end{array}\right|=x_0\left(8-2\right)-x_1\left(4-6\right)+x_2\left(1-6\right)=6x_0+2x_1-5x_2
+\end{equation*}
+Verifichiamo che contenga anche il terzo:
+\begin{equation*}
+	6\cdot 2 + 2\cdot \left(-1\right) -5\cdot 2=0
+\end{equation*}
+\end{solution}
+\section{Rappresentazione parametrica di un sottospazio proiettivo}
+Sia $S\subseteq\proj{V}$ un sottospazio proiettivo di dimensione $m$. Allora esistono sempre $m+1$ punti $P_0,\ \ldots,\ P_m\in S$ linearmente indipendenti che generano $S$. Infatti, se $S=\proj{W}$ con $W\subseteq V$ sottospazio vettoriale di dimensione $m+1$, possiamo scegliere una base $\left\{w_0,\ \ldots,\ w_m\right\}$ di $W$ tale per cui:
+\begin{equation*}
+	P_i=\left[w_i\right]\in S
+\end{equation*}
+Sono linearmente indipendenti (perché lo sono i vettori della base) e generano $S$.\\
+Allora, tutti e soli i punti di $S$ sono della forma:
+\begin{equation*}
+	\left[\lambda_0 w_0+\ldots+\lambda_m w_m\right]\quad \lambda_0,\ \ldots,\ \lambda_m\in\kamp
+\end{equation*}
+Supponiamo ora di aver fissato una base $\left\{e_0,\ \ldots,\ e_n\right\}$ di $V$ e quindi di aver considerato il corrispondente \textit{riferimento proiettivo}. In coordinate vettoriali di $V$, un punto di $W$ è $x=\left(x_0,\ \ldots,\ x_n\right)$ se e solo se:
+\begin{equation*}
+	x=x_0e_0+\ldots+x_ne_n=\lambda_0 w_0+\ldots+\lambda_m w_m
+\end{equation*}
+Il punto $P_i$ in $V$ avrà coordinate $\left(P_{0,i},\ \ldots,\ P_{n,i}\right)\ \forall i=1,\ \ldots,\ m$, dunque il generico vettore $x$ di $W$ è espresso da:
+\begin{equation}
+	\begin{cases}
+		x_0=\lambda_0 P_{0,0}+\lambda_1P_{0,1}+\ldots+\lambda_mP_{0,m}\\
+		\qquad\qquad \vdots\\
+		x_n=\lambda_0 P_{n,0}+\lambda_1P_{n,1}+\ldots+\lambda_mP_{n,m}
+	\end{cases}
+\end{equation}
+Anche i punti di $S$ sono date da queste coordinate, dunque questa viene definita la \textbf{rappresentazione parametrica}\index{rappresentazione!parametrica} del sottospazio $S$, con $\left(\lambda_0\colon\ldots\colon\lambda_m\right)$ le coordinate omogenee di $\proj{W}$ date dalla base $\left\{w_0,\ \ldots,\ w_m\right\}$.
+\begin{example}
+	In $\proj[3]{\realset}$ consideriamo i punti:
+	\begin{equation*}
+		A=\left(1\colon 0\colon -1\colon 4\right)\quad B=\left(2\colon 3\colon 0\colon 5\right)
+	\end{equation*}
+Allora, la rappresentazione parametrica del sottospazio $S$ con $\left(\lambda\colon \mu\right)$ è:
+\begin{equation*}
+	\begin{cases}
+		x_0=\lambda+2\mu\\
+		x_1=3\mu\\
+		x_2=-\lambda\\
+		x_3=4\lambda-5\mu
+	\end{cases}
+\end{equation*}
+\end{example}
+\subsection{Coordinate proiettive e punti in posizione generale}
+\begin{observe}
+	Sia $\proj{V}$ con un riferimento proiettivo fissato. Consideriamo i punti fondamentali $P_0,\ \ldots,\ P_n$ e il punto unità $U$.
+	\begin{itemize}
+		\item $P_0,\ \ldots,\ P_n,\ U$ sono $n+2$ punti.
+		\item $P_0,\ \ldots,\ P_n,\ U$ sono in posizione generale: essendo $P_i=\left[e_i\right]$ con $e_0,\ \ldots,\ e_n$ base di $V$, allora $P_0,\ \ldots,\ P_n$ sono indipendenti. Se sostituiamo l'$i$-esimo punto con $U=\left[e_1+\ldots+e_n\right]$, allora:
+		\begin{equation*}
+			P_0,\ \ldots,\ \check{P}_i,\ \ldots,\ U
+		\end{equation*}
+	Sono indipendenti $\forall i=0,\ \ldots,\ n$.\footnote{Indichiamo con $\check{P}_{i}$ il punto che sostituiamo.}
+	\end{itemize}
+\end{observe}
+\begin{observe}
+	Sia $\basis=\left\{e_0,\ \ldots,\ e_n\right\}$ una base che induce un \textit{riferimento proiettivo} su $\proj{V}$.\\
+	Per ogni $i$ sia $\lambda_i\in\kamp\setminus\left\{0\right\}$ e consideriamo $v_i=\lambda_i e_i$. Allora $\basis'=\left\{v_0,\ \ldots,\ v_n\right\}$ è ancora una base e i \textit{punti fondamentali} del riferimento indotto da $\basis'$ sono \textit{gli stessi} del riferimento indotto da $\basis$. Infatti:
+	\begin{equation*}
+		\left[e_i\right]=\left[v_i\right]=P_i
+	\end{equation*}
+	Però i due riferimenti sono \textbf{diversi}; dato $v$ espresso nella base $\basis$:
+	\begin{equation*}
+		v=x_0e_0+\ldots+x_ne_n
+	\end{equation*}
+	La sua classe in $\proj{V}$, rispetto a $\basis$, è:
+	\begin{equation*}
+		\left[v\right]=\left(x_0\colon\ldots\colon x_n\right)
+	\end{equation*}
+	Possiamo partire dall'espressione di $v$ nella base $\basis$ a quella nella base $\basis'$, moltiplicando e dividendo ogni $e_i$ per il corrispettivo $\lambda_i$:
+	\begin{equation*}
+		v=\frac{x_0}{\lambda_0}\left(\lambda_0e_0\right)+\ldots+\frac{x_n}{\lambda_n}\left(\lambda_ne_n\right)=\frac{x_0}{\lambda_0}v_0+\ldots+\frac{x_n}{\lambda_n}v_n
+	\end{equation*}
+	Passiamo dunque alla base $\basis'$ alla classe in $\proj{\kamp}$:
+	\begin{equation*}
+		\left[v\right]=\left(\frac{x_0}{\lambda_0}\colon\ldots\colon\right)
+	\end{equation*}
+	Notiamo che effettivamente il punto $\left[v\right]$ non cambia, ma i riferimenti \textit{non} sono multipli e quindi sono diversi!
+	\begin{itemize}
+		\item \textit{Conoscere} i punti fondamentali \textit{non basta} a determinare la base $\basis$.
+		\item Riferimenti proiettivi \textit{diversi} possono avere gli \textit{stessi} punti fondamentali.
+	\end{itemize}
+\end{observe}
+\begin{observe}\label{puntigeneraleindipendentiosserva}
+	Supponiamo di avere $n+2$ punti $P_0,\ \ldots,\ P_{n+1}$ in $\proj{V}$, cioè $\forall i=0,\ \ldots,\ n+1\ \exists v_i\in V\ \colon P_i=\left[v_i\right]$. Allora:
+	\begin{gather*}
+		P_0,\ \ldots,\ P_{n+1}\text{ sono in posizione generale}\iff v_0,\ \ldots,\ v_n\text{ sono indipendenti e}\\
+		v_{n+1}=a_0v_0+\ldots+a_nv_n\text{ con }a_i\neq 0\ \forall i=0,\ \ldots,\ n 
+	\end{gather*}
+Infatti, se $v_0,\ \ldots,\ v_n$ è una base (in quanto sono indipendenti), $v_0,\ \ldots,\ \check{v_i},\ \ldots,\ v_n,\ v_{n+1}$ sono indipendenti se e solo se $a_i\neq 0$.
+\end{observe}
+\begin{theorema}
+	Sia $\proj{V}$ di dimensione $n$. Dati $n+2$ punti $P_0,\ \ldots,\ P_{n+1}$ in \textit{posizione generale}, esiste una base $\basis=\left\{e_0,\ \ldots,\ e_n\right\}$ di $V$ tale che:
+	\begin{equation}
+		P_0=\left[e_0\right],\ \ldots,\ P_n=\left[e_n\right],\ P_{n+1}=\left[e_0+\ldots+e_n\right]
+	\end{equation}
+Inoltre, se $\basis'=\left\{f_0,\ \ldots,\ f_n\right\}$ è un'altra base di $V$ che soddisfa la condizione sopra, allora $\basis$ è proporzionale a $\basis$, cioè $\exists\lambda\in\kamp\setminus\left\{0\right\}\ \colon f_i=\lambda e_i\ \forall i=0,\ \ldots,\ n$.
+\end{theorema}
+\begin{demonstration}
+	Sia $P_i=\left[v_i\right]$ al variare di $i=0,\ \ldots,\ n+1$. I punti $P_0,\ \ldots,\ P_n$ sono indipendenti\footnote{Perchè se $N+2$ punti sono in posizione generale, presi $n+1$ punti fra di loro sono indipendenti.}, dunque per definizione $v_0,\ \ldots,\ v_n$ è una base di $V$. Definiamo:
+	\begin{equation*}
+		v_{n+1}=\lambda_0v_0+\ldots+\lambda_nv_n\quad \lambda_i\in\kamp
+	\end{equation*}
+	Ma allora, per l'osservazione precedente, $\lambda_i\neq 0\ \forall i$ perché i punti sono in posizione generale.\\
+	Consideriamo $_0=\lambda_0v_0,\ e_1=\lambda_1v_1,\ \ldots,\ e_n=\lambda_nv_n$. Si ha che $\basis=\left\{e_0,\ \ldots,\ e_n\right\}$ è una base di $V$ perché $\lambda_i\neq 0$\ $\forall i$. Segue che:
+	\begin{gather*}
+		\left[e_i\right]=\left[v_i\right]=P_i\ \forall i=0,\ \ldots,\ n\\
+		\left[e_0+\ldots+e_n\right]=\left[\lambda_0v_0+\ldots+\lambda_nv_n\right]=\left[v_{n+1}\right]=P_{n+1}
+	\end{gather*}
+Adesso, sia $\basis')\left\{f_0,\ \ldots,\ f_n\right\}$ come da ipotesi. Allora $\left[f_i\right]=P_i=\left[e_n\right]\ \forall i=0,\ \ldots,\ n$, cioè $\exists \mu_i\in\kamp\setminus\left\{0\right\}\ \colon f_i=\mu_i e_i\ \forall i=0,\ \ldots, n$. Inoltre, soddisfa anche $\left[f_0+\ldots+f_n\right]=P_{n+1}$, pertanto:
+\begin{equation*}
+	\left[f_0+\ldots+f_n\right]=\left[e_0+\ldots+e_n\right]
+\end{equation*}
+In altre parole, $\exists \mu\in\kamp\setminus\left\{0\right\}$ tale che:
+\begin{equation*}
+	\begin{array}{ccc}
+		f_0+\ldots+f_n&=&\mu\left(e_0+\ldots+e_n\right)\\
+		\shortparallel&&\\
+		\mu_0e_0+\ldots+\mu_ne_n&&
+	\end{array}
+\end{equation*}
+$e_0,\ \ldots,\ e_n$ è una base: per l'unicità della scrittura deve essere $\mu=\mu_0=\ldots=\mu_n$, cioè $f_i=\mu e_i\ \forall i=0,\ \ldots,\ n$.
+\end{demonstration}
+\section{Trasformazioni proiettive}
+\begin{define}
+	Un'applicazione $\funz{f}{\proj{V}}{\proj{V'}}$ tra spazi proiettivi si dice \textbf{trasformazione proiettiva}\index{trasformazione proiettiva} o \textbf{isomorfismo proiettivo}\seeonlyindex{isomorfismo!proiettivo}{trasformazione proiettiva} se $\exists \funz{\phi}{V}{V'}$ isomorfismo che induce un altro isomorfismo lineare:
+	\begin{equation}
+		\begin{tikzcd}
+			\tilde{\phi}\ \colon\\
+		\end{tikzcd}
+			\funztot{\ }{\proj{V}}{\proj{V'}}{\left[v\right]}{\left[\phi\left(v\right)\right]}
+	\end{equation}
+	Tale per cui $f=\tilde{\phi}$.\\
+	Se $V=V'$, diciamo che $f$ è una \textbf{proiettività}\index{proiettività} di $\proj{V}$.
+\end{define}
+\begin{demonstration}~{}
+	\begin{itemize}
+		\item $\tilde{\phi}$ \textbf{è ben definita}:
+		\begin{enumerate}
+			\item $\phi\left(v\right)\neq 0$ perché $v\neq 0$ e $\phi$ è iniettiva, pertanto $\ker\phi=\left\{0\right\}$ e dunque l'unico vettore mappato a $0$ tramite $\phi$ è solo $0$.
+			\item Se $\left[v\right]=\left[w\right]$, allora $w\sim v$, cioè $w=\lambda v$ con $\lambda\in\kamp\setminus\left\{0\right\}$; segue che per linearità di $\phi$ $\phi\left(w\right)=\lambda \left(v\right)\implies \left[\phi\left(w\right)\right]=\left[\phi\left(v\right)\right]$
+		\end{enumerate}
+		\item $\tilde{\phi}$ \textbf{è iniettiva}: se $\tilde{\phi}\left(\left[v\right]\right)=\tilde{\phi}\left(\left[w\right]\right)$, allora
+		\begin{equation*}
+			\left[\phi\left(v\right)\right]=\left[\phi\left(w\right)\right]\implies\exists\lambda\in\kamp\setminus\left\{0\right\}\ \colon\phi\left(w\right)=\lambda\phi\left(v\right)=\phi\left(\lambda v\right)
+		\end{equation*}
+	Poichè $\phi$ è iniettiva, segue che $w=\lambda v$ e dunque $\left[v\right]=\left[w\right]$.
+		\item $\tilde{\phi}$ \textbf{è suriettiva}: infatti, se $\left[w\right]\in\proj{V'}$, essendo $\phi$ suriettiva esiste un vettore $v$ tale che $w=\phi\left(v\right)$. Segue che $\left[w\right]=\left[\phi\left(v\right)\right]=\phi\left(\left[v\right]\right)$.
+	\end{itemize}
+\end{demonstration}
+Dato che spazi \textit{vettoriali} della \textit{stessa dimensione} sono sempre \textit{isomorfi}, due spazi \textit{proiettivi} della \textit{stessa dimensione} sono sempre \textit{isomorfi} e $\proj{V}$ è sempre isomorfo a $\proj[n]{\kamp}$, con $\dim V=n+1$.
+\begin{lemming}
+	Siano $\funz{\phi,\ \psi}{V}{V'}$ isomorfismi. Allora:
+	\begin{equation}
+		\tilde{\phi}=\tilde{\psi}\iff\exists\lambda\in\kamp\setminus\left\{0\right\}\ \colon\psi=\lambda\phi
+	\end{equation}
+\vspace{-6mm}
+\end{lemming}
+\begin{demonstration}~{}\\
+$\impliessx$ Se $v\in\kamp\setminus\left\{0\right\}$, allora $\psi\left(v\right)=\lambda\psi\left(v\right)$. Segue:
+\begin{equation*}
+	\implies \tilde{\psi}\left(\left[v\right]\right)=\left[\psi\left(v\right)\right]=\left[\psi\left(v\right)\right]=\tilde{\psi}\left(\left[v\right]\right)
+\end{equation*}
+$\impliesdx$ Sia $h\coloneqq \funz{\phi^{-1}\circ \psi}{V}{V}$ automorfismo. Vogliamo mostrare che $h=\lambda Id_V$ con $\lambda\in\kamp\setminus\left\{0\right\}$. Se $v\in V\setminus\left\{0\right\}$, abbiamo:
+\begin{equation*}
+	\begin{array}{c}
+\begin{array}{ccc}
+	\tilde{\phi}\left(\left[v\right]\right)&=&\psi\left(\left[v\right]\right)\\
+	\shortparallel&&\shortparallel\\
+	\left[\phi\left(v\right)\right]&&\left[\psi\left(v\right)\right]
+\end{array}
+\implies \lambda_v\in\kamp\setminus\left\{0\right\}\ \colon \phi\left(v\right)=\lambda_v\psi\left(v\right)
+\implies h\left(v\right)=\psi^{-1}\left(\phi\left(v\right)\right)=\lambda_v v
+\end{array}
+\end{equation*}
+Segue che $v$ è autovettore di $h\ \forall v\in V\setminus\left\{0\right\}$, in particolare ogni vettore non nullo è autovettore di $h$. Segue che $h$ è diagonalizzabile e ha un unico autovalore $\lambda$. Infatti, presi $\lambda_1$ e $\lambda_2$, si avrebbero i seguenti autovalori indipendenti:
+\begin{equation*}
+	v_1\in V_{\lambda_1}\setminus\left\{0\right\}\qquad v_2\in V_{\lambda_2}\setminus\left\{0\right\}
+\end{equation*}
+E considerato che:
+\begin{equation*}
+	\begin{array}{l}
+		h\left(v_1\right)=\lambda_1 v_1\\
+		h\left(v_2\right)=\lambda_2 v_2\\
+		h\left(v_1+v_2\right)=\lambda\left(v_1+v_2\right)\\
+		h\left(v_1+v_2\right)=h\left(v_1\right)+h\left(v_2\right)\\
+	\end{array}
+	\implies \lambda\left(v_1+v_2\right)=\lambda_1 v_1+\lambda_2 v_2
+\end{equation*}
+Da cui segue, in quanto $v_1,\ v_2,\ v_1+v_2\neq 0$, che $\lambda=\lambda_1=\lambda_2$ e quindi è unico.\\
+Allora, $h=\lambda Id_{V}$ e pertanto $\phi=\lambda \psi$.
+\end{demonstration}
+\subsection{Gruppo lineare proiettivo}
+\begin{observe}
+	Consideriamo $\proj{V}$ e l'insieme delle proiettività $\funz{\ }{\proj{V}}{\proj{V}}$.
+	\begin{itemize}
+		\item La \textit{composizione} di proiettività è una \textit{proiettività} (banalmente \textit{indotta} dalla composizione delle applicazioni lineari).
+		\item Poichè $Id_{\proj{V}}=\tilde{Id_V}\implies$ L'identità $Id_{\proj{V}}$ è una \textit{proiettività}.
+		\item Se $\tilde{\phi}\\funz{\! }{\proj{V}}{\proj{V}}$, allora $\tilde{\phi^{-1}}=\funz{f^{-1}}{\proj{V}}{\proj{V}}$. In altre parole, l'\textit{inversa} di una proiettività è ancora una proiettività.
+	\end{itemize}
+L'insieme delle proiettività risulta un \textbf{gruppo} rispetto alla \textit{composizione}.
+\end{observe}
+\begin{define}
+Il \textbf{gruppo lineare proiettivo}\index{gruppo!lineare proiettivo} $\projgl{V}$ è il gruppo delle proiettività dello spazio vettoriale $V$ con operazione la composizione di proiettività ed elemento neutro $Id_{\proj{V}}$. 
+\end{define}
+\subsubsection{Descrizione matriciale del gruppo lineare proiettivo}
+Consideriamo gli isomorfismi $\funz{\ }{\kamp^{n+1}}{\kamp^{n+1}}$: sappiamo che la matrice associata agli isomorfismi è una matrice invertibile, cioè si ha una \textit{isomorfismo di gruppi} fra l'insieme degli isomorfismi in $\kamp^{n+1}$ al \textit{gruppo generale lineare} $\gl\left(n+1,\ \kamp\right)$:
+\begin{equation*}
+	\left\{\text{isomorfismi}\funz{\ }{\kamp^{n+1}}{\kamp^{n+1}}\right\}\leftrightarrow\gl\left(n+1,\ \kamp\right)
+\end{equation*}
+E con il gruppo lineare proiettivo si può fare? Consideriamo:
+\begin{equation}
+	\funztot{\varphi}{\gl\left(n+1,\ \kamp\right)}{\projgl[n+1]{\kamp}}{\phi_A}{\tilde{\phi}_A}
+\end{equation}
+ $\phi$ è \textit{omomorfismo} di gruppi \textit{suriettivo}, ma non iniettivo. Infatti, il nucleo non è \textit{triviale}:
+ \begin{equation*}
+ 	\ker \varphi=\left\{\phi_A\mid \phi_A=Id_{\proj[n]{\kamp}}=\tilde{Id}_{\kamp^{n+1}}\right\}=\left\{\phi_A\mid \phi=\lambda I,\ \lambda\in\kamp\setminus\left\{0\right\}\right\}=\left\{\phi_A\mid A=\lambda I,\ \lambda\in\kamp\setminus\left\{0\right\}\right\}
+ \end{equation*}
+Tuttavia, possiamo per il Teorema dell'isomorfismo per i gruppi considerare il seguente diagramma commutativo:
+\[\begin{tikzcd}
+	{\gl\left(n+1,\ \kamp\right)} & {\projgl[n+1]{\kamp}} \\
+	{\frac{\gl\left(n+1,\ \kamp\right)}{\left\{\lambda I\ \mid\ \lambda\in\kamp\setminus\left\{0\right\}\right\}}}
+	\arrow["{\pi}"', from=1-1, to=2-1]
+	\arrow["{\exists \overline f}"', from=2-1, to=1-2, dashed]
+	\arrow["{\varphi}", from=1-1, to=1-2]
+\end{tikzcd}\]
+E si ha pertanto l'isomorfismo:
+\begin{equation*}
+	\projgl[n+1]{\kamp}\cong \frac{\gl\left(n+1,\ \kamp\right)}{\left\{\lambda I\mid\lambda\in\kamp\setminus\left\{0\right\}\right\}}=\frac{\gl\left(n+1,\ \kamp\right)}{\left\{\lambda I\right\}}
+\end{equation*}
+Si può anche considerare l'isomorfismo tra $\left\{\lambda I\mid\lambda\in\kamp\setminus\left\{0\right\}\right\}$ e $\kamp\setminus\left\{0\right\}$, e riscrivere l'isomorfismo trovato come:
+\begin{equation*}
+	\projgl[n+1]{\kamp}\cong \frac{\gl\left(n+1,\ \kamp\right)}{\kamp\setminus\left\{0\right\}}
+\end{equation*}
+
+\begin{example}
+	Consideriamo la seguente proiettività della \textit{retta proiettiva} $\proj[1]{\realset}$:
+	\begin{equation*}
+		\funztot{f}{\proj[1]{\realset}}{\proj[1]{\realset}}{\left(x_0\colon x_1\right)}{\left(ax_0+bx_1\colon cx_0+dx_1\right)}
+	\end{equation*}
+	Considerato il gruppo lineare proiettivo $\proj[2]{\realset}=\frac{\gl\left(2,\ \realset\right)}{\left\{\lambda I\right\}}$, per definizione di $f$ si ha $f=\tilde{\phi}$. In particolare, la matrice associata a $\phi$ è:
+	\begin{equation*}
+		A=\left(\begin{array}{cc}
+			a & b\\
+			c & d
+		\end{array}\right)
+	\end{equation*}
+	E dunque possiamo scrivere l'applicazione lineare $\phi$ come:
+	\begin{equation*}
+		\funztot{f}{\realset^2}{\realset^2}{\left(\begin{array}{c}
+				x_0 \\
+				x_1
+			\end{array}\right)}{A\left(\begin{array}{c}
+				x_0 \\
+				x_1
+			\end{array}\right)}
+	\end{equation*}
+	E dunque $f$ si può anche scrivere come:
+	\begin{equation*}
+		\funztot{f}{\proj[1]{\realset}}{\proj[1]{\realset}}{\left[v\right]}{\left[Av\right]}
+	\end{equation*}
+	Notiamo che se la matrice associata a $\phi$ fosse $2A$, per \textit{proporzionalità} si avrebbe comunque la stessa proiettività $f$. In modo analogo, $\lambda\in\realset\setminus\left\{0\right\}$ induce la \textit{stessa proiettività} $f$ di $A$.
+\end{example}
+\subsection{Proprietà delle trasformazioni proiettive}
+% cercare un titolo più consono
+\begin{observe}
+	Se $f$ è una proiettività di $\proj{V}$ e $S\subseteq \proj{V}$ un sottospazio proiettivo, allora $f\left(S\right)$ è ancora un sottospazio proiettivo della stessa dimensione di $S$. Se $S=\proj{W}$ e consideriamo per definizione $f=\tilde{\phi}$ con $\funz{\phi}{V}{V}$, allora:
+	\begin{equation*}
+		\forall \left[v\right]\in S\ f\left(\left[v\right]\right)=\tilde{\phi}\left(\left[v\right]\right)=\left[\phi\left(v\right)\right],\ \phi\left(v\right)\in W
+	\end{equation*}
+	\begin{equation}
+		f\left(S\right)=\proj{\phi\left(W\right)}
+	\end{equation}
+\vspace{-6mm}
+\end{observe}
+\begin{define}
+	Due sottoinsiemi $A,\ B$ di $\proj{V}$ si dicono \textbf{proiettivamente equivalenti}\index{proiettivamente equivalenti} se $\exists f$ proiettività di $\proj{V}$ tale che:
+	\begin{equation}
+		B=f\left(A\right)
+	\end{equation}
+\vspace{-6mm}
+\end{define}
+\begin{example}
+	Due sottospazi proiettivi di $\proj{V}$ della \textit{stessa} dimensione sono sempre \textit{proiettivamente equivalenti}.
+\end{example}
+\begin{theorema}
+	Siano $\proj{V}$ e $\proj{V'}$ di dimensione $n$. Siano:
+	\begin{itemize}
+		\item $P_0,\ \ldots,\ P_{n+1}\in\proj{V}$ in posizione generale.
+		\item $Q_0,\ \ldots,\ Q_{n+1}\in\proj{V'}$ in posizione generale.
+	\end{itemize}
+Allora $\exists!\funz{f}{\proj{V}}{\proj{V'}}$ trasformazione proiettiva tale che $f\left(P_i\right)=Q_i\ \forall i=0,\ \ldots,\ n+1$.\\
+In particolare: se una proiettività fissa $n+2$ punti in posizione generale, allora è l'identità.
+\end{theorema}
+\begin{demonstration}
+	\begin{itemize}
+		\item \textbf{Esistenza}: Siano, $\forall i$:
+		\begin{itemize}
+			\item $P_i=\left[v_i\right]\ v_i\in V$.
+			\item $Q_i=\left[w_i\right]\ w_i\in V'$.
+		\end{itemize}
+	Sappiamo, dall'osservazione a pag. \ref{puntigeneraleindipendentiosserva}, che:
+	\begin{itemize}
+		\item $v_0,\ \ldots,\ v_n$ è base di $V$, con $v_{n+1}=\lambda_0v_0+\ldots+\lambda_n v_n$ con $\lambda_i\neq 0\ \forall i$.
+		\item $w_0,\ \ldots,\ w_n$ è base di $V'$, con $w_{n+1}=\mu_0w_0+\ldots+\mu_n w_n$ con $\mu_i\neq 0\ \forall i$.
+	\end{itemize}
+		A meno di cambiare i rappresentanti dei punti, possiamo supporre senza perdita di generalità che $\lambda_i=\mu_i=1$. Si ha dunque:
+		\begin{gather*}
+			v_{n+1}=v_0+\ldots+v_n\\
+			w_{n+1}=w_0+\ldots+w_n
+		\end{gather*}
+	Sia $\funz{\phi}{V}{V'}$ l'applicazione lineare tale per cui $\phi\left(v_i\right)=w_i\ \forall i=0,\ \ldots,\ n$. Per linearità:
+	\begin{equation*}
+		\phi\left(v_{n+1}\right)=\phi\left(v_0+\ldots+v_n\right)=\phi\left(v_0\right)+\ldots+\phi\left(v_n\right)=w_0+\ldots+w_n=w_{n+1}
+	\end{equation*}
+Poiché $\im \phi$ contiene una base per costruzione, $\phi$ è suriettiva. In particolare, essendo endomorfismo ($\dim V=\dim V'$), $\phi$ è anche \textit{isomorfismo}.\\
+Allora $f\coloneqq\tilde{\phi}\funz{\ }{\proj{V}}{\proj{V'}}$ è una \textit{trasformazione proiettiva} e:
+\begin{equation*}
+	f\left(P_i\right)=f\left(\left[v_i\right]\right)=\left[\phi\left(v_i\right)\right]=\left(w_i\right)=Q_i\ \forall i=0,\ \ldots,\ n+1
+\end{equation*}
+\item \textbf{Unicità}: sia $\funz{g}{\proj{V}}{\proj{V'}}$ un'altra trasformazione proiettiva tale che $g\left(P_i\right)=Q_i\ \forall i=0,\ \ldots,\ n+1$. Per definizione, esiste $\funz{\psi}{V}{V'}$ isomorfismo per cui $g=\tilde{\psi}$ e:
+\begin{equation*}
+	\left[\psi\left(v_i\right)\right]=\left[w_i\right]\ \forall i
+\end{equation*}
+Si ha che $\exists a_i\in\kamp\setminus\left\{0\right\}$ tale che $\psi\left(v_i\right)=a_iw_i$. Allora:
+\begin{equation*}
+	\begin{array}{ccccc}
+		a_{n+1}w_{n+1}&=&\psi\left(v_{n+1}\right)&=&\psi\left(v_0+\ldots+v_n\right)\\
+		\shortparallel&&&&\shortparallel\\
+		a_{n+1}\left(w_0+\ldots+w_n\right)&&&&\psi\left(v_0\right)+\ldots+\psi\left(v_n\right)\\
+		\shortparallel&&&&\shortparallel\\
+		a_{n+1}w_0+\ldots+a_{n+1}w_n&&&&a_0w_0+\ldots+a_nw_n
+	\end{array}
+\end{equation*}
+Poiché $w_0,\ \ldots,\ w_n$ è base, la scrittura è unica. Segue che $a_0=a_1=\ldots=a_{n+1}=a$. Allora:
+\begin{equation*}
+	\begin{array}{l}
+		\psi\left(v_i\right)=aw_i=a\phi\left(v_i\right)\\
+		\implies \psi=a\phi\\
+		\implies g=\tilde{\psi}=\tilde{\phi}=f
+	\end{array}
+\end{equation*}
+	\end{itemize}
+\end{demonstration}
+\begin{examples}
+	\begin{itemize}
+		\item In una \textit{retta proiettiva} ($\dim 1$), una proiettività è determinata dalle immagini di $3$ \textit{punti distinti}, dato che è equivalente alla condizione di ‘‘\textit{punti in posizione generale}''.
+		\item In un \textit{piano proiettivo} ($\dim 2$), una proiettività è determinata dalle \textit{immagini} di $4$ punti, a $3$ a $3$ \textit{non allineati}.
+		\item Se $A,\ B\subseteq \proj{V}$ sono insiemi finiti, ciascuno contenente $k$ punti in posizione generale, con $k\leq n+2$, allora $A$ e $B$ sono sempre proiettivamente equivalenti.
+	\end{itemize}
+\end{examples}
+\begin{example}
+	Approfondiamo l'ultimo esempio. In $\proj[2]{\kamp}$ ($\dim 2$), si prenda $A=\left\{P_1,\ P_2\right\},\ B=\left\{Q_1,\ Q_2\right\}$ con $P_1\neq P_2$, $Q_1\neq Q_2$. Ho due punti distinti sia in $A$ e $B$, dunque esiste sempre una proiettività $\funz{f}{\proj[2]{\ }}{\proj[2]{\ }}$ tale che $f\left(A\right)=B$.\\
+	Se invece $A$ e $B$ contengono $3$ punti, se i $3$ punti in $A$ \textit{sono allineati} mentre i $3$ punti in $B$ \textit{non} lo sono, allora $A$ e $B$ \textit{non} sono proiettivamente equivalenti.
+\end{example}
+\subsection{Trasformazioni proiettive in coordinate}
+Supponiamo di avere fissato dei \textit{riferimenti proiettivi} su $\proj{V}$ e $\proj{V'}$, dati da delle basi $\basis$ di $V$ e $\basis'$ di $V'$, e sia $\funz{f}{\proj{V}}{\proj{V}}$ una trasformazione proiettiva. Sappiamo che $f=\tilde{\phi}$ con $\funz{\phi}{V}{V'}$ isomorfismo lineare.\\
+Sia $A\in\gl\left(n+1,\ \kamp\right)$ la matrice associata a $\phi$ rispetto alle basi $\basis$ e $\basis'$. Abbiamo visto che $\phi$ è determinata solo a meno di multipli: chiaramente, lo stesso è vero anche per $A$.\\
+Siano allora:
+\begin{gather*}
+	P=\left(x_0\colon\ldots\colon x_n\right)\in\proj{V}\\
+	f\left(P\right)=\left(y_0\colon\ldots\colon y_n\right)\in\proj{V'}
+\end{gather*}
+Allora $\exists\rho\in\kamp\setminus\left\{0\right\}$ tale che $\rho y=Ax$.
+\begin{observe}\textsc{Cambiamenti di coordinate.}\\
+Se in $\proj{V}$ abbiamo due riferimenti proiettivi, uno dalla dalla base $\basis$, e uno dalla base $\basis'$, sia $M$ la \textit{matrice del cambiamento di base} in $V$ tale che:
+\begin{equation*}
+	x'=Mx
+\end{equation*}
+Con $x$ in coordinate rispetto alla base $\basis$ e $x'$ in coordinate rispetto alla base $\basis'$. Allora, se $P\in\proj{V}$ ha coordinate:
+\begin{equation*}
+	\left(x_0\colon\ldots\colon x_n\right)\text{ rispetto a }\basis\\
+	\left(x_0'\colon\ldots\colon x_n'\right)\text{ rispetto a }\basis'
+\end{equation*}
+Esiste $\rho\in\kamp\setminus\left\{0\right\}$ tale che $\rho x'=M x$.
+\end{observe}
+\subsection{Impratichiamoci! Trasformazioni proiettive}
+\begin{exercise}
+	In $\proj[1]{\realset}$ determinare la proiettività $f$ tale che:
+	\begin{equation*}
+		f\left(2\colon 1\right)=\left(1\colon1\right)\quad f\left(1\colon 2\right)=\left(0\colon1\right)\quad
+		f\left(1\colon -1\right)=\left(1\colon0\right)
+	\end{equation*}
+\end{exercise}
+\begin{solution}
+Notiamo che i punti:
+\begin{equation*}
+	\left(2\colon 1\right)\quad\left(1\colon 2\right)\quad\left(1\colon -1\right)
+\end{equation*}
+E:
+\begin{equation*}
+		\left(1\colon 1\right)\quad\left(0\colon 1\right)\quad\left(1\colon 0\right)
+\end{equation*}
+Sono distinti, dunque sono in posizione generale e la proiettività è garantita. Prendiamo la generica matrice $A=\left(\begin{array}{cc}
+	a & b\\
+	c & d
+\end{array}\right)$ associata a $\phi$ indotta da $f$ e consideriamo $\rho y=Ax$:
+\begin{equation*}
+	\begin{cases}
+		\rho y_0=ax_0+bx_1\\
+		\rho y_1=cx_0+dx_1
+	\end{cases}
+\end{equation*}
+Imponiamo il passaggio per $f\left(2\colon 1\right)=\left(1\colon1\right)$:
+\begin{equation*}
+	\begin{cases}
+		\rho=1a+b\\
+		\rho=2c+d
+	\end{cases}\implies 2a+b=2c+d
+\end{equation*}
+In sostanza, \textit{eliminiamo} il parametro $\rho$ per ottenere un'equazione lineare \textit{omogenea} tra gli elementi della matrice.\\
+Facciamo lo stesso con i rimanenti punti $f\left(1\colon 2\right)=\left(0\colon1\right)$ e $	f\left(1\colon -1\right)=\left(1\colon0\right)$, utilizzando rispettivamente $\mu y=Ax$ e $\alpha y=Ax$:
+\begin{gather*}
+	\begin{cases}
+		0=a+2b\\
+		\rho=c+2d
+	\end{cases}\implies a+2b=0\\
+	\begin{cases}
+		\alpha=a-b\\
+		0=c-d
+	\end{cases}\implies c-d=0
+\end{gather*}
+Costruiamo così un sistema lineare omogeneo di $3$ equazioni in $4$ incognite $a,\ b,\ c,\ d$, con una matrice dei coefficienti di rango $3$:
+\begin{equation*}
+	\begin{cases}
+		2a+b=2c+d\\
+		a+2b=0\\
+		c-d=0
+	\end{cases}\implies \begin{cases}
+	a=2c\\
+	b=-c\\
+	c=c\\
+	d=c
+\end{cases}\implies
+A=\left(\begin{array}{cc}
+	2c & -c\\
+	c & c
+\end{array}\right)=c\left(\begin{array}{cc}
+1 & -1\\
+1 & 1
+\end{array}\right)
+\end{equation*}
+A meno di multipli, $A=\left(\begin{array}{cc}
+	1 & -1\\
+	1 & 1
+\end{array}\right)$ è la matrice cercata. Segue dunque che la proiettività cercata è:
+\begin{equation*}
+	\funztot{f}{\proj[1]{\realset}}{\proj[1]{\realset}}{\left(x_0\colon x_1\right)}{\left(2x_0-x_1\colon x_0+x_1\right)}
+\end{equation*}
+\end{solution}
