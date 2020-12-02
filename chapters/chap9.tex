@@ -17,31 +17,32 @@
 
 \section{Varietà topologiche}
 %AAA INTRODUZIONE BELLA CERCASI
-Si vuole formalizzare il concetto di avere la topologia euclidea localmente.
+Si vuole formalizzare il concetto di avere \textit{localmente} la topologia euclidea.
 \begin{define}
-	Uno spazio topologico $X$ si dice \textbf{localmente euclideo} di dimensione $n$ se ogni punto di $X$ ammette un intorno aperto omeomorfo ad una palla aperta di $\realset^n$.
+	Uno spazio topologico $X$ si dice \textbf{localmente euclideo}\index{localmente euclideo} di dimensione $n$ se ogni punto di $X$ ammette un intorno aperto omeomorfo ad una palla aperta di $\realset^n$.
 \end{define}
 
 \begin{define}
-	Uno spazio topologico $X$ si dice \textbf{varietà topologica} di dimensione $n$ se $X$ è $T_2$, connesso, a base numerabile e localmente euclideo di dimensione $n$.
+	Uno spazio topologico $X$ si dice \textbf{varietà topologica}\index{varietà topologica} di dimensione $n$ se $X$ è $T_2$, connesso, a base numerabile e localmente euclideo di dimensione $n$.
 \end{define}
 
 \begin{examples}
 	\begin{itemize}
-		\item $\realset^n$ è una varetà topologica di dimensione $n$
-		\item $S^n$ è una varietà topologica compatta di dimensione $n$, infatti grazie alla proiezione stereografica si ha che $S^\setminus\{*\}\cong \realset$
-		\item $\mathbb{P}^n(\realset)$ è una varietà topologica compatta di dimensione $n$
-		\item ogni aperto connesso di una varietà topologica di dimensione $n$ è una varietà topologica di dimensione $n$
+		\item $\realset^n$ è una varietà topologica di dimensione $n$.
+		\item $S^n$ è una varietà topologica compatta di dimensione $n$, infatti grazie alla proiezione stereografica si ha che $S^\setminus\{*\}\cong \realset$.
+		\item $\mathbb{P}^n(\realset)$ è una varietà topologica compatta di dimensione $n$.
+		\item Ogni aperto connesso di una varietà topologica di dimensione $n$ è una varietà topologica di dimensione $n$.
 	\end{itemize}
 \end{examples}
 \begin{observe}
-	La dimensione di una varietà topologica è ben definita per l'invarianza della dimensione.
+	La dimensione di una varietà topologica è \textit{ben definita} per l'\textit{invarianza} della dimensione.
 \end{observe}
 \begin{observe}
-	Una varietà topologica è c.p.a.
-%DIMOSTRAZIONE TUTORATO
-	Se $X$ è una varietà topologica di dimensione $n$ e $Y$ è una varietà topologica di dimensione $m$ allora $X\times Y$ è una varità topologica di dimensione $n+m$.
-%DIMOSTRAZIONE TUTORATO
+	\begin{itemize}
+		\item Una varietà topologica è \textbf{c.p.a.}.
+		\item Se $X$ è una varietà topologica di dimensione $n$ e $Y$ è una varietà topologica di dimensione $m$ allora $X\times Y$ è una varietà topologica di dimensione $n+m$.
+	\end{itemize}
+%DIMOSTRAZIONE TUTORATO dei due punti precedenti
 \end{observe}
 \begin{example}
 	$T=S^1\times S^1$ è una varietà topologica di dimensione $2$.
@@ -51,69 +52,54 @@ Si vuole formalizzare il concetto di avere la topologia euclidea localmente.
 	Sia $X$ uno spazio topologico compatto, connesso, $T_2$ e localmente euclideo di dimensione $n$. Allora $X$ è a base numerabile, dunque $X$ è una varietà topologica di dimensione $n$.
 \end{theorema}
  
-	\subsection{Dimensione $1$}
+	\subsection{Dimensione 1}
 Analizziamo il caso di varietà topologiche di dimensione $1$, per esempio $\realset$ e $S^1$.
 \begin{theorema}
-	Ogni varietà topologica di dimensione 1 è omeomorf a $\realset$ se non è compatta, oppure a $S^1$ se compatta.
+	Ogni varietà topologica di dimensione $1$ è omeomorfo a $\realset$ se \textit{non} è compatta, oppure a $S^1$ se compatta.
 \end{theorema} 
 \begin{example} 
 Riconsideriamo l'esempio della retta con 2 origini, vedasi la sezione \ref{retta 2 origini}, essa è un quoziente non $T_2$, dunque non è una varietà topologica.
 \end{example}
-	\subsection{Dimensione $2$}
+	\subsection{Dimensione 2}
 \begin{define} 
-	Una varietà topologica di dimensione 2 si dice \textbf{superficie topologica}.
+	Una varietà topologica di dimensione $2$ si dice \textbf{superficie topologica}\index{superficie!topologica}.
 \end{define}
 \begin{examples}
 	\begin{itemize}
-		\item $\realset^2$ o $\realset^2\setminus \{n \text{punti}\}$ sono non compatti
-		\item $S^2$ compatto
-		\item $T=S^1\times S^1$ compatto
-		\item $\mathbb{P}^2(\realset)$ compatto
+		\item $\realset^2$ o $\realset^2\setminus \{n \text{punti}\}$ sono \textit{non} compatti.
+		\item $S^2$ compatto.
+		\item $T=S^1\times S^1$ compatto.
+		\item $\mathbb{P}^2(\realset)$ compatto.
 	\end{itemize}
 \end{examples}
-Vogliamo dare una classificazione delle superfici topologiche \textit{compatte}. \footnote{Nota: seguiremo le note del professore Gianluca Occhetta}
+Vogliamo dare una classificazione delle superfici topologiche \textit{compatte}. \footnote{Seguiremo le note del professore Gianluca Occhetta}
 %BIBLIOGRAFIA
 \begin{examples} \textsc{modelli piani}\\
 	\begin{itemize}
-		\item Siccome $\mathbb{P}^2(\realset)$ è un quoziente del disco allora a meno di omeomorfismo lo si può anche vedere come un quoziente di $I\times I$ con una relazione di equivalenza sul bordo con parola $abab$
-		% https://q.uiver.app/?q=WzAsNCxbMCwwLCJcXGJ1bGxldCJdLFsyLDAsIlxcYnVsbGV0Il0sWzIsMiwiXFxidWxsZXQiXSxbMCwyLCJcXGJ1bGxldCJdLFswLDEsImEiXSxbMSwyLCJiIl0sWzIsMywiYSJdLFszLDAsImIiXV0=
-		\[\begin{tikzcd}
-			{\bullet} && {\bullet} \\
-			\\
-			{\bullet} && {\bullet}
-			\arrow["{a}", from=1-1, to=1-3]
-			\arrow["{b}", from=1-3, to=3-3]
-			\arrow["{a}", from=3-3, to=3-1]
-			\arrow["{b}", from=3-1, to=1-1]
-		\end{tikzcd}\]
-		\item Anche il toro si può vedere come quoziente di $I\times I$ con parola $aba^{-1}b^{-1}$
+		\item Siccome $\mathbb{P}^2(\realset)$ è un quoziente del disco, allora, a meno di omeomorfismo, lo si può anche vedere come un quoziente di $I\times I$ con una relazione di equivalenza sul bordo con \textit{parola} $abab$.
 		\begin{center}
-			\includegraphics[trim=0cm 0 cm 0 cm, clip, scale=0.4]{images/The-construction-of-a-torus-from-the-unit-square.png}
+			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.4]{images/proj.pdf}
 		\end{center}
-%IMMAGINE VENUTA MALE CON L'ENVIRONMENT
-		\item Vediamo $S^2$ come quoziente di $I\times I$ con parola $bb^{-1}a^{-1}a$
-		% https://q.uiver.app/?q=WzAsNCxbMCwwLCJcXGJ1bGxldCJdLFsyLDAsIlxcYnVsbGV0Il0sWzIsMiwiXFxidWxsZXQiXSxbMCwyLCJcXGJ1bGxldCJdLFswLDEsImIiXSxbMywwLCJhIl0sWzIsMSwiYiIsMl0sWzMsMiwiYSIsMl1d
-		\[\begin{tikzcd}
-			{\bullet} && {\bullet} \\
-			\\
-			{\bullet} && {\bullet}
-			\arrow["{b}", from=1-1, to=1-3]
-			\arrow["{a}", from=3-1, to=1-1]
-			\arrow["{b}"', from=3-3, to=1-3]
-			\arrow["{a}"', from=3-1, to=3-3]
-		\end{tikzcd}\]
+		\item Anche il \textbf{toro} si può vedere come quoziente di $I\times I$ con \textit{parola} $aba^{-1}b^{-1}$
+		\begin{center}
+			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.4]{images/torus.pdf}
+		\end{center}
+		\item Vediamo $S^2$ come quoziente di $I\times I$ con \textit{parola} $bb^{-1}a^{-1}a$.
+		\begin{center}
+			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.4]{images/sphere.pdf}
+		\end{center}
 	\end{itemize}
 \end{examples}
 
 \begin{observe}
-	Sia $P\subset\realset^2$ un poligono pieno con un numero pari di lati. Sia $\sim$ una relazione di equivalenza che identifica i lati a 2 a 2. Allora $S\coloneqq\nicefrac{P}{\sim}$ è una superficie topologica compatta, infatti
+	Sia $P\subset\realset^2$ un \textit{poligono} pieno con un numero pari di lati. Sia $\sim$ una relazione di equivalenza che identifica i lati a 2 a 2. Allora $S\coloneqq\nicefrac{P}{\sim}$ è una superficie topologica compatta, infatti:
 		\begin{enumerate}
-			\item  $P$ è connesso e compatto $\implies S$ connesso e compatto
+			\item  $P$ è connesso e compatto $\implies S$ connesso e compatto.
 			\item $S$ è localmente euclideo di dimensione $2$. Sia $p\in S$, se $p$ viene da un punto interno al poligono allora si sceglie un intorno aperto $U$ centrato in tale punto tale che $U\cap\partial{P}=\emptyset$, data la proiezione $\funz \pi P S$, $\pi(U)\cong U$ ed è un intorno aperto di $p$. Se $p$ viene da un punto interno ad un lato grazie all'dentificazione dei lati a due a due si ha che passando al quoziente cìè un intorno aperto di $p$ omeomorfo ad un disco aperto. Se $p$ viene da un vertice, siccome i vertici vengono identificati con i vertici, analogamente al caso dei lati si ottiene un intorno aperto di $p$ in $S$ omeomorfo ad un disco aperto di $\realset^2$.
 			\item $S$ è $T_2$.
 		\end{enumerate}
-	Osserviamo che nella relazione di equivalenza due lati vengono identificati nel modo seguente: $l_i\cong\intv$, dunque scelgo un omeomorfismo $l_1\stackrel{\stackrel{\phi}{\sim}}{\longrightarrow} l_2$, $p_1\in l_1 \sim \phi(p)\in l_2$ e $\phi$ manda vertici in vertici.
-	Il poligono $P$ con la relazione di equivalenza sui lati è detto un \textbf{modello piano} della superficie $S$ e può essere schematizzato con una sequenza di lettere detta \textbf{parola}. Ad essempio per la parola $aba^{-1}cbc^{-1}$ si ottiene il modello piano sguente
+	Osserviamo che nella relazione di equivalenza due lati vengono identificati nel modo seguente: $l_i\cong\intv$, dunque scelgo un omeomorfismo $l_1\stackrel{\stackrel{\phi}{\sim}}{\longrightarrow} l_2$, $p_1\in l_1 \sim \phi(p)\in l_2$ e $\phi$ manda vertici in vertici.\\
+	Il poligono $P$ con la relazione di equivalenza sui lati è detto un \textbf{modello piano}\index{modello piano} della superficie $S$ e può essere schematizzato con una sequenza di lettere detta \textbf{parola}\index{parola}. Ad esempio, per la parola $aba^{-1}cbc^{-1}$ si ottiene il modello piano seguente:
 	% https://q.uiver.app/?q=WzAsNixbMSwwLCJcXGJ1bGxldCJdLFsyLDAsIlxcYnVsbGV0Il0sWzMsMSwiXFxidWxsZXQiXSxbMCwxLCJcXGJ1bGxldCJdLFsxLDIsIlxcYnVsbGV0Il0sWzIsMiwiXFxidWxsZXQiXSxbMCwxLCJhIl0sWzEsMiwiYiJdLFswLDMsImMiLDJdLFs0LDMsImIiXSxbNSwyLCJhIiwyXSxbNSw0LCJjIl1d
 	\[\begin{tikzcd}
 		& {\bullet} & {\bullet} \\
@@ -126,7 +112,7 @@ Vogliamo dare una classificazione delle superfici topologiche \textit{compatte}.
 		\arrow["{a}"', from=3-3, to=2-4]
 		\arrow["{c}", from=3-3, to=3-2]
 	\end{tikzcd}\]
- Inoltre il modello piano di una superficie compatta non è unico.
+ Inoltre il modello piano di una superficie compatta \textit{non è unico}.
 \end{observe}
 
 
@@ -151,7 +137,7 @@ Vogliamo dare una classificazione delle superfici topologiche \textit{compatte}.
 			\arrow["{a}"', from=1-1, to=3-1, curve={height=18pt}]
 			\arrow["{a}"', from=3-1, to=1-1, curve={height=18pt}]
 		\end{tikzcd}\]
-		\item bottiglia di Klein $K$, essa è la superficie compatta data dal modello piano. Confrontiamolo con il toro. Incolliamo entrambi i modelli: prima si ottiene $S^1\times I$ con la relazione di equivalenza sul bordo.
+		\item La Bottiglia di Klein $K$, essa è la superficie compatta data dal modello piano. Confrontiamolo con il toro. Incolliamo entrambi i modelli: prima si ottiene $S^1\times I$ con la relazione di equivalenza sul bordo.
 		% https://q.uiver.app/?q=WzAsMTYsWzAsNCwiXFxidWxsZXQiXSxbMCw2LCJcXGJ1bGxldCJdLFsyLDQsIlxcYnVsbGV0Il0sWzIsNiwiXFxidWxsZXQiXSxbNSw0LCJcXGJ1bGxldCJdLFs3LDQsIlxcYnVsbGV0Il0sWzUsNiwiXFxidWxsZXQiXSxbNyw2LCJcXGJ1bGxldCJdLFswLDIsIlxcYnVsbGV0Il0sWzAsMCwiXFxidWxsZXQiXSxbMiwwLCJcXGJ1bGxldCJdLFsyLDIsIlxcYnVsbGV0Il0sWzUsMiwiXFxidWxsZXQiXSxbNSwwLCJcXGJ1bGxldCJdLFs3LDAsIlxcYnVsbGV0Il0sWzcsMiwiXFxidWxsZXQiXSxbMCwxLCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsMywiIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFswLDIsImIiLDIseyJjdXJ2ZSI6Mn1dLFswLDIsIiIsMSx7ImN1cnZlIjotMiwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDEsImIiLDAseyJjdXJ2ZSI6LTJ9XSxbMSwzLCIiLDAseyJjdXJ2ZSI6LTIsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNSwiYiIsMix7ImN1cnZlIjoyfV0sWzQsNSwiIiwwLHsiY3VydmUiOi0yLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsNywiYiIsMix7ImN1cnZlIjoyfV0sWzYsNywiIiwwLHsiY3VydmUiOi0yLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDYsIiIsMSx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNSw3LCIiLDEseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzgsOSwiYSJdLFs5LDEwLCJiIl0sWzExLDEwLCJhIiwyXSxbMTEsOCwiYiJdLFsxMiwxMywiYSJdLFsxMywxNCwiYiJdLFsxMiwxNSwiYiIsMl0sWzE1LDE0LCJhIiwyXV0=
 		\[\begin{tikzcd}
 			{\bullet} && {\bullet} &&& {\bullet} && {\bullet} \\
