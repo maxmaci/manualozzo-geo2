@@ -52,9 +52,9 @@ $F$ è detta \textbf{omotopia di cammini}\index{omotopia!di cammini} o \textbf{o
 		\begin{equation*}
 			\mvf{F}{t}{0}=\alpha\left(t\right),\ \mvf{F}{t}{1}=\beta\left(t\right),\ \mvf{F}{0}{s}=a,\ \mvf{F}{1}{s}=b
 		\end{equation*}
-		Per avere $\beta\sim \alpha$, basta prendere $\mvf{\tilde{F}}{t}{s}=\mvf{F}{t}{1-s}$: essa è ben definita, continua e:
+		Per avere $\beta\sim \alpha$, basta prendere $\mvf{\widetilde{F}}{t}{s}=\mvf{F}{t}{1-s}$: essa è ben definita, continua e:
 		\begin{gather*}
-			\mvf{\tilde{F}}{t}{0}=\mvf{F}{t}{1}=\beta\left(t\right),\ \mvf{\tilde{F}}{t}{1}=\mvf{F}{t}{0}=\alpha\left(t\right)\\ \mvf{\tilde{F}}{0}{s}=\mvf{F}{0}{s}=a,\ \mvf{\tilde{F}}{1}{s}=\mvf{F}{1}{s}=b
+			\mvf{\widetilde{F}}{t}{0}=\mvf{F}{t}{1}=\beta\left(t\right),\ \mvf{\widetilde{F}}{t}{1}=\mvf{F}{t}{0}=\alpha\left(t\right)\\ \mvf{\widetilde{F}}{0}{s}=\mvf{F}{0}{s}=a,\ \mvf{\widetilde{F}}{1}{s}=\mvf{F}{1}{s}=b
 		\end{gather*}
 		Cioè è omotopia di cammini tra $\beta$ e $\alpha$.
 		\item \textsc{Transitiva}: Da $\alpha\sim \beta$ abbiamo:
@@ -772,11 +772,11 @@ Su $g\circ f\sim Id_X$ applichiamo il teorema precedente.
 Per il corollario appena visto, poiché $g\circ f\sim Id_X$, segue che $\left(g\circ f\right)_{\ast}=g_\ast\circ f_\ast$ è isomorfismo di gruppi. Allora consideriamo lo schema seguente.
 \begin{center}
 	\begin{tikzcd}
-		\gruf{X}{x_0} \arrow[r, "f_\ast"'] \arrow[rr, "g_\ast\circ f_\ast=\left(g\circ f\right)_\ast", bend left] & \gruf{X}{f\left(x_0\right)} \arrow[r, "g_\ast"'] \arrow[rd, "\tilde{f}_\ast\circ g_\ast"'] & \gruf{X}{g\left(f\left(x_0\right)\right)} \arrow[d, "\tilde{f}_\ast"] \\
+		\gruf{X}{x_0} \arrow[r, "f_\ast"'] \arrow[rr, "g_\ast\circ f_\ast=\left(g\circ f\right)_\ast", bend left] & \gruf{X}{f\left(x_0\right)} \arrow[r, "g_\ast"'] \arrow[rd, "\widetilde{f}_\ast\circ g_\ast"'] & \gruf{X}{g\left(f\left(x_0\right)\right)} \arrow[d, "\widetilde{f}_\ast"] \\
 		&                                                                                            & \gruf{X}{f\left(g\left(f\left(x_0\right)\right)\right)}              
 	\end{tikzcd}
 \end{center}
-Sapendo che $f\circ g\sim Id_Y$, possiamo dimostrare in modo analogo (usando come punto base $f\left(x_0\right)\in Y$) che $\tilde{f}_\ast\circ g_\ast=\left(\tilde{f}\circ g\right)$ è isomorfismo di gruppi.\\
+Sapendo che $f\circ g\sim Id_Y$, possiamo dimostrare in modo analogo (usando come punto base $f\left(x_0\right)\in Y$) che $\widetilde{f}_\ast\circ g_\ast=\left(\widetilde{f}\circ g\right)$ è isomorfismo di gruppi.\\
 Applicando il ragionamento insiemistico ricordato in precedenza (pag. \pageref{biettivitàinsiemi}) segue che $f_{\ast}$ è un omomorfismo biettivo, cioè un isomorfismo.
 \end{demonstration}
 \begin{corollary}

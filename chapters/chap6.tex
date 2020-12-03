@@ -66,19 +66,19 @@ Sia $X$ \textit{a base numerabile}. Allora ogni ricoprimento aperto di $X$ ammet
 Sia $\mathcal{A}$ un ricoprimento aperto di $X$, $\basis$ una base numerabile per $X$ e $x\in X$. Allora $\exists U_x\in\mathcal{A}$ tale che $x\in U_x$. Essendo $\basis$ base, $\exists B_x\in\basis$ tale che $x\in B_x\subseteq U_x$.\\
 Abbiamo così determinato un sottoinsieme numerabile della base $\basis$:
 \begin{equation*}
-\tilde{\basis}\coloneqq\left\{B_x\mid x\in X\right\}
+\widetilde{\basis}\coloneqq\left\{B_x\mid x\in X\right\}
 \end{equation*}
 Allora esiste in particolare $E\subseteq X$ numerabile tale che:
 \begin{equation*}
-\tilde{\basis}\coloneqq\left\{B_x\mid x\in E\right\}
+\widetilde{\basis}\coloneqq\left\{B_x\mid x\in E\right\}
 \end{equation*}
-Se consideriamo ora $\tilde{\mathcal{A}}\coloneqq\left\{U_x\mid x\in E\right\}$, notiamo che:
+Se consideriamo ora $\widetilde{\mathcal{A}}\coloneqq\left\{U_x\mid x\in E\right\}$, notiamo che:
 \begin{itemize}
-	\item $\tilde{A}\subseteq A$.
-	\item $\tilde{A}$ è numerabile perché lo è $E$.
-	\item $X=\union_{B_x\in\tilde{\basis}}B_x=\union_{x\in E}B_x\subseteq \union_{x\in E}U_x $.
+	\item $\widetilde{A}\subseteq A$.
+	\item $\widetilde{A}$ è numerabile perché lo è $E$.
+	\item $X=\union_{B_x\in\widetilde{\basis}}B_x=\union_{x\in E}B_x\subseteq \union_{x\in E}U_x $.
 \end{itemize}
-Segue che $\tilde{\mathcal{A}}$ è un sottoricoprimento numerabile di $A$.
+Segue che $\widetilde{\mathcal{A}}$ è un sottoricoprimento numerabile di $A$.
 \end{demonstration}
 \begin{define}
 Uno spazio topologico $X$ si dice \textbf{separabile}\index{spazio topologico!separabile} se contiene un sottoinsieme $E$ \textit{denso} e \textit{numerabile}.
@@ -160,17 +160,17 @@ Mostriamo $\basis$ è base per una topologia, è separabile, primo-numerabile ma
 \begin{equation*}
 \left[a,\ a+\frac{1}{n}\right)\subseteq\left[a,\ b\right)\subseteq U
 \end{equation*}
-\item \textit{Non a base numerabile}: presa una base $\tilde{\basis}$ per $X$, mostriamo che non è numerabile. Sia $x\in\realset$. Allora:
+\item \textit{Non a base numerabile}: presa una base $\widetilde{\basis}$ per $X$, mostriamo che non è numerabile. Sia $x\in\realset$. Allora:
 \begin{equation*}
 \left[x,\ \infty\right)=\union_{y>x}\left[x,\ y\right)
 \end{equation*}
-È aperto. In particolare, esiste un aperto dipendente dal punto $x$, cioè $U\left(x\right)=\left[x,\ b\right)\in\tilde{\basis}$ (per un certo $b>x$) per cui $x\in U\left(x\right)\subseteq\left[x,\ \infty\right)$.\\
+È aperto. In particolare, esiste un aperto dipendente dal punto $x$, cioè $U\left(x\right)=\left[x,\ b\right)\in\widetilde{\basis}$ (per un certo $b>x$) per cui $x\in U\left(x\right)\subseteq\left[x,\ \infty\right)$.\\
 Notiamo che se $x\neq y$, allora $U\left(x\right)\neq U\left(y\right)$: preso $y>x$, segue che $x\notin \left[y,\ \infty\right)\supseteq U\left(y\right)\implies x\notin U\left(y\right)\implies U\left(x\right)\neq U\left(y\right)$. L'applicazione:
 \begin{equation}
-\funztot{\ }{\realset}{\tilde{\basis}}{x}{U\left(x\right)}
+\funztot{\ }{\realset}{\widetilde{\basis}}{x}{U\left(x\right)}
 \end{equation}
 \end{itemize}
-è iniettiva, dunque $\tilde{\basis}$ non è in iniezione con i naturali e pertanto $\tilde{\basis}$ \textit{non} è numerabile.
+è iniettiva, dunque $\widetilde{\basis}$ non è in iniezione con i naturali e pertanto $\widetilde{\basis}$ \textit{non} è numerabile.
 \end{example}
 \begin{center}
 	\begin{tikzcd}
@@ -312,14 +312,14 @@ Sia $X$ \textit{primo-numerabile}, $\left\{a_n\right\}$ successione in $X$ e $p\
 	$\impliesdx$ Vale per $\textcolor{red}{\circled{\ast}}$.\\
 	$\impliessx$ Sia $\left\{U_m\right\}_{m\in\naturalset}$ sistema fondamentale di intorni di $p$ numerabile per ipotesi ($X$ primo-numerabile). Consideriamo i seguenti insiemi:
 	\begin{equation*}
-	\tilde{U}_m\coloneqq U_1\cap\ldots U_m\quad \forall m\in \naturalset
+	\widetilde{U}_m\coloneqq U_1\cap\ldots U_m\quad \forall m\in \naturalset
 	\end{equation*}
 \begin{itemize}
-	\item $\tilde{U}_m$ è intorno di $p$, in quanto intersezione \textit{finita} di intorni di $p$.
-	\item $\tilde{U}_m=U_1\cap\ldots U_m\supseteq U_1\cap\ldots U_m\cap U_{m+1}=\tilde{U}_{m+1}$.
+	\item $\widetilde{U}_m$ è intorno di $p$, in quanto intersezione \textit{finita} di intorni di $p$.
+	\item $\widetilde{U}_m=U_1\cap\ldots U_m\supseteq U_1\cap\ldots U_m\cap U_{m+1}=\widetilde{U}_{m+1}$.
 \end{itemize}
-Segue che $\left\{\tilde{U}_m\right\}$ è ancora un sistema fondamentale di intorni (numerabile) di $p$, infatti, se $V$ è intorno di $p$, $\exists m\ \colon V\supseteq U_m\supseteq \tilde{U}_m$.\\
-A meno di sostituire $U_m$ con $\tilde{U}_m$, possiamo supporre che $U_1\supseteq U_2\supseteq U_3\supseteq \ldots$.\\
+Segue che $\left\{\widetilde{U}_m\right\}$ è ancora un sistema fondamentale di intorni (numerabile) di $p$, infatti, se $V$ è intorno di $p$, $\exists m\ \colon V\supseteq U_m\supseteq \widetilde{U}_m$.\\
+A meno di sostituire $U_m$ con $\widetilde{U}_m$, possiamo supporre che $U_1\supseteq U_2\supseteq U_3\supseteq \ldots$.\\
 Costruiamo una sottosuccessione di $\left\{a_n\right\}$ convergente a $p$. Sicuramente:
 \begin{itemize}
 	\item $\exists k\left(1\right)\in \naturalset\ \colon a_{k\left(1\right)}\in U_1$.
@@ -433,10 +433,10 @@ $\impliessx$ Vale per il lemma \ref{primonumesucc}, pag. \pageref{primonumesucc}
 \begin{demonstration}
 Sappiamo già che $2)\iff 3)$ e $1)\implies 2)$ dal lemma precedente. Dobbiamo dimostrare $2)\implies 1)$. Dimostriamo per contronominale ($\neg 1)\implies \neg 2)$): se $X$ \textit{non} è compatto, allora $X$ non è compatto per successioni, cioè esiste una sottosuccessione in $X$ che \textit{non} ha alcuna sottosuccessione convergente.\\
 \begin{itemize}
-	\item $X$ \textit{non} compatto$\implies \exists \tilde{\mathcal{A}}$ ricoprimento aperto di $X$ che \textit{non} ha sottoricoprimenti finiti.
-	\item $X$ a \textit{base numerabile} $\implies\exists\mathcal{A}$ sottoricoprimento di $\tilde{\mathcal{A}}$ che sia numerabile.
+	\item $X$ \textit{non} compatto$\implies \exists \widetilde{\mathcal{A}}$ ricoprimento aperto di $X$ che \textit{non} ha sottoricoprimenti finiti.
+	\item $X$ a \textit{base numerabile} $\implies\exists\mathcal{A}$ sottoricoprimento di $\widetilde{\mathcal{A}}$ che sia numerabile.
 \end{itemize}
-Poiché ogni sottoricoprimento di $\mathcal{A}$ è anche un sottoricoprimento di $\tilde{\mathcal{A}}$, significa che $\mathcal{A}$ \textit{non} ha sottoricoprimenti finiti. Definiamo:
+Poiché ogni sottoricoprimento di $\mathcal{A}$ è anche un sottoricoprimento di $\widetilde{\mathcal{A}}$, significa che $\mathcal{A}$ \textit{non} ha sottoricoprimenti finiti. Definiamo:
 \begin{equation*}
 \mathcal{A}\coloneqq\left\{A_n\right\}_{n\in\naturalset}
 \end{equation*}

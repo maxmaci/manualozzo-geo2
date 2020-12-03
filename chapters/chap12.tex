@@ -218,7 +218,7 @@ Dove $A=\left(a_{ij}\right)$ è di dimensioni $t\times \left(n+1\right)$ a eleme
 	\end{array}\right)\\
 \textcolor{green}{\circled{\ast}}\begin{cases}
 	a_{1,0}x_0+\ldots+a_{1,n}x_n=0\\
-	\qquad\qquad\vdots\\
+	\vdots\\
 	a_{t,0}x_0+\ldots+a_{t,n}x_n=0\\
 \end{cases}
 \end{gather}
@@ -237,9 +237,9 @@ Posto dunque $t$ come il numero delle \textit{equazioni}, notiamo che:
 \end{equation*}
 \textit{Scartando} delle equazioni possiamo sempre ricondurci ad un sistema in cui $t=\rk A=\codim\proj{W}$.
 \begin{intuit}
-	Per facilitare la visualizzazione degli spazi proiettivi possiamo pensare allo spazio $\kamp^{n+1}$ come lo \textbf{spazio affine} $\mathcal{A}\left(\kamp^{n+1}\right)$ in cui sia fissato un punto $O$ come origine: in questo modo, le classi di $\proj[n]{\kamp}$ corrispondono alle \textit{rette affini passanti per} $O$ (identificate con le rette vettoriali di $\kamp^{n+1}$):
+	Per facilitare la visualizzazione degli spazi proiettivi possiamo pensare allo spazio $\kamp^{n+1}$ come lo \textbf{spazio affine} $\aff{\kamp^{n+1}}$ in cui sia fissato un punto $O$ come origine: in questo modo, le classi di $\proj[n]{\kamp}$ corrispondono alle \textit{rette affini passanti per} $O$ (identificate con le rette vettoriali di $\kamp^{n+1}$):
 	\begin{equation*}
-		\left(x_0\colon\ldots\colon x_n\right)\leftrightarrow\text{retta affine di }\mathcal{A}\left(\kamp^{n+1}\right)\text{formata dai punti }\left(tx_0,\ \ldots,\ tx_n\right)\text{ al variare di t}\in\realset
+		\left(x_0\colon\ldots\colon x_n\right)\leftrightarrow\text{retta affine di }\aff{\kamp^{n+1}}\text{formata dai punti }\left(tx_0,\ \ldots,\ tx_n\right)\text{ al variare di t}\in\realset
 	\end{equation*}
 	Approfondiremo formalmente la relazione tra gli spazi affini e gli spazi proiettivi più avanti, a pag. \ref{spaziaffini}.
 \end{intuit}
@@ -254,18 +254,18 @@ Posto dunque $t$ come il numero delle \textit{equazioni}, notiamo che:
 				x_2=3x_0
 			\end{cases}$
 		\end{itemize}
-	\item Nel piano proiettivo reale $\proj[2]{\realset}$, le \textit{rette proiettive} vengono da \textit{piani vettoriali}, mentre nel modello affine di $\mathcal{A}\left(\realset^3\right)$ essi sono passanti per l'\textit{origine}; utilizzando la \textit{sfera unitaria} ai quali identifichiamo i punti antipodali in una relazione di equivalenza, la retta proiettiva si visualizza facilmente come l'\textit{intersezione} della sfera in un \textit{cerchio massimo}.\\
+	\item Nel piano proiettivo reale $\proj[2]{\realset}$, le \textit{rette proiettive} vengono da \textit{piani vettoriali}, mentre nel modello affine di $\aff{\realset^3}$ essi sono passanti per l'\textit{origine}; utilizzando la \textit{sfera unitaria} ai quali identifichiamo i punti antipodali in una relazione di equivalenza, la retta proiettiva si visualizza facilmente come l'\textit{intersezione} della sfera in un \textit{cerchio massimo}.\\
 	In questo modo, considerando la \textit{semisfera superiore}, la \textbf{proiezione} dell'intersezione su di essa sul disco unitario $D$ è la rappresentazione della retta proiettiva sul \textit{modello piano} ben noto. Dunque, guardando le rette proiettive nel \textit{modello piano}, se ne hanno di \textit{tre tipi}:
 	\begin{enumerate}
 		\item La \textit{retta} con equazione $z=0$, ovvero al piano $xy$ in $\realset^3$: sul modello piano corrisponde al \textbf{bordo del disco} $D$ (cioè $S^1$).
 		\item Le \textit{rette} con equazione $ax+by=0$, ovvero ai \textit{piani perpendicolari} in $\realset^3$ passanti per le rette con quell'equazione $ax+by=0$:  sul modello piano corrisponde a \textbf{diametri colleganti due punti} sul bordo.
 		\item Nel caso generale $ax+by+cz=0$, proiettando l'\textit{arco di cerchio massimo} viene un \textbf{arco di ellisse} in $D$.
 	\end{enumerate}
-	\item Riprendiamo l'esempio della retta proiettiva e vediamolo in $\realset^2$, sfruttando il modello affine. Le rette in $\mathcal{A}\left(\realset^2\right)$ possono anche essere scrivere in forma \textit{implicita}. In questo modo allora, si può vedere la retta proiettiva come:
+	\item Riprendiamo l'esempio della retta proiettiva e vediamolo in $\realset^2$, sfruttando il modello affine. Le rette in $\aff{\realset^2}$ possono anche essere scrivere in forma \textit{implicita}. In questo modo allora, si può vedere la retta proiettiva come:
 	\begin{equation*}
 		\proj[1]{\realset}=\left\{\text{rette } x_1=\lambda x_0\mid \lambda\in\realset\right\}\cup \left\{\text{retta } x_0=0\mid \lambda\in\realset\right\}
 	\end{equation*}
-	In questo modo, identifichiamo i punti $\left(a\colon b\right)$ (con $a\neq 0$), corrispondenti alla rette per l'origine generate dai vettori $\left(a,\ b\right)$ e dunque tale che $\lambda=\frac{b}{a}$, e il punto $\left(0\colon 1\right)$, corrispondente invece all'asse verticale di $\mathcal{A}\left(\realset^2\right)$.\\ Ne consegue che $\proj[1]{\realset}$ è in corrispondenza \textit{biunivoca} con la \textit{retta dei reali} $\realset$ unita ad un \textit{punto}: ogni punto definito dalla retta $x_1=\lambda x_0$ è in corrispondenza con $\lambda\in\realset$, mentre il punto $\left(0\colon 1\right)$ corrisponde all'infinito $\infty$ di $\realset$, dato che soddisferebbe l'equazione $1=\lambda 0$ con $\lambda=\infty$. In altre parole, possiamo scrivere $\proj[1]{\realset}$ come:
+	In questo modo, identifichiamo i punti $\left(a\colon b\right)$ (con $a\neq 0$), corrispondenti alla rette per l'origine generate dai vettori $\left(a,\ b\right)$ e dunque tale che $\lambda=\frac{b}{a}$, e il punto $\left(0\colon 1\right)$, corrispondente invece all'asse verticale di $\aff{\realset^2}$.\\ Ne consegue che $\proj[1]{\realset}$ è in corrispondenza \textit{biunivoca} con la \textit{retta dei reali} $\realset$ unita ad un \textit{punto}: ogni punto definito dalla retta $x_1=\lambda x_0$ è in corrispondenza con $\lambda\in\realset$, mentre il punto $\left(0\colon 1\right)$ corrisponde all'infinito $\infty$ di $\realset$, dato che soddisferebbe l'equazione $1=\lambda 0$ con $\lambda=\infty$. In altre parole, possiamo scrivere $\proj[1]{\realset}$ come:
 	\begin{equation*}
 		\proj[1]{\realset}=\realset\cup\left\{\infty\right\}
 	\end{equation*}
@@ -439,7 +439,7 @@ Il punto $P_i$ in $V$ avrà coordinate $\left(P_{0,i},\ \ldots,\ P_{n,i}\right)\
 \begin{equation}
 	\begin{cases}
 		x_0=\lambda_0 P_{0,0}+\lambda_1P_{0,1}+\ldots+\lambda_mP_{0,m}\\
-		\qquad\qquad \vdots\\
+		\vdots\\
 		x_n=\lambda_0 P_{n,0}+\lambda_1P_{n,1}+\ldots+\lambda_mP_{n,m}
 	\end{cases}
 \end{equation}
@@ -544,46 +544,46 @@ $e_0,\ \ldots,\ e_n$ è una base: per l'unicità della scrittura deve essere $\m
 	Un'applicazione $\funz{f}{\proj{V}}{\proj{V'}}$ tra spazi proiettivi si dice \textbf{trasformazione proiettiva}\index{trasformazione proiettiva} o \textbf{isomorfismo proiettivo}\seeonlyindex{isomorfismo!proiettivo}{trasformazione proiettiva} se $\exists \funz{\phi}{V}{V'}$ isomorfismo che induce un altro isomorfismo lineare:
 	\begin{equation}
 		\begin{tikzcd}
-			\tilde{\phi}\ \colon\\
+			\widetilde{\phi}\ \colon\\
 		\end{tikzcd}
 			\funztot{\ }{\proj{V}}{\proj{V'}}{\left[v\right]}{\left[\phi\left(v\right)\right]}
 	\end{equation}
-	Tale per cui $f=\tilde{\phi}$.\\
+	Tale per cui $f=\widetilde{\phi}$.\\
 	Se $V=V'$, diciamo che $f$ è una \textbf{proiettività}\index{proiettività} di $\proj{V}$.
 \end{define}
 \begin{demonstration}~{}
 	\begin{itemize}
-		\item $\tilde{\phi}$ \textbf{è ben definita}:
+		\item $\widetilde{\phi}$ \textbf{è ben definita}:
 		\begin{enumerate}
 			\item $\phi\left(v\right)\neq 0$ perché $v\neq 0$ e $\phi$ è iniettiva, pertanto $\ker\phi=\left\{0\right\}$ e dunque l'unico vettore mappato a $0$ tramite $\phi$ è solo $0$.
 			\item Se $\left[v\right]=\left[w\right]$, allora $w\sim v$, cioè $w=\lambda v$ con $\lambda\in\kamp\setminus\left\{0\right\}$; segue che per linearità di $\phi$ $\phi\left(w\right)=\lambda \left(v\right)\implies \left[\phi\left(w\right)\right]=\left[\phi\left(v\right)\right]$
 		\end{enumerate}
-		\item $\tilde{\phi}$ \textbf{è iniettiva}: se $\tilde{\phi}\left(\left[v\right]\right)=\tilde{\phi}\left(\left[w\right]\right)$, allora
+		\item $\widetilde{\phi}$ \textbf{è iniettiva}: se $\widetilde{\phi}\left(\left[v\right]\right)=\widetilde{\phi}\left(\left[w\right]\right)$, allora
 		\begin{equation*}
 			\left[\phi\left(v\right)\right]=\left[\phi\left(w\right)\right]\implies\exists\lambda\in\kamp\setminus\left\{0\right\}\ \colon\phi\left(w\right)=\lambda\phi\left(v\right)=\phi\left(\lambda v\right)
 		\end{equation*}
 	Poichè $\phi$ è iniettiva, segue che $w=\lambda v$ e dunque $\left[v\right]=\left[w\right]$.
-		\item $\tilde{\phi}$ \textbf{è suriettiva}: infatti, se $\left[w\right]\in\proj{V'}$, essendo $\phi$ suriettiva esiste un vettore $v$ tale che $w=\phi\left(v\right)$. Segue che $\left[w\right]=\left[\phi\left(v\right)\right]=\phi\left(\left[v\right]\right)$.
+		\item $\widetilde{\phi}$ \textbf{è suriettiva}: infatti, se $\left[w\right]\in\proj{V'}$, essendo $\phi$ suriettiva esiste un vettore $v$ tale che $w=\phi\left(v\right)$. Segue che $\left[w\right]=\left[\phi\left(v\right)\right]=\phi\left(\left[v\right]\right)$.
 	\end{itemize}
 \end{demonstration}
 Dato che spazi \textit{vettoriali} della \textit{stessa dimensione} sono sempre \textit{isomorfi}, due spazi \textit{proiettivi} della \textit{stessa dimensione} sono sempre \textit{isomorfi} e $\proj{V}$ è sempre isomorfo a $\proj[n]{\kamp}$, con $\dim V=n+1$.
 \begin{lemming}
 	Siano $\funz{\phi,\ \psi}{V}{V'}$ isomorfismi. Allora:
 	\begin{equation}
-		\tilde{\phi}=\tilde{\psi}\iff\exists\lambda\in\kamp\setminus\left\{0\right\}\ \colon\psi=\lambda\phi
+		\widetilde{\phi}=\widetilde{\psi}\iff\exists\lambda\in\kamp\setminus\left\{0\right\}\ \colon\psi=\lambda\phi
 	\end{equation}
 \vspace{-6mm}
 \end{lemming}
 \begin{demonstration}~{}\\
 $\impliessx$ Se $v\in\kamp\setminus\left\{0\right\}$, allora $\psi\left(v\right)=\lambda\psi\left(v\right)$. Segue:
 \begin{equation*}
-	\implies \tilde{\psi}\left(\left[v\right]\right)=\left[\psi\left(v\right)\right]=\left[\psi\left(v\right)\right]=\tilde{\psi}\left(\left[v\right]\right)
+	\implies \widetilde{\psi}\left(\left[v\right]\right)=\left[\psi\left(v\right)\right]=\left[\psi\left(v\right)\right]=\widetilde{\psi}\left(\left[v\right]\right)
 \end{equation*}
 $\impliesdx$ Sia $h\coloneqq \funz{\phi^{-1}\circ \psi}{V}{V}$ automorfismo. Vogliamo mostrare che $h=\lambda Id_V$ con $\lambda\in\kamp\setminus\left\{0\right\}$. Se $v\in V\setminus\left\{0\right\}$, abbiamo:
 \begin{equation*}
 	\begin{array}{c}
 \begin{array}{ccc}
-	\tilde{\phi}\left(\left[v\right]\right)&=&\psi\left(\left[v\right]\right)\\
+	\widetilde{\phi}\left(\left[v\right]\right)&=&\psi\left(\left[v\right]\right)\\
 	\shortparallel&&\shortparallel\\
 	\left[\phi\left(v\right)\right]&&\left[\psi\left(v\right)\right]
 \end{array}
@@ -613,8 +613,8 @@ Allora, $h=\lambda Id_{V}$ e pertanto $\phi=\lambda \psi$.
 	Consideriamo $\proj{V}$ e l'insieme delle proiettività $\funz{\ }{\proj{V}}{\proj{V}}$.
 	\begin{itemize}
 		\item La \textit{composizione} di proiettività è una \textit{proiettività} (banalmente \textit{indotta} dalla composizione delle applicazioni lineari).
-		\item Poichè $Id_{\proj{V}}=\tilde{Id_V}\implies$ L'identità $Id_{\proj{V}}$ è una \textit{proiettività}.
-		\item Se $\tilde{\phi}\! \funz{\! }{\proj{V}}{\proj{V}}$, allora $\tilde{\phi^{-1}}=\funz{f^{-1}}{\proj{V}}{\proj{V}}$. In altre parole, l'\textit{inversa} di una proiettività è ancora una proiettività.
+		\item Poichè $Id_{\proj{V}}=\widetilde{Id_V}\implies$ L'identità $Id_{\proj{V}}$ è una \textit{proiettività}.
+		\item Se $\widetilde{\phi}\! \funz{\! }{\proj{V}}{\proj{V}}$, allora $\widetilde{\phi^{-1}}=\funz{f^{-1}}{\proj{V}}{\proj{V}}$. In altre parole, l'\textit{inversa} di una proiettività è ancora una proiettività.
 	\end{itemize}
 L'insieme delle proiettività risulta un \textbf{gruppo} rispetto alla \textit{composizione}.
 \end{observe}
@@ -628,11 +628,11 @@ Consideriamo gli isomorfismi $\funz{\ }{\kamp^{n+1}}{\kamp^{n+1}}$: sappiamo che
 \end{equation*}
 E con il gruppo lineare proiettivo si può fare? Consideriamo:
 \begin{equation}
-	\funztot{\varphi}{\gl\left(n+1,\ \kamp\right)}{\projgl[n+1]{\kamp}}{\phi_A}{\tilde{\phi}_A}
+	\funztot{\varphi}{\gl\left(n+1,\ \kamp\right)}{\projgl[n+1]{\kamp}}{\phi_A}{\widetilde{\phi}_A}
 \end{equation}
  $\phi$ è \textit{omomorfismo} di gruppi \textit{suriettivo}, ma non iniettivo. Infatti, il nucleo non è \textit{triviale}:
  \begin{equation*}
- 	\ker \varphi=\left\{\phi_A\mid \phi_A=Id_{\proj[n]{\kamp}}=\tilde{Id}_{\kamp^{n+1}}\right\}=\left\{\phi_A\mid \phi=\lambda I,\ \lambda\in\kamp\setminus\left\{0\right\}\right\}=\left\{\phi_A\mid A=\lambda I,\ \lambda\in\kamp\setminus\left\{0\right\}\right\}
+ 	\ker \varphi=\left\{\phi_A\mid \phi_A=Id_{\proj[n]{\kamp}}=\widetilde{Id}_{\kamp^{n+1}}\right\}=\left\{\phi_A\mid \phi=\lambda I,\ \lambda\in\kamp\setminus\left\{0\right\}\right\}=\left\{\phi_A\mid A=\lambda I,\ \lambda\in\kamp\setminus\left\{0\right\}\right\}
  \end{equation*}
 Tuttavia, possiamo per il Teorema dell'isomorfismo per i gruppi considerare il seguente diagramma commutativo:
 \[\begin{tikzcd}
@@ -656,7 +656,7 @@ Si può anche considerare l'isomorfismo tra $\left\{\lambda I\mid\lambda\in\kamp
 	\begin{equation*}
 		\funztot{f}{\proj[1]{\realset}}{\proj[1]{\realset}}{\left(x_0\colon x_1\right)}{\left(ax_0+bx_1\colon cx_0+dx_1\right)}
 	\end{equation*}
-	Considerato il gruppo lineare proiettivo $\proj[2]{\realset}=\frac{\gl\left(2,\ \realset\right)}{\left\{\lambda I\right\}}$, per definizione di $f$ si ha $f=\tilde{\phi}$. In particolare, la matrice associata a $\phi$ è:
+	Considerato il gruppo lineare proiettivo $\proj[2]{\realset}=\frac{\gl\left(2,\ \realset\right)}{\left\{\lambda I\right\}}$, per definizione di $f$ si ha $f=\widetilde{\phi}$. In particolare, la matrice associata a $\phi$ è:
 	\begin{equation*}
 		A=\left(\begin{array}{cc}
 			a & b\\
@@ -682,9 +682,9 @@ Si può anche considerare l'isomorfismo tra $\left\{\lambda I\mid\lambda\in\kamp
 \subsection{Proprietà delle trasformazioni proiettive}
 % cercare un titolo più consono
 \begin{observe}
-	Se $f$ è una proiettività di $\proj{V}$ e $S\subseteq \proj{V}$ un sottospazio proiettivo, allora $f\left(S\right)$ è ancora un sottospazio proiettivo della stessa dimensione di $S$. Se $S=\proj{W}$ e consideriamo per definizione $f=\tilde{\phi}$ con $\funz{\phi}{V}{V}$, allora:
+	Se $f$ è una proiettività di $\proj{V}$ e $S\subseteq \proj{V}$ un sottospazio proiettivo, allora $f\left(S\right)$ è ancora un sottospazio proiettivo della stessa dimensione di $S$. Se $S=\proj{W}$ e consideriamo per definizione $f=\widetilde{\phi}$ con $\funz{\phi}{V}{V}$, allora:
 	\begin{equation*}
-		\forall \left[v\right]\in S\ f\left(\left[v\right]\right)=\tilde{\phi}\left(\left[v\right]\right)=\left[\phi\left(v\right)\right],\ \phi\left(v\right)\in W
+		\forall \left[v\right]\in S\ f\left(\left[v\right]\right)=\widetilde{\phi}\left(\left[v\right]\right)=\left[\phi\left(v\right)\right],\ \phi\left(v\right)\in W
 	\end{equation*}
 	\begin{equation}
 		f\left(S\right)=\proj{\phi\left(W\right)}
@@ -732,11 +732,11 @@ In particolare: se una proiettività fissa $n+2$ punti in posizione generale, al
 		\phi\left(v_{n+1}\right)=\phi\left(v_0+\ldots+v_n\right)=\phi\left(v_0\right)+\ldots+\phi\left(v_n\right)=w_0+\ldots+w_n=w_{n+1}
 	\end{equation*}
 Poiché $\im \phi$ contiene una base per costruzione, $\phi$ è suriettiva. In particolare, essendo endomorfismo ($\dim V=\dim V'$), $\phi$ è anche \textit{isomorfismo}.\\
-Allora $f\coloneqq\tilde{\phi}\funz{\ }{\proj{V}}{\proj{V'}}$ è una \textit{trasformazione proiettiva} e:
+Allora $f\coloneqq\widetilde{\phi}\funz{\ }{\proj{V}}{\proj{V'}}$ è una \textit{trasformazione proiettiva} e:
 \begin{equation*}
 	f\left(P_i\right)=f\left(\left[v_i\right]\right)=\left[\phi\left(v_i\right)\right]=\left(w_i\right)=Q_i\ \forall i=0,\ \ldots,\ n+1
 \end{equation*}
-\item \textbf{Unicità}: sia $\funz{g}{\proj{V}}{\proj{V'}}$ un'altra trasformazione proiettiva tale che $g\left(P_i\right)=Q_i\ \forall i=0,\ \ldots,\ n+1$. Per definizione, esiste $\funz{\psi}{V}{V'}$ isomorfismo per cui $g=\tilde{\psi}$ e:
+\item \textbf{Unicità}: sia $\funz{g}{\proj{V}}{\proj{V'}}$ un'altra trasformazione proiettiva tale che $g\left(P_i\right)=Q_i\ \forall i=0,\ \ldots,\ n+1$. Per definizione, esiste $\funz{\psi}{V}{V'}$ isomorfismo per cui $g=\widetilde{\psi}$ e:
 \begin{equation*}
 	\left[\psi\left(v_i\right)\right]=\left[w_i\right]\ \forall i
 \end{equation*}
@@ -755,7 +755,7 @@ Poiché $w_0,\ \ldots,\ w_n$ è base, la scrittura è unica. Segue che $a_0=a_1=
 	\begin{array}{l}
 		\psi\left(v_i\right)=aw_i=a\phi\left(v_i\right)\\
 		\implies \psi=a\phi\\
-		\implies g=\tilde{\psi}=\tilde{\phi}=f
+		\implies g=\widetilde{\psi}=\widetilde{\phi}=f
 	\end{array}
 \end{equation*}
 	\end{itemize}
@@ -772,7 +772,7 @@ Poiché $w_0,\ \ldots,\ w_n$ è base, la scrittura è unica. Segue che $a_0=a_1=
 	Se invece $A$ e $B$ contengono $3$ punti, se i $3$ punti in $A$ \textit{sono allineati} mentre i $3$ punti in $B$ \textit{non} lo sono, allora $A$ e $B$ \textit{non} sono proiettivamente equivalenti.
 \end{example}
 \subsection{Trasformazioni proiettive in coordinate}
-Supponiamo di avere fissato dei \textit{riferimenti proiettivi} su $\proj{V}$ e $\proj{V'}$, dati da delle basi $\basis$ di $V$ e $\basis'$ di $V'$, e sia $\funz{f}{\proj{V}}{\proj{V}}$ una trasformazione proiettiva. Sappiamo che $f=\tilde{\phi}$ con $\funz{\phi}{V}{V'}$ isomorfismo lineare.\\
+Supponiamo di avere fissato dei \textit{riferimenti proiettivi} su $\proj{V}$ e $\proj{V'}$, dati da delle basi $\basis$ di $V$ e $\basis'$ di $V'$, e sia $\funz{f}{\proj{V}}{\proj{V}}$ una trasformazione proiettiva. Sappiamo che $f=\widetilde{\phi}$ con $\funz{\phi}{V}{V'}$ isomorfismo lineare.\\
 Sia $A\in\gl\left(n+1,\ \kamp\right)$ la matrice associata a $\phi$ rispetto alle basi $\basis$ e $\basis'$. Abbiamo visto che $\phi$ è determinata solo a meno di multipli: chiaramente, lo stesso è vero anche per $A$.\\
 Siano allora:
 \begin{gather*}
@@ -792,6 +792,56 @@ Con $x$ in coordinate rispetto alla base $\basis$ e $x'$ in coordinate rispetto 
 \end{equation*}
 Esiste $\rho\in\kamp\setminus\left\{0\right\}$ tale che $\rho x'=M x$.
 \end{observe}
+\subsection{Punti fissi di proiettività}
+\begin{define}
+	Sia $\funz{f}{\proj{V}}{\proj{V}}$ una proiettività. Un \textbf{punto fisso}\index{punto!fisso} è un punto $P\in\proj{V}$ tale che:
+	\begin{equation}
+		f\left(P\right)=P
+	\end{equation}
+\vspace{-6mm}
+\end{define}
+Sia $\funz{\phi}{V}{V}$ un \textit{automorfismo} tale che $f=\widetilde{\phi}$, e sia $P=\left[v\right]$, con $v\in V\setminus\left\{0\right\}$. Allora:
+\begin{equation*}
+	\begin{array}{ll}
+		& f\left(P\right)=\left[\phi\left(v\right)\right]=\left[v\right]\\
+		\iff & \exists\lambda\in\kamp\setminus\left\{0\right\}\ \colon \phi\left(v\right)=\lambda v\\
+		\iff & v\text{ è un autovettore per }\phi
+	\end{array}
+\end{equation*}
+In particolare, $\phi$ è invertibile, dunque \textit{non} ha l'autovettore \textit{nullo}. Segue che i punti fissi di $f$ sono tutti e soli i punti $\left[v\right]$ con $v$ autovettore di $\phi$.
+\begin{observe}~{}
+	\begin{enumerate}
+		\item Se $\kamp=\complexset$, allora ogni proiettività ha almeno un punto fisso, dato che $\phi$ ha sempre almeno un autovettore.
+		\item Se $\kamp=\realset$ e $\dim\proj{V}=n$, allora $\dim V=n+1$. Il \textit{polinomio caratteristico} $C_\phi\left(t\right)\in\realset\left[t\right]$ ha grado $n+1$. Se $n$ è \textit{pari}, $\phi$ ha almeno un autovalore, dato che il polinomio caratteristico ha grado $n+1$ \textit{dispari}: infatti, o è di grado \textit{uno} (e quindi ha banalmente soluzione) oppure, in quanto si può decomporre in fattori a coefficienti reali al più di grado \textit{due}, ammetterà \textit{sempre} almeno un fattore di grado \textit{uno}.
+		\item Portiamo un controesempio al caso $n$ dispari. Sia $\funztot{f}{\proj{\realset}}{\proj{\realset}}{\left(x\colon y\right)}{\left(-y\colon x\right)}$. La matrice $A$ associata a $f$ è:
+		\begin{equation*}
+			A=\left(\begin{array}{cc}
+				0 & -1 \\ 
+				1 & 0
+			\end{array}\right)
+		\end{equation*}
+	Il polinomio caratteristico \textit{non} ha radici \textit{reali}:
+	\begin{equation*}
+		C_A\left(t\right)=\det\left(\begin{array}{cc}
+			-t & -1 \\ 
+			1 & -t
+		\end{array}\right)=t^2-1
+	\end{equation*}
+Segue che $A$ non ha autovettori reali e pertanto $f$ \textit{non} ha punti fissi.
+\item In generale, l'\textit{insieme} dei punti fissi di $\funz{f}{\proj{V}}{\proj{V}}$ è dato da:
+\begin{equation*}
+	\left\{\proj{V_{\lambda}}\mid\lambda\text{ autovalore di }\phi\right\}
+\end{equation*}
+Questo è un insieme di sottospazi proiettivi a 2 a 2 disgiunti.
+ 	\end{enumerate}
+\end{observe}
+\begin{define}
+	Se $S\subseteq\proj{V}$ è un sottospazio, diciamo che $S$ è \textbf{fisso} per $f$ proiettività se:
+		\begin{equation}
+		f\left(S\right)=S
+	\end{equation}
+	\vspace{-6mm}
+\end{define}
 \subsection{Impratichiamoci! Trasformazioni proiettive}
 \begin{exercise}
 	In $\proj[1]{\realset}$ determinare la proiettività $f$ tale che:
@@ -866,8 +916,100 @@ A meno di multipli, $A=\left(\begin{array}{cc}
 	\funztot{f}{\proj[1]{\realset}}{\proj[1]{\realset}}{\left(x_0\colon x_1\right)}{\left(2x_0-x_1\colon x_0+x_1\right)}
 \end{equation*}
 \end{solution}
-
-
+\section{Geometria affine e geometria proiettiva}
+Abbiamo già accennato all'esistenza di una relazione che intercorre fra \textit{geometria affine} e \textit{geometria proiettiva}. Diamo innanzitutto qualche richiamo dei concetti della geometria affine.
+\begin{define}
+	Sia $V$ uno spazio vettoriale di dimensione finita su un campo $\kamp$. Uno \textbf{spazio affine}\index{spazio!affine} di dimensione $n$ su $V$ (con spazio vettoriale associato $V$ di dimensione $n$ ) è un insieme $\aff{V}$ non vuoto di \textit{punti} (elementi) tale che sia data un'applicazione:
+	\begin{equation*}
+		\funztot{\ }{\aff{V}\times\aff{V} }{V}{\left(P,\ Q\right)}{\overrightarrow{PQ}}
+	\end{equation*}
+	Che alla coppia di punti $\left(P,\ Q\right)$ associa il vettore di $V$ con punto iniziale $P$ e punto finale $Q$ e tale che siano
+	soddisfatti i seguenti assiomi:
+	\begin{enumerate}
+		\item $\forall P\in\aff{V},\ \forall v\in V$ esiste un unico punto $Q\in\aff{V}$ tale che $\overrightarrow{PQ}=v$.
+		\item $\forall P,\ Q,\ R\in\aff{V}$ terna di punti di $\aff{V}$ si ha $\overrightarrow{PQ}+\overrightarrow{QR}=\overrightarrow{PR}$.
+	\end{enumerate}
+\end{define}
+\begin{define}
+	Un \textbf{riferimento affine}\index{riferimento!affine} $\mathcal{R} = (O,\  e_1,\  e_2,\ \ldots,\  e_n)$ sullo spazio $\aff{V}$ è assegnato fissando un punto $O\in \aff{V}$ detta \textbf{origine}\index{origine!affine} ed una base $\basis = (e_1,\  e_2,\ \ldots,\  e_n)$ di $V$. Dunque, per ogni $P\in \aff{V}$ si ha la $n$-upla $(x_1,\  x_2,\ \ldots,\  x_n)$ dette \textit{coordinate affini}\index{coordinate!affini} del punto $P\in\aff{V}$ (uniche per riferimento affine fissato) tale per cui:
+	\begin{equation}
+		P=\overrightarrow{OV}=x_1e_1+\ldots+x_ne_n
+	\end{equation}
+\end{define}
+Per i nostri scopi, parleremo spesso degli spazi affini di dimensione $n$ su $\kamp$.
+\begin{define}
+	Un'\textbf{affinità}\index{affinità} o \textbf{trasformazione lineare affine}\seeonlyindex{trasformazione lineare affine}{affinità} di $\aff{\kamp^n}$ è un'applicazione:
+	\begin{equation}
+		\funz{\phi}{\aff{\kamp^n}}{\aff{\kamp^n}}
+	\end{equation}
+Della forma $\phi\left(x\right)=Ax+b$ con $A\in\gl\left(n,\ \kamp\right)$ un'applicazione lineare invertibile e $b$ una \textit{traslazione}.
+\end{define}
+\begin{define}
+	Un \textbf{sottospazio affine}\index{sottospazio!affine} di $\aff{\kamp^n}$ è un \textit{traslato} di un sottospazio vettoriale $W\subseteq \kamp^n$:
+	\begin{equation}
+		S=W+x_0=\left\{w+x_0\mid w\in W,\ x_0\in\aff{W}\right\}
+	\end{equation}
+\end{define}
+\begin{observe}~{}
+	\begin{itemize}
+		\item $W$ è l'unico traslato di $S$ per l'origine ($x_0=O$) e si dice \textbf{sottospazio direttore}  di $S$\index{sottospazio!direttore}, cioè ne dà appunto la \textit{direzione}. Si definisce $\dim S\coloneqq\dim W$.
+		\item Un punto in $\aff{\kamp^n}$ è un sottospazio affine di dimensione $0$ ($W=\left\{0\right\}$; dopotutto non ha particolarmente senso parlare di direzione del punto).
+		\item Una \textbf{retta affine}\index{retta!affine} $r$ in $\aff{\kamp^n}$ è un sottospazio affine di $\dim 1$: $W=\lin{v}$, cioè $r$ si può individuare assegnando un punto $P\in r$ e un qualsiasi vettore $v$ \textit{parallelo} alla retta $r$.
+		\item Un \textbf{piano affine}\index{piano!affine} $\pi$ in $\aff{\kamp^n}$ è un sottospazio affine di $\dim 2$: $W=\lin{v,\ w}$, cioè $\pi$ si può individuare assegnando un punto $P\in r$ e una coppia di vettori l.i. \textit{paralleli} al piano $\pi$.
+		\item Un \textbf{iperpiano affine}\index{iperpiano!affine} è un sottospazio di dimensione $n+1$.
+		\item Due sottospazi affini della stessa dimensione si dicono \textbf{paralleli}\index{parallelo} se hanno lo \textit{stesso} sottospazio direttore.
+	\end{itemize}
+\end{observe}
+\begin{example}
+Consideriamo $r=W+x_0$ retta affine, che ha dunque $\dim r=\dim W=1$. $W$ è la retta vettoriale in $\kamp^n$, mentre un qualunque $v\in W\setminus\left\{0\right\}$ è la \textit{direzione} della retta.
+\end{example}
+Un sottospazio affine $S\subseteq \kamp^n$ può essere descritti con equazioni cartesiane oppure in forma parametrica.\\
+	\textbf{Equazioni cartesiane}. $S$ è visto come l'insieme delle \textit{soluzioni} del seguente sistema lineare:
+	\begin{equation}
+		Ax=b\qquad\left(\begin{array}{c}
+			x_1\\
+			\vdots\\
+			x_n
+		\end{array}\right)\in\aff{\kamp^{n}}
+	\end{equation}
+Con $b$ che descrive la traslazione dovuta a $x_0\in\aff{W}$.
+In tal caso $W$ è il sottospazio vettoriale delle soluzioni del sistema lineare omogeneo associato:
+\begin{equation}
+	Ax=0
+\end{equation}
+\textbf{Forma parametrica}. Supponiamo $\dim S=\dim W=m$. Siano $v_1,\ \ldots,\ v_m\in\kamp^n$ i vettori di una base di $W$; rispetto ad una base di $\kamp^n$, e dunque rispetto ad un sistema di riferimento affine con origine $O$, essi sono espressi nelle componenti:
+\begin{equation*}
+	v_i=\left(v_{i,1},\ \ldots,\ v_{i,n}\right)\in\aff{\kamp^n}
+\end{equation*}
+Consideriamo $S=W+c$, con il punto $c=\left(c_1,\ \ldots,\ c_n\right)$ rispetto allo stesso sistema affine di prima.\\
+I punti $x$ di $S$ in forma parametrica sono dati da:
+\begin{equation}
+	x=t_1v_1+\ldots+t_mv_m+c\quad t_1,\ \ldots,\ t_m\in\kamp
+\end{equation}
+Da cui otteniamo il sistema $n\times\left(m+1\right)$ seguente:
+\begin{equation}
+	\begin{cases}
+		\begin{array}{l}
+			x_1=t_1v_{1,1}+\ldots+t_mv_{m,1}+c_1\\
+			\vdots\\
+			x_n=t_1v_{1,n}+\ldots+t_mv_{m,n}+c_n\\			
+		\end{array}
+	\end{cases}
+\end{equation}
+\begin{example}
+	La retta $r$ ($\dim W=1$) passante per $c$ con direzione $v$ è descritto parametricamente da:
+\begin{equation*}
+	\begin{cases}
+		\begin{array}{l}
+			x_1=tv_1+c_1\\
+			\vdots\\
+			x_n=tv_n+c_n			
+		\end{array}
+	\end{cases}
+\end{equation*}	
+\end{example}
+\section{LEZIONI 31, 32 - DIRETTA}
+\begin{comment}
 %LEZ 31 
 Vediamo un esempio di proiettività di $\proj[1]{\ }$.
 \begin{example}
@@ -878,8 +1020,7 @@ Vediamo un esempio di proiettività di $\proj[1]{\ }$.
 
 	Sia $t=\frac{x_1}{x_0}$ la coordinata affine su $\kamp$, tutti i punti $x_o x_1$ si possono scrivere come $(x_0\colon x_1)=\left( 1\colon \frac{x_1}{x_0} \right)=(1\colon t)$, il che corrisponde al punto $t$ 
 	della retta affine k. Se si scrive l'immagine $f(x_0\colon x_1)=$ sfruttando l'oss appena fatta divido per la prima coordinata, ottenendo un termine per cui raccogliendo $x_0$ viene $\frac$, ovvero come   Dunque la proiettività $f$ corrisponde alla trasformazione $\funz F {\camp\cup \{\infty\}} {\camp\cup \{\infty\}}$ con $F(t)=\begin{cases}
-		
-%		\end{cases}$
+				\end{cases}$
 %	a/b corrisponde al punto che va ad infinito  $(-b \colon a)$ è il punto trovato prima controimmagine del punto all'infinito. Per primo il caso generale
 %	Sono dette anche trasformazioni lineari fratte, mappa definita sulla retta affine tranne dove si annulla il denominatore. Quand'è che $F$ diventa un'affinità? Se e solo se il denominatore diventa una costante, ovvero della forma $F(t)=\alpha$, il che significa che la proiettività fiss il punto all''infinito, la parte affine in sè stessa e si restringe ad un'affinità.
 %	Si può vedere anche in dimensione superiore
@@ -900,7 +1041,7 @@ Vediamo un esempio di proiettività di $\proj[1]{\ }$.
 %Connesione, cpt, T_2, manca localmente euclideo
 %Per mostrarlo uso la stessa costruzione vista nell'ultima lezione: subset spazio proiettivo identificabili conkn. Voglio identificare degli aperti di pn con kn
 %Si comincia con la prima coordinata
-%CHiamiamo U_j i sottoinsiemi di pnc dove tolgo l'j esimo piano coordinato. Per semplicità poniamo j=0 e vale per tutti i j. Si considera il quoziente e voglio considerre la controimmagine. Esso è un aperto perché tolgo un iperpiano, dunque U_0 è aperto in pnc. Questo vale per tutti gli U_j. Poi ricordiamo che un'identificazion di U_0 con C^n con la mappa j. Sappiamo che j e \oldphi sono biunivoche e inverse. Guardandole dall'apetto topologico mostriamo che sono omeomorfismi, ovvero che sono continue (l'inversa è continua). Iniziamo da j, che si fattrizza come segue in C^{}  non prendo mai il vettore nullo perché la prima coordinata è 1. La proiezione è continua e anche \tilde{j} lo è, dunque la composizione è continua e j lo è. Invece per la continuità di \phi che è l'inversa si procede con la fattorizzazione con \pi^{-1}  \hat{\phi} ha le stesse coordinate di \phi. Notiamo che sono tutti vettori, non c'è il quoziente! Dall'altra parte invece c'è la restrizione di \pi alla controimmagindi di U_0 in U_0. Chiaramente \at{\phi} è continua: divido per norma diversa da 0, dunque sapremo dire che \phi è continua se   induco al quoziente una mapa continua. Osserviamo che p è un'identificazione: il quoziente \pi è anch'esso un quoziente da un'azione di gruppo (sempre vero per spazi proiettivi, vedasi esercizio già dato) per molitplicazione su C^n+1 meno 0, inoltre è un'azione per omeomorfismi, infatti fissato \lambda in c-0, l'applicazione theta_\lambda è continua (definizione di azione per omeomorfismi) l'applicazione per un elemento fissato è continua. Avevamo dimostrato che la proiezione è aperta (vedasi proprietà delle proiezioni) se il gruppo è finito è anche chiusa!. Dunque anche p restringendosi ad un perto è ancora un'applicazione aperta (verifica per esercizio) Quindi sicocme è aperta allroa è un'identificazione, allora tale diagramma ci dice che la mappa \oldphi è continua.
+%CHiamiamo U_j i sottoinsiemi di pnc dove tolgo l'j esimo piano coordinato. Per semplicità poniamo j=0 e vale per tutti i j. Si considera il quoziente e voglio considerre la controimmagine. Esso è un aperto perché tolgo un iperpiano, dunque U_0 è aperto in pnc. Questo vale per tutti gli U_j. Poi ricordiamo che un'identificazion di U_0 con C^n con la mappa j. Sappiamo che j e \oldphi sono biunivoche e inverse. Guardandole dall'apetto topologico mostriamo che sono omeomorfismi, ovvero che sono continue (l'inversa è continua). Iniziamo da j, che si fattrizza come segue in C^{}  non prendo mai il vettore nullo perché la prima coordinata è 1. La proiezione è continua e anche \widetilde{j} lo è, dunque la composizione è continua e j lo è. Invece per la continuità di \phi che è l'inversa si procede con la fattorizzazione con \pi^{-1}  \hat{\phi} ha le stesse coordinate di \phi. Notiamo che sono tutti vettori, non c'è il quoziente! Dall'altra parte invece c'è la restrizione di \pi alla controimmagindi di U_0 in U_0. Chiaramente \at{\phi} è continua: divido per norma diversa da 0, dunque sapremo dire che \phi è continua se   induco al quoziente una mapa continua. Osserviamo che p è un'identificazione: il quoziente \pi è anch'esso un quoziente da un'azione di gruppo (sempre vero per spazi proiettivi, vedasi esercizio già dato) per molitplicazione su C^n+1 meno 0, inoltre è un'azione per omeomorfismi, infatti fissato \lambda in c-0, l'applicazione theta_\lambda è continua (definizione di azione per omeomorfismi) l'applicazione per un elemento fissato è continua. Avevamo dimostrato che la proiezione è aperta (vedasi proprietà delle proiezioni) se il gruppo è finito è anche chiusa!. Dunque anche p restringendosi ad un perto è ancora un'applicazione aperta (verifica per esercizio) Quindi sicocme è aperta allroa è un'identificazione, allora tale diagramma ci dice che la mappa \oldphi è continua.
 %Riasusmendo, abbiamo dedotto che U_0 è un aperto di pn, che è omeomorfo a cn, dunque a r2n. Allo stesso modo lo si verifica per tutti i j grazie alle mappe \phi_j che divide per la j-esima coordinata
 %In più chiarmanet pn è l'unione di tali n+1 aperti: le coordinate omoegenee ce n'è sempre una diversa da0, dunque ogni punto sta almeno in uno di questi aerti, dunque pnc è loclamente euclideo di dimensione 2n
 %su un campo qualsiasi si ha sempre la mappa j    con kn senza aspetto topologio è sempre biunivoca. Nel cso reale rimane comuneuq vero 
@@ -979,179 +1120,182 @@ Vediamo un esempio di proiettività di $\proj[1]{\ }$.
 %manca la proprietà per cui è importante, si vedrà nella prossima lezione
 
 %LEZ 32
-Sia $\proj{\ }$ una retta proiettiva ed i punti $P_1, P_2, P_3, P_4$ con $P_1, P_2, P_3$ distinti, allora definisco $\beta(P_1, P_2, P_3)  \\\
-Quando una coppia di quattro punti è 
-Date due rette proiettive PV e PV' e P_1 in PV distinti e Q in PV' distinti, quindi esiste sempre ed è unica una trasformazione proiettiva tale che f(P_i)=Q_i
-Posso farlo anche con quattro punti? Posso usare il birapporto per vederlo!
-\begin{theorema}
+
+	Sia $\proj{\ }$ una retta proiettiva ed i punti $P_1, P_2, P_3, P_4$ con $P_1, P_2, P_3$ distinti, allora definisco $\beta(P_1, P_2, P_3)  \\\
+	Quando una coppia di quattro punti è 
+	Date due rette proiettive PV e PV' e P_1 in PV distinti e Q in PV' distinti, quindi esiste sempre ed è unica una trasformazione proiettiva tale che f(P_i)=Q_i
+	Posso farlo anche con quattro punti? Posso usare il birapporto per vederlo!
+	\begin{theorema}
 	Sia PV e PV' due rette proiettive e siano i punti di cui  i primi 3 distinti idem. Allora $\exists $ trasformazione proiettiva tale che f(P_i)=Q_i, \forall  \iff il birapporto di queste quaterne è lo stesso
-\end{theorema}
-PREMESSA PRIMA DELLA DIM DELL'EQUIVLENZA: si usa nella dimostazione
-consideriamo solo i primi 3 pt (scelgo rappresentanti) sia per PV sia per PV'
-base che dà rif proiettivo con i punti coordinati e punto unità
-scegliamo anche un rappresentante per P_4: v_4=. Allora in tale rif proiettivo è P_4=(a\colon b) e il birapporto è 
-Allo stesso modo si procede con Q_i, per cui 
-Siccome P_1, P_2, P_3 e Q_i sono in posizione generale, allora esiste ed è unica trasformazione proiettiva che porta f(P_1)=Q_i
-l'abbiamo costruita come indotta da un'applicazione lineare che porta la base v in quella di v'
-Cosa succede a v_4 tramite \phi fra V e V'?
-la trasf che porta i primi 3 esiste ed è unica, quindi manda p_4 dove deve. Scrivo dunque questa unica trasf fino a 3 e vediamo cosa susccede a P_4
-DIMOSTRAZIONE
-\impliesdx ddeve essere proprio la f nica, per cui   nel riferimento in cui, per cui il rapporto di Q_i è dato dal rapporto che è pari
-\impliessx se il birapporto dei Q_i=b/a  Distinguiamo i casi in cui il birapporto è in \kamp o è infinito     se a=0, allora Q_4 è il punto 0\colon 1 e coincide con f(P_4)
-il senso sta nel fatto che i primitre pt distinit la traasf exists !      stessa cosa che dre che i birapporti sono uguali
+	\end{theorema}
+	PREMESSA PRIMA DELLA DIM DELL'EQUIVLENZA: si usa nella dimostazione
+	consideriamo solo i primi 3 pt (scelgo rappresentanti) sia per PV sia per PV'
+	base che dà rif proiettivo con i punti coordinati e punto unità
+	scegliamo anche un rappresentante per P_4: v_4=. Allora in tale rif proiettivo è P_4=(a\colon b) e il birapporto è 
+	Allo stesso modo si procede con Q_i, per cui 
+	Siccome P_1, P_2, P_3 e Q_i sono in posizione generale, allora esiste ed è unica trasformazione proiettiva che porta f(P_1)=Q_i
+	l'abbiamo costruita come indotta da un'applicazione lineare che porta la base v in quella di v'
+	Cosa succede a v_4 tramite \phi fra V e V'?
+	la trasf che porta i primi 3 esiste ed è unica, quindi manda p_4 dove deve. Scrivo dunque questa unica trasf fino a 3 e vediamo cosa susccede a P_4
+	DIMOSTRAZIONE
+	\impliesdx ddeve essere proprio la f nica, per cui   nel riferimento in cui, per cui il rapporto di Q_i è dato dal rapporto che è pari
+	\impliessx se il birapporto dei Q_i=b/a  Distinguiamo i casi in cui il birapporto è in \kamp o è infinito     se a=0, allora Q_4 è il punto 0\colon 1 e coincide con f(P_4)
+	il senso sta nel fatto che i primitre pt distinit la traasf exists !      stessa cosa che dre che i birapporti sono uguali
+	
+	
+	In particolare per le proiettività esiste una proiettività che manda i p_i nei q_i se e solo se il birapporto dei P-i è pari al birapporto dei Q_i
+	OSS  
+	il birapporto misura l'equivalenza proiettiva su punti di una retta proiettiva
+	
+	
+	è una relazione di equivalenza su \mathcal{S}  (verifica per esercizio) e tramite il birapporto possiamo dire che il quoziente di S per l'equiv proj, ovvero le classi di equiv proj di 4 pt distinti e ordinati in P1 sono in corrispondenza biunivoca con K\0,1 tramite il birapporto:  ad ogni quat associo il birapport (associazione suriettiva, per ogni el nel campo trovo quaterna pt distini che dà bir   due quat equivalenti se e solo se ha lo stesso birapporto, dunque quozientando diventa iniettiva e dunque biunivoca)
+	Qundo ho 4 pt in sp proj di dimension maggiore di 1 in generlae il birapporto non è definito a meno che i punti non siano allineati su una retta proiettiva r
+	
+	
+	esempio di come si usa il bir di come si studia l'equiv proj di 4 pt in pP2
+	si considerano 2 quaterne di pt distinti: P_1, P_2, P_3, P_4 e 
+	di ciascuna delle due quaterne vedo in che posizione sono: pos generale: a tre a tre non  allineati
+	oppure se non sono in pos generale allora ce ne sono 3 allineati: fa differenza se il quarto punto sta nella retta o meno
+	terza possibilità: tutti e quattro i pt allineati
+	Nel secondo caso ci sono tutte le possibili permutazioni fra pt allineati
+	Se i pt P sono proj equiv ai pt Q, tail posizioni devono essere mantenute: le proiettività mandano rette in rette, pos gen in pos gen
+	se si verificano casi diversi per i pt P e Q si può dire che non sono proj equiv
+	Supponiamo di essere nel caso 1, ovvero P_i e Q_i in pos generale: sono proj equiv oppure no? pos gener esiste unica proj fra le due (siamo nel numero giusto n+2=4)
+	Caso 2: 3 allineati: la proj esiste ed è unica, ma non ci interessa l'unicità ora, basta che ce ne sia una (sono gli stessi 3 alineati con gli stessi indici) Sono proj equiv: mostriamolo con un conto: per costruire proj costruisco trasf kin inveritible: retta nella retta   sappiamo dal ris sulle trasf proj esiste sempre trasf proj che mappa i pt nei pt, soprattutto sappiamo scriverl. HìDà un'appl linneare in piani vettoriali: posso estenderla in trasf lin da un vettore che rappresent P_4 in Q_4.   Estendo in una proiettività di P2 che fa questo lavoro sostanzialmente
+	Scegliamo P_i=[v_i]  tali che  posso farlo perché sono allineati: allora    è una base di K3 perché sono indipendetni dato che v_4\not in r  Idem per Q
+	Definiziamo \phi sulla base lineare tale che  impongo le immagini dei rappresentanti, allora per la linearità di phi è rispettato anche 4. dunque la proj indotta da phi tilde è una proiettività che manda pi in qi
+	Caso 3: osservazione: pt allineati allora è definito il loro birapporto se i pt sono proj equiv allora chiamata f la proiettività che manda i 4 pt nei 4 pt allora necessariamente manda r in s, dunque la restrizione alle due rette è una trsformazione proj che potta pi in qi per ogni i. COsa possiamo dire sui due birapporti? Ho la dimostrazione di prima /pt proj equiv allora stesso birapport/Vale il viceeversa: allora dal teorema esiste g trasformazione proiettiva che manda pi in qi per ogni ima tae g si estende facilmente ad un proiettività di p2, in maniera non unica /esercizio/ le proj si costruiscono dalle app lin: r piano vett in k3 mentre g corriponde app line fra i due piani: estendo l'app lin ad automorfismo di k3 sceglienod basi che hnno 3 vettori nel piano ed uno fuori ed uso ilterzo vettore per estenderla
+	Dunqeu in questo caso i pt sono proj equiv sse hanno lo stesso birapporto BIrapporto utie anche in dimensione superiore se stanno su una rettaho così esteso l'app line per la trasf 
+	
+	
+	FINITO LE BASI DELLO SPAZIO PROIETTIVO
+	LUNEDì E MARTEDì VACANZA
+	
+	
+	
+	STUDIO DELLA GEOMETRIA DI RETTE O CURVE NEL PIANO PROIETTIVO
+	OGGI RETTE E UN PO' DI IPERPIANI
+	Una retta in P2 ha equazione z_0x_0+a_i   eq lin omo elle coo omogenee, dunque è determinata dai coefficienti a_0 a_1 e a_2 dell'eq con la proprietà che devono essere non tutti nulli e in più fissati i coeff l'eq non è univocamente determinata: è determinata a meno di costante molitplicativa non nulla. Dunque si può associare a r un punto del piano proiettivo dato esattamente dai coefficienti delle coordinate omogenee, per cui si ha una corrispondenza binivoca fra le rette in P2 e P"(che non va pensato come lo stessso piano)   funziona bene con p2: le coo omo si comportano proprio come i coeff dell'equazione
+	
+	ESEMPIO NEL CASO REALE
+	quando pensiamo a P2 d destra cpme lo spazio che parametrizza le rette in P2, lo denotiamo conP2* e lo chiamiamo piano proiettivo duale
+	in prima istanza questo significa semplicemente  interpretazione punto del duale visto come ppunto associato ad una retta
+	collgamento co lo spazio vettoriale duale        forma lineare
+	prima costruzione come corrispondenza
+	
+	un FASCIO  di rette in P2 è il set delle rette di equazione    con l_1 ed l_2 sono rette fissate
+	i coeff variano in P1
+	
+	esempio
+	
+	collezione delle rette la cui eq si ottiene come combinazione lineare delle due
+	è una famiglia di rette con lambda e mu come parametri
+	
+	
+	famiglia dir ette: ad ogni retta un punto del proj duale: a cosa corrisonde questa costruzione di prendere il fascio?  Il fascio F corrisponde alla retta passante per i punti corrispondenti a l1 e a l2, perché quando guardo i coeff dell'eq ho l_1: a_0    \squigglyarrow  l_2:      il fascio F generato da queste due rette ha equazione e quindi eusto corrisponde esattamente ai pt nel duale scritti come (lambda    ), ovvero la retta per i due punti sopra
+	
+	Esempio
+	
+	
+	
+	nel duale mi dà la retta passante per i due punti
+	
+	
+	tornando dalla situazione generale nel fascio
+	OSS dure rette distinte nel piano si intersecano in un punto solo: deve stare in ogni retta del fascio perché lì si annullano, dunque la cl rimane 0
+	Ogn retta del fascio passa per P e P è l'unico punto comunea tutte le rette del fascio
+	Viceversa ogni retta per P appartiene al fascio
+	Ciò significa che F è la famiglia delle rette per il punto fissato P PUZZA DI SPAZIO VETT CON VETT NULLO P 
+	
+	P è detto punto base del fascio
+	
+	ESEMPIO
+	
+	
+	Voglio riprendere la descrizione parametrica del fascio, in questo esempio il fascio F corrisponde alla retta nel piano proiettivo duale per i punti 
+	adesso la voglio scrivere in equazione cartesiana nelle coordinate a_    nel piano proj duale
+	scrivere la retta vuol dire fare il determinante formale
+	
+	
+	sorpresa sorpresa, i coeff della retta sono esattmante le coo di P di intersezione delle due rette
+	infatti vale in generale che fissato un punto base, il set delle rette per p in P2 è un fascio di rette, corrispondente a una retta nel piano proiettivo duale, allora se P ha coordinate c_0   la retta corrispondente nel piano proj duale ha equazione c_0a_0 è   =0, questo perché dta una retta r qualsiasi di equazione a_0x_0   =0, il punto P appartiene a r sse vale l'equazione c_0    sostituisco le coordinate di P e trovo quell'eq:   condizione perchè appartenga alla retta   o al fascio, collezione delle rette per p     fisso p e retta che varia (duale )   retta r fissata e p che varia. Ma l'eq è la stessa
+	di fatto il fascio si scrive in forma parametrica scegliendo due rette specifiche che passano per p
+	
+	ESEMPIO IN P2R
+	scrivere in forma parametrica il fascio delle rette per il punto base p di coordinate (1\colon -1 \coln4)   scelgo 2rette a caso che passano per il punto p
+	se faccio variare lambda e mu ottengo tutte le rette di p2 che passano per questo punto
+	
+	OSS SULL'INTERPRETAZIONE AFFINE
+	se vedo r2 come   ed F fascio di rette proj con punto base P in p2, allora ho 2 possibilità: punto base proprio o all'infinito
+	Se P è un punto proprio, allora P\in\kamp^2 e F corrisponde a meno di passare alla chiusura proj dalla retta proj a quella affine corrisponde alle rette afifni in k2 per il punto P
+	Se p invece è un punto improprio, corrisponde ad una direzione di rette nel piano affine e F corrisponde a tutte le rette affini che hanno questa direazione fissata, ovvero è un fascio di rette parallele
+	differenza solo fra punto proprio e improprio
+	
+	
+	PIANO PROIETTIVO DUALE
+	OSS
+	P2 è il proeiettivizato di K3, e sappiamo che K3 duale è lo spazio delle forme lineari \alpha su K3 della forma ax_0+a_1    numero le coordinate da 0 a 2, per il resto è uguale a Geo1
+	Quando considero la retta r di equazione a_0x_0   =0, allora stiamo dicendo che r /è il nucle di tale forma lineare \alpha / corrisponde a un piano vettoriale che è esattamente il nucleo di \alpha 
+	r ha tale eq: r è proietivizzato da piano vett /da def sott/ tale sott è nucleo
+	il punt corrispondente ad \alpha corrisponde alla retta r    \alpha è forma lineare non nulla determinata a meno di multipli, dunque alpha non identicamente nulla e determinata a meno di multipli
+	
+	base che induce le coordinate proiettive a_0   su p2 duale, quindi tale interpretazione astratta diventa quella numerica fissando la base naturale delle forme lineari e le coo proiettive associate  lpha come cl della base a_0x_0   i coeff sono le coordinate omogenee
+	
+	INCISO
+	costruzione che si generalizza: dato V spazio vettoriale e PV spazio  proiettivo associato a V, abbiamo anche V^* spazio vettoriale duale, ovvero le forme lineari, allora il proiettivizzato del duale si dice spazio proiettivo duale di PV e si indica con l'asterisco fuori (!!)
+	di particolare ha una corrispondenza biunivoca fra i punti dello spazio proiettivo duale e gli iperpiani di PV   data da [\alpha]  associo il proiettivizzato del nucleo di alpha in PV
+	In coordinate: a un iperpiano di equazione a_0x_0+a_nx_ associamo il punto (a0\colon   a_n)
+	/così come associo ad un vettore i coefficienti della base/
+	
+	
+	CONICHE IN p^2(K)
+	Abbiamo già visto a Geo1 cosa sono le coniche in R^2, classificandole a meno di rototraslazione
+	generalizziamolo al caso del piano proiettivo. Il passaggi dalla retta alla conica   grado 1 (rette) a eq polinomiali di grado 2 Dobbiamo tenere conto del fatto che nel piano proiettivo le coordinate sono omogenee
+	Consideriamo k[x_0,   x_2] sono i polinomi in x_0   e coefficienti in K. Se F è un polinomio qualsiasi, 'equazione non dà una condizione ben definita in P2
+	quali sono le eq che ha senso studiare in p2: i polinomi omogenei
+	definizione per numero qualsiasi di variabilitutti i monomi con coeff non nulla hanno lo stesso grado
+	esempio
+	omogeneo di grado 3
+	non omogeneo  /grado 3, 2, 0/   PROPRIO PESSIMO
+	def significativa con più variabili
+	
+	forma lineare è omogenea quando non ha termine noto
+	
+	i polinomi omogenei hanno la proprietà di 		 infatti è vero per ogni monomio
+	
+	
+	tornando al pinao proiettivo duale con le coordinate omogenee x_0   e consideriamo F un polinomio omogeneo nelle coordinate omogenee
+	Se ho un punto P di coordinate c_0   in P2, allora tutte le altre coordinate, possibili scelte per le coordinate di P, sono \lambda c_0   con \lambda\in\kamp\setminus    e quando a valutare F con lambda ottego     quesot mi dice che F si annulla in una scelta di ccordinate se e solo se si annulla in qualsiasi scelta di coordinate
+	Quindi l'equazion F(a condizione)=0 è ben posta in P^2
+	
+	esempio
+	è un subset ben definito del piano proiettivo
+	
+	le coniche sono esattamente i sottonisiemi di P2 che sono dati da polinoi omogenei di grado 2
+	
+	
+	
+	def i pol + va omogeneo
+	eq polinomiali che hanno senso in P^2 per coo omogenee: pol omo
+	dunque eq ben definite
+	
+	
+	DEFINIZIONE
+	curva algebrica piana proiettiva è data da un polinomio omogeneo F a coefficienti nel piano K nelle coordinate omogenee su P". Tale polinomio si considera a meno di multipli (si consdiera come un'equazione)
+	
+	la curva C ha un supporto che è il subset di P^2 dove F si annulla
+	assieme al supporto vogliamo ricordarci dell'equazione
+	F è l'eq di C
+	La morale è che oltre al supporto vogliamo ricordarci dell'equazione a meno di multipli. Questo perhcé eq determina il supporto, ma in generale non vale il contrario  (vedasi ellissi immaginario)
+	le curve che vogliamo studiare sono subset di P2 sono luoghi di zeri di pol omogenei, ma nella nozione di curva inseriamo anche l'eq F con multpli . Algebrica erché polinomi, piana perché siamon nel piano, proiettiva perché piano proiettivo
+	
+	
+	ESEMPIO: retta
+	
+	Il grado della curva è il grado dell'equazione F. Dunque curve di grado 1 sono le rette proiettive. Le consiche che vogliamo studiare sono le curve di grado 2
+	
+	Terminologia: la curva C è reale o complessa se siamo in p2r o in p2c
+\end{comment}
 
-
-In particolare per le proiettività esiste una proiettività che manda i p_i nei q_i se e solo se il birapporto dei P-i è pari al birapporto dei Q_i
-OSS  
-il birapporto misura l'equivalenza proiettiva su punti di una retta proiettiva
-
-
-è una relazione di equivalenza su \mathcal{S}  (verifica per esercizio) e tramite il birapporto possiamo dire che il quoziente di S per l'equiv proj, ovvero le classi di equiv proj di 4 pt distinti e ordinati in P1 sono in corrispondenza biunivoca con K\0,1 tramite il birapporto:  ad ogni quat associo il birapport (associazione suriettiva, per ogni el nel campo trovo quaterna pt distini che dà bir   due quat equivalenti se e solo se ha lo stesso birapporto, dunque quozientando diventa iniettiva e dunque biunivoca)
-Qundo ho 4 pt in sp proj di dimension maggiore di 1 in generlae il birapporto non è definito a meno che i punti non siano allineati su una retta proiettiva r
-
-
-esempio di come si usa il bir di come si studia l'equiv proj di 4 pt in pP2
-si considerano 2 quaterne di pt distinti: P_1, P_2, P_3, P_4 e 
-di ciascuna delle due quaterne vedo in che posizione sono: pos generale: a tre a tre non  allineati
-oppure se non sono in pos generale allora ce ne sono 3 allineati: fa differenza se il quarto punto sta nella retta o meno
-terza possibilità: tutti e quattro i pt allineati
-Nel secondo caso ci sono tutte le possibili permutazioni fra pt allineati
-Se i pt P sono proj equiv ai pt Q, tail posizioni devono essere mantenute: le proiettività mandano rette in rette, pos gen in pos gen
-se si verificano casi diversi per i pt P e Q si può dire che non sono proj equiv
-Supponiamo di essere nel caso 1, ovvero P_i e Q_i in pos generale: sono proj equiv oppure no? pos gener esiste unica proj fra le due (siamo nel numero giusto n+2=4)
-Caso 2: 3 allineati: la proj esiste ed è unica, ma non ci interessa l'unicità ora, basta che ce ne sia una (sono gli stessi 3 alineati con gli stessi indici) Sono proj equiv: mostriamolo con un conto: per costruire proj costruisco trasf kin inveritible: retta nella retta   sappiamo dal ris sulle trasf proj esiste sempre trasf proj che mappa i pt nei pt, soprattutto sappiamo scriverl. HìDà un'appl linneare in piani vettoriali: posso estenderla in trasf lin da un vettore che rappresent P_4 in Q_4.   Estendo in una proiettività di P2 che fa questo lavoro sostanzialmente
-Scegliamo P_i=[v_i]  tali che  posso farlo perché sono allineati: allora    è una base di K3 perché sono indipendetni dato che v_4\not in r  Idem per Q
-Definiziamo \phi sulla base lineare tale che  impongo le immagini dei rappresentanti, allora per la linearità di phi è rispettato anche 4. dunque la proj indotta da phi tilde è una proiettività che manda pi in qi
-Caso 3: osservazione: pt allineati allora è definito il loro birapporto se i pt sono proj equiv allora chiamata f la proiettività che manda i 4 pt nei 4 pt allora necessariamente manda r in s, dunque la restrizione alle due rette è una trsformazione proj che potta pi in qi per ogni i. COsa possiamo dire sui due birapporti? Ho la dimostrazione di prima /pt proj equiv allora stesso birapport/Vale il viceeversa: allora dal teorema esiste g trasformazione proiettiva che manda pi in qi per ogni ima tae g si estende facilmente ad un proiettività di p2, in maniera non unica /esercizio/ le proj si costruiscono dalle app lin: r piano vett in k3 mentre g corriponde app line fra i due piani: estendo l'app lin ad automorfismo di k3 sceglienod basi che hnno 3 vettori nel piano ed uno fuori ed uso ilterzo vettore per estenderla
-Dunqeu in questo caso i pt sono proj equiv sse hanno lo stesso birapporto BIrapporto utie anche in dimensione superiore se stanno su una rettaho così esteso l'app line per la trasf 
-
-
-FINITO LE BASI DELLO SPAZIO PROIETTIVO
-LUNEDì E MARTEDì VACANZA
-
-
-
-STUDIO DELLA GEOMETRIA DI RETTE O CURVE NEL PIANO PROIETTIVO
-OGGI RETTE E UN PO' DI IPERPIANI
-Una retta in P2 ha equazione z_0x_0+a_i   eq lin omo elle coo omogenee, dunque è determinata dai coefficienti a_0 a_1 e a_2 dell'eq con la proprietà che devono essere non tutti nulli e in più fissati i coeff l'eq non è univocamente determinata: è determinata a meno di costante molitplicativa non nulla. Dunque si può associare a r un punto del piano proiettivo dato esattamente dai coefficienti delle coordinate omogenee, per cui si ha una corrispondenza binivoca fra le rette in P2 e P"(che non va pensato come lo stessso piano)   funziona bene con p2: le coo omo si comportano proprio come i coeff dell'equazione
-
-ESEMPIO NEL CASO REALE
-quando pensiamo a P2 d destra cpme lo spazio che parametrizza le rette in P2, lo denotiamo conP2* e lo chiamiamo piano proiettivo duale
-in prima istanza questo significa semplicemente  interpretazione punto del duale visto come ppunto associato ad una retta
-collgamento co lo spazio vettoriale duale        forma lineare
-prima costruzione come corrispondenza
-
-un FASCIO  di rette in P2 è il set delle rette di equazione    con l_1 ed l_2 sono rette fissate
-i coeff variano in P1
-
-esempio
-
-collezione delle rette la cui eq si ottiene come combinazione lineare delle due
-è una famiglia di rette con lambda e mu come parametri
-
-
-famiglia dir ette: ad ogni retta un punto del proj duale: a cosa corrisonde questa costruzione di prendere il fascio?  Il fascio F corrisponde alla retta passante per i punti corrispondenti a l1 e a l2, perché quando guardo i coeff dell'eq ho l_1: a_0    \squigglyarrow  l_2:      il fascio F generato da queste due rette ha equazione e quindi eusto corrisponde esattamente ai pt nel duale scritti come (lambda    ), ovvero la retta per i due punti sopra
-
-Esempio
-
-
-
-nel duale mi dà la retta passante per i due punti
-
-
-tornando dalla situazione generale nel fascio
-OSS dure rette distinte nel piano si intersecano in un punto solo: deve stare in ogni retta del fascio perché lì si annullano, dunque la cl rimane 0
-Ogn retta del fascio passa per P e P è l'unico punto comunea tutte le rette del fascio
-Viceversa ogni retta per P appartiene al fascio
-Ciò significa che F è la famiglia delle rette per il punto fissato P PUZZA DI SPAZIO VETT CON VETT NULLO P 
-
-P è detto punto base del fascio
-
-ESEMPIO
-
-
-Voglio riprendere la descrizione parametrica del fascio, in questo esempio il fascio F corrisponde alla retta nel piano proiettivo duale per i punti 
-adesso la voglio scrivere in equazione cartesiana nelle coordinate a_    nel piano proj duale
-scrivere la retta vuol dire fare il determinante formale
-
-
-sorpresa sorpresa, i coeff della retta sono esattmante le coo di P di intersezione delle due rette
-infatti vale in generale che fissato un punto base, il set delle rette per p in P2 è un fascio di rette, corrispondente a una retta nel piano proiettivo duale, allora se P ha coordinate c_0   la retta corrispondente nel piano proj duale ha equazione c_0a_0 è   =0, questo perché dta una retta r qualsiasi di equazione a_0x_0   =0, il punto P appartiene a r sse vale l'equazione c_0    sostituisco le coordinate di P e trovo quell'eq:   condizione perchè appartenga alla retta   o al fascio, collezione delle rette per p     fisso p e retta che varia (duale )   retta r fissata e p che varia. Ma l'eq è la stessa
-di fatto il fascio si scrive in forma parametrica scegliendo due rette specifiche che passano per p
-
-ESEMPIO IN P2R
-scrivere in forma parametrica il fascio delle rette per il punto base p di coordinate (1\colon -1 \coln4)   scelgo 2rette a caso che passano per il punto p
-se faccio variare lambda e mu ottengo tutte le rette di p2 che passano per questo punto
-
-OSS SULL'INTERPRETAZIONE AFFINE
-se vedo r2 come   ed F fascio di rette proj con punto base P in p2, allora ho 2 possibilità: punto base proprio o all'infinito
-Se P è un punto proprio, allora P\in\kamp^2 e F corrisponde a meno di passare alla chiusura proj dalla retta proj a quella affine corrisponde alle rette afifni in k2 per il punto P
-Se p invece è un punto improprio, corrisponde ad una direzione di rette nel piano affine e F corrisponde a tutte le rette affini che hanno questa direazione fissata, ovvero è un fascio di rette parallele
-differenza solo fra punto proprio e improprio
-
-
-PIANO PROIETTIVO DUALE
-OSS
-P2 è il proeiettivizato di K3, e sappiamo che K3 duale è lo spazio delle forme lineari \alpha su K3 della forma ax_0+a_1    numero le coordinate da 0 a 2, per il resto è uguale a Geo1
-Quando considero la retta r di equazione a_0x_0   =0, allora stiamo dicendo che r /è il nucle di tale forma lineare \alpha / corrisponde a un piano vettoriale che è esattamente il nucleo di \alpha 
-r ha tale eq: r è proietivizzato da piano vett /da def sott/ tale sott è nucleo
-il punt corrispondente ad \alpha corrisponde alla retta r    \alpha è forma lineare non nulla determinata a meno di multipli, dunque alpha non identicamente nulla e determinata a meno di multipli
-
-base che induce le coordinate proiettive a_0   su p2 duale, quindi tale interpretazione astratta diventa quella numerica fissando la base naturale delle forme lineari e le coo proiettive associate  lpha come cl della base a_0x_0   i coeff sono le coordinate omogenee
-
-INCISO
-costruzione che si generalizza: dato V spazio vettoriale e PV spazio  proiettivo associato a V, abbiamo anche V^* spazio vettoriale duale, ovvero le forme lineari, allora il proiettivizzato del duale si dice spazio proiettivo duale di PV e si indica con l'asterisco fuori (!!)
-di particolare ha una corrispondenza biunivoca fra i punti dello spazio proiettivo duale e gli iperpiani di PV   data da [\alpha]  associo il proiettivizzato del nucleo di alpha in PV
-In coordinate: a un iperpiano di equazione a_0x_0+a_nx_ associamo il punto (a0\colon   a_n)
-/così come associo ad un vettore i coefficienti della base/
-
-
-CONICHE IN p^2(K)
-Abbiamo già visto a Geo1 cosa sono le coniche in R^2, classificandole a meno di rototraslazione
-generalizziamolo al caso del piano proiettivo. Il passaggi dalla retta alla conica   grado 1 (rette) a eq polinomiali di grado 2 Dobbiamo tenere conto del fatto che nel piano proiettivo le coordinate sono omogenee
-Consideriamo k[x_0,   x_2] sono i polinomi in x_0   e coefficienti in K. Se F è un polinomio qualsiasi, 'equazione non dà una condizione ben definita in P2
-quali sono le eq che ha senso studiare in p2: i polinomi omogenei
-definizione per numero qualsiasi di variabilitutti i monomi con coeff non nulla hanno lo stesso grado
-esempio
-omogeneo di grado 3
-non omogeneo  /grado 3, 2, 0/   PROPRIO PESSIMO
-def significativa con più variabili
-
-forma lineare è omogenea quando non ha termine noto
-
-i polinomi omogenei hanno la proprietà di 		 infatti è vero per ogni monomio
-
-
-tornando al pinao proiettivo duale con le coordinate omogenee x_0   e consideriamo F un polinomio omogeneo nelle coordinate omogenee
-Se ho un punto P di coordinate c_0   in P2, allora tutte le altre coordinate, possibili scelte per le coordinate di P, sono \lambda c_0   con \lambda\in\kamp\setminus    e quando a valutare F con lambda ottego     quesot mi dice che F si annulla in una scelta di ccordinate se e solo se si annulla in qualsiasi scelta di coordinate
-Quindi l'equazion F(a condizione)=0 è ben posta in P^2
-
-esempio
-è un subset ben definito del piano proiettivo
-
-le coniche sono esattamente i sottonisiemi di P2 che sono dati da polinoi omogenei di grado 2
-
-
-
-def i pol + va omogeneo
-eq polinomiali che hanno senso in P^2 per coo omogenee: pol omo
-dunque eq ben definite
-
-
-DEFINIZIONE
-curva algebrica piana proiettiva è data da un polinomio omogeneo F a coefficienti nel piano K nelle coordinate omogenee su P". Tale polinomio si considera a meno di multipli (si consdiera come un'equazione)
-
-la curva C ha un supporto che è il subset di P^2 dove F si annulla
-assieme al supporto vogliamo ricordarci dell'equazione
-F è l'eq di C
-La morale è che oltre al supporto vogliamo ricordarci dell'equazione a meno di multipli. Questo perhcé eq determina il supporto, ma in generale non vale il contrario  (vedasi ellissi immaginario)
-le curve che vogliamo studiare sono subset di P2 sono luoghi di zeri di pol omogenei, ma nella nozione di curva inseriamo anche l'eq F con multpli . Algebrica erché polinomi, piana perché siamon nel piano, proiettiva perché piano proiettivo
-
-
-ESEMPIO: retta
-
-Il grado della curva è il grado dell'equazione F. Dunque curve di grado 1 sono le rette proiettive. Le consiche che vogliamo studiare sono le curve di grado 2
-
-Terminologia: la curva C è reale o complessa se siamo in p2r o in p2c
 
 

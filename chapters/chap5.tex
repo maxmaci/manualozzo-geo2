@@ -78,11 +78,11 @@ Sia data:
 \end{equation*}
 Mostriamo che $\alpha$ è ben definita e biunivoca.
 \begin{enumerate}
-	\item \textit{Ben definizione}: se $g\ldotp H_x=\tilde{g}\ldotp H_x$ allora $g^{-1}\tilde{g}=h\in H_x\implies\tilde{g}=gh\in H_x$. Si ha:
+	\item \textit{Ben definizione}: se $g\ldotp H_x=\widetilde{g}\ldotp H_x$ allora $g^{-1}\widetilde{g}=h\in H_x\implies\widetilde{g}=gh\in H_x$. Si ha:
 	\begin{equation*}
-		\alpha\left(\tilde{g}\ldotp H_x\right)=\tilde{g}\ldotp x = \left(gh\right)\ldotp x = g \ldotp\left( h\ldotp x\right)=g\ldotp x=\alpha\left(g\ldotp H_x\right)
+		\alpha\left(\widetilde{g}\ldotp H_x\right)=\widetilde{g}\ldotp x = \left(gh\right)\ldotp x = g \ldotp\left( h\ldotp x\right)=g\ldotp x=\alpha\left(g\ldotp H_x\right)
 	\end{equation*}
- Poiché $g\ldotp H_x=\tilde{g}\ldotp H_x\implies g\ldotp x=\tilde{g}\ldotp x$ la funzione è ben definita.
+ Poiché $g\ldotp H_x=\widetilde{g}\ldotp H_x\implies g\ldotp x=\widetilde{g}\ldotp x$ la funzione è ben definita.
  \item \textit{Iniettività}:
  \begin{align*}
  	\alpha\left(g_1\ldotp H_x\right)=\alpha\left(g_2\ldotp H_x\right)&\implies g_1\ldotp x=g_2\ldotp x\implies g_2^{-1}\ldotp\left(g_1\ldotp x\right)=g_2^{-1}\ldotp\left(g_2\ldotp x\right)\\
@@ -161,15 +161,15 @@ g_i\ldotp x\neq g_y\ldotp y\quad \forall i,\ j
 Definiti gli (intorni) aperti $U\in I\left(x\right)$ e $V\in I\left(x\right)$ disgiunti (in quanto $X$ di \textbf{Hausdorff}), possiamo considerare gli altri (intorni) aperti disgiunti $g_i\ldotp U\in I\left(g_i\ldotp x\right),\ g_i\ldotp V\in I\left(g_i\ldotp y\right)$.\\
 Allora:
 \begin{equation}
-\tilde{U}\coloneqq \union_{i}g_i\ldotp U\qquad \tilde{V}\coloneqq \union_{i}g_i\ldotp V
+\widetilde{U}\coloneqq \union_{i}g_i\ldotp U\qquad \widetilde{V}\coloneqq \union_{i}g_i\ldotp V
 \end{equation}
-Sono entrambi aperti. Vogliamo costruire $U\in I\left(x\right)$ e $V\in I\left(x\right)$ in modo che siano (intorni) aperti disgiunti tali che, costruiti come sopra $\tilde{U},\ \tilde{V}$, si abbia $\tilde{U}\cap \tilde{V}=\emptyset$. Così, passando al quoziente con $\pi$, si otterranno degli intorni $\pi\left(\tilde{U}\right)$ di $p$ e $\pi\left(\tilde{V}\right)$ di $q$ che soddisfano $\pi\left(\tilde{U}\right)\cap \pi\left(\tilde{V}\right)=\emptyset$.\\
+Sono entrambi aperti. Vogliamo costruire $U\in I\left(x\right)$ e $V\in I\left(x\right)$ in modo che siano (intorni) aperti disgiunti tali che, costruiti come sopra $\widetilde{U},\ \widetilde{V}$, si abbia $\widetilde{U}\cap \widetilde{V}=\emptyset$. Così, passando al quoziente con $\pi$, si otterranno degli intorni $\pi\left(\widetilde{U}\right)$ di $p$ e $\pi\left(\widetilde{V}\right)$ di $q$ che soddisfano $\pi\left(\widetilde{U}\right)\cap \pi\left(\widetilde{V}\right)=\emptyset$.\\
 \begin{itemize}
 \item Costruiamo $U$ e $V$: $\forall i$ sappiamo che $x\neq g_i\ldotp y$ in $X$ (in quanto le orbite di $x$ e $y$ sono distinte. In quanto $X$ è di \textbf{Hausdorff}, si ha che $\forall i\ \exists U_i,\ V_i$ (intorni) aperti disgiunti tali che $x\in U_i$ e $g_i\ldotp y\in V_i$. Notiamo che $y\in g_i^{-1}\ldotp V_i$; allora definiamo
 \begin{equation*}
 U\coloneqq \inter_{i}^{n}U_i\in I\left(x\right)\qquad V\coloneqq \inter_{i=1}^{n}g_i^{-1}\ldotp V_i\in I\left(y\right)
 \end{equation*}
-\item Ricaviamo $\tilde{U}$ e $\tilde{V}$: $\forall i$ (e quindi per ogni elemento di $G$) abbiamo:
+\item Ricaviamo $\widetilde{U}$ e $\widetilde{V}$: $\forall i$ (e quindi per ogni elemento di $G$) abbiamo:
 \begin{equation*}
 U\cap \left(g_i\ldotp V\right)\subseteq U_i\left(g_i\ldotp g_i^{-1}\ldotp V_i\right)=U_i\cap V_i=\emptyset\implies U\cap \left(g_i\ldotp V\right)=\emptyset
 \end{equation*}
@@ -180,7 +180,7 @@ Allora $\forall i,\ j$ abbiamo:
 Ma $g_i^{-1}g_j \in G$, dunque $U\cap \left(g_i^{-1}g_j\right)\ldotp V=\emptyset$. Segue che:
 \begin{equation*}
 	\left(g_i\ldotp U\right)\cap \left(g_j\ldotp V\right)=\emptyset\implies
-	\left(\union_{i}g_i\ldotp U\right)\cap \left(\union_{i}g_i\ldotp V\right)=\emptyset\implies \tilde{U}\cap \tilde{V}=\emptyset
+	\left(\union_{i}g_i\ldotp U\right)\cap \left(\union_{i}g_i\ldotp V\right)=\emptyset\implies \widetilde{U}\cap \widetilde{V}=\emptyset
 \end{equation*}	
 \end{itemize}
 \end{enumerate}
