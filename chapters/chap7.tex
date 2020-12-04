@@ -483,7 +483,7 @@ Se $r$ è una retrazione, per costruzione è suriettiva, dunque $A$ \textbf{ered
 	\begin{itemize}
 		\item Dato $x_0\in X$, $\left\{x_0\right\}$ è sempre un retratto: infatti la mappa costante $\funz{\ }{X}{\left(x_0\right)}$ soddisfa banalmente le ipotesi di retrazione.
 		\item Presi $X=\left[0,\ 1\right]$, $A=\left(0,\ 1\right]$ \textit{non} è un retratto di $X$ (non è compatto!).
-		\item Presi $X=\left[0, 1\right]$, $\tilde{A}=\left\{0,\ 1\right\}$ \textit{non} è un retratto (non è \textit{connesso}!).
+		\item Presi $X=\left[0, 1\right]$, $\widetilde{A}=\left\{0,\ 1\right\}$ \textit{non} è un retratto (non è \textit{connesso}!).
 	\end{itemize}
 \end{examples}
 \begin{example}\textsc{La retrazione radiale.}\label{retrazioneradiale}\\
@@ -528,14 +528,14 @@ Considero ora l'inclusionee, definendo per comodità $X=\realset^n\setminus\left
 		\funztot{r}{X}{X}{\underline{x}}{\frac{\underline{x}}{\labs \underline{x}\rabs}}
 	\end{equation*}
 			\begin{equation*}
-	\tilde{r}\coloneqq\funztot{ i\circ r}{X}{X}{\underline{x}}{\frac{\underline{x}}{\labs \underline{x}\rabs}}
+	\widetilde{r}\coloneqq\funztot{ i\circ r}{X}{X}{\underline{x}}{\frac{\underline{x}}{\labs \underline{x}\rabs}}
 \end{equation*}
-Vogliamo che $\tilde{r}$ sia omotopa a $Id_X$.
+Vogliamo che $\widetilde{r}$ sia omotopa a $Id_X$.
 Osserviamo che $\forall \underline{x}\in\realset^n\setminus\left\{\underline{0}\right\}=X$ il segmento da $\underline{x}$ a $\frac{\underline{x}}{\labs \underline{x}\rabs}$ non contiene, per costruzione, l'origine: allora esso è interamente contenuto in $\realset^n\setminus \left\{\underline{0}\right\}=X$. Dunque, riprendendo l'osservazione di pag. \pageref{omotopiasegmento} definiamo l'omotopia:
 \begin{equation*}
 	\funztot{F}{X\times I}{X}{\left(\underline{x},\ t\right)}{\left(1-t\right)\underline{x}+t\frac{\underline{x}}{\labs \underline{x}\rabs}}
 \end{equation*}
-Infatti $F$ è ben definita, continua e $\mvf{F}{\underline{x}}{0}=\frac{\underline{x}}{\labs \underline{x}\rabs}=\tilde{r}\left(\overline{x}\right),\ \mvf{F}{x}{1}=\overline{x}=Id_X\left(\overline{x}\right)$.
+Infatti $F$ è ben definita, continua e $\mvf{F}{\underline{x}}{0}=\frac{\underline{x}}{\labs \underline{x}\rabs}=\widetilde{r}\left(\overline{x}\right),\ \mvf{F}{x}{1}=\overline{x}=Id_X\left(\overline{x}\right)$.
 \end{example}
 \begin{corollary}
 	In generale vale che $S^{n-1}$ è retratto di deformazione di $\realset^n\setminus\left\{1\text{ punto}\right\}$; in particolare hanno lo stesso tipo di omotopia.
@@ -558,26 +558,26 @@ Un \textbf{bouquet}\index{bouquet di circonferenze} \textbf{di} $n$ \textbf{circ
 		\begin{itemize}
 			\item Se le rette sono \textbf{disgiunte}, $X$ è sempre omeomorfo a:
 			\begin{equation*}
-				\realset^3\setminus\left\{\text{asse z}\right\}\setminus\left\{x=y=1\right\}=\tilde{X}
+				\realset^3\setminus\left\{\text{asse z}\right\}\setminus\left\{x=y=1\right\}=\widetilde{X}
 			\end{equation*}
 		Cioè lo spazio $\realset^3$ privato di due rette perpendicolari al piano e distinte.\\
-			Considerato ora il piano $Y=\left\{\text{piano xy}\right\}\setminus\left\{\left(0,0\right),\ \left(1,1\right)\right\}$, questo risulta un retratto di deformazione di $\tilde{X}$ con retrazione:
+			Considerato ora il piano $Y=\left\{\text{piano xy}\right\}\setminus\left\{\left(0,0\right),\ \left(1,1\right)\right\}$, questo risulta un retratto di deformazione di $\widetilde{X}$ con retrazione:
 			\begin{equation*}
-				\funztot{r}{\tilde{X}}{Y}{\left(x,\ y,\ z\right)}{\left(x,\ y, 0\right)}
+				\funztot{r}{\widetilde{X}}{Y}{\left(x,\ y,\ z\right)}{\left(x,\ y, 0\right)}
 			\end{equation*}
-		Infatti la funzione è sempre ben definita e continua e, considerata la restrizione di $r$ ad $Y$, segue che banalmente che è l'identità di $Y$ in quanto tutti i punti di $Y$ hanno già la forma $\left(x,\ y, 0\right)$. Guardando invece $\tilde{r}=i\circ r$ con $\incl{i}{Y}{\tilde{X}}$, un'omotopia con $Id_{\tilde{X}}$ è:
+		Infatti la funzione è sempre ben definita e continua e, considerata la restrizione di $r$ ad $Y$, segue che banalmente che è l'identità di $Y$ in quanto tutti i punti di $Y$ hanno già la forma $\left(x,\ y, 0\right)$. Guardando invece $\widetilde{r}=i\circ r$ con $\incl{i}{Y}{\widetilde{X}}$, un'omotopia con $Id_{\widetilde{X}}$ è:
 		\begin{equation*}
-			\funz{F}{\tilde{X}\times I}{\tilde{X}}\ \colon \mvf{F}{\left(x,\ y,\ z\right)}{t}=\left(x,\ y,\ tz\right)
+			\funz{F}{\widetilde{X}\times I}{\widetilde{X}}\ \colon \mvf{F}{\left(x,\ y,\ z\right)}{t}=\left(x,\ y,\ tz\right)
 		\end{equation*}
-		Infatti $F$ è banalmente ben definita continua, con $\mvf{F}{\underline{x}}{0}=\left(x,\ y,\ 0\right)=\tilde{r}\left(\underline{x}\right)$ e $\mvf{F}{\underline{x}}{1}=\left(x,\ y,\ z\right)=Id_{\tilde{X}}\left(\underline{x}\right)$.\\
-		Segue che $\tilde{X}$, e dunque anche $X$ per omeomorfismo, ha la stessa omotopia di $\realset^2\setminus\left\{2\text{ punti}\right\}$ e di un \textit{bouquet di due circonferenze}.
+		Infatti $F$ è banalmente ben definita continua, con $\mvf{F}{\underline{x}}{0}=\left(x,\ y,\ 0\right)=\widetilde{r}\left(\underline{x}\right)$ e $\mvf{F}{\underline{x}}{1}=\left(x,\ y,\ z\right)=Id_{\widetilde{X}}\left(\underline{x}\right)$.\\
+		Segue che $\widetilde{X}$, e dunque anche $X$ per omeomorfismo, ha la stessa omotopia di $\realset^2\setminus\left\{2\text{ punti}\right\}$ e di un \textit{bouquet di due circonferenze}.
 		\item Se le due rette sono incidenti, a meno di omeomorfismi si intersecano nell'origine. Consideriamo dunque $X=\realset^3\left\{r_1\cup r_2\right\}$ e lo spazio $A=S^2\setminus\left\{P_1,\ P_2,\ Q_1,\ Q_2\right\}$. Se prendiamo la retrazione:
 		\begin{equation*}
 			\funztot{r}{X}{A}{\underline{x}}{\frac{\underline{x}}{\labs \underline{x}\rabs}}.\\
 		\end{equation*}
 		e l'omotopia:
 		\begin{equation*}
-			\tilde{r}\coloneqq\funztot{ i\circ r}{X}{X}{\underline{x}}{\frac{\underline{x}}{\labs \underline{x}\rabs}}
+			\widetilde{r}\coloneqq\funztot{ i\circ r}{X}{X}{\underline{x}}{\frac{\underline{x}}{\labs \underline{x}\rabs}}
 		\end{equation*}
 	Si verifica in modo analogo a come visto nel caso della sfera e dello spazio privato dell'origine (esempio a pagina \ref{retrattosfera}), trattando con una \textit{retrazione radiale} ben definita e la sua omotopia nota, che $A$ è retratto di deformazione di $X$. Segue allora che hanno lo stesso tipo di omotopia.
 		\end{itemize}

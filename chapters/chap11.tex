@@ -238,19 +238,19 @@ Supponiamo che $V=U\oplus W$, con $U$ e $W $sottospazi di $V$; supponiamo inoltr
 Data una funzione $\funz{f}{V}{V}$ e $A$ una matrice associata ad $f$; sia $\lambda$ un autovalore di $f$ (di cui ne esiste almeno uno perché in $\complexset$), $V_{\lambda}=\ker \left(f-\lambda Id\right)=\ker \left(A-\lambda I\right)$ l'autospazio di $\lambda$ e $m_{\lambda}$ la molteplicità algebrica di $\lambda$.\\
 Allora l'\textbf{autospazio generalizzato}\index{autospazio!generalizzato} di $\lambda$ è:
 \begin{equation}
-	\tilde{V}=\ker\left(f-\lambda Id\right)^{m_{\lambda}}=\ker\left(A-\lambda I\right)^{m_{\lambda}}
+	\widetilde{V}=\ker\left(f-\lambda Id\right)^{m_{\lambda}}=\ker\left(A-\lambda I\right)^{m_{\lambda}}
 \end{equation}
 \vspace{-6mm}
 \end{define}
 \begin{lemming}\textsc{Proprietà degli autospazi generalizzati}
 	\begin{enumerate}
-		\item $V_\lambda\subseteq \tilde{V}_{\lambda}$.
-		\item $\tilde{V}_{\lambda}$ è invariante per $A$, cioè $A\tilde{V}_{\lambda}\subseteq \tilde{V}_{\lambda}$.
-		\item $\dim \tilde{V}_{\lambda}=m_{\lambda}$.
-		\item $f_{\mid\tilde V_{\lambda}}\ \colon\funz{\ }{\tilde{V}_{\lambda}}{\tilde{V}_{\lambda}}$ ha polinomio caratteristico $\left(t-\lambda\right)^{m_{\lambda}}$.
+		\item $V_\lambda\subseteq \widetilde{V}_{\lambda}$.
+		\item $\widetilde{V}_{\lambda}$ è invariante per $A$, cioè $A\widetilde{V}_{\lambda}\subseteq \widetilde{V}_{\lambda}$.
+		\item $\dim \widetilde{V}_{\lambda}=m_{\lambda}$.
+		\item $f_{\mid\widetilde V_{\lambda}}\ \colon\funz{\ }{\widetilde{V}_{\lambda}}{\widetilde{V}_{\lambda}}$ ha polinomio caratteristico $\left(t-\lambda\right)^{m_{\lambda}}$.
 		\item Se $\lambda_1,\ \ldots,\ \lambda_r$ sono tutti gli autovalori di $A$, si ha:
 		\begin{equation}
-			V=\tilde{V}_{\lambda_1}\oplus\dots\tilde{V}_{\lambda_r}
+			V=\widetilde{V}_{\lambda_1}\oplus\dots\widetilde{V}_{\lambda_r}
 		\end{equation}
 	\end{enumerate}
 \vspace{-6mm}
@@ -273,7 +273,7 @@ Al crescere di $h$:
 \end{equation}
 Cioè il nucleo della potenza $h$ è contenuto in tutti quelli successivi. In particolare:
 \begin{equation*}\label{kernelsucc}
-V_{\lambda}=\ker\left(A-\lambda I\right)\subseteq \ker\left(A-\lambda I\right)^{m_{\lambda}}\implies V_{\lambda}\subseteq \tilde{V}_{\lambda}
+V_{\lambda}=\ker\left(A-\lambda I\right)\subseteq \ker\left(A-\lambda I\right)^{m_{\lambda}}\implies V_{\lambda}\subseteq \widetilde{V}_{\lambda}
 \end{equation*}
 Dimostrando così la prima proprietà.
 \item In modo analogo, se $\underline{w}\in\im \left(A-\lambda I\right)^h$, per definizione $\exists\underline{v}\in\left(A-\lambda I\right)^h$ tale che:
@@ -298,7 +298,7 @@ Cioè l'immagine della potenza $h$ contiene tutte quelle successive.\\ Possiamo 
 		\implies A\left(\ker\left(A-\lambda I\right)^h\right)\subseteq \ker\left(A-\lambda I\right)^h
 	\end{array}
 	\end{equation*}
-Abbiamo appena dimostrato l'invarianza dello spazio $\tilde{V}_{\lambda}$.
+Abbiamo appena dimostrato l'invarianza dello spazio $\widetilde{V}_{\lambda}$.
 \item Se $\underline{w}\in\im\left(A-\lambda I\right)^h$ esiste $\underline{v}$ tale che:
 	\begin{equation*}
 	\begin{array}{l}
@@ -422,20 +422,20 @@ Segue che la molteplicità algebrica di $\lambda$ come autovalore della matrice 
 \end{equation*}
 Da cui segue:
 \begin{equation*}
-	\ker\left(A-\lambda I\right)^p=\ker\left(A-\lambda I\right)^{m_\lambda}=\tilde{V}_{\lambda}
+	\ker\left(A-\lambda I\right)^p=\ker\left(A-\lambda I\right)^{m_\lambda}=\widetilde{V}_{\lambda}
 \end{equation*}
-Dunque, sapendo che $\dim \tilde{V}_{\lambda} = \dim \ker\left(A-\lambda I\right)^p=m_{\lambda}$, segue la proprietà $3$.
-\item Notiamo che l'endomorfismo $\phi$ definito nella dimostrazione precedente altro non è che $f_{\mid\tilde V_{\lambda}}\ \colon\funz{\ }{\tilde{V}_{\lambda}}{\tilde{V}_{\lambda}}$, e abbiamo visto come il suo polinomio caratteristico debba essere $\left(t-\lambda\right)^m_{\lambda}$. Si conclude il punto $4$.
+Dunque, sapendo che $\dim \widetilde{V}_{\lambda} = \dim \ker\left(A-\lambda I\right)^p=m_{\lambda}$, segue la proprietà $3$.
+\item Notiamo che l'endomorfismo $\phi$ definito nella dimostrazione precedente altro non è che $f_{\mid\widetilde V_{\lambda}}\ \colon\funz{\ }{\widetilde{V}_{\lambda}}{\widetilde{V}_{\lambda}}$, e abbiamo visto come il suo polinomio caratteristico debba essere $\left(t-\lambda\right)^m_{\lambda}$. Si conclude il punto $4$.
 \item Non dimostreremo quest'ultimo punto.
 \end{enumerate}
 \end{demonstration}
 Riassumendo, sappiamo ora che gli autospazi generalizzati sono invarianti e sono in somma diretta tra loro.
 \begin{equation}
-	V=\tilde{V}_{\lambda_1}\oplus\ldots\oplus\tilde{V}_{\lambda_r}
+	V=\widetilde{V}_{\lambda_1}\oplus\ldots\oplus\widetilde{V}_{\lambda_r}
 \end{equation}
-Ora, per trovare una base che mette la matrice $A$ associata ad $f$ in forma di Jordan, basta farlo in \textit{ogni autospazio generalizzato} $\tilde{V}_{\lambda_i}$, in cui l'unico autovalore è $\lambda_i$ per le osservazioni precedenti. In sostanza, quello che vogliamo fare è compiere una \textit{‘‘separazione degli autovalori''}.\\
-Per calcolare l'autospazio generalizzato dovremmo calcolare $\tilde{V}_{\lambda}=\left(A-\lambda I\right)^{m_{\lambda}}$, ma basterà calcolare invece $\tilde{V}_{\lambda}=\left(A-\lambda I\right)^{p}$. \\
-Nella sezione seguente dimostreremo l'esistenza della base di $\tilde{V}_{\lambda}$ che dà la forma di Jordan.
+Ora, per trovare una base che mette la matrice $A$ associata ad $f$ in forma di Jordan, basta farlo in \textit{ogni autospazio generalizzato} $\widetilde{V}_{\lambda_i}$, in cui l'unico autovalore è $\lambda_i$ per le osservazioni precedenti. In sostanza, quello che vogliamo fare è compiere una \textit{‘‘separazione degli autovalori''}.\\
+Per calcolare l'autospazio generalizzato dovremmo calcolare $\widetilde{V}_{\lambda}=\left(A-\lambda I\right)^{m_{\lambda}}$, ma basterà calcolare invece $\widetilde{V}_{\lambda}=\left(A-\lambda I\right)^{p}$. \\
+Nella sezione seguente dimostreremo l'esistenza della base di $\widetilde{V}_{\lambda}$ che dà la forma di Jordan.
 \subsection{Esistenza della base dell'autospazio generalizzato che dà la forma di Jordan}
 Prima di procedere dimostriamo un lemma che servirà più avanti.
 \begin{lemming}\label{lemmadimjordan}
@@ -495,7 +495,7 @@ Riscriviamo con questa nuova denominazione la successione creata.
 	\begin{equation}
 	V_{\lambda}=S_1\supseteq S_2\supseteq\ldots\supseteq S_p
 \end{equation}
-Costruiamo la base di $\tilde{V}_{\lambda}$.\\
+Costruiamo la base di $\widetilde{V}_{\lambda}$.\\
 Innanzitutto, scegliamo una base $\left\{x_1^1,\ \ldots,\ x_r^1\right\}$ del sottospazio più piccolo $S_p$. Per costruzione, $x^1_i\in\im\left(A-\lambda I\right)^{p-1}$, cioè:
 \begin{equation*}
 	\forall i=1,\ \ldots,\ r\ \exists x_1^p\in V\quad x_i^1=\left(A-\lambda I\right)^{p-1}x_i^p
@@ -551,7 +551,7 @@ Procediamo in questo modo: prendiamo la base ottenuta per $S_{i}$ e la completia
 Chiaramente, poiché potrebbe anche accadere che $S_{i-1}= S_{i}$, si prosegue senza aggiungere vettori alla base e si passa al sottospazio successivo.\\
 Arriviamo con queste iterazioni fino a $S_2=V_\lambda\cap \im \left(A-\lambda I\right)$: completiamo la base da $S_3$ ad una di $S_2$ aggiungendo i vettori $\left\{a_1^1,\ \ldots,\ a_t^1\right\}$. Sappiamo che $\exists a_t^2\ \colon a_t^1=\left(A-\lambda I\right)^{p-2}a_t^2$, dunque abbiamo i due vettori che formano il blocco di Jordan di dimensione $2$.\\
 Infine, completiamo ad una base di $S_1$ aggiungendo i vettori $\left\{b_1^1,\ \ldots,\ b_u^1\right\}$. In questo caso, non abbiamo bisogno di calcolare altri vettori $b_u^i\ \forall u$ (al variare di $i$) come prima, in quanto i vettori, per definizione di $S_1$, appartengono anche a $\ker\left(A-\lambda I\right)$. Allora, $\forall u\ b_u^1$ generano blocchi di Jordan di dimensione $1$.\\
-Al variare di $i,\ j,\ k,\ \ldots,\ t,\ u$ abbiamo costruito un insieme di vettori tutti appartenenti a $\tilde{V}_{\lambda}=\ker\left(A.\lambda I\right)$: nello schema precedente essi sono tutti i vettori appartenenti a tutte le colonne, da quella di $x_i$ a quella di $b_u$.\\
+Al variare di $i,\ j,\ k,\ \ldots,\ t,\ u$ abbiamo costruito un insieme di vettori tutti appartenenti a $\widetilde{V}_{\lambda}=\ker\left(A.\lambda I\right)$: nello schema precedente essi sono tutti i vettori appartenenti a tutte le colonne, da quella di $x_i$ a quella di $b_u$.\\
 \textbf{Vogliamo contare quanti sono questi vettori.} Innanzitutto, dobbiamo considerare che lo schema, per compattezza, rappresenta \textit{solo una colonna} per ciascun $x_i,\ y_j,\ \ldots$, ma in realtà c'è una colonna analoga alla prima \textit{per ogni vettore} della base di $S_p$, una colonna analoga alla seconda per ogni vettore della base di $S_{p-1}$ e così via. In pratica, abbiamo $\dim S_p=r$ colonne con $x_i$, $\dim S_{p-1}-\dim S_{p}=s$ colonne con $y_j$ e così via.\\
 Contiamo adesso gli elementi per \textit{righe}. L'\textit{ultima riga}, quella di $x_i^1,\ y_j^1\, z_k^1\, \ldots,\ a_t^1,\ b_u^1$ al variare di $i,\ j,\ k,\ \ldots,\ t,\ u$, sono per costruzione i vettori di una base di $S_1$, e quindi il loro numero sono $\dim S_1$.\\
 Sulla \textit{penultima riga} non abbiamo i vettori $b_u$ e i vettori $x_i^2,\ y_j^2\, z_k^2\, \ldots,\ a_t^2$ presenti sono in numero uguale ai vettori $x_i^1,\ y_j^1\, z_k^1\, \ldots,\ a_t^1$ al variare di $i,\ j,\ k,\ \ldots,\ t$, base di $S_2$ e quindi ne abbiamo $\dim S_2$.\\
@@ -569,10 +569,10 @@ Usando il lemma \ref{lemmadimjordan} (pag. \pageref{lemmadimjordan}), otteniamo 
 	\begin{array}{ll}
 	N=\sum_{i=1}^{p}\dim S_i&=\sum_{i=1}^{p}\left(\dim\ker\left(A-\lambda I\right)^i-\dim\ker\left(A-\lambda I\right)^{i-1}\right)=\\
 	&=\dim\ker\left(A-\lambda I\right)^p-\dim\ker\left(A-\lambda I\right)^0=\\&
-	=\dim\ker\left(A-\lambda I\right)^p=\tilde{V}_{\lambda}
+	=\dim\ker\left(A-\lambda I\right)^p=\widetilde{V}_{\lambda}
 \end{array}
 \end{gather*}
-L'insieme dei vettori, che ricordiamo essere tutti contenuti in $\tilde{V}_{\lambda}$, ha \textit{cardinalità} pari alla \textit{dimensione dell'autospazio generalizzato}. Ci resta dunque da dimostrare che i vettori siano \textit{linearmente indipendenti} per verificare che essi siano a tutti gli effetti la base cercata di $\tilde{V}_{\lambda}$.\\
+L'insieme dei vettori, che ricordiamo essere tutti contenuti in $\widetilde{V}_{\lambda}$, ha \textit{cardinalità} pari alla \textit{dimensione dell'autospazio generalizzato}. Ci resta dunque da dimostrare che i vettori siano \textit{linearmente indipendenti} per verificare che essi siano a tutti gli effetti la base cercata di $\widetilde{V}_{\lambda}$.\\
 Per dimostrarlo, prendiamo la combinazione lineare seguente:
 \begin{equation*}
 \sum_{i}\alpha_ix_i^p+\sum_{i}\beta_ix_i^{p-1}+\ldots+\sum_{i}\gamma_{j}y_{j}^{p-1}+\ldots+\sum_{u}\delta_{u}b_{u}^1=0
@@ -717,9 +717,9 @@ Queste due matrici hanno forme di Jordan \textit{diverse}, ma hanno entrambe:
 \subsection{Impratichiamoci! Forma canonica di Jordan}
 \begin{tips}\textsc{Alcune nozioni utili per il calcolo della base e della forma di Jordan.}
 	\begin{enumerate}
-		\item Per calcolare l'autospazio generalizzato $\tilde{V}_{\lambda}=\ker\left(A-\lambda I\right)^{m_{\lambda}}$ è sufficiente calcolare, \textit{se conosco il massimo ordine} $p$ \textit{dei blocchi di Jordan relativi a }$\lambda$:
+		\item Per calcolare l'autospazio generalizzato $\widetilde{V}_{\lambda}=\ker\left(A-\lambda I\right)^{m_{\lambda}}$ è sufficiente calcolare, \textit{se conosco il massimo ordine} $p$ \textit{dei blocchi di Jordan relativi a }$\lambda$:
 		\begin{equation}
-			\tilde{V}_{\lambda}=\ker\left(A-\lambda I\right)^{p}
+			\widetilde{V}_{\lambda}=\ker\left(A-\lambda I\right)^{p}
 		\end{equation}
 		\item Si ha, per le osservazioni fatte nella dimostrazione precedente:
 		\begin{equation}
@@ -745,7 +745,7 @@ Queste due matrici hanno forme di Jordan \textit{diverse}, ma hanno entrambe:
 		\begin{equation*}
 			S_{a_1}\supseteq\ldots\supseteq S_{a_r}=S_p
 		\end{equation*}
-		\item Se $A$ ha un'\textit{unico} autovalore $\lambda$, allora $V=\tilde{V}_{\lambda}$ e $\left(A-\lambda I\right)^p=0$. In particolare segue che:
+		\item Se $A$ ha un'\textit{unico} autovalore $\lambda$, allora $V=\widetilde{V}_{\lambda}$ e $\left(A-\lambda I\right)^p=0$. In particolare segue che:
 		\begin{equation*}
 			\begin{array}{l}
 				\forall \underline{v}\in\im\left(A-\lambda I\right)^{p-1}\ \exists\underline{u}\in\left(A-\lambda I\right)^{p-1}\ \colon \left(A-\lambda I\right)^{p-1}\underline{u}=\underline{v}\\
