@@ -871,85 +871,36 @@ A meno di multipli, $A=\left(\begin{array}{cc}
 %LEZ 31 
 Vediamo un esempio di proiettività di $\proj[1]{\ }$.
 \begin{example}
-	Si consideri $\proj[1]{\kamp} = \kamp \cup \{\infty\}$ con $\infty=(0\colon 1)$. Sia $\funz f {\proj[1]{\ }} {\proj[1]{\ }}$ una proiettività (dunque biunivoca) definita come $f(x_0\colon x_1)=(ax_0+bx_1\colon cx_0+dx_1)$. Si ha che: $f(0\colon 1)=(b\colon d)$, mentre la sua controimmagine è $f(-b\colon a)=(0\colon 1)$, infatti siccome le coordinate sono omoegenee basta porre $ax_0+bx_1=0$.\newline
-	Sia $t=\frac{x_1}{x_0}$ la coordinata affine su $\kamp$, se $x_0\neq 0$ tutti i punti $(x_0\colon x_1)$ si possono scrivere come $(x_0\colon x_1)=\left( 1\colon \frac{x_1}{x_0} \right)=(1\colon t)$, il che corrisponde al punto $t\in\kamp$ . Vediamo ora come si comporta l'immagine grazie a queste osservazioni se $ax_0+bx_1\neq 0$:
-		\begin{gather*}
-			f(x_0\colon x_1)=(ax_0+bx_1\colon cx_0+dx_1)= \left( 1\colon \frac{cx_0+dx_1}{ax_0+bx_1} \right)  =  \left( 1 \colon  \frac{ x_0 \left( c+ d \frac{x_1}{x_0} \right) }{ x_0 \left( a+ b\frac{ x_1 }{ x_0 } \right)} \right)=\left( 1\colon \frac{dt+c}{bt+a}\right)
-		\end{gather*}
-	Dunque la proiettività $f$ corrisponde alla trasformazione $\funz F {\kamp\cup \{\infty\}} {\kamp\cup \{\infty\}}$ con $F(t)=\begin{cases}
-		\frac{dt+c}{bt+a}, & t\in\kamp, \ t\neq -\frac{a}{b}\\
-		\infty, & t=-\frac{a}{b}\\
-		\frac{d}{b}, & t=\infty
-				\end{cases}$
-	dove per $t=-\frac{a}{b}$ si ottiene $f(-b\colon a)=(0\colon 1)=\infty$, mentre la prima equazione è detta \textit{trasformazione lineare fratta}, che è definita sulla retta affine tranne dove si annulla il denominatore. \newline
-	Notiamo che $F$ diventa un'affinità $\funztot F \kamp \kamp t {\alpha t+\beta}$ se e solo se il denominatore diventa una costante ponendo $b=0$, ovvero se è della forma $F(t)=\alpha$, il che significa che la proiettività fissa il punto all'infinito, ovvero $f(0\colon 1)=(0\colon 1)$, mentre la parte affine viene mandata in sè stessa.n\newline 
-	Quest ragionamento si può vedere anche in dimensione superiore.
+	Si consideri $\proj[1]{\ } {\kamp} = \kamp \cup \{\infty\}$ con $\infty=(0\colon 1)$. Sia $\funz f {\proj[1]{\ }} {\proj[1]{\ }}$ una proiettività (dunque biunivoca) definita come $f(x_0\colon x_1)=(ax_0+bx_1\colon cx_0+dx_1)$. Si ha che: $f(0\colon 1)=(b\colon d)$, mentre la sua controimmagine è $f(-b\colon a)=(0\colon 1)$, infatti basta porre $ax_0+bx_1=0$.\newline
+	
+	
+	
+
+	Sia $t=\frac{x_1}{x_0}$ la coordinata affine su $\kamp$, tutti i punti $x_o x_1$ si possono scrivere come $(x_0\colon x_1)=\left( 1\colon \frac{x_1}{x_0} \right)=(1\colon t)$, il che corrisponde al punto $t$ 
+	della retta affine k. Se si scrive l'immagine $f(x_0\colon x_1)=$ sfruttando l'oss appena fatta divido per la prima coordinata, ottenendo un termine per cui raccogliendo $x_0$ viene $\frac$, ovvero come   Dunque la proiettività $f$ corrisponde alla trasformazione $\funz F {\camp\cup \{\infty\}} {\camp\cup \{\infty\}}$ con $F(t)=\begin{cases}
+		
+%		\end{cases}$
+%	a/b corrisponde al punto che va ad infinito  $(-b \colon a)$ è il punto trovato prima controimmagine del punto all'infinito. Per primo il caso generale
+%	Sono dette anche trasformazioni lineari fratte, mappa definita sulla retta affine tranne dove si annulla il denominatore. Quand'è che $F$ diventa un'affinità? Se e solo se il denominatore diventa una costante, ovvero della forma $F(t)=\alpha$, il che significa che la proiettività fiss il punto all''infinito, la parte affine in sè stessa e si restringe ad un'affinità.
+%	Si può vedere anche in dimensione superiore
 \end{example}
 
-		\section{Spazi proiettivi complessi}
-Digressione di topologia sugli spazi proiettivi complessi
-\begin{remember}
-	Nel caso di $\realset^n$ si è già visto che lo spazio proiettivo reale è un quoziente del tipo $\displaystyle \proj[n]{\realset}=\nicefrac{\realset^{n+1}\setminus\{0\}}{\sim}$ dunque è dotato in maniera naturale di una topologia.\newline
-	Si può anche vedere come quoziente della sfera $S^n$ dove si identificano i punti antipodali grazie alla suriezione $\surr \pi {S^n} {\proj[n]{\realset}}$, è anche una varietà topologica compatta di dimensione $n$. Inoltre $\proj[1]{\realset}\cong S^1$ e abbiamo analizzato il piano proiettivo reale $\proj[2]{\realset}$.
-\end{remember}
 
+%Digressione di topologia sugli spazi proiettivi complessi
+%Nel caso di R^n si è già visto che lo spazio proiettivo reale è un quoziente     dunque è dotuato in maniera naturale di una topologia
+%Si può anche vedere cme quoziente della sfera dove si identificano i punti antipodali, inoltre è una varietà topologica compatta di dimensione n. Inoltre \prog^1\realset\cong S^1 e abbiamo analizzato \prof^2\realset
 
-Anche nel caso complesso per $\proj[n]{\complexset}=\nicefrac{\complexset^{n+1}\setminus\{0\}}{\sim}$ si ha in maniera naturale una topologia quoziente data dalla topologia euclidea su $\complexset^{n+1}\setminus\{0\} \cong \realset^{n+1}\setminus\{0\}$.\newline
-Vogliamo vedere che è una varietà topologica compatta di dimensione $\mathbf{2n}$. Questo perché mentre $\proj[n]{\realset}$ è localmente euclideo di dimensione n, si ha che $\proj[n]{\complexset}$ localmente è come $\complexset^n\cong\realset^{2n}$, dunque la dimensione topologica è $2n$.
-\begin{itemize}
-	\item $\proj[n]{\complexset}$ è \textit{connesso} perché è quoziente di $\complexset^{n+1}\setminus\{0\}$ che è connesso.
-	\item $\proj[n]{\complexset}$ è \textit{compatto}: per avere la tesi lo si vuole vedere come quoziente di un compatto o immagine tramite una funzione continua di un compatto. Per la relazione di equivalenza, due vettori $z\sim w\iff \exists\lambda\in\complexset\setminus\{0\}\colon w=\lambda z$. Vogliamo ora restringerci alla sfera (la cui dimensione è data da $\complexset^{n+1}=\realset^{2n+2}\supset S^{2n+1}$) e dimostrare che ogni punto del quoziente è equivalente ad un punto della sfera. Per fare ciò si sfrutta la corrispondenza fra numeri complessi e reali e la norma:
-		\begin{gather*}
-			z_j=x_j+iy_j\implies  z=(z_1,\dots,z_{n+1})\in\complexset^{n+1}\longleftrightarrow (x_1,y_1,\dots,x_{n+1},y_{n+1})\in\realset^{2n+2}\\
-			\begin{array}{ccc}
-				\|z\|^2=\sum_{j=1}^{n+1} \lvert z_j\rvert ^2=\sum_{j=1}^{n+1}(\lvert x_j \rvert ^2 +\lvert y_j \rvert ^2) & \wedge & \lambda\in\complexset,\  \ \|\lambda z \| =\sqrt{\sum_{j=1}^{n+1}\lvert \lambda z_j \rvert ^2}=\lvert\lambda\rvert \| z\|
-			\end{array} \\
-			z\in\complexset^{n+1}\setminus\{0\}\implies \|z\|\neq 0 \ \wedge \lambda=\frac{1}{\| z\|} \implies \underbrace{\frac{1}{\|z\|}z}_{\in S^{2n+1}}\sim z \implies \pi(S^{2n+1})=\proj[n]{\complexset}
-		\end{gather*}
-	Nel caso reale i punti sulla sfera sono equivalenti solo se antipodali, nel caso complesso $S^{2n+1}$ invece $z,w\in S^{2n+1}$ si ha $z\sim w\iff \exists \lambda\in\complexset\setminus\{0\} \colon w=\lambda z$ siccome $w,z\in S^{2n+1}$ hanno norma unitaria, dunque $1=\| w\|=\|\lambda z\|= \ \lambda | \|z\|=|\lambda|$. Siccome ci sono infiniti numeri di norma $1$ in $\complexset$, allora ci sono infiniti numeri nella stessa classe, infatti i punti $\lambda z\in S^{2n+1}$ sono tutti equivalenti. 		
-	\item $\proj[n]{\complexset}$ è $T_2$, basta dimostrare che $\pi_0$ è un'identificazione chiusa. Sia $C\subset S^{2n+1}$ un chiuso, allora $\pi_0(C)\iff \pi_0^{-1}(\pi_0(C))$ è chiusa in $S^{2n+1}$. In effetti la relazione di equivalenza su $S^{2n+1}$ viene da un'azione del gruppo $S^1=\{\lambda\in\complexset \mid |\lambda |=1\}$ rispetto al prodotto con elemento neutro $1$ quale $\funztot F {S^1\times S^{2n+1}} {S^{2n+1}} {(\lambda, z)} {\lambda z}$. Si ha che $F$ è un'applicazione continua e siccome $S^1\times S^{2n+1}$ è compatto e $S^{2n+1}$ è $T_2$ allora $F$ è chiusa. Dato un chiuso $C\subseteq S^{2n+1}$, allora data la controimmagine dell'immagine agisco sui punti di $C$ con tutti gli elementi di $S^1$, ovvero prendo tutte le orbite che intersecano $C$, ottenendo quanto segue:	
-	$\pi_0^{-1}(\pi_0(C))=F(S^1\times C)\subseteq S^{2n+1} \implies \pi_0^{-1}(\pi_0(C))$ chiuso $\implies \pi_0(C)$ chiuso in $\proj[n]{\complexset} \implies \pi_0$ applicazione chiusa $\implies \pi_0$ identificazione. Pertanto $\proj[n]{\complexset}$ è anche quoziente di $S^{2n+1}$. Siccome $S^{2n+1}$ è un compatto in un $T_2$ per 
-%AAA ESERCIZIO TUTORATO QUOZIENTE CERCASI	
-	e siccome $\pi_0$ è un'identificazione allora $\proj[n]{\complexset}$ è $T_2$.
-	\item $\proj[n]{\complexset}$ è localmente euclideo di dimensione $2n$: per dimostrarlo sfruttiamo la costruzione
-%AAA COSTRUZIONE CERCASI NELLA SCORSA LEZIONE
-	ovvero identificando degli aperti di $\proj[n]{\complexset}$ con $\kamp^n$, quale la famiglia $U_j\coloneqq\{z_j\neq 0\}=\proj[n]{\complexset}\setminus H_j$, con $H_j$ $j$-esimo iperpiano coordinato. Per semplicità lavoreremo con $j=0$.\newline 
-	Si considera la proiezione al quoziente $\funz \pi {\complexset^{n+1}\setminus\{0\}} {\proj[n]{\complexset}}$ e la controimmagine $\pi^{-1}(U_0)=\{z\in\complexset^{n+1}\setminus\{0\}\mid z_0\neq 0\}$ aperto in $\complexset^{n+1}\setminus\{0\}$ perché abbiamo tolto un iperpiano, pertanto $U_0$ è aperto in $\proj[n]{\complexset}$. Questo vale per tutti gli $U_j$. Ricordando la costruzione 
-%AAA COSTRUZIONE DI J E \PHI CERCASI
-	 si considerano le mappe biunivoche e una inversa dell'altra $\funztot j {\complexset^n} {U_0} {(z_1,\dots,z_n)} {(1\colon z_1\colon \dots\colon z_n)}$ e $\funztot \oldphi {U_0} {\complexset^n} {(z_0\colon\dots\colon z_n)} {\left( \frac{z_1}{z_0},\dots,\frac{z_n}{z_0} \right)}$. Mostriamo che $j$ e $\oldphi$ cono omeomorfismi, in questo caso siccome sono già biunivoche e una inversa dell'altra basta dimostrare che sono entrambe continue.
-	\begin{minipage}[t]{0.55\textwidth}
-		Per mostrare che $j$ è continua sfruttiamo il diagramma a lato, ovvero la fattorizzazione di $j$ in $\complexset^{n+1}\setminus\{0\}$ tramite $\widetilde{j}((z_1,\dots,z_n))=(1,z_1\dots,z_n)$ e la proiezione $\pi$. Siccome $\widetilde{j}$ e $\pi$ sono continue allora anche $j$ che è la loro composizione lo è.
-	\end{minipage}
- 	\begin{minipage}[t]{0.13\textwidth}\vspace{-10pt}
-	 % https://q.uiver.app/?q=WzAsNCxbMSwwLCJcXGNvbXBsZXhzZXRee24rMX1cXHNldG1pbnVzXFx7MFxcfSJdLFswLDIsIlxcY29tcGxleHNldF5uIl0sWzIsMiwiVV8wIl0sWzEsMl0sWzEsMCwiXFx3aWRldGlsZGV7an0iXSxbMSwyLCJqIiwyXSxbMCwyLCJcXHBpIl1d
-		\begin{tikzcd}
-	 		& {\complexset^{n+1}\setminus\{0\}} \\
-		 	\\
-		 	{\complexset^n} & {} & {U_0}
-	 		\arrow["{\widetilde{j}}", from=3-1, to=1-2]
-		 	\arrow["{j}"', from=3-1, to=3-3]
-		 	\arrow["{\pi}", from=1-2, to=3-3]
-		 \end{tikzcd}
- 	\end{minipage}
-	\begin{minipage}[t]{0.55\textwidth}
-	Per la continuità dell'inversa $\oldphi$ invece si procede con la fattorizzazione nella controimmagine di $U_0$ tramite $\pi$ tramite una restrizione dell'inversa di $\pi$ e $\hat{\oldphi}$ che sostanzialmente ha le stesse coordinate di $\oldphi$
-		
-		
-	\end{minipage}
-	\begin{minipage}[t]{0.13\textwidth}\vspace{-10pt}
-	% https://q.uiver.app/?q=WzAsNCxbMiwwLCJcXHBpXnstMX0oVV8wKSJdLFszLDAsIlxcc3Vic2V0IFxcY29tcGxleHNldF57fW4rMSJdLFswLDIsIlVfMCJdLFszLDIsIlxcY29tcGxleHNldF5uIl0sWzIsMywiXFxvbGRwaGkiLDJdLFswLDIsInAiLDJdLFswLDMsIlxcaGF0e1xcb2xkcGhpfSJdXQ==
-		\begin{tikzcd}
-			&& {\pi^{-1}(U_0)} & {\subset \complexset^{}n+1} \\
-			\\
-			{U_0} &&& {\complexset^n}
-			\arrow["{\oldphi}"', from=3-1, to=3-4]
-			\arrow["{p}"', from=1-3, to=3-1]
-			\arrow["{\hat{\oldphi}}", from=1-3, to=3-4]
-		\end{tikzcd}	
-	\end{minipage}
-\end{itemize}
-
-%Invece per la continuità di \phi che è l'inversa si procede con la fattorizzazione con \pi^{-1}  \hat{\phi} ha le stesse coordinate di \phi. Notiamo che sono tutti vettori, non c'è il quoziente! Dall'altra parte invece c'è la restrizione di \pi alla controimmagindi di U_0 in U_0. Chiaramente \hat{\phi} è continua: divido per norma diversa da 0, dunque sapremo dire che \phi è continua se   induco al quoziente una mappa continua. Osserviamo che p è un'identificazione: il quoziente \pi è anch'esso un quoziente da un'azione di gruppo (sempre vero per spazi proiettivi, vedasi esercizio già dato) per molitplicazione su C^n+1 meno 0, inoltre è un'azione per omeomorfismi, infatti fissato \lambda in c-0, l'applicazione theta_\lambda è continua (definizione di azione per omeomorfismi) l'applicazione per un elemento fissato è continua. Avevamo dimostrato che la proiezione è aperta (vedasi proprietà delle proiezioni) se il gruppo è finito è anche chiusa!. Dunque anche p restringendosi ad un aperto è ancora un'applicazione aperta (verifica per esercizio) Quindi sicocme è aperta allroa è un'identificazione, allora tale diagramma ci dice che la mappa \oldphi è continua.
+%Anche nel caso complesso si ha in maniera naturale una topologia quoziente data dalla topologia euclidea su c^{n+1}\setminus\{0\} $\cong$
+%Vogliamo vedere che è una varietà topologica compatta di dimensione 2n. Mentr pnr è localmente euclideo di dimensione n, mentre pnc localmente è come cn, dunque come r^2n, dunque la dimensione topologica è 2n
+%Verifichiamo dunque che è connesso (quoziente di un connesso), compattezza: similmente al caso reale si cerca di vederlo come quoziente di compatto o immagine tramite funzione continua di un compatto. Dati due vettoriz e w sonon equivalenti se esiste uno scalare complesso non nullo tale che sono proporzionali. Se si considera dentro c^n+1 che è uguale a R?2n+1 si può considerare la sfer S^2n+1. Come si restringe la relazione di euivalenza alla sfera? Si scrive in cooridnate e ci vede il vettore corrispondente in R^2n+2, dove x e y sono parte reale e immaginaria di z. La norma dal punto di vista reale o complesso è la stessa cosa. Se calcoliamo invece la norma di \lambda z con \lambda\in\complexset, il lambda esce e rimane il modulo per la norma. Ovvero se z sta in c^n+1 - o allora la sua norma non è nulla, e se lambda è proprio 1/norma di z, allora 1/norma di z=z, dunque appartiene a . Ho fatto vedere che ogni vettore del set quozientato è equivalente ad un vettore che sta nella sfer. Dunque la sfera si surietta sullo spazio proiettivo complesso, dunque pnc è compatto.
+%Nel caso reale identifico sono equivalenti solo se antipodali, in c invece ci sonon infiniti numeri di norma 1, dunque ci sono infiniti punti nella stessa classe lambda infiniti perché percorrono la circonferenza. I punti lambda z sono tutti equivalenti. Questo è il modo in cui vengono identificati i punti sulla sfera.
+%Si consideri la restrizione alla sfera. Abbiamo detto che l'immagine di punti sulla sfera è la stessa se e solo se esiste lambda tc   /significato del conto con le norme/
+%dimostro che pi_0 è un'dentificazione chiusa, dunque il pnc è di Hausdorff
+%è semplice da dimostrare perché dato un chiuso C in S^2n+1, allora pi_0(C) è chiuso nel quoziente se e solo se la controimmagine è chiusa in S^2n+1. In effetti la relazione di equivalenza su S^2n+1 viene da un'azione del gruppo S^1 rispetto al prodotto con neutro 1. L'azione è data dal prodotto. Un elemento agisce su un vettore er moltiplicazione. Studiamo ora la mappa dell'azione: è continua e siccome S^1\times è compatto perché prodotto di compatti e S^2n+1 è Hausdroff allora F è chiusa. Dato un chiuso nella sfera, allora stare nella controimmagine della    chiusura rispetto alla rel'de'eq, agire su tuti i punti di c con tutti i punti di s1.  Fare tale operazione vuol dire agire sui punti di C con tutti gli elementi di S^1, ovvero prendere tutte le orbite che intersecano C.  Però essendo chiuso nel prodoot ed F è chiusa allora l'immagine è chiusa.   Dunque per mostrare la chiusura di \pi_0 uso la chiusura di F.   Concludo con \pi_0 identificazione, dunque pnc è anche quoziente della sfera e sicocme la sfera è cpt e t_2 allora il quoziente è T_2.
+%Connesione, cpt, T_2, manca localmente euclideo
+%Per mostrarlo uso la stessa costruzione vista nell'ultima lezione: subset spazio proiettivo identificabili conkn. Voglio identificare degli aperti di pn con kn
+%Si comincia con la prima coordinata
+%CHiamiamo U_j i sottoinsiemi di pnc dove tolgo l'j esimo piano coordinato. Per semplicità poniamo j=0 e vale per tutti i j. Si considera il quoziente e voglio considerre la controimmagine. Esso è un aperto perché tolgo un iperpiano, dunque U_0 è aperto in pnc. Questo vale per tutti gli U_j. Poi ricordiamo che un'identificazion di U_0 con C^n con la mappa j. Sappiamo che j e \oldphi sono biunivoche e inverse. Guardandole dall'apetto topologico mostriamo che sono omeomorfismi, ovvero che sono continue (l'inversa è continua). Iniziamo da j, che si fattrizza come segue in C^{}  non prendo mai il vettore nullo perché la prima coordinata è 1. La proiezione è continua e anche \tilde{j} lo è, dunque la composizione è continua e j lo è. Invece per la continuità di \phi che è l'inversa si procede con la fattorizzazione con \pi^{-1}  \hat{\phi} ha le stesse coordinate di \phi. Notiamo che sono tutti vettori, non c'è il quoziente! Dall'altra parte invece c'è la restrizione di \pi alla controimmagindi di U_0 in U_0. Chiaramente \at{\phi} è continua: divido per norma diversa da 0, dunque sapremo dire che \phi è continua se   induco al quoziente una mapa continua. Osserviamo che p è un'identificazione: il quoziente \pi è anch'esso un quoziente da un'azione di gruppo (sempre vero per spazi proiettivi, vedasi esercizio già dato) per molitplicazione su C^n+1 meno 0, inoltre è un'azione per omeomorfismi, infatti fissato \lambda in c-0, l'applicazione theta_\lambda è continua (definizione di azione per omeomorfismi) l'applicazione per un elemento fissato è continua. Avevamo dimostrato che la proiezione è aperta (vedasi proprietà delle proiezioni) se il gruppo è finito è anche chiusa!. Dunque anche p restringendosi ad un perto è ancora un'applicazione aperta (verifica per esercizio) Quindi sicocme è aperta allroa è un'identificazione, allora tale diagramma ci dice che la mappa \oldphi è continua.
 %Riasusmendo, abbiamo dedotto che U_0 è un aperto di pn, che è omeomorfo a cn, dunque a r2n. Allo stesso modo lo si verifica per tutti i j grazie alle mappe \phi_j che divide per la j-esima coordinata
 %In più chiarmanet pn è l'unione di tali n+1 aperti: le coordinate omoegenee ce n'è sempre una diversa da0, dunque ogni punto sta almeno in uno di questi aerti, dunque pnc è loclamente euclideo di dimensione 2n
 %su un campo qualsiasi si ha sempre la mappa j    con kn senza aspetto topologio è sempre biunivoca. Nel cso reale rimane comuneuq vero 
@@ -1027,195 +978,180 @@ Vogliamo vedere che è una varietà topologica compatta di dimensione $\mathbf{2
 %def birapporto e come si calcola
 %manca la proprietà per cui è importante, si vedrà nella prossima lezione
 
-\
-	\
-		\
-			\
-				\	
-					\
-						\
-					\
-				\
-			\
-		\
-	\
-\
-
 %LEZ 32
-%
-%Sia $\proj{\ }$ una retta proiettiva ed i punti $P_1, P_2, P_3, P_4$ con $P_1, P_2, P_3$ distinti, allora definisco $\beta(P_1, P_2, P_3)  \\\
-%Quando una coppia di quattro punti è 
-%Date due rette proiettive PV e PV' e P_1 in PV distinti e Q in PV' distinti, quindi esiste sempre ed è unica una trasformazione proiettiva tale che f(P_i)=Q_i
-%Posso farlo anche con quattro punti? Posso usare il birapporto per vederlo!
-%\begin{theorema}
-%	Sia PV e PV' due rette proiettive e siano i punti di cui  i primi 3 distinti idem. Allora $\exists $ trasformazione proiettiva tale che f(P_i)=Q_i, \forall  \iff il birapporto di queste quaterne è lo stesso
-%\end{theorema}
-%PREMESSA PRIMA DELLA DIM DELL'EQUIVLENZA: si usa nella dimostazione
-%consideriamo solo i primi 3 pt (scelgo rappresentanti) sia per PV sia per PV'
-%base che dà rif proiettivo con i punti coordinati e punto unità
-%scegliamo anche un rappresentante per P_4: v_4=. Allora in tale rif proiettivo è P_4=(a\colon b) e il birapporto è 
-%Allo stesso modo si procede con Q_i, per cui 
-%Siccome P_1, P_2, P_3 e Q_i sono in posizione generale, allora esiste ed è unica trasformazione proiettiva che porta f(P_1)=Q_i
-%l'abbiamo costruita come indotta da un'applicazione lineare che porta la base v in quella di v'
-%Cosa succede a v_4 tramite \phi fra V e V'?
-%la trasf che porta i primi 3 esiste ed è unica, quindi manda p_4 dove deve. Scrivo dunque questa unica trasf fino a 3 e vediamo cosa susccede a P_4
-%DIMOSTRAZIONE
-%\impliesdx ddeve essere proprio la f nica, per cui   nel riferimento in cui, per cui il rapporto di Q_i è dato dal rapporto che è pari
-%\impliessx se il birapporto dei Q_i=b/a  Distinguiamo i casi in cui il birapporto è in \kamp o è infinito     se a=0, allora Q_4 è il punto 0\colon 1 e coincide con f(P_4)
-%il senso sta nel fatto che i primitre pt distinit la traasf exists !      stessa cosa che dre che i birapporti sono uguali
-%
-%
-%In particolare per le proiettività esiste una proiettività che manda i p_i nei q_i se e solo se il birapporto dei P-i è pari al birapporto dei Q_i
-%OSS  
-%il birapporto misura l'equivalenza proiettiva su punti di una retta proiettiva
-%
-%
-%è una relazione di equivalenza su \mathcal{S}  (verifica per esercizio) e tramite il birapporto possiamo dire che il quoziente di S per l'equiv proj, ovvero le classi di equiv proj di 4 pt distinti e ordinati in P1 sono in corrispondenza biunivoca con K\0,1 tramite il birapporto:  ad ogni quat associo il birapport (associazione suriettiva, per ogni el nel campo trovo quaterna pt distini che dà bir   due quat equivalenti se e solo se ha lo stesso birapporto, dunque quozientando diventa iniettiva e dunque biunivoca)
-%Qundo ho 4 pt in sp proj di dimension maggiore di 1 in generlae il birapporto non è definito a meno che i punti non siano allineati su una retta proiettiva r
-%
-%
-%esempio di come si usa il bir di come si studia l'equiv proj di 4 pt in pP2
-%si considerano 2 quaterne di pt distinti: P_1, P_2, P_3, P_4 e 
-%di ciascuna delle due quaterne vedo in che posizione sono: pos generale: a tre a tre non  allineati
-%oppure se non sono in pos generale allora ce ne sono 3 allineati: fa differenza se il quarto punto sta nella retta o meno
-%terza possibilità: tutti e quattro i pt allineati
-%Nel secondo caso ci sono tutte le possibili permutazioni fra pt allineati
-%Se i pt P sono proj equiv ai pt Q, tail posizioni devono essere mantenute: le proiettività mandano rette in rette, pos gen in pos gen
-%se si verificano casi diversi per i pt P e Q si può dire che non sono proj equiv
-%Supponiamo di essere nel caso 1, ovvero P_i e Q_i in pos generale: sono proj equiv oppure no? pos gener esiste unica proj fra le due (siamo nel numero giusto n+2=4)
-%Caso 2: 3 allineati: la proj esiste ed è unica, ma non ci interessa l'unicità ora, basta che ce ne sia una (sono gli stessi 3 alineati con gli stessi indici) Sono proj equiv: mostriamolo con un conto: per costruire proj costruisco trasf kin inveritible: retta nella retta   sappiamo dal ris sulle trasf proj esiste sempre trasf proj che mappa i pt nei pt, soprattutto sappiamo scriverl. HìDà un'appl linneare in piani vettoriali: posso estenderla in trasf lin da un vettore che rappresent P_4 in Q_4.   Estendo in una proiettività di P2 che fa questo lavoro sostanzialmente
-%Scegliamo P_i=[v_i]  tali che  posso farlo perché sono allineati: allora    è una base di K3 perché sono indipendetni dato che v_4\not in r  Idem per Q
-%Definiziamo \phi sulla base lineare tale che  impongo le immagini dei rappresentanti, allora per la linearità di phi è rispettato anche 4. dunque la proj indotta da phi tilde è una proiettività che manda pi in qi
-%Caso 3: osservazione: pt allineati allora è definito il loro birapporto se i pt sono proj equiv allora chiamata f la proiettività che manda i 4 pt nei 4 pt allora necessariamente manda r in s, dunque la restrizione alle due rette è una trsformazione proj che potta pi in qi per ogni i. COsa possiamo dire sui due birapporti? Ho la dimostrazione di prima /pt proj equiv allora stesso birapport/Vale il viceeversa: allora dal teorema esiste g trasformazione proiettiva che manda pi in qi per ogni ima tae g si estende facilmente ad un proiettività di p2, in maniera non unica /esercizio/ le proj si costruiscono dalle app lin: r piano vett in k3 mentre g corriponde app line fra i due piani: estendo l'app lin ad automorfismo di k3 sceglienod basi che hnno 3 vettori nel piano ed uno fuori ed uso ilterzo vettore per estenderla
-%Dunqeu in questo caso i pt sono proj equiv sse hanno lo stesso birapporto BIrapporto utie anche in dimensione superiore se stanno su una rettaho così esteso l'app line per la trasf 
-%
-%
-%FINITO LE BASI DELLO SPAZIO PROIETTIVO
-%LUNEDì E MARTEDì VACANZA
-%
-%
-%
-%STUDIO DELLA GEOMETRIA DI RETTE O CURVE NEL PIANO PROIETTIVO
-%OGGI RETTE E UN PO' DI IPERPIANI
-%Una retta in P2 ha equazione z_0x_0+a_i   eq lin omo elle coo omogenee, dunque è determinata dai coefficienti a_0 a_1 e a_2 dell'eq con la proprietà che devono essere non tutti nulli e in più fissati i coeff l'eq non è univocamente determinata: è determinata a meno di costante molitplicativa non nulla. Dunque si può associare a r un punto del piano proiettivo dato esattamente dai coefficienti delle coordinate omogenee, per cui si ha una corrispondenza binivoca fra le rette in P2 e P"(che non va pensato come lo stessso piano)   funziona bene con p2: le coo omo si comportano proprio come i coeff dell'equazione
-%
-%ESEMPIO NEL CASO REALE
-%quando pensiamo a P2 d destra cpme lo spazio che parametrizza le rette in P2, lo denotiamo conP2* e lo chiamiamo piano proiettivo duale
-%in prima istanza questo significa semplicemente  interpretazione punto del duale visto come ppunto associato ad una retta
-%collgamento co lo spazio vettoriale duale        forma lineare
-%prima costruzione come corrispondenza
-%
-%un FASCIO  di rette in P2 è il set delle rette di equazione    con l_1 ed l_2 sono rette fissate
-%i coeff variano in P1
-%
-%esempio
-%
-%collezione delle rette la cui eq si ottiene come combinazione lineare delle due
-%è una famiglia di rette con lambda e mu come parametri
-%
-%
-%famiglia dir ette: ad ogni retta un punto del proj duale: a cosa corrisonde questa costruzione di prendere il fascio?  Il fascio F corrisponde alla retta passante per i punti corrispondenti a l1 e a l2, perché quando guardo i coeff dell'eq ho l_1: a_0    \squigglyarrow  l_2:      il fascio F generato da queste due rette ha equazione e quindi eusto corrisponde esattamente ai pt nel duale scritti come (lambda    ), ovvero la retta per i due punti sopra
-%
-%Esempio
-%
-%
-%
-%nel duale mi dà la retta passante per i due punti
-%
-%
-%tornando dalla situazione generale nel fascio
-%OSS dure rette distinte nel piano si intersecano in un punto solo: deve stare in ogni retta del fascio perché lì si annullano, dunque la cl rimane 0
-%Ogn retta del fascio passa per P e P è l'unico punto comunea tutte le rette del fascio
-%Viceversa ogni retta per P appartiene al fascio
-%Ciò significa che F è la famiglia delle rette per il punto fissato P PUZZA DI SPAZIO VETT CON VETT NULLO P 
-%
-%P è detto punto base del fascio
-%
-%ESEMPIO
-%
-%
-%Voglio riprendere la descrizione parametrica del fascio, in questo esempio il fascio F corrisponde alla retta nel piano proiettivo duale per i punti 
-%adesso la voglio scrivere in equazione cartesiana nelle coordinate a_    nel piano proj duale
-%scrivere la retta vuol dire fare il determinante formale
-%
-%
-%sorpresa sorpresa, i coeff della retta sono esattmante le coo di P di intersezione delle due rette
-%infatti vale in generale che fissato un punto base, il set delle rette per p in P2 è un fascio di rette, corrispondente a una retta nel piano proiettivo duale, allora se P ha coordinate c_0   la retta corrispondente nel piano proj duale ha equazione c_0a_0 è   =0, questo perché dta una retta r qualsiasi di equazione a_0x_0   =0, il punto P appartiene a r sse vale l'equazione c_0    sostituisco le coordinate di P e trovo quell'eq:   condizione perchè appartenga alla retta   o al fascio, collezione delle rette per p     fisso p e retta che varia (duale )   retta r fissata e p che varia. Ma l'eq è la stessa
-%di fatto il fascio si scrive in forma parametrica scegliendo due rette specifiche che passano per p
-%
-%ESEMPIO IN P2R
-%scrivere in forma parametrica il fascio delle rette per il punto base p di coordinate (1\colon -1 \coln4)   scelgo 2rette a caso che passano per il punto p
-%se faccio variare lambda e mu ottengo tutte le rette di p2 che passano per questo punto
-%
-%OSS SULL'INTERPRETAZIONE AFFINE
-%se vedo r2 come   ed F fascio di rette proj con punto base P in p2, allora ho 2 possibilità: punto base proprio o all'infinito
-%Se P è un punto proprio, allora P\in\kamp^2 e F corrisponde a meno di passare alla chiusura proj dalla retta proj a quella affine corrisponde alle rette afifni in k2 per il punto P
-%Se p invece è un punto improprio, corrisponde ad una direzione di rette nel piano affine e F corrisponde a tutte le rette affini che hanno questa direazione fissata, ovvero è un fascio di rette parallele
-%differenza solo fra punto proprio e improprio
-%
-%
-%PIANO PROIETTIVO DUALE
-%OSS
-%P2 è il proeiettivizato di K3, e sappiamo che K3 duale è lo spazio delle forme lineari \alpha su K3 della forma ax_0+a_1    numero le coordinate da 0 a 2, per il resto è uguale a Geo1
-%Quando considero la retta r di equazione a_0x_0   =0, allora stiamo dicendo che r /è il nucle di tale forma lineare \alpha / corrisponde a un piano vettoriale che è esattamente il nucleo di \alpha 
-%r ha tale eq: r è proietivizzato da piano vett /da def sott/ tale sott è nucleo
-%il punt corrispondente ad \alpha corrisponde alla retta r    \alpha è forma lineare non nulla determinata a meno di multipli, dunque alpha non identicamente nulla e determinata a meno di multipli
-%
-%base che induce le coordinate proiettive a_0   su p2 duale, quindi tale interpretazione astratta diventa quella numerica fissando la base naturale delle forme lineari e le coo proiettive associate  lpha come cl della base a_0x_0   i coeff sono le coordinate omogenee
-%
-%INCISO
-%costruzione che si generalizza: dato V spazio vettoriale e PV spazio  proiettivo associato a V, abbiamo anche V^* spazio vettoriale duale, ovvero le forme lineari, allora il proiettivizzato del duale si dice spazio proiettivo duale di PV e si indica con l'asterisco fuori (!!)
-%di particolare ha una corrispondenza biunivoca fra i punti dello spazio proiettivo duale e gli iperpiani di PV   data da [\alpha]  associo il proiettivizzato del nucleo di alpha in PV
-%In coordinate: a un iperpiano di equazione a_0x_0+a_nx_ associamo il punto (a0\colon   a_n)
-%/così come associo ad un vettore i coefficienti della base/
-%
-%
-%CONICHE IN p^2(K)
-%Abbiamo già visto a Geo1 cosa sono le coniche in R^2, classificandole a meno di rototraslazione
-%generalizziamolo al caso del piano proiettivo. Il passaggi dalla retta alla conica   grado 1 (rette) a eq polinomiali di grado 2 Dobbiamo tenere conto del fatto che nel piano proiettivo le coordinate sono omogenee
-%Consideriamo k[x_0,   x_2] sono i polinomi in x_0   e coefficienti in K. Se F è un polinomio qualsiasi, 'equazione non dà una condizione ben definita in P2
-%quali sono le eq che ha senso studiare in p2: i polinomi omogenei
-%definizione per numero qualsiasi di variabilitutti i monomi con coeff non nulla hanno lo stesso grado
-%esempio
-%omogeneo di grado 3
-%non omogeneo  /grado 3, 2, 0/   PROPRIO PESSIMO
-%def significativa con più variabili
-%
-%forma lineare è omogenea quando non ha termine noto
-%
-%i polinomi omogenei hanno la proprietà di 		 infatti è vero per ogni monomio
-%
-%
-%tornando al pinao proiettivo duale con le coordinate omogenee x_0   e consideriamo F un polinomio omogeneo nelle coordinate omogenee
-%Se ho un punto P di coordinate c_0   in P2, allora tutte le altre coordinate, possibili scelte per le coordinate di P, sono \lambda c_0   con \lambda\in\kamp\setminus    e quando a valutare F con lambda ottego     quesot mi dice che F si annulla in una scelta di ccordinate se e solo se si annulla in qualsiasi scelta di coordinate
-%Quindi l'equazion F(a condizione)=0 è ben posta in P^2
-%
-%esempio
-%è un subset ben definito del piano proiettivo
-%
-%le coniche sono esattamente i sottonisiemi di P2 che sono dati da polinoi omogenei di grado 2
-%
-%
-%
-%def i pol + va omogeneo
-%eq polinomiali che hanno senso in P^2 per coo omogenee: pol omo
-%dunque eq ben definite
-%
-%
-%DEFINIZIONE
-%curva algebrica piana proiettiva è data da un polinomio omogeneo F a coefficienti nel piano K nelle coordinate omogenee su P". Tale polinomio si considera a meno di multipli (si consdiera come un'equazione)
-%
-%la curva C ha un supporto che è il subset di P^2 dove F si annulla
-%assieme al supporto vogliamo ricordarci dell'equazione
-%F è l'eq di C
-%La morale è che oltre al supporto vogliamo ricordarci dell'equazione a meno di multipli. Questo perhcé eq determina il supporto, ma in generale non vale il contrario  (vedasi ellissi immaginario)
-%le curve che vogliamo studiare sono subset di P2 sono luoghi di zeri di pol omogenei, ma nella nozione di curva inseriamo anche l'eq F con multpli . Algebrica erché polinomi, piana perché siamon nel piano, proiettiva perché piano proiettivo
-%
-%
-%ESEMPIO: retta
-%
-%Il grado della curva è il grado dell'equazione F. Dunque curve di grado 1 sono le rette proiettive. Le consiche che vogliamo studiare sono le curve di grado 2
-%
-%Terminologia: la curva C è reale o complessa se siamo in p2r o in p2c
-%
-%
+Sia $\proj{\ }$ una retta proiettiva ed i punti $P_1, P_2, P_3, P_4$ con $P_1, P_2, P_3$ distinti, allora definisco $\beta(P_1, P_2, P_3)  \\\
+Quando una coppia di quattro punti è 
+Date due rette proiettive PV e PV' e P_1 in PV distinti e Q in PV' distinti, quindi esiste sempre ed è unica una trasformazione proiettiva tale che f(P_i)=Q_i
+Posso farlo anche con quattro punti? Posso usare il birapporto per vederlo!
+\begin{theorema}
+	Sia PV e PV' due rette proiettive e siano i punti di cui  i primi 3 distinti idem. Allora $\exists $ trasformazione proiettiva tale che f(P_i)=Q_i, \forall  \iff il birapporto di queste quaterne è lo stesso
+\end{theorema}
+PREMESSA PRIMA DELLA DIM DELL'EQUIVLENZA: si usa nella dimostazione
+consideriamo solo i primi 3 pt (scelgo rappresentanti) sia per PV sia per PV'
+base che dà rif proiettivo con i punti coordinati e punto unità
+scegliamo anche un rappresentante per P_4: v_4=. Allora in tale rif proiettivo è P_4=(a\colon b) e il birapporto è 
+Allo stesso modo si procede con Q_i, per cui 
+Siccome P_1, P_2, P_3 e Q_i sono in posizione generale, allora esiste ed è unica trasformazione proiettiva che porta f(P_1)=Q_i
+l'abbiamo costruita come indotta da un'applicazione lineare che porta la base v in quella di v'
+Cosa succede a v_4 tramite \phi fra V e V'?
+la trasf che porta i primi 3 esiste ed è unica, quindi manda p_4 dove deve. Scrivo dunque questa unica trasf fino a 3 e vediamo cosa susccede a P_4
+DIMOSTRAZIONE
+\impliesdx ddeve essere proprio la f nica, per cui   nel riferimento in cui, per cui il rapporto di Q_i è dato dal rapporto che è pari
+\impliessx se il birapporto dei Q_i=b/a  Distinguiamo i casi in cui il birapporto è in \kamp o è infinito     se a=0, allora Q_4 è il punto 0\colon 1 e coincide con f(P_4)
+il senso sta nel fatto che i primitre pt distinit la traasf exists !      stessa cosa che dre che i birapporti sono uguali
+
+
+In particolare per le proiettività esiste una proiettività che manda i p_i nei q_i se e solo se il birapporto dei P-i è pari al birapporto dei Q_i
+OSS  
+il birapporto misura l'equivalenza proiettiva su punti di una retta proiettiva
+
+
+è una relazione di equivalenza su \mathcal{S}  (verifica per esercizio) e tramite il birapporto possiamo dire che il quoziente di S per l'equiv proj, ovvero le classi di equiv proj di 4 pt distinti e ordinati in P1 sono in corrispondenza biunivoca con K\0,1 tramite il birapporto:  ad ogni quat associo il birapport (associazione suriettiva, per ogni el nel campo trovo quaterna pt distini che dà bir   due quat equivalenti se e solo se ha lo stesso birapporto, dunque quozientando diventa iniettiva e dunque biunivoca)
+Qundo ho 4 pt in sp proj di dimension maggiore di 1 in generlae il birapporto non è definito a meno che i punti non siano allineati su una retta proiettiva r
+
+
+esempio di come si usa il bir di come si studia l'equiv proj di 4 pt in pP2
+si considerano 2 quaterne di pt distinti: P_1, P_2, P_3, P_4 e 
+di ciascuna delle due quaterne vedo in che posizione sono: pos generale: a tre a tre non  allineati
+oppure se non sono in pos generale allora ce ne sono 3 allineati: fa differenza se il quarto punto sta nella retta o meno
+terza possibilità: tutti e quattro i pt allineati
+Nel secondo caso ci sono tutte le possibili permutazioni fra pt allineati
+Se i pt P sono proj equiv ai pt Q, tail posizioni devono essere mantenute: le proiettività mandano rette in rette, pos gen in pos gen
+se si verificano casi diversi per i pt P e Q si può dire che non sono proj equiv
+Supponiamo di essere nel caso 1, ovvero P_i e Q_i in pos generale: sono proj equiv oppure no? pos gener esiste unica proj fra le due (siamo nel numero giusto n+2=4)
+Caso 2: 3 allineati: la proj esiste ed è unica, ma non ci interessa l'unicità ora, basta che ce ne sia una (sono gli stessi 3 alineati con gli stessi indici) Sono proj equiv: mostriamolo con un conto: per costruire proj costruisco trasf kin inveritible: retta nella retta   sappiamo dal ris sulle trasf proj esiste sempre trasf proj che mappa i pt nei pt, soprattutto sappiamo scriverl. HìDà un'appl linneare in piani vettoriali: posso estenderla in trasf lin da un vettore che rappresent P_4 in Q_4.   Estendo in una proiettività di P2 che fa questo lavoro sostanzialmente
+Scegliamo P_i=[v_i]  tali che  posso farlo perché sono allineati: allora    è una base di K3 perché sono indipendetni dato che v_4\not in r  Idem per Q
+Definiziamo \phi sulla base lineare tale che  impongo le immagini dei rappresentanti, allora per la linearità di phi è rispettato anche 4. dunque la proj indotta da phi tilde è una proiettività che manda pi in qi
+Caso 3: osservazione: pt allineati allora è definito il loro birapporto se i pt sono proj equiv allora chiamata f la proiettività che manda i 4 pt nei 4 pt allora necessariamente manda r in s, dunque la restrizione alle due rette è una trsformazione proj che potta pi in qi per ogni i. COsa possiamo dire sui due birapporti? Ho la dimostrazione di prima /pt proj equiv allora stesso birapport/Vale il viceeversa: allora dal teorema esiste g trasformazione proiettiva che manda pi in qi per ogni ima tae g si estende facilmente ad un proiettività di p2, in maniera non unica /esercizio/ le proj si costruiscono dalle app lin: r piano vett in k3 mentre g corriponde app line fra i due piani: estendo l'app lin ad automorfismo di k3 sceglienod basi che hnno 3 vettori nel piano ed uno fuori ed uso ilterzo vettore per estenderla
+Dunqeu in questo caso i pt sono proj equiv sse hanno lo stesso birapporto BIrapporto utie anche in dimensione superiore se stanno su una rettaho così esteso l'app line per la trasf 
+
+
+FINITO LE BASI DELLO SPAZIO PROIETTIVO
+LUNEDì E MARTEDì VACANZA
+
+
+
+STUDIO DELLA GEOMETRIA DI RETTE O CURVE NEL PIANO PROIETTIVO
+OGGI RETTE E UN PO' DI IPERPIANI
+Una retta in P2 ha equazione z_0x_0+a_i   eq lin omo elle coo omogenee, dunque è determinata dai coefficienti a_0 a_1 e a_2 dell'eq con la proprietà che devono essere non tutti nulli e in più fissati i coeff l'eq non è univocamente determinata: è determinata a meno di costante molitplicativa non nulla. Dunque si può associare a r un punto del piano proiettivo dato esattamente dai coefficienti delle coordinate omogenee, per cui si ha una corrispondenza binivoca fra le rette in P2 e P"(che non va pensato come lo stessso piano)   funziona bene con p2: le coo omo si comportano proprio come i coeff dell'equazione
+
+ESEMPIO NEL CASO REALE
+quando pensiamo a P2 d destra cpme lo spazio che parametrizza le rette in P2, lo denotiamo conP2* e lo chiamiamo piano proiettivo duale
+in prima istanza questo significa semplicemente  interpretazione punto del duale visto come ppunto associato ad una retta
+collgamento co lo spazio vettoriale duale        forma lineare
+prima costruzione come corrispondenza
+
+un FASCIO  di rette in P2 è il set delle rette di equazione    con l_1 ed l_2 sono rette fissate
+i coeff variano in P1
+
+esempio
+
+collezione delle rette la cui eq si ottiene come combinazione lineare delle due
+è una famiglia di rette con lambda e mu come parametri
+
+
+famiglia dir ette: ad ogni retta un punto del proj duale: a cosa corrisonde questa costruzione di prendere il fascio?  Il fascio F corrisponde alla retta passante per i punti corrispondenti a l1 e a l2, perché quando guardo i coeff dell'eq ho l_1: a_0    \squigglyarrow  l_2:      il fascio F generato da queste due rette ha equazione e quindi eusto corrisponde esattamente ai pt nel duale scritti come (lambda    ), ovvero la retta per i due punti sopra
+
+Esempio
+
+
+
+nel duale mi dà la retta passante per i due punti
+
+
+tornando dalla situazione generale nel fascio
+OSS dure rette distinte nel piano si intersecano in un punto solo: deve stare in ogni retta del fascio perché lì si annullano, dunque la cl rimane 0
+Ogn retta del fascio passa per P e P è l'unico punto comunea tutte le rette del fascio
+Viceversa ogni retta per P appartiene al fascio
+Ciò significa che F è la famiglia delle rette per il punto fissato P PUZZA DI SPAZIO VETT CON VETT NULLO P 
+
+P è detto punto base del fascio
+
+ESEMPIO
+
+
+Voglio riprendere la descrizione parametrica del fascio, in questo esempio il fascio F corrisponde alla retta nel piano proiettivo duale per i punti 
+adesso la voglio scrivere in equazione cartesiana nelle coordinate a_    nel piano proj duale
+scrivere la retta vuol dire fare il determinante formale
+
+
+sorpresa sorpresa, i coeff della retta sono esattmante le coo di P di intersezione delle due rette
+infatti vale in generale che fissato un punto base, il set delle rette per p in P2 è un fascio di rette, corrispondente a una retta nel piano proiettivo duale, allora se P ha coordinate c_0   la retta corrispondente nel piano proj duale ha equazione c_0a_0 è   =0, questo perché dta una retta r qualsiasi di equazione a_0x_0   =0, il punto P appartiene a r sse vale l'equazione c_0    sostituisco le coordinate di P e trovo quell'eq:   condizione perchè appartenga alla retta   o al fascio, collezione delle rette per p     fisso p e retta che varia (duale )   retta r fissata e p che varia. Ma l'eq è la stessa
+di fatto il fascio si scrive in forma parametrica scegliendo due rette specifiche che passano per p
+
+ESEMPIO IN P2R
+scrivere in forma parametrica il fascio delle rette per il punto base p di coordinate (1\colon -1 \coln4)   scelgo 2rette a caso che passano per il punto p
+se faccio variare lambda e mu ottengo tutte le rette di p2 che passano per questo punto
+
+OSS SULL'INTERPRETAZIONE AFFINE
+se vedo r2 come   ed F fascio di rette proj con punto base P in p2, allora ho 2 possibilità: punto base proprio o all'infinito
+Se P è un punto proprio, allora P\in\kamp^2 e F corrisponde a meno di passare alla chiusura proj dalla retta proj a quella affine corrisponde alle rette afifni in k2 per il punto P
+Se p invece è un punto improprio, corrisponde ad una direzione di rette nel piano affine e F corrisponde a tutte le rette affini che hanno questa direazione fissata, ovvero è un fascio di rette parallele
+differenza solo fra punto proprio e improprio
+
+
+PIANO PROIETTIVO DUALE
+OSS
+P2 è il proeiettivizato di K3, e sappiamo che K3 duale è lo spazio delle forme lineari \alpha su K3 della forma ax_0+a_1    numero le coordinate da 0 a 2, per il resto è uguale a Geo1
+Quando considero la retta r di equazione a_0x_0   =0, allora stiamo dicendo che r /è il nucle di tale forma lineare \alpha / corrisponde a un piano vettoriale che è esattamente il nucleo di \alpha 
+r ha tale eq: r è proietivizzato da piano vett /da def sott/ tale sott è nucleo
+il punt corrispondente ad \alpha corrisponde alla retta r    \alpha è forma lineare non nulla determinata a meno di multipli, dunque alpha non identicamente nulla e determinata a meno di multipli
+
+base che induce le coordinate proiettive a_0   su p2 duale, quindi tale interpretazione astratta diventa quella numerica fissando la base naturale delle forme lineari e le coo proiettive associate  lpha come cl della base a_0x_0   i coeff sono le coordinate omogenee
+
+INCISO
+costruzione che si generalizza: dato V spazio vettoriale e PV spazio  proiettivo associato a V, abbiamo anche V^* spazio vettoriale duale, ovvero le forme lineari, allora il proiettivizzato del duale si dice spazio proiettivo duale di PV e si indica con l'asterisco fuori (!!)
+di particolare ha una corrispondenza biunivoca fra i punti dello spazio proiettivo duale e gli iperpiani di PV   data da [\alpha]  associo il proiettivizzato del nucleo di alpha in PV
+In coordinate: a un iperpiano di equazione a_0x_0+a_nx_ associamo il punto (a0\colon   a_n)
+/così come associo ad un vettore i coefficienti della base/
+
+
+CONICHE IN p^2(K)
+Abbiamo già visto a Geo1 cosa sono le coniche in R^2, classificandole a meno di rototraslazione
+generalizziamolo al caso del piano proiettivo. Il passaggi dalla retta alla conica   grado 1 (rette) a eq polinomiali di grado 2 Dobbiamo tenere conto del fatto che nel piano proiettivo le coordinate sono omogenee
+Consideriamo k[x_0,   x_2] sono i polinomi in x_0   e coefficienti in K. Se F è un polinomio qualsiasi, 'equazione non dà una condizione ben definita in P2
+quali sono le eq che ha senso studiare in p2: i polinomi omogenei
+definizione per numero qualsiasi di variabilitutti i monomi con coeff non nulla hanno lo stesso grado
+esempio
+omogeneo di grado 3
+non omogeneo  /grado 3, 2, 0/   PROPRIO PESSIMO
+def significativa con più variabili
+
+forma lineare è omogenea quando non ha termine noto
+
+i polinomi omogenei hanno la proprietà di 		 infatti è vero per ogni monomio
+
+
+tornando al pinao proiettivo duale con le coordinate omogenee x_0   e consideriamo F un polinomio omogeneo nelle coordinate omogenee
+Se ho un punto P di coordinate c_0   in P2, allora tutte le altre coordinate, possibili scelte per le coordinate di P, sono \lambda c_0   con \lambda\in\kamp\setminus    e quando a valutare F con lambda ottego     quesot mi dice che F si annulla in una scelta di ccordinate se e solo se si annulla in qualsiasi scelta di coordinate
+Quindi l'equazion F(a condizione)=0 è ben posta in P^2
+
+esempio
+è un subset ben definito del piano proiettivo
+
+le coniche sono esattamente i sottonisiemi di P2 che sono dati da polinoi omogenei di grado 2
+
+
+
+def i pol + va omogeneo
+eq polinomiali che hanno senso in P^2 per coo omogenee: pol omo
+dunque eq ben definite
+
+
+DEFINIZIONE
+curva algebrica piana proiettiva è data da un polinomio omogeneo F a coefficienti nel piano K nelle coordinate omogenee su P". Tale polinomio si considera a meno di multipli (si consdiera come un'equazione)
+
+la curva C ha un supporto che è il subset di P^2 dove F si annulla
+assieme al supporto vogliamo ricordarci dell'equazione
+F è l'eq di C
+La morale è che oltre al supporto vogliamo ricordarci dell'equazione a meno di multipli. Questo perhcé eq determina il supporto, ma in generale non vale il contrario  (vedasi ellissi immaginario)
+le curve che vogliamo studiare sono subset di P2 sono luoghi di zeri di pol omogenei, ma nella nozione di curva inseriamo anche l'eq F con multpli . Algebrica erché polinomi, piana perché siamon nel piano, proiettiva perché piano proiettivo
+
+
+ESEMPIO: retta
+
+Il grado della curva è il grado dell'equazione F. Dunque curve di grado 1 sono le rette proiettive. Le consiche che vogliamo studiare sono le curve di grado 2
+
+Terminologia: la curva C è reale o complessa se siamo in p2r o in p2c
+
+
