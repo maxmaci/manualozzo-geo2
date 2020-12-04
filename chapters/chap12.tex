@@ -261,16 +261,6 @@ Posto dunque $t$ come il numero delle \textit{equazioni}, notiamo che:
 		\item Le \textit{rette} con equazione $ax+by=0$, ovvero ai \textit{piani perpendicolari} in $\realset^3$ passanti per le rette con quell'equazione $ax+by=0$:  sul modello piano corrisponde a \textbf{diametri colleganti due punti} sul bordo.
 		\item Nel caso generale $ax+by+cz=0$, proiettando l'\textit{arco di cerchio massimo} viene un \textbf{arco di ellisse} in $D$.
 	\end{enumerate}
-	\item Riprendiamo l'esempio della retta proiettiva e vediamolo in $\realset^2$, sfruttando il modello affine. Le rette in $\aff{\realset^2}$ possono anche essere scrivere in forma \textit{implicita}. In questo modo allora, si può vedere la retta proiettiva come:
-	\begin{equation*}
-		\proj[1]{\realset}=\left\{\text{rette } x_1=\lambda x_0\mid \lambda\in\realset\right\}\cup \left\{\text{retta } x_0=0\mid \lambda\in\realset\right\}
-	\end{equation*}
-	In questo modo, identifichiamo i punti $\left(a\colon b\right)$ (con $a\neq 0$), corrispondenti alla rette per l'origine generate dai vettori $\left(a,\ b\right)$ e dunque tale che $\lambda=\frac{b}{a}$, e il punto $\left(0\colon 1\right)$, corrispondente invece all'asse verticale di $\aff{\realset^2}$.\\ Ne consegue che $\proj[1]{\realset}$ è in corrispondenza \textit{biunivoca} con la \textit{retta dei reali} $\realset$ unita ad un \textit{punto}: ogni punto definito dalla retta $x_1=\lambda x_0$ è in corrispondenza con $\lambda\in\realset$, mentre il punto $\left(0\colon 1\right)$ corrisponde all'infinito $\infty$ di $\realset$, dato che soddisferebbe l'equazione $1=\lambda 0$ con $\lambda=\infty$. In altre parole, possiamo scrivere $\proj[1]{\realset}$ come:
-	\begin{equation*}
-		\proj[1]{\realset}=\realset\cup\left\{\infty\right\}
-	\end{equation*}
-    \textit{Intuitivamente}, questo corrisponde a prende la retta dei reali e ‘‘congiungere'' gli estremi infiniti in un unico punto, formando così una \textit{circonferenza}, cioè: $\proj[1]{\realset}\approx S^1$.
-    % inserire immagine pagine 7 console fino, spostare dopo
 	\end{itemize}
 \end{examples}
 \section{Operazioni con i sottospazi}
@@ -303,7 +293,7 @@ Come per i sottospazi vettoriali, in generale l'\textbf{unione} di due sottospaz
 		\left<T_1,\ T_2\right>=\proj{W_1+W_2}
 	\end{equation}
 \end{define}
-\begin{demonstration}~{}
+\begin{demonstration}~{}\\
 	$\includedx$ $\proj{W_1+W_2}$ è un sottospazio proiettivo che contiene, in quanto $W_1\subseteq W_1+W_2,\ W_2\subseteq W_1+W_2$ vettorialmente, sia $T_1=\proj{W_1}$ sia $T_2=\proj{W_2}$. In particolare, contiene la loro unione\footnote{Ricordiamo che non è essa un sottospazio, ma un sottoinsieme.}, dunque $\left<T_1,\ T_2\right>\left<T_1\cup T_2\right>\subseteq \proj{W_1+W_2}$.\\
 	$\includesx$ Abbiamo che $T_i\subseteq \left<T_1,\ T_2\right>=\proj{U}$, con $U$ un sottospazio vettoriale di $V$. In particolare, si ha che $W_1,\ W_2\subseteq U$, da cui $W_1+W_2\subseteq U$. Passando allo spazio proiettivo:
 	\begin{equation*}
@@ -628,11 +618,11 @@ Consideriamo gli isomorfismi $\funz{\ }{\kamp^{n+1}}{\kamp^{n+1}}$: sappiamo che
 \end{equation*}
 E con il gruppo lineare proiettivo si può fare? Consideriamo:
 \begin{equation}
-	\funztot{\varphi}{\gl\left(n+1,\ \kamp\right)}{\projgl[n+1]{\kamp}}{\phi_A}{\widetilde{\phi}_A}
+	\funztot{\oldphi}{\gl\left(n+1,\ \kamp\right)}{\projgl[n+1]{\kamp}}{\phi_A}{\widetilde{\phi}_A}
 \end{equation}
  $\phi$ è \textit{omomorfismo} di gruppi \textit{suriettivo}, ma non iniettivo. Infatti, il nucleo non è \textit{triviale}:
  \begin{equation*}
- 	\ker \varphi=\left\{\phi_A\mid \phi_A=Id_{\proj[n]{\kamp}}=\widetilde{Id}_{\kamp^{n+1}}\right\}=\left\{\phi_A\mid \phi=\lambda I,\ \lambda\in\kamp\setminus\left\{0\right\}\right\}=\left\{\phi_A\mid A=\lambda I,\ \lambda\in\kamp\setminus\left\{0\right\}\right\}
+ 	\ker \oldphi=\left\{\phi_A\mid \phi_A=Id_{\proj[n]{\kamp}}=\widetilde{Id}_{\kamp^{n+1}}\right\}=\left\{\phi_A\mid \phi=\lambda I,\ \lambda\in\kamp\setminus\left\{0\right\}\right\}=\left\{\phi_A\mid A=\lambda I,\ \lambda\in\kamp\setminus\left\{0\right\}\right\}
  \end{equation*}
 Tuttavia, possiamo per il Teorema dell'isomorfismo per i gruppi considerare il seguente diagramma commutativo:
 \[\begin{tikzcd}
@@ -640,7 +630,7 @@ Tuttavia, possiamo per il Teorema dell'isomorfismo per i gruppi considerare il s
 	{\frac{\gl\left(n+1,\ \kamp\right)}{\left\{\lambda I\ \mid\ \lambda\in\kamp\setminus\left\{0\right\}\right\}}}
 	\arrow["{\pi}"', from=1-1, to=2-1]
 	\arrow["{\exists \overline f}"', from=2-1, to=1-2, dashed]
-	\arrow["{\varphi}", from=1-1, to=1-2]
+	\arrow["{\oldphi}", from=1-1, to=1-2]
 \end{tikzcd}\]
 E si ha pertanto l'isomorfismo:
 \begin{equation*}
@@ -931,10 +921,11 @@ Abbiamo già accennato all'esistenza di una relazione che intercorre fra \textit
 	\end{enumerate}
 \end{define}
 \begin{define}
-	Un \textbf{riferimento affine}\index{riferimento!affine} $\mathcal{R} = (O,\  e_1,\  e_2,\ \ldots,\  e_n)$ sullo spazio $\aff{V}$ è assegnato fissando un punto $O\in \aff{V}$ detta \textbf{origine}\index{origine!affine} ed una base $\basis = (e_1,\  e_2,\ \ldots,\  e_n)$ di $V$. Dunque, per ogni $P\in \aff{V}$ si ha la $n$-upla $(x_1,\  x_2,\ \ldots,\  x_n)$ dette \textit{coordinate affini}\index{coordinate!affini} del punto $P\in\aff{V}$ (uniche per riferimento affine fissato) tale per cui:
+	Un \textbf{riferimento affine}\index{riferimento!affine} $\mathcal{R} = (O,\  e_1,\  e_2,\ \ldots,\  e_n)$ sullo spazio $\aff{V}$ è assegnato fissando un punto $O\in \aff{V}$ detta \textbf{origine}\index{origine!affine} ed una base $\basis = (e_1,\  e_2,\ \ldots,\  e_n)$ di $V$. Dunque, per ogni $P\in \aff{V}$ si ha la $n$-upla $(X_1,\  X_2,\ \ldots,\  X_n)$ dette \textit{coordinate affini}\index{coordinate!affini} del punto $P\in\aff{V}$ (uniche per riferimento affine fissato) tale per cui:
 	\begin{equation}
 		P=\overrightarrow{OV}=x_1e_1+\ldots+x_ne_n
 	\end{equation}
+\vspace{-6mm}			 
 \end{define}
 Per i nostri scopi, parleremo spesso degli spazi affini di dimensione $n$ su $\kamp$.
 \begin{define}
@@ -949,6 +940,7 @@ Della forma $\phi\left(x\right)=Ax+b$ con $A\in\gl\left(n,\ \kamp\right)$ un'app
 	\begin{equation}
 		S=W+x_0=\left\{w+x_0\mid w\in W,\ x_0\in\aff{W}\right\}
 	\end{equation}
+\vspace{-6mm}
 \end{define}
 \begin{observe}~{}
 	\begin{itemize}
@@ -967,9 +959,9 @@ Un sottospazio affine $S\subseteq \kamp^n$ può essere descritti con equazioni c
 	\textbf{Equazioni cartesiane}. $S$ è visto come l'insieme delle \textit{soluzioni} del seguente sistema lineare:
 	\begin{equation}
 		Ax=b\qquad\left(\begin{array}{c}
-			x_1\\
+			X_1\\
 			\vdots\\
-			x_n
+			X_n
 		\end{array}\right)\in\aff{\kamp^{n}}
 	\end{equation}
 Con $b$ che descrive la traslazione dovuta a $x_0\in\aff{W}$.
@@ -979,9 +971,9 @@ In tal caso $W$ è il sottospazio vettoriale delle soluzioni del sistema lineare
 \end{equation}
 \textbf{Forma parametrica}. Supponiamo $\dim S=\dim W=m$. Siano $v_1,\ \ldots,\ v_m\in\kamp^n$ i vettori di una base di $W$; rispetto ad una base di $\kamp^n$, e dunque rispetto ad un sistema di riferimento affine con origine $O$, essi sono espressi nelle componenti:
 \begin{equation*}
-	v_i=\left(v_{i,1},\ \ldots,\ v_{i,n}\right)\in\aff{\kamp^n}
+	v_i=\left(V_{i,1},\ \ldots,\ V_{i,n}\right)\in\aff{\kamp^n}
 \end{equation*}
-Consideriamo $S=W+c$, con il punto $c=\left(c_1,\ \ldots,\ c_n\right)$ rispetto allo stesso sistema affine di prima.\\
+Consideriamo $S=W+c$, con il punto $c=\left(C_1,\ \ldots,\ C_n\right)$ rispetto allo stesso sistema affine di prima.\\
 I punti $x$ di $S$ in forma parametrica sono dati da:
 \begin{equation}
 	x=t_1v_1+\ldots+t_mv_m+c\quad t_1,\ \ldots,\ t_m\in\kamp
@@ -990,9 +982,9 @@ Da cui otteniamo il sistema $n\times\left(m+1\right)$ seguente:
 \begin{equation}
 	\begin{cases}
 		\begin{array}{l}
-			x_1=t_1v_{1,1}+\ldots+t_mv_{m,1}+c_1\\
+			X_1=t_1V_{1,1}+\ldots+t_mV_{m,1}+C_1\\
 			\vdots\\
-			x_n=t_1v_{1,n}+\ldots+t_mv_{m,n}+c_n\\			
+			X_n=t_1V_{1,n}+\ldots+t_mV_{m,n}+C_n\\			
 		\end{array}
 	\end{cases}
 \end{equation}
@@ -1001,20 +993,319 @@ Da cui otteniamo il sistema $n\times\left(m+1\right)$ seguente:
 \begin{equation*}
 	\begin{cases}
 		\begin{array}{l}
-			x_1=tv_1+c_1\\
+			X_1=tV_1+c_1\\
 			\vdots\\
-			x_n=tv_n+c_n			
+			X_n=tV_n+c_n			
 		\end{array}
 	\end{cases}
 \end{equation*}	
 \end{example}
+Consideriamo ora lo \textit{spazio proiettivo numerico}:
+\begin{equation*}
+	\proj[n]{\ }=\proj[n]{\kamp}=\proj{\kamp^{n+1}}
+\end{equation*}
+E i punti in coordinate omogenee $\left(x_0\colon \ldots\colon x_n\right)$ rispetto ad un dato sistema di riferimento proiettivo.
+Consideriamo il seguente sottoinsieme di $\proj[n]{\ }$:
+\begin{equation}
+	U_0\coloneqq \left\{P=\left(x_0\colon\ldots\colon x_n\right)\in \proj[n]{\ }\mid x_0\neq 0\right\}
+\end{equation}
+La condizione $x_0\neq 0$ è \textit{ben posta}; infatti, se $\lambda\in\kamp\setminus\left\{0\right\}$, allora $x_0\neq 0\iff\lambda x_0\neq 0$.\\
+Consideriamo anche il suo complementare, che è l'iperpiano coordinato rispetto alla prima coordinata omogenea:
+\begin{equation}
+	\proj[n]{\ }\setminus=H_0=\left\{P=\left(x_0\colon\ldots\colon x_n\right)\in \proj[n]{\ }\mid x_0= 0\right\}=\left\{P=\left(0\colon\ldots\colon x_n\right)\in \proj[n]{\ }\right\}
+\end{equation}
+Sia $P\in U_0$: allora essendo $a_0\neq 0$ si ha $P=\left(a_0\colon\ldots\colon a_n\right)=\left(1\colon\frac{a_1}{a_0}\ldots\colon \frac{a_n}{a_0}\right)$. In particolare, $\frac{a_1}{a_0},\ \ldots,\ \frac{a_n}{a_0}$ sono univocamente determinate da $P$.
+\begin{example}
+ Sia $\proj[2]{\realset}=\left\{\text{rette vettoriali in }\realset^3\right\}$ con punti di componenti $\left(x_0\colon x_1\colon x_2\right)$. Allora $H_0$ è una retta proiettiva in $\proj[2]{\realset}$ e risulta:
+ \begin{equation*}
+ 	\begin{array}{ll}
+ 		H_0 & =\left\{P=\left(x_0\colon x_1\colon x_2\right)\in \proj[n]{\ }\mid x_0=0\right\}=\left\{P=\left(0\colon x_1\colon x_2\right)\in \proj[n]{\ }\right\} \\
+ 		& =\left\{\text{rette vettoriali di }\realset^3\text{ contenute nel piano affine }x_0=0\right\}
+ 	\end{array}
+ \end{equation*}
+	Infatti, prendiamo $\aff{\realset^3}$ e consideriamo il piano $x_0=1$, parallelo al piano $x_0=0$. Se $r\subseteq \realset^3$ è una retta vettoriale che \textit{non} appartiene al piano affine $\left\{x_0=0\right\}$ ($r\nsubseteq \left\{x_0=0\right\}$), $r$ interseca il piano $x_0=1$ in un solo punto! In particolare, se $r$ ha direzione $\left(a_0,\ a_1,\ a_2\right)$, il punto nel piano $\left\{x_0=1\right\}$ avrà coordinate $\left(\frac{a_1}{a_0},\ \frac{a_2}{a_0}\right)$.
+\end{example}
+Possiamo identificare $U_0\subseteq\proj[n]{\ }$ con $\aff{\kamp^n}$. Consideriamo le due funzioni seguenti:
+\begin{equation}
+	\funztot{j=j_0}{\aff{\kamp^n}}{U_0\subseteq \proj[n]{\ }}{\left(X_1,\ \ldots,\ X_n\right)}{\left(1\colon\ x_1\colon \ldots\colon X_n\right)}\\
+	\funztot{\oldphi}{U_0\subseteq \proj[n]{\ }}{\aff{\kamp^n}}{\left(x_0\colon\ \ldots\colon X_n\right)}{\left(\frac{x_1}{x_0},\ \ldots,\ \frac{x_n}{x_0}\right)}
+\end{equation}
+\begin{itemize}
+	\item $\oldphi$ è ben definita, dato che $x_0\neq 0$ per definizione di $U_0$.
+	\item $j$ e $\oldphi$ sono l'una l'inversa dell'altra:
+	% https://q.uiver.app/?q=WzAsNixbMCwwLCJcXGFmZntcXGthbXBebn0iXSxbMSwwLCJVXzAiXSxbMiwwLCJcXGFmZntcXGthbXBebn0iXSxbMCwxLCJcXGxlZnQoWF8xLFxcIFxcbGRvdHMsXFwgWF9uXFxyaWdodCkiXSxbMSwxLCJcXGxlZnQoMVxcY29sb24gWF8xXFxjb2xvbiBcXGxkb3RzXFxjb2xvbiBYX25cXHJpZ2h0KSJdLFsyLDEsIlxcbGVmdChYXzEsXFwgXFxsZG90cyxcXCBYX25cXHJpZ2h0KSJdLFswLDEsImoiXSxbMSwyLCJcXG9sZHBoaSJdLFszLDQsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XSxbNCw1LCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtYXBzIHRvIn19fV1d
+	\[\begin{tikzcd}
+		{\aff{\kamp^n}} & {U_0} & {\aff{\kamp^n}} \\[-25pt]
+		{\left(X_1,\ \ldots,\ X_n\right)} & {\left(1\colon X_1\colon \ldots\colon X_n\right)} & {\left(X_1,\ \ldots,\ X_n\right)}
+		\arrow["{j}", from=1-1, to=1-2]
+		\arrow["{\oldphi}", from=1-2, to=1-3]
+		\arrow[from=2-1, to=2-2, maps to]
+		\arrow[from=2-2, to=2-3, maps to]
+	\end{tikzcd}\]
+% https://q.uiver.app/?q=WzAsNixbMCwwLCJVXzAiXSxbMSwwLCJcXGFmZntcXGthbXBebn0iXSxbMiwwLCJVXzAiXSxbMCwxLCJcXGxlZnQoeF8wXFxjb2xvbiBcXGxkb3RzXFxjb2xvbiB4X25cXHJpZ2h0KSJdLFsxLDEsIlxcbGVmdChcXGZyYWN7eF8xfXt4XzB9LFxcIFxcbGRvdHMsXFwgXFxmcmFje3hfbn17eF8wfVxccmlnaHQpIl0sWzIsMSwiXFxsZWZ0KDFcXGNvbG9uXFxmcmFje3hfMX17eF8wfVxcY29sb25cXGxkb3RzXFxjb2xvblxcZnJhY3t4X259e3hfMH1cXHJpZ2h0KT1cXGxlZnQoeF8wXFxjb2xvblxcbGRvdHNcXGNvbG9uIHhfblxccmlnaHQpIl0sWzAsMSwiXFxvbGRwaGkiXSxbMSwyLCJqIl0sWzMsNCwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFs0LDUsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XV0=
+\[\begin{tikzcd}
+	{U_0} & {\aff{\kamp^n}} & {U_0} \\[-25pt]
+	{\left(x_0\colon \ldots\colon x_n\right)} & {\left(\frac{x_1}{x_0},\ \ldots,\ \frac{x_n}{x_0}\right)} & {\left(1\colon\frac{x_1}{x_0}\colon\ldots\colon\frac{x_n}{x_0}\right)=\left(x_0\colon\ldots\colon x_n\right)}
+	\arrow["{\oldphi}", from=1-1, to=1-2]
+	\arrow["{j}", from=1-2, to=1-3]
+	\arrow[from=2-1, to=2-2, maps to]
+	\arrow[from=2-2, to=2-3, maps to]
+\end{tikzcd}\]
+\end{itemize}
+Si ha dunque che $j$ e $\oldphi$ sono \textit{biunivoche}. In questo modo identifichiamo $U_0\subseteq \proj[n]{\ }$ con $\aff{\kamp^n}$, mentre l'iperpiano $H_0$ corrisponde allo spazio proiettivo di dimensione $n-1$; si ha dunque:
+\begin{equation}
+	\proj[n]{\ }=U_0\amalg H_0=\aff{\kamp^n}\amalg \proj[n-1]{\ }
+\end{equation}
+La coppia $\left(U_0,\ j\right)$ è detta \textbf{carta affine}\index{carta affine} di $\proj[n]{\ }$.\\
+In altre parole, $\proj[n]{\ }$ si può vedere come un'estensione o \textit{ampliamento} dello spazio affine $\kamp^n$. Diciamo allora che:
+	\begin{itemize}
+		\item I punti di $H_0$ sono detti \textbf{punti impropri}\seeonlyindex{punto!improprio}{punto!all'infinito} o \textbf{punti all'infinito}\index{punto!all'infinito}.
+		\item $H_0$ è detto \textbf{iperpiano improprio}\seeonlyindex{iperpiano!improprio}{iperpiano!all'infinito} o \textbf{iperpiano all'infinito}\index{iperpiano!all'infinito}.
+		\item I punti di $U_0=\aff{\kamp^n}$ sono detti \textbf{punti propri}\index{punto!proprio}.
+	\end{itemize}
+\begin{intuit}
+In molti casi, possiamo liberamente parlare di $\aff{\kamp^n}$ come lo spazio vettoriale $\kamp^n$ inteso in senso \textit{geometrico} come insieme di punti con un punto qualunque come origine.
+\end{intuit}
+\begin{example}
+	Consideriamo la retta proiettiva $\proj[1]{\kamp}$. L'iperpiano all'infinito è:
+	  \begin{equation*}
+	 		H_0=\left\{P=\left(x_0\colon x_1\right)\in \proj[1]{\ }\mid x_0=0\right\}=\left\{\left(0\colon 1\right)\right\}
+	 \end{equation*}
+ Mentre invece l'insieme dei punti propri è:
+ \begin{equation*}
+ 	U_0=\left\{P=\left(x_0\colon x_1\right)\in \proj[1]{\ }\mid x_0\neq 0\right\}=\left\{\left(0\colon 1\right)\right\}
+ \end{equation*}
+In particolare, si ha la corrispondenza biunivoca $U_0\stackrel{1\colon1}{\leftrightarrow}\kamp$:
+\begin{equation*}
+	\left(x_0\colon x_1\right)=\left(1\colon \frac{x_1}{x_0}\right)\mapsto \frac{x_1}{x_0}\in\kamp
+\end{equation*}
+In altre parole, si può vedere la retta proiettiva come il campo $\kamp$ con l'aggiunto di un unico punto, l'\textit{infinito} $\infty$.
+\begin{equation}
+\proj[1]{\ }=\kamp\union\left(0\colon 1\right)=\kamp\union\left\{\infty\right\}
+\end{equation}
+Se $\kamp=\realset$, essendo $S^1\setminus\left\{1\text{ punto}\right\}\cong \realset$, si ha:
+\begin{equation}
+	\proj[1]{\realset}=\realset\union\left\{\infty\right\}\cong S^1
+\end{equation}
+	% inserire immagine pagine 7 console fino
+\end{example}
+\subsection{Chiusura proiettiva di un sottospazio affine}
+\begin{define}
+	Sia $r\subseteq\aff{\kamp^n}$ una retta affine. La \textbf{chiusura proiettiva}\index{chiusura proiettiva}\index{chiusura!proiettiva} di $r$ è il sottospazio proiettivo $\overline{r}\subseteq\proj[n]{\ }$ generato da $r\subseteq U_0\subseteq\proj[n]{\ }$.
+\end{define}
+\begin{proposition}
+	$\overline{r}$ è una \textit{retta proiettiva} e si ha:
+	\begin{equation}
+		\overline{r}=r\union P_{\infty}
+	\end{equation}
+Dove $P_{\infty}=\overline{r}\cap H_0$ è detto \textit{punto all'infinito} o \textit{punto improprio} della retta $r$.
+\end{proposition}
+\begin{demonstration}
+	Sia $v\in\kamp^n\setminus\left\{0\right\}$ la direzione di $r$ e $w\in r$ un punto della retta. Allora $r$ ha descrizione parametrica in $\aff{\kamp^n}$:
+	\begin{equation*}
+		\begin{cases}
+			\begin{array}{l}
+				X_1=tv_1+w_1\\
+				\vdots\\
+				X_n=tv_n+w_n\\			
+			\end{array}
+		\end{cases}\quad t\in\kamp
+	\end{equation*}
+Consideriamo la retta proiettiva $R\subseteq\proj[n]{\ }$ con descrizione parametrica:
+\begin{equation*}
+\begin{cases}
+		\begin{array}{l}
+			x_0=s\\
+			x_1=tv_1+sw_1\\
+			\vdots\\
+			x_n=tv_n+sw_n\\			
+		\end{array}
+	\end{cases}\quad \left(s\colon t\right)\in\proj[1]{\ }
+\end{equation*}
+$R$ è la retta proiettiva per i punti:
+\begin{equation*}
+	t=0\ \colon\ \left(1\colon w_1\colon\ldots\colon w_n\right)\quad t=1\ \colon\ \left(0\colon v_1\colon\ldots\colon v_n\right)=P_\infty
+\end{equation*}
+Ponendo $s=1$ otteniamo:
+\begin{equation*}
+	\begin{cases}
+		\begin{array}{l}
+			x_0=1\\
+			x_1=tv_1+w_1\\
+			\vdots\\
+			x_n=tv_n+w_n\\			
+		\end{array}
+	\end{cases}\quad t\in\kamp
+\end{equation*}
+Al variare di $t\in\kamp$, questi sono tutti e soli i punti di $j\left(r\right)\subseteq U_0\subseteq \proj[n]{\ }$. Si ha dunque che $R$ è una retta proiettiva contente $r$:
+\begin{equation*}
+	\begin{array}{ll}
+			R&=r\union P_{\infty}\\
+			P_{\infty}&=R\cap H_0=\left\{\left(0\colon v_1\colon v_n\right)\right\}
+	\end{array}
+\end{equation*}
+$R$ è necessariamente il più piccolo sottospazio proiettivo contenente $r$, dato che è la retta più un solo punto. Pertanto, $R=\overline{r}$.
+\end{demonstration}
+\begin{observe}~{}
+	\begin{enumerate}
+		\item Il punto improprio di $r$ è:
+		\begin{equation*}
+			P_{\infty}=\left(0\colon v_1\colon \ldots\colon v_n\right)
+		\end{equation*}
+	E corrisponde esattamente alla \textit{direzione} $v=\left(v_1,\ \ldots,\ v_n\right)$ di $r$.
+	Poiché $P_\infty=\left[v\right]$ con $v$ la direzione di $r$, ne segue che l'iperpiano improprio di $\proj[n]{\kamp }$ è:
+	 \begin{equation*}
+		\begin{array}{ll}
+			H_0 & =\proj[n-1]{\kamp}=\proj{\kamp^n}=\left\{\text{rette vettoriali in }\kamp^n\right\}=\\
+			&=\left\{\text{direzioni delle rette affini in }\aff{\kamp^n}\right\}
+		\end{array}
+	\end{equation*}
+\item Due rette affini $r_1,\ r_2\subseteq \aff{\kamp^n}$ hanno lo stesso punto improprio se e solo hanno la \textit{stessa direzione}, cioè se sono \textit{parallele}.\\
+Se $r_1\neq r_2$ e $r_1$ e $r_2$ sono parallele, allora $r_1\cap r_2=\emptyset$ in $\aff{\kamp^n}$, ma $\overline{r_1}\cap \overline{r_2}={P_{\infty}}$ in $\proj[n]{\ }$. Ciò ci porta a dire che due rette parallele $r_1$ e $r_2$ si incontrano sempre all'\textit{infinito}!
+\item Se $n=2$, cioè operando in $\proj[2]{\ }$, due rette distinte $r_1,\ r_2\subseteq \aff{\kamp^2}$ sono o \textit{incidenti} o \textit{parallele}, ma in $\proj[2]{\ }$ si intersecano sempre.
+\item Viceversa: sia $l\subseteq \proj[n]{\ }$ una retta proiettiva. Abbiamo due casi:
+\begin{itemize}
+	\item $l\subseteq H_0,\ l\cap U_0= \emptyset$.
+	\item $l\nsubseteq H_0\implies l+H_0=\proj[n]{\ }$.
+\end{itemize}
+Infatti, si ha che $l+H_0$ è un sottospazio proiettivo che contiene strettamente $H_0$, dato che $l\nsubseteq H_0$, e usando la formula di Grassmann otteniamo:
+\begin{equation*}
+	\dim\left(l+H_0\right)=\dim l +\dim H_0-\dim \left(l\cap H_0\right)=1+n-1+0=n=\dim \proj[n]{\ }\implies l+H_0 = \proj[n]{\ }
+\end{equation*}
+Sempre dalla formula di Grassmann:
+\begin{equation*}
+	\dim\left(l\cap H_0\right)=0\implies l\cap H_0=\left\{1 \text{punto}\right\}=\left\{Q\right\}
+\end{equation*}
+Cioè $l\cap U_0=l\setminus\left\{Q\right\}$. In altre parole, $l$ è una retta affine in $\aff{\kamp^n}$ con un \textit{punto improprio} $Q$ e necessariamente $l$ è la chiusura proiettiva di $l\setminus\left\{Q\right\}$.
+\item Sia $n=2$, cioè operiamo in $\proj[2]{\ }$. Una retta $r\subseteq \aff{\kamp^2}$ è descritta da un'equazione lineare:
+\begin{equation}
+	ax+by+c=0\quad \left(a,\ b\right)\neq\left(0,\ 0\right)
+\end{equation}
+Con la corrispondenza biunivoca fra le coordinate $\left(x,\ y\right)$ vettoriali e $\left(X_1,\ X_2\right)$ affini. Abbiamo tuttavia anche la corrispondenza con le coordinate omogenee in $\proj[2]{\ }$, rispettivamente $\left(x\colon y\colon z\right)$ e $\left(_0\colon x_2\colon x_3\right)$.\\
+Chiamiamo $\left(x\colon y\colon z\right)$ le coordinate omogenee su $\proj[2]{\ }$ con:
+\begin{equation*}
+	H_0=\left\{P=\left(x\colon y\colon z\right)\in \proj[2]{\ }\mid z=0\right\}=\left\{P=\left(x\colon y\colon0\right)\in \proj[2]{\ }\right\}
+\end{equation*}
+Allora la chiusura proiettiva $\overline{r}\subseteq \proj[2]{\ }$ di $r$ ha in $\proj[2]{\ }$ l'equazione lineare omogenea seguente:
+\begin{equation}
+		ax+by+cz=0
+\end{equation}
+Infatti, per $z=1$ si ottiene l'equazione di $r$, mentre ponendo $z=0$ (cioè il passaggio per $H_0$) troviamo il punto improprio $P_{\infty}$ di $r$:
+\begin{equation*}
+		\begin{cases}
+		\begin{array}{l}
+			z=0\\
+			ax+by=0\\	
+		\end{array}
+	\end{cases}\quad P_{\infty}=\left(-b\colon a\colon 0\right)
+\end{equation*}
+La direzione della retta $ax+by+c=0$ è data dal punto improprio $P_{\infty}$ e corrisponde al vettore $\left(-b, a\colon 0\right)$.
+	\end{enumerate}
+\end{observe}
+Generalizziamo ora il concetto di chiusura proiettiva a un generico sottospazio affine.
+\begin{define}
+	Dato $S\subseteq \aff{\kamp^n}$ un sottospazio affine con $S\neq \emptyset$, la chiusura proiettiva $\overline{S}\subseteq \proj[n]{\ }$ di $S$ è il sottospazio proiettivo generato da $S$. Esso ha dimensione $\dim \overline{S}=\dim S=m$.
+\end{define}
+\textbf{Equazioni cartesiane}. Se $S$ come sottospazio affine è dato in forma cartesiana dal sistema lineare $h\times\left(n+1\right)$ seguente:
+\begin{gather*}
+			Ax+b=0\qquad\left(\begin{array}{c}
+		X_1\\
+		\vdots\\
+		X_n
+	\end{array}\right)\in\aff{\kamp^{n}}\\
+	\begin{cases}
+	\begin{array}{l}
+		a_{1,1}X_1+\ldots+a_{1,n}X_n+b_1=0\\
+		\vdots\\
+		a_{h,1}X_1+\ldots+a_{h,n}X_n+b_h=0\\			
+	\end{array}
+\end{cases}
+\end{gather*} 
+Allora $\overline{S}$ è descritto dal sistema lineare omogeneo  $h\times\left(n+1\right)$ in $\left(x_0,\ \ldots,\ x_n\right)$ seguente:
+\begin{gather*}
+	\left(A\mid b\right)x=0\qquad\left(\begin{array}{c}
+		x_1\\
+		\vdots\\
+		x_n\\
+		x_0
+	\end{array}\right)\in\proj[n]{\ }\\
+	\textcolor{red}{\circled{\ast}}\begin{cases}
+		\begin{array}{l}
+			a_{1,1}x_1+\ldots+a_{1,n}x_n+b_1x_0=0\\
+			\vdots\\
+			a_{h,1}x_1+\ldots+a_{h,n}x_n+b_hx_0=0\\			
+		\end{array}
+	\end{cases}
+\end{gather*}
+\begin{demonstration}
+	Studiamo le dimensioni di $S$ e $\overline{S}$ usando i sistemi cartesiani appena definiti:
+	\begin{equation*}
+		\begin{array}{l}
+			\dim S=\dim \kamp^n-\rk\left(A\right)=n-\rk\left(A\right)\\
+			\dim \overline{S}=\dim \proj[n]{\ }-\rk\left(A\mid b\right)-1=\left(n+1-\rk\left(A\mid b\right)\right)-1=n-\rk\left(A\mid b\right)\\
+		\end{array}
+	\end{equation*}
+	Per Rouché-Capelli vale $\rk A=\rk \left(A\mid b\right)$ in quanto $S\neq \emptyset$. In questo modo abbiamo dimostrato che $\dim \overline{S}=\dim S$.
+\end{demonstration}
+I \textit{punti impropri} del sottospazio affine $S$ sono dati da $\overline{S}\cap H_0$, con $\overline{S}$ la chiusura proiettiva di $S$ e $H_0$ l'iperpiano improprio. Dal sistema $\textcolor{red}{\circled{\ast}}$ si ha che $\overline{S}\cap H_0$ è dato da:
+\begin{equation*}
+	\begin{cases}
+		\begin{array}{l}
+			x_0=0\\
+			a_{1,1}x_1+\ldots+a_{1,n}x_n=0\\
+			\vdots\\
+			a_{h,1}x_1+\ldots+a_{h,n}x_n=0\\			
+		\end{array}
+	\end{cases}
+\end{equation*}
+Esso corrisponde al sistema lineare omogeneo in $\kamp^n$ $Ax=0$ associato al sistema lineare $Ax+b=0$ che definisce $S$. In altre parole, $\overline{S}\cap H_0$ corrisponde al \textit{sottospazio vettoriale direttore} $W\subseteq \kamp^n$ e vale $\overline{S}\cap H_0=\proj{W}$ direzione di $S$. La sua dimensione per definizione di direzione è:
+\begin{equation*}
+	\dim\left(\overline{S}\cap H_0\right)=\dim S-1=\dim\overline{S}-1
+\end{equation*}
+\textbf{Equazioni parametriche}. Se $S$ ($\dim S=m$) è data in \textit{forma parametrica} e il sottospazio direttore $W\subseteq \kamp^n$ ha una base $\left\{v_1,\ \ldots,\ v_m\right\}$ (tali che $v_i=\left(V_{i,1},\ \ldots,\ V_{i,n}\right)\in\aff{\kamp^n}$ per un dato sistema di riferimento affine), posto $c\in S$ ricordiamo che l'espressione parametrica di $S$ è:
+\begin{gather*}
+	X=t_1v_1+\ldots+t_mv_m+c\quad t_1,\ \ldots,\ t_m\in\kamp\\
+		\begin{cases}
+		\begin{array}{l}
+			X_1=t_1V_{1,1}+\ldots+t_mV_{m,1}+C_1\\
+			\vdots\\
+			X_n=t_1V_{1,n}+\ldots+t_mV_{m,n}+C_n\\			
+		\end{array}
+	\end{cases}
+\end{gather*}
+Allora, $\overline{S}$ è il sottospazio generato dagli $m+1$ punti \textit{indipendenti}:
+\begin{equation}
+	\begin{array}{cc}
+		\left(0\colon v_{i,1}\colon\ldots\colon v_{in}\right)&i=1,\ \ldots,\ m
+		\left(1\colon c_1\colon\ldots\colon c_n\right)
+	\end{array}
+\end{equation}
+Pertanto, $\overline{S}$ ha descrizione parametrica:
+\begin{equation*}
+			\begin{cases}
+		\begin{array}{l}
+			x_0=t_0\\
+			x_1=t_1v_{1,1}+\ldots+t_mv_{m,1}+t_0C_1\\
+			\vdots\\
+			x_n=t_1v_{1,n}+\ldots+t_mv_{m,n}+t_0C_n\\			
+		\end{array}
+	\end{cases}
+\end{equation*}
+Con $\left(t_0\colon\ldots\colon t_m\right)\in\proj[m]{\ }$.
+\subsection{Impratichiamoci! Geometria affine e geometria proiettiva}
+\begin{exercise}
+	Sia $\kamp=\realset$. Allora, preso $\realset^n$ con la topologia euclidea e $\proj[n]{\realset}$ con la topologia quoziente, mostrare che $U_0$ è un aperto di $\proj[n]{\realset}$ e che $\funz{j}{\realset^n}{U_0}$
+\end{exercise}
+\begin{solution}
+	... % aggiungere soluzione
+\end{solution}
 \section{LEZIONI 31, 32 - DIRETTA}
 
 
 %LEZ 31 
 Vediamo un esempio di proiettività di $\proj[1]{\ }$.
 \begin{example}
-	Si consideri $\proj[1]{\kamp} = \kamp \cup \{\infty\}$ con $\infty=(0\colon 1)$. Sia $\funz f {\proj[1]{\ }} {\proj[1]{\ }}$ una proiettività (dunque biunivoca) definita come $f(x_0\colon x_1)=(ax_0+bx_1\colon cx_0+dx_1)$. Si ha che: $f(0\colon 1)=(b\colon d)$, mentre la sua controimmagine è $f(-b\colon a)=(0\colon 1)$, infatti siccome le coordinate sono omoegenee basta porre $ax_0+bx_1=0$.\newline
+	Si consideri $\proj[1]{\kamp} = \kamp \cup \{\infty\}$ con $\infty=(0\colon 1)$. Sia $\funz f {\proj[1]{\ }} {\proj[1]{\ }}$ una proiettività (dunque biunivoca) definita come $f(x_0\colon x_1)=(ax_0+bx_1\colon cx_0+dx_1)$. Si ha che: $f(0\colon 1)=(b\colon d)$, mentre la sua controimmagine è $f(-b\colon a)=(0\colon 1)$, infatti siccome le coordinate sono omogenee basta porre $ax_0+bx_1=0$.\newline
 	Sia $t=\frac{x_1}{x_0}$ la coordinata affine su $\kamp$, se $x_0\neq 0$ tutti i punti $(x_0\colon x_1)$ si possono scrivere come $(x_0\colon x_1)=\left( 1\colon \frac{x_1}{x_0} \right)=(1\colon t)$, il che corrisponde al punto $t\in\kamp$ . Vediamo ora come si comporta l'immagine grazie a queste osservazioni se $ax_0+bx_1\neq 0$:
 	\begin{gather*}
 		f(x_0\colon x_1)=(ax_0+bx_1\colon cx_0+dx_1)= \left( 1\colon \frac{cx_0+dx_1}{ax_0+bx_1} \right)  =  \left( 1 \colon  \frac{ x_0 \left( c+ d \frac{x_1}{x_0} \right) }{ x_0 \left( a+ b\frac{ x_1 }{ x_0 } \right)} \right)=\left( 1\colon \frac{dt+c}{bt+a}\right)
@@ -1026,7 +1317,7 @@ Vediamo un esempio di proiettività di $\proj[1]{\ }$.
 	\end{cases}$
 	dove per $t=-\frac{a}{b}$ si ottiene $f(-b\colon a)=(0\colon 1)=\infty$, mentre la prima equazione è detta \textit{trasformazione lineare fratta}, che è definita sulla retta affine tranne dove si annulla il denominatore. \newline
 	Notiamo che $F$ diventa un'affinità $\funztot F \kamp \kamp t {\alpha t+\beta}$ se e solo se il denominatore diventa una costante ponendo $b=0$, ovvero se è della forma $F(t)=\alpha$, il che significa che la proiettività fissa il punto all'infinito, ovvero $f(0\colon 1)=(0\colon 1)$, mentre la parte affine viene mandata in sè stessa.n\newline 
-	Quest ragionamento si può vedere anche in dimensione superiore.
+	Questo ragionamento si può vedere anche in dimensione superiore.
 \end{example}
 
 \section{Spazi proiettivi complessi}
