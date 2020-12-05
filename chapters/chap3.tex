@@ -14,76 +14,78 @@
 	\textsc{NON UN ROBOT,} UN UMANO IN CARNE ED OSSA BEEP BOOP.
 \end{flushright}
 \end{introduction}
-
+% inserire citazione
 \section{Gruppi topologici}
-Conoscendo le strutture di gruppo e spazio topologico su un insieme vogliamo vedere come possono essere compatibili fra loro.
-\begin{define}
-	Un insieme $G$ si dice gruppo topologico se
+% riscrivere intro?
+Conoscendo le strutture di \textit{gruppo} e \textit{spazio topologico} su un insieme, vogliamo vedere come possono essere \textit{compatibili} fra loro.
+\begin{define}\textsc{Gruppo topologico.}\\
+	Un insieme $G$ si dice \textbf{gruppo topologico}\index{gruppo topologico} se:
 		\begin{itemize}
-			\item $G$ è un gruppo
-			\item $G$ è uno spazio topologico
-			\item Le operazioni sono continue, ovvero le mappe:
+			\item $G$ è un \textit{gruppo}.
+			\item $G$ è uno \textit{spazio topologico}.
+			\item L'\textit{operazione} e l'\textit{inverso} sono funzioni \textit{continue}:
 			\begin{equation}
-				\funztot \mu {G\times G} G {(x,\ y)} {xy}\qquad \funztot i G G x {x^{-1}}
+				\funztot \mu {G\times G} G {(x,\ y)} {x\cdot y}\qquad \funztot i G G x {x^{-1}}
 			\end{equation}
-		Sono funzioni continue.
 		\end{itemize}
+	\vspace{-3mm}
 \end{define}
 Vediamo ora degli esempi noti di gruppi topologici.
 \begin{examples}
 	\begin{itemize}
-		\item $\left( \realset^n, \ +, \ \mathcal{E_{ucl}} \right), \left( \complexset ^n, \ +, \ \mathcal{E_{ucl}} \right)$
-		\item $\left( \realset^*, \ \bullet,\ \mathcal{E_{ucl}} \right), \left( \realset^*, \ \bullet, \ \mathcal{E_{ucl}} \right)$ con la topologia indotta di sottospazio
-		\item $\left( M_{n,m}(\realset),\ \bullet, \mathcal{E_{ucl}} \right)$ con la topologia indotta di sottospazio di $\realset^{n,m}$, ad esempio $\intv$
-	\end{itemize}	
+		\item $\left( \realset^n, \ +, \ \mathcal{E_{ucl}} \right), \left( \complexset ^n, \ +, \ \mathcal{E_{ucl}} \right)$.
+		\item $\left( \realset^*, \ \cdot,\ \mathcal{E_{ucl}} \right), \left( \realset^*, \ \cdot, \ \mathcal{E_{ucl}} \right)$ con la topologia indotta di sottospazio.
+		\item $\left( M_{n,m}(\realset),\ \cdot, \mathcal{E_{ucl}} \right)$ con la topologia indotta di sottospazio di $\realset^{n,m}$, ad esempio $\intv$.
+	\end{itemize}
+\vspace{-3mm}
 \end{examples}
 \begin{observe}
-	I gruppi topologici $\gl (n,\realset )$ e $\gl (n, \realset )$ sono aperti di $M_{n,n}$.\newline
-	Infatti considerata la funzione determinante $\funz \det {\realset^{n,n}} \realset$ essa è continua in quanto per calcolare il determinante si opera solo con somme e prodotti. Si ha che $\gl(n, \realset)$ è il complementare dell'insieme delle matrici che hanno determinante nullo, il quale è un chiuso in quanto controimmagine di un chiuso quale $\{0\}$ di una funzione continua. Dunque tale gruppo topologico è aperto, analogamente per $\complexset$.
+	I gruppi topologici $\gl (n,\realset )$ e $\gl (n, \complexset )$ sono aperti di $M_{n,n}$.\newline
+	Infatti, considerata la funzione del \textit{determinante} $\funz \det {\realset^{n,n}} \realset$ essa è continua in quanto per calcolare il determinante si opera solo con somme e prodotti.\\
+	Si ha che $\gl(n, \realset)$ è il complementare dell'insieme delle matrici che hanno determinante nullo, il quale è un chiuso in quanto controimmagine di un chiuso quale $\{0\}$ di una funzione continua. Dunque tale gruppo topologico è aperto, e analogamente vale per il caso con $\complexset$.
 \end{observe}
 Vediamo ora altri sottoinsiemi di $M_{n,n}$:
 	\begin{itemize}
-		\item $\Sl$ dato da $\{\det A=1\} $ è il \textit{gruppo speciale lineare}
-		\item $\Or$ determinato dall'equazione $A^{t}A=I$ è il \textit{gruppo ortogonale}
-		\item $\So=\Or\cap\Sl$ è il \textit{gruppo speciale ortogonale}
-		\item $\U$ determinato dall'equazione $A^{t*}\overline{A}=I$ è il \textit{gruppo unitario}
-		\item $\Su=\U\cap\Sl$ è il \textit{gruppo speciale unitario}
+		\item $\Sl$, dato da $\{\det A=1\} $, è il \textit{gruppo speciale lineare}\index{gruppo!gruppo speciale lineare}.
+		\item $\Or$, determinato dall'equazione $A^{t}A=I$, è il \textit{gruppo ortogonale}\index{gruppo!gruppo ortogonale}.
+		\item $\So=\Or\cap\Sl$ è il \textit{gruppo speciale ortogonale}\index{gruppo!gruppo speciale ortogonale}.
+		\item $\U$, determinato dall'equazione $A^{t*}\overline{A}=I$, è il \textit{gruppo unitario}\index{gruppo!gruppo unitario}.
+		\item $\Su=\U\cap\Sl$ è il \textit{gruppo speciale unitario}\index{gruppo!gruppo speciale unitario}.
 	\end{itemize}
-
 Ci sono delle operazioni sulle matrici che sono continue:
 	\begin{itemize}
-		\item \textit{moltiplicazione matriciale}: continua perché definita tramite somme e prodotti di elementi delle matrici
-		\item \textit{inversa}: è una funzione che ad una matrice $A$ associa $\displaystyle \frac{1}{\det A}$ per prodotti e somme di elementi della matrice, dunque è continua
+		\item \textit{Moltiplicazione matriciale}: continua perché definita tramite somme e prodotti di elementi delle matrici
+		\item \textit{Inversa}: è una funzione che ad una matrice $A$ associa $\displaystyle \frac{1}{\det A}$ per prodotti e somme di elementi della matrice, in particolare è continua.
 	\end{itemize}
-
 \begin{observe}
-	Per i gruppi topologici in generale vale la moltiplicazione destra e sinistra sono omeomorfismi:
+	Per i gruppi topologici in generale vale la \textit{moltiplicazione destra} e \textit{sinistra}:
 		\begin{gather*}
 			\funztot {L_h} G G g {hg} \text{   e   } \funztot {R_n}  G G g {gh} \\
 			(L_h)^{-1}=L_{h^{-1}} \text{   e   } (R_h)^{-1}=R_{h^-1}
 		\end{gather*}
-	Ne segue che un gruppo topologico è \textbf{omogeneo}, ovvero
+	In particolare sono omeomorfismi. Ne segue che un gruppo topologico è \textbf{omogeneo}, ovvero:
 		\begin{gather*}
-			\forall g,h\in G \ \exists \funz \phi G G \text{ omeomorfismo t.c.} \phi(g)=h
+			\forall g,h\in G \ \exists \funz \phi G G \text{ omeomorfismo}\ \colon \phi(g)=h
 		\end{gather*}
-	infatti basta porre $\phi=L_{hg^{-1}}$ oppure $\phi=R_{g^{-1}h}$
+	Infatti, basta porre $\phi=L_{hg^{-1}}$ oppure $\phi=R_{g^{-1}h}$.
 \end{observe}
-Il seguente teorema ci permette di caratterizzare i gruppi topologici Hausdorff grazie alla chiusura dell'elemento neutro. 
+Il seguente teorema ci permette di caratterizzare i gruppi topologici di \textbf{Hausdorff} grazie alla chiusura dell'elemento neutro.
 %vorei mettere un punto esclamativo, è una cosa figa
 \begin{theorema}
-	Sia $G$ un gruppo topologico, $e\in G$ il suo elemento neutro, si ha che 
+	Sia $G$ un gruppo topologico, $e\in G$ il suo elemento neutro, si ha che:
 		\begin{gather*}
-			G \ T_2 \iff \{e\} \text{ chiuso }
+			G \ \text{di \textbf{Hausdorff}} \iff \{e\} \text{ chiuso }
 		\end{gather*}
+	\vspace{-6mm}
 \end{theorema}
 \begin{demonstration}~{}\\
-	$\impliesdx G \ T_2 \implies G \ T_1 \implies$ tutti i punti sono chiusi, in particolare anche $\{e\}$. \newline
-	$\impliessx$ Per dimostrare che $G \ T_2$ si utilizza la caratterizzazione con la diagonale chiusa, sfruttando l'omogeneità dei gruppi topologici:
+	$\impliesdx G$ di \textbf{Hausdorff} $\implies G \ T_1 \implies$ tutti i punti sono chiusi, in particolare anche $\{e\}$. \newline
+	$\impliessx$ Per dimostrare che $G$ è di \textbf{Hausdorff} si utilizza la caratterizzazione con la diagonale chiusa, sfruttando l'omogeneità dei gruppi topologici:
 		\begin{gather*}
 			\funztot \phi {G\times G} G {(g,h)} {gh^{-1}} \ \ , \ \ (g,h)=(h,g) \iff g=h\iff \phi\left( (g,h)\right)=gh^{-1}=e \\
 			\implies \Delta_G =\phi^{-1}\left(\{e\}\right)
 		\end{gather*}
-	Per ipotesi $\{e\}$ è chiusa, quindi $\Delta_G$ è chiuso e dunque $G \ \ T_2$.
+	Per ipotesi $\{e\}$ è chiusa, quindi $\Delta_G$ è chiuso e dunque $G$ è di \textbf{Hausdorff}.
 \end{demonstration}
 
 \begin{observe}
@@ -95,6 +97,7 @@ Il seguente teorema ci permette di caratterizzare i gruppi topologici Hausdorff 
 			\end{array}
 		\implies \gl(n,\realset)=\gl^+(n,\realset) \sqcup \gl^-(n,\realset)
 		\end{gather*}
+	\vspace{-3mm}
 \end{observe}
  Dimostriamo un lemma che generalizza il teorema \ref{unione sottospazi connessi}
  e che ci sarà utile nella dimostrazione successiva sulla connessione di alcuni gruppi topologici.
@@ -116,10 +119,10 @@ Il seguente teorema ci permette di caratterizzare i gruppi topologici Hausdorff 
 					\left( f^{-1}(y_0)\cap A_1 \right)\cup \left( f^{-1}(y_0)\cap A_2 \right)=f^{-1}(y_0) \\
 					\text{fibre connesse }
 				\end{cases}
-				 \implies  f^{-1}(y_0)\cap A_1\cap A_2\neq\emptyset \implies A_1\cap A_2\neq\emptyset
+				 \implies  f^{-1}(y_0)\cap A_1\cap A_2\neq\emptyset\implies\\
+				 \implies A_1\cap A_2\neq\emptyset
 		\end{gather*}
 \end{demonstration}
-
 \begin{theorema}
 	$\forall n\geq 1, \gl^+(n,\realset)$ e $\gl(n,\complexset)$ sono connessi.
 \end{theorema}
@@ -209,7 +212,7 @@ Il seguente teorema ci permette di caratterizzare i gruppi topologici Hausdorff 
 			A\in\So(n) \implies \sum_{i=1}^n a_{ij}^2=1, \forall i=1,\dots,n \implies \sum_{i=1}^n a_{ij}^2=n \implies \So(n)\subseteq S_{\sqrt{n}}\subseteq\realset^{n\times n}\\
 		\end{gather*}
 	dove $S_{\sqrt{n}}$ è la sfera di raggio $\sqrt{n}$, dunque $\So(n)$ è limitato. Ne segue che anche $\U(n)$ e $\Su(n)$ lo sono, dunque sono tutti chiusi e limitati in $\realset^{n\times n}$, quindi compatti. \newline
-	Per dimostrare che sono \textit{connessi} si procede analogamente al teorema precedente sfruttando il lemma che lo precede. Si consideri $\funz p {\So(n)} {S^{n-1}\subseteq \realset^n}$ funzione prima colonna, essa è continua, suriettiva e chiusa in quanto è un compatto (appena dimostrati) in un $T_2$, e le sue fibra sono connesse $\displaystyle p^{-1}\left( \begin{psmallmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{psmallmatrix} \right) = \begin{psmallmatrix}
+	Per dimostrare che sono \textit{connessi} si procede analogamente al teorema precedente sfruttando il lemma che lo precede. Si consideri $\funz p {\So(n)} {S^{n-1}\subseteq \realset^n}$ funzione prima colonna, essa è continua, suriettiva e chiusa in quanto è un compatto (appena dimostrati) in un $\textbf{T2}$, e le sue fibra sono connesse $\displaystyle p^{-1}\left( \begin{psmallmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{psmallmatrix} \right) = \begin{psmallmatrix}
 		1      & 0 & \cdots & 0\\
 		0      &   &       &  \\
 		\vdots &   & A     &  \\
