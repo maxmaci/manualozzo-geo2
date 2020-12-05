@@ -227,7 +227,7 @@ Posto dunque $t$ come il numero delle \textit{equazioni}, notiamo che:
 \begin{equation*}
 	\begin{array}{cc}
 		\dim W=n+1-\rk A \\
-\begin{array}{ccc}
+\begin{array}{lll}
 	\codim W &=&\rk A \\
 	\shortparallel &  \\
 	\dim V-\dim W &=&\dim\proj{V}-\dim\proj{W}=\codim\proj{W}
@@ -243,6 +243,7 @@ Posto dunque $t$ come il numero delle \textit{equazioni}, notiamo che:
 	\end{equation*}
 	Approfondiremo formalmente la relazione tra gli spazi affini e gli spazi proiettivi più avanti, a pag. \ref{spaziaffini}.
 \end{intuit}
+% controllare impaginazione
 \begin{examples}~{}
 	%completare con le note della fino
 	\begin{itemize}
@@ -316,15 +317,15 @@ Sottraendo $1$ a tutte le dimensioni, otteniamo le dimensioni dei corrispettivi 
 \begin{corollary}
 	Siano $T_1,\ T_2$ sottospazi proiettivi di $\proj{V}$ con $\dim\proj{P}=n$. Allora:
 	\begin{equation}
-		\dim \left(T_1\cap T_2\right)\leq \dim T_1+\dim T_2-n
+		\dim \left(T_1\cap T_2\right)\geq \dim T_1+\dim T_2-n
 	\end{equation}
 In particolare $T_1\cap T_2\neq \emptyset$ se $\dim T_1+\dim T_2\geq n$.
 \end{corollary}
 \begin{demonstration}
 	\begin{equation*}
-		\dim\left(T_1\cap T_2\right)=\dim T_1+\dim T_2-\dim\left<T_1,\ T_2\right>\leq \dim T_1+\dim T_2-n
+		\dim\left(T_1\cap T_2\right)=\dim T_1+\dim T_2-\dim\left<T_1,\ T_2\right>\geq \dim T_1+\dim T_2-n
 	\end{equation*}
-Chiaramente se $\dim T_1+\dim T_2\geq n$, allora $\dim \left(T_1\cap T_2\right)\geq 0$ e dunque $T_1\cap T_2\neq \emptyset$.
+Chiaramente, se $\dim T_1+\dim T_2\geq n$, allora $\dim \left(T_1\cap T_2\right)\geq 0$ e dunque $T_1\cap T_2\neq \emptyset$.
 \end{demonstration}
 \begin{example}
 	Nel piano proiettivo, due rette sono \textit{sempre incidenti}. Infatti, le rette hanno dimensione $1$, mentre $\dim\proj[2]{\kamp}=2$, dunque vale $1+1\leq 2$, pertanto due rette si incontrano sempre.
