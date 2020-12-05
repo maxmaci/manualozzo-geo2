@@ -1217,6 +1217,9 @@ linewidth=1pt]{neoncarrotBox}
 \theoremstyle{venetiannumbox}
 \newtheorem{observeT}{\textsc{Osservazione.}}[chapter]
 
+\theoremstyle{venetiannumbox}
+\newtheorem{observesT}{\textsc{Osservazioni.}}[chapter]
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \newcounter{define}
@@ -1281,9 +1284,11 @@ linewidth=1pt]{neoncarrotBox}
 
 \newenvironment{observe}{\begin{sBox}\begin{observeT}}{\hfill{\color{venetian}}	\end{observeT}\end{sBox}}
 
+\newenvironment{observes}{\begin{sBox}\begin{observesT}}{\hfill{\color{venetian}}	\end{observesT}\end{sBox}}
+
 %%% dimostrazione %%%
 
-\newenvironment{demonstration}{\begin{yBox}\begin{demonstrationT}}{\hfill{\color{BurntOrange}}	\end{demonstrationT}\end{yBox}}
+\newenvironment{demonstration}{\begin{yBox}\begin{demonstrationT}}{\hfill{\color{BurntOrange}}\qed\end{demonstrationT}\end{yBox}}
 
 %%% definizione %%%
 
@@ -1386,6 +1391,10 @@ linewidth=1pt]{neoncarrotBox}
 
 \DeclareSymbolFont{topology}{OMS}{cmsy}{m}{n} 
 \DeclareMathSymbol{\topo}{\mathord}{topology}{`T}
+
+% topologia euclidea
+
+\newcommand{\eucl}{\mathcal{E\! u\! c\! l}}
 
 % base
 

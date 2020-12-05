@@ -14,9 +14,10 @@
 	\textsc{NON UN ROBOT,} UN UMANO IN CARNE ED OSSA BEEP BOOP.
 \end{flushright}
 \end{introduction}
-
+% inserire citazione
+% inserire introduzione bellina
 \section{Connessione}
-\begin{define}
+\begin{define}\textsc{Spazio connesso e spazio sconnesso.}\\
 Uno spazio topologico $X$ si dice \textbf{connesso}\index{connessione} se gli unici sottoinsiemi aperti e chiusi sono $\emptyset,\ X$.\\
 Uno spazio non \textit{connesso} si dice \textbf{sconnesso} oppure \textbf{non connesso}.
 \end{define}
@@ -27,6 +28,7 @@ Uno spazio non \textit{connesso} si dice \textbf{sconnesso} oppure \textbf{non c
 		\item $X=A\cup B$ con $A,\ B$ aperti, non vuoti, disgiunti.
 		\item $X=A\cup B$ con $A,\ B$ chiusi, non vuoti, disgiunti.
 	\end{enumerate}
+\vspace{-3mm}
 \end{lemming}
 \begin{demonstration}~{}\\
 $2\iff3)$ Sono equivalenti: se $A$ è aperto e disgiunto da $B$ tale che $X=A\cup B$ significa che $B=\mathcal{C}A=X\setminus A$ e dunque chiuso; analogamente per $B$ aperto si ha che $A$ è chiuso: allora $A,\ B$ chiusi e aperti propri.\\
@@ -36,12 +38,13 @@ $1\implies2)$ $A$ aperto, $B$ aperto $\implies A$ chiuso perché $A=\mathcal{C}X
 \begin{observe}
 	Il lemma \ref{sconnesso} \textsc{(Manetti, 4.2)} ci dice che è sufficiente trovare solo due aperti (o chiusi) che soddisfano la condizione di cui sopra per affermare la sconnessione. Viceversa, per dimostrare la connessione, dobbiamo dimostrare che per ogni coppia di aperti (o chiusi) non vuoti, la cui unione è $X$, essi non siano disgiunti.
 \end{observe}
-\begin{example} Esempi di spazi topologici \textit{sconnessi} in topologia Euclidea.
+\begin{examples} Esempi di spazi topologici \textit{sconnessi} in topologia Euclidea:
 	\begin{itemize}
 		\item $X=\realset\setminus\left\{0\right\}=\left(-\infty,\ 0\right)\cup \left(0,\ +\infty\right)$.
 		\item $X=\left[0,\ 1\right]\cup \left(2,\ 3\right)$.
 	\end{itemize}
-\end{example}
+\vspace{-3mm}
+\end{examples}
 \begin{lemming}\textsc{(Manetti, 4.4)}\\
 Sia $X$ spazio topologico e $A\subseteq X$ con $A$ aperto e chiuso. Sia $Y\subseteq X,\ Y$ \textit{connesso}. Allora $Y\cap A=\emptyset$ (cioè $Y\subseteq Y\setminus A$) oppure $Y\subseteq A$. 
 \end{lemming}
@@ -62,12 +65,14 @@ Dobbiamo dimostrare che $C,\ D$ \textit{non} sono disgiunti, ovvero $C\cap D\neq
 	\item Se $d=0$, $d\in C\cap D\neq \emptyset$.
 	\item Se $d>0$ allora $\left[0,\ d\right)\subseteq C$ perché \textit{non sta} in $D$. Il passaggio alla chiusura mantiene l'inclusione, dunque $\left[0,\ d\right]\subseteq \overline{C}=C$. Segue che $d\in C$ e dunque $C\cap D\neq \emptyset$.
 \end{itemize}
+\vspace{-3mm}
 \end{demonstration}
 \begin{theorema}\textsc{(Manetti, 4.7)}\\
 	L'immagine continua di un \textit{connesso} è un \textit{connesso}:
 	\begin{equation}
 		\funz{f}{X}{Y}\text{ continua},\ X\text{ connesso}\implies f\left(X\right)\text{ connesso}
 	\end{equation}
+\vspace{-6mm}
 \end{theorema}
 \begin{theorema}
 	Sia $Z\subseteq f\left(X\right)$, $Z$ aperto, chiuso in $f\left(X\right)$ non vuoto. Per dimostrare che $f\left(X\right)$ sia connesso ci è sufficiente dimostrare che $Z=f\left(X\right)$: in questo modo gli unici aperti e chiusi sono i sottoinsiemi impropri:
@@ -85,17 +90,20 @@ Segue che $f^{-1}\left(Z\right)$ è aperto e chiuso in $X$. Notiamo inoltre che,
 \begin{observe}
 Dal teorema precedente segue che essere \textit{connesso} è una proprietà topologica! Infatti, se vale per una qualunque funzione continua $\funz{f}{X}{Y}$, allora varrà anche per omeomorfismi tra $X$ e $Y$; in particolare, si avrà per suriettività che $f\left(X\right)=Y$ connesso.
 \end{observe}
-\begin{define}
+\subsection{Connessione per archi}
+\begin{define}\textsc{Arco.}\\
 Un \textbf{arco}\seeonlyindex{arco}{cammino} o \textbf{cammino}\index{cammino} $\alpha$ da un punto $x$ a un punto $y$ in uno spazio topologico $X$ è una funzione continua che parametrizza un \textit{percorso} finito fra gli estremi $x$ e $y$:
 \begin{equation}
 \funz{\alpha}{\left[0,\ 1\right]}{X} \text{ continua}\ \colon \alpha\left(0\right)=x,\ \alpha\left(1\right)=y
 \end{equation}
+\vspace{-6mm}
 \end{define}
-\begin{define}
+\begin{define}\textsc{Connessione per archi.}\\
 Uno spazio topologico $X$ si dice \textbf{connesso per archi} o \textbf{c.p.a.}\index{connessione!per archi}\seeonlyindex{c.p.a.}{connessione!per archi} o \textit{path-connected} se per ogni coppia di punti in $X$ esiste un arco che li collega:
 \begin{equation}
 \forall x,\ y\in X\ \exists \funz{\alpha}{\left[0,\ 1\right]}{X} \text{ continua}\ \colon \alpha\left(0\right)=x,\ \alpha\left(1\right)=y
 \end{equation}
+\vspace{-6mm}
 \end{define}
 \begin{theorema}\textsc{(Manetti, 4.7)}\\
 $X$ \textbf{c.p.a.} $\implies X$ \textit{connesso}.
@@ -112,20 +120,22 @@ Poiché $\left[0,\ 1\right]$ è connesso, allora le controimmagini trovate non s
 \begin{equation*}
 \exists t\in \alpha^{-1}\left(A\right)\cap \alpha^{-1}\left(B\right)\implies \alpha\left(t\right)\alpha\left(\alpha^{-1}\left(A\right)\cap \alpha^{-1}\left(B\right)\right)\subset\alpha\left(\alpha^{-1}\left(A\right)\right)\cap\alpha\left(\alpha^{-1}\left(B\right)\right)=A\cap B
 \end{equation*}
+\vspace{-6mm}
 \end{demonstration}
-\begin{define}
+\begin{define}\textsc{Giunzione di cammini.}\\
 	Dati due cammini in uno spazio $X$:
 	\begin{gather*}
 		\funz{\alpha}{\left[0,\ 1\right]}{X}\quad \alpha\left(0\right)=x,\ \alpha\left(1\right)=y\\
-		\funz{\beta}{\left[0,\ 1\right]}{X}\quad \beta\left(0\right)=y,\ \beta\left(1\right)=z\\	
+		\funz{\beta}{\left[0,\ 1\right]}{X}\quad \beta\left(0\right)=y,\ \beta\left(1\right)=z
 	\end{gather*}
-	Allora possiamo creare un cammino $\alpha \ast \beta$ con la \textbf{congiunzione di cammini}\index{cammino!giunzione di cammini}:
+	Allora possiamo creare un cammino $\alpha \ast \beta$ con la \textbf{giunzione di cammini}\index{cammino!giunzione di cammini}:
 	\begin{equation}
 		\left(\alpha\ast\beta\right)\left(t\right)=\begin{cases}
 			\alpha\left(2t\right)\quad\text{se }0\leq t\leq \frac{1}{2}\\
 			\beta\left(2t-1\right)\quad\text{se }\frac{1}{2}\leq t\leq 1\\	
 		\end{cases}
 	\end{equation}
+\vspace{-6mm}
 \end{define}
 \begin{lemming}
 	Sia $A,\ B$ \textbf{c.p.a}, $A\cap B\neq \emptyset\implies A\cup B$ \textbf{c.p.a.}
@@ -134,7 +144,7 @@ Poiché $\left[0,\ 1\right]$ è connesso, allora le controimmagini trovate non s
 	Se $x, y\in A$ oppure $x,\ y\in B$ esiste per ipotesi un arco che li collega. Dobbiamo allora trovare un arco in $A\cup B$ da $x$ a $y$ $\forall x\in A, y\in B$. Preso $z\in A\cap B$, per ipotesi esistono due cammini ad esso:
 	\begin{gather*}
 		\funz{\alpha}{\left[0,\ 1\right]}{A}\quad \alpha\left(0\right)=x,\ \alpha\left(1\right)=z\\
-		\funz{\beta}{\left[0,\ 1\right]}{B}\quad \beta\left(0\right)=z,\ \beta\left(1\right)=z\\	
+		\funz{\beta}{\left[0,\ 1\right]}{B}\quad \beta\left(0\right)=z,\ \beta\left(1\right)=z	
 	\end{gather*}
 	Usando la \textit{giunzione di cammini}, si ha:
 	\begin{equation}
@@ -145,7 +155,7 @@ Poiché $\left[0,\ 1\right]$ è connesso, allora le controimmagini trovate non s
 	\end{equation}
 	Il cammino $\funz{\alpha\ast\beta}{\left[0,\ 1\right]}{A\cup B}$ è quello richiesto.
 \end{demonstration}
-\begin{observe}~{}\label{giunzionecpa}
+\begin{observes}~{}\label{giunzionecpa}
 	\begin{itemize}
 		\item Usando la giunzione di cammini, si ha che:
 		\begin{equation*}
@@ -155,26 +165,30 @@ Poiché $\left[0,\ 1\right]$ è connesso, allora le controimmagini trovate non s
 		In altre parole, uno spazio è \textbf{c.p.a.} se e solo se esiste un punto per cui ogni altro punto è collegato tramite un arco.
 		\item Per ogni arco $\alpha$ esiste l'arco inverso, percorso al contrario: $\overline{\alpha}\left(t\right)=\alpha\left(1-t\right)$.
 	\end{itemize}
-\end{observe}
-\begin{define}\label{segmento}
+\vspace{-3mm}
+\end{observes}
+\begin{define}\textsc{Segmento.}\label{segmento}\\
 	In $\realset^n$, un \textbf{segmento}\index{segmento} $\overline{PQ}$ è la combinazione lineare tra i punti $P$ e $Q$, parametrizzato come:
 	\begin{equation}
 		\overline{PQ}=\left\{P+tQ\mid t\in\left[0,\ 1\right]\right\}
 	\end{equation}
+\vspace{-6mm}
 \end{define}
-\begin{define}
+\begin{define}\textsc{Sottoinsieme convesso.}\\
 	Un sottoinsieme $Y\subseteq\realset^n$ è \textbf{convesso}\index{convessità} se per ogni coppia di punti esiste un segmento che li collega contenuto interamente in $Y$.
 	\begin{equation}
 		\forall P,\ Q\in Y\quad \overline{PQ}\subseteq Y
 	\end{equation}
+\vspace{-6mm}
 \end{define}
-\begin{define}
+\begin{define}\textsc{Sottoinsieme stellato}
 	Un sottoinsieme $Y\subseteq\realset^n$ è \textbf{stellato}\index{stellato} per $P$ se esiste un $P\in Y$ tale che per ogni altro punto esiste un segmento che li collega contenuto interamente in $Y$.
 	\begin{equation}
 		\exists P \in Y\ \colon \forall Q\in Y\quad \overline{PQ}\subseteq Y
 	\end{equation}
+\vspace{-6mm}
 \end{define}
-\begin{example}~{}
+\begin{examples}~{}
 \begin{itemize}
 	\item Gli intervalli aperti e semiaperti sono \textbf{c.p.a}, dunque sono \textit{connessi}: l'arco $\alpha$ è banalmente il segmento pari all'intervallo aperto.
 	\item Preso $X\subseteq\realset^n$ \textit{convesso}, qualunque segmento è anche per costruzione un arco: $X$ è anche \textbf{c.p.a} e dunque \textit{connesso}.
@@ -182,7 +196,9 @@ Poiché $\left[0,\ 1\right]$ è connesso, allora le controimmagini trovate non s
 	\item Preso $X\subseteq\realset^n$ \textit{stellato} per $P\in X$, qualunque segmento con $P$ è anche per costruzione un arco: $X$ è anche \textbf{c.p.a} per l'osservazione \ref{giunzionecpa} e dunque {connesso}.
 	\item Ogni insieme \textit{convesso} è anche \textit{stellato} per $P$, basta fissare un qualunque punto come nostro $P$. In generale, un insieme è convesso se e solo se è stellato per ogni suo punto.
 \end{itemize}
-\end{example}
+\vspace{-3mm}
+\end{examples}
+\subsection{Connessione nella topologia euclidea}
 Vediamo ora che conseguenze hanno questi teoremi in $\realset$ con la topologia Euclidea.
 \begin{theorema}
 	Sia $I\subseteq \realset$ . Le seguenti affermazioni sono equivalenti:
@@ -191,6 +207,7 @@ Vediamo ora che conseguenze hanno questi teoremi in $\realset$ con la topologia 
 	\item $I$ è \textbf{c.p.a.}.
 	\item $I$ è connesso.
 		\end{enumerate}
+	\vspace{-3mm}
 \end{theorema}
 \begin{demonstration}~{}\\
 	$1) \implies 2)$ Siccome $I$ è convesso $\implies$ $I$ stellato $\implies$ $I$ \textbf{c.p.a.} $\implies$ $I$ connesso. \\
@@ -219,8 +236,9 @@ Vediamo ora un risultato per funzioni continue da $S^n$ in $\realset$
 			\frac{1}{2}\left[ g(y) - g(-y)\right]=\frac{1}{2} \left[ f(y) -f(-y) - f(y) +f(-y) \right]= 0\\
 			\implies \exists x\in S^n \colon g(x)=0, \text{ ovvero } f(x)=f(-x)
 		\end{gather*}
+	\vspace{-6mm}
 \end{demonstration}
-Come conseguenza di questo teorema si ha che un aperto di $\realset$ non sarà mai omeomorfo ad un aperto di $\realset^n$, vediamolo più precisamente.
+Come conseguenza di questo teorema si ha che un aperto di $\realset$ non sarà mai omeomorfo ad un aperto di $\realset^n$.
 \begin{theorema}
 Sia $I\subseteq\realset$ e $U\subseteq\realset^n$, con $n\geq 2$. Se $I,U$ sono aperti allora $I$ non è omeomorfo a $U$.	
 \end{theorema}	
@@ -232,8 +250,8 @@ Sia $I\subseteq\realset$ e $U\subseteq\realset^n$, con $n\geq 2$. Se $I,U$ sono 
 	Il teorema appena visto è un caso particolare del \textsc{teorema dell'invarianza della dimensione}\index{teorema!dell'invarianza della dimensione}, che cita: \newline
 	Siano $U\subseteq\realset^n, V\subseteq\realset^m$ aperti. Se $U\cong V \implies n=m$. Equivalentemente $n\neq m\implies U\ncong V$
 \end{observe}
-
 %LEZ 08
+\subsection{Intersezioni, unioni e prodotti di spazi connessi}
 \begin{theorema} \label{unione sottospazi connessi}
 	Siano $\left\{ X_i \right\}_{i\in I}$ una famiglia di sottoinsiemi di uno spazio topologico $X$. Se ogni $X_i$ è connesso e $\displaystyle\inter_{i\in I}X_i\neq\emptyset$ allora $\displaystyle\union_{i\in I}X_i$ è connesso.	
 \end{theorema}
@@ -259,7 +277,7 @@ Sia $I\subseteq\realset$ e $U\subseteq\realset^n$, con $n\geq 2$. Se $I,U$ sono 
 \begin{theorema}~{}\label{prodotto connessi}
 	$X, Y$ sono spazi topologici connessi $\iff X\times Y$ è connesso.	
 \end{theorema}
-\begin{demonstration}
+\begin{demonstration}~{}\\
 	$\impliessx$ Si sfrutta la continuità delle proiezioni e che l'immagine continua di un connesos è connessa:
 		\begin{gather*}
 			\funz p {X\times Y} X \text{continua e suriettiva } \implies p(X)=X \text{ connesso} \\
@@ -275,7 +293,6 @@ Sia $I\subseteq\realset$ e $U\subseteq\realset^n$, con $n\geq 2$. Se $I,U$ sono 
 	Dunque $X\times Y$ è unione di connessi la cui intersezione non è vuota, quindi per il teorema precedente è connesso.
 %WELP COME CITO I TEOREMI%
 \end{demonstration}
-
 Approfondiamo ora la differenza fra essere spazio connesso o \textbf{c.p.a.} mostrando esempi di un tipo ma non dell'altro. Prima però dimostreremo un teorema sulla caratterizzazione di un insieme denso che ci tornerà utile.
 \begin{theorema}
 	Sia $X$ uno spazio topologico e $A\subseteq X$ un suo sottoinsieme, allora:
