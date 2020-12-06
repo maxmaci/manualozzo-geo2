@@ -15,7 +15,7 @@
 \end{flushright}
 \end{introduction}
 
-		\section{Topologia Quoziente}
+\section{Topologia quoziente}
 %AAA INTRODUZIONE BELLA CERCASI
 Torniamo ora a parlare di costruzioni topologiche, in particolare ci domandiamo quale sia la topologia più adatta per un insieme quoziente. Ne diamo prima una definizione come topologia indotta da una funzione fra uno spazio topologico ed un insieme, poi vedremo altre definizioni equivalenti tramite una funzione fra spazi topologici e con insiemi quozienti.\newline
 Accenniamo fin da subito che la situazione è \textit{duale} rispetto a quella dei sottospazi, analizzati nella sezione \ref{sottospazi}.
@@ -23,7 +23,6 @@ Accenniamo fin da subito che la situazione è \textit{duale} rispetto a quella d
 	Dato $X$ uno spazio topologico, $Y$ un \textit{insieme} e $\funz f X Y$ funzione suriettiva, la \textbf{topologia quoziente}\index{topologia!quoziente} su $Y$ indotta da $f$ è la topologia \textit{più fine} che rende $f$ continua.
 \end{define}
 Analizziamo ora chi sono i suoi aperti: $\displaystyle A\subseteq Y \text{ aperto } \iff f^{-1}(A)\subseteq X$ aperto. Notiamo che l'implicazione $\Rightarrow)$ è necessaria perché $f$ sia continua, mentre l'implicazione $\Leftarrow)$ è quella che caratterizza la topologia quoziente: infatti, se si considera un insieme $B\subseteq Y$ che non è aperto, allora la sua controimmagine $f^{-1}(B)\subseteq X$ non sarà aperta, pertanto la topologia su $Y$ è la più fine.
-%AAA NUOVO ENVIRONMENT CERCASI (come questo?)
 \begin{tips}
 	Per verificare che un sottoinsieme sia aperto in $Y$ con la topologia quoziente bisogna verificare che la sua controimmagine è aperta.
 \end{tips}
@@ -68,9 +67,11 @@ Vediamo ora un esempio di identificazione chiusa e non aperta.
 	È una funzione continua, suriettiva e chiusa (compatto in \textbf{Hausdorff}), dunque è un'identificazione chiusa. \\
 	Tuttavia $f$ non è aperta, infatti dato $A=[0, \ 1)\subseteq [0, \ 2\pi]$ aperto, ma $f(A)$ non è aperto in $S^1$.
 		\begin{center}
-			\includegraphics[width=240pt]{images/half_circle-eps-converted-to.pdf}
+			\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.9]{images/half_circle-eps-converted-to.pdf}
 		\end{center}
+	\vspace{-6mm}
 \end{example}
+%riguardare come mettere l'immagine
 \begin{observe}
 	Gli omeomorfismi sono identificazioni chiuse e aperte.
 \end{observe}
@@ -163,16 +164,15 @@ Sia $X$ uno spazio topologico, $A\subseteq X$, $\forall x,y\in X \ x\sim y\iff x
 \begin{example} $\nicefrac{D^n}{S^{n-1}}\cong S^n$ \\
 	Cerchiamo ora di generalizzare l'esempio precedente. Ricordiamo che relazione c'è fra i dischi e le sfere:
 		\begin{gather*}
-			D^n=\text{ disco in } \realset^n=\{x\in\realset^n \mid \labs x \rabs \leq 1 \}\\
-			S^{n-1}=\text{ bordo di } D^n=\{x\in\realset^n \mid \labs x \rabs = 1 \}
+			D^n=\text{ disco in } \realset^n=\{\mathbf{x}\in\realset^n \mid \labs \mathbf{x} \rabs \leq 1 \}\\
+			S^{n-1}=\text{ bordo di } D^n=\{\mathbf{x}\in\realset^n \mid \labs \mathbf{x} \rabs = 1 \}
 		\end{gather*}
 	Considerando $\sim$ come la contrazione di $S^{n-1}$ ad un punto, si ha che $\nicefrac{D^n}{S^{n-1}} \cong S^n$.
 \end{example}
 
 \begin{attention}
 	Anche se $X$ è di \textbf{Hausdorff} non è detto che $\nicefrac{X}{A}$ sia di \textbf{Hausdorff}!\newline
-	Se $A$ non è chiuso allora $\nicefrac{X}{A}$ non è neanche $T_1$, infatti $\pi^{-1}([A])=A$ non chiuso implica che $[A]$ non lo è, quindi per la caratterizzazione degli spazi $T_1$ (vedasi %AAA TEOREMA CERCASI) 
-	$\nicefrac{X}{A}$ non è $T_1$.\newline 
+	Se $A$ non è chiuso allora $\nicefrac{X}{A}$ non è neanche \textbf{T1}, infatti $\pi^{-1}([A])=A$ non chiuso implica che $[A]$ non lo è, quindi per la caratterizzazione degli spazi \textbf{T1} (definizione \ref{T1}, pag. \pageref{T1}) $\nicefrac{X}{A}$ non è \textbf{T1}.\newline 
 	Tuttavia se $X$ è di \textbf{Hausdorff}, $K\subseteq X$ è compatto allora $\nicefrac{X}{K}$ è di \textbf{Hausdorff}.
 \end{attention}
 \subsubsection{Cono su uno spazio}
@@ -182,19 +182,26 @@ Sia $X$ uno spazio topologico, $A\subseteq X$, $\forall x,y\in X \ x\sim y\iff x
 \begin{define}\textsc{Cono.}\\
 	Il \textbf{cono}\index{cono} su $X$ spazio topologico è il quoziente $\displaystyle \nicefrac{X\times\intv}{X\times\{1\}}$ oppure $\displaystyle \nicefrac{X\times\intv}{X\times\{0\}}$.
 \end{define}
+\begin{intuit}
+	Riprendendo il procedimento intuitivo di incollare parti dello spazio originale per creare il quoziente, lo stesso si può fare anche nel caso del cono. In questo caso, tutti i punti di una delle basi vengono incollati in uno.
+\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.4]{images/cilindertocone.pdf}
+\end{center}
+\end{intuit}
 \begin{observe}
 	Un cono è sempre c.p.a. rispetto al ‘‘vertice''.
 \end{observe}
-
-
-%AAA DISEGNI CERCASI
 \begin{example} \textsc{Cono su} $S^n \cong D^{n+1}$.\\
 	Studiamo i casi al variare della dimensione.
-	$n=0)$ $S^0=\{-1, \ 1\}=X \rightsquigarrow X\times\intv \rightsquigarrow \nicefrac{X\times\intv}{X\times \{1\}} \cong D^1$ \\
-	%AAA DISEGNI CERCASI
-	$n=1)$ $S^1=X \rightsquigarrow X\times\intv \rightsquigarrow \nicefrac{X\times\intv}{X\times \{1\}} \cong D^2$\\
-	%AAA DISEGNI CERCASI
-	n generale, considerata la funzione:
+	$n=0)$ $S^0=\{-1, \ 1\}=X \rightsquigarrow X\times\intv \rightsquigarrow \nicefrac{X\times\intv}{X\times \{1\}} \cong D^1$.
+\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.9]{images/cones0.pdf}
+\end{center}
+	$n=1)$ $S^1=X \rightsquigarrow X\times\intv \rightsquigarrow \nicefrac{X\times\intv}{X\times \{1\}} \cong D^2$.
+\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.9]{images/cones1.pdf}
+\end{center}
+	In generale, considerata la funzione:
 	\begin{equation*}
 		\funztot f {S^n\times\intv} {D^{n+1}} {(\mathbf{x}, \ t)} {t\mathbf{x}}
 	\end{equation*}
@@ -205,26 +212,23 @@ Sia $X$ uno spazio topologico, $A\subseteq X$, $\forall x,y\in X \ x\sim y\iff x
 				\mathbf{x=y}, t=s \\ 
 				t=s=0 
 			\end{cases}\\
-			\text{Se } t\neq 0 \implies \mathbf{x}=\frac{s}{t}\mathbf{y}, \text{ ma } \labs\mathbf{x}\rabs=1 \implies \lvert \frac{s}{t} \rvert \underbrace{\labs\mathbf{y}\rabs}_{=1}=1 \implies \lvert \frac{s}{t} \rvert=1 \implies s=t \implies \mathbf{x=y}
+			\text{Se } t\neq 0 \implies \mathbf{x}=\frac{s}{t}\mathbf{y}, \text{ ma } \labs\mathbf{x}\rabs=1 \implies \left| \frac{s}{t} \right| \underbrace{\labs\mathbf{y}\rabs}_{=1}=1 \implies \left| \frac{s}{t} \right| =1 \implies s=t \implies \mathbf{x=y}
 		\end{gather*}
 	\vspace{-6mm}
 \end{example}
-\begin{intuit}
-	Riprendendo il procedimento intuitivo di incollare parti dello spazio originale per creare il quoziente, lo stesso si può fare anche nel caso del cono. In questo caso, tutti i punti di una delle basi vengono incollati in uno.
-	%inserire immagine sfera
-\end{intuit}
-%PROBLEMA: I VALORI ASSOLUTI NON COPRONO TUTTA LA FRAZIONE
 
 \subsubsection{Retta con 2 origini}
-Analizziamo un particolare spazio topologico che spesso fungerà da controesempio, in particolare per le varietà topologiche (vedi sezione   ): la retta con $2$ origini. \newline
+Analizziamo un particolare spazio topologico che spesso fungerà da controesempio, in particolare per le varietà topologiche (vedi sezione   ): \textbf{la retta con 2 origini}. \newline
 Sia $X=\realset\times\{a,b\}$.
 %AAA SEZIONE CERCASI
-%AAA DISEGNO CERCASI
+\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.95]{images/line2origins.pdf}
+\end{center}
 Vogliamo definire una relazione di equivalenza che lasci ‘‘separate'' solo le origini:
 	\begin{gather*}
 		(x, \ \alpha)\sim (y, \ \beta) \iff 
 			\begin{cases}
-				x=y, \alpha=\beta \\
+				x=y,\ \alpha=\beta \\
 				x=y\neq 0
 			\end{cases}		
 	\end{gather*}
@@ -232,8 +236,8 @@ Vogliamo definire una relazione di equivalenza che lasci ‘‘separate'' solo l
 \begin{enumerate}
 	\item $Y\coloneqq \nicefrac{X}{\sim}$ è c.p.a., infatti se i punti $(x, \ \alpha)$ e $(y, \ \beta)$ sono tali che $x\neq 0 \neq y$ basta prendere il segmento $\overline{xy}$ sulla retta $\realset\times\{a\}$ e proiettarlo. Per unire $(0,\ a)$ e $(0, \ b)$ basta unire entrambi con un cammino al punto $(1, \ a)=(1, \ b)$
 	\item $Y$ non è di \textbf{Hausdorff}: tutti gli intorni di $(0, \ a)$ si intersecano con tutti gli 	intorni di $(0, \ b)$ 
-	\item $Y$ è localmente omeomorfo a $\realset$, infatti ogni punto ha un intorno omeomorfo ad un intervallo aperto di $\realset$
-	\item $\exists K_1, K_2\subseteq Y$ compatti t.c. $K_1\cap K_2$ non è compatto: basta prendere $K_1=\pi\left([-1, \ 1]\times \{a\} \right)$ e $K_1=\pi\left([-1, \ 1]\times \{a\} \right)$ compatti in $Y$, ma $K_1\cap K_2= [-1,\ 0) \cup (0,\ 1]$ non è compatto in $Y$
+	\item $Y$ è \textit{localmente omeomorfo} a $\realset$, infatti ogni punto ha un intorno omeomorfo ad un intervallo aperto di $\realset$
+	\item $\exists K_1, K_2\subseteq Y$ compatti tali per cui $K_1\cap K_2$ \textit{non} è compatto: basta prendere $K_1=\pi\left([-1, \ 1]\times \{a\} \right)$ e $K_1=\pi\left([-1, \ 1]\times \{a\} \right)$ compatti in $Y$, ma $K_1\cap K_2= [-1,\ 0) \cup (0,\ 1]$ \textit{non} è compatto in $Y$
 \end{enumerate}
 \subsection{Quoziente Hausdroff}
 Cerchiamo ora delle condizioni per avere un \textit{quoziente Hausdorff}.
