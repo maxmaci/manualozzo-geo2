@@ -1606,7 +1606,7 @@ Vogliamo ora scoprire come si calcola il birapporto in un sistema di riferimento
 \end{observe}
 
 \begin{tips}
-Se tutti e 4 i punti sono diversi da $(0\colon 1)$, ovvero se $\forall i,\ \lambda_i\neq 0 \\ P_i=(1\colon z_i), i=1,\dots,4$ allora $\displaystyle \beta(P_1,P_2,P_3,P_4)=\frac{ (z_4-z_1)(z_3-z_2) }{ (z_4-z_2)(z_3-z_1) }$. Infatti $P_i=(\lambda_i\colon\mu_i)=(1\colon z_i)$, cioé \\ $z_i=\frac{\mu_i}{\lambda_i}$, per la linearità delle colonne si ottiene
+Se tutti e 4 i punti sono diversi da $(0\colon 1)$, ovvero se $\forall i,\ \lambda_i\neq 0 \\ P_i=(1\colon z_i), i=1,\dots,4$ allora $\displaystyle \beta(P_1,P_2,P_3,P_4)=\frac{ (z_4-z_1)(z_3-z_2) }{ (z_4-z_2)(z_3-z_1) }$.\\ Infatti $P_i=(\lambda_i\colon\mu_i)=(1\colon z_i)$, cioé  $z_i=\frac{\mu_i}{\lambda_i}$, per la linearità delle colonne si ottiene
 	\begin{gather*}
 		\left| \begin{array}{cc}
 			\lambda_1 & \lambda_4 \\
@@ -1625,57 +1625,62 @@ Si procede allo stesso modo per gli altri determinanti e le $\lambda$ si semplif
 %Verificare che se $P_1,P_2,P_3,P_4$ sono tutti diversi da $(1\colon 0)\implies P_i=(w_i\colon 1), \forall i=1,\dots,4$, allora $\beta=\frac{ (w_2-w_1)(w_3-w_2) }{ (w_4-w_2)(w_3-w_1) }$
 
 %LEZ 32
-%
-%Sia $\proj{\ }$ una retta proiettiva ed i punti $P_1, P_2, P_3, P_4$ con $P_1, P_2, P_3$ distinti, allora definisco $\beta(P_1, P_2, P_3)  \\\
-%Quando una coppia di quattro punti è 
-%Date due rette proiettive PV e PV' e P_1 in PV distinti e Q in PV' distinti, quindi esiste sempre ed è unica una trasformazione proiettiva tale che f(P_i)=Q_i
-%Posso farlo anche con quattro punti? Posso usare il birapporto per vederlo!
-%\begin{theorema}
-%	Sia PV e PV' due rette proiettive e siano i punti di cui  i primi 3 distinti idem. Allora $\exists $ trasformazione proiettiva tale che f(P_i)=Q_i, \forall  \iff il birapporto di queste quaterne è lo stesso
-%\end{theorema}
-%PREMESSA PRIMA DELLA DIM DELL'EQUIVLENZA: si usa nella dimostazione
-%consideriamo solo i primi 3 pt (scelgo rappresentanti) sia per PV sia per PV'
-%base che dà rif proiettivo con i punti coordinati e punto unità
-%scegliamo anche un rappresentante per P_4: v_4=. Allora in tale rif proiettivo è P_4=(a\colon b) e il birapporto è 
-%Allo stesso modo si procede con Q_i, per cui 
-%Siccome P_1, P_2, P_3 e Q_i sono in posizione generale, allora esiste ed è unica trasformazione proiettiva che porta f(P_1)=Q_i
-%l'abbiamo costruita come indotta da un'applicazione lineare che porta la base v in quella di v'
-%Cosa succede a v_4 tramite \phi fra V e V'?
-%la trasf che porta i primi 3 esiste ed è unica, quindi manda p_4 dove deve. Scrivo dunque questa unica trasf fino a 3 e vediamo cosa susccede a P_4
-%DIMOSTRAZIONE
-%\impliesdx ddeve essere proprio la f nica, per cui   nel riferimento in cui, per cui il rapporto di Q_i è dato dal rapporto che è pari
-%\impliessx se il birapporto dei Q_i=b/a  Distinguiamo i casi in cui il birapporto è in \kamp o è infinito     se a=0, allora Q_4 è il punto 0\colon 1 e coincide con f(P_4)
-%il senso sta nel fatto che i primitre pt distinit la traasf exists !      stessa cosa che dre che i birapporti sono uguali
-%
-%
-%In particolare per le proiettività esiste una proiettività che manda i p_i nei q_i se e solo se il birapporto dei P-i è pari al birapporto dei Q_i
-%OSS  
-%il birapporto misura l'equivalenza proiettiva su punti di una retta proiettiva
-%
-%
-%è una relazione di equivalenza su \mathcal{S}  (verifica per esercizio) e tramite il birapporto possiamo dire che il quoziente di S per l'equiv proj, ovvero le classi di equiv proj di 4 pt distinti e ordinati in P1 sono in corrispondenza biunivoca con K\0,1 tramite il birapporto:  ad ogni quat associo il birapport (associazione suriettiva, per ogni el nel campo trovo quaterna pt distini che dà bir   due quat equivalenti se e solo se ha lo stesso birapporto, dunque quozientando diventa iniettiva e dunque biunivoca)
-%Qundo ho 4 pt in sp proj di dimension maggiore di 1 in generlae il birapporto non è definito a meno che i punti non siano allineati su una retta proiettiva r
-%
-%
-%esempio di come si usa il bir di come si studia l'equiv proj di 4 pt in pP2
-%si considerano 2 quaterne di pt distinti: P_1, P_2, P_3, P_4 e 
-%di ciascuna delle due quaterne vedo in che posizione sono: pos generale: a tre a tre non  allineati
-%oppure se non sono in pos generale allora ce ne sono 3 allineati: fa differenza se il quarto punto sta nella retta o meno
-%terza possibilità: tutti e quattro i pt allineati
-%Nel secondo caso ci sono tutte le possibili permutazioni fra pt allineati
-%Se i pt P sono proj equiv ai pt Q, tail posizioni devono essere mantenute: le proiettività mandano rette in rette, pos gen in pos gen
-%se si verificano casi diversi per i pt P e Q si può dire che non sono proj equiv
-%Supponiamo di essere nel caso 1, ovvero P_i e Q_i in pos generale: sono proj equiv oppure no? pos gener esiste unica proj fra le due (siamo nel numero giusto n+2=4)
-%Caso 2: 3 allineati: la proj esiste ed è unica, ma non ci interessa l'unicità ora, basta che ce ne sia una (sono gli stessi 3 alineati con gli stessi indici) Sono proj equiv: mostriamolo con un conto: per costruire proj costruisco trasf kin inveritible: retta nella retta   sappiamo dal ris sulle trasf proj esiste sempre trasf proj che mappa i pt nei pt, soprattutto sappiamo scriverl. HìDà un'appl linneare in piani vettoriali: posso estenderla in trasf lin da un vettore che rappresent P_4 in Q_4.   Estendo in una proiettività di P2 che fa questo lavoro sostanzialmente
-%Scegliamo P_i=[v_i]  tali che  posso farlo perché sono allineati: allora    è una base di K3 perché sono indipendetni dato che v_4\not in r  Idem per Q
-%Definiziamo \phi sulla base lineare tale che  impongo le immagini dei rappresentanti, allora per la linearità di phi è rispettato anche 4. dunque la proj indotta da phi tilde è una proiettività che manda pi in qi
-%Caso 3: osservazione: pt allineati allora è definito il loro birapporto se i pt sono proj equiv allora chiamata f la proiettività che manda i 4 pt nei 4 pt allora necessariamente manda r in s, dunque la restrizione alle due rette è una trsformazione proj che potta pi in qi per ogni i. COsa possiamo dire sui due birapporti? Ho la dimostrazione di prima /pt proj equiv allora stesso birapport/Vale il viceeversa: allora dal teorema esiste g trasformazione proiettiva che manda pi in qi per ogni ima tae g si estende facilmente ad un proiettività di p2, in maniera non unica /esercizio/ le proj si costruiscono dalle app lin: r piano vett in k3 mentre g corriponde app line fra i due piani: estendo l'app lin ad automorfismo di k3 sceglienod basi che hnno 3 vettori nel piano ed uno fuori ed uso ilterzo vettore per estenderla
-%Dunqeu in questo caso i pt sono proj equiv sse hanno lo stesso birapporto BIrapporto utie anche in dimensione superiore se stanno su una rettaho così esteso l'app line per la trasf 
-%
-%
-%FINITO LE BASI DELLO SPAZIO PROIETTIVO
-%LUNEDì E MARTEDì VACANZA
-%
+\begin{remember} 
+	Date due rette proiettive $\proj[1]{V}$ e $\proj[1]{V'}$, e $P_1,P_2,P_3 \in \proj[1](V)$ distinti e $Q_1,Q_2,Q_3 \in \proj[1]{V'}$ distinti, esiste sempre ed è unica una trasformazione proiettiva $\funz d {\proj[1](V)} {\proj[1]{V'}}$ tale che $f(P_i)=Q_i, \ i=1,2,3$
+\end{remember}
+Ci domandiamo ora se è possibile farlo anche con quattro punti, per riuscirci sfruttiamo il birapporto.
+\begin{theorema}
+	Siano $\proj[1]{V}$ e $\proj[1]{V'}$ due rette proiettive e siano i punti $P_1,P_2,P_3,P_4\in\proj[1]{V}$ di cui i primi 3 distinti, e $Q_1,Q_2,Q_3,Q_4\in\proj[1]{V'}$ di cui i primi 3 distinti. Allora $\exists$ trasformazione proiettiva $\funz f {\proj[1]{V}} {\proj[1]{V'}}$ tale che $f(P_i)=Q_i, \forall i=1,\dots,4  \iff \beta(P_1,P_2,P_3,P_4)=\beta(Q_1,Q_2,Q_3,Q_4)$, ovvero se il birapporto delle quaterne è lo stesso.
+\end{theorema}
+\begin{observe}
+	Consideriamo solo i primi 3 punti e scegliamone dei rappresentanti: $v_1,v_2,v_3\in V \colon P_i=[v_i],\ i=1,2,3$ e $v_3=v_1+v_2$. Dunque $\{v_1,v_2\}$ è base di $V$ che dà il riferimento proiettivo di $\proj[1]{V}$ in cui $P_1=(1\colon 0), P_2=(0\colon 1), P_3=(1\colon 1)$. Sia $P_4=[v_4]$ con $v_4=av_1+bv_2$. Allora $P_4=(a\colon b)$ e $\beta(P_i)=\frac{b}{a}$.\\
+	Allo stesso modo per l'altra quaterna, siano $v'_1,v'_2,v'_3\in V' \colon Q_i=[v'_i],\ i=1,2,3$ e\\ $v'_3=v'_1+v'_2$.\\
+	Siccome $P_1,P_2,P_3$ e $Q_1,Q_2,Q_3$ sono in posizione generale allora esiste ed è unica una trasformazione proiettiva $\funz f {\proj[1]{V}} {\proj[1]{V'}}$ tale che $f(P_i)=Q_i$. Inoltre $f=\widetilde{\phi}$ con $\funz \phi V {V'}$ applicazione lineare tale che $\phi(v_1)=v'_1,\ \phi(v_2)=v'_2$, ovvero porta una base di $V$ in una base di $V' \implies \phi(v_4)=\phi(av_1+bv_2)=av'_1+bv'_2 \implies f(P_4)=[\phi(v_4)]=(a\colon b)$ nel riferimento in $\proj[1]{V'}$.
+\end{observe}
+\begin{demonstration}~{}\\
+	$\impliesdx$ Siccome la $f$ è unica e $f(P_4)=Q_4 \implies Q_4=(a\colon b)$ nel riferimento in cui $Q_1=(1\colon 0), Q_2=(0\colon 1), Q_3=(1\colon 1) \implies \beta(Q_i)=\frac{b}{a}=\beta(P_i)$.\\
+	$\impliessx$ Se $\beta(Q_i)=\frac{b}{a}$ allora distinguiamo i casi in cui il birapporto è nel campo o infinito
+		\begin{gather*}
+			\frac{b}{a}\in\kamp \ \ \ Q_4=\left(1\colon \frac{b}{a} \right)=(a\colon b)=f(P_4)\\
+			\frac{b}{a}=\infty  \ \ \ a=0\implies Q_4=(0\colon 1)=f(P_4)
+		\end{gather*}
+\end{demonstration}
+\begin{corollary}
+	Siano $\proj[1]{\kamp}$ e siano i punti $P_1,P_2,P_3,P_4\in\proj[1]{\kamp}$ di cui i primi 3 distinti, e $Q_1,Q_2,Q_3,Q_4\in\proj[1]{\kamp}$ di cui i primi 3 distinti. Allora $\exists$ proiettività $\funz f {\proj[1]{\kamp}} {\proj[1]{\kamp}}$ t.c. $f(P_i)=Q_i, \forall i=1,\dots,4  \iff \beta(P_i)=\beta(Q_i)$, ovvero se il birapporto delle quaterne è lo stesso.
+\end{corollary}
+
+\begin{observe}
+	Sia $\mathcal{S}=\{$quaterne ordinate di punti distinti in $\proj[1]{\kamp}\}$. Siano due quaterne $\{P_1,P_2,P_3,P_4\}, \{Q_1,Q_2,Q_3,Q_4\} \in\mathcal{S}$, esse sono \textit{proiettivamente equivalenti} \index{equivalenza!proiettiva} se $\exists f$ proiettività t.c. $f(P_i)=Q_i
+, \forall i=1,2,3,4$, ovvero per il teorema precedente se le due quaterne hanno lo stesso birapporto.\\
+	Notiamo	che quella appena data è una relazione di equivalenza (verifica per esercizio), per cui le classi di equivalenza proiettiva di 4 punti distinti e ordinati in $\proj[1]{\kamp}$ sono in corrispondenza biunivoca con il campo meno lo $0$ e l'$1$ visto che sono 4 punti distinti, val a dire
+		\begin{equation*}
+			\displaystyle \nicefrac{\mathcal{S}}{\sim} \leftrightarrow \kamp\setminus\{0,1\}
+		\end{equation*}
+	Si ha dunque che ad ogni quaterna di punti distinti associamo il suo birapporto (applicazione suriettiva) e per ogni elemento nel campo troviamo una quaterna di punti distinti con tale birapporto (quozientando l'applicazione è iniettiva)
+\end{observe}
+%"il birapporto misura l'equivalenza proiettiva su punti di una retta proiettiva"
+
+\begin{observe}
+	In dimensione maggiore generalmente il birapporto non è definito, a meno che i 4 punti sono allineati su una retta proiettiva $r$.
+\end{observe}
+
+
+\begin{examples}~{}\\
+	Nel piano proiettivo $\proj[2]{\kamp}$ consideriamo due quaterne di punti distinti quali $\{P_1,P_2,P_3,P_4\}$ e $\{Q_1,Q_2,Q_3,Q_4\}$. Grazie al birapporto analizziamo per ciascuna delle due quaterne in che posizione sono: generale (ovvero a tre a tre non allineati), o non in posizione generale, in cui si differenzia se i punti allineati sono 3 o 4.
+%"Nel secondo caso ci sono tutte le possibili permutazioni fra pt allineati"
+	Se i punti $P_i$ sono proiettivamente equivalenti ai punti $Q_i$, allora tali posizioni devono essere mantenute: le proiettività mandano rette in rette, posizioni generali in posizioni generali. Per contronominale, se si verificano casi diversi per le due quaterne possiamo afermare che non sono proiettivamente equivalenti.
+	\begin{enumerate}
+		\item $P_i$ e $Q_i$ sono in \textit{posizione generale}. Vogliamo vedere se sono proiettivamente equivalenti, per farlo dobbiamo controllare se le dimensioni sono giuste: siccome abbiamo 4 punti e $4=\dim\proj[2]{\kamp}+2$ allora $\exists !$ proiettività $f$ di $\proj[2]{\kamp}$ tale che $f(P_1)=Q_i, i=1,\dots,4$, dunque hanno lo stesso birapporto e sono sempre proiettivamente equivalenti
+		\item $P_1,P_2,P_3$ allineati ma $P_4$ no, idem per i $Q_i$, ovvero $P_1,P_2,P_3\in r$ retta proiettiva. Vogliamo dimostrare che anche in questo caso le quaterne sono proiettivamente equivalenti,
+%sfruttando la proiettività fra i tre punti ed estendendola al quarto punto
+		Scegliamo dei rappresentanti $P_i=[v_i],\ i=1,2,3,4, v_i\in\kamp^3$ t.c. $v_3=v_1+v_2$, il che è possibile perché i punti sono allineati. Si ha che $\{v_1,v_2,v_3$ è una base di $\kamp^3\}$ visto che $P_4\notin r$ allora $v_4$ non è linearmente dipendente da $v_1,v_2$. Allo stesso modo sia $Q_i=[w_i],\ i=1,2,3,4, w_i\in\kamp^3$ t.c. $w_3=w_1+w_2$ con $\{w_1,w_2,w_4\}$ base di $\kamp^3$. \\
+		Definiamo $\funz \phi {\kamp^3} {\kamp^3}$ lineare t.c. $\phi(v_1)=w_1, \phi(v_2)=w_2, \phi(v_4)=w_4\implies \phi(v_3)=\phi(v_1+v_2)=w_1+w_2=w_3$. Dunque $\funz {f=\widetilde{\phi}} {\proj[2]{\kamp}} {\proj[2]{\kamp}}$ è una proiettività che manda $P_i$ in $Q_i,\ \forall i=1,2,3,4$
+		\item Siccome tutti i punti sono allineati allora è definito il loro birapporto. Se le due quaterne sono proiettivamente equivalenti, sia $\funz f {\proj[2]{\kamp}} {\proj[2]{\kamp}}$ la proiettività, essa porta una quaterna nell'altra e necessariamente una retta nell'altra, ovvero $f(r)=s$, dunque la restrizione alle due rette $\funz {f_{|_r}} r s$ porta $P_i$ in $Q_i,\ \forall i \implies \beta(P_i)=\beta(Q_i)$.\\
+		Viceversa se $\beta(P_i)=\beta(Q_i)$ allora $\exists \funz g r s$ trasformazione proiettiva che manda $P_i$ in $Q_i,\ \forall i=1,2,3,4$. Si ha che $g$ si estende in maniera non unica ad una proiettività di $\proj[2]{\kamp}$. Infatti dati $r=\mathbb{P}(U),\ U\subset \kamp^3$ e $s0\mathbb{P}(W),\ W\subset\kamp^3$ (gli ultimi sono piani vettoriali), si ha che $g=\widetilde{\psi}$ con $\funz \psi U W$ isomorfismo lineare. Vogliamo estenderla ad un automorfismo lineare $\funz \phi {\kamp^3} {\kamp^3}$ scegliendo basi con due vettori nel pinao ed uno esterno, ovvero $u_1,u_2\in U$ base di $U$ e $u_3\notin U$. Dunque $\psi(u_1),\psi(u_2)$ è una base di $W$ e $w_3\notin W \implies \{u_1,u_2,u_3\}$ base di $\kamp^3$, $\{\psi(u_1),\psi(u_2),\psi(u_3) \}$ un'altra base. Ponendo $\funz \phi {\kamp^3} {\kamp^3}$ tale che $\phi(u_1)\coloneqq \psi(u_1), \phi(u_2)\coloneqq \psi(u_2), \phi(u_3)\coloneqq w_3$ si ha $f=\widetilde{\phi}$. \\
+		In questo caso dunque i punti sono proiettivamente equivalenti se e solo se hanno lo stesso birapporto.
+	\end{enumerate} 
+\end{examples}
+
 %
 %
 %STUDIO DELLA GEOMETRIA DI RETTE O CURVE NEL PIANO PROIETTIVO
