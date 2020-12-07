@@ -586,11 +586,18 @@ Infatti $F$ è ben definita, continua e $\mvf{F}{\mathbf{x}}{0}=\frac{\mathbf{x}
 \end{intuit}
 \begin{define}\textsc{Bouquet di circonferenze.}\\
 Un \textbf{bouquet}\index{bouquet di circonferenze} \textbf{di} $n$ \textbf{circonferenze} è uno spazio topologico ottenuto unendo in un punto $n$ copie di $S^1$.
+\vspace{-8mm}
+\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.75]{images/bouquet.pdf}
+\end{center}
+\vspace{-8mm}
 \end{define}
-% aggiungere immagini bouquet
 \begin{examples}\textsc{Altri esempi di equivalenze omotopiche.}
 	\begin{enumerate}
-		\item $\realset^2\setminus\left\{2\text{ punti}\right\}$ ha lo stesso tipo di omotopia di un \textit{bouquet di due circonferenze}: si può ottenere attraverso una composizione (continua) di retrazioni radiali e lineari.
+		\item $\realset^2\setminus\left\{2\text{ punti}\right\}$ ha lo stesso tipo di omotopia di un \textit{bouquet di due circonferenze}: si può ottenere attraverso una composizione (continua) di retrazioni \textit{radiali} e \textit{lineari}.
+		\begin{center}
+						\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.75]{images/bouquetconstruction.pdf}
+		\end{center}	
 		\item $\realset^2\setminus\left\{n\text{ punti}\right\}$ ha lo stesso tipo di omotopia di un \textit{bouquet di} $n$ \textit{circonferenze}.
 		\item $\realset^3\setminus\left\{1\text{ retta}\right\}$ ha lo stesso tipo di omotopia di $\realset^2\setminus\left\{1\text{ punto}\right\}$ per retrazioni lineari, dunque ha la stessa omotopia di $S^1$ per i ragionamenti precedenti.
 		\item Per $\realset^3\setminus\left\{2\text{ rette}\right\}$ dobbiamo distinguere a seconda della relazione fra le due rette.
@@ -610,9 +617,9 @@ Un \textbf{bouquet}\index{bouquet di circonferenze} \textbf{di} $n$ \textbf{circ
 		\end{equation*}
 		Infatti $F$ è banalmente ben definita continua, con $\mvf{F}{\mathbf{x}}{0}=\left(x,\ y,\ 0\right)=\widetilde{r}\left(\mathbf{x}\right)$ e $\mvf{F}{\mathbf{x}}{1}=\left(x,\ y,\ z\right)=Id_{\widetilde{X}}\left(\mathbf{x}\right)$.\\
 		Segue che $\widetilde{X}$, e dunque anche $X$ per omeomorfismo, ha la stessa omotopia di $\realset^2\setminus\left\{2\text{ punti}\right\}$ e di un \textit{bouquet di due circonferenze}.
-		\item Se le due rette sono incidenti, a meno di omeomorfismi si intersecano nell'origine. Consideriamo dunque $X=\realset^3\left\{r_1\cup r_2\right\}$ e lo spazio $A=S^2\setminus\left\{P_1,\ P_2,\ Q_1,\ Q_2\right\}$. Se prendiamo la retrazione:
+		\item Se le due rette sono \textbf{incidenti}, a meno di omeomorfismi si intersecano nell'origine. Consideriamo dunque $X=\realset^3\left\{r_1\cup r_2\right\}$ e lo spazio $A=S^2\setminus\left\{P_1,\ P_2,\ Q_1,\ Q_2\right\}$. Se prendiamo la retrazione:
 		\begin{equation*}
-			\funztot{r}{X}{A}{\mathbf{x}}{\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}}.\\
+			\funztot{r}{X}{A}{\mathbf{x}}{\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}}.
 		\end{equation*}
 		e l'omotopia:
 		\begin{equation*}

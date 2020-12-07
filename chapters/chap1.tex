@@ -165,7 +165,7 @@ Sia $X$ un insieme e $\topo_1$, $\topo_2$ due topologie di $X$. Si dice che $\to
 \end{equation}
 In modo analogo si dice anche che $\topo_2$ è \textbf{più fine}\index{finezza!più fine} di $\topo_1$.
 \end{define}
-In altre parole, una topologia più fine ha più aperti rispetto a quella confrontata.
+In altre parole, una topologia \textit{più fine} ha \textit{più aperti} rispetto a quella confrontata.
 \begin{examples}~{}
 \begin{itemize}
 \item La \textit{topologia banale} è la \textit{meno fine} di tutte, dato che ogni topologia contiene $\emptyset$, $X$.
@@ -725,12 +725,12 @@ Segue dunque che $U_k\in I\left(x\right)$ e $V_k\in I\left(y\right)$ e dunque da
 	W_{ij} = U_i \times V_j\subseteq U_k\times V_k\subseteq W'\subseteq W
 \end{equation*}
 \item \begin{align*}
-\left(x\, y\right)\in \overline{A\times B}&\iff \forall W\in I\left(x,\ y\right)\quad W\cap\left(A\times B\right)\neq \emptyset\\
+\left(x,\ y\right)\in \overline{A\times B}&\iff \forall W\in I\left(x,\ y\right)\quad W\cap\left(A\times B\right)\neq \emptyset\\
 &\iff \forall U\in I\left(x\right),\ \forall V\in I\left(y\right)\quad \left(U\times V\right)\cap\left(A\times B\right)\neq \emptyset\\
 &\iff \forall U\in I\left(x\right),\ \forall V\in I\left(y\right)\quad \left(U\cap A\right)\times\left(V\cap B\right)\neq \emptyset\\
 &\iff \forall U\in I\left(x\right),\ \forall V\in I\left(y\right)\quad U\cap A\neq \emptyset ,\ V\cap B\neq \emptyset\\
 &\iff \forall U\in I\left(x\right)\quad U\cap A\neq \emptyset ,\ \forall V\in I\left(y\right)\quad V\cap B\neq \emptyset\\
-&\iff x\in\overline{A}\wedge y\in \overline{B}\iff\left(\right)\left(x\, y\right)\in\overline{A}\times \overline{B}
+&\iff x\in\overline{A}\wedge y\in \overline{B}\iff\left(\right)\left(x,\ y\right)\in\overline{A}\times \overline{B}
 \end{align*}
 In particolare, se $A$ e $B$ sono chiusi, avendo che $A=\overline{A}$ e $B=\overline{B}$, otteniamo:
 \begin{equation*}
@@ -751,7 +751,7 @@ In particolare una base di aperti di $X_1\times \ldots \times X_n$ è data da:
 \vspace{-6mm}
 \end{observe}
 \section{Assiomi di separazione: T1 e Hausdorff}\index{assioma di separazione}
-\begin{define}\textsc{T1.}\label{T1}\\
+\begin{define}\textsc{Spazio T1.}\label{T1}\\
 Uno spazio topologico $X$ si dice \textbf{T1}\index{assioma di separazione!T1}\index{spazio!T1} se ogni sottoinsieme finito è chiuso, in particolare se e solo se tutti i punti sono chiusi.\\
 In termini di intorni, $X$ è \textbf{T1} se presi due punti distinti $x$ e $y$ esiste un intorno per il punto $x$ che non contiene $y$ e viceversa:
 \begin{equation}
@@ -792,7 +792,7 @@ Per ipotesi, $\displaystyle \inter_{V\in I\left(y\right)}V=\left\{y\right\}$, du
 E per la proposizione precedente si ha che $X$ metrico è \textbf{T1}.
 \end{enumerate}
 \end{demonstration}
-\begin{define}\textbf{Hausdorff.}\\
+\begin{define}\textbf{Spazio di Hausdorff.}\\
 Uno spazio topologico $X$ si dice di \textbf{Hausdorff}\index{assioma di separazione!Hausdorff}\index{spazio!Hausdorff} o \textbf{T2}\seeonlyindex{spazio topologico!T2}{assioma di separazione!Hausdorff}\seeonlyindex{assioma di separazione!T2}{assioma di separazione!Hausdorff} se per ogni coppia di punti distinti esistono due intorni disgiunti:
 \begin{equation}
 	\forall x,\ y\in X\quad x\neq y\implies

@@ -17,10 +17,11 @@
 %inserire introduzione
 %inserire citazione
 \section{Omotopie fra cammini}
-Ove non specificato differentemente, useremo $I$ per indicare l'intervallo $\intv$.
-% inserire immagine omotopia di cammini
+\begin{notate}
+Se non specificato differentemente, useremo $I$ per indicare l'intervallo $\intv$.
+\end{notate}
 \begin{define}\textsc{Omotopia di cammini.}\\
-	Siano $\funz{\alpha,\ \beta}{I}{X}$ due cammini da $a$ a $b$, cioè con \textit{stessi estremi}. Allora $\alpha\,\beta$ sono \textbf{cammini omotopi}\index{cammino!omotopo} se $\exists \funz{F}{I \times I}{X}$ tale che:
+	Siano $\funz{\alpha,\ \beta}{I}{X}$ due cammini da $a$ a $b$, cioè con \textit{stessi estremi}. Allora $\alpha,\ \beta$ sono \textbf{cammini omotopi}\index{cammino!omotopo} se $\exists \funz{F}{I \times I}{X}$ tale che:
 	\begin{equation}
 		\begin{array}{ll}
 			\begin{cases}
@@ -40,7 +41,7 @@ Ove non specificato differentemente, useremo $I$ per indicare l'intervallo $\int
 \end{center}
 $F$ è detta \textbf{omotopia di cammini}\index{omotopia!di cammini} o \textbf{omotopia a estremi fissi} \seeonlyindex{omotopia!a estremi fissi}{omotopia!di cammini}.
 \end{define}
-\begin{define}\textsc{Insieme dei cammini.}
+\begin{define}\textsc{Insieme dei cammini.}\\
 	Indichiamo con $\inscam{X}{a}{b}$ l'\textbf{insieme dei cammini}\index{cammino!insieme} in $X$ da $a$ a $b$.
 \end{define}
 \begin{observe}
@@ -168,18 +169,19 @@ $H$ è l'omotopia a estremi fissi cercata.
 \begin{demonstration}
 	Sia $\funz{F}{I\times I}{X}$ data da $\mvf{F}{t}{s}=\alpha\left(s\varphi\left(t\right)+\left(1-s\right)t\right)$.
 	\begin{itemize}
+		%controllare impaginazione qui
 		\item $s\varphi\left(t\right)+\left(1-s\right)t$ è una combinazione lineare che è contenuta in $I\subseteq \realset\ \forall t,\ s\in I$ per convessità dell'intervallo $I$, da cui segue che $F$ è ben definita.
 		\item $F$ continua perché composizione di funzioni continue.
-		\item \parbox[t]{0.38\textwidth}{$\mvf{F}{t}{0}=\alpha\left(t\right)$}%\tikzmark{a}
-		\item \parbox[t]{0.38\textwidth}{$\mvf{F}{t}{1}=\alpha\left(\varphi\left(t\right)\right)$}%\tikzmark{b}
-		\item \parbox[t]{0.38\textwidth}{$\mvf{F}{0}{s}=\alpha\left(0\right)$}%\tikzmark{c}
-		\item \parbox[t]{0.38\textwidth}{$\mvf{F}{1}{s}=\alpha\left(s+1-s\right)=\alpha\left(1\right)$}%\tikzmark{d}
+		\item \parbox[t]{0.38\textwidth}{$\mvf{F}{t}{0}=\alpha\left(t\right)$}\tikzmark{a}
+		\item \parbox[t]{0.38\textwidth}{$\mvf{F}{t}{1}=\alpha\left(\varphi\left(t\right)\right)$}\tikzmark{b}
+		\item \parbox[t]{0.38\textwidth}{$\mvf{F}{0}{s}=\alpha\left(0\right)$}\tikzmark{c}
+		\item \parbox[t]{0.38\textwidth}{$\mvf{F}{1}{s}=\alpha\left(s+1-s\right)=\alpha\left(1\right)$}\tikzmark{d}
 	\end{itemize}
-%\brackitem{a}{b}[$\forall t\in I$ è omotopia]
-%\brackitem{c}{d}[$\forall s\in I$ ha estremi fissi]
+\brackitem{a}{b}[$\forall t\in I$ è omotopia]
+\brackitem{c}{d}[$\forall s\in I$ ha estremi fissi]
 $H$ è l'omotopia a estremi fissi cercata tra $\alpha$ e $\alpha\circ\varphi$.
 \end{demonstration}
-\begin{define}
+\begin{define}\textsc{Cammino costante.}\\
 	Il \textbf{cammino costante} $C_a$\index{cammino!costante} nel punto $a$ è un cammino che non si sposta mai da esso, cioè è descritto da una funzione costante nel punto:
 	\begin{equation}
 		\funztot{C_a}{I}{X}{t}{a}
@@ -311,9 +313,10 @@ Verifichiamo che lo sia:
 \end{itemize}
 In questo modo teniamo conto della possibilità del cammino di ‘‘fermarsi'' per un certo tempo in un particolare punto $\alpha\left(s\right)$. 
 \end{enumerate}
+\vspace{-3mm}
 \end{demonstration}
 \section{Gruppo fondamentale}
-\begin{define}
+\begin{define}\textsc{Laccio.}\\
 	Sia $X$ uno spazio topologico e fissiamo un punto $x_0\in X$. I \textbf{lacci}\index{laccio} o \textbf{cappi}\seeonlyindex{cappio}{laccio} sono i cammini chiusi in $X$, cioè tutti i cammini il cui punto iniziale e finale coincidono. Il loro insieme si denota dunque come $\inscam{X}{x_0}{x_0}$.
 \end{define}
 \begin{observe}
@@ -349,7 +352,7 @@ Preso un laccio $\alpha$, indichiamo la sua classe di equivalenza in $\gruf{X}{x
 	La proposizione \ref{propcammini} (Manetti, 11.4 e 11.6) ci garantisce che la composizione di cammini omotopi è omotopa ($\left(\alpha\ast\beta\right)\ast \gamma \sim \alpha\ast\left(\beta\ast\gamma\right)$), dunque possiamo parlare della \textit{classe} $\left[\alpha\ast\beta\ast\gamma\right]$. Tuttavia, al di fuori del quoziente non ha senso $\alpha\ast\beta\ast\gamma$!\\
 	L'ordine con cui congiungiamo i cammini dà luogo a due cammini certamente omotopi, \textit{ma non uguali}, dato che la parametrizzazione varia\footnote{Questo si vede chiaramente nella dimostrazione della proposizione.}.
 \end{attention}
-\begin{define}
+\begin{define}\textsc{Gruppo fondamentale.}\\
 	Dato uno spazio topologico $X$ e fissato un punto (detto \textbf{punto base}\index{punto!base}) $x_0$, il \textbf{gruppo fondamentale}\index{gruppo!fondamentale} con punto base $x_0$ è il gruppo $\gruf{X}{x_0}$ definito nell'osservazione precedente.\\
 	Si chiama anche \textbf{primo gruppo fondamentale}\index{gruppo!fondamentale!primo} o \textbf{gruppo di Poincaré}\seeonlyindex{gruppo!di Poicaré}{gruppo!fondamentale}.
 \end{define}
@@ -399,13 +402,15 @@ In modo assolutamente analogo a come visto sopra, si vede che è un omeomorfismo
 \end{gather*}
 Segue che allora $\gamma_{\#}$ è biettiva.
 \end{itemize}
+\vspace{-3mm}
 \end{demonstration}
-\begin{observe}~{}
+\begin{observes}~{}
 	\begin{itemize}
 		\item Se due punto $x_1$ e $x_2$ stanno in componenti connesse per archi diverse, \textit{non} c'è alcuna relazione tra $\gruf{X}{x_1}$ e $\gruf{X}{x_2}$.
 		\item Se $X$ è \textbf{c.p.a.}, il suo gruppo fondamentale è \textit{unico} a meno di isomorfismo.
 	\end{itemize}
-\end{observe}
+\vspace{-3mm}
+\end{observes}
 \begin{example}
 	Sia $Y\subseteq \realset^n$ un sottospazio convesso e $y_0\in Y$.
 	Allora $\gruf{Y}{y_0}=0$ è \textbf{banale}; in particolare, allora $\gruf{\realset^n}{y_0}$ è banale per ogni $n$.
@@ -424,7 +429,7 @@ Segue che allora $\gamma_{\#}$ è biettiva.
 \end{itemize}
 Segue che $F$ è un omotopia tra $C_{y_0}$ e $\alpha$, dunque segue la tesi.
 \end{demonstration}
-\begin{define}
+\begin{define}\textsc{Spazio semplicemente connesso.}\\
 	Uno spazio topologico $X$ è \textbf{semplicemente connesso}\index{semplicemente connesso} se è \textbf{c.p.a.} e ha gruppo fondamentale \textbf{banale}.
 \end{define}
 \begin{examples}~{}
@@ -432,10 +437,11 @@ Segue che $F$ è un omotopia tra $C_{y_0}$ e $\alpha$, dunque segue la tesi.
 		\item $\realset^n$ è semplicemente connesso.
 		\item Ogni convesso di $\realset^n$ è semplicemente connesso.
 	\end{itemize}
+\vspace{-3mm}
 \end{examples}
 \subsection{Mappe continue e omomorfismo di gruppi}
 \begin{notate}
-	Indichiamo con $\funz{f}{\left(X,\ x_0\right)}{\left(Y,\ y_0\right)}$ una funzione continua $\funz{f}{X}{Y}$ tale che $f\left(x_0\right)=y_0$.
+	$\funz{f}{\left(X,\ x_0\right)}{\left(Y,\ y_0\right)}$ è una funzione continua $\funz{f}{X}{Y}$ tale che $f\left(x_0\right)=y_0$.
 \end{notate}
 \begin{observe}
 Consideriamo $\funz{f}{X}{Y}$ continua e due cammini $\alpha$ in $X$ da $a$ a $b$ e $\beta$ in $X$ da $b$ a $c$.
@@ -453,6 +459,7 @@ Si ha che:
 \item $f\circ\overline{\alpha}=\overline{f\circ\alpha}$.
 \item Se $\alpha\sim\alpha'$, allora $f\circ\alpha\sim f\circ\alpha'$.
 \end{enumerate}
+\vspace{-3mm}
 \end{observe}
 \begin{proposition}
 	Dati $X,\ Y$ spazi topologici, due punti $x_0\in X,\ y_0\in Y$ e una funzione $\funz{f}{\left(X,\ x_0\right)}{\left(Y,\ y_0\right)}$ continua, si può definire associare un omomorfismo tra i corrispettivi gruppi fondamentali:
@@ -470,9 +477,10 @@ Si ha che:
 		\end{align*}
 	Inoltre: $f_{\ast}\left(\left[C_{x_0}\right]\right)=\left[f\circ C_{x_0}\right]=\left[C_{y_0}\right]$.
 	\end{itemize}
+\vspace{-3mm}
 \end{demonstration}
 \section{Digressione: Categorie}
-\begin{define}
+\begin{define}\textsc{Categoria.}\\
 	Una \textbf{categoria}\index{categoria} $\cat$ consiste di:
 	\begin{itemize}
 		\item Una \textbf{classe}\index{classe} $\mathrm{Ob}\left(\cat\right)$, i cui elementi sono datti \textbf{oggetti}\index{oggetto} di $\cat$.
@@ -496,9 +504,10 @@ Tali che questi oggetti soddisfino i seguenti assiomi:
 		\end{array}
 	\end{equation}
 Si dimostra che $Id_X$ è unico per ogni oggetto $X$.
-\end{enumerate} 
+\end{enumerate}
+\vspace{-3mm}
 \end{define}
-\begin{define}
+\begin{define}\textsc{Isomorfismo.}\\
 	Un morfismo $f\in\homo{\cat}{X}{Y}$ si dice \textbf{isomorfismo} se:
 	\begin{equation}
 		 \exists g\in \homo{\cat}{Y}{X} \text{ tale che } g\circ f=Id_X\qquad f\circ g=Id_Y
@@ -546,12 +555,13 @@ Nello specifico, se $U,\ V\subseteq X$ aperti, allora:
 	\end{cases}
 \end{equation*}
 \end{itemize}
+\vspace{-6mm}
 \end{examples}
 \begin{attention}
 	Come si evince dall'esempio 6, i morfismi delle categorie possono anche \textit{non} essere funzioni!
 \end{attention}
 \subsection{Funtori}
-\begin{define}
+\begin{define}\textsc{Funtore.}\\
 Siano $\mathcal{A},\ \mathcal{B}$ due categorie. Un \textbf{funtore}\index{funtore} $\funz{F}{\mathcal{A}}{\mathcal{B}}$ consiste di due funzioni:
 \begin{enumerate}
 	\item Una \textit{funzione sugli oggetti} $\funztot{F}{\mathrm{Ob}\left(\mathcal{A}\right)}{\mathrm{Ob}\left(\mathcal{B}\right)}{x}{F\left(x\right)}$.
@@ -602,13 +612,14 @@ Che preserva i morfismi identità, mentre inverte la direzione della composizion
 	\end{itemize}
 \end{enumerate}
 \end{define}
-\begin{observe}
+\begin{observes}
 	Un funtore porta:
 	\begin{itemize}
 		\item Isomorfismi in isomorfismi,
 		\item Oggetti isomorfi in oggetti isomorfi.
 	\end{itemize}
-\end{observe}
+\vspace{-3mm}
+\end{observes}
 \begin{demonstration}
 	Se $f\in \homo{\mathcal{A}}{X}{Y}$ è isomorfismo in $\mathcal{A}$, $\exists g\in\homo{\mathcal{A}}{Y}{X}$ tale che $g=f^{-1}$, cioè $g\circ f=Id_X,\ f\circ g=Id_Y$. Ma allora, se $F$ è covariante:
 	\begin{gather*}
@@ -671,7 +682,7 @@ Questo funtore \textit{covariante} si basa sull'omomorfismo tra gruppi fondament
 			\left(g\circ f\right)_{\ast}\left(\left[\alpha\right]\right)=\left[g\circ f\circ\alpha\right]=g_{\ast}\left(\left[f\circ\alpha\right]\right)=g_{\ast}\left(g_{\ast}\left(\left[\alpha\right]\right)\right)=\left(g_{\ast}\circ f_{\ast}\right)\left(\left[\alpha\right]\right)
 		\end{equation*}
 	\end{itemize}
-
+\vspace{-3mm}
 \end{demonstration}
 \section{Isomorfismi e gruppi fondamentali}
 \begin{corollary}
@@ -681,7 +692,7 @@ Questo funtore \textit{covariante} si basa sull'omomorfismo tra gruppi fondament
 	Se $g\circ f$ è una funzione biunivoca, allora $f$ è iniettiva e $g$ è suriettiva.
 \end{remember}
 \begin{corollary}
-	Sia $A\subseteq X$ è un retratto con retrazione $\funz{r}{X}{A}$, e sia $\incl{i}{A}{X}$. Si ha che:
+	Sia $A\subseteq X$ un retratto con retrazione $\funz{r}{X}{A}$; si consideri inoltre la sua inclusione $\incl{i}{A}{X}$. Si ha che:
 	\begin{itemize}
 		\item $\forall a\in A\ \funz{i_{\ast}}{\gruf{A}{a}}{\gruf{X}{a}}$ è un omomorfismo \textit{iniettivo}.
 		\item $\forall a\in A\ \funz{r_{\ast}}{\gruf{X}{a}}{\gruf{A}{a}}$ è un omomorfismo \textit{suriettivo}.
@@ -807,5 +818,4 @@ Applicando il ragionamento insiemistico ricordato in precedenza (pag. \pageref{b
 		\funz{i_{\ast}}{\gruf{A}{a}}{\gruf{X}{a}}\qquad\funz{r_{\ast}}{\gruf{X}{a}}{\gruf{A}{a}}
 	\end{equation}
 Sono isomorfismi di gruppi.
-\vspace{-6mm}
 \end{corollary}

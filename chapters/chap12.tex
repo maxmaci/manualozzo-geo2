@@ -14,11 +14,11 @@
 		\textsc{NON UN ROBOT,} UN UMANO IN CARNE ED OSSA BEEP BOOP.
 	\end{flushright}
 \end{introduction}
-
+%inserire citazione
 \section{Spazi proiettivi}
-% mettere superfici
-Abbiamo già approfondito, a livello \textit{topologico}, lo \textbf{spazio proiettivo reale} e le sue caratteristiche nel \autoref{chap:superfici}. In questo capitolo, ci dedicheremo a \textit{generalizzare} il concetto per un \textit{qualsiasi} spazio vettoriale su campo $\kamp$, utilizzando gli strumenti dell'algebra lineare. 
-\begin{define}
+% mettere ref superfici
+Abbiamo già approfondito lo \textbf{spazio proiettivo reale} e le sue caratteristiche sia \textit{topologicamente} nel \autoref{chap:azionidigruppo}, sia come \textit{varietà topologica} nel \autoref{chap:superfici}. In questo capitolo, ci dedicheremo a \textit{generalizzare} il concetto per un \textit{qualsiasi} spazio vettoriale su campo $\kamp$, utilizzando gli strumenti dell'algebra lineare. 
+\begin{define}\textsc{Spazio proiettivo.}\\
 Sia $\kamp$ un campo e $V$ uno spazio vettoriale di dimensione \textit{finita} su $\kamp$. Lo \textbf{spazio proiettivo}\index{spazio!proiettivo} associato a $V$ è l'insieme quoziente:
 \begin{equation}
 	\proj{V}=\frac{V\setminus\left\{0\right\}}{\sim}
@@ -29,23 +29,23 @@ Dove $\sim$ è la relazione di equivalenza data su $V\setminus\left\{0\right\}$ 
 \end{equation}
 Lo spazio proiettivo $\proj{V}$ si dice anche il \textbf{proiettivizzato}\seeonlyindex{proiettivizzato}{spazio!proiettivo} di $V$.
 \end{define}
-% finire dimostrazione
 \begin{demonstration}
-~{}
+Dimostriamo che è una relazione di equivalenza:
 \begin{itemize}
-	\item \textsc{Riflessiva}: ...
-	\item \textsc{Simmetrica}: ...
-	\item \textsc{Transitiva}: ...
+\item \textsc{Riflessiva}: $v\sim v?$ Basta porre $\lambda=1$, in quanto $x=1\cdot x$.
+\item \textsc{Simmetrica}: Per ipotesi $y=\lambda x$, allora $x=\nicefrac{1}{\lambda} y$ ($nicefrac{1}{\lambda}\in \kamp\setminus\left\{0\right\}$).
+\item \textsc{Transitiva}: Poichè $y=\lambda x,\ z=\mu y$, segue $z=\mu \left(\lambda x\right)=\left(\mu\lambda\right)x$ e $\mu\lambda\in \kamp\setminus\left\{0\right\}$.
 \end{itemize}
+\vspace{-3mm}
 \end{demonstration}
-\begin{define}
+\begin{define}\textsc{Dimensione di uno spazio proiettivo.}\\
 La \textbf{dimensione}\index{dimensione di uno spazio proiettivo} di $\proj{V}$ è:
 \begin{equation}
 	\dim\proj{V}=\dim V-1
 \end{equation}
 Se $V=\left\{0\right\}$, allora $\proj{V}=\emptyset$ e si pone $\dim\emptyset\coloneqq -1$.
 \end{define}
-\begin{define}
+\begin{define}\textsc{Proiezione al quoziente e classe.}\\
 Si denota con $\funz{\pi}{V\setminus\left\{0\right\}}{\proj{V}}$ la \textbf{proiezione al quoziente}\index{proiezione!al quoziente} e con $\left[v\right]\in\proj{V}$ la \textbf{classe}\index{classe!dello spazio proiettivo} di $v\in V\setminus\left\{0\right\}$.
 \end{define}
 \begin{observe}
@@ -58,16 +58,17 @@ Si denota con $\funz{\pi}{V\setminus\left\{0\right\}}{\proj{V}}$ la \textbf{proi
 	\end{equation}
 In altre parole, possiamo pensare a $\proj{V}$ come l'insieme delle \textbf{rette vettoriali} in $V$.
 \end{observe}
-\begin{define}~{}
+\begin{define}\textsc{Altre nomenclature proiettive.}\\
 	\begin{itemize}
 		\item Se $\dim V=1$, allora $\proj{V}$ è un \textbf{punto}\index{punto!proiettivo} e $\dim\proj{V}=0$.
 		\item Se $\dim \proj{V}=1$, si parla di \textbf{retta proiettiva}\index{retta!proiettiva}.
 		\item Se $\dim \proj{V}=2$, si parla di \textbf{piano proiettivo}\index{piano!proiettivo}.
 		\item Se $\kamp=\realset$ o $\kamp=\complexset$, si parla rispettivamente di \textbf{spazio proiettivo reale}\index{spazio!proiettivo!reale} o di \textbf{spazio proiettivo complesso}\index{spazio!proiettivo!complesso}.
 	\end{itemize}
+\vspace{-3mm}
 \end{define}
 Gli esempi più frequenti di spazi proiettivi si ottengono considerando $V=\kamp^{n+1}$.
-\begin{define}
+\begin{define}\textsc{Spazio proiettivo numerico.}\\
 	Lo \textbf{spazio proiettivo numerico}\index{spazio!proiettivo!numerico} o \textbf{spazio proiettivo standard}\seeonlyindex{spazio!proiettivo!standard}{spazio!proiettivo!numerico} è lo spazio proiettivo su $\kamp^{n+1}$:
 \begin{equation}
 	\proj{\ }=\proj[n]{\kamp}=\proj{\kamp^{n+1}}
@@ -76,7 +77,7 @@ Essi sono spazi di dimensione $\dim\proj[n]{\ }=n$.
 \end{define}
 \section{Sottospazi proiettivi}
 Sia $W\subseteq V$ un sottospazio vettoriale. Allora $W\setminus\left\{0\right\}\subseteq V\setminus\left\{0\right\}$ è chiuso rispetto alla relazione di equivalenza $\sim$ precedentemente definita e $\proj{W}$ è naturalmente un sottoinsieme di $\proj{V}$.
-\begin{define}
+\begin{define}\textsc{Sottospazio proiettivo.}\\
 	Se $W\subseteq V$ è un sottospazio vettoriale, allora $\proj{W}$ è detto \textbf{sottospazio proiettivo}\index{sottospazio!proiettivo}:
 	\begin{equation*}
 		\begin{array}{rl}
@@ -93,11 +94,12 @@ La dimensione del sottospazio proiettivo è $\dim\proj{W}=\dim W-1$.
 	\item Se $\dim W=3$ ($\dim\proj{W}=2$), allora $\proj{W}$ è \textbf{piano proiettivo}\index{piano!proiettivo} in $\proj{V}$.
 	\item Se $\dim\proj{W}=\dim \proj{V}-1$, allora $\proj{W}$ è \textbf{iperpiano (proiettivo)}\index{iperpiano!proiettivo} in $\proj{V}$.
 \end{itemize}
-\begin{define}
+\begin{define}\textsc{Codimensione.}\\
 Si definisce la \textbf{codimensione}\index{codimensione} di $\proj{W}$ sottospazio proiettivo come:
 \begin{equation}
 	\codim\proj{W}=\dim\proj{V}-\dim\proj{W}
 \end{equation}
+\vspace{-6mm}
 \end{define}
 \begin{example}
 	Gli iperpiani sono sottospazi di codimensione $1$.
@@ -107,7 +109,7 @@ Consideriamo $\proj[n]{\kamp}=\proj{\kamp^{n+1}}$. Se $v=\left(x_0,\ \ldots,\ x_
 \begin{equation}
 \left[v\right]=\left(x_0\colon \ldots\colon x_n\right)\in\proj[n]{\kamp},\ x_i\in\kamp
 \end{equation}
-\begin{observe}~{}
+\begin{observes}~{}
 	\begin{enumerate}
 		\item Le $x_i$ non possono mai essere tutte nulle, dato che $v\neq 0$.
 		\item Due classi sono uguali se le componenti sono tutte in proporzione per uno scalare $\lambda\in\kamp$.\footnote{La notazione con i $\colon$ viene utilizzata per mettere in evidenza che la relazione fra classi e vettori è di proporzione.}
@@ -117,15 +119,16 @@ Consideriamo $\proj[n]{\kamp}=\proj{\kamp^{n+1}}$. Se $v=\left(x_0,\ \ldots,\ x_
 			\end{array}
 		\end{equation*}
 	\end{enumerate}
-\end{observe}
+\end{observes}
 \begin{examples}
 	In $\proj[2]{\realset}$:
 	\begin{gather*}
 		\left(1\colon1\colon2\right) = \left(-2\colon-2\colon-4\right)\\
 		\left(1\colon0\colon2\right) = \left(\frac{1}{3}\colon0\colon\frac{1}{3}\right)
 	\end{gather*}
+\vspace{-6mm}
 \end{examples}
-\begin{define}
+\begin{define}\textsc{Coordinate omogenee e sistema di riferimento proiettivo.}\\
 	Sia $\basis=\left\{e_0,\ \ldots,\ e_n\right\}$ una base di $V$, con $\dim V=n+1$. Se $v\in V\setminus\left\{0\right\}$, si ha:
 	\begin{equation*}
 		v=x_0e_0+\ldots+x_ee_n,\ \text{con}\ x_i\in\kamp
@@ -136,14 +139,15 @@ Diciamo che $\left(x_0\colon\ldots\colon x_n\right)$ sono le \textbf{coordinate 
 \end{equation}
 La base $\basis$ definisce su $\proj{V}$ un \textbf{sistema di riferimento proiettivo}, cioè ad ogni punto vengono assegnate delle coordinate omogenee. 
 \end{define}
-\begin{observe}~{}
+\begin{observes}~{}
 		\begin{itemize}
 		\item Le coordinate omogenee non possono \textit{mai} essere \textit{tutte nulle}.
 		\item Le coordinate omogenee sono definite \textit{solo a meno di multipli}.
 		\item $\proj[n]{\kamp}$ ha delle coordinate omogenee ‘‘naturali'' date dalla base canonica di $\kamp^{n+1}$.
 		\item Basi \textit{multiple} definiscono lo stesso riferimento proiettivo di $\proj{V}$, cioè le stesse coordinate omogenee.
 	\end{itemize}
-\end{observe}
+\vspace{-3mm}
+\end{observes}
 \begin{demonstration}
 	Dimostriamo l'ultimo punto. Siano:
 	\begin{equation*}
@@ -158,7 +162,7 @@ Passando allo spazio proiettivo:
 \underbrace{\left(x_0\colon\ldots\colon x_n\right)}_{\text{coordinate omogenee rispetto a }\basis}=\underbrace{\left(\frac{x_0}{\mu}\colon\ldots\colon \frac{x_n}{\mu}\right)}_{\text{coordinate omogenee rispetto a }\basis'}
 \end{equation*}
 \end{demonstration}
-\begin{define}
+\begin{define}\textsc{Punti fondamentali e punto unità.}\\
 	Data la base $\basis$, i punti:
 	\begin{equation}
 		\begin{array}{l}
@@ -171,7 +175,7 @@ Sono detti \textbf{punti fondamentali}\index{punto!fondamentale} o \textbf{punti
 \begin{equation*}
 	U=\left[e_0+e_1+\ldots+e_n\right]=\left(1\colon1\colon\ldots\colon1\right)
 \end{equation*}
-è detto \textbf{punto unità}\index{punto!unità}.
+È detto \textbf{punto unità}\index{punto!unità}.
 \end{define}
 \subsubsection{Descrizione dei sottospazi proiettivi in coordinate}
 Siano $\left(x_0\colon\ldots\colon x_n\right)$ coordinate omogenee su $\proj{V}$, indotte da una base $\basis$, e consideriamo l'equazione lineare omogenea:
@@ -183,7 +187,7 @@ Con $a_i\in\kamp$ non tutti nulli.
 	\item In $V$ l'equazione omogenea rappresenta un \textit{iperpiano vettoriale} $H$.
 	\item I punti $P=\left[v\right]\in\proj{V}$, le cui coordinate soddisfano l'equazioni, sono quelli tali per cui $v\in H$, cioè sono tutti e soli i punti dell'iperpiano proiettivo $\proj{H}\subseteq\proj{V}$. L'equazione lineare $\textcolor{green}{\circled{\ast}}$ è l'\textbf{equazione (cartesiana) dell'iperpiano proiettivo} $\proj{H}$.
 \end{itemize}
-\begin{define}
+\begin{define}\textsc{Iperpiano coordinato.}\\
 	Gli iperpiani di equazione cartesiana $x_i=0$, cioè tutti i punti la cui $i$-esima coordinata omogenea è nulla, si dicono $i$\textbf{-esimi iperpiani coordinati}\index{iperpiano!proiettivo!coordinato}.
 \end{define}
 \begin{example}\item
@@ -235,17 +239,22 @@ Posto dunque $t$ come il numero delle \textit{equazioni}, notiamo che:
 	\implies t\geq \rk\left(A\right)=\codim\proj{W}
 	\end{array}
 \end{equation*}
-\textit{Scartando} delle equazioni possiamo sempre ricondurci ad un sistema in cui $t=\rk A=\codim\proj{W}$.
+\textit{Scartando} delle equazioni possiamo sempre ricondurci ad un sistema in cui:
+\begin{equation}
+	t=\rk A=\codim\proj{W}
+\end{equation}
+\vspace{-6mm}
 \begin{intuit}
 	Per facilitare la visualizzazione degli spazi proiettivi possiamo pensare allo spazio $\kamp^{n+1}$ come lo \textbf{spazio affine} $\aff{\kamp^{n+1}}$ in cui sia fissato un punto $O$ come origine: in questo modo, le classi di $\proj[n]{\kamp}$ corrispondono alle \textit{rette affini passanti per} $O$ (identificate con le rette vettoriali di $\kamp^{n+1}$):
 	\begin{equation*}
-		\left(x_0\colon\ldots\colon x_n\right)\leftrightarrow\text{retta affine di }\aff{\kamp^{n+1}}\text{formata dai punti }\left(tx_0,\ \ldots,\ tx_n\right)\text{ al variare di t}\in\realset
+		\left(x_0\colon\ldots\colon x_n\right)\leftrightarrow\begin{array}{c}
+			\text{retta affine di }\aff{\kamp^{n+1}}\text{ formata}\\
+			 \text{dai punti }\left(tx_0,\ \ldots,\ tx_n\right)\text{ al variare di t}\in\realset
+		\end{array}
 	\end{equation*}
 	Approfondiremo formalmente la relazione tra gli spazi affini e gli spazi proiettivi più avanti, a pag. \ref{spaziaffini}.
 \end{intuit}
-% controllare impaginazione
 \begin{examples}~{}
-	%completare con le note della fino
 	\begin{itemize}
 		\item Il piano proiettivo $\proj[2]{\kamp}$ ha, come sottospazi \textit{non banali}, i punti e le rette.
 		\begin{itemize}
@@ -256,19 +265,40 @@ Posto dunque $t$ come il numero delle \textit{equazioni}, notiamo che:
 			\end{cases}$
 		\end{itemize}
 	\item Nel piano proiettivo reale $\proj[2]{\realset}$, le \textit{rette proiettive} vengono da \textit{piani vettoriali}, mentre nel modello affine di $\aff{\realset^3}$ essi sono passanti per l'\textit{origine}; utilizzando la \textit{sfera unitaria} ai quali identifichiamo i punti antipodali in una relazione di equivalenza, la retta proiettiva si visualizza facilmente come l'\textit{intersezione} della sfera in un \textit{cerchio massimo}.\\
-	In questo modo, considerando la \textit{semisfera superiore}, la \textbf{proiezione} dell'intersezione su di essa sul disco unitario $D$ è la rappresentazione della retta proiettiva sul \textit{modello piano} ben noto. Dunque, guardando le rette proiettive nel \textit{modello piano}, se ne hanno di \textit{tre tipi}:
-	\begin{enumerate}
-		\item La \textit{retta} con equazione $z=0$, ovvero al piano $xy$ in $\realset^3$: sul modello piano corrisponde al \textbf{bordo del disco} $D$ (cioè $S^1$).
-		\item Le \textit{rette} con equazione $ax+by=0$, ovvero ai \textit{piani perpendicolari} in $\realset^3$ passanti per le rette con quell'equazione $ax+by=0$:  sul modello piano corrisponde a \textbf{diametri colleganti due punti} sul bordo.
-		\item Nel caso generale $ax+by+cz=0$, proiettando l'\textit{arco di cerchio massimo} viene un \textbf{arco di ellisse} in $D$.
-	\end{enumerate}
+	In questo modo, considerando la \textit{semisfera superiore}, la \textbf{proiezione} dell'intersezione su di essa sul disco unitario $D$ è la rappresentazione della retta proiettiva sul \textit{modello piano} ben noto. Dunque, guardando le rette proiettive nel \textit{modello piano}, se ne hanno di \textit{tre tipi}:\\
+	\begin{minipage}{0.77\textwidth}
+			\begin{enumerate}[series=proj]
+			\item La \textit{retta} con equazione $z=0$, ovvero al piano $xy$ in $\realset^3$: sul modello piano corrisponde al \textbf{bordo del disco} $D$ (cioè $S^1$).
+		\end{enumerate}
+		\end{minipage}
+	\begin{minipage}{0.32\textwidth}
+		\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/projectivelinesdisk1.pdf}
+	\end{minipage}\\
+	\begin{minipage}{0.77\textwidth}
+	\begin{enumerate}[resume=proj]
+			\item Le \textit{rette} con equazione $ax+by=0$, ovvero ai \textit{piani perpendicolari} in $\realset^3$ passanti per le rette con quell'equazione $ax+by=0$:  sul modello piano corrisponde a \textbf{diametri colleganti due punti} sul bordo.
+		\end{enumerate}
+	\end{minipage}
+\begin{minipage}{0.32\textwidth}
+\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/projectivelinesdisk2.pdf}
+\end{minipage}\\
+\begin{minipage}{0.77\textwidth}
+	\begin{enumerate}[resume=proj]
+			\item Nel caso generale $ax+by+cz=0$, proiettando l'\textit{arco di cerchio massimo} viene un \textbf{arco di ellisse} in $D$.
+		\end{enumerate}
+	\end{minipage}
+	\begin{minipage}{0.32\textwidth}
+		\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/projectivelinesdisk3.pdf}
+	\end{minipage}
 	\end{itemize}
+\vspace{-3mm}
 \end{examples}
 \section{Operazioni con i sottospazi}
 Se $W_1,\ W_2\subseteq V$ sono sottospazi vettoriali, allora $W_1\cap W_2$ è un sottospazio vettoriale e si ha che l'\textbf{intersezione}\index{sottospazio!intersezione} dei corrispettivi spazi proiettivi è ancora un sottospazio proiettivo.
 \begin{equation*}
 	\proj{W_1\cap W_2}=\proj{W_1}\cap\proj{W_2}
 \end{equation*}
+\vspace{-6mm}
 \begin{observe}
 	Si ha:
 	\begin{equation*}
@@ -277,14 +307,14 @@ Se $W_1,\ W_2\subseteq V$ sono sottospazi vettoriali, allora $W_1\cap W_2$ è un
 In tal caso diciamo che i due sottospazi sono \textbf{sghembi}\index{sottospazio!proiettivo!sghembo} o \textbf{disgiunti}\seeonlyindex{sottospazio!proiettivo!disgiunto}{sottospazio!proiettivo!sghembo}.
 \end{observe}
 Come per i sottospazi vettoriali, in generale l'\textbf{unione} di due sottospazi proiettivi \textit{non} è un sottospazio proiettivo.
-\begin{define}
+\begin{define}\textsc{Sottospazio generato da un sottoinsieme.}\\
 	Sia $S\subseteq \proj{V}$ un sottoinsieme non vuoto. Il \textbf{sottospazio generato}\index{sottospazio!proiettivo!generato} da $S$, denotato con $\left<S\right>$, è l'intersezione in $\proj{V}$ di tutti i sottospazi proiettivi contenenti $S$, ed è il più piccolo sottospazio contenente $S$.
 \end{define}
 \begin{itemize}
 	\item $\left<S\right>=S\iff S$ è un sottospazio proiettivo.
 	\item Se $S=\left\{P_1,\ \ldots,\ P_m\right\}$ è finito, scriviamo $\left<P_1,\ \ldots,\ P_m\right>$ per il sottospazio generato da $P_1,\ \ldots,\ P_m$.
 \end{itemize}
-\begin{define}
+\begin{define}\textsc{Sottospazio somma.}\\
 	Dati due sottospazi proiettivi $T_1,\ T_2\subseteq \proj{V}$, cioè:
 	\begin{equation*}
 		T_i=\proj{W_i}\quad W_i\subseteq V,\ i=1,\ 2
@@ -293,6 +323,7 @@ Come per i sottospazi vettoriali, in generale l'\textbf{unione} di due sottospaz
 	\begin{equation}
 		\left<T_1,\ T_2\right>=\proj{W_1+W_2}
 	\end{equation}
+\vspace{-6mm}
 \end{define}
 \begin{demonstration}~{}\\
 	$\includedx$ $\proj{W_1+W_2}$ è un sottospazio proiettivo che contiene, in quanto $W_1\subseteq W_1+W_2,\ W_2\subseteq W_1+W_2$ vettorialmente, sia $T_1=\proj{W_1}$ sia $T_2=\proj{W_2}$. In particolare, contiene la loro unione\footnote{Ricordiamo che non è essa un sottospazio, ma un sottoinsieme.}, dunque $\left<T_1,\ T_2\right>\left<T_1\cup T_2\right>\subseteq \proj{W_1+W_2}$.\\
@@ -300,12 +331,14 @@ Come per i sottospazi vettoriali, in generale l'\textbf{unione} di due sottospaz
 	\begin{equation*}
 		\left<T_1,\ T_2\right>=\proj{U}\subseteq \proj{W_1+W_2}
 	\end{equation*}
+\vspace{-6mm}
 \end{demonstration}
-\begin{proposition}\textsc{Formula di Grassmann proiettiva}\\
+\begin{proposition}\textsc{Formula di Grassmann proiettiva}\index{formula!di Grassmann proiettiva}\\
 	Siano $T_1,\ T_2$ sottospazi proiettivi di $\proj{V}$. Si ha:
 	\begin{equation}
 				\dim\left<T_1,\ R_2\right>+\dim\left(T_1\cap T_2\right)=\dim T_1+\dim T_2
 	\end{equation}
+\vspace{-6mm}
 \end{proposition}
 \begin{demonstration}
 	Posti $T_i=\proj{W_i}$, con $W_i\subseteq V$ sottospazi vettoriali. Dalla \textit{formula di Grassmann vettoriale}:
@@ -339,13 +372,14 @@ Chiaramente, se $\dim T_1+\dim T_2\geq n$, allora $\dim \left(T_1\cap T_2\right)
 	\begin{equation*}
 		S=\underbrace{\proj{\lin{v_1,\ \ldots,\ v_m}}}_{\dim \mathcal{L} \leq m}
 	\end{equation*}
+\vspace{-6mm}
 \end{observe}
 \section{Punti linearmente indipendenti e in posizione generale}
-\begin{define}
+\begin{define}\textsc{Punti linearmente indipendenti.}\\
 	Siano $P_1,\ \ldots, P_m\in\proj{V}$. Diciamo che i punti $P_1,\ \ldots,\ P_m$ sono \textbf{linearmente indipendenti}\index{linearmente indipendenti} se, scelti $v_1,\ \ldots,\ v_m\in V\setminus\left\{0\right\}$ tali che $P_i=\left[v_i\right]\ \forall i$, i vettori $v_1,\ \ldots,\ v_m$ sono \textit{linearmente indipendenti} in $V$.\\
 	Se così non è, diciamo che $P_1,\ \ldots, P_m$ sono linearmente dipendenti.
 \end{define}
-\begin{observe}~{}
+\begin{observes}~{}
 	\begin{itemize}
 		\item La definizione è \textit{ben posta}. Dati $\lambda_1,\ \ldots,\ \lambda_m\in\kamp\setminus\left\{0\right\}$, si ha che:
 		\begin{equation*}
@@ -354,7 +388,7 @@ Chiaramente, se $\dim T_1+\dim T_2\geq n$, allora $\dim \left(T_1\cap T_2\right)
 		\item Se $\dim \proj{V}=n$, $\proj{V}$ contiene al più $n+1$ punti indipendenti.
 		\item $P_1,\ \ldots,\ P_m$ sono indipendenti se e solo se $\dim\left<P_1,\ \ldots,\ P_m\right>=m-1$.
 	\end{itemize}
-\end{observe}
+\end{observes}
 \begin{examples}~{}
 	\begin{itemize}
 		\item \textit{Due} punti $P,\ Q$ sono indipendenti se e solo se $P\neq Q$. Infatti, se $P=\left[v\right]$ e $Q=\left[w\right]$, allora:
@@ -364,26 +398,29 @@ Chiaramente, se $\dim T_1+\dim T_2\geq n$, allora $\dim \left(T_1\cap T_2\right)
 		In tal caso $\left<P,\ Q\right>$ è l'unico \textit{retta} contenente $P$ e $Q$, che indicheremo anche con $\overline{PQ}$.
 		\item \textit{Tre} punti $P_1,\ P_2,\ P_3$ sono indipendenti se e solo se sono \textit{distinti} e \textit{non} sono \textit{allineati}, cioè appartenenti alla stessa retta. In tal caso $\left<P_1,\ P_2,\ P_3\right>$ è l'unico \textit{piano} contenente i tre punti.
 	\end{itemize}
+\vspace{-3mm}
 \end{examples}
-\begin{define}
+\begin{define}\textsc{Punti in posizione generali.}\\
 	Dati dei punti $P_1,\ \ldots,\ P_m\in\proj{V}$, diciamo che sono \textbf{in posizione generale}\index{in posizione generale}\index{posizione generale} se vale una delle due condizioni seguenti:
 	\begin{itemize}
 		\item $m\leq n+1$ e i punti sono \textit{linearmente indipendenti}.
 		\item $m>n+1$ e ogni scelta di $n+1$ punti tra loro sono linearmente indipendenti.
 	\end{itemize}
+\vspace{-3mm}
 \end{define}
 \begin{example}~{}
 		\begin{itemize}
 		\item Se $n=1$, cioè $\proj{V}$ è una \textit{retta proiettiva}, allora $P_1,\ \ldots,\ P_m$ sono in posizione generale se e solo se $P_1,\ \ldots,\ P_m$ sono \textit{tutti distinti}.
 		\item Se $n=2$, cioè $\proj{V}$ è una \textit{piano proiettivo}, allora $P_1,\ \ldots,\ P_m$ sono in posizione generale se e solo se $P_1,\ \ldots,\ P_m$ sono a $3$ a $3$ \textit{non} allineati.
 	\end{itemize}
+\vspace{-3mm}
 \end{example}
 \subsection{Impratichiamoci! Punti linearmente indipendenti}
 \begin{exercise}\textsc{F.F.P., 2.1.}\\
 	Si mostri che i punti del piano proiettivo reale:
-	\begin{equation}
+	\begin{equation*}
 		\left(\frac{1}{2}\colon 1 \colon 1\right)\quad \left(1\colon \frac{1}{3} \colon \frac{4}{3}\right)\quad \left(2\colon -1 \colon 2\right)
-	\end{equation}
+	\end{equation*}
 Sono allineati, e si determini un'equazione della retta che li contiene.
 \end{exercise}
 \begin{solution}
@@ -411,6 +448,7 @@ Verifichiamo che contenga anche il terzo:
 \begin{equation*}
 	6\cdot 2 + 2\cdot \left(-1\right) -5\cdot 2=0
 \end{equation*}
+\vspace{-6mm}
 \end{solution}
 \section{Rappresentazione parametrica di un sottospazio proiettivo}
 Sia $S\subseteq\proj{V}$ un sottospazio proiettivo di dimensione $m$. Allora esistono sempre $m+1$ punti $P_0,\ \ldots,\ P_m\in S$ linearmente indipendenti che generano $S$. Infatti, se $S=\proj{W}$ con $W\subseteq V$ sottospazio vettoriale di dimensione $m+1$, possiamo scegliere una base $\left\{w_0,\ \ldots,\ w_m\right\}$ di $W$ tale per cui:
@@ -449,6 +487,7 @@ Allora, la rappresentazione parametrica del sottospazio $S$ con $\left(\lambda\c
 		x_3=4\lambda-5\mu
 	\end{cases}
 \end{equation*}
+\vspace{-6mm}
 \end{example}
 \subsection{Coordinate proiettive e punti in posizione generale}
 \begin{observe}
@@ -461,6 +500,7 @@ Allora, la rappresentazione parametrica del sottospazio $S$ con $\left(\lambda\c
 		\end{equation*}
 	Sono indipendenti $\forall i=0,\ \ldots,\ n$.\footnote{Indichiamo con $\check{P}_{i}$ il punto che sostituiamo.}
 	\end{itemize}
+\vspace{-6mm}
 \end{observe}
 \begin{observe}
 	Sia $\basis=\left\{e_0,\ \ldots,\ e_n\right\}$ una base che induce un \textit{riferimento proiettivo} su $\proj{V}$.\\
@@ -531,7 +571,7 @@ In altre parole, $\exists \mu\in\kamp\setminus\left\{0\right\}$ tale che:
 $e_0,\ \ldots,\ e_n$ è una base: per l'unicità della scrittura deve essere $\mu=\mu_0=\ldots=\mu_n$, cioè $f_i=\mu e_i\ \forall i=0,\ \ldots,\ n$.
 \end{demonstration}
 \section{Trasformazioni proiettive}
-\begin{define}
+\begin{define}\textsc{Trasformazione proiettiva e proiettività.}\\
 	Un'applicazione $\funz{f}{\proj{V}}{\proj{V'}}$ tra spazi proiettivi si dice \textbf{trasformazione proiettiva}\index{trasformazione proiettiva} o \textbf{isomorfismo proiettivo}\seeonlyindex{isomorfismo!proiettivo}{trasformazione proiettiva} se $\exists \funz{\phi}{V}{V'}$ isomorfismo che induce un altro isomorfismo lineare:
 	\begin{equation}
 		\begin{tikzcd}
@@ -556,6 +596,7 @@ $e_0,\ \ldots,\ e_n$ è una base: per l'unicità della scrittura deve essere $\m
 	Poichè $\phi$ è iniettiva, segue che $w=\lambda v$ e dunque $\left[v\right]=\left[w\right]$.
 		\item $\widetilde{\phi}$ \textbf{è suriettiva}: infatti, se $\left[w\right]\in\proj{V'}$, essendo $\phi$ suriettiva esiste un vettore $v$ tale che $w=\phi\left(v\right)$. Segue che $\left[w\right]=\left[\phi\left(v\right)\right]=\phi\left(\left[v\right]\right)$.
 	\end{itemize}
+\vspace{-3mm}
 \end{demonstration}
 Dato che spazi \textit{vettoriali} della \textit{stessa dimensione} sono sempre \textit{isomorfi}, due spazi \textit{proiettivi} della \textit{stessa dimensione} sono sempre \textit{isomorfi} e $\proj{V}$ è sempre isomorfo a $\proj[n]{\kamp}$, con $\dim V=n+1$.
 \begin{lemming}
@@ -609,8 +650,9 @@ Allora, $h=\lambda Id_{V}$ e pertanto $\phi=\lambda \psi$.
 	\end{itemize}
 L'insieme delle proiettività risulta un \textbf{gruppo} rispetto alla \textit{composizione}.
 \end{observe}
-\begin{define}
-Il \textbf{gruppo lineare proiettivo}\index{gruppo!lineare proiettivo} $\projgl{V}$ è il gruppo delle proiettività dello spazio vettoriale $V$ con operazione la composizione di proiettività ed elemento neutro $Id_{\proj{V}}$. 
+\begin{define}\textsc{Gruppo lineare proiettivo.}\\
+Il \textbf{gruppo lineare proiettivo}\index{gruppo!lineare proiettivo} $\projgl{V}$ è il gruppo delle proiettività dello spazio vettoriale $V$ con operazione la composizione di proiettività ed elemento neutro $Id_{\proj{V}}$.
+\vspace{-3mm}
 \end{define}
 \subsubsection{Descrizione matriciale del gruppo lineare proiettivo}
 Consideriamo gli isomorfismi $\funz{\ }{\kamp^{n+1}}{\kamp^{n+1}}$: sappiamo che la matrice associata agli isomorfismi è una matrice invertibile, cioè si ha una \textit{isomorfismo di gruppi} fra l'insieme degli isomorfismi in $\kamp^{n+1}$ al \textit{gruppo generale lineare} $\gl\left(n+1,\ \kamp\right)$:
@@ -668,10 +710,10 @@ Si può anche considerare l'isomorfismo tra $\left\{\lambda I\mid\lambda\in\kamp
 	\begin{equation*}
 		\funztot{f}{\proj[1]{\realset}}{\proj[1]{\realset}}{\left[v\right]}{\left[Av\right]}
 	\end{equation*}
-	Notiamo che se la matrice associata a $\phi$ fosse $2A$, per \textit{proporzionalità} si avrebbe comunque la stessa proiettività $f$. In modo analogo, $\lambda\in\realset\setminus\left\{0\right\}$ induce la \textit{stessa proiettività} $f$ di $A$.
+	Notiamo che se la matrice associata a $\phi$ fosse $2A$, per \textit{proporzionalità} si avrebbe comunque la proiettività $f$. In modo analogo, $\lambda\in\realset\setminus\left\{0\right\}$ induce la \textit{stessa proiettività} $f$ di $A$.
+	\vspace{-3mm}
 \end{example}
-\subsection{Proprietà delle trasformazioni proiettive}
-% cercare un titolo più consono
+\subsection{Altri aspetti delle trasformazioni proiettive}
 \begin{observe}
 	Se $f$ è una proiettività di $\proj{V}$ e $S\subseteq \proj{V}$ un sottospazio proiettivo, allora $f\left(S\right)$ è ancora un sottospazio proiettivo della stessa dimensione di $S$. Se $S=\proj{W}$ e consideriamo per definizione $f=\widetilde{\phi}$ con $\funz{\phi}{V}{V}$, allora:
 	\begin{equation*}
@@ -682,7 +724,7 @@ Si può anche considerare l'isomorfismo tra $\left\{\lambda I\mid\lambda\in\kamp
 	\end{equation}
 \vspace{-6mm}
 \end{observe}
-\begin{define}
+\begin{define}\textsc{Proiettivamente equivalenti.}\\
 	Due sottoinsiemi $A,\ B$ di $\proj{V}$ si dicono \textbf{proiettivamente equivalenti}\index{proiettivamente equivalenti} se $\exists f$ proiettività di $\proj{V}$ tale che:
 	\begin{equation}
 		B=f\left(A\right)
@@ -701,7 +743,7 @@ Si può anche considerare l'isomorfismo tra $\left\{\lambda I\mid\lambda\in\kamp
 Allora $\exists!\funz{f}{\proj{V}}{\proj{V'}}$ trasformazione proiettiva tale che $f\left(P_i\right)=Q_i\ \forall i=0,\ \ldots,\ n+1$.\\
 In particolare: se una proiettività fissa $n+2$ punti in posizione generale, allora è l'identità.
 \end{theorema}
-\begin{demonstration}
+\begin{demonstration}~{}
 	\begin{itemize}
 		\item \textbf{Esistenza}: Siano, $\forall i$:
 		\begin{itemize}
@@ -750,6 +792,7 @@ Poiché $w_0,\ \ldots,\ w_n$ è base, la scrittura è unica. Segue che $a_0=a_1=
 	\end{array}
 \end{equation*}
 	\end{itemize}
+\vspace{-6mm}
 \end{demonstration}
 \begin{examples}
 	\begin{itemize}
@@ -757,6 +800,7 @@ Poiché $w_0,\ \ldots,\ w_n$ è base, la scrittura è unica. Segue che $a_0=a_1=
 		\item In un \textit{piano proiettivo} ($\dim 2$), una proiettività è determinata dalle \textit{immagini} di $4$ punti, a $3$ a $3$ \textit{non allineati}.
 		\item Se $A,\ B\subseteq \proj{V}$ sono insiemi finiti, ciascuno contenente $k$ punti in posizione generale, con $k\leq n+2$, allora $A$ e $B$ sono sempre proiettivamente equivalenti.
 	\end{itemize}
+\vspace{-3mm}
 \end{examples}
 \begin{example}
 	Approfondiamo l'ultimo esempio. In $\proj[2]{\kamp}$ ($\dim 2$), si prenda $A=\left\{P_1,\ P_2\right\},\ B=\left\{Q_1,\ Q_2\right\}$ con $P_1\neq P_2$, $Q_1\neq Q_2$. Ho due punti distinti sia in $A$ e $B$, dunque esiste sempre una proiettività $\funz{f}{\proj[2]{\ }}{\proj[2]{\ }}$ tale che $f\left(A\right)=B$.\\
@@ -784,7 +828,7 @@ Con $x$ in coordinate rispetto alla base $\basis$ e $x'$ in coordinate rispetto 
 Esiste $\rho\in\kamp\setminus\left\{0\right\}$ tale che $\rho x'=M x$.
 \end{observe}
 \subsection{Punti fissi di proiettività}
-\begin{define}
+\begin{define}\textsc{Punto fisso.}\\
 	Sia $\funz{f}{\proj{V}}{\proj{V}}$ una proiettività. Un \textbf{punto fisso}\index{punto!fisso} è un punto $P\in\proj{V}$ tale che:
 	\begin{equation}
 		f\left(P\right)=P
@@ -800,7 +844,7 @@ Sia $\funz{\phi}{V}{V}$ un \textit{automorfismo} tale che $f=\widetilde{\phi}$, 
 	\end{array}
 \end{equation*}
 In particolare, $\phi$ è invertibile, dunque \textit{non} ha l'autovettore \textit{nullo}. Segue che i punti fissi di $f$ sono tutti e soli i punti $\left[v\right]$ con $v$ autovettore di $\phi$.
-\begin{observe}~{}
+\begin{observes}~{}
 	\begin{enumerate}
 		\item Se $\kamp=\complexset$, allora ogni proiettività ha almeno un punto fisso, dato che $\phi$ ha sempre almeno un autovettore.
 		\item Se $\kamp=\realset$ e $\dim\proj{V}=n$, allora $\dim V=n+1$. Il \textit{polinomio caratteristico} $C_\phi\left(t\right)\in\realset\left[t\right]$ ha grado $n+1$. Se $n$ è \textit{pari}, $\phi$ ha almeno un autovalore, dato che il polinomio caratteristico ha grado $n+1$ \textit{dispari}: infatti, o è di grado \textit{uno} (e quindi ha banalmente soluzione) oppure, in quanto si può decomporre in fattori a coefficienti reali al più di grado \textit{due}, ammetterà \textit{sempre} almeno un fattore di grado \textit{uno}.
@@ -825,8 +869,8 @@ Segue che $A$ non ha autovettori reali e pertanto $f$ \textit{non} ha punti fiss
 \end{equation*}
 Questo è un insieme di sottospazi proiettivi a 2 a 2 disgiunti.
  	\end{enumerate}
-\end{observe}
-\begin{define}
+\end{observes}
+\begin{define}\textsc{Insieme fisso.}\\
 	Se $S\subseteq\proj{V}$ è un sottospazio, diciamo che $S$ è \textbf{fisso} per $f$ proiettività se:
 		\begin{equation}
 		f\left(S\right)=S
@@ -840,15 +884,12 @@ Questo è un insieme di sottospazi proiettivi a 2 a 2 disgiunti.
 		f\left(2\colon 1\right)=\left(1\colon1\right)\quad f\left(1\colon 2\right)=\left(0\colon1\right)\quad
 		f\left(1\colon -1\right)=\left(1\colon0\right)
 	\end{equation*}
+\vspace{-6mm}
 \end{exercise}
 \begin{solution}
 Notiamo che i punti:
 \begin{equation*}
-	\left(2\colon 1\right)\quad\left(1\colon 2\right)\quad\left(1\colon -1\right)
-\end{equation*}
-E:
-\begin{equation*}
-		\left(1\colon 1\right)\quad\left(0\colon 1\right)\quad\left(1\colon 0\right)
+	\left(2\colon 1\right)\quad\left(1\colon 2\right)\quad\left(1\colon -1\right)\text{ e }	\left(1\colon 1\right)\quad\left(0\colon 1\right)\quad\left(1\colon 0\right)
 \end{equation*}
 Sono distinti, dunque sono in posizione generale e la proiettività è garantita. Prendiamo la generica matrice $A=\left(\begin{array}{cc}
 	a & b\\
@@ -906,10 +947,11 @@ A meno di multipli, $A=\left(\begin{array}{cc}
 \begin{equation*}
 	\funztot{f}{\proj[1]{\realset}}{\proj[1]{\realset}}{\left(x_0\colon x_1\right)}{\left(2x_0-x_1\colon x_0+x_1\right)}
 \end{equation*}
+\vspace{-3mm}
 \end{solution}
-\section{Geometria affine e geometria proiettiva}
+\section{Geometria affine e geometria proiettiva}\label{spaziaffini}
 Abbiamo già accennato all'esistenza di una relazione che intercorre fra \textit{geometria affine} e \textit{geometria proiettiva}. Diamo innanzitutto qualche richiamo dei concetti della geometria affine.
-\begin{define}
+\begin{define}\textsc{Spazio affine.}\\
 	Sia $V$ uno spazio vettoriale di dimensione finita su un campo $\kamp$. Uno \textbf{spazio affine}\index{spazio!affine} di dimensione $n$ su $V$ (con spazio vettoriale associato $V$ di dimensione $n$ ) è un insieme $\aff{V}$ non vuoto di \textit{punti} (elementi) tale che sia data un'applicazione:
 	\begin{equation*}
 		\funztot{\ }{\aff{V}\times\aff{V} }{V}{\left(P,\ Q\right)}{\overrightarrow{PQ}}
@@ -921,7 +963,7 @@ Abbiamo già accennato all'esistenza di una relazione che intercorre fra \textit
 		\item $\forall P,\ Q,\ R\in\aff{V}$ terna di punti di $\aff{V}$ si ha $\overrightarrow{PQ}+\overrightarrow{QR}=\overrightarrow{PR}$.
 	\end{enumerate}
 \end{define}
-\begin{define}
+\begin{define}\textsc{Riferimento affine.}\\
 	Un \textbf{riferimento affine}\index{riferimento!affine} $\mathcal{R} = (O,\  e_1,\  e_2,\ \ldots,\  e_n)$ sullo spazio $\aff{V}$ è assegnato fissando un punto $O\in \aff{V}$ detta \textbf{origine}\index{origine!affine} ed una base $\basis = (e_1,\  e_2,\ \ldots,\  e_n)$ di $V$. Dunque, per ogni $P\in \aff{V}$ si ha la $n$-upla $(X_1,\  X_2,\ \ldots,\  X_n)$ dette \textit{coordinate affini}\index{coordinate!affini} del punto $P\in\aff{V}$ (uniche per riferimento affine fissato) tale per cui:
 	\begin{equation}
 		P=\overrightarrow{OV}=x_1e_1+\ldots+x_ne_n
@@ -929,21 +971,21 @@ Abbiamo già accennato all'esistenza di una relazione che intercorre fra \textit
 \vspace{-6mm}			 
 \end{define}
 Per i nostri scopi, parleremo spesso degli spazi affini di dimensione $n$ su $\kamp$.
-\begin{define}
+\begin{define}\textsc{Affinità.}\\
 	Un'\textbf{affinità}\index{affinità} o \textbf{trasformazione lineare affine}\seeonlyindex{trasformazione lineare affine}{affinità} di $\aff{\kamp^n}$ è un'applicazione:
 	\begin{equation}
 		\funz{\phi}{\aff{\kamp^n}}{\aff{\kamp^n}}
 	\end{equation}
 Della forma $\phi\left(x\right)=Ax+b$ con $A\in\gl\left(n,\ \kamp\right)$ un'applicazione lineare invertibile e $b$ una \textit{traslazione}.
 \end{define}
-\begin{define}
+\begin{define}\textsc{Sottospazio affine.}\\
 	Un \textbf{sottospazio affine}\index{sottospazio!affine} di $\aff{\kamp^n}$ è un \textit{traslato} di un sottospazio vettoriale $W\subseteq \kamp^n$:
 	\begin{equation}
 		S=W+x_0=\left\{w+x_0\mid w\in W,\ x_0\in\aff{W}\right\}
 	\end{equation}
 \vspace{-6mm}
 \end{define}
-\begin{observe}~{}
+\begin{observes}~{}
 	\begin{itemize}
 		\item $W$ è l'unico traslato di $S$ per l'origine ($x_0=O$) e si dice \textbf{sottospazio direttore}  di $S$\index{sottospazio!direttore}, cioè ne dà appunto la \textit{direzione}. Si definisce $\dim S\coloneqq\dim W$.
 		\item Un punto in $\aff{\kamp^n}$ è un sottospazio affine di dimensione $0$ ($W=\left\{0\right\}$; dopotutto non ha particolarmente senso parlare di direzione del punto).
@@ -952,7 +994,8 @@ Della forma $\phi\left(x\right)=Ax+b$ con $A\in\gl\left(n,\ \kamp\right)$ un'app
 		\item Un \textbf{iperpiano affine}\index{iperpiano!affine} è un sottospazio di dimensione $n+1$.
 		\item Due sottospazi affini della stessa dimensione si dicono \textbf{paralleli}\index{parallelo} se hanno lo \textit{stesso} sottospazio direttore.
 	\end{itemize}
-\end{observe}
+\vspace{-3mm}
+\end{observes}
 \begin{example}
 Consideriamo $r=W+x_0$ retta affine, che ha dunque $\dim r=\dim W=1$. $W$ è la retta vettoriale in $\kamp^n$, mentre un qualunque $v\in W\setminus\left\{0\right\}$ è la \textit{direzione} della retta.
 \end{example}
@@ -1080,18 +1123,23 @@ In particolare, si ha la corrispondenza biunivoca $U_0\stackrel{1\colon1}{\leftr
 \begin{equation*}
 	\left(x_0\colon x_1\right)=\left(1\colon \frac{x_1}{x_0}\right)\mapsto \frac{x_1}{x_0}\in\kamp
 \end{equation*}
+\begin{minipage}{0.56\textwidth}
 In altre parole, si può vedere la retta proiettiva come il campo $\kamp$ con l'aggiunto di un unico punto, l'\textit{infinito} $\infty$.
 \begin{equation}
-\proj[1]{\ }=\kamp\union\left(0\colon 1\right)=\kamp\union\left\{\infty\right\}
+	\proj[1]{\ }=\kamp\cup\left(0\colon 1\right)=\kamp\cup\left\{\infty\right\}
 \end{equation}
 Se $\kamp=\realset$, essendo $S^1\setminus\left\{1\text{ punto}\right\}\cong \realset$, si ha:
 \begin{equation}
-	\proj[1]{\realset}=\realset\union\left\{\infty\right\}\cong S^1
+	\proj[1]{\realset}=\realset\cup\left\{\infty\right\}\cong S^1
 \end{equation}
-	% inserire immagine pagine 7 console fino
+\end{minipage}
+\begin{minipage}{0.44\textwidth}
+	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.75]{images/projlinetocirc.pdf}
+\end{minipage}
+\vspace{-6mm}
 \end{example}
 \subsection{Chiusura proiettiva di un sottospazio affine}
-\begin{define}
+\begin{define}\textsc{Chiusura proiettiva.}\\
 	Sia $r\subseteq\aff{\kamp^n}$ una retta affine. La \textbf{chiusura proiettiva}\index{chiusura proiettiva}\index{chiusura!proiettiva} di $r$ è il sottospazio proiettivo $\overline{r}\subseteq\proj[n]{\ }$ generato da $r\subseteq U_0\subseteq\proj[n]{\ }$.
 \end{define}
 \begin{proposition}
@@ -1147,7 +1195,7 @@ Al variare di $t\in\kamp$, questi sono tutti e soli i punti di $j\left(r\right)\
 \end{equation*}
 $R$ è necessariamente il più piccolo sottospazio proiettivo contenente $r$, dato che è la retta più un solo punto. Pertanto, $R=\overline{r}$.
 \end{demonstration}
-\begin{observe}~{}
+\begin{observes}~{}
 	\begin{enumerate}
 		\item Il punto improprio di $r$ è:
 		\begin{equation*}
@@ -1202,10 +1250,10 @@ Infatti, per $z=1$ si ottiene l'equazione di $r$, mentre ponendo $z=0$ (cioè il
 \end{equation*}
 La direzione della retta $ax+by+c=0$ è data dal punto improprio $P_{\infty}$ e corrisponde al vettore $\left(-b, a\colon 0\right)$.
 	\end{enumerate}
-\end{observe}
+\end{observes}
 Generalizziamo ora il concetto di chiusura proiettiva a un generico sottospazio affine.
-\begin{define}
-	Dato $S\subseteq \aff{\kamp^n}$ un sottospazio affine con $S\neq \emptyset$, la chiusura proiettiva $\overline{S}\subseteq \proj[n]{\ }$ di $S$ è il sottospazio proiettivo generato da $S$. Esso ha dimensione $\dim \overline{S}=\dim S=m$.
+\begin{define}\textsc{Chiusura proiettiva di un sottospazio.}\\
+	Dato $S\subseteq \aff{\kamp^n}$ un sottospazio affine con $S\neq \emptyset$, la \textbf{chiusura proiettiva}\index{chiusura!proiettiva} $\overline{S}\subseteq \proj[n]{\ }$ di $S$ è il sottospazio proiettivo generato da $S$. Esso ha dimensione $\dim \overline{S}=\dim S=m$.
 \end{define}
 \textbf{Equazioni cartesiane}. Se $S$ come sottospazio affine è dato in forma cartesiana dal sistema lineare $h\times\left(n+1\right)$ seguente:
 \begin{gather*}
@@ -1295,40 +1343,47 @@ Pertanto, $\overline{S}$ ha descrizione parametrica:
 Con $\left(t_0\colon\ldots\colon t_m\right)\in\proj[m]{\ }$.
 \subsection{Impratichiamoci! Geometria affine e geometria proiettiva}
 \begin{exercise}
-	Sia $\kamp=\realset$. Allora, preso $\realset^n$ con la topologia euclidea e $\proj[n]{\realset}$ con la topologia quoziente, mostrare che $U_0$ è un aperto di $\proj[n]{\realset}$ e che $\funz{j}{\realset^n}{U_0}$
+	Sia $\kamp=\realset$. Allora, preso $\realset^n$ con la topologia euclidea e $\proj[n]{\realset}$ con la topologia quoziente, mostrare che $U_0$ è un aperto di $\proj[n]{\realset}$ e che $\funz{j}{\realset^n}{U_0}$ è un omeomorfismo.
 \end{exercise}
 \begin{solution}
 	... % aggiungere soluzione
 \end{solution}
+\begin{comment}
 \section{LEZIONI 31, 32 - DIRETTA}
 
 
 %LEZ 31 
 Vediamo un esempio di proiettività di $\proj[1]{\ }$.
 \begin{example}
-	Si consideri $\proj[1]{\kamp} = \kamp \cup \{\infty\}$ con $\infty=(0\colon 1)$. Sia $\funz f {\proj[1]{\ }} {\proj[1]{\ }}$ una proiettività (dunque biunivoca) definita come $f(x_0\colon x_1)=(ax_0+bx_1\colon cx_0+dx_1)$. Si ha che: $f(0\colon 1)=(b\colon d)$, mentre la sua controimmagine è $f(-b\colon a)=(0\colon 1)$, infatti siccome le coordinate sono omogenee basta porre $ax_0+bx_1=0$.\newline
+	Si consideri $\proj[1]{\kamp} = \kamp \cup \{\infty\}$ con $\infty=(0\colon 1)$. Sia $f$ una proiettività (dunque biunivoca) definita come:
+	\begin{equation*}
+		\funztot f {\proj[1]{\ }} {\proj[1]{\ }} (x_0\colon x_1) (ax_0+bx_1\colon cx_0+dx_1)
+	\end{equation*}
+	Si ha che $f(0\colon 1)=(b\colon d)$, mentre la sua controimmagine è $f(-b\colon a)=(0\colon 1)$; infatti, siccome le coordinate sono omogenee, basta porre $ax_0+bx_1=0$.\newline
 	Sia $t=\frac{x_1}{x_0}$ la coordinata affine su $\kamp$, se $x_0\neq 0$ tutti i punti $(x_0\colon x_1)$ si possono scrivere come $(x_0\colon x_1)=\left( 1\colon \frac{x_1}{x_0} \right)=(1\colon t)$, il che corrisponde al punto $t\in\kamp$ . Vediamo ora come si comporta l'immagine grazie a queste osservazioni se $ax_0+bx_1\neq 0$:
 	\begin{gather*}
 		f(x_0\colon x_1)=(ax_0+bx_1\colon cx_0+dx_1)= \left( 1\colon \frac{cx_0+dx_1}{ax_0+bx_1} \right)  =  \left( 1 \colon  \frac{ x_0 \left( c+ d \frac{x_1}{x_0} \right) }{ x_0 \left( a+ b\frac{ x_1 }{ x_0 } \right)} \right)=\left( 1\colon \frac{dt+c}{bt+a}\right)
 	\end{gather*}
-	Dunque la proiettività $f$ corrisponde alla trasformazione $\funz F {\kamp\cup \{\infty\}} {\kamp\cup \{\infty\}}$ con $F(t)=\begin{cases}
-		\frac{dt+c}{bt+a}, & t\in\kamp, \ t\neq -\frac{a}{b}\\
-		\infty, & t=-\frac{a}{b}\\
-		\frac{d}{b}, & t=\infty
-	\end{cases}$
-	dove per $t=-\frac{a}{b}$ si ottiene $f(-b\colon a)=(0\colon 1)=\infty$, mentre la prima equazione è detta \textit{trasformazione lineare fratta}, che è definita sulla retta affine tranne dove si annulla il denominatore. \newline
+	Dunque la proiettività $f$ corrisponde alla trasformazione:
+	\begin{equation*}
+		\funz F {\kamp\cup \{\infty\}} {\kamp\cup \{\infty\}}$ con $F(t)=\begin{cases}
+			\frac{dt+c}{bt+a}, & t\in\kamp, \ t\neq -\frac{a}{b}\\
+			\infty, & t=-\frac{a}{b}\\
+			\frac{d}{b}, & t=\infty
+		\end{cases}
+	\end{equation*}
+	Dove per $t=-\frac{a}{b}$ si ottiene $f(-b\colon a)=(0\colon 1)=\infty$, mentre la prima equazione è detta \textit{trasformazione lineare fratta}, che è definita sulla retta affine tranne dove si annulla il denominatore. \newline
 	Notiamo che $F$ diventa un'affinità $\funztot F \kamp \kamp t {\alpha t+\beta}$ se e solo se il denominatore diventa una costante ponendo $b=0$, ovvero se è della forma $F(t)=\alpha$, il che significa che la proiettività fissa il punto all'infinito, ovvero $f(0\colon 1)=(0\colon 1)$, mentre la parte affine viene mandata in sè stessa.n\newline 
 	Questo ragionamento si può vedere anche in dimensione superiore.
 \end{example}
 
 \section{Spazi proiettivi complessi}
+% aggiustare l'introduzione
 Digressione di topologia sugli spazi proiettivi complessi
 \begin{remember}
 	Nel caso di $\realset^n$ si è già visto che lo spazio proiettivo reale è un quoziente del tipo $\displaystyle \proj[n]{\realset}=\nicefrac{\realset^{n+1}\setminus\{0\}}{\sim}$ dunque è dotato in maniera naturale di una topologia.\newline
 	Si può anche vedere come quoziente della sfera $S^n$ dove si identificano i punti antipodali grazie alla suriezione $\surr \pi {S^n} {\proj[n]{\realset}}$, è anche una varietà topologica compatta di dimensione $n$. Inoltre $\proj[1]{\realset}\cong S^1$ e abbiamo analizzato il piano proiettivo reale $\proj[2]{\realset}$.
 \end{remember}
-
-
 Anche nel caso complesso per $\proj[n]{\complexset}=\nicefrac{\complexset^{n+1}\setminus\{0\}}{\sim}$ si ha in maniera naturale una topologia quoziente data dalla topologia euclidea su $\complexset^{n+1}\setminus\{0\} \cong \realset^{n+1}\setminus\{0\}$.\newline
 Vogliamo vedere che è una varietà topologica compatta di dimensione $\mathbf{2n}$. Questo perché mentre $\proj[n]{\realset}$ è localmente euclideo di dimensione n, si ha che $\proj[n]{\complexset}$ localmente è come $\complexset^n\cong\realset^{2n}$, dunque la dimensione topologica è $2n$.
 \begin{itemize}
@@ -1337,7 +1392,7 @@ Vogliamo vedere che è una varietà topologica compatta di dimensione $\mathbf{2
 	\begin{gather*}
 		z_j=x_j+iy_j\implies  z=(z_1,\dots,z_{n+1})\in\complexset^{n+1}\longleftrightarrow (x_1,y_1,\dots,x_{n+1},y_{n+1})\in\realset^{2n+2}\\
 		\begin{array}{ccc}
-			\|z\|^2=\sum_{j=1}^{n+1} \lvert z_j\rvert ^2=\sum_{j=1}^{n+1}(\lvert x_j \rvert ^2 +\lvert y_j \rvert ^2) & \wedge & \lambda\in\complexset,\  \ \|\lambda z \| =\sqrt{\sum_{j=1}^{n+1}\lvert \lambda z_j \rvert ^2}=\lvert\lambda\rvert \| z\|
+			\displaystyle \|z\|^2=\sum_{j=1}^{n+1} \lvert z_j\rvert ^2=\sum_{j=1}^{n+1}(\lvert x_j \rvert ^2 +\lvert y_j \rvert ^2) & \displaystyle\wedge & \displaystyle\lambda\in\complexset,\  \ \|\lambda z \| =\sqrt{\sum_{j=1}^{n+1}\lvert \lambda z_j \rvert ^2}=\lvert\lambda\rvert \| z\|
 		\end{array} \\
 		z\in\complexset^{n+1}\setminus\{0\}\implies \|z\|\neq 0 \ \wedge \lambda=\frac{1}{\| z\|} \implies \underbrace{\frac{1}{\|z\|}z}_{\in S^{2n+1}}\sim z \implies \pi(S^{2n+1})=\proj[n]{\complexset}
 	\end{gather*}
@@ -1385,7 +1440,7 @@ Vogliamo vedere che è una varietà topologica compatta di dimensione $\mathbf{2
 		\end{tikzcd}\]
 	\end{minipage}
 \end{itemize}
-
+\end{comment}
 %Invece per la continuità di \phi che è l'inversa si procede con la fattorizzazione con \pi^{-1}  \hat{\phi} ha le stesse coordinate di \phi. Notiamo che sono tutti vettori, non c'è il quoziente! Dall'altra parte invece c'è la restrizione di \pi alla controimmagindi di U_0 in U_0. Chiaramente \hat{\phi} è continua: divido per norma diversa da 0, dunque sapremo dire che \phi è continua se   induco al quoziente una mappa continua. Osserviamo che p è un'identificazione: il quoziente \pi è anch'esso un quoziente da un'azione di gruppo (sempre vero per spazi proiettivi, vedasi esercizio già dato) per molitplicazione su C^n+1 meno 0, inoltre è un'azione per omeomorfismi, infatti fissato \lambda in c-0, l'applicazione theta_\lambda è continua (definizione di azione per omeomorfismi) l'applicazione per un elemento fissato è continua. Avevamo dimostrato che la proiezione è aperta (vedasi proprietà delle proiezioni) se il gruppo è finito è anche chiusa!. Dunque anche p restringendosi ad un aperto è ancora un'applicazione aperta (verifica per esercizio) Quindi sicocme è aperta allroa è un'identificazione, allora tale diagramma ci dice che la mappa \oldphi è continua.
 %Riasusmendo, abbiamo dedotto che U_0 è un aperto di pn, che è omeomorfo a cn, dunque a r2n. Allo stesso modo lo si verifica per tutti i j grazie alle mappe \phi_j che divide per la j-esima coordinata
 %In più chiarmanet pn è l'unione di tali n+1 aperti: le coordinate omoegenee ce n'è sempre una diversa da0, dunque ogni punto sta almeno in uno di questi aerti, dunque pnc è loclamente euclideo di dimensione 2n
@@ -1413,7 +1468,7 @@ Vogliamo vedere che è una varietà topologica compatta di dimensione $\mathbf{2
 %p1c=c (pino) unito ad un solo punot, ottenendo la sfera
 %mentre p2r è pari al pinao r2 unita alla retta impropria p1r. Topologicamente si unisce una copia della circonferenza: la copia di r2 è la copia del disco (la parte interna) mentre s1 è il bordo che ha l'identificazione dei punti antipodali
 
----------------------------------------------------------------------
+%---------------------------------------------------------------------
 
 %torniamo al campo qualsiasi
 %cos'è il birapporto
