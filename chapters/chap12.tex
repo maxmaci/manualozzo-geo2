@@ -1320,8 +1320,9 @@ Vediamo un esempio di proiettività di $\proj[1]{\ }$.
 	Questo ragionamento si può vedere anche in dimensione superiore.
 \end{example}
 
-\section{Spazi proiettivi complessi}
-Digressione di topologia sugli spazi proiettivi complessi
+			\section{Spazi proiettivi complessi}
+%Digressione di topologia sugli spazi proiettivi complessi
+		\subsection{Varietà compatta}
 \begin{remember}
 	Nel caso di $\realset^n$ si è già visto che lo spazio proiettivo reale è un quoziente del tipo $\displaystyle \proj[n]{\realset}=\nicefrac{\realset^{n+1}\setminus\{0\}}{\sim}$ dunque è dotato in maniera naturale di una topologia.\newline
 	Si può anche vedere come quoziente della sfera $S^n$ dove si identificano i punti antipodali grazie alla suriezione $\surr \pi {S^n} {\proj[n]{\realset}}$, è anche una varietà topologica compatta di dimensione $n$. Inoltre $\proj[1]{\realset}\cong S^1$ e abbiamo analizzato il piano proiettivo reale $\proj[2]{\realset}$.
@@ -1330,152 +1331,298 @@ Digressione di topologia sugli spazi proiettivi complessi
 
 Anche nel caso complesso per $\proj[n]{\complexset}=\nicefrac{\complexset^{n+1}\setminus\{0\}}{\sim}$ si ha in maniera naturale una topologia quoziente data dalla topologia euclidea su $\complexset^{n+1}\setminus\{0\} \cong \realset^{n+1}\setminus\{0\}$.\newline
 Vogliamo vedere che è una varietà topologica compatta di dimensione $\mathbf{2n}$. Questo perché mentre $\proj[n]{\realset}$ è localmente euclideo di dimensione n, si ha che $\proj[n]{\complexset}$ localmente è come $\complexset^n\cong\realset^{2n}$, dunque la dimensione topologica è $2n$.
-\begin{itemize}
-	\item $\proj[n]{\complexset}$ è \textit{connesso} perché è quoziente di $\complexset^{n+1}\setminus\{0\}$ che è connesso.
-	\item $\proj[n]{\complexset}$ è \textit{compatto}: per avere la tesi lo si vuole vedere come quoziente di un compatto o immagine tramite una funzione continua di un compatto. Per la relazione di equivalenza, due vettori $z\sim w\iff \exists\lambda\in\complexset\setminus\{0\}\colon w=\lambda z$. Vogliamo ora restringerci alla sfera (la cui dimensione è data da $\complexset^{n+1}=\realset^{2n+2}\supset S^{2n+1}$) e dimostrare che ogni punto del quoziente è equivalente ad un punto della sfera. Per fare ciò si sfrutta la corrispondenza fra numeri complessi e reali e la norma:
-	\begin{gather*}
-		z_j=x_j+iy_j\implies  z=(z_1,\dots,z_{n+1})\in\complexset^{n+1}\longleftrightarrow (x_1,y_1,\dots,x_{n+1},y_{n+1})\in\realset^{2n+2}\\
-		\begin{array}{ccc}
-			\|z\|^2=\sum_{j=1}^{n+1} \lvert z_j\rvert ^2=\sum_{j=1}^{n+1}(\lvert x_j \rvert ^2 +\lvert y_j \rvert ^2) & \wedge & \lambda\in\complexset,\  \ \|\lambda z \| =\sqrt{\sum_{j=1}^{n+1}\lvert \lambda z_j \rvert ^2}=\lvert\lambda\rvert \| z\|
-		\end{array} \\
-		z\in\complexset^{n+1}\setminus\{0\}\implies \|z\|\neq 0 \ \wedge \lambda=\frac{1}{\| z\|} \implies \underbrace{\frac{1}{\|z\|}z}_{\in S^{2n+1}}\sim z \implies \pi(S^{2n+1})=\proj[n]{\complexset}
-	\end{gather*}
-	Nel caso reale i punti sulla sfera sono equivalenti solo se antipodali, nel caso complesso $S^{2n+1}$ invece $z,w\in S^{2n+1}$ si ha $z\sim w\iff \exists \lambda\in\complexset\setminus\{0\} \colon w=\lambda z$ siccome $w,z\in S^{2n+1}$ hanno norma unitaria, dunque $1=\| w\|=\|\lambda z\|= \ \lambda | \|z\|=|\lambda|$. Siccome ci sono infiniti numeri di norma $1$ in $\complexset$, allora ci sono infiniti numeri nella stessa classe, infatti i punti $\lambda z\in S^{2n+1}$ sono tutti equivalenti. 		
-	\item $\proj[n]{\complexset}$ è $T_2$, basta dimostrare che $\pi_0$ è un'identificazione chiusa. Sia $C\subset S^{2n+1}$ un chiuso, allora $\pi_0(C)\iff \pi_0^{-1}(\pi_0(C))$ è chiusa in $S^{2n+1}$. In effetti la relazione di equivalenza su $S^{2n+1}$ viene da un'azione del gruppo $S^1=\{\lambda\in\complexset \mid |\lambda |=1\}$ rispetto al prodotto con elemento neutro $1$ quale $\funztot F {S^1\times S^{2n+1}} {S^{2n+1}} {(\lambda, z)} {\lambda z}$. Si ha che $F$ è un'applicazione continua e siccome $S^1\times S^{2n+1}$ è compatto e $S^{2n+1}$ è $T_2$ allora $F$ è chiusa. Dato un chiuso $C\subseteq S^{2n+1}$, allora data la controimmagine dell'immagine agisco sui punti di $C$ con tutti gli elementi di $S^1$, ovvero prendo tutte le orbite che intersecano $C$, ottenendo quanto segue:	
-	$\pi_0^{-1}(\pi_0(C))=F(S^1\times C)\subseteq S^{2n+1} \implies \pi_0^{-1}(\pi_0(C))$ chiuso $\implies \pi_0(C)$ chiuso in $\proj[n]{\complexset} \implies \pi_0$ applicazione chiusa $\implies \pi_0$ identificazione. Pertanto $\proj[n]{\complexset}$ è anche quoziente di $S^{2n+1}$. Siccome $S^{2n+1}$ è un compatto in un $T_2$ per 
-	%AAA ESERCIZIO TUTORATO QUOZIENTE CERCASI	
-	e siccome $\pi_0$ è un'identificazione allora $\proj[n]{\complexset}$ è $T_2$.
-	\item $\proj[n]{\complexset}$ è localmente euclideo di dimensione $2n$: per dimostrarlo sfruttiamo la costruzione
-	%AAA COSTRUZIONE CERCASI NELLA SCORSA LEZIONE
-	ovvero identificando degli aperti di $\proj[n]{\complexset}$ con $\kamp^n$, quale la famiglia $U_j\coloneqq\{z_j\neq 0\}=\proj[n]{\complexset}\setminus H_j$, con $H_j$ $j$-esimo iperpiano coordinato. Per semplicità lavoreremo con $j=0$.\newline 
-	Si considera la proiezione al quoziente $\funz \pi {\complexset^{n+1}\setminus\{0\}} {\proj[n]{\complexset}}$ e la controimmagine $\pi^{-1}(U_0)=\{z\in\complexset^{n+1}\setminus\{0\}\mid z_0\neq 0\}$ aperto in $\complexset^{n+1}\setminus\{0\}$ perché abbiamo tolto un iperpiano, pertanto $U_0$ è aperto in $\proj[n]{\complexset}$. Questo vale per tutti gli $U_j$. Ricordando la costruzione 
+\begin{theorema}
+	$\proj[n]{\complexset}$ è una varietà topologica di dimensione $2n$.
+\end{theorema}
+\begin{demonstration} 
+	\begin{itemize}
+		\item $\proj[n]{\complexset}$ è \textit{connesso} perché è quoziente di $\complexset^{n+1}\setminus\{0\}$ che è connesso.
+		\item $\proj[n]{\complexset}$ è \textit{compatto}: per avere la tesi lo si vuole vedere come quoziente di un compatto o immagine tramite una funzione continua di un compatto. Per la relazione di equivalenza, due vettori $z\sim w\iff \exists\lambda\in\complexset\setminus\{0\}\colon w=\lambda z$. Vogliamo ora restringerci alla sfera (la cui dimensione è data da $\complexset^{n+1}=\realset^{2n+2}\supset S^{2n+1}$) e dimostrare che ogni punto del quoziente è equivalente ad un punto della sfera. Per fare ciò si sfrutta la corrispondenza fra numeri complessi e reali e la norma:
+		\begin{gather*}
+			z_j=x_j+iy_j\implies  z=(z_1,\dots,z_{n+1})\in\complexset^{n+1}\longleftrightarrow (x_1,y_1,\dots,x_{n+1},y_{n+1})\in\realset^{2n+2}\\
+			\begin{array}{ccc}
+				\displaystyle \|z\|^2=\sum_{j=1}^{n+1} \lvert z_j\rvert ^2=\sum_{j=1}^{n+1}(\lvert x_j \rvert ^2 +\lvert y_j \rvert ^2) & \wedge & \displaystyle \lambda\in\complexset,\  \ \|\lambda z \| =\sqrt{\sum_{j=1}^{n+1}\lvert \lambda z_j \rvert ^2}=\lvert\lambda\rvert \| z\|
+			\end{array} \\
+			z\in\complexset^{n+1}\setminus\{0\}\implies \|z\|\neq 0 \ \wedge \lambda=\frac{1}{\| z\|} \implies \underbrace{\frac{1}{\|z\|}z}_{\in S^{2n+1}}\sim z \implies \pi(S^{2n+1})=\proj[n]{\complexset}
+		\end{gather*}
+		Nel caso reale i punti sulla sfera sono equivalenti solo se antipodali, nel caso complesso $S^{2n+1}$ invece $z,w\in S^{2n+1}$ si ha $z\sim w\iff \exists \lambda\in\complexset\setminus\{0\} \colon w=\lambda z$ siccome $w,z\in S^{2n+1}$ hanno norma unitaria, dunque $1=\| w\|=\|\lambda z\|= \ \lambda | \|z\|=|\lambda|$. Siccome ci sono infiniti numeri di norma $1$ in $\complexset$, allora ci sono infiniti numeri nella stessa classe, infatti i punti $\lambda z\in S^{2n+1}$ sono tutti equivalenti. 		
+		\item $\proj[n]{\complexset}$ è $T_2$, basta dimostrare che $\pi_0$ è un'identificazione chiusa. Sia $C\subset S^{2n+1}$ un chiuso, allora $\pi_0(C)\iff \pi_0^{-1}(\pi_0(C))$ è chiusa in $S^{2n+1}$. In effetti la relazione di equivalenza su $S^{2n+1}$ viene da un'azione del gruppo $S^1=\{\lambda\in\complexset \mid |\lambda |=1\}$ rispetto al prodotto con elemento neutro $1$ quale $\funztot F {S^1\times S^{2n+1}} {S^{2n+1}} {(\lambda, z)} {\lambda z}$. Si ha che $F$ è un'applicazione continua e siccome $S^1\times S^{2n+1}$ è compatto e $S^{2n+1}$ è $T_2$ allora $F$ è chiusa. Dato un chiuso $C\subseteq S^{2n+1}$, allora data la controimmagine dell'immagine agisco sui punti di $C$ con tutti gli elementi di $S^1$, ovvero prendo tutte le orbite che intersecano $C$, ottenendo quanto segue:	
+		$\pi_0^{-1}(\pi_0(C))=F(S^1\times C)\subseteq S^{2n+1} \implies \pi_0^{-1}(\pi_0(C))$ chiuso $\implies \pi_0(C)$ chiuso in $\proj[n]{\complexset} \implies \pi_0$ applicazione chiusa $\implies \pi_0$ identificazione. Pertanto $\proj[n]{\complexset}$ è anche quoziente di $S^{2n+1}$. Siccome $S^{2n+1}$ è un compatto in un $T_2$ per 
+%AAA ESERCIZIO TUTORATO QUOZIENTE CERCASI	
+		e siccome $\pi_0$ è un'identificazione allora $\proj[n]{\complexset}$ è $T_2$.
+		\item $\proj[n]{\complexset}$ è localmente euclideo di dimensione $2n$: per dimostrarlo sfruttiamo la costruzione
+%AAA COSTRUZIONE CERCASI NELLA SCORSA LEZIONE
+		ovvero identificando degli aperti di $\proj[n]{\complexset}$ con $\kamp^n$, quale la famiglia $U_j\coloneqq\{z_j\neq 0\}=\proj[n]{\complexset}\setminus H_j$, con $H_j$ $j$-esimo iperpiano coordinato. Per semplicità lavoreremo con $j=0$.\newline 
+		Si considera la proiezione al quoziente $\funz \pi {\complexset^{n+1}\setminus\{0\}} {\proj[n]{\complexset}}$ e la controimmagine $\pi^{-1}(U_0)=\{z\in\complexset^{n+1}\setminus\{0\}\mid z_0\neq 0\}$ aperto in $\complexset^{n+1}\setminus\{0\}$ perché abbiamo tolto un iperpiano, pertanto $U_0$ è aperto in $\proj[n]{\complexset}$. Questo vale per tutti gli $U_j$. Ricordando la costruzione 
 	%AAA COSTRUZIONE DI J E \PHI CERCASI
-	si considerano le mappe biunivoche e una inversa dell'altra $\funztot j {\complexset^n} {U_0} {(z_1,\dots,z_n)} {(1\colon z_1\colon \dots\colon z_n)}$ e $\funztot \oldphi {U_0} {\complexset^n} {(z_0\colon\dots\colon z_n)} {\left( \frac{z_1}{z_0},\dots,\frac{z_n}{z_0} \right)}$. Mostriamo che $j$ e $\oldphi$ cono omeomorfismi, in questo caso siccome sono già biunivoche e una inversa dell'altra basta dimostrare che sono entrambe continue.
-		\begin{minipage}[t]{0.51\textwidth}\vspace{1pt}
-		Per mostrare che $j$ è continua sfruttiamo il diagramma a lato, ovvero la fattorizzazione di $j$ in $\complexset^{n+1}\setminus\{0\}$ tramite:
-		\begin{equation*}
-			\widetilde{j}((z_1,\dots,z_n))=(1,z_1\dots,z_n)
-		\end{equation*}
-		e la proiezione $\pi$. Siccome $\widetilde{j}$ e $\pi$ sono continue allora anche $j$ che è la loro composizione lo è.
-	\end{minipage}\hspace{-15pt}
-	\begin{minipage}[t]{0.49\textwidth}\vspace{5pt}
-		% https://q.uiver.app/?q=WzAsNCxbMSwwLCJcXGNvbXBsZXhzZXRee24rMX1cXHNldG1pbnVzXFx7MFxcfSJdLFswLDIsIlxcY29tcGxleHNldF5uIl0sWzIsMiwiVV8wIl0sWzEsMl0sWzEsMCwiXFx3aWRldGlsZGV7an0iXSxbMSwyLCJqIiwyXSxbMCwyLCJcXHBpIl1d
-		\[\begin{tikzcd}
-			& {\complexset^{n+1}\setminus\{0\}} \\
-			\\
-			{\complexset^n} & {} & {U_0}
-			\arrow["{\widetilde{j}}", from=3-1, to=1-2]
-			\arrow["{j}"', from=3-1, to=3-3]
-			\arrow["{\pi}", from=1-2, to=3-3]
-		\end{tikzcd}\]
-	\end{minipage}\\
-	\begin{minipage}[t]{0.51\textwidth}\vspace{10pt}
-		Per la continuità dell'inversa $\oldphi$ invece si procede con la fattorizzazione nella controimmagine di $U_0$ tramite $\pi$ tramite una restrizione dell'inversa di $\pi$ e $\hat{\oldphi}$ che sostanzialmente ha le stesse coordinate di $\oldphi$
-	\end{minipage}\hspace{-15pt}
-	\begin{minipage}[t]{0.49\textwidth}\hspace{-15pt}\vspace{5pt}
-		% https://q.uiver.app/?q=WzAsNCxbMiwwLCJcXHBpXnstMX0oVV8wKSJdLFszLDAsIlxcc3Vic2V0IFxcY29tcGxleHNldF57fW4rMSJdLFswLDIsIlVfMCJdLFszLDIsIlxcY29tcGxleHNldF5uIl0sWzIsMywiXFxvbGRwaGkiLDJdLFswLDIsInAiLDJdLFswLDMsIlxcaGF0e1xcb2xkcGhpfSJdXQ==
-		\[\begin{tikzcd}
-			&[-35pt]& {\pi^{-1}(U_0)}\subset \complexset^{n+1} &[-15pt] {} \\
-			\\
-			{U_0} &&& {\complexset^n}
-			\arrow["{\oldphi}"', from=3-1, to=3-4]
-			\arrow["{p}"', from=1-3, to=3-1]
-			\arrow["{\hat{\oldphi}}", from=1-3, to=3-4]
-		\end{tikzcd}\]
-	\end{minipage}
-\end{itemize}
+		si considerano le mappe biunivoche e una inversa dell'altra $\funztot j {\complexset^n} {U_0} {(z_1,\dots,z_n)} {(1\colon z_1\colon \dots\colon z_n)}$ e $\funztot \oldphi {U_0} {\complexset^n} {(z_0\colon\dots\colon z_n)} {\left( \frac{z_1}{z_0},\dots,\frac{z_n}{z_0} \right)}$. Mostriamo che $j$ e $\oldphi$ cono omeomorfismi, in questo caso siccome sono già biunivoche e una inversa dell'altra basta dimostrare che sono entrambe continue.
+			\begin{minipage}[t]{0.51\textwidth}\vspace{1pt}
+				Per mostrare che $j$ è continua sfruttiamo il diagramma a lato, ovvero la fattorizzazione di $j$ in $\complexset^{n+1}\setminus\{0\}$ tramite:
+					\begin{equation*}
+						\widetilde{j}((z_1,\dots,z_n))=(1,z_1\dots,z_n)
+					\end{equation*}
+				e la proiezione $\pi$. Siccome $\widetilde{j}$ e $\pi$ sono continue allora anche $j$ che è la loro composizione lo è.
+			\end{minipage}\hspace{-15pt}
+			\begin{minipage}[t]{0.49\textwidth}\vspace{5pt}
+				% https://q.uiver.app/?q=WzAsNCxbMSwwLCJcXGNvbXBsZXhzZXRee24rMX1cXHNldG1pbnVzXFx7MFxcfSJdLFswLDIsIlxcY29tcGxleHNldF5uIl0sWzIsMiwiVV8wIl0sWzEsMl0sWzEsMCwiXFx3aWRldGlsZGV7an0iXSxbMSwyLCJqIiwyXSxbMCwyLCJcXHBpIl1d
+				\[\begin{tikzcd}
+					& {\complexset^{n+1}\setminus\{0\}} \\
+					\\
+					{\complexset^n} & {} & {U_0}
+					\arrow["{\widetilde{j}}", from=3-1, to=1-2]
+					\arrow["{j}"', from=3-1, to=3-3]
+					\arrow["{\pi}", from=1-2, to=3-3]
+				\end{tikzcd}\]
+			\end{minipage}\\
+			\begin{minipage}[t]{0.51\textwidth}\vspace{10pt}
+				Per la continuità dell'inversa $\oldphi$ invece si procede con la fattorizzazione nella controimmagine di $U_0$ tramite $\pi$ tramite una restrizione dell'inversa di $\pi$ e $\hat{\oldphi}$ che sostanzialmente ha le stesse coordinate di $\oldphi$. Definiamo dunque $\funz {p\coloneqq \pi_{|_{\pi^{-1}(U_0)}}} {\pi^{-1}(U_0)} {U_0}$ e 
+			\end{minipage}\hspace{-15pt}
+			\begin{minipage}[t]{0.49\textwidth}\hspace{-15pt}\vspace{5pt}
+				% https://q.uiver.app/?q=WzAsNCxbMiwwLCJcXHBpXnstMX0oVV8wKSJdLFszLDAsIlxcc3Vic2V0IFxcY29tcGxleHNldF57fW4rMSJdLFswLDIsIlVfMCJdLFszLDIsIlxcY29tcGxleHNldF5uIl0sWzIsMywiXFxvbGRwaGkiLDJdLFswLDIsInAiLDJdLFswLDMsIlxcaGF0e1xcb2xkcGhpfSJdXQ==
+				\[\begin{tikzcd}
+					&[-35pt]& {\pi^{-1}(U_0)}\subset \complexset^{n+1} &[-15pt] {} \\
+					\\
+					{U_0} &&& {\complexset^n}
+					\arrow["{\oldphi}"', from=3-1, to=3-4]
+					\arrow["{p}"', from=1-3, to=3-1]
+					\arrow["{\widehat{\oldphi}}", from=1-3, to=3-4]
+				\end{tikzcd}\]
+			\end{minipage}
+		$\widehat{\oldphi}(z_0,\dots, z_n)=\left( \frac{z_1}{z_0},\dots,\frac{z_n}{z_0} \right)$. Entrambe sono continue, infatti la prima è la restrizione di una funzione continua e la seconda è ben definita ($U_0=\{z_0\neq 0\}$) e continua, inoltre lavora solo con vettori e non classi di equivalenza!\\
+		Per dimostrare che $\oldphi$ è continua sfruttiamo le proprietà della topologia quoziente (vedasi \ref{proprietà identificazione quoziente e mappa continua indotta}), pertanto vogliamo dimostrare che $p$ è un'identificazione: è già continua e suriettiva, basta solo che sia aperta o chiusa per il teorema \ref{condizione sufficiente identificazione}.\\
+		Osserviamo che $\funz \pi {\complexset^{n+1}\setminus\{0\}} {\proj[n]{\complexset}}$ è anch'essa un quoziente dato dall'azione del gruppo \footnote{questo vale in generale per gli spazi proiettivi vedasi 
+%AAA ESERCIZIO GIà DATO CERCASI	
+		} $G=\complexset\setminus\{0\}$ rispetto al prodotto per la moltiplicazione su $\complexset^{n+1}\setminus\{0\}$. Essa inoltre è un'azione per omeomorfismi, infatti fissato $\lambda\in\complexset\setminus\{0\}$ si ha che $\funztot {\theta_\lambda} {\complexset^{n+1}\setminus\{0\}} {\complexset^{n+1}\setminus\{0\}} z {\lambda z}$ è continua, per la proposizione \ref{proiezione azione gruppo aperta} si ha che $\funz \pi {\complexset^{n+1}\setminus\{0\}} {\proj[n]{\complexset}}$ è un'applicazione aperta, pertanto anche $p$ che è una sua restrizione ad un aperto è aperta (verifica per esercizio), pertanto dalle considerazioni di cui sopra $p$ è un'identificazione. \\
+		Ne segue che $U_0$ è un aperto di $\proj[n]{\complexset}$ omeomorfo a $\complexset^n$ e quindi a $\realset^{2n}$. Allo stesso modo, $\forall j\in\{0,\dots,n\},\ U_j$ è un aperto di $\proj[n]{\complexset}$ omeomorfo a $\complexset^n$ tramite la mappa $\funztot {\oldphi_j} {U_j} {\complexset^n} {(z_0\colon\dots\colon z_n)} {\left( \frac{z_0}{z_j},\dots,\frac{z_{j-1}}{z_j}, \frac{z_{j+1}}{z_j},\dots, \frac{z_n}{z_j} \right)}$, e siccome in coordinate omogenee c'è sempre un elemento non nullo (si lavora su $\complexset^{n+1}\setminus\{0\}$) allora ogni punto sta in uno degli aperti $U_j$, pertanto $\proj[n]{\complexset}=U_0\cup\dots\cup U_n\implies \proj[n]{\complexset}$ è localmente euclideo di dimensione $2n$, dunque è una varietà topologica compatta.
+	\end{itemize}
+\end{demonstration}
 
-%Invece per la continuità di \phi che è l'inversa si procede con la fattorizzazione con \pi^{-1}  \hat{\phi} ha le stesse coordinate di \phi. Notiamo che sono tutti vettori, non c'è il quoziente! Dall'altra parte invece c'è la restrizione di \pi alla controimmagindi di U_0 in U_0. Chiaramente \hat{\phi} è continua: divido per norma diversa da 0, dunque sapremo dire che \phi è continua se   induco al quoziente una mappa continua. Osserviamo che p è un'identificazione: il quoziente \pi è anch'esso un quoziente da un'azione di gruppo (sempre vero per spazi proiettivi, vedasi esercizio già dato) per molitplicazione su C^n+1 meno 0, inoltre è un'azione per omeomorfismi, infatti fissato \lambda in c-0, l'applicazione theta_\lambda è continua (definizione di azione per omeomorfismi) l'applicazione per un elemento fissato è continua. Avevamo dimostrato che la proiezione è aperta (vedasi proprietà delle proiezioni) se il gruppo è finito è anche chiusa!. Dunque anche p restringendosi ad un aperto è ancora un'applicazione aperta (verifica per esercizio) Quindi sicocme è aperta allroa è un'identificazione, allora tale diagramma ci dice che la mappa \oldphi è continua.
-%Riasusmendo, abbiamo dedotto che U_0 è un aperto di pn, che è omeomorfo a cn, dunque a r2n. Allo stesso modo lo si verifica per tutti i j grazie alle mappe \phi_j che divide per la j-esima coordinata
-%In più chiarmanet pn è l'unione di tali n+1 aperti: le coordinate omoegenee ce n'è sempre una diversa da0, dunque ogni punto sta almeno in uno di questi aerti, dunque pnc è loclamente euclideo di dimensione 2n
-%su un campo qualsiasi si ha sempre la mappa j    con kn senza aspetto topologio è sempre biunivoca. Nel cso reale rimane comuneuq vero 
-%END PROOF PNC VARIETà TOPOLOGICA
-%nel caso compatto infatti essere a base numerabile segue dalle ltre
-%ogni apero u_i ha una base umerabile, ed è facile vedere he facendone l'unione è comunque a base numerabile
+\begin{observe}
+	\begin{itemize}
+		\item Su un campo $\kamp$ qualsiasi si ha sempre la mappa $\oldphi_j$ che è un corrispondenza biunivoca fra i sottoinsiemi $U_j$ (complementari di un iperpiano coordinato) e $\kamp^n$ (senza aspetto topologico) e vale sempre che lo spazio proiettivo è unione di tali $U_j$.\\
+		In particolare nel caso reale, tali $U_j$ sono aperti ed il ragionamento è analogo a quello fatto poc'anzi nel caso complesso.
+		\item Non abbiamo dimostrato che è a base numerabile perché essendo compatto segue dal teorema
+%AAA TEOREMA SUPERFICI COMPATTE CERCASI
+		, inoltre si potrebbe dimostrare facilmente "a mano" sfruttando che gli aperti $U_j$ sono a base numerabile, dunque anche la loro unione finita lo è.
+	\end{itemize}
+\end{observe}
 
-%cosa succede per la retta proiettiva complessa? è una varietà topologica compatta di dimensione 2, dunque è una superficie topologica compatta, che abbiamo già classificato! che superficie sarà? l'aperto U_0 è comeomorfo a c e poi un solo punto, dunque la retta proiettiva complessa è un piano con in più solo un punto. Vediamo che è omeomorfo a S^2 e vediamo poi la differenza con il piano proiettivo reale. Si chiama anche sfera di riemann
-%tutto il piano richiuso su se stesso ed un punto aggiunto, pensato come punto all'infinito
-%Costruiamo l'oeomorfismo, definiamo la mappa $\funz F {S^2}  $ nella sfer in r3 si considera il polo nord ed il polo sud, la proiezione sterografica da s2-n a r2 è biunivoca ed un omeomorfismo. da r2 si va in c tramite la solita identificazione con i, essa è anche un omeomorfismo. si manda c in U_0 tramite la mappa j, anch'essa omeomorfismo. Composizione di 3 omeomorfismi: proeiz stero, identificazion standard e infine 
-%definiamo f ristretto in questo modo, trmaite la composizione di tutte queste mappe. Voglio però la definizione nel polo nord per avere  tutto. MAndo il polo nord nel punto unito a U_0 ovvero (0\colon 1) per avere una biezione
-%gratis: F biunivoca ed è continua in S^n-n. Manca la cotinuità su un aperto contenente il polo nord. S^2 cpt, t-2 implica chiusa, ed essendo F binuivoca allora è un omeomorfismo. 
-%la coniuità sull'aperto è un conto
-%PAUSA 
-%anche la restrizione al plo sud (intorno di N!) si scrive in temrini di proiez stereografica dal polo sud. Vogliamo mettere in relazione la proeiz stereografica dal polo sud.
-%Scriviamoci velocemente le due proiezioni stereografiche da N e d S. Fisso un punto della sfera, allora tramite la proiezione stereografica (retta uscente da N o da S che nterseca il pinao xy) scriviamo le due semirette con vettore che dà la direzoine P_0-N. Scirivamo anche la semiretta dal polo sud, cambia solo che il punto ha coordinate 0,0,-1. Intersecando con il piano xy (z=0), nel primo caso ottengo 1+t(z_0-1)  (torna tutto perché è defiita tranne in N, dunque il denominatore non è nulla), nel secondo -1+t stesse motivazioni. Dunque l'immagine di r2 si ottiene sosituendo i valorei di x e y nella semiretta. Nel caso di N viene (,), mentre nel cso della proiezione dal polo sud veien (,). Adesso considero i punti complessi associati a tali numeri tramite la mappa standard.
-%Si ha la relazione w=\frac{}{} e viceversa. Verifichiamola. Mi restringo alla sfera meno entrambi i poli, dunque sono entrambe definite le proiezioni. duneuq ho c-0 (entrambi non nulli). La relazione è di inversione e coniugio.
-%Verifico la relazione con un conticino: scrivo la frazione, scrivo la sua def complessa, raccolgo 1+z_0 e lo porto a numeratore, moltiplico sopra e sotto per z_0+i_0\neq 0 perché ho tolto l'asse z dalla sfera, dalla moltiplicazione si ottiene al denominatore la norma, ed essndo sulla sfera viene quanto voluto, bast semplificare.
+	\subsubsection{Retta proiettivo complessa}
+Cosa succede per la retta proiettiva complessa? Essa è una varietà topologica compatta di dimensione $2$ (dunque una superficie topologica compatta) che abbiamo già classificato! Scopriamo di che superficie si tratta.
+%AAA MOTIVAZIONE CERCASI
+Si ha che $\proj[n]{\complexset}=U_0\cup\{(0\colon 1)\}$ con $U_0\cong\complexset\cong\realset^2$, pertanto la retta proiettiva complessa è un piano unito ad un punto. Dimostriamo ora che è omeomorfa a $S^2$, detta anche \textit{sfera di Riemann} \index{sfera!Riemann} \index{Riemann!sfera}, e analizziamo poi la differenza con il piano proiettivo reale.
+\begin{theorema}
+	$\proj[1]{\complexset}\cong S^2$
+\end{theorema}
+\begin{intuit}
+	Per ottenere la sfera si può pensare di richiudere il piano su se stesso con aggiunto il punto all'infinito $\{(0\colon 1)\}$.
+\end{intuit}
+\begin{demonstration}
+	Costruiamo l'omeomorfismo con $S^2\subset\realset^3$ sfruttando la \textit{proiezione stereografica}. Definiamo la funzione $\funz F {S^2} {\proj[1]{\complexset}}$ prima sulla restrizione della sfera senza il polo nord $N=(0,0,1)$ e poi la estendiamo anche in $N$
+		% https://q.uiver.app/?q=WzAsNCxbMCwwLCJTXjJcXHNldG1pbnVzXFx7TlxcfSJdLFsyLDAsIlxccmVhbHNldF4yIl0sWzQsMCwiXFxjb21wbGV4c2V0Il0sWzYsMCwiVV8wIl0sWzAsMSwicF9OIl0sWzEsMiwiayJdLFsyLDMsImoiXSxbMCwzLCJGX3t8X3tTXjJcXHNldG1pbnVzXFx7TlxcfX19IiwyLHsiY3VydmUiOjV9XV0=
+		\[\begin{tikzcd}
+			{S^2\setminus\{N\}} && {\realset^2} && {\complexset} && {U_0}
+			\arrow["{p_N}", from=1-1, to=1-3]
+			\arrow["{k}", from=1-3, to=1-5]
+			\arrow["{j}", from=1-5, to=1-7]
+			\arrow["{F_{|_{S^2\setminus\{N\}}}}"', from=1-1, to=1-7, curve={height=30pt}]
+		\end{tikzcd}\]
+	con $\funz {p_N} {S^2\setminus\{N\}} {\realset^2}$ proiezione stereografica da $N$, con $\funztot k {\realset^2} \complexset {(x,y)} {x+iy}$ e con $\funztot j \complexset {U_0} w {(1\colon w)}$. Poniamo $F_{|_{S^2\setminus\{N\}}}\coloneqq j\circ k\circ p$ e $F(N)\coloneqq (0\colon 1)$ e ricordiamo che $\proj[1]{\complexset}=U_0\cup\{(0\colon 1)\}$. \\
+	Siccome $j,k,p$ sono omeomorfismi allora la loro composizione $F_{|_{S^2\setminus\{N\}}}$ è biunivoca e continua su $S^2\setminus\{N\}$. Perché $F$ sia continua in tutti i suoi punti basta che sia continua in un aperto contenente $N$. Per poter di nuovo sfruttare la proiezione stereografica però dal polo sud $S=(0,0,-1)$ scegliamo l'aperto $S^2\setminus\{S\}$. Dunque ora dobbiamo mostrare la continuità di $F_{|_{S^2\setminus\{S\}}}$. \\
+	Scriviamo le due proiezioni stereografiche: fissato un punto $P_0=(x_0,y_0,z_0)$ sulla sfera allora consideriamo le semirette uscenti da $N$ e da $S$ che passano per $P_0$ \footnote{le equazioni sono scritte in forma parametrica, pertanto abbiamo evidenziato il punto per cui passano e la direzione $P_0-N$ per esempio}
+		\begin{gather*}
+			\begin{array}{ccc}
+				NP_0\colon \begin{cases}
+					x=0+tx_0\\
+					y=0+ty_0\\
+					z=1+t(z_0-1)
+				\end{cases} & \wedge & SP_0\colon \begin{cases}
+					x=0+tx_0\\
+					y=0+ty_0\\
+					z=-1+t(z_0+1)
+				\end{cases}
+			\end{array}
+		\end{gather*}
+	Per trovare le immagini delle proiezioni stereografiche intersechiamo le due semirette con il piano $xy$, ovvero poniamo $z=0$, ottenendo così
+		\begin{gather*}
+			\begin{array}{ccc}
+				1+t(z_0-1)=0\implies t=\frac{1}{1-z_0} & \wedge & -1+t(z_0+1)=0\implies t=\frac{1}{1+z_0}
+			\end{array}
+		\end{gather*}
+	Notiamo che i denominatori non si annullano in entrambi i casi per la definizione delle proiezioni stereografiche sulla sfera meno $N$ ed $S$ rispettivamente.\\
+	Ne segue che l'immagine di $\realset^2$ tramite la mappa standard $k$ è
+		\begin{gather*}
+			\begin{array}{ccc}
+				\left( \frac{x_0}{1-z_0}, \frac{y_0}{1-z_0} \right) \mapsto w=\frac{x_0}{1-z_0} + i\frac{y_0}{1-z_0} \in\complexset & \wedge &  \left( \frac{x_0}{1+z_0}, \frac{y_0}{1+z_0} \right) \mapsto u=\frac{x_0}{1+z_0} + i\frac{y_0}{1+z_0} \in\complexset
+			\end{array}
+		\end{gather*}
+	Si ha che $w=\frac{1}{\overline{u}}$ e viceversa $u=\frac{1}{\overline{w}}$, poiché quando $P_0\in S^2\setminus\{N,S\}$ allora $w,u\in\complexset\setminus\{0\}$, verifichiamolo sfruttando le proprietà dei numeri complessi:
+		\begin{gather*}
+			\frac{1}{\overline{u}} = \frac{1}{ \frac{x_0}{1+z_0} -i\frac{y_0}{1+z_0} } = \frac{1+z_0}{x_0-iy_0} \stackrel{!}{=} \frac{(x_0+iy_0)(1+z_0)}{x_0^2+y_0^2} \stackrel{!!}{=} \frac{(x_0+iy_0)(1+z_0)}{1-z_0^2}=\frac{x_0+iy_0}{1-z_0}=w
+		\end{gather*}
+	dove (!) indica che il passaggio è dovuto al fatto che siccome $P_0\neq N,S$ allora $x_0+iy_0\neq 0$, mentre (!!) segue dal fatto che il punto sta sulla sfera, per cui $x_0^2+y_0^2+z_0^2=1\implies x_0^2+y_0^2=1-z_0^2$. \\
+	Abbiamo dunque ottenuto $F_{|_{S^2\setminus\{N,S\}}}$ come una composizione di mappe
+		% https://q.uiver.app/?q=WzAsNCxbMCwwLCJTXjJcXHNldG1pbnVzXFx7TixTXFx9Il0sWzIsMCwiXFxyZWFsc2V0XjIiXSxbNCwwLCJcXGNvbXBsZXhzZXQiXSxbNiwwLCJVXzAiXSxbMCwxLCJwX04iXSxbMSwyLCJrIl0sWzIsMywiaiJdLFswLDMsIkZfe3xfe1NeMlxcc2V0bWludXNcXHtOLFNcXH19fSIsMix7ImN1cnZlIjo1fV1d
+		\[\begin{tikzcd}
+			{S^2\setminus\{N,S\}} && {\realset^2} && {\complexset} && {U_0}
+			\arrow["{p_N}", from=1-1, to=1-3]
+			\arrow["{k}", from=1-3, to=1-5]
+			\arrow["{j}", from=1-5, to=1-7]
+			\arrow["{F_{|_{S^2\setminus\{N,S\}}}}"', from=1-1, to=1-7, curve={height=30pt}]
+		\end{tikzcd}\]
+	dove $j(w)=(1\colon w)=\left( 1\colon \frac{1}{\overline{u}} \right)=(\overline{u}\colon 1)$ in quanto si lavora con coordinate omogenee. Inoltre c'è un'estensione continua su $S^2\setminus\{S\}$ 
+		% https://q.uiver.app/?q=WzAsOSxbMCwwLCJTXjJcXHNldG1pbnVzXFx7TixTXFx9Il0sWzIsMCwiXFxyZWFsc2V0XjIiXSxbNCwwLCJcXGNvbXBsZXhzZXQiXSxbOCwwLCJVXzAiXSxbMCwxLCJQIl0sWzQsMSwidSJdLFs2LDAsIlxcY29tcGxleHNldCJdLFs2LDEsIlxcb3ZlcmxpbmV7dX0iXSxbOCwxLCIoXFxvdmVybGluZXt1fVxcY29sb24gMSkiXSxbMCwxLCJwX04iXSxbMSwyLCJrIl0sWzIsNiwiYyJdLFs2LDMsImoiXSxbNCw1LCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtYXBzIHRvIn19fV0sWzUsNywiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFs3LDgsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XV0=
+		\[\begin{tikzcd}
+			{S^2\setminus\{S\}} && {\realset^2} && {\complexset} && {\complexset} && {U_0} \\
+			{P} &&&& {u} && {\overline{u}} && {(\overline{u}\colon 1)}
+			\arrow["{p_S}", from=1-1, to=1-3]
+			\arrow["{k}", from=1-3, to=1-5]
+			\arrow["{c}", from=1-5, to=1-7]
+			\arrow["{j}", from=1-7, to=1-9]
+			\arrow[from=2-1, to=2-5, maps to]
+			\arrow[from=2-5, to=2-7, maps to]
+			\arrow[from=2-7, to=2-9, maps to]
+		\end{tikzcd}\]
+	con $c$ coniugio.\\
+	Dunque $F$ è continua, chiusa (compatto in $T_2$) e biunivoca, pertanto $F$ è un omeomorfismo.
+%	
 %questo ci dice che f ristretto a s^2-s,n è data da una composizione di mappe: proiezione stereografica da N, identificazione standard con C, mappa j in U_0. Ora al posto di w posso scrivere 1/\overline{u}, che per il quoziente è pari a  grazie alle coordinate omogenee: funziona come un'eliminzione dell'indeterminazione: anche se u=0 non è un problema perché ottengo 0:1. Nella proz ster da S il punto che va nello 0 è il polo nord, e questo ci dice che F si estende in maniera continua su S^n-s mandando P nella proiez ster da S , poi ho la mappa j_1, con tutti omeomorfisi. Dunque F è continua perché composizione di omeomorfismi.
-%FINE DIM SFERA OMEO A RETTA PROJ COMPLESSA
 
-%differenza fra p1c e p2r
-%sono entrambe suup cpt e sono entrambe compattificazioni del piano, ma lo fanno in modo diverso!
-%p1c=c (pino) unito ad un solo punot, ottenendo la sfera
-%mentre p2r è pari al pinao r2 unita alla retta impropria p1r. Topologicamente si unisce una copia della circonferenza: la copia di r2 è la copia del disco (la parte interna) mentre s1 è il bordo che ha l'identificazione dei punti antipodali
+\end{demonstration}
 
----------------------------------------------------------------------
+\begin{observe}\textsc{$\proj[1]{\complexset}\neq \proj[2]{\realset}$}\\
+	Notiamo che $\proj[1]{\complexset}$ e $\proj[2]{\realset}$ sono entrambe compattificazioni del piano, ma in modo profondamente diverso!\\
+	$\proj[1]{\complexset}=\complexset\cup\{\infty\}\cong S^2$, ovvero è l'unione di un piano con un punto all'infinito.\\
+	$\proj[2]{\realset}=\realset^2\cup\proj[1]{\realset}\cong\realset^2\cup S^1$, ovvero il piano unito alla retta impropria $\proj[1]{\realset}$, topologicamente è l'interno del disco omeomorfo a $\realset^2$ unito al bordo che è $S^1$ con la relazione di equivalenza per i punti antipodali.
+%AAA IMMAGINI SFERA E PIANO PROIETTIVO REALE CON I DISCI CERCASI
+\end{observe}
 
-%torniamo al campo qualsiasi
-%cos'è il birapporto
-%si fa sulla reSotta proiettiva
-%\begin{define}
-%si considerano 4 punti
-%voglio i primi 3 distinti. dipende dall'ordine, si può definire se i primi 3 sono distinti ed è un numero associato a tali 4 numeri ordinati   dove y_0\colon y_1 sono le coordinate di P_4 nel sistema di riferimento proiettivo in cui P_1 è il primo punto fondamentale, P_2 il secondo e P_3 è unita
-%\end{define}
+		\section{Birapporto}
+Torniamo ad analizzare il caso di spazi proiettivi su un campo $\kamp$ qualsiasi. Andremo a definire \\
+%AAA INTRO CARINA PER IL BIRAPPORTO CERCASI
+Sia $\proj[1]{V}$ una retta proiettiva, ovvero $\dim V=2$.
+\begin{define}
+	Siano $P_1,P_2,P_3,P_4\in\proj[1]{V}$ dei punti con $P_1,P_2,P_3$ distinti. Il \textbf{birapporto} dei punti $P_1,P_2,P_3,P_4$ (ordinati) è 
+		\begin{equation} 
+			\beta(P_1,P_2,P_3,P_4)=\frac{y_1}{y_0}\in\kamp\cup\{\infty\}
+		\end{equation}
+	con $\beta=\infty$ se $y_0=0$ e dove $(y_0\colon y_1)$ sono le coordinate di $P_4$ nel riferimento proiettivo in cui $P_1$ è il primo punto fondamentale, $P_2$ il secondo e $P_3$ il punto unità, ovvero se $P_1=(1\colon 0), P_2=(0\colon 1), P_3=(1\colon 1)$
+\end{define}
 
-%OSS y_0, y_i\in\kamp, dnque il birapporto è un elemento del campo ed è infinito se y_0=0
-%\beta è ben definito perché i 3 punti sono distinti, dunque sono in posizione generale (nella retta pro)j essere in pos gen è equivalente ad essere distinti) \implies \beta è unico (teo sul riferimento proiettivo e pos generale)
-%per ipotesi i primi 3 sono distinti, nesune ipotesi su P_4. Vediamo cosa succede quando è uguale a uno degli altri punti: catena di equivalenze che porta a dire che il birapporto è pari a 0
-%quindi ho 3 valori speciali del birapporto che ottengo solo quando il quarto punto coincide con uno specifico degli altri 3. contronominale
-%viceversa se prendo uno scalare che non è fra quei valori e se prendo P_4=(1\colon a) allora \btea=a, dunque \beta assume tutti i valori possibili in \kamp.
+\begin{observe}
+	\begin{enumerate}
+		\item $y_0,y_1\in\kamp\implies\beta\in\kamp\cup\{\infty\}$
+		\item $\beta$ è ben definito perché $P_1,P_2,P_3$ sono distinti $\implies$ sono in posizione generale \footnote{In una retta proiettiva essere distinti equivale ad essere in posizione generale} $\implies$ determinano in maniera univoca il riferimento proiettivo per il teorema
+%AAA TEOREMA CERCASI
+		sul riferimento proiettivo e punti in posizione generale
+		\item per ipotesi i primi tre punti sono distinti, mentre non si fanno ipotesi sul quarto punto, vediamo cosa succede in casi speciali
+			\begin{gather*}
+				P_4=P_1 \iff (y_0\colon y_1)=(1\colon 0)\iff \beta=0\\
+				P_4=P_2\iff (y_0\colon y_1)=(0\colon 1) \iff\beta=\infty\\
+				P_4=P_3\iff (y_0\colon y_1)=(1\colon 1)\iff y_0=y_1\iff\beta=1
+			\end{gather*}
+		dunque $\beta\in\{0,1,\infty\}$ esattamente quando $P_4$ coincide con uno dei primi 3 punti. Quindi se $P_1,P_2,P_3,P_4$ sono distinti allora $\beta\in\kamp\setminus\{0,1\}$. \\
+		Viceversa se $a\in\kamp\setminus\{0,1\}$ e $P_4=(1\colon a)$ allora $\beta=a$, dunque $\beta$ assume tutti i valori possibili in $\kamp$.
+	\end{enumerate}	
+\end{observe}
 
-%GOAL
-%1)come si calcola il birapporto in un sistema di riferimento qualsias e non quello della def
+Vogliamo ora scoprire come si calcola il birapporto in un sistema di riferimento qualsiasi e non solo quello dato nella definizione.
+
 %2)come mai il birapporto  interessante? quale proprietà lo caratteerizza?
 
-%\begin{theorema}
-%	Supponiamo di avere un riferimento fissato
-%	Allora la formula del birapporto è data da (quoziente di determinanti 2x2)
-%\end{theorema}
-%comenti: birapporto viene proprio da quest formula come nome. al nume ho 1,4 e 23 (esterni e interni) al den intermedi
-%ben deifnita: supponiamo di moltiplicarlo per uno scalare: succede sia al denomiatore sia al denominatore, dunque si semplifica, dunque non dipende dalla scelta delle coo omogenee. Al denominatore il primo det è sempre \neq 0 perché i punti sono distini. Il secondo det è 0 quando P_2=P_4, che torna con quanto definito prima
-%\begin{demonstration}
-%	Conto di algebra lineare.
-%	scrivo \lambda e roba come combinazione lineare. porto dentro gli scalari. Per la costruzione della dimostrazione nella costruzione di sistema riferimento per punti speciali, essa è la base che dà il riferimento proiettivo con p_1 e P_2 come punti fond e P_3 unità: riscalo in modo tale che l'ultimo sia la somma dei vettori. Per ottenere P_4 scrivo P_4 come combinazione lineare di questi 2 vettori: \exists c,d\in\kap (\lambda_4,\mu_4)=c(a\lmbda_1, a\mu_1)
-%	dunque P_4 ha coordinate c:d nel nuovo riferimento proiettivo. c e d sarebbero gli y_0 e y_1
-%	notazione comoda per i determinanti
-%	determinamo prima a e b: sono dati dalla relazione con\lambda_3 e \mu_3, esso diventa un piccolo sistema linearedi 2 equazioni in 2 incognite (\lambda e \mu come coeff e a e b come incognite) Risolvo il sistema con Cramer: sotto la matrice dei coeff del sistema (invertibile) 
-%	faccio lo stesso con c e d
-%	sostituisco il valore di a e b trovato
-%	uso di nuovo Cramer: metto i termini noti , seconda colonna dei coeff e sotto la mat dei coeff del sistema. Ora il det è lineare in ogni colonna, dunque i delta escono da ogni colonna. posso riscriverli riordinando gli indici: scambio ordine colonne cambio segno, ma essneodo frazione e facendolo per entrambe il segno è invariato
-%	faccio lo stesso per d
-%	dunque il birapport d/c è proprio il prodotto dei determinanti
-%\end{demonstration}
+\begin{theorema}
+	Siano $P_1,P_2,P_3,P_4\in\proj[1]{V}$ dei punti nella retta proiettiva con $P_1,P_2,P_3$ distinti. Supponiamo che $P_i=(\lambda_1\colon \mu_i), i=1,\dots,4$. Allora
+		\begin{equation}
+			\beta(P_1,P_2,P_3,P_4)=\frac{ \left| \begin{array}{cc}
+					\lambda_1 & \lambda_4 \\
+					\mu_1 & \mu_4
+				\end{array} \right| \cdot \left| \begin{array}{cc}
+				\lambda_2 & \lambda_3 \\
+				\mu_2 & \mu_3
+			\end{array} \right| } { \left| \begin{array}{cc}
+			\lambda_2 & \lambda_3 \\
+			\mu_2 & \mu_3
+		\end{array} \right| \cdot \left| \begin{array}{cc}
+		\lambda_2 & \lambda_4 \\
+		\mu_2 & \mu_4
+	\end{array} \right| }
+		\end{equation}
+\end{theorema}
 
-%TIPS AND TRICKS?
-%OSS quando i 4 punti hanno entrmbi la prima neq 0 o la seconda, c'è una fromula più semplice che semplifica i conti
-%questo perché per le coordinate omogenee posso mettere l'1, dunque scrivendo il determinante viene raccogliendo i \lambda 
-%si usa la linearità nella prima colonna moltipl e dividendo per lamba 1 e nella seconda colonna per lambda 4, dunque vine
-%idem per gli altri determinanti (semplificazione dei lambda)
+
+
+
+\begin{demonstration}
+	$P_1\neq P_2\implies (\lambda_1,\mu_1),(\lambda_2,\mu_2)$ sono una base di $\kamp^2$. Siano ora $a,b\in\kamp \colon (\lambda_3,\mu_3)=a(\lambda_1,\mu_1)+b(\lambda_2,\mu_2)=(a\lambda_1,a\mu_1)+(b\lambda_2,b\mu_2)$, ovvero faccio una combinazione lineare e porto dentro gli scalari. Per costruzione è la base che dà il riferimento proiettivo con $P_1, P_2$ punti fondamentali e $P_3$ punto unità, basta riscalare in modo tale che sia la somma degli altri due vettori. Per ottenere $P_4$, lo scrivo come combinazione lineare di tali 2 vettori: $\exists c,d\in\kamp \colon (\lambda_4,\mu_4)=c(a\lambda_1,a\mu_1)+d(b\lambda_2,b\mu_2)\implies P_4$ ha coordinate $(c\colon d)$ nel nuovo riferimento proiettivo $\implies \beta=\frac{d}{c}.$\\
+	Per non appesantire la scrittura useremo come la seguente notazione per i determinanti: $\delta_{ij}=\left| \begin{array}{cc}
+		\lambda_i & \lambda_j \\
+		\mu_i & \mu_j
+	\end{array} \right|$.\\
+	Notiamo che la prima combinazione lineare dà il seguente sistema lineare di 2 equazioni in 2 incognite $a,b : \begin{cases}
+		\lambda_1 a+\lambda_2 b=\lambda_3\\
+		\mu_1 a+\mu_2 b=\mu_3
+	\end{cases}$\\
+	Risolvendo il sistema con il metodo di Cramer si ottiene:
+%possibile nota sul metodo di Cramer?
+	$ \displaystyle a=\frac{\left| \begin{array}{cc}
+			\lambda_3 & \lambda_2 \\
+			\mu_3 & \mu_2
+		\end{array} \right| }{ \left| \begin{array}{cc}
+		\lambda_1 & \lambda_2 \\
+		\mu_1 & \mu_2
+	\end{array} \right| } = \frac{\delta_{32}}{\delta_{12}}$ e $\displaystyle b=\frac{\delta_{13}}{\delta_{12}}$\\
+	La seconda combinazione lineare invece dà un sistema lineare in $c,d$, dove sostituisco i valori di $a,b$ trovati : 
+	\begin{gather*}
+	\begin{cases}
+		(a\lambda_1)c + (b\lambda_2)d=\lambda_4\\
+		(a\mu_1)c + (b\mu_2)d=\mu_4
+	\end{cases} \implies \begin{cases}
+		\frac{\delta_{32}}{\delta_{12}}\lambda_1 c + \frac{\delta_{13}}{\delta_{12}}\lambda_2 d = \lambda_4\\
+		\frac{\delta_{32}}{\delta_{12}}\mu_1 c + \frac{\delta_{13}}{\delta_{12}}\mu_2 d = \mu_4
+	\end{cases} \implies \begin{cases}
+		(\delta_{32}\lambda_2)c + (\delta_{13}\lambda_2)d=\delta_{12}\lambda_4\\
+		(\delta_{32}\mu_2)c + (\delta_{13}\mu_2)d=\delta_{12}\mu_4	
+	\end{cases}
+	\end{gather*}
+	Si applica ancora Cramer e si sfrutta che il determinante è lineare in ogni colonna, dunque possiamo fare uscire i $\delta_{ij}$ e riscriverli riordinando gli indici: scambiamo l'ordine delle colonne a patto di cambiare segno, tuttavia essendo una frazione e facendolo per entrambi il segno non cambia, idem per $d$:
+		\begin{gather*}
+			c=\frac{ \left| \begin{array}{cc}
+					\delta_{12}\lambda_4 & \delta_{13}\lambda_2 \\
+					\delta_{12}\mu_4 & \delta_{13}\mu_2
+			\end{array} \right| }{ \left| \begin{array}{cc}
+				\delta_{32}\lambda_1 & \delta_{13}\lambda_2 \\
+				\delta_{32}\mu_1 & \delta_{13}\mu_2
+			\end{array} \right|  } = \frac{ \cancel{ \delta_{12} } \cancel{\delta_{13}} \delta_{42} }{ \delta_{32} \cancel{\delta_{13}}\cancel{\delta_{12}} } = \frac{-\delta_{24} }{\delta_{23} }=\frac{\delta_{24}}{\delta_{23}} \\
+			d=\frac{ \left| \begin{array}{cc}
+				\delta_{32}\lambda_1 & \delta_{12}\lambda_4 \\
+				\delta_{32}\mu_1 & \delta_{12}\mu_4
+			\end{array} \right| }{ \delta_{32} \delta_{13} \delta_{12} } = \frac{ \cancel{\delta_{32}} \cancel{\delta_{12}} \delta_{14} }{\cancel{\delta_{32}} \delta_{13} \cancel{\delta_{12}} } = \frac{\delta_{14}}{\delta_{13}}\\
+			\implies \beta=\frac{d}{c}=\frac{\delta_{14}}{\delta_{13}}\cdot \frac{\delta_{23}}{\delta_{24}}
+		\end{gather*}
+%						
+\end{demonstration}
+\begin{observe}
+	Il birapporto può anche essere definito tramite questa formula, che è ben definita: supponiamo di moltiplicare i punti per uno scalare: succede sia al numeratore sia al denominatore, dunque si semplifica, pertanto il birapporto così definito non dipende dalla scelta delle coordinate omogenee. Inoltre al denominatore il primo determinante è sempre diverso da $0$ perché i punti sono distinti. Il secondo determinante al denominatore è nullo quando $P_2=P_4$, il che torna con quanto definito prima.	
+\end{observe}
+
+\begin{tips}
+Se tutti e 4 i punti sono diversi da $(0\colon 1)$, ovvero se $\forall i,\ \lambda_i\neq 0 \\ P_i=(1\colon z_i), i=1,\dots,4$ allora $\displaystyle \beta(P_1,P_2,P_3,P_4)=\frac{ (z_4-z_1)(z_3-z_2) }{ (z_4-z_2)(z_3-z_1) }$. Infatti $P_i=(\lambda_i\colon\mu_i)=(1\colon z_i)$, cioé \\ $z_i=\frac{\mu_i}{\lambda_i}$, per la linearità delle colonne si ottiene
+	\begin{gather*}
+		\left| \begin{array}{cc}
+			\lambda_1 & \lambda_4 \\
+			\mu_1 & \mu_4
+		\end{array} \right| = \lambda_1\lambda_4 \left| \begin{array}{cc}
+		1 & 1 \\
+		\frac{\mu_1}{\lambda_1} & \frac{\mu_4}{\lambda_4}
+		\end{array} \right|= \lambda_1\lambda_4 \left| \begin{array}{cc}
+			1 & 1 \\
+			z_1 & z_4
+		\end{array} \right| = \lambda_1\lambda_2(z_4-z_1)
+	\end{gather*}
+Si procede allo stesso modo per gli altri determinanti e le $\lambda$ si semplificano.
+\end{tips}
 %ESERCIZIO
-
-
-
-%def birapporto e come si calcola
-%manca la proprietà per cui è importante, si vedrà nella prossima lezione
-
-\
-\
-\
-\
-\	
-\
-\
-\
-\
-\
-\
-\
-\
+%Verificare che se $P_1,P_2,P_3,P_4$ sono tutti diversi da $(1\colon 0)\implies P_i=(w_i\colon 1), \forall i=1,\dots,4$, allora $\beta=\frac{ (w_2-w_1)(w_3-w_2) }{ (w_4-w_2)(w_3-w_1) }$
 
 %LEZ 32
 %

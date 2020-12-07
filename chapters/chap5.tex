@@ -130,7 +130,7 @@ Questo è equivalente a chiedere che l'azione sia data da un \textit{omomorfismo
 \begin{demonstration}
 	...
 \end{demonstration}
-\begin{proposition}~{}
+\begin{proposition}~{} \label{proiezione azione gruppo aperta}
 \begin{enumerate}
 \item Sia $X$ uno spazio topologico e $G$ un gruppo che agisce su $X$ per omeomorfismo. Sia $\pi$ la proiezione dall'insieme allo spazio delle orbite $\nicefrac{X}{G}$:
 	\begin{equation}
@@ -141,7 +141,7 @@ Allora $\pi$ è aperta e, se $G$ è finito, $\pi$ è anche chiusa.
 \end{enumerate}
 \end{proposition}
 \begin{demonstration}~{}
-\begin{enumerate}[label=\Roman*]
+\begin{enumerate}[label=\Roman*] 
 \item Sia $A\subseteq X$ un aperto. Vogliamo dimostrare che $\pi\left(A\right)$ è aperto in $\nicefrac{X}{G}$. Un aperto della topologia quoziente è tale se la controimmagine dell'aperto nel quoziente è un aperto: si deve allora dimostrare che $\pi^{-1}\left(\pi\left(A\right)\right)$ è aperto in $X$.\\
 Ogni elemento di $A$ è contenuto in un orbita, dunque $\pi\left(A\right)$ contiene le orbite degli $x\in A$; la controimmagine $\pi^{-1}\left(\pi\left(A\right)\right)$ risulta dunque pari all'unione di \textit{tutte} le orbite in $X$ che intersecano l'insieme $A$:
 \begin{equation*}

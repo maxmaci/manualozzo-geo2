@@ -28,11 +28,11 @@ Per verificare che un sottoinsieme sia aperto in $Y$ con la topologia quoziente 
 
 Vediamo ora un esempio che giustifica la terminologia "topologia quoziente".
 \begin{example}
-	Sia $X$ uno spazio topologico e $\sim$ una relazione di equivalenza su $X$. Posto $Y=\nicefrac{X}{\sim}$ insieme quoziente e $\funztot \pi X Y x {[x]_\sim}$ \textbf{proiezione al quoziente}\index{proiezione!al quoziente}, la topologia quoziente su $Y$ è quella che rende la proiezione continua.
+	Sia $X$ uno spazio topologico e $\sim$ una relazione di equivalenza su $X$. Posto $Y=\nicefrac{X}{\sim}$ insieme quoziente e $\funztot \pi X Y x {\left[x\right]_\sim}$ \textbf{proiezione al quoziente}\index{proiezione!al quoziente}, la topologia quoziente su $Y$ è quella che rende la proiezione continua.
 \end{example}
 
-
-Ricordiamo il primo teorema fondamentale di isomorfismo per gli \textit{insiemi}, altresì chiamato decomposizione canonica.\newline
+\begin{remember}
+	Il primo teorema fondamentale di isomorfismo per gli \textit{insiemi}, altresì chiamato decomposizione canonica.\newline
 	\begin{minipage}[t]{0.83\textwidth}
 		Data una qualsiasi funzione suriettiva $\funz f X Y$ vi è la seguente relazione di equivalenza: $\displaystyle \forall x,y\in X, \ x\sim y \iff f(x)=f(y)$, inoltre $\exists ! \funz h {\nicefrac{X}{\sim}} Y$ biunivoca tale che $f=h\circ\pi$, baste porre $h\left( [x] \right) \coloneqq f(x)$, in modo tale che il diagramma commuti. Mostriamo che è ben definita e biunivoca.
 	\end{minipage}
@@ -46,6 +46,7 @@ Ricordiamo il primo teorema fondamentale di isomorfismo per gli \textit{insiemi}
 		[x]=[y]\iff x\sim t\iff f(x)=f(y)\iff h([x])=h([y]) \implies h \text{ ben definita e iniettiva }\\
 		f \text{ suriettiva } \implies h \text{ suriettiva}
 	\end{gather*}
+\end{remember}
 
 	\subsection{Identificazione}
 Tenendo a mente il concetto di immersione illustrato a pagina \pageref{immersione} illustriamo il concetto duale di identificazione.
@@ -54,7 +55,7 @@ Tenendo a mente il concetto di immersione illustrato a pagina \pageref{immersion
 \end{define}
 In generale è difficile determinare quando una data funzione è un'identificazione, quindi ne cerchiamo una condizione sufficiente. 
 %CONFUSIONE TIME: è sufficiente o necessaria?
-\begin{theorema} \textsc{Manetti, 5.4}\\
+\begin{theorema} \textsc{Manetti, 5.4} \label{condizione sufficiente identificazione}\\
 	Sia $\funz f X Y$continua, suriettiva e chiusa (o aperta), alora $f$ è un'identificazione chiusa (o aperta).
 \end{theorema}
 \begin{demonstration}
@@ -103,7 +104,7 @@ Vediamo ora che relazione c'è fra le identificazioni ed i quozienti dati da rel
 
 %QUESTO DISCORSETTO CARINO ED IMPORTANTE LO DEVO METTERE IN UN ENVIRONMENT?
 %SENZA ENVIRONMENT SBORDA ED INIZIA PIù A DESTRA
-	\begin{minipage}[t]{0.83\textwidth}
+	\begin{minipage}[t]{0.83\textwidth} \label{proprietà identificazione quoziente e mappa continua indotta}
 		Come conseguenza si ha che data $f$ continua, $\sim$ relazione di equivalenza e $\nicefrac{X}{\sim}$ spazio topologico con la topologia quoziente indotta dalla proiezione $\pi$ si ha che $\exists g$ continua $\iff \left( x\sim y \implies f(x)=f(y) \right)$, ovvero $\pi$ è costante sulle fibre di $f$.
 	\end{minipage}
  	\begin{minipage}[t]{0.13\textwidth}\vspace{-10pt}
@@ -113,7 +114,7 @@ Vediamo ora che relazione c'è fra le identificazioni ed i quozienti dati da rel
 		\end{tikzcd}
 	\end{minipage}
 	\begin{minipage}[t]{0.83\textwidth}
-		In particolare se $f$ è la relazione d'equivalenza indotta da $f$, ovvero se si è nelle ipotesi del primo teorema fondamentale di isomorfismo degli insiemi allora $\left( x\sim y \iff f(x)=f(y) \right) \implies \exists ! \overline{f}$ biettiva, continua. Dunque vale 
+		In particolare se $\sim$ è la relazione d'equivalenza indotta da $f$, ovvero se si è nelle ipotesi del primo teorema fondamentale di isomorfismo degli insiemi allora $\left( x\sim y \iff f(x)=f(y) \right) \implies \exists ! \overline{f}$ biettiva, continua. Dunque vale 
 			\begin{equation}
 				\overline{f} \text{ omeomorfismo} \iff f \text{ identificazione}
 			\end{equation}
