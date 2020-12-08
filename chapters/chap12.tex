@@ -1299,7 +1299,6 @@ Con $\left(t_0\colon\ldots\colon t_m\right)\in\proj[m]{\ }$.
 \begin{solution}
 	... % aggiungere soluzione
 \end{solution}
-\section{LEZIONI 31, 32 - DIRETTA}
 
 
 %LEZ 31 
@@ -1641,8 +1640,8 @@ Ci domandiamo ora se è possibile farlo anche con quattro punti, per riuscirci s
 	$\impliesdx$ Siccome la $f$ è unica e $f(P_4)=Q_4 \implies Q_4=(a\colon b)$ nel riferimento in cui $Q_1=(1\colon 0), Q_2=(0\colon 1), Q_3=(1\colon 1) \implies \beta(Q_i)=\frac{b}{a}=\beta(P_i)$.\\
 	$\impliessx$ Se $\beta(Q_i)=\frac{b}{a}$ allora distinguiamo i casi in cui il birapporto è nel campo o infinito
 		\begin{gather*}
-			\frac{b}{a}\in\kamp \ \ \ Q_4=\left(1\colon \frac{b}{a} \right)=(a\colon b)=f(P_4)\\
-			\frac{b}{a}=\infty  \ \ \ a=0\implies Q_4=(0\colon 1)=f(P_4)
+			\frac{b}{a}\in\kamp \implies Q_4=\left(1\colon \frac{b}{a} \right)=(a\colon b)=f(P_4)\\
+			\frac{b}{a}=\infty  \implies a=0\implies Q_4=(0\colon 1)=f(P_4)
 		\end{gather*}
 \end{demonstration}
 \begin{corollary}
@@ -1666,6 +1665,7 @@ Ci domandiamo ora se è possibile farlo anche con quattro punti, per riuscirci s
 
 
 \begin{examples}~{}\\
+%AAA DISEGNI CERCASI
 	Nel piano proiettivo $\proj[2]{\kamp}$ consideriamo due quaterne di punti distinti quali $\{P_1,P_2,P_3,P_4\}$ e $\{Q_1,Q_2,Q_3,Q_4\}$. Grazie al birapporto analizziamo per ciascuna delle due quaterne in che posizione sono: generale (ovvero a tre a tre non allineati), o non in posizione generale, in cui si differenzia se i punti allineati sono 3 o 4.
 %"Nel secondo caso ci sono tutte le possibili permutazioni fra pt allineati"
 	Se i punti $P_i$ sono proiettivamente equivalenti ai punti $Q_i$, allora tali posizioni devono essere mantenute: le proiettività mandano rette in rette, posizioni generali in posizioni generali. Per contronominale, se si verificano casi diversi per le due quaterne possiamo afermare che non sono proiettivamente equivalenti.
@@ -1681,132 +1681,192 @@ Ci domandiamo ora se è possibile farlo anche con quattro punti, per riuscirci s
 	\end{enumerate} 
 \end{examples}
 
-%
-%
 %STUDIO DELLA GEOMETRIA DI RETTE O CURVE NEL PIANO PROIETTIVO
-%OGGI RETTE E UN PO' DI IPERPIANI
-%Una retta in P2 ha equazione z_0x_0+a_i   eq lin omo elle coo omogenee, dunque è determinata dai coefficienti a_0 a_1 e a_2 dell'eq con la proprietà che devono essere non tutti nulli e in più fissati i coeff l'eq non è univocamente determinata: è determinata a meno di costante molitplicativa non nulla. Dunque si può associare a r un punto del piano proiettivo dato esattamente dai coefficienti delle coordinate omogenee, per cui si ha una corrispondenza binivoca fra le rette in P2 e P"(che non va pensato come lo stessso piano)   funziona bene con p2: le coo omo si comportano proprio come i coeff dell'equazione
-%
-%ESEMPIO NEL CASO REALE
-%quando pensiamo a P2 d destra cpme lo spazio che parametrizza le rette in P2, lo denotiamo conP2* e lo chiamiamo piano proiettivo duale
-%in prima istanza questo significa semplicemente  interpretazione punto del duale visto come ppunto associato ad una retta
+		\section{Rette nel piano proiettivo}
+
+Una retta in $\proj[2]{\kamp}$ ha equazione $r\colon a_0x_0+a_1x_1+a_2x_2=0$ che è un'equazione lineare omogenea in coordinate omogenee, dunque è determinata dai coefficienti $a_0, a_1, a_2$ dell'equazione con la proprietà che devono essere non tutti nulli e in più fissati i coefficienti l'equazione è determinata a meno di costante moltiplicativa non nulla. Dunque si può associare a $r$ un punto del piano proiettivo dato esattamente dai coefficienti delle coordinate omogenee, ovvero $(a_0\colon a_1\colon a_2)\in\proj[2]{\kamp}$ per cui si ha una corrispondenza biunivoca fra le rette in $\proj[2]{\kamp}$ e $\proj[2]{\kamp}$ (che non va pensato come lo stesso piano)
+	% https://q.uiver.app/?q=WzAsNCxbMCwwLCJcXHtcXHRleHR7cmV0dGUgaW4gfSBcXHByb2pbMl17XFxrYW1wfVxcfSJdLFszLDAsIlxccHJvalsyXXtcXGthbXB9Il0sWzAsMSwiclxcY29sb24gYV8weF8wK2FfMXhfMSthXzJ4XzI9MCJdLFszLDEsIihhXzBcXGNvbG9uIGFfMVxcY29sb24gYV8yKSJdLFswLDEsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsyLDMsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dXQ==
+	\[\begin{tikzcd}
+		{\{\text{rette in } \proj[2]{\kamp}\}} &&& {\proj[2]{\kamp}} \\
+		{r\colon a_0x_0+a_1x_1+a_2x_2=0} &&& {(a_0\colon a_1\colon a_2)}
+		\arrow[from=1-1, to=1-4, tail reversed]
+		\arrow[from=2-1, to=2-4, tail reversed]
+	\end{tikzcd}\]
+Notiamo che ciò funziona bene con $\proj[2]{\kamp}$, infatti le coordinate omogenee si comportano proprio come i coefficienti dell'equazione.
+
+\begin{example}
+	Retta nel piano proiettivo reale $\proj[2]{\realset}$
+		\begin{equation*}
+			l_i\colon x_0+x_1+2x_2=0 \leftrightarrow (1\colon 1\colon 2)\in\proj[2]{\realset}
+		\end{equation*}
+\end{example}
+
+Quando pensiamo a $\proj[2]{\kamp}$ come lo spazio che parametrizza le rette in $\proj[2]{\kamp}$, lo denotiamo con $\left(\proj[2]{\kamp}\right)^{*}$ e lo chiamiamo \textit{piano proiettivo duale}. \index{piano proiettivo!duale}.\\
+In prima istanza questo significa semplicemente che si interpreta un punto del duale come un punto associato ad una retta.
 %collgamento co lo spazio vettoriale duale        forma lineare
 %prima costruzione come corrispondenza
-%
-%un FASCIO  di rette in P2 è il set delle rette di equazione    con l_1 ed l_2 sono rette fissate
-%i coeff variano in P1
-%
-%esempio
-%
-%collezione delle rette la cui eq si ottiene come combinazione lineare delle due
-%è una famiglia di rette con lambda e mu come parametri
-%
-%
-%famiglia dir ette: ad ogni retta un punto del proj duale: a cosa corrisonde questa costruzione di prendere il fascio?  Il fascio F corrisponde alla retta passante per i punti corrispondenti a l1 e a l2, perché quando guardo i coeff dell'eq ho l_1: a_0    \squigglyarrow  l_2:      il fascio F generato da queste due rette ha equazione e quindi eusto corrisponde esattamente ai pt nel duale scritti come (lambda    ), ovvero la retta per i due punti sopra
-%
-%Esempio
-%
-%
-%
-%nel duale mi dà la retta passante per i due punti
-%
-%
-%tornando dalla situazione generale nel fascio
-%OSS dure rette distinte nel piano si intersecano in un punto solo: deve stare in ogni retta del fascio perché lì si annullano, dunque la cl rimane 0
-%Ogn retta del fascio passa per P e P è l'unico punto comunea tutte le rette del fascio
-%Viceversa ogni retta per P appartiene al fascio
-%Ciò significa che F è la famiglia delle rette per il punto fissato P PUZZA DI SPAZIO VETT CON VETT NULLO P 
-%
-%P è detto punto base del fascio
-%
-%ESEMPIO
-%
-%
-%Voglio riprendere la descrizione parametrica del fascio, in questo esempio il fascio F corrisponde alla retta nel piano proiettivo duale per i punti 
-%adesso la voglio scrivere in equazione cartesiana nelle coordinate a_    nel piano proj duale
-%scrivere la retta vuol dire fare il determinante formale
-%
-%
-%sorpresa sorpresa, i coeff della retta sono esattmante le coo di P di intersezione delle due rette
-%infatti vale in generale che fissato un punto base, il set delle rette per p in P2 è un fascio di rette, corrispondente a una retta nel piano proiettivo duale, allora se P ha coordinate c_0   la retta corrispondente nel piano proj duale ha equazione c_0a_0 è   =0, questo perché dta una retta r qualsiasi di equazione a_0x_0   =0, il punto P appartiene a r sse vale l'equazione c_0    sostituisco le coordinate di P e trovo quell'eq:   condizione perchè appartenga alla retta   o al fascio, collezione delle rette per p     fisso p e retta che varia (duale )   retta r fissata e p che varia. Ma l'eq è la stessa
+	\subsection{Fascio di rette}
+\begin{define} \index{fascio}
+	Un \textbf{fascio} di rette in $\proj[2]{\kamp}$ è l'insieme delle rette di equazione
+		\begin{equation*}
+			\mathcal{F}\colon \lambda l_1+\mu l_2=0, \ (\lambda\colon\mu)\in\proj[1]{\kamp}
+		\end{equation*}
+	dove $l_1,l_2$ sono due rette fissate e distinte.
+\end{define}
+\begin{observe}
+	Possiamo pensare al fascio di rette come una collezione di rette le cui equazioni si ottengono come combinazione lineare delle due rette del fascio con $\lambda,\mu$ come parametri.
+\end{observe}
+\begin{example}
+	Consideriamo le rette $l_1\colon x_0+x_1+2x_2=0$ e $l_2\colon 3x_0-2x_1+4x_2=0$. Il fascio di rette determinato da $l_1,l_2$ è
+		\begin{gather*}
+			(\lambda+3\mu)x_0+(\lambda-2\mu)x_1+2(\lambda+2\mu)x_2=0\\
+			(\lambda\colon\mu)=(1\colon 0) \rightarrow l_1\\
+			(\lambda\colon\mu)=(0\colon 1) \rightarrow l_2\\
+			(\lambda\colon\mu)=(1\colon 1) \colon 4x_0-x_1+6x_2=0			
+		\end{gather*}
+\end{example}
+
+\begin{observe}
+	Abbiamo detto che ad ogni retta corrisponde un punto del piano proiettivo duale, ci chiediamo ora a cosa corrisponda la costruzione del fascio. \\
+	Il fascio $\mathcal{F}$ corrisponde alla retta passante per i punti corrispondenti a $l_1$ e $l_2$
+		\begin{gather*}
+			l_1\colon a_0x_0+a_1x_1+a_2x_2=0 \rightarrow (a_0\colon a_1\colon a_2)\\
+			l_2\colon b_0x_0+b_1x_1+b_2x_2=0 \rightarrow (b_0\colon b_1\colon b_2)\\
+			\mathcal{F}\colon (\lambda a_0+\mu b_0)x_0+ (\lambda a_1+\mu b_1)x_1 +(\lambda a_2+\mu b_2)x_2=0 \rightarrow (\lambda a_0+\mu b_0 \colon \lambda a_1+\mu b_1 \colon \lambda a_2+\mu b_2)
+		\end{gather*}	
+\end{observe}
+
+\begin{example}
+	Fascio visto come retta per due punti del duale
+		\begin{gather*}
+			l_1 \leftrightarrow (1\colon 1\colon 2)=Q_1\\
+			l_2\colon 3x_0-2x_1+4x_2=0 \leftrightarrow (3\colon -2\colon 4)=Q_2\\
+			\mathcal{F} \leftrightarrow (\lambda+3\mu \colon \lambda-2\mu \colon 2(\lambda+2\mu))
+		\end{gather*}
+	che è la retta $\overline{Q_1Q_2}$ in forma \textit{parametrica}.
+\end{example}
+
+\begin{observe}
+	Siccome due rette distinte nel piano si intersecano in un punto solo, sia $P\coloneqq l_1\cap l_2$. Allora
+		\begin{itemize}
+			\item ogni retta del fascio passa per $P$ perché è lì che la combinazione lineare si annulla
+			\item $P$ è l'unico punto comune a tutte le rette del fascio $\mathcal{F}$
+			\item viceversa, ogni retta per $P$ appartiene al fascio $\mathcal{F}$
+		\end{itemize}
+	Ciò significa che $\mathcal{F}$ è la famiglia delle rette per il punto fissato $P$, che è detto \textbf{punto base} del fascio. \index{fascio!punto base}
+	%P PUZZA DI SOTTOSPAZIO VETT CON VETT NULLO P 
+\end{observe}
+
+\begin{example}
+	Punto base di un fascio
+		\begin{gather*}
+			\begin{cases}
+				l_1\colon x_0+x_1+2x_2=0\\
+				l_2\colon 3x_0-2x_1+4x_2=0
+			\end{cases} \implies \begin{cases}
+				x_0=-x_1-2x_2\\
+				-3x_1-6x_2-2x_1+4x_2=-5x_1-2x_2=0
+			\end{cases} \\
+		\implies x_1=2, x_2=-5, x_0=-2+10=8\\
+			P=(8\colon 2\colon -5)=l_1\cap l_2
+		\end{gather*}
+	Tale fascio $\mathcal{F}$ corrisponde alla retta in $\left(\proj[2]{\kamp}\right) ^{*}$ per i punti $Q_1=(1\colon 1 \colon 2)$ e \\ $Q_2=(3\colon -2\colon 4)$ che è già scritta in forma parametrica. Cerchiamo ora l'equazione cartesiana della retta $\overline{Q_1 Q_2}$ nelle coordinate $(a_0\colon a_1\colon a_2)$: 
+	\begin{gather*}
+	\left| \begin{array}{ccc}
+		a_0 & a_1 & a_2\\
+		1 & 1 & 2 \\
+		3 & -2 & 4 \end{array} \right| = 8a_0 + 2a_1-5a_2=0
+	\end{gather*}
+	Notiamo che i coefficienti della retta ottenuta sono esattamente le coordinate omogenee di $P$ che è intersezione delle due rette.
+\end{example}
+Più in generale, fissato un punto base $P\in\proj[2]{\kamp}$, l'insieme delle rette per $P$ in $\proj[2]{\kamp}$ quale $\mathcal{F}_P=\{$rette per $P$ in $\proj[2]{\kamp} \}$ è un fascio di rette corrispondente a una retta nel piano proiettivo duale $\left(\proj[2]{\kamp}\right)$. Se le coordinate sono $P=(c_0\colon c_1\colon c_2)$, la retta corrispondente nel piano proiettivo duale $\left(\proj[2]{\kamp}\right)^{*}$ ha equazione $c_0a_0+c_1a_1+c_2a_2=0$. Infatti data una retta $r$ qualsiasi di equazione $a_0x_0+a_1x_1+a_2x_2=0$, il punto $P$ appartiene a $r$, ovvero $P\in r$, se e solo se vale l'equazione $c_0a_0+c_1a_1+c_2a_2=0$. \\
+Per scrivere il fascio $\mathcal{F}$ in forma parametrica scelgo due rette distinte passanti per $P$.
+%    sostituisco le coordinate di P e trovo quell'eq:   condizione perchè appartenga alla retta   o al fascio, collezione delle rette per p     fisso p e retta che varia (duale )   retta r fissata e p che varia. Ma l'eq è la stessa
 %di fatto il fascio si scrive in forma parametrica scegliendo due rette specifiche che passano per p
-%
-%ESEMPIO IN P2R
-%scrivere in forma parametrica il fascio delle rette per il punto base p di coordinate (1\colon -1 \coln4)   scelgo 2rette a caso che passano per il punto p
-%se faccio variare lambda e mu ottengo tutte le rette di p2 che passano per questo punto
-%
-%OSS SULL'INTERPRETAZIONE AFFINE
-%se vedo r2 come   ed F fascio di rette proj con punto base P in p2, allora ho 2 possibilità: punto base proprio o all'infinito
-%Se P è un punto proprio, allora P\in\kamp^2 e F corrisponde a meno di passare alla chiusura proj dalla retta proj a quella affine corrisponde alle rette afifni in k2 per il punto P
-%Se p invece è un punto improprio, corrisponde ad una direzione di rette nel piano affine e F corrisponde a tutte le rette affini che hanno questa direazione fissata, ovvero è un fascio di rette parallele
-%differenza solo fra punto proprio e improprio
-%
-%
-%PIANO PROIETTIVO DUALE
-%OSS
-%P2 è il proeiettivizato di K3, e sappiamo che K3 duale è lo spazio delle forme lineari \alpha su K3 della forma ax_0+a_1    numero le coordinate da 0 a 2, per il resto è uguale a Geo1
-%Quando considero la retta r di equazione a_0x_0   =0, allora stiamo dicendo che r /è il nucle di tale forma lineare \alpha / corrisponde a un piano vettoriale che è esattamente il nucleo di \alpha 
-%r ha tale eq: r è proietivizzato da piano vett /da def sott/ tale sott è nucleo
-%il punt corrispondente ad \alpha corrisponde alla retta r    \alpha è forma lineare non nulla determinata a meno di multipli, dunque alpha non identicamente nulla e determinata a meno di multipli
-%
-%base che induce le coordinate proiettive a_0   su p2 duale, quindi tale interpretazione astratta diventa quella numerica fissando la base naturale delle forme lineari e le coo proiettive associate  lpha come cl della base a_0x_0   i coeff sono le coordinate omogenee
-%
-%INCISO
-%costruzione che si generalizza: dato V spazio vettoriale e PV spazio  proiettivo associato a V, abbiamo anche V^* spazio vettoriale duale, ovvero le forme lineari, allora il proiettivizzato del duale si dice spazio proiettivo duale di PV e si indica con l'asterisco fuori (!!)
-%di particolare ha una corrispondenza biunivoca fra i punti dello spazio proiettivo duale e gli iperpiani di PV   data da [\alpha]  associo il proiettivizzato del nucleo di alpha in PV
-%In coordinate: a un iperpiano di equazione a_0x_0+a_nx_ associamo il punto (a0\colon   a_n)
-%/così come associo ad un vettore i coefficienti della base/
-%
-%
-%CONICHE IN p^2(K)
-%Abbiamo già visto a Geo1 cosa sono le coniche in R^2, classificandole a meno di rototraslazione
-%generalizziamolo al caso del piano proiettivo. Il passaggi dalla retta alla conica   grado 1 (rette) a eq polinomiali di grado 2 Dobbiamo tenere conto del fatto che nel piano proiettivo le coordinate sono omogenee
-%Consideriamo k[x_0,   x_2] sono i polinomi in x_0   e coefficienti in K. Se F è un polinomio qualsiasi, 'equazione non dà una condizione ben definita in P2
-%quali sono le eq che ha senso studiare in p2: i polinomi omogenei
-%definizione per numero qualsiasi di variabilitutti i monomi con coeff non nulla hanno lo stesso grado
-%esempio
-%omogeneo di grado 3
-%non omogeneo  /grado 3, 2, 0/   PROPRIO PESSIMO
-%def significativa con più variabili
-%
-%forma lineare è omogenea quando non ha termine noto
-%
-%i polinomi omogenei hanno la proprietà di 		 infatti è vero per ogni monomio
-%
-%
-%tornando al pinao proiettivo duale con le coordinate omogenee x_0   e consideriamo F un polinomio omogeneo nelle coordinate omogenee
-%Se ho un punto P di coordinate c_0   in P2, allora tutte le altre coordinate, possibili scelte per le coordinate di P, sono \lambda c_0   con \lambda\in\kamp\setminus    e quando a valutare F con lambda ottego     quesot mi dice che F si annulla in una scelta di ccordinate se e solo se si annulla in qualsiasi scelta di coordinate
-%Quindi l'equazion F(a condizione)=0 è ben posta in P^2
-%
-%esempio
-%è un subset ben definito del piano proiettivo
-%
-%le coniche sono esattamente i sottonisiemi di P2 che sono dati da polinoi omogenei di grado 2
-%
-%
-%
-%def i pol + va omogeneo
-%eq polinomiali che hanno senso in P^2 per coo omogenee: pol omo
-%dunque eq ben definite
-%
-%
-%DEFINIZIONE
-%curva algebrica piana proiettiva è data da un polinomio omogeneo F a coefficienti nel piano K nelle coordinate omogenee su P". Tale polinomio si considera a meno di multipli (si consdiera come un'equazione)
-%
-%la curva C ha un supporto che è il subset di P^2 dove F si annulla
-%assieme al supporto vogliamo ricordarci dell'equazione
-%F è l'eq di C
-%La morale è che oltre al supporto vogliamo ricordarci dell'equazione a meno di multipli. Questo perhcé eq determina il supporto, ma in generale non vale il contrario  (vedasi ellissi immaginario)
-%le curve che vogliamo studiare sono subset di P2 sono luoghi di zeri di pol omogenei, ma nella nozione di curva inseriamo anche l'eq F con multpli . Algebrica erché polinomi, piana perché siamon nel piano, proiettiva perché piano proiettivo
-%
-%
-%ESEMPIO: retta
-%
-%Il grado della curva è il grado dell'equazione F. Dunque curve di grado 1 sono le rette proiettive. Le consiche che vogliamo studiare sono le curve di grado 2
-%
-%Terminologia: la curva C è reale o complessa se siamo in p2r o in p2c
-%
-%
+
+%ESEMPIO O ESERCIZIO?
+\begin{example}
+	In $\proj[2]{\realset}$ scrivere in forma parametrica il fascio delle rette per il punto base $P$ di coordinate $(1\colon -1 \colon4)$.\\
+	Scegliamo 2 rette distinte a caso che passano per il punto $P$, ad esempio $l_1\colon x_0+x_1=0$ e $l_2\colon 4x_0-x_2=0$. Il fascio sarà 
+		\begin{gather*}
+			\begin{array}{cc}
+				\mathcal{F}\colon & \lambda(x_0+x_1)+\mu(4x_0-x_2)=0 \\
+				& (\lambda+4\mu)x_0+\lambda x_1-\mu x_2=0, \ (\lambda\colon\mu)\in\proj[1]{\ }
+			\end{array}
+		\end{gather*}
+	Ovvero se facciamo variare $\lambda$ e $\mu$ otteniamo tutte le rette di $\proj[2]{\realset}$ che passano per $P$.
+\end{example}
+
+\begin{observe}\textsc{Interpretazione affine}\\
+	Se interpretiamo $\kamp^2=U_0\subset\proj[2]{\kamp}$ e consideriamo il fascio di rette proiettive $\mathcal{F}$ con punto base $P$ in $\proj[2]{\kamp}$, allora ci sono 2 possibilità: $P$ è punto base proprio o all'infinito.\\
+	Se $P$ è un punto proprio, allora $P\in\kamp^2$ e $\mathcal{F}$ corrisponde alle rette affini in $\kamp^2$ per il punto $P$ a meno di passare alla chiusura proiettiva dalla retta proiettiva a quella affine.\\
+	Se $P$ invece è un punto improprio, corrisponde ad una direzione di rette nel piano affine e $\mathcal{F}$ corrisponde a tutte le rette affini che hanno questa direzione fissata, ovvero è un fascio di rette parallele.\\
+	Il caso proiettivo dunque è interessante perché la distinzione fra questi due tipi di fasci è data solo dal fatto se il punto $P$ è proprio o improprio.  	
+\end{observe}
+
+	\subsection{Interpretazione duale}
+
+Sappiamo che $\proj[2]{\kamp}$ è il proiettivizzato di $\kamp^3$, ovvero $\proj[2]{\ }=\mathbb{P}(\kamp^3)$, inoltre dal corso di Geometria 1 sappiamo che $\left(\kamp^3\right)^{*}=\{$ forme lineari $\alpha$ su $\kamp^3\}$ del tipo $\funz \alpha {\kamp^3} \kamp$ e $\alpha(x_0,x_1,x_2)= ax_0+a_1x_1+a_2x_2$. L'unica differenza che per ora osserviamo da quanto visto nel corso precedente è la numerazione delle coordinate da $0$ a $2$.\\
+Quando consideriamo la retta $r\colon a_0x_0+a_1x_1+a_2x_2=0$, allora stiamo dicendo che $r$ corrisponde ad un piano proiettivo che è esattamente il proiettivizzato del nucleo di $\alpha$, che è un piano vettoriale $\ker\alpha\subset\kamp^3$ la cui equazione è proprio quella di $r$.\\
+Stiamo dunque considerando $\left( \proj[2]{\ }\right)^{*}=\mathbb{P}\left( (\kamp^3)^{*} \right)\ni [\alpha]\leftrightarrow r$, infatti $\alpha$ è una forma lineare non nulla determinata a meno di multipli. Passando alle coordinate si riottiene quanto visto prima, infatti si ha che $\{x_0,x_1,x_2\}$ è una base di $(\kamp^3)^{*}$ che induce le coordinate proiettive $(a_0\colon a_1\colon a_2)$ su $\left( \proj[2]{\ }\right)^{*}$. Pertanto tale interpretazione astratta diventa operativa (con dei numeri) fissando la base naturale delle forme lineari che è data dalle coordinate proiettive associate: scrivo $\alpha$ come combinazione lineare della base, e i coefficienti saranno le coordinate omogenee.\\
+
+Più in generale, dato uno spazio vettoriale $V$, il suo spazio proiettivo associato $\mathbb{P}(V)$ ed il suo spazio vettoriale duale $V*=\{$ forme lineari $\funz \alpha V \kamp \}$, si ha che $\mathbb{P}(V*)=\left(\mathbb{P}(V)\right)^{*}$.\\
+In particolare si ha una corrispondenza biunivoca
+	% https://q.uiver.app/?q=WzAsNCxbMCwwLCJcXGxlZnQoXFxtYXRoYmJ7UH0oVilcXHJpZ2h0KV57Kn0iXSxbMywwLCJcXHtcXHRleHR7aXBlcnBpYW5pIGRpIH0gXFxtYXRoYmJ7UH0oVikgXFx9Il0sWzAsMSwiW1xcYWxwaGFdIl0sWzMsMSwiXFxtYXRoYmJ7UH0oXFxrZXJcXGFscGhhKVxcc3Vic2V0XFxtYXRoYmJ7UH0oVikiXSxbMCwxLCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJhcnJvd2hlYWQifX19XSxbMiwzLCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJhcnJvd2hlYWQifX19XV0=
+	\[\begin{tikzcd}
+		{\left(\mathbb{P}(V)\right)^{*}} &&& {\{\text{iperpiani di } \mathbb{P}(V) \}} \\
+		{[\alpha]} &&& {\mathbb{P}(\ker\alpha)\subset\mathbb{P}(V)}
+		\arrow[from=1-1, to=1-4, tail reversed]
+		\arrow[from=2-1, to=2-4, tail reversed]
+	\end{tikzcd}\]
+In coordinate, ad un piano di equazione $\displaystyle \underbrace{a_0x_0+\dots +a_nx_n}_{\alpha}=0$ associamo il punto $(a_0\colon\dots\colon a_n)$, nello stesso modo in cui ad un vettore associo i coefficienti della scrittura secondo una tale base.
+
+		\section{Coniche in $\proj[2]{\kamp}$}
+Nel corso di Geometria 1 abbiamo già analizzato le coniche nel piano affine $\mathcal{A}(\realset^2)$ e le abbiamo classificate a meno di rototraslazione. Generalizziamo ora al caso proiettivo tenendo conto del fatto che nel piano proiettivo le coordinate sono omogenee.\\
+Consideriamo $\proj[2]{\kamp}$ con coordinte omogenee $(x_0\colon x_1\colon x_2)$. Indicheremo con $\kamp[x_0,x_1,x_2]$ l'anello dei polinomi in $x_0,x_1,x_2$ a coefficienti in $\kamp$. Se $F\in\kamp[x_0,x_1,x_2]$ è un polinomio qualsiasi, l'equazione $F(x_0,x_1,x_2)=0$ non dà una condizione ben definita in $\proj[2]{\kamp}$: ad esempio $x_0+1=0$ non ha senso perché $x_0$ è determinato solo a meno di multipli. Cerchiamo dunque dei polinomi che ha senso studiare in $\proj[2]{\kamp}$.
+
+\begin{define} \textsc{Polinomio omogeneo}\\ \index{polinomio!omogeneo}
+	Sia $F\in\kamp[x_0,x_1,x_2]$ un polinomio. Si dice che $F$ è un \textbf{polinomio omogeneo} se tutti i monomi a coefficienti non nulli hanno lo stesso grado.
+\end{define}
+Notiamo che la definizione è significativa per polinomi a più variabili, altrimenti i polinomi omogenei sarebbero solo monomi.
+
+\begin{example}
+	Un esempio di polinomio omogeneo è $F=x_0^3+x_0x_1^2-3x_1x_2x_3\in\realset[x_0,x_1,x_2]$, che p un polinomio omogeneo di grado $3$.\\
+	Un polinomio non omogeneo invece è $G=x_0^3-x_1x_2+1$
+\end{example}
+
+\begin{observe}
+	Considerato il caso del grado pari a $1$, se $\deg F=1$, ovvero $F=a_0x_0+\dots+a_nx_n+b$, allora $F$ è omogeneo $\iff b=0$
+\end{observe}
+
+\begin{observe}
+	Se $F\in\kamp[x_0,x_1,x_2]$ è omogeneo di grado $d$ allora 
+		\begin{equation}
+			F(\lambda x_0,\lambda x_1,\dots,\lambda x_n)=\lambda^d F(x_0,\dots,x_n)
+		\end{equation}
+	Infatti $F$ è somma di monomi di grado $d$ del tipo $ax_0^{i_0}x_1^{i_1}\cdots x_n^{i_n}$ con $\sum_{j_0}^n i_j=d$ e si ha che $a(\lambda x_0)^{i_0} (\lambda x_1)^{i_1} \cdots (\lambda x_n)^{i_n}=\lambda^{i_0+\dots +i_n} (ax_0^{i_0}\dots x_n^{i_n})=\lambda^d(ax_0^{i_0}\dots x_n^{i_n})$
+\end{observe}
+
+Torniamo al piano proiettivo $\mathbb{P}^2$ con le coordinate omogenee $(x_0\colon x_1\colon x_2)$ e consideriamo $F\in\kamp[x_0,x_1,x_2]$ un polinomio omogeneo nelle coordinate omogenee di grado $d$. Se abbiamo un punto $P=(c_0\colon c_1\colon c_2)\in\mathbb{P}^2$, allora tutte le possibili scelte per le coordinate di $P$ sono $(\lambda c_0\colon \lambda c_1 \colon \lambda c_2)$ con $\lambda\in\kamp\setminus\{0\}$ e valutando $F$ otteniamo $F(\lambda c_0,\lambda c_1, \lambda c_2)=\lambda^d F(c_0,c_1,c_2)$, e questo ci dice che $F$ si annulla in una scelta di coordinate se e solo se si annulla in qualsiasi scelta di coordinate, ovvero 
+	\begin{equation*}
+		F(c_0,c_1,c_2)=0\iff F(\lambda c_0, \lambda c_1, \lambda c_2)=0,\ \forall \lambda\in\kamp\setminus\{0\}
+	\end{equation*}
+Pertanto l'equazione $F(x_0,x_1,x_2)=0$ è ben posta in $\mathbb{P}^2$.
+
+\begin{example}
+	Si ha che $x_0^2-x_1x_2=0$ definisce un sottoinsieme del piano proiettivo.
+\end{example}
+Le coniche sono esattamente i sottoinsiemi di $\mathbb{P}^2$ che sono dati da polinomi omogenei di grado 2.
+%AAA ENVIRONMENT CERCASI: CC qui mette un define, però poi non si capisce dove finisca perché sbordola con discorsi, anche nell'esempio successivo
+	Una \textbf{curva algebrica piana proiettiva} è data da un polinomio omogeneo $F\in\kamp[x_0,x_1,x_2]$ a meno di multipli. Se $G=\lambda F$ con $\lambda\in\kamp\setminus\{0\}$ considereremo $G$ e $F$ come la stessa curva.\\
+	La curva $C$ ha un \textbf{supporto} $\{P\in\mathbb{P}^2\mid F(P)=0\}$ che è l'insieme dove il polinomio si annulla. $F$ è l'equazione della curva $C$ e oltre al supporto vogliamo ricordarci anche di essa, a meno di multipli. Questo perché l'equazione determina il supporto, ma in generale non vale il contrario, come nel caso dell'ellisse immaginario.\\
+Le curve che andremo a studiare sono sottoinsiemi di $\mathbb{P}^2$ che sono luoghi di zeri di polinomi omogenei, inserendo anche la nozione di molteplicità per la curva.\\
+Sia $F=a_0x_0+a_1x_1+a_2x_2=0 \implies C$ è una retta. Siccome il grado della curva $C$ è dato dal grado dell'equazione $F$, allora le curve di grado $1$ sono le rette proiettive.\\
+Le coniche che vogliamo studiare sono le curve di grado 2. Inoltre diremo che una curva $C$ è reale se $\kamp=\realset$ (in $\proj[2]{\realset}$) ed è complessa se $\kamp=\complexset$ (in $\proj[2]{\complexset}$).
+
+
+
+
 
 
 
