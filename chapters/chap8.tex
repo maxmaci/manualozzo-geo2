@@ -692,7 +692,7 @@ Questo funtore \textit{covariante} si basa sull'omomorfismo tra gruppi fondament
 \begin{remember}
 	Se $g\circ f$ è una funzione biunivoca, allora $f$ è iniettiva e $g$ è suriettiva.
 \end{remember}
-\begin{corollary}
+\begin{corollary}\label{grp fond iniettiva e suriettiva}
 	Sia $A\subseteq X$ un retratto con retrazione $\funz{r}{X}{A}$; si consideri inoltre la sua inclusione $\incl{i}{A}{X}$. Si ha che:
 	\begin{itemize}
 		\item $\forall a\in A\ \funz{i_{\ast}}{\gruf{A}{a}}{\gruf{X}{a}}$ è un omomorfismo \textit{iniettivo}.
@@ -829,6 +829,7 @@ Sia $\left(X, d\right)$ uno spazio metrico e $C\subseteq X$ un sottoinsieme non 
 \begin{equation}
 	\mvf{d}{x}{C}\coloneqq \inf_{y\in C} \mvf{d}{x}{y}
 \end{equation}
+\vspace{-6mm}
 \end{define}
 Vediamo alcune proprietà.
 \begin{enumerate}
@@ -872,7 +873,7 @@ Vediamo alcune proprietà.
 		\begin{equation*}
 			\max\left( f_1(x_1)\dots,f_n(x_1) \right)=F(x_1)\geq \delta \implies \exists j\in\left\{1,\ \dots,\ n\right\}\colon f_j(x_1)\geq \delta 
 		\end{equation*}
-	cioé tale che $d(x_1,\ C_j)\geq \delta > \text{diam}B$. Mostriamo che $B\subseteq U_j$, ovvero che $B\cap C_j=\emptyset$:
+	cioè tale che $d(x_1,\ C_j)\geq \delta > \text{diam}B$. Mostriamo che $B\subseteq U_j$, ovvero che $B\cap C_j=\emptyset$:
 		\begin{equation*}
 			y\in B \implies d(y,\ x_1)< \text{diam}B<\delta \leq d(x_1,\ C_j) \implies y\notin C_j \implies B\cap C_j=\emptyset
 		\end{equation*}
@@ -889,7 +890,7 @@ Vediamo alcune proprietà.
 			\end{array}
 		\end{equation*}
 \end{demonstration}
-\begin{observe}
+\begin{observe}\label{retratti gruppo fondamentale}
 	Sia $X$ uno spazio topologico. Preso $x_0\in A\subseteq X$ e l'inclusione del sottoinsieme $A$ in $X$ $\incl i A X$, essa induce un \textit{morfismo di gruppi}:
 	\begin{equation*}
 		\funztot{i_\ast}{\gruf{A}{x_0}}{\gruf{X}{x_0}}{\left[\alpha\right]}{\left[i\circ\alpha\right]}
@@ -898,7 +899,7 @@ Vediamo alcune proprietà.
 	\begin{equation*}
 		\funz{i\circ\alpha}{I}{X}
 	\end{equation*}
-Ricordiamo, per il corollario \ref{inclusione rdd isomorfismo} (pag. \pageref{inclusione rdd isomorfismo}), che se $A$ è un retratto allora $i_\ast$ è iniettivo; segue che se $A$ è un retratto di deformazione allora $i_\ast$ è un \textit{isomorfismo di gruppi}.\\
+Ricordiamo, per il corollario \ref{inclusione rdd isomorfismo} (pag. \pageref{inclusione rdd isomorfismo}), che se $A$ è un \textbf{retratto} allora $i_\ast$ è \textit{iniettivo}; segue che se $A$ è un \textbf{retratto di deformazione} allora $i_\ast$ è un \textit{isomorfismo di gruppi}.\\
 	Consideriamo l'immagine di $i_\ast$, ovvero:
 	\begin{equation*}
 		G_A\coloneqq \im i_\ast=i_\ast(\gruf{A}{x_0})\subseteq \gruf{X}{x_0}
@@ -927,7 +928,7 @@ Vediamo ora un risultato generale per poter avere qualche informazione in più s
 	Siccome $\left\{A,\ B\right\}$ è un ricoprimento aperto di $X$, per il corollario \ref{corollario suddivisione} (pag. \pageref{corollario suddivisione}) esiste una partizione $0=t_0\leq t_i\leq\dots\leq t_k=1$ tale che $\forall i=0,\dots,k-1, \alpha([t_i,\ t_{i+1}]) \subseteq A$ oppure $\subseteq B$. \\ 
 	Si consideri ora:
 	\begin{equation*}
-		\funz {\alpha_1\coloneqq \alpha_{|_{[t_{i-1},\ t_i]}}} {[t_{i-1},\ t_i]} X,\ \forall i=1,\dots,k
+		\funz {\alpha_1\coloneqq \alpha_{\mid_{[t_{i-1},\ t_i]}}} {[t_{i-1},\ t_i]} X,\ \forall i=1,\dots,k
 	\end{equation*}
 	Si può pensare ad essa come un \textit{cammino} in $X$, se lo riparametrizziamo su $\intv$. Per il \textit{lemma  sul cambiamento di parametri} (pag. \pageref{cambiamentodiparametri}) si ottiene, usando anche la giunzione di cammini:
 	\begin{equation*}
@@ -958,7 +959,7 @@ Vediamo ora un risultato generale per poter avere qualche informazione in più s
 	\end{equation*}
 Pertanto $G_A\cup G_B$ generano $\gruf{X}{x_0}$.
 \end{demonstration}
-\begin{corollary} \textsc{Manetti, 11.26} \label{corollario van kampfen}\\ 
+\begin{corollary} \textsc{(Manetti, 11.26)} \label{corollario van kampfen}\\ 
 	Sia $X$ uno spazio topologico e siano $A,\ B\subseteq X$ aperti tali che
 		\begin{enumerate}
 			\item $A$ e $B$ sono \textit{semplicemente connessi}.
@@ -988,7 +989,7 @@ Pertanto $G_A\cup G_B$ generano $\gruf{X}{x_0}$.
 	 La proiezione stereografica è in particolare un \textit{omeomorfismo}\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{proiezionestereograficanote}, si può trovare la dimostrazione di ciò per $n=2$.} e, poiché $H\cong\realset^2$ (in quanto iperpiano di $\realset^{n+1}$), si ha $S^n\setminus \{1\text{ punto}\}\cong \realset^n$.
 	 \vspace{-6mm}
 \end{observe}
-\begin{corollary} \textsc{Manetti, 11.27} \label{sfere sempl. connesse} \\
+\begin{corollary} \textsc{(Manetti, 11.27)} \label{sfere sempl. connesse} \\
 	La sfera $S^n$ è semplicemente connessa, $\forall n\geq 2$.
 \end{corollary}
 \begin{demonstration}
@@ -1009,38 +1010,63 @@ Pertanto $G_A\cup G_B$ generano $\gruf{X}{x_0}$.
 
 \section{Gruppo fondamentale della circonferenza}
 Nella sezione precedente abbiamo analizzato il gruppo fondamentale delle sfere $S^n$ per $n\geq 2$: ci domandiamo ora cosa succede per la circonferenza $S^1$. \\
-Siccome la dimostrazione sarà lunga e articolata preannunciamo che $\gruf{S^1}{\ }\cong \integerset$: l'isomorfismo conta il \textit{numero di giri} con \textit{segno} che il cammino chiuso fa \textit{intorno} alla circonferenza; per fare ciò si utilizzerà la \textit{mappa esponenziale} e altri risultati che andremo a dimostrare. \footnote{\textit{Nota}: per la dimostrazione del teorema seguiremo il capitolo 16 del libro ‘‘A first course in Algebraic Topology'' di Kosniowski.} \\
+Siccome la dimostrazione sarà lunga e articolata, preannunciamo che il gruppo fondamentale che otterremo \textit{non} è banale, ma è $\gruf{S^1}{\ }\cong \integerset$: nello specifico, l'isomorfismo rappresenta il \textit{numero di giri} con \textit{segno} che un cammino chiuso fa \textit{intorno} alla circonferenza. \footnote{\textit{Nota}: per la dimostrazione del teorema seguiremo il capitolo 16 del libro ‘‘A first course in Algebraic Topology'' di Kosniowski.} \\
 %DA SISTEMARE IN BIBLIOGRAFIA
-La nostra intenzione dunque è andare a formalizzare il concetto della seguente immagine: ogni intervallo fra interi ‘‘\textit{copre}'' la circonferenza.
+Dunque, la nostra intenzione è di formalizzare il concetto che ogni intervallo fra due interi consecutivi ‘‘\textit{copre}'' la circonferenza.
 \begin{center}
 	\includegraphics[width=240pt]{images/slinky-eps-converted-to.pdf}
 \end{center}
 %LEZ 20
 	\subsection{Mappa esponenziale}
-La \textbf{mappa esponenziale} $\funztot e \realset {S^1} t {e^{2\pi i t}}$ si può considerare come quoziente per l'azione di $\integerset$ su $\realset$, dunque è continua e \textit{aperta}. Con questa notazione si considera $S^1\subseteq\complexset$, per cui $S^1=\{z\in\complexset \mid |z|=1 \}$. Si considererà come punto base $(1,0) \in \realset^2$.
-
+	\begin{define}\textsc{Mappa esponenziale.}\\
+		La \textbf{mappa esponenziale}\index{mappa esponenziale} si può considerare come proiezione ad un quoziente per l'azione di $\integerset$ su $\realset$, cioè è la seguente funzione continua e \textit{aperta}:
+		\begin{equation*}
+			\funztot e \realset {S^1} t {e^{2\pi i t}}
+		\end{equation*}
+	Con questa notazione si considera $S^1\subseteq\complexset$, per cui $S^1=\{z\in\complexset \mid |z|=1 \}$.\footnote{Si veda a riguardo la digressione a pag. \pageref{complessir2}.}
+	\end{define}
+Utilizzeremo come punto base per i nostri scopi il punto $(1,0) \in \realset^2$, equivalente a $1\in\complexset$.
 \subsubsection{Rivestimento}
 Vogliamo ora utilizzare questa proprietà per definire il numero di giri che fa un cammino chiuso intorno alla circonferenza.
 \begin{lemming} \label{teo uniformemente rivestito}
-	Sia $U\subsetneqq S^1$ aperto. Allora $\displaystyle e^{-1}(U) = \amalg_{n\in\integerset} V_n$ con $V_n\subseteq\realset$ aperto e la restrizione $\funz {e_{|_{V_n}}} {V_n} U$ è un omeomorfismo $\forall n\in\integerset$.
+	Sia $U\subsetneqq S^1$ aperto. Allora:
+	\begin{equation}
+		e^{-1}(U) = \coprod_{n\in\integerset} V_n
+	\end{equation}
+Con $V_n\subseteq\realset$ aperto e la restrizione $\funz {e_{\mid_{V_n}}} {V_n} U$ è un omeomorfismo $\forall n\in\integerset$.
 \end{lemming}
-\begin{define} \textsc{Uniformemente rivestito} \index{uniformemente rivestito} \\
-	Un tale $U$ aperto di un qualsiasi spazio topologico $X$ si dice \textit{uniformemente rivestito}.
+\begin{define} \textsc{Uniformemente rivestito.}\\
+	Un tale $U$ aperto di un qualsiasi spazio topologico $X$ si dice \textbf{uniformemente rivestito}.\index{uniformemente rivestito}
 \end{define}
 \begin{demonstration}
-	Si consideri un punto non in $U$, ad esempio supponiamo che $1\notin U$. Si ha che $e^{-1}(1)=\{t \mid e^{2\pi i t}=\cos(2\pi t)+i\sin(2\pi t)=1\}=\integerset \implies \integerset \cap e^{-1}(U)=\emptyset$, ovvero $\integerset$ è disgiunto dalla controimmagine di $U$.\\
-	Poniamo $V_0\coloneqq e^{-1}(U)\cap \intv= e^{-1}(U)\cap (0,\ 1)$ in quanto la controimmagine di $U$ non contiene interi. Si ha che $V_0$ è aperto in $\realset$ in quanto intersezione di aperti, la restrizione $e_{|_{V_0}}$ è iniettiva e $e(V_0)=U$ in quanto $e\left( (0,\ 1) \right)=S^1\setminus\left\{1\right\}$. Siccome $e$ è aperta allora la restrizione $\funz {e_{|_{V_0}}} {V_0} U$ è un omeomorfismo in quanto è biunivoca, continua e aperta.\\
-	Poniamo $V_n\coloneqq V_0 +n=\{ x+n \mid x\in V_0\},\ \forall n\in\integerset$. Allora $\displaystyle e^{-1}(U)=\union_{n\in\integerset} V_n$ e $V_n\subseteq (n,\ n+1)$ quindi $V_n\cap V_m=\emptyset$ se $n\neq m$, che implica l'iniettività della funzione che segue. Siccome $e(V_n)=U$ allora $\funz  {e_{|_{V_n}}} {V_n} U$ è un omeomorfismo.
+	Si consideri un punto \textit{non} in $U$, ad esempio supponiamo $1\notin U$. Si ha che:
+	\begin{equation*}
+		e^{-1}(1)=\{t\in\realset \mid e^{2\pi i t}=\cos(2\pi t)+i\sin(2\pi t)=1\}=\integerset \implies \integerset \cap e^{-1}(U)=\emptyset
+	\end{equation*}
+	Dunque, $\integerset$ è \textit{disgiunto} dalla controimmagine di $U$.\\
+	Poniamo ora $V_0\coloneqq e^{-1}(U)\cap \intv= e^{-1}(U)\cap (0,\ 1)$, in quanto la controimmagine di $U$ non contiene interi.
+	\begin{itemize}
+		\item $V_0$ è aperto in $\realset$ in quanto intersezione di aperti.
+		\item La restrizione $e_{\mid_{V_0}}$ è iniettiva.
+		\item $e(V_0)=U$ in quanto $e\left( (0,\ 1) \right)=S^1\setminus\left\{1\right\}$ e $U\subseteq S^1\setminus\left\{1\right\}$ per ipotesi.
+	\end{itemize}
+ 	Siccome $e$ è \textit{aperta}, la restrizione $\funz {e_{\mid_{V_0}}} {V_0} U$ è un \textit{omeomorfismo} in quanto è biunivoca, continua e aperta.\\
+	Definiamo ora $V_n\coloneqq V_0 +n=\{ x+n \mid x\in V_0\},\ \forall n\in\integerset$. Allora:
+	\begin{equation*}
+		e^{-1}(U)=\union_{n\in\integerset} V_n\text{ e }V_n\subseteq (n,\ n+1)
+	\end{equation*} 
+	Quindi $V_n\cap V_m=\emptyset$ se $n\neq m$, che implica l'\textit{iniettività} della funzione $e_{\mid_{V_n}}$ e il fatto che la somma di sopra sia \textit{disgiunta}. Essendo $e(V_n)=U$, allora $\funz  {e_{\mid_{V_n}}} {V_n} U$ è un omeomorfismo.
+	% inserire immagine spirale con R ed S1
 \end{demonstration}
 
 \subsubsection{Sollevamento}
 
-\begin{define} \textsc{Sollevamento} \index{sollevamento}\\
-	\begin{minipage}[t]{0.73\textwidth}
-		Sia $\alpha$ un cammino in $S^1$. Un \textbf{sollevamento} di $\alpha$ è una funzione \textit{continua} $\funz {\widetilde{\alpha}} I \realset$ tale che commuti il diagramma, ovvero  tale che $\alpha= e\circ \widetilde{\alpha}$. \\
-		Più n generale, dato $X$ spazio topologico e $\funz f X {S^1}$ continua, un sollevamento di $f$ è $\funz {\widetilde{f}} X \realset$ continua tale che $f=e\circ \widetilde{f}$
+\begin{define} \textsc{Sollevamento.}\\
+	\begin{minipage}[t]{0.78\textwidth}
+		Sia $\alpha$ un cammino in $S^1$. Un \textbf{sollevamento}\index{sollevamento} di $\alpha$ è una funzione \textit{continua} $\funz {\widetilde{\alpha}} I \realset$ tale che commuti il diagramma a lato, cioè tale che $\alpha= e\circ \widetilde{\alpha}$. \\
+		Più in generale, dato $X$ spazio topologico e $\funz f X {S^1}$ continua, un \textit{sollevamento} di $f$ è la funzione $\funz {\widetilde{f}} X \realset$ continua tale che $f=e\circ \widetilde{f}$.
 	\end{minipage}
-	\begin{minipage}[t]{0.13\textwidth}\vspace{-10pt}
+	\begin{minipage}[t]{0.21\textwidth}\vspace{-10pt}
 		\begin{tikzcd}
 			&  & \realset \arrow[dd, "e"] \\
 			&  &                     \\
@@ -1048,80 +1074,148 @@ Vogliamo ora utilizzare questa proprietà per definire il numero di giri che fa 
 		\end{tikzcd}
 	\end{minipage}
 \end{define}
-Se $\widetilde{\alpha}$ è un sollevamento di $\alpha$ allora
+Se $\widetilde{\alpha}$ è un sollevamento di $\alpha$, allora:
 	\begin{equation*}
-		\forall t\in I, \ (\widetilde{\alpha}(t))=\alpha(t)\implies e^{2\pi i \widetilde{\alpha}(t)}=\cos(2\pi \widetilde{\alpha}(t))+i\sin(2\pi\widetilde{\alpha}(t))=\alpha(t)
+		\forall t\in I, \ e(\widetilde{\alpha}(t))=\alpha(t)\implies e^{2\pi i \widetilde{\alpha}(t)}=\cos(2\pi \widetilde{\alpha}(t))+i\sin(2\pi\widetilde{\alpha}(t))=\alpha(t)
 	\end{equation*}
-Dunque $2\pi\widetilde{\alpha}(t)$ è una determinazione dell'angolo per $\alpha(t\in S^1)$, quindi muovendosi con continuità su $S^1$ tramite $\alpha$ ci si muove in maniera continua anche tramite $\alpha$, ovvero $2\pi\widetilde{\alpha}$ è una determinazione continua dell'angolo per $\alpha$.\\
-Vediamo degli esempi.
-\begin{examples}
-	Fissato $n\in\integerset$, si considera il cammino $\funztot \gamma I {S^1} t {e^{2\pi i nt}}$. Per $n=1$ si percorre $1$ giro in senso \textit{antiorario}, con $n=2$ si percorrono $2$ giri in senso antiorario, con $n=-1$ si percorre $1$ un giro in senso \textit{orario}.\\ 
-	Un sollevamento di $\gamma$ è dato da $\funz {\widetilde{y}} I {S^1}$ dove per condizione di essere sollevamento si ha che $\gamma(t)=e(\widetilde{\gamma}(t))$, quindi $\widetilde{\gamma}(t)=nt$, che ha una scrittura così facile perché $\gamma$ è già scritto in forma esponenziale.
-\end{examples}
-Andiamo ora a verificare l'esistenza di sollevamenti per cammini e vedere se e quando sono unici.
+Dunque $2\pi\widetilde{\alpha}(t)$ è una \textit{determinazione dell'angolo} per $\alpha(t)\in S^1$; muovendosi con continuità su $S^1$ tramite $\alpha$ ci si muove in maniera continua anche tramite $\widetilde{\alpha}$, ovvero $2\pi\widetilde{\alpha}$ è una \textbf{determinazione continua}\index{determinazione continua} dell'angolo per $\alpha$.
+\begin{example}
+	Fissato $n\in\integerset$, si consideri il cammino:
+	\begin{equation*}
+		\funztot \gamma I {S^1} t {e^{2\pi i nt}}
+	\end{equation*}
+	Ad esempio, per $n=1$ si percorre $1$ giro in senso \textit{antiorario}, con $n=2$ si percorrono $2$ giri in senso antiorario, con $n=-1$ si percorre $1$ un giro in senso \textit{orario}.\\ 
+	Un sollevamento di $\gamma$ è dato da $\funz {\widetilde{y}} I {S^1}$ con $\gamma(t)=e(\widetilde{\gamma}(t))$. Poiché $\gamma$ è già scritto in forma esponenziale, si ha $\widetilde{\gamma}(t)=nt$.
+\end{example}
+Andiamo ora a verificare l'\textit{esistenza} di sollevamenti per cammini e vedere se e quando sono \textit{unici}.
 \begin{theorema} \textsc{Sollevamento di cammini} \label{teo sollevamento cammini}\\
-	Ogni cammino $\funz \alpha I {S^1}$ ammette un sollevamento $\funz {\widetilde{\alpha}} I \realset$. Inoltre fissato il punto iniziale il sollevamento è unico, ovvero fissato $x_0\in\realset \colon e(x_0)=\alpha(0)$, vale a dire \\
-	$x_0\in e^{-1}(\alpha(0))$ fibra di $\alpha(0)\in S^1$,  $\exists ! \funz {\widetilde{\alpha}} I \realset$ sollevamento di $\alpha$ \textit{a partire da $x_0$}, cioé $\widetilde{\alpha}(0)=x_0$.
+	Ogni cammino $\funz \alpha I {S^1}$ ammette un sollevamento $\funz {\widetilde{\alpha}} I \realset$. Inoltre, fissato il punto iniziale, il sollevamento è \textit{unico}: fissato $x_0\in\realset \colon e(x_0)=\alpha(0)$ (ovvero $x_0\in e^{-1}(\alpha(0))$ fibra di $\alpha(0)\in S^1$),  $\exists ! \funz {\widetilde{\alpha}} I \realset$ sollevamento di $\alpha$ \textit{a partire da $x_0$}, cioè $\widetilde{\alpha}(0)=x_0$.
 \end{theorema}
-\begin{demonstration}
-	Per dimostrare l'\textit{esistenza} si sfruttano gli aperti uniformemente rivestiti, si divide $I$ in modo tale da avere sottointervalli la cui immagine tramite $\alpha$ sia contenuta in un aperto rivestito e sulla costruzione induttiva del sollevamento ‘‘a pezzi'' componendo con le inverse locali dell'esponenziale.\\
-	Considerando tutti i punti della circonferenza, ovvero $\forall p\in S^1$, sia $U_p\subsetneqq S^1$ un intorno aperto connesso di $p$, allora $U_p$ è uniformemente rivestito, quindi $\{U_p\}_{p\in S^1}$ è un ricoprimento aperto di $S^1$.\\
-	Sia $\funz \alpha I {S^1}$ un cammino, per il corollario \ref{corollario suddivisione} del teorema di Lebesgue si ha che $\exists\ 0=t_0\leq t_1\leq\dots\leq t_k=1$ suddivisione $\colon \forall i=1,\dots, k,\ \alpha([t_{i-1},\ t_i])\subseteq U_i$ aperto del ricoprimento. Costruiamo ora il sollevamento ‘‘a pezzi'' induttivamente su ciascun intervallino$[0,\ t_i]$: prima si costruisce il caso base per $[0,\ t_1]$ poi assumendo di aver già definito il sollevamento fino a $t_i$ lo si costruisce fino a $t_{i+1}$.\\ 
-	Per $i=0$ poniamo $\widetilde{\alpha}(0)=x_0$. Si consideri l'intervallo $[0,\ t_1]$, si ha che $\alpha\left([0,\ t_1]\right)\subseteq U_1$ uniformemente rivestito, quindi per la proprietà di essere uniformemente rivestito (vedasi il lemma \ref{teo uniformemente rivestito}) $\displaystyle e^{-1}(U_1) = \amalg_{n\in\integerset}V_n$ aperto in $\realset$ tale che $\funz {e_{|_{V_n}}} {V_n} {U_1}$ è un omeomorfismo. Siccome $x_0\in e^{-1}(\alpha(0))$ e $\alpha(0)\in U_1$ allora $x_0\in e^{-1}(U_1)$, ma i $V_n$ sono disgiunti, quindi $\exists ! \overline{n} \colon x_0\in V_{\overline{n}}$. Siccome $\funz {e_{|_{V_{\overline{n}}}}} {V_{\overline{n}}} {U_1}$ è un omeomorfismo allora ha un'inversa locale $\funz {\phi\coloneqq \left(e_{|_{V_{\overline{n}}}}\right)^{-1}} {U_1} {V_{\overline{n}}}$.\\
-	Poniamo ora come primo ‘‘pezzo'' del sollevamento $\widetilde{\alpha_1}\coloneqq \phi\circ \alpha_{|_{[0,\ t_1]}}$,  $\funz {\widetilde{\alpha_1}} {[0,\ t_1]} \realset$.
-	Supponiamo di avere definito $\funz {\widetilde{\alpha_i}} {[0,\ t_i]} \realset$ continua, sollevamento di $\alpha_{|_{[0,\ t_i]}}$, ovvero il sollevamento di $\alpha$ da $0$ fino a $t_i$. Procedendo analogamente al primo intervallo, consideriamo $\alpha\left( [t_i,\ t_{i+1}] \right)\subseteq U_{i+1}$ uniformemente rivestito, allora $e^{-1}(U_{i+1})=\amalg_{m\in\integerset} W_m$ con $W_m$ aperti. Fra questi $W_m$ scegliamo quello che contiene il punto di partenza \\  $\widetilde{\alpha_i}(t_i)\in e^{-1}\left( \alpha(t_i) \right) \implies \widetilde{\alpha_i}(t_i)\in e^{-1}\left( U_{i+1} \right) \implies \exists ! \overline{m} \colon \widetilde{\alpha_i}(t_i)\in W_{\overline{m}}.$\\
-	Sia $\funz {\psi\coloneqq \left( e_{|_{W_{\overline{m}}}} \right)^{-1}} {U_{i+1}} {W_{\overline{m}}}$ e poniamo $\funz {\widetilde{\alpha_{i+1}}} {[0,\ t_{i+1}]} \realset$ inversa locale che estende il sollevamento $\widetilde{\alpha_i}$ definita come segue $\widetilde{\alpha_{i+1}}(t)= \begin{cases}
+\begin{demonstration}~{}
+	\begin{itemize}
+		\item \textbf{Esistenza}: Per dimostrare l'\textit{esistenza} si sfruttano gli aperti \textit{uniformemente rivestiti}, dividendo $I$ in modo tale da avere sottointervalli la cui immagine tramite $\alpha$ sia contenuta in un \textit{aperto rivestito}; costruiremo induttivamente il sollevamento ‘‘a pezzi'', componendo con le inverse locali dell'esponenziale.\\
+		$\forall p\in S^1$ punto della circonferenza, sia $U_p\subsetneqq S^1$ un intorno aperto \textit{connesso} di $p$. Allora $U_p$ è \textit{uniformemente rivestito}, quindi $\{U_p\}_{p\in S^1}$ è un ricoprimento aperto di $S^1$.\\
+		Sia $\funz \alpha I {S^1}$ un cammino; per il corollario \ref{corollario suddivisione} del \textit{teorema di Lebesgue} si ha che:
+		\begin{equation*}
+			\begin{array}{l}
+				\exists\ 0=t_0\leq t_1\leq\dots\leq t_k=1\text{ suddivisione }\colon \\
+				\forall i=1,\dots, k,\ \alpha([t_{i-1},\ t_i])\subseteq U_i\text{ aperto del ricoprimento.}
+			\end{array}
+		\end{equation*}
+		Costruiamo ora il sollevamento ‘‘a pezzi'' \textit{induttivamente} su ciascun intervallino $[0,\ t_i]$: prima si costruisce il passo base per $[0,\ t_1]$ poi, assumendo di aver già definito il sollevamento fino a $t_i$, lo si costruisce fino a $t_{i+1}$.\\
+		\begin{enumerate}
+			\item[$\underline{t_1}$] Posto $\widetilde{\alpha}(0)=x_0$, per $[0,\ t_1]$ si ha che $\alpha\left([0,\ t_1]\right)\subseteq U_1$ uniformemente rivestito; pertanto, per il lemma \ref{teo uniformemente rivestito} (pag. \pageref{teo uniformemente rivestito}) vale:
+			\begin{equation*}
+				 e^{-1}(U_1) = \coprod_{n\in\integerset}V_n\text{ aperto in } \realset\ \colon \funz {e_{\mid_{V_n}}} {V_n} {U_1} \text{ è un omeomorfismo.}
+			\end{equation*}
+			Siccome $x_0\in e^{-1}(\alpha(0))$ e $\alpha(0)\in U_1$ allora $x_0\in e^{-1}(U_1)$. Tuttavia, i $V_n$ sono disgiunti, quindi $\exists ! \overline{n} \colon x_0\in V_{\overline{n}}$. Siccome $\funz {e_{\mid_{V_{\overline{n}}}}} {V_{\overline{n}}} {U_1}$ è un omeomorfismo, allora ha un'inversa locale $\funz {\phi\coloneqq \left(e_{\mid_{V_{\overline{n}}}}\right)^{-1}} {U_1} {V_{\overline{n}}}$.\\
+			Poniamo ora come primo ‘‘pezzo'' del sollevamento:
+			\begin{equation*}
+				\widetilde{\alpha_1}\coloneqq \phi\circ \alpha_{\mid_{[0,\ t_1]}},\ \funz {\widetilde{\alpha_1}} {[0,\ t_1]} \realset
+			\end{equation*}
+		\item[$\underline{t_{i+1}}$] Supponiamo di avere definito $\funz {\widetilde{\alpha_i}} {[0,\ t_i]} \realset$ continua, sollevamento di $\alpha_{\mid_{[0,\ t_i]}}$, ovvero il sollevamento di $\alpha$ da $0$ fino a $t_i$.\\
+		Procedendo analogamente al primo intervallo: consideriamo $\alpha\left( [t_i,\ t_{i+1}] \right)\subseteq U_{i+1}$ uniformemente rivestito, tale per cui $\displaystyle e^{-1}(U_{i+1})=\coprod_{m\in\integerset} W_m$ con $W_m$ aperti. Fra questi $W_m$ scegliamo quello che contiene il punto di partenza.
+		\begin{equation*}
+			\widetilde{\alpha_i}(t_i)\in e^{-1}\left( \alpha(t_i) \right) \implies \widetilde{\alpha_i}(t_i)\in e^{-1}\left( U_{i+1} \right) \implies \exists ! \overline{m} \colon \widetilde{\alpha_i}(t_i)\in W_{\overline{m}}.
+		\end{equation*}
+	Sia $\funz {\psi\coloneqq \left( e_{\mid_{W_{\overline{m}}}} \right)^{-1}} {U_{i+1}} {W_{\overline{m}}}$ e poniamo $\funz {\widetilde{\alpha_{i+1}}} {[0,\ t_{i+1}]} \realset$ inversa locale che estende il sollevamento $\widetilde{\alpha_i}$ come segue:
+	\begin{equation*}
+		\widetilde{\alpha_{i+1}}(t)= \begin{cases}
 			\widetilde{\alpha_i}(t) & t\in [0,\ t_i]\\
 			\psi\circ \alpha(t) & t\in[t_i,\ t_{i+1}]
-		\end{cases}$. Tale funzione è continua per il lemma di incollamento \ref{lemmaincollamento}, infatti è continua separatamente e per costruzione di incolla in $t_i$\\ 
-	Procedendo in questo modo definiamo $\funz {\widetilde{\alpha}} \intv \realset$ sollevamento di $\alpha$ a partire da $x_0$. \\
-	Dimostriamo ora l'\textit{unicità}. Sia $\funz {\widehat{\alpha}} \intv \realset$ un altro sollevamento di $\alpha$ a partire da $x_0$. Sia $Y \coloneqq \{t\in I \mid \widetilde{\alpha}(t)=\widehat{\alpha}(t)\}$ l'insieme dove $\widetilde{\alpha}$ e $\widehat{\alpha}$ coincidono. Si ha che $0\in Y \implies Y\neq\emptyset$, infatti $\widetilde{\alpha}(0)=\widehat{\alpha}(0)=x_0$  e $Y$ è chiuso, infatti per l'implicazione $1\Rightarrow 3)$ del teorema \ref{quoziente Hausdorff} si ha che date due mappe continue a valori in $T_2$, l'insieme su cui conincidono è chiuso. Mostriamo che $Y$ è anche aperto e connesso, così per laconnessione di $I$ si ha che $Y=I$, il che implica $\widetilde{\alpha}=\widehat{\alpha}$. Per dimostrare che $Y$ è aperto dimostriamo che è intorno di ogni suo punto, per farlo si sfruttano gli intorni uniformemente rivestiti.\\
-	Sia $t_0\in Y$ e sia $\alpha(t_0)\in S^1$. Sia $U$ un intorno aperto di $\alpha(t_0)$ uniformemente rivestito, allora $e^{-1}(U)=\amalg_{n\in\integerset}V_n$, inoltre $\widetilde{\alpha}(t_0)=\widehat{\alpha}(t_0)\in e^{-1} \left( \alpha(t_0) \right)\subseteq e^{-1}(U)$ e per il lemma \ref{teo uniformemente rivestito} $\exists ! \overline{n} \colon \widetilde{\alpha} (t_0)=\widehat{\alpha}(t_0)\in V_{\overline{n}}$ aperto in $\realset$. \\
-	Poniamo $A\coloneqq \widetilde{\alpha}^{-1}(V_{\overline{n}}) \cap \widehat{\alpha}^{-1}(V_{\overline{n\cap }})$. Si ha che $A$ è aperto in $I$ in quanto intersezione di controimmagine tramite funzioni continue di aperti e $t_0 \in A$. Mostriamo che le due funzioni coincidono su $A$, ovvero $\widetilde{\alpha}(t)=\widehat{\alpha}(t),\ \forall t\in A$. Se $t\in A$, per definizione di $A$ si ha che $\widetilde{\alpha}(t), \widehat{\alpha}(t)\in V_{\overline{n}}$ e per definizione di sollevamento $e\left( \widetilde{\alpha}(t) \right)= e\left( \widehat{\alpha}(t) \right)= \alpha(t)$ ma $e_{|_{V_{\overline{n}}}}$ è iniettiva perché è un omeomorfismo, quindi $\widetilde{\alpha}(t)=\widehat{\alpha}(t) \implies A\subseteq Y \implies t_0$ è interno a $Y \implies Y$ aperto.
+		\end{cases}
+	\end{equation*}
+		Tale funzione è continua per il lemma di incollamento \ref{lemmaincollamento}.
+		\end{enumerate} 
+	Procedendo in questo modo definiamo $\funz {\widetilde{\alpha}} \intv \realset$ sollevamento di $\alpha$ a partire da $x_0$.
+	\item \textbf{Unicità}: Sia $\funz {\widehat{\alpha}} \intv \realset$ un \textit{altro} sollevamento di $\alpha$ a partire da $x_0$. Sia $Y$ l'insieme dove $\widetilde{\alpha}$ e $\widehat{\alpha}$ coincidono:
+	\begin{equation*}
+		Y \coloneqq \{t\in I \mid \widetilde{\alpha}(t)=\widehat{\alpha}(t)\}
+	\end{equation*}
+	Allora:
+	\begin{itemize}
+		\item $0\in Y \implies Y\neq\emptyset$ dato che $\widetilde{\alpha}(0)=\widehat{\alpha}(0)=x_0$.
+		\item $Y$ è chiuso per l'implicazione $1\Rightarrow 3)$ del teorema \ref{quoziente Hausdorff} (pag. \pageref{quoziente Hausdorff}), dato che si ha che, prese due mappe continue a valori in uno spazio di \textbf{Hausdorff}, l'insieme su cui coincidono è chiuso.
+	\end{itemize}
+	Mostriamo che $Y$ è anche \textit{aperto}, così per la connessione di $I$ si ha che $Y=I$, il che implica $\widetilde{\alpha}=\widehat{\alpha}$. Per dimostrare che $Y$ è aperto dimostriamo che è intorno di ogni suo punto, usando gli intorni uniformemente rivestiti.\\
+	Sia $t_0\in Y$ e sia $\alpha(t_0)\in S^1$. Sia $U$ un intorno aperto di $\alpha(t_0)$ uniformemente rivestito; si ha $\displaystyle e^{-1}(U)=\coprod_{n\in\integerset}V_n$ e vale inoltre:
+	\begin{equation*}
+		\widetilde{\alpha}(t_0)=\widehat{\alpha}(t_0)\in e^{-1} \left( \alpha(t_0) \right)\subseteq e^{-1}(U)
+	\end{equation*}
+	Per il lemma \ref{teo uniformemente rivestito} (pag. \ref{teo uniformemente rivestito}) $\exists ! \overline{n} \colon \widetilde{\alpha} (t_0)=\widehat{\alpha}(t_0)\in V_{\overline{n}}$ aperto in $\realset$. \\
+	Poniamo $A\coloneqq \widetilde{\alpha}^{-1}(V_{\overline{n}}) \cap \widehat{\alpha}^{-1}(V_{\overline{n}})$. Si ha:
+	\begin{itemize}
+		\item $A$ è aperto in $I$ in quanto intersezione di controimmagine tramite funzioni continue di aperti.
+		\item $t_0 \in A$.
+	\end{itemize}
+	Mostriamo ora che le due funzioni coincidano su $A$, ovvero $\widetilde{\alpha}(t)=\widehat{\alpha}(t),\ \forall t\in A$.\\
+	Se $t\in A$, per definizione di $A$ si ha che $\widetilde{\alpha}(t)$ e $\widehat{\alpha}(t)\in V_{\overline{n}}$, dunque per definizione di sollevamento:
+	\begin{equation*}
+		e\left( \widetilde{\alpha}(t) \right)= e\left( \widehat{\alpha}(t) \right)= \alpha(t)
+	\end{equation*} 
+	Ma $e_{\mid_{V_{\overline{n}}}}$ è iniettiva perché è un omeomorfismo, quindi $\widetilde{\alpha}(t)=\widehat{\alpha}(t) \implies A\subseteq Y \implies t_0$ è interno a $Y$. Per l'arbitrarietà di $t_0$ vale $Y$ aperto.
+	\end{itemize}
+\vspace{-6mm}
 \end{demonstration}
 
 \subsubsection{Grado di un cammino}
-\begin{define} \textsc{Grado di un cammino chiuso in $S^1$}\\
-	Sia $\funz \alpha I {S^1}$ un cammino chiuso con punto base $1\in S^1$ e sia $\funz {\widetilde{\alpha}} I \realset$ l'unico sollevamento di $\alpha$ a partire da $x_0=0 \in e^{-1} (1)$. Si definisce \textbf{grado} di $\alpha$ come $\deg (\alpha)\coloneqq \widetilde{\alpha}(1)$
+\begin{define} \textsc{Grado di un cammino chiuso in $S^1$.}\\
+	Sia $\funz \alpha I {S^1}$ un cammino chiuso con punto base $1\in S^1$ e sia $\funz {\widetilde{\alpha}} I \realset$ l'unico sollevamento di $\alpha$ a partire da $x_0=0 \in e^{-1} (1)$. Si definisce \textbf{grado}\index{grado} di $\alpha$ come il punto finale del sollevamento:
+	\begin{equation}
+		\deg (\alpha)\coloneqq \widetilde{\alpha}(1)
+	\end{equation}
+\vspace{-6mm}
 \end{define}
 
-\begin{observe} \textsc{$\deg(\alpha)\in\integerset$}\\
-	Quella appena data è una buona definizione grazie al teorema precedente che assicura che il grado esiste ed è unico. \\
-	Inoltre $\deg(\alpha)\in\integerset$, infatti per definizione di sollevemento e siccome il cammino è chiuso $\widetilde{\alpha}(1)\in e^{-1}(\alpha(1))=e^{-1}(\alpha(0))=e^{-1}(1)=\integerset$\\
-	Il grado conta il numero di giri con segno di $\alpha$ intorno a $S^1$, dove il segno è positivo se gira in senso antiorario, e negativo se gira in senso orario.
+\begin{observe} $\circled{1}\quad$ \textsc{$\deg(\alpha)\in\integerset$.}\\
+	Quella appena data è una \textit{buona definizione} grazie al teorema precedente che assicura che il sollevamento esiste ed è unico. \\
+	Inoltre $\deg(\alpha)\in\integerset$: per definizione di sollevamento, siccome il cammino è chiuso:
+	\begin{equation*}
+		\widetilde{\alpha}(1)\in e^{-1}(\alpha(1))=e^{-1}(\alpha(0))=e^{-1}(1)=\integerset
+	\end{equation*}
+	Il grado conta il \textbf{numero di giri} con \textit{segno} di $\alpha$ intorno a $S^1$, dove il segno è \textit{positivo} se gira in senso \textit{antiorario}, e \textit{negativo} se gira in senso \textit{orario}.
 \end{observe}
-
-Abbiamo così formalizzato il numero di giri con segno intorno a $S^1$, vediamo qualche esempio.
+Abbiamo così formalizzato il numero di giri con segno intorno a $S^1$.
 \begin{examples}
 	\begin{itemize} 
-		\item Sia $\alpha(t)=e^{2\pi i t}$, con $t\in\intv$, e sia $\widetilde{\alpha}(t)=t$ il sollevamento di $\alpha$ a partire da $x_0=0$. Siccome $\widetilde{\alpha}(1)=1\implies \deg\alpha=1$, ovvero $\alpha$ percorre solo un giro intono a $S^1$.
-		\item Fissato $n\in\integerset$, sia $\displaystyle \funztot \gamma I {S^1} t {e^{2\pi i nt}}$, esso è un cammino chiuso con punto base $1$. Il sollevamento di $\gamma$ con punto base $x_0=0$ è dato da $\widetilde{\gamma}(t)=nt \implies \deg\gamma=\widetilde{\gamma}(1)=n.$
-	\end{itemize}	
+		\item Sia $\alpha(t)=e^{2\pi i t}$, con $t\in\intv$, e sia $\widetilde{\alpha}(t)=t$ il sollevamento di $\alpha$ a partire da $x_0=0$. Siccome $\widetilde{\alpha}(1)=1\implies \deg\alpha=1$, $\alpha$ percorre solo un giro in senso antiorario intorno a $S^1$.
+		\item Fissato $n\in\integerset$, sia $\displaystyle \funztot \gamma I {S^1} t {e^{2\pi i nt}}$: esso è un cammino chiuso con punto base $1$. Il sollevamento di $\gamma$ con punto base $x_0=0$ è dato da $\widetilde{\gamma}(t)=nt$, dunque $\deg\gamma=\widetilde{\gamma}(1)=n$.
+	\end{itemize}
+\vspace{-3mm}
 \end{examples}
 
-\begin{observe} \textsc{$\deg\alpha = \widetilde{\alpha}(1)- \widetilde{\alpha}(0)$}\\
-	Sia $\funz \alpha I {S^1}$ un cammino chiuso con punto base $1$. Sia $\widetilde{\alpha_0}$ il sollevamento di $\alpha$ con punto base $x_0=0$. Sia $n\in\integerset$ e sia $\funz {\widetilde{\alpha_n}} I \realset$ definita come $\widetilde{\alpha_n}=\widetilde{\alpha_0}+n$. 
-	Siccome per ogni punto nella fibra del punto iniziale esiste ed è unico il sollevamento, e siccome la fibra in questo caso sono tutti gli interi si ha che per ogni intero si ha un sollevamento, che sarà il traslato di $\widetilde{\alpha_0}$. Verifichiamolo.\\
-	Si ha che $\widetilde{\alpha_n}$ è continuo ed è un sollevamento di $\alpha$, infatti
-		\begin{gather*}
+\begin{observe}$\circled{2}\quad$ \textsc{$\deg\alpha = \widetilde{\alpha}(1)- \widetilde{\alpha}(0)$.}\\
+	Sia $\funz \alpha I {S^1}$ un cammino chiuso con punto base $1$, $\widetilde{\alpha_0}$ il sollevamento di $\alpha$ con punto base $x_0=0$. Preso $n\in\integerset$, si consideri $\funz {\widetilde{\alpha_n}} I \realset$ definita come $\widetilde{\alpha_n}=\widetilde{\alpha_0}+n$.\\
+	Siccome per ogni punto nella \textit{fibra} del punto iniziale esiste ed è unico il \textit{sollevamento}, e siccome la fibra in questo caso è $\integerset$ si ha che, per ogni intero, il sollevamento sarà il traslato di $\widetilde{\alpha_0}$. Verifichiamolo.\\
+	Si ha che $\widetilde{\alpha_n}$ è continuo ed è un sollevamento di $\alpha$, infatti:
+		\begin{equation*}
 			e\left( \widetilde{\alpha_n}(t) \right)= e^{2\pi i \widetilde{\alpha_n}(t)}= e^{2\pi i (\widetilde{\alpha_0}(t)+n)}=e^{2\pi i \widetilde{\alpha_0}(t)} e^{2\pi i n}=\alpha(t)
-		\end{gather*}
+		\end{equation*}
 	Il suo punto iniziale è $n$, infatti $\widetilde{\alpha_n}(0)=\widetilde{\alpha_0}(0)+n=n$.	Quindi $\widetilde{\alpha_n}$ è il sollevamento di $\alpha$ a partire da $x_0=n$.\\
 	Inoltre osserviamo che 
-		\begin{gather*}
-			\widetilde{\alpha_n}(1)- \widetilde{\alpha_n}(0)=\widetilde{\alpha_0}(1)+n - (\underbrace{\widetilde{\alpha_0}(0)}_{=0}+n)= \widetilde{\alpha_0}(1)=\deg\alpha\\
-			\implies \deg\alpha= \widetilde{\alpha}(1)-\widetilde{\alpha}(0)
-		\end{gather*}
-	con $\widetilde{\alpha}$ è un sollevamento qualsiasi.\\
-	Si può quindi riformulare la definizione di grado di un cammino chiuso in $S^1$ con \textit{punto base qualsiasi} come la differenza fra il punto finale e quello iniziale di un sollevamento \textit{qualsiasi} del cammino.
+		\begin{equation*}
+			\widetilde{\alpha_n}(1)- \widetilde{\alpha_n}(0)=\widetilde{\alpha_0}(1)+n - (\underbrace{\widetilde{\alpha_0}(0)}_{=0}+n)= \widetilde{\alpha_0}(1)=\deg\alpha
+		\end{equation*}
+	Pertanto $\deg\alpha= \widetilde{\alpha}(1)-\widetilde{\alpha}(0)$ con $\widetilde{\alpha}$ è un sollevamento qualsiasi.\\
+	Si può quindi riformulare la definizione di grado di un cammino chiuso $\alpha$ in $S^1$ con \textit{punto base qualsiasi} come la differenza fra il punto finale e quello iniziale di un sollevamento $\widetilde{\alpha}$ \textit{qualsiasi} del cammino:
+	\begin{equation}
+		\deg (\alpha)\coloneqq \widetilde{\alpha}(1)-\widetilde{\alpha}(0)
+	\end{equation}
 \end{observe}
-
 Vediamo ora come si comporta il grado rispetto al prodotto di cammini.
 \begin{theorema}
-	Siano $\alpha, \beta$ cammini chiusi in $S^1$ con punto base $1$. Allora $\deg(\alpha\ast\beta)=\deg\alpha +\deg\beta$
+	Siano $\alpha,\ \beta$ cammini chiusi in $S^1$ con punto base $1$. Allora:
+	\begin{equation}
+		\deg(\alpha\ast\beta)=\deg\alpha +\deg\beta
+	\end{equation}
+\vspace{-6mm}
 \end{theorema}
 \begin{demonstration}
-	Sia $\widetilde{\alpha}$ il sollevamento di $\alpha$ a partire da $x_0=0$, allora $a\coloneqq \widetilde{\alpha}(1)=\deg\alpha\in\integerset$. Sia $\widehat{\beta}$ il sollevamento di $\beta$ a partire da $a$, allora $\deg\beta=\widehat{\beta}(1)-\widehat{\beta}(0)=\widehat{\beta}-a$. Siccome $\funz {\widetilde{\alpha},\widehat{\beta}} I \realset$ e $\widetilde{\alpha}(1)=\widehat{\beta}(0)$ si può considerare il cammino prodotto $\funz {\widetilde{\alpha}\ast\widehat{\beta}} I \realset$. Dimostriamo che è un sollevamento di $\alpha\ast\beta$
+	Sia $\widetilde{\alpha}$ il sollevamento di $\alpha$ a partire da $x_0=0$. Allora definiamo $a\coloneqq \widetilde{\alpha}(1)=\deg\alpha\in\integerset$. Sia $\widehat{\beta}$ il sollevamento di $\beta$ a partire da $a$; si ha:
+	\begin{equation*}
+		\deg\beta=\widehat{\beta}(1)-\widehat{\beta}(0)=\widehat{\beta}-a
+	\end{equation*} 
+	Siccome $\funz {\widetilde{\alpha},\ \widehat{\beta}} I \realset$ e $\widetilde{\alpha}(1)=\widehat{\beta}(0)$ si può considerare il cammino prodotto $\funz {\widetilde{\alpha}\ast\widehat{\beta}} I \realset$. Dimostriamo che è un sollevamento di $\alpha\ast\beta$:
 		\begin{gather*}
 			e\left( \widetilde{\alpha}\ast\widehat{\beta}(t) \right)= e^{2\pi i \widetilde{\alpha}\ast\widehat{\beta}(t)}=\begin{cases}
 				e^{2\pi i \widetilde{\alpha}(t)}, & t\in \left[ 0,\ \frac{1}{2} \right]\\
@@ -1132,115 +1226,195 @@ Vediamo ora come si comporta il grado rispetto al prodotto di cammini.
 			\end{cases}= \alpha\ast\beta(t)\\
 			(\widetilde{\alpha}\ast\widehat{\beta})(0)=\widetilde{\alpha}(0)=0 \implies \deg(\alpha\ast\beta)=(\widetilde{\alpha}\ast\widehat{\beta})(1)=\widehat{\beta}(1)=a+\deg\beta=\deg\alpha +\deg\beta 
 		\end{gather*}
+	\vspace{-6mm}
 \end{demonstration}
-
-
-Si ha che il grado è invariante per omotopia di cammini, tuttavia è un teorema che non dimostriamo, ma concettualmente consiste nel costruire un sollevamento fra le omotopie per mostrare che hanno lo stesso grado.
-\begin{theorema} \textsc{di monodronia}\\
-	Siano $\alpha,\beta$ cammini chiusi in $S^1$ con punto base $1$ e supponiamo che $\alpha$ e $\beta$ siano cammini omotopi. Allora $\deg\alpha=\deg\beta$, ovvero il grado è invariante per omotopia di cammini.
+Si può dimostrare, anche se in questa sede non lo faremo, che il grado è \textit{invariante} per omotopia di cammini; concettualmente consiste nel costruire un sollevamento fra le omotopie per mostrare che hanno lo stesso grado.
+\begin{theorema} \textsc{Teorema di monodromia.}\\
+	Siano $\alpha,\beta$ cammini chiusi in $S^1$ con punto base $1$ e supponiamo che $\alpha$ e $\beta$ siano cammini omotopi. Allora $\deg\alpha=\deg\beta$, cioè il grado è invariante per omotopia di cammini.
 \end{theorema}
 
 \subsubsection{Dimostrazione del gruppo fondamentale della circonferenza}
 \begin{theorema}\textsc{Gruppo fondamentale di $S^1$}\\
-	\begin{center}
-		$\gruf{S^1}{1}\cong\integerset$
-	\end{center}
+	\begin{equation}
+		\gruf{S^1}{1}\cong\integerset
+	\end{equation}
+\vspace{-6mm}
 \end{theorema}
 \begin{demonstration}
-	Sia $\displaystyle \funztot \Phi {\gruf{S^1}{1}} \integerset {[\alpha]} {\deg\alpha}$. Vogliamo dimostrare che è un isomorfismo di gruppi per ottenere la tesi.
+	Sia $\displaystyle \funztot \Phi {\gruf{S^1}{1}} \integerset {\left[\alpha\right]} {\deg\alpha}$. Vogliamo dimostrare che è un \textbf{isomorfismo di gruppi} per ottenere la tesi.
 		\begin{itemize}
-			\item $\Phi$ è un'applicazione \textit{ben definita} per il teorema della monodronia.
-			\item $\Phi$ è un \textit{morfismo di gruppi}, infatti dati $[\alpha],[\beta]\in\gruf{S^1}{1}$ si ha che
+			\item $\Phi$ è un'applicazione \textit{ben definita} per il teorema di monodromia.
+			\item $\Phi$ è un \textit{morfismo di gruppi}: dati $[\alpha],[\beta]\in\gruf{S^1}{1}$ si ha che:
 				\begin{gather*}
-					\Phi([\alpha]\cdot [\beta])=\Phi([\alpha\ast\beta])=\det(\alpha\ast\beta)=\deg\alpha+\deg\beta=\Phi([\alpha])+\Phi([\beta])
+					\Phi([\alpha]\cdot [\beta])=\Phi([\alpha\ast\beta])=\deg(\alpha\ast\beta)=\deg\alpha+\deg\beta=\Phi([\alpha])+\Phi([\beta])
 				\end{gather*}
-			\item $\Phi$ è \textit{suriettiva}, infatti $\forall n\in\integerset,\ \exists \gamma$ cammino chiuso in $S^1$ e di grado $n\implies \Phi([\gamma])=n$
-			\item $\Phi$ è \textit{iniettiva}, mostriamo che $\ker\Phi$ è banale. Sia $[\alpha]\in\ker\Phi$, vogliamo dimostrare che $[\alpha]=[c_1]$, ovvero $\alpha\sim c_1$ cammino costante in $S^1$. Per ipotesi $\deg\alpha=\Phi([\alpha])=0$, quindi si considera il sollevamento di $\alpha$ con punto base $x_0=0$, quindi $\deg\alpha=\widetilde{\alpha}(1)=0$, cioè $\alpha$ è un cammino chiuso. Siccome $\realset$ è contraibile allora è semplicemente connesso, dunque $\gruf{\realset}{0}=\left\{1\right\}$ quindi $[\widetilde{\alpha}]\in\gruf{\realset}{0}=\left\{1\right\}\implies [\widetilde{\alpha}]=[c_0]\implies \exists \funz F {I\times I}  \realset$ omotopia di cammini fra $\widetilde{\alpha}$ e $c_0$, ovvero $F$ è continua e $F(t,0)=\widetilde{\alpha}(t),\ F(0,s)=F(1,s)=0,\ F(t,1)=0,\ \forall t,s\in I$. Sia $\funz {G\coloneqq e\circ F} {I\times I} {S^1}$, allora $G$ è continua e vale che 
-				\begin{gather*}
-					G(t,0)=e(F(t,0))=e(\widetilde{\alpha}(t))=\alpha(t)\\
-					G(t,1)=e(F(t,1))=e(0)=1\\
-					G(0,s)=G(1,s)=1,\ \forall t,s\in I
-				\end{gather*}
-			quindi $G$ è un'omotopia di cammini fra $\alpha$ e $c_1$ in $S^1\implies \Phi$ iniettiva $\implies \Phi$ isomorfismo di gruppi.
-		\end{itemize}	
+			\item $\Phi$ è \textit{suriettiva}: $\forall n\in\integerset,\ \exists \gamma$ cammino chiuso in $S^1$ e di grado $n\implies \Phi([\gamma])=n$.
+			\item $\Phi$ è \textit{iniettiva}; per far ciò, mostriamo che $\ker\Phi$ è banale. Sia $[\alpha]\in\ker\Phi$, vogliamo dimostrare che $[\alpha]=[C_1]$, cioè $\alpha\sim C_1$ cammino costante in $S^1$. Per ipotesi $\deg\alpha=\Phi([\alpha])=0$, quindi si consideri il sollevamento di $\alpha$ con punto base $x_0=0$. Si ha $\deg\alpha=\widetilde{\alpha}(1)=0$, cioè $\alpha$ è un cammino chiuso. \\
+			Siccome $\realset$ è contraibile, allora è \textit{semplicemente connesso}, dunque $\gruf{\realset}{0}=\left\{1\right\}$ e $[\widetilde{\alpha}]\in\gruf{\realset}{0}=\left\{1\right\}$.
+			Pertanto, $[\widetilde{\alpha}]=[C_0]\implies \exists \funz F {I\times I}  \realset$ omotopia di cammini fra $\widetilde{\alpha}$ e $C_0$. $F$ è continua e:
+			\begin{equation*}
+				\begin{cases}
+					F(t,0)=\widetilde{\alpha}(t)\\
+					F(t,1)=0
+				\end{cases}\forall t\in I\quad
+				F(0,s)=F(1,s)=0,\ \forall s\in I
+			\end{equation*}
+				Sia $\funz {G\coloneqq e\circ F} {I\times I} {S^1}$; $G$ è continua e vale che:
+				\begin{equation*}
+					\begin{cases}
+						G(t,0)=e(F(t,0))=e(\widetilde{\alpha}(t))=\alpha(t)\\
+						G(t,1)=e(F(t,1))=e(0)=1
+					\end{cases}\forall t\in I\quad
+					G(0,s)=G(1,s)=1,\ \forall s\in I
+				\end{equation*}
+			$G$ è un'omotopia di cammini fra $\alpha$ e $C_1$ in $S^1$, pertanto $\Phi$ iniettiva.
+		\end{itemize}
+	Concludiamo che $\Phi$ è isomorfismo di gruppi e segue dunque la tesi.
 \end{demonstration}
-
 %intermezzo LEZ 19
-	\subsection{Conseguenze}
-Osserviamo ora tramite un esempio sulla circonferenza che il corollario \ref{corollario van kampfen} non vale se $A$ e $B$ non sono aperti.
-\begin{observe}
-	Siano $X=S^1, A=(S^1\cap\{y>0\})\cup \{(1,0)\}$ e $B=S^1\cap\{y\leq 0\}$ che non sono aperti in $X$. Siccome $A\cong (0,\ 1]\subseteq \realset$ che è convesso in $\realset$ allora $A$ è contraibile e dunque semplicemente connesso. Analogamente per $B\cong\intv$. Dunque si ha che $X=A\cup B, A\cap B=\{(1,\ 0)\}\neq\emptyset$ e c.p.a., ma $X=S^1$ non è semplicemente connesso.
+\subsection{Alcune conseguenze del gruppo fondamentale della circonferenza}
+Osserviamo ora, con un esempio sulla circonferenza, che il corollario \ref{corollario van kampfen} \textit{non} vale se $A$ e $B$ non sono \textit{aperti}.
+\begin{observe}%inserire immagine?
+	Siano $X=S^1,\ A=(S^1\cap\{y>0\})\cup \{(1,0)\}$ e $B=S^1\cap\{y\leq 0\}$: notiamo come non sono aperti in $X$. 
+	\begin{itemize}
+		\item $A\cong (0,\ 1]\subseteq \realset$ convesso in $\realset$, allora $A$ è contraibile e dunque semplicemente connesso.
+		\item $B=S^1\cap\{y\leq 0\}\cong\intv$ convesso in $\realset$, allora $B$ è contraibile e dunque semplicemente connesso.
+	\end{itemize}
+Si ha che $X=A\cup B,\ A\cap B=\{(1,\ 0)\}\neq\emptyset$ e \textbf{c.p.a.}, ma $X=S^1$ come abbiamo appena dimostrato \textit{non} è semplicemente connesso!
 \end{observe}
-
-\begin{corollary} \textsc{Manetti, 12.38} \label{circonferenza non retratto disco} \\
-	Sia $D\subseteq\realset^2$ il disco unitario e $A=\partial{D}$ il bordo, ovvero $A=S^1$. Allora $A$ non è un retratto di $D$.
+\begin{corollary} \textsc{(Manetti, 12.38)} \label{circonferenza non retratto disco}\\
+Sia $D\subseteq\realset^2$ il \textit{disco unitario} e $A=\partial{D}$ il suo \textit{bordo}, ovvero $A=S^1$. Allora $A$ non è un retratto di $D$.
 \end{corollary}
 \begin{demonstration}
-	Se $A$ fosse un retratto allora $\gruf{A}{\ }$ dovrebbe essere isomorfo ad un sottogruppo di $\gruf{D}{\ }$. Tuttavia $\gruf{A}{\ }=\gruf{S^1}{\ }=\integerset$ e $D\subseteq\realset^2$ convesso $\implies \gruf{D}{\ }=\left\{1\right\}$, il che non è possibile.
+	Se $A$ fosse un retratto, allora $\gruf{A}{\ }$ dovrebbe essere isomorfo ad un sottogruppo di $\gruf{D}{\ }$. Tuttavia, $\gruf{A}{\ }=\gruf{S^1}{\ }=\integerset$ e $D\subseteq\realset^2$ convesso $\implies \gruf{D}{\ }=\left\{1\right\}$, il che è un assurdo in quanto $\integerset\nless \left\{1\right\}$!.
 \end{demonstration}
 \begin{observe}
-	Allo stesso modo se $X$ è uno spazio topologico semplicemente connesso e $A\subseteq X$ con $A\cong S^1$, allora $A$ non può essere un retratto di $X$.
+	Allo stesso modo, se $X$ è uno spazio topologico \textit{semplicemente connesso} e $A\subseteq X$ con $A\cong S^1$, allora $A$ \textit{non} può essere un retratto di $X$.
 \end{observe}
 
-\begin{corollary} \textsc{Teorema del punto fisso di Brouwer, Manetti 12.39} \label{punto fisso B} \index{punto fisso} \index{Brouwer} \\
+\begin{corollary} \textsc{Teorema del punto fisso di Brouwer (Manetti 12.39)} \label{punto fisso B} \index{punto fisso} \index{Brouwer} \\
 	Sia $D\subseteq \realset^2$ il disco unitario e sia $\funz f D D$ continua. Allora $f$ ha un punto fisso, ovvero $\exists x_0\in D \colon f(x_0)=x_0$.
 \end{corollary}
 \begin{demonstration}
-	Ragionando per assurdo supponiamo che $f$ non abbia punti fissi, ovvero $f(x_0)\neq x_0,\ \forall x_0\in D$. Utilizziamo $f$ per costruire una retrazione che non può esistere per motivi topologici: sia $\funz r D {\partial{D}}$ retrazione continua con $r_{\partial{D}}=Id_{\partial{D}}$ definita nel modo seguente. Sia $S$ la semiretta aperta uscente da $f(x)$ (essendo aperta il punto $f(x)$ è escluso) e passante per $x$, essa esiste perché $x\neq f(x)$ per ipotesi assurda, e si ponga $r(x)=S\cap\partial{D}$. Se $x\in\partial{D} \implies x=r(x) \implies r_{|_{\partial{D}}}= Id_{\partial{D}} \implies r$ retrazione, il che è assurdo per il corollario precedente.
+	Per \textit{assurdo}, supponiamo che $f$ \textit{non} abbia punti fissi, ovvero $f(x_0)\neq x_0,\ \forall x_0\in D$. Utilizziamo $f$ per costruire una retrazione che non può esistere per motivi topologici. Sia $\funz r D {\partial{D}}$ \textit{retrazione} continua con $r_{\partial{D}}=Id_{\partial{D}}$ definita nel modo seguente:
+	\begin{center}
+		Presa $S$ la semiretta aperta uscente da $f(x)$ (essendo aperta il punto $f(x)$ è escluso) e passante per $x$ (in quanto $x\neq f(x)$ per ipotesi dell'assurdo), si ponga $r(x)=S\cap\partial{D}$.
+		% inserire immagine
+	\end{center} 
+Se $x\in\partial{D}$, allora $x=r(x) \implies r_{\mid_{\partial{D}}}= Id_{\partial{D}} \implies r$ retrazione, il che è \textit{assurdo} per il corollario precedente.
 \end{demonstration}
 %fine intermezzo LEZ 19
 
 \subsubsection{Invarianza della dimensione}
-Grazie al calcolo del gruppo fondamentale della circonferenza si riescono anche a dimostrare dei casi particolari del teorema di invarianza della dimensione (che verrà affrontato nel corso di Topologia Algebrica), che recita quanto segue.
-\begin{theorema}
+Grazie al calcolo del gruppo fondamentale della circonferenza si riescono anche a dimostrare dei casi particolari del \textit{teorema di invarianza della dimensione} (che verrà affrontato nel corso di \textit{Topologia Algebrica}).
+\begin{theorema}\textsc{Teorema di invarianza della dimensione.}\index{teorema!di invarianza della dimensione}\\
 	Siano $U\subseteq\realset^n$ e $V\subseteq \realset^m$ aperti. Se $U$ e $V$ sono omeomorfi allora $n=m$. Per contronominale, se $n\neq m$ allora $U$ e $V$ non sono omeomorfi.
 \end{theorema}
-
-
-\begin{observe}
-	Sia $U\subseteq\realset^n$ aperto con $n\geq 2$. Allora $U$ non è omeomorfo ad un aperto di $\realset$. Per dimostrarlo basta considerare una palla $B$ in $\realset^n$ ed un intervallo $I$ in $\realset$ e togliere ad entrambe un punto: nel primo caso si ottiene ancora un connesso, mentre nel secondo uno sconnesso, dunque non possono essere omeomorfi.
-\end{observe}
-\begin{theorema}
-	Sia $U\subseteq\realset^n$ aperto con $n\geq 3$. Allora $U$ non è omeomorfo ad un aperto di $\realset^2$.
-\end{theorema}
-\begin{demonstration}
-	Ragionando per assurdo, ipotizziamo che $U$ sia omeomorfo ad un aperto di $\realset^2$. Sia $B\subseteq U$ una palla aperta di centro $p$, allora $B$ è omeomorfo ad un aperto $A$ di $\realset^2$. Sia $q\in A$ il punto corrispondente a $p$ tramite l'omeomorfismo, dunque $B\setminus\{p\}$ è omeomorfo a $A\setminus\{q\}$, ma $B\setminus\{p\}$ ha lo stesso tipo di omotopia di $S^{n-1}$, infatti sia $S$ una sfera centrata in $p$ tale per cui $S\subset B$, si ha che $S\cong S^{n-1}$ e $S\subset B\setminus\{p\}$ è un retratto di deformazione. Supponiamo per semplicità che $p=\mathbf{0}$: la retrazione è data da $\displaystyle \funztot r {B\setminus \{\mathbf{0}\}} S x {R\frac{x}{\| x \|}}$ con $R$ raggio di $S$, allora $A\setminus \{q\}$ ha lo stesso tipo di omotopia di $S^{n-1}, n\geq 3\implies n-1\geq 2\implies S^{n-1}$ è semplicemente connesso$\implies A\setminus\{q\}$ semplicemente connesso. Dimostriamo ora che questo è assurdo.\\
-	$A$ aperto $\implies \exists C$ circonferenza centrata in $q$ tale che $C\subset A$. Si ha che $C$ è un retratto (in generale non di deformazione!) di $A\setminus\{q\}$, sempre con la stessa retrazione $\displaystyle \funztot f {A\setminus\{q\}} C {x=q+(x-q)} {q+r(C)\frac{x-q}{\| x-q \|}}$ con $r(C)$ raggio di $C$ e lo spostamento dovuto al fatto che $x$ non è il centro $q$. Se $x_0\in C\subset A\setminus\{q\}$ allora siccome è un retratto per il corollario \ref{grp fond iniettiva e suriettiva} si ha che $\integerset\cong \gruf{C}{x_0}\hookrightarrow \gruf{A\setminus\{q\}}{x_0} )=\left\{1\right\}$, da cui l'assurdo.
-%LA FRECCIA NON è LUNGA QUANTO DOVREBBE
-\end{demonstration}
-\begin{attention}
-	Non abbiamo potuto supporre che $A$ fosse una palla perché non sappiamo che ‘‘forma'' abbia dato l'omeomorfismo.
-\end{attention}
-
-
-	\subsection{Gruppo fondamentale prodotto}
-	
-\begin{theorema} \textsc{Manetti, 11.17}\\
-	Siano $X$ e $Y$ spazi topologici, $x_0\in X$, $y_0\in Y$. Allora $\gruf{X\times Y}{(x_0,y_0)}\cong \gruf{X}{x_0}\oplus \gruf{Y}{y_0}$.
-\end{theorema}
-\begin{attention}
-	Con $\oplus$ si intende la somma diretta di gruppi, da intendersi come prodotto cartesiano i cui morfismi sono componente per componente. Essa è diversa dalla somma diretta fra spazi vettoriali, in quest'ultimo caso infatti è interna!
-\end{attention}
-\begin{demonstration}
-	Un cammino $\funz \alpha I {X\times Y}$ è determinato dalle sue componenti $\alpha=(\alpha_1,\ \alpha_2),\ \funz {\alpha_1} I X$ e $\funz {\alpha_2} I Y$, dunque c'è una corrispondenza biunivoca fra \\ $\inscam{X\times Y}{)x_0,\ y_0}{(x_0,\ y_0)}\leftrightarrow\inscam{X}{x_0}{x_0}\times \inscam{Y}{y_0}{y_0}$. Allo stesso modo le mappe $\funz F {I\times I} {X\times Y}$ è determinata dalle sue componenti $(F_1,\ F_2),\ \funz {F_1} {I\times I} X$ e $\funz {F_2} {I\times I} Y$, e inoltre si ha che $F$ è omotopia fra i cammini $\alpha$ e $\beta$ se e solo se $F_i$ è un'omotopia di cammini fra $\alpha_i$ e $\beta_i$. Dunque c'è una corrispondenza biunivoca tra i quozienti $\gruf{X\times Y}{(x_0,y_0)}\leftrightarrow \gruf{X}{x_0}\oplus \gruf{Y}{y_0}$ con $[\alpha]\leftrightarrow ([\alpha_1],\ [\alpha_2])$. Essa è anche un morfismo di gruppi, infatti $\alpha\ast\beta = (\alpha_1\ast\beta_1,\ \alpha_2\ast\beta_2)$, dunque i gruppi sono isomorfi.
-\end{demonstration}
-
-Analizziamo degli esempi di gruppi fondamentali.
-\begin{example} \textsc{Toro}
-	Si consideri lo spazio $S^1\times S^! =T$, detto toro. Siccome $S^1\subset\realset^2$ allora $T\subset \realset^4$, tuttavia esso è omeomorfo al sottospazio $X$ di $\realset^3$ visualizzato come una ‘‘ciambella''. Si può definire meglio come effetto della rotazione di una circonferenza attorno all'asse $z$ ad essa disgiunto.\\
-	Per il teorema precedente si ha che $\gruf{T}{\ }=\gruf{T}{S^1\times S^1}=\integerset\oplus\integerset$. Siccome $\integerset$ è un gruppo ciclico infinito, posso considerare per il gruppo fondamentale gli analoghi di $\{-1\}$ e $\left\{1\right\}$, ovvero la classe del cappio di grado $1$ e quella di grado $-1$; si utilizzerà come generatore standard $\gamma(t)=e^{2\pi i t}$. Per il toro invece si considerano i generatori corrispondenti a $(1,\ 0)$ e $(0,\ 1)$ in $\integerset\oplus\integerset$, ovvero scelto il punto base $x_0=(1,\ 1)$, $\alpha(t)=(e^{2\pi i t},\ 1)$ e $\beta(t)=(1,\ e^{2\pi i t})$
+\begin{example}
+	Sia $U\subseteq\realset^n$ aperto con $n\geq 2$. Allora $U$ \textit{non} è omeomorfo ad un aperto di $\realset$. Per dimostrarlo basta considerare una palla $B$ in $\realset^n$ ed un intervallo $I$ in $\realset$ e togliere ad entrambe un punto: nel primo caso si ottiene ancora un \textit{connesso}, mentre nel secondo uno \textit{sconnesso}, dunque \textit{non} possono essere \textit{omeomorfi}.
 \end{example}
-%AAA COOL PICTURES CERCASI
+\begin{theorema}
+	Sia $U\subseteq\realset^n$ aperto con $n\geq 3$. Allora $U$ \textit{non} è omeomorfo ad un aperto di $\realset^2$.
+\end{theorema}
+\begin{demonstration}
+	Ragionando per assurdo, ipotizziamo che $U$ sia omeomorfo ad un aperto di $\realset^2$. Sia $B\subseteq U$ una palla aperta di centro $p$, allora $B$ è omeomorfo ad un aperto $A$ di $\realset^2$.\\
+	Sia $q\in A$ il punto corrispondente a $p$ tramite l'omeomorfismo, dunque $B\setminus\{p\}$ è omeomorfo a $A\setminus\{q\}$, ma $B\setminus\{p\}$ ha lo stesso tipo di omotopia di $S^{n-1}$.\\ Infatti, sia $S$ una sfera centrata in $p$ tale per cui $S\subset B$, si ha che $S\cong S^{n-1}$ e $S\subset B\setminus\{p\}$ è un \textit{retratto di deformazione}. Supponiamo per semplicità che $p=\mathbf{0}$; la retrazione è data da:
+	\begin{equation*}
+		\funztot r {B\setminus \{\mathbf{0}\}} S x {R\frac{x}{\| x \|}}
+	\end{equation*}
+	Con $R$ raggio di $S$. Segue che $A\setminus \{q\}$ ha lo stesso tipo di omotopia di $S^{n-1}, n\geq 3\implies n-1\geq 2\implies S^{n-1}$ è semplicemente connesso, cioè $A\setminus\{q\}$ è \textit{semplicemente connesso}. Dimostriamo ora che questo è assurdo.\\
+	$A$ aperto $\implies \exists C$ circonferenza centrata in $q$ tale che $C\subset A$. Si ha che $C$ è un retratto (in generale \textit{non} di \textit{deformazione}!) di $A\setminus\{q\}$, sempre con la stessa retrazione di prima:
+	\begin{equation*}
+		\funztot f {A\setminus\{q\}} C {x=q+(x-q)} {q+r(C)\frac{x-q}{\| x-q \|}}
+	\end{equation*}
+	Con $r(C)$ raggio di $C$ e lo spostamento dovuto al fatto che $C$ è centrata in $q$. Se $x_0\in C\subset A\setminus\{q\}$, siccome esso è un retratto,  si ha che $\incl{\ }{\integerset\cong \gruf{C}{x_0}}{\gruf{A\setminus\{q\}}{x_0} )=\left\{1\right\}}$, da cui l'assurdo.
+% che corollario \ref{grp fond iniettiva e suriettiva}???
+\end{demonstration}
+\begin{attention}
+	Non abbiamo potuto supporre che $A$ fosse una palla perché non sappiamo che ‘‘forma'' abbia dato l'omeomorfismo!
+\end{attention}
+\subsection{Gruppo fondamentale del prodotto}
+\begin{theorema} \textsc{(Manetti, 11.17)}\\
+	Siano $X$ e $Y$ spazi topologici, $x_0\in X$, $y_0\in Y$. Allora:
+	\begin{equation}
+		\gruf{X\times Y}{(x_0,y_0)}\cong \gruf{X}{x_0}\oplus \gruf{Y}{y_0}
+	\end{equation}
+\vspace{-6mm}
+\end{theorema}
+\begin{attention}
+	Con $\oplus$ si intende la \textit{somma diretta} di gruppi, da intendersi come \textit{prodotto cartesiano} i cui morfismi sono \textit{componente per componente}. È diversa dalla \textit{somma diretta fra spazi vettoriali}, dato in quest'ultimo caso essa è \textit{interna}!
+\end{attention}
+\begin{demonstration}
+	Un cammino $\funz \alpha I {X\times Y}$ è determinato dalle sue componenti $\alpha=(\alpha_1,\ \alpha_2)$ con $\funz {\alpha_1} I X$ e $\funz {\alpha_2} I Y$, dunque c'è la seguente corrispondenza biunivoca:
+	\begin{equation*}
+		\inscam{X\times Y}{)x_0,\ y_0}{(x_0,\ y_0)}\leftrightarrow\inscam{X}{x_0}{x_0}\times \inscam{Y}{y_0}{y_0}
+	\end{equation*}
+Allo stesso modo, la mappa $\funz F {I\times I} {X\times Y}$ è determinata dalle sue componenti $(F_1,\ F_2)$ con $ \funz {F_1} {I\times I} X$ e $\funz {F_2} {I\times I} Y$; inoltre, si ha che $F$ è omotopia fra i cammini $\alpha$ e $\beta$ se e solo se $F_i$ è un'omotopia di cammini fra $\alpha_i$ e $\beta_i$. \\
+Dunque c'è una corrispondenza biunivoca tra i quozienti:
+\begin{gather*}
+	\gruf{X\times Y}{(x_0,y_0)}\leftrightarrow \gruf{X}{x_0}\oplus \gruf{Y}{y_0}\\
+	[\alpha]\leftrightarrow ([\alpha_1],\ [\alpha_2])
+\end{gather*}
+Essa è anche un morfismo di gruppi, dato che $\alpha\ast\beta = (\alpha_1\ast\beta_1,\ \alpha_2\ast\beta_2)$: i gruppi sono isomorfi.
+\end{demonstration}
+\section{Alcuni esempi di gruppi fondamentali}
+\subsection{Toro}
+\begin{define}\textsc{Toro.}\\
+	Il \textbf{toro}\index{toro} $T$ è lo spazio dato dal prodotto $S^1\times S^1$.
+\end{define}
+	Siccome $S^1\subset\realset^2$, si ha sicuramente che $T\subset \realset^4$; tuttavia, esso è \textit{omeomorfo} al sottospazio $X$ di $\realset^3$ che possiamo visualizzare come una ‘‘ciambella''.
+	%AAA COOL PICTURES CERCASI
+	In particolare, si può definire come effetto della \textit{rotazione} attorno all'asse $z$ di una \textit{circonferenza} ad esso disgiunto.\\
+	Per il teorema precedente si ha: 
+	\begin{equation*}
+		\gruf{T}{\ }=\gruf{S^1\times S^1}{\ }=\gruf{S^1}{\ }\oplus\gruf{S^1}{\ }=\integerset\oplus\integerset
+	\end{equation*}
+Siccome $\integerset$ è un gruppo \textit{ciclico infinito}, posso considerare per il gruppo fondamentale $\gruf{S^1}{\ }$ i generatori $\{-1\}$ e $\left\{1\right\}$, cioè la \textit{classe} del cappio di grado $1$ e quella di grado $-1$; si utilizzerà come generatore \textit{standard} $\gamma(t)=e^{2\pi i t}$.\\
+% inserire immagine
+Per il toro, invece si considerano i generatori corrispondenti a $(1,\ 0)$ e $(0,\ 1)$ in $\integerset\oplus\integerset$; scelto, il punto base $x_0=(1,\ 1)$ si hanno:
+\begin{itemize}
+	\item $\alpha(t)=(e^{2\pi i t},\ 1)$, corrispondente ad un giro nel senso della circonferenza indicata in \textcolor{red}{rosso}.
+	\item $\beta(t)=(1,\ e^{2\pi i t})$, corrispondente ad un giro nel senso della circonferenza indicata in \textcolor{blue}{blu}.
+\end{itemize}
+\subsection{Un gruppo fondamentale non abeliano}
 %LEZ 21
-\begin{example}\textsc{Gruppo fondamentale non abeliano}
-	Sia $X$ l'unione ad un punto di due circonferenze in $\realset^2$, altresì detto bouquet di due circonferenze. Si ha che $\gruf{X}{x_0}$ è infinito ed i cammini per ogni circonferenza con punto base $x_0$ intersezione delle due circonferenze  $[\alpha]$ e $[\beta]$ non commutano, ovvero $[\alpha\ast\beta]\neq [\beta\ast\alpha]$. Inoltre $\gruf{X}{x_0}$ è generato da $[\alpha]$ e da $[\beta]$.
-\end{example}	
-
-	\subsection{Spazi proiettivi reali}
-Consideriamo ora il caso degli spazi proiettivi reali. \\
-Ricordiamo che la definizione \ref{def spazio proiettivo}, per cui $\mathbb{P}^n(\realset)=\nicefrac{\realset^{n+1}\setminus\{0\}}{\sim}$ dove $x\sim y \iff \exists\lambda\in\realset\setminus\{0\} \colon y=\lambda x$, ovvero $\sim$ indotta dall'azione di $\realset\setminus\{0\}$ su $\realset^{n+1}\setminus\{0\}$ per moltiplicazione. Ricordiamo anche la proposizione \ref{spazi proiettivi compatti connessi} per cui $\mathbb{P}^n(\realset)$ è compatto e connesso. Inoltre $\mathbb{P}^n(\realset)$ è $T_2$. Considerata la restrizione della proiezione $\funz {\pi_0\coloneqq \pi_{|_{S^n}}} {S^n} {\mathbb{P}^n(\realset)}$, essa è continua, suriettiva e chiusa (compatto in $T_2$), quindi $\pi_0$ è un'identificazione, ovvero $\mathbb{P}^n(\realset)$ è anche un quoziente di $S^n$ rispetto alla relazione che identifica i punti antipodali $p$ e $-p$. Si consideri la funzione associata $\funztot \phi {S^n} {S^n} p {-p}$ omeomorfismo di $S^n$. Tale relazione di equivalenza su $S^n$ è indotta dall'azione del gruppo $\{\pm 1\}$ per moltiplicazione, dunque $\funz {\pi_0} {S^n} {\mathbb{P}^n(\realset)}$ è sia chiusa sia aperta. In particolare, se $U\subset S^n$ è un aperto su cui $\pi_0$ è iniettiva, allora $\funz {\pi_{0_{|_{S^n}}}} U {\pi_0(U)}$ è un omeomorfismo perché continua, biunivoca e aperta. Da notare che se $\pi_0$ è iniettiva su $U$ allora $U\subsetneqq S^n$, dunque se $p_0\in S^n\setminus\{p_0\}\cong\realset^n \implies \pi_0(U)$ aperto in $\mathbb{P}^n(\realset)$ è omeomorfo ad un aperto di $\realset^n$.\\
-Analizziamo dei casi di dimensione bassa:
+Sia $X$ l'unione ad un punto di due circonferenze in $\realset^2$, cioè il \textbf{bouquet di due circonferenze} che abbiamo trattato a pag. \pageref{bouquet}. Si ha che $\gruf{X}{x_0}$ è \textit{infinito}: Presi i cammini $[\alpha]$ e $[\beta]$ per ciascuna delle due circonferenze, con punto base $x_0$ dato dall'intersezione delle due circonferenze, essi \textit{non} commutano, ovvero $[\alpha\ast\beta]\neq [\beta\ast\alpha]$.\\
+Inoltre $\gruf{X}{x_0}$ è generato da $[\alpha]$ e da $[\beta]$.
+\subsection{Spazio proiettivo reale}
+Consideriamo ora il caso dello \textit{spazio proiettivo reale}, che abbiamo introdotto nel capitolo \autoref{chap:azionidigruppo}. \\
+Ricordiamo la definizione \ref{def spazio proiettivo}:
+\begin{equation*}
+	\proj[n]{\realset}=\frac{\realset^{n+1}\setminus\{0\}}{\sim}
+\end{equation*}
+Dove $x\sim y \iff \exists\lambda\in\realset\setminus\{0\} \colon y=\lambda x$, cioè $\sim$ è la relazione indotta dall'azione di $\realset\setminus\{0\}$ su $\realset^{n+1}\setminus\{0\}$ per moltiplicazione.\\
+Ricordiamo inoltre la proposizione \ref{spazi proiettivi compatti connessi} per cui $\proj[n]{\realset}$ è \textit{compatto} e \textit{connesso}; si ha inoltre che $\proj[n]{\realset}$ è di \textbf{Hausdorff}.\\
+Considerata la \textit{restrizione} della proiezione $\funz {\pi_0\coloneqq \pi_{\mid_{S^n}}} {S^n} {\proj[n]{\realset}}$, essa è continua, suriettiva e chiusa (in quanto funzione da compatto in \textbf{Hausdorff}), quindi $\pi_0$ è un'identificazione. Pertanto, $\proj[n]{\realset}$ è anche un quoziente di $S^n$ rispetto alla relazione che identifica i \textit{punti antipodali} $p$ e $-p$.\\
+Si consideri dunque la funzione associata:
+\begin{equation}
+	\funztot \phi {S^n} {S^n} p {-p}\text{ omeomorfismo di }S^n
+\end{equation}
+Tale relazione di equivalenza su $S^n$ è indotta dall'azione del gruppo $\{\pm 1\}$ per moltiplicazione, dunque $\funz {\pi_0} {S^n} {\proj[n]{\realset}}$ è sia chiusa, sia aperta. In particolare, se $U\subset S^n$ è un aperto su cui $\pi_0$ è \textit{iniettiva}, allora $\funz {\pi_{0_{\mid_{S^n}}}} U {\pi_0(U)}$ è un \textit{omeomorfismo} perché continua, biunivoca e aperta.\\
+Da notare che, se $\pi_0$ è iniettiva su $U$, allora $U\subsetneqq S^n$, dunque se $p_0\in S^n\setminus\{p_0\}\cong\realset^n$ segue che $\pi_0(U)$ aperto in $\proj[n]{\realset}$ è omeomorfo ad un aperto di $\realset^n$.\\
+Analizziamo alcuni casi di dimensione \textit{bassa}:
 	\begin{itemize}
-		\item \underline{$n=1$} \textit{Retta proiettiva reale} $\mathbb{P}^1(\realset)$ 
-		\item \underline{$n=2$} Il \textit{piano proiettivo reale}, la sua descrizione geometrica esplicita può essere complicata, per cui data la mappa $\funz {\pi_0	} {S^2} {\mathbb{P}^2(\realset)}$ e considerata la calotta superiore della sfera compreso l'equatore quale $C=\coloneqq S^2\cap\{z\geq 0\}$,si ha che $\pi_0(C)=\mathbb{P}^2(\realset)$, dunque $\funz {\pi_{0_{|_{C}}}} C {\mathbb{P}^2(\realset)}$ è ancora chiusa, dunque è ancora un'identificazione. Consideriamo ora un altro modello omeomorfo, detto \textit{modello piano di $\mathbb{P}^2(\realset)$}, quello del disco, che tuttavia non è omeomorfo a nesusn sottospazio di $\realset^3$, dunque non è rappresentabile. Sia $D\subset\realset^2$ il disco unitario; si ha che $D\cong\complexset$ tramite la proiezione ortogonale sul piano $x,y$, dunque $D\rightarrow \mathbb{P}^2(\realset)$ è un'identificazione che identifica i punti antipodali su $\partial{D}$. Inoltre il gruppo fondamentale $\pi_0(\mathbb{P}^2(\realset),\ p_0)=\nicefrac{\integerset}{2\integerset}$, infatti ho solo la classe di un cammino $\alpha$ fra due punti antipodali e quella del cammino costante $[c_0]$.
+		\item \underline{$n=1$}: \textbf{retta proiettiva reale} $\mathbb{P}^1(\realset)$.
+		\item \underline{$n=2$}: \textbf{piano proiettivo reale}. La sua descrizione geometrica esplicita può essere \textit{complicata}, tuttavia possiamo trovare un \textit{modello} che ci permetta di studiarlo comodamente. Data la mappa $\funz {\pi_0	} {S^2} {\proj[2]{\realset}}$ e considerata la \textit{calotta superiore} della sfera compreso l'\textit{equatore}, cioè $C\coloneqq S^2\cap\{z\geq 0\}$, si ha che $\pi_0(C)=\proj[2]{\realset}$. Dunque, $\funz {\pi_{0_{\mid_{C}}}} C {\proj[2]{\realset}}$ è ancora chiusa ed è ancora un'identificazione.
+		Sia ora $D\subset\realset^2$ il disco unitario; si ha che $D\cong C$ tramite la proiezione ortogonale dei punti della calotta superiore sul piano $xy$, dunque $\funz{\ }{D}{\proj[2]{\realset}}$ è un'identificazione che identifica i \textit{punti antipodali} su $\partial{D}$. Lo spazio quoziente che otteniamo su $D$ (e anche su $C$, chiaramente) è omeomorfo a $\proj[2]{\realset}$ e prende il nome \textbf{modello piano di $\proj[2]{\realset}$}.
+		% inserire immagine modello circolare
+		Da ciò si vede, anche intuitivamente, che il gruppo fondamentale risulta un gruppo di due elementi:
+		\begin{equation}
+			\gruf{\proj[2]{\realset}}{p_0}=\nicefrac{\integerset}{2\integerset}=\integerset_2=\left\{\overline{0},\ \overline{1}\right\}
+		\end{equation}
+	Preso un punto base $p_0$:
+		\begin{itemize}
+			\item Qualunque cappio contenuto all'\textit{interno} del disco, cioé senza toccare alcun punto del bordo, è omotopicamente equivalente al cammino banale $C_0$ (e quindi la classe è $\left[C_0\right]$). % inserire immagine modello circolare
+			\item Qualunque cappio che va ‘‘oltre il bordo'' \textit{una volta}, attraversando il cammino banale e torna indietro al punto base \textit{non} è banale. Infatti, non possiamo ridurre il cammino ad un cappio sul piano, al più possiamo ‘‘ruotarlo'' attorno al punto base per ottenere un'altro cappio omotopico al primo che attraversa sempre il bordo.  % inserire immagine modello circolare		
+		\end{itemize}
+		Tuttavia, un cappio che va oltre il bordo \textit{due volte} è omotopicamente equivalente al cammino costante. Infatti, 
+		Un punto attorno, possiamo ‘‘ruotare'' la seconda parte del cappio in modo da ottenere il cammino come in figura. % inserire immagine
+		In questo modo, percorrendo il cappio si attraversa il bordo e, quando si arriva al punto base per la prima volta, si torna indietro e si ripercorre il percorso appena fatto all'indietro. In altre parole, si ha (in termini di classi): % inserire immagine
+		\begin{equation*}
+			\left[\alpha\right]^2=\left[\alpha\ast\overline{\alpha}\right]=\left[C_{p_0}\right]
+		\end{equation*}
+		Ottenendo quindi come gruppo fondamentale un gruppo di due soli elementi.
 	\end{itemize}
