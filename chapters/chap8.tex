@@ -910,12 +910,12 @@ Ricordiamo, per il corollario \ref{inclusione rdd isomorfismo} (pag. \pageref{in
 		\end{gather*}
 	Quindi, ad ogni sottoinsieme di $X$ possiamo associare un \textit{sottogruppo del gruppo fondamentale} definito dall'immagine del morfismo \textit{indotto} dall'inclusione ed è formato esattamente dalle \textit{classi di cammini} che ammettono rappresentante con \textit{immagine} interamente contenuta nel sottoinsieme.
 \end{observe}
-\section{Teorema di Van Kampfen sui generatori}
+\section{Teorema di Van Kampen sui generatori}
 \begin{remember}
 	Sia $G$ un gruppo qualsiasi e $S\subseteq G$ sottoinsieme. Si dice che $S$ \textbf{genera il gruppo} $G$ se ogni $g\in G$ si può scrivere come \textit{prodotto finito} di elementi di $S$ e di loro inversi. 
 \end{remember}
 Vediamo ora un risultato generale per poter avere qualche informazione in più sui gruppi fondamentali, sfruttando proprio la nozione di generatore. Si riuscirà a calcolare il gruppo fondamentale $\gruf{X}{x_0}$ di generici spazi $X$ nel corso di \textit{GEOMETRIA 4}.
-\begin{theorema} \textsc{Teorema di Van Kampfen sui generatori (Manetti 11.25).} \label{van kampfen}\index{teorema!di Van Kampfen} \\
+\begin{theorema} \textsc{Teorema di Van Kampen sui generatori (Manetti 11.25).} \label{Van Kampen}\index{teorema!di Van Kampen} \\
 	Sia $X$ uno spazio topologico e siano $A,\ B\subseteq X$ aperti tali che $A,\ B$ e $A\cap B$ siano \textbf{c.p.a.} e $A\cap B\neq\emptyset, X=A\cup B$\footnote{Per il teorema \ref{unione sottospazi connessi}, pag. \pageref{unione sottospazi connessi} questo implica che $X$ è \textbf{c.p.a.}}. \\
 	Sia $x_0\in A\cap B$; consideriamo le inclusioni $\incl i A X$ e $\incl j B X$ con i loro morfismi indotti:
 	\begin{equation}
@@ -959,7 +959,7 @@ Vediamo ora un risultato generale per poter avere qualche informazione in più s
 	\end{equation*}
 Pertanto $G_A\cup G_B$ generano $\gruf{X}{x_0}$.
 \end{demonstration}
-\begin{corollary} \textsc{(Manetti, 11.26)} \label{corollario van kampfen}\\ 
+\begin{corollary} \textsc{(Manetti, 11.26)} \label{corollario Van Kampen}\\ 
 	Sia $X$ uno spazio topologico e siano $A,\ B\subseteq X$ aperti tali che
 		\begin{enumerate}
 			\item $A$ e $B$ sono \textit{semplicemente connessi}.
@@ -970,7 +970,7 @@ Pertanto $G_A\cup G_B$ generano $\gruf{X}{x_0}$.
 \end{corollary}
 \begin{demonstration}
 	Per il teorema \ref{unione sottospazi connessi} $X$ è connesso, essendo unione di \textbf{c.p.a.} con intersezione non vuota.\\
-	Siccome l'intersezione non è vuota, sia $x_0\in A\cap B$: le ipotesi del \textit{teorema di Van Kampfen} appena dimostrato sono soddisfatte, quindi $\gruf{X}{x_0}$ è generato da $G_A$ e $G_B$. Tuttavia $A$ è semplicemente connesso, dunque $\gruf{A}{x_0}=\left\{1\right\}$; considerando:
+	Siccome l'intersezione non è vuota, sia $x_0\in A\cap B$: le ipotesi del \textit{teorema di Van Kampen} appena dimostrato sono soddisfatte, quindi $\gruf{X}{x_0}$ è generato da $G_A$ e $G_B$. Tuttavia $A$ è semplicemente connesso, dunque $\gruf{A}{x_0}=\left\{1\right\}$; considerando:
 	\begin{equation*}
 		\surr {L_\ast} {\gruf{A}{x_0}} {G_A}\text{ suriettiva}\implies G_A=\left\{1\right\}
 	\end{equation*} 
@@ -985,22 +985,23 @@ Pertanto $G_A\cup G_B$ generano $\gruf{X}{x_0}$.
 		\funz {\pi}{S^n\setminus\{N\}}{H=\left\{\left(x_0,\ \ldots,\ x_n\right)\in\realset^{n+1}\mid x_n=0\right\}}
 	\end{equation}
 	 Che, al punto $Q\in S^n$, associa il punto di intersezione $\pi\left(Q\right)$ di intersezione della \textit{retta} passante per $N$ e $Q$ con l'iperpiano $H$.
-	 % inserire immagine proiezione stereografica
+	\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.8]{images/stereo.pdf}
+	\end{center}
 	 La proiezione stereografica è in particolare un \textit{omeomorfismo}\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{proiezionestereograficanote}, si può trovare la dimostrazione di ciò per $n=2$.} e, poiché $H\cong\realset^2$ (in quanto iperpiano di $\realset^{n+1}$), si ha $S^n\setminus \{1\text{ punto}\}\cong \realset^n$.
-	 \vspace{-6mm}
 \end{observe}
 \begin{corollary} \textsc{(Manetti, 11.27)} \label{sfere sempl. connesse} \\
 	La sfera $S^n$ è semplicemente connessa, $\forall n\geq 2$.
 \end{corollary}
 \begin{demonstration}
-	Applichiamo il \textit{teorema di Van Kampfen}, scegliendo degli aperti adatti.\\
+	Applichiamo il \textit{teorema di Van Kampen}, scegliendo degli aperti adatti.\\
 	Sia:
 	\begin{itemize}
 		\item $N=(0,\dots,0,\ 1)\in S^n$ il polo Nord.
 		\item $S=(0,\dots,\ -1)\in S^n$ il polo Sud.
 	\end{itemize}
 	Definiamo $A\coloneqq S^n\setminus\{N\}$: esso è aperto, \textbf{c.p.a.}, omeomorfo a $\realset^n$ per la \textit{proiezione stereografica} e, siccome $\realset^n$ è contraibile, lo è anche $A$; dunque sarà \textit{semplicemente connesso}. Lo stesso è vero per $B\coloneqq S^n\setminus\{S\}$.\\
-	Si ha $A\cap B=S^n\setminus\{N, S\}$ \textbf{c.p.a.} se $n\geq 2$, $A\cap B$ \textit{non} vuoto e inoltre $S^n=A\cup B$; per il corollario \ref{corollario van kampfen} si ha che $S^n$ è \textit{semplicemente connesso}.
+	Si ha $A\cap B=S^n\setminus\{N, S\}$ \textbf{c.p.a.} se $n\geq 2$, $A\cap B$ \textit{non} vuoto e inoltre $S^n=A\cup B$; per il corollario \ref{corollario Van Kampen} si ha che $S^n$ è \textit{semplicemente connesso}.
 \end{demonstration}
 
 \begin{attention}
@@ -1016,7 +1017,6 @@ Dunque, la nostra intenzione è di formalizzare il concetto che ogni intervallo 
 \begin{center}
 	\includegraphics[width=240pt]{images/slinky-eps-converted-to.pdf}
 \end{center}
-%LEZ 20
 	\subsection{Mappa esponenziale}
 	\begin{define}\textsc{Mappa esponenziale.}\\
 		La \textbf{mappa esponenziale}\index{mappa esponenziale} si può considerare come proiezione ad un quoziente per l'azione di $\integerset$ su $\realset$, cioè è la seguente funzione continua e \textit{aperta}:
@@ -1226,11 +1226,10 @@ Vediamo ora come si comporta il grado rispetto al prodotto di cammini.
 			\end{cases}= \alpha\ast\beta(t)\\
 			(\widetilde{\alpha}\ast\widehat{\beta})(0)=\widetilde{\alpha}(0)=0 \implies \deg(\alpha\ast\beta)=(\widetilde{\alpha}\ast\widehat{\beta})(1)=\widehat{\beta}(1)=a+\deg\beta=\deg\alpha +\deg\beta 
 		\end{gather*}
-	\vspace{-6mm}
 \end{demonstration}
 Si può dimostrare, anche se in questa sede non lo faremo, che il grado è \textit{invariante} per omotopia di cammini; concettualmente consiste nel costruire un sollevamento fra le omotopie per mostrare che hanno lo stesso grado.
 \begin{theorema} \textsc{Teorema di monodromia.}\\
-	Siano $\alpha,\beta$ cammini chiusi in $S^1$ con punto base $1$ e supponiamo che $\alpha$ e $\beta$ siano cammini omotopi. Allora $\deg\alpha=\deg\beta$, cioè il grado è invariante per omotopia di cammini.
+	Siano $\alpha,\ \beta$ cammini chiusi in $S^1$ con punto base $1$ e supponiamo che $\alpha$ e $\beta$ siano cammini omotopi. Allora $\deg\alpha=\deg\beta$, cioè il grado è invariante per omotopia di cammini.
 \end{theorema}
 
 \subsubsection{Dimostrazione del gruppo fondamentale della circonferenza}
@@ -1271,16 +1270,20 @@ Si può dimostrare, anche se in questa sede non lo faremo, che il grado è \text
 		\end{itemize}
 	Concludiamo che $\Phi$ è isomorfismo di gruppi e segue dunque la tesi.
 \end{demonstration}
-%intermezzo LEZ 19
 \subsection{Alcune conseguenze del gruppo fondamentale della circonferenza}
-Osserviamo ora, con un esempio sulla circonferenza, che il corollario \ref{corollario van kampfen} \textit{non} vale se $A$ e $B$ non sono \textit{aperti}.
+Osserviamo ora, con un esempio sulla circonferenza, che il corollario \ref{corollario Van Kampen} \textit{non} vale se $A$ e $B$ non sono \textit{aperti}.
 \begin{observe}%inserire immagine?
-	Siano $X=S^1,\ A=(S^1\cap\{y>0\})\cup \{(1,0)\}$ e $B=S^1\cap\{y\leq 0\}$: notiamo come non sono aperti in $X$. 
-	\begin{itemize}
-		\item $A\cong (0,\ 1]\subseteq \realset$ convesso in $\realset$, allora $A$ è contraibile e dunque semplicemente connesso.
-		\item $B=S^1\cap\{y\leq 0\}\cong\intv$ convesso in $\realset$, allora $B$ è contraibile e dunque semplicemente connesso.
-	\end{itemize}
+	Siano $X=S^1,\ A=(S^1\cap\{y>0\})\cup \{(1,0)\}$ e $B=S^1\cap\{y\leq 0\}$: notiamo come non sono aperti in $X$.\\
+\begin{minipage}{.81\linewidth}
+\begin{itemize}
+	\item $A\cong (0,\ 1]\subseteq \realset$ convesso in $\realset$, allora $A$ è contraibile e dunque semplicemente connesso.
+	\item $B=S^1\cap\{y\leq 0\}\cong\intv$ convesso in $\realset$, allora $B$ è contraibile e dunque semplicemente connesso.
+\end{itemize}
 Si ha che $X=A\cup B,\ A\cap B=\{(1,\ 0)\}\neq\emptyset$ e \textbf{c.p.a.}, ma $X=S^1$ come abbiamo appena dimostrato \textit{non} è semplicemente connesso!
+	\end{minipage}
+	\begin{minipage}{.18\linewidth}\vspace{-6mm}
+		\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.6]{images/notvankampen.pdf}
+	\end{minipage}
 \end{observe}
 \begin{corollary} \textsc{(Manetti, 12.38)} \label{circonferenza non retratto disco}\\
 Sia $D\subseteq\realset^2$ il \textit{disco unitario} e $A=\partial{D}$ il suo \textit{bordo}, ovvero $A=S^1$. Allora $A$ non è un retratto di $D$.
@@ -1303,8 +1306,6 @@ Sia $D\subseteq\realset^2$ il \textit{disco unitario} e $A=\partial{D}$ il suo \
 	\end{center} 
 Se $x\in\partial{D}$, allora $x=r(x) \implies r_{\mid_{\partial{D}}}= Id_{\partial{D}} \implies r$ retrazione, il che è \textit{assurdo} per il corollario precedente.
 \end{demonstration}
-%fine intermezzo LEZ 19
-
 \subsubsection{Invarianza della dimensione}
 Grazie al calcolo del gruppo fondamentale della circonferenza si riescono anche a dimostrare dei casi particolari del \textit{teorema di invarianza della dimensione} (che verrà affrontato nel corso di \textit{Topologia Algebrica}).
 \begin{theorema}\textsc{Teorema di invarianza della dimensione.}\index{teorema!di invarianza della dimensione}\\
@@ -1328,7 +1329,6 @@ Grazie al calcolo del gruppo fondamentale della circonferenza si riescono anche 
 		\funztot f {A\setminus\{q\}} C {x=q+(x-q)} {q+r(C)\frac{x-q}{\| x-q \|}}
 	\end{equation*}
 	Con $r(C)$ raggio di $C$ e lo spostamento dovuto al fatto che $C$ è centrata in $q$. Se $x_0\in C\subset A\setminus\{q\}$, siccome esso è un retratto,  si ha che $\incl{\ }{\integerset\cong \gruf{C}{x_0}}{\gruf{A\setminus\{q\}}{x_0} )=\left\{1\right\}}$, da cui l'assurdo.
-% che corollario \ref{grp fond iniettiva e suriettiva}???
 \end{demonstration}
 \begin{attention}
 	Non abbiamo potuto supporre che $A$ fosse una palla perché non sappiamo che ‘‘forma'' abbia dato l'omeomorfismo!
