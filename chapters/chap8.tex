@@ -16,7 +16,7 @@
 \end{introduction}
 %inserire introduzione
 %inserire citazione
-%controllare gruppo fondamentale banale nomenclatura
+%controllare gruppo fondamentale banale nomenclatura (già fatto, ma ricontrollare non guasta mai(onese) )
 \section{Omotopie fra cammini}
 \begin{notate}
 Se non specificato differentemente, useremo $I$ per indicare l'intervallo $\intv$.
@@ -200,6 +200,7 @@ Valgono le seguenti proprietà:
 	\item \textsc{Rapporto coi cammini costanti}: $C_a\ast \alpha \sim \alpha \sim \alpha \ast C_b$. 
 	\item \textsc{Inverso}: $\alpha\ast\overline{\alpha}\sim C_a$ e $\overline{\alpha}\ast\alpha\sim C_a$.
 \end{enumerate}
+\vspace{-3mm}
 \end{proposition}
 \begin{demonstration}~{}
 \begin{enumerate}[label=\Roman*]
@@ -297,7 +298,7 @@ Nel nostro caso, possiamo considerare il punto $a$ di inizio e il punto $b$ di f
 \begin{minipage}{.37\linewidth}
 	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.6]{images/camminoinverso.pdf}
 \end{minipage}
-\begin{equation}
+\begin{equation*}
 	\mvf{F}{t}{s}=\begin{cases}
 		\begin{array}{ll}
 			\alpha\left(2t\right)&\text{se }0\leq t\leq \frac{s}{2}\\
@@ -305,7 +306,7 @@ Nel nostro caso, possiamo considerare il punto $a$ di inizio e il punto $b$ di f
 			\alpha\left(2-2t\right)&\text{se }1-\frac{s}{2}\leq t\leq 1
 		\end{array}
 	\end{cases}
-\end{equation}
+\end{equation*}
 Verifichiamo che lo sia:
 \begin{itemize}
 \item $F$ è ben definita grazie alla ben definizione di $\alpha$: tutti i valori di $F$ risultano interni ad $X$.
@@ -414,7 +415,7 @@ Segue che allora $\gamma_{\#}$ è biettiva.
 \end{observes}
 \begin{example}
 	Sia $Y\subseteq \realset^n$ un sottospazio convesso e $y_0\in Y$.
-	Allora $\gruf{Y}{y_0}=0$ è \textbf{banale}; in particolare, allora $\gruf{\realset^n}{y_0}$ è banale per ogni $n$.
+	Allora $\gruf{Y}{y_0}=\left\{1\right\}$ è \textbf{banale}; in particolare, allora $\gruf{\realset^n}{y_0}$ è banale per ogni $n$.
 \end{example}
 \begin{demonstration}
 	Sia $\left[\alpha\right]\in\gruf{Y}{y_0}$. Vogliamo mostrare che $\left[\alpha\right]=\left[C_{y_0}\right]$, cioè che $\alpha\sim C_{y_0}$.\\
@@ -810,7 +811,7 @@ Applicando il ragionamento insiemistico ricordato in precedenza (pag. \pageref{b
 \begin{demonstration}
 	$X$ contraibile significa che $X$ ha lo stesso tipo di omotopia di $\left\{1\text{ punto}\right\}$. Segue che, per il corollario precedente, il gruppo fondamentale di $X$ è banale:
 	\begin{equation*}
-		\gruf{X}{\ }\cong\gruf{\left\{1\text{ punto}\right\}}{\ }=0
+		\gruf{X}{\ }\cong\gruf{\left\{1\text{ punto}\right\}}{\ }=\left\{1\right\}
 	\end{equation*}
 	Essendo $X$ contraibile, $X$ è anche \textbf{c.p.a.}, dunque vale la tesi.
 \end{demonstration}
@@ -940,6 +941,10 @@ Vediamo ora un risultato generale per poter avere qualche informazione in più s
 			\item Se $\alpha(t_i)\in A\setminus B$ si sceglie un arco $\funz {\gamma_i} I {A}$ da $x_0$ a $\alpha(t_i)$.
 			\item Se $\alpha(t_i)\in B\setminus A$ si sceglie un arco $\funz {\gamma_i} I {B}$ da $x_0$ a $\alpha(t_i)$.
 		\end{itemize}
+		\begin{center}
+		\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.8]{images/vankampenpaths.pdf}
+	\end{center}
+		\vspace{-6mm}
 	Grazie a $\gamma_i$ ora si può ottenere un \textit{cammino chiuso}: $\forall i=1,\dots,k$ sia $\beta_i\coloneqq (\gamma_{i-1}\ast \alpha_i)\ast\overline{\gamma_i}$:
 	\begin{itemize}
 		\item $\beta_i$ è ben definito.
@@ -949,7 +954,7 @@ Vediamo ora un risultato generale per poter avere qualche informazione in più s
 	Mostriamo ora che $\im \beta_i$ è contenuta o in $A$ o in $B$. Fissato $i\in\left\{1,\dots,k\right\}, \ \im\alpha_i=\alpha([t_{i-1},\ t_i])$ è contenuto o in $A$ o in $B$, supponiamo quanto segue:
 		\begin{equation*}
 			\begin{array}{llll}
-				&\im\alpha_i \subseteq A &\implies \alpha(t_{i-1})\in A,\ \alpha(t_i)\in A &\implies \gamma_{i-1} \text{ e } \gamma_i \text{ sono entrambi a valori in }A \\ 
+				&\im\alpha_i \subseteq A &\implies \alpha(t_{i-1})\in A,\ \alpha(t_i)\in A &\implies \gamma_{i-1} \text{ e } \gamma_i \text{ entrambi a valori in }A \\ 
 				\implies& \im\beta_i \subseteq A &\implies [\beta_i]\in G_A&\\ 
 			\end{array}
 		\end{equation*}
@@ -1044,22 +1049,26 @@ Con $V_n\subseteq\realset$ aperto e la restrizione $\funz {e_{\mid_{V_n}}} {V_n}
 		e^{-1}(1)=\{t\in\realset \mid e^{2\pi i t}=\cos(2\pi t)+i\sin(2\pi t)=1\}=\integerset \implies \integerset \cap e^{-1}(U)=\emptyset
 	\end{equation*}
 	Dunque, $\integerset$ è \textit{disgiunto} dalla controimmagine di $U$.\\
-	Poniamo ora $V_0\coloneqq e^{-1}(U)\cap \intv= e^{-1}(U)\cap (0,\ 1)$, in quanto la controimmagine di $U$ non contiene interi.
+	Poniamo ora $V_0\coloneqq e^{-1}(U)\cap \intv= e^{-1}(U)\cap (0,\ 1)$, in quanto la controimmagine di $U$ non contiene interi.\\
+		\begin{minipage}[t]{0.68\textwidth}
 	\begin{itemize}
-		\item $V_0$ è aperto in $\realset$ in quanto intersezione di aperti.
-		\item La restrizione $e_{\mid_{V_0}}$ è iniettiva.
-		\item $e(V_0)=U$ in quanto $e\left( (0,\ 1) \right)=S^1\setminus\left\{1\right\}$ e $U\subseteq S^1\setminus\left\{1\right\}$ per ipotesi.
-	\end{itemize}
- 	Siccome $e$ è \textit{aperta}, la restrizione $\funz {e_{\mid_{V_0}}} {V_0} U$ è un \textit{omeomorfismo} in quanto è biunivoca, continua e aperta.\\
-	Definiamo ora $V_n\coloneqq V_0 +n=\{ x+n \mid x\in V_0\},\ \forall n\in\integerset$. Allora:
-	\begin{equation*}
-		e^{-1}(U)=\union_{n\in\integerset} V_n\text{ e }V_n\subseteq (n,\ n+1)
-	\end{equation*} 
-	Quindi $V_n\cap V_m=\emptyset$ se $n\neq m$, che implica l'\textit{iniettività} della funzione $e_{\mid_{V_n}}$ e il fatto che la somma di sopra sia \textit{disgiunta}. Essendo $e(V_n)=U$, allora $\funz  {e_{\mid_{V_n}}} {V_n} U$ è un omeomorfismo.
-	% inserire immagine spirale con R ed S1
+	\item $V_0$ è aperto in $\realset$ in quanto intersezione di aperti.
+	\item La restrizione $e_{\mid_{V_0}}$ è iniettiva.
+	\item $e(V_0)=U$ in quanto $e\left( (0,\ 1) \right)=S^1\setminus\left\{1\right\}$ e $U\subseteq S^1\setminus\left\{1\right\}$ per ipotesi.
+\end{itemize}
+Siccome $e$ è \textit{aperta}, la restrizione $\funz {e_{\mid_{V_0}}} {V_0} U$ è un \textit{omeomorfismo} in quanto è biunivoca, continua e aperta.\\
+Definiamo ora $V_n\coloneqq V_0 +n=\{ x+n \mid x\in V_0\},\ \forall n\in\integerset$. Allora:
+\begin{equation*}
+	e^{-1}(U)=\union_{n\in\integerset} V_n\text{ e }V_n\subseteq (n,\ n+1)
+\end{equation*} 
+Quindi $V_n\cap V_m=\emptyset$ se $n\neq m$, che implica l'\textit{iniettività} della funzione $e_{\mid_{V_n}}$ e il fatto che la somma di sopra sia \textit{disgiunta}. Essendo $e(V_n)=U$, allora $\funz  {e_{\mid_{V_n}}} {V_n} U$ è un omeomorfismo.
+	\end{minipage}
+	\begin{minipage}[t]{0.31\textwidth}\vspace{-10pt}
+	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=1]{images/spiralexponential.pdf}
+	\end{minipage}
 \end{demonstration}
 
-\subsubsection{Sollevamento}
+\subsection{Sollevamento}
 
 \begin{define} \textsc{Sollevamento.}\\
 	\begin{minipage}[t]{0.78\textwidth}
@@ -1155,7 +1164,7 @@ Andiamo ora a verificare l'\textit{esistenza} di sollevamenti per cammini e vede
 	\end{equation*} 
 	Ma $e_{\mid_{V_{\overline{n}}}}$ è iniettiva perché è un omeomorfismo, quindi $\widetilde{\alpha}(t)=\widehat{\alpha}(t) \implies A\subseteq Y \implies t_0$ è interno a $Y$. Per l'arbitrarietà di $t_0$ vale $Y$ aperto.
 	\end{itemize}
-\vspace{-6mm}
+\vspace{-3mm}
 \end{demonstration}
 
 \subsubsection{Grado di un cammino}
@@ -1201,6 +1210,7 @@ Abbiamo così formalizzato il numero di giri con segno intorno a $S^1$.
 	\begin{equation}
 		\deg (\alpha)\coloneqq \widetilde{\alpha}(1)-\widetilde{\alpha}(0)
 	\end{equation}
+\vspace{-6mm}
 \end{observe}
 Vediamo ora come si comporta il grado rispetto al prodotto di cammini.
 \begin{theorema}
@@ -1232,7 +1242,7 @@ Si può dimostrare, anche se in questa sede non lo faremo, che il grado è \text
 	Siano $\alpha,\ \beta$ cammini chiusi in $S^1$ con punto base $1$ e supponiamo che $\alpha$ e $\beta$ siano cammini omotopi. Allora $\deg\alpha=\deg\beta$, cioè il grado è invariante per omotopia di cammini.
 \end{theorema}
 
-\subsubsection{Dimostrazione del gruppo fondamentale della circonferenza}
+\subsection{Dimostrazione del gruppo fondamentale della circonferenza}
 \begin{theorema}\textsc{Gruppo fondamentale di $S^1$}\\
 	\begin{equation}
 		\gruf{S^1}{1}\cong\integerset
@@ -1272,7 +1282,7 @@ Si può dimostrare, anche se in questa sede non lo faremo, che il grado è \text
 \end{demonstration}
 \subsection{Alcune conseguenze del gruppo fondamentale della circonferenza}
 Osserviamo ora, con un esempio sulla circonferenza, che il corollario \ref{corollario Van Kampen} \textit{non} vale se $A$ e $B$ non sono \textit{aperti}.
-\begin{observe}%inserire immagine?
+\begin{example}
 	Siano $X=S^1,\ A=(S^1\cap\{y>0\})\cup \{(1,0)\}$ e $B=S^1\cap\{y\leq 0\}$: notiamo come non sono aperti in $X$.\\
 \begin{minipage}{.81\linewidth}
 \begin{itemize}
@@ -1284,7 +1294,7 @@ Si ha che $X=A\cup B,\ A\cap B=\{(1,\ 0)\}\neq\emptyset$ e \textbf{c.p.a.}, ma $
 	\begin{minipage}{.18\linewidth}\vspace{-6mm}
 		\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.6]{images/notvankampen.pdf}
 	\end{minipage}
-\end{observe}
+\end{example}
 \begin{corollary} \textsc{(Manetti, 12.38)} \label{circonferenza non retratto disco}\\
 Sia $D\subseteq\realset^2$ il \textit{disco unitario} e $A=\partial{D}$ il suo \textit{bordo}, ovvero $A=S^1$. Allora $A$ non è un retratto di $D$.
 \end{corollary}
@@ -1299,11 +1309,15 @@ Sia $D\subseteq\realset^2$ il \textit{disco unitario} e $A=\partial{D}$ il suo \
 	Sia $D\subseteq \realset^2$ il disco unitario e sia $\funz f D D$ continua. Allora $f$ ha un punto fisso, ovvero $\exists x_0\in D \colon f(x_0)=x_0$.
 \end{corollary}
 \begin{demonstration}
-	Per \textit{assurdo}, supponiamo che $f$ \textit{non} abbia punti fissi, ovvero $f(x_0)\neq x_0,\ \forall x_0\in D$. Utilizziamo $f$ per costruire una retrazione che non può esistere per motivi topologici. Sia $\funz r D {\partial{D}}$ \textit{retrazione} continua con $r_{\partial{D}}=Id_{\partial{D}}$ definita nel modo seguente:
-	\begin{center}
-		Presa $S$ la semiretta aperta uscente da $f(x)$ (essendo aperta il punto $f(x)$ è escluso) e passante per $x$ (in quanto $x\neq f(x)$ per ipotesi dell'assurdo), si ponga $r(x)=S\cap\partial{D}$.
-		% inserire immagine
-	\end{center} 
+	Per \textit{assurdo}, supponiamo che $f$ \textit{non} abbia punti fissi, ovvero $f(x_0)\neq x_0,\ \forall x_0\in D$. Utilizziamo $f$ per costruire una retrazione che non può esistere per motivi topologici. Sia $\funz r D {\partial{D}}$ \textit{retrazione} continua con $r_{\partial{D}}=Id_{\partial{D}}$ definita nel modo seguente:\\
+	\begin{minipage}{.82\linewidth}
+		\begin{center}
+			Presa $S$ la semiretta aperta uscente da $f(x)$ (essendo aperta il punto $f(x)$ è escluso) e passante per $x$ (in quanto $x\neq f(x)$ per ipotesi dell'assurdo), si ponga $r(x)=S\cap\partial{D}$.
+		\end{center} 
+	\end{minipage}
+\begin{minipage}{.17\linewidth}
+	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.5]{images/brower.pdf}
+\end{minipage}
 Se $x\in\partial{D}$, allora $x=r(x) \implies r_{\mid_{\partial{D}}}= Id_{\partial{D}} \implies r$ retrazione, il che è \textit{assurdo} per il corollario precedente.
 \end{demonstration}
 \subsubsection{Invarianza della dimensione}
@@ -1363,22 +1377,35 @@ Essa è anche un morfismo di gruppi, dato che $\alpha\ast\beta = (\alpha_1\ast\b
 	Il \textbf{toro}\index{toro} $T$ è lo spazio dato dal prodotto $S^1\times S^1$.
 \end{define}
 	Siccome $S^1\subset\realset^2$, si ha sicuramente che $T\subset \realset^4$; tuttavia, esso è \textit{omeomorfo} al sottospazio $X$ di $\realset^3$ che possiamo visualizzare come una ‘‘ciambella''.
-	%AAA COOL PICTURES CERCASI
 	In particolare, si può definire come effetto della \textit{rotazione} attorno all'asse $z$ di una \textit{circonferenza} ad esso disgiunto.\\
+	\begin{minipage}{.42\linewidth}
+		\begin{center}
+				\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.45]{images/torusalone.pdf}
+		\end{center}
+
+	\end{minipage}
+	\begin{minipage}{.57\linewidth}
 	Per il teorema precedente si ha: 
-	\begin{equation*}
-		\gruf{T}{\ }=\gruf{S^1\times S^1}{\ }=\gruf{S^1}{\ }\oplus\gruf{S^1}{\ }=\integerset\oplus\integerset
-	\end{equation*}
-Siccome $\integerset$ è un gruppo \textit{ciclico infinito}, posso considerare per il gruppo fondamentale $\gruf{S^1}{\ }$ i generatori $\{-1\}$ e $\left\{1\right\}$, cioè la \textit{classe} del cappio di grado $1$ e quella di grado $-1$; si utilizzerà come generatore \textit{standard} $\gamma(t)=e^{2\pi i t}$.\\
-% inserire immagine
-Per il toro, invece si considerano i generatori corrispondenti a $(1,\ 0)$ e $(0,\ 1)$ in $\integerset\oplus\integerset$; scelto, il punto base $x_0=(1,\ 1)$ si hanno:
+\begin{equation*}
+	\gruf{T}{\ }=\gruf{S^1\times S^1}{\ }=\gruf{S^1}{\ }\oplus\gruf{S^1}{\ }=\integerset\oplus\integerset
+\end{equation*}
+Siccome $\integerset$ è un gruppo \textit{ciclico infinito}, posso considerare per il gruppo fondamentale $\gruf{S^1}{\ }$ i generatori $\{-1\}$ e $\left\{1\right\}$, cioè la \textit{classe} del cappio di grado $1$ e quella di grado $-1$; si utilizzerà come generatore \textit{standard} $\gamma(t)=e^{2\pi i t}$.
+	\end{minipage}\\
+\begin{minipage}{.52\linewidth}
+Per il toro, dunque, consideriamo i generatori corrispondenti a $(1,\ 0)$ e $(0,\ 1)$ in $\integerset\oplus\integerset$; scelto pertanto il punto base $x_0=(1,\ 1)$ si hanno:
 \begin{itemize}
-	\item $\alpha(t)=(e^{2\pi i t},\ 1)$, corrispondente ad un giro nel senso della circonferenza indicata in \textcolor{red}{rosso}.
-	\item $\beta(t)=(1,\ e^{2\pi i t})$, corrispondente ad un giro nel senso della circonferenza indicata in \textcolor{blue}{blu}.
+	\item $\alpha(t)=(e^{2\pi i t},\ 1)$, corrispondente ad un giro nel senso della circonferenza indicata in \textcolor{redill}{\textbf{rosso}}.
+	\item $\beta(t)=(1,\ e^{2\pi i t})$, corrispondente ad un giro nel senso della circonferenza indicata in \textcolor{blueill}{\textbf{blu}}.
 \end{itemize}
+\end{minipage}
+	\begin{minipage}{.47\linewidth}
+		\begin{center}
+				\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.5]{images/torusgenerator.pdf}
+		\end{center}
+\end{minipage}
 \subsection{Un gruppo fondamentale non abeliano}
 %LEZ 21
-Sia $X$ l'unione ad un punto di due circonferenze in $\realset^2$, cioè il \textbf{bouquet di due circonferenze} che abbiamo trattato a pag. \pageref{bouquet}. Si ha che $\gruf{X}{x_0}$ è \textit{infinito}: Presi i cammini $[\alpha]$ e $[\beta]$ per ciascuna delle due circonferenze, con punto base $x_0$ dato dall'intersezione delle due circonferenze, essi \textit{non} commutano, ovvero $[\alpha\ast\beta]\neq [\beta\ast\alpha]$.\\
+Sia $X$ l'unione ad un punto di due circonferenze in $\realset^2$, cioè il \textbf{bouquet di due circonferenze} che abbiamo trattato a pag. \pageref{bouquet}. Si ha che $\gruf{X}{x_0}$ è \textit{infinito}: presi i cammini $[\alpha]$ e $[\beta]$ per ciascuna delle due circonferenze, con punto base $x_0$ dato dall'intersezione delle due circonferenze, essi \textit{non} commutano, ovvero $[\alpha\ast\beta]\neq [\beta\ast\alpha]$.\\
 Inoltre $\gruf{X}{x_0}$ è generato da $[\alpha]$ e da $[\beta]$.
 \subsection{Spazio proiettivo reale}
 Consideriamo ora il caso dello \textit{spazio proiettivo reale}, che abbiamo introdotto nel capitolo \autoref{chap:azionidigruppo}. \\
@@ -1398,21 +1425,42 @@ Da notare che, se $\pi_0$ è iniettiva su $U$, allora $U\subsetneqq S^n$, dunque
 Analizziamo alcuni casi di dimensione \textit{bassa}:
 	\begin{itemize}
 		\item \underline{$n=1$}: \textbf{retta proiettiva reale} $\mathbb{P}^1(\realset)$.
-		\item \underline{$n=2$}: \textbf{piano proiettivo reale}. La sua descrizione geometrica esplicita può essere \textit{complicata}, tuttavia possiamo trovare un \textit{modello} che ci permetta di studiarlo comodamente. Data la mappa $\funz {\pi_0	} {S^2} {\proj[2]{\realset}}$ e considerata la \textit{calotta superiore} della sfera compreso l'\textit{equatore}, cioè $C\coloneqq S^2\cap\{z\geq 0\}$, si ha che $\pi_0(C)=\proj[2]{\realset}$. Dunque, $\funz {\pi_{0_{\mid_{C}}}} C {\proj[2]{\realset}}$ è ancora chiusa ed è ancora un'identificazione.
-		Sia ora $D\subset\realset^2$ il disco unitario; si ha che $D\cong C$ tramite la proiezione ortogonale dei punti della calotta superiore sul piano $xy$, dunque $\funz{\ }{D}{\proj[2]{\realset}}$ è un'identificazione che identifica i \textit{punti antipodali} su $\partial{D}$. Lo spazio quoziente che otteniamo su $D$ (e anche su $C$, chiaramente) è omeomorfo a $\proj[2]{\realset}$ e prende il nome \textbf{modello piano di $\proj[2]{\realset}$}.
-		% inserire immagine modello circolare
+		\item \underline{$n=2$}: \textbf{piano proiettivo reale}. La sua descrizione geometrica esplicita può essere \textit{complicata}, tuttavia possiamo trovare un \textit{modello} che ci permetta di studiarlo comodamente. Data la mappa $\funz {\pi_0	} {S^2} {\proj[2]{\realset}}$ e considerata la \textit{calotta superiore} della sfera compreso l'\textit{equatore}, cioè $C\coloneqq S^2\cap\{z\geq 0\}$, si ha che $\pi_0(C)=\proj[2]{\realset}$. Dunque, $\funz {\pi_{0_{\mid_{C}}}} C {\proj[2]{\realset}}$ è ancora chiusa ed è ancora un'identificazione.\\
+\begin{minipage}{.23\linewidth}
+	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.75]{images/projdisc.pdf}
+\end{minipage}
+\begin{minipage}{.76\linewidth}
+	Sia ora $D\subset\realset^2$ il disco unitario; si ha che $D\cong C$ tramite la proiezione ortogonale dei punti della calotta superiore sul piano $xy$, dunque $\funz{\ }{D}{\proj[2]{\realset}}$ è un'identificazione che identifica i \textit{punti antipodali} su $\partial{D}$. Lo spazio quoziente che otteniamo su $D$ (e anche su $C$, chiaramente) è omeomorfo a $\proj[2]{\realset}$ e prende il nome \textbf{modello piano di $\proj[2]{\realset}$}.
+\end{minipage}\\
 		Da ciò si vede, anche intuitivamente, che il gruppo fondamentale risulta un gruppo di due elementi:
 		\begin{equation}
 			\gruf{\proj[2]{\realset}}{p_0}=\nicefrac{\integerset}{2\integerset}=\integerset_2=\left\{\overline{0},\ \overline{1}\right\}
 		\end{equation}
-	Preso un punto base $p_0$:
+	Vediamo il perché. Preso un punto base $p_0$:
 		\begin{itemize}
-			\item Qualunque cappio contenuto all'\textit{interno} del disco, cioé senza toccare alcun punto del bordo, è omotopicamente equivalente al cammino banale $C_0$ (e quindi la classe è $\left[C_0\right]$). % inserire immagine modello circolare
-			\item Qualunque cappio che va ‘‘oltre il bordo'' \textit{una volta}, attraversando il cammino banale e torna indietro al punto base \textit{non} è banale. Infatti, non possiamo ridurre il cammino ad un cappio sul piano, al più possiamo ‘‘ruotarlo'' attorno al punto base per ottenere un'altro cappio omotopico al primo che attraversa sempre il bordo.  % inserire immagine modello circolare		
+				\item Qualunque cappio contenuto all'\textit{interno} del disco, cioè senza toccare alcun punto del bordo, è omotopicamente equivalente al cammino banale $C_0$ (e quindi la classe è $\left[C_0\right]$).
+			\begin{center}
+				\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.95]{images/projdiscindisc.pdf}
+			\end{center}
+			\item Qualunque cappio che va ‘‘oltre il bordo'' \textit{una volta}, attraversando il cammino banale e torna indietro al punto base \textit{non} è banale. Infatti, non possiamo ridurre il cammino ad un cappio sul piano (dato che non avremmo più i punti sul bordo \textit{antipodali}), al più possiamo ‘‘ruotarlo'' attorno al punto base per ottenere un'altro cappio omotopico al primo che attraversa sempre il bordo\footnote{Per semplicità, nelle figure abbiamo preso come punto il centro del disco. Questi ragionamenti e quelli successivi si adattano facilmente anche nel caso di un \textit{punto generico}, ponendo una leggera \textit{deformazione} al cappio in modo da fare rotazioni ‘‘lecite'', cioè che mantengono i punti del cammino posti sul bordo \textit{antipodali}.}.
+						\begin{center}
+				\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.95]{images/projdiscoverborder1.pdf}
+				\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.95]{images/projdiscoverborder2.pdf}
+				\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.95]{images/projdiscoverborder3.pdf}
+			\end{center}
 		\end{itemize}
-		Tuttavia, un cappio che va oltre il bordo \textit{due volte} è omotopicamente equivalente al cammino costante. Infatti, 
-		Un punto attorno, possiamo ‘‘ruotare'' la seconda parte del cappio in modo da ottenere il cammino come in figura. % inserire immagine
-		In questo modo, percorrendo il cappio si attraversa il bordo e, quando si arriva al punto base per la prima volta, si torna indietro e si ripercorre il percorso appena fatto all'indietro. In altre parole, si ha (in termini di classi): % inserire immagine
+		Tuttavia, un cappio che va oltre il bordo \textit{due volte} è omotopicamente equivalente al cammino costante. Infatti, possiamo ‘‘ruotare'' la seconda parte del cappio (nell'immagine indicata con $3$ e $4$, cioè la parte del laccio dopo che ha già attraversato una volta il bordo) in modo da ottenere il cammino come in figura.
+		\begin{center}
+			\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.95]{images/projdiscdouble1.pdf}
+			\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.95]{images/projdiscdouble2.pdf}
+			\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.95]{images/projdiscdouble3.pdf}
+		\end{center}
+		In questo modo, percorrendo il cappio si attraversa il bordo e, quando si arriva al punto base per la prima volta, si torna indietro e si ripercorre il percorso appena fatto all'indietro. 
+		\begin{center}
+			\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.95]{images/projdiscdouble4.pdf}
+			\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.95]{images/projdiscdouble5.pdf}
+		\end{center}
+		In termini di classi si ha:
 		\begin{equation*}
 			\left[\alpha\right]^2=\left[\alpha\ast\overline{\alpha}\right]=\left[C_{p_0}\right]
 		\end{equation*}
