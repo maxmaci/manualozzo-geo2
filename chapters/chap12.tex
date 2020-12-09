@@ -1809,7 +1809,6 @@ Per scrivere il fascio $\mathcal{F}$ in forma parametrica scelgo due rette disti
 Sappiamo che $\proj[2]{\kamp}$ è il proiettivizzato di $\kamp^3$, ovvero $\proj[2]{\ }=\mathbb{P}(\kamp^3)$, inoltre dal corso di Geometria 1 sappiamo che $\left(\kamp^3\right)^{*}=\{$ forme lineari $\alpha$ su $\kamp^3\}$ del tipo $\funz \alpha {\kamp^3} \kamp$ e $\alpha(x_0,x_1,x_2)= ax_0+a_1x_1+a_2x_2$. L'unica differenza che per ora osserviamo da quanto visto nel corso precedente è la numerazione delle coordinate da $0$ a $2$.\\
 Quando consideriamo la retta $r\colon a_0x_0+a_1x_1+a_2x_2=0$, allora stiamo dicendo che $r$ corrisponde ad un piano proiettivo che è esattamente il proiettivizzato del nucleo di $\alpha$, che è un piano vettoriale $\ker\alpha\subset\kamp^3$ la cui equazione è proprio quella di $r$.\\
 Stiamo dunque considerando $\left( \proj[2]{\ }\right)^{*}=\mathbb{P}\left( (\kamp^3)^{*} \right)\ni [\alpha]\leftrightarrow r$, infatti $\alpha$ è una forma lineare non nulla determinata a meno di multipli. Passando alle coordinate si riottiene quanto visto prima, infatti si ha che $\{x_0,x_1,x_2\}$ è una base di $(\kamp^3)^{*}$ che induce le coordinate proiettive $(a_0\colon a_1\colon a_2)$ su $\left( \proj[2]{\ }\right)^{*}$. Pertanto tale interpretazione astratta diventa operativa (con dei numeri) fissando la base naturale delle forme lineari che è data dalle coordinate proiettive associate: scrivo $\alpha$ come combinazione lineare della base, e i coefficienti saranno le coordinate omogenee.\\
-
 Più in generale, dato uno spazio vettoriale $V$, il suo spazio proiettivo associato $\mathbb{P}(V)$ ed il suo spazio vettoriale duale $V*=\{$ forme lineari $\funz \alpha V \kamp \}$, si ha che $\mathbb{P}(V*)=\left(\mathbb{P}(V)\right)^{*}$.\\
 In particolare si ha una corrispondenza biunivoca
 	% https://q.uiver.app/?q=WzAsNCxbMCwwLCJcXGxlZnQoXFxtYXRoYmJ7UH0oVilcXHJpZ2h0KV57Kn0iXSxbMywwLCJcXHtcXHRleHR7aXBlcnBpYW5pIGRpIH0gXFxtYXRoYmJ7UH0oVikgXFx9Il0sWzAsMSwiW1xcYWxwaGFdIl0sWzMsMSwiXFxtYXRoYmJ7UH0oXFxrZXJcXGFscGhhKVxcc3Vic2V0XFxtYXRoYmJ7UH0oVikiXSxbMCwxLCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJhcnJvd2hlYWQifX19XSxbMiwzLCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJhcnJvd2hlYWQifX19XV0=
@@ -1821,7 +1820,7 @@ In particolare si ha una corrispondenza biunivoca
 	\end{tikzcd}\]
 In coordinate, ad un piano di equazione $\displaystyle \underbrace{a_0x_0+\dots +a_nx_n}_{\alpha}=0$ associamo il punto $(a_0\colon\dots\colon a_n)$, nello stesso modo in cui ad un vettore associo i coefficienti della scrittura secondo una tale base.
 
-		\section{Coniche in $\proj[2]{\kamp}$}
+		\section{Coniche nel piano proiettivo}
 Nel corso di Geometria 1 abbiamo già analizzato le coniche nel piano affine $\mathcal{A}(\realset^2)$ e le abbiamo classificate a meno di rototraslazione. Generalizziamo ora al caso proiettivo tenendo conto del fatto che nel piano proiettivo le coordinate sono omogenee.\\
 Consideriamo $\proj[2]{\kamp}$ con coordinte omogenee $(x_0\colon x_1\colon x_2)$. Indicheremo con $\kamp[x_0,x_1,x_2]$ l'anello dei polinomi in $x_0,x_1,x_2$ a coefficienti in $\kamp$. Se $F\in\kamp[x_0,x_1,x_2]$ è un polinomio qualsiasi, l'equazione $F(x_0,x_1,x_2)=0$ non dà una condizione ben definita in $\proj[2]{\kamp}$: ad esempio $x_0+1=0$ non ha senso perché $x_0$ è determinato solo a meno di multipli. Cerchiamo dunque dei polinomi che ha senso studiare in $\proj[2]{\kamp}$.
 
@@ -1867,6 +1866,241 @@ Le coniche che vogliamo studiare sono le curve di grado 2. Inoltre diremo che un
 
 
 
+%%LEZ 33
+%DEF
+%C è irriducibile
+%
+%
+%ogni F_i  omegeneo e dunque definisce una curva e le componenti irriducibili della curva C sono le curve C_i definite dai fattori riducibili di FSe l'esponente m_i>1 diciamo che C_i è una componente di moolteplicità m_i in C
+%
+%ESEMPI
+%rette: curve di grado 1 e sono sempre irriducibili
+%coniche curve di grado 2
+%C conica di equazione F=0, 3 possibilità:
+%	C irriducibile
+%	prodotto fattori lineari
+%		distinti e non multipli: F=L_1\cdot L_2 con L_i forme lineari non proporzionali \implies C è una coppia di rette distinte (esempio F=x_0x_1, ovvero C è unione della retta x_0=0 e x_1=0)
+%		fattori lineari associati, ovvero F è un quadrato a meno di scalare F=\lambda L^2, \lambda\in\kamp\setminus\{0\} \implies C è una retta doppia: 1 sola componente irriducibile, la reta, di molteplicità 2  esempio F=x_0^2
+%
+%Adesso voglimo studiare più nel dettaglio il caso delle coniche
+%CONICHE PROIETTIVE
+%una conica è data da un polinomio F omoegeneo di grado 2 in x_0,x_1,x_2 a coefficienti reali o complessi.
+%Scriviamo il polinomio con delle lettere per i coefficienti F=a_{00}x_0^2 +a_{01}x_0x_1+
+%tale scrittura ci fa venire in mente una forma quadratica sullo spazio vettoriale \kamp^3
+%in generale i     sono forme quadratiche di grado 2
+%forma <---> polinomio omogeneo
+%Siccome conosciamo tutto delle forme quadratiche, siccome li si vuole associare la matrice simmetrica senza dover dividere per 2 tutte le volte, allora si moltiplicano per 2 i termini misti
+%DunqueA=(a_{ij}) matrice simmetrica 3\times 3     con x vettore delle coordinate omogenee
+%Possimao associare alla conica un rango, che è il rango della matrice A
+%l'equazione della conica (la forma quadratica) determina F solo a meno di multipl, dunque anche la matrice A è determinata a meno di multipli. Quindi 3A, 100A mi dà la stessa conica. Chiaramente il rango rimane ben definito in quanto \rank(\lambda A)=\rank(A), \forall\lambda\neq 0		il rango non può essere 0 perché siccome deve essere l'eq di una conica il polinomio non può essere nullo
+%Vogliamo studiare le coniche e le curve di grado maggiore a meno di equivalenza proiettiva (idem della classificazione dele coniche in R^2 con le rototraslazioni)
+%Dunque se abbiamo una proiettività sappiamo che la possiamo scrivere in coordinate come x'=Mx con M matrice invertibile associata alla proiettività. Allora f porta la conica C\colon F=0 nella conica 			dove \widetilde{F* si ottiene sostituendo in F x=M^{-1}x'
+%ESEMPIO
+%coppia di retta C\colon x_ox_1=0
+%proiettività f()=()
+%scriviamo x' in funzione di x e facciamo il contrario cercando di scrivere x in funzione di x'
+%tolgo la seconda equazione dalla prima \implies x_1=\frac{1}{3}(x_0'-x_1')
+%mentre dalla prima equazione e poi sostituendo quanto ottenuto, viene 
+%in sostanza ho ottenuto l'espressione dell'inversa di f
+%e quindi la trasformata di C tramite f viene esattamente (2x_01+)	=0
+%ignoro 1/3 perché l'equazione della conica è determinata a meno di multipli
+%ottengo ancora una copia di rette, che sono proprio le immagini tramite f delle rette x_0= e x_1=0
+%la proiettività manda il supporto della prima conica nel supporto della seconda conica
+%osserviamo che come abbiamo trasfromato la conica corrisponde a fare un camibamento di coordinate su \kamp^3
+%/trasformando la conica tramite una proiettività, trasformiamo la forma quadratica $F$ tramite un cambiamento di coordinate di $\kamp^3$, dunque se $A$ è la matrice associata a C e $\widetilde{A}$ è la matrice associata alla trasformata tilde C tramite f, allora A e \widetilde{A} sono
+%il cambiamento di coordinate su uno spazio vettoriale, il cambiamento della forma quadratica è dato da widetilde{A}=M^tAM con M\in   cambiamento di base
+%due matrici con questa relazione si dicono congruenti
+%Viceversa, date due coniche C_1 e C_2 le cui matrici associate (simmetriche) A_1 e A_2 sono congruenti, allora $C_1$ e $C_2$ sono proiettivamente equivalenti /questo perché vale anche per le forme quadratiche: forme congruenti differiscono per cambiamento di base
+%Riassumendo, C_1 e C_2 sono proiettivamente equivalenti \iff A_1 e A_2 sono congruenti
+%lo studio delle coniche a meno di equivalenza proiettiva 	passa per matrici congruenti /DA RIASCOLATRE
+%
+%CLASSIFICAZIONE DELLE CONICHE PROIETTIVE COMPLESSE
+%nel campo dei complessi, simmetriche, quando sono congruenti? quando hanno lo stesso rango  /nel caso complesso è equivalente, mentre in generale vale solo che se cono congruenti allora hanno lo stesso rango
+%REMEMBER
+%se 
+%
+%A meno di equivalenza proiettiva allora ci sono solo 3 possibili coniche: rango 1, rango 2 e rango 3
+%TEOREMA
+%1 due coniche in P2C sono proiettivamente equivalenti \iff hanno lo stesso rango
+%2 forma canonica: forma standard per le tre classi di equivalenza proiettiva:	ogni conica di P2C è proiettiamente equivalente ad una ed una sola delle tre coniche seguenti
+%	\rank 3\colon x_0^2+x_1^2+x_3^2=0	conica irriducibile
+%	\rank 2 \colon x_0^2+x_1^2=(x_0+ix_i)() forme lineari non proporzioneli	coppia di rette distinte
+%	\rank 1 \colon x_0^2=0	retta doppia
+%questo è dato dalla classificazione delle forme quadratiche du \complexset^3
+%
+%CLASSIFICAZIONE DELLE CONICHE PROIETTIVE REALI
+%nel caso reale
+%Sia $C$ una conica in P2R con matrice associata $A$, che è simmetrica reale 3\times 3, serve anche la segnatura oltre al rango
+%OSS
+%A è determinata a meno di multipli, la segnatura può cambiare
+%Se A è segnatura (p,q) con p#autovalori positivi e q#autovalori negativi
+%allora \lambda A può avere segnatura: la stessa se lambda è positivo oppure (q,p) se \lambda <0
+%quindi la segnatura di una conica è definita solo a meno del segno , nel /scambio degli autovalori/ nel senso che (p,q)=(q,p)
+%TEOREMA
+%1 Due coniche in P2R sono proiettivamente equivalenti  \iff hanno la stessa segnatura (a meno del segno)
+%2 Ogni conica in P2R è proiettivamente equivalente a una ed una sola delle seguenti coniche (segnature distinte a meno del segno)
+%	\rank 3	
+%		(3,0)\colon x_0		ha un supporto? ci sono dei punti in P2R che hanno questa equazione? no perché escludiamo l'origine	conica irriducibile senza punti reali /tipo ellisse immaginario/ dunque il supporto è vuoto
+%		(1,2) \colon x_0^2+x_1^2-x_2^2=0	irriducibile a punti reali, contiene infiniti punti in P2R
+%	\rank 2
+%		(2,0) \colon x_0^2+x_1^2=0	coppia di rette non reali perché si fattorizza ma a coeff complessi. Ha un unico punto reale (0\colon 0\colon 1) intersezione delle due rette complesse coniugate
+%		(1,1) 	coppia di rette reali distinte che si fattorizza su R
+%	\rank 1
+%		(1,0)\colon x_0^2=0	retta doppia
+%		
+%		
+%CURVE ALGEBRICHE PIANE AFFINI E CHIUSURA PROIETTIVA
+%vediamo come si relaziona con la classe delle coniche in R2
+%lo si può fare perché abbiamo interpretato il caso proiettivo come un'estensione di quello affine
+%
+%DEF
+%una curva algebrica pina affine in \kamp^2 è data dall'equazione f(x,y)=0, dove f è un polinomio 
+%per definizione, due equazioni due equazioni f,g definiscono la stessa curva \iff sono proporzionali, ovvero g=\lambda f, \lambda\in\kamp\setminus\{0\}
+%grado di C=\deg f
+%supporto di C= \{\}
+%componenti irriducibili, cura irriducibile, molteplicità di una componente
+%retta=curva di grado 1 ax+by+c=0
+%conica= curva di grado 2: ax^2+by^2+cxy+dx+ey+f=0
+%
+%legame fra curve affini e proiettive passando alla chiusura proiettiva
+%analogo delle rette
+%ricordiamo che \kamp^2=U_0\subset 
+%usiamo come notazione \colon per le coordinate omogenee, per cui useremo che x=/ e y= /
+%
+%partiamo da una curva affine C di equazione f(x,y)=0. Vogliamo associare a f un polinomio omogeneo nelle coordinate x_0   dello stesso grado di f
+%Consideriamo il polinomio F\in\kmp[x_0,x_1,x_2] così definito: se d=\deg f, allora F\coloneqq x_0^d f(,)
+%scritto così non è chiaro che sia un polinomio, dimostriamolo
+%Fè un polinomio omogeneo di grado d, infatti, considerato un monomio in f ax^iy^j allora i+j\leq f
+%operando sul monomio, 	otteniamo, mettendo davanti a
+%abbiamo ottenuto che c'è una parte data dal monomio di partenza (roba gialla) in cui ho cambiato nome alle variabili, poi abbiamo moltiplicato per la potenza di x_0 per farlo diventare monomio di grado d in x_0,x_1,x_2
+%facendolo per ogni monomio otteniamo un polinomio omogeneo di grado d, che è ottenuto "omogeneizzando" f(x_1,x_2) rispetto a x_0 /omogeneizzazione di un polinomio
+%ESEMPIO
+%F=
+%CAMBIO VARIABILI IN X_1,X_2
+%POI OMOGENEIZZO RISPetto a x_0	F=x_1^3-2x_0x_1x_2 +3x_0^2x_2+x_0^3
+%
+%OSS con questo procedimento, ponendo x_0=1 si riottiene il polinomio di partnza f(x_1x_2)
+%
+%DEF
+%La curva overlineC in P2K definita da F=0 si dice chiusura proiettiva della curva affine F di equazione f=0
+%
+%Se P=(1\colon x\colon y)  allora f()=F(	x_0=1ottengo polinomio partenza)
+%Ne segue che overlinec\cap   come cupporti
+%I punti impropri o punti all'infinito della curva C sono dati dall'intersezione della chiusura proiettiva con la retta impropria
+%
+%ESEMPIO
+%Se C è una retta ax	allora la chiusura proiettiva di C è ax_1+bx_2+cx_0=0 ed i punto improprio di C è	 che corrisponde alla direzione della retta C
+%%PLANNING DELLE ULTIME LEZIONI
+%%GIOVEDì: 1h teoria ed 1h esercizi
+%%LUNEDì: teoria
+%%MARTEDì: teoria
+%%MERCOLEDì: Martinengo
+%%GIOVEDì: no lezione
+%
+%ESEMPIO
+%consideriamo in R^2 le coniche
+%C_1\colon y=x^2 	parabola
+%C_2\colon x_2		circonferenza
+%C_3\colon	irpobole
+%Chiusure proiettive: coniche proiettive nel pinao proiettivo reale tramite l'omogeneizzazione
+%\overline{C_1}
+%
+%
+%scrivendo le matrici associate e guardando la segnatura, si ha che tutte e tre hanno segnatura (2,1) o (1,2) e quindi sono coniche /nelle 5 classi/ irriducibili a punti reali in P2R e sono tutte proiettivamente equivalenti
+%vediamo quali sono i punti impropri
+%\overline{C_1}\cap	segue che x_1=0, ottenendo un solo punto (0\colon 0\colon 1) 	\ual è il significato di questa direzione rispetto alla 		
+%	parabola: direzione (0,1) (span lineare dto dal vettore x_1,x_2), dunque la direzione dell'asse y, che è proprio l'asse della parabola
+%	circonferenza: x_0=0 \implies x_1=x_2=0 ma non si possono avere tute le coordinate omogenee nulla \implies non ci sono punti impropri
+%	iperbole: 	due punti impropri che sono (0\colon 1\colon 1) e (), a cui corrispondono le direzioni degli asintoti dell'iperbole
+%sono tutte proiettivamente equivalenti, e dal punto di vista affine si distinguono dalla posizione rispetto alla retta impropria
+%%AAA DISEGNI CERCASI
+%essendo S^1 disgiunta dalla reta impropria non cambia nulla
+%
+%le 3 chiusure proj sono equiva, ma hanno 3 posizioni diverse rispetto alla retta impropria: tangente, disgiunta e secante
+%
+%ESEMPIO con la coppia di rette
+%In \realset^2 possiamo considerare la coppia di rette parallele distinte x(x+1)=0
+%oppure una coppia di rette incidenti distinte xy=0
+%Facendone le chiusure proiettive si ottiene 		, e sono entrambe coppie di rette distinte reali in P2R, ovvero la segnatura è sempre (1,1)
+%sono proj equiv fra loro ma hanno posizione diversa rispetto alla retta impropria, infatti guardando i punti impropri si ha che la prima ha un solo punto improprio () che è la direzione comune delle due rette parallele, mentre nel secondo caso si hanno due punti () e () che sono le direzioni delle due rette
+%	passa nell'intersezionie delle due rett
+%	
+%ragionando in questo modo si può ricavare dalla class delel coniche proiettive si può riottenere la calss delle coniche in R2 a meno di affinità (invertibile e traslazionie), ottenendo le forme canoncihe in cui poniamo i coeff uguali a 1 perché le matrici non sono solo di rotazione
+%proj ad affine tramite chiusura
+%	attenzione alla posizione rispetto alla retta impropria
+%Si mette in relazione la classificazione proiettiva delle coniche in P2R con la ben note classificazione affine delle coniche in R^2
+%	
+%COMPLESSO
+%ClASSIFICAZIONE AFFINE DELLE CONICHE IN \COMPLEXSET^2
+%
+%PROP
+%ogni conica in C^2 si può ridurre con una trasofrmazionie del tipo 		
+%ad una delle cinque coniche
+%	DA RIASCOLTARE
+%	vediamo dove andiamo a parare:guardando la chiusura proiettiva, ho 3 ranghi possibili con la loro ir/riducibilità. Dobbamo guarare la posizione possibile rispetto alla retta allìinfinito, Siccome simao su C la chiusura proj ha solo 2 posizioni possibili: 2 punt distini o 2 punti coincidenti se irriducibili in base a 2 pt impropri o un solo. Idem per la coppia di rette al caso 			1 caso in rango 1
+%1 La forma canonica 	la chiusura proiettiva ha rango 3 ed abbiamo 2 unti impropri distinti
+%2 y-	=0	la chiusura proj ha ancora rango 3 ma abbiamo un unico punto improprio
+%3 x^2+y^2=()()=0	coppia di rette distinte incidenti, la chiusura proiettiva ha rango 2 ed abbiamo 2 punti impropri
+%4 	coppia di rette distinte ma parallele, la chiusura proiettiva ha rango 2 e c'è 1 punto impproprio
+%5 	retta dopiia
+%
+%	non la dimostriamo ma abbiamo dato una giustificazione geometrica: class a meno di proj e #punti impropri
+%RECAP	
+%nel piano proj nel piano proj si riduce a classificare le forme quadratiche in K^3 ed usiamo l'algebra lineare: equiv proj dal rango (3 classi) mentr ein quello reale dipende anche dalla segnatura (a meno del segno) ed abbiamo 5 classi di equiv proj di coniche nel pin proj reale
+%curve alg aff e chius proj
+%	class affine coniche in r2 passando alla chiusura proj 
+%		esempi che spiegao il significato geometrico
+%			ellisse ierbole etc	chiusura proj stessa ma cambia pos retta impropria
+%			
+%			
+%	class affine coniche in c2, guardo anche il numero di punti impropri
+%	
+%class coniche semplice perché è alg ineare, da grado 3 in su è meno semplice, servono dunque le nozioni per studiare curva algebrica, che sia affine o proiettiva
+%
+%OSS POLINOMI OMOGENEI IN 2 VARIABILI
+%definito la scrosa volte. In una sola var non ha molot senso perché ho solo 1 monomio. Il caso in 2 sarà quello più semplice
+%GOAL: pol om 2 var si comportano come i polinomi qualsiasi in una variabile
+%Sia F\in\kamp  omogeneo di grado d con F=a_0x_0^d+a_1x_0^}
+%d+1 monomi dunque d+1 coefficienti
+%ricordimao che vedendo x_0:x_1 com coo omogenee su P1, allora F ha degli zeri su P1, ovvero F(P)=0 è ben posta per P=()
+%
+%PROPOSIZIONE
+%1 F si annulla in punto P=(a\colon b) \iff ax_1-bx_0 divide F
+%	DEF diciamo che F si annulla in P all'ordine m se la potenza ()^m è la massima potenza di 	che divide F
+%		va letta ome la propr in 1 var come le radici /Ruffini!/
+%2 Se d=\deg F, F ha al più d zeri su P1 contati con molteplicità /analogo degli zeri 
+%3 Se F ha coefficienti complessi, allora F si fattorizza come prodotto di forme lineari e ha esattamente d zeri in P1 contati con molteplicità
+%	su c, analogo ogni pol in una vr si fatttorizza come pol di grado 1 ed ha tutti gli zeri
+%DIMOSTRAZIONE
+%facciamo un'ipotesi che semplifica la notaione poi vediamo il caso generale
+%Supponiamo che x_0 non divida F, ovvero a_d\neq 0 e F non si annulla in (0\colon 1)
+%Poniamo f\coloneqq F(1,t), dunque è un polinomio in una variabile,  x_0=1, e x_1=t, dunque scrivendolo esplicitamente a_0+a_1t	non solo è in una variabile ma è ancora di grado d perché a_d\neq 0
+%F è l'omogeneizzati di f rispetto a x_0, ovvero F=x_0^2f
+%gli zeri di F sono tutti e soli della forma (1\colon\lambda) con \lambda radice di f, ovvero deomogeneizzando passiamo da 2 variabili in 1 variabile. siccome F non si annulla nell'unico punto che ha x_0=, allora	forma 1 lambda  e F(1,\lambda)=f(\lambda)
+%dunque le propr di F che vogliamo dimostrare seguono da quelle di f che sappiamo
+%
+%! F si annulla in (1\colon\lambda) sto usando il fatto che posso igorare il fato che  	\iff f(\lambda)=0 \iff t-\lambda |f \iif l'omoegeneizzati divide F
+%2 immediato da 1, perché se F si annulla inp_i=(a_i\colon b_i) distinti con molteplicità m_i, allor vedendo la divisibilità 		\forall i=1,\dots,r siccome ipunti sono distinit allora i vettori sono non propr, allora i polinomi sono primi fra loro al variare di i / i punti sono istinti/, dunque anche il loro prodotto deve dividere F	\implies \sum_{i=1}^r
+%3 segue immediatamente dal caso complesso in 1 variabile, infatti f si scrive come f=c(t-\lambda_1)^{m_1}\dots	siccome C è algebricamente chiuso \implies F=c()^{}\dots()^{*}, ovveor si fattorizza completamente con forma lineari	non solo di vide ma a meno di costante ho l'uguaglianza
+%
+%OSS
+%se fossimo su R potremmo dedurre che un pol reale in una var ha radici reali o complesse conigate, posso dedurre da F che ha sempre almeno uno ero nella retta proj reale
+%
+%Vediamo il caso generale
+%Se x_0 divide F, allora 	con G omogenoeo di grado d-r e x_0 non divide G
+%Quest significa che F si annulla in o,1 con molteplicità r e tutte le propr di F seguono dalle proprietà che sono vere per G
+%la proposizione vale per G e per esercizio verificare che vale anche per F
+%
+%Conclusione: i polinomi omogenei in 2 var si comportano come ipolinomi in una variabile
+%
+%Useremo ciò per studiare l'intersezione fra una retta ed una curva in P2
+%Sia C una curva in P2 di grado d ed equazione
+%Sia r una retta
+%Vogliamo intersecare la retta on il supporto di C
+%quando interseco 2 sott è ottimale se uno è descritto per eq e l'altro parametrica e poi sostituisco
+%Di unoho le equazioni, mentre so come scrivere in forma parametrica la retta
+%Scriviamo una parametrizzazioe per r, per farlo servoon 2 punti distinti, ogni punto di r si scrive come P=\lamda =[], dove v è un vettore che rappresente A 	con v,w\in e ()\in
+%\implies C\cap r è dato dal F(\lambda)=0, è uguale all'esplicitamzione delle coordinate quindi qui pensaimo che a e B sono date ed ho già dei numeri, mentre \lambda e \mu sono delle variabili, ottenendo così un polinomio G in \lambda e \mu che sarà omogeneo di grado d o identicamene nulo se la retta è contenuta nella curva
 
 
 
