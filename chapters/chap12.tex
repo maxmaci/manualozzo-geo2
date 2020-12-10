@@ -2099,8 +2099,101 @@ Le coniche che vogliamo studiare sono le curve di grado 2. Inoltre diremo che un
 %Vogliamo intersecare la retta on il supporto di C
 %quando interseco 2 sott è ottimale se uno è descritto per eq e l'altro parametrica e poi sostituisco
 %Di unoho le equazioni, mentre so come scrivere in forma parametrica la retta
-%Scriviamo una parametrizzazioe per r, per farlo servoon 2 punti distinti, ogni punto di r si scrive come P=\lamda =[], dove v è un vettore che rappresente A 	con v,w\in e ()\in
+%Scriviamo una parametrizzazioe per r, per farlo servoon 2 punti distinti, ogni punto di r si scrive come P=\lambda =[], dove v è un vettore che rappresente A 	con v,w\in e ()\in
 %\implies C\cap r è dato dal F(\lambda)=0, è uguale all'esplicitamzione delle coordinate quindi qui pensaimo che a e B sono date ed ho già dei numeri, mentre \lambda e \mu sono delle variabili, ottenendo così un polinomio G in \lambda e \mu che sarà omogeneo di grado d o identicamene nulo se la retta è contenuta nella curva
 
+%LEZ 34
+%ESEMPIO
+%
+%IN GENERALE DATA c UNA CURVA IN p2 DI GRADO D E R IN p2 UNA RETTA, ABBIAMO VISTO CHE L'INTERSEZIONE SI OTTIENE PRENDENDO UNA PARAMETRIZZAZIONE DELLA RETTA (VISTO IERI) 
+%combinazione lineare dei punti e dei vettori corrispondenti e poi F(x_0  )=0 equazione di C, sostituiamo nell'equazione la parametrizzazione di r in F si ottine n polinomio in lambda e mu G()\coloneqq	che per definizione è ottenuto sostituend i vetori
+%Abbiamo due possibilità
+%o la retta è contenuta nella conica: ogni pt della retta soddisfa l'eq, dunque il polinomio è identicamente nullo
+%se la retta non è contenuta nella conica, allora G è un polinoimo in lamba e mu siccome F era omo di grado d e dento F sostituisco forme lineari, allora G  un polinomio  omogeneo di grado d in lambda e mu
+%
+%DEF
+%SE UNA COPPIA è UNA RADICE DI g DI MOLTELICIT M
+%(massimo esponente della fomra lineare che fdivide il polinomio G=
+%la curva C e la retta r hanno molteplicità di intersezione m nel punto P che corrisponde all'intersezione in P2, sostituendolo nella parametrizzazione della retta
+%CONTO MOLTEPLICITà DELL'INTERSEZIONE
+%
+%poniamo m=0 se P non sta nell'intersezione e m=\infrty se la retta è contenuta nella curva e P è in r
+%
+%RECAP OSS
+%1 MOLTEPLICITà INTERSEZIONE	se r non è contnuta in C allora l'intersezione è finita /#finito di punti/. Sia mi la molteplicità di intersezione in P_i, allora il numero di questi punti di intersezione /G(\lambda, \mu)=0 dà i punti di intersezione della curvacon la retta. Tale equazione può avere al più d soluzioni, ovvero tante quandte la curva, questo perché G è omogeneo di grado d. N deduciamo che la cardinalità dell'intersezione è al più in grado di C. Anche contati con moltplicità è al più il grado di C. Questo perché G()=0 ha al più d soluzioni con moltplicità /dall'analisi dei plinomi omogenei in due variabili di ieri
+%	Se il campo è quello complesso allora possiamo dire che la somma delle moltlpicità è esattamente d. In particolare, la retta e la curva si intersecano sempre: generalizza che nel pinao proj si intersecano sempre
+%	Se il campo è quello reale e d è dispari allora possimamo ancora concludere che la rettaaa e la curva si intersecano sempre: deve annullarsi almeno in un punto reale
+%
+%
+%nel caso della conica il grado è due, quindi non si hanno molte possibilità
+%ESEMPIO 
+%Se C in P2C è una conica ed r è una retta non contenuta in C, allora r\cap C sono due punti con molt 1 o 1 punto con molteplicità 2
+%Se la conica  in P2R ed r è una retta non contenuta in c, allora c'è anche la possibilità che l'intersezione sia vuota e
+%	C\colon	r_3
+%	
+%Se una conica C contiene tre punti allineati, allora è riducibile, questo perché
+%riducibile vuol dire che il rango è minore o uguale di 2
+%TIPS 14:50 da riasocltare
+%se la retta e lacurva si intersecano troppo lo vedo dal grado e dalla molteplicità ottengo che una è contenuta
+%OSS si può dimostrare che la molteplicità di intersezione fra C e r in P non dipende dalla parametrizzazione scelta per r		cambiamento variabili invertibile nel poinomio
+%la molteplicità di intersezione è invariante per proiettività
+%
+%con l'inversa della proiettività ottengo un nuovo pol omogeneo
+%dunque le priìoiettività portano curve algebriche in curve algebriche
+%
+%
+%stessa costruzione nel caso affine
+%
+%INTERSEZINE RETTA CURVA NE CASO AFFINE
+%Sia C una curva in k\amp^2 di equazione f(x,y)=0 e sia r una retta affine
+%Scegliamo una parametrizzazione per r
+%per intersecare C ed r sostituiamo la parametrizzazine di r nell'equazione di C e otteniamo un polinomio nell'unico parametro t
+%le radici di t corrispondono ai punti di intersezione
+%definiamo la moltplicità di intersezinoe di C e r in un punto P che corrispone ad un t_0 del parametro che è uno 0 di G che corrisponde alla molteplicità di t_0 come radice fi g(t)
+%
+%FATTI
+%1/2	la moltplicità di int non dipende dalla scelta di paramaterizzazione della retta ed è invariante per afifnità
+%3	è la stessa cosa calcolata nel pinao affine o nella chiusura proiettiva. Sia p nell'intersezione e la chiusura proiettiva di C in P2 che contiene il piano affine ed r segnato la chiusura proiettiva di r in P2, partiamo da una curva nel piano affine e una retta e il punto di intersezione
+%il punto satarà ancora nelle chiusure proiettive, allora la molteplicità di intersezione fra c e r in P è uguale alla molteplicità di intersezione fra le chiusure proiettive in P
+%
+%DEF RETTA TANGENTE AD UNA CURVA IN UN PUNTO
+%Sia C una curva piana (affine o proj) e r una retta (aff o proj). Diciamo che r è TANGENTE a C in un punto P se la molteplicità di intersezione fra C ed r in P è maggiore di 1
+%per esempio, C in P2R di equazione con retta di equazione, l'intersezione era solo un punto, allora r_1 è tangente a C in P. è proprio la tangente geoemtrica. La conica in P2R 
+%deomogeneizziamo rispetto alla variabile non nulla x=/ y=/ e duneue C_2 ha equazione	,ovvero è una circonferenza con P=(0,1) allora la tangente in questp caso è chiaramente la retta y=1, tornando in coo proj diventa x1/x_2=1 \implies x_1=x_2
+%
+%esempio con una cubica in R2
+%Sia C in R^2 la crva di equazione y^2=x^2+x^3, è una cubica perché ha grado 3
+%voglio calcolare quali sono le rette tangenti nei punti P=(-1,0)\in C	prendo le rette che passano per P, le interseco con la retta e vedo quali sono tangente: fascio e per quali la molteplicità è maggiore di 1
+%tego la direzione come parametro
+%dalla retta parametrizzazione sosttuisco nell'equazione 
+%
+%g(t) porto tutto al secondo membro e viene 
+%
+%analizziamo cosa abbiamo trovato t=0 è sempre una soluzione: per costruione abbiamo preso la retta che passava per p, dunque è sempre soluzione, per qualsiasi direazione
+%la molteplicità di intersezione fra C e r in P è la massima potenza di t che divide g, o meglio è m se  t^m è la massima potenza di t che divide g. Quand'è che la molteplicità di intersezione è maggiore di 1 in questo caso con una cubica? Nell'equazione che abbiamo scritto deve succedere che t^2 divide g, ovvero v_1=0 per poter raccogliere una copia di t
+%questo determina univocamente la retta
+%quindi r è la retta verticale che assa per P
+%abbiamo dunque determinato che esiste ed è unica tangente in P
+%
+%ESEMPIO DI RETTE TANG NON UNICHE
+%riscriviamo l'eq delle curva, questa volta consideriamo l'origine
+%scriviamo il frascio di rette per Q
+%troviamo che t^2 si può sempre raccogliere
+%significa in questo caso che la molt di intersezione fra le rette e Q è sempre almeno 2, dunque ogni retta per Q ha intersezione maggiore di 2, dunque è tangente
+%nel punto Q la curva si autointerseca, moralment ogniiretta per l'origine interseca la curva almeno due vole, quindi è tangente
+%nel conto ci sono due dir speciali per ui la molt è 3, quando w_1^2-w_2^2=0\implies w_1=w_2 (bis 1 quadrante) oppure w_1=-w_2	tangenti ai rami: più tangenti perché la molt di intersezione sale
+%
+%nel caso generale si fa un conto analogo: nel caso affine
+%C\colon f()=0
+%OSS possiamo sempre scrivere il polinomio come polinomio centrato in x_0,y_0, ovvero come polinomio in x_0-x_0 e	 invece che come polinomio in x e y
+%(somma finita senza specificare il grado)
+%uso la formula del binomio di Newton
+%Allora f()==f(P) e in particolare in questa scrittura si ha il termine noto,quello lineare e i termini di grado superiore
+%dipende da tali numeri, che si possoo esprimere in termini di derivate parziali
+%quando ho polinomio posso sempre definire in maniera formale la derivazione parziale
+%
+%ESERCIZIO
+%verificare che \alpha=\frac{\partial{f}}{\partial{x}}(x_0,y_0) e \beta=\frac{\partial{f}}{\partial{y}}(x_0,y_0)
+%
 
 
