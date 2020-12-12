@@ -1825,40 +1825,40 @@ Nel corso di Geometria 1 abbiamo già analizzato le coniche nel piano affine $\m
 Consideriamo $\proj[2]{\kamp}$ con coordinte omogenee $(x_0\colon x_1\colon x_2)$. Indicheremo con $\kamp[x_0,x_1,x_2]$ l'anello dei polinomi in $x_0,x_1,x_2$ a coefficienti in $\kamp$. Se $F\in\kamp[x_0,x_1,x_2]$ è un polinomio qualsiasi, l'equazione $F(x_0,x_1,x_2)=0$ non dà una condizione ben definita in $\proj[2]{\kamp}$: ad esempio $x_0+1=0$ non ha senso perché $x_0$ è determinato solo a meno di multipli. Cerchiamo dunque dei polinomi che ha senso studiare in $\proj[2]{\kamp}$.
 
 \begin{define} \textsc{Polinomio omogeneo}\\ \index{polinomio!omogeneo}
-	Sia $F\in\kamp[x_0,x_1,x_2]$ un polinomio. Si dice che $F$ è un \textbf{polinomio omogeneo} se tutti i monomi a coefficienti non nulli hanno lo stesso grado.
+Sia $F\in\kamp[x_0,x_1,x_2]$ un polinomio. Si dice che $F$ è un \textbf{polinomio omogeneo} se tutti i monomi a coefficienti non nulli hanno lo stesso grado.
 \end{define}
 Notiamo che la definizione è significativa per polinomi a più variabili, altrimenti i polinomi omogenei sarebbero solo monomi.
 
 \begin{example}
-	Un esempio di polinomio omogeneo è $F=x_0^3+x_0x_1^2-3x_1x_2x_3\in\realset[x_0,x_1,x_2]$, che p un polinomio omogeneo di grado $3$.\\
-	Un polinomio non omogeneo invece è $G=x_0^3-x_1x_2+1$
+Un esempio di polinomio omogeneo è $F=x_0^3+x_0x_1^2-3x_1x_2x_3\in\realset[x_0,x_1,x_2]$, che p un polinomio omogeneo di grado $3$.\\
+Un polinomio non omogeneo invece è $G=x_0^3-x_1x_2+1$
 \end{example}
 
 \begin{observe}
-	Considerato il caso del grado pari a $1$, se $\deg F=1$, ovvero $F=a_0x_0+\dots+a_nx_n+b$, allora $F$ è omogeneo $\iff b=0$
+Considerato il caso del grado pari a $1$, se $\deg F=1$, ovvero $F=a_0x_0+\dots+a_nx_n+b$, allora $F$ è omogeneo $\iff b=0$
 \end{observe}
 
 \begin{observe}
-	Se $F\in\kamp[x_0,x_1,x_2]$ è omogeneo di grado $d$ allora 
-		\begin{equation}
-			F(\lambda x_0,\lambda x_1,\dots,\lambda x_n)=\lambda^d F(x_0,\dots,x_n)
-		\end{equation}
-	Infatti $F$ è somma di monomi di grado $d$ del tipo $ax_0^{i_0}x_1^{i_1}\cdots x_n^{i_n}$ con $\sum_{j_0}^n i_j=d$ e si ha che $a(\lambda x_0)^{i_0} (\lambda x_1)^{i_1} \cdots (\lambda x_n)^{i_n}=\lambda^{i_0+\dots +i_n} (ax_0^{i_0}\dots x_n^{i_n})=\lambda^d(ax_0^{i_0}\dots x_n^{i_n})$
+Se $F\in\kamp[x_0,x_1,x_2]$ è omogeneo di grado $d$ allora 
+\begin{equation}
+F(\lambda x_0,\lambda x_1,\dots,\lambda x_n)=\lambda^d F(x_0,\dots,x_n)
+\end{equation}
+Infatti $F$ è somma di monomi di grado $d$ del tipo $ax_0^{i_0}x_1^{i_1}\cdots x_n^{i_n}$ con $\sum_{j_0}^n i_j=d$ e si ha che $a(\lambda x_0)^{i_0} (\lambda x_1)^{i_1} \cdots (\lambda x_n)^{i_n}=\lambda^{i_0+\dots +i_n} (ax_0^{i_0}\dots x_n^{i_n})=\lambda^d(ax_0^{i_0}\dots x_n^{i_n})$
 \end{observe}
 
 Torniamo al piano proiettivo $\mathbb{P}^2$ con le coordinate omogenee $(x_0\colon x_1\colon x_2)$ e consideriamo $F\in\kamp[x_0,x_1,x_2]$ un polinomio omogeneo nelle coordinate omogenee di grado $d$. Se abbiamo un punto $P=(c_0\colon c_1\colon c_2)\in\mathbb{P}^2$, allora tutte le possibili scelte per le coordinate di $P$ sono $(\lambda c_0\colon \lambda c_1 \colon \lambda c_2)$ con $\lambda\in\kamp\setminus\{0\}$ e valutando $F$ otteniamo $F(\lambda c_0,\lambda c_1, \lambda c_2)=\lambda^d F(c_0,c_1,c_2)$, e questo ci dice che $F$ si annulla in una scelta di coordinate se e solo se si annulla in qualsiasi scelta di coordinate, ovvero 
-	\begin{equation*}
-		F(c_0,c_1,c_2)=0\iff F(\lambda c_0, \lambda c_1, \lambda c_2)=0,\ \forall \lambda\in\kamp\setminus\{0\}
-	\end{equation*}
+\begin{equation*}
+F(c_0,c_1,c_2)=0\iff F(\lambda c_0, \lambda c_1, \lambda c_2)=0,\ \forall \lambda\in\kamp\setminus\{0\}
+\end{equation*}
 Pertanto l'equazione $F(x_0,x_1,x_2)=0$ è ben posta in $\mathbb{P}^2$.
 
 \begin{example}
-	Si ha che $x_0^2-x_1x_2=0$ definisce un sottoinsieme del piano proiettivo.
+Si ha che $x_0^2-x_1x_2=0$ definisce un sottoinsieme del piano proiettivo.
 \end{example}
 Le coniche sono esattamente i sottoinsiemi di $\mathbb{P}^2$ che sono dati da polinomi omogenei di grado 2.
 %AAA ENVIRONMENT CERCASI: CC qui mette un define, però poi non si capisce dove finisca perché sbordola con discorsi, anche nell'esempio successivo
-	Una \textbf{curva algebrica piana proiettiva} è data da un polinomio omogeneo $F\in\kamp[x_0,x_1,x_2]$ a meno di multipli. Se $G=\lambda F$ con $\lambda\in\kamp\setminus\{0\}$ considereremo $G$ e $F$ come la stessa curva.\\
-	La curva $C$ ha un \textbf{supporto} $\{P\in\mathbb{P}^2\mid F(P)=0\}$ che è l'insieme dove il polinomio si annulla. $F$ è l'equazione della curva $C$ e oltre al supporto vogliamo ricordarci anche di essa, a meno di multipli. Questo perché l'equazione determina il supporto, ma in generale non vale il contrario, come nel caso dell'ellisse immaginario.\\
+Una \textbf{curva algebrica piana proiettiva} è data da un polinomio omogeneo $F\in\kamp[x_0,x_1,x_2]$ a meno di multipli. Se $G=\lambda F$ con $\lambda\in\kamp\setminus\{0\}$ considereremo $G$ e $F$ come la stessa curva.\\
+La curva $C$ ha un \textbf{supporto} $\{P\in\mathbb{P}^2\mid F(P)=0\}$ che è l'insieme dove il polinomio si annulla. $F$ è l'equazione della curva $C$ e oltre al supporto vogliamo ricordarci anche di essa, a meno di multipli. Questo perché l'equazione determina il supporto, ma in generale non vale il contrario, come nel caso dell'ellisse immaginario.\\
 Le curve che andremo a studiare sono sottoinsiemi di $\mathbb{P}^2$ che sono luoghi di zeri di polinomi omogenei, inserendo anche la nozione di molteplicità per la curva.\\
 Sia $F=a_0x_0+a_1x_1+a_2x_2=0 \implies C$ è una retta. Siccome il grado della curva $C$ è dato dal grado dell'equazione $F$, allora le curve di grado $1$ sono le rette proiettive.\\
 Le coniche che vogliamo studiare sono le curve di grado 2. Inoltre diremo che una curva $C$ è reale se $\kamp=\realset$ (in $\proj[2]{\realset}$) ed è complessa se $\kamp=\complexset$ (in $\proj[2]{\complexset}$).
@@ -1869,111 +1869,154 @@ Le coniche che vogliamo studiare sono le curve di grado 2. Inoltre diremo che un
 %LEZ 33
 D'ora in poi ci restringeremo ai casi $\kamp=\realset$ e $\kamp=\complexset$
 \begin{define}
-	Una curva $C$ è \textbf{irriducibile} se lo è la sua equazione $F$. Altrimenti sia $F=F_1^{m_1}\dots F_r^{m_r}$ la fattorizzazione in irriducibili. Siccome ogni fattore irriducibile $F_i$ è omogeneo allora ognuno definisce una curva, e vengono definite \textbf{componenti irriducibili} della curva $C$ le curve $C_i\colon F_i=0$.\\
-	Se $m_i>1$ diciamo che $C_i$ è una componente di \textit{molteplicità} $m_i$ in $C$
+Una curva $C$ è \textbf{irriducibile} se lo è la sua equazione $F$. Altrimenti sia $F=F_1^{m_1}\dots F_r^{m_r}$ la fattorizzazione in irriducibili. Siccome ogni fattore irriducibile $F_i$ è omogeneo allora ognuno definisce una curva, e vengono definite \textbf{componenti irriducibili} della curva $C$ le curve $C_i\colon F_i=0$.\\
+Se $m_i>1$ diciamo che $C_i$ è una componente di \textit{molteplicità} $m_i$ in $C$
 \end{define}
 
 \begin{examples}
-	Le rette sono curve di grado 1 e sono sempre irriducibili.\\
-	Le coniche sono curve di grado 2. Sia $C$ una conica di equazione $F=0$, ci sono 3 possibilità:
-	\begin{enumerate}
-		\item	$C$ è irriducibile
-		\item	$C$ è il prodotto di fattori lineari distinti e non multipli: $F=L_1\cdot L_2$ con $L_i$ forme lineari non proporzionali $\implies C$ è una coppia di rette distinte, ad esempio $F=x_0x_1$, ovvero $C$ è unione delle rette $x_0=0$ e $x_1=0$
-		\item	$C$ è data da fattori lineari associati, ovvero $F$ è un quadrato a meno di uno scalare: $F=\lambda L^2, \lambda\in\kamp\setminus\{0\} \implies C$ è una retta doppia: 1 sola componente irriducibile, la retta, di molteplicità 2, ad esempio $F=x_0^2$
-	\end{enumerate}
+Le rette sono curve di grado 1 e sono sempre irriducibili.\\
+Le coniche sono curve di grado 2. Sia $C$ una conica di equazione $F=0$, ci sono 3 possibilità:
+\begin{enumerate}
+\item	$C$ è irriducibile
+\item	$C$ è il prodotto di fattori lineari distinti e non multipli: $F=L_1\cdot L_2$ con $L_i$ forme lineari non proporzionali $\implies C$ è una coppia di rette distinte, ad esempio $F=x_0x_1$, ovvero $C$ è unione delle rette $x_0=0$ e $x_1=0$
+\item	$C$ è data da fattori lineari associati, ovvero $F$ è un quadrato a meno di uno scalare: $F=\lambda L^2, \lambda\in\kamp\setminus\{0\} \implies C$ è una retta doppia: 1 sola componente irriducibile, la retta, di molteplicità 2, ad esempio $F=x_0^2$
+\end{enumerate}
 \end{examples}
 
-	\subsection{Coniche proiettive}
+\subsection{Coniche proiettive}
 Una conica è data da un polinomio $F$ omogeneo di grado 2 in $x_0,x_1,x_2$ a coefficienti reali o complessi.
-	\begin{equation*}
-		F=a_{00}x_0^2 +a_{01}x_0x_1+a_{02}x_0x_2+a_{11}x_1^2+a_{12}x_1x_2+a_{22}x_2^2
-	\end{equation*}
-Tale scrittura ci ricorda l'espressione in coordinate una forma quadratica sullo spazio vettoriale $\kamp^3$, e in generale i polinomi omogenei di grado 2 sono forme quadratiche, che abbiamo già affrontato nel corso di Geometria 1.
+\begin{equation*}
+F=a_{00}x_0^2 +a_{01}x_0x_1+a_{02}x_0x_2+a_{11}x_1^2+a_{12}x_1x_2+a_{22}x_2^2
+\end{equation*}
+Tale scrittura ci ricorda l'espressione in coordinate una forma quadratica sullo spazio vettoriale $\kamp^3$, e in generale i polinomi omogenei di grado 2 sono forme quadratiche, che abbiamo già affrontato nel corso di \textit{Geometria 1}.
 %forma <---> polinomio omogeneo
 Volendo associare alla forma la  corrispondente matrice simmetrica, per evitare di dividere per 2 i termini misti, li  moltiplichiamo per 2 nell'espresisione polinomiale, ottenendo così:
-	\begin{equation*}
-	F=a_{00}x_0^2 +2a_{01}x_0x_1+2a_{02}x_0x_2+a_{11}x_1^2+2a_{12}x_1x_2+a_{22}x_2^2
-	\end{equation*}
+\begin{equation*}
+F=a_{00}x_0^2 +2a_{01}x_0x_1+2a_{02}x_0x_2+a_{11}x_1^2+2a_{12}x_1x_2+a_{22}x_2^2
+\end{equation*}
 Sia dunque $A=(a_{ij})$ la matrice simmetrica $3\times 3$ associata alla forma quadratica, ovvero $\displaystyle F=x^tAx$ con $x=\left( \begin{array}{c}
-	x_0 \\ x_1 \\ x_2
-	\end{array} \right)$ vettore delle coordinate omogenee.
+x_0 \\ x_1 \\ x_2
+\end{array} \right)$ vettore delle coordinate omogenee.
 Definiamo il \textbf{rango} della conica $C$ come il rango della matrice associata $A$.
 \begin{observe}
-	L'equazione della conica $C$ determina $F$ solo a meno di multipli, dunque anche la matrice $A$ è determinata a meno di multipli. 
-	Tuttavia il rango rimane ben definito in quanto $\rk(\lambda A)=\rk(A), \forall\lambda\neq 0$. Inoltre il rango non può essere $0$ perché essendo l'equazione di una conica il polinomio non può essere nullo.
+L'equazione della conica $C$ determina $F$ solo a meno di multipli, dunque anche la matrice $A$ è determinata a meno di multipli. 
+Tuttavia il rango rimane ben definito in quanto $\rk(\lambda A)=\rk(A), \forall\lambda\neq 0$. Inoltre il rango non può essere $0$ perché essendo l'equazione di una conica il polinomio non può essere nullo.
 \end{observe}
 Vogliamo studiare le coniche e le curve di grado maggiore a meno di equivalenza proiettiva, allo stesso modo in cui abbiamo classificato le coniche in $\realset^2$ a meno di rototraslazioni.\\
 Sia $\funz f {\proj[2]{\ }} {\proj[2]{\ }}$ una proiettività definita da $x'=Mx,\ M\in\gl(e,\kamp)$. Allora $f$ porta la conica $C\colon F=0$ nella conica $\widetilde{C}\colon \widetilde{F}=0$, dove $\widetilde{F}$ si ottiene sostituendo in $f$ $x=M^{-1}x'$.
 
 \begin{example}
-	Sia $C \colon x_ox_1=0$ una coppia di rette e $f$ una proiettività tale che $f(x_0\colon x_1\colon x_2)=(x_0+x_1\colon x_0-2x_1\colon x_2)$. Scriviamo $x'_i$ in funzione di $x_i$ e poi facciamo il contrario cercando di scrivere $x_i$ in funzione di $x'_i$
-		\begin{gather*}
-			f\colon \begin{cases} 
-				x'_0=x_0+x_1\\
-				x'_1=x_0-2x_2\\
-				x'_2=x_2
-			\end{cases} \implies \begin{cases}
-				-3x_1=x'_1-x'_0 \implies x_1=\frac{1}{3}(x'_0-x'_1)\\
-				x_0=x'_0-x_1=x'_0 -\frac{1}{3}(x'_0-x'_1)=\frac{1}{3}(2x'_0+x'_1)
-			\end{cases}\\
-		f^{-1}\colon \begin{cases}
-			x_0=\frac{1}{3}(2x'_0+x'_1)\\
-			x_1=\frac{1}{3}(x'_0-x'_1)\\
-			x_2=x'_2
-		\end{cases}
-	\end{gather*}
-	In sostanza abbiamo ottenuto l'espressione dell'inversa di $f$ e quindi la trasformata di $C$ tramite $f$ è esattamente $(2x_01+)(x'_0-x'_1)=0$, che è ancora una coppia di rette che sono le immagini tramite $f$ delle rette $x_0=$ e $x_1=0$, ignorando i 
-	fattori moltiplicativi $\frac{1}{3}$.
+Sia $C \colon x_ox_1=0$ una coppia di rette e $f$ una proiettività tale che $f(x_0\colon x_1\colon x_2)=(x_0+x_1\colon x_0-2x_1\colon x_2)$. Scriviamo $x'_i$ in funzione di $x_i$ e poi facciamo il contrario cercando di scrivere $x_i$ in funzione di $x'_i$
+\begin{gather*}
+f\colon \begin{cases} 
+x'_0=x_0+x_1\\
+x'_1=x_0-2x_2\\
+x'_2=x_2
+\end{cases} \implies \begin{cases}
+-3x_1=x'_1-x'_0 \implies x_1=\frac{1}{3}(x'_0-x'_1)\\
+x_0=x'_0-x_1=x'_0 -\frac{1}{3}(x'_0-x'_1)=\frac{1}{3}(2x'_0+x'_1)
+\end{cases}\\
+f^{-1}\colon \begin{cases}
+x_0=\frac{1}{3}(2x'_0+x'_1)\\
+x_1=\frac{1}{3}(x'_0-x'_1)\\
+x_2=x'_2
+\end{cases}
+\end{gather*}
+In sostanza abbiamo ottenuto l'espressione dell'inversa di $f$ e quindi la trasformata di $C$ tramite $f$ è esattamente $(2x_01+)(x'_0-x'_1)=0$, che è ancora una coppia di rette che sono le immagini tramite $f$ delle rette $x_0=$ e $x_1=0$, ignorando i 
+fattori moltiplicativi $\frac{1}{3}$.
 \end{example}
-Osserviamo che la proiettività manda il supporto della prima conica nel supporto della seconda conica e che trasformando la conica tramite una proiettività, trasformiamo la forma quadratica $F$ tramite un cambiamento di coordinate di $\kamp^3$, dunque se $A$ è la matrice associata a $C$ e $\widetilde{A}$ è la matrice associata alla trasformata $\widetilde{C}$ tramite $f$, allora $A$ e $\widetilde{A}$ sono congruenti, infatti il cambiamento di coordinate su uno spazio vettoriale per la forma quadratica è dato da $widetilde{A}=M^tAM con M\in\gl{3,\kamp}$ con $M$ matrice della proiettività che si interpreta come matrice del cambiamento di base.
+Osserviamo che la proiettività manda il supporto della prima conica nel supporto della seconda conica e che trasformando la conica tramite una proiettività, trasformiamo la forma quadratica $F$ tramite un cambiamento di coordinate di $\kamp^3$, dunque se $A$ è la matrice associata a $C$ e $\widetilde{A}$ è la matrice associata alla trasformata $\widetilde{C}$ tramite $f$, allora $A$ e $\widetilde{A}$ sono congruenti, infatti il cambiamento di coordinate su uno spazio vettoriale per la forma quadratica è dato da $\widetilde{A}=M^tAM$ con $M\in\gl{3,\kamp}$ con $M$ matrice della proiettività che si interpreta come matrice del cambiamento di base.
 Viceversa, date due coniche $C_1$ e $C_2$ le cui matrici associate (simmetriche) $A_1$ e $A_2$ sono congruenti, allora $C_1$ e $C_2$ sono proiettivamente equivalenti, questo perché vale anche per le forme quadratiche: forme congruenti differiscono per cambiamento di base, ottenendo così la seguente corrispondenza:
-	\begin{array}{ccc}
-		$C_1$ e $C_2$ equivalenti & \iff & $A_1$ e $A_2$ congruenti
-	\end{array}
+
+\begin{equation*}
+\begin{array}{ccc}
+C_1\text{ e }C_2\text{ equivalenti}& \iff & A_1\text{ e }A_2\text{ congruenti}
+\end{array}
+\end{equation*}
 Pertanto lo studio delle coniche a meno di equivalenza proiettiva passa per lo studio delle matrici congruenti.
 
-	\subsection{Classificazione delle coniche proiettive complesse}
+\subsection{Classificazione delle coniche proiettive complesse}
 \begin{remember}
-	Nel campo dei complessi, ovvero se $\kamp=\complexset$, due matrici simmetriche sono congruenti se e solo se hanno lo stesso rango. In generale vale solo che se sono congruenti allora hanno lo stesso rango.
+Nel campo dei complessi, ovvero se $\kamp=\complexset$, due matrici simmetriche sono congruenti se e solo se hanno lo stesso rango. In generale vale solo che se sono congruenti allora hanno lo stesso rango.
 \end{remember}
 A meno di equivalenza proiettiva allora ci sono solo 3 possibili coniche: quelle di rango 1, rango 2 e rango 3.
 \begin{theorema}
-	\begin{enumerate}
-		\item	Due coniche in $\proj[2]{\complexset}$ sono proiettivamente equivalenti $\iff$ hanno lo stesso rango
-		\item	forma canonica: ogni conica di P2C è proiettiamente equivalente ad una ed una sola delle tre coniche seguenti\\
-			\begin{array}{ccc}
-				$\rk 3\colon$ & $x_0^2+x_1^2+x_3^2=0$ &	\text{conica irriducibile}\\
-				$\rk 2 \colon$ & $x_0^2+x_1^2=(x_0+ix_i)(x_0-ix_1)=0$ & \text{ coppia di rette distinte}\\
-				$\rk 1 \colon$ & $x_0^2=0$ & \text{retta doppia}
-			\end{array}
-	\end{enumerate}
+\begin{enumerate}
+\item	Due coniche in $\proj[2]{\complexset}$ sono proiettivamente equivalenti $\iff$ hanno lo stesso rango
+\item	forma canonica: ogni conica di P2C è proiettivamente equivalente ad una ed una sola delle tre coniche seguenti\\
+\begin{equation*}
+		\begin{array}{ccc}
+		\rk 3\colon & x_0^2+x_1^2+x_3^2=0 &	\text{conica irriducibile}\\
+		\rk 2 \colon & x_0^2+x_1^2=(x_0+ix_i)(x_0-ix_1)=0 & \text{ coppia di rette distinte}\\
+		\rk 1 \colon & x_0^2=0 & \text{retta doppia}
+	\end{array}
+\end{equation*}
+\end{enumerate}
 \end{theorema}
+
 %questo è dato dalla classificazione delle forme quadratiche du \complexset^3
 
 	\subsection{Classificazione delle coniche proiettive reali}
-Sia $C$ una conica in $\proj[2]{\realset}$ con matrice associata $A$, che è simmetrica reale $3\times 3$, perché sia congruente ad un'altra matrice simmetrica serve anche la segnatura oltre al rango.
-\begin{observe}
+	Sia $C$ una conica in $\proj[2]{\realset}$ con matrice associata $A$, che è simmetrica reale $3\times 3$, perché sia congruente ad un'altra matrice simmetrica serve anche la segnatura oltre al rango.
+	\begin{observe}
 	Siccome $A$ è determinata a meno di multipli, allora in principio la segnatura può cambiare. Vediamo cosa succede effettivamente.\\
 	Se $A$ ha segnatura $(p,q)$ con $p=$numero di autovalori positivi e $q=$ numero di autovalori negativi, allora $\lambda A$ può avere segnatura: $(p,q)$ se $\lambda>0$ oppure $(q,p)$ se $\lambda <0$.\\
 	Quindi la segnatura di una conica è definita solo "a meno del segno" nel senso che $(p,q)=(q,p)$
-\end{observe}
-
-\begin{theorema}
+	\end{observe}
+	\begin{theorema}~{}
 	\begin{enumerate}
-		\item	 Due coniche in $\proj[2]{\realset}$ sono proiettivamente equivalenti $\iff$ hanno la stessa segnatura a meno del segno (dalla segnatura si deduce anche il rango)
-		\item	Ogni conica in $\proj[2]{\realset}$ è proiettivamente equivalente a una ed una sola delle seguenti coniche con segnature distinte a meno del segno:
+	\item	 Due coniche in $\proj[2]{\realset}$ sono proiettivamente equivalenti $\iff$ hanno la stessa segnatura a meno del segno (dalla segnatura si deduce anche il rango).
+	\item	Ogni conica in $\proj[2]{\realset}$ è proiettivamente equivalente a una ed una sola delle seguenti coniche con segnature distinte a meno del segno:
+	\begin{equation*}
+		\arraycolsep=2.5pt
 		\begin{array}{cccc}
-			$\rk 3\colon$ &	$(3,0)/(0,3)\colon$ & $x_0^2+x_1^2+x_2^2=0$	& \text{conica irriducibile senza punti reali (supporto vuoto)}\\
-			%ha un supporto? ci sono dei punti in P2R che hanno questa equazione? no perché escludiamo l'origine	conica irriducibile senza punti reali /tipo ellisse immaginario/ dunque il supporto è vuoto
-			& $(1,2)/(2,1) \colon$& $x_0^2+x_1^2-x_2^2=0$ &	\text{conica irriducibile a punti reali, contiene infiniti punti in $\proj[2]{\realset}$}\\
-			$\rk 2 \colon$ & $(2,0)/(0,2) \colon$ & $x_0^2+x_1^2=0$ & \text{coppia di rette non reali con 1 punto reale $(0\colon 0\colon 1)$\\
-%				perché si fattorizza ma a coeff complessi. Ha un unico punto reale (0\colon 0\colon 1) intersezione delle due rette complesse coniugate
-			& $(1,1)\colon $ & $x_0^2-x_1^2=(x_0-x_1)(x_0+x_1)=0$ &	\text{coppia di rette reali distinte}\\ %che si fattorizza su R
-			$\rk 1 \colon$ & $(1,0)\colon$ & $x_0^2=0$ & \text{retta doppia}
+			\rk 3 & \begin{array}{cc}
+					(3,0)/(0,3) \\
+					\\
+					(1,2)/(2,1)
+				\end{array} & \begin{array}{cc}
+				x_0^2+x_1^2+x_2^2=0\\
+				\\
+				x_0^2+x_1^2-x_2^2=0\\
+			\end{array} 
+				 & \begin{array}{c}
+			\begin{array}{c}
+				\text{Conica irriducibile senza} \\
+				\text{punti reali (supporto vuoto)}
+			\end{array} \\
+			\begin{array}{c}
+				\text{Conica irriducibile a punti reali,} \\
+				\text{contiene infiniti punti in }\proj[2]{\realset}
+			\end{array}
+		\end{array}\\ \hline %ha un supporto? ci sono dei punti in P2R che hanno questa equazione? no perché escludiamo l'origine	conica irriducibile senza punti reali /tipo ellisse immaginario/ dunque il supporto è vuoto
+		\rk 2 &\begin{array}{c}
+		(2,0)/(0,2) \\
+		\\
+		(1,1)
+		\end{array} &\begin{array}{c}
+		x_0^2+x_1^2=0 \\
+		\\
+		x_0^2-x_1^2=\\[-0.75ex]
+		=(x_0-x_1)(x_0+x_1)=0
+		\end{array} & \begin{array}{c}
+		\begin{array}{c}
+		\text{Coppia di rette non reali} \\
+		\text{con } 1 \text{ punto reale } (0\colon 0\colon 1)
+		\end{array} \\ %	perché si fattorizza ma a coeff complessi. Ha un unico punto reale (0\colon 0\colon 1) intersezione delle due rette complesse coniugate
+		\begin{array}{c}
+		\text{Conica irriducibile a punti reali,} \\
+		\text{coppia di rette reali distinte}
 		\end{array}
+		\end{array} \\ \hline %che si fattorizza su R
+		\rk 1 & (1,0) & \begin{array}{c}
+			\\[-2.75ex]
+			x_0^2=0
+		\end{array} & \text{Retta doppia}	
+\end{array}	
+	\end{equation*}
 	\end{enumerate}
-\end{theorema}		
-		
+	\end{theorema}
+
 %CURVE ALGEBRICHE PIANE AFFINI E CHIUSURA PROIETTIVA
 %vediamo come si relaziona con la classe delle coniche in R2
 %lo si può fare perché abbiamo interpretato il caso proiettivo come un'estensione di quello affine
