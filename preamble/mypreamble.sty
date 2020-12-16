@@ -1541,6 +1541,16 @@ linewidth=1pt]{neoncarrotBox}
 		{\ensuremath{\pi_{1}\left(#1,\ #2\right)}}%
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%% definizioni varietà %%%%%%%%%%%%%%%%%%%%%%%%%
+
+% caratteristica di Eulero
+
+\newcommand{\euler}[2]{%
+	\IfEq{#2}{\ }{\ensuremath{\chi\left(#1\right)}}
+	{\ensuremath{\chi\left(#1,\ #2\right)}}%
+}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%% definizioni categoria %%%%%%%%%%%%%%%%%%%%%%%%%
 
 % categoria in generale
@@ -1840,3 +1850,4 @@ linewidth=1pt]{neoncarrotBox}
 
 \definecolor{redill}{RGB}{190, 30, 45 }
 \definecolor{blueill}{RGB}{46, 49, 146 }
+\definecolor{greenill}{RGB}{0, 161, 74 }
