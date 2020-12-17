@@ -107,7 +107,7 @@ Vogliamo dare una classificazione delle superfici topologiche \textit{compatte}.
 			\item $S$ è di \textbf{Hausdorff}.
 		\end{enumerate}
 	% riguardare la frase, magari separare in un equazione a parte
-	Osserviamo che nella relazione di equivalenza due lati vengono identificati nel modo seguente: $l_i\cong\intv$, dunque scelgo un omeomorfismo $l_1\stackrel{\stackrel{\phi}{\sim}}{\longrightarrow} l_2$, $p_1\in l_1 \sim \phi(p)\in l_2$ e $\phi$ manda vertici in vertici.\\
+	Osserviamo che nella relazione di equivalenza due lati vengono identificati nel modo seguente: poiché $l_i\cong\intv$, scelgo un omeomorfismo $\funz{\phi}{l_1}{l_2}$, in modo che $p_1\in l_1 \sim \phi(p)\in l_2$ e $\phi$ manda vertici in vertici.\\
 	Il poligono $P$ con la relazione di equivalenza sui lati è detto un \textbf{modello piano}\index{modello piano} della superficie $S$ e può essere schematizzato con una \textit{sequenza di lettere} detta \textbf{parola}\index{parola}. Ad esempio, per la parola $aba^{-1}cbc^{-1}$ si ottiene il modello piano seguente:
 		\begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.375]{images/modellopiano.pdf}
@@ -240,20 +240,31 @@ $T_g$ è un quoziente con $4g$ lati.
 	\end{equation*}
 \vspace{-3mm}
 \end{define}
-\begin{observe}~\\
-	\begin{minipage}{.49\linewidth}
-		Studiamo come la \textit{bottiglia di Klein} altro non è che la somma connessa di due piani proiettivi, cioè $K=P\# P=P_2$.\\
-		$K$ ha il modello piano quadrato con parola $aba^{-1}b$, mentre invece $P=\proj[2]{\realset}$ ha il modello piano a due lati con parola $cc$.\\
-		Pertanto, la somma connessa $P\# P$ ha il modello piano dato dalla parola $ccdd$.
+\begin{observe}	Studiamo come la \textit{bottiglia di Klein} altro non è che la somma connessa di due piani proiettivi, cioè $K=P\# P=P_2$.\\
+	\begin{minipage}{.75\linewidth}
+		$K$ ha il modello piano quadrato con parola $aba^{-1}b$, come nella figura a fianco.
 	\end{minipage}
-	\begin{minipage}{.49\linewidth}
+	\begin{minipage}{.24\linewidth}
 		\begin{center}
 			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/klein.pdf}
-			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/proj2lines.pdf}
-			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/projdouble.pdf}
 		\end{center}
 	\end{minipage}\\
-%potrebbe essere più chiaro fare prima figura # seconda figura \cong terza figura così si capisce ad occhio cosa si vuole fare, così sembrano solo tre figure e basta
+	\begin{minipage}{.75\linewidth}
+	Abbiamo visto inoltre come $P=\proj[2]{\realset}$ ha un modello piano a due lati con parola $cc$.
+\end{minipage}
+\begin{minipage}{.24\linewidth}
+	\begin{center}
+		\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/proj2lines.pdf}
+	\end{center}
+\end{minipage}\\
+	\begin{minipage}{.75\linewidth}
+	Pertanto, per le osservazioni precedenti, la somma connessa di due piani proiettivi $P\# P$ ha il modello piano dato dalla parola $ccdd$.
+\end{minipage}
+\begin{minipage}{.24\linewidth}
+	\begin{center}
+		\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/projdouble.pdf}
+	\end{center}
+\end{minipage}\\
 Vogliamo vedere che $aba^{-1}b$ e $ccdd$ danno la stessa superficie. Partiamo dal primo modello e tagliamo lungo la diagonale.
 \begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/kleintoprojdouble1.pdf}
@@ -262,14 +273,13 @@ Incolliamo lungo il lato $b$:
 \begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/kleintoprojdouble2.pdf}
 \end{center}
-%nel triangolo centrale mancano le frecce
 Infatti, otteniamo come modello $aaee$, che corrisponde a $P\# P$.
 \end{observe}
 \begin{lemming}
 	\begin{equation}
 		T\# P= K\# P=P\# P\# P
 	\end{equation}
-\vspace{-6mm} %vedremo $T\# K$ (???), non vale la legge di cancellazione per la somma connessa.
+\vspace{-6mm}
 \end{lemming}
 \begin{demonstration}
 	Sappiamo già che, essendo $K=P\# P$, allora $K\# P=P\# P\# P$. Vogliamo invece mostrare ora che $T\# P$ sia uguale a $K\# P$. Facciamo un procedimento di taglia e incolla, partendo da $T\# P$, modello piano con parola $aba^{-1}b^{-1}cc$.
