@@ -1,0 +1,774 @@
+% SVN info for this file
+\svnidlong
+{$HeadURL$}
+{$LastChangedDate$}
+{$LastChangedRevision$}
+{$LastChangedBy$}
+
+\chapter{Varietà topologiche}
+\labelChapter{varietà}
+
+\begin{introduction}
+	‘‘BEEP BOOP INSERIRE CITAZIONE QUA BEEP BOOP.''
+	\begin{flushright}
+		\textsc{NON UN ROBOT,} UN UMANO IN CARNE ED OSSA BEEP BOOP.
+	\end{flushright}
+\end{introduction}
+
+\section{Varietà topologiche}
+%AAA INTRODUZIONE BELLA CERCASI
+Si vuole formalizzare il concetto di avere \textit{localmente} la topologia euclidea. 
+%BIBLIOGRAFIA
+\begin{define}\textsc{Localmente euclideo.}\\
+	Uno spazio topologico $X$ si dice \textbf{localmente euclideo}\index{localmente euclideo} di dimensione $n$ se ogni punto di $X$ ammette un intorno aperto omeomorfo ad una palla aperta di $\realset^n$.
+\end{define}
+
+\begin{define}\textsc{Varietà topologica.}\\
+	Uno spazio topologico $X$ si dice \textbf{varietà topologica}\index{varietà topologica} di dimensione $n$ se $X$ è di \textbf{Hausdorff}, connesso, a base numerabile e localmente euclideo di dimensione $n$.
+\end{define}
+
+\begin{examples}
+	\begin{itemize}
+		\item $\realset^n$ è una varietà topologica di dimensione $n$.
+		\item $S^n$ è una varietà topologica compatta di dimensione $n$, infatti grazie alla proiezione stereografica si ha che $S\setminus\{*\}\cong \realset$.
+		\item $\mathbb{P}^n(\realset)$ è una varietà topologica compatta di dimensione $n$.
+		\item Ogni aperto connesso di una varietà topologica di dimensione $n$ è una varietà topologica di dimensione $n$.
+	\end{itemize}
+\vspace{-3mm}
+\end{examples}
+\begin{observe}
+	La dimensione di una varietà topologica è \textit{ben definita} per l'\textit{invarianza della dimensione}.
+\end{observe}
+\begin{observes}~{}
+	\begin{itemize}
+		\item Una varietà topologica è \textbf{c.p.a.}.
+		\item Se $X$ è una varietà topologica di dimensione $n$ e $Y$ è una varietà topologica di dimensione $m$ allora $X\times Y$ è una varietà topologica di dimensione $n+m$.
+	\end{itemize}
+%DIMOSTRAZIONE TUTORATO dei due punti precedenti
+\end{observes}
+\begin{example}
+	$T=S^1\times S^1$ è una varietà topologica di dimensione $2$.
+\end{example}
+
+\begin{theorema}
+	Sia $X$ uno spazio topologico compatto, connesso, \textbf{Hausdorff} e localmente euclideo di dimensione $n$. Allora $X$ è a \textit{base numerabile}, dunque $X$ è una varietà topologica di dimensione $n$.
+\end{theorema}
+ 
+\subsection{Dimensione 1}
+Analizziamo il caso di varietà topologiche di dimensione $1$, per esempio $\realset$ e $S^1$.
+\begin{theorema}
+	Ogni varietà topologica di dimensione $1$ è omeomorfo a $\realset$ se \textit{non} è compatta, oppure a $S^1$ se compatta.
+\end{theorema}
+\begin{example} 
+Riconsideriamo l'esempio della \textbf{retta con 2 origini} (sez. \ref{retta 2 origini}, pag. \ref{retta 2 origini}): essa è un quoziente non \textbf{Hausdorff}, dunque \textit{non} è una varietà topologica.
+\end{example}
+	\subsection{Dimensione 2}
+\begin{define}\textsc{Superficie topologica.}\\
+	Una varietà topologica di dimensione $2$ si dice \textbf{superficie topologica}\index{superficie!topologica}.
+\end{define}
+\begin{examples}
+	\begin{itemize}
+		\item Il \textit{piano} $\realset^2$ oppure $\realset^2\setminus \{n\text{ punti}\}$ sono superfici topologiche di dimensione $2$ \textit{non} compatte.
+		\item La \textbf{sfera} $S^2$ è una superficie topologica compatta.
+		\item Il \textbf{toro} $T=S^1\times S^1$ è una superficie topologica compatta.
+		\item Il \textbf{piano proiettivo} $P=\mathbb{P}^2(\realset)$ una superficie topologica compatta.
+	\end{itemize}
+\vspace{-3mm}
+\end{examples}
+Vogliamo dare una classificazione delle superfici topologiche \textit{compatte}. Innanzitutto, esaminiamo alcuni esempi di superfici compatte studiandole sul \textit{modello piano}, di cui daremo successivamente una definizione formale.
+\begin{examples} \textsc{Modelli piani.}\\
+			\begin{itemize}
+		\item Siccome $\mathbb{P}^2(\realset)$ è un quoziente del disco, allora, a meno di omeomorfismo, lo si può anche vedere come un quoziente di $I\times I$ con una relazione di equivalenza sul bordo con \textit{parola} $abab$.
+		\begin{center}
+		\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.375]{images/proj.pdf}
+		\end{center}
+		\item Anche il \textbf{toro} si può vedere come quoziente di $I\times I$ con \textit{parola} $aba^{-1}b^{-1}$.
+		\begin{center}
+			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.375]{images/torus.pdf}
+		\end{center}
+		\item Vediamo $S^2$ come quoziente di $I\times I$ con \textit{parola} $bb^{-1}a^{-1}a$.
+		\begin{center}
+			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.375]{images/sphere.pdf}
+		\end{center}
+	\end{itemize}
+\vspace{-6mm}
+\end{examples}
+
+\begin{observe}
+	Sia $P\subset\realset^2$ un \textit{poligono} pieno con un numero \textit{pari} di lati. Sia $\sim$ una relazione di equivalenza che identifica i lati a $2$ a $2$. Allora $S\coloneqq\nicefrac{P}{\sim}$ è una \textit{superficie topologica compatta}, infatti:
+		\begin{enumerate}
+			\item  $P$ è connesso e compatto $\implies S$ connesso e compatto.
+			\item $S$ è localmente euclideo di dimensione $2$. Infatti, sia $p\in S$:
+			\begin{itemize}
+				\item Se $p$ viene da un punto interno al poligono allora si sceglie un intorno aperto $U$ centrato in tale punto tale che $U\cap\partial{P}=\emptyset$, data la proiezione $\funz \pi P S$, $\pi(U)\cong U$ ed è un intorno aperto di $p$.
+				\item Se $p$ viene da un punto interno ad un lato grazie all'identificazione dei lati a due a due si ha che passando al quoziente, cioè un intorno aperto di $p$ omeomorfo ad un disco aperto.
+				Se $p$ viene da un vertice, siccome i vertici vengono identificati con i vertici, analogamente al caso dei lati si ottiene un intorno aperto di $p$ in $S$ omeomorfo ad un disco aperto di $\realset^2$.
+			\end{itemize}  
+			\item $S$ è di \textbf{Hausdorff}.
+		\end{enumerate}
+	% riguardare la frase, magari separare in un equazione a parte
+	Osserviamo che nella relazione di equivalenza due lati vengono identificati nel modo seguente: poiché $l_i\cong\intv$, scelgo un omeomorfismo $\funz{\phi}{l_1}{l_2}$, in modo che $p_1\in l_1 \sim \phi(p)\in l_2$ e $\phi$ manda vertici in vertici.\\
+	Il poligono $P$ con la relazione di equivalenza sui lati è detto un \textbf{modello piano}\index{modello piano} della superficie $S$ e può essere schematizzato con una \textit{sequenza di lettere} detta \textbf{parola}\index{parola}. Ad esempio, per la parola $aba^{-1}cbc^{-1}$ si ottiene il modello piano seguente:
+		\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.375]{images/modellopiano.pdf}
+\end{center}
+ Inoltre, il modello piano di una superficie compatta \textit{non è unico}.
+\end{observe}
+
+\begin{examples}
+	\begin{itemize}
+		\item Abbiamo già visto il modello piano di $S^2$ sul \textit{quadrato}; per la costruzione effettuata, possiamo unire la sequenza di lati $ab$ in un unico lato $c$ in modo da ottenere un modello costituito da un poligono \textit{improprio a due lati}, con parola $cc^{-1}$:
+		\begin{center}
+			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.375]{images/sphere2lines.pdf}
+		\end{center}
+		\item Anche il modello piano di $\mathbb{P}^2(\realset)$ sul \textit{quadrato} può essere trasformato in uno sul poligono a due lati, unificando $ba$ per ottenere un'unico lato $c$ e un modello con parola $cc$:
+		\begin{center}
+			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.375]{images/proj2lines.pdf}
+		\end{center}
+		\item La \textbf{bottiglia di Klein}\index{bottiglia di Klein} $K$ è la superficie compatta data dal modello piano:
+				\begin{center}
+			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.375]{images/klein.pdf}
+		\end{center}
+		Confrontiamo la costruzione della bottiglia di Klein con la costruzione del \textit{toro}, vista precedentemente. Innanzitutto otteniamo in entrambi il cilindro $S^1\times I$ con la relazione di equivalenza sul \textit{bordo}; notiamo che nella bottiglia di Klein (il modello inferiore nella figura sotto) il ‘‘verso'' rispetto al quale \textit{incolleremo} i bordi sono uno l'opposto dell'altro.
+		\begin{center}
+			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.375]{images/kleintorus.pdf}
+		\end{center}
+	Questo comporta che la bottiglia di Klein \textit{non} può essere rappresentata in $\realset^3$; tuttavia, possiamo visualizzarla in modo improprio operando un ‘‘\textit{taglio}'' nella superficie e compenetrando uno dei due estremi del cilindro nella figura, come di seguito.
+	 \begin{center}
+	 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.375]{images/kleinconstruction.pdf}
+	 \end{center}
+	\end{itemize}
+\end{examples}
+
+\section{Somma connessa di superfici compatte}
+Siano $S_1$ e $S_2$ superfici compatte e siano $x\in S_1$ e $y\in S_2$. Siano $D_x\subset S_1$ e $D_y\subset S_2$ intorni di $x$ e $y$ rispettivamente, omeomorfi ad un disco chiuso $D\subset\realset^2$:
+% https://q.uiver.app/?q=WzAsMixbMCwwLCJEX3giXSxbMSwwLCJEX3kiXSxbMCwxLCJcXHN0YWNrcmVse2h9e1xcc2ltfSJdXQ==
+\[\begin{tikzcd}
+	{D_x} & {D_y}
+	\arrow["{\stackrel{h}{\sim}}", from=1-1, to=1-2]
+\end{tikzcd}\]
+\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.4]{images/connectedsum1.pdf}
+\end{center}
+\textit{Togliamo} dalle due superfici gli interni dei dischetti, creando dunque lo spazio:
+\begin{equation*}
+	Y\coloneqq (S_1\setminus \interior{D_x})\amalg (S_2\setminus \interior{D_y})
+\end{equation*}
+\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.4]{images/connectedsum2.pdf}
+\end{center}
+\textit{Incolliamo} ora i due pezzi di $Y$ lungo i bordi dei dischi, cioè mettiamo su $Y$ la seguente relazione di equivalenza:
+\begin{equation*}
+	x_1\sim y_1 \iff x_1=y_1\text{ oppure } x_1\in\partial{D},\ y_1\in\partial{D}\text{ e } y_1=h(x_1)\text{ (o viceversa)} 
+\end{equation*}
+\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.4]{images/connectedsum3.pdf}
+\end{center}
+Vediamo ora qualche fatto che \textit{non} dimostriamo:
+	\begin{itemize}
+		\item Il quoziente è ancora una superficie topologica, che chiamiamo \textbf{somma connessa}\index{somma!connessa} $S_1\# S_2$  di $S_1$ e $S_2$. 
+		\item La somma connessa $S_1\# S_2$, a meno di omeomorfismo, \textit{non dipende} dalle scelte fatte come i punti $x$ e $y$, gli intorni $D_x$ e $D_y$, l'omeomorfismo $h$, ma soltanto da $S_1$ e da $S_2$!
+		\item La somma connessa di superfici compatte è, a meno di omeomorfismi, \textit{commutativa} e \textit{associativa}:
+		\begin{itemize}
+			\item \textsc{Commutativa}: $S_1\# S_2\cong S_2\# S_1$.
+			\item \textsc{Associativa}: $\left(S_1\# S_2\right)\# S_3\cong S_1\#\left(S_2\# S_3\right)$.
+		\end{itemize}
+	\item Se $S_1,\ S_2$ sono superfici compatte, allora anche $S_1\# S_2$ è una superficie topologica compatta.
+	\end{itemize}
+\begin{observe}
+	Sia $X$ una superficie compatta. Allora $X\# S^2\cong X$. Infatti, $S^2\setminus D_y$ è omeomorfismo ad un \textit{disco chiuso} in $\realset^2$. Dato che stiamo togliendo un disco anche ad $X$ per poi aggiungerne un altro, ritroviamo $X$ a meno di omeomorfismi.
+	\begin{center}
+		\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.4]{images/connectedsumsphere.pdf}
+	\end{center}
+\vspace{-6mm}
+\end{observe}
+\begin{define}\textsc{Somma di tori.}\\
+	Indichiamo con $T_g$ la \textbf{somma connessa di }$g\geq 1$ \textbf{tori}:
+	\begin{equation}
+		T_g=\underbrace{T\# \ldots\# T}_{g\ \text{volte}}\quad g\geq 1\ \left(T_1=T\right)
+	\end{equation}
+$T_g$ può essere visualizzato sia come ‘‘ciambella con $g$ buchi'' , sia come "sfera con $g$ manici''.
+\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.25]{images/toruschain.pdf}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.25]{images/spherewithhandle.pdf}
+\end{center}
+\vspace{-3mm}
+\end{define}
+\subsubsection{Rappresentazione della somma connessa tramite modelli piani}
+\vspace{-3mm}
+\begin{minipage}{.74\linewidth}
+Supponiamo che $S_1$ e $S_2$ abbiano entrambe un modello piano, rappresentato da una parola.\\
+Ad esempio, prendiamo come $S_1$ un \textit{toro}, con parola $a_1b_1a_1^{-1}b_1^{-1}$. Scegliamone un \textit{vertice} e prendiamo un disco $\overline{U}$ passante per il vertice che non tocca il resto del bordo.
+\end{minipage}
+\begin{minipage}{.25\linewidth}
+\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.4]{images/torusmodelconnect1.pdf}
+\end{center}
+\end{minipage}
+Per fare la somma connessa, togliamo $U$:
+\vspace{-3mm}
+\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/torusmodelconnect2.pdf}
+\end{center}
+\vspace{-3mm}
+Facciamo lo stesso con la seconda superficie, $S_2$ (che in questo esempio è anch'essa un toro di parola $a_2b_2a_2^{-1}b_2^{-1}$).
+\vspace{-3mm}
+\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/torusmodelconnect3.pdf}
+\end{center}
+\vspace{-3mm}
+Infine, \textit{incolliamo} lungo i due nuovi lati creati bucando le due superfici:
+\vspace{-3mm}
+ \begin{center}
+ 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/torusmodelconnect4.pdf}
+ \end{center}
+Il modello ottenuto è un modello piano per $S_1\# S_2$, la cui parola associata è ottenuta per \textit{concatenazione}:
+\begin{equation*}
+	\underbrace{a_1b_1a_1^{-1}b_1^{-1}}_{\text{modello piano di }S_1}\underbrace{a_2b_2a_2^{-1}b_2^{-1}}_{\text{modello piano di }S_2}
+\end{equation*}
+\begin{example}
+Il toro $T$ è dato dalla parola $aba^{-1}b^{-1}$. Allora $T_g=T\#\ldots\# T$ ha un modello piano dato dalla parola :
+\begin{equation*}
+a_1b_1a_1^{-1}b_1^{-1}a_2b_2a_2^{-1}b_2^{-1}\ldots a_gb_ga_g^{-1}b_g^{-1}
+\end{equation*}
+$T_g$ è un quoziente con $4g$ lati.
+\end{example}
+\begin{define}\textsc{Somma connessa di $n$ piani proiettivi}\\
+	Preso il \textit{piano proiettivo reale} $P=\proj[2]{\realset}$, definiamo la \textbf{somma connessa di} $n$ \textbf{piani proiettivi} come:
+	\begin{equation*}
+		P_n=\underbrace{P\# \ldots\# P}_{n\ \text{volte}}\quad n\geq 1\ \left(P_1=P\right)
+	\end{equation*}
+\vspace{-3mm}
+\end{define}
+\begin{observe}	Studiamo come la \textit{bottiglia di Klein} altro non è che la somma connessa di due piani proiettivi, cioè $K=P\# P=P_2$.\\
+	\begin{minipage}{.75\linewidth}
+		$K$ ha il modello piano quadrato con parola $aba^{-1}b$, come nella figura a fianco.
+	\end{minipage}
+	\begin{minipage}{.24\linewidth}
+		\begin{center}
+			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/klein.pdf}
+		\end{center}
+	\end{minipage}\\
+	\begin{minipage}{.75\linewidth}
+	Abbiamo visto inoltre come $P=\proj[2]{\realset}$ ha un modello piano a due lati con parola $cc$.
+\end{minipage}
+\begin{minipage}{.24\linewidth}
+	\begin{center}
+		\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/proj2lines.pdf}
+	\end{center}
+\end{minipage}\\
+	\begin{minipage}{.75\linewidth}
+	Pertanto, per le osservazioni precedenti, la somma connessa di due piani proiettivi $P\# P$ ha il modello piano dato dalla parola $ccdd$.
+\end{minipage}
+\begin{minipage}{.24\linewidth}
+	\begin{center}
+		\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/projdouble.pdf}
+	\end{center}
+\end{minipage}\\
+Vogliamo vedere che $aba^{-1}b$ e $ccdd$ danno la stessa superficie. Partiamo dal primo modello e tagliamo lungo la diagonale.
+\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/kleintoprojdouble1.pdf}
+\end{center}
+Incolliamo lungo il lato $b$:
+\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/kleintoprojdouble2.pdf}
+\end{center}
+Infatti, otteniamo come modello $aaee$, che corrisponde a $P\# P$.
+\end{observe}
+\begin{lemming}
+	\begin{equation}
+		T\# P= K\# P=P\# P\# P
+	\end{equation}
+\vspace{-6mm}
+\end{lemming}
+\begin{demonstration}
+	Sappiamo già che, essendo $K=P\# P$, allora $K\# P=P\# P\# P$. Vogliamo invece mostrare ora che $T\# P$ sia uguale a $K\# P$. Facciamo un procedimento di taglia e incolla, partendo da $T\# P$, modello piano con parola $aba^{-1}b^{-1}cc$.
+	\begin{center}
+			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/torusplusproj1.pdf}
+	\end{center}
+Incolliamo lungo $c$:
+\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/torusplusproj2.pdf}
+\end{center}
+Otteniamo un modello piano di $T\# P$ che può essere descritto dalla parola $dadbab^{-1}$.\\ Prendiamo adesso $K\# P$, di parola $\underbrace{\delta\beta\delta^{-1}\beta}_{K}\underbrace{\gamma\gamma}_{P}$:
+\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/kleinplusproj1.pdf}
+\end{center}
+Incolliamo lungo $\gamma$:
+\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/kleinplusproj2.pdf}
+\end{center}
+Otteniamo un modello piano di $K\# P$ che può essere descritto dalla parola $\delta \alpha \delta\beta\alpha\beta^{-1}$, che corrisponde lettera per lettera al modello $T\# P$.
+\end{demonstration}
+\begin{corollary}\label{toropiupiano}
+Se $g\geq 1$ e $n\geq 1$ si ha:
+\begin{equation}
+	T_g\# P_n=P_{n+2g}
+\end{equation}
+\vspace{-6mm}
+\end{corollary}
+\begin{demonstration}
+	Se $g=1$:
+	\begin{equation*}
+		T\# P_n=\underbrace{T\# P}_{P_3}\# P_{n-1}=P_3\# P_{n-1}=P\# P_{n+2}
+	\end{equation*}
+Procediamo per induzione su $g$; se è vero per $g-1$, allora:
+\begin{equation*}
+	T_g\# P_n=T\# T_{g-1}\# P_n=T\# P_{n+2g-2}=T\# P\# P_{n+2g-3}=P_3\# P_{n+2g-3}=P_{n+2g}
+\end{equation*}
+\end{demonstration}
+\section{Classificazione delle superfici topologiche compatte}
+\begin{theorema}\textsc{Classificazione delle superfici topologiche compatte.}\\
+Ogni superfici topologica compatta è omeomorfa a $S^2$, $T_g$ per qualche $g\geq 1$ oppure $P_n$ per qualche $n\geq 1$.\\
+Inoltre, tali superfici sono tutte distinte, ovvero:
+\begin{itemize}
+	\item $T_g\ncong T_{g'}$ se $g\neq g'$.
+	\item $P_n\ncong P_{n'}$ se $n\neq n'$.
+	\item $T_g\ncong P_{n}\ \forall n\geq 1,\ \forall g\geq 1$.
+	\item $S^2\ncong T_g\ \forall g\geq 1$.
+	\item $S^2\ncong P_n\ \forall n\geq 1$.
+\end{itemize}
+\vspace{-3mm}
+\end{theorema}
+Per la dimostrazione del teorema abbiamo prima bisogno di definire e dimostrare dei risultati sulla triangolazione.
+\subsection{Triangolazione}
+\begin{define}\textsc{Triangolo geometrico.}\\
+	Sia $S$ una superficie compatta. Un \textbf{triangolo geometrico}\index{triangolo geometrico} $T$ in $S$ è un'applicazione:
+	\begin{equation}
+		\funz{\phi}{T'}{T\subseteq S}
+	\end{equation}
+Dove $T'\subseteq \realset^2$ è un triangolo \textit{non} degenere (compreso dell'interno), inteso nel senso tradizionale del termine, mentre $\phi$ è un omeomorfismo.\\
+I vertici e i lati di $T$ sono le immagini tramite $\phi$ dei vertici dei lati di $T'$.
+\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/spheretriangle.pdf}
+\end{center}
+\vspace{-6mm}
+\end{define}
+\begin{define}\textsc{Triangolazione.}\\
+	Sia $S$ una superficie compatta. Una \textbf{triangolazione}\index{triangolazione} di $S$ è una collezione \textit{finita} di triangoli geometrici $T_1,\ \ldots,\ T_r$ in $S$ tale che:
+	\begin{enumerate}
+		\item $S=T_1\cup \ldots \cup T_r$.
+		\item $\forall i\neq j$ si ha che $T_i\cap T_j$ può essere una di queste tre possibilità:
+		\begin{itemize}
+			\item $\emptyset$.
+			\item Un \textit{vertice} di entrambi i triangoli.
+			\item Un \textit{lato} di entrambi i triangoli.
+		\end{itemize}
+	\end{enumerate}
+Una superficie compatta $S$ si dice \textbf{triangolabile}\index{triangolabilità} se ammette una triangolazione.
+\end{define}
+\begin{example}
+	Il \textbf{tetraedro} dà una triangolazione della sfera con $4$ triangoli.
+\end{example}
+Enunciamo ora un teorema (di cui \textit{non} daremo dimostrazione) che ci servirà successivamente per poter classificare le superfici compatte direttamente con i loro modelli piani associati.
+\begin{theorema}\textsc{Teorema di Radò, 1925.}\\
+	Ogni superficie compatta è triangolabile.
+\end{theorema}
+\begin{corollary}
+	Ogni superficie compatta $S$ ha un modello piano.
+\end{corollary}
+\begin{demonstration}
+	Per il teorema di Radò, $S$ ammette una triangolazione $T_1,\ \ldots,\ T_r$. Riportiamo gli $r$ triangoli nel piano, con i lati identificati. Incolliamo poi i lati uno ad uno fino ad ottenere un unico poligono con delle identificazioni sui lati.
+\end{demonstration}
+\subsection{Dimostrazione del teorema di classificazione: prima parte}
+La prima parte della dimostrazione del teorema di classificazione si occupa di dimostrare che \textit{tutte le superfici compatte sono omeomorfe a $S^2$, $T_g$ o $P_n$}. Grazie al corollario appena dimostrato, possiamo studiare direttamente il \textit{modello piano} associato alla superficie compatta $S$ in esame, cioè studieremo un \textit{poligono} con i lati identificati a $2$ a $2$. Diamo ora una nomenclatura utile.
+\begin{define}\textsc{Coppie di lati.}\\
+	Nel modello piano, una \textit{coppia di lati} identificati tra di loro:
+	\begin{itemize}
+		\item È del \textbf{primo tipo} se, percorrendo il bordo del poligono, i due lati compaiono con \textit{orientazione opposta}.
+		\item È del \textbf{secondo tipo} se, percorrendo il bordo del poligono, i due lati compaiono con la \textit{stessa orientazione}.
+	\end{itemize}
+\vspace{-3mm}
+\end{define}
+\begin{example}
+	Nella \textit{bottiglia di Klein} $K$, modello con parola $aba^{-1}b$, i lati $a$ sono del I tipo, mentre i lati $b$ sono del II tipo.
+\end{example}
+La dimostrazione è \textit{costruttiva}: procederemo passo per passo, da un modello piano di una qualunque superficie compatta ad ottenere una delle superfici citate nel teorema con un \textbf{algoritmo di taglia e incolla}\index{algoritmo del taglia e incolla}.
+\begin{demonstration}~{}\\
+%PASSO 0
+\textsc{\underline{\textbf{Passo 0}}}: se nel modello piano ci sono \textit{solo} $2$ lati abbiamo finito. Infatti, abbiamo solo due superfici con un modello di questo tipo, che abbiamo già visto:
+\begin{center}
+	\vspace{-3mm}
+	\begin{minipage}{.19\linewidth}
+		\begin{equation*}
+			\begin{array}{cc}
+				cc^{-1}\quad \text{(I tipo)}\\
+				S=S^2
+			\end{array}
+		\end{equation*}
+	\end{minipage}
+	\begin{minipage}{.20\linewidth}
+		\begin{center}
+			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/sphere2lines.pdf}
+		\end{center}
+	\end{minipage}
+	\begin{minipage}{.19\linewidth}
+		\begin{equation*}
+			\begin{array}{cc}
+				cc\quad \text{(II tipo)}\\
+				S=P
+			\end{array}
+		\end{equation*}
+	\end{minipage}
+	\begin{minipage}{.20\linewidth}
+		\begin{center}
+			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/proj2lines.pdf}
+		\end{center}
+	\end{minipage}
+\vspace{-3mm}
+\end{center}
+Possiamo supporre che nel modello piano c'è un numero di lati maggiore di $4$.\\
+%PASSO 1
+\textsc{\underline{\textbf{Passo 1}}}: \textit{Eliminazione delle coppie adiacenti del I tipo}.\\
+Supponiamo che nel modello piano ci sia una coppia di lati \textit{adiacenti} del I tipo, come in figura.
+\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep1-1.pdf}
+\end{center}
+Incolliamo i lati $a$ della coppia: in questo modo, otteniamo un nuovo modello piano omeomorfo al primo con due lati in meno.
+\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep1-2.pdf}
+\end{center}
+Ripetiamo il passo 1 finché eliminiamo tutte le coppie adiacenti del I tipo. Se alla fine abbiamo due soli lati, ricadiamo nel passo 0 e abbiamo già finito la dimostrazione.\\
+%PASSO 2
+\textsc{\underline{\textbf{Passo 2}}}: \textit{Riduzione dei vertici a un'unica classe di equivalenza}.\\
+Supponiamo che i vertici del poligono \textit{non} siano tutti equivalenti. Dunque, esisterà un lato $b$ i cui due vertici $P$ e $Q$ \textit{non} sono equivalenti! 
+\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep2-1.pdf}
+\end{center}
+Consideriamo il secondo lato $a$ con vertice $Q$ e, facendo un taglio come in figura, incolliamo il lato $a$:
+\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep2-2.pdf}
+\end{center}
+Abbiamo ora un vertice $Q$ in meno e un vertice $P$ in più. Ripetiamo questa operazione facendo via via diminuire i vertici $Q$. Quando rimane solo un vertice $Q$ deve essere parte di una coppia adiacente del I tipo; possiamo pertanto incollare il lato $a$ facendo scomparire il vertice $Q$.\\
+Alternando i passi 1 e 2 arriviamo ad un modello piano con tutti i vertici identificati e senza coppie adiacenti del I tipo.\\
+\textsc{\textbf{Osservazione}}. Quando incolliamo lungo una coppia di lati del I tipo \textit{non} ribaltiamo i lati, dunque le restanti coppie mantengono il tipo. Al contrario, quando invece incolliamo lungo una coppia di lati del II tipo, i lati restanti \textit{possono} cambiare tipo.\\
+	Ad esempio, nel passo 2, se $a$ è del primo tipo (come nelle figure precedenti) anche il lato $c$ di taglio è del I tipo e le restanti coppie \textit{non} cambiano tipo. Invece, se $a$ è del II tipo, il lato $c$ è del II tipo:
+	\begin{center}
+		\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep2-3.pdf}
+	\end{center}
+In altre parole, l'esistenza di \textit{almeno una} coppia di lati del II tipo è \textit{mantenuta} dal passo 2.\\
+%PASSO 3
+\textsc{\underline{\textbf{Passo 3}}}: \textit{Rendere adiacenti le coppie del II tipo}.\\
+Supponiamo che ci sia una coppia di lati $a$ \textit{non} adiacenti del II tipo. Operiamo un taglio $b$ tra gli estremi finali della coppia e incolliamo la coppia stessa.
+	\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep3.pdf}
+\end{center}
+In questo modo rendiamo adiacenti tutte le coppie dello stesso tipo.\\
+Se ci sono solo \textit{coppie del II tipo}, abbiamo ottenuto una parola della forma:
+\begin{equation}
+	a_1a_1a_2a_2\ldots a_na_n \implies \ovaled{S\cong P_n}
+\end{equation}
+%PASSO 4
+\textsc{\underline{\textbf{Passo 4}}}: \textit{Raggruppare le coppie del I tipo}.\\
+Supponiamo che nel modello piano ci sia almeno una coppia del primo tipo (non adiacente per i passi precedenti).
+	\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep4-1.pdf}
+\end{center}
+Allora deve esistere un'altra coppia di lati del I tipo tali che queste coppie si separino a vicenda. Infatti, i vertici sono tutti identificati tra loro, in particolare lo sono i due vertici di $a$. In altre parole, deve esistere un lato $b$ nella parte superiore identificato ad un lato $b$ nella parte inferiore.
+	\begin{center}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep4-2.pdf}
+\end{center}
+Siccome i lati $b$ \textit{non} sono adiacenti e abbiamo già reso adiacenti tutte le coppie di lati del II tipo, $b$ deve essere una coppia di lati del I tipo.
+Operiamo due taglia e incolla per raggruppare le due coppie.
+\begin{enumerate}
+	\item[\underline{4.1}] Taglio un lato $c$ lungo gli estremi finali di $a$ nella stessa direzione di $b$ e incollo $b$.
+	\begin{center}
+		\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep4-3.pdf}
+	\end{center}
+	\item[\underline{4.2}] Taglio un lato $d$ lungo gli estremi finali di $c$ nella stessa direzione di $a$ e incollo $a$.
+	\begin{center}
+		\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep4-4.pdf}
+	\end{center}
+\end{enumerate}
+In queste operazioni incolliamo lungo coppie del I tipo, pertanto i tipi delle coppie \textit{non cambiano!}\\
+\begin{itemize}
+	\item Se nel modello piano compaiono \textit{solo} coppie del \textit{I tipo}, dopo un numero finito di passi otteniamo la parola:
+	\begin{equation}
+		a_1b_1a_1^{-1}b_1^{-1}a_2b_2a_2^{-1}b_2^{-1}\ldots a_nb_na_n^{-1}b_n^{-1}\implies \ovaled{S\cong T_g}
+	\end{equation}
+\item Se invece nel modello piano compaiono sia coppie adiacenti del II tipo, sia sequenze $aba^{-1}b^{-1}$ di coppie del I tipo, allora $S$ è data dalla somma connessa di tori e piani proiettivi, con almeno un piano proiettivo, pertanto per il corollario \ref{toropiupiano} (pag. \pageref{toropiupiano}) segue che $\ovaled{S\cong P_n}$
+\end{itemize}
+\vspace{-3mm}
+\end{demonstration}
+\begin{observe}
+	Si ottiene sempre un piano proiettivo se e solo nel modello iniziale c'è almeno una coppia di lati del II tipo (perché i passi mantengono il tipo).
+\end{observe}
+\section{Orientabilità}
+\begin{define}\textsc{Nastro di Möbius}.\\
+	\begin{minipage}{.75\linewidth}
+Definiamo il \textbf{nastro di Möbius} (aperto) $N_0\subseteq \realset^3$ come lo spazio $\left[0,\ 1\right]\times (0,\ 1)$ (mentre si considera $\left[0,\ 1\right]\times [0,\ 1]$ nel caso chiuso $N$) con i lati quozientati come in figura.
+	\end{minipage}
+	\begin{minipage}{.14\linewidth}
+		\begin{center}
+			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.4]{images/openmoebius.pdf}
+		\end{center}
+	\end{minipage}
+\end{define}
+\begin{observe}
+	$N_0$ è una superficie topologica, ma \textit{non} è compatta in quanto \textit{non} è chiusa.
+	\vspace{-3mm}
+\end{observe}
+\begin{intuit}
+	Immaginiamo di avere una \textit{figura bidimensionale} posta sulla sfera $S^2$; essa è libera di muoversi su di essa. Qualunque percorso chiuso essa faccia, la figura tornerà al punto di partenza \textit{esattamente come era partita}.\\
+	Prendiamo invece il \textit{nastro di Möbius}. Dopo un percorso attorno al nastro, la figura torna al punto di partenza non com'era partita, bensì ci ritorna con la sua \textit{immagine speculare}!\\
+	Oltre a questo strano avvenimento, notiamo che la figura nel caso della sfera percorre sempre e solo un percorso sull'esterno o sull'interno della sfera, ma \textit{mai} contemporaneamente su entrambi. Nel caso del nastro di Möbius, la figura percorre l'\textit{intera superficie} in un unico percorso.\\
+	In questi termini, diciamo che la sfera è una superficie \textbf{orientabile}: non esistono percorsi che mi ribaltano una figura piana su di essa e (vista come superficie in $\realset^3$) ho due lati ben distinti, l'interno e l'esterno della sfera. Il nastro di Möbius, invece, \textbf{non è orientabile}: la figura si \textit{ribalta} e, allo stesso tempo, percorre tutta la superficie; in altre parole, non esiste un ‘‘interno'' o un ‘‘esterno'' del nastro.
+\end{intuit}
+I comportamenti sul nastro di Möbius che abbiamo appena osservato si presentano anche in superfici come il \textit{piano proiettivo reale} o la \textit{bottiglia di Klein}; in particolare, si ha questo proprio perché possiamo identificare su di esse un percorso esattamente \textit{analogo} a quello visto sul nastro di Möbius.\\
+Possiamo formalizzare l'\textit{orientabilità} utilizzando questo principio.
+\begin{define}\textsc{Orientabilità.}\\
+	Una superficie topologica si dice \textbf{orientabile}\index{orientabilità} se contiene un sottospazio omeomorfo al nastro di Möbius (aperto o chiuso). Altrimenti $S$ si dice \textbf{non orientabile}.
+\end{define}
+\begin{examples}~{}
+	\begin{itemize}
+		\item $N_0$ \textit{non} è orientabile.
+		\item $P=\proj[2]{\realset}$ \textit{non} è orientabile:
+		\begin{center}
+			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/projmoebius.pdf}
+		\end{center}
+		\item $K$ \textit{non} è orientabile:
+		\begin{center}
+			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/kleinmoebius.pdf}
+		\end{center}
+	\item Una superficie il cui modello piano contiene una coppia di lati del II tipo \textit{non} è orientabile:
+	\begin{center}
+		\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/generalmoebius.pdf}
+	\end{center}
+	\end{itemize}
+\vspace{-6mm}
+\end{examples}
+\begin{notate}~{}
+	\begin{enumerate}
+		\item $S^2$ e $T_g$ sono orientabili $\forall g\geq 1$.
+		\item Se una superficie \textit{compatta} è omeomorfa a un sottospazio di $\realset^3$, allora è \textit{orientabile} ed è rappresentabile. %io negli appunti ho "non" è rappresentabile, ma mi sembra strano.
+	\end{enumerate}
+\vspace{-3mm}
+\end{notate}
+\begin{observe}
+	L'\textbf{orientabilità} è una proprietà topologica, cioè è mantenuta per omeomorfismo.
+\end{observe}
+\subsection{Dimostrazione del teorema di classificazione: seconda parte}
+Noto ciò, con il concetto di orientabilità possiamo fare un passettino avanti nella classificazione delle superfici.
+\begin{corollary}
+	\begin{gather*}
+		S^2 \ncong P_n\ \forall n\geq 1\\
+		T_g \ncong P_n\ \forall n\geq 1,\ \forall g\geq 1
+	\end{gather*}
+\vspace{-6mm}
+\end{corollary}
+\begin{corollary}
+	Sia $S$ una superficie compatta con un suo modello piano. Allora $S$ è \textit{orientabile} se e solo se il modello \textit{non} contene coppie di lati del II tipo.
+\end{corollary}
+\begin{demonstration}~{}\\
+$\impliesdx$ Se c'è una coppia di lati del II tipo, costruiamo facilmente un nastro di Möbius collegandone gli estremi.\\
+$\impliessx$ Applicando l'algoritmo del taglia e incolla, se non ci sono lati del II tipo otteniamo una superficie omeomorfa a $S^2$ o a $T_g$, entrambe superfici orientabili.
+\end{demonstration}
+\section{Suddivisione di una superficie compatta}
+\begin{define}\textsc{Lato.}\\
+	Un \textbf{lato}\index{lato} in $S$ superficie compatta è un sottospazio $L\subseteq S$ con un'applicazione continua $\funz{f}{\intv}{L}$ tale che valga una delle due proprietà seguenti:
+	\begin{itemize}
+		\item $f$ è omeomorfismo tra $\intv$ e $L$.
+		\item $f$ è iniettivo su $\left[0\, 1\right)$, $f\left(0\right)=f\left(1\right)$ e $f$ induce un omeomorfismo tra $L$ e $S^1$ (cioè $f$ è un'identificazione).
+	\end{itemize}
+Definiamo come \textbf{vertici}\index{vertice} del lato, rispetto ai due casi sopra:
+\begin{itemize}
+	\item $f\left(0\right)$ e $f\left(1\right)$.
+	\item $f\left(0\right)$.
+\end{itemize}
+\vspace{-3mm}
+\end{define}
+\begin{define}\textsc{Suddivisione di una superficie compatta.}\\
+	Una \textbf{suddivisione}\index{suddivisione} $\mathcal
+	S$ di una superficie compatta $S$ è data da:
+	\begin{itemize}
+		\item un sottoinsieme finito $V$ di $S$, i cui punti sono detti \textbf{vertici}.
+		\item un insieme finito $L_1,\ \ldots,\ L_m$ in $S$ di lati
+	\end{itemize}
+Tali che:
+\begin{enumerate}
+	\item $\forall L$, $L_i\cap V=\left\{\text{vertici di }L_i\right\}$.
+	\item $\forall i\neq j$, $L_i\cap L_j\subseteq V$.
+	\item $S\setminus\left(L_1\cup\ldots\cup L_m\right)$ ha un numero \textit{finito} di componenti connesse dette \textbf{facce}\index{faccia} della suddivisione e ogni faccia è omeomorfa a un disco aperto di $\realset^2$.
+\end{enumerate}
+\vspace{-3mm}
+\end{define}	
+\begin{example}
+	Una \textbf{triangolazione} $T_1,\ \ldots,\ T_r$ di $S$ induce \textit{sempre} una suddivisione, in cui:
+	\begin{itemize}
+		\item $V=$ vertici di $T_1,\ \ldots,\ T_r$.
+		\item $L_1,\ \ldots,\ L_m=$ lati di $T_1,\ \ldots,\ T_r$.
+		\item Facce $=$ interni di $T_1,\ \ldots,\ T_r$.
+	\end{itemize}
+Pertanto, ogni superficie compatta ammetta almeno una suddivisione perché esiste sempre una triangolazione per il \textit{Teorema di Radò}.
+\end{example}
+\begin{examples}~{}
+	\begin{itemize}
+		\item $S^2$ ha una suddivisione (ulteriore a quella data dal tetraedro) data da un \textcolor{redill}{\textbf{unico vertice}}, un \textcolor{greenill}{\textbf{unico lato}} e \textcolor{blueill}{\textbf{due facce}}.
+			\begin{center}
+				\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/spheresubdivision.pdf}
+			\end{center}
+		\item Il toro ha una suddivisione data da un \textcolor{redill}{\textbf{unico vertice}}, \textcolor{greenill}{\textbf{due lati}} e un'\textcolor{blueill}{\textbf{unica faccia}}.	
+		\begin{center}
+			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/torussubdivision.pdf}
+		\end{center}
+	\end{itemize}
+\vspace{-6mm}
+\end{examples}
+\section{Caratteristica di Eulero}
+\begin{define}\textsc{Caratteristica di Eulero.}\\
+	Data una suddivisione $\mathcal{S}$ di una superficie compatta $S$, essa avrà:
+	\begin{itemize}
+		\item $v$ vertici.
+		\item $e$ lati.
+		\item $f$ facce.
+	\end{itemize}
+La \textbf{caratteristica di Eulero}\index{caratteristica di Eulero} di $\mathcal{S}$ è:
+\begin{equation}
+	\euler{S}{\mathcal{S}}=v-e+f\in\integerset
+\end{equation}
+\vspace{-6mm}
+\end{define}
+\begin{examples}~{}
+	\begin{itemize}
+		\item Il \textit{tetraedro} ha 4 vertici, 6 lati e 4 facce, pertanto $S^2$ ha come caratteristica di Eulero $\euler{S}{\mathcal{S}_1}=4-6+4=2$.
+		\item Riprendendo la suddivisione della sfera precedente, descritta dalla tripletta $\left(v,\ e,\ f\right)=\left(1,\ 1,\ 2\right)$, la caratteristica di Eulero secondo questa suddivisione è $\euler{S}{\mathcal{S}_1}=1-1+2=2$.
+		\item Il toro ha una suddivisione $\left(v,\ e,\ f\right)=\left(1,\ 2,\ 1\right)$, con caratteristica di Eulero $\euler{S}{\mathcal{S}}=1-2+1=0$.
+		\item Possiamo costruire una suddivisione alternativa del toro direttamente sul modello piano, nel modo seguente:
+		\begin{center}
+			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/torusmodelplane.pdf}
+		\end{center}
+	Allora abbiamo $\left(v,\ e,\ f\right)=\left(2,\ 6,\ 4\right)$ con caratteristica di Eulero $\euler{S}{\mathcal{S}}=2-5+4=0$.
+	\end{itemize}
+\vspace{-3mm}
+\end{examples}
+Notiamo che, in questi esempi, suddivisioni diverse di una stessa superficie hanno stessa caratteristica di Eulero. Questo \textit{non} è un caso: il seguente teorema (che non dimostreremo) ci garantisce ciò.
+\begin{theorema}
+	Date due suddivisioni $\mathcal{S}_1$ e $\mathcal{S}_2$ della stessa superficie compatta $S$, si ha:
+	\begin{equation*}
+		\euler{S}{\mathcal{S}_1}=\euler{S}{\mathcal{S}_2}
+	\end{equation*}
+\vspace{-6mm}
+\end{theorema}
+\begin{define}\textsc{Caratteristica di Eulero.}\\
+	Sia $S$ una superficie compatta. La \textbf{caratteristica di Eulero} $\euler{S}{\ }\in \integerset$ è la caratteristica di Eulero di una qualsiasi suddivisione di $S$.
+\end{define}
+\begin{corollary}
+	La \textbf{caratteristica di Eulero è un'invariante per omeomorfismo.}
+\end{corollary}
+\begin{demonstration}
+	Siano $S_1$ e $S_2$ due superfici compatte omeomorfe tra di loro e siano $\mathcal{S}_1$ una suddivisione di $S_1$. Usando l'omeomorfismo, costruiamo una suddivisione $\mathcal{S}_2$ di $S_2$ con lo stesso numero di vertici, lati e facce di $\mathcal{S}_1$. Allora:
+	\begin{equation*}
+		\euler{S_1}{\ }=\euler{S_1}{\mathcal{S}_1}=\euler{S_2}{\mathcal{S}_2}=\euler{S_2}{\ }
+	\end{equation*}
+\vspace{-3mm}
+\end{demonstration}
+\begin{example}~{}
+	\begin{itemize}
+		\item $\euler{S^2}{\ }=2$
+		\item $\euler{T}{\ }=0$
+	\end{itemize}
+\vspace{-3mm}
+\end{example}
+\subsection{Dimostrazione del teorema di classificazione: terza e ultima parte}
+Forti di questo nuovo invariante per omeomorfismi, possiamo concludere la dimostrazione del teorema di classificazione delle superfici compatte.\\ Innanzitutto, vediamo per bene che relazione c'è tra la caratteristica di Eulero e il modello piano di una superficie.
+\begin{observe}
+	Sia $S$ una superficie compatta avente un modello piano con $2n$ lati identificati a coppie. Esso dà una suddivisione nativa di $S$ in cui:
+	\begin{itemize}
+		\item I \textit{vertici} $v$ sono le immagini in $S$ dei vertici del poligono e il loro numero è il numero di classi di equivalenza sui vertici del modello piano.
+		\item I \textit{lati} $n$ sono le immagini in $S$ dei lati del poligono  e il loro numero è il numero di coppie di lati del modello piano.
+		\item C'è solo \textit{una} faccia, data dall'immagine dell'interno del poligono.
+	\end{itemize}
+In altre parole:
+\begin{equation}
+	\euler{S}{\ }=v-n+1
+\end{equation}
+\vspace{-6mm}
+\end{observe}
+\begin{demonstration}~{}
+	\begin{itemize}
+		\item $P_n$ è espresso dalla parola $a_1a_1a_2a_2\ldots a_na_n$ e la suddivisione data dal modello piano ha un solo vertice, $n$ lati e una faccia. Allora:
+		\begin{equation}
+			\euler{P_n}{\ }=1-n+1=2-n\quad \forall n\geq 1
+		\end{equation}
+	In particolare:
+	\begin{equation*}
+		\begin{array}{l}
+			\euler{P}{\ }=1\\
+			\euler{K}{\ }=\euler{P_2}{\ }=0=\euler{T}{\ }
+		\end{array}
+	\end{equation*}
+Ma $T\ncong K$ in quanto $T$ è orientabile, mentre $K$ \textit{non} lo è.\\
+Notiamo che $\euler{P_n}{\ }\leq 1\ \forall n\geq 1$ e $\euler{P_n}{\ }= 2-n$ è una funzione iniettiva. Pertanto, se $n_1\neq n_2$, allora $\euler{P_{n_1}}{\ }\neq\euler{P_{n_2}}{\ }$ e, in quanto invariante per omeomorfismi, segue che $P_{n_1}\ncong P_{n_2}$.\\
+In altre parole, \textit{tutte} le superfici $P_n$ sono \textit{non} omeomorfe tra di loro.
+\item $T_g$ è espresso dalla parola $a_1b_1a_1^{-1}b_1^{-1}\ldots a_nb_na_n^{-1}b_n^{-1}$ e la suddivisione data dal modello piano ha un solo vertice, $2g$ lati e una faccia. Allora:
+\begin{equation}
+	\euler{T_g}{\ }=1-2g+1=2-2g\quad \forall g\geq 1
+\end{equation}
+In particolare, se poniamo $T_0=S^2$ come caso ‘‘degenere'' di toro non bucato e $\euler{T_g}{\ }=2-2g\ \forall g\geq 0$:
+\begin{itemize}
+	\item La caratteristica di Eulero delle superfici orientabili è sempre \textit{pari} e minore di 2.
+	\item $\euler{S}{\ }\leq 2$ per ogni superficie compatta.
+\end{itemize}
+Notiamo che $\euler{T_g}{\ }= 2-2g$ è una funzione iniettiva. Pertanto, se $g_1\neq g_2$, allora $\euler{T_{g_1}}{\ }\neq\euler{T_{g_2}}{\ }$ e, in quanto invariante per omeomorfismi, segue che $T_{g_1}\ncong T_{g_2}$.\\
+In altre parole, \textit{tutte} le superfici $T_g$ sono \textit{non} omeomorfe tra di loro.
+\end{itemize}
+\vspace{-3mm}
+\end{demonstration}
+\subsection{Somma connessa e caratteristica di Eulero}
+\begin{lemming}
+	Siano $S_1,\ S_2$ due superfici compatte. Allora:
+	\begin{equation}
+		\euler{S_1\# S_2}{\ }=\euler{S_1}{\ }+\euler{S_2}{\ }-2
+	\end{equation}
+\vspace{-6mm}
+\end{lemming}
+\begin{demonstration}
+	Scegliamo una triangolazione $\left(v_1,\ e_1,\ f_1\right)$ e $\left(v_2,\ e_2,\ f_2\right)$ per $S_1$ e $S_2$, rispettivamente. Per costruire $S_1\# S_2$ scegliamo un triangolo su $S_1$ e uno su $S_2$. Incolliamo le due superfici lungo i bordi di questi due triangoli. Otteniamo così una triangolazione per $S_1\# S_2$ con $\left(v_3,\ e_3,\ f_3\right)$:
+	\begin{equation*}
+		\begin{array}{l}
+			\begin{cases}
+				v_3=v_1+v_2-3\\
+				e_3=e_1+e_2-3\\
+				f_3=f_1-1+f_2-1=f_1+f_2-2
+			\end{cases}\\
+			\implies \euler{S_1\# S_2}{\ }=v_3-e_3+f_3=v_1+v_2-\cancel{3}-\left(e_1+e_2-\cancel{3}\right)+f_1+f_2-2=\euler{S_1}{\ }+\euler{S_2}{\ }
+		\end{array}
+	\end{equation*}
+\end{demonstration}
+\begin{observe}
+	Possiamo ora calcolare in un altro modo $\euler{P_n}{\ }$ e $\euler{T_g}{\ }$, per induzione:
+	\begin{equation*}
+		\begin{array}{l}
+			\euler{P}{\ }=1\\
+			\euler{P_2}{\ }=\euler{P\# P}=1+1-2=0\\
+			\euler{P_n}{\ }=\euler{P\# P_{n-1}}=\euler{P_n}{\ }+\euler{P_{n-1}}{\ }-2=1+2-\left(n-1\right)-2=2-n
+		\end{array}
+	\end{equation*}
+In modo analogo per $T_g$:
+\begin{equation*}
+	\begin{array}{l}
+		\euler{T}{\ }=0\\
+		\euler{T_2}{\ }=\euler{T\# T}{\ }=0+0-2=-2\\
+		\euler{T_g}{\ }=\euler{T\# T_{g-1}}{\ }=\euler{T_g}{\ }+\euler{T_{g-1}}{\ }-2=0+2-2\left(g-1\right)-2=2-2g
+	\end{array}
+\end{equation*}
+\vspace{-3mm}
+\end{observe}
+\subsection{Impratichiamoci! Caratteristica di Eulero}
+\begin{exercise}\textsc{Prova d'esame, Luglio 2018.}\\
+Sia $S$ la superficie compatta data dalla parola $abcdea^{-1}b^{-1}c^{-1}d^{-1}e^{-1}$. Determinare la classe di $S$ nella classificazione delle superfici compatte.
+\end{exercise}
+\begin{solution}
+	Tutte le coppie di lati sono del II tipo, pertanto $S$ è orientabile, cioè può essere $S^2$ o $T_g$ per un qualche $g\geq 1$, e la caratteristica di Eulero è del tipo $\euler{S}{\ }=2-2g$.\\
+	$S$ ha un modello piano seguente con $10$ lati identificati a coppie, che dà origine ad una suddivisione di $S$ con 5 lati $a,\ b,\ c,\ d,\ e$, una faccia e $v$ vertici, con $v$ il numero di classi di equivalenza sui vertici del modello.\\
+	Per calcolare $v$, disegniamo il modello piano e raggruppiamo i vertici.
+	\begin{center}
+		\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.375]{images/modellopianoexercise.pdf}
+	\end{center}
+Su 10 vertici ho 2 classi di equivalenza, quindi $v=2$. Pertanto:
+\begin{equation*}
+	\euler{S}{\ }=v-5+1=2-4=-2=2-2g\implies 2g=4\implies g=2\implies S\cong T_2
+\end{equation*}
+\vspace{-6mm}
+\end{solution}
+% AGGIUNGERE Note di Topologia Algebrica e Analisi Complessa http://www.science.unitn.it/~perotti/disgeoIII.pdf

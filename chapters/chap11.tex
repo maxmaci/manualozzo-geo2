@@ -14,11 +14,324 @@
 		\textsc{NON UN ROBOT,} UN UMANO IN CARNE ED OSSA BEEP BOOP.
 	\end{flushright}
 \end{introduction}
-
+% inserire citazione
+% inserire introduzione carina
+\section{Diagonalizzazione simultanea}
+\begin{remember}
+	Sia $V$ spazio vettoriale, su campo $\kamp$, di dimensione finita. Consideriamo gli \textbf{endomorfismi} di $V$ o, equivalentemente, le matrici $n\times n$ a elementi in $\kamp$ (con $\dim V=n$).
+	\begin{itemize}
+		\item $A$ determina un endomorfismo di $\kamp^n$ dato da $v\mapsto A\mathbf{v}$.
+		\item Matrici associate allo stesso endomorfismo rispetto a basi diverse sono \textbf{simili}\index{matrice!simile}, cioè:
+		\begin{equation}
+			\exists P\in\gl\left(n\, \kamp\right)\ \colon B=P^{-1}AP
+		\end{equation}
+		\item Le seguenti affermazioni sono equivalenti:
+		\begin{itemize}
+			\item $A$ è \textbf{diagonalizzabile}\index{diagonalizzazione}.
+			\item $A$ è simile ad una matrice diagonale $A=PDP^{-1}$ con $P$ matrice con \textbf{autovettori} sulle colonne.
+			\item $\kamp^n$ ammette una base di \textbf{autovettori}\index{autovettore} di $A$.
+			\item $\kamp^n=V_{\lambda_1}\oplus\ldots\oplus V_{\lambda_r}$ con $V_{\lambda_i}$ \textbf{autospazio}\index{autospazio} relativo ad $A$
+		\end{itemize}
+	\end{itemize}
+\vspace{-3mm}
+\end{remember}
+\begin{define}\textsc{Diagonalizzazione simultanea}.\\
+	Siano $A,\ B\in\kamp^{n, m}$ due matrici \textit{diagonalizzabili}. Diciamo che $A$ e $B$ sono \textbf{simultaneamente diagonalizzabili}\index{diagonalizzazione!simultanea} se esiste una base di $\kamp^n$ composta di autovettori sia di $A$ che di $B$.\\
+	Equivalentemente, $A$ e $B$ sono \textbf{simultaneamente diagonalizzabili} se esiste una matrice invertibile $P$ tale che $P^{-1}AP$ e $P^{-1}BP$ sono \textit{entrambe diagonali}.
+\end{define}
+\begin{example}
+	Non tutte le matrici diagonalizzabili lo sono simultaneamente. Prendiamo $\realset^2$; si consideri:
+	\begin{itemize}
+		\item $A$ diagonalizzabile con $2$ autovalori diversi, i cui autospazi sono le rette $y=x$ e $y=-x$.
+		\item $B$ diagonalizzabile con $2$ autovalori diversi, i cui autospazi sono le rette $y=0$ e $y=2x$.
+	\end{itemize}
+Non esiste alcun autovettore comune, dunque $A$ e $B$ \textit{non} sono simultaneamente diagonalizzabili.
+\end{example}
+Dalla sola definizione non è semplice capire quali matrici sono a tutti gli effetti simultaneamente diagonalizzabili. Tuttavia, il seguente teorema ci permetterà di trovare una condizione necessaria e sufficiente per la diagonalizzazione simultanea.
+\begin{theorema}\label{teoremasimdiag}
+	Siano $A,\ B\in\kamp^{n, n}$. Allora $A$ e $B$ sono simultaneamente diagonalizzabili se e solo se $A$ e $ B$ sono diagonalizzabili e $A,\ B$ commutano, cioè $AB=BA$.
+\end{theorema}
+Per dimostrare il teorema, abbiamo tuttavia bisogno del seguente lemma:
+\begin{lemming}
+	Siano $A,\ B\in\kamp^{n, n}$ tale che $AB=BA$ e sia $W$ un autospazio di $B$. Allora, presa l'azione di $\gl\left(n,\ \kamp\right)$ su $\kamp^{n, n}$, si ha che $A\ldotp W\subseteq W$.
+\end{lemming}
+\begin{demonstration}
+	Sia $\lambda$ l'autovalore di $B$ relativo all'autospazio $W$. Per definizione di autospazio:
+	\begin{equation*}
+		W=\left\{\mathbf{v}\in V\mid B\ldotp \mathbf{v}=\lambda \mathbf{v}\right\}
+	\end{equation*}
+Sia $\mathbf{w}\in W$. Vogliamo mostrare che $A\ldotp \mathbf{w}\in W$.
+\begin{equation*}
+	B\ldotp\left(A\ldotp\mathbf{w}\right)=\left(BA\ldotp\mathbf{w}\right)=\left(AB\ldotp\mathbf{w}\right)=A\ldotp\left(B\ldotp\mathbf{w}\right)=A\ldotp\left(\lambda\mathbf{w}\right)=\lambda\left(A\ldotp\mathbf{w}\right)
+\end{equation*}
+$A\ldotp \mathbf{w}$ è autovettore rispetto a $\lambda$, pertanto $A\ldotp \mathbf{w}\in W,\ \forall \mathbf{w}$ e dunque segue la tesi.
+\end{demonstration}
+\begin{demonstration} \textsc{Dimostrazione del teorema} \ref{teoremasimdiag}.\\
+	$\impliesdx$ Per ipotesi, $\exists P\in \gl\left(n,\ \kamp\right)$ tale che $D_1=P^{-1}AP$ e $D_2=P^{-1}BP$ sono diagonali; in particolare, in quanto matrici diagonali, esse commutano: $D_1D_2=D_2D_1$. Allora $A=PD_1P^{-1}$ e $B=PD_2P^{-1}$.
+	\begin{equation*}
+		AB=\left(PD_1P^{-1}\right)\left(PD_2P^{-1}\right)=PD_1D_2P^{-1}=PD_2D_1P^{-1}=\left(PD_2P^{-1}\right)\left(PD_1P^{-1}\right)=BA
+	\end{equation*}
+$\impliessx$ Procediamo con una \textit{dimostrazione costruttiva}. Sappiamo che:
+\begin{itemize}
+	\item $A$ diagonalizzabile $\implies \exists \mathbf{v}_1,\ \ldots,\ \mathbf{v}_n$ base di $V$ composta da \textit{autovettori} di $A$.
+	\item $B$ diagonalizzabile $\implies V=W_1\oplus\ldots\oplus W_r$ con $W_j$ \textit{autospazi} di $B$
+\end{itemize}
+Consideriamo $\mathbf{v}_1\in V$. Esso si scrive in modo unico:
+\begin{equation*}
+	\textcolor{red}{\circled{{\ast}}}\quad \mathbf{v}_1=\mathbf{w}_{1,1}+\ldots+\mathbf{w}_{1,r}\text{ con }\mathbf{w}_{1,j}\in W_j,\ \forall j=1,\ \ldots,\ r
+\end{equation*}
+$\mathbf{v}_1$ è autovettore di $A$ relativo all'autovalore di $\lambda_1$, dunque $A\mathbf{v}_1=\lambda_1\mathbf{v}$. \textit{Moltiplichiamo} $\mathbf{v}_1$ per $A$:
+\begin{equation*}
+	\begin{array}{ccc}
+		A\ldotp\mathbf{v}_1&=&A\ldotp\mathbf{w}_{1,1}+\ldots+A\ldotp\mathbf{w}_{1,r}\\
+		\shortparallel&\\
+		\lambda_1\mathbf{v}_1&=&\lambda_1\mathbf{w}_{1,1}+\ldots+\lambda_1\mathbf{w}_{1,r}
+	\end{array}
+\end{equation*}
+Dal lemma appena dimostrato, da $A\ldotp W_j\subseteq W_j,\ \forall j$ segue che $A\ldotp \mathbf{w}_j\in W_j$. Per la chiusura di $W_j$ rispetto al prodotto per uno scalare, abbiamo anche $\lambda \mathbf{w}_j\in W_j,\ \forall j$. Siccome in una somma diretta la decomposizione è unica, deduciamo che:
+\begin{equation*}
+	A\ldotp \mathbf{w}_{1,1}=\lambda_1 \mathbf{w}_{1,1},\ \ldots,\ A\ldotp \mathbf{w}_{1,r}=\lambda_1 \mathbf{w}_{1,r}
+\end{equation*}
+In altre parole, $\forall j,\ \mathbf{w}_{1,j}$ è $\mathbf{0}$ oppure un autovettore di $A$ e, per ipotesi, anche di $B$. Procediamo allo stesso modo tutti i vettori della base $\mathbf{v}_1, \ldots,\ \mathbf{v}_n$: si ha che $\mathbf{v}_i=\mathbf{w}_{i,1}+\ldots+\mathbf{w}_{i,r}$ e $\forall i, j,\ $ $\mathbf{w}_{i,j}$ è $\mathbf{0}$ oppure un autovettore comune di $A$ e $B$.\\
+Otteniamo un insieme $\left\{\mathbf{w}_{i, j}\right\}$ di autovettori comuni di $A$ e $B$. Per costruzione, lo \textit{span lineare} dei $\left\{\mathbf{w}_{i, j}\right\}$ contiene $\left\{\mathbf{v}_1,\ \ldots,\ \mathbf{v}_n\right\}$ e pertanto è necessariamente pari a $V$!\\
+In altre parole, $\left\{\mathbf{w}_{i,\ j}\right\}$ è un sistema di generatori di $V$ e possiamo estrarre da esso una base di $V$ costituita di autovettori comuni ad $A$ e a $B$.
+\end{demonstration}
+\section{Polinomi e matrici}
+\begin{remember}
+	Dato un campo $\kamp$, indichiamo con $\kamp\left[t\right]$ l'anello dei polinomi a coefficienti in $\kamp$ nella variabile $t$; un suo elemento $f\left(t\right)\in\kamp\left[t\right]$ è della forma:
+	\begin{equation}
+		f\left(t\right)=b_nt^n+b_{n-1}t^{n-1}+\ldots+b_1t+b_0\text{ con }b_i\in\kamp
+	\end{equation}
+\vspace{-6mm}
+\end{remember}
+Finora abbiamo sempre \textit{valutato} i polinomi in valori del campo $\kamp$. Possiamo invece valutarli in una \textit{matrice} in $\kamp^{n, n}$? Dopotutto, la \textit{somma di matrici} e la \textit{moltiplicazione per uno scalare} sono operazioni \textit{interne} a $\kamp^{n, n}$ e pertanto potremmo pensare che sia lecito.\\ Tuttavia, presi i polinomi $p$ così come sono, non sarebbe \textit{ben definita} $p\left(A\right)$ a causa del \textbf{termine noto}; infatti, non possiamo sommare uno \textit{scalare ad una matrice}! Per ovviare a questo problema, quando valutiamo un polinomio in una matrice $A$ ‘‘\textit{correggiamo}'' il termine noto con la \textbf{matrice identità} $I$:
+\begin{equation}
+	f\left(A\right)\coloneqq b_nA^n+b_{n-1}A^{n-1}+\ldots+b_1A+b_0I\text{ con }b_i\in\kamp
+\end{equation}
+In questo modo, $f\left(A\right)\in\kamp^{n, n}$.
+\begin{example}
+Preso $f\left(t\right)=t^2-3$, il polinomio valutato nella matrice $A$ è $f\left(A\right)=A^2-3I$.
+\end{example}
+\begin{observe}
+	Dati $f,\ g\in\kamp\left[t\right]$ e $A\in\kamp^{n,\ n}$, si ha:
+	\begin{itemize}
+		\item $\left(f+g\right)\left(A\right)=f\left(A\right)+g\left(A\right)$.
+		\item $\left(fg\right)\left(A\right)=f\left(A\right)g\left(A\right)$
+	\end{itemize}
+\vspace{-3mm}
+\end{observe}
+\begin{demonstration}
+	Prendiamo i polinomi $f\left(t\right)=b_nt^n+b_{n-1}t^{n-1}+\ldots+b_1t+b_0$ e $g\left(t\right)=c_nt^n+c_{n-1}t^{n-1}+\ldots+c_1t+c_0$ e valutiamoli entrambi in $A$: $f\left(A\right)=b_nA^n+b_{n-1}A^{n-1}+\ldots+b_1A+b_0I$ e $g\left(A\right)=c_nA^n+c_{n-1}A^{n-1}+\ldots+c_1A+c_0I$.
+	\begin{enumerate}[label=\Roman*]
+		\item La somma è ovvia.
+		\item Il prodotto è garantito dalla commutatività delle potenze di matrici.
+	\end{enumerate}
+\vspace{-3mm}
+\end{demonstration}
+\subsection{Ideale di una matrice}
+\begin{define}\textsc{Ideale di una matrice.}\\
+	Data $A\in\kamp^{n,\ n}$, definiamo l'\textbf{ideale della matrice}\index{ideale!di una matrice}:
+	\begin{equation}
+		I_A\coloneqq\left\{f\in\kamp\left[t\right]\mid f\left(A\right)=O\right\}
+	\end{equation}
+\vspace{-6mm}
+\end{define}
+\begin{observe}~{}
+	\begin{itemize}
+		\item $O\in I_A$.
+		\item $I_A\neq\left\{O\right\}$; infatti, se consideriamo le seguenti $n^2+1$ matrici in $\kamp^{n,\ n}$:
+		\begin{equation*}
+			I,\ A,\ A^2,\ A^3,\ \ldots,\ A^{n^2}
+		\end{equation*}
+	Per il lemma di Steinitz queste matrici sono necessariamente \textit{linearmente dipendenti}, dato che superano in numero $\dim \kamp^{n,\ n}=n^2$, cioè esistono i coefficienti $a_0,\ \ldots,\ a_{n^2}\in\kamp$ \textit{non} tutti nulli tali che:
+	\begin{equation*}
+		a_0I+a_1A+a_2A^2+\ldots+a_{n^2}A^{n^2}=O
+	\end{equation*}
+	Allora $p\left(t\right)=a_{n^2}t^{n^2}+\ldots+a_2t^2+a_1t+a_0$ è un polinomio \textit{non} nullo in $I_A$.
+	\item $I_A$ soddisfa giustamente la definizione di ideale di $\kamp\left[t\right]$:
+	\begin{itemize}
+		\item \textsc{$I_A$ è un sottogruppo di $\left(\kamp^{n, n},\ +\right)$}.
+		\begin{equation*}
+			\left(f+g\right)\left(A\right)=f\left(A\right)+g\left(A\right)=0\implies f+g\in I_A
+		\end{equation*}
+		\item \textsc{Assorbimento}: se $h\in\kamp\left[t\right]$ si ha :
+		\begin{equation*}
+			\left(fh\right)\left(A\right)=\underbrace{f\left(A\right)}_{=O}h\left(A\right)=O\implies fh\in I_A
+		\end{equation*}
+	\end{itemize}
+	\end{itemize}
+\vspace{-3mm}
+\end{observe}
+\subsection{Polinomio minimo}
+\begin{proposition}
+	L'anello $\kamp\left[t\right]$ è ad \textit{ideali principali}: se $I\subseteq \kamp\left[t\right]$ è un ideale, $\exists p$ tale che $I=\left(p\right)$. Il generatore $p$ è \textit{unico} a meno di moltiplicazione per scalari \textit{non} nulli, se prendiamo $P$ \textbf{monico} allora è unico.
+\end{proposition}
+\begin{demonstration}
+Sia $p\in I$ un polinomio \textit{non} nullo di grado \textit{minimo} tra i polinomi in $I_A$.\\
+Se $p$ è \textit{costante}, allora $I=\kamp\left[t\right]=\left(1\right)=\left(p\right)$.\\
+Supponiamo allora $p$ \textit{non} costante. Vogliamo mostrare che $p$ genera $I$.
+Prendiamo $f\in I$ e dividiamolo per $p$:
+\begin{equation*}
+	\underbrace{f\left(t\right)}_{\in I}=\underbrace{p\left(t\right)q\left(t\right)}_{\in I\text{ per assorbimento}}+r\left(t\right)
+\end{equation*}
+Con $r\left(t\right)$ polinomio con $\deg r < \deg p$. Notiamo che anche $r\left(t\right)\in I$ per essere vera l'equazione di sopra; in particolare, per la minimalità del grado di $p$ non può esserci un polinomio in $I$ di grado minore di $p$, dunque $r\equiv 0$. Allora $p\mid f$ e dunque ogni polinomio in $I$ è generato da $p$: $I\equiv\left(p\right)$.\\
+Se $I=\left(p\right)=\left(\widetilde{p}\right)$, allora $p,\ \widetilde{p}\in I$ e dunque $p\mid \widetilde{p}$, $\widetilde{p}\mid p$, cioè $p=\lambda\widetilde{p}$ con $\lambda\in\kamp\setminus\left\{0\right\}$. Se $p$ è \textit{monico}, l'unico coefficiente $\lambda$ per cui si ha $p=\lambda\widetilde{p}$ è $1$, e dunque $p=\widetilde{p}$, cioè $p$ è unico.
+\end{demonstration}
+\begin{define}\textsc{Polinomio minimo.}\\
+	Sia $A\in\kamp^{n, n}$ e sia $I_A$ ideale dei polinomi che si annullano in $A$. Il \textbf{polinomio minimo}\index{polinomio!minimo} $m_A\left(t\right)$ di $A$ è il  \textit{generatore monico} di $I_A$, ovvero è il polinomio monico \textit{non} nullo di grado minimo tra i polinomi in $I_A$.
+\end{define}
+\begin{example} Cerchiamo il polinomio minimo della seguente matrice.
+	\begin{equation*}
+		A=\left(\begin{array}{cc}
+			0 & 1 \\
+			1 & 0
+		\end{array}\right)\quad A^2=\left(\begin{array}{cc}
+		0 & 1 \\
+		1 & 0
+	\end{array}\right)\left(\begin{array}{cc}
+	0 & 1 \\
+	1 & 0
+\end{array}\right)=\left(\begin{array}{cc}
+1 & 0 \\
+0 & 1
+\end{array}\right)=I
+	\end{equation*}
+Notiamo che $A^2-I=O$, dunque $p\left(t\right)=t^2-1\in I_A$. Poiché $m_A\left(t\right)\mid p\left(t\right)$, esso può essere solo $t-1$, $t+1$, $t^2-1$. Escludiamo sempre il caso $m_A\left(t\right)=1$, in quanto allora si avrebbe $I_A=\kamp\left[t\right]$ e ciò non è mai vero per questo anello (i polinomi di grado $0$ non si annullano in generale sulle matrici!).\\
+Se fosse $m_A\left(t\right)=t-1$, allora $m_A\left(A\right)=A-I\neq O$ e dunque $t-1\notin I_A$. In modo analogo $m_A\left(t\right)=t+1\implies A+I\neq 0\implies t-1\notin I_A$. L'unica possibilità è allora $m_A\left(t\right)=t^2-1$.
+\end{example}
+\begin{observe}
+	Se $A$ e $B$ sono simili, allora $I_A=I_B\subseteq \kamp\left[t\right]$ e quindi $m_A\left(t\right)=m_B\left(t\right)$.
+\end{observe}
+\begin{demonstration}
+	Sia $M\in\gl\left(n,\ \kamp\right)$ la matrice che rende $A$ simile a $B$: $B=M^{-1}AM$. Le potenze di matrici simili sono simili anch'esse:
+	\begin{equation*}
+		\begin{array}{l}
+			B=M^{-1}AM\\
+			B^2=M^{-1}A^2M\\
+			\ldots\\
+			B^k=M^{-1}A^kM
+		\end{array}
+	\end{equation*}
+Se $p\left(t\right)=c_dt^d+\ldots+c_0$, allora:
+\begin{equation*}
+	\begin{array}{ll}
+		M^{-1}p\left(A\right)M&=M^{-1}\left(c_dA^d+\ldots+c_0I\right)M=c_d\left(M^{-1}A^dM\right)+\ldots+c_1\left(M^{-1}AM\right)+c_0I=\\
+		&=c_dB^d+\ldots+c_1B+c_0I=p\left(B\right)
+	\end{array}
+\end{equation*}
+Ovvero $M^{-1}p\left(A\right)M=\left(B\right)$. Pertanto, $p\left(A\right)=O$ se e solo se $p\left(B\right)=O$, cioè se $I_A=I_B$.
+\end{demonstration}
 \section{Teorema di Cayley-Hamilton}
-\begin{center}
-	[...]
-\end{center}
+\begin{remember}
+	Ricordiamo alcune definizioni e proprietà utili legate al \textbf{determinante}:
+	\begin{itemize}
+		\item Il \textbf{complemento algebrico}\index{completamento algebrico} $\left(i,\ j\right)$ di una matrice quadrata $M$ è:
+		\begin{equation}
+			M_{i,j}=\left(-1\right)^{i+j}\det\left(\begin{array}{c}
+				\text{matrice ottenuta da }M \text{ cancellando}\\
+				\text{la riga }i\text{ e la colonna }j
+			\end{array}\right)
+		\end{equation}
+	\item La \textbf{matrice aggiunta}\index{matrice!aggiunta} $\mathrm{adj}\left(M\right)$ di una matrice quadrata $M$ è la matrice $\left(M_{i,j}\right)$ che, al posto $\left(i,\ j\right)$ ha il complemento algebrico $M_{j,\ i}$.\footnote{Attenzione all'ordine degli indici!}
+	\item La \textbf{regola di Laplace}\index{regola!di Laplace} afferma che:
+	\begin{equation}
+		\mathrm{adj}\left(M\right)M=M\mathrm{adj}\left(M\right)=\det\left(M\right)I
+	\end{equation}
+	Inoltre, se $\det\left(M\right)\neq 0$, allora:
+	\begin{equation}
+		M^{-1}=\frac{1}{\det M}\mathrm{adj}\left(M\right)
+	\end{equation}
+\item Il \textbf{polinomio caratteristico}\index{polinomio!caratteristico} di $A$ è:
+\begin{equation}
+	C_A\left(t\right)=\det\left(tI-A\right)=\left(-1\right)^n\det\left(A-tI\right)
+\end{equation}
+In particolare, il polinomio caratteristico è un polinomio \textit{monico}.
+	\end{itemize}
+\vspace{-3mm}
+\end{remember}
+\begin{observe}\label{polinomicoeffmatrisci}
+Una matrice i cui elementi sono polinomi in $\kamp\left[t\right]$ può essere scritta in modo unico come polinomio in $t$ con coefficienti delle matrici in $\kamp^{n,\ n}$.
+\end{observe}
+\begin{example}~{}
+	\begin{equation*}
+		\left(\begin{array}{cc}
+			2t^2 & 3t+1 \\
+			t^2-4t & 0
+		\end{array}\right)=\left(\begin{array}{cc}
+		2 & 0 \\
+		1 & 0
+	\end{array}\right)t^2+\left(\begin{array}{cc}
+	0 & 3 \\
+	-4 & 0
+\end{array}\right)t+\left(\begin{array}{cc}
+0 & 1 \\
+0 & 0
+\end{array}\right)
+	\end{equation*}
+\end{example}
+\begin{theorema}\textsc{Teorema di Cayley-Hamilton}.\index{teorema!di Cayley-Hamilton}\\
+Sia $A\in \mathbb{K}^{n,\ n}$. Allora $C_A\left(t\right)\in I_A$, cioè $C_A\left(A\right)=0$. In altre parole, $m_A\left(t\right)\mid C_A\left(t\right)$.\\
+In particolare $\deg m_A\left(t\right)\leq n$.
+\end{theorema}
+\begin{demonstration}
+	Sia $M\coloneqq tI-A$. Allora:
+	\begin{equation*}
+		C_A\left(t\right)=\det M=t^n+b_{n-1}t^{n-1}+\ldots+b_1t+b_0
+	\end{equation*}
+Consideriamo l'\textit{aggiunta} di $M$, $\mathrm{adj}\left(M\right)=\mathrm{adj}\left(tI-A\right)$.
+Poiché gli elementi di $tI-A$ sono polinomi in $\kamp\left[t\right]$ di grado minore o uguale di $1$ e gli elementi di $\mathrm{adj}\left(M\right)$ sono polinomi in $\kamp\left[t\right]$ di grado minore o uguale di $n-1$, $\mathrm{adj}\left(M\right)$ si scrive come polinomio di grado minore e uguale a $n-1$ con coefficienti in $\kamp^{n, n}$ (grazie all'osservazione di pag. \pageref{polinomicoeffmatrisci}).
+\begin{equation*}
+	\mathrm{adj}\left(M\right)=C_{n-1}t^{n-1}+C_{n-2}t^{n-2}+\ldots+C_1t+C_0,\ C_i\in\kamp^{n,\ n}
+\end{equation*}
+Usando la regola di Laplace:
+\begin{equation*}
+	\begin{array}{ccc}
+		M\mathrm{adj}\left(M\right)=\det\left(M\right)I&&\\
+		\Downarrow&&\\
+		\left(tI-A\right)\mathrm{adj}\left(M\right)=C_A\left(t\right)I&=&\left(t^n+b_{n-1}t^{n-1}+\ldots+b_1t+b_0\right)I\\
+		\shortparallel &=& \ovaled{It^n+b_{n-1}It^{n-1}+\ldots+b_1It+b_0I}\\
+		\left(tI-A\right)\left(C_{n-1}t^{n-1}+C_{n-2}t^{n-2}+\ldots+C_1t+C_0\right)&&\\
+		={\tikz[baseline=(char.base)]\node[anchor=south west, draw,rectangle, rounded corners, inner sep=2pt, minimum size=7mm,
+		text height=6mm](char){$\begin{array}{l}
+				{\small C_{n-1}t^n+C_{n-2}t^{n-1}+\ldots+C_1t^2+C_0t+}\\
+				{\small-AC_{n-1}t^{n-1}-AC_{n-2}t^{n-2}+\ldots-AC_1t+AC_0}
+			\end{array}$} ;}&&
+	\end{array}
+\end{equation*}
+Uguagliamo i due termini evidenziati, sommando le matrici coefficienti termine a termine. Si ha il sistema:
+\begin{equation*}
+	\begin{cases}
+		\begin{array}{ll}
+			C_{n-1}=I&\colon t^n\\
+			C_{n-2}-AC_{n-1}=b_{n-1}I&\colon t^{n-1}\\
+			C_{n-3}-AC_{n-2}=b_{n-2}I&\colon t^{n-2}\\
+			\ldots&\\
+			C_{0}-AC_{1}=b_{1}I&\colon t\\
+			-AC_0=b_0I&\colon 1\\
+		\end{array}
+	\end{cases}
+\end{equation*}
+Sostituiamo a cascata le equazioni dalla seconda in giù:
+\begin{equation*}
+	\begin{cases}
+		\begin{array}{ll}
+			C_{n-2}=A+b_{n-1}I\\
+			C_{n-3}=A^2+b_{n-1}A+b_{n-2}I\\
+			\ldots\\
+			C_0=A^{n-1}+b_{n-1}A^{n-2}+\ldots+b_1I
+		\end{array}
+	\end{cases}
+\end{equation*}
+Sostituiamo $C_0$ nell'ultima:
+\begin{equation*}
+	\underbrace{A^n+b_{n-1}A^{n-1}+\ldots+b_1A+b_0I}_{C_A\left(A\right)}=O
+\end{equation*}
+Abbiamo dunque ottenuto la tesi.
+\end{demonstration}
+\begin{observe}
+	Si ha che $m_A\left(t\right)\mid C_A\left(t\right)\implies C_A\left(t\right)=m_A\left(t\right)q\left(t\right)$, con $q\left(t\right)\in\kamp\left[t\right]$. In altre parole, le \textit{radici} del \textit{polinomio minimo} sono \textit{autovalori}.
+\end{observe}
+Il seguente teorema afferma un legame ancora più forte tra polinomio minimo e autovalori di una matrice.
 \begin{theorema}
 	Sia $A\in \kamp^{n,\ n}$ e $m_A\left(t\right)$ il suo polinomio minimo. Allora, preso $\lambda\in\kamp$:
 	\begin{equation}
