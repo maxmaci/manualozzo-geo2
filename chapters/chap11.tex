@@ -36,7 +36,7 @@
 \vspace{-3mm}
 \end{remember}
 \begin{define}\textsc{Diagonalizzazione simultanea}.\\
-	Siano $A,\ B\in\kamp^{n,\ m}$ due matrici \textit{diagonalizzabili}. Diciamo che $A$ e $B$ sono \textbf{simultaneamente diagonalizzabili}\index{diagonalizzazione!simultanea} se esiste una base di $\kamp^n$ composto di autovettori sia di $A$ che di $B$.\\
+	Siano $A,\ B\in\kamp^{n,\ m}$ due matrici \textit{diagonalizzabili}. Diciamo che $A$ e $B$ sono \textbf{simultaneamente diagonalizzabili}\index{diagonalizzazione!simultanea} se esiste una base di $\kamp^n$ composta di autovettori sia di $A$ che di $B$.\\
 	Equivalentemente, $A$ e $B$ sono \textbf{simultaneamente diagonalizzabili} se esiste una matrice invertibile $P$ tale che $P^{-1}AP$ e $P^{-1}BP$ sono \textit{entrambe diagonali}.
 \end{define}
 \begin{example}
@@ -49,11 +49,11 @@ Non esiste alcun autovettore comune, dunque $A$ e $B$ \textit{non} sono simultan
 \end{example}
 Dalla sola definizione non è semplice capire quali matrici sono a tutti gli effetti simultaneamente diagonalizzabili. Tuttavia, il seguente teorema ci permetterà di trovare una condizione necessaria e sufficiente per la diagonalizzazione simultanea.
 \begin{theorema}\label{teoremasimdiag}
-	Siano $A,\ B\in\kamp^{n,\ n}$. Allora $A$ e $B$ sono simultaneamente diagonalizzabili se e solo se $A$ e $ B$ sono diagonalizzabili e $A,\ B$ commutano, cioè $AB=BA$.
+	Siano $A,\ B\in\kamp^{n, n}$. Allora $A$ e $B$ sono simultaneamente diagonalizzabili se e solo se $A$ e $ B$ sono diagonalizzabili e $A,\ B$ commutano, cioè $AB=BA$.
 \end{theorema}
 Per dimostrare il teorema, abbiamo tuttavia bisogno del seguente lemma:
 \begin{lemming}
-	Siano $A,\ B\in\kamp^{n,\ n}$ tale che $AB=BA$ e sia $W$ un autospazio di $B$. Allora, presa l'azione di $\gl\left(n,\ \kamp\right)$ su $\kamp^{n,\ n}$, si ha che $A\ldotp W\subseteq W$.
+	Siano $A,\ B\in\kamp^{n, n}$ tale che $AB=BA$ e sia $W$ un autospazio di $B$. Allora, presa l'azione di $\gl\left(n,\ \kamp\right)$ su $\kamp^{n, n}$, si ha che $A\ldotp W\subseteq W$.
 \end{lemming}
 \begin{demonstration}
 	Sia $\lambda$ l'autovalore di $B$ relativo all'autospazio $W$. Per definizione di autospazio:
@@ -64,7 +64,7 @@ Sia $\mathbf{w}\in W$. Vogliamo mostrare che $A\ldotp \mathbf{w}\in W$.
 \begin{equation*}
 	B\ldotp\left(A\ldotp\mathbf{w}\right)=\left(BA\ldotp\mathbf{w}\right)=\left(AB\ldotp\mathbf{w}\right)=A\ldotp\left(B\ldotp\mathbf{w}\right)=A\ldotp\left(\lambda\mathbf{w}\right)=\lambda\left(A\ldotp\mathbf{w}\right)
 \end{equation*}
-$A\ldotp \mathbf{w}$ è autovettore rispetto a $\lambda$, pertanto $A\ldotp \mathbf{w}\in W\ \forall \mathbf{w}$ e dunque segue la tesi.
+$A\ldotp \mathbf{w}$ è autovettore rispetto a $\lambda$, pertanto $A\ldotp \mathbf{w}\in W,\ \forall \mathbf{w}$ e dunque segue la tesi.
 \end{demonstration}
 \begin{demonstration} \textsc{Dimostrazione del teorema} \ref{teoremasimdiag}.\\
 	$\impliesdx$ Per ipotesi, $\exists P\in \gl\left(n,\ \kamp\right)$ tale che $D_1=P^{-1}AP$ e $D_2=P^{-1}BP$ sono diagonali; in particolare, in quanto matrici diagonali, esse commutano: $D_1D_2=D_2D_1$. Allora $A=PD_1P^{-1}$ e $B=PD_2P^{-1}$.
@@ -78,7 +78,7 @@ $\impliessx$ Procediamo con una \textit{dimostrazione costruttiva}. Sappiamo che
 \end{itemize}
 Consideriamo $\mathbf{v}_1\in V$. Esso si scrive in modo unico:
 \begin{equation*}
-	\textcolor{red}{\circled{{\ast}}}\quad \mathbf{v}_1=\mathbf{w}_{1,1}+\ldots+\mathbf{w}_{1,r}\text{ con }\mathbf{w}_{1,j}\in W_j\ \forall j=1,\ \ldots,\ r
+	\textcolor{red}{\circled{{\ast}}}\quad \mathbf{v}_1=\mathbf{w}_{1,1}+\ldots+\mathbf{w}_{1,r}\text{ con }\mathbf{w}_{1,j}\in W_j,\ \forall j=1,\ \ldots,\ r
 \end{equation*}
 $\mathbf{v}_1$ è autovettore di $A$ relativo all'autovalore di $\lambda_1$, dunque $A\mathbf{v}_1=\lambda_1\mathbf{v}$. \textit{Moltiplichiamo} $\mathbf{v}_1$ per $A$:
 \begin{equation*}
@@ -88,12 +88,12 @@ $\mathbf{v}_1$ è autovettore di $A$ relativo all'autovalore di $\lambda_1$, dun
 		\lambda_1\mathbf{v}_1&=&\lambda_1\mathbf{w}_{1,1}+\ldots+\lambda_1\mathbf{w}_{1,r}
 	\end{array}
 \end{equation*}
-Dal lemma appena dimostrato, da $A\ldotp W_j\subseteq W_j\ \forall j$ segue che $A\ldotp \mathbf{w}_j\in W_j$. Per la chiusura di $W_j$ rispetto al prodotto per uno scalare, abbiamo anche $\lambda \mathbf{w}_j\in W_j\ \forall j$. Siccome in una somma diretta la decomposizione è unica, deduciamo che:
+Dal lemma appena dimostrato, da $A\ldotp W_j\subseteq W_j,\ \forall j$ segue che $A\ldotp \mathbf{w}_j\in W_j$. Per la chiusura di $W_j$ rispetto al prodotto per uno scalare, abbiamo anche $\lambda \mathbf{w}_j\in W_j,\ \forall j$. Siccome in una somma diretta la decomposizione è unica, deduciamo che:
 \begin{equation*}
 	A\ldotp \mathbf{w}_{1,1}=\lambda_1 \mathbf{w}_{1,1},\ \ldots,\ A\ldotp \mathbf{w}_{1,r}=\lambda_1 \mathbf{w}_{1,r}
 \end{equation*}
-In altre parole, $\forall j\ \mathbf{w}_{1,j}$ è $\mathbf{0}$ oppure un autovettore di $A$ e, per ipotesi, anche di $B$. Procediamo allo stesso modo tutti i vettori della base $\mathbf{v}_1, \ldots,\ \mathbf{v}_n$: si ha che $\mathbf{v}_i=\mathbf{w}_{i,1}+\ldots+\mathbf{w}_{i,r}$ e $\forall i,\ j$ $\mathbf{w}_{i,j}$ è $\mathbf{0}$ oppure un autovettore comune di $A$ e $B$.\\
-Otteniamo un insieme $\left\{\mathbf{w}_{i,\ j}\right\}$ di autovettori comuni di $A$ e $B$. Per costruzione, lo \textit{span lineare} dei $\left\{\mathbf{w}_{i,\ j}\right\}$ contiene $\left\{\mathbf{v}_1,\ \ldots,\ \mathbf{v}_n\right\}$ e pertanto è necessariamente pari a $V$!\\
+In altre parole, $\forall j,\ \mathbf{w}_{1,j}$ è $\mathbf{0}$ oppure un autovettore di $A$ e, per ipotesi, anche di $B$. Procediamo allo stesso modo tutti i vettori della base $\mathbf{v}_1, \ldots,\ \mathbf{v}_n$: si ha che $\mathbf{v}_i=\mathbf{w}_{i,1}+\ldots+\mathbf{w}_{i,r}$ e $\forall i, j,\ $ $\mathbf{w}_{i,j}$ è $\mathbf{0}$ oppure un autovettore comune di $A$ e $B$.\\
+Otteniamo un insieme $\left\{\mathbf{w}_{i, j}\right\}$ di autovettori comuni di $A$ e $B$. Per costruzione, lo \textit{span lineare} dei $\left\{\mathbf{w}_{i, j}\right\}$ contiene $\left\{\mathbf{v}_1,\ \ldots,\ \mathbf{v}_n\right\}$ e pertanto è necessariamente pari a $V$!\\
 In altre parole, $\left\{\mathbf{w}_{i,\ j}\right\}$ è un sistema di generatori di $V$ e possiamo estrarre da esso una base di $V$ costituita di autovettori comuni ad $A$ e a $B$.
 \end{demonstration}
 \section{Polinomi e matrici}
@@ -104,11 +104,11 @@ In altre parole, $\left\{\mathbf{w}_{i,\ j}\right\}$ è un sistema di generatori
 	\end{equation}
 \vspace{-6mm}
 \end{remember}
-Finora abbiamo sempre \textit{valutato} i polinomi in valori del campo $\kamp$. Possiamo invece valutarli in una \textit{matrice} in $\kamp^{n,\ n}$? Dopotutto, la \textit{somma di matrici} e la \textit{moltiplicazione per uno scalare} sono operazioni \textit{interne} a $\kamp^{n,\ n}$ e pertanto potremmo pensare che sia lecito.\\ Tuttavia, presi i polinomi $p$ così come sono, non sarebbe \textit{ben definita} $p\left(A\right)$ a causa del \textbf{termine noto}; infatti, non possiamo sommare uno \textit{scalare ad una matrice}! Per ovviare a questo problema, quando valutiamo un polinomio in una matrice $A$ ‘‘\textit{correggiamo}'' il termine noto con la \textbf{matrice identità} $I$:
+Finora abbiamo sempre \textit{valutato} i polinomi in valori del campo $\kamp$. Possiamo invece valutarli in una \textit{matrice} in $\kamp^{n, n}$? Dopotutto, la \textit{somma di matrici} e la \textit{moltiplicazione per uno scalare} sono operazioni \textit{interne} a $\kamp^{n, n}$ e pertanto potremmo pensare che sia lecito.\\ Tuttavia, presi i polinomi $p$ così come sono, non sarebbe \textit{ben definita} $p\left(A\right)$ a causa del \textbf{termine noto}; infatti, non possiamo sommare uno \textit{scalare ad una matrice}! Per ovviare a questo problema, quando valutiamo un polinomio in una matrice $A$ ‘‘\textit{correggiamo}'' il termine noto con la \textbf{matrice identità} $I$:
 \begin{equation}
 	f\left(A\right)\coloneqq b_nA^n+b_{n-1}A^{n-1}+\ldots+b_1A+b_0I\text{ con }b_i\in\kamp
 \end{equation}
-In questo modo, $f\left(A\right)\in\kamp^{n,\ n}$.
+In questo modo, $f\left(A\right)\in\kamp^{n, n}$.
 \begin{example}
 Preso $f\left(t\right)=t^2-3$, il polinomio valutato nella matrice $A$ è $f\left(A\right)=A^2-3I$.
 \end{example}
@@ -139,22 +139,22 @@ Preso $f\left(t\right)=t^2-3$, il polinomio valutato nella matrice $A$ è $f\lef
 \begin{observe}~{}
 	\begin{itemize}
 		\item $O\in I_A$.
-		\item $I_A\neq\left\{O\right\}$; infatti, se consideriamo le $n^2+1$ matrici in $\kamp^{n,\ n}$:
+		\item $I_A\neq\left\{O\right\}$; infatti, se consideriamo le seguenti $n^2+1$ matrici in $\kamp^{n,\ n}$:
 		\begin{equation*}
 			I,\ A,\ A^2,\ A^3,\ \ldots,\ A^{n^2}
 		\end{equation*}
-	Queste matrici sono necessariamente \textit{linearmente dipendenti}, dato che superano in numero $\dim \kamp^{n,\ n}=n^2$, cioè esistono i coefficienti $a_0,\ \ldots,\ a_{n^2}\in\kamp$ \textit{non} tutti nulli tali che:
+	Per il lemma di Steinitz queste matrici sono necessariamente \textit{linearmente dipendenti}, dato che superano in numero $\dim \kamp^{n,\ n}=n^2$, cioè esistono i coefficienti $a_0,\ \ldots,\ a_{n^2}\in\kamp$ \textit{non} tutti nulli tali che:
 	\begin{equation*}
 		a_0I+a_1A+a_2A^2+\ldots+a_{n^2}A^{n^2}=O
 	\end{equation*}
 	Allora $p\left(t\right)=a_{n^2}t^{n^2}+\ldots+a_2t^2+a_1t+a_0$ è un polinomio \textit{non} nullo in $I_A$.
 	\item $I_A$ soddisfa giustamente la definizione di ideale di $\kamp\left[t\right]$:
 	\begin{itemize}
-		\item \textsc{$I_A$ è un sottogruppo di $\left(\kamp^{n,\ n},\ +\right)$}.
+		\item \textsc{$I_A$ è un sottogruppo di $\left(\kamp^{n, n},\ +\right)$}.
 		\begin{equation*}
 			\left(f+g\right)\left(A\right)=f\left(A\right)+g\left(A\right)=0\implies f+g\in I_A
-		\end{equation*}.
-		\item \textsc{Assorbimento}. se $h\in\kamp\left[t\right]$ si ha :
+		\end{equation*}
+		\item \textsc{Assorbimento}: se $h\in\kamp\left[t\right]$ si ha :
 		\begin{equation*}
 			\left(fh\right)\left(A\right)=\underbrace{f\left(A\right)}_{=O}h\left(A\right)=O\implies fh\in I_A
 		\end{equation*}
@@ -178,7 +178,7 @@ Con $r\left(t\right)$ polinomio con $\deg r < \deg p$. Notiamo che anche $r\left
 Se $I=\left(p\right)=\left(\widetilde{p}\right)$, allora $p,\ \widetilde{p}\in I$ e dunque $p\mid \widetilde{p}$, $\widetilde{p}\mid p$, cioè $p=\lambda\widetilde{p}$ con $\lambda\in\kamp\setminus\left\{0\right\}$. Se $p$ è \textit{monico}, l'unico coefficiente $\lambda$ per cui si ha $p=\lambda\widetilde{p}$ è $1$, e dunque $p=\widetilde{p}$, cioè $p$ è unico.
 \end{demonstration}
 \begin{define}\textsc{Polinomio minimo.}\\
-	Sia $A\in\kamp^{n,\ n}$ e sia $I_A$ ideale dei polinomi che si annullano in $A$. Il \textbf{polinomio minimo}\index{polinomio!minimo} $m_A\left(t\right)$ di $A$ è il  \textit{generatore monico} di $I_A$, ovvero è il polinomio monico \textit{non} nullo di grado minimo tra i polinomi in $I_A$.
+	Sia $A\in\kamp^{n, n}$ e sia $I_A$ ideale dei polinomi che si annullano in $A$. Il \textbf{polinomio minimo}\index{polinomio!minimo} $m_A\left(t\right)$ di $A$ è il  \textit{generatore monico} di $I_A$, ovvero è il polinomio monico \textit{non} nullo di grado minimo tra i polinomi in $I_A$.
 \end{define}
 \begin{example} Cerchiamo il polinomio minimo della seguente matrice.
 	\begin{equation*}
@@ -228,7 +228,7 @@ Ovvero $M^{-1}p\left(A\right)M=\left(B\right)$. Pertanto, $p\left(A\right)=O$ se
 		\item Il \textbf{complemento algebrico}\index{completamento algebrico} $\left(i,\ j\right)$ di una matrice quadrata $M$ è:
 		\begin{equation}
 			M_{i,j}=\left(-1\right)^{i+j}\det\left(\begin{array}{c}
-				\text{matrice ottenuta da }M\text{cancellando}\\
+				\text{matrice ottenuta da }M \text{ cancellando}\\
 				\text{la riga }i\text{ e la colonna }j
 			\end{array}\right)
 		\end{equation}
@@ -279,7 +279,7 @@ In particolare $\deg m_A\left(t\right)\leq n$.
 		C_A\left(t\right)=\det M=t^n+b_{n-1}t^{n-1}+\ldots+b_1t+b_0
 	\end{equation*}
 Consideriamo l'\textit{aggiunta} di $M$, $\mathrm{adj}\left(M\right)=\mathrm{adj}\left(tI-A\right)$.
-Poichè gli elementi di $tI-A$ sono polinomi in $\kamp\left[t\right]$ di grado minore o uguale di $1$ e gli elementi di $\mathrm{adj}\left(M\right)$ sono polinomi in $\kamp\left[t\right]$ di grado minore o uguale di $n-1$, $\mathrm{adj}\left(M\right)$ si scrive come polinomio di grado minore e uguale a $n-1$ con coefficienti in $\kamp^{n,\ n}$ (grazie all'osservazione di pag. \pageref{polinomicoeffmatrisci}).
+Poiché gli elementi di $tI-A$ sono polinomi in $\kamp\left[t\right]$ di grado minore o uguale di $1$ e gli elementi di $\mathrm{adj}\left(M\right)$ sono polinomi in $\kamp\left[t\right]$ di grado minore o uguale di $n-1$, $\mathrm{adj}\left(M\right)$ si scrive come polinomio di grado minore e uguale a $n-1$ con coefficienti in $\kamp^{n, n}$ (grazie all'osservazione di pag. \pageref{polinomicoeffmatrisci}).
 \begin{equation*}
 	\mathrm{adj}\left(M\right)=C_{n-1}t^{n-1}+C_{n-2}t^{n-2}+\ldots+C_1t+C_0,\ C_i\in\kamp^{n,\ n}
 \end{equation*}
