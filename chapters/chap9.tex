@@ -30,7 +30,7 @@ Si vuole formalizzare il concetto di avere \textit{localmente} la topologia eucl
 \begin{examples}
 	\begin{itemize}
 		\item $\realset^n$ è una varietà topologica di dimensione $n$.
-		\item $S^n$ è una varietà topologica compatta di dimensione $n$, infatti grazie alla proiezione stereografica si ha che $S^\setminus\{*\}\cong \realset$.
+		\item $S^n$ è una varietà topologica compatta di dimensione $n$, infatti grazie alla proiezione stereografica si ha che $S\setminus\{*\}\cong \realset$.
 		\item $\mathbb{P}^n(\realset)$ è una varietà topologica compatta di dimensione $n$.
 		\item Ogni aperto connesso di una varietà topologica di dimensione $n$ è una varietà topologica di dimensione $n$.
 	\end{itemize}
@@ -187,7 +187,7 @@ Vediamo ora qualche fatto che \textit{non} dimostriamo:
 	\begin{equation}
 		T_g=\underbrace{T\# \ldots\# T}_{g\ \text{volte}}\quad g\geq 1\ \left(T_1=T\right)
 	\end{equation}
-$T_g$ può essere visualizzato sia come ‘‘ciambella con $g$ buchi'' , sia ‘‘come sfera con $g$ manici''.
+$T_g$ può essere visualizzato sia come ‘‘ciambella con $g$ buchi'' , sia come "sfera con $g$ manici''.
 \begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.25]{images/toruschain.pdf}
 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.25]{images/spherewithhandle.pdf}
@@ -233,7 +233,7 @@ a_1b_1a_1^{-1}b_1^{-1}a_2b_2a_2^{-1}b_2^{-1}\ldots a_gb_ga_g^{-1}b_g^{-1}
 \end{equation*}
 $T_g$ è un quoziente con $4g$ lati.
 \end{example}
-\begin{define}\textsc{Somma connessa di $n$ piani proiettivi}
+\begin{define}\textsc{Somma connessa di $n$ piani proiettivi}\\
 	Preso il \textit{piano proiettivo reale} $P=\proj[2]{\realset}$, definiamo la \textbf{somma connessa di} $n$ \textbf{piani proiettivi} come:
 	\begin{equation*}
 		P_n=\underbrace{P\# \ldots\# P}_{n\ \text{volte}}\quad n\geq 1\ \left(P_1=P\right)
@@ -253,6 +253,7 @@ $T_g$ è un quoziente con $4g$ lati.
 			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/projdouble.pdf}
 		\end{center}
 	\end{minipage}\\
+%potrebbe essere più chiaro fare prima figura # seconda figura \cong terza figura così si capisce ad occhio cosa si vuole fare, così sembrano solo tre figure e basta
 Vogliamo vedere che $aba^{-1}b$ e $ccdd$ danno la stessa superficie. Partiamo dal primo modello e tagliamo lungo la diagonale.
 \begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/kleintoprojdouble1.pdf}
@@ -261,6 +262,7 @@ Incolliamo lungo il lato $b$:
 \begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/kleintoprojdouble2.pdf}
 \end{center}
+%nel triangolo centrale mancano le frecce
 Infatti, otteniamo come modello $aaee$, che corrisponde a $P\# P$.
 \end{observe}
 \begin{lemming}
@@ -318,9 +320,10 @@ Inoltre, tali superfici sono tutte distinte, ovvero:
 \end{itemize}
 \vspace{-3mm}
 \end{theorema}
+Per la dimostrazione del teorema abbiamo prima bisogno di definire e dimostrare dei risultati sulla triangolazione.
 \subsection{Triangolazione}
 \begin{define}\textsc{Triangolo geometrico.}\\
-	Sia $S$ una superficie compatta. Un \textbf{triangolo geometrico}\index{triangolo geometrico} $T$ in $S$ è un applicazione:
+	Sia $S$ una superficie compatta. Un \textbf{triangolo geometrico}\index{triangolo geometrico} $T$ in $S$ è un'applicazione:
 	\begin{equation}
 		\funz{\phi}{T'}{T\subseteq S}
 	\end{equation}
@@ -338,7 +341,7 @@ I vertici e i lati di $T$ sono le immagini tramite $\phi$ dei vertici dei lati d
 		\item $\forall i\neq j$ si ha che $T_i\cap T_j$ può essere una di queste tre possibilità:
 		\begin{itemize}
 			\item $\emptyset$.
-			\item Un \textit{vertici} di entrambi i triangoli.
+			\item Un \textit{vertice} di entrambi i triangoli.
 			\item Un \textit{lato} di entrambi i triangoli.
 		\end{itemize}
 	\end{enumerate}
@@ -372,6 +375,7 @@ La prima parte della dimostrazione del teorema di classificazione si occupa di d
 \end{example}
 La dimostrazione è \textit{costruttiva}: procederemo passo per passo, da un modello piano di una qualunque superficie compatta ad ottenere una delle superfici citate nel teorema con un \textbf{algoritmo di taglia e incolla}\index{algoritmo del taglia e incolla}.
 \begin{demonstration}~{}\\
+%PASSO 0
 \textsc{\underline{\textbf{Passo 0}}}: se nel modello piano ci sono \textit{solo} $2$ lati abbiamo finito. Infatti, abbiamo solo due superfici con un modello di questo tipo, che abbiamo già visto:
 \begin{center}
 	\vspace{-3mm}
@@ -404,6 +408,7 @@ La dimostrazione è \textit{costruttiva}: procederemo passo per passo, da un mod
 \vspace{-3mm}
 \end{center}
 Possiamo supporre che nel modello piano c'è un numero di lati maggiore di $4$.\\
+%PASSO 1
 \textsc{\underline{\textbf{Passo 1}}}: \textit{Eliminazione delle coppie adiacenti del I tipo}.\\
 Supponiamo che nel modello piano ci sia una coppia di lati \textit{adiacenti} del I tipo, come in figura.
 \begin{center}
@@ -414,25 +419,27 @@ Incolliamo i lati $a$ della coppia: in questo modo, otteniamo un nuovo modello p
 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep1-2.pdf}
 \end{center}
 Ripetiamo il passo 1 finché eliminiamo tutte le coppie adiacenti del I tipo. Se alla fine abbiamo due soli lati, ricadiamo nel passo 0 e abbiamo già finito la dimostrazione.\\
+%PASSO 2
 \textsc{\underline{\textbf{Passo 2}}}: \textit{Riduzione dei vertici a un'unica classe di equivalenza}.\\
-Supponiamo che i vertici del poligono \textit{non} siano tutti equivalenti. Dunque, esisterà un lato $a$ i cui due vertici $P$ e $Q$ \textit{non} sono equivalenti!
+Supponiamo che i vertici del poligono \textit{non} siano tutti equivalenti. Dunque, esisterà un lato $b$ i cui due vertici $P$ e $Q$ \textit{non} sono equivalenti! 
 \begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep2-1.pdf}
 \end{center}
-Consideriamo il secondo lato $b$ con vertice $Q$ e, facendo un taglio come in figura, incolliamo il lato $a$:
+Consideriamo il secondo lato $a$ con vertice $Q$ e, facendo un taglio come in figura, incolliamo il lato $a$:
 \begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep2-2.pdf}
 \end{center}
 Abbiamo ora un vertice $Q$ in meno e un vertice $P$ in più. Ripetiamo questa operazione facendo via via diminuire i vertici $Q$. Quando rimane solo un vertice $Q$ deve essere parte di una coppia adiacente del I tipo; possiamo pertanto incollare il lato $a$ facendo scomparire il vertice $Q$.\\
 Alternando i passi 1 e 2 arriviamo ad un modello piano con tutti i vertici identificati e senza coppie adiacenti del I tipo.\\
 \textsc{\textbf{Osservazione}}. Quando incolliamo lungo una coppia di lati del I tipo \textit{non} ribaltiamo i lati, dunque le restanti coppie mantengono il tipo. Al contrario, quando invece incolliamo lungo una coppia di lati del II tipo, i lati restanti \textit{possono} cambiare tipo.\\
-	Ad esempio, nel passo 2, se $a$ è del primo tipo (come nelle figure precedenti) anche il lato $c$ di taglio è del I tipo e le restanti coppie \textit{non} cambiano tipo. Invece, se $a$ è del II tipo, il lato $c$ è del II tipo.
+	Ad esempio, nel passo 2, se $a$ è del primo tipo (come nelle figure precedenti) anche il lato $c$ di taglio è del I tipo e le restanti coppie \textit{non} cambiano tipo. Invece, se $a$ è del II tipo, il lato $c$ è del II tipo:
 	\begin{center}
 		\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep2-3.pdf}
 	\end{center}
 In altre parole, l'esistenza di \textit{almeno una} coppia di lati del II tipo è \textit{mantenuta} dal passo 2.\\
+%PASSO 3
 \textsc{\underline{\textbf{Passo 3}}}: \textit{Rendere adiacenti le coppie del II tipo}.\\
-Supponiamo che ci sia una coppia di lati $b$ \textit{non} adiacenti del II tipo. Operiamo un taglio $c$ tra gli estremi finali della coppia e incolliamo la coppia stessa.
+Supponiamo che ci sia una coppia di lati $a$ \textit{non} adiacenti del II tipo. Operiamo un taglio $b$ tra gli estremi finali della coppia e incolliamo la coppia stessa.
 	\begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep3.pdf}
 \end{center}
@@ -441,23 +448,24 @@ Se ci sono solo \textit{coppie del II tipo}, abbiamo ottenuto una parola della f
 \begin{equation}
 	a_1a_1a_2a_2\ldots a_na_n \implies \ovaled{S\cong P_n}
 \end{equation}
+%PASSO 4
 \textsc{\underline{\textbf{Passo 4}}}: \textit{Raggruppare le coppie del I tipo}.\\
 Supponiamo che nel modello piano ci sia almeno una coppia del primo tipo (non adiacente per i passi precedenti).
 	\begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep4-1.pdf}
 \end{center}
-Allora deve esistere un'altra coppia di lati del I tipo tali che queste coppie si separano a vicenda. Infatti, i vertici sono tutti identificati tra loro, in particolare lo sono i due vertici di $a$. In altre parole, deve esistere un lato $b$ nella parte superiore identificato ad un lato $b$ nella parte inferiore.
+Allora deve esistere un'altra coppia di lati del I tipo tali che queste coppie si separino a vicenda. Infatti, i vertici sono tutti identificati tra loro, in particolare lo sono i due vertici di $a$. In altre parole, deve esistere un lato $b$ nella parte superiore identificato ad un lato $b$ nella parte inferiore.
 	\begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep4-2.pdf}
 \end{center}
 Siccome i lati $b$ \textit{non} sono adiacenti e abbiamo già reso adiacenti tutte le coppie di lati del II tipo, $b$ deve essere una coppia di lati del I tipo.
 Operiamo due taglia e incolla per raggruppare le due coppie.
 \begin{enumerate}
-	\item[\underline{4.1}] Taglio un lato $c$ lungo gli estremi finali di $a$ e incollo $b$.
+	\item[\underline{4.1}] Taglio un lato $c$ lungo gli estremi finali di $a$ nella stessa direzione di $b$ e incollo $b$.
 	\begin{center}
 		\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep4-3.pdf}
 	\end{center}
-	\item[\underline{4.2}] Taglio un lato $d$ lungo gli estremi finali di $c$ e incollo $a$.
+	\item[\underline{4.2}] Taglio un lato $d$ lungo gli estremi finali di $c$ nella stessa direzione di $a$ e incollo $a$.
 	\begin{center}
 		\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep4-4.pdf}
 	\end{center}
@@ -473,12 +481,12 @@ In queste operazioni incolliamo lungo coppie del I tipo, pertanto i tipi delle c
 \vspace{-3mm}
 \end{demonstration}
 \begin{observe}
-	Si ottiene sempre un piano proiettiva se e solo nel modello iniziale c'è almeno una coppia di lati del II tipo (perché i passi mantengono il tipo).
+	Si ottiene sempre un piano proiettivo se e solo nel modello iniziale c'è almeno una coppia di lati del II tipo (perché i passi mantengono il tipo).
 \end{observe}
 \section{Orientabilità}
 \begin{define}\textsc{Nastro di Möbius}.\\
 	\begin{minipage}{.75\linewidth}
-Definiamo il \textbf{nastro di Möbius} (aperto) $N_0\subseteq \realset^3$ come lo spazio $\left[0,\ 1\right]\times (0,\ 1)$ ($\left[0,\ 1\right]\times [0,\ 1]$ nel caso chiuso $N$) con i lati quozientati come in figura.
+Definiamo il \textbf{nastro di Möbius} (aperto) $N_0\subseteq \realset^3$ come lo spazio $\left[0,\ 1\right]\times (0,\ 1)$ (mentre si considera $\left[0,\ 1\right]\times [0,\ 1]$ nel caso chiuso $N$) con i lati quozientati come in figura.
 	\end{minipage}
 	\begin{minipage}{.14\linewidth}
 		\begin{center}
@@ -487,11 +495,11 @@ Definiamo il \textbf{nastro di Möbius} (aperto) $N_0\subseteq \realset^3$ come 
 	\end{minipage}
 \end{define}
 \begin{observe}
-	$N_0$ è una superficie topologica, ma \textit{non} è compatta in quanto \textit{non} è chiuso.
+	$N_0$ è una superficie topologica, ma \textit{non} è compatta in quanto \textit{non} è chiusa.
 	\vspace{-3mm}
 \end{observe}
 \begin{intuit}
-	Immaginiamo di essere una \textit{figura bidimensionale} posta sulla sfera $S^2$; essa è libera di muoversi su di essa. Qualunque percorso chiuso essa faccia, la figura tornerà al punto di partenza \textit{esattamente come era partita}.\\
+	Immaginiamo di avere una \textit{figura bidimensionale} posta sulla sfera $S^2$; essa è libera di muoversi su di essa. Qualunque percorso chiuso essa faccia, la figura tornerà al punto di partenza \textit{esattamente come era partita}.\\
 	Prendiamo invece il \textit{nastro di Möbius}. Dopo un percorso attorno al nastro, la figura torna al punto di partenza non com'era partita, bensì ci ritorna con la sua \textit{immagine speculare}!\\
 	Oltre a questo strano avvenimento, notiamo che la figura nel caso della sfera percorre sempre e solo un percorso sull'esterno o sull'interno della sfera, ma \textit{mai} contemporaneamente su entrambi. Nel caso del nastro di Möbius, la figura percorre l'\textit{intera superficie} in un unico percorso.\\
 	In questi termini, diciamo che la sfera è una superficie \textbf{orientabile}: non esistono percorsi che mi ribaltano una figura piana su di essa e (vista come superficie in $\realset^3$) ho due lati ben distinti, l'interno e l'esterno della sfera. Il nastro di Möbius, invece, \textbf{non è orientabile}: la figura si \textit{ribalta} e, allo stesso tempo, percorre tutta la superficie; in altre parole, non esiste un ‘‘interno'' o un ‘‘esterno'' del nastro.
@@ -563,13 +571,13 @@ Definiamo come \textbf{vertici}\index{vertice} del lato, rispetto ai due casi so
 	Una \textbf{suddivisione}\index{suddivisione} $\mathcal
 	S$ di una superficie compatta $S$ è data da:
 	\begin{itemize}
-		\item Un sottoinsieme finito $V$ di $S$, i cui punti sono detti \textbf{vertici}.
-		\item Un insieme finito $L_1,\ \ldots,\ L_m$ in $S$ di lati
+		\item un sottoinsieme finito $V$ di $S$, i cui punti sono detti \textbf{vertici}.
+		\item un insieme finito $L_1,\ \ldots,\ L_m$ in $S$ di lati
 	\end{itemize}
 Tali che:
 \begin{enumerate}
-	\item $\forall L$ $L_i\cap V=\left\{\text{vertici di }L_i\right\}$.
-	\item $\forall i\neq j$ $L_i\cap L_j\subseteq V$.
+	\item $\forall L$, $L_i\cap V=\left\{\text{vertici di }L_i\right\}$.
+	\item $\forall i\neq j$, $L_i\cap L_j\subseteq V$.
 	\item $S\setminus\left(L_1\cup\ldots\cup L_m\right)$ ha un numero \textit{finito} di componenti connesse dette \textbf{facce}\index{faccia} della suddivisione e ogni faccia è omeomorfa a un disco aperto di $\realset^2$.
 \end{enumerate}
 \vspace{-3mm}
@@ -646,8 +654,8 @@ Notiamo che, in questi esempi, suddivisioni diverse di una stessa superficie han
 \end{demonstration}
 \begin{example}~{}
 	\begin{itemize}
-		\item $\euler{S^2}{\ }=2$.
-		\item $\euler{T}{\ }=2$
+		\item $\euler{S^2}{\ }=2$
+		\item $\euler{T}{\ }=0$
 	\end{itemize}
 \vspace{-3mm}
 \end{example}
@@ -686,7 +694,7 @@ In altre parole, \textit{tutte} le superfici $P_n$ sono \textit{non} omeomorfe t
 \begin{equation}
 	\euler{T_g}{\ }=1-2g+1=2-2g\quad \forall g\geq 1
 \end{equation}
-In particolare, se poniamo $T_0=S^2$ come caso ‘‘degenere'' di toro non buco e $\euler{T_g}{\ }=2-2g\ \forall g\geq 0$:
+In particolare, se poniamo $T_0=S^2$ come caso ‘‘degenere'' di toro non bucato e $\euler{T_g}{\ }=2-2g\ \forall g\geq 0$:
 \begin{itemize}
 	\item La caratteristica di Eulero delle superfici orientabili è sempre \textit{pari} e minore di 2.
 	\item $\euler{S}{\ }\leq 2$ per ogni superficie compatta.
