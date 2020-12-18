@@ -2021,14 +2021,14 @@ A meno di equivalenza proiettiva allora ci sono solo 3 possibili coniche: quelle
 Siccome abbiamo interpretato il piano proiettivo come un'estensione di quello affine, possiamo confrontare la classificazione delle curve nel piano proiettivo con la classificazione nel caso affine.\\
 
 Una curva algebrica piana $C$ affine in $\kamp^2$ è data dall'equazione $f(x,y)=0$, dove $f\in\kamp[x,y]$ è un polinomio.
-Per definizione, due equazioni $f,g$ definiscono la stessa curva $\iff$ sono proporzionali, ovvero $g=\lambda f, \lambda\in\kamp\setminus\{0\}$. Si definisce dunque il grado di una curva $C$ come $\feg f$ ed il supporto di $C$ come $\{(x,y)\in\kamp^2 \mid f(x,y)=0\}$, e di conseguenza anche le componenti irriducibili, le curve irriducibili e la molteplicità di una componente.\\
+Per definizione, due equazioni $f,g$ definiscono la stessa curva $\iff$ sono proporzionali, ovvero $g=\lambda f, \lambda\in\kamp\setminus\{0\}$. Si definisce dunque il grado di una curva $C$ come $\deg f$ ed il supporto di $C$ come $\{(x,y)\in\kamp^2 \mid f(x,y)=0\}$, e di conseguenza anche le componenti irriducibili, le curve irriducibili e la molteplicità di una componente.\\
 Allo stesso modo un retta è una curva di grado $1$: $ax+by+c=0$ e una conica è una curva di grado $2$: $ax^2+by^2+cxy+dx+ey+f=0$.\\
 
 Vediamo ora qual è il legame fra curve affini e proiettive passando alla chiusura proiettiva. Ricordiamo che $\kamp^2=U_0\subset \proj[2]{\kamp}$ con $(x,y)\in\kamp^2$ che corrispondono a $\displaystyle x=\frac{x_1}{x_0}$ e $\displaystyle y=\frac{x_2}{x_0}$ dato $(x_0\colon x_1\colon x_2)\in\proj[2]{\kamp}$.\\
 
 \subsubsection{Omogeneizzazione di un polinomio}
 Partiamo da una curva affine $C$ di equazione $f(x,y)=0$. Vogliamo associare a $f$ un polinomio omogeneo nelle coordinate $x_0,_1,x_2$ dello stesso grado di $f$.
-Consideriamo dunque il polinomio $F\in\kmp[x_0,x_1,x_2]$ così definito: se $d=\deg f$, allora $F\coloneqq x_0^d f\left( \frac{x_1}{x_0}, \frac{x_2}{x_0} \right)$. Scritto così non è immediato che sia un polinomio, per cui dimostriamolo.\\
+Consideriamo dunque il polinomio $F\in\kamp[x_0,x_1,x_2]$ così definito: se $d=\deg f$, allora $F\coloneqq x_0^d f\left( \frac{x_1}{x_0}, \frac{x_2}{x_0} \right)$. Scritto così non è immediato che sia un polinomio, per cui dimostriamolo.\\
 $F$ è un polinomio omogeneo di grado $d$, infatti, considerato un monomio in $f$ quale $ax^iy^j$ allora $i+j\leq d=\deg f$ e si "omogeneizza" rispetto a $x_0$ per ottenere un monomio di grado $d$ in $x_0,x_1,x_2$
 	\begin{gather*}
 		ax^iy^j \rightarrow x_0^d a \left( \frac{x_1}{x_0} \right)^i \left( \frac{x_2}{x_0} \right)^j = ax_0^{d-i-j} x_1^i x_2^j
@@ -2055,53 +2055,54 @@ I \textit{punti impropri} o \textit{punti all'infinito} della curva $C$ sono dat
 	Se $C$ è una retta $ax+by+c=0$allora la chiusura proiettiva di $C$ è $ax_1+bx_2+cx_0=0$ ed il punto improprio di $C$ è $(0\colon -b\colon a)$ che corrisponde alla direzione della retta $C$.
 \end{example}
 
-ESEMPIO
-consideriamo in R^2 le coniche
-C_1\colon y=x^2 	parabola
-C_2\colon x_2		circonferenza
-C_3\colon	irpobole
-Chiusure proiettive: coniche proiettive nel pinao proiettivo reale tramite l'omogeneizzazione
-\overline{C_1}
-
-
-scrivendo le matrici associate e guardando la segnatura, si ha che tutte e tre hanno segnatura (2,1) o (1,2) e quindi sono coniche /nelle 5 classi/ irriducibili a punti reali in P2R e sono tutte proiettivamente equivalenti
-vediamo quali sono i punti impropri
-\overline{C_1}\cap	segue che x_1=0, ottenendo un solo punto (0\colon 0\colon 1) 	\ual è il significato di questa direzione rispetto alla 		
-	parabola: direzione (0,1) (span lineare dto dal vettore x_1,x_2), dunque la direzione dell'asse y, che è proprio l'asse della parabola
-	circonferenza: x_0=0 \implies x_1=x_2=0 ma non si possono avere tute le coordinate omogenee nulla \implies non ci sono punti impropri
-	iperbole: 	due punti impropri che sono (0\colon 1\colon 1) e (), a cui corrispondono le direzioni degli asintoti dell'iperbole
-sono tutte proiettivamente equivalenti, e dal punto di vista affine si distinguono dalla posizione rispetto alla retta impropria
+\begin{examples}
+	Consideriamo in $\realset^2$ le coniche 
+		$\begin{array}{ccc}
+			C_1\colon & y=x^2 & 	\text{parabola}\\
+			C_2\colon & x^2+y^2=1 &		\text{circonferenza}\\
+			C_3\colon &	x^2-y^2=1 & \text{iperbole}
+		\end{array}$\\
+	Consideriamo ora le loro chiusure proiettive reali tramite l'omogeneizzazione, ovvero $\overline{C_i}$ conica proiettiva in $\proj[2]{\realset}$:
+		$\begin{array}{cc}
+			\overline{C_1} \colon & x_0x_1=x_1^2\\
+			\overline{C_2} \colon & x_1^2+x_2^2=x_0^2\\
+			\overline{C_3} \colon & x_1^2-x_2^2=x_0^2
+		\end{array}$.
+	Scrivendo le matrici associate e guardandone la segnatura, si ha che tutte e tre hanno segnatura $(2,1)/(1,2)$ e quindi sono coniche irriducibili a punti reali in $\proj[2]{\realset}$ e sono tutte proiettivamente equivalenti per la classificazione delle coniche nel piano proiettivo reale.\\
+	Consideriamo ora i loro punti impropri:
+		\begin{itemize}
+			\item	parabola: $\overline{C_1}\cap\{x_0=0\}\colon (0\colon 0\colon 1)$, dunque un solo punto improprio, ovvero la direzione $(0,1)$ dell'asse $y=\mathcal{L}(0,1)$, quindi è l'asse della parabola
+			\item	circonferenza: $\overline{C_2}\cap \{x_0=0\} \colon x_0=0 \implies x_1=x_2=0$ ma non si possono avere tute le coordinate omogenee nulle, dunque non ci sono punti impropri 
+			\item	iperbole: $\overline{C_3}\cap\{x_0=0\}\colon x_1^2-x_2^2=0$, dunque ci sono	due punti impropri quali $(0\colon 1\colon 1)$ e $(0\colon 1\colon -1)$, a cui corrispondono le direzioni degli asintoti dell'iperbole
+		\end{itemize}
 %AAA DISEGNI CERCASI
-essendo S^1 disgiunta dalla reta impropria non cambia nulla
+	Notiamo che le chiusure proiettive sono tutte proiettivamente equivalenti, ma dal punto di vista affine hanno 3 posizioni diverse rispetto alla retta impropria: tangente, disgiunta e secante.
+\end{examples}
 
-le 3 chiusure proj sono equiva, ma hanno 3 posizioni diverse rispetto alla retta impropria: tangente, disgiunta e secante
+\begin{example}
+	In $\realset^2$ possiamo considerare la coppia di rette parallele distinte $x(x+1)=0$ oppure una coppia di rette incidenti distinte quali $xy=0$.\\
+	Considerandone le chiusure proiettive si ottiene $x_1(x_1+x_0)=0$ e $x_1x_2=0$ che sono entrambe coppie di rette distinte reali in $\proj[2]{\realset}$ con segnatura (1,1). Dunque sono proiettivamente equivalenti fra loro ma hanno posizione diversa rispetto alla retta impropria, infatti guardando i punti impropri si ha che la prima ha un solo punto improprio quale $(0\colon 0\colon 1)$ che è la direzione comune delle due rette parallele, mentre nel secondo caso si hanno due punti impropri quali $(0\colon 0\colon 1)$ e $(0\colon 1\colon 0)$ che sono le direzioni delle due rette.
+%AAA DISEGNI CERCASI
+	%passa nell'intersezionie delle due rett
+\end{example}
 
-%ESEMPIO con la coppia di rette
-%In \realset^2 possiamo considerare la coppia di rette parallele distinte x(x+1)=0
-%oppure una coppia di rette incidenti distinte xy=0
-%Facendone le chiusure proiettive si ottiene 		, e sono entrambe coppie di rette distinte reali in P2R, ovvero la segnatura è sempre (1,1)
-%sono proj equiv fra loro ma hanno posizione diversa rispetto alla retta impropria, infatti guardando i punti impropri si ha che la prima ha un solo punto improprio () che è la direzione comune delle due rette parallele, mentre nel secondo caso si hanno due punti () e () che sono le direzioni delle due rette
-%	passa nell'intersezionie delle due rett
-%	
-%ragionando in questo modo si può ricavare dalla class delel coniche proiettive si può riottenere la calss delle coniche in R2 a meno di affinità (invertibile e traslazionie), ottenendo le forme canoncihe in cui poniamo i coeff uguali a 1 perché le matrici non sono solo di rotazione
-%proj ad affine tramite chiusura
-%	attenzione alla posizione rispetto alla retta impropria
-%Si mette in relazione la classificazione proiettiva delle coniche in P2R con la ben note classificazione affine delle coniche in R^2
-%	
-%COMPLESSO
-%ClASSIFICAZIONE AFFINE DELLE CONICHE IN \COMPLEXSET^2
-%
-%PROP
-%ogni conica in C^2 si può ridurre con una trasofrmazionie del tipo 		
-%ad una delle cinque coniche
+Ragionando in questo modo dalla classificazione delle coniche proiettive si può riottenere la classe delle coniche nel caso affine $\\aff{\realset^2}$ a meno di affinità (ovvero procedendo per rototraslazione), prestando	attenzione alla posizione rispetto alla retta impropria.
+
+	\subsection{Classificazione affine delle coniche nel caso complesso}
+
+\begin{proposition}
+	Ogni conica in $\complexset^2$ si può ridurre con una trasformazioni
+	e del tipo $\begin{pmatrix} x' \\ y' \end{pmatrix} =A\begin{pmatrix} x \\ y \end{pmatrix} +b$ con $b\in\complexset^2$ e $A\in\gl(2,\complexset)$ ad una delle cinque coniche
 %	DA RIASCOLTARE
 %	vediamo dove andiamo a parare:guardando la chiusura proiettiva, ho 3 ranghi possibili con la loro ir/riducibilità. Dobbamo guarare la posizione possibile rispetto alla retta allìinfinito, Siccome simao su C la chiusura proj ha solo 2 posizioni possibili: 2 punt distini o 2 punti coincidenti se irriducibili in base a 2 pt impropri o un solo. Idem per la coppia di rette al caso 			1 caso in rango 1
-%1 La forma canonica 	la chiusura proiettiva ha rango 3 ed abbiamo 2 unti impropri distinti
-%2 y-	=0	la chiusura proj ha ancora rango 3 ma abbiamo un unico punto improprio
-%3 x^2+y^2=()()=0	coppia di rette distinte incidenti, la chiusura proiettiva ha rango 2 ed abbiamo 2 punti impropri
-%4 	coppia di rette distinte ma parallele, la chiusura proiettiva ha rango 2 e c'è 1 punto impproprio
-%5 	retta dopiia
-%
+		\begin{enumerate}
+			\item	$x^2+y^2+1=0$: la chiusura proiettiva ha rango 3 ed abbiamo 2 punti impropri distinti
+			\item	$y-x^2=0$: la chiusura proiettiva ha ancora rango 3 ma abbiamo un unico punto improprio
+			\item	$x^2+y^2=(x+iy)(x-iy)=0$: è una coppia di rette distinte incidenti, la chiusura proiettiva ha rango 2 ed abbiamo 2 punti impropri
+			\item	$x(x+1)=0$:	coppia di rette distinte ma parallele, la chiusura proiettiva ha rango 2 e c'è un solo punto improprio
+			\item	$x^2=0$ che è una retta doppia
+		\end{enumerate}
+\end{proposition}
 %	non la dimostriamo ma abbiamo dato una giustificazione geometrica: class a meno di proj e #punti impropri
 %RECAP	
 %nel piano proj nel piano proj si riduce a classificare le forme quadratiche in K^3 ed usiamo l'algebra lineare: equiv proj dal rango (3 classi) mentr ein quello reale dipende anche dalla segnatura (a meno del segno) ed abbiamo 5 classi di equiv proj di coniche nel pin proj reale
@@ -2114,88 +2115,66 @@ le 3 chiusure proj sono equiva, ma hanno 3 posizioni diverse rispetto alla retta
 %	class affine coniche in c2, guardo anche il numero di punti impropri
 %	
 %class coniche semplice perché è alg ineare, da grado 3 in su è meno semplice, servono dunque le nozioni per studiare curva algebrica, che sia affine o proiettiva
-%
-%OSS POLINOMI OMOGENEI IN 2 VARIABILI
-%definito la scrosa volte. In una sola var non ha molot senso perché ho solo 1 monomio. Il caso in 2 sarà quello più semplice
-%GOAL: pol om 2 var si comportano come i polinomi qualsiasi in una variabile
-%Sia F\in\kamp  omogeneo di grado d con F=a_0x_0^d+a_1x_0^}
-%d+1 monomi dunque d+1 coefficienti
-%ricordimao che vedendo x_0:x_1 com coo omogenee su P1, allora F ha degli zeri su P1, ovvero F(P)=0 è ben posta per P=()
-%
-%PROPOSIZIONE
-%1 F si annulla in punto P=(a\colon b) \iff ax_1-bx_0 divide F
-%	DEF diciamo che F si annulla in P all'ordine m se la potenza ()^m è la massima potenza di 	che divide F
+
+	\subsection{Polinomi omogenei in 2 variabili}
+L'obiettivo ora è mostrare che i polinomi omogenei in 2 variabili si comportano per alcuni aspetti come polinomi in una sola variabile.\\
+Sia $F\in\kamp[x_0x_1]$  omogeneo di grado $d$ come $F=a_0x_0^d+a_1x_0^{d-1}x_1+a_2x_0^{d-2}x_2^2+\dots + a_{d-1}x_0x_1^{d-1}a_dx_1^d$ che ha $d+1$ monomi. Ricordiamo che vedendo $x_0:x_1\in\proj[1]{\ }$, allora $F$ ha degli zeri su $\proj[1]{\ }$, ovvero $F(P)=0$ è ben posta per $P=(a\colon b)\in\proj[1]{\ }$.
+
+\begin{define}
+	Diciamo che $F$ si \textbf{annulla in } $p=(a\colon b)$ \textbf{all'ordine } $m$ se $(ax_1-bx_0)^m$ è la massima potenza di $ax_1-bx_0$ che divide $F$.
+\end{define}
 %		va letta ome la propr in 1 var come le radici /Ruffini!/
-%2 Se d=\deg F, F ha al più d zeri su P1 contati con molteplicità /analogo degli zeri 
-%3 Se F ha coefficienti complessi, allora F si fattorizza come prodotto di forme lineari e ha esattamente d zeri in P1 contati con molteplicità
-%	su c, analogo ogni pol in una vr si fatttorizza come pol di grado 1 ed ha tutti gli zeri
-%DIMOSTRAZIONE
-%facciamo un'ipotesi che semplifica la notaione poi vediamo il caso generale
-%Supponiamo che x_0 non divida F, ovvero a_d\neq 0 e F non si annulla in (0\colon 1)
-%Poniamo f\coloneqq F(1,t), dunque è un polinomio in una variabile,  x_0=1, e x_1=t, dunque scrivendolo esplicitamente a_0+a_1t	non solo è in una variabile ma è ancora di grado d perché a_d\neq 0
-%F è l'omogeneizzati di f rispetto a x_0, ovvero F=x_0^2f
-%gli zeri di F sono tutti e soli della forma (1\colon\lambda) con \lambda radice di f, ovvero deomogeneizzando passiamo da 2 variabili in 1 variabile. siccome F non si annulla nell'unico punto che ha x_0=, allora	forma 1 lambda  e F(1,\lambda)=f(\lambda)
-%dunque le propr di F che vogliamo dimostrare seguono da quelle di f che sappiamo
-%
-%! F si annulla in (1\colon\lambda) sto usando il fatto che posso igorare il fato che  	\iff f(\lambda)=0 \iff t-\lambda |f \iif l'omoegeneizzati divide F
-%2 immediato da 1, perché se F si annulla inp_i=(a_i\colon b_i) distinti con molteplicità m_i, allor vedendo la divisibilità 		\forall i=1,\dots,r siccome ipunti sono distinit allora i vettori sono non propr, allora i polinomi sono primi fra loro al variare di i / i punti sono istinti/, dunque anche il loro prodotto deve dividere F	\implies \sum_{i=1}^r
-%3 segue immediatamente dal caso complesso in 1 variabile, infatti f si scrive come f=c(t-\lambda_1)^{m_1}\dots	siccome C è algebricamente chiuso \implies F=c()^{}\dots()^{*}, ovveor si fattorizza completamente con forma lineari	non solo di vide ma a meno di costante ho l'uguaglianza
-%
-%OSS
-%se fossimo su R potremmo dedurre che un pol reale in una var ha radici reali o complesse conigate, posso dedurre da F che ha sempre almeno uno ero nella retta proj reale
-%
-%Vediamo il caso generale
-%Se x_0 divide F, allora 	con G omogenoeo di grado d-r e x_0 non divide G
-%Quest significa che F si annulla in o,1 con molteplicità r e tutte le propr di F seguono dalle proprietà che sono vere per G
-%la proposizione vale per G e per esercizio verificare che vale anche per F
-%
-%Conclusione: i polinomi omogenei in 2 var si comportano come ipolinomi in una variabile
-%
-%Useremo ciò per studiare l'intersezione fra una retta ed una curva in P2
-%Sia C una curva in P2 di grado d ed equazione
-%Sia r una retta
-%Vogliamo intersecare la retta on il supporto di C
-%quando interseco 2 sott è ottimale se uno è descritto per eq e l'altro parametrica e poi sostituisco
+\begin{proposition}
+	\begin{itemize}
+		\item	$F$ si annulla in un punto $P=(a\colon b)\in\proj[1]{\ } \iff ax_1-bx_0\mid F$
+		\item 	Se $d=\deg F$, $F$ ha al più $d$ zeri su $\proj[1]{\ }$ contati con molteplicità %/analogo degli zeri 
+		\item	Se $F\in\complexset[x_0,x_1]$, allora $F$ si fattorizza come prodotto di forme lineari e ha esattamente $d$ zeri in $\proj[1]{\ }$ contati con molteplicità.\footnote{è analogo al caso in un variabile per cui in $\complexset$ ogni polinomio si fattorizza come prodotto di polinomi di grado 1 ed ha tutti gli zeri}
+	\end{itemize}
+\end{proposition}
+\begin{demonstration}
+	Facciamo un'ipotesi che semplifica la notazione per poi studiare il caso generale.\\
+	Supponiamo che $x_0 \cancel\mid F$, ovvero $a_d\neq 0$ e $F(0\colon 1)\neq 0$. Poniamo $f\coloneqq F(1,t)\in\kamp[t] = a_0+a_1t+\dots+a_{d-1}t^{d-1}+a_dt^d$, dunque è un polinomio in una variabile, infatti si è posto $x_0=1$ e $x_1=t$, inoltre è ancora di grado $d$ perché $a_d\neq 0\implies \deg f=\deg F=d$. Si ha inoltre che:
+		\begin{itemize}
+			\item	$F$ è l'omogeneizzato di $f$ rispetto a $x_0$, ovvero $F=x_0^2f\left( \frac{x_1}{x_0} \right)$
+			\item	gli zeri di $F$ sono tutti e soli della forma $(1\colon\lambda)$ con $\lambda$ radice di $f$, ovvero deomogeneizzando passiamo da 2 variabili in 1 variabile, infatti $F(1,\lambda)=f(\lambda)$.\\
+		\end{itemize}
+	Pertanto le proprietà di $F$ che vogliamo dimostrare seguono da quelle di $f$ che conosciamo già.\\
+		\begin{enumerate}
+			\item	$F$ si annulla in $(1\colon\lambda)=(a\colon b)\iff f(\lambda)=0 \iff t-\lambda \mid f \iff x_1-\lambda x_0\mid F$, ovvero l'omogeneizzato divide $F$.
+			\item	è immediato dal punto $1$, perché se $F$ si annulla in $p_i=(a_i\colon b_i)$ distinti con molteplicità $m_i$, allora $(a_ix_1-b_ix_0)^{m_i} \mid F,\ \forall i=1,\dots,r $ siccome i punti $P_i$ sono distinti, allora i polinomi sono primi fra loro al variare di $i$, dunque anche il loro prodotto deve dividere $F$, ovvero $\prod_{i=1}^r (a_ix_1-b_ix_0)^{m_i}\mid F	\implies \sum_{i=1}^r m_i\leq d=\deg F$.
+			\item	segue immediatamente dal caso complesso in $1$ variabile, infatti $f$ si scrive come $f=c(t-\lambda_1)^{m_1}\dots(x_1-\lambda_r x_0)^{m_r}$	siccome $\complexset$ è algebricamente chiuso $\implies F=c(x_1-\lambda_1x_0)^{m_1}\dots(x_1-\lambda_rx_0)^{m_r}$, ovvero si fattorizza completamente con forma lineari e non solo lo divide ma a meno di costante ho l'uguaglianza, per cui il numero di zeri contati con molteplicità è pari al grado.
+		\end{enumerate}
+\end{demonstration}
+
+\begin{observe}
+	Se fossimo su $\realset$ potremmo dedurre che un polinomio reale $f$ in una variabile ha radici reali o complesse coniugate, se ha grado dispari posso dedurre da $F$ che ha sempre almeno uno zero nella retta proiettiva reale.\\ 
+	Vediamo il caso generale. Se $x_0\mid F$, ovvero $F=x_0^rG$ con $G$ omogeneo di grado $d-r$ per cui $x_0\cancel\mid G$, allora $F(0\colon 1)=0$ con molteplicità $r$.
+	Questo significa che $F$ si annulla in $(0\colon 1)$ con molteplicità $r$ e tutte le proprietà di $F$ seguono dalle proprietà che sono vere per $G$.\\
+	Conclusione: i polinomi omogenei in 2 variabili si comportano come i polinomi in una variabile.
+\end{observe}
+
+	\subsection{Intersezione tra una retta ed una curva nel piano proiettivo}
+	
+Useremo queste proprietà dei polinomi omogenei di secondo grado per studiare l'intersezione fra una retta ed una curva in $\proj[2]{\ }$.\\
+Sia $C$ una curva in $\proj[2]{\ }$ di grado $d$ ed equazione $F(x_0,x_1,x_2)=0$ e sia $r\subset\proj[2]{\ }$ una retta. Vogliamo intersecare la retta $r$ con il supporto di $C$.\\
+Quando interseco 2 sottoinsiemi è ottimale se uno è descritto per equazioni e l'altro in forma parametrica e poi sostituisco.\\
 %Di unoho le equazioni, mentre so come scrivere in forma parametrica la retta
-%Scriviamo una parametrizzazioe per r, per farlo servoon 2 punti distinti, ogni punto di r si scrive come P=\lambda =[], dove v è un vettore che rappresente A 	con v,w\in e ()\in
-%\implies C\cap r è dato dal F(\lambda)=0, è uguale all'esplicitamzione delle coordinate quindi qui pensaimo che a e B sono date ed ho già dei numeri, mentre \lambda e \mu sono delle variabili, ottenendo così un polinomio G in \lambda e \mu che sarà omogeneo di grado d o identicamene nulo se la retta è contenuta nella curva
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Scriviamo una parametrizzazioe per $r$, per farlo servono 2 punti distinti quali $A,B\in R$, e ogni punto di $r$ si scrive come $P=\lambda A+\mu B=[\lambda v+\mu v]$, dove $v$ è un vettore che rappresenta $A$, ovvero $A=[v]$ e idem per $B=[w]$ con $v,w\in\kamp^3$ e $(\lambda\colon\mu)\in\proj[1]{\ }$. Pertanto $C\cap r$ è dato da $F(\lambda v+\mu w)=0$ che è uguale all'esplicitamzione delle coordinate quindi è pari a $F(\lambda v_0+\mu w_0,\ \lambda v_1+\mu w_1,\ \lambda v_2+\mu w_2)$ e qui pensiamo che $A$ e $B$ sono dati mentre $\lambda$ e $\mu$ sono delle variabili, ottenendo un polinomio $G$ in $\lambda$ e $\mu$ quale $G(\lambda,\mu)\in\kamp[\lambda,\mu]$ che sarà omogeneo di grado $d$ o identicamente nullo se la retta è contenuta nella curva, ovvero $r\subset C$.
 
 %LEZ 34
-%ESEMPIO
-%
-%IN GENERALE DATA c UNA CURVA IN p2 DI GRADO D E R IN p2 UNA RETTA, ABBIAMO VISTO CHE L'INTERSEZIONE SI OTTIENE PRENDENDO UNA PARAMETRIZZAZIONE DELLA RETTA (VISTO IERI) 
+\begin{example}
+	In $\proj[2]{\realset}$ sia $C\colon x_0^2+x_1^2-x_2^2=0$, $r_1\colon x_1=x_2$ e $r_2\colon x_0+x_1=0$, vogliamo calcolare le intersezioni $r_i\cap C$:
+		\begin{gather*}
+			r_1\colon x_1=x_2 \rightarrow x_0^2=0 \text{ e } r_1\cap C=\{ (0\colon 1 \colon 1) \} \text{ molteplicità 2}\\
+			r_2 \colon x_1=-x_0 \rightarrow 2x_0^2=x_2^2 \rightarrow x_2=\pm \sqrt{2}x_0 \ \ x_0=1\implies x_1=-1,\ x_2=\pm \sqrt{2}\\ \implies \text{ due punti di intersezione } (1\colon -1\colon \sqrt{2}) \text{ e } (1\colon -1\colon -\sqrt{2})
+		\end{gather*}
+\end{example}
+
 %combinazione lineare dei punti e dei vettori corrispondenti e poi F(x_0  )=0 equazione di C, sostituiamo nell'equazione la parametrizzazione di r in F si ottine n polinomio in lambda e mu G()\coloneqq	che per definizione è ottenuto sostituend i vetori
 %Abbiamo due possibilità
 %o la retta è contenuta nella conica: ogni pt della retta soddisfa l'eq, dunque il polinomio è identicamente nullo
 %se la retta non è contenuta nella conica, allora G è un polinoimo in lamba e mu siccome F era omo di grado d e dento F sostituisco forme lineari, allora G  un polinomio  omogeneo di grado d in lambda e mu
-%
+
 %DEF
 %SE UNA COPPIA è UNA RADICE DI g DI MOLTELICIT M
 %(massimo esponente della fomra lineare che fdivide il polinomio G=
