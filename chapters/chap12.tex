@@ -2124,7 +2124,7 @@ Sia $F\in\kamp[x_0x_1]$  omogeneo di grado $d$ come $F=a_0x_0^d+a_1x_0^{d-1}x_1+
 	Diciamo che $F$ si \textbf{annulla in } $p=(a\colon b)$ \textbf{all'ordine } $m$ se $(ax_1-bx_0)^m$ è la massima potenza di $ax_1-bx_0$ che divide $F$.
 \end{define}
 %		va letta ome la propr in 1 var come le radici /Ruffini!/
-\begin{proposition}
+\begin{proposition} \label{teo polinomi omogenei 2 variabili}
 	\begin{itemize}
 		\item	$F$ si annulla in un punto $P=(a\colon b)\in\proj[1]{\ } \iff ax_1-bx_0\mid F$
 		\item 	Se $d=\deg F$, $F$ ha al più $d$ zeri su $\proj[1]{\ }$ contati con molteplicità %/analogo degli zeri 
@@ -2159,7 +2159,7 @@ Useremo queste proprietà dei polinomi omogenei di secondo grado per studiare l'
 Sia $C$ una curva in $\proj[2]{\ }$ di grado $d$ ed equazione $F(x_0,x_1,x_2)=0$ e sia $r\subset\proj[2]{\ }$ una retta. Vogliamo intersecare la retta $r$ con il supporto di $C$.\\
 Quando interseco 2 sottoinsiemi è ottimale se uno è descritto per equazioni e l'altro in forma parametrica e poi sostituisco.\\
 %Di unoho le equazioni, mentre so come scrivere in forma parametrica la retta
-Scriviamo una parametrizzazioe per $r$, per farlo servono 2 punti distinti quali $A,B\in R$, e ogni punto di $r$ si scrive come $P=\lambda A+\mu B=[\lambda v+\mu v]$, dove $v$ è un vettore che rappresenta $A$, ovvero $A=[v]$ e idem per $B=[w]$ con $v,w\in\kamp^3$ e $(\lambda\colon\mu)\in\proj[1]{\ }$. Pertanto $C\cap r$ è dato da $F(\lambda v+\mu w)=0$ che è uguale all'esplicitamzione delle coordinate quindi è pari a $F(\lambda v_0+\mu w_0,\ \lambda v_1+\mu w_1,\ \lambda v_2+\mu w_2)$ e qui pensiamo che $A$ e $B$ sono dati mentre $\lambda$ e $\mu$ sono delle variabili, ottenendo un polinomio $G$ in $\lambda$ e $\mu$ quale $G(\lambda,\mu)\in\kamp[\lambda,\mu]$ che sarà omogeneo di grado $d$ o identicamente nullo se la retta è contenuta nella curva, ovvero $r\subset C$.
+Scriviamo una parametrizzazioe per $r$, per farlo servono 2 punti distinti quali $A,B\in r$, e ogni punto di $r$ si scrive come $P=\lambda A+\mu B=[\lambda v+\mu v]$, dove $v$ è un vettore che rappresenta $A$, ovvero $A=[v]$ e idem per $B=[w]$ con $v,w\in\kamp^3$ e $(\lambda\colon\mu)\in\proj[1]{\ }$. Pertanto $C\cap r$ è dato da $F(\lambda v+\mu w)=0$ che è uguale all'esplicitamzione delle coordinate quindi è pari a $F(\lambda v_0+\mu w_0,\ \lambda v_1+\mu w_1,\ \lambda v_2+\mu w_2)$ e qui pensiamo che $A$ e $B$ sono dati mentre $\lambda$ e $\mu$ sono delle variabili, ottenendo un polinomio $G$ in $\lambda$ e $\mu$ quale $G(\lambda,\mu)\in\kamp[\lambda,\mu]$ che sarà omogeneo di grado $d$ o identicamente nullo se la retta è contenuta nella curva, ovvero $r\subset C$.
 
 %LEZ 34
 \begin{example}
@@ -2170,116 +2170,122 @@ Scriviamo una parametrizzazioe per $r$, per farlo servono 2 punti distinti quali
 		\end{gather*}
 \end{example}
 
-%combinazione lineare dei punti e dei vettori corrispondenti e poi F(x_0  )=0 equazione di C, sostituiamo nell'equazione la parametrizzazione di r in F si ottine n polinomio in lambda e mu G()\coloneqq	che per definizione è ottenuto sostituend i vetori
-%Abbiamo due possibilità
-%o la retta è contenuta nella conica: ogni pt della retta soddisfa l'eq, dunque il polinomio è identicamente nullo
-%se la retta non è contenuta nella conica, allora G è un polinoimo in lamba e mu siccome F era omo di grado d e dento F sostituisco forme lineari, allora G  un polinomio  omogeneo di grado d in lambda e mu
+In generale, data $C$ curva di grdo $d$ in $\proj[2]{\ }$ e una retta $r\subset\proj[2]{\ }$, consideriamo una parametrizzazione della retta descrivendo un generico punto $P$ della retta come combinazione lineare di altri due punti noti della retta e dei loro vettori, ovvero $P=\lambda A+\mu B=[\lambda v+\mu w]$. Nota $F(x_0,x_1,x_2)=0$ equazione di $C$, sostituiamo nell'equazione $F$ la parametrizzazione di $r$ e si ottiene un polinomio in $\lambda$ e $\mu$ quale $G(\lambda,\mu)\coloneqq F(\lambda v_0+\mu w_0,\ \lambda v_1+\mu w_1,\ \lambda v_2+\mu w_2)$ le cui radici sono i \textit{punti di intersezione} $r\cap C$.\\
+Ci sono due possibilità:
+	\begin{enumerate}
+		\item	$r\subset C$: la retta è contenuta nella conica, quindi ogni punto della retta soddisfa l'equazione, pertanto il polinomio è identicamente nullo, ovvero $G\equiv 0$
+		\item	$r\cancel\subset C$: la retta non è contenuta nella conica, allora $G$ è un polinomio in $\lambda$ e $\mu$ e siccome $F$ era omogeneo di grado $d$ e in $F$ sostituisco forme lineari, allora $G$ è un polinomio omogeneo di grado $d$ in $\lambda$ e $\mu$
+	\end{enumerate}
 
-%DEF
-%SE UNA COPPIA è UNA RADICE DI g DI MOLTELICIT M
-%(massimo esponente della fomra lineare che fdivide il polinomio G=
-%la curva C e la retta r hanno molteplicità di intersezione m nel punto P che corrisponde all'intersezione in P2, sostituendolo nella parametrizzazione della retta
-%CONTO MOLTEPLICITà DELL'INTERSEZIONE
-%
-%poniamo m=0 se P non sta nell'intersezione e m=\infrty se la retta è contenuta nella curva e P è in r
-%
-%RECAP OSS
-%1 MOLTEPLICITà INTERSEZIONE	se r non è contnuta in C allora l'intersezione è finita /#finito di punti/. Sia mi la molteplicità di intersezione in P_i, allora il numero di questi punti di intersezione /G(\lambda, \mu)=0 dà i punti di intersezione della curvacon la retta. Tale equazione può avere al più d soluzioni, ovvero tante quandte la curva, questo perché G è omogeneo di grado d. N deduciamo che la cardinalità dell'intersezione è al più in grado di C. Anche contati con moltplicità è al più il grado di C. Questo perché G()=0 ha al più d soluzioni con moltplicità /dall'analisi dei plinomi omogenei in due variabili di ieri
-%	Se il campo è quello complesso allora possiamo dire che la somma delle moltlpicità è esattamente d. In particolare, la retta e la curva si intersecano sempre: generalizza che nel pinao proj si intersecano sempre
-%	Se il campo è quello reale e d è dispari allora possimamo ancora concludere che la rettaaa e la curva si intersecano sempre: deve annullarsi almeno in un punto reale
-%
-%
-%nel caso della conica il grado è due, quindi non si hanno molte possibilità
-%ESEMPIO 
-%Se C in P2C è una conica ed r è una retta non contenuta in C, allora r\cap C sono due punti con molt 1 o 1 punto con molteplicità 2
-%Se la conica  in P2R ed r è una retta non contenuta in c, allora c'è anche la possibilità che l'intersezione sia vuota e
-%	C\colon	r_3
-%	
-%Se una conica C contiene tre punti allineati, allora è riducibile, questo perché
-%riducibile vuol dire che il rango è minore o uguale di 2
-%TIPS 14:50 da riasocltare
-%se la retta e lacurva si intersecano troppo lo vedo dal grado e dalla molteplicità ottengo che una è contenuta
-%OSS si può dimostrare che la molteplicità di intersezione fra C e r in P non dipende dalla parametrizzazione scelta per r		cambiamento variabili invertibile nel poinomio
-%la molteplicità di intersezione è invariante per proiettività
-%
-%con l'inversa della proiettività ottengo un nuovo pol omogeneo
-%dunque le priìoiettività portano curve algebriche in curve algebriche
-%
-%
-%stessa costruzione nel caso affine
-%
-%INTERSEZINE RETTA CURVA NE CASO AFFINE
-%Sia C una curva in k\amp^2 di equazione f(x,y)=0 e sia r una retta affine
-%Scegliamo una parametrizzazione per r
-%per intersecare C ed r sostituiamo la parametrizzazine di r nell'equazione di C e otteniamo un polinomio nell'unico parametro t
-%le radici di t corrispondono ai punti di intersezione
-%definiamo la moltplicità di intersezinoe di C e r in un punto P che corrispone ad un t_0 del parametro che è uno 0 di G che corrisponde alla molteplicità di t_0 come radice fi g(t)
-%
-%FATTI
-%1/2	la moltplicità di int non dipende dalla scelta di paramaterizzazione della retta ed è invariante per afifnità
-%3	è la stessa cosa calcolata nel pinao affine o nella chiusura proiettiva. Sia p nell'intersezione e la chiusura proiettiva di C in P2 che contiene il piano affine ed r segnato la chiusura proiettiva di r in P2, partiamo da una curva nel piano affine e una retta e il punto di intersezione
-%il punto satarà ancora nelle chiusure proiettive, allora la molteplicità di intersezione fra c e r in P è uguale alla molteplicità di intersezione fra le chiusure proiettive in P
-%
-%DEF RETTA TANGENTE AD UNA CURVA IN UN PUNTO
-%Sia C una curva piana (affine o proj) e r una retta (aff o proj). Diciamo che r è TANGENTE a C in un punto P se la molteplicità di intersezione fra C ed r in P è maggiore di 1
-%per esempio, C in P2R di equazione con retta di equazione, l'intersezione era solo un punto, allora r_1 è tangente a C in P. è proprio la tangente geoemtrica. La conica in P2R 
-%deomogeneizziamo rispetto alla variabile non nulla x=/ y=/ e duneue C_2 ha equazione	,ovvero è una circonferenza con P=(0,1) allora la tangente in questp caso è chiaramente la retta y=1, tornando in coo proj diventa x1/x_2=1 \implies x_1=x_2
-%
-%esempio con una cubica in R2
-%Sia C in R^2 la crva di equazione y^2=x^2+x^3, è una cubica perché ha grado 3
-%voglio calcolare quali sono le rette tangenti nei punti P=(-1,0)\in C	prendo le rette che passano per P, le interseco con la retta e vedo quali sono tangente: fascio e per quali la molteplicità è maggiore di 1
-%tego la direzione come parametro
-%dalla retta parametrizzazione sosttuisco nell'equazione 
-%
-%g(t) porto tutto al secondo membro e viene 
-%
-%analizziamo cosa abbiamo trovato t=0 è sempre una soluzione: per costruione abbiamo preso la retta che passava per p, dunque è sempre soluzione, per qualsiasi direazione
-%la molteplicità di intersezione fra C e r in P è la massima potenza di t che divide g, o meglio è m se  t^m è la massima potenza di t che divide g. Quand'è che la molteplicità di intersezione è maggiore di 1 in questo caso con una cubica? Nell'equazione che abbiamo scritto deve succedere che t^2 divide g, ovvero v_1=0 per poter raccogliere una copia di t
-%questo determina univocamente la retta
-%quindi r è la retta verticale che assa per P
-%abbiamo dunque determinato che esiste ed è unica tangente in P
-%
-%ESEMPIO DI RETTE TANG NON UNICHE
-%riscriviamo l'eq delle curva, questa volta consideriamo l'origine
-%scriviamo il frascio di rette per Q
-%troviamo che t^2 si può sempre raccogliere
-%significa in questo caso che la molt di intersezione fra le rette e Q è sempre almeno 2, dunque ogni retta per Q ha intersezione maggiore di 2, dunque è tangente
-%nel punto Q la curva si autointerseca, moralment ogniiretta per l'origine interseca la curva almeno due vole, quindi è tangente
-%nel conto ci sono due dir speciali per ui la molt è 3, quando w_1^2-w_2^2=0\implies w_1=w_2 (bis 1 quadrante) oppure w_1=-w_2	tangenti ai rami: più tangenti perché la molt di intersezione sale
-%
-%nel caso generale si fa un conto analogo: nel caso affine
-%C\colon f()=0
-%OSS possiamo sempre scrivere il polinomio come polinomio centrato in x_0,y_0, ovvero come polinomio in x_0-x_0 e	 invece che come polinomio in x e y
-%(somma finita senza specificare il grado)
-%uso la formula del binomio di Newton
-%Allora f()==f(P) e in particolare in questa scrittura si ha il termine noto,quello lineare e i termini di grado superiore
-%dipende da tali numeri, che si possoo esprimere in termini di derivate parziali
-%quando ho polinomio posso sempre definire in maniera formale la derivazione parziale
-%
-%ESERCIZIO
-%verificare che \alpha=\frac{\partial{f}}{\partial{x}}(x_0,y_0) e \beta=\frac{\partial{f}}{\partial{y}}(x_0,y_0)
-%
+%questa osservazione è uguale a quanto scritto prima dell'esempio, quale teniamo? o facciamo un mix?
+
+\begin{define}
+	Se $(\lambda_0\colon\mu_0)\in\proj[1]{\ }$ è una radice di $G$ di molteplicità $m$ (ovvero è il massimo esponente della forma lineare che divide $G$), allora diciamo che $C$ e $r$ hanno \textbf{molteplicità di intersezione} $m$ nel punto $P=\lambda_0 A+\mu_0 B$.\\
+	Poniamo $m=0$ se $P\notin C\cap r$ e $m=\infty$ se $P\in r$ e $r\subset C$.
+\end{define}
+
+\begin{observe}
+	Se $r\cancel\subset C$ allora l'intersezione è finita, ovvero è data da un numero finito di punti: $C\cap r=\{P_1,\dots,P_n\}$. Sia $m_i$ la molteplicità di intersezione in $P_i$, allora il numero di questi punti di intersezione è maggiorato dal grado della curva, ovvero
+		\begin{equation}
+			\# (C\cap r)\leq \deg C
+		\end{equation}
+	più precisamente $\displaystyle \sum_{i=1}^n m_i\leq\deg C$, questo perché $G(\lambda, \mu)=0$ con le sue radici dà i punti di intersezione della curva con la retta, ma tale equazione può avere al più $d$ soluzioni, ovvero tante quante il grado della curva, questo perché $G$ è omogeneo di grado $d$. Ne deduciamo che la cardinalità dell'intersezione è al più in grado di $C$. Inoltre anche contate con molteplicità è al più il grado di $C$, questo perché $G(\lambda,\mu)=0$ ha al più $d$ soluzioni contate con molteplicità per la proposizione \ref{teo polinomi omogenei 2 variabili}.\\
+	Se $\kamp=\complexset$ allora possiamo dire che la somma delle molteplicità è esattamente $d$, ovvero $\displaystyle \sum_{i=1}^n m_i=\deg C$. In particolare, la retta e la curva si intersecano sempre nel piano proiettivo, ovvero $C\cap R\neq 0$.\\
+	Se $\kamp=\realset$ e $d$ è dispari allora possiamo ancora concludere che la retta e la curva si intersecano sempre in quanto $G$ deve annullarsi almeno in un punto reale, ovvero $C\cap r\neq 0$
+\end{observe}
+
+Nel caso della conica il grado è due, pertanto non ci sono molte possibilità per l'intersezione.
+\begin{example}
+	Se $C\subset\proj[2]{\complexset}$ è una conica ed $r$ è una retta non contenuta in $C$, ovvero $r\cancel\subset C$, allora 
+		% https://q.uiver.app/?q=WzAsMyxbMCwxLCJyXFxjYXAgQz0iXSxbMiwwLCJcXHsyXFx0ZXh0eyBwdW50aSBjb24gbW9sdGVwbGljaXTDoCB9IDFcXH0iXSxbMiwyLCJcXHsxIFxcdGV4dHsgcHVudG8gY29uIG1vbHRlcGxpY2l0w6AgfSAyXFx9Il0sWzAsMl0sWzAsMV1d
+		\[\begin{tikzcd}
+			&& {\{2\text{ punti con molteplicità } 1\}} \\
+			{r\cap C=} \\
+			&& {\{1 \text{ punto con molteplicità } 2\}}
+			\arrow[from=2-1, to=3-3]
+			\arrow[from=2-1, to=1-3]
+		\end{tikzcd}\]
+	Se la conica $C\subset\proj[2]{\realset}$ ed $r$ è una retta non contenuta in $C$, ovvero $r\cancel\subset C$, allora c'è \textit{anche} la possibilità che l'intersezione sia vuota, ovvero $C\cap r=\emptyset$, ad esempio $C\colon x_0^2+x_1^2-x_2^2=0$ e $r_3\colon x_2=0$.
+\end{example}
+	
+\begin{tips}
+	Se una conica $C$ contiene tre punti allineati, allora $C$ contiene una retta e dunque è riducibile, quindi $\rk C\leq 2$.		
+\end{tips}
+
+\begin{observe}
+	Si può dimostrare che la molteplicità di intersezione fra $C$ e $r$ in $P$ non dipende dalla parametrizzazione scelta per $r$ e che la molteplicità di intersezione è invariante per proiettività.
+\end{observe}
+\begin{demonstration}
+	Sia $\funz f {\proj[2]{\ }} {\proj[2]{\ }}$ una proiettività e $C'$ la trasformata di $C$ tramite $f$ con $C\colon F(x_0,x_1,x_2)=0$, $f\colon x'=Mx$ e $f^{-1}\colon x=M^{-1}x'$ quindi $C'\colon F'(x')=F(M^{-1}x')=0$ polinomio omogeneo di grado $d$, dunque le proiettività portano curve algebriche in curve algebriche, ovvero $r'=f(r)$ è una retta e $P'=f(r)$. Pertanto la molteplicità di intersezione fra $C$ e $r$ in $P$ è uguale alla molteplicità di intersezione fra $C'$ e $r'$ in $P'$
+\end{demonstration}
 
 
+	\subsection{Intersezione retta curva nel caso affine}
+Sia $C$ una curva in $\kamp^2$ di equazione $f(x,y)=0$ e sia $r$ una retta affine. Scegliamo una parametrizzazione per $r\colon\begin{cases}
+	x=tv_1+w_1\\
+	y=tv_2+w_2
+\end{cases}$. Per intersecare $C$ ed $r$ sostituiamo la parametrizzazione di $r$ nell'equazione di $C$ ed otteniamo un polinomio nell'unico parametro $t$:
+	\begin{equation*}
+		g(t)\coloneqq f(tv_1+w_1,\ tv_2+w_2)\in\kamp[t]
+	\end{equation*}
+Le radici di $g$ corrispondono ai punti di intersezione e definiamo la molteplicità di intersezione di $C$ ed $r$ in un punto $P=t_0v+w$ come la molteplicità di $t_0$ come radice di $g(t)$.\\
+Fatti:
+	\begin{enumerate}
+		\item	la molteplicità di intersezione non dipende dalla scelta di parametrizzazione della retta $r$ 
+		\item	la molteplicità di intersezione è invariante per affinità
+		\item	la molteplicità affine è pari a quella proiettiva: sia $P\in C\cap r$ e siano $\overline{C}$ la chiusura proiettiva di $C$ in $\proj[2]{\ }\supset\kamp^2$ ed $\overline{r}$ la chiusura proiettiva di $r$ in $\proj[2]{\ }$. Allora la molteplicità di intersezione tra $C$ e $r$ in $P$ è uguale alla molteplicità di intersezione fra $\overline{C}$ e $\overline{r}$ in $P$.
+	\end{enumerate}
 
+\begin{define} \textsc{Retta tangente ad una curva in un punto} \index{retta!tangente}\\
+	Sia $C$ una curva piana (affine o proiettiva) ed $r$ una retta (affine o proiettiva). Diciamo che $r$ è \textbf{tangente} a $C$ in un punto $P$ se la \textit{molteplicità di intersezione} fra $C$ ed $r$ in $P$ è \textit{maggiore di 1}.
+\end{define}
 
+\begin{example} \textsc{Retta tangente in un punto} \\
+	Sia $C$ in $\proj[2]{\realset}$ una conica di equazione $x_0^2+x_1^2-x_2^2=0$ con retta di equazione $r_1\colon x_1-x_2=0$, l'intersezione era solo un punto $r_1\cap C=\{(0\colon 0\colon 1)\}=P$, allora $r_1$ è tangente a $C$ in $P$ ed è proprio la tangente nel senso geometrico. \\
+	La conica in $\proj[2]{\realset}$ si ottiene deomogeneizzando rispetto alla variabile non nulla $x_2$ (in questo caso in $P$ si ha che $x_0=0$), per cui 
+	$x=\frac{x_0}{x_2}$ e $y=\frac{x_1}{x_2}$ e dunque $C_2$ ha equazione $\left( \frac{x_0}{x_2} \right)^2 + \left( \frac{x_0}{x_2} \right)^2 -1 =0$, ovvero è una circonferenza $x^2+y^2=1$ con $P=(0,1)$. In questo caso la tangente in $P$ è chiaramente la retta $y=1$, che in coordinate proiettive diventa $\frac{x1}{x_2}=1 \implies x_1=x_2$
+\end{example}
 
+\begin{example} \textsc{Cubica in $\realset^2$}\\
+	Sia $C$ in $\realset^2$ la curva di equazione $y^2=x^2+x^3=x^2(x+1)$, è una cubica in quanto ha grado 3.
+	Vogliamo calcolare quali sono le rette tangenti nel punto $P=(-1,0)\in C$. Consideriamo le rette che passano per $P$, ovvero un fascio, e le intersechiamo con la cubica e per decidere quali sono tangente guardiamo quali hanno molteplicità di intersezione maggiore di 1.\\
+	Fascio di rette per $P$  $r\colon \begin{cases}
+		x=-1+tv_1\\
+		y=tv_2
+	\end{cases}$ con $(v_1,v_2)$ direzione di $r$. Sostituiamo la parametrizzazione di $r$ nell'equazione di $C$ e teniamo la direzione come parametro
+	\begin{gather*}
+		t^2v^2=(tv_1-1)^2 tv_1\\
+		g(t)=(tv_1-1)^2tv_1-t^2v_"^2=t[v_1(t^2v_1^2+1-2tv_1)-tv_2^2]=t[v_1^3t^2-t(2v_1^2+v_2^2)+v_1]
+	\end{gather*}
+	Analizziamo cosa abbiamo trovato:
+		\begin{itemize}
+			\item	$t=0$ è sempre una soluzione: per costruzione abbiamo preso la retta che passava per $P$, dunque è sempre soluzione, per qualsiasi direzione
+			\item	la molteplicità di intersezione fra $C$ e $r$ in $P$ è la massima potenza di $t$ che divide $g$, ovvero è $m$ se  $t^m$ è la massima potenza di $t$ che divide $g$. Quand'è che la molteplicità di intersezione è maggiore di 1 in questo caso con una cubica? Nell'equazione che abbiamo scritto deve succedere che $t^2$ divide $g$, ovvero $v_1=0$ per poter raccogliere una copia di $t$. Quindi $r$ è la retta verticale che passa per $P$ e abbiamo determinato che esiste ed è l'\textit{unica} tangente in $P$
+		\end{itemize}
+	Vediamo ora il caso in cui la retta tangente ad un punto non è unica, consideriamo la stessa cubica ma cambiamo il punto, questa volta consideriamo l'origine $Q=(0,0)\in C$.\\
+	Scriviamo il fascio di rette per $Q\colon \begin{cases}
+		x=tw_1\\
+		y=tw_2
+	\end{cases}$ con $(w_1,w_2)$ direzione. Analogamente a prima
+		\begin{gather*}
+			h(t)=t^2w_1^2+t^3w_1-t^2w_2^2=t^2(w_1^2-w_2^2+tw_1^3)
+		\end{gather*}
+	Troviamo così che $t^2$ si può sempre raccogliere, dunque in questo caso la molteplicità di intersezione fra le rette e $Q$ è sempre almeno 2, dunque ogni retta per $Q$ ha intersezione maggiore di 2, dunque è tangente.\\
+	Osserviamo che nel punto $Q$ la curva si autointerseca, moralmente ogni retta per l'origine interseca la curva almeno due vole, quindi è tangente. Inoltre, nel conto ci sono due direzioni speciali per cui la molteplicità è 3, ovvero quelle per cui $w_1^2-w_2^2=0\implies w_1=w_2 \implies \mathcal{L}(1,1) \ y=x$ oppure $w_1=-w_2 \implies \mathcal{L}(1,-1) \ y=-x$	
+\end{example}
 
+Nel caso generale (affine) si fa un conto analogo.\\
+Sia $C\colon f(x,y)=0$ in $\kamp^2$ e $P=(x_0,y_0)$. Osserviamo che possiamo sempre scrivere il polinomio come polinomio centrato in $x_0,y_0$, ovvero come polinomio in $x-x_0$ e $y-y_0$ invece che come polinomio in x e y. Nel passaggio indicato con (!) si stanno sottintendendo conti con il binomio di Newton
+	\begin{gather*}
+		f=\sum_{i,j\geq 0} a_{ij}x^iy^j = \sum_{i,j\geq 0} a_{ij}(x-x_0+x_0)^i(y-y_0+y_0)^j \stackrel{!}{=} 	\sum_{i,j\geq 0}b_{ij}(x-x_0)^i(y-y_0)^j\\
+		\implies f(x_0,y_0)=b_{00}=f(P) \implies f=f(P) +\alpha (x-x_0)+\beta (y-y_0)+ \text{ termini di grado} >1
+	\end{gather*}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Notiamo inoltre che dato un polinomio $f\in\kamp[x,y]$ si possono sempre definire in maniera formale le \textbf{derivate parziali} \index{derivata parziale} di $f$ quali $\frac{\partial{f}}{\partial{x}},\ \frac{\partial{f}}{\partial{y}}$ come segue:
+	\begin{equation}
+		f=\sum_{i,j}a_{ij}x^iy^j \implies \frac{\partial{f}}{\partial{x}}\coloneqq \sum_{i,j}a_{ij}ix^{i-1}y^j
+	\end{equation}
+Si verifica che $\alpha=\frac{\partial{f}}{\partial{x}}(x_0,y_0)$ e $\beta=\frac{\partial{f}}{\partial{y}}(x_0,y_0)$.
 
 
 
@@ -2516,15 +2522,6 @@ Scriviamo una parametrizzazioe per $r$, per farlo servono 2 punti distinti quali
 %
 %ESEMPIO 2
 %retta di punti base perché  una retta comune a tutte le coniche del fascio, ed il punto base del fascio di rette che dà la seconda retta della conica di equazione \lambda x_1+\mu x_2=0		la seconda retta varia fra tutte le rette che contengono P
-
-
-
-
-
-
-
-
-
 
 
 %%LEZ 36
