@@ -2286,51 +2286,56 @@ Notiamo inoltre che dato un polinomio $f\in\kamp[x,y]$ si possono sempre definir
 		f=\sum_{i,j}a_{ij}x^iy^j \implies \frac{\partial{f}}{\partial{x}}\coloneqq \sum_{i,j}a_{ij}ix^{i-1}y^j
 	\end{equation}
 Si verifica che $\alpha=\frac{\partial{f}}{\partial{x}}(x_0,y_0)$ e $\beta=\frac{\partial{f}}{\partial{y}}(x_0,y_0)$.
+%LEZ 35
+Indicheremo anche il gradiente $\nabla f=\left( \frac{\partial{f}}{\partial{x}},\ \frac{\partial{f}}{\partial{y}} \right)$ ed il gradiente valutato in $P$: $\nabla f(P)=(\alpha,\beta)\in\kamp^2$.\\
+%Adesso vogliamo intersecare con l retta genereica per P
+Sia $r$ la retta per $P$ con direzione $v=(v_1,v_2)$ e descrizione parametrica $\begin{cases}
+	x=x_0+tv_1\\
+	y=y_0+tv_2
+\end{cases}$ Allora
+	\begin{gather*}
+		g(t)=f(x_0+tv_1,\ y+tv_2)=\alpha tv_1+\beta tv_2 + \text{ termini in $t$ di grado }\geq 2 =\\
+		= (\alpha v_1+\beta v_2)t + \text{ termini in $t$ di grado }\geq 2
+	\end{gather*}
 
+Si hanno dunque due possibilità, che dipendono dal coefficiente di $t$:
+	\begin{enumerate}
+		\item	$\alpha=\beta=0$, ovvero $\nabla f =0$ il coefficiente è nullo indipendentemente dalla retta $\implies \forall r$ retta per $P$,  $t^2 \mid g(t)\implies$ la molteplicità di intersezione è $\geq 2 \implies$ ogni retta per $P$ è tangente a $C$ in $P$
+		\item	$\nabla f(P)=(\alpha,\beta)\neq 0$:	il coefficiente di $t$ determina in maniera univoca la direzione della retta, che è quella ortogonale a $(\alpha,\beta): \implies \exists !$ retta tangente a $C$ in $P$ ed è quella di direzione $(-\beta,\alpha)$ con equazione	$\alpha(x-x_0)+\beta(y-y_0)=0$, ovvero 
+			\begin{equation}
+				\frac{\partial{f}}{\partial{x}}(P)(x-x_0) + \frac{\partial{f}}{\partial{y}} (P)(y-y_0)=0
+			\end{equation}
+	\end{enumerate}
 
-
-%
-%%LEZ 35
-%Scriviamo $f$ centrato in $p$: $f=\sum_{i,j\geq} 
-%
-%definsco derivate formale, che sono pol in coeff x e y, applicando tali regoe alla srittura in x_0 e y_0 si vede che la derivata si può scrivere come
-%Allo stesso modo $\frac{}{}=\beta$
-%indicheremo anche il gradiente ed il gradiente valutato in P
-%
-%adesso vogliamo intersecare con l retta genereica per P
-%Sia r la retta per P con direzione v=(v_1,v_2)
-%descrizione parametrica x=x_0+tv_1 
-%per cui x-x_0=
-%dnque scrivendo g(t)=f()siamo facilitati dall'averlo scritto centrato /scritta in rosso/
-%sostituendo siccome non c'è il termine noto viene 	i monomi con gado almeno 2 in -x_0 almeno grado almeno 2 in t
-%raccogliendo la t viene (\alpha v_1+\beta v_2)t
-%quello che fa la differenza è il coeff nel rettangolo giallo
-%Si hanno dunque due possiblità:
-%	1	\alpha=\beta=0, ovvero grad =0:\il ceoff è0 infipendentemente dalla retta \implies \forall r retta per p t^2 divide g(t)\implies la moltplicità di intersezione è \geq 2 \implies ogni retta per P è tangente a C in P
-%	2	\neq 0 	l'eq gialla determina in maniera univoca la direzione della retta: retta ortogonale a \alpha e \beta: \implies \exists ! la retta tangente a C in P ed è quela di direzione (-\beta,\alpha) con equazione	\alpha(x-x_0)+\beta(y-y_0)=0, ovvero in temrinin di polinomi			 \frac{}{}(P)(x-x_0)+\frac{}{}
-%=0
-%abbiamo ritrovato la casistica della cubica con pnti eplicit: ogni retta è tangente oppure c'è una sola tangente alla curvanel punto
+Abbiamo così ritrovato la casistica della cubica con i punti espliciti: ogni retta è tangente oppure c'è una sola tangente alla curva nel punto.
 %ESERCIZIOE nel caso della cruva dello scorso esempio: calcolare il gradiente di f in (-1,0) e in (0,0) e per (-1,0) scrivere la retta tangente e confrontare con i conti dello scorso esempio
-%
-%questo ci porta a dare una definizione su punto della curva se il gradiente si annulla o no
-%DEF
-%Sia $C$ una curva affine in $\kamp^2$ di equazione $f(x,y)=$, allora un punto $P\in C$ è detto \textbf{non singolare} o \textbf{liscio} se \neq 0. Altrimenti $p$ è detto \textbf{punto singolare}
-%Una cruva $C$ è detta $\textbf{singolare} se ha almeno un punto singolare, altrimenti è detta curva non singolare o liscia
-%
-%Abbiamo visto prima che se $P$ è non singolare esiste ed è unic la tangente a $C$ in $P$ ed ha equazione		essendo non sing almeno uno dei due coeff non è nullo
-%Se invece $P$ è singolare allora ogni retta per $P$ è tangente a $C$ in $P$.
-%
-%vogliamo vedere la stessa cosa nel caso proiettivo
-%per passare da punto singolare o tangente serve prima proprietà dei polinomi omogenei, detta relazione di Eulero sui polinomi omogenei (in un qualsiasi numero di variabili e  coeff in un campo qualsiasi)
-%Sia $F\in\kamp[]$ relazione fra $F$ e le sue derivate parziali, che sono dei polinomi data la loro definizione formale, e sono polinomio omogenei di grado $m-1$
-%Si ha che la somma 	è un polinomio è pari a mF con m grado di F.
-%Siccome la der parz omogeneo m-1, molt per x
-%
-%PROOF
-%siccome la somma è la somma, allora basta mostrarlo per un monomio G=\lambda 	con j_0+\dots
-%scrivendo la deer rispetto ad una variabile
-%quando moltiplico per x_i metto apposto l'esponente i-esimo
-%
+Questo ci porta a dare una definizione per un punto della curva in base al gradiente nel punto.
+\begin{define} \textsc{Punto singolare} \index{punto!singolare}
+	Sia $C$ una curva affine in $\kamp^2$ di equazione $f(x,y)=$, allora un punto $P\in C$ è detto \textbf{non singolare} o \textbf{liscio} se $\nabla f(P)\neq 0$. Altrimenti $P$ è detto \textbf{punto singolare}.\\
+	Una curva $C$ è detta \textbf{singolare} se ha almeno un punto singolare, altrimenti è detta curva non singolare o liscia.
+\end{define}
+
+Abbiamo visto prima che se $P$ è non singolare esiste ed è unica la tangente a $C$ in $P$ ed ha equazione	$\frac{\partial{f}}{\partial{x}}(P)(x-x_0) + \frac{\partial{f}}{\partial{y}} (P)(y-y_0)=0$, notiamo inoltre che essendo non singolare almeno uno dei due coefficienti non è nullo.\\
+Se invece $P$ è singolare allora ogni retta per $P$ è tangente a $C$ in $P$.
+
+\subsubsection{Caso proiettivo}
+Vogliamo analizzare la tangenza nel caso proiettivo, tuttavia per trattare di punti singolare o tangenti serve prima una proprietà dei polinomi omogenei, detta relazione di Eulero sui polinomi omogenei che vale in un qualsiasi numero di variabili a coefficienti in un campo qualsiasi e mette in relazione un polinomio omogeneo e le sue derivate parziali, anch'esse polinomi omogenei ma di un grado inferiore.
+
+\begin{theorema} \textsc{Relazione di Eulero} \index{Eulero!relazione} \\
+	Sia $F\in\kamp[x_0,\dots,x_n]$ polinomio omogeneo di grado $m$ e le sue derivate parziali $\frac{\partial{f}}{\partial{x_i}}\in\kamp[x_0,\dots,x_n]$, polinomio omogenei di grado $m-1$. Si ha che 
+		\begin{equation}
+			\sum_{i=0}^n x_i\frac{\partial{F}}{\partial{x_i}}=mF
+		\end{equation}
+\footnote{siccome le derivate parziali sono omogenee di grado $ m-1$, si moltiplica per $x_i$ perché la somma sia omogenea di grado $m$.}
+\end{theorema}
+\begin{demonstration}
+	Basta mostrarlo per un monomio $G=\lambda x_0^{j_0}\cdots x_n^{j_n}$ con $j_0+\dots+j_n=m,\ \lambda\in\kamp$. Scrivendone le derivate parziali rispetto ad una variabile e poi moltiplicando per $x_i$ sistemiamo l'esponente $i$-esimo
+		\begin{gather*}
+			\frac{\partial{G}}{\partial{x_i}}=\lambda j_i x_0^{j_0}\cdots x_i^{j_{i-1}} \cdots x_n^{j_n} \implies  x_i \frac{\partial{G}}{\partial{x_i}}=\lambda j_i x_0^{j_0}\cdots x_i^{j_i} x_n^{j_n}\\
+			\implies \sum_{i=0}^n x_i\frac{\partial{G}}{\partial{x_i}} = \sum_{i=0}^n \lambda j_i _0^{j_0} \codots x_n^{j_n}=\lambda x_0^{j_0}\cdots x_n^{j_n} \cdot \sum_{i=0}^n j_i =mG
+		\end{gather*}
+\end{demonstration}
+
 %il monomio è sempre lo stesso perché si moltiplica per x_i
 %monomio j e somma degli esponenti è esattamente di grado, dunque =mG
 %
@@ -2444,8 +2449,8 @@ Si verifica che $\alpha=\frac{\partial{f}}{\partial{x}}(x_0,y_0)$ e $\beta=\frac
 %per liscie
 %se $F=x_0^3	$ dà una curva senza punti singolari perché le der parziali sono multpli delle coordinate dunque non possono mai essere tutti nulli
 %FINE PNTI SINGOLARI DELLE CUBICHE
-%
-%--------------------------------------------------------------------
+
+--------------------------------------------------------------------
 %FASCI DI CONICHE PROIETTIVE
 %
 %prendo 2 coniche e considero le coniche le cui eq si ottengono come cl delle due equazioni
