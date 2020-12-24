@@ -1217,6 +1217,9 @@ linewidth=1pt]{neoncarrotBox}
 \theoremstyle{venetiannumbox}
 \newtheorem{observeT}{\textsc{Osservazione.}}[chapter]
 
+\theoremstyle{venetiannumbox}
+\newtheorem{observesT}{\textsc{Osservazioni.}}[chapter]
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \newcounter{define}
@@ -1281,9 +1284,11 @@ linewidth=1pt]{neoncarrotBox}
 
 \newenvironment{observe}{\begin{sBox}\begin{observeT}}{\hfill{\color{venetian}}	\end{observeT}\end{sBox}}
 
+\newenvironment{observes}{\begin{sBox}\begin{observesT}}{\hfill{\color{venetian}}	\end{observesT}\end{sBox}}
+
 %%% dimostrazione %%%
 
-\newenvironment{demonstration}{\begin{yBox}\begin{demonstrationT}}{\hfill{\color{BurntOrange}}	\end{demonstrationT}\end{yBox}}
+\newenvironment{demonstration}{\begin{yBox}\begin{demonstrationT}}{\hfill{\color{BurntOrange}}\qed\end{demonstrationT}\end{yBox}}
 
 %%% definizione %%%
 
@@ -1386,6 +1391,10 @@ linewidth=1pt]{neoncarrotBox}
 
 \DeclareSymbolFont{topology}{OMS}{cmsy}{m}{n} 
 \DeclareMathSymbol{\topo}{\mathord}{topology}{`T}
+
+% topologia euclidea
+
+\newcommand{\eucl}{\mathcal{E\! u\! c\! l}}
 
 % base
 
@@ -1532,6 +1541,16 @@ linewidth=1pt]{neoncarrotBox}
 		{\ensuremath{\pi_{1}\left(#1,\ #2\right)}}%
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%% definizioni varietà %%%%%%%%%%%%%%%%%%%%%%%%%
+
+% caratteristica di Eulero
+
+\newcommand{\euler}[2]{%
+	\IfEq{#2}{\ }{\ensuremath{\chi\left(#1\right)}}
+	{\ensuremath{\chi\left(#1,\ #2\right)}}%
+}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%% definizioni categoria %%%%%%%%%%%%%%%%%%%%%%%%%
 
 % categoria in generale
@@ -1602,7 +1621,6 @@ linewidth=1pt]{neoncarrotBox}
 \newcommand{\aff}[1]{
 	{\ensuremath{\mathcal{A}\left(#1\right)}}
 }
-
 
 %%%%%%%%%%%%%%%%%%%%%%%% altre definizioni  %%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1826,3 +1844,9 @@ linewidth=1pt]{neoncarrotBox}
 	sixslant1/.style={anchor=south, rotate=17, inner sep=.5mm, yshift=-4mm},
 		sixslant2/.style={anchor=south, rotate=17, inner sep=.5mm, yshift=1mm}		
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%% altri colori %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{redill}{RGB}{190, 30, 45 }
+\definecolor{blueill}{RGB}{46, 49, 146 }
+\definecolor{greenill}{RGB}{0, 161, 74 }

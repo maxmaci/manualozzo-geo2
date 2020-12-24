@@ -14,11 +14,11 @@
 		\textsc{NON UN ROBOT,} UN UMANO IN CARNE ED OSSA BEEP BOOP.
 	\end{flushright}
 \end{introduction}
-
+%inserire citazione
 \section{Spazi proiettivi}
-% mettere superfici
-Abbiamo già approfondito, a livello \textit{topologico}, lo \textbf{spazio proiettivo reale} e le sue caratteristiche nel \autoref{chap:superfici}. In questo capitolo, ci dedicheremo a \textit{generalizzare} il concetto per un \textit{qualsiasi} spazio vettoriale su campo $\kamp$, utilizzando gli strumenti dell'algebra lineare. 
-\begin{define}
+% mettere ref superfici
+Abbiamo già approfondito lo \textbf{spazio proiettivo reale} e le sue caratteristiche sia \textit{topologicamente} nel \autoref{chap:azionidigruppo}, sia come \textit{varietà topologica} nel \autoref{chap:superfici}. In questo capitolo, ci dedicheremo a \textit{generalizzare} il concetto per un \textit{qualsiasi} spazio vettoriale su campo $\kamp$, utilizzando gli strumenti dell'algebra lineare. 
+\begin{define}\textsc{Spazio proiettivo}.\\
 Sia $\kamp$ un campo e $V$ uno spazio vettoriale di dimensione \textit{finita} su $\kamp$. Lo \textbf{spazio proiettivo}\index{spazio!proiettivo} associato a $V$ è l'insieme quoziente:
 \begin{equation}
 	\proj{V}=\frac{V\setminus\left\{0\right\}}{\sim}
@@ -29,23 +29,23 @@ Dove $\sim$ è la relazione di equivalenza data su $V\setminus\left\{0\right\}$ 
 \end{equation}
 Lo spazio proiettivo $\proj{V}$ si dice anche il \textbf{proiettivizzato}\seeonlyindex{proiettivizzato}{spazio!proiettivo} di $V$.
 \end{define}
-% finire dimostrazione
 \begin{demonstration}
-~{}
+Dimostriamo che è una relazione di equivalenza:
 \begin{itemize}
-	\item \textsc{Riflessiva}: ...
-	\item \textsc{Simmetrica}: ...
-	\item \textsc{Transitiva}: ...
+\item \textsc{Riflessiva}: $v\sim v?$ Basta porre $\lambda=1$, in quanto $x=1\cdot x$.
+\item \textsc{Simmetrica}: Per ipotesi $y=\lambda x$, allora $x=\frac{1}{\lambda} y$ ($\frac{1}{\lambda}\in \kamp\setminus\left\{0\right\}$).
+\item \textsc{Transitiva}: Poichè $y=\lambda x,\ z=\mu y$, segue $z=\mu \left(\lambda x\right)=\left(\mu\lambda\right)x$ e $\mu\lambda\in \kamp\setminus\left\{0\right\}$.
 \end{itemize}
+\vspace{-3mm}
 \end{demonstration}
-\begin{define}
+\begin{define}\textsc{Dimensione di uno spazio proiettivo}.\\
 La \textbf{dimensione}\index{dimensione di uno spazio proiettivo} di $\proj{V}$ è:
 \begin{equation}
 	\dim\proj{V}=\dim V-1
 \end{equation}
 Se $V=\left\{0\right\}$, allora $\proj{V}=\emptyset$ e si pone $\dim\emptyset\coloneqq -1$.
 \end{define}
-\begin{define}
+\begin{define}\textsc{Proiezione al quoziente e classe}.\\
 Si denota con $\funz{\pi}{V\setminus\left\{0\right\}}{\proj{V}}$ la \textbf{proiezione al quoziente}\index{proiezione!al quoziente} e con $\left[v\right]\in\proj{V}$ la \textbf{classe}\index{classe!dello spazio proiettivo} di $v\in V\setminus\left\{0\right\}$.
 \end{define}
 \begin{observe}
@@ -58,16 +58,17 @@ Si denota con $\funz{\pi}{V\setminus\left\{0\right\}}{\proj{V}}$ la \textbf{proi
 	\end{equation}
 In altre parole, possiamo pensare a $\proj{V}$ come l'insieme delle \textbf{rette vettoriali} in $V$.
 \end{observe}
-\begin{define}~{}
+\begin{define}\textsc{Altre nomenclature proiettive}.\\
 	\begin{itemize}
 		\item Se $\dim V=1$, allora $\proj{V}$ è un \textbf{punto}\index{punto!proiettivo} e $\dim\proj{V}=0$.
 		\item Se $\dim \proj{V}=1$, si parla di \textbf{retta proiettiva}\index{retta!proiettiva}.
 		\item Se $\dim \proj{V}=2$, si parla di \textbf{piano proiettivo}\index{piano!proiettivo}.
 		\item Se $\kamp=\realset$ o $\kamp=\complexset$, si parla rispettivamente di \textbf{spazio proiettivo reale}\index{spazio!proiettivo!reale} o di \textbf{spazio proiettivo complesso}\index{spazio!proiettivo!complesso}.
 	\end{itemize}
+\vspace{-3mm}
 \end{define}
 Gli esempi più frequenti di spazi proiettivi si ottengono considerando $V=\kamp^{n+1}$.
-\begin{define}
+\begin{define}\textsc{Spazio proiettivo numerico}.\\
 	Lo \textbf{spazio proiettivo numerico}\index{spazio!proiettivo!numerico} o \textbf{spazio proiettivo standard}\seeonlyindex{spazio!proiettivo!standard}{spazio!proiettivo!numerico} è lo spazio proiettivo su $\kamp^{n+1}$:
 \begin{equation}
 	\proj{\ }=\proj[n]{\kamp}=\proj{\kamp^{n+1}}
@@ -76,7 +77,7 @@ Essi sono spazi di dimensione $\dim\proj[n]{\ }=n$.
 \end{define}
 \section{Sottospazi proiettivi}
 Sia $W\subseteq V$ un sottospazio vettoriale. Allora $W\setminus\left\{0\right\}\subseteq V\setminus\left\{0\right\}$ è chiuso rispetto alla relazione di equivalenza $\sim$ precedentemente definita e $\proj{W}$ è naturalmente un sottoinsieme di $\proj{V}$.
-\begin{define}
+\begin{define}\textsc{Sottospazio proiettivo}.\\
 	Se $W\subseteq V$ è un sottospazio vettoriale, allora $\proj{W}$ è detto \textbf{sottospazio proiettivo}\index{sottospazio!proiettivo}:
 	\begin{equation*}
 		\begin{array}{rl}
@@ -93,11 +94,12 @@ La dimensione del sottospazio proiettivo è $\dim\proj{W}=\dim W-1$.
 	\item Se $\dim W=3$ ($\dim\proj{W}=2$), allora $\proj{W}$ è \textbf{piano proiettivo}\index{piano!proiettivo} in $\proj{V}$.
 	\item Se $\dim\proj{W}=\dim \proj{V}-1$, allora $\proj{W}$ è \textbf{iperpiano (proiettivo)}\index{iperpiano!proiettivo} in $\proj{V}$.
 \end{itemize}
-\begin{define}
+\begin{define}\textsc{Codimensione}.\\
 Si definisce la \textbf{codimensione}\index{codimensione} di $\proj{W}$ sottospazio proiettivo come:
 \begin{equation}
 	\codim\proj{W}=\dim\proj{V}-\dim\proj{W}
 \end{equation}
+\vspace{-6mm}
 \end{define}
 \begin{example}
 	Gli iperpiani sono sottospazi di codimensione $1$.
@@ -107,7 +109,7 @@ Consideriamo $\proj[n]{\kamp}=\proj{\kamp^{n+1}}$. Se $v=\left(x_0,\ \ldots,\ x_
 \begin{equation}
 \left[v\right]=\left(x_0\colon \ldots\colon x_n\right)\in\proj[n]{\kamp},\ x_i\in\kamp
 \end{equation}
-\begin{observe}~{}
+\begin{observes}~{}
 	\begin{enumerate}
 		\item Le $x_i$ non possono mai essere tutte nulle, dato che $v\neq 0$.
 		\item Due classi sono uguali se le componenti sono tutte in proporzione per uno scalare $\lambda\in\kamp$.\footnote{La notazione con i $\colon$ viene utilizzata per mettere in evidenza che la relazione fra classi e vettori è di proporzione.}
@@ -117,15 +119,16 @@ Consideriamo $\proj[n]{\kamp}=\proj{\kamp^{n+1}}$. Se $v=\left(x_0,\ \ldots,\ x_
 			\end{array}
 		\end{equation*}
 	\end{enumerate}
-\end{observe}
+\end{observes}
 \begin{examples}
 	In $\proj[2]{\realset}$:
 	\begin{gather*}
 		\left(1\colon1\colon2\right) = \left(-2\colon-2\colon-4\right)\\
 		\left(1\colon0\colon2\right) = \left(\frac{1}{3}\colon0\colon\frac{1}{3}\right)
 	\end{gather*}
+\vspace{-6mm}
 \end{examples}
-\begin{define}
+\begin{define}\textsc{Riferimento proiettivo e coordinate omogenee}.\\
 	Sia $\basis=\left\{e_0,\ \ldots,\ e_n\right\}$ una base di $V$, con $\dim V=n+1$. Se $v\in V\setminus\left\{0\right\}$, si ha:
 	\begin{equation*}
 		v=x_0e_0+\ldots+x_ee_n,\ \text{con}\ x_i\in\kamp
@@ -136,14 +139,15 @@ Diciamo che $\left(x_0\colon\ldots\colon x_n\right)$ sono le \textbf{coordinate 
 \end{equation}
 La base $\basis$ definisce su $\proj{V}$ un \textbf{sistema di riferimento proiettivo}, cioè ad ogni punto vengono assegnate delle coordinate omogenee. 
 \end{define}
-\begin{observe}~{}
+\begin{observes}~{}
 		\begin{itemize}
 		\item Le coordinate omogenee non possono \textit{mai} essere \textit{tutte nulle}.
 		\item Le coordinate omogenee sono definite \textit{solo a meno di multipli}.
 		\item $\proj[n]{\kamp}$ ha delle coordinate omogenee ‘‘naturali'' date dalla base canonica di $\kamp^{n+1}$.
 		\item Basi \textit{multiple} definiscono lo stesso riferimento proiettivo di $\proj{V}$, cioè le stesse coordinate omogenee.
 	\end{itemize}
-\end{observe}
+\vspace{-3mm}
+\end{observes}
 \begin{demonstration}
 	Dimostriamo l'ultimo punto. Siano:
 	\begin{equation*}
@@ -158,7 +162,7 @@ Passando allo spazio proiettivo:
 \underbrace{\left(x_0\colon\ldots\colon x_n\right)}_{\text{coordinate omogenee rispetto a }\basis}=\underbrace{\left(\frac{x_0}{\mu}\colon\ldots\colon \frac{x_n}{\mu}\right)}_{\text{coordinate omogenee rispetto a }\basis'}
 \end{equation*}
 \end{demonstration}
-\begin{define}
+\begin{define}\textsc{Punti fondamentali e punto unità}.\\
 	Data la base $\basis$, i punti:
 	\begin{equation}
 		\begin{array}{l}
@@ -171,7 +175,7 @@ Sono detti \textbf{punti fondamentali}\index{punto!fondamentale} o \textbf{punti
 \begin{equation*}
 	U=\left[e_0+e_1+\ldots+e_n\right]=\left(1\colon1\colon\ldots\colon1\right)
 \end{equation*}
-è detto \textbf{punto unità}\index{punto!unità}.
+È detto \textbf{punto unità}\index{punto!unità}.
 \end{define}
 \subsubsection{Descrizione dei sottospazi proiettivi in coordinate}
 Siano $\left(x_0\colon\ldots\colon x_n\right)$ coordinate omogenee su $\proj{V}$, indotte da una base $\basis$, e consideriamo l'equazione lineare omogenea:
@@ -183,7 +187,7 @@ Con $a_i\in\kamp$ non tutti nulli.
 	\item In $V$ l'equazione omogenea rappresenta un \textit{iperpiano vettoriale} $H$.
 	\item I punti $P=\left[v\right]\in\proj{V}$, le cui coordinate soddisfano l'equazioni, sono quelli tali per cui $v\in H$, cioè sono tutti e soli i punti dell'iperpiano proiettivo $\proj{H}\subseteq\proj{V}$. L'equazione lineare $\textcolor{green}{\circled{\ast}}$ è l'\textbf{equazione (cartesiana) dell'iperpiano proiettivo} $\proj{H}$.
 \end{itemize}
-\begin{define}
+\begin{define}\textsc{Iperpiano coordinato}.\\
 	Gli iperpiani di equazione cartesiana $x_i=0$, cioè tutti i punti la cui $i$-esima coordinata omogenea è nulla, si dicono $i$\textbf{-esimi iperpiani coordinati}\index{iperpiano!proiettivo!coordinato}.
 \end{define}
 \begin{example}\item
@@ -227,7 +231,7 @@ Posto dunque $t$ come il numero delle \textit{equazioni}, notiamo che:
 \begin{equation*}
 	\begin{array}{cc}
 		\dim W=n+1-\rk A \\
-\begin{array}{ccc}
+\begin{array}{lll}
 	\codim W &=&\rk A \\
 	\shortparallel &  \\
 	\dim V-\dim W &=&\dim\proj{V}-\dim\proj{W}=\codim\proj{W}
@@ -235,16 +239,22 @@ Posto dunque $t$ come il numero delle \textit{equazioni}, notiamo che:
 	\implies t\geq \rk\left(A\right)=\codim\proj{W}
 	\end{array}
 \end{equation*}
-\textit{Scartando} delle equazioni possiamo sempre ricondurci ad un sistema in cui $t=\rk A=\codim\proj{W}$.
+\textit{Scartando} delle equazioni possiamo sempre ricondurci ad un sistema in cui:
+\begin{equation}
+	t=\rk A=\codim\proj{W}
+\end{equation}
+\vspace{-6mm}
 \begin{intuit}
 	Per facilitare la visualizzazione degli spazi proiettivi possiamo pensare allo spazio $\kamp^{n+1}$ come lo \textbf{spazio affine} $\aff{\kamp^{n+1}}$ in cui sia fissato un punto $O$ come origine: in questo modo, le classi di $\proj[n]{\kamp}$ corrispondono alle \textit{rette affini passanti per} $O$ (identificate con le rette vettoriali di $\kamp^{n+1}$):
 	\begin{equation*}
-		\left(x_0\colon\ldots\colon x_n\right)\leftrightarrow\text{retta affine di }\aff{\kamp^{n+1}}\text{formata dai punti }\left(tx_0,\ \ldots,\ tx_n\right)\text{ al variare di t}\in\realset
+		\left(x_0\colon\ldots\colon x_n\right)\leftrightarrow\begin{array}{c}
+			\text{retta affine di }\aff{\kamp^{n+1}}\text{ formata}\\
+			 \text{dai punti }\left(tx_0,\ \ldots,\ tx_n\right)\text{ al variare di t}\in\realset
+		\end{array}
 	\end{equation*}
 	Approfondiremo formalmente la relazione tra gli spazi affini e gli spazi proiettivi più avanti, a pag. \ref{spaziaffini}.
 \end{intuit}
 \begin{examples}~{}
-	%completare con le note della fino
 	\begin{itemize}
 		\item Il piano proiettivo $\proj[2]{\kamp}$ ha, come sottospazi \textit{non banali}, i punti e le rette.
 		\begin{itemize}
@@ -255,19 +265,40 @@ Posto dunque $t$ come il numero delle \textit{equazioni}, notiamo che:
 			\end{cases}$
 		\end{itemize}
 	\item Nel piano proiettivo reale $\proj[2]{\realset}$, le \textit{rette proiettive} vengono da \textit{piani vettoriali}, mentre nel modello affine di $\aff{\realset^3}$ essi sono passanti per l'\textit{origine}; utilizzando la \textit{sfera unitaria} ai quali identifichiamo i punti antipodali in una relazione di equivalenza, la retta proiettiva si visualizza facilmente come l'\textit{intersezione} della sfera in un \textit{cerchio massimo}.\\
-	In questo modo, considerando la \textit{semisfera superiore}, la \textbf{proiezione} dell'intersezione su di essa sul disco unitario $D$ è la rappresentazione della retta proiettiva sul \textit{modello piano} ben noto. Dunque, guardando le rette proiettive nel \textit{modello piano}, se ne hanno di \textit{tre tipi}:
-	\begin{enumerate}
-		\item La \textit{retta} con equazione $z=0$, ovvero al piano $xy$ in $\realset^3$: sul modello piano corrisponde al \textbf{bordo del disco} $D$ (cioè $S^1$).
-		\item Le \textit{rette} con equazione $ax+by=0$, ovvero ai \textit{piani perpendicolari} in $\realset^3$ passanti per le rette con quell'equazione $ax+by=0$:  sul modello piano corrisponde a \textbf{diametri colleganti due punti} sul bordo.
-		\item Nel caso generale $ax+by+cz=0$, proiettando l'\textit{arco di cerchio massimo} viene un \textbf{arco di ellisse} in $D$.
-	\end{enumerate}
+	In questo modo, considerando la \textit{semisfera superiore}, la \textbf{proiezione} dell'intersezione su di essa sul disco unitario $D$ è la rappresentazione della retta proiettiva sul \textit{modello piano} ben noto. Dunque, guardando le rette proiettive nel \textit{modello piano}, se ne hanno di \textit{tre tipi}:\\
+	\begin{minipage}{0.77\textwidth}
+			\begin{enumerate}[series=proj]
+			\item La \textit{retta} con equazione $z=0$, ovvero al piano $xy$ in $\realset^3$: sul modello piano corrisponde al \textbf{bordo del disco} $D$ (cioè $S^1$).
+		\end{enumerate}
+		\end{minipage}
+	\begin{minipage}{0.32\textwidth}
+		\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/projectivelinesdisk1.pdf}
+	\end{minipage}\\
+	\begin{minipage}{0.77\textwidth}
+	\begin{enumerate}[resume=proj]
+			\item Le \textit{rette} con equazione $ax+by=0$, ovvero ai \textit{piani perpendicolari} in $\realset^3$ passanti per le rette con quell'equazione $ax+by=0$:  sul modello piano corrisponde a \textbf{diametri colleganti due punti} sul bordo.
+		\end{enumerate}
+	\end{minipage}
+\begin{minipage}{0.32\textwidth}
+\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/projectivelinesdisk2.pdf}
+\end{minipage}\\
+\begin{minipage}{0.77\textwidth}
+	\begin{enumerate}[resume=proj]
+			\item Nel caso generale $ax+by+cz=0$, proiettando l'\textit{arco di cerchio massimo} viene un \textbf{arco di ellisse} in $D$.
+		\end{enumerate}
+	\end{minipage}
+	\begin{minipage}{0.32\textwidth}
+		\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/projectivelinesdisk3.pdf}
+	\end{minipage}
 	\end{itemize}
+\vspace{-3mm}
 \end{examples}
 \section{Operazioni con i sottospazi}
 Se $W_1,\ W_2\subseteq V$ sono sottospazi vettoriali, allora $W_1\cap W_2$ è un sottospazio vettoriale e si ha che l'\textbf{intersezione}\index{sottospazio!intersezione} dei corrispettivi spazi proiettivi è ancora un sottospazio proiettivo.
 \begin{equation*}
 	\proj{W_1\cap W_2}=\proj{W_1}\cap\proj{W_2}
 \end{equation*}
+\vspace{-6mm}
 \begin{observe}
 	Si ha:
 	\begin{equation*}
@@ -276,14 +307,14 @@ Se $W_1,\ W_2\subseteq V$ sono sottospazi vettoriali, allora $W_1\cap W_2$ è un
 In tal caso diciamo che i due sottospazi sono \textbf{sghembi}\index{sottospazio!proiettivo!sghembo} o \textbf{disgiunti}\seeonlyindex{sottospazio!proiettivo!disgiunto}{sottospazio!proiettivo!sghembo}.
 \end{observe}
 Come per i sottospazi vettoriali, in generale l'\textbf{unione} di due sottospazi proiettivi \textit{non} è un sottospazio proiettivo.
-\begin{define}
+\begin{define}\textsc{Sottospazio generato da un sottoinsieme}.\\
 	Sia $S\subseteq \proj{V}$ un sottoinsieme non vuoto. Il \textbf{sottospazio generato}\index{sottospazio!proiettivo!generato} da $S$, denotato con $\left<S\right>$, è l'intersezione in $\proj{V}$ di tutti i sottospazi proiettivi contenenti $S$, ed è il più piccolo sottospazio contenente $S$.
 \end{define}
 \begin{itemize}
 	\item $\left<S\right>=S\iff S$ è un sottospazio proiettivo.
 	\item Se $S=\left\{P_1,\ \ldots,\ P_m\right\}$ è finito, scriviamo $\left<P_1,\ \ldots,\ P_m\right>$ per il sottospazio generato da $P_1,\ \ldots,\ P_m$.
 \end{itemize}
-\begin{define}
+\begin{define}\textsc{Sottospazio somma}.\\
 	Dati due sottospazi proiettivi $T_1,\ T_2\subseteq \proj{V}$, cioè:
 	\begin{equation*}
 		T_i=\proj{W_i}\quad W_i\subseteq V,\ i=1,\ 2
@@ -292,6 +323,7 @@ Come per i sottospazi vettoriali, in generale l'\textbf{unione} di due sottospaz
 	\begin{equation}
 		\left<T_1,\ T_2\right>=\proj{W_1+W_2}
 	\end{equation}
+\vspace{-6mm}
 \end{define}
 \begin{demonstration}~{}\\
 	$\includedx$ $\proj{W_1+W_2}$ è un sottospazio proiettivo che contiene, in quanto $W_1\subseteq W_1+W_2,\ W_2\subseteq W_1+W_2$ vettorialmente, sia $T_1=\proj{W_1}$ sia $T_2=\proj{W_2}$. In particolare, contiene la loro unione\footnote{Ricordiamo che non è essa un sottospazio, ma un sottoinsieme.}, dunque $\left<T_1,\ T_2\right>\left<T_1\cup T_2\right>\subseteq \proj{W_1+W_2}$.\\
@@ -299,12 +331,14 @@ Come per i sottospazi vettoriali, in generale l'\textbf{unione} di due sottospaz
 	\begin{equation*}
 		\left<T_1,\ T_2\right>=\proj{U}\subseteq \proj{W_1+W_2}
 	\end{equation*}
+\vspace{-6mm}
 \end{demonstration}
-\begin{proposition}\textsc{Formula di Grassmann proiettiva}\\
+\begin{proposition}\textsc{Formula di Grassmann proiettiva}.\index{formula!di Grassmann proiettiva}\\
 	Siano $T_1,\ T_2$ sottospazi proiettivi di $\proj{V}$. Si ha:
 	\begin{equation}
 				\dim\left<T_1,\ R_2\right>+\dim\left(T_1\cap T_2\right)=\dim T_1+\dim T_2
 	\end{equation}
+\vspace{-6mm}
 \end{proposition}
 \begin{demonstration}
 	Posti $T_i=\proj{W_i}$, con $W_i\subseteq V$ sottospazi vettoriali. Dalla \textit{formula di Grassmann vettoriale}:
@@ -316,15 +350,15 @@ Sottraendo $1$ a tutte le dimensioni, otteniamo le dimensioni dei corrispettivi 
 \begin{corollary}
 	Siano $T_1,\ T_2$ sottospazi proiettivi di $\proj{V}$ con $\dim\proj{P}=n$. Allora:
 	\begin{equation}
-		\dim \left(T_1\cap T_2\right)\leq \dim T_1+\dim T_2-n
+		\dim \left(T_1\cap T_2\right)\geq \dim T_1+\dim T_2-n
 	\end{equation}
 In particolare $T_1\cap T_2\neq \emptyset$ se $\dim T_1+\dim T_2\geq n$.
 \end{corollary}
 \begin{demonstration}
 	\begin{equation*}
-		\dim\left(T_1\cap T_2\right)=\dim T_1+\dim T_2-\dim\left<T_1,\ T_2\right>\leq \dim T_1+\dim T_2-n
+		\dim\left(T_1\cap T_2\right)=\dim T_1+\dim T_2-\dim\left<T_1,\ T_2\right>\geq \dim T_1+\dim T_2-n
 	\end{equation*}
-Chiaramente se $\dim T_1+\dim T_2\geq n$, allora $\dim \left(T_1\cap T_2\right)\geq 0$ e dunque $T_1\cap T_2\neq \emptyset$.
+Chiaramente, se $\dim T_1+\dim T_2\geq n$, allora $\dim \left(T_1\cap T_2\right)\geq 0$ e dunque $T_1\cap T_2\neq \emptyset$.
 \end{demonstration}
 \begin{example}
 	Nel piano proiettivo, due rette sono \textit{sempre incidenti}. Infatti, le rette hanno dimensione $1$, mentre $\dim\proj[2]{\kamp}=2$, dunque vale $1+1\leq 2$, pertanto due rette si incontrano sempre.
@@ -338,13 +372,14 @@ Chiaramente se $\dim T_1+\dim T_2\geq n$, allora $\dim \left(T_1\cap T_2\right)\
 	\begin{equation*}
 		S=\underbrace{\proj{\lin{v_1,\ \ldots,\ v_m}}}_{\dim \mathcal{L} \leq m}
 	\end{equation*}
+\vspace{-6mm}
 \end{observe}
 \section{Punti linearmente indipendenti e in posizione generale}
-\begin{define}
+\begin{define}\textsc{Punti linearmente indipendenti}.\\
 	Siano $P_1,\ \ldots, P_m\in\proj{V}$. Diciamo che i punti $P_1,\ \ldots,\ P_m$ sono \textbf{linearmente indipendenti}\index{linearmente indipendenti} se, scelti $v_1,\ \ldots,\ v_m\in V\setminus\left\{0\right\}$ tali che $P_i=\left[v_i\right]\ \forall i$, i vettori $v_1,\ \ldots,\ v_m$ sono \textit{linearmente indipendenti} in $V$.\\
 	Se così non è, diciamo che $P_1,\ \ldots, P_m$ sono linearmente dipendenti.
 \end{define}
-\begin{observe}~{}
+\begin{observes}~{}
 	\begin{itemize}
 		\item La definizione è \textit{ben posta}. Dati $\lambda_1,\ \ldots,\ \lambda_m\in\kamp\setminus\left\{0\right\}$, si ha che:
 		\begin{equation*}
@@ -353,7 +388,7 @@ Chiaramente se $\dim T_1+\dim T_2\geq n$, allora $\dim \left(T_1\cap T_2\right)\
 		\item Se $\dim \proj{V}=n$, $\proj{V}$ contiene al più $n+1$ punti indipendenti.
 		\item $P_1,\ \ldots,\ P_m$ sono indipendenti se e solo se $\dim\left<P_1,\ \ldots,\ P_m\right>=m-1$.
 	\end{itemize}
-\end{observe}
+\end{observes}
 \begin{examples}~{}
 	\begin{itemize}
 		\item \textit{Due} punti $P,\ Q$ sono indipendenti se e solo se $P\neq Q$. Infatti, se $P=\left[v\right]$ e $Q=\left[w\right]$, allora:
@@ -363,26 +398,29 @@ Chiaramente se $\dim T_1+\dim T_2\geq n$, allora $\dim \left(T_1\cap T_2\right)\
 		In tal caso $\left<P,\ Q\right>$ è l'unico \textit{retta} contenente $P$ e $Q$, che indicheremo anche con $\overline{PQ}$.
 		\item \textit{Tre} punti $P_1,\ P_2,\ P_3$ sono indipendenti se e solo se sono \textit{distinti} e \textit{non} sono \textit{allineati}, cioè appartenenti alla stessa retta. In tal caso $\left<P_1,\ P_2,\ P_3\right>$ è l'unico \textit{piano} contenente i tre punti.
 	\end{itemize}
+\vspace{-3mm}
 \end{examples}
-\begin{define}
+\begin{define}\textsc{Punti in posizione generale}.\\
 	Dati dei punti $P_1,\ \ldots,\ P_m\in\proj{V}$, diciamo che sono \textbf{in posizione generale}\index{in posizione generale}\index{posizione generale} se vale una delle due condizioni seguenti:
 	\begin{itemize}
 		\item $m\leq n+1$ e i punti sono \textit{linearmente indipendenti}.
 		\item $m>n+1$ e ogni scelta di $n+1$ punti tra loro sono linearmente indipendenti.
 	\end{itemize}
+\vspace{-3mm}
 \end{define}
 \begin{example}~{}
 		\begin{itemize}
 		\item Se $n=1$, cioè $\proj{V}$ è una \textit{retta proiettiva}, allora $P_1,\ \ldots,\ P_m$ sono in posizione generale se e solo se $P_1,\ \ldots,\ P_m$ sono \textit{tutti distinti}.
 		\item Se $n=2$, cioè $\proj{V}$ è una \textit{piano proiettivo}, allora $P_1,\ \ldots,\ P_m$ sono in posizione generale se e solo se $P_1,\ \ldots,\ P_m$ sono a $3$ a $3$ \textit{non} allineati.
 	\end{itemize}
+\vspace{-3mm}
 \end{example}
 \subsection{Impratichiamoci! Punti linearmente indipendenti}
 \begin{exercise}\textsc{F.F.P., 2.1.}\\
 	Si mostri che i punti del piano proiettivo reale:
-	\begin{equation}
+	\begin{equation*}
 		\left(\frac{1}{2}\colon 1 \colon 1\right)\quad \left(1\colon \frac{1}{3} \colon \frac{4}{3}\right)\quad \left(2\colon -1 \colon 2\right)
-	\end{equation}
+	\end{equation*}
 Sono allineati, e si determini un'equazione della retta che li contiene.
 \end{exercise}
 \begin{solution}
@@ -410,6 +448,7 @@ Verifichiamo che contenga anche il terzo:
 \begin{equation*}
 	6\cdot 2 + 2\cdot \left(-1\right) -5\cdot 2=0
 \end{equation*}
+\vspace{-6mm}
 \end{solution}
 \section{Rappresentazione parametrica di un sottospazio proiettivo}
 Sia $S\subseteq\proj{V}$ un sottospazio proiettivo di dimensione $m$. Allora esistono sempre $m+1$ punti $P_0,\ \ldots,\ P_m\in S$ linearmente indipendenti che generano $S$. Infatti, se $S=\proj{W}$ con $W\subseteq V$ sottospazio vettoriale di dimensione $m+1$, possiamo scegliere una base $\left\{w_0,\ \ldots,\ w_m\right\}$ di $W$ tale per cui:
@@ -448,6 +487,7 @@ Allora, la rappresentazione parametrica del sottospazio $S$ con $\left(\lambda\c
 		x_3=4\lambda-5\mu
 	\end{cases}
 \end{equation*}
+\vspace{-6mm}
 \end{example}
 \subsection{Coordinate proiettive e punti in posizione generale}
 \begin{observe}
@@ -460,6 +500,7 @@ Allora, la rappresentazione parametrica del sottospazio $S$ con $\left(\lambda\c
 		\end{equation*}
 	Sono indipendenti $\forall i=0,\ \ldots,\ n$.\footnote{Indichiamo con $\check{P}_{i}$ il punto che sostituiamo.}
 	\end{itemize}
+\vspace{-6mm}
 \end{observe}
 \begin{observe}
 	Sia $\basis=\left\{e_0,\ \ldots,\ e_n\right\}$ una base che induce un \textit{riferimento proiettivo} su $\proj{V}$.\\
@@ -530,7 +571,7 @@ In altre parole, $\exists \mu\in\kamp\setminus\left\{0\right\}$ tale che:
 $e_0,\ \ldots,\ e_n$ è una base: per l'unicità della scrittura deve essere $\mu=\mu_0=\ldots=\mu_n$, cioè $f_i=\mu e_i\ \forall i=0,\ \ldots,\ n$.
 \end{demonstration}
 \section{Trasformazioni proiettive}
-\begin{define}
+\begin{define}\textsc{Trasformazione proiettiva e proiettività}.\\
 	Un'applicazione $\funz{f}{\proj{V}}{\proj{V'}}$ tra spazi proiettivi si dice \textbf{trasformazione proiettiva}\index{trasformazione proiettiva} o \textbf{isomorfismo proiettivo}\seeonlyindex{isomorfismo!proiettivo}{trasformazione proiettiva} se $\exists \funz{\phi}{V}{V'}$ isomorfismo che induce un altro isomorfismo lineare:
 	\begin{equation}
 		\begin{tikzcd}
@@ -555,6 +596,7 @@ $e_0,\ \ldots,\ e_n$ è una base: per l'unicità della scrittura deve essere $\m
 	Poichè $\phi$ è iniettiva, segue che $w=\lambda v$ e dunque $\left[v\right]=\left[w\right]$.
 		\item $\widetilde{\phi}$ \textbf{è suriettiva}: infatti, se $\left[w\right]\in\proj{V'}$, essendo $\phi$ suriettiva esiste un vettore $v$ tale che $w=\phi\left(v\right)$. Segue che $\left[w\right]=\left[\phi\left(v\right)\right]=\phi\left(\left[v\right]\right)$.
 	\end{itemize}
+\vspace{-3mm}
 \end{demonstration}
 Dato che spazi \textit{vettoriali} della \textit{stessa dimensione} sono sempre \textit{isomorfi}, due spazi \textit{proiettivi} della \textit{stessa dimensione} sono sempre \textit{isomorfi} e $\proj{V}$ è sempre isomorfo a $\proj[n]{\kamp}$, con $\dim V=n+1$.
 \begin{lemming}
@@ -608,8 +650,9 @@ Allora, $h=\lambda Id_{V}$ e pertanto $\phi=\lambda \psi$.
 	\end{itemize}
 L'insieme delle proiettività risulta un \textbf{gruppo} rispetto alla \textit{composizione}.
 \end{observe}
-\begin{define}
-Il \textbf{gruppo lineare proiettivo}\index{gruppo!lineare proiettivo} $\projgl{V}$ è il gruppo delle proiettività dello spazio vettoriale $V$ con operazione la composizione di proiettività ed elemento neutro $Id_{\proj{V}}$. 
+\begin{define}\textsc{Gruppo lineare proiettivo}.\\
+Il \textbf{gruppo lineare proiettivo}\index{gruppo!lineare proiettivo} $\projgl{V}$ è il gruppo delle proiettività dello spazio vettoriale $V$ con operazione la composizione di proiettività ed elemento neutro $Id_{\proj{V}}$.
+\vspace{-3mm}
 \end{define}
 \subsubsection{Descrizione matriciale del gruppo lineare proiettivo}
 Consideriamo gli isomorfismi $\funz{\ }{\kamp^{n+1}}{\kamp^{n+1}}$: sappiamo che la matrice associata agli isomorfismi è una matrice invertibile, cioè si ha una \textit{isomorfismo di gruppi} fra l'insieme degli isomorfismi in $\kamp^{n+1}$ al \textit{gruppo generale lineare} $\gl\left(n+1,\ \kamp\right)$:
@@ -667,10 +710,10 @@ Si può anche considerare l'isomorfismo tra $\left\{\lambda I\mid\lambda\in\kamp
 	\begin{equation*}
 		\funztot{f}{\proj[1]{\realset}}{\proj[1]{\realset}}{\left[v\right]}{\left[Av\right]}
 	\end{equation*}
-	Notiamo che se la matrice associata a $\phi$ fosse $2A$, per \textit{proporzionalità} si avrebbe comunque la stessa proiettività $f$. In modo analogo, $\lambda\in\realset\setminus\left\{0\right\}$ induce la \textit{stessa proiettività} $f$ di $A$.
+	Notiamo che se la matrice associata a $\phi$ fosse $2A$, per \textit{proporzionalità} si avrebbe comunque la proiettività $f$. In modo analogo, $\lambda\in\realset\setminus\left\{0\right\}$ induce la \textit{stessa proiettività} $f$ di $A$.
+	\vspace{-3mm}
 \end{example}
-\subsection{Proprietà delle trasformazioni proiettive}
-% cercare un titolo più consono
+\subsection{Altri aspetti delle trasformazioni proiettive}
 \begin{observe}
 	Se $f$ è una proiettività di $\proj{V}$ e $S\subseteq \proj{V}$ un sottospazio proiettivo, allora $f\left(S\right)$ è ancora un sottospazio proiettivo della stessa dimensione di $S$. Se $S=\proj{W}$ e consideriamo per definizione $f=\widetilde{\phi}$ con $\funz{\phi}{V}{V}$, allora:
 	\begin{equation*}
@@ -681,7 +724,7 @@ Si può anche considerare l'isomorfismo tra $\left\{\lambda I\mid\lambda\in\kamp
 	\end{equation}
 \vspace{-6mm}
 \end{observe}
-\begin{define}
+\begin{define}\textsc{Proiettivamente equivalenti}.\\
 	Due sottoinsiemi $A,\ B$ di $\proj{V}$ si dicono \textbf{proiettivamente equivalenti}\index{proiettivamente equivalenti} se $\exists f$ proiettività di $\proj{V}$ tale che:
 	\begin{equation}
 		B=f\left(A\right)
@@ -691,16 +734,16 @@ Si può anche considerare l'isomorfismo tra $\left\{\lambda I\mid\lambda\in\kamp
 \begin{example}
 	Due sottospazi proiettivi di $\proj{V}$ della \textit{stessa} dimensione sono sempre \textit{proiettivamente equivalenti}.
 \end{example}
-\begin{theorema}
+\begin{theorema}\label{puntigeneralitrasformazioni}
 	Siano $\proj{V}$ e $\proj{V'}$ di dimensione $n$. Siano:
 	\begin{itemize}
-		\item $P_0,\ \ldots,\ P_{n+1}\in\proj{V}$ in posizione generale.
-		\item $Q_0,\ \ldots,\ Q_{n+1}\in\proj{V'}$ in posizione generale.
+		\item $P_0,\ \ldots,\ P_{n+1}\in\proj{V}$ $n+2$ punti in posizione generale.
+		\item $Q_0,\ \ldots,\ Q_{n+1}\in\proj{V'}$ $n+2$ punti in posizione generale.
 	\end{itemize}
 Allora $\exists!\funz{f}{\proj{V}}{\proj{V'}}$ trasformazione proiettiva tale che $f\left(P_i\right)=Q_i\ \forall i=0,\ \ldots,\ n+1$.\\
-In particolare: se una proiettività fissa $n+2$ punti in posizione generale, allora è l'identità.
+In particolare: se una proiettività fissa $n+2$ punti ($f\left(P_i\right)=P_i\ \forall i=0,\ \ldots,\ n+1$) in posizione generale, allora è l'identità.
 \end{theorema}
-\begin{demonstration}
+\begin{demonstration}~{}
 	\begin{itemize}
 		\item \textbf{Esistenza}: Siano, $\forall i$:
 		\begin{itemize}
@@ -749,6 +792,7 @@ Poiché $w_0,\ \ldots,\ w_n$ è base, la scrittura è unica. Segue che $a_0=a_1=
 	\end{array}
 \end{equation*}
 	\end{itemize}
+\vspace{-6mm}
 \end{demonstration}
 \begin{examples}
 	\begin{itemize}
@@ -756,6 +800,7 @@ Poiché $w_0,\ \ldots,\ w_n$ è base, la scrittura è unica. Segue che $a_0=a_1=
 		\item In un \textit{piano proiettivo} ($\dim 2$), una proiettività è determinata dalle \textit{immagini} di $4$ punti, a $3$ a $3$ \textit{non allineati}.
 		\item Se $A,\ B\subseteq \proj{V}$ sono insiemi finiti, ciascuno contenente $k$ punti in posizione generale, con $k\leq n+2$, allora $A$ e $B$ sono sempre proiettivamente equivalenti.
 	\end{itemize}
+\vspace{-3mm}
 \end{examples}
 \begin{example}
 	Approfondiamo l'ultimo esempio. In $\proj[2]{\kamp}$ ($\dim 2$), si prenda $A=\left\{P_1,\ P_2\right\},\ B=\left\{Q_1,\ Q_2\right\}$ con $P_1\neq P_2$, $Q_1\neq Q_2$. Ho due punti distinti sia in $A$ e $B$, dunque esiste sempre una proiettività $\funz{f}{\proj[2]{\ }}{\proj[2]{\ }}$ tale che $f\left(A\right)=B$.\\
@@ -783,7 +828,7 @@ Con $x$ in coordinate rispetto alla base $\basis$ e $x'$ in coordinate rispetto 
 Esiste $\rho\in\kamp\setminus\left\{0\right\}$ tale che $\rho x'=M x$.
 \end{observe}
 \subsection{Punti fissi di proiettività}
-\begin{define}
+\begin{define}\textsc{Punto fisso}.\\
 	Sia $\funz{f}{\proj{V}}{\proj{V}}$ una proiettività. Un \textbf{punto fisso}\index{punto!fisso} è un punto $P\in\proj{V}$ tale che:
 	\begin{equation}
 		f\left(P\right)=P
@@ -798,8 +843,8 @@ Sia $\funz{\phi}{V}{V}$ un \textit{automorfismo} tale che $f=\widetilde{\phi}$, 
 		\iff & v\text{ è un autovettore per }\phi
 	\end{array}
 \end{equation*}
-In particolare, $\phi$ è invertibile, dunque \textit{non} ha l'autovalore \textit{nullo}. Segue che i punti fissi di $f$ sono tutti e soli i punti $\left[v\right]$ con $v$ autovettore di $\phi$.
-\begin{observe}~{}
+In particolare, $\phi$ è invertibile, dunque \textit{non} ha l'autovettore \textit{nullo}. Segue che i punti fissi di $f$ sono tutti e soli i punti $\left[v\right]$ con $v$ autovettore di $\phi$.
+\begin{observes}~{}
 	\begin{enumerate}
 		\item Se $\kamp=\complexset$, allora ogni proiettività ha almeno un punto fisso, dato che $\phi$ ha sempre almeno un autovettore.
 		\item Se $\kamp=\realset$ e $\dim\proj{V}=n$, allora $\dim V=n+1$. Il \textit{polinomio caratteristico} $C_\phi\left(t\right)\in\realset\left[t\right]$ ha grado $n+1$. Se $n$ è \textit{pari}, $\phi$ ha almeno un autovalore, dato che il polinomio caratteristico ha grado $n+1$ \textit{dispari}: infatti, o è di grado \textit{uno} (e quindi ha banalmente soluzione) oppure, in quanto si può decomporre in fattori a coefficienti reali al più di grado \textit{due}, ammetterà \textit{sempre} almeno un fattore di grado \textit{uno}.
@@ -824,8 +869,8 @@ Segue che $A$ non ha autovettori reali e pertanto $f$ \textit{non} ha punti fiss
 \end{equation*}
 Questo è un insieme di sottospazi proiettivi a 2 a 2 disgiunti.
  	\end{enumerate}
-\end{observe}
-\begin{define}
+\end{observes}
+\begin{define}\textsc{Insieme fisso.}\\
 	Se $S\subseteq\proj{V}$ è un sottospazio, diciamo che $S$ è \textbf{fisso} per $f$ proiettività se:
 		\begin{equation}
 		f\left(S\right)=S
@@ -839,15 +884,12 @@ Questo è un insieme di sottospazi proiettivi a 2 a 2 disgiunti.
 		f\left(2\colon 1\right)=\left(1\colon1\right)\quad f\left(1\colon 2\right)=\left(0\colon1\right)\quad
 		f\left(1\colon -1\right)=\left(1\colon0\right)
 	\end{equation*}
+\vspace{-6mm}
 \end{exercise}
 \begin{solution}
 Notiamo che i punti:
 \begin{equation*}
-	\left(2\colon 1\right)\quad\left(1\colon 2\right)\quad\left(1\colon -1\right)
-\end{equation*}
-E:
-\begin{equation*}
-		\left(1\colon 1\right)\quad\left(0\colon 1\right)\quad\left(1\colon 0\right)
+	\left(2\colon 1\right)\quad\left(1\colon 2\right)\quad\left(1\colon -1\right)\text{ e }	\left(1\colon 1\right)\quad\left(0\colon 1\right)\quad\left(1\colon 0\right)
 \end{equation*}
 Sono distinti, dunque sono in posizione generale e la proiettività è garantita. Prendiamo la generica matrice $A=\left(\begin{array}{cc}
 	a & b\\
@@ -871,7 +913,7 @@ Facciamo lo stesso con i rimanenti punti $f\left(1\colon 2\right)=\left(0\colon1
 \begin{gather*}
 	\begin{cases}
 		0=a+2b\\
-		\mu=c+2d
+		\rho=c+2d
 	\end{cases}\implies a+2b=0\\
 	\begin{cases}
 		\alpha=a-b\\
@@ -905,10 +947,11 @@ A meno di multipli, $A=\left(\begin{array}{cc}
 \begin{equation*}
 	\funztot{f}{\proj[1]{\realset}}{\proj[1]{\realset}}{\left(x_0\colon x_1\right)}{\left(2x_0-x_1\colon x_0+x_1\right)}
 \end{equation*}
+\vspace{-3mm}
 \end{solution}
-\section{Geometria affine e geometria proiettiva}
+\section{Geometria affine e geometria proiettiva}\label{spaziaffini}
 Abbiamo già accennato all'esistenza di una relazione che intercorre fra \textit{geometria affine} e \textit{geometria proiettiva}. Diamo innanzitutto qualche richiamo dei concetti della geometria affine.
-\begin{define}
+\begin{define}\textsc{Spazio affine}.\\
 	Sia $V$ uno spazio vettoriale di dimensione finita su un campo $\kamp$. Uno \textbf{spazio affine}\index{spazio!affine} di dimensione $n$ su $V$ (con spazio vettoriale associato $V$ di dimensione $n$ ) è un insieme $\aff{V}$ non vuoto di \textit{punti} (elementi) tale che sia data un'applicazione:
 	\begin{equation*}
 		\funztot{\ }{\aff{V}\times\aff{V} }{V}{\left(P,\ Q\right)}{\overrightarrow{PQ}}
@@ -920,7 +963,7 @@ Abbiamo già accennato all'esistenza di una relazione che intercorre fra \textit
 		\item $\forall P,\ Q,\ R\in\aff{V}$ terna di punti di $\aff{V}$ si ha $\overrightarrow{PQ}+\overrightarrow{QR}=\overrightarrow{PR}$.
 	\end{enumerate}
 \end{define}
-\begin{define}
+\begin{define}\textsc{Riferimento affine e coordinate affini}.\\
 	Un \textbf{riferimento affine}\index{riferimento!affine} $\mathcal{R} = (O,\  e_1,\  e_2,\ \ldots,\  e_n)$ sullo spazio $\aff{V}$ è assegnato fissando un punto $O\in \aff{V}$ detta \textbf{origine}\index{origine!affine} ed una base $\basis = (e_1,\  e_2,\ \ldots,\  e_n)$ di $V$. Dunque, per ogni $P\in \aff{V}$ si ha la $n$-upla $(X_1,\  X_2,\ \ldots,\  X_n)$ dette \textit{coordinate affini}\index{coordinate!affini} del punto $P\in\aff{V}$ (uniche per riferimento affine fissato) tale per cui:
 	\begin{equation}
 		P=\overrightarrow{OV}=x_1e_1+\ldots+x_ne_n
@@ -928,21 +971,21 @@ Abbiamo già accennato all'esistenza di una relazione che intercorre fra \textit
 \vspace{-6mm}			 
 \end{define}
 Per i nostri scopi, parleremo spesso degli spazi affini di dimensione $n$ su $\kamp$.
-\begin{define}
+\begin{define}\textsc{Affinità}.\\
 	Un'\textbf{affinità}\index{affinità} o \textbf{trasformazione lineare affine}\seeonlyindex{trasformazione lineare affine}{affinità} di $\aff{\kamp^n}$ è un'applicazione:
 	\begin{equation}
 		\funz{\phi}{\aff{\kamp^n}}{\aff{\kamp^n}}
 	\end{equation}
 Della forma $\phi\left(x\right)=Ax+b$ con $A\in\gl\left(n,\ \kamp\right)$ un'applicazione lineare invertibile e $b$ una \textit{traslazione}.
 \end{define}
-\begin{define}
+\begin{define}\textsc{Sottospazio affine}.\\
 	Un \textbf{sottospazio affine}\index{sottospazio!affine} di $\aff{\kamp^n}$ è un \textit{traslato} di un sottospazio vettoriale $W\subseteq \kamp^n$:
 	\begin{equation}
 		S=W+x_0=\left\{w+x_0\mid w\in W,\ x_0\in\aff{W}\right\}
 	\end{equation}
 \vspace{-6mm}
 \end{define}
-\begin{observe}~{}
+\begin{observes}~{}
 	\begin{itemize}
 		\item $W$ è l'unico traslato di $S$ per l'origine ($x_0=O$) e si dice \textbf{sottospazio direttore}  di $S$\index{sottospazio!direttore}, cioè ne dà appunto la \textit{direzione}. Si definisce $\dim S\coloneqq\dim W$.
 		\item Un punto in $\aff{\kamp^n}$ è un sottospazio affine di dimensione $0$ ($W=\left\{0\right\}$; dopotutto non ha particolarmente senso parlare di direzione del punto).
@@ -951,7 +994,8 @@ Della forma $\phi\left(x\right)=Ax+b$ con $A\in\gl\left(n,\ \kamp\right)$ un'app
 		\item Un \textbf{iperpiano affine}\index{iperpiano!affine} è un sottospazio di dimensione $n+1$.
 		\item Due sottospazi affini della stessa dimensione si dicono \textbf{paralleli}\index{parallelo} se hanno lo \textit{stesso} sottospazio direttore.
 	\end{itemize}
-\end{observe}
+\vspace{-3mm}			 
+\end{observes}
 \begin{example}
 Consideriamo $r=W+x_0$ retta affine, che ha dunque $\dim r=\dim W=1$. $W$ è la retta vettoriale in $\kamp^n$, mentre un qualunque $v\in W\setminus\left\{0\right\}$ è la \textit{direzione} della retta.
 \end{example}
@@ -1079,24 +1123,29 @@ In particolare, si ha la corrispondenza biunivoca $U_0\stackrel{1\colon1}{\leftr
 \begin{equation*}
 	\left(x_0\colon x_1\right)=\left(1\colon \frac{x_1}{x_0}\right)\mapsto \frac{x_1}{x_0}\in\kamp
 \end{equation*}
+\begin{minipage}{0.56\textwidth}
 In altre parole, si può vedere la retta proiettiva come il campo $\kamp$ con l'aggiunto di un unico punto, l'\textit{infinito} $\infty$.
 \begin{equation}
-\proj[1]{\ }=\kamp\union\left(0\colon 1\right)=\kamp\union\left\{\infty\right\}
+	\proj[1]{\ }=\kamp\cup\left(0\colon 1\right)=\kamp\cup\left\{\infty\right\}
 \end{equation}
 Se $\kamp=\realset$, essendo $S^1\setminus\left\{1\text{ punto}\right\}\cong \realset$, si ha:
 \begin{equation}
-	\proj[1]{\realset}=\realset\union\left\{\infty\right\}\cong S^1
+	\proj[1]{\realset}=\realset\cup\left\{\infty\right\}\cong S^1
 \end{equation}
-	% inserire immagine pagine 7 console fino
+\end{minipage}
+\begin{minipage}{0.44\textwidth}
+	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.75]{images/projlinetocirc.pdf}
+\end{minipage}
+\vspace{-2mm}
 \end{example}
 \subsection{Chiusura proiettiva di un sottospazio affine}
-\begin{define}
+\begin{define}\textsc{Chiusura proiettiva.}\\
 	Sia $r\subseteq\aff{\kamp^n}$ una retta affine. La \textbf{chiusura proiettiva}\index{chiusura proiettiva}\index{chiusura!proiettiva} di $r$ è il sottospazio proiettivo $\overline{r}\subseteq\proj[n]{\ }$ generato da $r\subseteq U_0\subseteq\proj[n]{\ }$.
 \end{define}
 \begin{proposition}
 	$\overline{r}$ è una \textit{retta proiettiva} e si ha:
 	\begin{equation}
-		\overline{r}=r\union P_{\infty}
+		\overline{r}=r\cup P_{\infty}
 	\end{equation}
 Dove $P_{\infty}=\overline{r}\cap H_0$ è detto \textit{punto all'infinito} o \textit{punto improprio} della retta $r$.
 \end{proposition}
@@ -1140,13 +1189,13 @@ Ponendo $s=1$ otteniamo:
 Al variare di $t\in\kamp$, questi sono tutti e soli i punti di $j\left(r\right)\subseteq U_0\subseteq \proj[n]{\ }$. Si ha dunque che $R$ è una retta proiettiva contente $r$:
 \begin{equation*}
 	\begin{array}{ll}
-			R&=r\union P_{\infty}\\
+			R&=r\cup P_{\infty}\\
 			P_{\infty}&=R\cap H_0=\left\{\left(0\colon v_1\colon v_n\right)\right\}
 	\end{array}
 \end{equation*}
 $R$ è necessariamente il più piccolo sottospazio proiettivo contenente $r$, dato che è la retta più un solo punto. Pertanto, $R=\overline{r}$.
 \end{demonstration}
-\begin{observe}~{}
+\begin{observes}~{}
 	\begin{enumerate}
 		\item Il punto improprio di $r$ è:
 		\begin{equation*}
@@ -1201,10 +1250,10 @@ Infatti, per $z=1$ si ottiene l'equazione di $r$, mentre ponendo $z=0$ (cioè il
 \end{equation*}
 La direzione della retta $ax+by+c=0$ è data dal punto improprio $P_{\infty}$ e corrisponde al vettore $\left(-b, a\colon 0\right)$.
 	\end{enumerate}
-\end{observe}
+\end{observes}
 Generalizziamo ora il concetto di chiusura proiettiva a un generico sottospazio affine.
-\begin{define}
-	Dato $S\subseteq \aff{\kamp^n}$ un sottospazio affine con $S\neq \emptyset$, la chiusura proiettiva $\overline{S}\subseteq \proj[n]{\ }$ di $S$ è il sottospazio proiettivo generato da $S$. Esso ha dimensione $\dim \overline{S}=\dim S=m$.
+\begin{define}\textsc{Chiusura proiettiva di un sottospazio}.\\
+	Dato $S\subseteq \aff{\kamp^n}$ un sottospazio affine con $S\neq \emptyset$, la \textbf{chiusura proiettiva}\index{chiusura!proiettiva} $\overline{S}\subseteq \proj[n]{\ }$ di $S$ è il sottospazio proiettivo generato da $S$. Esso ha dimensione $\dim \overline{S}=\dim S=m$.
 \end{define}
 \textbf{Equazioni cartesiane}. Se $S$ come sottospazio affine è dato in forma cartesiana dal sistema lineare $h\times\left(n+1\right)$ seguente:
 \begin{gather*}
@@ -1292,77 +1341,118 @@ Pertanto, $\overline{S}$ ha descrizione parametrica:
 	\end{cases}
 \end{equation*}
 Con $\left(t_0\colon\ldots\colon t_m\right)\in\proj[m]{\ }$.
-\subsection{Impratichiamoci! Geometria affine e geometria proiettiva}
-\begin{exercise}
-	Sia $\kamp=\realset$. Allora, preso $\realset^n$ con la topologia euclidea e $\proj[n]{\realset}$ con la topologia quoziente, mostrare che $U_0$ è un aperto di $\proj[n]{\realset}$ e che $\funz{j}{\realset^n}{U_0}$
-\end{exercise}
-\begin{solution}
-	... % aggiungere soluzione
-\end{solution}
-
-
-%LEZ 31 
+\subsection{Un esempio di proiettività}
 Vediamo un esempio di proiettività di $\proj[1]{\ }$.
 \begin{example}
-	Si consideri $\proj[1]{\kamp} = \kamp \cup \{\infty\}$ con $\infty=(0\colon 1)$. Sia $\funz f {\proj[1]{\ }} {\proj[1]{\ }}$ una proiettività (dunque biunivoca) definita come $f(x_0\colon x_1)=(ax_0+bx_1\colon cx_0+dx_1)$. Si ha che: $f(0\colon 1)=(b\colon d)$, mentre la sua controimmagine è $f(-b\colon a)=(0\colon 1)$, infatti siccome le coordinate sono omogenee basta porre $ax_0+bx_1=0$.\newline
-	Sia $t=\frac{x_1}{x_0}$ la coordinata affine su $\kamp$, se $x_0\neq 0$ tutti i punti $(x_0\colon x_1)$ si possono scrivere come $(x_0\colon x_1)=\left( 1\colon \frac{x_1}{x_0} \right)=(1\colon t)$, il che corrisponde al punto $t\in\kamp$ . Vediamo ora come si comporta l'immagine grazie a queste osservazioni se $ax_0+bx_1\neq 0$:
+	Si consideri $\proj[1]{\kamp} = \aff{\kamp} \cup \{\infty\}$ con $\infty=(0\colon 1)$. Sia $\funz f {\proj[1]{\ }} {\proj[1]{\ }}$ una proiettività (dunque \textit{biunivoca}) definita come $f(x_0\colon x_1)=(ax_0+bx_1\colon cx_0+dx_1)$. Si ha che $f(0\colon 1)=(b\colon d)$, mentre la sua controimmagine è $f(-b\colon a)=(0\colon 1)$; infatti, siccome le coordinate sono omogenee, basta porre $ax_0+bx_1=0$.\newline
+	Sia $t=\frac{x_1}{x_0}$ la coordinata affine su $\aff{\kamp}$. Se $x_0\neq 0$, tutti i punti $(x_0\colon x_1)$ si possono scrivere come $(x_0\colon x_1)=\left( 1\colon \frac{x_1}{x_0} \right)=(1\colon t)$, che corrispondono al punto $t\in\kamp$. Vediamo ora come si comporta l'immagine grazie a queste osservazioni se $ax_0+bx_1\neq 0$:
 	\begin{gather*}
-		f(x_0\colon x_1)=(ax_0+bx_1\colon cx_0+dx_1)= \left( 1\colon \frac{cx_0+dx_1}{ax_0+bx_1} \right)  =  \left( 1 \colon  \frac{ x_0 \left( c+ d \frac{x_1}{x_0} \right) }{ x_0 \left( a+ b\frac{ x_1 }{ x_0 } \right)} \right)=\left( 1\colon \frac{dt+c}{bt+a}\right)
+		f(x_0\colon x_1)=(ax_0+bx_1\colon cx_0+dx_1)= \left(1\colon \frac{cx_0+dx_1}{ax_0+bx_1} \right)  =  \left( 1 \colon  \frac{ x_0 \left( c+ d \frac{x_1}{x_0} \right) }{ x_0 \left( a+ b\frac{ x_1 }{ x_0 } \right)} \right)=\left( 1\colon \frac{dt+c}{bt+a}\right)
 	\end{gather*}
 	Dunque la proiettività $f$ corrisponde alla trasformazione $\funz F {\kamp\cup \{\infty\}} {\kamp\cup \{\infty\}}$ con $F(t)=\begin{cases}
 		\frac{dt+c}{bt+a}, & t\in\kamp, \ t\neq -\frac{a}{b}\\
 		\infty, & t=-\frac{a}{b}\\
 		\frac{d}{b}, & t=\infty
 	\end{cases}$
-	dove per $t=-\frac{a}{b}$ si ottiene $f(-b\colon a)=(0\colon 1)=\infty$, mentre la prima equazione è detta \textit{trasformazione lineare fratta}, che è definita sulla retta affine tranne dove si annulla il denominatore. \newline
-	Notiamo che $F$ diventa un'affinità $\funztot F \kamp \kamp t {\alpha t+\beta}$ se e solo se il denominatore diventa una costante ponendo $b=0$, ovvero se è della forma $F(t)=\alpha$, il che significa che la proiettività fissa il punto all'infinito, ovvero $f(0\colon 1)=(0\colon 1)$, mentre la parte affine viene mandata in sè stessa.n\newline 
+	dove per $t=-\frac{a}{b}$ si ottiene $f(-b\colon a)=(0\colon 1)=\infty$. La prima equazione è detta \textit{trasformazione lineare fratta}, che è definita sulla retta affine tranne dove si annulla il denominatore. \newline
+	Notiamo che $F$ diventa un'affinità $\funztot{F}{\aff{\kamp}} {\aff{\kamp}}{t}{\alpha t+\beta}$ se e solo se il denominatore diventa una costante ponendo $b=0$, cioè se è della forma $F(t)=\alpha$.
+	Ciò significa che la proiettività fissa il punto all'infinito ($f(0\colon 1)=(0\colon 1)$), mentre la parte affine viene mandata in sè stessa.\newline
 	Questo ragionamento si può vedere anche in dimensione superiore.
 \end{example}
+\subsection{Impratichiamoci! Geometria affine e geometria proiettiva}
+\begin{exercise}
+	Sia $\kamp=\realset$. Allora, preso $\realset^n$ con la topologia euclidea e $\proj[n]{\realset}$ con la topologia quoziente, mostrare che $U_0$ è un aperto di $\proj[n]{\realset}$ e che $\funz{j}{\realset^n}{U_0}$ è un omeomorfismo.
+\end{exercise}
+\begin{solution}
+	... % aggiungere soluzione
+\end{solution}
 
-			\section{Spazi proiettivi complessi}
+%LEZ 31 
+\section{Spazi proiettivi complessi}
 %Digressione di topologia sugli spazi proiettivi complessi
-		\subsection{Varietà compatta}
 \begin{remember}
-	Nel caso di $\realset^n$ si è già visto che lo spazio proiettivo reale è un quoziente del tipo $\displaystyle \proj[n]{\realset}=\nicefrac{\realset^{n+1}\setminus\{0\}}{\sim}$ dunque è dotato in maniera naturale di una topologia.\newline
-	Si può anche vedere come quoziente della sfera $S^n$ dove si identificano i punti antipodali grazie alla suriezione $\surr \pi {S^n} {\proj[n]{\realset}}$, è anche una varietà topologica compatta di dimensione $n$. Inoltre $\proj[1]{\realset}\cong S^1$ e abbiamo analizzato il piano proiettivo reale $\proj[2]{\realset}$.
+	Nel caso di $\realset^n$ si è già visto che lo spazio proiettivo reale è un quoziente del tipo $\displaystyle \proj[n]{\realset}=\frac{\realset^{n+1}\setminus\{0\}}{\sim}$, dunque è dotato in maniera naturale di una topologia.\newline
+	Si può anche vedere come \textit{quoziente della sfera} $S^n$ dove si identificano i punti antipodali grazie alla \textit{suriezione} $\surr \pi {S^n} {\proj[n]{\realset}}$; è anche una \textit{varietà topologica compatta} di dimensione $n$. Inoltre $\proj[1]{\realset}\cong S^1$ e abbiamo analizzato il piano proiettivo reale $\proj[2]{\realset}$.
 \end{remember}
-
-
-Anche nel caso complesso per $\proj[n]{\complexset}=\nicefrac{\complexset^{n+1}\setminus\{0\}}{\sim}$ si ha in maniera naturale una topologia quoziente data dalla topologia euclidea su $\complexset^{n+1}\setminus\{0\} \cong \realset^{n+1}\setminus\{0\}$.\newline
-Vogliamo vedere che è una varietà topologica compatta di dimensione $\mathbf{2n}$. Questo perché mentre $\proj[n]{\realset}$ è localmente euclideo di dimensione n, si ha che $\proj[n]{\complexset}$ localmente è come $\complexset^n\cong\realset^{2n}$, dunque la dimensione topologica è $2n$.
+Anche nel caso complesso per $\proj[n]{\complexset}=\frac{\complexset^{n+1}\setminus\{0\}}{\sim}$ si ha in maniera naturale una topologia quoziente data dalla topologia euclidea su $\complexset^{n+1}\setminus\{0\} \cong \realset^{n+1}\setminus\{0\}$.\newline
+Vogliamo vedere che è una \textit{varietà topologica compatta} di dimensione $\mathbf{2n}$. Infatti, mentre $\proj[n]{\realset}$ è localmente euclideo di dimensione $n$, si ha che $\proj[n]{\complexset}$ localmente si comporta come $\complexset^n\cong\realset^{2n}$, dunque la dimensione topologica è $2n$.
 \begin{theorema}
 	$\proj[n]{\complexset}$ è una varietà topologica di dimensione $2n$.
 \end{theorema}
-\begin{demonstration} 
+\begin{demonstration}~{}
 	\begin{itemize}
-		\item $\proj[n]{\complexset}$ è \textit{connesso} perché è quoziente di $\complexset^{n+1}\setminus\{0\}$ che è connesso.
-		\item $\proj[n]{\complexset}$ è \textit{compatto}: per avere la tesi lo si vuole vedere come quoziente di un compatto o immagine tramite una funzione continua di un compatto. Per la relazione di equivalenza, due vettori $z\sim w\iff \exists\lambda\in\complexset\setminus\{0\}\colon w=\lambda z$. Vogliamo ora restringerci alla sfera (la cui dimensione è data da $\complexset^{n+1}=\realset^{2n+2}\supset S^{2n+1}$) e dimostrare che ogni punto del quoziente è equivalente ad un punto della sfera. Per fare ciò si sfrutta la corrispondenza fra numeri complessi e reali e la norma:
+		\item $\proj[n]{\complexset}$ è \textbf{connesso}: è quoziente di $\complexset^{n+1}\setminus\{0\}$, che è connesso.
+		\item $\proj[n]{\complexset}$ è \textbf{compatto}: per avere la tesi, si vuole vedere lo spazio come \textit{quoziente di un compatto} o \textit{immagine tramite una funzione continua di un compatto}. 
+		Ricordiamo la relazione di equivalenza:
+		\begin{equation*}
+			z\sim w\iff \exists\lambda\in\complexset\setminus\{0\}\colon w=\lambda z
+		\end{equation*}
+		Vogliamo ora \textit{restringerci alla sfera complessa} (la cui dimensione è data da $\complexset^{n+1}=\realset^{2n+2}\supset S^{2n+1}$) e dimostrare che ogni \textit{punto del quoziente} è equivalente ad un \textit{punto della sfera}. Per fare ciò si sfrutta la corrispondenza fra numeri complessi e reali e la norma:
 		\begin{gather*}
-			z_j=x_j+iy_j\implies  z=(z_1,\dots,z_{n+1})\in\complexset^{n+1}\longleftrightarrow (x_1,y_1,\dots,x_{n+1},y_{n+1})\in\realset^{2n+2}\\
+			z_j=x_j+iy_j\implies  z=(z_1,\ \ldots,\ z_{n+1})\in\complexset^{n+1}\longleftrightarrow (x_1,\ y_1,\ \ldots,\ x_{n+1},\ y_{n+1})\in\realset^{2n+2}\\
 			\begin{array}{ccc}
-				\displaystyle \|z\|^2=\sum_{j=1}^{n+1} \lvert z_j\rvert ^2=\sum_{j=1}^{n+1}(\lvert x_j \rvert ^2 +\lvert y_j \rvert ^2) & \wedge & \displaystyle \lambda\in\complexset,\  \ \|\lambda z \| =\sqrt{\sum_{j=1}^{n+1}\lvert \lambda z_j \rvert ^2}=\lvert\lambda\rvert \| z\|
-			\end{array} \\
-			z\in\complexset^{n+1}\setminus\{0\}\implies \|z\|\neq 0 \ \wedge \lambda=\frac{1}{\| z\|} \implies \underbrace{\frac{1}{\|z\|}z}_{\in S^{2n+1}}\sim z \implies \pi(S^{2n+1})=\proj[n]{\complexset}
+				\displaystyle \|z\|^2=\sum_{j=1}^{n+1} \lvert z_j\rvert ^2=\sum_{j=1}^{n+1}\left(\lvert x_j \rvert ^2 +\lvert y_j \rvert ^2\right) & \wedge & \displaystyle \ \|\lambda z \| =\sqrt{\sum_{j=1}^{n+1}\lvert \lambda z_j \rvert ^2}=\lvert\lambda\rvert \| z\|,\ \lambda\in\complexset
+			\end{array}
 		\end{gather*}
-		Nel caso reale i punti sulla sfera sono equivalenti solo se antipodali, nel caso complesso $S^{2n+1}$ invece $z,w\in S^{2n+1}$ si ha $z\sim w\iff \exists \lambda\in\complexset\setminus\{0\} \colon w=\lambda z$ siccome $w,z\in S^{2n+1}$ hanno norma unitaria, dunque $1=\| w\|=\|\lambda z\|= \ \lambda | \|z\|=|\lambda|$. Siccome ci sono infiniti numeri di norma $1$ in $\complexset$, allora ci sono infiniti numeri nella stessa classe, infatti i punti $\lambda z\in S^{2n+1}$ sono tutti equivalenti. 		
-		\item $\proj[n]{\complexset}$ è $T_2$, basta dimostrare che $\pi_0$ è un'identificazione chiusa. Sia $C\subset S^{2n+1}$ un chiuso, allora $\pi_0(C)\iff \pi_0^{-1}(\pi_0(C))$ è chiusa in $S^{2n+1}$. In effetti la relazione di equivalenza su $S^{2n+1}$ viene da un'azione del gruppo $S^1=\{\lambda\in\complexset \mid |\lambda |=1\}$ rispetto al prodotto con elemento neutro $1$ quale $\funztot F {S^1\times S^{2n+1}} {S^{2n+1}} {(\lambda, z)} {\lambda z}$. Si ha che $F$ è un'applicazione continua e siccome $S^1\times S^{2n+1}$ è compatto e $S^{2n+1}$ è $T_2$ allora $F$ è chiusa. Dato un chiuso $C\subseteq S^{2n+1}$, allora data la controimmagine dell'immagine agisco sui punti di $C$ con tutti gli elementi di $S^1$, ovvero prendo tutte le orbite che intersecano $C$, ottenendo quanto segue:	
-		$\pi_0^{-1}(\pi_0(C))=F(S^1\times C)\subseteq S^{2n+1} \implies \pi_0^{-1}(\pi_0(C))$ chiuso $\implies \pi_0(C)$ chiuso in $\proj[n]{\complexset} \implies \pi_0$ applicazione chiusa $\implies \pi_0$ identificazione. Pertanto $\proj[n]{\complexset}$ è anche quoziente di $S^{2n+1}$. Siccome $S^{2n+1}$ è un compatto in un $T_2$ per 
+	 Se $z\in\complexset^{n+1}\setminus\{0\}\implies \|z\|\neq 0$ e se $\lambda=\frac{1}{\| z\|}$ si ha $\underbrace{\frac{1}{\|z\|}\cdot z}_{\in S^{2n+1}}\sim z$. Notiamo allora che $\pi(S^{2n+1})=\proj[n]{\complexset}$, dunque $\proj[n]{\complexset}$ è compatto.
+	\item $\proj[n]{\complexset}$ è di \textbf{Hausdorff}: partiamo con una considerazione che segue dal punto precedente. Nel caso reale, i punti sulla sfera sono equivalenti solo se \textit{antipodali}, nel caso complesso $S^{2n+1}$ invece si ha, dati $z,w\in S^{2n+1}$:
+		\begin{equation*}
+			z\sim w\iff \exists \lambda\in\complexset\setminus\{0\} \colon w=\lambda z
+		\end{equation*}
+	Siccome $w,z\in S^{2n+1}$ hanno norma unitaria $1=\| w\|=\|\lambda z\|= \ \lambda | \|z\|=|\lambda|$. Essendoci \textit{infiniti} numeri di norma $1$ in $\complexset$, allora ci sono \textit{infiniti} numeri nella stessa classe, e quindi i punti $\lambda z\in S^{2n+1}$ sono tutti equivalenti.\\
+	Consideriamo ora $\funz{\pi_0=\pi_{\mid S^{2n+1}}}{S^{2n+1}}{\proj[n]{\complexset}}$. Per dimostrare che $\proj[n]{\complexset}$ è di Hausdorff, è sufficiente dimostrare che $\pi_0$ sia una identificazione chiusa: in questo modo, per il teorema % Y hausdorff iff f identificazione chiusa se X compatto + Hausdorff e f identificazione.
+	basta dimostrare che $\pi_0$ è un'identificazione \textit{chiusa}.\\
+	Sia $C\subset S^{2n+1}$ un chiuso. Allora $\pi_0(C)$ è chiuso in $\proj[n]{\complexset}\iff \pi_0^{-1}(\pi_0(C))$ è chiuso in $S^{2n+1}$.
+	Notiamo che:
+	\begin{equation*}
+		\pi_0\left(z\right)\sim \pi_0\left(w\right)\iff \exists\lambda\in\complexset\text{ con }\lvert\lambda\rvert=1\colon w=\lambda z
+	\end{equation*}
+	In effetti la relazione di equivalenza su $S^{2n+1}$ viene da un'azione del gruppo $S^1=\{\lambda\in\complexset \mid |\lambda |=1\}$ rispetto al prodotto con elemento neutro $1$:
+	\begin{equation*}
+		\funztot F {S^1\times S^{2n+1}} {S^{2n+1}} {(\lambda, z)} {\lambda z}
+	\end{equation*}
+	\begin{itemize}
+		\item $F$ è un'applicazione continua.
+		\item $S^1\times S^{2n+1}$ è compatto e \textbf{Hausdorff}.
+	\end{itemize}
+	$F$ è \textit{chiusa} in quanto funzione continua da un compatto in \textbf{Hausdorff}.\\
+	Dato un chiuso $C\subseteq S^{2n+1}$, prendendo la controimmagine dell'immagine agisco sui punti di $C$ con tutti gli elementi di $S^1$, cioè prendo tutte le orbite che intersecano $C$, ottenendo quanto segue:
+	\begin{equation*}
+		\pi_0^{-1}(\pi_0(C))=F(\underbrace{S^1\times C}_{\stackrel{\text{chiuso in}}{S^1\times S^{2n+1}}})\subseteq S^{2n+1}
+	\end{equation*}
+\vspace{-1mm}
+Segue che $\pi_0^{-1}(\pi_0(C))$ chiuso  e $\pi_0(C)$ chiuso in $\proj[n]{\complexset}$, cioè $\pi_0$ è applicazione chiusa e $\pi_0$ identificazione per il teorema % manetti 5.4
+.\\
+Pertanto $\proj[n]{\complexset}$ è anche quoziente di $S^{2n+1}$.
+Siccome $S^{2n+1}$ è un compatto in un \textbf{Hausdorff} per 
 %AAA ESERCIZIO TUTORATO QUOZIENTE CERCASI	
-		e siccome $\pi_0$ è un'identificazione allora $\proj[n]{\complexset}$ è $T_2$.
-		\item $\proj[n]{\complexset}$ è localmente euclideo di dimensione $2n$: per dimostrarlo sfruttiamo la costruzione
+		e siccome $\pi_0$ è un'identificazione \textit{chiusa} allora $\proj[n]{\complexset}$ è \textbf{Hausdorff} per il teorema già citato in precedenza.
+		\item $\proj[n]{\complexset}$ è \textbf{localmente euclideo di dimensione} $2n$: per dimostrarlo sfruttiamo la costruzione
 %AAA COSTRUZIONE CERCASI NELLA SCORSA LEZIONE
-		ovvero identificando degli aperti di $\proj[n]{\complexset}$ con $\kamp^n$, quale la famiglia $U_j\coloneqq\{z_j\neq 0\}=\proj[n]{\complexset}\setminus H_j$, con $H_j$ $j$-esimo iperpiano coordinato. Per semplicità lavoreremo con $j=0$.\newline 
-		Si considera la proiezione al quoziente $\funz \pi {\complexset^{n+1}\setminus\{0\}} {\proj[n]{\complexset}}$ e la controimmagine $\pi^{-1}(U_0)=\{z\in\complexset^{n+1}\setminus\{0\}\mid z_0\neq 0\}$ aperto in $\complexset^{n+1}\setminus\{0\}$ perché abbiamo tolto un iperpiano, pertanto $U_0$ è aperto in $\proj[n]{\complexset}$. Questo vale per tutti gli $U_j$. Ricordando la costruzione 
+		. Consideriamo la famiglia di insiemi:
+		\begin{equation*}
+			U_j\coloneqq\{z_j\neq 0\}=\proj[n]{\complexset}\setminus H_j\text{, con }H_j\ j\text{-esimo iperpiano coordinato.}
+		\end{equation*}
+		Per semplicità sia $j=0$.\newline 
+		Si consideri la proiezione al quoziente $\funz \pi {\complexset^{n+1}\setminus\{0\}} {\proj[n]{\complexset}}$ e la controimmagine $\pi^{-1}(U_0)=\{z\in\complexset^{n+1}\setminus\{0\}\mid z_0\neq 0\}$, aperto in $\complexset^{n+1}\setminus\{0\}$ in quanto abbiamo tolto un iperpiano. Segue che $U_0$ è aperto in $\proj[n]{\complexset}$ e lo stesso vale per tutti gli $U_j$. Ricordando la costruzione 
 	%AAA COSTRUZIONE DI J E \PHI CERCASI
-		si considerano le mappe biunivoche e una inversa dell'altra $\funztot j {\complexset^n} {U_0} {(z_1,\dots,z_n)} {(1\colon z_1\colon \dots\colon z_n)}$ e $\funztot \oldphi {U_0} {\complexset^n} {(z_0\colon\dots\colon z_n)} {\left( \frac{z_1}{z_0},\dots,\frac{z_n}{z_0} \right)}$. Mostriamo che $j$ e $\oldphi$ cono omeomorfismi, in questo caso siccome sono già biunivoche e una inversa dell'altra basta dimostrare che sono entrambe continue.
+		si considerano le seguenti mappe biunivoche, una inversa dell'altra: 
+		\begin{equation*}
+			\funztot j {\complexset^n} {U_0} {(z_1,\ \ldots,\ z_n)} {(1\colon z_1\colon \ldots\colon z_n)}\quad \funztot \oldphi {U_0} {\complexset^n} {(z_0\colon\ldots\colon z_n)} {\left( \frac{z_1}{z_0},\ \ldots,\ \frac{z_n}{z_0} \right)}
+		\end{equation*}
+		Mostriamo che $j$ e $\oldphi$ siano omeomorfismi; siccome sono già biunivoche e una inversa dell'altra basta dimostrare che sono entrambe \textit{continue}.\\
 			\begin{minipage}[t]{0.51\textwidth}\vspace{1pt}
 				Per mostrare che $j$ è continua sfruttiamo il diagramma a lato, ovvero la fattorizzazione di $j$ in $\complexset^{n+1}\setminus\{0\}$ tramite:
 					\begin{equation*}
-						\widetilde{j}((z_1,\dots,z_n))=(1,z_1\dots,z_n)
+						\widetilde{j}((z_1,\ \ldots,\ z_n))=(1,\ z_1\ldots,\ z_n)
 					\end{equation*}
-				e la proiezione $\pi$. Siccome $\widetilde{j}$ e $\pi$ sono continue allora anche $j$ che è la loro composizione lo è.
+				E la proiezione $\pi$, che in questo caso opera nel seguente modo:
+					\begin{equation*}
+					\pi((1,\ z_1\ \ldots,\ z_n))=(1\colon z_1\colon\ldots\colon z_n)
+				\end{equation*}
+				 Siccome $\widetilde{j}$ e $\pi$ sono continue, allora anche la loro composizione $j$ lo è.
 			\end{minipage}\hspace{-15pt}
-			\begin{minipage}[t]{0.49\textwidth}\vspace{5pt}
+			\begin{minipage}[t]{0.49\textwidth}\vspace{25pt}
 				% https://q.uiver.app/?q=WzAsNCxbMSwwLCJcXGNvbXBsZXhzZXRee24rMX1cXHNldG1pbnVzXFx7MFxcfSJdLFswLDIsIlxcY29tcGxleHNldF5uIl0sWzIsMiwiVV8wIl0sWzEsMl0sWzEsMCwiXFx3aWRldGlsZGV7an0iXSxbMSwyLCJqIiwyXSxbMCwyLCJcXHBpIl1d
 				\[\begin{tikzcd}
 					& {\complexset^{n+1}\setminus\{0\}} \\
@@ -1374,9 +1464,16 @@ Vogliamo vedere che è una varietà topologica compatta di dimensione $\mathbf{2
 				\end{tikzcd}\]
 			\end{minipage}\\
 			\begin{minipage}[t]{0.51\textwidth}\vspace{10pt}
-				Per la continuità dell'inversa $\oldphi$ invece si procede con la fattorizzazione nella controimmagine di $U_0$ tramite $\pi$ tramite una restrizione dell'inversa di $\pi$ e $\hat{\oldphi}$ che sostanzialmente ha le stesse coordinate di $\oldphi$. Definiamo dunque $\funz {p\coloneqq \pi_{|_{\pi^{-1}(U_0)}}} {\pi^{-1}(U_0)} {U_0}$ e 
+				Per la continuità dell'inversa $\oldphi$ si procede con la fattorizzazione della controimmagine $\pi^{-1}$ tramite una restrizione dell'inversa di $\pi$ a $\pi^{-1}U_0$:
+				\begin{equation*}
+					\funz {p\coloneqq \pi_{|_{\pi^{-1}(U_0)}}} {\pi^{-1}(U_0)} {U_0}
+				\end{equation*}
+				E tramite $\hat{\oldphi}$:
+				\begin{equation*}
+					\widehat{\oldphi}(z_0,\ \ldots,\  z_n)=\left( \frac{z_1}{z_0},\ \ldots,\ \frac{z_n}{z_0}\right)
+				\end{equation*}
 			\end{minipage}\hspace{-15pt}
-			\begin{minipage}[t]{0.49\textwidth}\hspace{-15pt}\vspace{5pt}
+			\begin{minipage}[t]{0.49\textwidth}\hspace{-15pt}\vspace{25pt}
 				% https://q.uiver.app/?q=WzAsNCxbMiwwLCJcXHBpXnstMX0oVV8wKSJdLFszLDAsIlxcc3Vic2V0IFxcY29tcGxleHNldF57fW4rMSJdLFswLDIsIlVfMCJdLFszLDIsIlxcY29tcGxleHNldF5uIl0sWzIsMywiXFxvbGRwaGkiLDJdLFswLDIsInAiLDJdLFswLDMsIlxcaGF0e1xcb2xkcGhpfSJdXQ==
 				\[\begin{tikzcd}
 					&[-35pt]& {\pi^{-1}(U_0)}\subset \complexset^{n+1} &[-15pt] {} \\
@@ -1386,38 +1483,57 @@ Vogliamo vedere che è una varietà topologica compatta di dimensione $\mathbf{2
 					\arrow["{p}"', from=1-3, to=3-1]
 					\arrow["{\widehat{\oldphi}}", from=1-3, to=3-4]
 				\end{tikzcd}\]
-			\end{minipage}
-		$\widehat{\oldphi}(z_0,\dots, z_n)=\left( \frac{z_1}{z_0},\dots,\frac{z_n}{z_0} \right)$. Entrambe sono continue, infatti la prima è la restrizione di una funzione continua e la seconda è ben definita ($U_0=\{z_0\neq 0\}$) e continua, inoltre lavora solo con vettori e non classi di equivalenza!\\
-		Per dimostrare che $\oldphi$ è continua sfruttiamo le proprietà della topologia quoziente (vedasi \ref{proprietà identificazione quoziente e mappa continua indotta}), pertanto vogliamo dimostrare che $p$ è un'identificazione: è già continua e suriettiva, basta solo che sia aperta o chiusa per il teorema \ref{condizione sufficiente identificazione}.\\
-		Osserviamo che $\funz \pi {\complexset^{n+1}\setminus\{0\}} {\proj[n]{\complexset}}$ è anch'essa un quoziente dato dall'azione del gruppo \footnote{questo vale in generale per gli spazi proiettivi vedasi 
+			\end{minipage}\\
+		 Entrambe sono \textit{continue}: la prima è la restrizione di una funzione continua e la seconda, essendo ben definita ($U_0=\{z_0\neq 0\}$), risulta banalmente continua: inoltre, quest'ultima lavora solo con vettori e non con classi di equivalenza!\\
+		Per dimostrare che $\oldphi$ è continua sfruttiamo le proprietà della topologia quoziente (vedasi \ref{proprietà identificazione quoziente e mappa continua indotta}), dimostrando che $p$ è un'\textit{identificazione}: è già \textit{continua} e \textit{suriettiva}, dunque basta solo che sia aperta o chiusa per il teorema \ref{condizione sufficiente identificazione}.\\
+		Osserviamo che $\funz \pi {\complexset^{n+1}\setminus\{0\}} {\proj[n]{\complexset}}$ è anch'essa un quoziente dato dall'azione del gruppo \footnote{Questo vale in generale per gli spazi proiettivi, si veda 
 %AAA ESERCIZIO GIà DATO CERCASI	
-		} $G=\complexset\setminus\{0\}$ rispetto al prodotto per la moltiplicazione su $\complexset^{n+1}\setminus\{0\}$. Essa inoltre è un'azione per omeomorfismi, infatti fissato $\lambda\in\complexset\setminus\{0\}$ si ha che $\funztot {\theta_\lambda} {\complexset^{n+1}\setminus\{0\}} {\complexset^{n+1}\setminus\{0\}} z {\lambda z}$ è continua, per la proposizione \ref{proiezione azione gruppo aperta} si ha che $\funz \pi {\complexset^{n+1}\setminus\{0\}} {\proj[n]{\complexset}}$ è un'applicazione aperta, pertanto anche $p$ che è una sua restrizione ad un aperto è aperta (verifica per esercizio), pertanto dalle considerazioni di cui sopra $p$ è un'identificazione. \\
-		Ne segue che $U_0$ è un aperto di $\proj[n]{\complexset}$ omeomorfo a $\complexset^n$ e quindi a $\realset^{2n}$. Allo stesso modo, $\forall j\in\{0,\dots,n\},\ U_j$ è un aperto di $\proj[n]{\complexset}$ omeomorfo a $\complexset^n$ tramite la mappa $\funztot {\oldphi_j} {U_j} {\complexset^n} {(z_0\colon\dots\colon z_n)} {\left( \frac{z_0}{z_j},\dots,\frac{z_{j-1}}{z_j}, \frac{z_{j+1}}{z_j},\dots, \frac{z_n}{z_j} \right)}$, e siccome in coordinate omogenee c'è sempre un elemento non nullo (si lavora su $\complexset^{n+1}\setminus\{0\}$) allora ogni punto sta in uno degli aperti $U_j$, pertanto $\proj[n]{\complexset}=U_0\cup\dots\cup U_n\implies \proj[n]{\complexset}$ è localmente euclideo di dimensione $2n$, dunque è una varietà topologica compatta.
+		.} $G=\complexset\setminus\{0\}$ rispetto al prodotto per la moltiplicazione su $\complexset^{n+1}\setminus\{0\}$. In particolare, è un'azione per omeomorfismi. Infatti, fissato  $\lambda\in\complexset\setminus\{0\}$:
+	\begin{equation*}
+		\funztot {\theta_\lambda} {\complexset^{n+1}\setminus\{0\}} {\complexset^{n+1}\setminus\{0\}} z {\lambda z}
+	\end{equation*}
+	È continua: per la proposizione \ref{proiezione azione gruppo aperta} si ha che $\funz \pi {\complexset^{n+1}\setminus\{0\}} {\proj[n]{\complexset}}$ è un'applicazione aperta, pertanto anche $p$ che è una sua restrizione ad un aperto è aperta %(verifica per esercizio)
+	. Dalle considerazioni di cui sopra $p$ è un'identificazione. Ne segue che $U_0$ è un aperto di $\proj[n]{\complexset}$ omeomorfo a $\complexset^n$ e quindi a $\realset^{2n}$.\\
+	Allo stesso modo, $\forall j\in\{0,\ \ldots,\ n\},\ U_j$ è un aperto di $\proj[n]{\complexset}$ omeomorfo a $\complexset^n$ tramite la mappa-.
+	\begin{equation*}
+		\funztot {\oldphi_j} {U_j} {\complexset^n} {(z_0\colon\ldots\colon z_n)} {\left( \frac{z_0}{z_j},\ldots,\frac{z_{j-1}}{z_j}, \frac{z_{j+1}}{z_j},\ldots, \frac{z_n}{z_j} \right)}
+	\end{equation*}
+	Siccome in \textit{coordinate omogenee} c'è sempre un elemento \textit{non} nullo (si lavora su $\complexset^{n+1}\setminus\{0\}$) allora ogni punto sta in uno degli aperti $U_j$, cioè:
+	\begin{equation*}
+		\proj[n]{\complexset}=U_0\cup\ldots\cup U_n\implies \proj[n]{\complexset}
+	\end{equation*}
+	 $\proj[n]{\complexset}$ è \textit{localmente euclideo} di dimensione $2n$, dunque è una \textit{varietà topologica compatta}.
 	\end{itemize}
+\vspace{-3mm}
 \end{demonstration}
-
-\begin{observe}
+\begin{observes}~{}
 	\begin{itemize}
-		\item Su un campo $\kamp$ qualsiasi si ha sempre la mappa $\oldphi_j$ che è un corrispondenza biunivoca fra i sottoinsiemi $U_j$ (complementari di un iperpiano coordinato) e $\kamp^n$ (senza aspetto topologico) e vale sempre che lo spazio proiettivo è unione di tali $U_j$.\\
-		In particolare nel caso reale, tali $U_j$ sono aperti ed il ragionamento è analogo a quello fatto poc'anzi nel caso complesso.
+		\item Su un campo $\kamp$ qualsiasi si ha sempre la mappa $\oldphi_j$, una corrispondenza biunivoca fra i sottoinsiemi $U_j$ (complementari di un iperpiano coordinato) e $\kamp^n$ (senza aspetto topologico): vale sempre che lo spazio proiettivo è unione di tali $U_j$.\\
+		In particolare, nel caso reale, tali $U_j$ sono \textit{aperti} ed il ragionamento è \textit{analogo} a quello fatto poc'anzi nel caso complesso.
 		\item Non abbiamo dimostrato che è a base numerabile perché essendo compatto segue dal teorema
 %AAA TEOREMA SUPERFICI COMPATTE CERCASI
 		, inoltre si potrebbe dimostrare facilmente "a mano" sfruttando che gli aperti $U_j$ sono a base numerabile, dunque anche la loro unione finita lo è.
 	\end{itemize}
-\end{observe}
+\vspace{-3mm}
+\end{observes}
 
-	\subsubsection{Retta proiettivo complessa}
-Cosa succede per la retta proiettiva complessa? Essa è una varietà topologica compatta di dimensione $2$ (dunque una superficie topologica compatta) che abbiamo già classificato! Scopriamo di che superficie si tratta.
+	\subsection{Retta proiettiva complessa}
+Cosa succede per la \textit{retta proiettiva complessa}? Essa è una varietà topologica compatta di dimensione $2$ (dunque una \textit{superficie topologica compatta}) che abbiamo già classificato! Scopriamo di che superficie si tratta.
 %AAA MOTIVAZIONE CERCASI
-Si ha che $\proj[n]{\complexset}=U_0\cup\{(0\colon 1)\}$ con $U_0\cong\complexset\cong\realset^2$, pertanto la retta proiettiva complessa è un piano unito ad un punto. Dimostriamo ora che è omeomorfa a $S^2$, detta anche \textit{sfera di Riemann} \index{sfera!Riemann} \index{Riemann!sfera}, e analizziamo poi la differenza con il piano proiettivo reale.
+Si ha:
+\begin{equation}
+	\proj[n]{\complexset}=U_0\cup\{(0\colon 1)\}\text{ con } U_0\cong\complexset\cong\realset^2
+\end{equation}
+In altre parole, la retta proiettiva complessa è un \textit{piano} unito ad un \textit{punto}. Dimostriamo ora che è omeomorfa a $S^2$, detta anche \textbf{sfera di Riemann} \index{sfera!di Riemann}, e analizziamo poi la differenza con il piano proiettivo reale.
 \begin{theorema}
 	$\proj[1]{\complexset}\cong S^2$
 \end{theorema}
 \begin{intuit}
-	Per ottenere la sfera si può pensare di richiudere il piano su se stesso con aggiunto il punto all'infinito $\{(0\colon 1)\}$.
+	Per ottenere la sfera si può pensare di \textit{richiudere} il piano $\realset^2$ su se stesso, aggiungendo il punto all'infinito $\{(0\colon 1)\}$.
 \end{intuit}
 \begin{demonstration}
-	Costruiamo l'omeomorfismo con $S^2\subset\realset^3$ sfruttando la \textit{proiezione stereografica}. Definiamo la funzione $\funz F {S^2} {\proj[1]{\complexset}}$ prima sulla restrizione della sfera senza il polo nord $N=(0,0,1)$ e poi la estendiamo anche in $N$
+	Costruiamo l'omeomorfismo con $S^2\subset\realset^3$ sfruttando la \textit{proiezione stereografica}. % \funz F {S^2} {\proj[1]{\complexset}}$ prima sulla restrizione della sfera senza il polo nord $N=(0,0,1)$ e poi la estendiamo anche in $N$.
+	Consideriamo:
 		% https://q.uiver.app/?q=WzAsNCxbMCwwLCJTXjJcXHNldG1pbnVzXFx7TlxcfSJdLFsyLDAsIlxccmVhbHNldF4yIl0sWzQsMCwiXFxjb21wbGV4c2V0Il0sWzYsMCwiVV8wIl0sWzAsMSwicF9OIl0sWzEsMiwiayJdLFsyLDMsImoiXSxbMCwzLCJGX3t8X3tTXjJcXHNldG1pbnVzXFx7TlxcfX19IiwyLHsiY3VydmUiOjV9XV0=
 		\[\begin{tikzcd}
 			{S^2\setminus\{N\}} && {\realset^2} && {\complexset} && {U_0}
@@ -1426,41 +1542,47 @@ Si ha che $\proj[n]{\complexset}=U_0\cup\{(0\colon 1)\}$ con $U_0\cong\complexse
 			\arrow["{j}", from=1-5, to=1-7]
 			\arrow["{F_{|_{S^2\setminus\{N\}}}}"', from=1-1, to=1-7, curve={height=30pt}]
 		\end{tikzcd}\]
-	con $\funz {p_N} {S^2\setminus\{N\}} {\realset^2}$ proiezione stereografica da $N$, con $\funztot k {\realset^2} \complexset {(x,y)} {x+iy}$ e con $\funztot j \complexset {U_0} w {(1\colon w)}$. Poniamo $F_{|_{S^2\setminus\{N\}}}\coloneqq j\circ k\circ p$ e $F(N)\coloneqq (0\colon 1)$ e ricordiamo che $\proj[1]{\complexset}=U_0\cup\{(0\colon 1)\}$. \\
-	Siccome $j,k,p$ sono omeomorfismi allora la loro composizione $F_{|_{S^2\setminus\{N\}}}$ è biunivoca e continua su $S^2\setminus\{N\}$. Perché $F$ sia continua in tutti i suoi punti basta che sia continua in un aperto contenente $N$. Per poter di nuovo sfruttare la proiezione stereografica però dal polo sud $S=(0,0,-1)$ scegliamo l'aperto $S^2\setminus\{S\}$. Dunque ora dobbiamo mostrare la continuità di $F_{|_{S^2\setminus\{S\}}}$. \\
-	Scriviamo le due proiezioni stereografiche: fissato un punto $P_0=(x_0,y_0,z_0)$ sulla sfera allora consideriamo le semirette uscenti da $N$ e da $S$ che passano per $P_0$ \footnote{le equazioni sono scritte in forma parametrica, pertanto abbiamo evidenziato il punto per cui passano e la direzione $P_0-N$ per esempio}
+	Con $\funz {p_N} {S^2\setminus\{N\}} {\realset^2}$ la \textit{proiezione stereografica} dal polo nord $N=(0,\ 0,\ 1)$, $\funztot k {\realset^2} \complexset {(x,y)} {x+iy}$ e $\funztot j \complexset {U_0} w {(1\colon w)}$. Allora definiamo una funzione $F$ su $S^2\setminus\{N\}$:
+	\begin{equation*}
+		F_{\mid_{S^2\setminus\{N\}}}\coloneqq j\circ k\circ p
+	\end{equation*}
+	Poniamo $F(N)\coloneqq (0\colon 1)$ in quanto sono gli unici punti rimasti da dover ‘‘mappare'', ricordando che $\proj[1]{\complexset}=U_0\cup\{(0\colon 1)\}$. \\
+	Siccome $j\ ,\ k,\ p$ sono \textit{tutti} omeomorfismi, allora la loro composizione $F_{\mid_{S^2\setminus\{N\}}}$ è biunivoca e continua su $S^2\setminus\{N\}$.\\
+	Perché $F$ sia continua in tutti i suoi punti basta verificarla che lo sia in un intorno (aperto) contenente $N$. % per il manetti, 3.27 ?
+	Sfruttiamo la proiezione stereografica dal polo sud $S=(0,\ 0,\ -1)$ scegliamo l'aperto $S^2\setminus\{S\}$, intorno di $N$. Dobbiamo mostrare la continuità di $F_{\mid_{S^2\setminus\{S\}}}$.\\
+	Scriviamo le due proiezioni stereografiche, sia da $N$, sia da $S$: fissato un punto $P_0=(x_0,\ y_0,\ z_0)$ sulla sfera, allora consideriamo le semirette uscenti da $N$ e da $S$ che passano per $P_0$ \footnote{Le equazioni sono scritte in \textit{forma parametrica}, pertanto abbiamo evidenziato il punto per cui passano e la direzione.}:
 		\begin{gather*}
 			\begin{array}{ccc}
 				NP_0\colon \begin{cases}
 					x=0+tx_0\\
 					y=0+ty_0\\
 					z=1+t(z_0-1)
-				\end{cases} & \wedge & SP_0\colon \begin{cases}
+				\end{cases}\quad P_0-N & \quad & SP_0\colon \begin{cases}
 					x=0+tx_0\\
 					y=0+ty_0\\
 					z=-1+t(z_0+1)
-				\end{cases}
+				\end{cases}\quad P_0-S
 			\end{array}
 		\end{gather*}
-	Per trovare le immagini delle proiezioni stereografiche intersechiamo le due semirette con il piano $xy$, ovvero poniamo $z=0$, ottenendo così
+	Per trovare le immagini delle proiezioni stereografiche intersechiamo le due semirette con il piano $xy$, cioè poniamo $z=0$:
 		\begin{gather*}
 			\begin{array}{ccc}
-				1+t(z_0-1)=0\implies t=\frac{1}{1-z_0} & \wedge & -1+t(z_0+1)=0\implies t=\frac{1}{1+z_0}
+				N\ \colon  1+t(z_0-1)=0\implies t=\frac{1}{1-z_0} & \quad & S\ \colon -1+t(z_0+1)=0\implies t=\frac{1}{1+z_0}
 			\end{array}
 		\end{gather*}
 	Notiamo che i denominatori non si annullano in entrambi i casi per la definizione delle proiezioni stereografiche sulla sfera meno $N$ ed $S$ rispettivamente.\\
-	Ne segue che l'immagine di $\realset^2$ tramite la mappa standard $k$ è
+	Ne segue che l'immagine di $\realset^2$ tramite la mappa standard $k$ è:
 		\begin{gather*}
 			\begin{array}{ccc}
-				\left( \frac{x_0}{1-z_0}, \frac{y_0}{1-z_0} \right) \mapsto w=\frac{x_0}{1-z_0} + i\frac{y_0}{1-z_0} \in\complexset & \wedge &  \left( \frac{x_0}{1+z_0}, \frac{y_0}{1+z_0} \right) \mapsto u=\frac{x_0}{1+z_0} + i\frac{y_0}{1+z_0} \in\complexset
+				N\ \colon  \left( \frac{x_0}{1-z_0}, \frac{y_0}{1-z_0} \right) \mapsto w=\frac{x_0}{1-z_0} + i\frac{y_0}{1-z_0} \in\complexset & \quad &  S\ \colon \left( \frac{x_0}{1+z_0}, \frac{y_0}{1+z_0} \right) \mapsto u=\frac{x_0}{1+z_0} + i\frac{y_0}{1+z_0} \in\complexset
 			\end{array}
 		\end{gather*}
-	Si ha che $w=\frac{1}{\overline{u}}$ e viceversa $u=\frac{1}{\overline{w}}$, poiché quando $P_0\in S^2\setminus\{N,S\}$ allora $w,u\in\complexset\setminus\{0\}$, verifichiamolo sfruttando le proprietà dei numeri complessi:
+	Si ha che $w=\frac{1}{\overline{u}}$ e, viceversa, $u=\frac{1}{\overline{w}}$; infatti, quando $P_0\in S^2\setminus\{N,S\}$ allora $w,\ u\in\complexset\setminus\{0\}$. Verifichiamolo usando le proprietà dei numeri complessi:
 		\begin{gather*}
 			\frac{1}{\overline{u}} = \frac{1}{ \frac{x_0}{1+z_0} -i\frac{y_0}{1+z_0} } = \frac{1+z_0}{x_0-iy_0} \stackrel{!}{=} \frac{(x_0+iy_0)(1+z_0)}{x_0^2+y_0^2} \stackrel{!!}{=} \frac{(x_0+iy_0)(1+z_0)}{1-z_0^2}=\frac{x_0+iy_0}{1-z_0}=w
 		\end{gather*}
-	dove (!) indica che il passaggio è dovuto al fatto che siccome $P_0\neq N,S$ allora $x_0+iy_0\neq 0$, mentre (!!) segue dal fatto che il punto sta sulla sfera, per cui $x_0^2+y_0^2+z_0^2=1\implies x_0^2+y_0^2=1-z_0^2$. \\
-	Abbiamo dunque ottenuto $F_{|_{S^2\setminus\{N,S\}}}$ come una composizione di mappe
+	dove l'uguaglianza (!) vale perché, in quanto $P_0\neq N,\ S$ allora $x_0+iy_0\neq 0$, mentre quella (!!) segue dal fatto che il punto sta sulla sfera, per cui $x_0^2+y_0^2+z_0^2=1\implies x_0^2+y_0^2=1-z_0^2$.\\
+	Abbiamo dunque ottenuto $F_{|_{S^2\setminus\{N,S\}}}$ come una composizione di mappe:
 		% https://q.uiver.app/?q=WzAsNCxbMCwwLCJTXjJcXHNldG1pbnVzXFx7TixTXFx9Il0sWzIsMCwiXFxyZWFsc2V0XjIiXSxbNCwwLCJcXGNvbXBsZXhzZXQiXSxbNiwwLCJVXzAiXSxbMCwxLCJwX04iXSxbMSwyLCJrIl0sWzIsMywiaiJdLFswLDMsIkZfe3xfe1NeMlxcc2V0bWludXNcXHtOLFNcXH19fSIsMix7ImN1cnZlIjo1fV1d
 		\[\begin{tikzcd}
 			{S^2\setminus\{N,S\}} && {\realset^2} && {\complexset} && {U_0}
@@ -1469,10 +1591,10 @@ Si ha che $\proj[n]{\complexset}=U_0\cup\{(0\colon 1)\}$ con $U_0\cong\complexse
 			\arrow["{j}", from=1-5, to=1-7]
 			\arrow["{F_{|_{S^2\setminus\{N,S\}}}}"', from=1-1, to=1-7, curve={height=30pt}]
 		\end{tikzcd}\]
-	dove $j(w)=(1\colon w)=\left( 1\colon \frac{1}{\overline{u}} \right)=(\overline{u}\colon 1)$ in quanto si lavora con coordinate omogenee. Inoltre c'è un'estensione continua su $S^2\setminus\{S\}$ 
+	Dove $j(w)=(1\colon w)=\left( 1\colon \frac{1}{\overline{u}} \right)=(\overline{u}\colon 1)$, lavorando in coordinate omogenee. Inoltre, $F$ si estende in modo continuo su $S^2\setminus\{S\}$:
 		% https://q.uiver.app/?q=WzAsOSxbMCwwLCJTXjJcXHNldG1pbnVzXFx7TixTXFx9Il0sWzIsMCwiXFxyZWFsc2V0XjIiXSxbNCwwLCJcXGNvbXBsZXhzZXQiXSxbOCwwLCJVXzAiXSxbMCwxLCJQIl0sWzQsMSwidSJdLFs2LDAsIlxcY29tcGxleHNldCJdLFs2LDEsIlxcb3ZlcmxpbmV7dX0iXSxbOCwxLCIoXFxvdmVybGluZXt1fVxcY29sb24gMSkiXSxbMCwxLCJwX04iXSxbMSwyLCJrIl0sWzIsNiwiYyJdLFs2LDMsImoiXSxbNCw1LCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtYXBzIHRvIn19fV0sWzUsNywiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFs3LDgsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XV0=
 		\[\begin{tikzcd}
-			{S^2\setminus\{S\}} && {\realset^2} && {\complexset} && {\complexset} && {U_0} \\
+			{S^2\setminus\{S\}} && {\realset^2} && {\complexset} && {\complexset} && {U_0} \\[-25pt]
 			{P} &&&& {u} && {\overline{u}} && {(\overline{u}\colon 1)}
 			\arrow["{p_S}", from=1-1, to=1-3]
 			\arrow["{k}", from=1-3, to=1-5]
@@ -1482,57 +1604,59 @@ Si ha che $\proj[n]{\complexset}=U_0\cup\{(0\colon 1)\}$ con $U_0\cong\complexse
 			\arrow[from=2-5, to=2-7, maps to]
 			\arrow[from=2-7, to=2-9, maps to]
 		\end{tikzcd}\]
-	con $c$ coniugio.\\
-	Dunque $F$ è continua, chiusa (compatto in $T_2$) e biunivoca, pertanto $F$ è un omeomorfismo.
-%	
+	Con $c$ coniugio dei complessi (che è un omeomorfismo). In questo modo $F_{\mid_{S^2\setminus\{S\}}}$ è composizione di omeomorfismi e quindi continua.\\
+	Dunque $F$ è continua, chiusa (in quanto funzione da $S^2$ compatto in $\proj[1]{\complexset}$ \textbf{Hausdorff}) e biunivoca, pertanto $F$ è un \textit{omeomorfismo}.
 %questo ci dice che f ristretto a s^2-s,n è data da una composizione di mappe: proiezione stereografica da N, identificazione standard con C, mappa j in U_0. Ora al posto di w posso scrivere 1/\overline{u}, che per il quoziente è pari a  grazie alle coordinate omogenee: funziona come un'eliminzione dell'indeterminazione: anche se u=0 non è un problema perché ottengo 0:1. Nella proz ster da S il punto che va nello 0 è il polo nord, e questo ci dice che F si estende in maniera continua su S^n-s mandando P nella proiez ster da S , poi ho la mappa j_1, con tutti omeomorfisi. Dunque F è continua perché composizione di omeomorfismi.
-
 \end{demonstration}
-
-\begin{observe}\textsc{$\proj[1]{\complexset}\neq \proj[2]{\realset}$}\\
-	Notiamo che $\proj[1]{\complexset}$ e $\proj[2]{\realset}$ sono entrambe compattificazioni del piano, ma in modo profondamente diverso!\\
-	$\proj[1]{\complexset}=\complexset\cup\{\infty\}\cong S^2$, ovvero è l'unione di un piano con un punto all'infinito.\\
-	$\proj[2]{\realset}=\realset^2\cup\proj[1]{\realset}\cong\realset^2\cup S^1$, ovvero il piano unito alla retta impropria $\proj[1]{\realset}$, topologicamente è l'interno del disco omeomorfo a $\realset^2$ unito al bordo che è $S^1$ con la relazione di equivalenza per i punti antipodali.
+\begin{observe}\textsc{$\proj[1]{\complexset}\neq \proj[2]{\realset}$}.\\
+Notiamo che $\proj[1]{\complexset}$ e $\proj[2]{\realset}$ sono entrambe compattificazioni del piano, ma in modo \textit{profondamente diverso}!
+\begin{itemize}
+	\item $\proj[1]{\complexset}=\complexset\cup\{\infty\}\cong S^2$, è l'unione di un \textbf{piano} con un \textbf{punto all'infinito} ed abbiamo appena dimostrato essere omeomorfo alla \textit{sfera di Riemann} $S^2$.
+	\item $\proj[2]{\realset}=\realset^2\cup\proj[1]{\realset}\cong\realset^2\cup S^1$, è il piano unito alla retta impropria $\proj[1]{\realset}$; topologicamente, esso è l'\textbf{interno del disco} omeomorfo a $\realset^2$ unito al bordo $S^1$ con la relazione di equivalenza per i punti antipodali. Per il teorema di classificazione delle superfici compatte (
+	%inserire riferimento
+	), sappiamo che $S^2\ncong \proj[2]{\realset}$.
+\end{itemize}
+\vspace{-3mm}
 %AAA IMMAGINI SFERA E PIANO PROIETTIVO REALE CON I DISCI CERCASI
 \end{observe}
 
-		\section{Birapporto}
-Torniamo ad analizzare il caso di spazi proiettivi su un campo $\kamp$ qualsiasi. Andremo a definire \\
-%AAA INTRO CARINA PER IL BIRAPPORTO CERCASI
-Sia $\proj[1]{V}$ una retta proiettiva, ovvero $\dim V=2$.
-\begin{define}
-	Siano $P_1,P_2,P_3,P_4\in\proj[1]{V}$ dei punti con $P_1,P_2,P_3$ distinti. Il \textbf{birapporto} dei punti $P_1,P_2,P_3,P_4$ (ordinati) è 
+\section{Birapporto}
+Nei nostri precedenti studi di Topologia abbiamo messo in primo piano lo studio delle \textit{proprietà topologiche}, quegli aspetti di uno spazio topologico che si preservano sotto \textit{omeomorfismi}. Anche nella Geometria Proiettiva risulta di fondamentale importanza la ricerca di \textbf{invarianti} rispetto alle proiettività.\\
+Nella geometria Euclidea del piano diverse trasformazioni mantengono relazioni metriche come distanze, angoli e rapporti di distanze, ma passando alla \textit{retta proiettiva} la maggior parte di queste vengono \textit{distorte}. Tuttavia, già nella matematica del tardo periodo greco si trovò che un \textit{rapporto di rapporto di distanze} sul piano si preservava tramite certe trasformazioni.\\
+Questo concetto, approfondito e generalizzato (separandolo completamente dalla \textit{distanza Euclidea}) nell'ottica della Geometria proiettiva nel \textit{secolo XIX}, diventò il \textbf{birapporto}, risultando uno degli invarianti proiettivi più usati.
+\begin{define}\textsc{Birapporto}.\\
+	Sia $\proj[1]{V}$ una retta proiettiva, ovvero $\dim V=2$.\\
+	Siano $P_1,\ P_2,\ P_3,\ P_4\in\proj[1]{V}$ dei punti con $P_1,\ P_2,\ P_3$ distinti. Il \textbf{birapporto}\index{birapporto} dei punti $P_1,\ P_2,\ P_3,\ P_4$ (ordinati) è:
 		\begin{equation} 
-			\beta(P_1,P_2,P_3,P_4)=\frac{y_1}{y_0}\in\kamp\cup\{\infty\}
+			\beta(P_1,\ P_2, \P_3, \P_4)=\frac{y_1}{y_0}\in\kamp\cup\{\infty\}\text{ con }\beta=\infty\text{ se }y_0=0
 		\end{equation}
-	con $\beta=\infty$ se $y_0=0$ e dove $(y_0\colon y_1)$ sono le coordinate di $P_4$ nel riferimento proiettivo in cui $P_1$ è il primo punto fondamentale, $P_2$ il secondo e $P_3$ il punto unità, ovvero se $P_1=(1\colon 0), P_2=(0\colon 1), P_3=(1\colon 1)$
+	Dove $(y_0\colon y_1)$ sono le coordinate di $P_4$ nel riferimento proiettivo in cui $P_1$ e $P_2$ sono i punti fondamentali e $P_3$ il punto unità, cioè $P_1=(1\colon 0), P_2=(0\colon 1), P_3=(1\colon 1)$.
 \end{define}
-
-\begin{observe}
+\begin{observes}~{}
 	\begin{enumerate}
 		\item $y_0,y_1\in\kamp\implies\beta\in\kamp\cup\{\infty\}$
-		\item $\beta$ è ben definito perché $P_1,P_2,P_3$ sono distinti $\implies$ sono in posizione generale \footnote{In una retta proiettiva essere distinti equivale ad essere in posizione generale} $\implies$ determinano in maniera univoca il riferimento proiettivo per il teorema
-%AAA TEOREMA CERCASI
-		sul riferimento proiettivo e punti in posizione generale
-		\item per ipotesi i primi tre punti sono distinti, mentre non si fanno ipotesi sul quarto punto, vediamo cosa succede in casi speciali
-			\begin{gather*}
-				P_4=P_1 \iff (y_0\colon y_1)=(1\colon 0)\iff \beta=0\\
-				P_4=P_2\iff (y_0\colon y_1)=(0\colon 1) \iff\beta=\infty\\
-				P_4=P_3\iff (y_0\colon y_1)=(1\colon 1)\iff y_0=y_1\iff\beta=1
-			\end{gather*}
-		dunque $\beta\in\{0,1,\infty\}$ esattamente quando $P_4$ coincide con uno dei primi 3 punti. Quindi se $P_1,P_2,P_3,P_4$ sono distinti allora $\beta\in\kamp\setminus\{0,1\}$. \\
+		\item $\beta$ è ben definito perché $P_1,\ P_2,\ P_3$ sono distinti e quindi sono in posizione generale \footnote{In una retta proiettiva essere distinti equivale ad essere in posizione generale.}, ovvero determinano in maniera univoca il riferimento proiettivo per il teorema
+%AAA TEOREMA CERCASI sul riferimento proiettivo e punti in posizione generale
+		.
+		\item Per ipotesi i primi tre punti sono distinti, mentre non si fanno ipotesi sul quarto punto; vediamo cosa succede in alcuni casi speciali:\label{birapporto2punti}
+			\begin{equation*}
+				\begin{array}{lllllll}
+					P_4=P_1 &\iff& (y_0\colon y_1)=(1\colon 0)&&&\iff& \beta=0\\
+					P_4=P_2 &\iff& (y_0\colon y_1)=(0\colon 1)&&& \iff&\beta=\infty\\
+					P_4=P_3 &\iff& (y_0\colon y_1)=(1\colon 1)&\iff& y_0=y_1 &\iff&\beta=1
+				\end{array}
+			\end{equation*}
+		Dunque $\beta\in\{0,1,\infty\}$ esattamente quando $P_4$ coincide con uno dei primi 3 punti. Quindi, se $P_1,\ P_2,\ P_3,\ P_4$ sono distinti. allora $\beta\in\kamp\setminus\{0,1\}$. \\
 		Viceversa se $a\in\kamp\setminus\{0,1\}$ e $P_4=(1\colon a)$ allora $\beta=a$, dunque $\beta$ assume tutti i valori possibili in $\kamp$.
-	\end{enumerate}	
-\end{observe}
-
+	\end{enumerate}
+\vspace{-3mm}	
+\end{observes}
 Vogliamo ora scoprire come si calcola il birapporto in un sistema di riferimento qualsiasi e non solo quello dato nella definizione.
-
 %2)come mai il birapporto  interessante? quale proprietà lo caratteerizza?
-
 \begin{theorema}
-	Siano $P_1,P_2,P_3,P_4\in\proj[1]{V}$ dei punti nella retta proiettiva con $P_1,P_2,P_3$ distinti. Supponiamo che $P_i=(\lambda_1\colon \mu_i), i=1,\dots,4$. Allora
+	Siano $P_1,\ P_2,\ P_3,\ P_4\in\proj[1]{V}$ dei punti nella retta proiettiva con $P_1,\ P_2,\ P_3$ distinti. Supponiamo che $P_i=(\lambda_1\colon \mu_i), i=1,\ \ldots,\ 4$. Allora:
 		\begin{equation}
-			\beta(P_1,P_2,P_3,P_4)=\frac{ \left| \begin{array}{cc}
+			\beta(P_1,\ P_2,\ P_3,\ P_4)=\frac{ \left| \begin{array}{cc}
 					\lambda_1 & \lambda_4 \\
 					\mu_1 & \mu_4
 				\end{array} \right| \cdot \left| \begin{array}{cc}
@@ -1546,45 +1670,70 @@ Vogliamo ora scoprire come si calcola il birapporto in un sistema di riferimento
 		\mu_2 & \mu_4
 	\end{array} \right| }
 		\end{equation}
+	\vspace{-3mm}
 \end{theorema}
-
-
-
-
 \begin{demonstration}
-	$P_1\neq P_2\implies (\lambda_1,\mu_1),(\lambda_2,\mu_2)$ sono una base di $\kamp^2$. Siano ora $a,b\in\kamp \colon (\lambda_3,\mu_3)=a(\lambda_1,\mu_1)+b(\lambda_2,\mu_2)=(a\lambda_1,a\mu_1)+(b\lambda_2,b\mu_2)$, ovvero faccio una combinazione lineare e porto dentro gli scalari. Per costruzione è la base che dà il riferimento proiettivo con $P_1, P_2$ punti fondamentali e $P_3$ punto unità, basta riscalare in modo tale che sia la somma degli altri due vettori. Per ottenere $P_4$, lo scrivo come combinazione lineare di tali 2 vettori: $\exists c,d\in\kamp \colon (\lambda_4,\mu_4)=c(a\lambda_1,a\mu_1)+d(b\lambda_2,b\mu_2)\implies P_4$ ha coordinate $(c\colon d)$ nel nuovo riferimento proiettivo $\implies \beta=\frac{d}{c}.$\\
-	Per non appesantire la scrittura useremo come la seguente notazione per i determinanti: $\delta_{ij}=\left| \begin{array}{cc}
-		\lambda_i & \lambda_j \\
-		\mu_i & \mu_j
-	\end{array} \right|$.\\
-	Notiamo che la prima combinazione lineare dà il seguente sistema lineare di 2 equazioni in 2 incognite $a,b : \begin{cases}
-		\lambda_1 a+\lambda_2 b=\lambda_3\\
-		\mu_1 a+\mu_2 b=\mu_3
-	\end{cases}$\\
-	Risolvendo il sistema con il metodo di Cramer si ottiene:
-%possibile nota sul metodo di Cramer?
-	$ \displaystyle a=\frac{\left| \begin{array}{cc}
-			\lambda_3 & \lambda_2 \\
-			\mu_3 & \mu_2
-		\end{array} \right| }{ \left| \begin{array}{cc}
-		\lambda_1 & \lambda_2 \\
-		\mu_1 & \mu_2
-	\end{array} \right| } = \frac{\delta_{32}}{\delta_{12}}$ e $\displaystyle b=\frac{\delta_{13}}{\delta_{12}}$\\
-	La seconda combinazione lineare invece dà un sistema lineare in $c,d$, dove sostituisco i valori di $a,b$ trovati : 
-	\begin{gather*}
+	Poichè $P_1\neq P_2$, si ha che $(\lambda_1,\mu_1),(\lambda_2,\mu_2)$ sono una base di $\kamp^2$. Siano ora:
+	\begin{equation*}
+	\textcolor{blueill}{\circled{\ast}}\quad	a,\ b\in\kamp \colon (\lambda_3,\mu_3)=a(\lambda_1,\mu_1)+b(\lambda_2,\mu_2)=(a\lambda_1,a\mu_1)+(b\lambda_2,b\mu_2)
+	\end{equation*} 
+	In sostanza, facciamo una \textit{combinazione lineare} e portiamo dentro gli scalari. Per costruzione con questi vettori ottengo la base che dà il riferimento proiettivo con $P_1,\ P_2$ punti fondamentali e $P_3$ punto unità (riscalando in modo tale che sia la somma degli altri due vettori). Per ottenere $P_4$, scrivo il corrispettivo vettore come una combinazione lineare dei vettori della base:
+	\begin{equation*}
+		\textcolor{redill}{\circled{\ast}}\quad	\exists c,d\in\kamp \colon (\lambda_4,\mu_4)=c(a\lambda_1,a\mu_1)+d(b\lambda_2,b\mu_2)
+	\end{equation*} 
+	Segue che $P_4$ ha coordinate $(c\colon d)$ nel nuovo riferimento proiettivo e quindi $\beta=\frac{d}{c}$.\\
+	Per non appesantire la scrittura useremo come la seguente notazione per i determinanti: 
+	\begin{equation*}
+		\delta_{ij}=\left| \begin{array}{cc}
+			\lambda_i & \lambda_j \\
+			\mu_i & \mu_j
+		\end{array} \right|
+	\end{equation*}
+	Notiamo che la prima combinazione lineare $\textcolor{blueill}{\circled{\ast}}$ dà il seguente sistema lineare di 2 equazioni in 2 incognite $a,\ b$:
+	\begin{equation*}
+		\begin{cases}
+			\lambda_1 a+\lambda_2 b=\lambda_3\\
+			\mu_1 a+\mu_2 b=\mu_3
+		\end{cases}
+	\end{equation*}
+	Risolvendo il sistema con il metodo di Cramer\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{Cramerrimembriancor}, si possono trovare alcuni brevi cenni al metodo di Cramer.} si ottiene:
+	\begin{equation*}
+		a=\frac{\left| \begin{array}{cc}
+				\lambda_3 & \lambda_2 \\
+				\mu_3 & \mu_2
+			\end{array} \right| }{ \left| \begin{array}{cc}
+				\lambda_1 & \lambda_2 \\
+				\mu_1 & \mu_2
+			\end{array} \right| } = \frac{\delta_{32}}{\delta_{12}}
+		\qquad
+		b=\frac{\left| \begin{array}{cc}
+				\lambda_1 & \lambda_3 \\
+				\mu_1 & \mu_3
+			\end{array} \right| }{ \left| \begin{array}{cc}
+				\lambda_1 & \lambda_2 \\
+				\mu_1 & \mu_2
+			\end{array} \right| } = \frac{\delta_{13}}{\delta_{12}}
+	\end{equation*}
+	La seconda combinazione lineare $\textcolor{redill}{\circled{\ast}}$ invece dà un sistema lineare in $c,\ d$, dove sostituisco i valori di $a,\ b$ trovati : 
+	\begin{equation*}
+	\begin{array}{l}
 	\begin{cases}
 		(a\lambda_1)c + (b\lambda_2)d=\lambda_4\\
 		(a\mu_1)c + (b\mu_2)d=\mu_4
-	\end{cases} \implies \begin{cases}
+	\end{cases}\\
+	\implies \begin{cases}
 		\frac{\delta_{32}}{\delta_{12}}\lambda_1 c + \frac{\delta_{13}}{\delta_{12}}\lambda_2 d = \lambda_4\\
 		\frac{\delta_{32}}{\delta_{12}}\mu_1 c + \frac{\delta_{13}}{\delta_{12}}\mu_2 d = \mu_4
-	\end{cases} \implies \begin{cases}
+	\end{cases}
+	\implies \begin{cases}
 		(\delta_{32}\lambda_2)c + (\delta_{13}\lambda_2)d=\delta_{12}\lambda_4\\
 		(\delta_{32}\mu_2)c + (\delta_{13}\mu_2)d=\delta_{12}\mu_4	
 	\end{cases}
-	\end{gather*}
-	Si applica ancora Cramer e si sfrutta che il determinante è lineare in ogni colonna, dunque possiamo fare uscire i $\delta_{ij}$ e riscriverli riordinando gli indici: scambiamo l'ordine delle colonne a patto di cambiare segno, tuttavia essendo una frazione e facendolo per entrambi il segno non cambia, idem per $d$:
-		\begin{gather*}
+	\end{array}
+	\end{equation*}
+	Applicando ancora Cramer, poiché il determinante è lineare in ogni colonna, possiamo estrarre i $\delta_{ij}$ dalle colonne e riscriverli \textit{riordinando gli indici}: scambiamo l'ordine delle colonne cambiamo il segno, ma facendolo sia al numeratore, sia al denominatore, i segni si semplificano e lo stesso vale per $d$:
+		\begin{equation*}
+			\begin{array}{l}
 			c=\frac{ \left| \begin{array}{cc}
 					\delta_{12}\lambda_4 & \delta_{13}\lambda_2 \\
 					\delta_{12}\mu_4 & \delta_{13}\mu_2
@@ -1592,20 +1741,26 @@ Vogliamo ora scoprire come si calcola il birapporto in un sistema di riferimento
 				\delta_{32}\lambda_1 & \delta_{13}\lambda_2 \\
 				\delta_{32}\mu_1 & \delta_{13}\mu_2
 			\end{array} \right|  } = \frac{ \cancel{ \delta_{12} } \cancel{\delta_{13}} \delta_{42} }{ \delta_{32} \cancel{\delta_{13}}\cancel{\delta_{12}} } = \frac{-\delta_{24} }{\delta_{23} }=\frac{\delta_{24}}{\delta_{23}} \\
+			\\
 			d=\frac{ \left| \begin{array}{cc}
 				\delta_{32}\lambda_1 & \delta_{12}\lambda_4 \\
 				\delta_{32}\mu_1 & \delta_{12}\mu_4
 			\end{array} \right| }{ \delta_{32} \delta_{13} \delta_{12} } = \frac{ \cancel{\delta_{32}} \cancel{\delta_{12}} \delta_{14} }{\cancel{\delta_{32}} \delta_{13} \cancel{\delta_{12}} } = \frac{\delta_{14}}{\delta_{13}}\\
 			\implies \beta=\frac{d}{c}=\frac{\delta_{14}}{\delta_{13}}\cdot \frac{\delta_{23}}{\delta_{24}}
-		\end{gather*}
+		\end{array}
+		\end{equation*}
 %						
 \end{demonstration}
 \begin{observe}
-	Il birapporto può anche essere definito tramite questa formula, che è ben definita: supponiamo di moltiplicare i punti per uno scalare: succede sia al numeratore sia al denominatore, dunque si semplifica, pertanto il birapporto così definito non dipende dalla scelta delle coordinate omogenee. Inoltre al denominatore il primo determinante è sempre diverso da $0$ perché i punti sono distinti. Il secondo determinante al denominatore è nullo quando $P_2=P_4$, il che torna con quanto definito prima.	
+	Il birapporto può anche essere definito tramite questa formula, che è \textit{ben definita}: supponendo di moltiplicare i punti per uno scalare, la stessa costante appare al numeratore e al denominatore, dunque si semplifica, pertanto il birapporto così definito \textit{non dipende} dalla scelta delle coordinate omogenee. Inoltre, al denominatore il primo determinante è sempre diverso da $0$ perché \textit{i punti sono distinti}, mentre il secondo determinante al denominatore è \textit{nullo} se e solo $P_2=P_4$, ottenendo la definizione originale.	
 \end{observe}
 
 \begin{tips}
-Se tutti e 4 i punti sono diversi da $(0\colon 1)$, ovvero se $\forall i,\ \lambda_i\neq 0 \\ P_i=(1\colon z_i), i=1,\dots,4$ allora $\displaystyle \beta(P_1,P_2,P_3,P_4)=\frac{ (z_4-z_1)(z_3-z_2) }{ (z_4-z_2)(z_3-z_1) }$.\\ Infatti $P_i=(\lambda_i\colon\mu_i)=(1\colon z_i)$, cioé  $z_i=\frac{\mu_i}{\lambda_i}$, per la linearità delle colonne si ottiene
+Se tutti e 4 i punti sono diversi da $(0\colon 1)$, ovvero se $\forall i,\ \lambda_i\neq 0\ P_i=(1\colon z_i),\ i=1,\ \ldots,\ 4$ allora:
+\begin{equation}
+	\beta(P_1,\ P_2,\ P_3,\ P_4)=\frac{ (z_4-z_1)(z_3-z_2) }{ (z_4-z_2)(z_3-z_1) }
+\end{equation}
+Infatti, $P_i=(\lambda_i\colon\mu_i)=(1\colon z_i)$, cioè  $z_i=\frac{\mu_i}{\lambda_i}$; per la linearità delle colonne si ottiene:
 	\begin{gather*}
 		\left| \begin{array}{cc}
 			\lambda_1 & \lambda_4 \\
@@ -1618,258 +1773,348 @@ Se tutti e 4 i punti sono diversi da $(0\colon 1)$, ovvero se $\forall i,\ \lamb
 			z_1 & z_4
 		\end{array} \right| = \lambda_1\lambda_2(z_4-z_1)
 	\end{gather*}
-Si procede allo stesso modo per gli altri determinanti e le $\lambda$ si semplificano.
+Procedendo allo stesso modo con gli altri determinanti e applicando la definizione equivalente di \textit{birapporto}, si ottiene il risultato di sopra in quando i $\lambda$ si semplificano.
 \end{tips}
-%ESERCIZIO
-%Verificare che se $P_1,P_2,P_3,P_4$ sono tutti diversi da $(1\colon 0)\implies P_i=(w_i\colon 1), \forall i=1,\dots,4$, allora $\beta=\frac{ (w_2-w_1)(w_3-w_2) }{ (w_4-w_2)(w_3-w_1) }$
-
 %LEZ 32
+\subsection{Birapporto e trasformazioni proiettive}
 \begin{remember} 
-	Date due rette proiettive $\proj[1]{V}$ e $\proj[1]{V'}$, e $P_1,P_2,P_3 \in \proj[1](V)$ distinti e $Q_1,Q_2,Q_3 \in \proj[1]{V'}$ distinti, esiste sempre ed è unica una trasformazione proiettiva $\funz d {\proj[1](V)} {\proj[1]{V'}}$ tale che $f(P_i)=Q_i, \ i=1,2,3$
+	Date due rette proiettive $\proj[1]{V}$ e $\proj[1]{V'}$ ($\dim \proj[1]{V}=1=\dim \proj[1]{V'}$), e $P_1,\ P_2,\ P_3 \in \proj[1]{V}$ distinti e $Q_1,\ Q_2,\ Q_3 \in \proj[1]{V'}$ distinti, esiste sempre ed è unica una trasformazione proiettiva $\funz d {\proj[1]{V}} {\proj[1]{V'}}$ tale che $f(P_i)=Q_i, \ i=1,2,3$ grazie al il teorema \ref{puntigeneralitrasformazioni}, pag. \pageref{puntigeneralitrasformazioni}.
 \end{remember}
-Ci domandiamo ora se è possibile farlo anche con quattro punti, per riuscirci sfruttiamo il birapporto.
+Ci interessa ora provare un risultato più generale: l'esistenza di una proiettività con $4$ punti \textit{non tutti in posizione generale}.
 \begin{theorema}
-	Siano $\proj[1]{V}$ e $\proj[1]{V'}$ due rette proiettive e siano i punti $P_1,P_2,P_3,P_4\in\proj[1]{V}$ di cui i primi 3 distinti, e $Q_1,Q_2,Q_3,Q_4\in\proj[1]{V'}$ di cui i primi 3 distinti. Allora $\exists$ trasformazione proiettiva $\funz f {\proj[1]{V}} {\proj[1]{V'}}$ tale che $f(P_i)=Q_i, \forall i=1,\dots,4  \iff \beta(P_1,P_2,P_3,P_4)=\beta(Q_1,Q_2,Q_3,Q_4)$, ovvero se il birapporto delle quaterne è lo stesso.
+	Siano $\proj[1]{V}$ e $\proj[1]{V'}$ due rette proiettive, con:
+	\begin{itemize}
+		\item $P_1,\ P_2,\ P_3,\ P_4\in\proj[1]{V}$ (di cui i primi 3 distinti).
+		\item $Q_1,\ Q_2,\ Q_3,\ Q_4\in\proj[1]{V'}$ (di cui i primi 3 distinti).
+	\end{itemize}
+	Allora $\exists$ trasformazione proiettiva $\funz f {\proj[1]{V}} {\proj[1]{V'}}$ tale che:
+	\begin{equation}
+		f(P_i)=Q_i,\ \forall i=1,\ \ldots,\ 4  \iff \beta(P_1,\ P_2,\ P_3,\ P_4)=\beta(Q_1,\ Q_2,\ Q_3,\ Q_4)
+	\end{equation}
+Cioè se il birapporto delle quaterne è \textbf{invariante per proiettività}.
 \end{theorema}
 \begin{observe}
-	Consideriamo solo i primi 3 punti e scegliamone dei rappresentanti: $v_1,v_2,v_3\in V \colon P_i=[v_i],\ i=1,2,3$ e $v_3=v_1+v_2$. Dunque $\{v_1,v_2\}$ è base di $V$ che dà il riferimento proiettivo di $\proj[1]{V}$ in cui $P_1=(1\colon 0), P_2=(0\colon 1), P_3=(1\colon 1)$. Sia $P_4=[v_4]$ con $v_4=av_1+bv_2$. Allora $P_4=(a\colon b)$ e $\beta(P_i)=\frac{b}{a}$.\\
-	Allo stesso modo per l'altra quaterna, siano $v'_1,v'_2,v'_3\in V' \colon Q_i=[v'_i],\ i=1,2,3$ e\\ $v'_3=v'_1+v'_2$.\\
-	Siccome $P_1,P_2,P_3$ e $Q_1,Q_2,Q_3$ sono in posizione generale allora esiste ed è unica una trasformazione proiettiva $\funz f {\proj[1]{V}} {\proj[1]{V'}}$ tale che $f(P_i)=Q_i$. Inoltre $f=\widetilde{\phi}$ con $\funz \phi V {V'}$ applicazione lineare tale che $\phi(v_1)=v'_1,\ \phi(v_2)=v'_2$, ovvero porta una base di $V$ in una base di $V' \implies \phi(v_4)=\phi(av_1+bv_2)=av'_1+bv'_2 \implies f(P_4)=[\phi(v_4)]=(a\colon b)$ nel riferimento in $\proj[1]{V'}$.
+	Consideriamo i primi 3 punti e scegliamone dei rappresentanti per cui:
+	\begin{equation}
+		v_1,\ v_2,\ v_3\in V \colon P_i=[v_i],\ i=1,\ 2,\ 3\text{ e }v_3=v_1+v_2
+	\end{equation}
+	In altri termini, $\{v_1,v_2\}$ è base di $V$ che dà il riferimento proiettivo di $\proj[1]{V}$ in cui $P_1=(1\colon 0),\ P_2=(0\colon 1),\ P_3=(1\colon 1)$. Sia $P_4=[v_4]$ con $v_4=av_1+bv_2$. Allora $P_4=(a\colon b)$ e $\beta(P_i)=\frac{b}{a}$.\\
+	Allo stesso modo per l'altra quaterna, siano:
+	\begin{equation*}
+		v'_1,\ v'_2,\ v'_3\in V' \colon Q_i=[v'_i],\ i=1,\ 2,\ 3\text{ con }v'_3=v'_1+v'_2
+	\end{equation*}
+	Siccome $P_1,\ P_2,\ P_3$ e $Q_1,\ Q_2,\ Q_3$ sono in posizione generale, allora \textit{esiste ed è unica} una trasformazione proiettiva $\funz f {\proj[1]{V}} {\proj[1]{V'}}$ tale che $f(P_i)=Q_i$.\\
+	Inoltre, $f=\widetilde{\phi}$ con $\funz \phi V {V'}$ applicazione lineare tale che $\phi(v_1)=v'_1,\ \phi(v_2)=v'_2$, cioè porta una base di $V$ in una base di $V'$; segue che $\phi(v_4)=\phi(av_1+bv_2)=av'_1+bv'_2$ e pertanto
+	$ f(P_4)=[\phi(v_4)]=(a\colon b)$ nel riferimento in $\proj[1]{V'}$.
 \end{observe}
 \begin{demonstration}~{}\\
-	$\impliesdx$ Siccome la $f$ è unica e $f(P_4)=Q_4 \implies Q_4=(a\colon b)$ nel riferimento in cui $Q_1=(1\colon 0), Q_2=(0\colon 1), Q_3=(1\colon 1) \implies \beta(Q_i)=\frac{b}{a}=\beta(P_i)$.\\
-	$\impliessx$ Se $\beta(Q_i)=\frac{b}{a}$ allora distinguiamo i casi in cui il birapporto è nel campo o infinito
-		\begin{gather*}
-			\frac{b}{a}\in\kamp \implies Q_4=\left(1\colon \frac{b}{a} \right)=(a\colon b)=f(P_4)\\
-			\frac{b}{a}=\infty  \implies a=0\implies Q_4=(0\colon 1)=f(P_4)
-		\end{gather*}
+	$\impliesdx$ Siccome $f$ è unica e $f(P_4)=Q_4 \implies Q_4=(a\colon b)$ nel riferimento in cui $Q_1=(1\colon 0),\ Q_2=(0\colon 1),\ Q_3=(1\colon 1) \implies \beta(Q_1,\ Q_2,\ Q_3,\ Q_4)=\frac{b}{a}=\beta(P_1,\ P_2,\ P_3,\ P_4)$.\\
+	$\impliessx$ Se $\beta(Q_1,\ Q_2,\ Q_3,\ Q_4)=\frac{b}{a}$, allora distinguiamo i casi in cui il birapporto è in $\kamp$ o \textit{infinito}:
+	\begin{itemize}
+		\item $\begin{array}{lllll}
+			\frac{b}{a}\in\kamp & \implies & Q_4=\left(1\colon \frac{b}{a} \right)=(a\colon b)=f(P_4) &  & 
+		\end{array}$
+		\item $\begin{array}{lllll}
+			\frac{b}{a}=\infty & \implies & a=0 & \implies & Q_4=(0\colon 1)=f(P_4)\end{array}$
+	\end{itemize}
+\vspace{-3mm}
 \end{demonstration}
 \begin{corollary}
-	Siano $\proj[1]{\kamp}$ e siano i punti $P_1,P_2,P_3,P_4\in\proj[1]{\kamp}$ di cui i primi 3 distinti, e $Q_1,Q_2,Q_3,Q_4\in\proj[1]{\kamp}$ di cui i primi 3 distinti. Allora $\exists$ proiettività $\funz f {\proj[1]{\kamp}} {\proj[1]{\kamp}}$ t.c. $f(P_i)=Q_i, \forall i=1,\dots,4  \iff \beta(P_i)=\beta(Q_i)$, ovvero se il birapporto delle quaterne è lo stesso.
+	Siano $\proj[1]{\kamp}$ e siano i punti $P_1,\ P_2,\ P_3,\ P_4\in\proj[1]{\kamp}$ di cui i primi 3 distinti, e $Q_1,\ Q_2,\ Q_3,\ Q_4\in\proj[1]{\kamp}$ di cui i primi 3 distinti. Allora $\exists$ proiettività $\funz f {\proj[1]{\kamp}} {\proj[1]{\kamp}}$ tale che:
+	\begin{equation}
+		f(P_i)=Q_i,\ \forall i=1,\ \ldots,\ 4  \iff \beta(P_i)=\beta(Q_i)
+	\end{equation}
+Cioè se il birapporto delle quaterne è \textbf{invariante per proiettività}.
 \end{corollary}
 
 \begin{observe}
-	Sia $\mathcal{S}=\{$quaterne ordinate di punti distinti in $\proj[1]{\kamp}\}$. Siano due quaterne $\{P_1,P_2,P_3,P_4\}, \{Q_1,Q_2,Q_3,Q_4\} \in\mathcal{S}$, esse sono \textit{proiettivamente equivalenti} \index{equivalenza!proiettiva} se $\exists f$ proiettività t.c. $f(P_i)=Q_i
-, \forall i=1,2,3,4$, ovvero per il teorema precedente se le due quaterne hanno lo stesso birapporto.\\
-	Notiamo	che quella appena data è una relazione di equivalenza (verifica per esercizio), per cui le classi di equivalenza proiettiva di 4 punti distinti e ordinati in $\proj[1]{\kamp}$ sono in corrispondenza biunivoca con il campo meno lo $0$ e l'$1$ visto che sono 4 punti distinti, val a dire
+	Sia $\mathcal{S}=\{\text{quaterne ordinate di punti distinti in } \proj[1]{\kamp}\}$. Prese due quaterne $\{P_1,\ P_2,\ P_3,\ P_4\}, \{Q_1,\ Q_2,\ Q_3,\ Q_4\} \in\mathcal{S}$, esse sono \textit{proiettivamente equivalenti} se $\exists f$ proiettività tale che $f(P_i)=Q_i
+	,\ \forall i=1,\ 2,\ 3,\ 4$ e quindi, in base al teorema precedente, è vero se le due quaterne hanno lo stesso birapporto.\\
+	Notiamo	che quella appena data è una \textbf{relazione di equivalenza} %(verifica per esercizio)
+	, tale per cui le classi di equivalenza \textit{proiettiva} di $4$ punti \textit{distinti e ordinati} in $\proj[1]{\kamp}$ sono in corrispondenza biunivoca con il campo $\kamp$ escluso $0$ e $1$ visto che sono 4 punti distinti\footnote{Si veda l'analisi dei casi del birapporto con 2 punti uguali a pag. \pageref{birapporto2punti}}, val a dire:
 		\begin{equation*}
-			\displaystyle \nicefrac{\mathcal{S}}{\sim} \leftrightarrow \kamp\setminus\{0,1\}
+			\frac{\mathcal{S}}{\sim} \substack{\longleftrightarrow}{\beta} \kamp\setminus\{0,1\}
 		\end{equation*}
-	Si ha dunque che ad ogni quaterna di punti distinti associamo il suo birapporto (applicazione suriettiva) e per ogni elemento nel campo troviamo una quaterna di punti distinti con tale birapporto (quozientando l'applicazione è iniettiva)
+	Si ha dunque che ad ogni quaterna di punti distinti associamo il suo \textit{birapporto} (l'applicazione è \textit{suriettiva}) e per ogni elemento nel campo troviamo una \textit{quaterna di punti distinti} con tale birapporto (quozientando, l'applicazione è iniettiva)
 \end{observe}
 %"il birapporto misura l'equivalenza proiettiva su punti di una retta proiettiva"
 
 \begin{observe}
-	In dimensione maggiore generalmente il birapporto non è definito, a meno che i 4 punti sono allineati su una retta proiettiva $r$.
+	In dimensione maggiore generalmente il birapporto \textit{non è definito}, a meno che i $4$ punti non siano \textit{allineati} su una retta proiettiva $r$.
 \end{observe}
 
 
-\begin{examples}~{}\\
+\begin{example}~{}\\
 %AAA DISEGNI CERCASI
-	Nel piano proiettivo $\proj[2]{\kamp}$ consideriamo due quaterne di punti distinti quali $\{P_1,P_2,P_3,P_4\}$ e $\{Q_1,Q_2,Q_3,Q_4\}$. Grazie al birapporto analizziamo per ciascuna delle due quaterne in che posizione sono: generale (ovvero a tre a tre non allineati), o non in posizione generale, in cui si differenzia se i punti allineati sono 3 o 4.
-%"Nel secondo caso ci sono tutte le possibili permutazioni fra pt allineati"
-	Se i punti $P_i$ sono proiettivamente equivalenti ai punti $Q_i$, allora tali posizioni devono essere mantenute: le proiettività mandano rette in rette, posizioni generali in posizioni generali. Per contronominale, se si verificano casi diversi per le due quaterne possiamo afermare che non sono proiettivamente equivalenti.
+	Nel piano proiettivo $\proj[2]{\kamp}$ consideriamo due quaterne di punti distinti $\{P_1,\ P_2,\ P_3,\ P_4\}$ e $\{Q_1,\ Q_2,\ Q_3,\ Q_4\}$. Scelta una quaterna, le disposizioni possibili sono le seguenti:
+	\begin{itemize}
+		\item In \textbf{posizione generale}, cioè a 3 a 3 non allineati.
+		\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/fourpoints1.pdf}
+		\item 3 punti allineati su una retta.
+		\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/fourpoints2.pdf}
+		\item 4 punti allineati su una retta.
+		\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/fourpoints3.pdf}
+	\end{itemize}
+	Se i punti $P_i$ sono proiettivamente equivalenti ai punti $Q_i$, allora tali posizioni \textit{devono essere mantenute}: le proiettività mandano \textit{rette in rette}, \textit{posizioni generali in posizioni generali}. Per contronominale, se si verificano casi diversi per le due quaterne possiamo affermare che \textit{non} sono proiettivamente equivalenti.
 	\begin{enumerate}
-		\item $P_i$ e $Q_i$ sono in \textit{posizione generale}. Vogliamo vedere se sono proiettivamente equivalenti, per farlo dobbiamo controllare se le dimensioni sono giuste: siccome abbiamo 4 punti e $4=\dim\proj[2]{\kamp}+2$ allora $\exists !$ proiettività $f$ di $\proj[2]{\kamp}$ tale che $f(P_1)=Q_i, i=1,\dots,4$, dunque hanno lo stesso birapporto e sono sempre proiettivamente equivalenti
-		\item $P_1,P_2,P_3$ allineati ma $P_4$ no, idem per i $Q_i$, ovvero $P_1,P_2,P_3\in r$ retta proiettiva. Vogliamo dimostrare che anche in questo caso le quaterne sono proiettivamente equivalenti,
+		\item Sia $P_i$, sia $Q_i$ sono in \textit{posizione generale}. Siccome abbiamo 4 punti e $4=\dim\proj[2]{\kamp}+2$, allora $\exists !$ proiettività $f$ di $\proj[2]{\kamp}$ tale che $f(P_1)=Q_i, i=1,\ \ldots,\ 4$, dunque hanno lo stesso \textit{birapporto} e sono sempre \textit{proiettivamente equivalenti}.
+		\item $P_1,\ P_2,\ P_3$ \textbf{allineati ma non} $P_4$, \textbf{e lo stesso per i} $Q_i$; in altre parole, $P_1,\ P_2,\ P_3\in r$ retta proiettiva e $Q_1,\ Q_2,\ Q_3\in s$ retta proiettiva.
+		\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/fourpointseq1.pdf}
+		Vogliamo dimostrare che anche in questo caso le quaterne sono proiettivamente equivalenti,
 %sfruttando la proiettività fra i tre punti ed estendendola al quarto punto
-		Scegliamo dei rappresentanti $P_i=[v_i],\ i=1,2,3,4, v_i\in\kamp^3$ t.c. $v_3=v_1+v_2$, il che è possibile perché i punti sono allineati. Si ha che $\{v_1,v_2,v_3$ è una base di $\kamp^3\}$ visto che $P_4\notin r$ allora $v_4$ non è linearmente dipendente da $v_1,v_2$. Allo stesso modo sia $Q_i=[w_i],\ i=1,2,3,4, w_i\in\kamp^3$ t.c. $w_3=w_1+w_2$ con $\{w_1,w_2,w_4\}$ base di $\kamp^3$. \\
-		Definiamo $\funz \phi {\kamp^3} {\kamp^3}$ lineare t.c. $\phi(v_1)=w_1, \phi(v_2)=w_2, \phi(v_4)=w_4\implies \phi(v_3)=\phi(v_1+v_2)=w_1+w_2=w_3$. Dunque $\funz {f=\widetilde{\phi}} {\proj[2]{\kamp}} {\proj[2]{\kamp}}$ è una proiettività che manda $P_i$ in $Q_i,\ \forall i=1,2,3,4$
-		\item Siccome tutti i punti sono allineati allora è definito il loro birapporto. Se le due quaterne sono proiettivamente equivalenti, sia $\funz f {\proj[2]{\kamp}} {\proj[2]{\kamp}}$ la proiettività, essa porta una quaterna nell'altra e necessariamente una retta nell'altra, ovvero $f(r)=s$, dunque la restrizione alle due rette $\funz {f_{|_r}} r s$ porta $P_i$ in $Q_i,\ \forall i \implies \beta(P_i)=\beta(Q_i)$.\\
-		Viceversa se $\beta(P_i)=\beta(Q_i)$ allora $\exists \funz g r s$ trasformazione proiettiva che manda $P_i$ in $Q_i,\ \forall i=1,2,3,4$. Si ha che $g$ si estende in maniera non unica ad una proiettività di $\proj[2]{\kamp}$. Infatti dati $r=\mathbb{P}(U),\ U\subset \kamp^3$ e $s0\mathbb{P}(W),\ W\subset\kamp^3$ (gli ultimi sono piani vettoriali), si ha che $g=\widetilde{\psi}$ con $\funz \psi U W$ isomorfismo lineare. Vogliamo estenderla ad un automorfismo lineare $\funz \phi {\kamp^3} {\kamp^3}$ scegliendo basi con due vettori nel pinao ed uno esterno, ovvero $u_1,u_2\in U$ base di $U$ e $u_3\notin U$. Dunque $\psi(u_1),\psi(u_2)$ è una base di $W$ e $w_3\notin W \implies \{u_1,u_2,u_3\}$ base di $\kamp^3$, $\{\psi(u_1),\psi(u_2),\psi(u_3) \}$ un'altra base. Ponendo $\funz \phi {\kamp^3} {\kamp^3}$ tale che $\phi(u_1)\coloneqq \psi(u_1), \phi(u_2)\coloneqq \psi(u_2), \phi(u_3)\coloneqq w_3$ si ha $f=\widetilde{\phi}$. \\
-		In questo caso dunque i punti sono proiettivamente equivalenti se e solo se hanno lo stesso birapporto.
+		Scegliamo dei rappresentanti $P_i=[v_i],\ i=1,\ 2,\ 3,\ 4, v_i\in\kamp^3$ tale che $v_3=v_1+v_2$, lecito in quando i punti non sono allineati. Si ha che $\{v_1,\ v_2,\ v_4\}$ è una base di $\kamp^3$: $P_4\notin r$ significa che $v_4$ non è linearmente dipendente da $v_1,\ v_2$. Allo stesso modo sia $Q_i=[w_i],\ i=1,\ 2,\ 3,\ 4, w_i\in\kamp^3$ tale che $w_3=w_1+w_2$ con $\{w_1,\ w_2,\ w_4\}$ base di $\kamp^3$. \\
+		Definiamo $\funz \phi {\kamp^3} {\kamp^3}$ lineare tale che:
+		\begin{equation*}
+			\phi(v_1)=w_1, \phi(v_2)=w_2, \phi(v_4)=w_4
+		\end{equation*}
+		In questo modo $\phi(v_3)=\phi(v_1+v_2)=w_1+w_2=w_3$. Dunque $\funz {f=\widetilde{\phi}} {\proj[2]{\kamp}} {\proj[2]{\kamp}}$ è una proiettività che manda $P_i$ in $Q_i,\ \forall i=1,\ 2,\ 3,\ 4$.
+		\item \textbf{Tutti i punti sono allineati}.
+		\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/fourpointseq2.pdf}
+		Essendo allineati, allora è definito il loro birapporto. Se le due quaterne sono proiettivamente equivalenti, sia $\funz f {\proj[2]{\kamp}} {\proj[2]{\kamp}}$ la proiettività: essa porta una quaterna nell'altra e necessariamente una retta nell'altra, ovvero $f(r)=s$; in altre parole, la restrizione alle due rette $\funz {f_{|_r}} r s$ porta $P_i$ in $Q_i,\ \forall i \implies \beta(P_i)=\beta(Q_i)$.\\
+		Viceversa, se $\beta(P_i)=\beta(Q_i)$ allora $\exists \funz g r s$ trasformazione proiettiva che manda $P_i$ in $Q_i,\ \forall i=1,\ 2,\ 3,\ 4$.\\
+		Si ha che $g$ si estende in maniera non unica ad una proiettività di $\proj[2]{\kamp}$. Infatti dati:
+		\begin{itemize}
+			\item $r=\proj{U},\ U\subset \kamp^3$.
+			\item $s=\proj{W},\ W\subset\kamp^3$.
+		\end{itemize}
+		Con $U$ e $W$ piani vettoriali, si ha che $g=\widetilde{\psi}$ con $\funz \psi U W$ è un isomorfismo lineare. Vogliamo estenderla ad un \textit{automorfismo lineare} $\funz \phi {\kamp^3} {\kamp^3}$ scegliendo basi con due vettori nel piano ed uno esterno, ovvero $u_1,\ u_2\in U$ base di $U$ e $u_3\notin U$. Dunque $\{\psi(u_1),\psi(u_2)\}$ è una base di $W$ e $w_3\notin W \implies \{u_1,u_2,u_3\}$ base di $\kamp^3$ e $\{\psi(u_1),\psi(u_2),\psi(u_3)\}$ un'altra base. Ponendo $\funz \phi {\kamp^3} {\kamp^3}$ tale che:
+		\begin{itemize}
+			\item $\phi(u_1)\coloneqq \psi(u_1)$.
+			\item $\phi(u_2)\coloneqq \psi(u_2)$.
+			\item $\phi(u_3)\coloneqq w_3$
+		\end{itemize}
+		Si ha $f=\widetilde{\phi}$. Dunque, i punti sono \textit{proiettivamente equivalenti} se e solo se hanno lo \textit{stesso birapporto}.
 	\end{enumerate} 
-\end{examples}
-
+\end{example}
+\subsection{Eserciziamoci! Birapporto}
+\begin{exercise}
+	Verificare che se $P_1,\ P_2,\ P_3,\ P_4$ sono tutti diversi da $(1\colon 0)$, cioè $P_i=(w_i\colon 1),\ \forall i=1,\ \ldots,\ 4$ e:
+	\begin{equation}
+		\beta=\frac{ (w_2-w_1)(w_3-w_2) }{ (w_4-w_2)(w_3-w_1) }
+	\end{equation}
+\end{exercise}
 %STUDIO DELLA GEOMETRIA DI RETTE O CURVE NEL PIANO PROIETTIVO
-		\section{Rette nel piano proiettivo}
-
-Una retta in $\proj[2]{\kamp}$ ha equazione $r\colon a_0x_0+a_1x_1+a_2x_2=0$ che è un'equazione lineare omogenea in coordinate omogenee, dunque è determinata dai coefficienti $a_0, a_1, a_2$ dell'equazione con la proprietà che devono essere non tutti nulli e in più fissati i coefficienti l'equazione è determinata a meno di costante moltiplicativa non nulla. Dunque si può associare a $r$ un punto del piano proiettivo dato esattamente dai coefficienti delle coordinate omogenee, ovvero $(a_0\colon a_1\colon a_2)\in\proj[2]{\kamp}$ per cui si ha una corrispondenza biunivoca fra le rette in $\proj[2]{\kamp}$ e $\proj[2]{\kamp}$ (che non va pensato come lo stesso piano)
+		\section{Piano proiettivo duale}
+Una \textbf{retta} in $\proj[2]{\kamp}$ ha equazione:
+\begin{equation}
+	r\ \colon a_0x_0+a_1x_1+a_2x_2=0
+\end{equation}
+Essa è un'\textbf{equazione lineare omogenea} in coordinate omogenee, dunque è determinata dai coefficienti $a_0,\ a_1,\ a_2$ dell'equazione con la proprietà che devono essere \textit{non tutti nulli}; inoltre, fissati i coefficienti, l'equazione è determinata \textit{a meno di costante moltiplicativa non nulla}. Dunque si può associare a $r$ un \textbf{punto} del piano proiettivo dato dai coefficienti delle coordinate omogenee:
+\begin{equation}
+	(a_0\colon a_1\colon a_2)\in\proj[2]{\kamp}
+\end{equation}
+Si ha una \textit{corrispondenza biunivoca} fra le rette in $\proj[2]{\kamp}$ e $\proj[2]{\kamp}$:
 	% https://q.uiver.app/?q=WzAsNCxbMCwwLCJcXHtcXHRleHR7cmV0dGUgaW4gfSBcXHByb2pbMl17XFxrYW1wfVxcfSJdLFszLDAsIlxccHJvalsyXXtcXGthbXB9Il0sWzAsMSwiclxcY29sb24gYV8weF8wK2FfMXhfMSthXzJ4XzI9MCJdLFszLDEsIihhXzBcXGNvbG9uIGFfMVxcY29sb24gYV8yKSJdLFswLDEsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsyLDMsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dXQ==
 	\[\begin{tikzcd}
-		{\{\text{rette in } \proj[2]{\kamp}\}} &&& {\proj[2]{\kamp}} \\
+		{\{\text{rette in } \proj[2]{\kamp}\}} &&& {\proj[2]{\kamp}} \\[-25pt]
 		{r\colon a_0x_0+a_1x_1+a_2x_2=0} &&& {(a_0\colon a_1\colon a_2)}
 		\arrow[from=1-1, to=1-4, tail reversed]
 		\arrow[from=2-1, to=2-4, tail reversed]
 	\end{tikzcd}\]
-Notiamo che ciò funziona bene con $\proj[2]{\kamp}$, infatti le coordinate omogenee si comportano proprio come i coefficienti dell'equazione.
-
+% Notiamo che ciò funziona bene con $\proj[2]{\kamp}$, infatti le coordinate omogenee si comportano proprio come i coefficienti dell'equazione.
 \begin{example}
-	Retta nel piano proiettivo reale $\proj[2]{\realset}$
+In $\proj[2]{\realset}$:
 		\begin{equation*}
-			l_i\colon x_0+x_1+2x_2=0 \leftrightarrow (1\colon 1\colon 2)\in\proj[2]{\realset}
+			l_i\colon x_0+x_1+2x_2=0 \longleftrightarrow (1\colon 1\colon 2)\in\proj[2]{\realset}
 		\end{equation*}
+	\vspace{-6mm}
 \end{example}
-
-Quando pensiamo a $\proj[2]{\kamp}$ come lo spazio che parametrizza le rette in $\proj[2]{\kamp}$, lo denotiamo con $\left(\proj[2]{\kamp}\right)^{*}$ e lo chiamiamo \textit{piano proiettivo duale}. \index{piano proiettivo!duale}.\\
-In prima istanza questo significa semplicemente che si interpreta un punto del duale come un punto associato ad una retta.
-%collgamento co lo spazio vettoriale duale        forma lineare
-%prima costruzione come corrispondenza
-	\subsection{Fascio di rette}
-\begin{define} \index{fascio}
-	Un \textbf{fascio} di rette in $\proj[2]{\kamp}$ è l'insieme delle rette di equazione
-		\begin{equation*}
+\begin{define}\textbf{Piano proiettivo duale.}\\
+	Inteso $\proj[2]{\kamp}$ come lo spazio che \textit{parametrizza le rette} in $\proj[2]{\kamp}$, lo chiamiamo \textbf{piano proiettivo duale} \index{piano!proiettivo!duale} e lo denotiamo con $\proj[2]{\kamp}^{\ast}$.
+\end{define}
+In prima istanza, questo significa semplicemente che si interpreta un punto del \textit{piano duale} come un punto \textit{associato} ad una \textit{retta} di $\proj[2]{\kamp}$.
+%collgamento co lo spazio vettoriale duale forma lineare, prima costruzione come corrispondenza
+\subsection{Fascio di rette}
+\begin{define}\textsc{Fascio di rette}.\\
+	Un \textbf{fascio di rette}\index{fascio!di rette} $\mathcal{F}$ in $\proj[2]{\kamp}$ è l'insieme delle rette di equazione:
+		\begin{equation}
 			\mathcal{F}\colon \lambda l_1+\mu l_2=0, \ (\lambda\colon\mu)\in\proj[1]{\kamp}
-		\end{equation*}
-	dove $l_1,l_2$ sono due rette fissate e distinte.
+		\end{equation}
+	Dove $l_1,\ l_2$ sono due rette fissate e distinte.
 \end{define}
 \begin{observe}
-	Possiamo pensare al fascio di rette come una collezione di rette le cui equazioni si ottengono come combinazione lineare delle due rette del fascio con $\lambda,\mu$ come parametri.
+	Possiamo pensare al fascio di rette come una \textbf{collezione di rette}, le cui equazioni si ottengono come \textit{combinazione lineare} delle due rette del fascio con $\lambda,\ \mu$ come \textbf{parametri}.
 \end{observe}
 \begin{example}
-	Consideriamo le rette $l_1\colon x_0+x_1+2x_2=0$ e $l_2\colon 3x_0-2x_1+4x_2=0$. Il fascio di rette determinato da $l_1,l_2$ è
+	Consideriamo le rette $l_1\colon x_0+x_1+2x_2=0$ e $l_2\colon 3x_0-2x_1+4x_2=0$. Il fascio di rette determinato da $l_1,\ l_2$ è
 		\begin{gather*}
-			(\lambda+3\mu)x_0+(\lambda-2\mu)x_1+2(\lambda+2\mu)x_2=0\\
-			(\lambda\colon\mu)=(1\colon 0) \rightarrow l_1\\
-			(\lambda\colon\mu)=(0\colon 1) \rightarrow l_2\\
-			(\lambda\colon\mu)=(1\colon 1) \colon 4x_0-x_1+6x_2=0			
+			(\lambda+3\mu)x_0+(\lambda-2\mu)x_1+2(\lambda+2\mu)x_2=0	
 		\end{gather*}
+	\begin{itemize}
+		\item $(\lambda\colon\mu)=(1\colon 0) \rightarrow l_1$.
+		\item $(\lambda\colon\mu)=(0\colon 1) \rightarrow l_2$.
+		\item $(\lambda\colon\mu)=(1\colon 1) \colon 4x_0-x_1+6x_2=0$.	
+	\end{itemize}
+\vspace{-3mm}
 \end{example}
 
 \begin{observe}
-	Abbiamo detto che ad ogni retta corrisponde un punto del piano proiettivo duale, ci chiediamo ora a cosa corrisponda la costruzione del fascio. \\
-	Il fascio $\mathcal{F}$ corrisponde alla retta passante per i punti corrispondenti a $l_1$ e $l_2$
+	Abbiamo detto che ad ogni retta corrisponde un punto del piano proiettivo duale. Il fascio $\mathcal{F}$ corrisponde, sul piano duale $\proj[2]{\kamp}^{\ast}$, alla \textbf{retta} passante per i punti corrispondenti a $l_1$ e $l_2$:
 		\begin{gather*}
-			l_1\colon a_0x_0+a_1x_1+a_2x_2=0 \rightarrow (a_0\colon a_1\colon a_2)\\
-			l_2\colon b_0x_0+b_1x_1+b_2x_2=0 \rightarrow (b_0\colon b_1\colon b_2)\\
+			l_1\colon a_0x_0+a_1x_1+a_2x_2=0 \longrightarrow (a_0\colon a_1\colon a_2)\\
+			l_2\colon b_0x_0+b_1x_1+b_2x_2=0 \longrightarrow (b_0\colon b_1\colon b_2)\\
 			\mathcal{F}\colon (\lambda a_0+\mu b_0)x_0+ (\lambda a_1+\mu b_1)x_1 +(\lambda a_2+\mu b_2)x_2=0 \rightarrow (\lambda a_0+\mu b_0 \colon \lambda a_1+\mu b_1 \colon \lambda a_2+\mu b_2)
-		\end{gather*}	
-\end{observe}
-
-\begin{example}
-	Fascio visto come retta per due punti del duale
-		\begin{gather*}
-			l_1 \leftrightarrow (1\colon 1\colon 2)=Q_1\\
-			l_2\colon 3x_0-2x_1+4x_2=0 \leftrightarrow (3\colon -2\colon 4)=Q_2\\
-			\mathcal{F} \leftrightarrow (\lambda+3\mu \colon \lambda-2\mu \colon 2(\lambda+2\mu))
 		\end{gather*}
-	che è la retta $\overline{Q_1Q_2}$ in forma \textit{parametrica}.
+	In altri termini, $(\lambda a_0+\mu b_0 \colon \lambda a_1+\mu b_1 \colon \lambda a_2+\mu b_2)$ rappresenta la retta per i due punti duali \textit{in forma parametrica}.
+\end{observe}
+\begin{example}
+	Prendiamo:
+		\begin{gather*}
+			\begin{array}{l}
+				l_1 \longleftrightarrow (1\colon 1\colon 2)=Q_1\\
+				l_2\colon 3x_0-2x_1+4x_2=0 \longleftrightarrow (3\colon -2\colon 4)=Q_2\\
+			\end{array}
+			\mathcal{F} \longleftrightarrow (\lambda+3\mu \colon \lambda-2\mu \colon 2(\lambda+2\mu))
+		\end{gather*}
+	Il fascio rappresenta la retta $\overline{Q_1Q_2}$ in forma \textit{parametrica}.
 \end{example}
-
 \begin{observe}
-	Siccome due rette distinte nel piano si intersecano in un punto solo, sia $P\coloneqq l_1\cap l_2$. Allora
+	Siccome due rette distinte nel piano si intersecano \textit{in un punto solo}, consideriamo $P\coloneqq l_1\cap l_2$. Allora:
 		\begin{itemize}
-			\item ogni retta del fascio passa per $P$ perché è lì che la combinazione lineare si annulla
-			\item $P$ è l'unico punto comune a tutte le rette del fascio $\mathcal{F}$
-			\item viceversa, ogni retta per $P$ appartiene al fascio $\mathcal{F}$
+			\item Ogni retta del fascio passa per $P$ perché è lì che la combinazione lineare \textit{si annulla}.
+			\item $P$ è l'unico punto comune a tutte le rette del fascio $\mathcal{F}$.
+			\item Viceversa, ogni retta per $P$ appartiene al fascio $\mathcal{F}$.
 		\end{itemize}
-	Ciò significa che $\mathcal{F}$ è la famiglia delle rette per il punto fissato $P$, che è detto \textbf{punto base} del fascio. \index{fascio!punto base}
+	Ciò significa che $\mathcal{F}$ è la \textit{famiglia delle rette} per il punto fissato $P$, che è detto \textbf{punto base del fascio}\index{punto!base di un fascio}. 
 	%P PUZZA DI SOTTOSPAZIO VETT CON VETT NULLO P 
 \end{observe}
-
 \begin{example}
-	Punto base di un fascio
+	Consideriamo:
 		\begin{gather*}
 			\begin{cases}
 				l_1\colon x_0+x_1+2x_2=0\\
 				l_2\colon 3x_0-2x_1+4x_2=0
 			\end{cases} \implies \begin{cases}
 				x_0=-x_1-2x_2\\
-				-3x_1-6x_2-2x_1+4x_2=-5x_1-2x_2=0
-			\end{cases} \\
-		\implies x_1=2, x_2=-5, x_0=-2+10=8\\
-			P=(8\colon 2\colon -5)=l_1\cap l_2
-		\end{gather*}
-	Tale fascio $\mathcal{F}$ corrisponde alla retta in $\left(\proj[2]{\kamp}\right) ^{*}$ per i punti $Q_1=(1\colon 1 \colon 2)$ e \\ $Q_2=(3\colon -2\colon 4)$ che è già scritta in forma parametrica. Cerchiamo ora l'equazione cartesiana della retta $\overline{Q_1 Q_2}$ nelle coordinate $(a_0\colon a_1\colon a_2)$: 
+				-3x_1-6x_2-2x_1+4x_2=0\implies -5x_1-2x_2=0
+			\end{cases}
+		\implies \begin{cases}
+			x_0=4x_1\\
+			x_2=-\frac{5}{2}x_1
+		\end{cases}
+			\end{gather*}
+		Otteniamo, a meno di multipli, il punto $P=(8\colon 2\colon -5)=l_1\cap l_2$
+	Tale fascio $\mathcal{F}$ corrisponde alla retta in $\left(\proj[2]{\ }\right) ^{\ast}$ per i punti $Q_1=(1\colon 1 \colon 2)$ e \\ $Q_2=(3\colon -2\colon 4)$ che, scritta in forma \textit{parametrica}, corrisponde a $(\lambda+3\mu \colon \lambda-2\mu \colon 2(\lambda+2\mu))$. Cerchiamo ora l'equazione \textit{cartesiana} della retta $\overline{Q_1 Q_2}$ nelle coordinate $(a_0\colon a_1\colon a_2)$:
 	\begin{gather*}
 	\left| \begin{array}{ccc}
 		a_0 & a_1 & a_2\\
 		1 & 1 & 2 \\
 		3 & -2 & 4 \end{array} \right| = 8a_0 + 2a_1-5a_2=0
 	\end{gather*}
-	Notiamo che i coefficienti della retta ottenuta sono esattamente le coordinate omogenee di $P$ che è intersezione delle due rette.
+	Notiamo che i coefficienti della retta ottenuta sono esattamente le \textbf{coordinate omogenee} di $P$, intersezione delle due rette!
 \end{example}
-Più in generale, fissato un punto base $P\in\proj[2]{\kamp}$, l'insieme delle rette per $P$ in $\proj[2]{\kamp}$ quale $\mathcal{F}_P=\{$rette per $P$ in $\proj[2]{\kamp} \}$ è un fascio di rette corrispondente a una retta nel piano proiettivo duale $\left(\proj[2]{\kamp}\right)$. Se le coordinate sono $P=(c_0\colon c_1\colon c_2)$, la retta corrispondente nel piano proiettivo duale $\left(\proj[2]{\kamp}\right)^{*}$ ha equazione $c_0a_0+c_1a_1+c_2a_2=0$. Infatti data una retta $r$ qualsiasi di equazione $a_0x_0+a_1x_1+a_2x_2=0$, il punto $P$ appartiene a $r$, ovvero $P\in r$, se e solo se vale l'equazione $c_0a_0+c_1a_1+c_2a_2=0$. \\
-Per scrivere il fascio $\mathcal{F}$ in forma parametrica scelgo due rette distinte passanti per $P$.
-%    sostituisco le coordinate di P e trovo quell'eq:   condizione perchè appartenga alla retta   o al fascio, collezione delle rette per p     fisso p e retta che varia (duale )   retta r fissata e p che varia. Ma l'eq è la stessa
-%di fatto il fascio si scrive in forma parametrica scegliendo due rette specifiche che passano per p
-
-%ESEMPIO O ESERCIZIO?
-\begin{example}
-	In $\proj[2]{\realset}$ scrivere in forma parametrica il fascio delle rette per il punto base $P$ di coordinate $(1\colon -1 \colon4)$.\\
-	Scegliamo 2 rette distinte a caso che passano per il punto $P$, ad esempio $l_1\colon x_0+x_1=0$ e $l_2\colon 4x_0-x_2=0$. Il fascio sarà 
-		\begin{gather*}
-			\begin{array}{cc}
-				\mathcal{F}\colon & \lambda(x_0+x_1)+\mu(4x_0-x_2)=0 \\
-				& (\lambda+4\mu)x_0+\lambda x_1-\mu x_2=0, \ (\lambda\colon\mu)\in\proj[1]{\ }
-			\end{array}
-		\end{gather*}
-	Ovvero se facciamo variare $\lambda$ e $\mu$ otteniamo tutte le rette di $\proj[2]{\realset}$ che passano per $P$.
-\end{example}
-
-\begin{observe}\textsc{Interpretazione affine}\\
-	Se interpretiamo $\kamp^2=U_0\subset\proj[2]{\kamp}$ e consideriamo il fascio di rette proiettive $\mathcal{F}$ con punto base $P$ in $\proj[2]{\kamp}$, allora ci sono 2 possibilità: $P$ è punto base proprio o all'infinito.\\
-	Se $P$ è un punto proprio, allora $P\in\kamp^2$ e $\mathcal{F}$ corrisponde alle rette affini in $\kamp^2$ per il punto $P$ a meno di passare alla chiusura proiettiva dalla retta proiettiva a quella affine.\\
-	Se $P$ invece è un punto improprio, corrisponde ad una direzione di rette nel piano affine e $\mathcal{F}$ corrisponde a tutte le rette affini che hanno questa direzione fissata, ovvero è un fascio di rette parallele.\\
-	Il caso proiettivo dunque è interessante perché la distinzione fra questi due tipi di fasci è data solo dal fatto se il punto $P$ è proprio o improprio.  	
-\end{observe}
-
-	\subsection{Interpretazione duale}
-
-Sappiamo che $\proj[2]{\kamp}$ è il proiettivizzato di $\kamp^3$, ovvero $\proj[2]{\ }=\mathbb{P}(\kamp^3)$, inoltre dal corso di Geometria 1 sappiamo che $\left(\kamp^3\right)^{*}=\{$ forme lineari $\alpha$ su $\kamp^3\}$ del tipo $\funz \alpha {\kamp^3} \kamp$ e $\alpha(x_0,x_1,x_2)= ax_0+a_1x_1+a_2x_2$. L'unica differenza che per ora osserviamo da quanto visto nel corso precedente è la numerazione delle coordinate da $0$ a $2$.\\
-Quando consideriamo la retta $r\colon a_0x_0+a_1x_1+a_2x_2=0$, allora stiamo dicendo che $r$ corrisponde ad un piano proiettivo che è esattamente il proiettivizzato del nucleo di $\alpha$, che è un piano vettoriale $\ker\alpha\subset\kamp^3$ la cui equazione è proprio quella di $r$.\\
-Stiamo dunque considerando $\left( \proj[2]{\ }\right)^{*}=\mathbb{P}\left( (\kamp^3)^{*} \right)\ni [\alpha]\leftrightarrow r$, infatti $\alpha$ è una forma lineare non nulla determinata a meno di multipli. Passando alle coordinate si riottiene quanto visto prima, infatti si ha che $\{x_0,x_1,x_2\}$ è una base di $(\kamp^3)^{*}$ che induce le coordinate proiettive $(a_0\colon a_1\colon a_2)$ su $\left( \proj[2]{\ }\right)^{*}$. Pertanto tale interpretazione astratta diventa operativa (con dei numeri) fissando la base naturale delle forme lineari che è data dalle coordinate proiettive associate: scrivo $\alpha$ come combinazione lineare della base, e i coefficienti saranno le coordinate omogenee.\\
-Più in generale, dato uno spazio vettoriale $V$, il suo spazio proiettivo associato $\mathbb{P}(V)$ ed il suo spazio vettoriale duale $V*=\{$ forme lineari $\funz \alpha V \kamp \}$, si ha che $\mathbb{P}(V*)=\left(\mathbb{P}(V)\right)^{*}$.\\
-In particolare si ha una corrispondenza biunivoca
-	% https://q.uiver.app/?q=WzAsNCxbMCwwLCJcXGxlZnQoXFxtYXRoYmJ7UH0oVilcXHJpZ2h0KV57Kn0iXSxbMywwLCJcXHtcXHRleHR7aXBlcnBpYW5pIGRpIH0gXFxtYXRoYmJ7UH0oVikgXFx9Il0sWzAsMSwiW1xcYWxwaGFdIl0sWzMsMSwiXFxtYXRoYmJ7UH0oXFxrZXJcXGFscGhhKVxcc3Vic2V0XFxtYXRoYmJ7UH0oVikiXSxbMCwxLCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJhcnJvd2hlYWQifX19XSxbMiwzLCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJhcnJvd2hlYWQifX19XV0=
-	\[\begin{tikzcd}
-		{\left(\mathbb{P}(V)\right)^{*}} &&& {\{\text{iperpiani di } \mathbb{P}(V) \}} \\
-		{[\alpha]} &&& {\mathbb{P}(\ker\alpha)\subset\mathbb{P}(V)}
-		\arrow[from=1-1, to=1-4, tail reversed]
-		\arrow[from=2-1, to=2-4, tail reversed]
-	\end{tikzcd}\]
-In coordinate, ad un piano di equazione $\displaystyle \underbrace{a_0x_0+\dots +a_nx_n}_{\alpha}=0$ associamo il punto $(a_0\colon\dots\colon a_n)$, nello stesso modo in cui ad un vettore associo i coefficienti della scrittura secondo una tale base.
-
-		\section{Coniche nel piano proiettivo}
-Nel corso di Geometria 1 abbiamo già analizzato le coniche nel piano affine $\mathcal{A}(\realset^2)$ e le abbiamo classificate a meno di rototraslazione. Generalizziamo ora al caso proiettivo tenendo conto del fatto che nel piano proiettivo le coordinate sono omogenee.\\
-Consideriamo $\proj[2]{\kamp}$ con coordinte omogenee $(x_0\colon x_1\colon x_2)$. Indicheremo con $\kamp[x_0,x_1,x_2]$ l'anello dei polinomi in $x_0,x_1,x_2$ a coefficienti in $\kamp$. Se $F\in\kamp[x_0,x_1,x_2]$ è un polinomio qualsiasi, l'equazione $F(x_0,x_1,x_2)=0$ non dà una condizione ben definita in $\proj[2]{\kamp}$: ad esempio $x_0+1=0$ non ha senso perché $x_0$ è determinato solo a meno di multipli. Cerchiamo dunque dei polinomi che ha senso studiare in $\proj[2]{\kamp}$.
-
-\begin{define} \textsc{Polinomio omogeneo}\\ \index{polinomio!omogeneo}
-Sia $F\in\kamp[x_0,x_1,x_2]$ un polinomio. Si dice che $F$ è un \textbf{polinomio omogeneo} se tutti i monomi a coefficienti non nulli hanno lo stesso grado.
-\end{define}
-Notiamo che la definizione è significativa per polinomi a più variabili, altrimenti i polinomi omogenei sarebbero solo monomi.
-
-\begin{example}
-Un esempio di polinomio omogeneo è $F=x_0^3+x_0x_1^2-3x_1x_2x_3\in\realset[x_0,x_1,x_2]$, che p un polinomio omogeneo di grado $3$.\\
-Un polinomio non omogeneo invece è $G=x_0^3-x_1x_2+1$
-\end{example}
-
-\begin{observe}
-Considerato il caso del grado pari a $1$, se $\deg F=1$, ovvero $F=a_0x_0+\dots+a_nx_n+b$, allora $F$ è omogeneo $\iff b=0$
-\end{observe}
-
-\begin{observe}
-Se $F\in\kamp[x_0,x_1,x_2]$ è omogeneo di grado $d$ allora 
+Più in generale, fissato un punto base $P\in\proj[2]{\kamp}$, l'insieme delle rette per $P$ in $\proj[2]{\kamp}$:
 \begin{equation}
-F(\lambda x_0,\lambda x_1,\dots,\lambda x_n)=\lambda^d F(x_0,\dots,x_n)
+	\mathcal{F}_P=\{\text{rette per }P\text{ in }\proj[2]{\kamp}\}
 \end{equation}
-Infatti $F$ è somma di monomi di grado $d$ del tipo $ax_0^{i_0}x_1^{i_1}\cdots x_n^{i_n}$ con $\sum_{j_0}^n i_j=d$ e si ha che $a(\lambda x_0)^{i_0} (\lambda x_1)^{i_1} \cdots (\lambda x_n)^{i_n}=\lambda^{i_0+\dots +i_n} (ax_0^{i_0}\dots x_n^{i_n})=\lambda^d(ax_0^{i_0}\dots x_n^{i_n})$
+È un fascio di rette corrispondente a una \textbf{retta} nel piano proiettivo duale $\left(\proj[2]{\kamp}\right)^{\ast}$. Se le coordinate del punto sono $P=(c_0\colon c_1\colon c_2)$, la retta corrispondente nel piano proiettivo duale $\left(\proj[2]{\kamp}\right)^{\ast}$ ha equazione cartesiana:
+\begin{equation}
+	c_0a_0+c_1a_1+c_2a_2=0
+\end{equation}
+Infatti, data una retta $r$ qualsiasi di equazione $a_0x_0+a_1x_1+a_2x_2=0$, il punto $P$ appartiene a $r$, cioè $P\in r$, se e solo se vale l'equazione precedente $c_0a_0+c_1a_1+c_2a_2=0$.\\
+Per scrivere il fascio $\mathcal{F}$ in forma \textit{parametrica} scelgo due rette distinte passanti per $P$.
+%    sostituisco le coordinate di P e trovo quell'eq:   condizione perchè appartenga alla retta   o al fascio, collezione delle rette per p     fisso p e retta che varia (duale )   retta r fissata e p che varia. Ma l'eq è la stessa. Di fatto il fascio si scrive in forma parametrica scegliendo due rette specifiche che passano per p
+\begin{observe}\textsc{Interpretazione affine del fascio di rette proiettive.}\\
+	Se interpretiamo $\aff{\kamp^2}=U_0\subset\proj[2]{\kamp}$ e consideriamo il fascio di rette proiettive $\mathcal{F}$ con punto base $P$ in $\proj[2]{\kamp}$, abbiamo due possibilità: $P$ è punto base \textit{proprio} o \textit{all'infinito}.\\
+	\begin{itemize}
+	\item Se $P$ è un \textbf{punto proprio}, allora $P\in\aff{\kamp^2}$ e $\mathcal{F}$ corrisponde al  \textit{rette affini} in $\kamp^2$ per il punto $P$ (passando dalla chiusura proiettiva della retta proiettiva a quella affine).
+	\item Se $P$ invece è un \textit{punto improprio}, esso corrisponde ad una \textit{direzione} di rette nel piano affine e $\mathcal{F}$ corrisponde a tutte le rette affini che hanno questa direzione fissata, ovvero è un \textbf{fascio di rette parallele}.
+	\end{itemize}
+	Il caso proiettivo è interessante perché la distinzione fra questi due tipi di fasci è data solo dal fatto se il punto $P$ è proprio o improprio.  	
+\end{observe}
+\subsection{Spazi vettoriali duali e spazi proiettivi duali}
+Sappiamo che $\proj[2]{\kamp}$ è il proiettivizzato di $\kamp^3$, ovvero $\proj[2]{\ }=\proj[2]{\kamp^3}$. Inoltre, in \textit{Geometria Uno}, abbiamo definito gli \textbf{spazi vettoriali duali} come\footnote{A differenza della notazione vista in \textit{Geometria Uno}, qui consideriamo gli indici delle coordinate da $0$ a $2$.}:
+\begin{equation}
+	\begin{array}{lll}
+		\left(\kamp^3\right)^{\ast}&=&\{\text{forme lineari }\alpha\text{ su }\kamp^3\}\\
+		& & \funz \alpha {\kamp^3} \kamp\\
+		& & \alpha(x_0,\ x_1,\ x_2)= ax_0+a_1x_1+a_2x_2
+	\end{array}
+\end{equation}
+Quando consideriamo la retta $r\colon a_0x_0+a_1x_1+a_2x_2=0$, $r$ è il proiettivizzato del \textbf{nucleo} di $\alpha$, il quale è un \textit{piano vettoriale} $\ker\alpha\subset\kamp^3$ la cui equazione è appunto $a_0x_0+a_1x_1+a_2x_2=0$.\\
+In altre parole, si ha una corrispondenza fra i \textit{punti della retta proiettiva duale} e le \textit{classi proiettive} delle forme lineari $[\alpha]$:
+\begin{equation}
+	\begin{array}{ccc}
+		\left( \proj[2]{\ }\right)^{\ast}&=&\proj[2]{\kamp^3}^{\ast}\\ 
+		r & \longleftrightarrow & [\alpha]\\
+	\end{array}
+\end{equation}
+Infatti, $\alpha$ è una forma lineare \textit{non nulla} determinata \textit{a meno di multipli}. Si ha che $\{x_0,\ x_1,\ x_2\}$ è una base di $(\kamp^3)^{\ast}$ che induce le coordinate proiettive $(a_0\colon a_1\colon a_2)$ su $\left( \proj[2]{\ }\right)^{\ast}$.\\
+Pertanto, tale \textit{interpretazione astratta} diventa operativa fissando la \textit{base duale} delle forme lineari: scrivo $\alpha$ come combinazione lineare della base, e i coefficienti saranno le  data dalle \textit{coordinate proiettive associate}.
+Generalizziamo ulteriormente ad uno spazio vettoriale qualunque.
+\begin{define}\textsc{Spazio proiettivo duale}.\\
+	Dato uno spazio vettoriale $V$, il suo \textit{spazio proiettivo associato} $\proj{V}$ ed il suo \textit{spazio vettoriale duale} $V^{\ast}=\{\text{forme lineari }\funz \alpha V \kamp \}$, si definisce lo \textbf{spazio proiettivo duale}\index{spazio!proiettivo!duale} di $\proj[n]{V}$:
+	\begin{equation}
+		\proj{V}^{\ast}=\proj{V^{\ast}}
+	\end{equation}
+	Poichè $\dim V^{\ast} = \dim V$, allora $\proj{V}^{\ast} =\proj{V}$.
+\end{define}
+In particolare, si ha la corrispondenza biunivoca:
+% https://q.uiver.app/?q=WzAsNCxbMCwwLCJcXHByb2p7Vn1ee1xcYXN0fSJdLFszLDAsIlxce1xcdGV4dHtpcGVycGlhbmkgZGkgfSBcXHByb2p7Vn0gXFx9Il0sWzAsMSwiW1xcYWxwaGFdIl0sWzMsMSwiXFxwcm9qe1xca2VyXFxhbHBoYX1cXHN1YnNldFxcbWF0aGJie1B9KFYpIl0sWzAsMSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn19fV0sWzIsMywiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn19fV1d
+\[\begin{tikzcd}
+	{\proj{V}^{\ast}} &&& {\{\text{iperpiani di } \proj{V} \}} \\
+	{[\alpha]} &&& {\mathbb{P}\left(\ker \alpha\right)\subset\proj{V}}
+	\arrow[from=1-1, to=1-4, tail reversed]
+	\arrow[from=2-1, to=2-4, tail reversed]
+\end{tikzcd}\]
+In coordinate, ad un piano di equazione $a_0x_0+\ldots +a_nx_n=0$ associamo il punto $(a_0\colon\ldots\colon a_n)$, nello stesso modo in cui ad un vettore associo i coefficienti della scrittura secondo una tale base.
+\subsection{Impratichiamoci! Piano proiettivo duale}
+\begin{exercise}
+	In $\proj[2]{\realset}$ scrivere in forma parametrica il fascio delle rette per il punto base $P$ di coordinate $(1\colon -1 \colon 4)$.
+\end{exercise}
+\begin{solution}
+	Scegliamo 2 rette distinte, a nostro piacere, che passano per il punto $P$; ad esempio, $l_1\colon x_0+x_1=0$ e $l_2\colon 4x_0-x_2=0$. Il fascio sarà: 
+	\begin{gather*}
+		\begin{array}{cc}
+			\mathcal{F}\colon \lambda(x_0+x_1)+\mu(4x_0-x_2)=0 &  \\
+			(\lambda+4\mu)x_0+\lambda x_1-\mu x_2=0,\ & (\lambda\colon\mu)\in\proj[1]{\ }
+		\end{array}
+	\end{gather*}
+	Se facciamo variare $\lambda$ e $\mu$ otteniamo tutte le rette di $\proj[2]{\realset}$ che passano per $P$.
+\end{solution}
+% io separerei le coniche in un capitolo nuovo, che ne pensi?
+\section{Coniche nel piano proiettivo}
+Durante \textit{Geometria 1} abbiamo analizzato le coniche nel piano affine $\mathcal{A}(\realset^2)$ e le abbiamo classificate \textit{a meno di rototraslazione}. Vogliamo trattare ora dell'estensione al \textit{piano proiettivo} di queste coniche, tenendo dunque conto del ruolo svolto dalla \textit{retta all'infinito}.\\
+Consideriamo $\proj[2]{\kamp}$ con coordinate omogenee $(x_0\colon x_1\colon x_2)$. Indichiamo con $\kamp\left[x_0,\ x_1,\ x_2\right]$ l'\textit{anello dei polinomi} in $x_0,\ x_1,\ x_2$ a coefficienti in $\kamp$. Se $F\in\kamp\left[x_0,\ x_1,\ x_2\right]$ è un polinomio \textit{qualsiasi}, l'equazione $F(x_0,\ x_1,\ x_2)=0$ \textit{non} dà una condizione \textit{ben definita} in $\proj[2]{\kamp}$: ad esempio, $x_0+1=0$ non ha senso perché $x_0$ è determinato solo a meno di multipli. Cerchiamo dunque dei polinomi che ha senso studiare in $\proj[2]{\kamp}$.
+\begin{define}\textsc{Polinomio omogeneo}.\\
+Sia $F\in\kamp\left[x_0,\ x_1,\ x_2\right]$ un polinomio. Si dice che $F$ è un \textbf{polinomio omogeneo}\index{polinomio!omogeneo} se tutti i monomi a coefficienti \textit{non} nulli hanno lo \textit{stesso} grado.
+\end{define}
+% Notiamo che la definizione è significativa per polinomi a più variabili, altrimenti i polinomi omogenei sarebbero solo monomi. (non ho questa nota :/)
+\begin{example} $F=x_0^3+x_0x_1^2-3x_1x_2x_3\in\realset\left[x_0,\ x_1,\ x_2\right]$ è un polinomio omogeneo di grado $3$.\\
+$G=x_0^3-x_1x_2+1$ non è un polinomio omogeneo.
+\end{example}
+
+\begin{observe}
+Se $\deg F=1$, cioè $F=a_0x_0+\ldots+a_nx_n+b$, allora $F$ è omogeneo se e solo se $b=0$
 \end{observe}
 
-Torniamo al piano proiettivo $\mathbb{P}^2$ con le coordinate omogenee $(x_0\colon x_1\colon x_2)$ e consideriamo $F\in\kamp[x_0,x_1,x_2]$ un polinomio omogeneo nelle coordinate omogenee di grado $d$. Se abbiamo un punto $P=(c_0\colon c_1\colon c_2)\in\mathbb{P}^2$, allora tutte le possibili scelte per le coordinate di $P$ sono $(\lambda c_0\colon \lambda c_1 \colon \lambda c_2)$ con $\lambda\in\kamp\setminus\{0\}$ e valutando $F$ otteniamo $F(\lambda c_0,\lambda c_1, \lambda c_2)=\lambda^d F(c_0,c_1,c_2)$, e questo ci dice che $F$ si annulla in una scelta di coordinate se e solo se si annulla in qualsiasi scelta di coordinate, ovvero 
+\begin{observe}
+Se $F\in\kamp\left[x_0,\ x_1,\ x_2\right]$ è omogeneo di grado $d$ allora 
+\begin{equation}
+F(\lambda x_0,\ \lambda x_1,\ \ldots,\ \lambda x_n)=\lambda^d F(x_0,\ \ldots,\ x_n)
+\end{equation}
+Infatti, $F$ è somma di monomi di grado $d$ del tipo $ax_0^{i_0}x_1^{i_1}\cdots x_n^{i_n}$ con $\displaystyle\sum_{j=0}^n i_j=d$ e si ha che $a(\lambda x_0)^{i_0} (\lambda x_1)^{i_1} \cdots (\lambda x_n)^{i_n}=\lambda^{i_0+\ldots +i_n} (ax_0^{i_0}\ldots x_n^{i_n})=\lambda^d(ax_0^{i_0}\ldots x_n^{i_n})$.
+\end{observe}
+Torniamo al piano proiettivo $\proj[2]{\ }$ con le coordinate omogenee $(x_0\colon x_1\colon x_2)$ e consideriamo $F\in\kamp\left[x_0,\ x_1,\ x_2\right]$ un polinomio omogeneo nelle coordinate omogenee di grado $d$. Se abbiamo un punto $P=(c_0\colon c_1\colon c_2)\in\proj[2]{\ }$, allora tutte le possibili scelte per le coordinate di $P$ sono $(\lambda c_0\colon \lambda c_1 \colon \lambda c_2)$ con $\lambda\in\kamp\setminus\{0\}$ e valutando $F$ otteniamo $F(\lambda c_0,\lambda c_1, \lambda c_2)=\lambda^d F(c_0,c_1,c_2)$, e questo ci dice che $F$ si annulla in una scelta di coordinate se e solo se si annulla in qualsiasi scelta di coordinate, ovvero 
 \begin{equation*}
 F(c_0,c_1,c_2)=0\iff F(\lambda c_0, \lambda c_1, \lambda c_2)=0,\ \forall \lambda\in\kamp\setminus\{0\}
 \end{equation*}
-Pertanto l'equazione $F(x_0,x_1,x_2)=0$ è ben posta in $\mathbb{P}^2$.
+Pertanto l'equazione $F(x_0,\ x_1,\ x_2)=0$ è ben posta in $\proj[2]{\ }$.
 
 \begin{example}
 Si ha che $x_0^2-x_1x_2=0$ definisce un sottoinsieme del piano proiettivo.
 \end{example}
-Le coniche sono esattamente i sottoinsiemi di $\mathbb{P}^2$ che sono dati da polinomi omogenei di grado 2.
+Le coniche sono esattamente i sottoinsiemi di $\proj[2]{\ }$ che sono dati da polinomi omogenei di grado 2.
 %AAA ENVIRONMENT CERCASI: CC qui mette un define, però poi non si capisce dove finisca perché sbordola con discorsi, anche nell'esempio successivo
-Una \textbf{curva algebrica piana proiettiva} è data da un polinomio omogeneo $F\in\kamp[x_0,x_1,x_2]$ a meno di multipli. Se $G=\lambda F$ con $\lambda\in\kamp\setminus\{0\}$ considereremo $G$ e $F$ come la stessa curva.\\
-La curva $C$ ha un \textbf{supporto} $\{P\in\mathbb{P}^2\mid F(P)=0\}$ che è l'insieme dove il polinomio si annulla. $F$ è l'equazione della curva $C$ e oltre al supporto vogliamo ricordarci anche di essa, a meno di multipli. Questo perché l'equazione determina il supporto, ma in generale non vale il contrario, come nel caso dell'ellisse immaginario.\\
-Le curve che andremo a studiare sono sottoinsiemi di $\mathbb{P}^2$ che sono luoghi di zeri di polinomi omogenei, inserendo anche la nozione di molteplicità per la curva.\\
+Una \textbf{curva algebrica piana proiettiva} è data da un polinomio omogeneo $F\in\kamp\left[x_0,\ x_1,\ x_2\right]$ a meno di multipli. Se $G=\lambda F$ con $\lambda\in\kamp\setminus\{0\}$ considereremo $G$ e $F$ come la stessa curva.\\
+La curva $C$ ha un \textbf{supporto} $\{P\in\proj[2]{\ }\mid F(P)=0\}$ che è l'insieme dove il polinomio si annulla. $F$ è l'equazione della curva $C$ e oltre al supporto vogliamo ricordarci anche di essa, a meno di multipli. Questo perché l'equazione determina il supporto, ma in generale non vale il contrario, come nel caso dell'ellisse immaginario.\\
+Le curve che andremo a studiare sono sottoinsiemi di $\proj[2]{\ }$ che sono luoghi di zeri di polinomi omogenei, inserendo anche la nozione di molteplicità per la curva.\\
 Sia $F=a_0x_0+a_1x_1+a_2x_2=0 \implies C$ è una retta. Siccome il grado della curva $C$ è dato dal grado dell'equazione $F$, allora le curve di grado $1$ sono le rette proiettive.\\
 Le coniche che vogliamo studiare sono le curve di grado 2. Inoltre diremo che una curva $C$ è reale se $\kamp=\realset$ (in $\proj[2]{\realset}$) ed è complessa se $\kamp=\complexset$ (in $\proj[2]{\complexset}$).
-
-
-
-
 %LEZ 33
 D'ora in poi ci restringeremo ai casi $\kamp=\realset$ e $\kamp=\complexset$
-\begin{define}
-Una curva $C$ è \textbf{irriducibile} se lo è la sua equazione $F$. Altrimenti sia $F=F_1^{m_1}\dots F_r^{m_r}$ la fattorizzazione in irriducibili. Siccome ogni fattore irriducibile $F_i$ è omogeneo allora ognuno definisce una curva, e vengono definite \textbf{componenti irriducibili} della curva $C$ le curve $C_i\colon F_i=0$.\\
+\begin{define}\textsc{Curva irriducibile}.\\
+Una curva $C$ è \textbf{irriducibile}\index{curva!irriducibile} se lo è la sua equazione $F$. Altrimenti sia $F=F_1^{m_1}\cdot \ldots \cdot F_r^{m_r}$ la fattorizzazione in irriducibili. Siccome ogni fattore irriducibile $F_i$ è omogeneo allora ognuno definisce una curva, e vengono definite \textbf{componenti irriducibili} della curva $C$ le curve $C_i\colon F_i=0$.\\
 Se $m_i>1$ diciamo che $C_i$ è una componente di \textit{molteplicità} $m_i$ in $C$
 \end{define}
 
@@ -1884,7 +2129,7 @@ Le coniche sono curve di grado 2. Sia $C$ una conica di equazione $F=0$, ci sono
 \end{examples}
 
 \subsection{Coniche proiettive}
-Una conica è data da un polinomio $F$ omogeneo di grado 2 in $x_0,x_1,x_2$ a coefficienti reali o complessi.
+Una conica è data da un polinomio $F$ omogeneo di grado 2 in $x_0,\ x_1,\ x_2$ a coefficienti reali o complessi.
 \begin{equation*}
 F=a_{00}x_0^2 +a_{01}x_0x_1+a_{02}x_0x_2+a_{11}x_1^2+a_{12}x_1x_2+a_{22}x_2^2
 \end{equation*}
@@ -1900,7 +2145,7 @@ x_0 \\ x_1 \\ x_2
 Definiamo il \textbf{rango} della conica $C$ come il rango della matrice associata $A$.
 \begin{observe}
 L'equazione della conica $C$ determina $F$ solo a meno di multipli, dunque anche la matrice $A$ è determinata a meno di multipli. 
-Tuttavia il rango rimane ben definito in quanto $\rk(\lambda A)=\rk(A), \forall\lambda\neq 0$. Inoltre il rango non può essere $0$ perché essendo l'equazione di una conica il polinomio non può essere nullo.
+Tuttavia il rango rimane ben definito in quanto $\rk(\lambda A)=\rk(A),\ \forall\lambda\neq 0$. Inoltre il rango non può essere $0$ perché essendo l'equazione di una conica il polinomio non può essere nullo.
 \end{observe}
 Vogliamo studiare le coniche e le curve di grado maggiore a meno di equivalenza proiettiva, allo stesso modo in cui abbiamo classificato le coniche in $\realset^2$ a meno di rototraslazioni.\\
 Sia $\funz f {\proj[2]{\ }} {\proj[2]{\ }}$ una proiettività definita da $x'=Mx,\ M\in\gl(e,\kamp)$. Allora $f$ porta la conica $C\colon F=0$ nella conica $\widetilde{C}\colon \widetilde{F}=0$, dove $\widetilde{F}$ si ottiene sostituendo in $f$ $x=M^{-1}x'$.
@@ -2028,8 +2273,8 @@ Vediamo ora qual è il legame fra curve affini e proiettive passando alla chiusu
 
 \subsubsection{Omogeneizzazione di un polinomio}
 Partiamo da una curva affine $C$ di equazione $f(x,y)=0$. Vogliamo associare a $f$ un polinomio omogeneo nelle coordinate $x_0,_1,x_2$ dello stesso grado di $f$.
-Consideriamo dunque il polinomio $F\in\kamp[x_0,x_1,x_2]$ così definito: se $d=\deg f$, allora $F\coloneqq x_0^d f\left( \frac{x_1}{x_0}, \frac{x_2}{x_0} \right)$. Scritto così non è immediato che sia un polinomio, per cui dimostriamolo.\\
-$F$ è un polinomio omogeneo di grado $d$, infatti, considerato un monomio in $f$ quale $ax^iy^j$ allora $i+j\leq d=\deg f$ e si "omogeneizza" rispetto a $x_0$ per ottenere un monomio di grado $d$ in $x_0,x_1,x_2$
+Consideriamo dunque il polinomio $F\in\kamp\left[x_0,\ x_1,\ x_2\right]$ così definito: se $d=\deg f$, allora $F\coloneqq x_0^d f\left( \frac{x_1}{x_0}, \frac{x_2}{x_0} \right)$. Scritto così non è immediato che sia un polinomio, per cui dimostriamolo.\\
+$F$ è un polinomio omogeneo di grado $d$, infatti, considerato un monomio in $f$ quale $ax^iy^j$ allora $i+j\leq d=\deg f$ e si "omogeneizza" rispetto a $x_0$ per ottenere un monomio di grado $d$ in $x_0,\ x_1,\ x_2$
 	\begin{gather*}
 		ax^iy^j \rightarrow x_0^d a \left( \frac{x_1}{x_0} \right)^i \left( \frac{x_2}{x_0} \right)^j = ax_0^{d-i-j} x_1^i x_2^j
 	\end{gather*}
@@ -2044,8 +2289,8 @@ Notiamo che operativamente l'omogeneizzazione consiste nel cambiare nome alle va
 
 \subsubsection{Chiusura proiettiva}
 
-\begin{define}
-	La curva $\overline{C}$ in $\proj[2]{\kamp}$ definita da $F=0$ si dice \textbf{chiusura proiettiva} della curva affine $C$ di equazione $f=0$.
+\begin{define}\textsc{Chiusura proiettiva di una curva affine}.\\
+	La curva $\overline{C}$ in $\proj[2]{\kamp}$ definita da $F=0$ si dice \textbf{chiusura proiettiva}\index{chiusura!proiettiva} della curva affine $C$ di equazione $f=0$.
 \end{define}
 
 Se $P=(1\colon x\colon y)\in U_0$  allora $f(x,y)=F(P)\implies \overline{C}\cap U_0=C$ come supporti.\\
@@ -2118,10 +2363,10 @@ Ragionando in questo modo dalla classificazione delle coniche proiettive si può
 
 	\subsection{Polinomi omogenei in 2 variabili}
 L'obiettivo ora è mostrare che i polinomi omogenei in 2 variabili si comportano per alcuni aspetti come polinomi in una sola variabile.\\
-Sia $F\in\kamp[x_0x_1]$  omogeneo di grado $d$ come $F=a_0x_0^d+a_1x_0^{d-1}x_1+a_2x_0^{d-2}x_2^2+\dots + a_{d-1}x_0x_1^{d-1}a_dx_1^d$ che ha $d+1$ monomi. Ricordiamo che vedendo $x_0:x_1\in\proj[1]{\ }$, allora $F$ ha degli zeri su $\proj[1]{\ }$, ovvero $F(P)=0$ è ben posta per $P=(a\colon b)\in\proj[1]{\ }$.
+Sia $F\in\kamp[x_0x_1]$  omogeneo di grado $d$ come $F=a_0x_0^d+a_1x_0^{d-1}x_1+a_2x_0^{d-2}x_2^2+\ldots + a_{d-1}x_0x_1^{d-1}a_dx_1^d$ che ha $d+1$ monomi. Ricordiamo che vedendo $x_0:x_1\in\proj[1]{\ }$, allora $F$ ha degli zeri su $\proj[1]{\ }$, ovvero $F(P)=0$ è ben posta per $P=(a\colon b)\in\proj[1]{\ }$.
 
-\begin{define}
-	Diciamo che $F$ si \textbf{annulla in } $p=(a\colon b)$ \textbf{all'ordine } $m$ se $(ax_1-bx_0)^m$ è la massima potenza di $ax_1-bx_0$ che divide $F$.
+\begin{define}\textsc{Annullarsi in un punto}.\\
+	Diciamo che $F$ si \textbf{annulla in } $p=(a\colon b)$ \textbf{all'ordine } $m$ se $(ax_1-bx_0)^m$\index{annullarsi in un punto} è la massima potenza di $ax_1-bx_0$ che divide $F$.
 \end{define}
 %		va letta ome la propr in 1 var come le radici /Ruffini!/
 \begin{proposition} \label{teo polinomi omogenei 2 variabili}
@@ -2133,7 +2378,7 @@ Sia $F\in\kamp[x_0x_1]$  omogeneo di grado $d$ come $F=a_0x_0^d+a_1x_0^{d-1}x_1+
 \end{proposition}
 \begin{demonstration}
 	Facciamo un'ipotesi che semplifica la notazione per poi studiare il caso generale.\\
-	Supponiamo che $x_0 \cancel\mid F$, ovvero $a_d\neq 0$ e $F(0\colon 1)\neq 0$. Poniamo $f\coloneqq F(1,t)\in\kamp[t] = a_0+a_1t+\dots+a_{d-1}t^{d-1}+a_dt^d$, dunque è un polinomio in una variabile, infatti si è posto $x_0=1$ e $x_1=t$, inoltre è ancora di grado $d$ perché $a_d\neq 0\implies \deg f=\deg F=d$. Si ha inoltre che:
+	Supponiamo che $x_0 \cancel\mid F$, ovvero $a_d\neq 0$ e $F(0\colon 1)\neq 0$. Poniamo $f\coloneqq F(1,t)\in\kamp[t] = a_0+a_1t+\ldots+a_{d-1}t^{d-1}+a_dt^d$, dunque è un polinomio in una variabile, infatti si è posto $x_0=1$ e $x_1=t$, inoltre è ancora di grado $d$ perché $a_d\neq 0\implies \deg f=\deg F=d$. Si ha inoltre che:
 		\begin{itemize}
 			\item	$F$ è l'omogeneizzato di $f$ rispetto a $x_0$, ovvero $F=x_0^2f\left( \frac{x_1}{x_0} \right)$
 			\item	gli zeri di $F$ sono tutti e soli della forma $(1\colon\lambda)$ con $\lambda$ radice di $f$, ovvero deomogeneizzando passiamo da 2 variabili in 1 variabile, infatti $F(1,\lambda)=f(\lambda)$.\\
@@ -2141,8 +2386,8 @@ Sia $F\in\kamp[x_0x_1]$  omogeneo di grado $d$ come $F=a_0x_0^d+a_1x_0^{d-1}x_1+
 	Pertanto le proprietà di $F$ che vogliamo dimostrare seguono da quelle di $f$ che conosciamo già.\\
 		\begin{enumerate}
 			\item	$F$ si annulla in $(1\colon\lambda)=(a\colon b)\iff f(\lambda)=0 \iff t-\lambda \mid f \iff x_1-\lambda x_0\mid F$, ovvero l'omogeneizzato divide $F$.
-			\item	è immediato dal punto $1$, perché se $F$ si annulla in $p_i=(a_i\colon b_i)$ distinti con molteplicità $m_i$, allora $(a_ix_1-b_ix_0)^{m_i} \mid F,\ \forall i=1,\dots,r $ siccome i punti $P_i$ sono distinti, allora i polinomi sono primi fra loro al variare di $i$, dunque anche il loro prodotto deve dividere $F$, ovvero $\prod_{i=1}^r (a_ix_1-b_ix_0)^{m_i}\mid F	\implies \sum_{i=1}^r m_i\leq d=\deg F$.
-			\item	segue immediatamente dal caso complesso in $1$ variabile, infatti $f$ si scrive come $f=c(t-\lambda_1)^{m_1}\dots(x_1-\lambda_r x_0)^{m_r}$	siccome $\complexset$ è algebricamente chiuso $\implies F=c(x_1-\lambda_1x_0)^{m_1}\dots(x_1-\lambda_rx_0)^{m_r}$, ovvero si fattorizza completamente con forma lineari e non solo lo divide ma a meno di costante ho l'uguaglianza, per cui il numero di zeri contati con molteplicità è pari al grado.
+			\item	è immediato dal punto $1$, perché se $F$ si annulla in $p_i=(a_i\colon b_i)$ distinti con molteplicità $m_i$, allora $(a_ix_1-b_ix_0)^{m_i} \mid F,\ \forall i=1,\ \ldots,\ r $ siccome i punti $P_i$ sono distinti, allora i polinomi sono primi fra loro al variare di $i$, dunque anche il loro prodotto deve dividere $F$, ovvero $\prod_{i=1}^r (a_ix_1-b_ix_0)^{m_i}\mid F	\implies \sum_{i=1}^r m_i\leq d=\deg F$.
+			\item	segue immediatamente dal caso complesso in $1$ variabile, infatti $f$ si scrive come $f=c(t-\lambda_1)^{m_1}\cdot \ldots\ cdot (x_1-\lambda_r x_0)^{m_r}$	siccome $\complexset$ è algebricamente chiuso $\implies F=c(x_1-\lambda_1x_0)^{m_1}\cdot \ldots\cdot (x_1-\lambda_rx_0)^{m_r}$, ovvero si fattorizza completamente con forma lineari e non solo lo divide ma a meno di costante ho l'uguaglianza, per cui il numero di zeri contati con molteplicità è pari al grado.
 		\end{enumerate}
 \end{demonstration}
 
@@ -2156,10 +2401,10 @@ Sia $F\in\kamp[x_0x_1]$  omogeneo di grado $d$ come $F=a_0x_0^d+a_1x_0^{d-1}x_1+
 	\subsection{Intersezione tra una retta ed una curva nel piano proiettivo}
 	
 Useremo queste proprietà dei polinomi omogenei di secondo grado per studiare l'intersezione fra una retta ed una curva in $\proj[2]{\ }$.\\
-Sia $C$ una curva in $\proj[2]{\ }$ di grado $d$ ed equazione $F(x_0,x_1,x_2)=0$ e sia $r\subset\proj[2]{\ }$ una retta. Vogliamo intersecare la retta $r$ con il supporto di $C$.\\
+Sia $C$ una curva in $\proj[2]{\ }$ di grado $d$ ed equazione $F(x_0,\ x_1,\ x_2)=0$ e sia $r\subset\proj[2]{\ }$ una retta. Vogliamo intersecare la retta $r$ con il supporto di $C$.\\
 Quando interseco 2 sottoinsiemi è ottimale se uno è descritto per equazioni e l'altro in forma parametrica e poi sostituisco.\\
 %Di unoho le equazioni, mentre so come scrivere in forma parametrica la retta
-Scriviamo una parametrizzazioe per $r$, per farlo servono 2 punti distinti quali $A,B\in r$, e ogni punto di $r$ si scrive come $P=\lambda A+\mu B=[\lambda v+\mu v]$, dove $v$ è un vettore che rappresenta $A$, ovvero $A=[v]$ e idem per $B=[w]$ con $v,w\in\kamp^3$ e $(\lambda\colon\mu)\in\proj[1]{\ }$. Pertanto $C\cap r$ è dato da $F(\lambda v+\mu w)=0$ che è uguale all'esplicitamzione delle coordinate quindi è pari a $F(\lambda v_0+\mu w_0,\ \lambda v_1+\mu w_1,\ \lambda v_2+\mu w_2)$ e qui pensiamo che $A$ e $B$ sono dati mentre $\lambda$ e $\mu$ sono delle variabili, ottenendo un polinomio $G$ in $\lambda$ e $\mu$ quale $G(\lambda,\mu)\in\kamp[\lambda,\mu]$ che sarà omogeneo di grado $d$ o identicamente nullo se la retta è contenuta nella curva, ovvero $r\subset C$.
+Scriviamo una parametrizzazioe per $r$, per farlo servono 2 punti distinti quali $A,B\in r$, e ogni punto di $r$ si scrive come $P=\lambda A+\mu B=[\lambda v+\mu v]$, dove $v$ è un vettore che rappresenta $A$, ovvero $A=[v]$ e idem per $B=[w]$ con $v,w\in\kamp^3$ e $(\lambda\colon\mu)\in\proj[1]{\ }$. Pertanto $C\cap r$ è dato da $F(\lambda v+\mu w)=0$ che è uguale all'esplicitamzione delle coordinate quindi è pari a $F(\lambda v_0+\mu w_0,\ \lambda v_1+\mu w_1,\ \lambda v_2+\mu w_2)$ e qui pensiamo che $A$ e $B$ sono dati mentre $\lambda$ e $\mu$ sono delle variabili, ottenendo un polinomio $G$ in $\lambda$ e $\mu$ quale $G(\lambda,\ \mu)\in\kamp[\lambda,\ \mu]$ che sarà omogeneo di grado $d$ o identicamente nullo se la retta è contenuta nella curva, ovvero $r\subset C$.
 
 %LEZ 34
 \begin{example}
@@ -2170,7 +2415,7 @@ Scriviamo una parametrizzazioe per $r$, per farlo servono 2 punti distinti quali
 		\end{gather*}
 \end{example}
 
-In generale, data $C$ curva di grdo $d$ in $\proj[2]{\ }$ e una retta $r\subset\proj[2]{\ }$, consideriamo una parametrizzazione della retta descrivendo un generico punto $P$ della retta come combinazione lineare di altri due punti noti della retta e dei loro vettori, ovvero $P=\lambda A+\mu B=[\lambda v+\mu w]$. Nota $F(x_0,x_1,x_2)=0$ equazione di $C$, sostituiamo nell'equazione $F$ la parametrizzazione di $r$ e si ottiene un polinomio in $\lambda$ e $\mu$ quale $G(\lambda,\mu)\coloneqq F(\lambda v_0+\mu w_0,\ \lambda v_1+\mu w_1,\ \lambda v_2+\mu w_2)$ le cui radici sono i \textit{punti di intersezione} $r\cap C$.\\
+In generale, data $C$ curva di grdo $d$ in $\proj[2]{\ }$ e una retta $r\subset\proj[2]{\ }$, consideriamo una parametrizzazione della retta descrivendo un generico punto $P$ della retta come combinazione lineare di altri due punti noti della retta e dei loro vettori, ovvero $P=\lambda A+\mu B=[\lambda v+\mu w]$. Nota $F(x_0,\ x_1,\ x_2)=0$ equazione di $C$, sostituiamo nell'equazione $F$ la parametrizzazione di $r$ e si ottiene un polinomio in $\lambda$ e $\mu$ quale $G(\lambda,\ \mu)\coloneqq F(\lambda v_0+\mu w_0,\ \lambda v_1+\mu w_1,\ \lambda v_2+\mu w_2)$ le cui radici sono i \textit{punti di intersezione} $r\cap C$.\\
 Ci sono due possibilità:
 	\begin{enumerate}
 		\item	$r\subset C$: la retta è contenuta nella conica, quindi ogni punto della retta soddisfa l'equazione, pertanto il polinomio è identicamente nullo, ovvero $G\equiv 0$
@@ -2179,17 +2424,17 @@ Ci sono due possibilità:
 
 %questa osservazione è uguale a quanto scritto prima dell'esempio, quale teniamo? o facciamo un mix?
 
-\begin{define}
-	Se $(\lambda_0\colon\mu_0)\in\proj[1]{\ }$ è una radice di $G$ di molteplicità $m$ (ovvero è il massimo esponente della forma lineare che divide $G$), allora diciamo che $C$ e $r$ hanno \textbf{molteplicità di intersezione} $m$ nel punto $P=\lambda_0 A+\mu_0 B$.\\
+\begin{define}\textsc{Molteplicità di intersezione}.\\
+	Se $(\lambda_0\colon\mu_0)\in\proj[1]{\ }$ è una radice di $G$ di molteplicità $m$ (ovvero è il massimo esponente della forma lineare che divide $G$), allora diciamo che $C$ e $r$ hanno \textbf{molteplicità di intersezione}\index{molteplicità!di intersezione} $m$ nel punto $P=\lambda_0 A+\mu_0 B$.\\
 	Poniamo $m=0$ se $P\notin C\cap r$ e $m=\infty$ se $P\in r$ e $r\subset C$.
 \end{define}
 
 \begin{observe}
-	Se $r\cancel\subset C$ allora l'intersezione è finita, ovvero è data da un numero finito di punti: $C\cap r=\{P_1,\dots,P_n\}$. Sia $m_i$ la molteplicità di intersezione in $P_i$, allora il numero di questi punti di intersezione è maggiorato dal grado della curva, ovvero
+	Se $r\cancel\subset C$ allora l'intersezione è finita, ovvero è data da un numero finito di punti: $C\cap r=\{P_1,\ \ldots,\ P_n\}$. Sia $m_i$ la molteplicità di intersezione in $P_i$, allora il numero di questi punti di intersezione è maggiorato dal grado della curva, ovvero
 		\begin{equation}
 			\# (C\cap r)\leq \deg C
 		\end{equation}
-	più precisamente $\displaystyle \sum_{i=1}^n m_i\leq\deg C$, questo perché $G(\lambda, \mu)=0$ con le sue radici dà i punti di intersezione della curva con la retta, ma tale equazione può avere al più $d$ soluzioni, ovvero tante quante il grado della curva, questo perché $G$ è omogeneo di grado $d$. Ne deduciamo che la cardinalità dell'intersezione è al più in grado di $C$. Inoltre anche contate con molteplicità è al più il grado di $C$, questo perché $G(\lambda,\mu)=0$ ha al più $d$ soluzioni contate con molteplicità per la proposizione \ref{teo polinomi omogenei 2 variabili}.\\
+	più precisamente $\displaystyle \sum_{i=1}^n m_i\leq\deg C$, questo perché $G(\lambda, \mu)=0$ con le sue radici dà i punti di intersezione della curva con la retta, ma tale equazione può avere al più $d$ soluzioni, ovvero tante quante il grado della curva, questo perché $G$ è omogeneo di grado $d$. Ne deduciamo che la cardinalità dell'intersezione è al più in grado di $C$. Inoltre anche contate con molteplicità è al più il grado di $C$, questo perché $G(\lambda,\ \mu)=0$ ha al più $d$ soluzioni contate con molteplicità per la proposizione \ref{teo polinomi omogenei 2 variabili}.\\
 	Se $\kamp=\complexset$ allora possiamo dire che la somma delle molteplicità è esattamente $d$, ovvero $\displaystyle \sum_{i=1}^n m_i=\deg C$. In particolare, la retta e la curva si intersecano sempre nel piano proiettivo, ovvero $C\cap R\neq 0$.\\
 	Se $\kamp=\realset$ e $d$ è dispari allora possiamo ancora concludere che la retta e la curva si intersecano sempre in quanto $G$ deve annullarsi almeno in un punto reale, ovvero $C\cap r\neq 0$
 \end{observe}
@@ -2216,7 +2461,7 @@ Nel caso della conica il grado è due, pertanto non ci sono molte possibilità p
 	Si può dimostrare che la molteplicità di intersezione fra $C$ e $r$ in $P$ non dipende dalla parametrizzazione scelta per $r$ e che la molteplicità di intersezione è invariante per proiettività.
 \end{observe}
 \begin{demonstration}
-	Sia $\funz f {\proj[2]{\ }} {\proj[2]{\ }}$ una proiettività e $C'$ la trasformata di $C$ tramite $f$ con $C\colon F(x_0,x_1,x_2)=0$, $f\colon x'=Mx$ e $f^{-1}\colon x=M^{-1}x'$ quindi $C'\colon F'(x')=F(M^{-1}x')=0$ polinomio omogeneo di grado $d$, dunque le proiettività portano curve algebriche in curve algebriche, ovvero $r'=f(r)$ è una retta e $P'=f(r)$. Pertanto la molteplicità di intersezione fra $C$ e $r$ in $P$ è uguale alla molteplicità di intersezione fra $C'$ e $r'$ in $P'$
+	Sia $\funz f {\proj[2]{\ }} {\proj[2]{\ }}$ una proiettività e $C'$ la trasformata di $C$ tramite $f$ con $C\colon F(x_0,\ x_1,\ x_2)=0$, $f\colon x'=Mx$ e $f^{-1}\colon x=M^{-1}x'$ quindi $C'\colon F'(x')=F(M^{-1}x')=0$ polinomio omogeneo di grado $d$, dunque le proiettività portano curve algebriche in curve algebriche, ovvero $r'=f(r)$ è una retta e $P'=f(r)$. Pertanto la molteplicità di intersezione fra $C$ e $r$ in $P$ è uguale alla molteplicità di intersezione fra $C'$ e $r'$ in $P'$
 \end{demonstration}
 
 
@@ -2236,8 +2481,8 @@ Fatti:
 		\item	la molteplicità affine è pari a quella proiettiva: sia $P\in C\cap r$ e siano $\overline{C}$ la chiusura proiettiva di $C$ in $\proj[2]{\ }\supset\kamp^2$ ed $\overline{r}$ la chiusura proiettiva di $r$ in $\proj[2]{\ }$. Allora la molteplicità di intersezione tra $C$ e $r$ in $P$ è uguale alla molteplicità di intersezione fra $\overline{C}$ e $\overline{r}$ in $P$.
 	\end{enumerate}
 
-\begin{define} \textsc{Retta tangente ad una curva in un punto} \index{retta!tangente}\\
-	Sia $C$ una curva piana (affine o proiettiva) ed $r$ una retta (affine o proiettiva). Diciamo che $r$ è \textbf{tangente} a $C$ in un punto $P$ se la \textit{molteplicità di intersezione} fra $C$ ed $r$ in $P$ è \textit{maggiore di 1}.
+\begin{define}\textsc{Retta tangente ad una curva in un punto}\\
+Sia $C$ una curva piana (affine o proiettiva) ed $r$ una retta (affine o proiettiva). Diciamo che $r$ è \textbf{tangente} \index{retta!tangente} a $C$ in un punto $P$ se la \textit{molteplicità di intersezione} fra $C$ ed $r$ in $P$ è \textit{maggiore di 1}.
 \end{define}
 
 \begin{example} \textsc{Retta tangente in un punto} \\
@@ -2310,8 +2555,8 @@ Si hanno dunque due possibilità, che dipendono dal coefficiente di $t$:
 Abbiamo così ritrovato la casistica della cubica con i punti espliciti: ogni retta è tangente oppure c'è una sola tangente alla curva nel punto.
 %ESERCIZIOE nel caso della cruva dello scorso esempio: calcolare il gradiente di f in (-1,0) e in (0,0) e per (-1,0) scrivere la retta tangente e confrontare con i conti dello scorso esempio
 Questo ci porta a dare una definizione per un punto della curva in base al gradiente nel punto.
-\begin{define} \textsc{Punto singolare} \index{punto!singolare}
-	Sia $C$ una curva affine in $\kamp^2$ di equazione $f(x,y)=$, allora un punto $P\in C$ è detto \textbf{non singolare} o \textbf{liscio} se $\nabla f(P)\neq 0$. Altrimenti $P$ è detto \textbf{punto singolare}.\\
+\begin{define}\textsc{Punto singolare}.\\
+	Sia $C$ una curva affine in $\kamp^2$ di equazione $f(x,y)=$, allora un punto $P\in C$ è detto \textbf{non singolare} o \textbf{liscio} se $\nabla f(P)\neq 0$. Altrimenti $P$ è detto \textbf{punto singolare} \index{punto!singolare}.\\
 	Una curva $C$ è detta \textbf{singolare} se ha almeno un punto singolare, altrimenti è detta curva non singolare o liscia.
 \end{define}
 
@@ -2321,18 +2566,18 @@ Se invece $P$ è singolare allora ogni retta per $P$ è tangente a $C$ in $P$.
 \subsubsection{Caso proiettivo}
 Vogliamo analizzare la tangenza nel caso proiettivo, tuttavia per trattare di punti singolare o tangenti serve prima una proprietà dei polinomi omogenei, detta relazione di Eulero sui polinomi omogenei che vale in un qualsiasi numero di variabili a coefficienti in un campo qualsiasi e mette in relazione un polinomio omogeneo e le sue derivate parziali, anch'esse polinomi omogenei ma di un grado inferiore.
 
-\begin{theorema} \textsc{Relazione di Eulero} \index{Eulero!relazione} \\
-	Sia $F\in\kamp[x_0,\dots,x_n]$ polinomio omogeneo di grado $m$ e le sue derivate parziali $\frac{\partial{f}}{\partial{x_i}}\in\kamp[x_0,\dots,x_n]$, polinomio omogenei di grado $m-1$. Si ha che 
+\begin{theorema}\textsc{Relazione di Eulero} \index{Relazione!di Eulero} \\
+	Sia $F\in\kamp[x_0,\ \ldots,\ x_n]$ polinomio omogeneo di grado $m$ e le sue derivate parziali $\frac{\partial{f}}{\partial{x_i}}\in\kamp[x_0,\ \ldots,\ x_n]$, polinomio omogenei di grado $m-1$. Si ha che 
 		\begin{equation}
 			\sum_{i=0}^n x_i\frac{\partial{F}}{\partial{x_i}}=mF
 		\end{equation}
 \footnote{siccome le derivate parziali sono omogenee di grado $ m-1$, si moltiplica per $x_i$ perché la somma sia omogenea di grado $m$.}
 \end{theorema}
 \begin{demonstration}
-	Basta mostrarlo per un monomio $G=\lambda x_0^{j_0}\cdots x_n^{j_n}$ con $j_0+\dots+j_n=m,\ \lambda\in\kamp$. Scrivendone le derivate parziali rispetto ad una variabile e poi moltiplicando per $x_i$ sistemiamo l'esponente $i$-esimo
+	Basta mostrarlo per un monomio $G=\lambda x_0^{j_0}\cdots x_n^{j_n}$ con $j_0+\ldots+j_n=m,\ \lambda\in\kamp$. Scrivendone le derivate parziali rispetto ad una variabile e poi moltiplicando per $x_i$ sistemiamo l'esponente $i$-esimo
 		\begin{gather*}
-			\frac{\partial{G}}{\partial{x_i}}=\lambda j_i x_0^{j_0}\cdots x_i^{j_{i-1}} \cdots x_n^{j_n} \implies  x_i \frac{\partial{G}}{\partial{x_i}}=\lambda j_i x_0^{j_0}\cdots x_i^{j_i} x_n^{j_n}\\
-			\implies \sum_{i=0}^n x_i\frac{\partial{G}}{\partial{x_i}} = \sum_{i=0}^n \lambda j_i _0^{j_0} \codots x_n^{j_n}=\lambda x_0^{j_0}\cdots x_n^{j_n} \cdot \sum_{i=0}^n j_i =mG
+			\frac{\partial{G}}{\partial{x_i}}=\lambda j_i x_0^{j_0}\ldots x_i^{j_{i-1}} \ldots x_n^{j_n} \implies  x_i \frac{\partial{G}}{\partial{x_i}}=\lambda j_i x_0^{j_0}\ldots x_i^{j_i} x_n^{j_n}\\
+			\implies \sum_{i=0}^n x_i\frac{\partial{G}}{\partial{x_i}} = \sum_{i=0}^n \lambda j_i x_0^{j_0} \ldots x_n^{j_n}=\lambda x_0^{j_0}\ldots x_n^{j_n} \cdot \sum_{i=0}^n j_i =mG
 		\end{gather*}
 \end{demonstration}
 
@@ -2369,7 +2614,7 @@ Vogliamo analizzare la tangenza nel caso proiettivo, tuttavia per trattare di pu
 %sostituisco ed omgeneizzo rispetto a x_0
 %sostituendo le der parzi di f sostituisco le relazioni asterisco verde chiaro, ottenendo
 %\frac{}{}()()+\frac{}{}()()=0
-%raccogliendo i termini in x_0,x_1,x_2, ottenendo 
+%raccogliendo i termini in x_0,\ x_1,\ x_2, ottenendo 
 %-a\frac{}{}()-b\frac{}{}()
 %si usa ora la secona relazione ottenuta da Eulero	coeff di x_0 proprio
 %END PROOF
@@ -2401,7 +2646,7 @@ Vogliamo analizzare la tangenza nel caso proiettivo, tuttavia per trattare di pu
 %FINE ESEMPIO
 %ESEMPIO
 %nuova cubica
-%parto da curva affine e poi ne consideriamo la chiusura proiettiva $C$ di equazione $F(x_0,x_1,x_2)=x_0x_2^2-x_1^3$
+%parto da curva affine e poi ne consideriamo la chiusura proiettiva $C$ di equazione $F(x_0,\ x_1,\ x_2)=x_0x_2^2-x_1^3$
 %\implies unico punto singolare di C
 %
 %vediamo qual è la moltplicità dell'intersezione per confrontarlo con il caso precedente
@@ -2456,7 +2701,7 @@ Vogliamo analizzare la tangenza nel caso proiettivo, tuttavia per trattare di pu
 %prendo 2 coniche e considero le coniche le cui eq si ottengono come cl delle due equazioni
 %Siano $C_1$ e $C_2$ due coniche distinte nel piano proiettivo di equazionie $F_1$ e $F_2$, siccome le coniche sono distinte allor $F_1$ e $F_2$ non sono proporzionali. 
 %Il fascio di coniche generato da $C_1$ e da $C_2$ è dato da tutte le coniche di equazione $\lambda F_1+\mu F_2=0$ con $(\lambda\colon \mu)\in $
-%posso scrivere \mathcal{F} come fascio e $C_{\lambda,\mu} com conica specifica ottenuta dall'equazione, che è sempre unnac onica
+%posso scrivere \mathcal{F} come fascio e $C_{\lambda,\ \mu} com conica specifica ottenuta dall'equazione, che è sempre unnac onica
 %se moltiplico lambda e mu per lo stesso scalare tutta l'eq viene moltplicata ed ottengo la stessa conica di prima, dunque vanno presi in P1 e non solo in K
 %
 %ESEMPIO
@@ -2482,8 +2727,8 @@ Vogliamo analizzare la tangenza nel caso proiettivo, tuttavia per trattare di pu
 %lambda A_1+\mu A_2 è una matrice 3\times 3 i cui elementi sono nulli oppure delle forme lineari in \lmbda e \mu /cl di numeri/
 %dunque facendo il determinante si ottiene un polinomio omogeneo in \lambda e \mu e sarà nullo oppure avrà grado 3
 %dunque si avranno 2 possibilità
-%	o D(\lambda,\mu)=0\implies in termini del fasciotutte le coniche del fascio sono degeneri
-%	o D(\lambda,\mu) è omogeneo di grado 3 \implies si possono avere nel fascio 	coniche degeneri è come se stessimo guardando gli zeri del polinomio du P1 e ne può avere al più 3, pertanto ci sono al più 3 coniche degeneri
+%	o D(\lambda,\ \mu)=0\implies in termini del fascio tutte le coniche del fascio sono degeneri
+%	o D(\lambda,\ \mu) è omogeneo di grado 3 \implies si possono avere nel fascio 	coniche degeneri è come se stessimo guardando gli zeri del polinomio du P1 e ne può avere al più 3, pertanto ci sono al più 3 coniche degeneri
 %	
 %deduciamo dunque che o sono tutte degeneri o sono massimo 3, quindi se in un fascio ne trovo 4 degenerei allora tutte lo sono!
 %
@@ -2536,7 +2781,7 @@ Vogliamo analizzare la tangenza nel caso proiettivo, tuttavia per trattare di pu
 %Cosa vuol dire considerare un fascio di coniche?
 %Date C_1 e C_2 coniche, consideriamo il fascio \mathcal{F} da loro generato. C_1 ha equazione con coefficienti a_{ij} e corrisponde ad un punto A=()\in P5
 %Mentre C_2 ha equazione 		punto di P5 a coefficienti b_{ij}
-%La conica C_{\lambda,\mu} del fascio è la cl di F e G, dunque i coefficienti sono la cl dei coefficienti dell'eq si C_1 e C_2, dunque il punto corrispondente P_{\lambda,\mu}=() che facendo variare lambda e mu in P5 descrive una retta generata dai punti a e b
+%La conica C_{\lambda,\ \mu} del fascio è la cl di F e G, dunque i coefficienti sono la cl dei coefficienti dell'eq si C_1 e C_2, dunque il punto corrispondente P_{\lambda,\ \mu}=() che facendo variare lambda e mu in P5 descrive una retta generata dai punti a e b
 %in questa corrisp biunvoca fra coniche e punti, i fasci di coniche corrispondono esattamente alle rette in P5
 %Ogni fascio di coniche corisponde ad una retta in P5
 %dunque la retta è individuata da due qualsiasi 2 punti, allo stesso modo il fascio è descritto da qualsiasi sue 2 coniche
@@ -2565,7 +2810,7 @@ Vogliamo analizzare la tangenza nel caso proiettivo, tuttavia per trattare di pu
 %mat e determinate
 %trovo conica rid del fascio
 %interseco C_1 o C_2 con le rette della conica riducibile
-%Questo dà anche un metodo per calcolare C_1\cap C_2 nel fascio \mathcal{F* scirviamo D(\lambda,\mu), troviamo una onica degenere widetilde{C} e poi intersechiamo con C_1\cap\widetilde{C}}
+%Questo dà anche un metodo per calcolare C_1\cap C_2 nel fascio \mathcal{F* scirviamo D(\lambda,\ \mu), troviamo una onica degenere widetilde{C} e poi intersechiamo con C_1\cap\widetilde{C}}
 %
 %
 %fasci coniche rappresentazione geometrica, ce ne sono di molti tipi, vediamo quello comune
@@ -2582,7 +2827,7 @@ Vogliamo analizzare la tangenza nel caso proiettivo, tuttavia per trattare di pu
 %PROF
 %/scelta coo: siccome sono in pos gen posso scegliere in modo tale che i primi 3 sono i punti fondamentali e l'ultimo il punto unità/
 %A,
-%scriviamo letterlamnte la famiglia partendo da eq conica generica, impoiamo che pass per A,\dots D e vediamo che conidzioni vengon sui coefficienti
+%scriviamo letterlamnte la famiglia partendo da eq conica generica, impoiamo che pass per A,\ldots D e vediamo che conidzioni vengon sui coefficienti
 %Conica generale: a_{00}x_0^2+2a_{01}x_0x_1+a_{11}x_1^2+2a_{02}
 %
 %imponiamo il passaggio per A, ovvero sostituire A e metterlo uguale a 0, ottenendo la condizione a_{00}=0
@@ -2732,11 +2977,6 @@ Vogliamo analizzare la tangenza nel caso proiettivo, tuttavia per trattare di pu
 %
 %seabbiamo tempo controlliamo se la conica fa quello che deve fare: passa per i punti per cui deve passare e che sia tangente
 %scriviamo direttamente la tangente
-
-
-
-
-
 
 
 
