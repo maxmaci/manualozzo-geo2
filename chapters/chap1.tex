@@ -9,13 +9,14 @@
 \labelChapter{spazitopologici}
 
 \begin{introduction}
-‘‘BEEP BOOP INSERIRE CITAZIONE QUA BEEP BOOP.''
+‘‘La Topologia generale è una malattia da cui l'umanità guarirà presto.''
 \begin{flushright}
-	\textsc{NON UN ROBOT,} UN UMANO IN CARNE ED OSSA BEEP BOOP.
+	\textsc{Henri Poincaré (1854–1912)}, dopo aver letto le prime pagine di un libro di Topologia.
 \end{flushright}
 \end{introduction}
-% inserire citazione
-% inserire introduzione bellina
+\noindent Immaginiamo di aver un oggetto costituito di un magico \emph{materiale elastico} che possiamo allungare, piegare, torcere e rimpicciolire a piacere, ma che non possiamo né strappare né incollarne parti. Quali proprietà dell'oggetto si mantengono \emph{inalterate} prima e dopo la deformazione?\\
+Il principale scopo della \textbf{Topologia} è studiare le proprietà che rimangono invariate da queste deformazioni continue. Per far ciò, è necessario dotare un insieme di una struttura, detta \emph{topologia}, che permetta la definizione di \emph{continuità} di una funzione e di \emph{omeomorfismo}, generalizzando ciò detto in precedenza.\\
+In questo capitolo ci occuperemo di introdurre questi concetti fondamentali per poi studiare alcuni risultati che ne conseguono. Inoltre, affronteremo alcuni degli \emph{assiomi di separazione} e la nozione di \emph{metrica}.
 \section{Spazio topologico}
 \begin{define}\textsc{Spazio topologico e assiomi degli aperti.}\\
 	Uno \textbf{spazio topologico}\index{spazio!topologico} $\left(X, \topo\right)$ è un insieme $X$ con una famiglia di sottoinsiemi $\topo\subseteq\setpart{X}$ detta \textbf{topologia}\index{topologia} che soddisfano i seguenti assiomi (detti \textbf{assiomi degli aperti}\index{assiomi topologici!degli aperti}):
@@ -56,6 +57,7 @@
 		\item \textbf{Simmetria}: $\forall x,\ y\in X\quad \mvf{d}{x}{y}=\mvf{d}{y}{x}$.
 		\item \textbf{Disuguaglianza triangolare}\index{disuguaglianza triangolare}: $\forall x,\ y,\ z\in X\quad \mvf{d}{x}{z}\leq\mvf{d}{x}{y}+\mvf{d}{y}{z}$.
 	\end{enumerate}
+\vspace{-3mm}
 \end{define}
 \begin{define}\textsc{Spazio metrico.}\\
 	Uno \textbf{spazio metrico}\index{spazio!metrico} $\left(X, d\right)$ è un insieme su cui è definita una distanza.
@@ -103,7 +105,6 @@
 		A\subseteq \realset \text{ aperto } \left(A\in CF\right) \text{ se }  X\setminus A \text{ è finito.}\\
 		C\subseteq \realset \text{ chiuso } \left(C\in CF\right) \text{ se }  C \text{ è finito.}
 	\end{gather*}
-	Alcune osservazioni:
 	\begin{itemize}
 		\item Se un aperto $A$ è tale se il suo complementare $\mathcal{C}A$ è finito, si ha che:
 		\begin{equation}
@@ -113,21 +114,30 @@
 		\item Se $X$ è finito, la topologia $CF$ coincide con la topologia discreta: ogni sottoinsieme di $X$ è finito e dunque un aperto.
 		\item Se $X$ è infinito, ad esempio $\realset$, la topologia \textit{non} è quella discreta: $[0,\ 1]$ per la topologia discreta è un chiuso ma per quella $CF$ non lo è in quanto \textit{non} è finito.
 	\end{itemize}
+\vspace{-3mm}
 \end{attention}
 
 \subsubsection{Norme esotiche}
 Possiamo definire su $\realset^n$ una famiglia di distanze dette \textbf{norme}\index{norma}; qui di seguito ne elenchiamo alcune. Definiti i punti $x=\left(x_1,\ldots, x_n\right),\ y=\left(y_1,\ldots, y_n\right)\in\realset^n$ abbiamo:
-\begin{itemize}
-\item \textbf{Norma infinito}: $\displaystyle\mvf{d_\infty}{x}{y}=\max_{i}{\left|x_i-y_i\right|}$
-\item \textbf{Norma uno}: $\displaystyle\mvf{d_1}{x}{y}=\sum_{i=1}^{n}\left|x_i-y_i\right|$
-\item \textbf{Norma due}: $\displaystyle\mvf{d_2}{x}{y}=\sqrt{\sum_{i=1}^{n}\left|x_i-y_i\right|^2}$
-\item \textbf{Norma p}: $\displaystyle\mvf{d_p}{x}{y}=\sqrt[\leftroot{1}\uproot{3}p]{\sum_{i=1}^{n}\left|x_i-y_i\right|^p}$
+\begin{multicols}{2}
+	\begin{itemize}
+	\item \textbf{Norma infinito}:
+	\[\mvf{d_\infty}{x}{y}=\max_{i}{\left|x_i-y_i\right|}\]
+	\item \textbf{Norma uno}:
+	\[\mvf{d_1}{x}{y}=\sum_{i=1}^{n}\left|x_i-y_i\right|\]
 \end{itemize}
-Si ha inoltre $\displaystyle \lim_{p \to +\infty}d_p=d_\infty$.\\
-Valgono inoltre le seguenti disuguaglianze:
+\begin{itemize}
+	\item \textbf{Norma due}:
+	\[\mvf{d_2}{x}{y}=\sqrt{\sum_{i=1}^{n}\left|x_i-y_i\right|^2}\]
+	\item \textbf{Norma p}:
+	\[\mvf{d_p}{x}{y}=\sqrt[\leftroot{1}\uproot{3}p]{\sum_{i=1}^{n}\left|x_i-y_i\right|^p}\]
+\end{itemize}
+\end{multicols}
+Si ha $\displaystyle \lim_{p \to +\infty}d_p=d_\infty$. Valgono inoltre le seguenti disuguaglianze:
 \begin{equation}
 \forall x,\ y\in\realset^n\quad \mvf{d_\infty}{x}{y}\leq\mvf{d_2}{x}{y}\leq\mvf{d_1}{x}{y}\leq n\mvf{d_\infty}{x}{y}
 \end{equation}
+\vspace{-6mm}
 \begin{demonstration}
 Supponiamo senza perdere di generalità che $\mvf{d_\infty}{x}{y}=\left|x_1-y_1\right|$.
 \begin{gather*}
@@ -138,8 +148,9 @@ Notiamo che $\left|x_i-y_i\right|$ sono sempre positive, allora sia $a_i\coloneq
 \begin{equation*}
 \sqrt{a_1^2+\ldots+a_n^2}\leq a_1+\ldots+a_n\implies d_2\leq d_1
 \end{equation*}
+\vspace{-6mm}
 \end{demonstration}
-Queste disuguaglianze danno le seguenti inclusioni\footnote{Qui usiamo la notazione $B_i\left(r\right)$ per indicare la palla aperta di raggio $r$ e centro fissato $x$ rispetto alla norma $i$.}:
+Queste disuguaglianze danno le seguenti inclusioni\footnote{Qui $B_i\left(r\right)$ indica la palla aperta di raggio $r$ e centro fissato $x$ rispetto alla norma $i$.}:
 \begin{equation}
 B_1\left(\epsilon\right)\subseteq B_2\left(\epsilon\right)\subseteq B_\infty\left(\epsilon\right)\subseteq B_1\left(n\epsilon\right)
 \end{equation}
@@ -149,17 +160,26 @@ B_1\left(\epsilon\right)\subseteq B_2\left(\epsilon\right)\subseteq B_\infty\lef
 	\end{minipage}
 \end{center}
 Questo ci porta a dire che le topologie indotte da queste distanze sono la stessa.\\
-Preso adesso $X=\mathcal{C}\left([0,\ 1]\right)=\left\{\funz{f}{[0,\ 1]}{\realset},\ f\text{ continua}\right\}$, esso è uno spazio vettoriale infinito, con $0_\mathcal{C}\equiv O_{[0,\ 1]}$ (cioè la funzione \textit{identicamente nulla}). In questo caso possiamo comunque adattare le norme precedenti con delle ‘‘somme infinite'', ovvero degli integrali.
-\begin{itemize}
-	\item \textbf{Norma infinito}: $\displaystyle\mvf{d_\infty}{f}{g}=\max_{x\in[0,\ 1]}{\left|f(\left(x\right)-\left(y\right)\right|}$
-	\item \textbf{Norma uno}: $\displaystyle\mvf{d_1}{f}{g}=\int_{0}^{1}\left|f(\left(x\right)-\left(y\right)\right|$
-	\item \textbf{Norma due}: $\displaystyle\mvf{d_2}{f}{g}=\sqrt{\int_{0}^{1}\left|f(\left(x\right)-\left(y\right)\right|^2}$
-	\item \textbf{Norma p}: $\displaystyle\mvf{d_p}{f}{g}=\sqrt[\leftroot{1}\uproot{3}p]{\int_{0}^{1}\left|f(\left(x\right)-\left(y\right)\right|^p}$
-\end{itemize}
-A differenza del caso su $\realset^n$, ogni norma genera in realtà una topologia distinta!
+Preso adesso $X=\mathcal{C}\left([0,\ 1]\right)=\left\{\funz{f}{[0,\ 1]}{\realset},\ f\text{ continua}\right\}$, esso è uno spazio vettoriale infinito, con $0_\mathcal{C}\equiv O_{[0,\ 1]}$ (cioè la funzione \textit{identicamente nulla}). Possiamo comunque adattare le norme precedenti con delle ‘‘somme infinite'', ovvero degli \textit{integrali}.
+\vspace{-2mm}
+\begin{multicols}{2}
+	\begin{itemize}
+		\item \textbf{Norma infinito}:
+		\[\displaystyle\mvf{d_\infty}{f}{g}=\max_{x\in[0,\ 1]}{\left|f(\left(x\right)-\left(y\right)\right|}\]
+		\item \textbf{Norma uno}: \[\displaystyle\mvf{d_1}{f}{g}=\int_{0}^{1}\left|f(\left(x\right)-\left(y\right)\right|\]
+	\end{itemize}
+	\begin{itemize}
+		\item \textbf{Norma due}: \[\displaystyle\mvf{d_2}{f}{g}=\sqrt{\int_{0}^{1}\left|f(\left(x\right)-\left(y\right)\right|^2}\]
+		\item \textbf{Norma p}: \[\displaystyle\mvf{d_p}{f}{g}=\sqrt[\leftroot{1}\uproot{3}p]{\int_{0}^{1}\left|f(\left(x\right)-\left(y\right)\right|^p}\]
+	\end{itemize}
+\end{multicols}
+\vspace{-1mm}
+\noindent A differenza del caso su $\realset^n$, ogni norma genera in realtà una topologia distinta!
+\vspace{-3mm}
 \subsection{Finezza: confronto di topologia}
 \begin{define}\textsc{Finezza.}\index{finezza}\\
 Sia $X$ un insieme e $\topo_1$, $\topo_2$ due topologie di $X$. Si dice che $\topo_1$ è \textbf{meno fine}\index{finezza!meno fine} di $\topo_2$ se tutti gli aperti della prima topologia sono aperti della seconda:
+\vspace{-2mm}
 \begin{equation}
 \forall A\in\topo_1\implies A\in \topo_2
 \end{equation}
