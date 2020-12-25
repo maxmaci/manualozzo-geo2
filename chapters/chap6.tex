@@ -14,28 +14,30 @@
 	\textsc{NON UN ROBOT,} UN UMANO IN CARNE ED OSSA BEEP BOOP.
 \end{flushright}
 \end{introduction}
-
+% introduzione carina
+% citazione
 \section{Numerabilità}
-\begin{define}
+\begin{define}\textsc{Insieme numerabile.}\\
 Un insieme $X$ è \textbf{numerabile}\index{numerabile} se è finito oppure esiste una biezione tra l'insieme $X$ e i naturali $\naturalset$.
 \end{define}
-\begin{define}
+\begin{define}\textsc{Secondo assioma di numerabilità (A base numerabile).}\\
 Uno spazio topologico $X$ è \textbf{a base numerabile}\seeonlyindex{a base numerabile}{assioma di numerabilità!secondo} se esiste una base $\basis$ della topologia tale che $\basis$ sia numerabile. %sia di cardinalità numerabile??
 Si dice anche che $X$ soddisfa il \textbf{secondo assioma di numerabilità}\index{assioma di numerabilità!secondo}.
 \end{define}
-\begin{define}
-Uno spazio topologico $X$ è \textit{primo-numerabile}\seeonlyindex{primo-numerabile}{assioma di numerabilità!primo} se ogni punto ammette un sistema fondamentale di intorni che sia numerabile. Si dice anche che $X$ soddisfa il \textbf{primo assioma di numerabilità}\index{assioma di numerabilità!primo}.
+\begin{define}\textsc{Primo assioma di numerabilità.}\\
+Uno spazio topologico $X$ è \textit{primo numerabile}\seeonlyindex{primo numerabile}{assioma di numerabilità!primo} se ogni punto ammette un sistema fondamentale di intorni che sia numerabile. Si dice anche che $X$ soddisfa il \textbf{primo assioma di numerabilità}\index{assioma di numerabilità!primo}.
 \end{define}
-\begin{observe}~{}
+\begin{observes}~{}
 \begin{enumerate}
 \item Il secondo assioma di numerabilità implica il primo.
 \item Se $X$ è finito, $X$ soddisfa sempre i due assiomi.
-\item Se $X$ è spazio metrico, $X$ è sempre \textit{primo-numerabile}.
-\item Se $X$ è \textit{a base numerabile}, ogni sottospazio $Y$ di $X$ è \textit{a base numerabile}. In particolare $Y$ è primo-numerabile.
-\item Se $X$ e $Y$ sono \textit{a base numerabile}, allora $X\times Y$ è \textit{a base numerabile}. In particolare $X\times Y$ è primo-numerabile.
-\item Non è vero che il quoziente di $X$ spazio \textit{a base numerabile} (o \textit{primo-numerabile}) è sempre \textit{a base numerabile} (o \textit{primo-numerabile}).
+\item Se $X$ è spazio metrico, $X$ è sempre \textit{primo numerabile}.
+\item Se $X$ è \textit{a base numerabile}, ogni sottospazio $Y$ di $X$ è \textit{a base numerabile}. In particolare $Y$ è primo numerabile.
+\item Se $X$ e $Y$ sono \textit{a base numerabile}, allora $X\times Y$ è \textit{a base numerabile}. In particolare $X\times Y$ è primo numerabile.
+\item Non è vero che il quoziente di $X$ spazio \textit{a base numerabile} (o \textit{primo numerabile}) è sempre \textit{a base numerabile} (o \textit{primo numerabile}).
 \end{enumerate}
-\end{observe}
+\vspace{-3mm}
+\end{observes}
 \begin{demonstration}~{}
 \begin{enumerate}[label=\Roman*]
 	\item Se $X$ ha base numerabile $\basis$ e $x\in X$, allora $\left\{A\in \basis\mid x\in A\right\}$ è un sistema fondamentali di intorni di $x$ ed è chiaramente numerabile.
@@ -43,11 +45,12 @@ Uno spazio topologico $X$ è \textit{primo-numerabile}\seeonlyindex{primo-numera
 	\item Preso $x\in X$, allora $\left\{B_{\nicefrac{1}{n}}\left(x\right)\right\}_{n\in\naturalset}$ è un sistema fondamentale di intorni ed è numerabile.
 	\item Se $\basis$ è una base numerabile per $X$, $\left\{A\cap Y\mid A\in \basis\right\}$ è base numerabile per $Y$.
 	\item Se $\basis_X$ è una base numerabile per $X$ e $\basis_Y$ base numerabile per $Y$, allora $\left\{A\times B\mid A\in \basis_X,\ B\in\basis_Y\right\}$ è base di $X\times Y$ numerabile: il prodotto cartesiano di due insiemi numerabili rimane numerabile.
-	\item La contrazione di $\integerset$ in $\realset$ ad un punto, cioè il quoziente $\nicefrac{\realset}{\integerset}$, non è primo-numerabile nè tanto meno a base numerabile, pur essendo $\realset$ a base numerabile in quanto metrico\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{dimostrazionenonnumerabilità}, si può trovare la dimostrazione di ciò.}.
+	\item La contrazione di $\integerset$ in $\realset$ ad un punto, cioè il quoziente $\nicefrac{\realset}{\integerset}$, non è primo numerabile nè tanto meno a base numerabile, pur essendo $\realset$ a base numerabile in quanto metrico\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{dimostrazionenonnumerabilità}, si può trovare la dimostrazione di ciò.}.
 \end{enumerate}
+\vspace{-3mm}
 \end{demonstration}
 \begin{example}
-	$\realset$ con la topologia Euclidea è \textit{a base numerabile}. Presa infatti:
+	$\realset$ con la topologia Euclidea è \textit{a base numerabile}. Infatti, presa:
 	\begin{equation*}
 		\basis=\left\{\left(a,\ b\right)\mid a,\ b\in \rationalset,\ a<b\right\}
 	\end{equation*}
@@ -58,6 +61,7 @@ Uno spazio topologico $X$ è \textit{primo-numerabile}\seeonlyindex{primo-numera
 			\left(x,\ y\right)=\union_{\substack{a, b\in\rationalset\\ x<a<b<y}}\left(a,\ b\right)
 		\end{equation*}
 	\end{itemize}
+\vspace{-6mm}
 \end{example}
 \begin{proposition}
 Sia $X$ \textit{a base numerabile}. Allora ogni ricoprimento aperto di $X$ ammette un sottoricoprimento numerabile.
@@ -66,21 +70,21 @@ Sia $X$ \textit{a base numerabile}. Allora ogni ricoprimento aperto di $X$ ammet
 Sia $\mathcal{A}$ un ricoprimento aperto di $X$, $\basis$ una base numerabile per $X$ e $x\in X$. Allora $\exists U_x\in\mathcal{A}$ tale che $x\in U_x$. Essendo $\basis$ base, $\exists B_x\in\basis$ tale che $x\in B_x\subseteq U_x$.\\
 Abbiamo così determinato un sottoinsieme numerabile della base $\basis$:
 \begin{equation*}
-\tilde{\basis}\coloneqq\left\{B_x\mid x\in X\right\}
+\widetilde{\basis}\coloneqq\left\{B_x\mid x\in X\right\}
 \end{equation*}
 Allora esiste in particolare $E\subseteq X$ numerabile tale che:
 \begin{equation*}
-\tilde{\basis}\coloneqq\left\{B_x\mid x\in E\right\}
+\widetilde{\basis}\coloneqq\left\{B_x\mid x\in E\right\}
 \end{equation*}
-Se consideriamo ora $\tilde{\mathcal{A}}\coloneqq\left\{U_x\mid x\in E\right\}$, notiamo che:
+Se consideriamo ora $\widetilde{\mathcal{A}}\coloneqq\left\{U_x\mid x\in E\right\}$, notiamo che:
 \begin{itemize}
-	\item $\tilde{A}\subseteq A$.
-	\item $\tilde{A}$ è numerabile perché lo è $E$.
-	\item $X=\union_{B_x\in\tilde{\basis}}B_x=\union_{x\in E}B_x\subseteq \union_{x\in E}U_x $.
+	\item $\widetilde{A}\subseteq A$.
+	\item $\widetilde{A}$ è numerabile perché lo è $E$.
+	\item $X=\union_{B_x\in\widetilde{\basis}}B_x=\union_{x\in E}B_x\subseteq \union_{x\in E}U_x $.
 \end{itemize}
-Segue che $\tilde{\mathcal{A}}$ è un sottoricoprimento numerabile di $A$.
+Segue che $\widetilde{\mathcal{A}}$ è un sottoricoprimento numerabile di $A$.
 \end{demonstration}
-\begin{define}
+\begin{define}\textsc{Spazio separabile.}\\
 Uno spazio topologico $X$ si dice \textbf{separabile}\index{spazio topologico!separabile} se contiene un sottoinsieme $E$ \textit{denso} e \textit{numerabile}.
 \end{define}
 \begin{examples}~{}
@@ -88,6 +92,7 @@ Uno spazio topologico $X$ si dice \textbf{separabile}\index{spazio topologico!se
 		\item Se $X$ è numerabile, allora è separabile perché l'insieme stesso è un sottoinsieme numerabile e denso.
 		\item $\realset^n$ con la topologia euclidea è separabile perché si ha $E=\rationalset^n$ denso in $\realset^n$.
 	\end{itemize}
+\vspace{-3mm}
 \end{examples}
 \begin{lemming}\label{basenumseparabile}
 Se $X$ è \textit{a base numerabile}, allora è \textit{separabile}.
@@ -101,9 +106,10 @@ Se $X$ è \textit{a base numerabile}, allora è \textit{separabile}.
 	\item $E$ è numerabile perché lo è $\basis$: abbiamo preso un punto per ogni elemento della base numerabile.
 	\item $E$ è denso: se $A\subseteq X$ è aperto \textit{non} vuoto, allora $\exists U\in\basis$ tale che $x_u\in U\subseteq A\implies x_U\in A\implies E\cap A\neq \emptyset$.
 \end{itemize}
+\vspace{-3mm}
 \end{demonstration}
 \begin{proposition}
-	Se $X$ è spazio metrico, $X$ è sempre primo-numerabile ed è:
+	Se $X$ è spazio metrico, $X$ è sempre primo numerabile ed è:
 	\begin{center}
 		\textit{a base numerabile} $\iff$ \textit{separabile}
 	\end{center}
@@ -136,7 +142,7 @@ Segue la tesi.
 	Si può vedere che $\realset^n$ è base numerabile anche perché è uno spazio metrico ed è separabile.
 \end{example}
 \begin{attention}
-Un insieme con una certa topologia può essere a base numerabile (o primo-numerabile), ma non necessariamente rispetto ad un altra!
+Un insieme con una certa topologia può essere a base numerabile (o primo numerabile), ma non necessariamente rispetto ad un altra!
 \end{attention}
 \begin{example}
 \textsc{Retta di Sorgenfrey}\index{retta di Sorgenfrey}.\\
@@ -144,7 +150,7 @@ Consideriamo $X=\realset$ con la topologia avente come base:
 \begin{equation}
 \basis=\left\{\left[a,\ b\right)\mid a,\ b\in\realset,\ a<b\right\}
 \end{equation}
-Mostriamo $\basis$ è base per una topologia, è separabile, primo-numerabile ma \textit{non} è a base numerabile.
+Mostriamo $\basis$ è base per una topologia, è separabile, primo numerabile ma \textit{non} è a base numerabile.
 \begin{itemize}
 	\item \textit{Base per una topologia}: usiamo il teorema delle basi (Manetti, 3.7), pag. \pageref{teoremabasi}.
 	\begin{enumerate}[label=\Roman*]
@@ -156,21 +162,21 @@ Mostriamo $\basis$ è base per una topologia, è separabile, primo-numerabile ma
 	Allora basta prendere $C=A\cap B\in\basis$ per soddisfare $x\in C\subseteq A\cap B$.
 	\end{enumerate}
 \item \textit{Separabile}: $E=\integerset$ è numerabile ed è denso perché vale sempre $\left[a,\ b\right)\cap \integerset \neq \emptyset$, dunque ogni aperto non vuoto interseca $E$; segue che $X$ è separabile.
-\item \textit{Primo-numerabile}: s $a\in\realset$ allora $\left\{\left[a,\ a+\frac{1}{n}\right)\right\}_{n\in\naturalset}$ è un sistema fondamentale di intorni di $a$ numerabile. Preso $U$ intorno di $a$, $\exists b>a$ tale che $\left[a,\ b\right)\subseteq U$; inoltre, $\exists n\in\naturalset$ tale che $a+\frac{1}{n}<b$, cioè:
+\item \textit{primo numerabile}: s $a\in\realset$ allora $\left\{\left[a,\ a+\frac{1}{n}\right)\right\}_{n\in\naturalset}$ è un sistema fondamentale di intorni di $a$ numerabile. Preso $U$ intorno di $a$, $\exists b>a$ tale che $\left[a,\ b\right)\subseteq U$; inoltre, $\exists n\in\naturalset$ tale che $a+\frac{1}{n}<b$, cioè:
 \begin{equation*}
 \left[a,\ a+\frac{1}{n}\right)\subseteq\left[a,\ b\right)\subseteq U
 \end{equation*}
-\item \textit{Non a base numerabile}: presa una base $\tilde{\basis}$ per $X$, mostriamo che non è numerabile. Sia $x\in\realset$. Allora:
+\item \textit{Non a base numerabile}: presa una base $\widetilde{\basis}$ per $X$, mostriamo che non è numerabile. Sia $x\in\realset$. Allora:
 \begin{equation*}
 \left[x,\ \infty\right)=\union_{y>x}\left[x,\ y\right)
 \end{equation*}
-È aperto. In particolare, esiste un aperto dipendente dal punto $x$, cioè $U\left(x\right)=\left[x,\ b\right)\in\tilde{\basis}$ (per un certo $b>x$) per cui $x\in U\left(x\right)\subseteq\left[x,\ \infty\right)$.\\
+È aperto. In particolare, esiste un aperto dipendente dal punto $x$, cioè $U\left(x\right)=\left[x,\ b\right)\in\widetilde{\basis}$ (per un certo $b>x$) per cui $x\in U\left(x\right)\subseteq\left[x,\ \infty\right)$.\\
 Notiamo che se $x\neq y$, allora $U\left(x\right)\neq U\left(y\right)$: preso $y>x$, segue che $x\notin \left[y,\ \infty\right)\supseteq U\left(y\right)\implies x\notin U\left(y\right)\implies U\left(x\right)\neq U\left(y\right)$. L'applicazione:
 \begin{equation}
-\funztot{\ }{\realset}{\tilde{\basis}}{x}{U\left(x\right)}
+\funztot{\ }{\realset}{\widetilde{\basis}}{x}{U\left(x\right)}
 \end{equation}
 \end{itemize}
-è iniettiva, dunque $\tilde{\basis}$ non è in iniezione con i naturali e pertanto $\tilde{\basis}$ \textit{non} è numerabile.
+è iniettiva, dunque $\widetilde{\basis}$ non è in iniezione con i naturali e pertanto $\widetilde{\basis}$ \textit{non} è numerabile.
 \end{example}
 \begin{center}
 	\begin{tikzcd}
@@ -183,11 +189,11 @@ Notiamo che se $x\neq y$, allora $U\left(x\right)\neq U\left(y\right)$: preso $y
 	\end{tikzcd}
 \end{center}
 \section{Successioni}
-\begin{define}
+\begin{define}\textsc{Successione.}\\
 Una \textbf{successione}\index{successione} in uno spazio topologico $X$ è una funzione:
 $\funz{a}{\naturalset}{X}$ che indichiamo con $\left\{a_n\right\}_{n\in\naturalset}=\left\{a_n\right\}$.
 \end{define}
-\begin{define}
+\begin{define}\textsc{Convergenza di una successione.}\\
 Sia $\left\{a_n\right\}$ una successione in $X$. Diciamo che $\left\{a_n\right\}$ \textbf{converge}\index{convergenza} a $p\in X$ se $\forall U\in I\left(p\right)\ \exists n_0\in \naturalset\ \colon a_n\in U,\ \forall n\geq n_0$.
 \end{define}
 \begin{observe}
@@ -197,15 +203,15 @@ Sia $\left\{a_n\right\}$ una successione in $X$. Diciamo che $\left\{a_n\right\}
 	Supponiamo che $\left\{a_n\right\}$ converga a $p$ e $q$. Mostriamo che $p=q$.\\
 	Siano $U\in I\left(p\right)$ e $V\in I\left(q\right)$.
 	\begin{itemize}
-		\item Siccome $\left\{a_n\right\}$ converge a $p$, $\exists n_0$ tale che $a_n\in U \forall n\geq n_0$.
-		\item Siccome $\left\{a_n\right\}$ converge a $1$, $\exists n_1$ tale che $a_n\in V \forall n\geq n_1$.
+		\item Siccome $\left\{a_n\right\}$ converge a $p$, $\exists n_0$ tale che $a_n\in U,\ \forall n\geq n_0$.
+		\item Siccome $\left\{a_n\right\}$ converge a $1$, $\exists n_1$ tale che $a_n\in V,\ \forall n\geq n_1$.
 	\end{itemize}
 \begin{equation*}
-\implies a_n\in U\cap V\ \forall n\geq \max_{n_0,\ n_1}\implies U\cap V\neq \emptyset\implies p=q
+\text{Allora } a_n\in U\cap V\ \forall n\geq \max_{n_0,\ n_1}\implies U\cap V\neq \emptyset\implies p=q
 \end{equation*}
 L'ultima implicazione deriva dal fatto che $X$ è di \textbf{Hausdorff}. Infatti, se in \textbf{Hausdorff} $p\neq q\implies U\cap V = \emptyset$, vale anche la sua negazione: $U\cap V\neq \emptyset\implies p = q$.
 \end{demonstration}
-\begin{define}
+\begin{define}\textsc{Limite.}\\
 Se $X$ è di \textbf{Hausdorff} e $\left\{a_n\right\}$ è convergente, ha senso parlare del \textbf{limite} della successione:
 \begin{equation}
 p=\lim_{n \to +\infty}a_n
@@ -217,6 +223,7 @@ Se $X$ \textit{non} è di \textbf{Hausdorff}, la stessa successione può converg
 		\item Se $X$ ha la topologia banale $\topo=\left\{X,\ \emptyset\right\}$, l'unico intorno di qualunque punto è $X$. Allora ogni successione $\left\{a_n\right\}$ in $X$ converge sempre ad un qualunque punto $p$.
 		\item Se $X$ ha la topologia discreta, $\left\{a_n\right\}$ successione in $X$ converge a $p\iff \exists n_0\ \colon a_n=p,\ \forall n\geq n_0$, cioè se la successione è finitamente costante. Infatti, nella topologia discreta anche il singoletto $\left\{p\right\}$ è intorno di $p$, dunque eventualmente la successione avrà solo termini nel singoletto.
 	\end{itemize}
+\vspace{-3mm}
 \end{examples}
 \begin{observe}
 Se $X$ spazio metrico:
@@ -230,7 +237,7 @@ Se $X$ spazio metrico:
 	$\impliessx$ Sia $U\in I\left(p\right)$. Allora $\exists \epsilon\ \colon B_{\epsilon}\left(p\right)\subseteq U$. Ma allora, dato che per le ipotesi $\exists n_0\ \colon \mvf{d}{p}{a_n}<\epsilon,\ \forall n\geq n_0$, cioè $a_n\in B_{\epsilon}\left(p\right)\subseteq U\implies a_n\in U\forall n\geq n_0$.
 \end{demonstration}
 \subsection{Punti di accumulazione}
-\begin{define}
+\begin{define}\textsc{Punto di accumulazione per la successione.}\\
 	Un punto $p\in X$ è \textbf{punto di accumulazione per la successione}\index{punto!di accumulazione!per una successione} $\left\{a_n\right\}$ se:
 	\begin{equation}
 		\forall U\in I\left(p\right),\ \forall N\in\naturalset\ \exists n\geq N\ \colon a_n\in U
@@ -242,9 +249,10 @@ Se $X$ spazio metrico:
 	\begin{equation}
 		p\textsc{ punto di accumulazione per } a_n\iff \forall \epsilon>0\ \exists n_0\ \colon \mvf{d}{x}{y}<\epsilon,\ \forall n\geq n_0
 	\end{equation}
-\end{exercise}
 \vspace{-6mm}
-\begin{define}
+\end{exercise}
+
+\begin{define}\textsc{Punto di accumulazione per il sottoinsieme e derivato.}\\
 	Un punto $p\in X$ è \textbf{punto di accumulazione per il sottoinsieme}\index{punto!di accumulazione!per un sottoinsieme} $B\subseteq X$ se:
 	\begin{equation}
 		\forall U\in I\left(p\right), \exists b\in B \colon b\in U\setminus \left\{ p\right\}
@@ -255,12 +263,12 @@ L'insieme dei punti di accumulazione per il sottoinsieme $B$ è chiamato \textbf
 Data la successione $\left\{a_n\right\}$ in $X$ e definito $A\coloneqq \{a_n\mid n\in\naturalset\}$:
 \begin{itemize}
 \item $p\in X$ punto di accumulazione per la successione non è mai punto di accumulazione per l'insieme $A$.
-\item $p\in X$ punto di accumulazione per l'insieme $A$ in generale non è punto di accumulazione per la successione; se $X$ è metrico %
-allora vale l'implicazione
+\item $p\in X$ punto di accumulazione per l'insieme $A$ in generale non è punto di accumulazione per la successione; se $X$ è metrico allora vale l'implicazione.
 \end{itemize}
+\vspace{-3mm}
 \end{exercise}
 \subsection{Sottosuccessioni}
-\begin{define}
+\begin{define}\textsc{Sottosuccessione.}\\
 Una \textbf{sottosuccessione}\index{successione!sottosuccessione} di $\left\{a_n\right\}$ è la composizione di $\funz{a}{\naturalset}{X}$ con un'applicazione \textit{strettamente crescente} $\funztot{k}{\naturalset}{\naturalset}{n}{k\left(n\right)}$. Si indica con $\left\{a_{k_n}\right\}$.
 \end{define}
 \begin{lemming}\label{lemmatriangolino} $\textcolor{blue}{\circled{{\large \blacktriangle}}}$ 	Sia $\left\{a_n\right\}$ una successione su $X$ e $p\in X$. Valgono le seguenti implicazioni:
@@ -291,8 +299,9 @@ Una \textbf{sottosuccessione}\index{successione!sottosuccessione} di $\left\{a_n
 \begin{equation}
 	\circled{4}\ p\in\overline{A}\text{ dove }A=\left\{a_n\mid n\in \naturalset\right\}\subseteq X
 \end{equation}
-\end{lemming}~{}\\
-\begin{demonstration}
+\vspace{-6mm}
+\end{lemming}
+\begin{demonstration}~{}\\
 $\circled{1}\implies\circled{2}$ La sottosuccessione convergente è la successione stessa.\\
 $\circled{2}\implies\circled{3}$ Sia $\left\{a_{k\left(n\right)}\right\}$ una sottosuccessione convergente a $p$ e sia $U\in I\left(p\right)$. \\
 Se $a_{k\left(n\right)}$ converge a $p$ si ha che $\exists n_0\ \colon a_{k\left(n\right)}\in U,\ \forall n\geq n_0$. Poichè $k\left(n\right)$ è strettamente crescente, $\exists n_1\ \colon k\left(n\right)\geq N,\ \forall n\geq n_1$. Allora preso:
@@ -303,23 +312,23 @@ Abbiamo che $a_{k\left(n\right)}\in U,\ k\left(n\right)\geq N$.\footnote{L'intor
 $\circled{3}\implies\circled{4}$ $p\in \overline{A}\iff \forall U\in I\left(p\right)\ A\cap U\neq \emptyset$. Allora sia $U$ intorno di $p$: voglia che $U\cap A\neq \emptyset$. Essendo $p$ punto di accumulazione per $\left\{a_n\right\}$, $\exists n\ a_n\in U\implies U\cap A\neq \emptyset$.
 \end{demonstration}
 \begin{lemming}\label{primonumesucc}
-Sia $X$ \textit{primo-numerabile}, $\left\{a_n\right\}$ successione in $X$ e $p\in X$. Allora vale anche il viceversa di $\textcolor{red}{\circled{\ast}}$, cioè:
+Sia $X$ \textit{primo numerabile}, $\left\{a_n\right\}$ successione in $X$ e $p\in X$. Allora vale anche il viceversa di $\textcolor{red}{\circled{\ast}}$, cioè:
 \begin{equation}
 	\left\{a_n\right\}\text{ ha una sottosuccessione convergente a }p\iff p\text{ è di accumulazione per }\left\{a_n\right\}
 \end{equation}
 \end{lemming}
-\begin{demonstration}
+\begin{demonstration}~{}\\
 	$\impliesdx$ Vale per $\textcolor{red}{\circled{\ast}}$.\\
-	$\impliessx$ Sia $\left\{U_m\right\}_{m\in\naturalset}$ sistema fondamentale di intorni di $p$ numerabile per ipotesi ($X$ primo-numerabile). Consideriamo i seguenti insiemi:
+	$\impliessx$ Sia $\left\{U_m\right\}_{m\in\naturalset}$ sistema fondamentale di intorni di $p$ numerabile per ipotesi ($X$ primo numerabile). Consideriamo i seguenti insiemi:
 	\begin{equation*}
-	\tilde{U}_m\coloneqq U_1\cap\ldots U_m\quad \forall m\in \naturalset
+	\widetilde{U}_m\coloneqq U_1\cap\ldots U_m\quad \forall m\in \naturalset
 	\end{equation*}
 \begin{itemize}
-	\item $\tilde{U}_m$ è intorno di $p$, in quanto intersezione \textit{finita} di intorni di $p$.
-	\item $\tilde{U}_m=U_1\cap\ldots U_m\supseteq U_1\cap\ldots U_m\cap U_{m+1}=\tilde{U}_{m+1}$.
+	\item $\widetilde{U}_m$ è intorno di $p$, in quanto intersezione \textit{finita} di intorni di $p$.
+	\item $\widetilde{U}_m=U_1\cap\ldots U_m\supseteq U_1\cap\ldots U_m\cap U_{m+1}=\widetilde{U}_{m+1}$.
 \end{itemize}
-Segue che $\left\{\tilde{U}_m\right\}$ è ancora un sistema fondamentale di intorni (numerabile) di $p$, infatti, se $V$ è intorno di $p$, $\exists m\ \colon V\supseteq U_m\supseteq \tilde{U}_m$.\\
-A meno di sostituire $U_m$ con $\tilde{U}_m$, possiamo supporre che $U_1\supseteq U_2\supseteq U_3\supseteq \ldots$.\\
+Segue che $\left\{\widetilde{U}_m\right\}$ è ancora un sistema fondamentale di intorni (numerabile) di $p$, infatti, se $V$ è intorno di $p$, $\exists m\ \colon V\supseteq U_m\supseteq \widetilde{U}_m$.\\
+A meno di sostituire $U_m$ con $\widetilde{U}_m$, possiamo supporre che $U_1\supseteq U_2\supseteq U_3\supseteq \ldots$.\\
 Costruiamo una sottosuccessione di $\left\{a_n\right\}$ convergente a $p$. Sicuramente:
 \begin{itemize}
 	\item $\exists k\left(1\right)\in \naturalset\ \colon a_{k\left(1\right)}\in U_1$.
@@ -334,7 +343,7 @@ Sia $V$ intorno di $p$. Dal sistema fondamentale di intorni $\exists m_0$ tale c
 \end{demonstration}
 \begin{proposition}
 	\textsc{Caratterizzazione della chiusura in termini di successioni.}\\
-	Sia $X$ uno spazio topologico \textit{primo-numerabile}. Sia $Y\subseteq X$ e $p\in X$. Sono equivalenti
+	Sia $X$ uno spazio topologico \textit{primo numerabile}. Sia $Y\subseteq X$ e $p\in X$. Sono equivalenti
 	\begin{itemize}
 		\item Esiste una successione in $Y$ convergente a $p$.
 		\item $p$ è di accumulazione per una successione in $Y$.
@@ -342,8 +351,8 @@ Sia $V$ intorno di $p$. Dal sistema fondamentale di intorni $\exists m_0$ tale c
 	\end{itemize}
 \end{proposition}
 \begin{demonstration}~{}\\
-$\circled{1}\implies\circled{2}$ Non è necessario che $X$ sia primo-numerabile, è immediato dal lemma \ref{lemmatriangolino} $\textcolor{blue}{\circled{{\large \blacktriangle}}}$ (pag. \pageref{lemmatriangolino}).\\
-$\circled{2}\implies\circled{3}$ Non è necessario che $X$ sia primo-numerabile. Se $p$ di accumulazione per $\left\{a_n\right\}$ con $a_n\in y\ \forall n\implies A=\left\{a_n\mid n\in \naturalset\right\}\subseteq Y$. Allora segue dal lemma \ref{lemmatriangolino} $\textcolor{blue}{\circled{{\large \blacktriangle}}}$ (pag. \pageref{lemmatriangolino}) che $p\in A=\overline{\left\{a_n\mid n\in \naturalset\right\}}\subseteq \overline{Y}$ \\
+$\circled{1}\implies\circled{2}$ Non è necessario che $X$ sia primo numerabile, è immediato dal lemma \ref{lemmatriangolino} $\textcolor{blue}{\circled{{\large \blacktriangle}}}$ (pag. \pageref{lemmatriangolino}).\\
+$\circled{2}\implies\circled{3}$ Non è necessario che $X$ sia primo numerabile. Se $p$ di accumulazione per $\left\{a_n\right\}$ con $a_n\in y\ \forall n\implies A=\left\{a_n\mid n\in \naturalset\right\}\subseteq Y$. Allora segue dal lemma \ref{lemmatriangolino} $\textcolor{blue}{\circled{{\large \blacktriangle}}}$ (pag. \pageref{lemmatriangolino}) che $p\in A=\overline{\left\{a_n\mid n\in \naturalset\right\}}\subseteq \overline{Y}$ \\
 $\circled{3}\implies\circled{1}$ Sia $\left\{U_n\right\}$ un sistmea fondamentale di intorni di $p$ tale che $U_n\supseteq U_{n+1}\ \forall n$. Allora:
 \begin{equation*}
 	p\in \overline{Y}\implies \forall n\ Y\cap U_n\neq\emptyset\implies\forall n\ \exists y_n\in Y\cap U_n
@@ -373,12 +382,13 @@ Allora nessuna unione \textit{finita} degli $A_n$ ricopre $K_1$, cioè $\display
 \begin{equation*}
 \union_{n\geq 1}A_n=\union_{n\geq 1}K_1\setminus K_n=K_1\setminus \left(\inter_{n\geq 1}K_n\right)\subsetneqq K_1\implies \inter_{n\geq 1}K_n\neq\emptyset
 \end{equation*}
+\vspace{-6mm}
 \end{demonstration}
 \begin{lemming}
 In uno spazio topologico \textit{compatto} $X$ ogni successione in $X$ ha punti di accumulazione.
 \end{lemming}
 \begin{demonstration}
-Sia	$\left\{a_n\right\}$ successione in $X$; per definizione:
+Sia	$\left\{a_n\right\}$ successione in $X$. Per definizione:
 \begin{center}
 $p\in X$ punto di accumulazione per $\left\{a_n\right\}\iff \forall U\in I\left(p\right),\ \forall N\in\naturalset\ \exists n\geq N\ \colon a_n\in U$
 \end{center}
@@ -402,18 +412,19 @@ Abbiamo trovato una successione di compatti contenuto l'uno nel successivo. Allo
 Segue che esiste un punto di accumulazione per la successione.
 \end{demonstration}
 \subsection{Compattezza per successioni}
-\begin{define}
+\begin{define}\textsc{Compatto per successioni.}\\
 Sia $X$ spazio topologico. $X$ si dice \textbf{compatto per successioni}\index{compatto!per successioni} se ogni successione ammette una sottosuccessione convergente.
 \end{define}
 \begin{observe}
 Per il lemma \ref{lemmatriangolino} $\textcolor{blue}{\circled{{\large \blacktriangle}}}$ (pag. \pageref{lemmatriangolino}), se $X$ è compatto per successioni allora ogni successione in $X$ ha un punto di accumulazione.
 \end{observe}
 \begin{lemming}
-	Sia $X$ \textit{primo-numerabile.} Allora:
+	Sia $X$ \textit{primo numerabile.} Allora:
 \begin{enumerate}
 	\item $X$ compatto per successioni $\iff $ Ogni successione in $X$ ha un punto di accumulazione.
 	\item $X$ compatto $\implies$ $X$ compatto per successioni.
 \end{enumerate}
+\vspace{-3mm}
 \end{lemming}
 \begin{demonstration}~{}
 \begin{enumerate}[label=\Roman*]
@@ -421,6 +432,7 @@ Per il lemma \ref{lemmatriangolino} $\textcolor{blue}{\circled{{\large \blacktri
 $\impliessx$ Vale per il lemma \ref{primonumesucc}, pag. \pageref{primonumesucc}: se ogni successione ha un punto di accumulazione in $X$ primo numerabile, allora ogni sottosuccessione ammette una sottosuccessione convergente a $p$, cioè $X$ è compatto per successioni.
 \item Se $X$ è compatto, allora ogni successione in $X$ ha dei punti di accumulazione e per il punto $1)$ segue che $X$ è compatto per successioni.
 \end{enumerate}
+\vspace{-3mm}
 \end{demonstration}
 \begin{proposition}\textsc{Caratterizzazione della compattezza in termini di successioni}\\
 	Sia $X$ uno spazio topologico a base numerabile. Allora sono equivalenti:
@@ -429,14 +441,15 @@ $\impliessx$ Vale per il lemma \ref{primonumesucc}, pag. \pageref{primonumesucc}
 		\item $X$ compatto per successioni
 		\item Ogni successione in $X$ ammette un punto di accumulazione.
 	\end{enumerate}
+\vspace{-3mm}
 \end{proposition}
 \begin{demonstration}
 Sappiamo già che $2)\iff 3)$ e $1)\implies 2)$ dal lemma precedente. Dobbiamo dimostrare $2)\implies 1)$. Dimostriamo per contronominale ($\neg 1)\implies \neg 2)$): se $X$ \textit{non} è compatto, allora $X$ non è compatto per successioni, cioè esiste una sottosuccessione in $X$ che \textit{non} ha alcuna sottosuccessione convergente.\\
 \begin{itemize}
-	\item $X$ \textit{non} compatto$\implies \exists \tilde{\mathcal{A}}$ ricoprimento aperto di $X$ che \textit{non} ha sottoricoprimenti finiti.
-	\item $X$ a \textit{base numerabile} $\implies\exists\mathcal{A}$ sottoricoprimento di $\tilde{\mathcal{A}}$ che sia numerabile.
+	\item $X$ \textit{non} compatto$\implies \exists \widetilde{\mathcal{A}}$ ricoprimento aperto di $X$ che \textit{non} ha sottoricoprimenti finiti.
+	\item $X$ a \textit{base numerabile} $\implies\exists\mathcal{A}$ sottoricoprimento di $\widetilde{\mathcal{A}}$ che sia numerabile.
 \end{itemize}
-Poiché ogni sottoricoprimento di $\mathcal{A}$ è anche un sottoricoprimento di $\tilde{\mathcal{A}}$, significa che $\mathcal{A}$ \textit{non} ha sottoricoprimenti finiti. Definiamo:
+Poiché ogni sottoricoprimento di $\mathcal{A}$ è anche un sottoricoprimento di $\widetilde{\mathcal{A}}$, significa che $\mathcal{A}$ \textit{non} ha sottoricoprimenti finiti. Definiamo:
 \begin{equation*}
 \mathcal{A}\coloneqq\left\{A_n\right\}_{n\in\naturalset}
 \end{equation*}
@@ -461,6 +474,7 @@ Sia $X$ spazio metrico. Allora:
 \begin{equation}
 	X\text{ compatto}\iff X\text{ compatto per successioni}
 \end{equation}
+\vspace{-6mm}
 \end{theorema}
 \begin{center}
 \begin{tikzcd}
@@ -474,16 +488,17 @@ Sia $X$ spazio metrico. Allora:
 \end{tikzcd}
 \end{center}
 \section{Spazi metrici completi}
-\begin{define}
+\begin{define}\textsc{Successione di Cauchy.}\\
 	Sia $\left(X,\ d\right)$ uno spazio metrico. Una successione $\left\{a_n\right\}$ si dice \textbf{di Cauchy}\index{successione!di Cauchy} se:
 	\begin{equation}
 		\forall \epsilon>0\ \exists n_0\in\naturalset\ \colon \mvf{d}{a_n}{a_m}<\epsilon,\ \forall n,\ m\geq n_0
 	\end{equation}
+\vspace{-6mm}
 \end{define}
-\begin{define}
+\begin{define}\textsc{Spazio metrico completo.}\\
 	Uno spazio metrico $\left(X,\ d\right)$ si dice \textbf{completo}\index{spazio topologico!metrico!completo} se ogni successione di Cauchy è convergente.
 \end{define}
-\begin{observe}~{}
+\begin{observes}~{}
 	\begin{enumerate}
 		\item Ogni successione \textit{convergente} è di \textit{Cauchy}.
 		\item Una successione di Cauchy è \textit{convergente} se e solo se ha punti di accumulazione.
@@ -491,7 +506,8 @@ Sia $X$ spazio metrico. Allora:
 		\item Se $X$ è \textit{compatto}, allora ogni successione di Cauchy è \textit{convergente}.
 		\item Se $X$ è spazio metrico \textit{compatto}, allora $X$ è spazio metrico \textit{completo}; non è vero il viceversa.
 	\end{enumerate}
-\end{observe}
+\vspace{-3mm}
+\end{observes}
 \begin{demonstration}~{}
 	\begin{enumerate}[label=\Roman*]
 		\item Se $a_n\to p$ per $n\to +\infty$ significa che:
@@ -510,10 +526,11 @@ Essendo $p$ di accumulazione, $\exists n_1\geq n_0$ tale per cui $\mvf{d}{p}{a_{
 	\mvf{d}{a_n}{p}\leq \mvf{d}{a_n}{a_{n_1}}+\mvf{d}{a_{n_1}}{p}< 2\epsilon
 \end{equation*}
 Dunque $\left\{a_n\right\}$ converge a $p$.
-\item Poiché $X$ è metrico, $X$ è primo-numerabile, dunque avere un punto di accumulazione è equivalente ad avere una sottosuccessione convergente.
+\item Poiché $X$ è metrico, $X$ è primo numerabile, dunque avere un punto di accumulazione è equivalente ad avere una sottosuccessione convergente.
 \item Se $X$ è compatto, ogni successione ha punti di accumulazione, in particolare quelle di Cauchy: per il punto $2)$ tutte le successioni di Cauchy risultano allora convergenti.
-\item Segue dal punto $4)$. Un controesempio del viceversa è $R^n$, dato che è completo ma non è compatto (si veda il teorema seguente). 
+\item Segue dal punto $4)$. Un controesempio del viceversa è $\mathbb{R}^n$, dato che è completo ma non è compatto (si veda il teorema seguente). 
 \end{enumerate}
+\vspace{-3mm}
 \end{demonstration}
 \begin{theorema}
 	$\realset^n$ in metrica euclidea è uno spazio metrico completo.

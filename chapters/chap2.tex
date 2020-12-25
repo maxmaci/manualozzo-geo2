@@ -14,9 +14,10 @@
 	\textsc{NON UN ROBOT,} UN UMANO IN CARNE ED OSSA BEEP BOOP.
 \end{flushright}
 \end{introduction}
-
+% inserire citazione
+% inserire introduzione bellina
 \section{Connessione}
-\begin{define}
+\begin{define}\textsc{Spazio connesso e spazio sconnesso.}\\
 Uno spazio topologico $X$ si dice \textbf{connesso}\index{connessione} se gli unici sottoinsiemi aperti e chiusi sono $\emptyset,\ X$.\\
 Uno spazio non \textit{connesso} si dice \textbf{sconnesso} oppure \textbf{non connesso}.
 \end{define}
@@ -27,6 +28,7 @@ Uno spazio non \textit{connesso} si dice \textbf{sconnesso} oppure \textbf{non c
 		\item $X=A\cup B$ con $A,\ B$ aperti, non vuoti, disgiunti.
 		\item $X=A\cup B$ con $A,\ B$ chiusi, non vuoti, disgiunti.
 	\end{enumerate}
+\vspace{-3mm}
 \end{lemming}
 \begin{demonstration}~{}\\
 $2\iff3)$ Sono equivalenti: se $A$ è aperto e disgiunto da $B$ tale che $X=A\cup B$ significa che $B=\mathcal{C}A=X\setminus A$ e dunque chiuso; analogamente per $B$ aperto si ha che $A$ è chiuso: allora $A,\ B$ chiusi e aperti propri.\\
@@ -36,12 +38,13 @@ $1\implies2)$ $A$ aperto, $B$ aperto $\implies A$ chiuso perché $A=\mathcal{C}X
 \begin{observe}
 	Il lemma \ref{sconnesso} \textsc{(Manetti, 4.2)} ci dice che è sufficiente trovare solo due aperti (o chiusi) che soddisfano la condizione di cui sopra per affermare la sconnessione. Viceversa, per dimostrare la connessione, dobbiamo dimostrare che per ogni coppia di aperti (o chiusi) non vuoti, la cui unione è $X$, essi non siano disgiunti.
 \end{observe}
-\begin{example} Esempi di spazi topologici \textit{sconnessi} in topologia Euclidea.
+\begin{examples} Esempi di spazi topologici \textit{sconnessi} in topologia Euclidea:
 	\begin{itemize}
 		\item $X=\realset\setminus\left\{0\right\}=\left(-\infty,\ 0\right)\cup \left(0,\ +\infty\right)$.
 		\item $X=\left[0,\ 1\right]\cup \left(2,\ 3\right)$.
 	\end{itemize}
-\end{example}
+\vspace{-3mm}
+\end{examples}
 \begin{lemming}\textsc{(Manetti, 4.4)}\\
 Sia $X$ spazio topologico e $A\subseteq X$ con $A$ aperto e chiuso. Sia $Y\subseteq X,\ Y$ \textit{connesso}. Allora $Y\cap A=\emptyset$ (cioè $Y\subseteq Y\setminus A$) oppure $Y\subseteq A$. 
 \end{lemming}
@@ -62,12 +65,14 @@ Dobbiamo dimostrare che $C,\ D$ \textit{non} sono disgiunti, ovvero $C\cap D\neq
 	\item Se $d=0$, $d\in C\cap D\neq \emptyset$.
 	\item Se $d>0$ allora $\left[0,\ d\right)\subseteq C$ perché \textit{non sta} in $D$. Il passaggio alla chiusura mantiene l'inclusione, dunque $\left[0,\ d\right]\subseteq \overline{C}=C$. Segue che $d\in C$ e dunque $C\cap D\neq \emptyset$.
 \end{itemize}
+\vspace{-3mm}
 \end{demonstration}
 \begin{theorema}\textsc{(Manetti, 4.7)}\\
 	L'immagine continua di un \textit{connesso} è un \textit{connesso}:
 	\begin{equation}
 		\funz{f}{X}{Y}\text{ continua},\ X\text{ connesso}\implies f\left(X\right)\text{ connesso}
 	\end{equation}
+\vspace{-6mm}
 \end{theorema}
 \begin{theorema}
 	Sia $Z\subseteq f\left(X\right)$, $Z$ aperto, chiuso in $f\left(X\right)$ non vuoto. Per dimostrare che $f\left(X\right)$ sia connesso ci è sufficiente dimostrare che $Z=f\left(X\right)$: in questo modo gli unici aperti e chiusi sono i sottoinsiemi impropri:
@@ -85,17 +90,20 @@ Segue che $f^{-1}\left(Z\right)$ è aperto e chiuso in $X$. Notiamo inoltre che,
 \begin{observe}
 Dal teorema precedente segue che essere \textit{connesso} è una proprietà topologica! Infatti, se vale per una qualunque funzione continua $\funz{f}{X}{Y}$, allora varrà anche per omeomorfismi tra $X$ e $Y$; in particolare, si avrà per suriettività che $f\left(X\right)=Y$ connesso.
 \end{observe}
-\begin{define}
+\subsection{Connessione per archi}
+\begin{define}\textsc{Arco.}\\
 Un \textbf{arco}\seeonlyindex{arco}{cammino} o \textbf{cammino}\index{cammino} $\alpha$ da un punto $x$ a un punto $y$ in uno spazio topologico $X$ è una funzione continua che parametrizza un \textit{percorso} finito fra gli estremi $x$ e $y$:
 \begin{equation}
 \funz{\alpha}{\left[0,\ 1\right]}{X} \text{ continua}\ \colon \alpha\left(0\right)=x,\ \alpha\left(1\right)=y
 \end{equation}
+\vspace{-6mm}
 \end{define}
-\begin{define}
+\begin{define}\textsc{Connessione per archi.}\\
 Uno spazio topologico $X$ si dice \textbf{connesso per archi} o \textbf{c.p.a.}\index{connessione!per archi}\seeonlyindex{c.p.a.}{connessione!per archi} o \textit{path-connected} se per ogni coppia di punti in $X$ esiste un arco che li collega:
 \begin{equation}
 \forall x,\ y\in X\ \exists \funz{\alpha}{\left[0,\ 1\right]}{X} \text{ continua}\ \colon \alpha\left(0\right)=x,\ \alpha\left(1\right)=y
 \end{equation}
+\vspace{-6mm}
 \end{define}
 \begin{theorema}\textsc{(Manetti, 4.7)}\\
 $X$ \textbf{c.p.a.} $\implies X$ \textit{connesso}.
@@ -113,19 +121,20 @@ Poiché $\left[0,\ 1\right]$ è connesso, allora le controimmagini trovate non s
 \exists t\in \alpha^{-1}\left(A\right)\cap \alpha^{-1}\left(B\right)\implies \alpha\left(t\right)\alpha\left(\alpha^{-1}\left(A\right)\cap \alpha^{-1}\left(B\right)\right)\subset\alpha\left(\alpha^{-1}\left(A\right)\right)\cap\alpha\left(\alpha^{-1}\left(B\right)\right)=A\cap B
 \end{equation*}
 \end{demonstration}
-\begin{define}
+\begin{define}\textsc{Giunzione di cammini.}\\
 	Dati due cammini in uno spazio $X$:
 	\begin{gather*}
 		\funz{\alpha}{\left[0,\ 1\right]}{X}\quad \alpha\left(0\right)=x,\ \alpha\left(1\right)=y\\
-		\funz{\beta}{\left[0,\ 1\right]}{X}\quad \beta\left(0\right)=y,\ \beta\left(1\right)=z\\	
+		\funz{\beta}{\left[0,\ 1\right]}{X}\quad \beta\left(0\right)=y,\ \beta\left(1\right)=z
 	\end{gather*}
-	Allora possiamo creare un cammino $\alpha \ast \beta$ con la \textbf{congiunzione di cammini}\index{cammino!giunzione di cammini}:
+	Allora possiamo creare un cammino $\alpha \ast \beta$ con la \textbf{giunzione di cammini}\index{cammino!giunzione di cammini}:
 	\begin{equation}
 		\left(\alpha\ast\beta\right)\left(t\right)=\begin{cases}
 			\alpha\left(2t\right)\quad\text{se }0\leq t\leq \frac{1}{2}\\
 			\beta\left(2t-1\right)\quad\text{se }\frac{1}{2}\leq t\leq 1\\	
 		\end{cases}
 	\end{equation}
+\vspace{-6mm}
 \end{define}
 \begin{lemming}
 	Sia $A,\ B$ \textbf{c.p.a}, $A\cap B\neq \emptyset\implies A\cup B$ \textbf{c.p.a.}
@@ -134,7 +143,7 @@ Poiché $\left[0,\ 1\right]$ è connesso, allora le controimmagini trovate non s
 	Se $x, y\in A$ oppure $x,\ y\in B$ esiste per ipotesi un arco che li collega. Dobbiamo allora trovare un arco in $A\cup B$ da $x$ a $y$ $\forall x\in A, y\in B$. Preso $z\in A\cap B$, per ipotesi esistono due cammini ad esso:
 	\begin{gather*}
 		\funz{\alpha}{\left[0,\ 1\right]}{A}\quad \alpha\left(0\right)=x,\ \alpha\left(1\right)=z\\
-		\funz{\beta}{\left[0,\ 1\right]}{B}\quad \beta\left(0\right)=z,\ \beta\left(1\right)=z\\	
+		\funz{\beta}{\left[0,\ 1\right]}{B}\quad \beta\left(0\right)=z,\ \beta\left(1\right)=z	
 	\end{gather*}
 	Usando la \textit{giunzione di cammini}, si ha:
 	\begin{equation}
@@ -145,7 +154,7 @@ Poiché $\left[0,\ 1\right]$ è connesso, allora le controimmagini trovate non s
 	\end{equation}
 	Il cammino $\funz{\alpha\ast\beta}{\left[0,\ 1\right]}{A\cup B}$ è quello richiesto.
 \end{demonstration}
-\begin{observe}~{}\label{giunzionecpa}
+\begin{observes}~{}\label{giunzionecpa}
 	\begin{itemize}
 		\item Usando la giunzione di cammini, si ha che:
 		\begin{equation*}
@@ -155,26 +164,30 @@ Poiché $\left[0,\ 1\right]$ è connesso, allora le controimmagini trovate non s
 		In altre parole, uno spazio è \textbf{c.p.a.} se e solo se esiste un punto per cui ogni altro punto è collegato tramite un arco.
 		\item Per ogni arco $\alpha$ esiste l'arco inverso, percorso al contrario: $\overline{\alpha}\left(t\right)=\alpha\left(1-t\right)$.
 	\end{itemize}
-\end{observe}
-\begin{define}\label{segmento}
+\vspace{-3mm}
+\end{observes}
+\begin{define}\textsc{Segmento.}\label{segmento}\\
 	In $\realset^n$, un \textbf{segmento}\index{segmento} $\overline{PQ}$ è la combinazione lineare tra i punti $P$ e $Q$, parametrizzato come:
 	\begin{equation}
 		\overline{PQ}=\left\{P+tQ\mid t\in\left[0,\ 1\right]\right\}
 	\end{equation}
+\vspace{-6mm}
 \end{define}
-\begin{define}
+\begin{define}\textsc{Sottoinsieme convesso.}\\
 	Un sottoinsieme $Y\subseteq\realset^n$ è \textbf{convesso}\index{convessità} se per ogni coppia di punti esiste un segmento che li collega contenuto interamente in $Y$.
 	\begin{equation}
 		\forall P,\ Q\in Y\quad \overline{PQ}\subseteq Y
 	\end{equation}
+\vspace{-6mm}
 \end{define}
-\begin{define}
+\begin{define}\textsc{Sottoinsieme stellato.}\\
 	Un sottoinsieme $Y\subseteq\realset^n$ è \textbf{stellato}\index{stellato} per $P$ se esiste un $P\in Y$ tale che per ogni altro punto esiste un segmento che li collega contenuto interamente in $Y$.
 	\begin{equation}
 		\exists P \in Y\ \colon \forall Q\in Y\quad \overline{PQ}\subseteq Y
 	\end{equation}
+\vspace{-6mm}
 \end{define}
-\begin{example}~{}
+\begin{examples}~{}
 \begin{itemize}
 	\item Gli intervalli aperti e semiaperti sono \textbf{c.p.a}, dunque sono \textit{connessi}: l'arco $\alpha$ è banalmente il segmento pari all'intervallo aperto.
 	\item Preso $X\subseteq\realset^n$ \textit{convesso}, qualunque segmento è anche per costruzione un arco: $X$ è anche \textbf{c.p.a} e dunque \textit{connesso}.
@@ -182,15 +195,18 @@ Poiché $\left[0,\ 1\right]$ è connesso, allora le controimmagini trovate non s
 	\item Preso $X\subseteq\realset^n$ \textit{stellato} per $P\in X$, qualunque segmento con $P$ è anche per costruzione un arco: $X$ è anche \textbf{c.p.a} per l'osservazione \ref{giunzionecpa} e dunque {connesso}.
 	\item Ogni insieme \textit{convesso} è anche \textit{stellato} per $P$, basta fissare un qualunque punto come nostro $P$. In generale, un insieme è convesso se e solo se è stellato per ogni suo punto.
 \end{itemize}
-\end{example}
+\vspace{-3mm}
+\end{examples}
+\subsection{Connessione nella topologia euclidea}
 Vediamo ora che conseguenze hanno questi teoremi in $\realset$ con la topologia Euclidea.
 \begin{theorema}
-	Sia $I\subseteq \realset$ . Le seguenti affermazioni sono equivalenti:
+	Sia $I\subseteq \realset$. Le seguenti affermazioni sono equivalenti:
 		\begin{enumerate}
 	\item $I$ è un intervallo, ovvero $I$ è \textit{convesso}.
 	\item $I$ è \textbf{c.p.a.}.
 	\item $I$ è connesso.
 		\end{enumerate}
+	\vspace{-3mm}
 \end{theorema}
 \begin{demonstration}~{}\\
 	$1) \implies 2)$ Siccome $I$ è convesso $\implies$ $I$ stellato $\implies$ $I$ \textbf{c.p.a.} $\implies$ $I$ connesso. \\
@@ -207,39 +223,41 @@ Vediamo ora che conseguenze hanno questi teoremi in $\realset$ con la topologia 
 	\item Come conseguenza immediata di questo teorema si ha il \textbf{teorema di esistenza degli zeri}\index{teorema! di esistenza degli zeri} per funzioni continue da $\realset$ in $\realset$, infatti se l'immagine continua di un connesso è un connesso, per tali funzioni vale che l'immagine continua di un intervallo è un intervallo.
 	\item Per $n\geq 1$ la sfera $\displaystyle S^n \coloneqq \left\{ \left(x_1,\dots,x_{n+1}\right) \mid \sum_{i=1}^{n+1}x_i^2=1 \right\}$ è \textbf{c.p.a.}, infatti $\forall x,y\in S^n$ si trova sempre un arco come intersezione di $S^n$ e del piano $H$ passante per il centro della sfera, $x$ e $y$.
 		\end{itemize}
+	\vspace{-3mm}
 \end{observe}
-Vediamo ora un risultato per funzioni continue da $S^n$ in $\realset$
+% riformulare, simile all'altro paragrafo
+Vediamo ora un risultato per funzioni continue da $S^n$ in $\realset$.
 \begin{theorema}~{}\label{non iniettività S^n in realset}
 	Sia $\funz f {S^n} \realset$ una funzione continua. Allora $\exists x\in S^n \ \colon f(x)=f(-x)$. In particolare $f$ non è iniettiva.
 \end{theorema}
 \begin{demonstration}
-	Costruiamo una funzione $g(x)=f(x)-f(-x)$, essa è continua perché somma di funzioni continue. Siccome $S^n$ è connesso allora $g\left( S^n\right)\subseteq\realset$ è connesso $\implies$ per il teorema precedente $g\left(S^n\right)$ è un intervallo.\\
+	Costruiamo una funzione $g(x)=f(x)-f(-x)$: essa è continua perché somma di funzioni continue. Siccome $S^n$ è connesso allora $g\left( S^n\right)\subseteq\realset$ è connesso $\implies$ per il teorema precedente $g\left(S^n\right)$ è un intervallo.\\
 	Si considerino un punto $y\in S^n$ arbitrario e le sue immagini $g(y)$ e $g(-y)$: esse appartengono all'intervallo dell'immagine $g\left( S^n\right)$, quindi se ne può considerare il loro punto medio:
 		\begin{gather*}
 			\frac{1}{2}\left[ g(y) - g(-y)\right]=\frac{1}{2} \left[ f(y) -f(-y) - f(y) +f(-y) \right]= 0\\
 			\implies \exists x\in S^n \colon g(x)=0, \text{ ovvero } f(x)=f(-x)
 		\end{gather*}
 \end{demonstration}
-Come conseguenza di questo teorema si ha che un aperto di $\realset$ non sarà mai omeomorfo ad un aperto di $\realset^n$, vediamolo più precisamente.
+Come conseguenza di questo teorema si ha che un aperto di $\realset$ non sarà mai omeomorfo ad un aperto di $\realset^n$.
 \begin{theorema}
-Sia $I\subseteq\realset$ e $U\subseteq\realset^n$, con $n\geq 2$. Se $I,U$ sono aperti allora $I$ non è omeomorfo a $U$.	
+Sia $I\subseteq\realset$ e $U\subseteq\realset^n$, con $n\geq 2$. Se $I,\ U$ sono aperti allora $I$ non è omeomorfo a $U$.	
 \end{theorema}	
 \begin{demonstration}
 	Si consideri un omeomorfismo $\funz g U I$. Siccome $U\subseteq\realset^n$ aperto allora esiste una palla aperta di raggio $\epsilon$ contenuta in $U$, se ne considera il bordo $S^n\subseteq U$. Si considera dunque la restrizione $\funz {g_{|_{S^n}}} {S^n} I$, che per il teorema precedente non è iniettiva. Dunque $g$ non è un omeomorfismo.	
 \end{demonstration}
 
 \begin{observe}
-	Il teorema appena visto è un caso particolare del \textsc{teorema dell'invarianza della dimensione}\index{teorema!dell'invarianza della dimensione}, che cita: \newline
-	Siano $U\subseteq\realset^n, V\subseteq\realset^m$ aperti. Se $U\cong V \implies n=m$. Equivalentemente $n\neq m\implies U\ncong V$
+	Il teorema appena visto è un caso particolare del \textsc{teorema dell'invarianza della dimensione}\index{teorema!dell'invarianza della dimensione}: ‘‘Siano $U\subseteq\realset^n, V\subseteq\realset^m$ aperti. Se $U\cong V \implies n=m$. Equivalentemente $n\neq m\implies U\ncong V$''.
+	
 \end{observe}
-
 %LEZ 08
+\subsection{Intersezioni, unioni e prodotti di spazi connessi}
 \begin{theorema} \label{unione sottospazi connessi}
 	Siano $\left\{ X_i \right\}_{i\in I}$ una famiglia di sottoinsiemi di uno spazio topologico $X$. Se ogni $X_i$ è connesso e $\displaystyle\inter_{i\in I}X_i\neq\emptyset$ allora $\displaystyle\union_{i\in I}X_i$ è connesso.	
 \end{theorema}
 \begin{demonstration}
 	Sia $\displaystyle Z\subseteq Y\coloneqq \union_{i\in I}X_i$ un aperto, chiuso non vuoto. Vogliamo dimostrare che $Z=X$, cosicché $X$ risulti connesso. Basta l'inclusione $Y\subseteq Z$.\newline
-	Si considera l'intersezione di $Z$ e di un connesso, dunque essa sarà banale
+	Si considera l'intersezione di $Z$ e di un connesso, dunque essa sarà banale:
 	\begin{gather*}
 		X_i \cap Z = \begin{cases}
 			\emptyset & \\
@@ -259,7 +277,7 @@ Sia $I\subseteq\realset$ e $U\subseteq\realset^n$, con $n\geq 2$. Se $I,U$ sono 
 \begin{theorema}~{}\label{prodotto connessi}
 	$X, Y$ sono spazi topologici connessi $\iff X\times Y$ è connesso.	
 \end{theorema}
-\begin{demonstration}
+\begin{demonstration}~{}\\
 	$\impliessx$ Si sfrutta la continuità delle proiezioni e che l'immagine continua di un connesos è connessa:
 		\begin{gather*}
 			\funz p {X\times Y} X \text{continua e suriettiva } \implies p(X)=X \text{ connesso} \\
@@ -273,15 +291,15 @@ Sia $I\subseteq\realset$ e $U\subseteq\realset^n$, con $n\geq 2$. Se $I,U$ sono 
 			\implies \inter_{y\in Y}\left( X_y  \cup Y_{x_0}\right)\neq\emptyset		
 		\end{gather*}
 	Dunque $X\times Y$ è unione di connessi la cui intersezione non è vuota, quindi per il teorema precedente è connesso.
-%WELP COME CITO I TEOREMI%
 \end{demonstration}
-
-Approfondiamo ora la differenza fra essere spazio connesso o \textbf{c.p.a.} mostrando esempi di un tipo ma non dell'altro. Prima però dimostreremo un teorema sulla caratterizzazione di un insieme denso che ci tornerà utile.
+\subsection{Spazi connessi non c.p.a.}
+Approfondiamo ora la differenza fra essere spazio connesso o \textbf{c.p.a.}, mostrando esempi di un tipo ma non dell'altro. Prima però dimostreremo un teorema sulla caratterizzazione di un \textit{insieme denso} che ci tornerà utile.
 \begin{theorema}
 	Sia $X$ uno spazio topologico e $A\subseteq X$ un suo sottoinsieme, allora:
 		\begin{gather*}
 			A \text{ è denso }\iff \forall U\subseteq X \text{ aperto e } \ U\neq\emptyset, \ \ U\cap A\neq\emptyset	
 		\end{gather*}
+	\vspace{-6mm}
 \end{theorema}
 \begin{demonstration}~{}
 	$\impliesdx$ Se $A$ è denso allora $\overline{A}=X$. Supponiamo che $\exists V$ aperto $\colon V\cap A=\emptyset$. Siccome $V$ è aperto allora $X\setminus V$ è chiuso, inoltre $V\cap A=\emptyset$, quindi $A\subseteq X\setminus V$. Essendo $A$ contenuto in un chiuso allora lo sarà anche la sua chiusura, siccome è il più piccolo chiuso che lo contiene:
@@ -290,13 +308,16 @@ Approfondiamo ora la differenza fra essere spazio connesso o \textbf{c.p.a.} mos
 		\end{gather*}
 	Ne segue che l'unico aperto che non interseca $A$ è l'insieme vuoto. \newline 
 	$\impliessx$ Consideriamo un chiuso $K\supseteq A$. Siccome è chiuso allora il suo complementare $X\setminus K$ è aperto. Per ipotesi dunque si ha che $V\cap A\neq \emptyset$ oppure $V=\emptyset$, passando al complementare si ottiene che:
-		\begin{gather*}
-			A\subseteq K \implies X\setminus K \subseteq X\setminus A \implies V\subseteq X\setminus A \implies V\cap A=\emptyset \implies V=\emptyset \implies K=X \implies \overline{A}=X
-		\end{gather*}
+		\begin{equation*}
+			\begin{array}{l}
+				A\subseteq K \implies X\setminus K \subseteq X\setminus A \implies V\subseteq X\setminus A \implies \\
+				\implies V\cap A=\emptyset \implies V=\emptyset \implies K=X \implies \overline{A}=X
+			\end{array}
+		\end{equation*}
 	L'ultima implicazione è dovuta al fatto che ogni chiuso che contiene $A$ si è dimostrato essere solo $X$ per cui esso sarà la sua chiusura.
 \end{demonstration}
 
-\begin{theorema}
+\begin{theorema}\label{chiusuraconnessa}
 	Sia $X$ uno spazio topologico e $Y\subseteq X$ connesso, allora 
 		\begin{equation*}
 			\forall W \colon Y\subseteq W \subseteq \overline{Y} \implies W \text{ connesso}
@@ -325,12 +346,11 @@ Approfondiamo ora la differenza fra essere spazio connesso o \textbf{c.p.a.} mos
 		\end{equation*}
 \end{demonstration}
 Vediamo ora degli esempi di spazi connessi ma non \textbf{c.p.a.}.
-\begin{example}\textsc{Seno del topologo}\\
-	Sia $Y\subseteq \realset^2$ con la topologia euclidea e $Y=\left\{ \left( x,\ \frac{1}{x} \right) \mid x>0 \right\}$, detto anche \textbf{seno del topologo}\index{seno del topologo}. Esso è \textbf{c.p.a.} perché per connettere due punti basta percorrere la curva stessa del grafico. Quindi $Y$ è connesso, dunque per teorema 27 $\overline{Y}$ è connesso. 
-	%DA AGGIUSTARE IL RIFERIMENTO AL TEOREMA, 27 SECONDO I MIEI APPUNTI
+\begin{example}\textsc{Seno del topologo.}\\% inserire immagine
+	Sia $Y\subseteq \realset^2$ con la topologia euclidea e $Y=\left\{ \left( x,\ \frac{1}{x} \right) \mid x>0 \right\}$, detto anche \textbf{seno del topologo}\index{seno del topologo}. Esso è \textbf{c.p.a.} perché per connettere due punti basta percorrere la curva stessa del grafico. Quindi $Y$ è connesso, dunque per il teorema \ref{chiusuraconnessa} (pag. \pageref{chiusuraconnessa}) $\overline{Y}$ è connesso.\\
 	Tuttavia $\overline{Y}$ non è \textbf{c.p.a.} in quanto $\overline{Y}=Y\cup \left\{ (0,y) \mid -1\leq y \geq 1 \right\}$ ed i punti sull'asse delle y  e sulla curva $Y$ non si possono connettere tramite un arco continuo.
 \end{example}
-\begin{example}\textsc{La pulce ed il pettine}\\
+\begin{example}\textsc{La pulce ed il pettine.}\\% inserire immagine
 	Si consideri il ‘‘pettine'' come il seguente sottospazio di $\realset ^2$ con la topologia euclidea:
 		\begin{equation*}
 			Y= \left\{ (x,\ 0) \mid 0\leq x\geq 1 \right\} \cup \union_{r\in\rationalset, 0\leq r\geq 1} \left\{ (r,\ y) \mid 0\leq y \leq 1 \right\}
@@ -344,24 +364,30 @@ Vediamo ora degli esempi di spazi connessi ma non \textbf{c.p.a.}.
 \end{example}
 
 \begin{observe}
-	L'immagine continua di uno spazio \textbf{c.p.a.} è \textbf{c.p.a.}, ovvero dato $X$ \textbf{c.p.a.}, $\funz f X Y$ continua, allora $f(X)$ è \textbf{c.p.a.}\newline
+	L'immagine continua di uno spazio \textbf{c.p.a.} è \textbf{c.p.a.}, ovvero dato $X$ \textbf{c.p.a.}, $\funz f X Y$ continua, allora $f(X)$ è \textbf{c.p.a.}.\newline
 	Dati $a,b\in X$ si vuole trovare un cammino fra $f(a)$ e $f(b)$ in $f(X)$. Si consideri la composizione seguente fra il cammino $\alpha$ fra $a$ e $b$ con la funzione $f$ stessa. Siccome ha come dominio $\left[0,\ 1\right]$ ed è continua essendo composizione di funzione continue è in effetti un cammino fra le due immagini:
 \begin{center}
 \begin{tikzcd}
 	{f\circ \alpha\ \colon \left[0,\ 1\right]} \arrow[r, "\alpha"] & X \arrow[r, "f"] & Y
 \end{tikzcd}
 \end{center}
+\vspace{-6mm}
 \end{observe}
+\subsection{Componenti connesse}
 L'intuizione geometrica che ci ha portati alla definizione di connessione è stata ‘‘di quanti pezzi è fatto uno spazio?''. Se uno spazio è connesso è fatto di un solo ‘‘pezzo'', cerchiamo ora di definire cosa sono i ‘‘pezzi'' e come sono fatti.
-\begin{define}
-	Sia $X$ uno spazio topologico e $C\subseteq X$. Si dice che $C$ è una \textbf{componente connessa}\index{componente!connessa} se 
+\begin{define}\textsc{Componente connessa.}\\
+	Sia $X$ uno spazio topologico e $C\subseteq X$. Si dice che $C$ è una \textbf{componente connessa}\index{componente!connessa} se: 
 		\begin{itemize}
-			\item $C$ è connesso.
+			\item $C$ è \textit{connesso}.
 			\item $C$ è \textbf{massimale}\index{massimale}, ovvero $C\subseteq A$, $A$ connesso $\implies C=A$.
 		\end{itemize}
-	Scelto $x\in X$ si può definire la \textbf{componente connessa di un punto}\index{componente!connessa di un punto}, ovvero $\displaystyle C(x)=\union \{C \mid C\text{connesso}, x\in C\}$
+	Scelto $x\in X$ si può definire la \textbf{componente connessa di un punto}\index{componente!connessa di un punto}, ovvero:
+	\begin{equation}
+		\displaystyle C(x)=\union \{C \mid C\text{ connesso},\ x\in C\}
+	\end{equation}
+\vspace{-6mm}
 \end{define}
-La componente connessa di un punto è effettivamente una componente connessa, infatti è connessa perché unione di connessi con intersezione non vuota ($x$ stesso) e se $C(x)\subseteq A \implies x\in A \implies A\subseteq C(x) \implies A=C(x)$.\newline
+La componente connessa di \textit{un punto} è effettivamente una componente connessa: infatti, è connessa perché unione di connessi con intersezione \textit{non vuota} ($x$ stesso) e se $C(x)\subseteq A \implies x\in A \implies A\subseteq C(x) \implies A=C(x)$.\newline
 Vediamo ora qualche proprietà delle componenti connesse, in particolare che sono chiuse e formano una partizione.
 \begin{theorema}
 	Sia $X$ uno spazio topologico, allora:
@@ -369,6 +395,7 @@ Vediamo ora qualche proprietà delle componenti connesse, in particolare che son
 			\item le componenti connesse sono chiuse.
 			\item le componenti connesse formano una partizione di $X$.
 		\end{enumerate}
+	\vspace{-3mm}
 \end{theorema}
 \begin{demonstration}
 	~{}
@@ -383,6 +410,7 @@ Vediamo ora qualche proprietà delle componenti connesse, in particolare che son
 			C\cap D\neq\emptyset \implies C\cup D \text{ connesso } \implies C=C\cup D=D
 		\end{gather*}
 	\end{enumerate}
+\vspace{-6mm}
 \end{demonstration}
 \begin{example}
 	Sia $\rationalset\subseteq\realset$ con la topologia Euclidea. La componenti connesse di $\rationalset$ sono i punti, quindi i punti sono chiusi in $\rationalset$, il che è una riconferma dato che sappiamo che $\rationalset$ è Hausdorff. Tuttavia non possono essere aperti altrimenti avremmo la topologia discreta!\newline
@@ -394,13 +422,13 @@ Vediamo ora qualche proprietà delle componenti connesse, in particolare che son
 
 
 		\section{Compattezza}
-		
-\begin{define}
-	Sia $X$ uno spazio topologico. Un \textbf{ricoprimento aperto} di $X$ è una famiglia $\mathcal{A}=\{A_i \}_{i\in I}$ di aperti di $X$ tali che $X=\union_{i\in I} A_i$. \newline
-	Un \textbf{sottoricoprimento} $\mathcal{B}$ di un ricoprimento aperto $\mathcal{A}$ è una famiglia di aperti di $\mathcal{A}$ la cui unione è ancora tutto $X$.
+		%inserire introduzione?
+\begin{define} \textsc{Ricoprimento aperto e sottoricoprimento.}\\
+	Sia $X$ uno spazio topologico. Un \textbf{ricoprimento aperto}\index{ricoprimento}\index{ricoprimento!aperto} di $X$ è una famiglia $\mathcal{A}=\{A_i \}_{i\in I}$ di aperti di $X$ tali che $X=\union_{i\in I} A_i$. \newline
+	Un \textbf{sottoricoprimento}\index{sottoricoprimento} $\mathcal{B}$ di un ricoprimento aperto $\mathcal{A}$ è una famiglia di aperti di $\mathcal{A}$ la cui unione è ancora tutto $X$.
 \end{define}		
 
-\begin{examples} \textsc{ricoprimenti aperti}
+\begin{examples} \textsc{Esempi di ricoprimenti aperti.}
 	\begin{itemize}
 		\item $\displaystyle \realset=(-\infty ,\ 2)\cup(0,\ +\infty)$ è un ricoprimento aperto
 		\item $\displaystyle \realset =\union_{n\in\naturalset}(n,\ -n)$ è un ricoprimento aperto
@@ -408,31 +436,33 @@ Vediamo ora qualche proprietà delle componenti connesse, in particolare che son
 	\end{itemize}
 \end{examples}
 
-\begin{define} \textsc{ricoprimento aperto}\\
-	Uno spazio topologico $X$ si dice \textbf{compatto} se dato un qualsiasi ricoprimento aperto $\mathcal{A}$ si può sempre estrarre un sottoricoprimento \textit{finito} $\mathcal{B}$.
+\begin{define} \textsc{Spazio compatto.}\\
+	Uno spazio topologico $X$ si dice \textbf{compatto}\index{spazio!compatto} se dato un qualsiasi ricoprimento aperto $\mathcal{A}$ si può sempre estrarre un sottoricoprimento \textit{finito} $\mathcal{B}$.
 \end{define}
 L'importanza della definizione risiede nel fatto che non si chiede che esista un ricoprimento $\mathcal{A}$ finito, infatti basterebbe banalmente $X$ stesso che è aperto, bensì che da $\mathcal{A}$ si possa sempre estrarre un numero finito di aperti che ricopra ancora $X$.
 
-\begin{examples} \textsc{spazi non compatti}\\
+\begin{examples} \textsc{Esempi di spazi non compatti.}
 	\begin{itemize}
-		\item $\realset$ con la topologia euclidea: si consideri il ricoprimento aperto $\displaystyle \realset=(-\infty , 2)\cup(0,+\infty)$, esso non ammette sottoricoprimento finito.
-		\item Gli intervalli aperti o semiaperti della forma $[a,\ b)$ hanno come ricoprimento aperto $\mathcal{A}=\left\{ \left[ a, \ b-\frac{1}{n}\right) \right\}$ che non ammette un sottoricoprimento finito.
+		\item $\realset$ con la topologia euclidea: se si considera il ricoprimento aperto $\displaystyle \realset=(-\infty , 2)\cup(0,+\infty)$, esso non ammette sottoricoprimento finito.
+		\item Gli intervalli aperti o semiaperti della forma $[a,\ b)$ hanno come ricoprimento aperto $\mathcal{A}=\left\{ \left[ a, \ b-\frac{1}{n}\right) \right\}$, che non ammette un sottoricoprimento finito.
 	\end{itemize}
 \end{examples}
 
 \begin{theorema}\label{immagine compatto}
-	L'immagine continua di un compatto è un compatto, ovvero dati $X,Y$ spazi toplogici, $\funz f X Y$ continua, allora
+	L'immagine \textit{continua} di un compatto è un compatto: dati $X,Y$ spazi topologici, $\funz f X Y$ continua, allora
 		\begin{gather*}
 			X \text{ comaptto } \implies f(X) \text{ compatto}
 		\end{gather*}
+	\vspace{-6mm}
 \end{theorema}
 \begin{demonstration}
-	Si considera un ricoprimento aperto di $f(X)$ e se ne vuole trovare un sottoricoprimento finito tramite le controimmagini, sfruttando così la compattezza di $X$. \newline
-	Sia  $\mathcal{A}=\{A_i\}$ ricomprimanto di $f(X)$, allora $\forall i\in I, A_i\subseteq Y$ aperto e $\displaystyle \union_{i\in I}A_i \supseteq f(X)$. \newline
-	Si considerino ora le controimmagini, che saranno aperte perché $f$ è continua:\\ $\mathcal{B}=\left\{f^{-1}(A_i)\right\}$ è un ricoprimento aperto di $X$. Tuttavia $X$ è compatto, quindi posso estrarre un sottoricoprimento finito 
+	Considerato un ricoprimento aperto di $f(X)$, si vuole trovare un sottoricoprimento finito tramite le controimmagini di $f$ in modo da sfruttare così la compattezza di $X$. \newline
+	Sia  $\mathcal{A}=\{A_i\}$ ricoprimento di $f(X)$, allora $\forall i\in I, A_i\subseteq Y$ aperto e $\displaystyle \union_{i\in I}A_i \supseteq f(X)$. \newline
+	Si considerino ora le controimmagini, che saranno aperte perché $f$ è continua:\\ $\mathcal{B}=\left\{f^{-1}(A_i)\right\}$ è un ricoprimento aperto di $X$. Tuttavia $X$ è compatto, quindi posso estrarre un sottoricoprimento finito:
 		\begin{gather*}
 			X=f^{-1}(A_1) \cup	\dots \cup f^{-1}(A_n) \implies f(X)\subseteq A_1\cup \dots \cup A_n \implies f(X) \text{ compatto}
 		\end{gather*}
+	\vspace{-6mm}
 \end{demonstration}
 Da questo teorema segue che essere compatti è una proprietà topologica.
 
@@ -456,8 +486,8 @@ Da questo teorema segue che essere compatti è una proprietà topologica.
 				\end{gather*}	
 			Quindi $b+h$ è coperto da un numero finito di aperti, il che implica che $b+h\in X$, il che è assurdo perché $b=\sup X$.
 		\end{itemize}
+	\vspace{-3mm}
 \end{demonstration}
-
 Notiamo che questo teorema implica che un intervallo $[a,\ b]\subseteq\realset$ è compatto, infatti è omeomorfo a $[0,\ 1]$ e la compattezza è una proprietà topologica. \newline
 Vediamo ora un esempio di spazio compatto che non abbia la topologia euclidea.
 \begin{example}
@@ -470,23 +500,25 @@ Vediamo ora un esempio di spazio compatto che non abbia la topologia euclidea.
 		\begin{gather*}
 			A_i\in\mathcal{A}\colon x_i\in A_i\implies X=A_0\cup A_1\cup A_n
 		\end{gather*}
+	\vspace{-6mm}
 \end{example}
 
 \begin{observe}
-Notiamo che se $X$ è finito allora $X$ è compatto per qualsiasi topologia, in quanto se la sua cardinalità è finita allora lo sarà anche quella del suo insieme delle parti, dai cui elementi scelgo gli aperti di una topologia. Dunque i casi interessanti di spazi compatti sono quelli il cui insieme di sostegno non è finito.\newline
-Inoltre se $X$ ha la topologia discreta vale anche il viceversa ovvero
+Notiamo che se $X$ è finito allora $X$ è compatto per qualsiasi topologia, in quanto se la sua cardinalità è finita allora lo sarà anche quella del suo insieme delle parti, dai cui elementi scelgo gli aperti di una topologia. Dunque i casi interessanti di spazi compatti sono quelli il cui insieme di sostegno \textit{non è finito}.\newline
+Inoltre, se $X$ ha la topologia discreta vale anche il viceversa:
 	\begin{gather*}
 		X \text{ top. discreta } \implies \left( X \text{ compatto } \iff X \text{ finito}\right)
 	\end{gather*}
 Sia $\mathcal{A}=\left\{ A_x\right\}_{x\in X}, \ A_x\coloneqq \{x\}$, che è aperto in quanto $X$ ha la topologia discreta. Siccome $X$ è compatto allora esiste un sottoricoprimento finito, ovvero un numero finito di aperti di $\mathcal{A}$ che lo ricopra, ossia $X=\{x_1\}\cup\{x_2\}\cup\dots\{x_n\}\implies X$ finito.
 \end{observe}
-
+\subsection{Relazioni fra compattezza e altre proprietà topologiche}
+% trovare un nome più adatto
 \begin{theorema}\textsc{Manetti 4.41.1} \label{chiuso in compatto}\\
 	Un chiuso in un compatto è un compatto, ovvero se $X$ è uno spazio topologico compatto, $C\subseteq X$ chiuso allora $C$ è compatto.
 \end{theorema}
 \begin{demonstration}
 	Sia $\mathcal{A}=\{A_i \}_{i\in I}$ un ricoprimento di $X$, sia $C\subseteq X$ chiuso, allora $A\coloneqq X\setminus C$ è aperto in $X$.\newline
-	Sia $\mathcal{A}'=\{A_i, A\}$ ricoprimento aperto di $X$. Siccome $X$ è compatto esiste un suo sottoricoprimento finito 
+	Sia $\mathcal{A}'=\{A_i,\ A\}$ ricoprimento aperto di $X$. Siccome $X$ è compatto esiste un suo sottoricoprimento finito 
 		\begin{gather*}
 			X=A_1\cup\dots\cup A_n\cup A \implies C=X\setminus A=A_1\cup\dots\cup A_n
 		\end{gather*}
@@ -496,32 +528,31 @@ Sia $\mathcal{A}=\left\{ A_x\right\}_{x\in X}, \ A_x\coloneqq \{x\}$, che è ape
 \begin{observe}\textsc{Manetti, 4.41.2}
 	L'unione finita di compatti è un compatto, ovvero se $K_1,\dots,K_n$ sono compatti allora $K=K_1\cup\dots\cup K_n$ è compatto, infatti basta prendere l'unione dei sottoricoprimenti finiti.
 \end{observe}
-
-Vediamo ora che relazione c'è fra le due proprietà topologiche di essere uno spazio $T_2$ e compatto.
+Vediamo ora che relazione c'è fra le due proprietà topologiche di essere uno spazio di \textbf{Hausdorff} (\textbf{T2}) e compatto.
+% mettere i nomini ai teoremi utili?
 \begin{theorema}\textsc{Manetti, 4.48} \label{compatto in hausdorff chiuso} \\ 
 	Un compatto in un Hausdorff è chiuso, ovvero se $X$ è di Hausdorff, $K\subseteq X$ è compatto allora $K$ è chiuso.
 \end{theorema}
 \begin{demonstration}
-	Per dimostrare che $K$ è chiuso mostriamo che il suo complementare è aperto, ovvero che è intorno di ogni suo punto, in modo tale da poter usare agilmente l'essere $T_2$.
+	Per dimostrare che $K$ è chiuso mostriamo che il suo complementare è aperto, ovvero che è intorno di ogni suo punto, in modo tale da poter usare agilmente l'essere di \textbf{Hausdorff}.
 		\begin{gather*}
 			K \text{ chiuso } \iff X\setminus K \text{ aperto } \iff \exists A\subseteq X\setminus K \text{ aperto } \colon x_0\in A \\
 			A\subseteq X\setminus K \iff A\cap K=\emptyset
 		\end{gather*}
-	Per poter sfruttare che $X$ è $T_2$ scriviamo $A$ come intorno di $x_=$ e $K$ come intorno di $y$:
+	Per poter sfruttare che $X$ è di \textbf{Hausdorff} scriviamo $A$ come intorno di $x_0$ e $K$ come intorno di $y$:
 		\begin{gather*}
-			x_0\in X\setminus K, y\in K \stackrel{!}{\implies} x\neq y\implies \exists U_y\in I(x_0), \ \exists V_y\in I(y) \colon U_y\cap V_y=\emptyset \\
-			\text{Sia } V=\union_{y\in K}V_y \implies V\supseteq K \stackrel{!!}{\implies} V=V_{y_1}\cup\dots\cup V_{y_n} \\
+			x_0\in X\setminus K, y\in K \stackrel{X\ \textbf{T2}}{\implies} x\neq y\implies \exists U_y\in I(x_0), \ \exists V_y\in I(y) \colon U_y\cap V_y=\emptyset \\
+			\text{Sia } V=\union_{y\in K}V_y \implies V\supseteq K \stackrel{K\ compatto}{\Longrightarrow} V=V_{y_1}\cup\dots\cup V_{y_n} \\
 			\text{Sia } U=U_{y_1}\cap\dots\cap U_{y_n} \in I(x_0)\\
 			\implies V_{y_i}\cap U_{y_i}=\emptyset \implies V\cap K=\emptyset \implies U\subseteq X\setminus K
 		\end{gather*}
-	dove (!) indica che $X$ è $T_2$ e (!!) che $K$ è compatto.
 \end{demonstration}
 
 \begin{theorema}\textsc{Manetti, 4.42} \label{compatto chiuso e limitato R}\\
 	Un sottospazio $K\subseteq \realset$ è compatto $\iff K$ chiuso e limitato.
 \end{theorema}
-\begin{demonstration}
-	$\impliesdx$ Siccome $\realset$ è $T_2$ e $K$ è compatto allora per il teorema precedente $K$ è chiuso.\newline
+\begin{demonstration}~{}\\
+	$\impliesdx$ Siccome $\realset$ è \textbf{T2} e $K$ è compatto allora per il teorema precedente $K$ è chiuso.\newline
 	Per vedere che è limitato consideriamo un ricoprimento aperto $\mathcal{A}=\left\{ (-n,\ n)\cap K\right\}_{n\in\naturalset}$ di $K$. Siccome è compatto allora esiste un sottoricoprimento finito, ovvero:
 	\begin{gather*}
 		K\subseteq (-n_1,\ n_1)\cup\dots\cup(-n_m,\ n_m) \implies K\subseteq (-M,\ M), \ M\coloneqq \max m_i
@@ -551,9 +582,8 @@ Vediamo ora che relazione c'è fra le due proprietà topologiche di essere uno s
 \end{demonstration}
 
 \begin{observe}
-	Per poter parlare di massimo e minimo c'è bisogno di n ordinamento sul codominio, mentre il dominio $X$ potrebbe anche non averne uno!
+	Per poter parlare di massimo e minimo c'è bisogno di un \textit{ordinamento} sul codominio, mentre il dominio $X$ potrebbe anche non averne uno!
 \end{observe}
-
 Vogliamo ora vedere come si comporta la compattezza rispetto al prodotto, prima però va dimostrato un lemma che ci tornerà utile nella dimostrazione del teorema.
 \begin{lemming}\textsc{Tube lemma} \label{tube lemma}\\
 	Siano $X,Y$ spazi topologici con $Y$ compatto, $x_0\in X$, $A\subseteq X\times Y\colon A$ aperto e $\{x_0\}\times Y\subseteq A$. Allora $\exists U\subseteq X$ con $x_0\in U$, aperto tale che $\{x_0\}\times Y \subseteq U\times Y \subseteq A$
@@ -567,10 +597,10 @@ Vogliamo ora vedere come si comporta la compattezza rispetto al prodotto, prima 
 \begin{theorema}\textsc{Manetti, 4.49.2} \label{prodotto compatti}\\
 	$X,Y$ compatti $\iff X\times Y$ è compatto.
 \end{theorema}
-\begin{demonstration}
+\begin{demonstration}~{}\\
 	$\impliessx $ Si considerino le proiezioni, che sono funzioni continue. Essendo $X\times Y$ compatto allora le immagini delle proiezioni saranno compatte, ed essendo le proiezioni suriettive allora $X,Y$ sono compatti. \newline
 	$\impliesdx $ Sia $\mathcal{A}=\{A_i\}$ un ricoprimento aperto di $X\times Y$, cerchiamo un sottoricoprimento finito.\newline
-	Per sfruttare la compattezza di $Y$ notiamo che $Y\cong \{x\}\times Y\subseteq A_{x_1}\cup\dots\cup A_{x_n}=A_x$, che possiamo pensare come sottoricoprimento "verticale" finito. Notiamo inoltre che gli $A_{x_i}$ dipendono dalla $\{x\}$ scelta.\newline
+	Per sfruttare la compattezza di $Y$ notiamo che $Y\cong \{x\}\times Y\subseteq A_{x_1}\cup\dots\cup A_{x_n}=A_x$, che possiamo pensare come sottoricoprimento ‘‘verticale'' finito. Notiamo inoltre che gli $A_{x_i}$ dipendono dalla $\{x\}$ scelta.\newline
 	Per il Tube Lemma dimostrato sopra allora 
 		\begin{gather*}
 			\exists U_x\subseteq X \text{ aperto }\colon \{ x\}\times Y \subseteq U_x\times Y \subseteq A_x=A_{x_1}\cup\dots\cup A_{x_n}
@@ -581,7 +611,6 @@ Vogliamo ora vedere come si comporta la compattezza rispetto al prodotto, prima 
 			\subseteq \left( A_{x_1 , 1}\cup\dots\cup A_{x_1, n_1}\right) \cup\dots\cup \left( A_{x_m, 1}\cup\dots\cup A_{x_m, n_m} \right)
 		\end{gather*}
 \end{demonstration}
-
 Sfruttiamo ora che il prodotto di compatti è compatto per generalizzare il teorema \ref{compatto chiuso e limitato R} allo spazio $\realset ^n$.
 \begin{theorema} \label{compatto chiuso e limitato R^n}
 	$K\subseteq \realset^n$ compatto $\iff K$ chiuso e limitato.
@@ -594,28 +623,29 @@ Sfruttiamo ora che il prodotto di compatti è compatto per generalizzare il teor
 	con $M=\max n_i$.\newline
 	$\impliessx$ $K$ è limitato, quindi $K\subseteq [-a,\ a]^n$ che è compatto perché prodotto di compatti, ma $K$ è anche chiuso, quindi per il teorema \ref{chiuso in compatto} è compatto.
 \end{demonstration}
-
-
-%%% DA ATTIVARE CON IL NUOVO MAIN \begin{digression}
-In realtà vale un teorema più generale, che si dimostrerà poi nel corso di Istituzioni di Analisi.\newline
-\textsc{Teorema:} Sia $X$ uno spazio metrico completo, allora $K\subseteq X$ compatto $\iff K$ chiuso e totalmente limitato, ovvero $\forall\epsilon >0, \ K$ è contenuto in un'unione finita di palle di raggio $\epsilon$.\newline 
-In $\realset^n$ vale limitato $\iff$ totalmente limitato, ma ad esempio considerato lo spazio metrico 
+\begin{digression}
+In realtà vale un teorema più generale, che si dimostrerà poi nel corso di Istituzioni di Analisi.
+\textsc{Teorema:} Sia $X$ uno spazio metrico completo, allora $K\subseteq X$ compatto $\iff K$ chiuso e totalmente limitato, ovvero $\forall\epsilon >0, \ K$ è contenuto in un'unione finita di palle di raggio $\epsilon$.\\ 
+In $\realset^n$ vale limitato $\iff$ totalmente limitato, ma ad esempio consideriamo lo spazio metrico:
 	\begin{gather*}
 		\mathcal{C}\left( [0, \ 1] \right) \coloneqq \left\{ \funz f {[0,\ 1]} \realset \mid f \text{ continua } \right\},  \ \ \text{con } \mvf{d}{f}{g} =\sup_{x\in [0, \ 1]} |f(x)-g(x)|
 	\end{gather*}
-Una palla di centro $\mathbf{0}$ e raggio $1$ quale $B_1(\mathbf{0})=\left\{ \funz f {[0,\ 1]} \realset \mid f \text{ continua }, -1\geq f(x) \leq 1 \ \right\}$ è chiusa e limitata, tuttavia in $	\mathcal{C}\left( [0, \ 1] \right)$ non è compatta.\newline
-
+Una palla di centro $\mathbf{0}$ e raggio $1$ come:
+\begin{equation*}
+	B_1(\mathbf{0})=\left\{ \funz f {[0,\ 1]} \realset \mid f \text{ continua }, -1\geq f(x) \leq 1 \ \right\}
+\end{equation*}
+È chiusa e limitata, tuttavia in $	\mathcal{C}\left( [0, \ 1] \right)$ non è compatta.\newline
+\end{digression}
 \begin{theorema} \textsc{Manetti 4. 52} \label{da compatto in T_2 è chiuso} \\
-	Sia $\funz f X Y$ continua con $X$ è compatto e $Y$ $T_2$, \ allora $f$ è chiusa.
+	Sia $\funz f X Y$ continua con $X$ è compatto e $Y$ \textbf{T2}, allora $f$ è chiusa.
 \end{theorema}
 \begin{demonstration}
 	Per dimostrare che $f$ è chiusa consideriamo $C\subseteq X$ chiuso e mostriamo che $f(C)$ è chiuso sfruttando rispettivamente i teoremi \ref{chiuso in compatto}, \ref{immagine compatto} e \ref{compatto in hausdorff chiuso}:
 		\begin{equation*}
-			C\subseteq X \text{ chiuso in compatto } \implies C \text{ compatto } \implies f(C) \text{ compatto in } T_2 \implies f(C) \text{ chiuso}
+			C\subseteq X \text{ chiuso in compatto } \implies C \text{ compatto } \implies f(C) \text{ compatto in } \textbf{T2} \implies f(C) \text{ chiuso}
 		\end{equation*}
 \end{demonstration}
-
-In generale vale il teorema di Kuratowsi-Mròwka, che dice che $Y$ è compatto se e solo se per qualsiasi spazio topologico $X$ la proiezione $\funz {p_X} {X\times Y} X$ è chiusa, ne dimostreremo una versione più debole.
+In generale vale il \textbf{teorema di Kuratowsi-Mròwka}, che dice che $Y$ è compatto se e solo se per qualsiasi spazio topologico $X$ la proiezione $\funz {p_X} {X\times Y} X$ è chiusa, ne dimostreremo una versione più debole.
 % LEZ 10
 \begin{theorema} \textsc{Manetti, 4.49.1} \\
 	Siano $X,Y$ spazi topologici con $Y$ compatto, allora la proiezione $\funz p {X\times Y} X$ è chiusa.
