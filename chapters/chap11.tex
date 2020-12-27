@@ -5,7 +5,7 @@
 {$LastChangedRevision$}
 {$LastChangedBy$}
 
-\chapter{Forma canonica di Jordan}
+\chapter{Approfondimenti di Algebra Lineare}
 \labelChapter{jordan}
 
 \begin{introduction}
@@ -15,7 +15,13 @@
 	\end{flushright}
 \end{introduction}
 % inserire citazione
-% inserire introduzione carina
+\noindent Questo capitolo si può considerare un approfondimento di concetti ben noti dall'Algebra Lineare, cercando di rispondere alle seguenti questioni:
+\begin{itemize}
+	\item \textbf{\textsc{Diagonalizzazione simultanea}}: quando possiamo diagonalizzare due matrici con una \textit{stessa base} di autovettori?
+	\item \textbf{\textsc{Polinomi e matrici}}: possiamo valutare un \textit{polinomio} con dei valori matriciali? Che relazione c'è fra polinomi matriciali e il \textit{polinomio caratteristico} della matrice?
+	\item \textbf{\textsc{Forma canonica di Jordan}}: possiamo generalizzare la \textit{decomposizione spettrale} anche a matrici che non sono diagonalizzabili, rendendole così ‘‘più semplici''?
+	\item \textbf{\textsc{Funzione esponenziale matriciale}}: come abbiamo fatto con i polinomi, possiamo ‘‘matricizzare'' la funzione esponenziale?
+\end{itemize}
 \section{Diagonalizzazione simultanea}
 \begin{remember}
 	Sia $V$ spazio vettoriale, su campo $\kamp$, di dimensione finita. Consideriamo gli \textbf{endomorfismi} di $V$ o, equivalentemente, le matrici $n\times n$ a elementi in $\kamp$ (con $\dim V=n$).
@@ -221,9 +227,6 @@ Se $p\left(t\right)=c_dt^d+\ldots+c_0$, allora:
 \end{equation*}
 Ovvero $M^{-1}p\left(A\right)M=\left(B\right)$. Pertanto, $p\left(A\right)=O$ se e solo se $p\left(B\right)=O$, cioè se $I_A=I_B$.
 \end{demonstration}
-
-%inserire citazione
-%inserire introduzione
 \section{Teorema di Cayley-Hamilton}
 \begin{remember}
 	Ricordiamo alcune definizioni e proprietà utili legate al \textbf{determinante}:
@@ -235,7 +238,7 @@ Ovvero $M^{-1}p\left(A\right)M=\left(B\right)$. Pertanto, $p\left(A\right)=O$ se
 				\text{la riga }i\text{ e la colonna }j
 			\end{array}\right)
 		\end{equation}
-	\item La \textbf{matrice aggiunta}\index{matrice!aggiunta} $\mathrm{adj}\left(M\right)$ di una matrice quadrata $M$ è la matrice $\left(M_{i,j}\right)$ che, al posto $\left(i,\ j\right)$ ha il complemento algebrico $M_{j,\ i}$.\footnote{Attenzione all'ordine degli indici!}
+	\item La \textbf{matrice aggiunta}\index{matrice!aggiunta} $\mathrm{adj}\left(M\right)$ di una matrice quadrata $M$ è la matrice $\left(M_{i,j}\right)$ che, al posto $\left(i,\ j\right)$ ha il complemento algebrico $M_{j,i}$.\footnote{Attenzione all'ordine degli indici!}
 	\item La \textbf{regola di Laplace}\index{regola!di Laplace} afferma che:
 	\begin{equation}
 		\mathrm{adj}\left(M\right)M=M\mathrm{adj}\left(M\right)=\det\left(M\right)I
@@ -379,7 +382,7 @@ Come altra conseguenza, ogni matrice $n\times n$ ammette $n$ autovalori compless
 Sia $A\in \complexset^{n,\ n}$ una matrice associata a un endomorfismo $\funz{f}{V}{V}$. Se $f$ è diagonalizzabile, esiste una base in cui la matrice di $f$ è diagonale. Anche quando tuttavia la matrice non è diagonalizzabile, vogliamo cercare una base in cui la matrice di $f$ è \textit{particolarmente semplice}.
 \begin{define}\textsc{Blocco di Jordan.}\\
 	Un \textbf{blocco di Jordan}\index{blocco di Jordan} $J=J_k\left(\lambda\right)$, di autovalore $\lambda\in\complexset$ e dimensione $K$, è una matrice quadrata $k\times k$ con sulla diagonale solo l'autovalore e sopra ogni elemento della diagonale $1$:
-	\begin{equation}%\setlength\arraycolsep{0.5mm}
+	\begin{equation}
 		    J=J_k\left(\lambda\right) = \left(
 		\begin{array}{ccccc}
 \lambda	& 1 		&  0		& \ldots 	& 0 \\
@@ -485,11 +488,11 @@ Come ultima osservazione fondamentale, notiamo inoltre che $N^k=O$, cioè $N$ è
 	Una matrice quadrata si dice in \textbf{forma di Jordan}\index{forma di Jordan} se ha solo blocchi di Jordan lungo la diagonale, mentre altrove è nulla.
 \end{define}
 \begin{example}
-La seguente matrice $9\times 9$  è in forma di Jordan, con blocchi $J_3\left(2\right)$, $J_2\left(i\right)$, $J_3\left(i\right)$ e $J_1\left(-4\right)$:
+La seguente matrice $9\times 9$ è in forma di Jordan con $J_3\left(2\right)$, $J_2\left(i\right)$, $J_3\left(i\right)$ e $J_1\left(-4\right)$:
 	\begin{equation*}
 		A=
-		\tikz[baseline]{%
-			\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+		\tikz[baseline]{
+			\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {
 				2 	\& 1 	\& 0	\& \color{gray}{0}	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\\
 				0	\& 2 	\& 1 	\& \color{gray}{0}	\&	\color{gray}{0}	\&	 \color{gray}{0}	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\\
 				0	\& 0 	\& 2 	\& \color{gray}{0}	\& \color{gray}{0}	\&	\color{gray}{0}	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\&	\color{gray}{0} 	\\
@@ -936,8 +939,8 @@ L'osservazione che qui facciamo ci servirà nella dimostrazione della proposizio
 	 Consideriamo $A-\lambda_1I$, rappresentata in figura: ha, nella parte rossa, dei blocchi di Jordan relativi all'autovalore zero. Poichè la parte rossa è una sottomatrice nilpotente di ordine $p_1$, ne consegue che $\left(A-\lambda_1I\right)^{p_1}$ ha la matrice nulla nella parte zero.\\
 	 In generale, $\left(A-\lambda_iI\right)^{p_i}$ è nullo nel blocco $m_i\times m_i$ corrispondente a $\lambda_i$.
 	 \begin{equation*}
-	 	\tikz[baseline]{%
-	 		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+	 	\tikz[baseline]{
+	 		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {
 	 			~\& \& \& \& \& \& 	\\
 	 			~\& \& \& \& \& \& 	\\
 	 			~\& \& ~ \& \& \& \& 	\\
@@ -962,8 +965,8 @@ Ne consegue che $\displaystyle\prod_{i=2}^{r}\left(A-\lambda_iI\right)^{d_i}$ ha
 \end{equation*}
 Rappresentando visivamente il prodotto di queste due matrici:
 	 \begin{equation*}
-	\tikz[baseline]{%
-		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+	\tikz[baseline]{
+		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {
 			\ast\neq 0\& \& \& \& \& \& 	\\
 			~\& \& \& \& \& \& 	\\
 			~\& \& ~ \& \& \& \& 	\\
@@ -972,8 +975,8 @@ Rappresentando visivamente il prodotto di queste due matrici:
 			~\& \& \& \& \& \& 	\\
 			~\&~ \&~ \&~ \&~ \&~ \&~ \\
 		};
-	}	\tikz[baseline]{%
-	\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (m) {%
+	}	\tikz[baseline]{
+	\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (m) {
 		~\& \& 1\& \& \& \& 	\\
 		~\& \& 0\& \& \& \& 	\\
 		~\& \& \vdots \& \& \& \& 	\\
@@ -997,8 +1000,8 @@ Viceversa, se $A$ è diagonalizzabile, tutti i blocchi sono di dimensione $1$ e 
 \begin{observe}
 La forma di Jordan determina il polinomio minimo e il polinomio caratteristico, ma \textit{non} vale il viceversa. Per esempio, prendiamo le seguenti matrici:
 \begin{equation*}
-\tikz[baseline]{%
-	\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+\tikz[baseline]{
+	\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {
 		2 \& 1	\& 0 \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0}  \\
 		0 \& 2	\& 1 \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0}  \\
 		0 \& 0	\& 1 \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0}  \\
@@ -1011,8 +1014,8 @@ La forma di Jordan determina il polinomio minimo e il polinomio caratteristico, 
 	\draw (M-3-3.south east) rectangle (M-6-6.south east);
 	\draw (M-6-6.south east) rectangle (M-7-7.south east);
 }
-\tikz[baseline]{%
-	\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+\tikz[baseline]{
+	\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {
 		2 \& 1	\& 0 \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0}  \\
 		0 \& 2	\& 1 \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0}  \\
 		0 \& 0	\& 1 \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0} \& \color{gray}{0}  \\
@@ -1104,8 +1107,8 @@ Il suo polinomio caratteristico è $C_A\left(t\right)=\left(t-2\right)^3$ e $\la
 \end{equation*}
 Il rango è $\rk \left(A-2I\right)=1$ e la molteplicità geometrica è pertanto $\dim V_2=2$. Notiamo che le possibili forme di Jordan di una matrice $3\times 3$ con unico autovalore $2$ sono:
 	\begin{equation*}
-	\underset{\tikz[baseline]{%
-			\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+	\underset{\tikz[baseline]{
+			\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {
 				2 	\&	\color{gray}{0}	\& \color{gray}{0} 	\\
 				\color{gray}{0} 	\& 2	\& \color{gray}{0} 	\\
 				\color{gray}{0}	\& \color{gray}{0}	\& 2 	\\
@@ -1114,8 +1117,8 @@ Il rango è $\rk \left(A-2I\right)=1$ e la molteplicità geometrica è pertanto 
 			\draw (M-1-1.south east) rectangle (M-2-2.south east);
 			\draw (M-2-2.south east) rectangle (M-3-3.south east);
 	}}{3\text{ blocchi},\ \dim V_2=3}
-	\underset{\tikz[baseline]{%
-		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+	\underset{\tikz[baseline]{
+		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {
 			2 	\&	1	\& \color{gray}{0} 	\\
 			0 	\& 2	\& \color{gray}{0} 	\\
 			\color{gray}{0}	\& \color{gray}{0}	\& 2 	\\
@@ -1123,8 +1126,8 @@ Il rango è $\rk \left(A-2I\right)=1$ e la molteplicità geometrica è pertanto 
 		\draw (M-1-1.north west) rectangle (M-2-2.south east);
 		\draw (M-2-2.south east) rectangle (M-3-3.south east);
 }}{2\text{ blocchi},\ \dim V_2=2}
-	\underset{\tikz[baseline]{%
-		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+	\underset{\tikz[baseline]{
+		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {
 			2 	\&	1	\& 0 	\\
 			0 	\& 2	\& 1 	\\
 			0	\& 0	\& 2 	\\
@@ -1173,8 +1176,8 @@ Possiamo scegliere ad esempio $\left(-1,\ 1,\ 0\right)$, ottenendo allo stesso t
 \textit{Non si può dunque verificare}, in quanto con la condizione di avere un blocco di dimensione $5$ non ci può essere più di un solo blocco di dimensione $1$.
 \item  $A$ ha autovalori $2$ e $3$, di \textit{molteplicità algebrica} rispettivamente $1$ e $3$, dunque il \textit{più grande} blocco di Jordan nella forma di Jordan di $A$ riferito a $2$ ha dimensione $1$, mentre quello riferito a $3$ è $3$; poiché la dimensione dell'autospazio relativo a $2$ è la molteplicità geometrica, segue che il numero di blocchi relativi a $2$ sono $3$.
 \begin{equation*}
-	\tikz[baseline]{%
-		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+	\tikz[baseline]{
+		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {
 			2 	\&	 	\&   \&   \&   \&  	\\
 			  	\& 2	\&   \&   \&   \&  	\\
 			 	\&  	\& 2 \&   \&   \&  	\\
@@ -1234,13 +1237,15 @@ Oppure come il valore della serie di potenze:
 	e^x=\sum_{n=0}^{+\infty}\frac{x^n}{n!}=1+x+\frac{x^2}{2}+\frac{x^3}{3!}+\ldots
 \end{equation*}
 Vogliamo ora definire una funzione analoga anche in campo complesso.
+\vspace{2mm}
 \begin{define}\textsc{Funzione esponenziale sui numeri complessi.}\\
 Sia $z\in\complexset$. Definiamo come \textbf{funzione esponenziale sui numeri complessi}\index{funzione!esponeziale sui numeri complessi} la seguente serie:
 \begin{equation}
 	\exp\left(z\right)=e^z\coloneqq\sum_{n=0}^{+\infty}\frac{z^n}{n!}
 \end{equation}
-Essa è una funzione continua
+Essa è una funzione continua.
 \end{define}
+\vspace{2mm}
 \begin{demonstration}
 	Dimostriamo che sia ben definita la funzione mostrando la convergenza della serie. In realtà possiamo mostrare che la serie \textbf{converge assolutamente}\index{convergenza!assoluta}\footnote{Si può parlare di convergenza assoluta in spazi topologici dotati di una \textit{norma}; si ha che la convergenza implica la convergenza ‘‘classica'' se lo spazio è completo rispetto alla metrica indotta dalla norma.} Dunque, con i complessi consideriamo il \textit{modulo} $\lvert\cdot\rvert$:
 	\begin{equation}
@@ -1255,8 +1260,13 @@ Passando alle serie:
 \begin{equation*}
 \sum_{n=0}^{+\infty}\frac{a^n}{n!}<\infty
 \end{equation*}
-Allora la funzione esponenziale converge uniformemente su $S$, dunque $\funz{e^z}{\complexset}{\complexset}$ è continua.
+Allora la funzione esponenziale converge uniformemente su $S$, dunque:
+\begin{equation*}
+	\funz{e^z}{\complexset}{\complexset}
+\end{equation*}
+È continua.
 \end{demonstration}
+\vspace{2mm}
 \begin{proposition}\label{proposizioneeWeZ=eW+Z}
 L'esponenziale in campo complesso gode delle seguenti proprietà:
 \begin{enumerate}
@@ -1290,8 +1300,8 @@ L'esponenziale in campo complesso gode delle seguenti proprietà:
 \begin{observes}~{}
 	\begin{itemize}
 		\item $e^z=e^{x+iy}=e^x\cdot e^{iy}=e^x\left(\cos y+i\sin y\right)\implies \lvert e^z\rvert = e^x = e^{\Re z}$\\
-		L'argomento di $e^z$ è, per costruzione, $y=\Im z$ % immagine complessa
-		\item $e^{2\pi i}=1$, mentre $e^{z+2\pi i}=e^z\cdot e^{2\pi i}=e^{z}$
+		L'argomento di $e^z$ è, per costruzione, $y=\Im z$.
+		\item $e^{2\pi i}=1$, mentre $e^{z+2\pi i}=e^z\cdot e^{2\pi i}=e^{z}$.
 		\item $e^z\neq 0$, dunque $\forall w\in \complexset\setminus \left\{0\right\}\ \exists z\in \complexset\ \colon e^z=w$, cioè $\funz{e^z}{\complexset}{\complexset\setminus\left\{0\right\}}$. Infatti, se $w=x+iy$ si può scrivere in forma polare come:
 		\begin{equation*}
 			w=\lvert w\rvert\left(\cos y+i\sin y\right)
@@ -1568,8 +1578,8 @@ In generale, tuttavia, come possiamo calcolare l'esponenziale di una generica ma
 	Allora è sufficiente calcolare $P$, $J$ e $e^J$.
 	\item $J$ è una matrice a blocchi diagonali, dunque la potenza $k$-esima è una matrice con le potenze $k$-esime dei blocchi sulla diagonale:
 	\begin{equation*}
-		J=\tikz[baseline]{%
-			\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+		J=\tikz[baseline]{
+			\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {
 				\mathbf{B_1} 	\&	\dots	\& 0 	\\
 				\vdots 	\& \ldots	\& \vdots 	\\
 				0	\& \dots	\& \mathbf{B_r} 	\\
@@ -1577,8 +1587,8 @@ In generale, tuttavia, come possiamo calcolare l'esponenziale di una generica ma
 			\draw (M-1-1.north west) rectangle (M-1-1.south east);
 			\draw (M-3-3.north west) rectangle (M-3-3.south east);
 		}
-	J^k=\tikz[baseline]{%
-		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+	J^k=\tikz[baseline]{
+		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {
 			\mathbf{B_1}^k 	\&	\dots	\& 0 	\\
 			\vdots 	\& \ldots	\& \vdots 	\\
 			0	\& \dots	\& \mathbf{B_r}^k	\\
@@ -1589,8 +1599,8 @@ In generale, tuttavia, come possiamo calcolare l'esponenziale di una generica ma
 	\end{equation*}
 Dunque usando la definizione , segue che, l'esponenziale è anch'essa una matrice a blocchi:
 \begin{equation*}
-	e^J=\tikz[baseline]{%
-		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {%
+	e^J=\tikz[baseline]{
+		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {
 			e^\mathbf{B_1} 	\&	\dots	\& 0 	\\
 			\vdots 	\& \ldots	\& \vdots 	\\
 			0	\& \dots	\& e^\mathbf{B_r}	\\

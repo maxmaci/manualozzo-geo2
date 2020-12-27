@@ -15,7 +15,7 @@
 	\end{flushright}
 \end{introduction}
 % citazione
-Finora abbiamo visto omeomorfismi tra spazi topologici sotto tanti aspetti diversi, definendo rigorosamente quella che era l'intuizione del magico materiale elastico. Possiamo osservare tuttavia delle ‘‘\textit{equivalenze di forma}'' che un omeomorfismo è troppo rigido per descriverle.\\
+\noindent Finora abbiamo visto omeomorfismi tra spazi topologici sotto tanti aspetti diversi, definendo rigorosamente quella che era l'intuizione del magico materiale elastico. Possiamo osservare tuttavia delle ‘‘\textit{equivalenze di forma}'' che un omeomorfismo è troppo rigido per descriverle.\\
 Ad esempio, si possono considerare \textit{equivalenti} figure con lo stesso numero di buchi. Sotto questo punto di vista, la figura corrispondente alla lettera \textsf{\textbf{O}} e quella corrispondente a \textsf{\textbf{P}} sono \textit{equivalenti}, dato che hanno entrambe un solo buco, mentre \textsf{\textbf{X}} non lo è perché non ne ha. Allo stesso tempo, nessuna di queste è \textit{omeomorfa} all'altra: infatti, se togliamo dalle tre lettera/figure un punto come il nodo di raccordo delle ‘‘stanghette'' (o per \textsf{\textbf{O}} un punto qualunque), otteniamo per \textsf{\textbf{O}} una componente connessa, per \textsf{\textbf{P}} due e per \textsf{\textbf{X}} ben quattro distinte.\\
 Preceduto da un'approfondimento delle componenti connesse (anche per archi), nel presente capitolo formalizzeremo questo tipo di equivalenza più debole e allo stesso tempo più ampia: l'\textbf{omotopia}.
 \section{Lemma di incollamento}
@@ -28,7 +28,7 @@ Preceduto da un'approfondimento delle componenti connesse (anche per archi), nel
 			g\left(x\right)\ x\in B
 		\end{cases}
 	\end{equation}
-	Se $A$ e $B$ sono entrambi aperti in $X$, oppure se $A$ e $B$ sono entrambi chiusi in $X$, allora $h$ è continua.
+	Se $A$ e $B$ sono entrambi aperti in $X$ (o entrambi chiusi in $X$), allora $h$ è continua.
 \end{lemming}
 \begin{demonstration}
 	Supponiamo $A$ e $B$ aperti. Sia $U\subseteq Y$ aperto. Allora:
@@ -60,6 +60,7 @@ Riprendiamo la trattazione delle componenti connesse e \textbf{c.p.a.} introdott
 		x,\ y\in X\qquad x\sim_C y\iff \exists C\subseteq X\text{ connesso}\ \colon x,\ y\in C
 	\end{equation}
 \end{itemize}
+\vspace{-6mm}
 \end{observes}
 \begin{demonstration}
 Innanzitutto mostriamo che la relazione è di equivalenza:
@@ -70,8 +71,9 @@ Innanzitutto mostriamo che la relazione è di equivalenza:
 Mostriamo che le classi di equivalenza sono le componenti connesse per $x$.\\
 $\includedx$ Se $C\subseteq X$ è una componente connessa, allora $\forall x, y\in C$ si ha $x\sim_C y$, cioè $C$ è interamente contenuta in $C_0=[x]=[y]$ classe di equivalenza per $\sim_C$: $C\subseteq C_0$.\\
 $\includesx$ Sia $z\in C_0$ classe di equivalenza e sia $x\in C$ componente connessa. Allora: $x\sim_C z\implies \exists T\subseteq X \text{ connesso}\ \colon x,\ z\in T$.\\
-Consideriamo $C\cup T$. $C$ e $T$ sono connessi, $x\in C\cap T\implies C\cap T\neq \emptyset$: $C\cup T$ è ancora connessa. In quanto $C$ è componente connessa, dato che $C\subseteq C\cup T$ per definizione segue che $C=C\cup T$, cioè $T\subseteq C$. Ma allora $z\in C$ e segue che $C_0\subseteq C$.
+Consideriamo $C\cup T$. $C$ e $T$ sono connessi, $x\in C\cap T\implies C\cap T\neq \emptyset$: $C\cup T$ è ancora connessa. In quanto $C$ è componente connessa, poiché $C\subseteq C\cup T$, per definizione segue che $C=C\cup T$, cioè $T\subseteq C$. Allora $z\in C$ e $C_0\subseteq C$.
 \end{itemize}
+\vspace{-3mm}
 \end{demonstration}
 \begin{define}\textsc{Componente c.p.a..}\\
 Una \textbf{componente c.p.a.}\index{componente!c.p.a.} di $X$ è una classe di equivalenza per la relazione $\sim_A$ così definita:
@@ -301,7 +303,7 @@ In tal caso $f$ e $g$ si dicono \textbf{equivalenze omotopiche}\index{equivalenz
 \end{define}
 \begin{observes}~{}
 \begin{enumerate}
-	\item Se $X$ e $Y$ sono \textit{omeomorfi}, allora sono anche \textit{omotopicamente} equivalenti.
+	\item Se $X$ e $Y$ sono \textit{omeomorfi}, allora sono anche \textit{omotopicamente equivalenti}.
 	\item Consideriamo $X=\realset^n$ in topologia Euclidea e $Y=\left\{1\text{ punto}\right\}$. Allora $X$ e $Y$ sono omotopicamente equivalenti.
 \end{enumerate}
 \vspace{-3mm}
@@ -342,7 +344,7 @@ Abbiamo che $g\circ f=O_{\realset^n}$ è omotopa a $Id_{\realset^n}$, in quanto 
 \vspace{-3mm}
 \end{demonstration}
 \begin{attention}
-	Se $n>0$, $\realset^n$ e $\left\{1\text{ punto}\right\}$ \textit{non} è sono omeomorfi, dato che \textit{non} possono essere in corrispondenza biunivoca.
+	Se $n>0$, $\realset^n$ e $\left\{1\text{ punto}\right\}$ \textit{non} sono omeomorfi, dato che \textit{non} possono essere in corrispondenza biunivoca.
 \end{attention}
 \begin{exercise}
 	\textit{Essere omotopicamente equivalenti} è una relazione di equivalenza sull'insieme degli spazi topologici.
@@ -414,8 +416,8 @@ $\implies a\circ b\sim Id_Z$.
 	\begin{enumerate}
 		\item $\realset^n$ è contraibile: si veda l'osservazione precedente.
 		\item Dall'esempio seguente, per transitività del tipo di equivalenza, si può affermare che \textit{tutti} i $\realset^n$ sono tutti omotopicamente equivalenti tra di loro.
-		\item Ogni sottospazio $X\subseteq \realset^n$ \textit{convesso} di è contraibile.
-		\item Ogni sottospazio $X\subseteq \realset^n$ \textit{stellato} di è contraibile.
+		\item Ogni sottospazio $X\subseteq \realset^n$ \textit{convesso} è contraibile.
+		\item Ogni sottospazio $X\subseteq \realset^n$ \textit{stellato} è contraibile.
 	\end{enumerate}
 \vspace{-3mm}
 \end{examples}

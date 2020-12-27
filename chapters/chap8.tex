@@ -15,8 +15,9 @@
 	\end{flushright}
 \end{introduction}
 %inserire introduzione
-%inserire citazione
-%controllare gruppo fondamentale banale nomenclatura (già fatto, ma ricontrollare non guasta mai(onese) )
+\noindent Nel \autoref{chap:omotopia}, abbiamo definito e studiato diverse proprietà legate all'\textit{omotopia}, mostrando alcuni esempi di spazi omotopicamente equivalenti. Tuttavia, non abbiamo ancora formalizzato un aspetto dell'intuizione iniziale: come contiamo i \textit{buchi} di una figura?\\
+In questo capitolo proseguiamo la trattazione introducendo un \textit{oggetto algebrico} che associamo come invariante ad uno spazio topologico: il \textbf{gruppo fondamentale}. Definendo una versione dell'omotopia specifica dei cammini, utilizziamo questo gruppo formato dalle classi di equivalenza omotopica di \textit{cammini chiusi} per mostrare in termini rigorosi la presenza di buchi.\\
+Inoltre, largo spazio sarà lasciato alla dimostrazione del primo gruppo fondamentale non banale, quello della \textit{circonferenza}.
 \section{Omotopie fra cammini}
 \begin{notate}
 Se non specificato differentemente, useremo $I$ per indicare l'intervallo $\intv$.
@@ -768,7 +769,7 @@ In particolare, ne segue che $f_{\ast}=\gamma_{\#}$ è isomorfismo.
 		\item $f$ è iniettiva perché $g\circ f$ è iniettiva.
 		\item $f$ è suriettiva: preso $b\in B$ e il corrispettivo $g\left(b\right)\in C$, dal fatto che $g\circ f$ è biunivoca segue che $\exists a\in A\ \colon g\left(f\left(a\right)\right)\left(g\circ f\right)\left(a\right)=g\left(b\right)$. Essendo $h\circ g$ biunivoca, $g$ è iniettiva, dunque $b=f\left(a\right)\implies f$ suriettiva e segue allora la tesi.
 	\end{itemize}
-\vspace{-6mm}
+\vspace{-3mm}
 \end{remember}
 \begin{theorema}\textsc{Invarianza omotopica del gruppo fondamentale (Manetti, 11.22)}\\
 Siano $X,\ Y$ spazi topologici e $\funz{f}{X}{Y}$ un'equivalenza omotopica. Allora $\forall x_0\in X$ si ha che:
@@ -915,7 +916,7 @@ Ricordiamo, per il corollario \ref{inclusione rdd isomorfismo} (pag. \pageref{in
 \begin{remember}
 	Sia $G$ un gruppo qualsiasi e $S\subseteq G$ sottoinsieme. Si dice che $S$ \textbf{genera il gruppo} $G$ se ogni $g\in G$ si può scrivere come \textit{prodotto finito} di elementi di $S$ e di loro inversi. 
 \end{remember}
-Vediamo ora un risultato generale per poter avere qualche informazione in più sui gruppi fondamentali, sfruttando proprio la nozione di generatore. Si riuscirà a calcolare il gruppo fondamentale $\gruf{X}{x_0}$ di generici spazi $X$ nel corso di \textit{GEOMETRIA 4}.
+Vediamo ora un risultato generale per poter avere qualche informazione in più sui gruppi fondamentali, sfruttando proprio la nozione di generatore. Si riuscirà a calcolare il gruppo fondamentale $\gruf{X}{x_0}$ di generici spazi $X$ nel corso di \textit{Geometria 4}.
 \begin{theorema} \textsc{Teorema di Van Kampen sui generatori (Manetti 11.25).} \label{Van Kampen}\index{teorema!di Van Kampen} \\
 	Sia $X$ uno spazio topologico e siano $A,\ B\subseteq X$ aperti tali che $A,\ B$ e $A\cap B$ siano \textbf{c.p.a.} e $A\cap B\neq\emptyset, X=A\cup B$\footnote{Per il teorema \ref{unione sottospazi connessi}, pag. \pageref{unione sottospazi connessi} questo implica che $X$ è \textbf{c.p.a.}}. \\
 	Sia $x_0\in A\cap B$; consideriamo le inclusioni $\incl i A X$ e $\incl j B X$ con i loro morfismi indotti:
@@ -942,7 +943,7 @@ Vediamo ora un risultato generale per poter avere qualche informazione in più s
 			\item Se $\alpha(t_i)\in B\setminus A$ si sceglie un arco $\funz {\gamma_i} I {B}$ da $x_0$ a $\alpha(t_i)$.
 		\end{itemize}
 		\begin{center}
-		\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.8]{images/vankampenpaths.pdf}
+		\includegraphics[trim=0cm 0cm 0cm 0.2cm,clip,scale=0.8]{images/vankampenpaths.pdf}
 	\end{center}
 		\vspace{-6mm}
 	Grazie a $\gamma_i$ ora si può ottenere un \textit{cammino chiuso}: $\forall i=1,\dots,k$ sia $\beta_i\coloneqq (\gamma_{i-1}\ast \alpha_i)\ast\overline{\gamma_i}$:

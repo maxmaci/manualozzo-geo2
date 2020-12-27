@@ -452,7 +452,7 @@ Siano $X$, $Y$ spazi topologici e $\funz{f}{X}{Y}$ funzione. Dato $x\in X$ $f$ �
 \begin{equation}
 	\forall U\in I\left(f\left(x\right)\right)\exists V\in I\left(x\right)\ \colon f\left(V\right)\subseteq U
 \end{equation}
-Questa è la generalizzazione della definizione tradizionale della continuità affrontata in \textit{Analisi UNO}.
+Questa è la generalizzazione della definizione tradizionale della continuità affrontata in \textit{Analisi 1}.
 \end{define}
 \begin{theorema}\textsc{(Manetti, 3.28)}\\
 Siano $X$, $Y$ spazi topologici e $\funz{f}{X}{Y}$ funzione. $f$ è continua per aperti $\iff$ $f$ è continua in $x\ \forall x\in X$.
@@ -469,6 +469,7 @@ Siano $X$, $Y$ spazi topologici e $\funz{f}{X}{Y}$ funzione.
 \item $f$ è \textbf{aperta}\index{funzione!aperta} se $\forall A$ aperto in $X$ $f\left(A\right)$ è aperto in $Y$.
 \item $f$ è \textbf{chiusa}\index{funzione!chiusa} se $\forall C$ chiuso in $X$ $f\left(C\right)$ è chiuso in $Y$.
 \end{itemize}
+\vspace{-3mm}
 \end{define}
 \begin{observe}
 	È sufficiente verificare la definizione di funzione aperta per gli aperti di una base di $X$ perché l'immagine si ‘‘comporta bene'' con le unioni di insiemi:
@@ -478,13 +479,14 @@ Siano $X$, $Y$ spazi topologici e $\funz{f}{X}{Y}$ funzione.
 \vspace{-6mm}
 \end{observe}
 \begin{attention}
-	Una funzione $f$ aperta che non sia omeomorfismo \textit{non} è necessariamente una funzione aperta. Si prenda $\funztot{f}{\realset^2}{\realset}{\left(x,\ y\right)}{x}$ (la proiezione sulla prima coordinata):
+	Una funzione $f$ aperta che non sia omeomorfismo \textit{non} è necessariamente una funzione chiusa. Si prenda $\funztot{f}{\realset^2}{\realset}{\left(x,\ y\right)}{x}$ (la proiezione sulla prima coordinata):
 	\begin{itemize}
 		\item $f$ è \textit{continua} per ovvi motivi.
 		\item $f$ è \textit{aperta}. Infatti, presa una base su $\realset^2$ come $\left\{B_{\epsilon}\left(x,\ y\right)\right\}$, si ha che $f\left(B_{\epsilon}\left(x,\ y\right)\right)=\left(x-\epsilon,\ x+\epsilon\right)$ che sono aperti in $\realset$.
 		\item $f$ \textit{non} è \textit{chiusa}. Prendiamo $C=\left\{\left(x,\ y\right)\in \realset^2\mid xy=1 \right\}$ e definiamo la funzione $\funztot{g}{\realset^2}{\realset}{\left(x,\ y\right)}{xy}$ continua; vediamo facilmente come $C=g^{-1}\left(\left\{1\right\}\right)$ e, essendo ${1}$ chiuso in $\mathrm{R}$, $C$ è controimmagine continua di un chiuso e dunque chiuso.\\
 		Si ha dunque $f\left(C\right)=\realset\setminus\left\{0\right\}$, che tuttavia non è un chiuso della topologia Euclidea in quanto non contiene infiniti punti (una base della $\eucl$ è formata da intervalli, che dunque contengono infiniti punti).
 	\end{itemize}
+\vspace{-3mm}
 \end{attention}
 \section{Omeomorfismi}
 \begin{define}\textsc{Omeomorfismo.}\\

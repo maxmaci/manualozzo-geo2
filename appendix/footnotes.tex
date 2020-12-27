@@ -31,13 +31,21 @@ Le seguenti dimostrazioni sulle continuità di funzioni sono tratte da \cite{mun
 \begin{demonstration}
 	La funzione $f_{\mid Z}$ è la composizione dell'inclusione $\incl{i}{Z}{X}$ con la funzione $\funz{f}{X}{Y}$. Poiché la composizione di funzioni continue è continua (teorema \ref{compfunzcont}, pag. \pageref{compfunzcont}), segue la tesi.
 \end{demonstration}
-La seguente dimostrazione sulle restrizioni di omeomorfismi è un'elaborazione personale sulle basi dei teoremi precedenti.
+Le seguente dimostrazioni sulle restrizioni di omeomorfismi è un'elaborazione personale sulle basi dei teoremi precedenti.
 \begin{corollary}
-Se $\funz{f}{X}{Y}$ è un omeomorfismo, allora $\funz{f_{\mid Z}}{Z}{f\left(Z\right)}$ è omeomorfismo per ogni sottospazio $Z\subseteq X$.
+Se $\funz{f}{X}{Y}$ è un omeomorfismo, allora $\funz{f_{\mid Z}}{Z}{f\left(Z\right)}$ è omeomorfismo per ogni sottospazio $Z\subseteq X$. In particolare, $\funz{f_{X\setminus Z}}{X\setminus Z}{Y\setminus f\left(Z\right)}$.
 \end{corollary}
 \begin{demonstration}
-	La restrizione di una funzione è sempre una biezione e, per il teorema precedente, è anche continua. Ciò vale sia per $f$, sia per l'inversa $f^{-1}$; segue dunque la tesi.
+	La restrizione di una funzione è sempre una biezione e, per il teorema precedente, è anche continua. Ciò vale sia per $f$, sia per l'inversa $f^{-1}$ e segue dunque la prima tesi. La seconda parte del corollario vale perché, se $f$ è biettiva, allora:
+	\begin{equation*}
+		f\left(X\setminus Z\right)=f\left(X\right)\setminus f\left(Z\right)=Y\setminus f\left(Z\right)
+	\end{equation*}
+\vspace{-3mm}
 \end{demonstration}
+\begin{attention}
+	Non vale il viceversa del teorema precedente: \textit{non è vero} che se $A,\ B\subseteq X$ sono omeomorfi, allora $X\setminus A$ e $X\setminus B$ sono omeomorfi!\\
+	Preso ad esempio $A=S^2\setminus\left\{(0,\ 0,\ 1),\ (0,\ 0,\ -1)\right\}$ e $B=S^1\times \realset$. Si ha che $A$ e $B$ sono \textit{omeomorfi} (per proiezione dall'origine), ma $\realset^3\setminus A$ è connesso per archi, mentre $\realset^3\setminus B$ non è \textit{neppure connesso}.
+\end{attention} 
 \section{Capitolo 6: assiomi di numerabilità e successioni}
 La seguente dimostrazione sulla non prima-numerabilità del quoziente $\nicefrac{\realset}{\integerset}$ è adattata da \cite{scott:nonum} su Mathematics Stack Exchange.
 \begin{demonstration}\label{dimostrazionenonnumerabilità}
