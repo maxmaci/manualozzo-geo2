@@ -15,7 +15,8 @@
 \end{flushright}
 \end{introduction}
 % inserire citazione
-% inserire introduzione
+\noindent In questo capitolo studieremo uno strumento importante dell'algebra: l'\textbf{azione di un gruppo} $G$ su un insieme $X$. Grazie a ciò, possiamo dire che gli elementi del gruppo ‘‘\textit{spostano}'' gli elementi dell'insieme in altri, senza dotare l'insieme di alcuna particolare \textit{struttura} od operazione. Alcuni gruppi sono definiti proprio sulla base delle azioni, come il \textit{gruppo simmetrico}: gli elementi sono le \textit{permutazioni} sull'insieme!\\ 
+Per gli scopi della topologia, le azioni di gruppo hanno particolare importanza: se nel \autoref{chap:topologia quoziente} abbiamo visto diversi tipi di spazi quozienti, generalmente dando una \textit{relazione di equivalenza} su un sottoinsieme relativamente semplice, qui introdurremo \textit{quozienti topologici} indotti da queste azioni di gruppo. Fra questi preannunciamo il ruolo di primo piano svolto dallo \textit{spazio proiettivo reale}.
 \section{Azione di un gruppo su un insieme}
 \begin{define}\textsc{Gruppo simmetrico.}\\
 	Sia $X$ un insieme. Si definisce il \textbf{gruppo simmetrico} sull'insieme $X$ come:
@@ -25,13 +26,13 @@
 \vspace{-6mm}
 \end{define}
 \begin{define}\textsc{Azione di un gruppo su un insieme.}\\
-	Sia $G$ un gruppo e $X$ un insieme. Un'\textbf{azione}\index{azione} di $G$ su $X$ è
+	Sia $G$ un gruppo e $X$ un insieme. Un'\textbf{azione}\index{azione} di $G$ su $X$ è, equivalentemente:
 		\begin{itemize}
 			\item  $\funz \Phi G {S(X)}$ morfismo di gruppi, ovvero $\Phi(g\ldotp h)=\Phi(g)\Phi(h)$.
 			\item $\funztot \phi {G\times X} X {(g,\ x)} {g\ldotp x}$ tale che $e\ldotp x=x, \forall x\in X$ e $g\ldotp (h\ldotp x)=(gh)\ldotp x$.
 		\end{itemize}
 	Se ho $\Phi$ definisco $\phi(g,\ x)=\underbrace{\Phi(g)}_{\in S(X)}(x)$.\newline
-	Se ho $\phi$ definisco $\funztot {\Phi(g)} X X x {\phi(g,\ x)}$
+	Se ho $\phi$ definisco $\funztot {\Phi(g)} X X x {\phi(g,\ x)}$.
 \end{define}
 
 \begin{define}\textsc{Relazione di equivalenza dell'azione.}\\
@@ -53,7 +54,7 @@
 \begin{define}\textsc{Orbita.}\\
 	Le classi di equivalenza date da questa relazione sono dette \textbf{orbite}\index{orbita}:
 		\begin{equation*}
-			[x]=G\ldotp x=\{y\in X \mid \exists y \colon y=g\ldotp x\}=\{ g\ldotp x\mid g\in G \}
+			[x]=G\ldotp x=\{y\in X \mid \exists y \colon y=g\ldotp x\}=\{ g\ldotp x\in X\mid g\in G \}
 		\end{equation*}
 	L'insieme quoziente è detto \textbf{spazio delle orbite}\index{spazio!delle orbite} e si scrive come $\nicefrac{X}{G}$.
 \end{define}
@@ -137,10 +138,9 @@ Questo è equivalente a chiedere che l'azione sia data da un \textit{omomorfismo
 \end{equation}
 \vspace{-6mm}
 \end{define}
-\begin{exercise}
+\begin{lemming}
 $G$ agisce per omeomorfismi se e solo se $\theta_g$ è \textit{continua}, $\forall g\in G$.
-\end{exercise}
-% spostare in impratichiamoci! ?
+\end{lemming}
 \begin{demonstration}~{}\\
 $\impliesdx$ $G$ agisce per omeomorfismi se $\theta_g$ è un omeomorfismo $\forall g$, dunque banalmente $\theta_g$ è continua.\\
 $\impliessx$ Dobbiamo dimostrare che $\theta_g$ è un omeomorfismo. Notiamo che $\forall g,\ h\in G$ vale $\theta_g\circ \theta_h = \theta_{gh}$:
@@ -225,6 +225,7 @@ Se mettiamo ad $\realset$ la topologia Euclidea, allora l'azione è per omeomorf
 	\item \textit{Stabilizzatore}: $H_x=\left\{m\in Z\mid x+m=x\right\}=\left\{0\right\}$ è banale, dunque l'azione è libera.
 	\item \textit{Spazio delle orbite}: $\nicefrac{\realset}{\integerset}$ è insiemisticamente in corrispondenza biunivoca con $\left[0,\ 1\right)$, in particolare un sistema di rappresentanti di $\nicefrac{\realset}{\integerset}$ sono le orbite al variare di $x\in[0,1)$. Inoltre, lo spazio delle orbite è compatto essendo immagine continua di un compatto ($\pi\left(\left[0,\ 1\right]\right)=\nicefrac{\realset}{\integerset}$). Si può dimostrare che è omeomorfo a $S^1$.
 \end{itemize}
+\vspace{-3mm}
 \end{example}
 \begin{demonstration}
 Consideriamo $\funztot{f}{R}{S^1\subseteq \realset}{t}{\left(\cos\left(2\pi t\right),\sin\left(2\pi t\right)\right)}$.
@@ -266,8 +267,7 @@ L'azione è per omeomorfismi, dato che fissato $A\in G$: $\funztot{\theta_A}{\re
 \vspace{-3mm}
 \end{example}
 \subsection{Spazio proiettivo reale}
-% confermare autoref
-In questa sezione introduciamo uno spazio topologico molto importante per i nostri studi, lo \textbf{spazio proiettivo reale}. Nel \autoref{chap9} guarderemo il suo comportamento come \textit{varietà topologica}, mentre nel \autoref{chap:geoproiettiva} tratteremo una sua \textit{generalizzazione} su un qualunque campo $\kamp$ con gli strumenti dell'\textit{algebra lineare}, oltre a discutere topologicamente lo \textit{spazio proiettivo complesso}.
+In questa sezione introduciamo uno spazio topologico molto importante per i nostri studi, lo \textbf{spazio proiettivo reale}. Nel \autoref{chap:varietà} guarderemo il suo comportamento come \textit{varietà topologica}, mentre nel \autoref{chap:geoproiettiva} tratteremo una sua \textit{generalizzazione} su un qualunque campo $\kamp$ con gli strumenti dell'\textit{algebra lineare}, oltre a discutere topologicamente lo \textit{spazio proiettivo complesso}.
 \begin{example}
 	$G=\realset^{\ast}=\realset\setminus\left\{0\right\}$, inteso come gruppo moltiplicativo, agisce su $X=\realset^{n+1}\setminus\left\{0\right\}$ con l'azione di moltiplicazione per uno scalare:
 	\begin{equation}

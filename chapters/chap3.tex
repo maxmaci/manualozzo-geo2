@@ -15,8 +15,9 @@
 \end{flushright}
 \end{introduction}
 % inserire citazione
+\noindent Nel \autoref{chap:spazitopologici} abbiamo definito la struttura di \textit{spazio topologico} su un insieme con lo scopo principale di poter definire formalmente la \textit{continuità} di una funzione. Un'altro tipo di struttura fondamentale per la Matematica è quella di \textit{gruppo}, un insieme dotato di una \textit{operazione binaria} che soddisfa le condizioni di chiusura, associatività, identità ed invertibilità.\\
+In questo capitolo studieremo il \textbf{gruppo topologico}, un oggetto matematico che è dotato contemporaneamente sia di una struttura di \textit{gruppo}, sia di una di \textit{spazio topologico}. In questo modo, potremo eseguire operazioni algebriche e parlare di continuità allo stesso tempo. Vedremo inoltre le relazioni fra alcune proprietà che abbiamo già visto e questo nuovo oggetto di studio.
 \section{Gruppi topologici}
-% riscrivere intro?
 Conoscendo le strutture di \textit{gruppo} e \textit{spazio topologico} su un insieme, vogliamo vedere come possono essere \textit{compatibili} fra loro.
 \begin{define}\textsc{Gruppo topologico.}\\
 	Un insieme $G$ si dice \textbf{gruppo topologico}\index{gruppo topologico} se:
@@ -35,7 +36,7 @@ Vediamo ora degli esempi noti di gruppi topologici.
 	\begin{itemize}
 		\item $\left( \realset^n, \ +, \ \mathcal{E_{ucl}} \right), \left( \complexset ^n, \ +, \ \mathcal{E_{ucl}} \right)$.
 		\item $\left( \realset^*, \ \cdot,\ \mathcal{E_{ucl}} \right), \left( \realset^*, \ \cdot, \ \mathcal{E_{ucl}} \right)$ con la topologia indotta di sottospazio.
-		\item $\left( M_{n,m}(\realset),\ \cdot, \mathcal{E_{ucl}} \right)$ con la topologia indotta di sottospazio di $\realset^{n,m}$, ad esempio $\intv$.
+		\item $\left( M_{n,m}(\realset),\ \cdot, \mathcal{E_{ucl}} \right)$ con la topologia indotta di sottospazio di $\realset^{n,m}$, ad es. $\intv$.
 	\end{itemize}
 \vspace{-3mm}
 \end{examples}
@@ -70,7 +71,6 @@ Ci sono delle operazioni sulle matrici che sono continue:
 	Infatti, basta porre $\phi=L_{hg^{-1}}$ oppure $\phi=R_{g^{-1}h}$.
 \end{observe}
 Il seguente teorema ci permette di caratterizzare i gruppi topologici di \textbf{Hausdorff} grazie alla chiusura dell'elemento neutro.
-%vorei mettere un punto esclamativo, è una cosa figa
 \begin{theorema}
 	Sia $G$ un gruppo topologico, $e\in G$ il suo elemento neutro, si ha che:
 		\begin{gather*}
@@ -145,24 +145,30 @@ Il seguente teorema ci permette di caratterizzare i gruppi topologici di \textbf
 		\end{gather*}
 	con $(*,\dots, *)\in\realset^{n-1}$ arbitrario in quanto non influisce nel calcolo del determinante e con $A\in\gl^+(n-1,\realset)$, da cui segue che $p^{-1}(y_0)=\realset^{n-1}\times\gl^+(n-1,\realset)$, dunque $p^{-1}(y_0)$ è conness visto che i due fattori lo sono per ipotesi.\newline
 	Mostriamo ora che tutte le fibre sono omeomorfe a $p^{-1}(y_0)$. Sia $y\in\realset^n\setminus\{\mathbf{0}\}$ e sia $A\in\gl^+(n,\realset)$ tale che $p(A)=y$, ovvero $y$ è la prima colonna di $A$. In generale vale la relazione $p(AB)=Ap(B)$ e la moltiplicazione sinistra $\displaystyle \funztot {L_A} {\gl^+(n,\realset)} {\gl^+(n,\realset)} B {AB}$ è un omeomorfismo. Dimostriamo che vale $p^{-1}(y)=L_A\left( p^{-1}(y_0)\right)=Ap^{-1}(y_0)$, in modo tale da avere tutte le fibre omeomorfe fra loro:
-		\begin{gather*}
-			\supseteq ) \ \ B\in p^{-1}(y_0) \implies B=\begin{pmatrix}
+	\begin{equation*}
+		\begin{array}{ll}
+			\includesx & \displaystyle \quad B\in p^{-1}(y_0) \implies B=\begin{pmatrix}
 				1	   & \cdots  & \cdot  \\
 				0 	   & \cdots  & \cdot   \\
 				\vdots & \ddots  & \vdots   \\
 				0      & \cdots  & \cdot
 			\end{pmatrix} \implies	p(AB)=Ap(B)=A\begin{psmallmatrix}
-					1 \\ 0 \\ \vdots \\ 0
-				\end{psmallmatrix}= p(A)=y \\
-			\\
-			\subseteq ) \ \  C\in p^{-1}(y) \implies C=\begin{pmatrix}
+				1 \\ 0 \\ \vdots \\ 0
+			\end{psmallmatrix}= p(A)=y\\
+			\includedx & \displaystyle \quad C\in p^{-1}(y) \implies C=\begin{pmatrix}
 				y & * & \cdots & *
-				\end{pmatrix}\\
-			\text{Poniamo } B=A^{-1}C\implies p(B)=p(A^{-1}C)=A^{-1}p(C)=A^{-1}y=A^{-1}p(A)=\\
-			=p(A^{-1}A)=p(I)=y_0\\
-			\text{Siccome } C=AB \implies B\in p^{-1}(y_0)
-		\end{gather*}
-	Quindi siccome tutte le fibre sono tutte omeomorfe ad una fibra connessa allora sono tutte connesse e valgono le ipotesi del lemma precedente, per cui $\gl^+(n,\realset)$ è connesso.
+			\end{pmatrix}
+		\end{array}
+	\end{equation*}
+Poniamo allora $B=A^{-1}C$:
+			\begin{equation*}
+				\begin{array}{ll}
+					p(B)&=p(A^{-1}C)=A^{-1}p(C)=A^{-1}y=A^{-1}p(A)=\\
+					&=p(A^{-1}A)=p(I)=y_0
+				\end{array}
+			\end{equation*} 
+	Poiché $C=AB$, allora $B\in p^{-1}(y_0)$.\\
+	Quindi, siccome tutte le fibre sono tutte omeomorfe ad una fibra connessa, allora sono tutte connesse e valgono le ipotesi del lemma precedente, per cui $\gl^+(n,\realset)$ è connesso.
 \end{demonstration}
 %WELP LA FORMATTAZIONE DEL GATHER* è ORRIBILE MA NON SO COME MIGLIORARLA
 
@@ -185,7 +191,7 @@ Il seguente teorema ci permette di caratterizzare i gruppi topologici di \textbf
 \end{demonstration}
 
 \begin{corollary}
-	$\Or$ non è connesso.	
+	$\Or$ \textit{non} è connesso.	
 \end{corollary}
 \begin{demonstration}
 	Siccome $\Or$ è sottogruppo di $\gl$ e la connessione è una proprietà topologica allora $\Or$ non è connesso. In particolare si può dividere in base a $\det =+1$ e $\det =-1$.
@@ -209,10 +215,10 @@ Il seguente teorema ci permette di caratterizzare i gruppi topologici di \textbf
 		\end{gather*}
 	Siccome $\Su(n)\subseteq \U(n)\subseteq \So(n)$ basta dimostrare che $\So(n)$ è limitato:
 		\begin{gather*}
-			A\in\So(n) \implies \sum_{i=1}^n a_{ij}^2=1, \forall i=1,\dots,n \implies \sum_{i=1}^n a_{ij}^2=n \implies \So(n)\subseteq S_{\sqrt{n}}\subseteq\realset^{n\times n}\\
+			A\in\So(n) \implies \sum_{i=1}^n a_{ij}^2=1, \forall i=1,\dots,n \implies \sum_{i=1}^n a_{ij}^2=n \implies \So(n)\subseteq S_{\sqrt{n}}\subseteq\realset^{n\times n}
 		\end{gather*}
 	dove $S_{\sqrt{n}}$ è la sfera di raggio $\sqrt{n}$, dunque $\So(n)$ è limitato. Ne segue che anche $\U(n)$ e $\Su(n)$ lo sono, dunque sono tutti chiusi e limitati in $\realset^{n\times n}$, quindi compatti. \newline
-	Per dimostrare che sono \textit{connessi} si procede analogamente al teorema precedente sfruttando il lemma che lo precede. Si consideri $\funz p {\So(n)} {S^{n-1}\subseteq \realset^n}$ funzione prima colonna, essa è continua, suriettiva e chiusa in quanto è un compatto (appena dimostrati) in un $\textbf{T2}$, e le sue fibra sono connesse $\displaystyle p^{-1}\left( \begin{psmallmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{psmallmatrix} \right) = \begin{psmallmatrix}
+	Per dimostrare che sono \textit{connessi} si procede analogamente al teorema precedente sfruttando il lemma che lo precede. Si consideri $\funz p {\So(n)} {S^{n-1}\subseteq \realset^n}$ funzione prima colonna, essa è continua, suriettiva e chiusa in quanto è un compatto (appena dimostrati) in un \textbf{Hausdorff}, e le sue fibra sono connesse $\displaystyle p^{-1}\left( \begin{psmallmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{psmallmatrix} \right) = \begin{psmallmatrix}
 		1      & 0 & \cdots & 0\\
 		0      &   &       &  \\
 		\vdots &   & A     &  \\

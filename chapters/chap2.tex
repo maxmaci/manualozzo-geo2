@@ -15,7 +15,12 @@
 \end{flushright}
 \end{introduction}
 % inserire citazione
-% inserire introduzione bellina
+\noindent Le due proprietà che danno il nome a questo capitolo sono estremamente importanti, in quanto sono due dei principali \textit{invarianti} studiati in topologia. Entrambe rappresentano una \textit{generalizzazione} di alcuni aspetti affrontati più o meno esplicitamente durante lo studio dell'Analisi:
+\begin{itemize}
+	\item Ci sono sottoinsiemi del piano i cui punti possono essere \textit{connessi} da una linea arzigogolata, una spezzata o un segmento, mente
+	\item Ci sono sottoinsiemi \textit{limitati} le cui successioni di punti \textit{convergono} nel sottoinsieme.
+\end{itemize}
+Vedremo che la \textbf{connessione} e la \textbf{compattezza} sono definite in modo abbastanza basilare, seppur non necessariamente siano intuitive a primo acchito. Tuttavia, proprio in virtù di questa semplicità, sono applicabili in tanti contesti diversi; in particolare, la compattezza come la definiremo ci permetterà di prendere informazioni note \textit{localmente} ed estenderle in modo che valgano globalmente in tutto lo spazio.
 \section{Connessione}
 \begin{define}\textsc{Spazio connesso e spazio sconnesso.}\\
 Uno spazio topologico $X$ si dice \textbf{connesso}\index{connessione} se gli unici sottoinsiemi aperti e chiusi sono $\emptyset,\ X$.\\
@@ -225,8 +230,7 @@ Vediamo ora che conseguenze hanno questi teoremi in $\realset$ con la topologia 
 		\end{itemize}
 	\vspace{-3mm}
 \end{observe}
-% riformulare, simile all'altro paragrafo
-Vediamo ora un risultato per funzioni continue da $S^n$ in $\realset$.
+Mostriamo un risultato per funzioni continue da $S^n$ in $\realset$.
 \begin{theorema}~{}\label{non iniettività S^n in realset}
 	Sia $\funz f {S^n} \realset$ una funzione continua. Allora $\exists x\in S^n \ \colon f(x)=f(-x)$. In particolare $f$ non è iniettiva.
 \end{theorema}
@@ -248,7 +252,6 @@ Sia $I\subseteq\realset$ e $U\subseteq\realset^n$, con $n\geq 2$. Se $I,\ U$ son
 
 \begin{observe}
 	Il teorema appena visto è un caso particolare del \textsc{teorema dell'invarianza della dimensione}\index{teorema!dell'invarianza della dimensione}: ‘‘Siano $U\subseteq\realset^n, V\subseteq\realset^m$ aperti. Se $U\cong V \implies n=m$. Equivalentemente $n\neq m\implies U\ncong V$''.
-	
 \end{observe}
 %LEZ 08
 \subsection{Intersezioni, unioni e prodotti di spazi connessi}
@@ -293,7 +296,7 @@ Sia $I\subseteq\realset$ e $U\subseteq\realset^n$, con $n\geq 2$. Se $I,\ U$ son
 	Dunque $X\times Y$ è unione di connessi la cui intersezione non è vuota, quindi per il teorema precedente è connesso.
 \end{demonstration}
 \subsection{Spazi connessi non c.p.a.}
-Approfondiamo ora la differenza fra essere spazio connesso o \textbf{c.p.a.}, mostrando esempi di un tipo ma non dell'altro. Prima però dimostreremo un teorema sulla caratterizzazione di un \textit{insieme denso} che ci tornerà utile.
+Approfondiamo ora la differenza fra essere spazio connesso o \textbf{c.p.a.}, mostrando esempi di un tipo ma non dell'altro. Prima, però, dimostreremo un teorema sulla caratterizzazione di un \textit{insieme denso} che ci tornerà utile.
 \begin{theorema}
 	Sia $X$ uno spazio topologico e $A\subseteq X$ un suo sottoinsieme, allora:
 		\begin{gather*}
@@ -346,21 +349,32 @@ Approfondiamo ora la differenza fra essere spazio connesso o \textbf{c.p.a.}, mo
 		\end{equation*}
 \end{demonstration}
 Vediamo ora degli esempi di spazi connessi ma non \textbf{c.p.a.}.
-\begin{example}\textsc{Seno del topologo.}\\% inserire immagine
-	Sia $Y\subseteq \realset^2$ con la topologia euclidea e $Y=\left\{ \left( x,\ \frac{1}{x} \right) \mid x>0 \right\}$, detto anche \textbf{seno del topologo}\index{seno del topologo}. Esso è \textbf{c.p.a.} perché per connettere due punti basta percorrere la curva stessa del grafico. Quindi $Y$ è connesso, dunque per il teorema \ref{chiusuraconnessa} (pag. \pageref{chiusuraconnessa}) $\overline{Y}$ è connesso.\\
-	Tuttavia $\overline{Y}$ non è \textbf{c.p.a.} in quanto $\overline{Y}=Y\cup \left\{ (0,y) \mid -1\leq y \geq 1 \right\}$ ed i punti sull'asse delle y  e sulla curva $Y$ non si possono connettere tramite un arco continuo.
+\begin{example}\textsc{Seno del topologo.}\\
+\begin{minipage}{0.47\textwidth}
+Sia $Y\subseteq \realset^2$ con la topologia euclidea e $Y=\left\{ \left( x,\ \frac{1}{x} \right) \mid x>0 \right\}$, detto anche \textbf{seno del topologo}\index{seno del topologo}. Esso è \textbf{c.p.a.} perché per connettere due punti basta percorrere la curva stessa del grafico. Quindi $Y$ è connesso, dunque per il teorema \ref{chiusuraconnessa} (pag. \pageref{chiusuraconnessa}) $\overline{Y}$ è connesso.\\
+Tuttavia $\overline{Y}$ non è \textbf{c.p.a.} in quanto $\overline{Y}=Y\cup \left\{ (0,y) \mid -1\leq y \leq 1 \right\}$ ed i punti sull'asse delle $y$ e sulla curva $Y$ non si possono connettere tramite un arco continuo.
+\end{minipage}
+\hspace{-7mm}
+\begin{minipage}{0.52\textwidth}
+	\includegraphics[trim=0cm 0.5cm 0.5cm 1.25cm,clip,scale=0.50]{images/topologistsine.pdf}
+\end{minipage}
 \end{example}
-\begin{example}\textsc{La pulce ed il pettine.}\\% inserire immagine
+\begin{example}\textsc{La pulce ed il pettine.}\\
 	Si consideri il ‘‘pettine'' come il seguente sottospazio di $\realset ^2$ con la topologia euclidea:
 		\begin{equation*}
-			Y= \left\{ (x,\ 0) \mid 0\leq x\geq 1 \right\} \cup \union_{r\in\rationalset, 0\leq r\geq 1} \left\{ (r,\ y) \mid 0\leq y \leq 1 \right\}
+			Y= \left\{ (x,\ 0) \mid 0\leq x\leq 1 \right\} \cup \union_{\stackrel{r\in\rationalset}{ 0\leq r\geq 1}} \left\{ (r,\ y) \mid 0\leq y \leq 1 \right\}
 		\end{equation*}
-	Presi due punti su $Y$ si possono collegare fra loro scendendo alla base del pettine $\left[0,\ 1\right]$ e risalendo sui ‘‘denti'' di ascissa razionale. Quindi $Y$ è \textbf{c.p.a.}, allora $Y$ è connesso e $\overline{Y}=\left[0,\ 1\right]\times \left[0,\ 1\right]$.\newline 
-	Si consideri ora la ‘‘pulce'', ovvero un punto $P$ di ascissa irrazionale ed ordinata 1, ad esempio $P=\left(\frac{\sqrt{2}}{2},\ 1\right)$. Sia $Z=Y\cap P$, per il teorema precedente segue che $Z$ è connesso, infatti:
-		\begin{gather*}
-			Y\subseteq Z \subseteq \overline{Y}=\left[0,\ 1\right]\times \left[0,\ 1\right]	
-		\end{gather*}
-	Tuttavia $Z$ non è \textbf{c.p.a.}, infatti preso un cammino $\funz \alpha {\left[0,\ 1\right]} {Z\subseteq \realset^2}$ tale che $\alpha(t)= \left( x(t), y(t)\right)$ con $\alpha (0)=(0,0)$ e $\alpha(1)=P$, per continuità $y(t)\neq 0 \implies x(t)\in\rationalset$, che non è vero per $P$ che ha ascissa irrazionale, dunque non esiste un cammino continuo che colleghi l'origine e $P$. dunque $Z$ non è \textbf{c.p.a.}.
+\begin{minipage}{0.62\textwidth}
+Presi due punti su $Y$ si possono collegare fra loro scendendo alla base del pettine $\left[0,\ 1\right]$ e risalendo sui ‘‘denti'' di ascissa razionale. Quindi $Y$ è \textbf{c.p.a.}, allora $Y$ è connesso e $\overline{Y}=\left[0,\ 1\right]\times \left[0,\ 1\right]$.\newline 
+Si consideri ora la ‘‘pulce'', ovvero un punto $P$ di ascissa irrazionale ed ordinata 1, ad esempio $P=\left(\frac{\sqrt{2}}{2},\ 1\right)$. Sia $Z=Y\cup P$; per il teorema precedente segue che $Z$ è connesso, infatti:
+\begin{gather*}
+	Y\subseteq Z \subseteq \overline{Y}=\left[0,\ 1\right]\times \left[0,\ 1\right]	
+\end{gather*}
+	\end{minipage}
+	\begin{minipage}{0.37\textwidth}
+		\includegraphics[trim=1.1cm 0.5cm 0.5cm 1.25cm,clip,scale=0.50]{images/comb.pdf}
+	\end{minipage}\\
+Tuttavia $Z$ non è \textbf{c.p.a.}: preso un cammino $\funz \alpha {\left[0,\ 1\right]} {Z\subseteq \realset^2}$ tale che $\alpha(t)= \left( x(t), y(t)\right)$ con $\alpha (0)=(0,0)$ e $\alpha(1)=P$, per continuità $y(t)\neq 0 \implies x(t)\in\rationalset$, ma è vero per $P$ che ha ascissa irrazionale, dunque non esiste un cammino continuo che colleghi l'origine e $P$. Ne consegue che $Z$ non è \textbf{c.p.a.}.
 \end{example}
 
 \begin{observe}
@@ -422,7 +436,6 @@ Vediamo ora qualche proprietà delle componenti connesse, in particolare che son
 
 
 		\section{Compattezza}
-		%inserire introduzione?
 \begin{define} \textsc{Ricoprimento aperto e sottoricoprimento.}\\
 	Sia $X$ uno spazio topologico. Un \textbf{ricoprimento aperto}\index{ricoprimento}\index{ricoprimento!aperto} di $X$ è una famiglia $\mathcal{A}=\{A_i \}_{i\in I}$ di aperti di $X$ tali che $X=\union_{i\in I} A_i$. \newline
 	Un \textbf{sottoricoprimento}\index{sottoricoprimento} $\mathcal{B}$ di un ricoprimento aperto $\mathcal{A}$ è una famiglia di aperti di $\mathcal{A}$ la cui unione è ancora tutto $X$.
@@ -439,7 +452,7 @@ Vediamo ora qualche proprietà delle componenti connesse, in particolare che son
 \begin{define} \textsc{Spazio compatto.}\\
 	Uno spazio topologico $X$ si dice \textbf{compatto}\index{spazio!compatto} se dato un qualsiasi ricoprimento aperto $\mathcal{A}$ si può sempre estrarre un sottoricoprimento \textit{finito} $\mathcal{B}$.
 \end{define}
-L'importanza della definizione risiede nel fatto che non si chiede che esista un ricoprimento $\mathcal{A}$ finito, infatti basterebbe banalmente $X$ stesso che è aperto, bensì che da $\mathcal{A}$ si possa sempre estrarre un numero finito di aperti che ricopra ancora $X$.
+L'importanza della definizione risiede nel fatto che non si chiede che esista un ricoprimento $\mathcal{A}$ finito (basterebbe banalmente $X$ stesso che è aperto) bensì che da $\mathcal{A}$ si possa sempre estrarre un \textit{numero finito di aperti} che ricopra ancora $X$.
 
 \begin{examples} \textsc{Esempi di spazi non compatti.}
 	\begin{itemize}
@@ -451,7 +464,7 @@ L'importanza della definizione risiede nel fatto che non si chiede che esista un
 \begin{theorema}\label{immagine compatto}
 	L'immagine \textit{continua} di un compatto è un compatto: dati $X,Y$ spazi topologici, $\funz f X Y$ continua, allora
 		\begin{gather*}
-			X \text{ comaptto } \implies f(X) \text{ compatto}
+			X \text{ compatto } \implies f(X) \text{ compatto }
 		\end{gather*}
 	\vspace{-6mm}
 \end{theorema}
@@ -464,10 +477,8 @@ L'importanza della definizione risiede nel fatto che non si chiede che esista un
 		\end{gather*}
 	\vspace{-6mm}
 \end{demonstration}
-Da questo teorema segue che essere compatti è una proprietà topologica.
-
+Da questo teorema segue che essere compatti è una \textbf{proprietà topologica}.
 %LEZ 09
-
 \begin{theorema}
 	L'intervallo $[0,\ 1]\subseteq\realset$ con la topologia euclidea è compatto.
 \end{theorema}
@@ -512,7 +523,6 @@ Inoltre, se $X$ ha la topologia discreta vale anche il viceversa:
 Sia $\mathcal{A}=\left\{ A_x\right\}_{x\in X}, \ A_x\coloneqq \{x\}$, che è aperto in quanto $X$ ha la topologia discreta. Siccome $X$ è compatto allora esiste un sottoricoprimento finito, ovvero un numero finito di aperti di $\mathcal{A}$ che lo ricopra, ossia $X=\{x_1\}\cup\{x_2\}\cup\dots\{x_n\}\implies X$ finito.
 \end{observe}
 \subsection{Relazioni fra compattezza e altre proprietà topologiche}
-% trovare un nome più adatto
 \begin{theorema}\textsc{Manetti 4.41.1} \label{chiuso in compatto}\\
 	Un chiuso in un compatto è un compatto, ovvero se $X$ è uno spazio topologico compatto, $C\subseteq X$ chiuso allora $C$ è compatto.
 \end{theorema}
@@ -529,9 +539,9 @@ Sia $\mathcal{A}=\left\{ A_x\right\}_{x\in X}, \ A_x\coloneqq \{x\}$, che è ape
 	L'unione finita di compatti è un compatto, ovvero se $K_1,\dots,K_n$ sono compatti allora $K=K_1\cup\dots\cup K_n$ è compatto, infatti basta prendere l'unione dei sottoricoprimenti finiti.
 \end{observe}
 Vediamo ora che relazione c'è fra le due proprietà topologiche di essere uno spazio di \textbf{Hausdorff} (\textbf{T2}) e compatto.
-% mettere i nomini ai teoremi utili?
-\begin{theorema}\textsc{Manetti, 4.48} \label{compatto in hausdorff chiuso} \\ 
-	Un compatto in un Hausdorff è chiuso, ovvero se $X$ è di Hausdorff, $K\subseteq X$ è compatto allora $K$ è chiuso.
+
+\begin{theorema}\textbf{Compatto in un Hausdorff è chiuso}\textsc{Manetti, 4.48} \label{compatto in hausdorff chiuso} \\ 
+Se $X$ è di Hausdorff e $K\subseteq X$ è compatto, allora $K$ è chiuso.
 \end{theorema}
 \begin{demonstration}
 	Per dimostrare che $K$ è chiuso mostriamo che il suo complementare è aperto, ovvero che è intorno di ogni suo punto, in modo tale da poter usare agilmente l'essere di \textbf{Hausdorff}.
@@ -552,7 +562,7 @@ Vediamo ora che relazione c'è fra le due proprietà topologiche di essere uno s
 	Un sottospazio $K\subseteq \realset$ è compatto $\iff K$ chiuso e limitato.
 \end{theorema}
 \begin{demonstration}~{}\\
-	$\impliesdx$ Siccome $\realset$ è \textbf{T2} e $K$ è compatto allora per il teorema precedente $K$ è chiuso.\newline
+	$\impliesdx$ Siccome $\realset$ è di \textbf{Hausdorff} e $K$ è compatto allora per il teorema precedente $K$ è chiuso.\newline
 	Per vedere che è limitato consideriamo un ricoprimento aperto $\mathcal{A}=\left\{ (-n,\ n)\cap K\right\}_{n\in\naturalset}$ di $K$. Siccome è compatto allora esiste un sottoricoprimento finito, ovvero:
 	\begin{gather*}
 		K\subseteq (-n_1,\ n_1)\cup\dots\cup(-n_m,\ n_m) \implies K\subseteq (-M,\ M), \ M\coloneqq \max m_i
@@ -634,18 +644,18 @@ Una palla di centro $\mathbf{0}$ e raggio $1$ come:
 \begin{equation*}
 	B_1(\mathbf{0})=\left\{ \funz f {[0,\ 1]} \realset \mid f \text{ continua }, -1\geq f(x) \leq 1 \ \right\}
 \end{equation*}
-È chiusa e limitata, tuttavia in $	\mathcal{C}\left( [0, \ 1] \right)$ non è compatta.\newline
+È chiusa e limitata, tuttavia in $	\mathcal{C}\left( [0, \ 1] \right)$ non è compatta.
 \end{digression}
-\begin{theorema} \textsc{Manetti 4. 52} \label{da compatto in T_2 è chiuso} \\
-	Sia $\funz f X Y$ continua con $X$ è compatto e $Y$ \textbf{T2}, allora $f$ è chiusa.
+\begin{theorema}\textsc{Funzione continua da compatto ad Hausdorff è chiusa}. \textsc{(Manetti 4. 52)} \label{da compatto in T_2 è chiuso} \\
+	Sia $\funz f X Y$ continua con $X$ è compatto e $Y$ di \textbf{Hausdorff}, allora $f$ è chiusa.
 \end{theorema}
 \begin{demonstration}
 	Per dimostrare che $f$ è chiusa consideriamo $C\subseteq X$ chiuso e mostriamo che $f(C)$ è chiuso sfruttando rispettivamente i teoremi \ref{chiuso in compatto}, \ref{immagine compatto} e \ref{compatto in hausdorff chiuso}:
 		\begin{equation*}
-			C\subseteq X \text{ chiuso in compatto } \implies C \text{ compatto } \implies f(C) \text{ compatto in } \textbf{T2} \implies f(C) \text{ chiuso}
+			C\subseteq X \text{ chiuso in compatto} \implies C \text{ compatto} \implies f(C) \text{ compatto in } \textbf{T2} \implies f(C) \text{ chiuso}
 		\end{equation*}
 \end{demonstration}
-In generale vale il \textbf{teorema di Kuratowsi-Mròwka}, che dice che $Y$ è compatto se e solo se per qualsiasi spazio topologico $X$ la proiezione $\funz {p_X} {X\times Y} X$ è chiusa, ne dimostreremo una versione più debole.
+In generale vale il \textbf{teorema di Kuratowsi-Mròwka}: $Y$ è compatto se e solo se per qualsiasi spazio topologico $X$ la proiezione $\funz {p_X} {X\times Y} X$ è chiusa; noi ne dimostreremo una versione più debole.
 % LEZ 10
 \begin{theorema} \textsc{Manetti, 4.49.1} \\
 	Siano $X,Y$ spazi topologici con $Y$ compatto, allora la proiezione $\funz p {X\times Y} X$ è chiusa.

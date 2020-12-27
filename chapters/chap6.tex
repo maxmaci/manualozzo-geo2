@@ -5,7 +5,7 @@
 {$LastChangedRevision$}
 {$LastChangedBy$}
 
-\chapter{Successioni}
+\chapter{Assiomi di numerabilità e successioni}
 \labelChapter{successioni}
 
 \begin{introduction}
@@ -14,15 +14,17 @@
 	\textsc{NON UN ROBOT,} UN UMANO IN CARNE ED OSSA BEEP BOOP.
 \end{flushright}
 \end{introduction}
-% introduzione carina
 % citazione
+\noindent Dallo studio dell'\textit{Analisi} sono ben note le \textit{successioni} a valori reali e le loro proprietà. In questo capitolo porremo la nostra attenzione sulle \textbf{successioni} con codominio uno \textit{spazio topologico}. Inoltre, riprenderemo dal \autoref{chap:Connessocompatto} la trattazione dei \textit{compatti} per studiare la relazione che hanno con le successioni.\\
+Prima fare tutto ciò, tuttavia, abbiamo bisogno di introdurre degli \textbf{assiomi di numerabilità}, in modo da garantire l'esistenza di insiemi \textit{numerabili} di oggetti topologici; la maggior parte degli spazi topologici più comuni soddisfano almeno uno di questi assiomi.\\
+Il capitolo si conclude con un approfondimento delle successioni negli spazi metrici.
 \section{Numerabilità}
 \begin{define}\textsc{Insieme numerabile.}\\
-Un insieme $X$ è \textbf{numerabile}\index{numerabile} se è finito oppure esiste una biezione tra l'insieme $X$ e i naturali $\naturalset$.
+Un insieme $X$ è \textbf{numerabile}\index{numerabile} o di \textit{cardinalità numerabile} se è finito oppure esiste una biezione tra l'insieme $X$ e i naturali $\naturalset$.
 \end{define}
 \begin{define}\textsc{Secondo assioma di numerabilità (A base numerabile).}\\
-Uno spazio topologico $X$ è \textbf{a base numerabile}\seeonlyindex{a base numerabile}{assioma di numerabilità!secondo} se esiste una base $\basis$ della topologia tale che $\basis$ sia numerabile. %sia di cardinalità numerabile??
-Si dice anche che $X$ soddisfa il \textbf{secondo assioma di numerabilità}\index{assioma di numerabilità!secondo}.
+Uno spazio topologico $X$ è \textbf{a base numerabile}\seeonlyindex{a base numerabile}{assioma di numerabilità!secondo} se esiste una base $\basis$ della topologia tale che $\basis$ sia di \textit{cardinalità numerabile}.
+Si dice anche che $X$ soddisfa il \textbf{{\small secondo assioma di numerabilità}}\index{assioma di numerabilità!secondo}.
 \end{define}
 \begin{define}\textsc{Primo assioma di numerabilità.}\\
 Uno spazio topologico $X$ è \textit{primo numerabile}\seeonlyindex{primo numerabile}{assioma di numerabilità!primo} se ogni punto ammette un sistema fondamentale di intorni che sia numerabile. Si dice anche che $X$ soddisfa il \textbf{primo assioma di numerabilità}\index{assioma di numerabilità!primo}.
@@ -180,13 +182,13 @@ Notiamo che se $x\neq y$, allora $U\left(x\right)\neq U\left(y\right)$: preso $y
 \end{example}
 \begin{center}
 	\begin{tikzcd}
-		&  & \begin{array}{c}
-			\text{Primo}\\\text{numerabile}\end{array} \arrow[color=red, lld, "\text{se }X\text{ è metrico}"' six, shift right, below] \\
+		&  &  \text{Separabile} \arrow[color=red, lld, "\text{se }X\text{ è metrico}"' six, shift right, below] \\
 		\begin{array}{c}
 			\text{A base}\\\text{numerabile}
-		\end{array} \arrow[rrd, shift left, shorten >= 1em] \arrow[rru, shift right] &  &                                                                                      \\
-		&  & \text{Separabile}                                                                   
-	\end{tikzcd}
+		\end{array} \arrow[rrd, shift left, shorten >= -1em] \arrow[rru, shift right] &  &                                                                                      \\
+		&  & \begin{array}{c}
+			\text{Primo}\\\text{numerabile}\end{array}
+		\end{tikzcd}
 \end{center}
 \section{Successioni}
 \begin{define}\textsc{Successione.}\\
@@ -255,7 +257,7 @@ Se $X$ spazio metrico:
 \begin{define}\textsc{Punto di accumulazione per il sottoinsieme e derivato.}\\
 	Un punto $p\in X$ è \textbf{punto di accumulazione per il sottoinsieme}\index{punto!di accumulazione!per un sottoinsieme} $B\subseteq X$ se:
 	\begin{equation}
-		\forall U\in I\left(p\right), \exists b\in B \colon b\in U\setminus \left\{ p\right\}
+		\forall U\in I\left(p\right),\ \exists b\in B \colon b\in U\setminus \left\{ p\right\}
 	\end{equation}
 L'insieme dei punti di accumulazione per il sottoinsieme $B$ è chiamato \textbf{derivato}\index{derivato} di $B$.
 \end{define}
@@ -347,8 +349,9 @@ Sia $V$ intorno di $p$. Dal sistema fondamentale di intorni $\exists m_0$ tale c
 	\begin{itemize}
 		\item Esiste una successione in $Y$ convergente a $p$.
 		\item $p$ è di accumulazione per una successione in $Y$.
-		\item $p\in \overline{Y}$
+		\item $p\in \overline{Y}$.
 	\end{itemize}
+\vspace{-3mm}
 \end{proposition}
 \begin{demonstration}~{}\\
 $\circled{1}\implies\circled{2}$ Non è necessario che $X$ sia primo numerabile, è immediato dal lemma \ref{lemmatriangolino} $\textcolor{blue}{\circled{{\large \blacktriangle}}}$ (pag. \pageref{lemmatriangolino}).\\
@@ -360,13 +363,17 @@ $\circled{3}\implies\circled{1}$ Sia $\left\{U_n\right\}$ un sistmea fondamental
 In modo analogo a $\textcolor{blue}{{\large \smiley{}}}$ (pag. \pageref{notasorridente}), se $n_2\geq n_1$, allora $y_{n_2}\in U_{n_2}\subseteq U_{n_1}$. Allora $\left\{y_n\right\}$ è una successione in $Y$, mostriamo che converge a $p$.\\
 Sia $V$ intorno di $p$. Dal sistema fondamentale di intorni $\exists n_0$ tale che $U_{n_0}\subseteq V$. Dal ragionamento analogo a $\textcolor{blue}{{\large \smiley{}}}$ si ha che $\forall n\geq n_0\ y_n\in U_{n_0}\subseteq V$.
 \end{demonstration}
+\begin{observe}\label{densitaesuccessioni}
+	Preso uno spazio topologico $X$ primo numerabile, se $Y\subseteq X$ è un sottoinsieme \textbf{denso} (cioè $\overline{Y}=X$) allora la proposizione precedente ogni elemento $p\in X$ ammette una successione in $Y$ convergente al punto $p$.\\
+	In $\realset$, ciò comporta che ogni \textit{reale} può essere approssimato da una successione di soli \textit{razionali}, dato che $\overline{\rationalset}=\realset$.
+\end{observe}
 \section{Successioni e compatti}
 \begin{proposition}\label{compattocontenuto}\textsc{(Manetti, 4.46)}\\
 Sia $X$ spazio topologico e sia $K_n\subseteq X\ \forall n\in\naturalset$ un sottospazio chiuso, \textit{compatto} e non vuoto. Supponiamo inoltre che:
 \begin{equation*}
 K_n\supseteq K_n+1\ \forall n\implies K_1\supseteq K_2\supseteq K_3\supseteq \ldots
 \end{equation*}
-Allora: $\inter_{n\geq 1}K_n\neq\emptyset$.
+Allora: $\displaystyle\inter_{n\geq 1}K_n\neq\emptyset$.
 \end{proposition}
 \begin{demonstration}
 Iniziamo in $K_1$. Consideriamo $A_n\coloneqq K_1\setminus K_n$:
@@ -496,7 +503,7 @@ Sia $X$ spazio metrico. Allora:
 \vspace{-6mm}
 \end{define}
 \begin{define}\textsc{Spazio metrico completo.}\\
-	Uno spazio metrico $\left(X,\ d\right)$ si dice \textbf{completo}\index{spazio topologico!metrico!completo} se ogni successione di Cauchy è convergente.
+	Uno spazio metrico $\left(X,\ d\right)$ si dice \textbf{completo}\index{spazio topologico!metrico!completo} {\small se ogni successione di Cauchy è convergente.}
 \end{define}
 \begin{observes}~{}
 	\begin{enumerate}

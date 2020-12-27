@@ -16,9 +16,30 @@
 \end{introduction}
 
 \noindent Riportiamo alcune note e dimostrazioni aggiuntive che possono risultare utili al lettore.
-
-\section{Capitolo 6: successioni}
-La seguente dimostrazione sulla non prima-numerabilità del quoziente $\nicefrac{\realset}{\integerset}$ è adattata da Brian M. Scott \cite{scott:nonum} su Mathematics Stack Exchange.
+% mettere a posto bibliografia con autore e titolo - ordine preferibilmente alfabetico
+\section{Capitolo 1: spazi topologici}
+Le seguenti dimostrazioni sulle continuità di funzioni sono tratte da \cite{munkres:2000topology}.
+\begin{theorema}\textsc{(Munkres, 18.2b)}\\
+	Se $Z\subseteq X$ è sottospazio, l'inclusione $\incl{i}{Z}{X}$ è una funzione continua.
+\end{theorema}
+\begin{demonstration}
+	Se $A$ è un aperto in $X$, allora $i^{-1}\left(A\right)=A\cap Z$ è un aperto in $Z$ per definizione della topologia di sottospazio.
+\end{demonstration}
+\begin{theorema}\textsc{(Munkres, 18.2d)}\\
+	Se $\funz{f}{X}{Y}$ è una funzione continua, allora $\funz{f_{\mid Z}}{Z}{Y}$ è continua per ogni sottospazio $Z\subseteq X$.
+\end{theorema}
+\begin{demonstration}
+	La funzione $f_{\mid Z}$ è la composizione dell'inclusione $\incl{i}{Z}{X}$ con la funzione $\funz{f}{X}{Y}$. Poiché la composizione di funzioni continue è continua (teorema \ref{compfunzcont}, pag. \pageref{compfunzcont}), segue la tesi.
+\end{demonstration}
+La seguente dimostrazione sulle restrizioni di omeomorfismi è un'elaborazione personale sulle basi dei teoremi precedenti.
+\begin{corollary}
+Se $\funz{f}{X}{Y}$ è un omeomorfismo, allora $\funz{f_{\mid Z}}{Z}{f\left(Z\right)}$ è omeomorfismo per ogni sottospazio $Z\subseteq X$.
+\end{corollary}
+\begin{demonstration}
+	La restrizione di una funzione è sempre una biezione e, per il teorema precedente, è anche continua. Ciò vale sia per $f$, sia per l'inversa $f^{-1}$; segue dunque la tesi.
+\end{demonstration}
+\section{Capitolo 6: assiomi di numerabilità e successioni}
+La seguente dimostrazione sulla non prima-numerabilità del quoziente $\nicefrac{\realset}{\integerset}$ è adattata da \cite{scott:nonum} su Mathematics Stack Exchange.
 \begin{demonstration}\label{dimostrazionenonnumerabilità}
 Si consideri la contrazione di $\integerset$ in $\realset$ ad un punto, cioè il quoziente $\nicefrac{\realset}{\integerset}$ e si definisca la classe di equivalenza degli interi come $[0]$.\\
 Sia $\left\{U_n:n\in\naturalset\right\}$ una famiglia di intorni aperti di $[0]$; cerchiamo un intorno aperto di $[0]$ che non ne contiene nessuno come sottoinsieme, mostrano in tal modo che non formano un sistema fondamentale di intorni di $[0]$ e pertanto che $\nicefrac{\realset}{\integerset}$ non è primo-numerabile per $[0]$.\\
@@ -33,7 +54,7 @@ V=\pi\left[\bigcup_{k\in\integerset}(k-\delta_k,k+\delta_k)\right]
 Chiaramente $V$ è un intorno aperto di $[0]$, e vogliamo dimostrare che $U_n\nsubseteq V$ per ogni $n\in\naturalset$. Per mostrare ciò, fissiamo $n\in\naturalset$; si ha $\delta_n<\epsilon_{n,n}$, quindi possiamo sceglie un numero reale $x\in(n+\delta_n,n+\epsilon_{n,n})$. Ma allora $\pi(x)\in U_n\setminus V$, e dunque $U_n\nsubseteq V$.
 \end{demonstration}
 \section{Capitolo 11: forma canonica di Jordan}
-La seguente dimostrazione sul determinante di una matrice a blocchi e del suo polinomio caratteristico si basa su integrazioni proprie da Jean Marie \cite{jeanmarie:blockdet} e da Ben Grossmann \cite{bengrossman:blockdet} su Mathematics Stack Exchange. \label{dimostrazionedeterminantematriceblocchi}
+La seguente dimostrazione sul determinante di una matrice a blocchi e del suo polinomio caratteristico si basa su integrazioni proprie da \cite{jeanmarie:blockdet} e da \cite{bengrossman:blockdet} su Mathematics Stack Exchange. \label{dimostrazionedeterminantematriceblocchi}
 \begin{demonstration}
 	Data una matrice quadrata $\left(
 	\begin{array}{c|c}

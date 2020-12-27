@@ -14,9 +14,9 @@
 	\textsc{Henri Poincaré (1854–1912)}, dopo aver letto le prime pagine di un libro di Topologia.
 \end{flushright}
 \end{introduction}
-\noindent Immaginiamo di aver un oggetto costituito di un magico \emph{materiale elastico} che possiamo allungare, piegare, torcere e rimpicciolire a piacere, ma che non possiamo né strappare né incollarne parti. Quali proprietà dell'oggetto si mantengono \emph{inalterate} prima e dopo la deformazione?\\
-Il principale scopo della \textbf{Topologia} è studiare le proprietà che rimangono invariate da queste deformazioni continue. Per far ciò, è necessario dotare un insieme di una struttura, detta \emph{topologia}, che permetta la definizione di \emph{continuità} di una funzione e di \emph{omeomorfismo}, generalizzando ciò detto in precedenza.\\
-In questo capitolo ci occuperemo di introdurre questi concetti fondamentali per poi studiare alcuni risultati che ne conseguono. Inoltre, affronteremo alcuni degli \emph{assiomi di separazione} e la nozione di \emph{metrica}.
+\noindent Immaginiamo di aver un oggetto costituito di un magico \emph{materiale elastico} che possiamo allungare, piegare, torcere e rimpicciolire a piacere, ma che non possiamo né strappare né incollarne parti. L'oggetto che otteniamo dopo queste deformazioni lo consideriamo ‘‘equivalente'' a quello iniziale. Che proprietà si mantengono prima e dopo?\\
+Il principale scopo della \textit{Topologia} è studiare proprio le proprietà che rimangono invariate da queste deformazioni continue. Per far ciò, è necessario dotare un insieme di una struttura, detta \textbf{topologia}, che permetta la definizione di \textbf{continuità} di una funzione e di \emph{omeomorfismo}, generalizzando così quello che abbiamo chiamato ‘‘deformazioni''.\\
+In questo capitolo ci occuperemo dunque di introdurre questi concetti fondamentali per poi studiare alcuni risultati che ne conseguono. Inoltre, affronteremo alcuni degli \emph{assiomi di separazione} e la nozione di \emph{distanza}.
 \section{Spazio topologico}
 \begin{define}\textsc{Spazio topologico e assiomi degli aperti.}\\
 	Uno \textbf{spazio topologico}\index{spazio!topologico} $\left(X, \topo\right)$ è un insieme $X$ con una famiglia di sottoinsiemi $\topo\subseteq\setpart{X}$ detta \textbf{topologia}\index{topologia} che soddisfano i seguenti assiomi (detti \textbf{assiomi degli aperti}\index{assiomi topologici!degli aperti}):
@@ -229,13 +229,12 @@ Un'altra base per $\realset$ nella $\eucl$ è
 \begin{equation*}
 	\basis=\left\{\left(a,\ b\right)\mid a,\ b\in \rationalset\right\}
 \end{equation*}
-Dato $x\in\realset$, esiste sempre una successione $\left\{x_n\right\}\in\rationalset$ decrescente o crescente tale che $\displaystyle\lim_{n \to +\infty}x_n=x$, essendo $\rationalset$ denso in $\realset$\footnote{Per una discussione più approfondita a riguardo, si guardi sez. \textbf{XXX} a pag. \textbf{XXX}.}. Allora presa $a_n\searrow a$ e $b_n\nearrow b$, si ha:
+Dato $x\in\realset$, esiste sempre una successione $\left\{x_n\right\}\in\rationalset$ decrescente o crescente tale che $\displaystyle\lim_{n \to +\infty}x_n=x$, essendo $\rationalset$ denso in $\realset$\footnote{Per una discussione più approfondita a riguardo, si guardi sez. \ref{densitaesuccessioni}, pag. \pageref{densitaesuccessioni}.}. Allora presa $a_n\searrow a$ e $b_n\nearrow b$, si ha:
 \begin{equation*}
 \left(a,\ b\right)=\union_{n\in \naturalset}\left(a_n,\ b_n\right)
 \end{equation*}
 Questa base con estremi razionali ha \textit{infiniti elementi}, ma in \textit{misura minore} rispetto a quella ad estremi reali.
 \end{itemize}
-%aggiungere citazione all'esempio
 \end{examples}
 \begin{theorema}\textsc{Teorema delle basi. (Manetti, 3.7)}\index{teorema!delle basi}\label{teoremabasi}\\
 Sia $X$ un insieme e $\basis\subseteq\setpart{X}$ una famiglia di sottoinsiemi di $X$. $\basis$ è la base di un'\textit{unica} topologia \textit{se e solo se}:
@@ -298,7 +297,7 @@ Sia $X$ spazio topologico e $A\subseteq X$. La \textbf{chiusura}\index{chiusura}
 \end{itemize}
 \vspace{-3mm}
 \end{define}
-\begin{define}\textsc{Punto aderento.}\\
+\begin{define}\textsc{Punto aderente.}\\
 Un punto $x$ è \textbf{aderente}\index{aderenza} ad $A$ se $x\in\overline{A}$.
 \end{define}
 \begin{define}\textsc{Interno.}\\
@@ -373,7 +372,6 @@ I\left(x\right)=\left\{V\subseteq X\mid V\text{ è intorno di }x \right\}
 \begin{define}\textsc{Sistema fondamentale di intorni.}\\
 Sia $X$ spazio topologico, $x\in X$ e $I\left(x\right)$ la famiglia degli intorni di $x$. Una sottofamiglia $\mathcal{I}\subseteq I\left(x\right)$ è un \textbf{sistema fondamentale di intorni}\index{sistema fondamentale di intorni} di $x$ se $\forall U\in I\left(x\right)\exists V\in\mathcal{J}\ \colon V\subseteq U$.
 \end{define}
-%%% fine controllo elisa novembre %%%
 \section{Funzioni continue}
 \begin{define}\textsc{Funzione continua.}\\
 Siano $X$, $Y$ spazi topologici. Una funzione $\funz{f}{X}{Y}$ si dice \textbf{continua}\index{continuità}\index{continuità!per aperti o chiusi}\seeonlyindex{funzione!continua}{continuità!per aperti o chiusi} se la controimmagine di aperti in $Y$ è un aperto in $X$:
@@ -439,7 +437,7 @@ f\left(\overline{f^{-1}\left(C\right)}\right)\subseteq C\\
 \end{gather*}
 Dunque la controimmagine $A$ di un chiuso $C$ è un chiuso.
 \end{demonstration}
-\begin{theorema}\textsc{Manetti, 3.26}\\
+\begin{theorema}\textsc{Manetti, 3.26}\\ \label{compfunzcont}
 La \textit{composizione} di funzioni continue è continua.
 \begin{equation}
 \funz{f}{Y}{Z},\ \funz{g}{X}{Y}\text{ continue}\implies \funz{f\circ g}{X}{Z}\text{ continua}
@@ -495,8 +493,8 @@ Due spazi topologici si dicono \textbf{omeomorfi} se esiste un omeomorfismo fra 
 \end{define}
 \begin{intuit}
 	Possiamo immaginare l'omeomorfismo come una \textit{deformazione} che \textit{piega} e \textit{allunga} uno spazio senza formare \textit{strappi} ($f$ continua), creare \textit{nuovi punti} ($f$ iniettiva), \textit{sovrapposizioni} ($f$ suriettiva) o \textit{incollamenti} ()$f^{-1}$ continua): in questo modo si può trasformare lo spazio in un altro che mantenga le stesse \textit{proprietà topologiche} dell'originale.\\
-	Si vede allora facilmente che un \textit{quadrato} ed un \textit{cerchio} sono omeomorfi, mentre una \textit{sfera} ed un \textit{toro} (la versione ‘‘topologica'' di una ciambella col buco, si veda pag. \pageref{cambiella}) non lo sono, dato che non posso creare né far sparire quel buco; allo stesso modo una \textit{retta} non è omeomorfa ad un \textit{punto}, dato che non posso ‘‘accumulare'' tutti i punti della retta in uno solo!\\
-	Seppur questa ‘‘visualizzazione'' è una buona intuizione del funzionamento degli omeomorfismi, \textbf{non è completamente accurata}. Ad esempio, un \textit{nastro di Möbius} (per la si veda \pageref{nastromobius}) con un mezzo-giro ed uno con tre mezzi-giri sono omeomorfi, ma con la nostra intuizione non si arriva a dire perché.
+	Si vede allora facilmente che un \textit{quadrato} ed un \textit{cerchio} sono omeomorfi, mentre una \textit{sfera} ed un \textit{toro} (la versione ‘‘topologica'' di una ciambella col buco, si veda sez. \ref{ciambella}, pag. \pageref{ciambella}) non lo sono, dato che non posso creare né far sparire quel buco; allo stesso modo una \textit{retta} non è omeomorfa ad un \textit{punto}, dato che non posso ‘‘accumulare'' tutti i punti della retta in uno solo!\\
+	Seppur questa ‘‘visualizzazione'' è una buona intuizione del funzionamento degli omeomorfismi, \textbf{non è completamente accurata}. Ad esempio, un \textit{nastro di Möbius} (per la definizione si veda sez. \ref{nastromobius}, pag. \pageref{nastromobius}) con un mezzo-giro ed uno con tre mezzi-giri sono omeomorfi, ma con la nostra intuizione non si arriva a dire perché.
 \end{intuit}
 \begin{lemming}\textsc{(Manetti, 3.31)}\\
 Siano $X$, $Y$ spazi topologici e $\funz{f}{X}{Y}$ funzione \textit{continua}. Allora vale:
@@ -704,9 +702,9 @@ Per i ragionamenti della prima parte, $A\cap P\times\left\{ y\right\}$ è aperto
 $\impliessx$ Dobbiamo dimostrare che $f$ sia continua. Sia $A=U\times V\subseteq P\times Q$ aperto della base:
 \begin{align*}
 f^{-1}\left(U\times V\right)=&f^{-1}\left(p^{-1}\left(U\right)\cap q^{-1}\left(V\right)\right)=f^{-1}\left(p^{-1}\left(U\right)\right)\cap f^{-1}\left(q^{-1}\left(V\right)\right)= \\
-=& \left(pf\right)^{-1}\left(U\right)\cap \left(qf\right)^{-1}\left(V\right)
+=& \left(p\circ f\right)^{-1}\left(U\right)\cap \left(qf\right)^{-1}\left(V\right)
 \end{align*}
-Per ipotesi $pf$, $qf$ sono continue, dunque loro controimmagini di aperti sono ancora aperti; inoltre, essendo la loro intersezione un aperto, segue l'implicazione.
+Per ipotesi $p\circ f$, $q\circ f$ sono continue, quindi le loro controimmagini di aperti sono ancora aperti; essendo la loro intersezione un aperto, segue l'implicazione.
 \end{enumerate}
 \end{demonstration}
 \begin{proposition}
@@ -793,8 +791,9 @@ $\impliessx$ Dobbiamo dimostrare che $\forall x\quad \left\{x\right\}$ è chiuso
 \begin{equation}
 \left\{x\right\}=\inter_{U\in I\left(x\right)}U
 \end{equation}
-\item Ogni spazio metrico è \textbf{T1}
+\item Ogni spazio metrico è \textbf{T1}.
 \end{enumerate}
+\vspace{-3mm}
 \end{observes}
 \begin{demonstration}~{}
 \begin{enumerate}[label=\Roman*]
