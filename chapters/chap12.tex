@@ -1628,7 +1628,7 @@ Questo concetto, approfondito e generalizzato (separandolo completamente dalla \
 	Sia $\proj[1]{V}$ una retta proiettiva, ovvero $\dim V=2$.\\
 	Siano $P_1,\ P_2,\ P_3,\ P_4\in\proj[1]{V}$ dei punti con $P_1,\ P_2,\ P_3$ distinti. Il \textbf{birapporto}\index{birapporto} dei punti $P_1,\ P_2,\ P_3,\ P_4$ (ordinati) è:
 		\begin{equation} 
-			\beta(P_1,\ P_2, \P_3, \P_4)=\frac{y_1}{y_0}\in\kamp\cup\{\infty\}\text{ con }\beta=\infty\text{ se }y_0=0
+			\beta(P_1,\ P_2, P_3, P_4)=\frac{y_1}{y_0}\in\kamp\cup\{\infty\}\text{ con }\beta=\infty\text{ se }y_0=0
 		\end{equation}
 	Dove $(y_0\colon y_1)$ sono le coordinate di $P_4$ nel riferimento proiettivo in cui $P_1$ e $P_2$ sono i punti fondamentali e $P_3$ il punto unità, cioè $P_1=(1\colon 0), P_2=(0\colon 1), P_3=(1\colon 1)$.
 \end{define}
@@ -1987,7 +1987,7 @@ In prima istanza, questo significa semplicemente che si interpreta un punto del 
 			\end{cases} \implies \begin{cases}
 				x_0=-x_1-2x_2\\
 				-3x_1-6x_2-2x_1+4x_2=0\implies -5x_1-2x_2=0
-			\end{cases}
+			\end{cases}\\
 		\implies \begin{cases}
 			x_0=4x_1\\
 			x_2=-\frac{5}{2}x_1
@@ -2677,7 +2677,7 @@ La conica $C_1$ in $\aff{\realset^2}$ si ottiene deomogeneizzando $C$ rispetto a
 	\end{equation*}
 \begin{minipage}{0.75\textwidth}
 È pari quindi alla circonferenza $x^2+y^2=1$ con $P=(0,\ 1)$. In questo caso la tangente in $P$ è chiaramente la retta $y=1$.\\
-Passando alle coordinate proiettive diventa $\frac{x1}{x_2}=1 \implies x_1=x_2$. Notiamo come la \textit{chiusura proiettiva} della \textit{tangente affine} sia proprio la \textit{tangente proiettiva}.
+Passando alle coordinate proiettive diventa $\frac{x_1}{x_2}=1 \implies x_1=x_2$. Notiamo come la \textit{chiusura proiettiva} della \textit{tangente affine} sia proprio la \textit{tangente proiettiva}.
 \end{minipage}
 \hspace{-12mm}
 \begin{minipage}{0.24\textwidth}
@@ -2811,198 +2811,224 @@ Nella relazione appena annunciata notiamo che moltiplichiamo ciascuna derivata p
 			\implies \sum_{i=0}^n x_i\frac{\partial{G}}{\partial{x_i}} = \sum_{i=0}^n \lambda j_i x_0^{j_0} \ldots x_n^{j_n}=\lambda x_0^{j_0}\ldots x_n^{j_n} \cdot \sum_{i=0}^n j_i =mG
 		\end{gather*}
 \end{demonstration}
-
+%
 %il monomio è sempre lo stesso perché si moltiplica per x_i
 %monomio j e somma degli esponenti è esattamente di grado, dunque =mG
-%
-%sing e non sing rette tang per piane pro
-%PROP
-%Sia ora $$ in P2 una curva di equazione $F()=0$ con $F$ omogeneo di grado $d$. Sia $P\in C$, allora, $P$ è non singolare $\iff$ almeno una delle der parz di F non è nulla in $P$, ovvero $\exists i\in\{0,1,2\}\colon \frac{}{}(P)\neq 0$
-%allo stesso mod del caso affine con le der in p
-%In tal caso eisste ed è unica la retta tangente a $C$ in $P$ ed ha equazione coeff dati dalle der parziali di $F$ in $P$:
-%\frac{}{}(P)x_0+ \frac{}{}(P)x_1+\frac{}{}(P)x_2=0
-%ATTENZIONE che le derivate sono dei numeri!
-%PROOF
-%dobbiamo verificare che la crva aff di cui C è chiusura proj, deomogeneizzando rispetto a x_0 si ritrovano le stesse definiion di prima
-%A meno di proiettività possiamo supporre che $P=(1\colon a\colon b)$, ovvero che stia nella carta affine $U_0$, ovvero P corrisponde a quando identificao U_0 a K^2
-%Poniamo $f(x,\ y)\coloneqq F(1,x,y)$ e sia $C_0$ la curva in K^2 di equazione $f8x,y=0$ per cui $C$ è la chiusura proiettiva di $C_0$
-%vogliamo mettere in relazionie le der parz di f e di F a partire dalla relazione nel rettangolo giallo, che ci dice che facendo la der parz di f rispetto a x è la sessa di 	valutata in	come polinomio, idem y, ed è una relazione fra polinomi
-%valutandola nel punto si ottiene l'eq \frac{}{}(a,b)=\frac{}{}(1,a,b) idem y
-%
-%usiamo la relazione di Euleeero: riusciamo a mettere in rel le der parz solo rispetto alle var x_2,y_2, nulla con x_0
-%Relazione di Euleero: 	relazione fra polinomi, valutiamo in (1,a,b) siccome x_0= otteniamo
-%\frac{}{}(1,a,b)+a\fracP{}{}(1,a,b)+b\frac{}{}(1,a,b)=dF(1,a,b), ma F(1,a,b)=0 perché il punto sta nella curva
-%riusciamo così a esprimere la terza derivata parziale in funzione delle altre due \frac=-a\frac -b\frac
-%Quindi abbiamo che 	=0\iff F(1,a,b)=(0,0,0)
-%Verifichiamo la doppia implicazione: se il grad f si annulla in P allora si annullano le derivate parziali di x_1,x_2 di F, allora per la relazione di Eulero anche la terza derivata parziale si annulla
-%Viceversa, se il grad fi F si annulla bastano le relazioni per avere che anche il grad di f si annulla
-%
-%il pnto P è non singolare quando il grad fdi F non è identicamente nullo nel punto
-%manca che la retta tangente diventi proprio quell'equazione
-%Supponendo $P$ non singolare, ovvero $grad F\neq 0$, allora la ret tangente affine a $C_0$ in $P$ ha equazione
-%ne facciamo la chiusura proiettiva che ne dà la retta tangente proiettiva a $C$ in $P$ ed ha equazione	bisgona omogeneizzare rispetto a $x_0$
-%
-%sostituisco ed omgeneizzo rispetto a x_0
-%sostituendo le der parzi di f sostituisco le relazioni asterisco verde chiaro, ottenendo
-%\frac{}{}()()+\frac{}{}()()=0
-%raccogliendo i termini in x_0,\ x_1,\ x_2, ottenendo 
-%-a\frac{}{}()-b\frac{}{}()
-%si usa ora la secona relazione ottenuta da Eulero	coeff di x_0 proprio
-%END PROOF
-%
-%OSS
-%Se $C$ è una curva affine di equazione 	per trovare i punti singolare di $C$ bisogna risolvere un sistema con l'eq della curva e le der parz di f	serve l'eq della cruva perché potrei avere punti che il grad si annulla ma non appartengono alla curva!
-%Invece se $C$ è proiettiva di eqazunoe	 per trovare i punti singoari di $C$ bisogna risolvere il sistema 
-%e non serve mettere anche l'eq della curva perché c'è la relazione di Eulero:
-%Infatti se P annulla grad F, allora dalla relazione di Eulero 
-%F(P)=\frac{1}{d}		e se sono tute nulle viene 0 /applicazione di Eulero/
-%
-%ESEMPI
-%Esempi di due cubiche: una vecchia
-%
-%$C$ è la chiusura proiettiva di $C_0$ ed ha equazione $F=x_0x_1^2+x_1^3-x_0x_2^2$ con derivate parziali
-%se le poniamo uguali a zero
-%
-%siccome l'ultima è un prodotto otttengo che una deve essere nulla, da cui viene una condizione impossibile perché le coordinate omogenee non possono essere tutte nulle
-%
-%P corrisponde all'origin in K^2		la curva affine con tale equazione l'abbiamo già studiata, e sappiam già che l'origine deve venire singolare
-%in più abbiamo verificato che P è l'unico punto singolare
-%avevamo studiato anche il punto (-1,0), vediamolo anche nel caso proiettivo
-%Scriviamo $T_Q C$
-%	\frac{}{}()=1,\ \frac{}{}(Q)=(2x_0x_1+3x_1^2)(Q)=1
-%dunque l'equazione proiettiva della retta tangente proiettiva è
-%per ottenere la retta affine di cui è chiusura proiettiva basta porre x_0=1, per cui x+1=0, ed è coerente con l'analisi fatta la scorsa lezione
-%avevamo visto che nel punto singolare P=(), tutte le rette per P hanno molteplicità di intersezione 2 con la curva $C$ in $P$ tranne due rette speciali, quelle di direzione (1\pm 1) in cui la moltplicità di intersezione è 3	/comportamento locale nel punto singolare/
-%	P si dice un nodo con questo tipo di punto singolare
-%FINE ESEMPIO
-%ESEMPIO
-%nuova cubica
-%parto da curva affine e poi ne consideriamo la chiusura proiettiva $C$ di equazione $F(x_0,\ x_1,\ x_2)=x_0x_2^2-x_1^3$
-%\implies unico punto singolare di C
-%
-%vediamo qual è la moltplicità dell'intersezione per confrontarlo con il caso precedente
-%retta r per l'origine in K^2 	con v direazione di r
-%interechiamo con C_0
-%sostituendo si ottiene g(t)
-%t^2()=0
-%veidmamo dunque che la molteplicità di intersezione della retta con la curva è 2 in generale e 3 se v_2=0, quindi vediamo che è simile ma diverso: quasi tutte le rette hanno moolt 2 e qui c'è soo un'unica retta con moltplicità 3 e non 2
-%
-%se la disegnamo in R2 è circa così:
-%nel punto singolare c'è una cuspide
-%intorno al punto non singolare è liscia
-%
-%questi erano esempi di cubiche, vediamo cosa succede per le coniche
-%OSS punti singolari delle coiche
-%Sia $C$ una conica proiettiva, allora il numero di punti singolari dipende solo dal rango, ovvero
-%	\rk=3\implies C non ha punti singolari
-%	\rk C=2 \implies C ha un punti singolare
-%	\rk C=1 \implies C è una retta doppia e ogni punto di C è singolare
-%	
-%Infatti sia $A$ la matrice simmetrica associata a $C$, allora l'equazione associata a $C$ è $F=x^tAX=\sum_{i,j=0}^2 a_{ij}x_ix_j
-%scriviamo la derivata parziale: 0 se i,j\neq h
-%
-%u punt P rappresentato dal vettore v è singolare per C se le derivate parziali si annullano, cioé \sum_{i=0}^2 a_{hi}v_i=0\forall =0,1,1
-%se si pensa al prodotto righe per colonne si ha che ho l'indice di riga di a fissato in h mentre faccio variare l'indice di colonna
-%
-%sela riga h deve essere nulla allora il vettore deve essere nullo, ovvero v\in\ker A
-%riassumendo, i punti singolari di $C$ son dati dai vettori che stanno nel nucleo dellamatrice $A$, che dipende dal rango di $A$
-%	\rk a=3\implies \ker A=\{0 \} \implies nessun punto singolare
-%	\rk A=2\implies
-%			quadrato di una forma lineare, retta dopppia, allora ogni punto di C è singolare	è esattamente la retta proiettiva associata al nucleo di A
-%data la classificazione proiettiva reale e complessa
-%posto \rk C=2, nel caso complesso C=	distinte e il punto singolare è il punto di intersezione delle due rette
-%mentre nel caso reale a meno di proiettività di hanno 2 casi in base alla segnatura		ancora intersezione delle due rette
-%mentre nell'altro caso la forma quadratica si fattorizza su C e non su R e C ha sostegno un unico punto P, che è proprio il punto singolare
-%
-%OSS sulle cubiche nel caso complesso
-%nel piano proiettivo complesso consideriamo $C$ una cubica di equazione $F=0$, qunidi $\deg F=3$. Se la curva p riducibile, allora il polinomio $F$ p riducibile, per definizione, ma siccomei lgrado è basso allora è prodotto di un polinomio di grado 1 per un altro polinomio di grdo 2, pertanto il prodott	luogo zeri F è unione luogo zeri G e H
-%dunque $C$ è unione di una retta ed una conica
-%mi riconduco così a gradi più bassi
-%Supponiamo che $C$ invece sia irriducibile: allora $C$ non può contenere una retta, altrimenti l'eq della retta dividerebbe il polinomio $F$. Allora $C$ ha al più un punto singolare 
-%Infatti, se per assurdo ne avesse almeno 2 quali $P$ e $Q$ potremmo considerare la retta r che passa per P e Q, pertanto l'intersezione fra la retta e la cubica	la interseca in almeno	C\cap r\subseteq \{P,q\} e sappiamo che la molteplicità di intersezione in questi due punti, siccome sono due punti singolari allora la molteplicità è almeno 2, ma non è possibile perché dallo studio delle intersezioni fra una retta e una curva sappiamo che dobbiamo contare con molteplicità fino al grado della curva: qui sono 2 punti con molt 2, ma C ha grado 3, dunque la retta dovrebbe essere contenuta nella curva, ma è una contraddizione
-%
-%ESEMPIO
-%per liscie
-%se $F=x_0^3	$ dà una curva senza punti singolari perché le der parziali sono multpli delle coordinate dunque non possono mai essere tutti nulli
-%FINE PNTI SINGOLARI DELLE CUBICHE
 
-%--------------------------------------------------------------------
-%FASCI DI CONICHE PROIETTIVE
-%
-%prendo 2 coniche e considero le coniche le cui eq si ottengono come cl delle due equazioni
-%Siano $C_1$ e $C_2$ due coniche distinte nel piano proiettivo di equazionie $F_1$ e $F_2$, siccome le coniche sono distinte allor $F_1$ e $F_2$ non sono proporzionali. 
-%Il fascio di coniche generato da $C_1$ e da $C_2$ è dato da tutte le coniche di equazione $\lambda F_1+\mu F_2=0$ con $(\lambda\colon \mu)\in $
-%posso scrivere \mathcal{F} come fascio e $C_{\lambda,\ \mu} com conica specifica ottenuta dall'equazione, che è sempre unnac onica
-%se moltiplico lambda e mu per lo stesso scalare tutta l'eq viene moltplicata ed ottengo la stessa conica di prima, dunque vanno presi in P1 e non solo in K
-%
-%ESEMPIO
-%C_1\colon x_0x_1=0
-%C_2\colon (x_0-x_1)x_2=0
-%entrambe coppie di rette, allorail fascio da loro generato è	
-%riscritto raggruppando i monomi si ottiene
-%
-%ESEMPIO
-%si cambia C_2	una delle due rette fa parte della prima: x_0=0 appartiene ad entrambe
-%posso raccogliere x_0
-%
-%dato un fascio di coniche ci si chiede qual è il rango delle coniche del fascio
-%DEF
-%una conica in P2 si dice DEGENERE quando non ha rango massimo , ovvero se \rk C< 3, ovvero quando la matrice non è invertibile
-%
-%STUDIO DELLE CONICHE DEGNERI IN UN FASCIO
-%dato un fascio vogliamo vedere quante e quali sono le coniche degenerei del fascio
-%
-%Supponiamo che C_1 abbia matrice associata la matrice simmetrica $A_1$ e
-%allora è chiaro che la conica del fascio generata da C_1,c_2 sarà la combinazione lineare sulle matrici: ci interessa il determinante della combinazione lineare
-%si hanno due possibilità:
-%lambda A_1+\mu A_2 è una matrice 3\times 3 i cui elementi sono nulli oppure delle forme lineari in \lmbda e \mu /cl di numeri/
-%dunque facendo il determinante si ottiene un polinomio omogeneo in \lambda e \mu e sarà nullo oppure avrà grado 3
-%dunque si avranno 2 possibilità
-%	o D(\lambda,\ \mu)=0\implies in termini del fascio tutte le coniche del fascio sono degeneri
-%	o D(\lambda,\ \mu) è omogeneo di grado 3 \implies si possono avere nel fascio 	coniche degeneri è come se stessimo guardando gli zeri del polinomio du P1 e ne può avere al più 3, pertanto ci sono al più 3 coniche degeneri
-%	
-%deduciamo dunque che o sono tutte degeneri o sono massimo 3, quindi se in un fascio ne trovo 4 degenerei allora tutte lo sono!
-%
-%nel caso complesso gli zeri sono pari al grado contato con moltplicità: ho sempre almeno una conica degenere
-%anche nel caso reale ssendo nel caso dispari 
-%		dunque c'è sempre una conica degenere
-%		
-%Se \kamp=\complexset o \kamp=\realset, allora D ha sempre almeno una radice in P1, dunque il fascio ha sempre una conica degenere
-%pertanto ogni fascio ha sempre una conica degenere
-%
-%riscriviamo gli esempi precedenti
-%\ESEMPIO 1
-%
-%
-%ci sono solo 2 eri perché uno è doppio
-%questi valori dei parametri soo sempre i valori che c restituisconoi polinomi di partenza, corrispondono dunque a C_1 e C_2, che sapevamo già esseredegeneri perché sono coppie di rett
-%abbiamo dunque scoperto che C_1 e C_2 sono le uniche coniche degeneri del fascio
-%
-%ESEMPIO 2
-%in questo caso il deterinante viene identicamente nullo perché sono riducibili essendo coppie di rette
-%in questo fasco tutte le coniche del fascio hanno una retta in comune
-%
-%FIN ESEMPIO
-%
-%ci interessa sapere anche il punto che passa per tutte le coniche (che ne sono di più)
-%DEF
-%I \textbf{punti base} base di un fascio di coniche sono i punti che appartengono a tutte le coniche del fascio, ovvero 
-%
-%OSS punti base
-%i pnti base sono dati dall'interseoine delle due coniche che generano il fascio, infatti essendo nel fascio la loro intersezione
-%viceversa se 		duque comunque faccia la combinazione lineare viene sempre nulla
-%
-%
-%vediamo i punti base degli esempi
-%ESEMPIO 1
-%punti base
-%
-%intersecando due rette non coincidenti posso ottenere al più 4 punti 1+1+1+1	ne ottengo meno se qualcuno di questi punti va a coincidere
-%
-%si guardano diversi casi		3 punti base
-%
-%ESEMPIO 2
-%retta di punti base perché  una retta comune a tutte le coniche del fascio, ed il punto base del fascio di rette che dà la seconda retta della conica di equazione \lambda x_1+\mu x_2=0		la seconda retta varia fra tutte le rette che contengono P
+%sing e non sing rette tang per piane pro
+\begin{proposition}
+	Sia ora $C$ in $\proj[2]{\ }$ una curva di equazione $F(x_0,x_1,x_2)=0$ con $F$ polinomio omogeneo di grado $d$. Sia $P\in C$, allora, $P$ è \textit{non singolare} $\iff$ almeno una delle derivate parziali di F non è nulla in $P$, ovvero $\exists i\in\{0,1,2\}\colon \frac{\partial{F}}{\partial{x_i}}(P)\neq 0$.\\
+%allo stesso mod del caso affine con le der in p
+	In tal caso esiste ed è unica la retta tangente a $C$ in $P$ ed ha equazione
+		\begin{equation}
+			\underbrace{frac{\partial{F}}{\partial{x_0}}(P) }_{\in\kamp}x_0 + \underbrace{frac{\partial{F}}{\partial{x_1}}(P) }_{\in\kamp}x_1 + \underbrace{frac{\partial{F}}{\partial{x_2}}(P) }_{\in\kamp}x_2 
+		\end{equation}
+	che ha i coefficienti dati dalle derivate parziali di $F$ in $P$.
+\end{proposition}
+\begin{demonstration}
+	Dobbiamo verificare che per la curva affine di cui $C$ è chiusura proiettiva (ottenuta deomogeneizzando rispetto a $x_0$) si ritrovano le stesse definizioni di prima.\\
+	A meno di proiettività possiamo supporre che $P=(1\colon a\colon b)\in U_0=\{x_0\neq 0\}$, ovvero che stia nella carta affine $U_0$ che è identificata a $\kamp^2$, quindi $P$ corrisponde a $(a,b)\in\kamp^2$.\\
+	Poniamo $f(x,\ y)\coloneqq F(1,x,y)$ e sia $C_0$ la curva in $K^2$ di equazione $f(x,y)=0$ per cui $C$ è la chiusura proiettiva di $C_0$. Vogliamo mettere in relazione le derivate parziali di $f$ e di $F$ a partire dalla definizione stessa di $f$, 
+%	che ci dice che facendo la derivate parziali di $f$ rispetto a $x$ è la sessa di 	valutata in	come polinomio, idem y, ed è una relazione fra polinomi
+	per poi valutarla nel punto, ottenendo
+		\begin{gather*}
+			\begin{cases}
+				\frac{\partial{f}}{\partial{x}} = \frac{\partial{F}}{\partial{x_1}} (1,x,y)\\
+				\frac{\partial{f}}{\partial{y}} = \frac{\partial{F}}{\partial{x_2}} (1,x,y)
+			\end{cases}
+			\implies \textcolor{green}{\circled{\ast}}
+			\begin{cases}
+				\frac{\partial{f}}{\partial{x}}(a,b) = \frac{\partial{F}}{\partial{x_1}} (1,a,b)\\
+				\frac{\partial{f}}{\partial{y}}(a,b) = \frac{\partial{F}}{\partial{x_2}} (1,a,b)
+			\end{cases}
+		\end{gather*}
+	Usiamo la relazione di Eulero fra polinomi e valutiamo in $(1,a,b)$:
+		\begin{gather*}
+			\frac{\partial{F}}{\partial{x_0}}(1,a,b) + a\frac{\partial{F}}{\partial{x_1}}(1,a,b) + b\frac{\partial{F}}{\partial{x_2}}(1,a,b)= dF(1,a,b)=0
+		\end{gather*}
+	e $F(1,a,b)=0$ perché il punto sta nella curva, $P\in C$. Riusciamo così a esprimere la terza derivata parziale rispetto a $x_0$ in funzione delle altre due:
+		\begin{gather*}
+			\textcolor{green}{\circled{\ast\ast}}\quad \frac{\partial{F}}{\partial{x_0}}=-a\frac{\partial{F}}{\partial{x_1}} -b\frac{\partial{F}}{\partial{x_2}}
+		\end{gather*}
+	Quindi abbiamo che $\nabla f(a,b)=0 \iff  \nabla F(1,a,b)=(0,0,0)$, infatti se il gradiente $f$ si annulla in $P$ allora si annullano le derivate parziali rispetto a $x_1,x_2$ di $F$, allora per la relazione di Eulero anche la terza derivata parziale si annulla. Viceversa, se il gradiente di $F$ si annulla bastano le relazioni $\textcolor{green}{\circled{\ast}}$ per avere che anche il gradiente di $f$ si annulla.\\
+	Il punto $P$ è \textit{non singolare} se e solo se $\nabla F(1,a,b)\neq \mathbf{0}$, dunque si ha la tesi.\\
+	Vogliamo anche che la retta tangente diventi proprio quell'equazione. Supponendo $P$ non singolare, allora la retta tangente affine a $C_0$ in $P$ ha equazione $\frac{\partial{f}}{\partial{x}}(a,b)(x-a) + \frac{\partial{f}}{\partial{y}}(a,b)(y-b)=0$. La chiusura proiettiva di tale retta affine dà la retta tangente proiettiva a $C$ in $P$ ed ha equazione $\frac{\partial{f}}{\partial{x}}(a,b)(x_1-ax_0) + \frac{\partial{f}}{\partial{y}}(a,b)(x_2-bx_0)=0 $, in quanto si è omogeneizzato rispetto a $x_0$. Per $\textcolor{green}{\circled{\ast}}$ si ha che
+		\begin{gather*}
+			\frac{\partial{F}}{\partial{x_1}}(1,a,b)(x_1-ax_0) + \frac{\partial{F}}{\partial{x_2}}(1,a,b)(x_2-bx_0)=0 \\
+			\implies  \underbrace{ \left( -a\frac{\partial{F}}{\partial{x_1}}(1,a,b) -b \frac{\partial{F}}{\partial{x_2}}(1,a,b) \right)}_{\textcolor{green}{\circled{\ast\ast}}}  x_0 + \frac{\partial{F}}{\partial{x_1}}(1,a,b) x_1 + \frac{\partial{F}}{\partial{x_2}}(1,a,b) x_2=0 \\
+			\implies \frac{\partial{F}}{\partial{x_0}}(P) x_0 + \frac{\partial{F}}{\partial{x_1}}(P) x_1 + \frac{\partial{F}}{\partial{x_2}}(P) x_2
+		\end{gather*}
+\end{demonstration}
+
+\begin{observe} \textsc{Rette tangenti: sistema Affine vs. Proiettivo}
+	Se $C$ è una curva affine di equazione $f(x,y)=0$ per trovare i punti singolare di $C$ bisogna risolvere un sistema con l'equazione della curva e le derivate parziali di $f$. L'equazione della curva è necessaria perché potrei avere punti in cui il gradiente si annulla ma non appartengono alla curva!\\ 
+	Invece se $C$ è proiettiva di equazione $F(x_0,x_1,x_2)=0$, per trovare i punti singolari di $C$ bisogna solo risolvere il sistema delle derivate parziali nulle e non serve mettere anche l'equazione della curva per via della relazione di Eulero. Infatti se $P$ annulla $\nabla F$, allora dalla relazione di Eulero si ha che:
+		\begin{equation*}
+			F(P)=\frac{1}{d}\left( a\frac{\partial{F}}{\partial{x_0}}(P) + b\frac{\partial{F}}{\partial{x_1}}(P) + c\frac{\partial{F}}{\partial{x_2}}(P) \right) = 0 \implies P\in C
+		\end{equation*}
+	Riassumendo, ecco i sistemi a confronto:
+		\begin{center}
+			\begin{tabular}{c|c}
+				Affine & Proiettivo \\
+				\hline
+				$\displaystyle \begin{cases} 
+					f(x,y)=0 \\		\frac{\partial{f}}{\partial{x}}(x,y)=0\\	\frac{\partial{f}}{\partial{y}}(x,y)=0
+				\end{cases}$ & $\displaystyle \begin{cases}
+					\frac{\partial{F}}{\partial{x_0}}=0\\	\frac{\partial{F}}{\partial{x_1}}=0\\	\frac{\partial{F}}{\partial{x_2}}=0 
+				\end{cases}$
+			\end{tabular}
+		\end{center}
+\end{observe}
+
+\begin{examples}
+	\begin{enumerate}
+		\item	Sia $C_0\colon x^2+x^3-y^2=0$ una curva affine. Sia $C$ la chiusura proiettiva di $C_0$ con equazione $F=x_0x_1^2+x_1^3-x_0x_2^2$, cerchiamo i punti singolari:
+			\begin{gather*}
+				\nabla F=0 \iff \begin{cases}
+					\frac{\partial{F}}{\partial{x_0}}=x_1^2 - x_1^2=0\\
+					\frac{\partial{F}}{\partial{x_1}}=2x_0x_1+3x_1^2=0\\
+					\frac{\partial{F}}{\partial{x_2}}-2x_0x_2=0
+				\end{cases} \implies \begin{cases}
+					x_0=0 \\ x_1=0 \\ x_2=0
+				\end{cases} \text{ oppure } \begin{cases}
+					x_0=t \\ x_1=0 \\ x_2=0
+				\end{cases}
+			\end{gather*}
+		di cui il primo è un assurdo, dunque $P=(1\colon 0\colon 0)$ è l'unico punto singolare di $C$ e osserviamo che corrisponde a $(0,0)\in\kamp^2$.\\
+		Avevamo studiato anche il punto $Q=(-1,0)\in C_0$, vediamolo anche nel caso proiettivo in cui $Q=(1\colon -1\colon 0)\in C$ non singolare. Scriviamo la tangente $T_Q C$ grazie alle derivate parziali:	$\frac{\partial{F}}{\partial{x_0}}(Q)=1,\ \frac{\partial{F}}{\partial{x_1}}(Q)=(2x_0x_1+3x_1^2)(Q)=1,\ \frac{\partial{F}}{\partial{x_2}}(Q)=(-2x_0x_1)(Q)=0$, per cui $T_Q C\colon x_0+x_1=0$. Per ottenere la retta affine di cui è chiusura proiettiva basta porre $x_0=1$, per cui $x+1=0$, ed è coerente con l'analisi nel caso affine.\\
+		Avevamo visto che nel punto singolare $P=(1\colon 0\colon 0)$, tutte le rette per $P$ hanno molteplicità di intersezione $2$ con la curva $C$ in $P$ tranne due rette speciali, quelle di direzione $(1\pm 1)$ in cui la molteplicità di intersezione è 3, pertanto $P$ è detto \textbf{nodo}. \index{nodo}
+		\item	consideriamo la curva affine $C_0$ data da $f(x,y)=y-x$ e la chiusura proiettiva $C$ di equazione $F(x_0,\ x_1,\ x_2)=x_0x_2^2-x_1^3$. Siccome $\frac{\partial{F}}{\partial{x_0}} =x_2^2,\ \frac{\partial{F}}{\partial{x_1}}= -3x_1^2,\ \frac{\partial{F}}{\partial{x_2}}= 2x_0x_2$ allora $P=(1\colon 0\colon 0)$ è l'unico punto singolare di $C$, che corrisponde all'origine in $\mathcal{A}(\kamp^2)$. Consideriamo il fascio di rette per l'origine in $\mathcal{A}(\kamp^2)$ e vediamo qual è la molteplicità di intersezione per confrontarlo con il caso precedente. Sia la generica retta per l'origine $r\colon \begin{cases}
+			x=tv_1 \\
+			y=tv_2
+		\end{cases}$ con $v=(v_1,v_2)$ direzione di $r$. La intersechiamo con $C_0$
+			\begin{gather*}
+				g(t)=t^2v_2^2 -t^3v_1^3=0 \implies t^2(v_2^2 -tv_1^3)=0
+			\end{gather*}
+		da cui segue la molteplicità di intersezione in $P$ è 2 se $v_2\neq 0$ ed è 3 se $v_2=0$.\\
+		Si nota che è simile al caso precedente ma la differenza sta nel fatto che quasi tutte le rette hanno molteplicità 2 e c'è solo un'unica retta con molteplicità 3 e non 2 come nel caso precedente.\\
+		Disegnandola si nota la presenza di una cuspide e attorno al punto singolare non è liscia.
+%DISEGNO
+	\end{enumerate}
+\end{examples}
+
+Questi erano esempi di cubiche, vediamo cosa succede per le coniche.
+\begin{observe} \textsc{Punti singolari delle coniche}\\
+	Sia $C$ una conica proiettiva, allora il numero di punti singolari dipende solo dal rango, ovvero
+		\begin{itemize}
+			\item	$\rk C=3\implies C$ non ha punti singolari
+			\item	$\rk C=2 \implies C$ ha un punti singolare
+			\item	$\rk C=1 \implies C$ è una retta doppia e ogni punto di $C$ è singolare
+		\end{itemize}
+	Infatti sia $A$ la matrice simmetrica associata a $C$, allora l'equazione associata a $C$ e le derivate parziali sono 
+		\begin{gather*}
+			F=x^tAX=\sum_{i,j=0}^2 a_{ij}x_ix_j \implies \frac{\partial{F}}{\partial{x_h}} = \sum_{j=0, i=h}^2 a_{hj}x_j+ \sum_{i=0, j=h}^2  a_{ih}x_i = 2\sum_{i=0}^2 a_{ih}x_i
+		\end{gather*}
+	Un punto $P$ rappresentato dal vettore $v$, ovvero $P=[v]$, è singolare per $C$ se le derivate parziali si annullano, cioé se $\sum_{i=0}^2 a_{hi}v_i=0\forall h=0,1,2$. In notazione matriciale, se si pensa al prodotto righe per colonne si ha che l'indice di riga di $a$ è fissato in $h$ mentre facciamo variare l'indice di colonna $i$: sia $v=\begin{psmallmatrix} v_0 \\ v_1 \\ v_2 \end{psmallmatrix}$ il vettore e $\left( Av \right)_{\text{riga }h}$ un vettore colonna, dunque la condizione con la sommatoria ci dice che $Av=0$, ovvero $v\in\ker A$.\\
+	Riassumendo, i punti singolari di $C$ sono dati dai vettori che stanno nel nucleo della matrice $A$, che dipende dal rango di $A$:
+		\begin{itemize}
+			\item	$\rk A=3\implies \ker A=\{0 \} \implies$ nessun punto singolare
+			\item	$\rk A=2\implies \dim\ker A=1 \implies$ unico punto singolare
+			\item	$\rk A=1\implies F=\lambda L^2$	retta doppia, allora ogni punto di $C$ è singolare	ed è esattamente la retta proiettiva associata al nucleo di $A$: $L=\mathbb{P}(\ker A)$
+		\end{itemize}
+	Confrontiamolo con la classificazione delle coniche nel caso proiettiva
+	o reale e complesso.\\
+	Posto $\rk C=2$, nel \textit{caso complesso} $C=L_1\cup L_2$ con $L_1\neq L_2$ distinte e il punto singolare è il punto di intersezione delle due rette, ovvero $L_1\cap L_2$.\\
+	Nel \textit{caso reale} a meno di proiettività di hanno 2 casi in base alla segnatura: $(1,1)$ allora $C=L_1\cup L_2$ e $P=L_1\cap L_2$, mentre se la segnatura è $(2,0)/(0,2)$ allora la forma quadratica si fattorizza su $\complexset$ e non su $\realset$ e $C$ ha come sostegno un unico punto $P$, che è proprio il punto singolare.
+\end{observe}
+
+\begin{observe}\textsc{Cubiche proiettive nel caso complesso}
+	Nel piano proiettivo complesso $\proj[2]{\complexset}$ consideriamo $C$ una cubica di equazione $F=0$ con $\deg F=3$. Se la curva $C$ è riducibile, allora il polinomio $F$ è riducibile, per definizione, ma siccome il grado è basso allora è prodotto di un polinomio di grado 1 per un altro polinomio di grado 2, quali $F=G\cdot H$ con $\deg G=1$ e $\deg H=2$ pertanto il luogo degli zeri di $F$ è unione dei luoghi degli zeri di $G$ e $H$, dunque $C$ è unione di una retta e di una conica.Ci riconduciamo così a gradi più bassi.\\
+	Supponiamo invece che $C$ sia irriducibile: allora $C$ non può contenere una retta, altrimenti l'equazione della retta dividerebbe il polinomio $F$. Allora $C$ ha \textit{al più un punto singolare}. Infatti, se per assurdo ne avesse almeno 2 quali $P$ e $Q$ potremmo considerare la retta $r$ che passa per $P$ e $Q$ quale $r=\overline{PQ}$, pertanto $C\cap r\supseteq \{P,q\}$ e siccome sono due punti singolari allora la molteplicità di intersezione è almeno 2. Ma ciò non è possibile perché dallo studio delle intersezioni fra una retta e una curva sappiamo che dobbiamo contare con molteplicità fino al grado della curva: qui sono $2$ punti con molteplicità $2$, ma $C$ ha grado 3, dunque la retta dovrebbe essere contenuta nella curva, ma è una contraddizione.
+\end{observe}
+
+\begin{example}
+	Sia $F=x_0^3+x_1^3+x_2^3$, esso dà una curva senza punti singolari perché le derivate parziali sono multipli delle coordinate dunque non possono mai essere tutti nulli
+\end{example}
+
+		\section{Fasci di coniche proiettive}
+\begin{intuit}
+	Scrivere il fascio vuol dire prendere 2 coniche e considerare le coniche la cui equazione si ottiene come combinazione lineare delle due equazioni di partenza.
+\end{intuit}
+Siano $C_1$ e $C_2$ due coniche distinte nel piano proiettivo $\proj[2]{\ }$ di equazioni $F_1$ e $F_2$, siccome le coniche sono distinte allora $F_1$ e $F_2$ non sono proporzionali. Il \textbf{fascio di coniche} generato da $C_1$ e da $C_2$ è dato da tutte le coniche di equazione $\lambda F_1+\mu F_2=0$ con $(\lambda\colon \mu)\in \proj[1]{\ }$. Possiamo scrivere $\mathcal{F}$ come fascio e $C_{\lambda,\ \mu}$ come conica specifica ottenuta dall'equazione.\\
+Notiamo che se moltiplichiamo $\lambda$ e $\mu$ per lo stesso scalare tutta l'equazione viene moltiplicata ed otteniamo la stessa conica di prima, dunque $\lambda$ e $\mu$ vanno presi in $\proj[1]{\ }$ e non solo in $\kamp$.
+
+\begin{examples}
+	\begin{enumerate}
+		\item	Siano $C_1\colon x_0x_1=0$ e $C_2\colon (x_0-x_1)x_2=0$ due coniche, entrambe coppie di rette. Allora il fascio da loro generato è $C_{\lambda,\mu}\colon \lambda x_0x_1 + \mu (x_0-x_1)x_2=\lambda x_0x_1 + \mu x_0x_2 -\mu x_1x_2=0$
+		\item	Siano $C_1\colon x_0x_1=0$ e $\widetilde{C_2}\colon x_0x_2=0$. Il fascio sarà $C_{\lambda,\mu}\colon \lambda x_0x_1 +\mu x_0x_2=x_0(\lambda x_1 + \mu x_2)=0$, infatti siccome $x_0=0$ appartiene ad entrambe le coniche si può raccogliere il fattore $x_0$
+	\end{enumerate}
+\end{examples}
+
+Dato un fascio di coniche ci si chiede qual è il rango delle coniche del fascio.
+\begin{define}\textsc{Conica Degenere} \index{conica!degenere}
+	Una conica $C$ in $\proj[2]{\ }$ si dice \textbf{degenere} quando \textit{non} ha rango massimo, ovvero se $\rk C< 3$, dunque quando la matrice non è invertibile.
+\end{define}
+
+	\subsection{Studio delle coniche degeneri di un fascio}
+Dato un fascio vogliamo vedere quante e quali sono le coniche degeneri del fascio.\\
+Supponiamo che $C_1$ abbia come matrice simmetrica $A_1$ e $C_2$ idem con $A_2$. Allora è chiaro che la conica del fascio generata da $C_1,C_2$ sarà associata alla combinazione lineare sulle matrici: $C_{\lambda,\mu}\rightarrow \lambda A_1+\mu A_2$, matrice $3\times 3$ i cui elementi sono o $0$ o forme lineari in $\lambda$ e $\mu$.\\
+Sia $D(\lambda,\mu)\coloneqq \det (\lambda A_1+\mu A_2)$, che è un polinomio omogeneo in $\lambda$ e $\mu$ che sarà nullo o di grado $3$. Si hanno due possibilità:
+	\begin{itemize}
+		\item	$D(\lambda,\ \mu)\equiv 0\implies$ \textit{tutte} le coniche del fascio sono degeneri
+		\item	$D(\lambda,\ \mu)$ è omogeneo di grado 3, dunque le	coniche degeneri corrispondono agli zeri del polinomio $D$ su $\proj[1]{\ }$ che sono al più 3, pertanto ci sono \textit{al più 3 coniche degeneri}
+	\end{itemize}
+\begin{tips}
+	Deduciamo dunque che o tutte le coniche del fascio sono degeneri o sono al massimo 3, quindi se in un fascio ne trovo 4 degeneri allora tutte lo sono!
+\end{tips}
+Nel caso complesso gli zeri sono pari al grado contato con molteplicità, dunque si ha sempre almeno una conica degenere. Ciò vale anche nel caso reale essendo il grado dispari.
+		
+
+Riscriviamo gli esempi precedenti
+\begin{examples}
+	\begin{enumerate}
+		\item	Il fascio è $\mathcal{F}_1\colon 2(\lambda x_0x_1 +\mu x_0x_2 -\mu x_1x_2)=0$ ed ha matrice $A_{\lambda,\mu}=\begin{pmatrix}
+			0 & \lambda & \mu \\
+			\lambda & 0 & -\mu \\
+			\mu & \mu & 0
+		\end{pmatrix}$. Pertanto $D(\lambda,\mu)=\det A_{\lambda,\mu}=-\lambda(\mu^2)+\mu(-\lambda \mu)=-2\lambda\mu^2$. Ci sono solo 2 eri perché uno è doppio, e $D$ si annulla per $(\lambda\colon\mu)=(1\colon 0)$ oppure $(0\colon 1)$. Questi valori dei parametri ci restituiscono i polinomi di partenza, corrispondono dunque a $C_1$ e $C_2$, che sapevamo già essere degeneri. Abbiamo dunque scoperto che $C_1$ e $C_2$ sono le uniche coniche degeneri del fascio.
+		\item	Il fascio è $\mathcal{F}_2 \colon x_0(\lambda x_1+\mu x_2)=0$. In questo caso il determinante viene identicamente nullo $D\equiv 0$ perché sono riducibili essendo coppie di rette. In questo fascio dunque tutte le coniche hanno una retta in comune.
+	\end{enumerate}
+\end{examples}
+
+\begin{define} \textsc{Punti Base di un fascio di coniche} \index{punti!base}\\
+	I \textbf{punti base} di un fascio di coniche sono i punti che appartengono a tutte le coniche del fascio, ovvero 
+		\begin{equation*}
+			\inter_{C\in\mathcal{F}} C \subset \proj[2]{\ }
+		\end{equation*}
+\end{define}
+
+\begin{observe} \textsc{Punti base}\\
+	I punti base di un fascio sono dati dall'interseoine delle due coniche che generano il fascio: $C_1\cap C_2$.\\
+	Infatti $\displaystyle C_1\cap C_2 \supseteq \inter_{C\in\mathcal{F}} C$. Viceversa se $P\in C_1\cap C_2$ allora $F_1(P)=0$ e $F_2(P)=0 \implies (\lambda F_1 +\mu F_2)(P)=0,\forall\lambda,\mu \implies P\in C_{\lambda,\mu},\forall (\lambda\colon\mu)\in\proj[1]{\ }$, ovvero comunque si faccia la combinazione lineare viene sempre nulla.
+\end{observe}
+
+Vediamo i punti base degli esempi precedenti.
+\begin{examples}
+	\begin{enumerate}
+		\item	Per ottenere i punti base del fascio si intersecano le coniche che lo generano:
+			\begin{gather*}
+				\begin{cases}
+					x_0x_1=0\\
+					(x_0-x_1)x_2=0
+				\end{cases} \implies \begin{cases}
+					x_0=x_1=0\\
+					x_0=x_2=0\\
+					x_1=x_2=0
+				\end{cases}
+			\end{gather*}
+		Intersecando due rette non coincidenti si possono ottenere al più 4 punti 1+1+1+1, ma se ne ottengono meno se qualcuno di questi punti va a coincidere.\\
+		In questo caso infatti si hanno 3 punti base quali $(1\colon 0\colon 0),(0\colon 1\colon 0), (0\colon 0\colon 1)$
+		\item	I punti base sono dati dal sistema $\begin{cases} x_0x_1=0\\ x_0x_2=0 \end{cases}$. Si ha una retta di punti base perché $x_0=0$ è una retta comune a tutte le coniche del fascio, e $P=(1\colon 0\colon 0)$ è un altro punto base. Inoltre è il punto base del fascio di rette $\lambda x_1+\mu x_2=0$, che varia fra tutte le rette che contengono $P$.
+	\end{enumerate}
+\end{examples}
+
+\begin{digression} \textsc{Nodi e Cuspidi}\\
+	Un \textbf{nodo} è un punto $P$ per cui la retta "generale" per $P$ ha intersezione $2$ con la curva e ce ne sono \textit{esattamente} $2$ che hanno intersezione $>2$.\\
+	Una \textbf{cuspide} è un punto in cui la retta "generale" per $P$ ha intersezione $2$ con la curva e ce n'è \textit{una sola} che ha intersezione $>2$
+\end{digression}
+
+
+
 
 
 %%LEZ 36
@@ -3183,6 +3209,8 @@ Nella relazione appena annunciata notiamo che moltiplichiamo ciascuna derivata p
 %la retta x_0-x_1=0 passa per il punto di intersezione delle prme 2 rette, quindi qui siamo nella situa precedene: A il punto i intersezione, B e B i punti di intersezione di con
 %dunque C_2 diventa r\cup BC, mentre C_1 è AB\cup AC
 %ieri abbiamo già verificato che i punti base sono solo 3 e che C_1 e C_2 sono le uniche soniche degenerei di F. non avevamo visto che la retta r è tangente a tutte le coniche del fascio
+%
+%
 %ESEMPIO ESERCIZIO 4.3 FFP
 %Nel piao proiettivo reale P2R considerimao i punti A=(0\colon 1 \colon 2) e B=(0\colon 0\colon 1)
 %Determinare, se esiste l'equazione di una conica passante per A,B,C,D e tangente in C alla retta r di equazione x_0-x_2=0 /che passa per C/
@@ -3208,12 +3236,12 @@ Nella relazione appena annunciata notiamo che moltiplichiamo ciascuna derivata p
 %
 %seabbiamo tempo controlliamo se la conica fa quello che deve fare: passa per i punti per cui deve passare e che sia tangente
 %scriviamo direttamente la tangente
-
-
-
-
-
-
-
-
-
+%
+%
+%
+%
+%
+%
+%
+%
+%
