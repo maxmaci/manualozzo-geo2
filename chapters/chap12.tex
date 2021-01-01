@@ -2880,7 +2880,7 @@ Nella relazione appena annunciata notiamo che moltiplichiamo ciascuna derivata p
 		\end{center}
 \end{observe}
 
-\begin{examples}
+\begin{examples} \label{esempi lez 35}
 	\begin{enumerate}
 		\item	Sia $C_0\colon x^2+x^3-y^2=0$ una curva affine. Sia $C$ la chiusura proiettiva di $C_0$ con equazione $F=x_0x_1^2+x_1^3-x_0x_2^2$, cerchiamo i punti singolari:
 			\begin{gather*}
@@ -3031,217 +3031,261 @@ Vediamo i punti base degli esempi precedenti.
 
 
 
-%%LEZ 36
-%PARAMETRIZZZIONE DELLE CONICHE IN p2
-%Data l'equazione di una conica $F=a_{00}x_0^2+2a_{01}x_0x_1		$ possiamo associare a $C$ il punto $(a_{00}\colon a_{01}\colon )$, essendoci 6 coordinate allora è un punto di P5, che determina univocamente la conica: non nulla e ameno di multipli sia l'equazione sia i lpunto di P5
-%In questo modo otteniamo una corrispondenza biunivoca fra le coice in P2 e P5
-%Cosa vuol dire considerare un fascio di coniche?
-%Date C_1 e C_2 coniche, consideriamo il fascio \mathcal{F} da loro generato. C_1 ha equazione con coefficienti a_{ij} e corrisponde ad un punto A=()\in P5
-%Mentre C_2 ha equazione 		punto di P5 a coefficienti b_{ij}
-%La conica C_{\lambda,\ \mu} del fascio è la cl di F e G, dunque i coefficienti sono la cl dei coefficienti dell'eq si C_1 e C_2, dunque il punto corrispondente P_{\lambda,\ \mu}=() che facendo variare lambda e mu in P5 descrive una retta generata dai punti a e b
-%in questa corrisp biunvoca fra coniche e punti, i fasci di coniche corrispondono esattamente alle rette in P5
-%Ogni fascio di coniche corisponde ad una retta in P5
-%dunque la retta è individuata da due qualsiasi 2 punti, allo stesso modo il fascio è descritto da qualsiasi sue 2 coniche
-%scelta coniche dà parametrizzazione del fascio
-%La retta in P5 è determinata da 2 suoi punti qualsiasi distinti \implies il fascio \mathcal{F} è determinato da 2 qualsiasi 2 coniche distinte (la scelta di C_1 e C_2 dà diverse descrizioni parametriche del fascio)
-%questo ci permette di dare più informazioni sui punti base
-%OSS
-%Dato un fascio di coniche, i punti base del fascio sono dti dall'intersezione di due qualsiasi coniche del fascio purché siano distinte, ovvero da $C\cap\widetilde{C}$ dove $C$ e $\widetilde{C}$  coniche distinte del fascio
-%	tips?
+%LEZ 36
+	\subsection{Parametrizzazione delle coniche nel piano proiettivo}
+Data l'equazione di una conica $F=a_{00}x_0^2+2a_{01}x_0x_1+\dots+a_{22}x_2^2$ possiamo associare a $C$ il punto $(a_{00}\colon a_{01}\colon a_{02}\colon a_{11}\colon a_{12}\colon a_{22})\in\proj[5]{\ }$, in quanto ci sono 6 coordinate. Tale punto determina univocamente la conica: entrambi sono non nulli e determinati a meno di multipli.\\
+In questo modo otteniamo una corrispondenza biunivoca fra le coniche in $\proj[2]{\ }$ e $\proj[5]{\ }$, ovvero
+	% https://q.uiver.app/?q=WzAsMixbMCwwLCJcXHtcXHRleHR7Y29uaWNoZSBpbiB9XFxwcm9qWzJde1xcIH0gXFx9Il0sWzIsMCwiXFxwcm9qWzVde1xcIH0iXSxbMCwxLCIxXFxjb2xvbiAxIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn19fV1d
+	\[\begin{tikzcd}
+		{\{\text{coniche in }\proj[2]{\ } \}} && {\proj[5]{\ }}
+		\arrow["{1\colon 1}", from=1-1, to=1-3, tail reversed]
+	\end{tikzcd}\]
+In questo contesto Cosa vuol dire considerare un fascio di coniche?\\
+Date $C_1$ e $C_2$ coniche, consideriamo il fascio $\mathcal{F}$ da loro generato. Se $C_1\colon F=\sum_{i,j}a_{ij}x_ix_j$ allora corrisponde ad un punto $A=(a_{00}\colon \cdots \colon a_{22})\in\proj[5]{\ }$. Idem per $C_2\colon G=\sum_{i,j}b_{ij}x_ix_j$ che corrisponde ad un punti $B=(b_{00}\colon\cdots\colon b_{22})\in\proj[5]{\ }$. La conica $C_{\lambda,\ \mu}$ del fascio è la combinazione lineare di $F$ e $G$, dunque i coefficienti sono la combinazione lineare dei coefficienti delle equazioni di $C_1$ e $C_2$, ovvero
+	\begin{gather*}
+		c_{\lambda,\mu}\colon \lambda F+\mu G=\sum_{i,j}(\lambda a_{ij}+\mu b_{ij})x_ix_j \longleftrightarrow P_{\lambda,\mu} =(\lambda a_{00}+\mu b_{00}\colon \cdots \colon \lambda a_{22}+\mu b_{22})\in\proj[5]{\ }
+	\end{gather*}
+Facendo variare $\lambda$ e $\mu$ si ha che il punto $P_{\lambda,\mu}$ descrive in $\proj[5]{\ }$ una retta generata dai punti $A$ e $B$ quale $\overline{AB}$, pertanto un \textit{fascio di coniche corrisponde esattamente ad una retta in $\proj[5]{\ }$}.Siccome una retta è individuata da due qualsiasi suoi punti, allo stesso modo il fascio è descritto da qualsiasi sue 2 coniche, pertanto la scelta coniche dà solo una parametrizzazione diversa del fascio.\\
+Questo ci permette di dare più informazioni sui punti base
+\begin{tips} \textsc{Calcolo punti base con 2 coniche qualsiasi}\\
+	Dato un fascio $\mathcal{F}$ di coniche, i punti base del fascio sono dati dall'intersezione di due qualsiasi coniche del fascio purché siano distinte, ovvero da $C\cap\widetilde{C}$ dove $C$ e $\widetilde{C}$ sono 2 coniche distinte del fascio
+\end{tips}
 %così è molto più facile intersecare coppie di rette
-%
-%OSS
-%Sia \mathcal{F} un fascio di coniche. Esiste sempre una conica degenere in \mathcal{F} /possiamo usarla per calcolare i punti base/ \implies usiamo C per calcolare i punti base
-%C è l'uniione di due rette. Scegliamo una qualsiasi altra conica del fascio \implies i punti base del fascio sono dati da C\cap\widetilde{D}=()\cup ()
-%deduciamo che il numero di punti base di un fascio di coniche, se sono finiti
-%ciascuna delle due rette interseca tilde C al più in 2 punti
-%
-%COROLL
-%Se due coniche C_1 e C_2 non hanno una retta in comune allora #()\leq 4
-%PROOF
-%C_1\cap C_2 sono i punti base del fascio generato da C_1 e C_2, dunque segue dall'osservazione precedente
-%
-%TRUCCO PER CALCOLARE INTERESEZIONE DELLE CONICHE
-%coniche irriducibili di cui devo calc intersezione, ovvero il sistema delle due coniche
-%fascio coniche
-%mat e determinate
-%trovo conica rid del fascio
-%interseco C_1 o C_2 con le rette della conica riducibile
-%Questo dà anche un metodo per calcolare C_1\cap C_2 nel fascio \mathcal{F* scirviamo D(\lambda,\ \mu), troviamo una onica degenere widetilde{C} e poi intersechiamo con C_1\cap\widetilde{C}}
-%
-%
-%fasci coniche rappresentazione geometrica, ce ne sono di molti tipi, vediamo quello comune
-%PROP
-%Siano $A,B,C,D$ 4 punti in posizione generale in P2. Allora la famiglia delle coniche passanti per i 4 punti è un fascio \mathcal{F} avente come punti base esattamente i 4 punti
-%/stimao dicendo che fisso 4 punti in po gen e considero le coniche che contengono tutti e 4 punti
+
+\begin{observe}
+	Sia $\mathcal{F}$ un fascio di coniche. Esiste sempre una conica $C$ degenere in $\mathcal{F}$ quindi usiamo $C$ per calcolare i punti base.\\
+	Siccome è degenere, $C$ è l'unione di due rette linearmente indipendenti, ovvero $C=l_1\cup l_2$. Scegliamo una qualsiasi altra conica del fascio quale $\widetilde{C}$, duqneu i punti base del fascio sono dati da $C\cap\widetilde{C}=(l_1\cap\widetilde{C})\cup (l_2\cap \widetilde{C})$.\\
+	Ne deduciamo che il numero di punti base di un fascio di coniche, se sono finiti, sono 4, infatti ciascuna delle due rette interseca $\widetilde{C}$ al più in 2 punti.
+\end{observe}
+
+\begin{corollary}
+	Se due coniche $C_1$ e $C_2$ non hanno una retta in comune allora $\#(C_1\cap C_2)\leq 4$.
+\end{corollary}
+\begin{demonstration}
+	$C_1\cap C_2$ sono i punti base del fascio generato da $C_1$ e $C_2$, dunque segue dall'osservazione precedente.
+\end{demonstration}
+
+\begin{tips} \textsc{Calcolo intersezione delle coniche}\\
+	Abbiamo così anche un metodo per calcolare $C_1\cap C_2$ nel fascio $\mathcal{F}$ scriviamo $D(\lambda,\ \mu),$ troviamo una conica degenere $\widetilde{C}$ e poi intersechiamo con $C_1\cap\widetilde{C}$. Questo metodo è particolarmente utile nel caso avessimo a che fare con coniche irriducibili.
+\end{tips}
+
+Ci sono diversi tipi di rappresentazione geometrica dei fasci di coniche proiettive, vediamo quello più comune.
+\begin{proposition}
+	Siano $A,B,C,D$ 4 punti in posizione generale in $\proj[2]{\ }$. Allora la famiglia delle coniche passanti per i 4 punti è un fascio $\mathcal{F}$ avente come punti base esattamente i 4 punti, ovvero geometricamente stiamo fissando i 4 punti e considerando le coniche che passano per tutti e 4 i punti.\\
 %famiglia fascio F: se la consider ocome punti di P5 descrivono esataente una retta: fissate due coniche le altre sono date da cl delle altre 2
 %essere un fascio: in P5 è una retta: se guardo le eq tutte e sole che si ottengono come cl di due eq fissate/
-%Inoltre \mathcal{F} non contiene rette doppie e contiene esattamente 3 coniche degeneri
-%/coniche degeneri che sono coppie di rette che passano per questi 4 punti/
-%/il disegno è fuorviante perché le rette si intersecano da qualche parte nel piano proiettivo/
-%\overline{AB}\cup\overline{CD} e
+	Inoltre $\mathcal{F}$ non contiene rette doppie e contiene esattamente 3 coniche degeneri che sono le coppie di rette che passano per questi 4 punti, ovvero
+%DISEGNO
+%\footnote{il disegno è fuorviante perché le rette si intersecano da qualche parte nel piano proiettivo}
+	$\overline{AB}\cup\overline{CD}$, $\overline{AC}\cup \overline{BD}$, $\overline{AD}\cup\overline{BC}$.
 %/è un fascio semplice perché il comportamento è quello che uno si aspetta/
-%PROF
-%/scelta coo: siccome sono in pos gen posso scegliere in modo tale che i primi 3 sono i punti fondamentali e l'ultimo il punto unità/
-%A,
-%scriviamo letterlamnte la famiglia partendo da eq conica generica, impoiamo che pass per A,\ldots D e vediamo che conidzioni vengon sui coefficienti
-%Conica generale: a_{00}x_0^2+2a_{01}x_0x_1+a_{11}x_1^2+2a_{02}
-%
-%imponiamo il passaggio per A, ovvero sostituire A e metterlo uguale a 0, ottenendo la condizione a_{00}=0
-%condizioni semplici perché abbiamo scelto unti semplici
-%
-%nel passaggio per D tego conto delle condizioni precedenti
-%
-%andiamo a scrivere l'equazione che abbiamo ottenut: a_{01}x_0x_1+a_{02}x_0x_2-(a_01+a_02)x_1x_2=0
-%sono le eq di tutte e sole coniche che passano per A,B,C,D
-%siccome a_{01} e a_{02} sono gli unici parametri rimasti adesso le voglio  riscrivere evidenziandoli
-%a_{01}()+a_{02}()=0
-%
-%abbiamo così trovato esattamente un fascio di coniche ed  enerato dalle due coniche che sono entrambe degeneri x_1(x_0-x_2)=0
-%abbiamo così dimostrato la prima affermazione
-%per la seoncda esaminiamo cosa sono queste coppie di rette
-%la retta x_!=0 è la retta \overline{AC} mentre quella			guardo quale coppia di punti ha quella coordinata nulla
-%
-%ci dice anche che i punti base sono solo A,D perché si intersecano solo lì le rette degeneri
-%C_1\cap C_2
-%
-%dunque i punti base del fascio sono questi 4 punti: devono essere i punti base del fascio e siccome sono finiti allora non ossono essercene altri
-%
-%affermazione sulle coniche degeneri: scirviamo la matrice della conica, usiamo l'equazione della conica del fascio per scrivere la matrice
-%Per calcolare le coniche degeneri sciviamo la matrice divisa per due perché tanto è determinata a meno di multipli
-%0 & a_{01} & a_{02} \\
-%a_{01} & 0 & -a_{01}-a_{02}\\
-%a_{02} & -a_{01}-a{02} & 0
-%
-%D=\det M=-a_{01}(a_{01}+a_{02}) + a_{02}a_{01}(-a_{01}-a_{02}=
-%pol omogeneo in a_o1 e 02 già fattorizzato in fattori lilneari, pertanto si hanno esattemente 3 oniche degeneri)
-%a_{01}=0 dà C_2, mentre a_{02}=0 dà C_1, mentre la terza si ottiene sostituendo nell'euazione del fascio a_{02}=-a_{01}, ottenendo a_{01}x_0x_1-a_		dunque x_0(x_1-x_2)=0, a cui corrispondono 
-%Tutte e tre le coniche degeneri hanno rango 2 e quindi non ci sono rette doppie nel fascio
-%	end proof
-%
-%TIPS
-%se devo scrivere fascio coniche per 4 punti non lo facco come nella dim
-%OSS
-%Supponiamo di aver dati 4 punti in posizione generale e di voler scrivere il fascio \mathcal{F} delle coniche che passano per questi 4 punti
-%/scirvo 2 delle coniche riducibili perché faccio molto prima/
-%Scriviamo 2 delle coniche riducibili: l_1 eq della retta \overline{AB} etc
-%pertanto l'eq del fascio è
-%fare come nella dimostrazione è più complicato
-%END TIPS
-%
-%OSS sui fasci
-%PROP Sia \mathcal{F} un fascio di coniche e sia P\in P2 / se il punto è base sta in tutte le coniche del fascio, ma se non è un pnto base in quante coniche sta?
-%Se P non è un punto base di \mathcal{F}, allora esiste ed è unica la conica del fascio che contiene P
-%PROOF
-%Supponiamo di avere 2 coniche che generano il fascio con	 pertanto il fascio avrà eq
-%il punto P apparitene a \iff l'eq della conica è soddisfatta nel punto, ovvero
-%va vista come un'equazione in \lambda e \mu
-%siccome il punto P non è un punto base, allora non appartiene all'intersezione, allora non è ossibile che entrambe le equazioni si annullino in P, ovvero
-%è equivalente pt base ed eq nulla
-%pertanto l'equazione ha un'unica soluzione in P1 che sarà proprio (), pertanto si ottiene un'unica conica del fascio che contiene P
-%
+\end{proposition}
+\begin{demonstration}
+	Siccome i 4 punti sono in posizione generale possiamo scegliere delle coordinate in $\proj[2]{\ }$ tali che i primi 3 sono i punti fondamentali e l'ultimo il punto unità, ovvero tali che $A=(1\colon0\colon0), B=(0\colon1\colon0), c=(0\colon0\colon1),d=(1\colon1\colon1)$.
+	Partiamo dall'equazione di una conica generica e imponiamo che passi per i 4 punti e vediamo che condizioni vengono sui coefficienti:
+		\begin{gather*}
+			a_{00}x_0^2+2a_{01}x_0x_1+a_{11}x_1^2+2a_{02}x_0x_2+2a_{12}x_1x_2+a_{22}x_2^2=0\\
+			\text{Per } A \colon a_{00}=0 \quad \text{Per } B \colon a_{11}=0 \quad \text{Per } C \colon a_{22}=0 \\
+			\text{Per } D \colon 2a_{01}+2a{02}+2a_{12}=0 \implies a_{12}=-a_{01}-a_{02}\\
+			\implies a_{01}x_0x_1+a_{02}x_0x_2-(a_01+a_02)x_1x_2=0
+		\end{gather*}
+	che sono le equazioni di tutte e sole le coniche che passano per $A,B,C,D$. Siccome $a_{01}$ e $a_{02}$ sono gli unici parametri rimasti adesso riscriviamo l'equazione evidenziandoli: $a_{01}x_1(x_0-x_2)+a_{02}x_2(x_0-x_1)=0$. Abbiamo così trovato esattamente un fascio di coniche  generato dalle due coniche entrambe degeneri:
+		\begin{gather*}
+			C_1\colon \underbrace{x_1}_{\overline{AC}} \underbrace{(x_0-x_2)}_{\overline{BD}}=0 \\
+			C_2\colon \underbrace{x_2}_{\overline{AB}} \underbrace{(x_0-x_1)}_{\overline{CD}}=0
+		\end{gather*}
+	Abbiamo così dimostrato la prima affermazione.\\
+	Per la seconda affermazione esaminiamo cosa sono queste coppie di rette e ritroviamo le rette per i punti base come evidenziato sopra. Per riuscirci osserviamo ad esempio che i punti per cui la coordinata $x_1=0$ sono proprio $A$ e $C$, pertanto $x_1=0$ è proprio $\overline{AC}$. In questo modo abbiamo già trovato due coniche delle coniche degeneri del fascio e questo ci dice anche che i punti base sono solo $A,B,C,D$, perché queste due rette si intersecano solo lì, infatti:
+		\begin{gather*}
+			C_1\cap C_2 = (\overline{AC}\cup \overline{BD}) \cap (\overline{AB}\cup\overline{CD}) = (\overline{AC}\cap\overline{AB}) \cup (\overline{AC}\cap\overline{CD}) \cup (\overline{BD}\cap \overline{AB}) \cup (\overline{BD}\cap \overline{CD}) =\\ 
+			=\{A,B,C,D\}
+		\end{gather*}
+	Avremmo potuto evitare questo conto osservando che sono punti base perché per costruzione tutte le coniche passano per questi 4 punti, inoltre se sono finiti non possono essercene altri.
+	Per calcolare le coniche degeneri utilizziamo l'equazione della conica generica del fascio e scriviamo la matrice divisa per due perché tanto è determinata a meno di multipli e ne calcoliamo il determinante:
+		\begin{gather*}
+			M=\begin{pmatrix}
+				0 & a_{01} & a_{02} \\
+				a_{01} & 0 & -a_{01}-a_{02}\\
+				a_{02} & -a_{01}-a{02} & 0
+			\end{pmatrix}\\
+		\implies D=\det M= -a_{01}a_{02}(a_{01}+a_{02})+a_{02}a_{01}(-a_{01}-a_{02}) = -2a_{01}a_{02}(a_{01}+a_{02})
+		\end{gather*}
+	Osserviamo che è un polinomio omogeneo in $a_{01}$ e $a_{02}$ già fattorizzato in fattori lineari, pertanto si hanno esattamente 3 coniche degeneri: $a_{01}=0$ dà $C_2$, mentre $a_{02}=0$ dà $C_1$ e la terza si ottiene sostituendo nell'equazione del fascio $a_{02}=-a_{01}$, ottenendo $a_{01}x_0x_1-a_{01}x_0x_2=0$ dunque $x_0(x_1-x_2)=0$, a cui corrispondono $\overline{BC}$ e $\overline{AD}$.\\
+	Tutte e tre le coniche degeneri hanno rango 2 e quindi non ci sono rette doppie nel fascio.
+\end{demonstration}
+
+\begin{tips} \textsc{Scrittura fascio coniche per 4 punti in posizione generale} \label{fascio coniche per 4 pt pos gen} \\
+	Se dobbiamo scrivere un fascio di coniche per 4 punti procedere come nella dimostrazione può esser lungo, vediamo un metodo alternativo.\\
+	Supponiamo di aver dati 4 punti in posizione generale e di voler scrivere il fascio $\mathcal{F}$ delle coniche che passano per questi 4 punti.
+		\begin{itemize}
+			\item	Scriviamo 2 delle coniche riducibili: $l_1$ equazione della retta $\overline{AB}$, $l_2$ retta $\overline{CD}$, $l_3$ retta $\overline{AC}$ e $l_4$ retta $\overline{BD}$ 
+			\item	L'equazione del fascio è $\mathcal{F}\colon \lambda l_1 l_2 + \mu l_3 l_4 =0$
+		\end{itemize}
+\end{tips}
+
+Considerando un punto del piano proiettivo sappiamo che se è un punto base allora appartiene a tutte le coniche del fascio, ci chiediamo ora per quante coniche passa se \textit{non} è un punto base del fascio.
+\begin{proposition}
+	Sia $\mathcal{F}$ un fascio di coniche e sia $P\in \proj[2]{\ }$. Se $P$ \textit{non} è un punto base di $\mathcal{F}$, allora esiste ed è unica la conica del fascio che contiene $P$.
+\end{proposition}
+\begin{demonstration}
+	Supponiamo di avere 2 coniche quali $C_1, C_2$ che generano il fascio $\mathcal{F}$ con $C_i\colon f_i=0$. Pertanto il fascio avrà equazione $\mathcal{F}\colon \lambda F_1 +\mu F_2=0$. Il punto $P$ appartiene alla conica generale del fascio se e solo se l'equazione della conica è soddisfatta nel punto, ovvero 
+		\begin{equation*}
+			P\in C_{\lambda,\mu} \iff \lambda F_1(P) +\mu F_2(P)=0
+		\end{equation*}
+	Tale equazione può essere vista come un'equazione in $(\lambda \colon \mu)$.\\
+	Siccome $P$ non è un punto base, allora non appartiene all'intersezione, dunque non è possibile che entrambe le equazioni si annullino in P, ovvero $P\notin C_1\cap C_2 \implies (F_1(P), F_2(P)) \neq (0,0)$. Pertanto l'equazione ha un'unica soluzione in $\proj[1]{\ }$ che sarà proprio $(-F_2(P)\colon F_1(P))$, ottenendo così un'unica conica del fascio che contiene $P$.
 %sostituisco i valori di lamba e mu per trovare la soluzione /esempio in giallo
-%
-%
-%PROP
-%5 punti determinano una conica
-%Dati 5 punti distinti in P2 a 4 a 4 non allineati / più deboe che siano in pos generael, perché pottrebbero essercene 3 allineati ma non 4/, esiste ed è unica la conica C che li contiene
-%PROOF
-%Possiamo scegliere 4 di questi punti che sono in posizione generale, infatti consideriamo i ptimi 4: se sono in pos gen ok, else ce ne sono 3 allineati, per esempio A,B,C. siccome per i potesi i 4 pt non sono allineati allora D\notin r e ancheora per ipotesi neanche E appartiene a E. buttiamo C e consideriamo A,B,D,E: di nuovo, se son in pos gen ok, else 3 sono allineati, però abbiamo già che D ed E non sono in r, dunque abbiamo 3 punti allineati che possono essere A,D,E oppure B,D,E. Supponiamo A,D,E, allora B.C.D,E son in pos generale (scarto A)
-%
-%--
-%Troviamo quindi 4 punti fra	in pos generale, dunque possiamo applicare la posizione precendente, dunque sia \mathcal{F} il fascio delle coniche passanti per A,D. Ma E non è un punto base per F perchè i punti base sono i 4 punti, dunque esiste ed è unica la conica C del fascio che passa per E, e dunque C è l'unica conica che contiene i 5 punti
-%
-%dati 5 punti esiste ed è unica la conica che passa per i 5 punti
-%
-%UTILE PER ESERCIZI
-%questa dim dà anche il metodo che passa per tali 5 punti
-%
-%TIPS
-%il metodo più semplice è scrivere il fascio come nel tip per prima e poi imporre il passaggio per il 5° punto
-%oppure parto dalla conica generale e impongo il passaggio per 5 punti, ma è più lungo
-%il passaggio per un unto dà eq lin omo sui coeff della conica e possiamo pensarlo come ipermiano nel P5, è ragionevole aspettarsi che con 5 punti ho 5 iperpiani che in pos gen si intersecano in solo punto
-%l'ipotesi sui punti serve a garantire che le condizioni lineari siano indipendenti, così si ttiene un punto
-% OSS
-% La dimstrazione dà anche il metodo per trovare la conica $C$ che passa per 5 punti dati, nescelgo 4 in posizione generale, scrivo 4 rette e come prima scrivo il fascio delle coniche per, impongo al fascio il passaggio per E, ottenendo i valori di lambda e mu giusti, così trovo C
-% 
-%ES
-%Se abbiamo 5 punti di cui 4 allineati, allora per ogni retta s che passa per P la conica r\cup s contiene i 5 punti, qunidi ce ne cono \infty avendo infinite rette s
-%
-%%PAUSA
-%
-%PROP
-%invece di prendere 4 pt in pos gen, consideriamo
-%Siano 3 punti non allineati, e sia una retta r che passi per A ma non per B e C. La famiglia delle coniche che passano per A,B,C e sono tangenti a r in A è un fascio F. I punti base del fascio sono solo A,B,C e il fascio F non contiene rette doppie e contiene 2 coniche degeneri che sono esattamente
-%/due coppie di rette che soddsfano le condizioni/
-%\overline{AB}\cup\overline{AC} : si intersecano in A: la molt di intersezione è 2, conta 1 per ciascuna retta, pertanto la retta è tangente, dal punto di vist dei pt sing: la retta è singolare, ogni retta per A è tangente
-%r\cup	passa per a,b,c e contiene r, duneuq siccome quando è contenuta è tangente (moltplicità infinita)
-%PROOF
-%parto dalla conica generale e impongo condizioni, ottenog fascio e vedo che valgono le 
-%Sia P\in r un punto diverso da A e P\notin\overline{BC} \implies A,B,C,P sono n posizione generale (a tre a tre non allineati)
-%Scegliamo le coordinate proiettive tali che A,B,C siano i punti coordinati mentre P il punto unità. Allora la retta r che è AP ha equazione x_1-x_2=0
-%Si consideri la conica generale 
-%sappiamo già che il passaggio per i punti coordinati annulla la diagonale
-%
-%vogliamo scrivere le der parz perché vogliamo imporre che la retta r sia tangente in A
-%Dobbiamo imporre che la retta r sia tangente alla conica in A: due modi istruttivi
-%	1	intersechiamo semplicemente con r	sostituendo in Fx_1=x_2 otteniamo a_{01}x_0x_+a_{12}x_1^2
-%	raccogliamo x_1 e rimane
-%	il primo x_1 corrisponde al fatto che a\in 	r e C passano per A, voglimao che r sia tangente alla conica in A, pertanto bisogna imporre che xx_1=0 è l'unica soluzione, dunque il coefficiente di x_0 deve essere nullo, ovvero a_{01}+a_{02}=0
-%	sostituendo nell'equazione si ottiene
-%	raccogliamo
-%	sono tutte e sole le coniche per A,B,C e tangenti a r in A
-%	in questo modo abbiamo verificato che è un fascio: cl di coniche fissae ciascuna con coeff
-%	
-%	vediamo quali sono le coniche che generano: C:1\xoln x_0	 e C_2
-%	intersecando C_1 e C_2 otteniamo i punti base		verifico così aff dìsui punti base
-%	
-%	sriviamo la matrice per verificare che non si sono altri puti base (?)
-%	D=\det M=
-%	pol omo 3 grado si ha radice doppia, duque le uniche coniche deg sono 2
-%	parametri nulli danon le coniche che generano
-%	
-%	è uno dei de esempi dei fasci dati ieri
-%
-%OSS
-%Un fascio di questo tipo è l'esempio 1 della scorsa lezione: 
-%vediamo come sono posizionate le rette
-%la retta x_0-x_1=0 passa per il punto di intersezione delle prme 2 rette, quindi qui siamo nella situa precedene: A il punto i intersezione, B e B i punti di intersezione di con
-%dunque C_2 diventa r\cup BC, mentre C_1 è AB\cup AC
-%ieri abbiamo già verificato che i punti base sono solo 3 e che C_1 e C_2 sono le uniche soniche degenerei di F. non avevamo visto che la retta r è tangente a tutte le coniche del fascio
-%
-%
-%ESEMPIO ESERCIZIO 4.3 FFP
-%Nel piao proiettivo reale P2R considerimao i punti A=(0\colon 1 \colon 2) e B=(0\colon 0\colon 1)
-%Determinare, se esiste l'equazione di una conica passante per A,B,C,D e tangente in C alla retta r di equazione x_0-x_2=0 /che passa per C/
-%SOLUZIONE DIVERSA
-%SOL
-%Verifichiamo se i 4 punti sono in posizione generale verificando che sono a 3 a 3 non allineati tramite i determinanti
-%dunque c'è un fascio di coniche per questi 4 punti, che si scrive come 
-%scrivo l'eq delle 4 rette con il determinante formale delle cordinate
-%passa per i 2 punti, dunque la conica delfascio è
-%scrivo le altre 2 retta
-%idem seoncda conica
-%dunque il fascio F è dato da
-%queste sono tute e eosle le coniche che passano per A,D
-%Vogliamo la conica del fascio che è tangente alla retta r\colo 	in C
-%intersechiamo la conicha con la retta sostituenzo x_2=x_0 nell'equazione
-%
-%interpretiamo quando trovato: x_1=x_0 stiamo parametrixxando la retta r come x_0\colon x_1\colon x_0
+\end{demonstration}
+
+Vedremo ora come 5 punti determinano una conica proiettiva.
+\begin{proposition}
+	Dati 5 punti distinti in $\proj[2]{\ }$ \textit{a 4 a 4 non allineati} \footnote{è una condizione più debole rispetto all'essere in posizione generale, perché potrebbero essercene 3 allineati ma non 4}, esiste ed è unica la conica $C$ che li contiene.
+\end{proposition}
+\begin{demonstration}
+	Possiamo scegliere 4 di questi punti che sono in posizione generale, infatti consideriamo i primi 4 quali $A,B,C,D$: se sono in posizione generale ok, altrimenti ce ne sono 3 allineati, per esempio $A,B,C$. Siccome per i potesi i 4 pt non sono allineati allora $D\notin r$ con $r$ retta per $A,B,C$ e sempre per ipotesi $E\notin r$. Tralasciamo $C$ e consideriamo $A,B,D,E$: di nuovo, se sono in posizione generale ok, altrimenti 3 sono allineati, però abbiamo già che $D,E \notin r$, dunque abbiamo 3 punti allineati che possono essere $A,D,E$ oppure $B,D,E$. Supponiamo $A,D,E$, allora $B,C,D,E$ sono in posizione generale (scartiamo $A$).
+	Troviamo quindi 4 punti fra	in posizione generale, dunque possiamo applicare la proposizione precedente, dunque sia $\mathcal{F}$ il fascio delle coniche passanti per $A,B,C,D$. Ma $E$ non è un punto base per $\mathcal{F}$ perché i punti base sono i 4 punti $A,B,C,D$, dunque esiste ed è unica la conica $C$ del fascio che passa per $E$, e dunque $C$ è l'unica conica che contiene i 5 punti
+\end{demonstration}
+
+Riassumendo, dati 5 punti esiste ed è unica la conica che passa per i 5 punti, e questa dimostrazione dà anche il metodo per trovare la conica che passa per tali 5 punti.
+
+\begin{tips}
+	Il metodo più semplice per trovare una conica $\mathcal{C}$ che passa per 5 punti dati $A,B,C,D,E$ in $\proj[2]{\ }$ è 
+		\begin{itemize}
+			\item	scegliere 4 punti in posizione generale quali $A,B,C,D$
+			\item	scrivere 4 rette e il fascio $\mathcal{F} $ come nel tip precedente quale \ref{fascio coniche per 4 pt pos gen} per prima 
+			\item	imporre il passaggio per il 5° punto $E$ in modo da trovare la conica $\mathcal{C}$
+		\end{itemize}
+	Altrimenti potremmo partire dalla conica generale e imporre il passaggio per 5 punti, ma è più lungo.
+\end{tips}
+
+\begin{observe}
+	Il passaggio per un punto dà equazioni lineari omogenee sui coefficienti della conica e possiamo pensarlo come un iperpiano nel $\proj[5]{\ }$, è ragionevole aspettarsi che con 5 punti ho 5 iperpiani che in posizione generale si intersecano in solo punto.\\
+	L'ipotesi sui punti a 4 a 4 non allineati serve a garantire che le condizioni lineari siano indipendenti, così da ottenere un punto nell'intersezione degli iperpiani.
+\end{observe}
+
+\begin{example}
+	Se abbiamo 5 punti di cui 4 allineati, allora per ogni retta $s$ che passa per $P$ la conica $r\cup s$ contiene i 5 punti, quindi ce ne cono $\infty$ avendo infinite rette $s$.
+\end{example}
+
+%PAUSA
+
+\begin{proposition}
+	Siano 3 punti \textit{non allineati} quali $A,B,C\in\proj[2]{\ }$, e sia una retta $r$ che passi per $A$ ma non per $B$ e $C$, ovvero $A\in r$ e $B,C\notin r$. La famiglia delle coniche che passano per $A,B,C$ e sono tangenti a $r$ in $A$ è un fascio $\mathcal{F}$. I punti base del fascio sono solo $A,B,C$ e il fascio $\mathcal{F}$ non contiene rette doppie e contiene 2 coniche degeneri che sono esattamente $\overline{AB}\cup\overline{AC}$ e $r\cup\overline{BC}$, \footnote{le due coppie di rette soddisfano le condizioni necessarie: nella prima si intersecano in $A$ e la molteplicità di intersezione è 2, conta 1 per ciascuna retta, pertanto la retta è tangente, dal punto di vista dei punti singolari invece la retta è singolare, e ogni retta per $A$ è tangente; mentre la seconda coppia passa per $A,B,C$ e contiene $r$, dunque siccome quando è contenuta è tangente si ha molteplicità infinita.}
+\end{proposition}
+\begin{demonstration}
+	Partiamo dalla conica generale e imponiamo le condizioni, ottenendo un fascio e osserviamo che vale quanto voluto.\\
+	Sia $P\in r$ un punto diverso da $A$ e $P\notin\overline{BC} \implies A,B,C,P$ sono in posizione generale (a tre a tre non allineati). Scegliamo le coordinate proiettive tali che $A,B,C$ siano i punti coordinati mentre $P$ il punto unità: $A=(1\colon 0\colon 0),B=(0\colon 1\colon 0),C=(0\colon 0\colon 0\colon1)$. Allora la retta $r=\overline{AP}$ ha equazione $x_1-x_2=0$.\\
+	Si consideri la conica generale $a_{00}x_0^2+2a_{01}x_0x_1+a_{11}x_1^2+2a_{02}x_0x_2+2a_{12}x_1x_2+a_{22}x_2^2=0$ e sappiamo già che il passaggio per i punti coordinati annulla la diagonale, ovvero il passaggio per $A$ implica $a_{00}=0$, per $B$ invece $a_{11}=0$ e per $C$ infine $a_{22}=0$, dunque $F=a_{01}x_0x_1+a_{12}x_1x_2+a_{02}x_0x_2$.\\
+	Vogliamo scrivere le derivate parziali siccome vogliamo imporre che la retta $r$ sia tangente in $A$. Intersechiamo semplicemente con $r\colon x_1=x_2$ sostituendo in $F$ e ottenendo $a_{01}x_0x_+a_{12}x_1^2+a_{02}x_0x_1=0\implies x_1((a_{01}+a_{02})x_0+a_{12}x_1)=0$. Il primo $x_1=0$ corrisponde al fatto che $A\in r\cap C$, vogliamo che $r$ sia tangente alla conica in $A \iff x_1=0$ è l'unica soluzione $\iff$ il coefficiente di $x_0$ deve essere nullo, ovvero $a_{01}+a_{02}=0$, per cui $a_{02}=-a_{01}$. Sostituendo nell'equazione si ottiene:
+		\begin{gather*}
+			a_{01}x_0x_1 -a_{01}x_0x_2 + a_{12}x_1x_2=0 \implies a_{01}x_0(x_1-x_2) + a_{12}x_1x_2=0
+		\end{gather*}
+	Sono tutte e sole le coniche per $A,B,C$ e tangenti a $r$ in $A$, in questo modo abbiamo verificato che è un fascio $\mathcal{F}$. Vediamo quali sono le coniche che lo generano: $C_1\colon \underbrace{x_0}_{\overline{BC}} \underbrace{(x_1-x_2)}_{r}$ e $C_2\colon \underbrace{x_1}_{\overline{AC}} \underbrace{x_2}_{\overline{AB}}$. Intersecando $C_1$ e $C_2$ otteniamo i punti base:
+		\begin{gather*}
+			C_1\cap C_2 = (\overline{BC}\cup r) \cap (\overline{AC}\cup\overline{AB})=(\overline{BC}\cap\overline{AC}) \cup (\overline{BC}\cap\overline{AB}) \cup (r\cap\overline{AC}) \cup (r\cap\overline{AB}) =\{ C,B,A \}
+		\end{gather*}
+	Scriviamo la matrice per verificare che non si sono altri punti base:
+		\begin{gather*}
+			M=\begin{pmatrix}
+				0 & a_{01} & -a_{01}\\
+				a_{01} & 0 & a_{12}\\
+				-a_{01} & a_{12} & 0
+			\end{pmatrix}\\
+			\implies D=\det M= -a_{01}(a_{01}a_{12}) -a_{01}(a_{01}a_{12}) = -2a_{01}^2 a_{12}
+		\end{gather*}
+	Siccome è un polinomio omogeneo di grado 3 si ha una radice doppia \footnote{i parametri nulli danno le coniche che generano il fascio}, dunque le uniche coniche degeneri sono solo $C_1$ e $C_2$.
+\end{demonstration}
+
+\begin{observe}
+	Un fascio di questo tipo è l'esempio 1 di \ref{esempi lez 35}, %della scorsa lezione: 
+	, ovvero consideriamo $C_1\colon x_0x_1=0$ e $C_2\colon (x_0-x_1)x_2=0$ e vediamo come sono posizionate le rette: la retta $x_0-x_1=0$ passa per il punto di intersezione delle prime 2 rette $x_0=0$ e $X_1=0$, quindi siamo nella situazione precedente: $A$ è il punto di intersezione, mentre $B$ e $C$ sono i punti di intersezione di $x_2=0$ con $x_0=0$ e $x_1=0$. Dunque $C_2$ diventa $r\cup \overline{BC}$, mentre $C_1$ è $\overline{AB}\cup \overline{AC}$.\\
+	Abbiamo già verificato che i punti base sono solo 3 quali $A,B,C$ e che $C_1$ e $C_2$ sono le uniche coniche degeneri di $\mathcal{F}$ ed ora osserviamo che la retta $r$ è tangente a tutte le coniche del fascio.
+\end{observe}
+%DISEGNO
+
+
+\begin{example} \textsc{Esercizio 4.3 FFP, risoluzione alternativa} \\
+	Nel piao proiettivo reale $\proj[2]{\realset}$ consideriamo i punti $A=(0\colon 1 \colon 2), B=(0\colon 0\colon 1), C=(2\colon1\colon2), D=(3\colon0\colon1)$. Determinare, se esiste l'equazione di una conica passante per $A,B,C,D$ e tangente in $C$ alla retta $r$ di equazione $x_0-x_2=0$ che passa per $C$.\\
+	\textit{Soluzione}\\
+	Verifichiamo se i 4 punti sono in posizione generale verificando che sono a 3 a 3 non allineati tramite i determinanti
+		\begin{gather*}
+			\begin{vmatrix}
+				0 & 0 & 2\\
+				1 & 0 & 1\\
+				2 & 1 & 2
+			\end{vmatrix} \neq 0 \implies A,B,C \text{ non allineati} 
+			\quad\begin{vmatrix}
+				0 & 0 & 3\\
+				1 & 0 & 0\\
+				2 & 1 & 1
+			\end{vmatrix} \neq 0 \implies A,B,D \text{ non allineati} \\
+			\begin{vmatrix}
+				0 & 2 & 3\\
+				0 & 1 & 0\\
+				1 & 2 & 1
+			\end{vmatrix} \neq 0 \implies B,C,D \text{ non allineati} 
+			\quad \begin{vmatrix}
+				0 & 2 & 3\\
+				1 & 1 & 0\\
+				2 & 2 & 1
+			\end{vmatrix} \neq 0 \implies A,C,D \text{ non allineati} \\
+		\end{gather*}
+	Dunque c'è un fascio $\mathcal{F}$ di coniche per $A,B,C,D$. Scriviamo l'equazione delle 4 rette con il determinante formale delle coordinate:
+		\begin{gather*}
+			\text{retta } \overline{AB} \colon \begin{vmatrix}
+				x_0 & x_1 & x_2 \\
+				0 & 1 & 2 \\
+				0 & 0 & 1 
+			\end{vmatrix} = x_0=0\\
+			\text{retta } \overline{CD} \colon \begin{vmatrix}
+				x_0 & x_1 & x_2 \\
+				2 & 1 & 2 \\
+				3 & 0 & 1 
+			\end{vmatrix} = x_0- x_1 (-4) + x_2(-3)=x_0 +4x_1-3x_2=0\\
+			\implies C_1\colon x_0(x_0+4x_1-3x_2)\\
+			\text{retta } \overline{BD} \colon x_1=0\\
+			\text{retta } \overline{AC} \colon \begin{vmatrix}
+				x_0 & x_1 & x_2 \\
+				0 & 1 & 2 \\
+				2 & 1 & 2 
+			\end{vmatrix} = -x_1(-4) +x_2(-2)= 4x_1 -2x_2=0 \implies 2x_1-x_2=0\\
+			\implies C_2 \colon x_1(2x_1-x_2) \\
+			\implies \text{fascio } \mathcal{F}\colon \lambda x_0(x_0+4x_1-3x_2) +\mu x_1(2x_1-x_2)=0
+		\end{gather*}
+	Queste sono tutte e sole le coniche che passano per $A,D$. Vogliamo la conica del fascio che è tangente alla retta $r\colon x_0-x_2=0$ in $C$. Intersechiamo la conica $C_{\lambda,\mu}$ con la retta $r$ sostituendo $x_2=x_0$ nell'equazione:
+		\begin{gather*}
+			\lambda x_0(x_0+4x_1-3x_0)+\mu x_1(2x_1-x_0)=0 \implies \lambda x_0(4x_1-2x_0)+ \mu x_1(2x_1-x_0)=0\\
+			2\lambda x_0(2x_1-x_0)+ \mu x_1(2x_1-x_0)=0 \implies (2x_1-x_0)(2\lambda x_0 +\mu x_1)=0
+		\end{gather*}
+	Interpretiamo quanto trovato: sostituendo $x_2=x_0$ stiamo parametrizzando la retta $r$ come $(x_0\colon x_1\colon x_0)$ e ricordiamo che $C=(2\colon1\colon2)$, che corrisponde esattamente a $x_0=2x_1$, che è il primo fattore, dunque corrisponde alla soluzione $C$.\\
+	La retta $r$ è tangente alla conica nel punto $C \iff$ anche l'altra soluzione corrisponde al punto $C \iff 2\lambda x_0 +\mu x_1$ e $-x_0+2x_1$ sono proporzionali $\iff \det \begin{pmatrix} 
+		2\lambda & \mu \\
+		-1 & 2
+	\end{pmatrix} =0 \iff 4\lambda +\mu=0 \implies \mu=-4\lambda$, ad esempio per $\lambda=1$ e $\mu=-4$ si ha $2\lambda x_0+\mu x_1=2x_0-4x_1$. L'equazione della conica sarà $\mathcal{C} \colon x_0(x_0+4x_1-3x_2) -4x_1(2x_1-x_2)=0 \implies \mathcal{C}\colon x_0^2 +4x_0x_1 -3x_0x_2 -8x_1^2 +4x_1x_2=0$, dunque esiste ed è unica la conica cercata.
+		\begin{gather*}
+			F(A)=F(0,1,2)=-8+8=0 \quad F(B)=F(0,0,1)=0 \\
+			F(C)=F(2,1,2)= 4+8-12-8+8 =0 \quad F(D)=F(3,0,1)=9-9=0
+		\end{gather*}
+%	Dunque è tangente alla conica nel punto $C=(\colon1\colon2)$
 %le coordinate d c perché C corrisponde al punto, ovvero a x_0=2x_1, ovvero x_0-2x_1=0, dunque il primo fattore corrisponde alla soluzione C
 %tutte le conche passano per C e r passa per C allora
 %vogliamo che anche l'altra soluzione sia il punto C, quindi imponimìamo che lambda e mu dinao la stessa sol, ovvero che le forme lineari siano proporzionali, ovvero imponiamo che \det =0, ovvero che i coeff dell'eq sono multipli, ovvero \mu=-4\lambda
 %poniamo \kambda=1 e \mu=-4
-%
-%
-%seabbiamo tempo controlliamo se la conica fa quello che deve fare: passa per i punti per cui deve passare e che sia tangente
-%scriviamo direttamente la tangente
-%
-%
-%
-%
-%
-%
-%
-%
-%
+	Controlliamo se la conica fa quello che deve fare: passare per i punti per cui deve passare e che sia tangente a $C$. Scriviamo direttamente la tangente alla conica nel punto $C=(2\colon1\colon2)$ con le derivate parziali:
+		\begin{gather*}
+			\frac{\partial{F}}{\partial{x_0}} = 2x_0+4x_1-3x_2 \quad \frac{\partial{F}}{\partial{x_1}} = 4x_0-16 x_1 +4x_2 \quad \frac{\partial{F}}{\partial{x_2}} = -3x_0 +ax_1\\
+			\frac{\partial{F}}{\partial{x_0}} (2,1,2) =4+4-6=2 \quad \frac{\partial{F}}{\partial{x_1}} (2,1,2) =8-16+6=0 \quad \frac{\partial{F}}{\partial{x_2}} (2,1,2) = -6+4=2\\
+			\implies 2x_0-2x_2=0 \implies x_0-x_2=0
+		\end{gather*}
+	che è proprio la retta $r$.
+\end{example} 
+			
+
+
+
+
+
+
+
+
+
