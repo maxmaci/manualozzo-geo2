@@ -1466,7 +1466,7 @@ Siccome $S^{2n+1}$ è un compatto in un \textbf{Hausdorff} per
 			\begin{minipage}[t]{0.51\textwidth}\vspace{10pt}
 				Per la continuità dell'inversa $\oldphi$ si procede con la fattorizzazione della controimmagine $\pi^{-1}$ tramite una restrizione dell'inversa di $\pi$ a $\pi^{-1}U_0$:
 				\begin{equation*}
-					\funz {p\coloneqq \pi_{|_{\pi^{-1}(U_0)}}} {\pi^{-1}(U_0)} {U_0}
+					\funz {p\coloneqq \pi_{\mid_{\pi^{-1}(U_0)}}} {\pi^{-1}(U_0)} {U_0}
 				\end{equation*}
 				E tramite $\hat{\oldphi}$:
 				\begin{equation*}
@@ -1540,9 +1540,9 @@ In altre parole, la retta proiettiva complessa è un \textit{piano} unito ad un 
 			\arrow["{p_N}", from=1-1, to=1-3]
 			\arrow["{k}", from=1-3, to=1-5]
 			\arrow["{j}", from=1-5, to=1-7]
-			\arrow["{F_{|_{S^2\setminus\{N\}}}}"', from=1-1, to=1-7, curve={height=30pt}]
+			\arrow["{F_{\mid_{S^2\setminus\{N\}}}}"', from=1-1, to=1-7, curve={height=30pt}]
 		\end{tikzcd}\]
-	Con $\funz {p_N} {S^2\setminus\{N\}} {\realset^2}$ la \textit{proiezione stereografica} dal polo nord $N=(0,\ 0,\ 1)$, $\funztot k {\realset^2} \complexset {(x,\ y)} {x+iy}$ e $\funztot j \complexset {U_0} w {(1\colon w)}$. Allora definiamo una funzione $F$ su $S^2\setminus\{N\}$:
+	Con $\funz {p_N} {S^2\setminus\{N\}} {\realset^2}$ la \textit{proiezione stereografica} dal polo nord $N=(0,\ 0,\ 1)$, $\funztot k {\realset^2} \complexset {\left(x,\ y\right)} {x+iy}$ e $\funztot j \complexset {U_0} w {(1\colon w)}$. Allora definiamo una funzione $F$ su $S^2\setminus\{N\}$:
 	\begin{equation*}
 		F_{\mid_{S^2\setminus\{N\}}}\coloneqq j\circ k\circ p
 	\end{equation*}
@@ -1582,14 +1582,14 @@ In altre parole, la retta proiettiva complessa è un \textit{piano} unito ad un 
 			\frac{1}{\overline{u}} = \frac{1}{ \frac{x_0}{1+z_0} -i\frac{y_0}{1+z_0} } = \frac{1+z_0}{x_0-iy_0} \stackrel{!}{=} \frac{(x_0+iy_0)(1+z_0)}{x_0^2+y_0^2} \stackrel{!!}{=} \frac{(x_0+iy_0)(1+z_0)}{1-z_0^2}=\frac{x_0+iy_0}{1-z_0}=w
 		\end{gather*}
 	dove l'uguaglianza (!) vale perché, in quanto $P_0\neq N,\ S$ allora $x_0+iy_0\neq 0$, mentre quella (!!) segue dal fatto che il punto sta sulla sfera, per cui $x_0^2+y_0^2+z_0^2=1\implies x_0^2+y_0^2=1-z_0^2$.\\
-	Abbiamo dunque ottenuto $F_{|_{S^2\setminus\{N,S\}}}$ come una composizione di mappe:
+	Abbiamo dunque ottenuto $F_{\mid_{S^2\setminus\{N,S\}}}$ come una composizione di mappe:
 		% https://q.uiver.app/?q=WzAsNCxbMCwwLCJTXjJcXHNldG1pbnVzXFx7TixTXFx9Il0sWzIsMCwiXFxyZWFsc2V0XjIiXSxbNCwwLCJcXGNvbXBsZXhzZXQiXSxbNiwwLCJVXzAiXSxbMCwxLCJwX04iXSxbMSwyLCJrIl0sWzIsMywiaiJdLFswLDMsIkZfe3xfe1NeMlxcc2V0bWludXNcXHtOLFNcXH19fSIsMix7ImN1cnZlIjo1fV1d
 		\[\begin{tikzcd}
 			{S^2\setminus\{N,S\}} && {\realset^2} && {\complexset} && {U_0}
 			\arrow["{p_N}", from=1-1, to=1-3]
 			\arrow["{k}", from=1-3, to=1-5]
 			\arrow["{j}", from=1-5, to=1-7]
-			\arrow["{F_{|_{S^2\setminus\{N,S\}}}}"', from=1-1, to=1-7, curve={height=30pt}]
+			\arrow["{F_{\mid_{S^2\setminus\{N,S\}}}}"', from=1-1, to=1-7, curve={height=30pt}]
 		\end{tikzcd}\]
 	Dove $j(w)=(1\colon w)=\left( 1\colon \frac{1}{\overline{u}} \right)=(\overline{u}\colon 1)$, lavorando in coordinate omogenee. Inoltre, $F$ si estende in modo continuo su $S^2\setminus\{S\}$:
 		% https://q.uiver.app/?q=WzAsOSxbMCwwLCJTXjJcXHNldG1pbnVzXFx7TixTXFx9Il0sWzIsMCwiXFxyZWFsc2V0XjIiXSxbNCwwLCJcXGNvbXBsZXhzZXQiXSxbOCwwLCJVXzAiXSxbMCwxLCJQIl0sWzQsMSwidSJdLFs2LDAsIlxcY29tcGxleHNldCJdLFs2LDEsIlxcb3ZlcmxpbmV7dX0iXSxbOCwxLCIoXFxvdmVybGluZXt1fVxcY29sb24gMSkiXSxbMCwxLCJwX04iXSxbMSwyLCJrIl0sWzIsNiwiYyJdLFs2LDMsImoiXSxbNCw1LCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtYXBzIHRvIn19fV0sWzUsNywiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFs3LDgsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XV0=
@@ -1716,20 +1716,17 @@ Vogliamo ora scoprire come si calcola il birapporto in un sistema di riferimento
 	\end{equation*}
 	La seconda combinazione lineare $\textcolor{redill}{\circled{\ast}}$ invece dà un sistema lineare in $c,\ d$, dove sostituisco i valori di $a,\ b$ trovati : 
 	\begin{equation*}
-	\begin{array}{l}
 	\begin{cases}
 		(a\lambda_1)c + (b\lambda_2)d=\lambda_4\\
 		(a\mu_1)c + (b\mu_2)d=\mu_4
-	\end{cases}\\
-	\implies \begin{cases}
+	\end{cases}	\Rightarrow \begin{cases}
 		\frac{\delta_{32}}{\delta_{12}}\lambda_1 c + \frac{\delta_{13}}{\delta_{12}}\lambda_2 d = \lambda_4\\
 		\frac{\delta_{32}}{\delta_{12}}\mu_1 c + \frac{\delta_{13}}{\delta_{12}}\mu_2 d = \mu_4
 	\end{cases}
-	\implies \begin{cases}
+	\Rightarrow \begin{cases}
 		(\delta_{32}\lambda_2)c + (\delta_{13}\lambda_2)d=\delta_{12}\lambda_4\\
 		(\delta_{32}\mu_2)c + (\delta_{13}\mu_2)d=\delta_{12}\mu_4	
 	\end{cases}
-	\end{array}
 	\end{equation*}
 	Applicando ancora Cramer, poiché il determinante è lineare in ogni colonna, possiamo estrarre i $\delta_{ij}$ dalle colonne e riscriverli \textit{riordinando gli indici}: scambiamo l'ordine delle colonne cambiamo il segno, ma facendolo sia al numeratore, sia al denominatore, i segni si semplificano e lo stesso vale per $d$:
 		\begin{equation*}
@@ -1748,8 +1745,7 @@ Vogliamo ora scoprire come si calcola il birapporto in un sistema di riferimento
 			\end{array} \right| }{ \delta_{32} \delta_{13} \delta_{12} } = \frac{ \cancel{\delta_{32}} \cancel{\delta_{12}} \delta_{14} }{\cancel{\delta_{32}} \delta_{13} \cancel{\delta_{12}} } = \frac{\delta_{14}}{\delta_{13}}\\
 			\implies \beta=\frac{d}{c}=\frac{\delta_{14}}{\delta_{13}}\cdot \frac{\delta_{23}}{\delta_{24}}
 		\end{array}
-		\end{equation*}
-%						
+		\end{equation*}					
 \end{demonstration}
 \begin{observe}
 	Il birapporto può anche essere definito tramite questa formula, che è \textit{ben definita}: supponendo di moltiplicare i punti per uno scalare, la stessa costante appare al numeratore e al denominatore, dunque si semplifica, pertanto il birapporto così definito \textit{non dipende} dalla scelta delle coordinate omogenee. Inoltre, al denominatore il primo determinante è sempre diverso da $0$ perché \textit{i punti sono distinti}, mentre il secondo determinante al denominatore è \textit{nullo} se e solo $P_2=P_4$, ottenendo la definizione originale.	
@@ -1795,9 +1791,9 @@ Cioè se il birapporto delle quaterne è \textbf{invariante per proiettività}.
 \end{theorema}
 \begin{observe}
 	Consideriamo i primi 3 punti e scegliamone dei rappresentanti per cui:
-	\begin{equation}
+	\begin{equation*}
 		v_1,\ v_2,\ v_3\in V \colon P_i=[v_i],\ i=1,\ 2,\ 3\text{ e }v_3=v_1+v_2
-	\end{equation}
+	\end{equation*}
 	In altri termini, $\{v_1,v_2\}$ è base di $V$ che dà il riferimento proiettivo di $\proj[1]{V}$ in cui $P_1=(1\colon 0),\ P_2=(0\colon 1),\ P_3=(1\colon 1)$. Sia $P_4=[v_4]$ con $v_4=av_1+bv_2$. Allora $P_4=(a\colon b)$ e $\beta(P_i)=\frac{b}{a}$.\\
 	Allo stesso modo per l'altra quaterna, siano:
 	\begin{equation*}
@@ -1833,7 +1829,7 @@ Cioè se il birapporto delle quaterne è \textbf{invariante per proiettività}.
 	Notiamo	che quella appena data è una \textbf{relazione di equivalenza} %(verifica per esercizio)
 	, tale per cui le classi di equivalenza \textit{proiettiva} di $4$ punti \textit{distinti e ordinati} in $\proj[1]{\kamp}$ sono in corrispondenza biunivoca con il campo $\kamp$ escluso $0$ e $1$ visto che sono 4 punti distinti\footnote{Si veda l'analisi dei casi del birapporto con 2 punti uguali a pag. \pageref{birapporto2punti}}, val a dire:
 		\begin{equation*}
-			\frac{\mathcal{S}}{\sim} \substack{\longleftrightarrow}{\beta} \kamp\setminus\{0,1\}
+			\frac{\mathcal{S}}{\sim} \substack{\longleftrightarrow}{\beta}\in\kamp\setminus\{0,1\}
 		\end{equation*}
 	Si ha dunque che ad ogni quaterna di punti distinti associamo il suo \textit{birapporto} (l'applicazione è \textit{suriettiva}) e per ogni elemento nel campo troviamo una \textit{quaterna di punti distinti} con tale birapporto (quozientando, l'applicazione è iniettiva)
 \end{observe}
@@ -1849,30 +1845,39 @@ Cioè se il birapporto delle quaterne è \textbf{invariante per proiettività}.
 	Nel piano proiettivo $\proj[2]{\kamp}$ consideriamo due quaterne di punti distinti $\{P_1,\ P_2,\ P_3,\ P_4\}$ e $\{Q_1,\ Q_2,\ Q_3,\ Q_4\}$. Scelta una quaterna, le disposizioni possibili sono le seguenti:
 	\begin{itemize}
 		\item In \textbf{posizione generale}, cioè a 3 a 3 non allineati.
-		\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/fourpoints1.pdf}
+\begin{center}
+			\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/fourpoints1.pdf}
+\end{center}
 		\item 3 punti allineati su una retta.
-		\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/fourpoints2.pdf}
+\begin{center}
+			\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/fourpoints2.pdf}
+\end{center}
 		\item 4 punti allineati su una retta.
-		\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/fourpoints3.pdf}
+\begin{center}
+			\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/fourpoints3.pdf}
+\end{center}
 	\end{itemize}
 	Se i punti $P_i$ sono proiettivamente equivalenti ai punti $Q_i$, allora tali posizioni \textit{devono essere mantenute}: le proiettività mandano \textit{rette in rette}, \textit{posizioni generali in posizioni generali}. Per contronominale, se si verificano casi diversi per le due quaterne possiamo affermare che \textit{non} sono proiettivamente equivalenti.
 	\begin{enumerate}
 		\item Sia $P_i$, sia $Q_i$ sono in \textit{posizione generale}. Siccome abbiamo 4 punti e $4=\dim\proj[2]{\kamp}+2$, allora $\exists !$ proiettività $f$ di $\proj[2]{\kamp}$ tale che $f(P_1)=Q_i, i=1,\ \ldots,\ 4$, dunque hanno lo stesso \textit{birapporto} e sono sempre \textit{proiettivamente equivalenti}.
 		\item $P_1,\ P_2,\ P_3$ \textbf{allineati ma non} $P_4$, \textbf{e lo stesso per i} $Q_i$; in altre parole, $P_1,\ P_2,\ P_3\in r$ retta proiettiva e $Q_1,\ Q_2,\ Q_3\in s$ retta proiettiva.
+		\begin{center}
 		\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/fourpointseq1.pdf}
+		\end{center}
 		Vogliamo dimostrare che anche in questo caso le quaterne sono proiettivamente equivalenti,
 %sfruttando la proiettività fra i tre punti ed estendendola al quarto punto
-		Scegliamo dei rappresentanti $P_i=[v_i],\ i=1,\ 2,\ 3,\ 4, v_i\in\kamp^3$ tale che $v_3=v_1+v_2$, lecito in quando i punti non sono allineati. Si ha che $\{v_1,\ v_2,\ v_4\}$ è una base di $\kamp^3$: $P_4\notin r$ significa che $v_4$ non è linearmente dipendente da $v_1,\ v_2$. Allo stesso modo sia $Q_i=[w_i],\ i=1,\ 2,\ 3,\ 4, w_i\in\kamp^3$ tale che $w_3=w_1+w_2$ con $\{w_1,\ w_2,\ w_4\}$ base di $\kamp^3$. \\
-		Definiamo $\funz \phi {\kamp^3} {\kamp^3}$ lineare tale che:
+		Scegliamo dei rappresentanti $P_i=[v_i],\ i=1,\ 2,\ 3,\ 4, v_i\in\kamp^3$ tale che $v_3=v_1+v_2$, lecito in quando i punti non sono allineati. Si ha che $\{v_1,\ v_2,\ v_4\}$ è una base di $\kamp^3$: $P_4\notin r$ significa che $v_4$ non è linearmente dipendente da $v_1,\ v_2$. Allo stesso modo sia $Q_i=[w_i],\ i=1,\ 2,\ 3,\ 4, w_i\in\kamp^3$ tale che $w_3=w_1+w_2$ con $\{w_1,\ w_2,\ w_4\}$ base di $\kamp^3$. Definiamo $\funz \phi {\kamp^3} {\kamp^3}$ lineare tale che:
 		\begin{equation*}
 			\phi(v_1)=w_1, \phi(v_2)=w_2, \phi(v_4)=w_4
 		\end{equation*}
-		In questo modo $\phi(v_3)=\phi(v_1+v_2)=w_1+w_2=w_3$. Dunque $\funz {f=\widetilde{\phi}} {\proj[2]{\kamp}} {\proj[2]{\kamp}}$ è una proiettività che manda $P_i$ in $Q_i,\ \forall i=1,\ 2,\ 3,\ 4$.
+		Allora $\phi(v_3)=\phi(v_1+v_2)=w_1+w_2=w_3$ e dunque $\! \funz {f=\widetilde{\phi}} {\proj[2]{\kamp}} {\proj[2]{\kamp}}$ è una proiettività che manda $P_i$ in $Q_i,\ \forall i=1,\ 2,\ 3,\ 4$.
 		\item \textbf{Tutti i punti sono allineati}.
+		\begin{center}
 		\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/fourpointseq2.pdf}
-		Essendo allineati, allora è definito il loro birapporto. Se le due quaterne sono proiettivamente equivalenti, sia $\funz f {\proj[2]{\kamp}} {\proj[2]{\kamp}}$ la proiettività: essa porta una quaterna nell'altra e necessariamente una retta nell'altra, ovvero $f(r)=s$; in altre parole, la restrizione alle due rette $\funz {f_{|_r}} r s$ porta $P_i$ in $Q_i,\ \forall i \implies \beta(P_i)=\beta(Q_i)$.\\
+		\end{center}
+		Essendo allineati, allora è definito il loro birapporto. Se le due quaterne sono proiettivamente equivalenti, sia $\funz f {\proj[2]{\kamp}} {\proj[2]{\kamp}}$ la proiettività: essa porta una quaterna nell'altra e necessariamente una retta nell'altra, ovvero $f(r)=s$; in altre parole, la restrizione alle due rette $\funz {f_{\mid_r}} r s$ porta $P_i$ in $Q_i,\ \forall i \implies \beta(P_i)=\beta(Q_i)$.\\
 		Viceversa, se $\beta(P_i)=\beta(Q_i)$ allora $\exists \funz g r s$ trasformazione proiettiva che manda $P_i$ in $Q_i,\ \forall i=1,\ 2,\ 3,\ 4$.\\
-		Si ha che $g$ si estende in maniera non unica ad una proiettività di $\proj[2]{\kamp}$. Infatti dati:
+		Si ha che $g$ si estende in maniera non unica ad una proiettività di $\proj[2]{\kamp}$. Infatti, dati:
 		\begin{itemize}
 			\item $r=\proj{U},\ U\subset \kamp^3$.
 			\item $s=\proj{W},\ W\subset\kamp^3$.
@@ -1884,7 +1889,8 @@ Cioè se il birapporto delle quaterne è \textbf{invariante per proiettività}.
 			\item $\phi(u_3)\coloneqq w_3$
 		\end{itemize}
 		Si ha $f=\widetilde{\phi}$. Dunque, i punti sono \textit{proiettivamente equivalenti} se e solo se hanno lo \textit{stesso birapporto}.
-	\end{enumerate} 
+	\end{enumerate}
+\vspace{-3mm}
 \end{example}
 \subsection{Eserciziamoci! Birapporto}
 \begin{exercise}
@@ -1892,6 +1898,7 @@ Cioè se il birapporto delle quaterne è \textbf{invariante per proiettività}.
 	\begin{equation}
 		\beta=\frac{ (w_2-w_1)(w_3-w_2) }{ (w_4-w_2)(w_3-w_1) }
 	\end{equation}
+\vspace{-3mm}
 \end{exercise}
 %STUDIO DELLA GEOMETRIA DI RETTE O CURVE NEL PIANO PROIETTIVO
 		\section{Piano proiettivo duale}
@@ -2072,1220 +2079,3 @@ In coordinate, ad un piano di equazione $a_0x_0+\ldots +a_nx_n=0$ associamo il p
 	\end{gather*}
 	Se facciamo variare $\lambda$ e $\mu$ otteniamo tutte le rette di $\proj[2]{\realset}$ che passano per $P$.
 \end{solution}
-% io separerei le coniche in un capitolo nuovo, che ne pensi?
-\section{Coniche nel piano proiettivo}
-Durante \textit{Geometria 1} abbiamo analizzato le coniche nel piano affine $\mathcal{A}(\realset^2)$ e le abbiamo classificate \textit{a meno di rototraslazione}. Vogliamo trattare ora dell'estensione al \textit{piano proiettivo} di queste coniche, tenendo dunque conto del ruolo svolto dalla \textit{retta all'infinito}.\\
-Consideriamo $\proj[2]{\kamp}$ con coordinate omogenee $(x_0\colon x_1\colon x_2)$. Indichiamo con $\kamp\left[x_0,\ x_1,\ x_2\right]$ l'\textit{anello dei polinomi} in $x_0,\ x_1,\ x_2$ a coefficienti in $\kamp$. Se $F\in\kamp\left[x_0,\ x_1,\ x_2\right]$ è un polinomio \textit{qualsiasi}, l'equazione $F(x_0,\ x_1,\ x_2)=0$ \textit{non} dà una condizione \textit{ben definita} in $\proj[2]{\kamp}$: ad esempio, $x_0+1=0$ non ha senso perché $x_0$ è determinato solo a meno di multipli. Cerchiamo dunque dei polinomi che ha senso studiare in $\proj[2]{\kamp}$.
-\begin{define}\textsc{Polinomio omogeneo}.\\
-Sia $F\in\kamp\left[x_0,\ x_1,\ x_2\right]$ un polinomio. Si dice che $F$ è un \textbf{polinomio omogeneo}\index{polinomio!omogeneo} se tutti i monomi a coefficienti \textit{non} nulli hanno lo \textit{stesso} grado.
-\end{define}
-% Notiamo che la definizione è significativa per polinomi a più variabili, altrimenti i polinomi omogenei sarebbero solo monomi. (non ho questa nota :/)
-\begin{examples}~{}
-	\begin{itemize}
-		\item $F=x_0^3+x_0x_1^2-3x_1x_2x_3\in\realset\left[x_0,\ x_1,\ x_2\right]$ è un polinomio omogeneo di grado $3$.
-		\item $G=x_0^3-x_1x_2+1$ non è un polinomio omogeneo.
-	\end{itemize}
-\vspace{-3mm}
-\end{examples}
-
-\begin{observe}
-Se $\deg F=1$, cioè $F=a_0x_0+\ldots+a_nx_n+b$, allora $F$ è omogeneo se e solo se $b=0$.
-\end{observe}
-
-\begin{observe}
-Se $F\in\kamp\left[x_0,\ x_1,\ x_2\right]$ è omogeneo di grado $d$ allora:
-\begin{equation}
-F(\lambda x_0,\ \lambda x_1,\ \ldots,\ \lambda x_n)=\lambda^d F(x_0,\ \ldots,\ x_n)
-\end{equation}
-Infatti, $F$ è somma di monomi di grado $d$ del tipo $ax_0^{i_0}x_1^{i_1}\cdots x_n^{i_n}$ con $\displaystyle\sum_{j=0}^n i_j=d$ e si ha che $a(\lambda x_0)^{i_0} (\lambda x_1)^{i_1} \cdots (\lambda x_n)^{i_n}=\lambda^{i_0+\ldots +i_n} (ax_0^{i_0}\ldots x_n^{i_n})=\lambda^d(ax_0^{i_0}\ldots x_n^{i_n})$.
-\end{observe}
-Torniamo al piano proiettivo $\proj[2]{\ }$ con le coordinate omogenee $(x_0\colon x_1\colon x_2)$ e consideriamo $F\in\kamp\left[x_0,\ x_1,\ x_2\right]$ un polinomio omogeneo nelle coordinate omogenee di grado $d$. Se abbiamo un punto $P=(c_0\colon c_1\colon c_2)\in\proj[2]{\ }$, allora tutte le possibili scelte per le coordinate di $P$ sono $(\lambda c_0\colon \lambda c_1 \colon \lambda c_2)$ con $\lambda\in\kamp\setminus\{0\}$. Valutando $F$ in $P$, otteniamo $F(\lambda c_0,\ \lambda c_1,\ \lambda c_2)=\lambda^d F(c_0,\ c_1,\ c_2)$: in altre parole, $F$ si annulla in una scelta di coordinate se e solo se si annulla in qualsiasi scelta di coordinate, cioè: 
-\begin{equation*}
-F(c_0,\ c_1,\ c_2)=0\iff F(\lambda c_0,\ \lambda c_1,\ \lambda c_2)=0,\ \forall \lambda\in\kamp\setminus\{0\}
-\end{equation*}
-Pertanto, l'equazione $F(x_0,\ x_1,\ x_2)=0$ è ben posta in $\proj[2]{\ }$.
-\begin{example}
-$x_0^2-x_1x_2=0$ definisce un sottoinsieme del piano proiettivo.
-\end{example}
-\begin{define}\textsc{Curva algebrica piana proiettiva}.\\
-	Una \textbf{curva algebrica piana proiettiva}\index{curva!algebrica!proiettiva} $C$ di $\proj[2]{\ }$ è il luoghi degli zeri dato da un polinomio omogeneo $F\in\kamp\left[x_0,\ x_1,\ x_2\right]$:
-	\begin{equation}
-		C=\left\{(x_0,\ x_1,\ x_2)\in\proj[2]{\ }\mid F(x_0,\ x_1,\ x_2)=0\right\}
-	\end{equation}
-	La curva è definita a meno di multipli: se $G=\lambda F$ con $\lambda\in\kamp\setminus\left\{0\right\}$, $G$ e $F$ descrivono la stessa curva.\\
-	Diciamo che la curva $C$ è \textbf{reale} se $\kamp=\realset$ (e quindi $C\in\proj[2]{\realset}$), \textbf{complessa} se $\kamp=\complexset$ (e quindi $C\in\proj[2]{\complexset}$).
-\end{define}
-\begin{define}\textsc{Equazione di una curva}.\\
-	L'\textbf{equazione}\index{equazione!di una curva} di una curva $C$ è il polinomio $F$ (a a meno di multipli) che la descrive.
-\end{define}
-\begin{define}\textsc{Supporto di una curva}.\\
-	Il \textbf{supporto}\index{supporto} di una curva $C$ descritta da un polinomio $F$ (a a meno di multipli) è l'insieme dove il polinomio si annulla.\\
-	L'equazione determina il supporto, ma in generale non vale il contrario.
-\end{define}
-\begin{define}\textsc{Grado di una curva}.\\
-	Il \textbf{grado}\index{grado!di una curva} della curva $C$ è il grado dell'equazione $F$.
-\end{define}
-\begin{example}
-	Preso il polinomio $F(x_0,\ x_1,\ x_2)=a_0x_0+a_1x_1+a_2x_2=0$,la curva $C$ descrive una retta.
-\end{example}
-\begin{define}\textsc{Rette e coniche proiettive}.
-	\begin{itemize}
-		\item Le \textbf{rette proiettive} sono curve di grado $1$.
-		\item Le \textbf{coniche proiettiva} sono curve di grado $2$.
-	\end{itemize}
-\vspace{-3mm}
-\end{define}
-%LEZ 33
-D'ora in poi ci restringeremo ai casi $\kamp=\realset$ e $\kamp=\complexset$.
-\begin{define}\textsc{Curva irriducibile}.\\
-Una curva $C$ è \textbf{irriducibile}\index{curva!irriducibile} se lo è la sua equazione $F$. Altrimenti si considera la sua fattorizzazione in irriducibili:
-\begin{equation}
-	F=F_1^{m_1}\cdot \ldots \cdot F_r^{m_r}
-\end{equation}
-Siccome ogni fattore irriducibile $F_i$ è omogeneo, ognuno definisce una curva $C_i\colon F_i=0$, dette \textbf{componenti irriducibili}\index{componenti irriducibili della curva} della curva $C$.\\
-Se $m_i>1$ diciamo che $C_i$ è una componente di \textbf{molteplicità}\index{molteplicità} $m_i$ in $C$
-\end{define}
-
-\begin{examples}
-	\begin{itemize}
-		\item Le rette, essendo curve di grado 1, sono \textit{sempre} \textbf{irriducibili}.\\
-		Le coniche sono curve di grado 2. Dunque, considerata una conica $C$ di equazione $F=0$, ci sono 3 possibilità:
-		\begin{enumerate}
-			\item	$C$ è \textbf{irriducibile}.
-			\item	$C$ è il prodotto di fattori lineari distinti e non multipli:
-			\begin{equation}
-				F=L_1\cdot L_2
-			\end{equation}
-			Con $L_i$ forme lineari \textit{non} proporzionali. Pertanto, $C$ è una \textbf{coppia di rette distinte} (ad es. $C\colon F=x_0x_1\implies C$ unione delle rette $x_0=0$ e $x_1=0$).
-			\item	$C$ è data da fattori lineari associati, cioè $F$ è un quadrato a meno di uno scalare:
-			\begin{equation}
-				F=\lambda L^2,\ \lambda\in\kamp\setminus\{0\}
-			\end{equation}
-			Allora $C$ è una \textbf{retta doppia}: la retta è la sola componente irriducibile ed è di molteplicità 2 (ad es. $C\colon F=x_0^2$).
-		\end{enumerate}
-	\end{itemize}
-\vspace{-3mm}
-\end{examples}
-
-\subsection{Coniche proiettive}
-\begin{define}\textsc{Conica}.\\
-		Una \textbf{conica}\index{conica} $C$ di $\proj[2]{\ }$ è il luoghi degli zeri dato da un polinomio omogeneo $F\in\kamp\left[x_0,\ x_1,\ x_2\right]$ di grado 2 in $x_0,\ x_1,\ x_2$ a coefficienti \textit{reali} o \textit{complessi}.
-		\begin{equation*}
-			F=a_{00}x_0^2 +a_{01}x_0x_1+a_{02}x_0x_2+a_{11}x_1^2+a_{12}x_1x_2+a_{22}x_2^2
-		\end{equation*}
-\end{define}
-In generale, i polinomi omogenei di grado 2 sono \textit{forme quadratiche}. Pertanto, vogliamo associare alla forma la  corrispondente matrice simmetrica.
-%forma <---> polinomio omogeneo
-Per evitare di dividere per 2 i termini misti, ci è lecito immaginarli già nella forma $2a_{01},\ 2a_{02},\ 2a_{12}$, ottenendo così:
-\begin{equation*}
-F=a_{00}x_0^2 +2a_{01}x_0x_1+2a_{02}x_0x_2+a_{11}x_1^2+2a_{12}x_1x_2+a_{22}x_2^2
-\end{equation*}
-Allora la matrice simmetrica $3\times 3$ associata alla forma quadratica è:
-\begin{equation}
-	A=(a_{ij})=\left(\begin{array}{ccc}
-		a_{00} & a_{01} & a_{02}\\
-		a_{01} & a_{11} & a_{12}\\
-		a_{02} & a_{11} & a_{22}\\
-	\end{array}\right)\in S\left(\kamp^{3,3}\right)
-\end{equation}
-Ed è tale per cui $\displaystyle F=x^tAx$ con $x=\left( \begin{array}{c}
-x_0 \\ x_1 \\ x_2
-\end{array} \right)$ il vettore delle coordinate omogenee.\\
-\begin{define}\textsc{Rango della conica}.\\
-Il \textbf{rango}\index{rango!di una conica} della conica $C$ è il rango della matrice associata $A$.
-\end{define}
-\begin{observe}
-Come già osservato, l'equazione della conica $C$ determina $F$ solo a meno di multipli, dunque anche la matrice $A$ è determinata \textit{a meno di multipli}. 
-Tuttavia, il rango rimane ben definito in quanto $\rk(\lambda A)=\rk(A),\ \forall\lambda\neq 0$. Inoltre, il rango \textit{non} può essere $0$ perché essendo l'equazione di una conica il polinomio \textit{non} può essere nullo (non descriveremmo una conica!).
-\end{observe}
-Vogliamo studiare le coniche e le curve di grado maggiore a meno di equivalenza proiettiva, allo stesso modo in cui abbiamo classificato le coniche in $\realset^2$ a meno di rototraslazioni.\\
-Sia dunque $\funz f {\proj[2]{\ }} {\proj[2]{\ }}$ una proiettività, la cui matrice associata $M\in\gl(3,\kamp)$ è tale per cui $x'=Mx$. Allora $f$ porta la conica $C\colon F=0$ nella conica $\widetilde{C}\colon \widetilde{F}=0$, dove $\widetilde{F}$ si ottiene sostituendo in $f$ il vettore $x=M^{-1}x'$.
-\begin{example}
-Sia $C \colon x_ox_1=0$ una coppia di rette e $f$ una proiettività tale che:
-\begin{equation*}
-	f(x_0\colon x_1\colon x_2)=(x_0+x_1\colon x_0-2x_1\colon x_2)
-\end{equation*}
-Scriviamo, usando la matrice associata alla proiettività, il vettore immagine $x'_i$ in funzione di $x_i$ e poi ricaviamo $x_i$ in funzione di $x'_i$.
-\begin{gather*}
-f\colon \begin{cases} 
-x'_0=x_0+x_1\\
-x'_1=x_0-2x_2\\
-x'_2=x_2
-\end{cases} \implies \begin{cases}
--3x_1=x'_1-x'_0 \implies x_1=\frac{1}{3}(x'_0-x'_1)\\
-x_0=x'_0-x_1=x'_0 -\frac{1}{3}(x'_0-x'_1)=\frac{1}{3}(2x'_0+x'_1)
-\end{cases}\\
-f^{-1}\colon \begin{cases}
-x_0=\frac{1}{3}(2x'_0+x'_1)\\
-x_1=\frac{1}{3}(x'_0-x'_1)\\
-x_2=x'_2
-\end{cases}
-\end{gather*}
-In sostanza abbiamo ottenuto l'espressione dell'inversa di $f$; quindi, la trasformata di $C$ tramite $f$ è $(2x_01+)(x'_0-x'_1)=0$, che è ancora una coppia di rette. In particolare, notiamo che esse sono le immagini tramite $f$ delle rette $x_0=$ e $x_1=0$, a meno dei fattori moltiplicativi $\frac{1}{3}$.
-\end{example}
-Osserviamo che la proiettività manda il supporto della prima conica nel supporto della seconda conica e che, trasformando la conica tramite una proiettività, trasformiamo la forma quadratica $F$ tramite un cambiamento di coordinate di $\kamp^3$.\\
-Dunque, se $A$ è la matrice associata a $C$ e $\widetilde{A}$ è la matrice associata alla trasformata $\widetilde{C}$ tramite $f$, allora $A$ e $\widetilde{A}$ sono \textbf{congruenti}.
-Infatti, il \textit{cambiamento di coordinate} su uno spazio vettoriale per la forma quadratica è dato da $\widetilde{A}=M^tAM$ con $M\in\gl\left(3,\kamp\right)$ con $M$ una matrice associata della proiettività, interpretata come matrice del cambiamento di base.\\
-Viceversa, date due coniche $C_1$ e $C_2$ le cui matrici associate (simmetriche) $A_1$ e $A_2$ sono congruenti, allora $C_1$ e $C_2$ sono \textit{proiettivamente equivalenti}:  questo perché, in generale, forme quadratiche congruenti differiscono per un cambiamento di base.\\ Otteniamo così la seguente corrispondenza:
-\begin{equation*}
-\begin{array}{ccc}
-C_1\text{ e }C_2\text{ equivalenti}& \iff & A_1\text{ e }A_2\text{ congruenti}
-\end{array}
-\end{equation*}
-Pertanto lo studio delle coniche, a meno di equivalenze proiettive, passa per lo studio delle matrici congruenti.
-\subsection{Classificazione delle coniche proiettive complesse}
-\begin{remember}
-Nel campo dei complessi ($\kamp=\complexset$) due matrici simmetriche \textit{sono congruenti} se e solo se hanno lo \textit{stesso rango}.
-\begin{equation*}
-	\begin{array}{ccc}
-		A_1\text{ e }A_2\text{ congruenti}& \iff & \rk A_1=\rk A_2
-	\end{array}
-\end{equation*}
-In generale, vale solo che se le matrici simmetriche sono congruenti allora hanno lo stesso rango (ma non il viceversa!).
-\end{remember}
-Allora, a meno di equivalenza proiettiva, ci sono solo 3 possibili coniche: quelle di rango 1, rango 2 e rango 3.
-\begin{theorema}\textsc{Classificazione delle coniche proiettive complesse}.
-\begin{enumerate}
-\item	Due coniche in $\proj[2]{\complexset}$ sono proiettivamente equivalenti se e solo se hanno lo stesso rango.
-\item	\textbf{Forma canonica}: ogni conica di $\proj[2]{\complexset}$ è proiettivamente equivalente ad \textit{una ed una sola} delle tre coniche seguenti:\\
-\begin{equation*}
-		\begin{array}{cll}
-		\underline{\rk 3}\colon & x_0^2+x_1^2+x_3^2=0 &	\text{Conica irriducibile}\\[1mm]
-		\underline{\rk 2} \colon & x_0^2+x_1^2=(x_0+ix_i)(x_0-ix_1)=0 & \text{Coppia di rette distinte}\\[1mm]
-		\underline{\rk 1} \colon & x_0^2=0 & \text{Retta doppia}
-	\end{array}
-\end{equation*}
-\end{enumerate}
-\vspace{-3mm}
-\end{theorema}
-
-%questo è dato dalla classificazione delle forme quadratiche du \complexset^3
-
-v\subsection{Classificazione delle coniche proiettive reali}
-Sia $C$ una conica in $\proj[2]{\realset}$ con matrice associata $A$, simmetrica \textit{reale} $3\times 3$. Come abbiamo detto, poiché la matrice non è complessa, non è sufficiente il rango per la congruenza: affinché sia congruente ad un'altra matrice simmetrica serve anche la \textbf{segnatura}.
-\begin{observe}
-Siccome $A$ è determinata a meno di multipli, in principio la segnatura potrebbe cambiare. Vediamo cosa succede effettivamente.\\
-Se $A$ ha segnatura $(p,q)$ con $p$ il numero di autovalori \textit{positivi} e $q$ il numero di autovalori \textit{negativi}, allora $\lambda A$ può avere segnatura $(p,q)$ se $\lambda>0$ oppure $(q,p)$ se $\lambda <0$.\\
-Quindi, la segnatura di una conica è definita solo ‘‘a meno del segno'', nel senso che $(p,q)=(q,p)$.
-\end{observe}
-	\begin{theorema}\textsc{Classificazione delle coniche proiettive reali}.
-	\begin{enumerate}
-	\item	 Due coniche in $\proj[2]{\realset}$ sono proiettivamente equivalenti se e solo se hanno la stessa \textit{segnatura} a meno del segno; dalla segnatura si deduce anche il \textit{rango}.
-	\item	Ogni conica in $\proj[2]{\realset}$ è proiettivamente equivalente a una ed una sola delle seguenti coniche, con segnature distinte a meno del segno:
-	\begin{equation*}
-		\arraycolsep=2.5pt
-		\begin{array}{ccll}
-			\underline{\rk 3} & \begin{array}{l}
-					(3,0)/(0,3) \\
-					\\
-					(1,2)/(2,1)
-				\end{array} & \begin{array}{l}
-				x_0^2+x_1^2+x_2^2=0\\
-				\\
-				x_0^2+x_1^2-x_2^2=0\\
-			\end{array} 
-				 & \begin{array}{l}
-			\begin{array}{l}
-				\text{Conica irriducibile senza} \\
-				\text{punti reali (supporto vuoto)}
-			\end{array} \\
-			\begin{array}{l}
-				\text{Conica irriducibile a punti reali,} \\
-				\text{contiene infiniti punti in }\proj[2]{\realset}
-			\end{array}
-		\end{array}\\ \hline %ha un supporto? ci sono dei punti in P2R che hanno questa equazione? no perché escludiamo l'origine	conica irriducibile senza punti reali /tipo ellisse immaginario/ dunque il supporto è vuoto
-		\underline{\rk 2} &\begin{array}{c}
-		(2,0)/(0,2) \\
-		\\
-		(1,1)
-		\end{array} &\begin{array}{l}
-		\\[-1mm]
-		x_0^2+x_1^2=0 \\
-		\\[-1mm]
-		x_0^2-x_1^2=\\[-0.75ex]
-		=(x_0-x_1)(x_0+x_1)=0
-		\end{array} & \begin{array}{l}
-		\begin{array}{l}
-		\text{Coppia di rette non reali} \\
-		\text{con } 1 \text{ punto reale } (0\colon 0\colon 1)
-		\end{array} \\ %	perché si fattorizza ma a coeff complessi. Ha un unico punto reale (0\colon 0\colon 1) intersezione delle due rette complesse coniugate
-		\begin{array}{l}
-		\text{Conica irriducibile a punti reali,} \\
-		\text{coppia di rette reali distinte}
-		\end{array}
-		\end{array} \\[2mm] \hline %che si fattorizza su R
-		\underline{\rk 1} & (1,0) & \begin{array}{l}
-			\\[-4mm]
-			x_0^2=0
-		\end{array} &\ \ \begin{array}{l}
-		\text{Retta doppia}
-	\end{array}	
-\end{array}	
-	\end{equation*}
-	\end{enumerate}
-	\end{theorema}
-
-	\subsection{Curve algebriche piane affini e chiusura proiettiva}
-Siccome abbiamo interpretato il piano proiettivo come un'\textit{estensione} di quello affine, possiamo confrontare la classificazione delle curve nel piano proiettivo con la \textit{classificazione nel caso affine}.
-\begin{define}\textsc{Curva algebrica piana affine}.\\
-	Una \textbf{curva algebrica piana affine}\index{curva!algebrica!affine} $C$ di $\aff{\kamp^2}$ è il luoghi degli zeri dato da un polinomio omogeneo $f\in\kamp\left[x,\ y\right]$:
-\begin{equation}
-	C=\left\{(x,\ y)\in\proj[2]{\ }\mid f(x,\ y)=0\right\}
-\end{equation}
-La curva è definita a meno di multipli: se $g=\lambda f$ con $\lambda\in\kamp\setminus\left\{0\right\}$, $g$ e $f$ descrivono la stessa curva.\\
-Diciamo che la curva $C$ è \textbf{reale} se $\kamp=\realset$ (e quindi $C\in\aff{\realset^2}$), \textbf{complessa} se $\kamp=\complexset$ (e quindi $C\in\aff{\complexset^2}$).
-\end{define}
-\begin{define}\textsc{Equazione di una curva}.\\
-L'\textbf{equazione}\index{equazione!di una curva} di una curva $C$ è il polinomio $f$ (a a meno di multipli) che la descrive.
-\end{define}
-\begin{define}\textsc{Supporto di una curva}.\\
-Il \textbf{supporto}\index{supporto} di una curva $C$ descritta da un polinomio $f$ (a a meno di multipli) è l'insieme dove il polinomio si annulla.\\
-L'equazione determina il supporto, ma in generale non vale il contrario.
-\end{define}
-\begin{define}\textsc{Grado di una curva}.\\
-Il \textbf{grado}\index{grado!di una curva} della curva $C$ è il grado dell'equazione $f$.
-\end{define}
-\begin{define}\textsc{Curva irriducibile}.\\
-	Una curva $C$ è \textbf{irriducibile}\index{curva!irriducibile} se lo è la sua equazione $f$. Altrimenti si considera la sua fattorizzazione in irriducibili:
-	\begin{equation}
-		f=f_1^{m_1}\cdot \ldots \cdot f_r^{m_r}
-	\end{equation}
-	Siccome ogni fattore irriducibile $f_i$ è omogeneo, ognuno definisce una curva $C_i\colon f_i=0$, dette \textbf{componenti irriducibili}\index{componenti irriducibili della curva} della curva $C$.\\
-	Se $m_i>1$ diciamo che $C_i$ è una componente di \textbf{molteplicità}\index{molteplicità} $m_i$ in $C$
-\end{define}
-\begin{define}\textsc{Rette e coniche affini}.
-	\begin{itemize}
-		\item Le \textbf{rette affini} $ax+by+c=0$ sono curve di grado $1$.
-		\item Le \textbf{coniche affini} $ax^2+by^2+cxy+dx+ey+f=0$ sono curve di grado $2$.
-	\end{itemize}
-	\vspace{-3mm}
-\end{define}
-\subsubsection{Omogeneizzazione di un polinomio}
-Vediamo ora qual è il legame fra curve affini e proiettive utilizzando la \textit{chiusura proiettiva}. Ricordiamo che $\kamp^2=U_0\subset \proj[2]{\kamp}$ con $(x,\ y)\in\kamp^2$ che corrispondono a $\displaystyle x=\frac{x_1}{x_0}$ e $\displaystyle y=\frac{x_2}{x_0}$, dato $(x_0\colon x_1\colon x_2)\in\proj[2]{\kamp}$.\\
-Sia $C$ una curva affine di equazione $f(x,\ y)=0$. Vogliamo associare a $f$ un polinomio omogeneo nelle coordinate $x_0,\ x_1,\ x_2$ dello stesso grado di $f$.
-Consideriamo dunque il polinomio $F\in\kamp\left[x_0,\ x_1,\ x_2\right]$ così definito: se $d=\deg f$, allora:
-\begin{equation}
-	F\coloneqq x_0^d f\left( \frac{x_1}{x_0}, \frac{x_2}{x_0} \right)
-\end{equation}
-Esso è a tutti gli effetti un polinomio dello stesso grado di $f$. Infatti, $F$ è un polinomio omogeneo di grado $d$: considerato un monomio in $f$, della forma $ax^iy^j$, allora $i+j$ se ne ottiene uno di grado $d$ in $x_0,\ x_1,\ x_2$:
-	\begin{equation*}
-		ax^iy^j \Longrightarrow x_0^d a \left( \frac{x_1}{x_0} \right)^i \left( \frac{x_2}{x_0} \right)^j = ax_0^{d-i-j} x_1^i x_2^j
-	\end{equation*}
-Ripetendo questa procedura per ogni monomio si ottiene un polinomio omogeneo $f$ di grado $d$ come desiderato. Notiamo che, operativamente, l'omogeneizzazione consiste nel cambiare nome alle variabili $x$ e $y$ e moltiplicare per un'opportuna potenza di $x_0$ in modo tale che il monomio sia di grado $d$. 
-\begin{example} Vogliamo omogenizzare il polinomio $f=x^3-2xy+3y+1$. Prima di tutto si cambia il nome delle variabili e si ottiene $x_1^3-2x_1x_2+3x_2+1$. Moltiplicando ciascun monomio per l'opportuna potenza di $x_0$, il polinomio omogeneizzato rispetto a $x_0$ sarà $F=x_1^3-2x_0x_1x_2 +3x_0^2x_2+x_0^3$.
-\end{example}
-\begin{observe}
-	Possiamo ‘‘deomogeneizzare'' un polinomio omogeneo $F(x_0,\ x_1,\ x_2)$: ponendo $x_0=1$ si riottiene il polinomio di partenza $f(x_1,\ x_2)$.
-\end{observe}
-\subsubsection{Chiusura proiettiva}
-\begin{define}\textsc{Chiusura proiettiva di una curva affine}.\\
-	La curva $\overline{C}$ in $\proj[2]{\kamp}$ definita da $F=0$ si dice \textbf{chiusura proiettiva}\index{chiusura!proiettiva!di una curva} della curva affine $C$ di equazione $f=0$.
-\end{define}
-Se $P=(1\colon x\colon y)\in U_0$  allora $f(x,\ y)=F(P)$ e in particolare $\overline{C}\cap U_0=C$.
-\begin{define}\textsc{Punti impropri di una curva}.\\
-	I \textit{punti impropri} o \textit{punti all'infinito} della curva $C$ sono dati dall'intersezione della chiusura proiettiva con la \textit{retta impropria}, ovvero da $\overline{C}\cap\{x_0=0\}$
-\end{define}
-\begin{example}\textsc{Chiusura proiettiva di una retta}.\\
-	Se $C$ è una retta $ax+by+c=0$, allora la \textit{chiusura proiettiva} di $C$ è $ax_1+bx_2+cx_0=0$ ed il \textit{punto improprio} di $C$ è $(0\colon -b\colon a)$, che corrisponde alla direzione della retta $C$.
-\end{example}
-
-\begin{examples}
-	Consideriamo in $\realset^2$ le coniche:
-	\begin{equation*}
-		\begin{array}{cll}
-			C_1\colon & y=x^2 & 	\text{Parabola}\\[1mm]
-			C_2\colon & x^2+y^2=1 &		\text{Circonferenza}\\[1mm]
-			C_3\colon &	x^2-y^2=1 & \text{Iperbole}
-		\end{array}
-	\end{equation*}
-	Consideriamo ora le loro \textit{chiusure proiettive reali} tramite l'omogeneizzazione, cioè le coniche proiettive $\overline{C_i}$ in $\proj[2]{\realset}$:
-		\begin{equation*}
-		\begin{array}{cl}
-			\overline{C_1} \colon & x_0x_1=x_1^2\\[1mm]
-			\overline{C_2} \colon & x_1^2+x_2^2=x_0^2\\[1mm]
-			\overline{C_3} \colon & x_1^2-x_2^2=x_0^2
-		\end{array}
-	\end{equation*}
-	Scrivendo le matrici associate e guardandone la segnatura, si vede che \textit{tutte e tre} hanno segnatura $(2,1)/(1,2)$ e quindi tutte proiettivamente equivalenti (per la classificazione delle coniche nel piano proiettivo reale) ad una \textit{conica irriducibile a punti reali} in $\proj[2]{\realset}$.\\
-	Consideriamo ora i loro punti impropri:
-		\begin{itemize}
-			\item \textsc{Parabola}: $\overline{C_1}\cap\{x_0=0\}\colon (0\colon 0\colon 1)$, dunque un solo punto improprio, ovvero la direzione $(0,1)$ dell'asse $y=\mathcal{L}(0,1)$, quindi è l'asse della parabola
-			\item \textsc{Circonferenza}: $\overline{C_2}\cap \{x_0=0\} \colon x_0=0 \implies x_1=x_2=0$ ma non si possono avere tute le coordinate omogenee nulle, dunque non ci sono punti impropri 
-			\item \textsc{Iperbole}: $\overline{C_3}\cap\{x_0=0\}\colon x_1^2-x_2^2=0$, dunque ci sono	due punti impropri quali $(0\colon 1\colon 1)$ e $(0\colon 1\colon -1)$, a cui corrispondono le direzioni degli asintoti dell'iperbole
-		\end{itemize}
-	Notiamo che le chiusure proiettive viste sono tutte proiettivamente equivalenti, ma hanno 3 posizioni diverse rispetto alla \textit{retta impropria}:\\
-			\begin{minipage}{0.57\textwidth}
-			\begin{enumerate}[series=proj2]
-				\item $\overline{C_1}$ è ‘‘\textit{tangente}'' alla retta impropria.
-			\end{enumerate}
-		\end{minipage}
-		\begin{minipage}{0.52\textwidth}
-					\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/projconic1.pdf}
-		\end{minipage}\\
-	\begin{minipage}{0.57\textwidth}
-		\begin{enumerate}[resume=proj2]
-		\item $\overline{C_2}$ è ‘‘\textit{disgiunta}'' dalla retta impropria.
-		\end{enumerate}
-	\end{minipage}
-	\begin{minipage}{0.52\textwidth}
-					\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/projconic2.pdf}
-	\end{minipage}\\
-	\begin{minipage}{0.57\textwidth}
-	\begin{enumerate}[resume=proj2]
-		\item $\overline{C_3}$ è ‘‘\textit{secante}'' rispetto alla retta impropria.
-	\end{enumerate}
-\end{minipage}
-\begin{minipage}{0.52\textwidth}
-					\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/projconic3.pdf}
-\end{minipage}
-\end{examples}
-\begin{example}
-	In $\aff{\realset^2}$ consideriamo la coppia di \textit{rette parallele} distinte $x(x+1)=0$ e la coppia di \textit{rette incidenti} distinte $xy=0$.\\
-	Prendendo le le chiusure proiettive si ottiene $x_1(x_1+x_0)=0$ e $x_1x_2=0$, entrambe coppie di rette distinte reali in $\proj[2]{\realset}$ con segnatura (1,1). \\
-	Dunque sono proiettivamente equivalenti fra loro ma hanno posizione diversa rispetto alla retta impropria.
-	\begin{itemize}
-		\item La prima ha un solo punto improprio $(0\colon 0\colon 1)$, che è la \textit{direzione comune} delle due rette parallele nel piano affine.
-		\begin{center}
-			\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/projlineintersect1.pdf}
-		\end{center}
-		\item La seconda ha due punti impropri $(0\colon 0\colon 1)$ e $(0\colon 1\colon 0)$, che sono le direzioni delle due rette nel piano affine.
-		\begin{center}
-			\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/projlineintersect2.pdf}
-		\end{center}
-	\end{itemize}
-\vspace{-3mm}
-\end{example}
-Ragionando in questo modo dalla classificazione delle coniche proiettive si può mettere in relazione la classificazioni delle coniche affini $\aff{\realset^2}$ (a meno di rototraslazione), prestando attenzione alla posizione rispetto alla retta impropria.
-\subsection{Classificazione affine delle coniche nel caso complesso}
-\begin{proposition}\textsc{Classificazione delle coniche affini complesse}.
-Ogni conica in $\complexset^2$ si può ridurre con una trasformazione del tipo:
-\begin{equation}
-	\begin{pmatrix} x' \\ y' \end{pmatrix} =A\begin{pmatrix} x \\ y \end{pmatrix} +b
-\end{equation}
-Con $b\in\complexset^2$ e $A\in\gl(2,\complexset)$ ad una delle cinque coniche:
-\begin{center}
-	\begin{tabular}{cll}
-	1. &	$x^2+y^2+1=0$ & \begin{tabular}{l}
-			${\scriptstyle \blacksquare}$ Rango 3.\\
-			${\scriptstyle \blacksquare}$ \textit{Due} punti impropri \textit{distinti}.
-		\end{tabular}   \\ \hline
-	2. &	$y-x^2=0$ & \begin{tabular}{l}
-			${\scriptstyle \blacksquare}$ Rango 3.\\
-			${\scriptstyle \blacksquare}$ Un \textit{unico} punto improprio.
-		\end{tabular}  \\ \hline
-	3. &	$x^2+y^2=(x+iy)(x-iy)=0$ & \begin{tabular}{l}
-			Coppia di rette distinte \textit{incidenti}:\\
-			${\scriptstyle \blacksquare}$ Rango 2.\\
-			${\scriptstyle \blacksquare}$ \textit{Due} punti impropri \textit{distinti}.
-		\end{tabular} \\ \hline
-	4. &	$x(x+1)=0$ & \begin{tabular}{l}
-			Coppia di rette distinte \textit{parallele}:\\
-			${\scriptstyle \blacksquare}$ Rango 2.\\
-			${\scriptstyle \blacksquare}$ Un \textit{unico} punto improprio.
-		\end{tabular} \\ \hline
-	\begin{tabular}{l}
-		\\[-3mm]
-		5.
-	\end{tabular} &	\begin{tabular}{l}
-		\\[-3mm]
-		$x^2=0$
-	\end{tabular} & \begin{tabular}{l}
-		\\[-3mm]
-		Retta doppia
-	\end{tabular} \\
-	\end{tabular}
-\end{center}
-%	DA RIASCOLTARE
-%	vediamo dove andiamo a parare:guardando la chiusura proiettiva, ho 3 ranghi possibili con la loro ir/riducibilità. Dobbamo guarare la posizione possibile rispetto alla retta allìinfinito, Siccome simao su C la chiusura proj ha solo 2 posizioni possibili: 2 punt distini o 2 punti coincidenti se irriducibili in base a 2 pt impropri o un solo. Idem per la coppia di rette al caso 			1 caso in rango 1
-\vspace{-3mm}
-\end{proposition}
-\begin{comment}
-	non la dimostriamo ma abbiamo dato una giustificazione geometrica: class a meno di proj e #punti impropri
-	RECAP	
-	nel piano proj nel piano proj si riduce a classificare le forme quadratiche in K^3 ed usiamo l'algebra lineare: equiv proj dal rango (3 classi) mentr ein quello reale dipende anche dalla segnatura (a meno del segno) ed abbiamo 5 classi di equiv proj di coniche nel pin proj reale
-	curve alg aff e chius proj
-	class affine coniche in r2 passando alla chiusura proj 
-	esempi che spiegao il significato geometrico
-	ellisse ierbole etc	chiusura proj stessa ma cambia pos retta impropria
-	class affine coniche in c2, guardo anche il numero di punti impropri
-	class coniche semplice perché è alg ineare, da grado 3 in su è meno semplice, servono dunque le nozioni per studiare curva algebrica, che sia affine o proiettiva
-\end{comment}
-	\subsection{Polinomi omogenei in 2 variabili}
-I polinomi omogenei in \textit{due variabili} si comportano per alcuni aspetti come polinomi in \textit{una so}la variabile.\\
-Sia $F\in\kamp[x_0x_1]$ un polinomio omogeneo di grado $d$, costituito da $d+1$ monomi:
-\begin{equation*}
-	F=a_0x_0^d+a_1x_0^{d-1}x_1+a_2x_0^{d-2}x_2^2+\ldots + a_{d-1}x_0x_1^{d-1}a_dx_1^d
-\end{equation*}
-Ricordiamo che vedendo $\left(x_0\colon x_1\right)\in\proj[1]{\ }$, allora $F$ ha degli zeri su $\proj[1]{\ }$, ovvero $F(P)=0$ è ben posto per $P=(a\colon b)\in\proj[1]{\ }$.
-\begin{define}\textsc{Annullarsi in un punto}.\\
-	Diciamo che $F$ si \textbf{annulla in } $P=(a\colon b)$ \textbf{all'ordine } $m$ se $(ax_1-bx_0)^m$\index{annullarsi in un punto} è la massima potenza di $ax_1-bx_0$ che divide $F$.
-\end{define}
-%		va letta ome la propr in 1 var come le radici /Ruffini!/
-\begin{proposition} \label{teo polinomi omogenei 2 variabili}~{}
-	\begin{enumerate}
-		\item	$F$ si annulla in un punto $P=(a\colon b)\in\proj[1]{\ } \iff ax_1-bx_0\mid F$.
-		\item 	Se $d=\deg F$, $F$ ha al più $d$ zeri su $\proj[1]{\ }$ contati con molteplicità. %/analogo degli zeri 
-		\item	Se $F\in\complexset[x_0,\ x_1]$, allora $F$ si fattorizza come prodotto di forme lineari e ha esattamente $d$ zeri in $\proj[1]{\ }$ contati con molteplicità.\footnote{Questo punto è analogo al caso in una variabile per cui, in $\complexset$, ogni polinomio si fattorizza come prodotto di polinomi di grado 1 ed ha tutti gli zeri ben definiti.}.
-	\end{enumerate}
-\vspace{-3mm}
-\end{proposition}
-\begin{demonstration}
-	% Facciamo un'ipotesi che ci semplificherà la notazione, per poi studiare il caso generale.\\
-	Supponiamo che $x_0 \nmid F$; ciò è vero se e solo se $a_d\neq 0$ o, alternativamente, $F(0\colon 1)\neq 0$. Poniamo:
-	\begin{equation}
-		f\coloneqq F(1,t)\in\kamp[t] = a_0+a_1t+\ldots+a_{d-1}t^{d-1}+a_dt^d
-	\end{equation}
-	Esso è un polinomio nella sola variabile $t$, dato che abbiamo posto $x_0=1$ e $x_1=t$, ed è ancora di grado $d$ perché $a_d\neq 0\implies \deg f=\deg F=d$. Inoltre:
-		\begin{itemize}
-			\item $F$ è l'omogeneizzato di $f$ rispetto a $x_0$:
-			\begin{equation*}
-				F=x_0^2f\left( \frac{x_1}{x_0} \right)
-			\end{equation*}
-			\item Gli zeri di $F$ sono tutti e soli della forma $(1\colon\lambda)$ con $\lambda$ radice di $f$, dato che \textit{deomogeneizzando} passiamo da 2 variabili in 1 variabile, infatti $F(1,\lambda)=f(\lambda)$.\\
-		\end{itemize}
-	Pertanto, le proprietà di $F$ che vogliamo dimostrare seguono da quelle di $f$ che conosciamo già.\\
-		\begin{enumerate}[label=\Roman*]
-			\item $F$ si annulla in $(1\colon\lambda)=(a\colon b) \footnote{Con $\lambda=\frac{b}{a}$.}\iff f(\lambda)=0 \iff t-\lambda \mid f \iff x_1-\lambda x_0\mid F$. %in particolare l'omogeneizzato divide $F$ (non ho questa nota).
-			\item È immediato dal punto $1$, perché se $F$ si annulla in $P_i=(a_i\colon b_i)$ distinti con molteplicità $m_i$, allora:
-			\begin{equation*}
-				(a_ix_1-b_ix_0)^{m_i} \mid F,\ \forall i=1,\ \ldots,\ r 
-			\end{equation*}
-			Siccome i punti $P_i$ sono distinti, allora i polinomi sono \textit{primi fra loro} al variare di $i$, dunque anche il loro prodotto deve dividere $F$:
-			 \begin{equation*}
-			 	\prod_{i=1}^r (a_ix_1-b_ix_0)^{m_i}\mid F \implies \sum_{i=1}^r m_i\leq d=\deg F
-			 \end{equation*}.
-			\item Segue immediatamente dal caso complesso in una variabile; infatti, $f$ si scrive come:
-			\begin{equation*}
-				f=c(t-\lambda_1)^{m_1}\cdot \ldots\ \cdot (x_1-\lambda_r x_0)^{m_r}
-			\end{equation*}
-			Siccome $\complexset$ è algebricamente chiuso, $F=c(x_1-\lambda_1x_0)^{m_1}\cdot \ldots\cdot (x_1-\lambda_rx_0)^{m_r}$, cioè si fattorizza completamente con forma lineari. Non solo questo polinomio divide $F$ ma, a meno di costante, ho l'\textit{uguaglianza}, per cui il numero di zeri contati con molteplicità è pari al suo grado.
-		\end{enumerate}
-	Se invece $x_0\mid F$, allora $F=x_0^r G$ per un certo $r$, con $G$ un polinomio omogeneo di grado $d-r$ tale per cui $x_0\nmid G$. Allora i risultati trovati valgono per $G$ e, tenendo conto che $F$ si annulla in $(0\colon 1)$ con molteplicità $r$, segue la tesi della proposizione.
-\end{demonstration}
-\subsection{Intersezione tra una retta ed una curva nel piano proiettivo}
-%Useremo queste proprietà dei polinomi omogenei di secondo grado per studiare l'intersezione fra una retta ed una curva in $\proj[2]{\ }$.\\
-Sia $C$ una curva in $\proj[2]{\ }$ di grado $d$ ed equazione $F(x_0,\ x_1,\ x_2)=0$ e sia $r\subset\proj[2]{\ }$ una retta proiettiva. Vogliamo intersecare la retta $r$ con il supporto di $C$.\\
-\begin{tips}
-	Per studiare l'intersezione di due sottoinsiemi può essere comodo esprimere uno dei due sottoinsiemi in \textit{forma parametrica} e sostituire i risultati trovati nelle equazioni dell'altro.
-\end{tips}
-%Di uno ho le equazioni, mentre so come scrivere in forma parametrica la retta
-Scriviamo una parametrizzazione per $r$; per farlo sono necessari servono 2 punti distinti $A,B\in r$. In questo modo, ogni punto di $r$ si scrive come combinazione lineare di altri due punti noti della retta e dei loro vettori:
-\begin{equation}
-	P=\lambda A+\mu B=\left[\lambda v+\mu w\right]
-\end{equation}
-Dove $v$ è un vettore che rappresenta $A$ ($A=[v]$) e $w$ è un rappresentante per $B$ ($A=[w]$), con $v,\ w\in\kamp^3$ e $(\lambda\colon\mu)\in\proj[1]{\ }$. Allora $C\cap r$ è dato da $F(\lambda v+\mu w)=0$; dato che vogliamo trovare il punto di intersezione descritto dai parametri $(\lambda\colon\mu)$, possiamo vedere questa sostituzione come un polinomio $G$ in $\lambda$ e $\mu$, cioè $G\left(\lambda,\ \mu\right)\in\kamp[\lambda,\ \mu]$:
-\begin{equation}
-	G\left(\lambda,\ \mu\right)\coloneqq F(\lambda v_0+\mu w_0,\ \lambda v_1+\mu w_1,\ \lambda v_2+\mu w_2)
-\end{equation}
-In particolare, abbiamo due possibilità:
-	\begin{enumerate}
-	\item	$r\subseteq C$: la retta è contenuta nella conica, quindi \textit{ogni punto della retta} soddisfa l'equazione; il polinomio è \textit{identicamente nullo}, ovvero $G\equiv 0$
-	\item	$r\nsubseteq C$: la retta \textit{non} è contenuta nella conica, allora $G$ è un polinomio omogeneo di grado $d$ in $\lambda$ e $\mu$ le cui radici. Le radici di $G$ sono i \textit{punti di intersezione} $r\cap C$. 
-\end{enumerate}
-%LEZ 34
-\begin{example}
-	In $\proj[2]{\realset}$ sia $C\colon x_0^2+x_1^2-x_2^2=0$, $r_1\colon x_1=x_2$ e $r_2\colon x_0+x_1=0$; vogliamo calcolare le intersezioni $r_i\cap C$:
-	\begin{itemize}
-		\item $r_1\colon x_1=x_2 \rightarrow x_0^2=0 \text{ e } r_1\cap C=\{ (0\colon 1 \colon 1) \} \text{ molteplicità 2}$
-		\item $r_2 \colon x_1=-x_0 \rightarrow 2x_0^2=x_2^2 \rightarrow x_2=\pm \sqrt{2}x_0 \ \ x_0=1\implies x_1=-1,\ x_2=\pm \sqrt{2}$\\
-			$\implies \text{ due punti di intersezione } (1\colon -1\colon \sqrt{2}) \text{ e } (1\colon -1\colon -\sqrt{2})$
-	\end{itemize}
-\end{example}
-\begin{define}\textsc{Molteplicità di intersezione}.\\
-	Se $(\lambda_0\colon\mu_0)\in\proj[1]{\ }$ è una radice di $G$ di molteplicità $m$ (ovvero è il massimo esponente della forma lineare che divide $G$), allora diciamo che $C$ e $r$ hanno \textbf{molteplicità di intersezione}\index{molteplicità!di intersezione} $m$ nel punto $P=\lambda_0 A+\mu_0 B$. Poniamo:
-	\begin{itemize}
-		\item $m=0$ se $P\notin C\cap r$.
-		\item $m=\infty$ se $P\in r$ e $r\subset C$.
-	\end{itemize} 
-\end{define}
-\begin{observe}
-	Se $r\nsubseteq C$, allora l'intersezione è finita:
-	\begin{equation*}
-		C\cap r=\{P_1,\ \ldots,\ P_n\}
-	\end{equation*}
-	Sia $m_i$ la molteplicità di intersezione in $P_i$; il numero di questi punti di intersezione è minore del grado della curva:
-		\begin{equation}
-			\# (C\cap r)\leq \deg C
-		\end{equation}
-	Più precisamente, $\displaystyle \sum_{i=1}^n m_i\leq\deg C$; infatti, le radici di $G\left(\lambda,\ \mu\right)=0$ danno i punti di intersezione della curva con la retta e può avere al più $d$ soluzioni, tante quante il grado della curva (anche se contate con molteplicità per la proposizione \ref{teo polinomi omogenei 2 variabili}).\\
-	Se $\kamp=\complexset$, possiamo dire che la somma delle molteplicità è esattamente $d$:
-	\begin{equation}
-		\displaystyle \sum_{i=1}^n m_i=\deg C
-	\end{equation}
-	In particolare, la retta e la curva si intersecano \textit{sempre} nel \textit{piano proiettivo complesso}, ovvero $C\cap R\neq 0$.\\
-	Se $\kamp=\realset$ e $d$ è \textbf{dispari} allora possiamo ancora concludere che la retta e la curva si intersecano sempre in quanto $G$ deve annullarsi almeno in un punto reale, e quindi $C\cap r\neq 0$.
-\end{observe}
-\begin{example}
-	Se $C\subset\proj[2]{\complexset}$ è una conica ($\deg C=2$) ed $r$ è una retta non contenuta in $C$, ovvero $r\nsubseteq C$, allora:
-	\begin{equation}
-		r\cap C=\hspace{-2mm}\begin{array}{ll}
-			\nearrow &\{2\text{ punti con molteplicità } 1\}\\
-			\searrow & {\{1 \text{ punto con molteplicità } 2\}}
-		\end{array}
-	\end{equation}
-	% https://q.uiver.app/?q=WzAsMyxbMCwxLCJyXFxjYXAgQz0iXSxbMiwwLCJcXHsyXFx0ZXh0eyBwdW50aSBjb24gbW9sdGVwbGljaXTDoCB9IDFcXH0iXSxbMiwyLCJcXHsxIFxcdGV4dHsgcHVudG8gY29uIG1vbHRlcGxpY2l0w6AgfSAyXFx9Il0sWzAsMl0sWzAsMV1d
-	Se la conica $C\subset\proj[2]{\realset}$ ed $r$ è una retta non contenuta in $C$, ovvero $r\nsubseteq C$, allora c'è \textit{anche} la possibilità che l'intersezione sia \textit{vuota}, cioè $C\cap r=\emptyset$ (ad es. $C\colon x_0^2+x_1^2-x_2^2=0$ e $r_3\colon x_2=0$).
-\end{example}
-	
-\begin{tips}
-	Se una conica $C$ contiene tre punti \textit{allineati}, allora $C$ contiene una retta, è riducibile (l'equazione della retta divide quella della conica)e $\rk C\leq 2$.		
-\end{tips}
-\begin{observe} 	Si può dimostrare che:
-	\begin{enumerate}
-		\item La molteplicità di intersezione fra $C$ e $r$ in $P$ non dipende dalla parametrizzazione scelta per $r$.
-		\item La molteplicità di intersezione è \textbf{invariante} per \textit{proiettività}.
-	\end{enumerate}
-\vspace{-3mm}
-\end{observe}
-\begin{demonstration} Dimostriamo l'ultimo punto
-	Sia $\funz f {\proj[2]{\ }} {\proj[2]{\ }}$ una proiettività e $C'$ la trasformata di $C$ tramite $f$ con $C\colon F(x_0,\ x_1,\ x_2)=0$ e $f\colon x'=Mx$. Allora $f^{-1}\colon x=M^{-1}x'$ e $C'\colon F'(x')=F(M^{-1}x')=0$ è un polinomio omogeneo di grado $d$.\\
-	Le proiettività portano curve algebriche in curve algebriche, ovvero $r'=f(r)$ è una retta e $P'=f(P)$. Pertanto, la molteplicità di intersezione fra $C$ e $r$ in $P$ è uguale alla molteplicità di intersezione fra $C'$ e $r'$ in $P'$.
-\end{demonstration}
-\subsection{Intersezione tra una retta ed una curva nel caso affine}
-Sia $C$ una curva in $\kamp^2$ di equazione $f(x,\ y)=0$ e sia $r$ una retta affine. Scegliamo una parametrizzazione per $r$:
-\begin{equation}
-	r\colon\begin{cases}
-	x=tv_1+w_1\\
-	y=tv_2+w_2
-\end{cases}
-\end{equation}
-Per intersecare $C$ ed $r$ sostituiamo la parametrizzazione di $r$ nell'equazione di $C$ ed otteniamo un polinomio nell'unico parametro $t$:
-\begin{equation}
-	g(t)\coloneqq f(tv_1+w_1,\ tv_2+w_2)\in\kamp[t]
-\end{equation}
-In modo analogo al caso proiettivo, le radici di $g$ corrispondono ai \textit{punti di intersezione} e definiamo la \textbf{molteplicità di intersezione} di $C$ ed $r$ in un punto $P=t_0v+w$ come la molteplicità di $t_0$ come radice di $g(t)$.\\
-\begin{observes}~{}
-		\begin{enumerate}
-		\item	La molteplicità di intersezione non dipende dalla scelta di parametrizzazione della retta $r$.
-		\item	La molteplicità di intersezione è \textbf{invariante} per \textit{affinità}.
-		\item	La \textit{molteplicità affine} è pari a quella proiettiva. Per precisare, sia $P\in C\cap r$, $\overline{C}$ la chiusura proiettiva di $C$ in $\proj[2]{\ }\supset\kamp^2$ ed $\overline{r}$ la chiusura proiettiva di $r$ in $\proj[2]{\ }$; allora la molteplicità di intersezione tra $C$ e $r$ in $P$ è uguale alla molteplicità di intersezione fra $\overline{C}$ e $\overline{r}$ in $P$.
-	\end{enumerate}
-\vspace{-3mm}
-\end{observes}
-\subsection{Retta tangente}
-\begin{define}\textsc{Retta tangente ad una curva in un punto}\\
-Sia $C$ una curva piana (affine o proiettiva) ed $r$ una retta (affine o proiettiva). Diciamo che $r$ è \textbf{tangente} \index{retta!tangente} a $C$ in un punto $P$ se la \textit{molteplicità di intersezione} fra $C$ ed $r$ in $P$ è \textit{maggiore di 1}.
-\end{define}
-\begin{example}	Sia $C$ in $\proj[2]{\realset}$ una conica di equazione $x_0^2+x_1^2-x_2^2=0$ e una retta di equazione $r_1\colon x_1-x_2=0$; poiché l'intersezione è solo il punto $r_1\cap C=\{(0\colon 1\colon 1)\}=P$, allora $r_1$ è tangente a $C$ in $P$ e ‘‘coincide'' con la tangente nel senso geometrico.\\
-La conica $C_1$ in $\aff{\realset^2}$ si ottiene deomogeneizzando $C$ rispetto alla variabile \textit{non} nulla $x_2$ (in questo caso in $P$ si ha che $x_0=0$), per cui:
-\begin{equation*}
-		x=\frac{x_0}{x_2}\quad y=\frac{x_1}{x_2}
-	\end{equation*}
-	Dunque $C_1$ ha equazione:
-	\begin{equation*}
-		\left( \frac{x_0}{x_2} \right)^2 + \left( \frac{x_0}{x_2} \right)^2 -1 =0
-	\end{equation*}
-\begin{minipage}{0.75\textwidth}
-È pari quindi alla circonferenza $x^2+y^2=1$ con $P=(0,\ 1)$. In questo caso la tangente in $P$ è chiaramente la retta $y=1$.\\
-Passando alle coordinate proiettive diventa $\frac{x_1}{x_2}=1 \implies x_1=x_2$. Notiamo come la \textit{chiusura proiettiva} della \textit{tangente affine} sia proprio la \textit{tangente proiettiva}.
-\end{minipage}
-\hspace{-12mm}
-\begin{minipage}{0.24\textwidth}
-	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/planecurve1.pdf}
-\end{minipage}
-\end{example}
-\begin{example}	Sia $C$ in $\aff{\realset^2}$ la curva di equazione $f\ \colon y^2=x^2+x^3=x^2(x+1)$, una \textbf{cubica} in quanto ha grado 3.\\
-Vogliamo calcolare quali sono le rette tangenti nel punto $P=(-1,\ 0)\in C$. Consideriamo pertanto il fascio di rette passanti per $P$ e le intersechiamo con la cubica per determinare quali sono tangente con la definizione; guardiamo dunque quali hanno molteplicità di intersezione maggiore di 1.\\
-Il fascio di rette per $P$ è:
-\begin{equation*}
-	r\colon \begin{cases}
-		x=-1+tv_1\\
-		y=tv_2
-	\end{cases}
-\end{equation*}
-Con $(v_1,\ v_2)$ direzione di $r$. Sostituiamo la parametrizzazione di $r$ nell'equazione di $C$, costruendo la funzione $g\left(t\right)$:
-	\begin{gather*}
-		t^2v^2=(tv_1-1)^2 tv_1\\
-		g(t)=(tv_1-1)^2tv_1-t^2v_2^2=t[v_1(t^2v_1^2+1-2tv_1)-tv_2^2]=t[v_1^3t^2-t(2v_1^2+v_2^2)+v_1]
-	\end{gather*}
-	Analizziamo cosa abbiamo trovato:
-		\begin{itemize}
-			\item $t=0$ è sempre una soluzione: per costruzione abbiamo preso la retta che passava per $P$, dunque $P$ è banalmente intersezione di una retta di \textit{qualsiasi} direzione con la cubica.
-			\item La molteplicità di intersezione fra $C$ e $r$ in $P$ è la massima potenza di $t$ che divide $g$; pertanto è $m$ se $t^m$ è la massima potenza di $t$ che divide $g$.\\
-			In questo caso, quand'è che la molteplicità di intersezione è maggiore di 1? Nell'equazione che abbiamo scritto almeno $t^2$ deve dividere $g$: l'unica possibilità per questa curva di poter raccogliere un'altro $t$ è avere $v_1=0$. Allora $r$ è la retta verticale che passa per $P$ e abbiamo determinato che esiste ed è l'\textit{unica} tangente in $P$.
-		\end{itemize}
-	Vediamo ora un caso in cui la retta tangente ad un punto non è unica. Consideriamo la stessa cubica ma \textit{cambiamo il punto}, prendendo l'origine $Q=(0,0)\in C$.\\
-	Scriviamo il fascio di rette per $Q$:
-	\begin{equation*}
-		q\colon \begin{cases}
-			x=tw_1\\
-			y=tw_2
-		\end{cases}
-	\end{equation*}
-	Con $(w_1,\ w_2)$ direzione. Analogamente a prima:
-	\begin{gather*}
-		h(t)=t^2w_1^2+t^3w_1-t^2w_2^2=t^2(w_1^2-w_2^2+tw_1^3)
-	\end{gather*}
-\begin{minipage}{0.75\textwidth}
-Troviamo così che $t^2$ si può sempre raccogliere, dunque in questo caso la molteplicità di intersezione fra le rette e $Q$ è sempre almeno 2. In particolare, ogni retta per $Q$ ha intersezione maggiore di 2, dunque è \textit{tangente}.\\
-Osserviamo che nel punto $Q$ la curva si auto-interseca: ogni retta per l'origine interseca la curva almeno due volte, quindi è tangente. Fra queste, ci sono due \textit{direzioni speciali} per cui la molteplicità è 3:
-\begin{itemize}
-	\item $w_1^2-w_2^2=0\implies w_1=w_2 \implies \mathcal{L}(1,1) \colon y=x$.
-	\item $w_1=-w_2 \implies \mathcal{L}(1,-1) \colon y=-x$.
-\end{itemize}
-\end{minipage}
-\hspace{-12mm}
-\begin{minipage}{0.24\textwidth}
-	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/planecurve2.pdf}
-\end{minipage}
-\end{example}
-\subsubsection{Caso affine}
-Sia $C\colon f(x,\ y)=0$ in $\kamp^2$ e $P=(x_0,\ y_0)$. Osserviamo che possiamo sempre scrivere il polinomio come un polinomio centrato in $x_0,\ y_0$, cioè come polinomio in $x-x_0$ e $y-y_0$ invece che come polinomio in $x$ e $y$.
-\begin{gather*}
-		f=\sum_{i,j\geq 0} a_{ij}x^iy^j = \sum_{i,j\geq 0} a_{ij}(x-x_0+x_0)^i(y-y_0+y_0)^j \stackrel{!}{=} 	\sum_{i,j\geq 0}b_{ij}(x-x_0)^i(y-y_0)^j\\
-		\implies f(x_0,\ y_0)=b_{00}=f(P) \implies f=f(P) +\alpha (x-x_0)+\beta (y-y_0)+ \text{ termini di grado} >1
-\end{gather*}
-Nel passaggio indicato con (!) si stanno sottintendendo conti con il binomio di Newton.\\
-\begin{define}\textsc{Derivate parziali}.\\
-	Dato un polinomio $f=\sum_{i,j}a_{ij}x^iy^j\in\kamp[x,\ y]$, le \textbf{derivate parziali}\index{derivata!parziale} di $f$ sono i seguenti polinomi:
-	\begin{equation}
-		\frac{\partial{f}}{\partial{x}}\coloneqq \sum_{i,j}a_{ij}ix^{i-1}y^j\quad \frac{\partial{f}}{\partial{y}}\coloneqq \sum_{i,j}a_{ij}jx^iy^{j-1}
-	\end{equation}
-\vspace{-3mm}
-\end{define}
-Si verifica che $\alpha=\frac{\partial{f}}{\partial{x}}(x_0,\ y_0)$ e $\beta=\frac{\partial{f}}{\partial{y}}(x_0,\ y_0)$.
-\begin{demonstration}
-	Se $P\in C$, segue dai ragionamenti precedenti $f=\alpha (x-x_0)+\beta (y-y_0)+ \text{ termini di grado} >1$. Applicando la definizione di derivata parziale si hanno:
-	\begin{equation*}
-		\frac{\partial{f}}{\partial{x}}= \sum_{i,j}a_{ij}i\left(x-x_0\right)^{i-1}\left(y-y_0\right)^j\quad \frac{\partial{f}}{\partial{y}}= \sum_{i,j}a_{ij}j\left(x-x_0\right)^i\left(y-y_0\right)^{j-1}
-	\end{equation*}
-	Valutando in $P=(x_0,\ y_0)$:
-	\begin{equation*}
-		\frac{\partial{f}}{\partial{x}}\left(P\right)=a_{10}=\alpha\quad \frac{\partial{f}}{\partial{y}}\left(P\right)=a_{01}=\beta
-	\end{equation*}
-\end{demonstration}
-%LEZ 35
-\begin{define}\textsc{Gradiente}.\\
-	Il \textbf{gradiente}\index{gradiente} $\nabla f$ è il vettore con componenti le derivate parziali:
-	\begin{equation}
-		\nabla f=\left( \frac{\partial{f}}{\partial{x}},\ \frac{\partial{f}}{\partial{y}} \right)
-	\end{equation}
-\vspace{-6mm}
-\end{define}
-Il gradiente valutato in $P=(x_0,\ y_0)$ è $\nabla f(P)=(\alpha,\beta)\in\kamp^2$.\\
-%Adesso vogliamo intersecare con l retta genereica per P
-\paragraph{Tangente e derivate parziali}
-Sia $r$ la retta per $P$ con direzione $v=(v_1,v_2)$ e descrizione parametrica:
-\begin{equation*}
-	\begin{cases}
-		x=x_0+tv_1\\
-		y=y_0+tv_2
-	\end{cases}
-\end{equation*}
-Allora:
-	\begin{equation*}
-		\begin{array}{ll}
-			g(t)=f(x_0+tv_1,\ y+tv_2)&=\alpha tv_1+\beta tv_2 + \text{ termini in }t\text{ di grado }\geq 2 =\\
-			&= (\alpha v_1+\beta v_2)t + \text{ termini in }t \text{ di grado }\geq 2
-		\end{array}	
-	\end{equation*}
-Si hanno dunque due possibilità, che dipendono dal coefficiente di $t$:
-	\begin{enumerate}
-		\item	$\alpha=\beta=0$, ovvero $\nabla f =0$: il \textit{coefficiente} è nullo indipendentemente dalla retta. Allora, $\forall r$ retta per $P$,  $t^2 \mid g(t)$: la molteplicità di intersezione è $\geq 2$ e \textit{ogni} retta per $P$ è tangente a $C$ in $P$.
-		\item	$\nabla f(P)=(\alpha,\beta)\neq 0$:	il coefficiente di $t$ determina in maniera \textit{univoca} la direzione della retta, che è quella \textbf{ortogonale} a $(\alpha,\beta)$. Ciò implica che $\exists !$ retta tangente a $C$ in $P$ ed è quella di direzione $(-\beta,\alpha)$ con equazione	$\alpha(x-x_0)+\beta(y-y_0)=0$, ovvero 
-			\begin{equation}
-				\frac{\partial{f}}{\partial{x}}(P)(x-x_0) + \frac{\partial{f}}{\partial{y}} (P)(y-y_0)=0
-			\end{equation}
-	\end{enumerate}
-% Abbiamo così ritrovato la casistica della cubica con i punti espliciti: ogni retta è tangente oppure c'è una sola tangente alla curva nel punto.
-\begin{define}\textsc{Punto singolare}.\\
-	Sia $C$ una curva affine in $\kamp^2$ di equazione $f(x,\ y)=0$. Un punto $P\in C$ è detto \textit{non singolare} o \textbf{liscio}\index{punto!liscio} se $\nabla f(P)\neq 0$. Altrimenti $P$ è detto \textbf{punto singolare} \index{punto!singolare}.\\
-	Una curva $C$ è detta \textbf{singolare} se ha almeno un punto singolare, altrimenti è detta curva \textit{non singolare} o \textbf{liscia}.
-\end{define}
-Abbiamo visto prima che se $P$ è \textit{non singolare} esiste ed è unica la tangente a $C$ in $P$. Essa ha equazione	$\frac{\partial{f}}{\partial{x}}(P)(x-x_0) + \frac{\partial{f}}{\partial{y}} (P)(y-y_0)=0$ e, essendo non singolare, almeno uno dei due coefficienti non è nullo.\\
-Se invece $P$ è \textit{singolare} allora ogni retta per $P$ è tangente a $C$ in $P$.
-\subsubsection{Caso proiettivo}
-Vogliamo analizzare la tangenza nel \textit{caso proiettivo}. Tuttavia, prima di trattare di punti singolare o tangenti, ci servirà una proprietà dei polinomi omogenei, detta \textbf{relazione di Eulero} sui polinomi omogenei. Essa vale per un qualsiasi \textit{numero di variabili} a coefficienti in un campo \textit{qualsiasi} e mette in relazione un polinomio omogeneo con sue derivate parziali, che per costruzione sono anch'esse polinomi omogenei ma di un \textit{grado inferiore}.
-\begin{theorema}\textsc{Relazione di Eulero} \index{Relazione!di Eulero} \\
-	Sia $F\in\kamp[x_0,\ \ldots,\ x_n]$ polinomio omogeneo di grado $m$ e le sue derivate parziali $\frac{\partial{f}}{\partial{x_i}}\in\kamp[x_0,\ \ldots,\ x_n]$, polinomio omogenei di grado $m-1$. Si ha che:
-		\begin{equation}
-			\sum_{i=0}^n x_i\frac{\partial{F}}{\partial{x_i}}=mF
-		\end{equation}
-	\vspace{-6mm}
-\end{theorema}
-Nella relazione appena annunciata notiamo che moltiplichiamo ciascuna derivata parziale per $x_i$. Ciò è necessario per la \textit{buona definizione} dell'equazione: siccome le derivate parziali sono omogenee di grado $m-1$, moltiplichiamo per $x_i$ affinché la somma sia omogenea di grado $m$ come il polinomio $F$.
-\begin{demonstration}
-	Basta mostrarlo per un monomio $G=\lambda x_0^{j_0}\cdots x_n^{j_n}$ con $j_0+\ldots+j_n=m,\ \lambda\in\kamp$. Scrivendone le derivate parziali rispetto ad una variabile e poi moltiplicando per $x_i$ sistemiamo l'esponente $i$-esimo:
-		\begin{gather*}
-			\frac{\partial{G}}{\partial{x_i}}=\lambda j_i x_0^{j_0}\ldots x_i^{j_{i-1}} \ldots x_n^{j_n} \implies  x_i \frac{\partial{G}}{\partial{x_i}}=\lambda j_i x_0^{j_0}\ldots x_i^{j_i} \ldots x_n^{j_n}\\
-			\implies \sum_{i=0}^n x_i\frac{\partial{G}}{\partial{x_i}} = \sum_{i=0}^n \lambda j_i x_0^{j_0} \ldots x_n^{j_n}=\lambda x_0^{j_0}\ldots x_n^{j_n} \cdot \sum_{i=0}^n j_i =mG
-		\end{gather*}
-\end{demonstration}
-%
-%il monomio è sempre lo stesso perché si moltiplica per x_i
-%monomio j e somma degli esponenti è esattamente di grado, dunque =mG
-
-%sing e non sing rette tang per piane pro
-\begin{proposition}
-	Sia ora $C$ in $\proj[2]{\ }$ una curva di equazione $F(x_0,x_1,x_2)=0$ con $F$ polinomio omogeneo di grado $d$. Sia $P\in C$, allora, $P$ è \textit{non singolare} $\iff$ almeno una delle derivate parziali di F non è nulla in $P$, ovvero $\exists i\in\{0,1,2\}\colon \frac{\partial{F}}{\partial{x_i}}(P)\neq 0$.\\
-%allo stesso mod del caso affine con le der in p
-	In tal caso esiste ed è unica la retta tangente a $C$ in $P$ ed ha equazione
-		\begin{equation}
-			\underbrace{frac{\partial{F}}{\partial{x_0}}(P) }_{\in\kamp}x_0 + \underbrace{frac{\partial{F}}{\partial{x_1}}(P) }_{\in\kamp}x_1 + \underbrace{frac{\partial{F}}{\partial{x_2}}(P) }_{\in\kamp}x_2 
-		\end{equation}
-	che ha i coefficienti dati dalle derivate parziali di $F$ in $P$.
-\end{proposition}
-\begin{demonstration}
-	Dobbiamo verificare che per la curva affine di cui $C$ è chiusura proiettiva (ottenuta deomogeneizzando rispetto a $x_0$) si ritrovano le stesse definizioni di prima.\\
-	A meno di proiettività possiamo supporre che $P=(1\colon a\colon b)\in U_0=\{x_0\neq 0\}$, ovvero che stia nella carta affine $U_0$ che è identificata a $\kamp^2$, quindi $P$ corrisponde a $(a,b)\in\kamp^2$.\\
-	Poniamo $f(x,\ y)\coloneqq F(1,x,y)$ e sia $C_0$ la curva in $K^2$ di equazione $f(x,y)=0$ per cui $C$ è la chiusura proiettiva di $C_0$. Vogliamo mettere in relazione le derivate parziali di $f$ e di $F$ a partire dalla definizione stessa di $f$, 
-%	che ci dice che facendo la derivate parziali di $f$ rispetto a $x$ è la sessa di 	valutata in	come polinomio, idem y, ed è una relazione fra polinomi
-	per poi valutarla nel punto, ottenendo
-		\begin{gather*}
-			\begin{cases}
-				\frac{\partial{f}}{\partial{x}} = \frac{\partial{F}}{\partial{x_1}} (1,x,y)\\
-				\frac{\partial{f}}{\partial{y}} = \frac{\partial{F}}{\partial{x_2}} (1,x,y)
-			\end{cases}
-			\implies \textcolor{green}{\circled{\ast}}
-			\begin{cases}
-				\frac{\partial{f}}{\partial{x}}(a,b) = \frac{\partial{F}}{\partial{x_1}} (1,a,b)\\
-				\frac{\partial{f}}{\partial{y}}(a,b) = \frac{\partial{F}}{\partial{x_2}} (1,a,b)
-			\end{cases}
-		\end{gather*}
-	Usiamo la relazione di Eulero fra polinomi e valutiamo in $(1,a,b)$:
-		\begin{gather*}
-			\frac{\partial{F}}{\partial{x_0}}(1,a,b) + a\frac{\partial{F}}{\partial{x_1}}(1,a,b) + b\frac{\partial{F}}{\partial{x_2}}(1,a,b)= dF(1,a,b)=0
-		\end{gather*}
-	e $F(1,a,b)=0$ perché il punto sta nella curva, $P\in C$. Riusciamo così a esprimere la terza derivata parziale rispetto a $x_0$ in funzione delle altre due:
-		\begin{gather*}
-			\textcolor{green}{\circled{\ast\ast}}\quad \frac{\partial{F}}{\partial{x_0}}=-a\frac{\partial{F}}{\partial{x_1}} -b\frac{\partial{F}}{\partial{x_2}}
-		\end{gather*}
-	Quindi abbiamo che $\nabla f(a,b)=0 \iff  \nabla F(1,a,b)=(0,0,0)$, infatti se il gradiente $f$ si annulla in $P$ allora si annullano le derivate parziali rispetto a $x_1,x_2$ di $F$, allora per la relazione di Eulero anche la terza derivata parziale si annulla. Viceversa, se il gradiente di $F$ si annulla bastano le relazioni $\textcolor{green}{\circled{\ast}}$ per avere che anche il gradiente di $f$ si annulla.\\
-	Il punto $P$ è \textit{non singolare} se e solo se $\nabla F(1,a,b)\neq \mathbf{0}$, dunque si ha la tesi.\\
-	Vogliamo anche che la retta tangente diventi proprio quell'equazione. Supponendo $P$ non singolare, allora la retta tangente affine a $C_0$ in $P$ ha equazione $\frac{\partial{f}}{\partial{x}}(a,b)(x-a) + \frac{\partial{f}}{\partial{y}}(a,b)(y-b)=0$. La chiusura proiettiva di tale retta affine dà la retta tangente proiettiva a $C$ in $P$ ed ha equazione $\frac{\partial{f}}{\partial{x}}(a,b)(x_1-ax_0) + \frac{\partial{f}}{\partial{y}}(a,b)(x_2-bx_0)=0 $, in quanto si è omogeneizzato rispetto a $x_0$. Per $\textcolor{green}{\circled{\ast}}$ si ha che
-		\begin{gather*}
-			\frac{\partial{F}}{\partial{x_1}}(1,a,b)(x_1-ax_0) + \frac{\partial{F}}{\partial{x_2}}(1,a,b)(x_2-bx_0)=0 \\
-			\implies  \underbrace{ \left( -a\frac{\partial{F}}{\partial{x_1}}(1,a,b) -b \frac{\partial{F}}{\partial{x_2}}(1,a,b) \right)}_{\textcolor{green}{\circled{\ast\ast}}}  x_0 + \frac{\partial{F}}{\partial{x_1}}(1,a,b) x_1 + \frac{\partial{F}}{\partial{x_2}}(1,a,b) x_2=0 \\
-			\implies \frac{\partial{F}}{\partial{x_0}}(P) x_0 + \frac{\partial{F}}{\partial{x_1}}(P) x_1 + \frac{\partial{F}}{\partial{x_2}}(P) x_2
-		\end{gather*}
-\end{demonstration}
-
-\begin{observe} \textsc{Rette tangenti: sistema Affine vs. Proiettivo}
-	Se $C$ è una curva affine di equazione $f(x,y)=0$ per trovare i punti singolare di $C$ bisogna risolvere un sistema con l'equazione della curva e le derivate parziali di $f$. L'equazione della curva è necessaria perché potrei avere punti in cui il gradiente si annulla ma non appartengono alla curva!\\ 
-	Invece se $C$ è proiettiva di equazione $F(x_0,x_1,x_2)=0$, per trovare i punti singolari di $C$ bisogna solo risolvere il sistema delle derivate parziali nulle e non serve mettere anche l'equazione della curva per via della relazione di Eulero. Infatti se $P$ annulla $\nabla F$, allora dalla relazione di Eulero si ha che:
-		\begin{equation*}
-			F(P)=\frac{1}{d}\left( a\frac{\partial{F}}{\partial{x_0}}(P) + b\frac{\partial{F}}{\partial{x_1}}(P) + c\frac{\partial{F}}{\partial{x_2}}(P) \right) = 0 \implies P\in C
-		\end{equation*}
-	Riassumendo, ecco i sistemi a confronto:
-		\begin{center}
-			\begin{tabular}{c|c}
-				Affine & Proiettivo \\
-				\hline
-				$\displaystyle \begin{cases} 
-					f(x,y)=0 \\		\frac{\partial{f}}{\partial{x}}(x,y)=0\\	\frac{\partial{f}}{\partial{y}}(x,y)=0
-				\end{cases}$ & $\displaystyle \begin{cases}
-					\frac{\partial{F}}{\partial{x_0}}=0\\	\frac{\partial{F}}{\partial{x_1}}=0\\	\frac{\partial{F}}{\partial{x_2}}=0 
-				\end{cases}$
-			\end{tabular}
-		\end{center}
-\end{observe}
-
-\begin{examples} \label{esempi lez 35}
-	\begin{enumerate}
-		\item	Sia $C_0\colon x^2+x^3-y^2=0$ una curva affine. Sia $C$ la chiusura proiettiva di $C_0$ con equazione $F=x_0x_1^2+x_1^3-x_0x_2^2$, cerchiamo i punti singolari:
-			\begin{gather*}
-				\nabla F=0 \iff \begin{cases}
-					\frac{\partial{F}}{\partial{x_0}}=x_1^2 - x_1^2=0\\
-					\frac{\partial{F}}{\partial{x_1}}=2x_0x_1+3x_1^2=0\\
-					\frac{\partial{F}}{\partial{x_2}}-2x_0x_2=0
-				\end{cases} \implies \begin{cases}
-					x_0=0 \\ x_1=0 \\ x_2=0
-				\end{cases} \text{ oppure } \begin{cases}
-					x_0=t \\ x_1=0 \\ x_2=0
-				\end{cases}
-			\end{gather*}
-		di cui il primo è un assurdo, dunque $P=(1\colon 0\colon 0)$ è l'unico punto singolare di $C$ e osserviamo che corrisponde a $(0,0)\in\kamp^2$.\\
-		Avevamo studiato anche il punto $Q=(-1,0)\in C_0$, vediamolo anche nel caso proiettivo in cui $Q=(1\colon -1\colon 0)\in C$ non singolare. Scriviamo la tangente $T_Q C$ grazie alle derivate parziali:	$\frac{\partial{F}}{\partial{x_0}}(Q)=1,\ \frac{\partial{F}}{\partial{x_1}}(Q)=(2x_0x_1+3x_1^2)(Q)=1,\ \frac{\partial{F}}{\partial{x_2}}(Q)=(-2x_0x_1)(Q)=0$, per cui $T_Q C\colon x_0+x_1=0$. Per ottenere la retta affine di cui è chiusura proiettiva basta porre $x_0=1$, per cui $x+1=0$, ed è coerente con l'analisi nel caso affine.\\
-		Avevamo visto che nel punto singolare $P=(1\colon 0\colon 0)$, tutte le rette per $P$ hanno molteplicità di intersezione $2$ con la curva $C$ in $P$ tranne due rette speciali, quelle di direzione $(1\pm 1)$ in cui la molteplicità di intersezione è 3, pertanto $P$ è detto \textbf{nodo}. \index{nodo}
-		\item	consideriamo la curva affine $C_0$ data da $f(x,y)=y-x$ e la chiusura proiettiva $C$ di equazione $F(x_0,\ x_1,\ x_2)=x_0x_2^2-x_1^3$. Siccome $\frac{\partial{F}}{\partial{x_0}} =x_2^2,\ \frac{\partial{F}}{\partial{x_1}}= -3x_1^2,\ \frac{\partial{F}}{\partial{x_2}}= 2x_0x_2$ allora $P=(1\colon 0\colon 0)$ è l'unico punto singolare di $C$, che corrisponde all'origine in $\mathcal{A}(\kamp^2)$. Consideriamo il fascio di rette per l'origine in $\mathcal{A}(\kamp^2)$ e vediamo qual è la molteplicità di intersezione per confrontarlo con il caso precedente. Sia la generica retta per l'origine $r\colon \begin{cases}
-			x=tv_1 \\
-			y=tv_2
-		\end{cases}$ con $v=(v_1,v_2)$ direzione di $r$. La intersechiamo con $C_0$
-			\begin{gather*}
-				g(t)=t^2v_2^2 -t^3v_1^3=0 \implies t^2(v_2^2 -tv_1^3)=0
-			\end{gather*}
-		da cui segue la molteplicità di intersezione in $P$ è 2 se $v_2\neq 0$ ed è 3 se $v_2=0$.\\
-		Si nota che è simile al caso precedente ma la differenza sta nel fatto che quasi tutte le rette hanno molteplicità 2 e c'è solo un'unica retta con molteplicità 3 e non 2 come nel caso precedente.\\
-		Disegnandola si nota la presenza di una cuspide e attorno al punto singolare non è liscia.
-%DISEGNO
-	\end{enumerate}
-\end{examples}
-
-Questi erano esempi di cubiche, vediamo cosa succede per le coniche.
-\begin{observe} \textsc{Punti singolari delle coniche}\\
-	Sia $C$ una conica proiettiva, allora il numero di punti singolari dipende solo dal rango, ovvero
-		\begin{itemize}
-			\item	$\rk C=3\implies C$ non ha punti singolari
-			\item	$\rk C=2 \implies C$ ha un punti singolare
-			\item	$\rk C=1 \implies C$ è una retta doppia e ogni punto di $C$ è singolare
-		\end{itemize}
-	Infatti sia $A$ la matrice simmetrica associata a $C$, allora l'equazione associata a $C$ e le derivate parziali sono 
-		\begin{gather*}
-			F=x^tAX=\sum_{i,j=0}^2 a_{ij}x_ix_j \implies \frac{\partial{F}}{\partial{x_h}} = \sum_{j=0, i=h}^2 a_{hj}x_j+ \sum_{i=0, j=h}^2  a_{ih}x_i = 2\sum_{i=0}^2 a_{ih}x_i
-		\end{gather*}
-	Un punto $P$ rappresentato dal vettore $v$, ovvero $P=[v]$, è singolare per $C$ se le derivate parziali si annullano, cioé se $\sum_{i=0}^2 a_{hi}v_i=0\forall h=0,1,2$. In notazione matriciale, se si pensa al prodotto righe per colonne si ha che l'indice di riga di $a$ è fissato in $h$ mentre facciamo variare l'indice di colonna $i$: sia $v=\begin{psmallmatrix} v_0 \\ v_1 \\ v_2 \end{psmallmatrix}$ il vettore e $\left( Av \right)_{\text{riga }h}$ un vettore colonna, dunque la condizione con la sommatoria ci dice che $Av=0$, ovvero $v\in\ker A$.\\
-	Riassumendo, i punti singolari di $C$ sono dati dai vettori che stanno nel nucleo della matrice $A$, che dipende dal rango di $A$:
-		\begin{itemize}
-			\item	$\rk A=3\implies \ker A=\{0 \} \implies$ nessun punto singolare
-			\item	$\rk A=2\implies \dim\ker A=1 \implies$ unico punto singolare
-			\item	$\rk A=1\implies F=\lambda L^2$	retta doppia, allora ogni punto di $C$ è singolare	ed è esattamente la retta proiettiva associata al nucleo di $A$: $L=\mathbb{P}(\ker A)$
-		\end{itemize}
-	Confrontiamolo con la classificazione delle coniche nel caso proiettiva
-	o reale e complesso.\\
-	Posto $\rk C=2$, nel \textit{caso complesso} $C=L_1\cup L_2$ con $L_1\neq L_2$ distinte e il punto singolare è il punto di intersezione delle due rette, ovvero $L_1\cap L_2$.\\
-	Nel \textit{caso reale} a meno di proiettività di hanno 2 casi in base alla segnatura: $(1,1)$ allora $C=L_1\cup L_2$ e $P=L_1\cap L_2$, mentre se la segnatura è $(2,0)/(0,2)$ allora la forma quadratica si fattorizza su $\complexset$ e non su $\realset$ e $C$ ha come sostegno un unico punto $P$, che è proprio il punto singolare.
-\end{observe}
-
-\begin{observe}\textsc{Cubiche proiettive nel caso complesso}
-	Nel piano proiettivo complesso $\proj[2]{\complexset}$ consideriamo $C$ una cubica di equazione $F=0$ con $\deg F=3$. Se la curva $C$ è riducibile, allora il polinomio $F$ è riducibile, per definizione, ma siccome il grado è basso allora è prodotto di un polinomio di grado 1 per un altro polinomio di grado 2, quali $F=G\cdot H$ con $\deg G=1$ e $\deg H=2$ pertanto il luogo degli zeri di $F$ è unione dei luoghi degli zeri di $G$ e $H$, dunque $C$ è unione di una retta e di una conica.Ci riconduciamo così a gradi più bassi.\\
-	Supponiamo invece che $C$ sia irriducibile: allora $C$ non può contenere una retta, altrimenti l'equazione della retta dividerebbe il polinomio $F$. Allora $C$ ha \textit{al più un punto singolare}. Infatti, se per assurdo ne avesse almeno 2 quali $P$ e $Q$ potremmo considerare la retta $r$ che passa per $P$ e $Q$ quale $r=\overline{PQ}$, pertanto $C\cap r\supseteq \{P,q\}$ e siccome sono due punti singolari allora la molteplicità di intersezione è almeno 2. Ma ciò non è possibile perché dallo studio delle intersezioni fra una retta e una curva sappiamo che dobbiamo contare con molteplicità fino al grado della curva: qui sono $2$ punti con molteplicità $2$, ma $C$ ha grado 3, dunque la retta dovrebbe essere contenuta nella curva, ma è una contraddizione.
-\end{observe}
-
-\begin{example}
-	Sia $F=x_0^3+x_1^3+x_2^3$, esso dà una curva senza punti singolari perché le derivate parziali sono multipli delle coordinate dunque non possono mai essere tutti nulli
-\end{example}
-
-		\section{Fasci di coniche proiettive}
-\begin{intuit}
-	Scrivere il fascio vuol dire prendere 2 coniche e considerare le coniche la cui equazione si ottiene come combinazione lineare delle due equazioni di partenza.
-\end{intuit}
-Siano $C_1$ e $C_2$ due coniche distinte nel piano proiettivo $\proj[2]{\ }$ di equazioni $F_1$ e $F_2$, siccome le coniche sono distinte allora $F_1$ e $F_2$ non sono proporzionali. Il \textbf{fascio di coniche} generato da $C_1$ e da $C_2$ è dato da tutte le coniche di equazione $\lambda F_1+\mu F_2=0$ con $(\lambda\colon \mu)\in \proj[1]{\ }$. Possiamo scrivere $\mathcal{F}$ come fascio e $C_{\lambda,\ \mu}$ come conica specifica ottenuta dall'equazione.\\
-Notiamo che se moltiplichiamo $\lambda$ e $\mu$ per lo stesso scalare tutta l'equazione viene moltiplicata ed otteniamo la stessa conica di prima, dunque $\lambda$ e $\mu$ vanno presi in $\proj[1]{\ }$ e non solo in $\kamp$.
-
-\begin{examples}
-	\begin{enumerate}
-		\item	Siano $C_1\colon x_0x_1=0$ e $C_2\colon (x_0-x_1)x_2=0$ due coniche, entrambe coppie di rette. Allora il fascio da loro generato è $C_{\lambda,\mu}\colon \lambda x_0x_1 + \mu (x_0-x_1)x_2=\lambda x_0x_1 + \mu x_0x_2 -\mu x_1x_2=0$
-		\item	Siano $C_1\colon x_0x_1=0$ e $\widetilde{C_2}\colon x_0x_2=0$. Il fascio sarà $C_{\lambda,\mu}\colon \lambda x_0x_1 +\mu x_0x_2=x_0(\lambda x_1 + \mu x_2)=0$, infatti siccome $x_0=0$ appartiene ad entrambe le coniche si può raccogliere il fattore $x_0$
-	\end{enumerate}
-\end{examples}
-
-Dato un fascio di coniche ci si chiede qual è il rango delle coniche del fascio.
-\begin{define}\textsc{Conica Degenere} \index{conica!degenere}
-	Una conica $C$ in $\proj[2]{\ }$ si dice \textbf{degenere} quando \textit{non} ha rango massimo, ovvero se $\rk C< 3$, dunque quando la matrice non è invertibile.
-\end{define}
-
-	\subsection{Studio delle coniche degeneri di un fascio}
-Dato un fascio vogliamo vedere quante e quali sono le coniche degeneri del fascio.\\
-Supponiamo che $C_1$ abbia come matrice simmetrica $A_1$ e $C_2$ idem con $A_2$. Allora è chiaro che la conica del fascio generata da $C_1,C_2$ sarà associata alla combinazione lineare sulle matrici: $C_{\lambda,\mu}\rightarrow \lambda A_1+\mu A_2$, matrice $3\times 3$ i cui elementi sono o $0$ o forme lineari in $\lambda$ e $\mu$.\\
-Sia $D(\lambda,\mu)\coloneqq \det (\lambda A_1+\mu A_2)$, che è un polinomio omogeneo in $\lambda$ e $\mu$ che sarà nullo o di grado $3$. Si hanno due possibilità:
-	\begin{itemize}
-		\item	$D(\lambda,\ \mu)\equiv 0\implies$ \textit{tutte} le coniche del fascio sono degeneri
-		\item	$D(\lambda,\ \mu)$ è omogeneo di grado 3, dunque le	coniche degeneri corrispondono agli zeri del polinomio $D$ su $\proj[1]{\ }$ che sono al più 3, pertanto ci sono \textit{al più 3 coniche degeneri}
-	\end{itemize}
-\begin{tips}
-	Deduciamo dunque che o tutte le coniche del fascio sono degeneri o sono al massimo 3, quindi se in un fascio ne trovo 4 degeneri allora tutte lo sono!
-\end{tips}
-Nel caso complesso gli zeri sono pari al grado contato con molteplicità, dunque si ha sempre almeno una conica degenere. Ciò vale anche nel caso reale essendo il grado dispari.
-		
-
-Riscriviamo gli esempi precedenti
-\begin{examples}
-	\begin{enumerate}
-		\item	Il fascio è $\mathcal{F}_1\colon 2(\lambda x_0x_1 +\mu x_0x_2 -\mu x_1x_2)=0$ ed ha matrice $A_{\lambda,\mu}=\begin{pmatrix}
-			0 & \lambda & \mu \\
-			\lambda & 0 & -\mu \\
-			\mu & \mu & 0
-		\end{pmatrix}$. Pertanto $D(\lambda,\mu)=\det A_{\lambda,\mu}=-\lambda(\mu^2)+\mu(-\lambda \mu)=-2\lambda\mu^2$. Ci sono solo 2 eri perché uno è doppio, e $D$ si annulla per $(\lambda\colon\mu)=(1\colon 0)$ oppure $(0\colon 1)$. Questi valori dei parametri ci restituiscono i polinomi di partenza, corrispondono dunque a $C_1$ e $C_2$, che sapevamo già essere degeneri. Abbiamo dunque scoperto che $C_1$ e $C_2$ sono le uniche coniche degeneri del fascio.
-		\item	Il fascio è $\mathcal{F}_2 \colon x_0(\lambda x_1+\mu x_2)=0$. In questo caso il determinante viene identicamente nullo $D\equiv 0$ perché sono riducibili essendo coppie di rette. In questo fascio dunque tutte le coniche hanno una retta in comune.
-	\end{enumerate}
-\end{examples}
-
-\begin{define} \textsc{Punti Base di un fascio di coniche} \index{punti!base}\\
-	I \textbf{punti base} di un fascio di coniche sono i punti che appartengono a tutte le coniche del fascio, ovvero 
-		\begin{equation*}
-			\inter_{C\in\mathcal{F}} C \subset \proj[2]{\ }
-		\end{equation*}
-\end{define}
-
-\begin{observe} \textsc{Punti base}\\
-	I punti base di un fascio sono dati dall'interseoine delle due coniche che generano il fascio: $C_1\cap C_2$.\\
-	Infatti $\displaystyle C_1\cap C_2 \supseteq \inter_{C\in\mathcal{F}} C$. Viceversa se $P\in C_1\cap C_2$ allora $F_1(P)=0$ e $F_2(P)=0 \implies (\lambda F_1 +\mu F_2)(P)=0,\forall\lambda,\mu \implies P\in C_{\lambda,\mu},\forall (\lambda\colon\mu)\in\proj[1]{\ }$, ovvero comunque si faccia la combinazione lineare viene sempre nulla.
-\end{observe}
-
-Vediamo i punti base degli esempi precedenti.
-\begin{examples}
-	\begin{enumerate}
-		\item	Per ottenere i punti base del fascio si intersecano le coniche che lo generano:
-			\begin{gather*}
-				\begin{cases}
-					x_0x_1=0\\
-					(x_0-x_1)x_2=0
-				\end{cases} \implies \begin{cases}
-					x_0=x_1=0\\
-					x_0=x_2=0\\
-					x_1=x_2=0
-				\end{cases}
-			\end{gather*}
-		Intersecando due rette non coincidenti si possono ottenere al più 4 punti 1+1+1+1, ma se ne ottengono meno se qualcuno di questi punti va a coincidere.\\
-		In questo caso infatti si hanno 3 punti base quali $(1\colon 0\colon 0),(0\colon 1\colon 0), (0\colon 0\colon 1)$
-		\item	I punti base sono dati dal sistema $\begin{cases} x_0x_1=0\\ x_0x_2=0 \end{cases}$. Si ha una retta di punti base perché $x_0=0$ è una retta comune a tutte le coniche del fascio, e $P=(1\colon 0\colon 0)$ è un altro punto base. Inoltre è il punto base del fascio di rette $\lambda x_1+\mu x_2=0$, che varia fra tutte le rette che contengono $P$.
-	\end{enumerate}
-\end{examples}
-
-\begin{digression} \textsc{Nodi e Cuspidi}\\
-	Un \textbf{nodo} è un punto $P$ per cui la retta "generale" per $P$ ha intersezione $2$ con la curva e ce ne sono \textit{esattamente} $2$ che hanno intersezione $>2$.\\
-	Una \textbf{cuspide} è un punto in cui la retta "generale" per $P$ ha intersezione $2$ con la curva e ce n'è \textit{una sola} che ha intersezione $>2$
-\end{digression}
-
-
-
-
-
-%LEZ 36
-	\subsection{Parametrizzazione delle coniche nel piano proiettivo}
-Data l'equazione di una conica $F=a_{00}x_0^2+2a_{01}x_0x_1+\dots+a_{22}x_2^2$ possiamo associare a $C$ il punto $(a_{00}\colon a_{01}\colon a_{02}\colon a_{11}\colon a_{12}\colon a_{22})\in\proj[5]{\ }$, in quanto ci sono 6 coordinate. Tale punto determina univocamente la conica: entrambi sono non nulli e determinati a meno di multipli.\\
-In questo modo otteniamo una corrispondenza biunivoca fra le coniche in $\proj[2]{\ }$ e $\proj[5]{\ }$, ovvero
-	% https://q.uiver.app/?q=WzAsMixbMCwwLCJcXHtcXHRleHR7Y29uaWNoZSBpbiB9XFxwcm9qWzJde1xcIH0gXFx9Il0sWzIsMCwiXFxwcm9qWzVde1xcIH0iXSxbMCwxLCIxXFxjb2xvbiAxIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn19fV1d
-	\[\begin{tikzcd}
-		{\{\text{coniche in }\proj[2]{\ } \}} && {\proj[5]{\ }}
-		\arrow["{1\colon 1}", from=1-1, to=1-3, tail reversed]
-	\end{tikzcd}\]
-In questo contesto Cosa vuol dire considerare un fascio di coniche?\\
-Date $C_1$ e $C_2$ coniche, consideriamo il fascio $\mathcal{F}$ da loro generato. Se $C_1\colon F=\sum_{i,j}a_{ij}x_ix_j$ allora corrisponde ad un punto $A=(a_{00}\colon \cdots \colon a_{22})\in\proj[5]{\ }$. Idem per $C_2\colon G=\sum_{i,j}b_{ij}x_ix_j$ che corrisponde ad un punti $B=(b_{00}\colon\cdots\colon b_{22})\in\proj[5]{\ }$. La conica $C_{\lambda,\ \mu}$ del fascio è la combinazione lineare di $F$ e $G$, dunque i coefficienti sono la combinazione lineare dei coefficienti delle equazioni di $C_1$ e $C_2$, ovvero
-	\begin{gather*}
-		c_{\lambda,\mu}\colon \lambda F+\mu G=\sum_{i,j}(\lambda a_{ij}+\mu b_{ij})x_ix_j \longleftrightarrow P_{\lambda,\mu} =(\lambda a_{00}+\mu b_{00}\colon \cdots \colon \lambda a_{22}+\mu b_{22})\in\proj[5]{\ }
-	\end{gather*}
-Facendo variare $\lambda$ e $\mu$ si ha che il punto $P_{\lambda,\mu}$ descrive in $\proj[5]{\ }$ una retta generata dai punti $A$ e $B$ quale $\overline{AB}$, pertanto un \textit{fascio di coniche corrisponde esattamente ad una retta in $\proj[5]{\ }$}.Siccome una retta è individuata da due qualsiasi suoi punti, allo stesso modo il fascio è descritto da qualsiasi sue 2 coniche, pertanto la scelta coniche dà solo una parametrizzazione diversa del fascio.\\
-Questo ci permette di dare più informazioni sui punti base
-\begin{tips} \textsc{Calcolo punti base con 2 coniche qualsiasi}\\
-	Dato un fascio $\mathcal{F}$ di coniche, i punti base del fascio sono dati dall'intersezione di due qualsiasi coniche del fascio purché siano distinte, ovvero da $C\cap\widetilde{C}$ dove $C$ e $\widetilde{C}$ sono 2 coniche distinte del fascio
-\end{tips}
-%così è molto più facile intersecare coppie di rette
-
-\begin{observe}
-	Sia $\mathcal{F}$ un fascio di coniche. Esiste sempre una conica $C$ degenere in $\mathcal{F}$ quindi usiamo $C$ per calcolare i punti base.\\
-	Siccome è degenere, $C$ è l'unione di due rette linearmente indipendenti, ovvero $C=l_1\cup l_2$. Scegliamo una qualsiasi altra conica del fascio quale $\widetilde{C}$, duqneu i punti base del fascio sono dati da $C\cap\widetilde{C}=(l_1\cap\widetilde{C})\cup (l_2\cap \widetilde{C})$.\\
-	Ne deduciamo che il numero di punti base di un fascio di coniche, se sono finiti, sono 4, infatti ciascuna delle due rette interseca $\widetilde{C}$ al più in 2 punti.
-\end{observe}
-
-\begin{corollary}
-	Se due coniche $C_1$ e $C_2$ non hanno una retta in comune allora $\#(C_1\cap C_2)\leq 4$.
-\end{corollary}
-\begin{demonstration}
-	$C_1\cap C_2$ sono i punti base del fascio generato da $C_1$ e $C_2$, dunque segue dall'osservazione precedente.
-\end{demonstration}
-
-\begin{tips} \textsc{Calcolo intersezione delle coniche}\\
-	Abbiamo così anche un metodo per calcolare $C_1\cap C_2$ nel fascio $\mathcal{F}$ scriviamo $D(\lambda,\ \mu),$ troviamo una conica degenere $\widetilde{C}$ e poi intersechiamo con $C_1\cap\widetilde{C}$. Questo metodo è particolarmente utile nel caso avessimo a che fare con coniche irriducibili.
-\end{tips}
-
-Ci sono diversi tipi di rappresentazione geometrica dei fasci di coniche proiettive, vediamo quello più comune.
-\begin{proposition}
-	Siano $A,B,C,D$ 4 punti in posizione generale in $\proj[2]{\ }$. Allora la famiglia delle coniche passanti per i 4 punti è un fascio $\mathcal{F}$ avente come punti base esattamente i 4 punti, ovvero geometricamente stiamo fissando i 4 punti e considerando le coniche che passano per tutti e 4 i punti.\\
-%famiglia fascio F: se la consider ocome punti di P5 descrivono esataente una retta: fissate due coniche le altre sono date da cl delle altre 2
-%essere un fascio: in P5 è una retta: se guardo le eq tutte e sole che si ottengono come cl di due eq fissate/
-	Inoltre $\mathcal{F}$ non contiene rette doppie e contiene esattamente 3 coniche degeneri che sono le coppie di rette che passano per questi 4 punti, ovvero
-%DISEGNO
-%\footnote{il disegno è fuorviante perché le rette si intersecano da qualche parte nel piano proiettivo}
-	$\overline{AB}\cup\overline{CD}$, $\overline{AC}\cup \overline{BD}$, $\overline{AD}\cup\overline{BC}$.
-%/è un fascio semplice perché il comportamento è quello che uno si aspetta/
-\end{proposition}
-\begin{demonstration}
-	Siccome i 4 punti sono in posizione generale possiamo scegliere delle coordinate in $\proj[2]{\ }$ tali che i primi 3 sono i punti fondamentali e l'ultimo il punto unità, ovvero tali che $A=(1\colon0\colon0), B=(0\colon1\colon0), c=(0\colon0\colon1),d=(1\colon1\colon1)$.
-	Partiamo dall'equazione di una conica generica e imponiamo che passi per i 4 punti e vediamo che condizioni vengono sui coefficienti:
-		\begin{gather*}
-			a_{00}x_0^2+2a_{01}x_0x_1+a_{11}x_1^2+2a_{02}x_0x_2+2a_{12}x_1x_2+a_{22}x_2^2=0\\
-			\text{Per } A \colon a_{00}=0 \quad \text{Per } B \colon a_{11}=0 \quad \text{Per } C \colon a_{22}=0 \\
-			\text{Per } D \colon 2a_{01}+2a{02}+2a_{12}=0 \implies a_{12}=-a_{01}-a_{02}\\
-			\implies a_{01}x_0x_1+a_{02}x_0x_2-(a_01+a_02)x_1x_2=0
-		\end{gather*}
-	che sono le equazioni di tutte e sole le coniche che passano per $A,B,C,D$. Siccome $a_{01}$ e $a_{02}$ sono gli unici parametri rimasti adesso riscriviamo l'equazione evidenziandoli: $a_{01}x_1(x_0-x_2)+a_{02}x_2(x_0-x_1)=0$. Abbiamo così trovato esattamente un fascio di coniche  generato dalle due coniche entrambe degeneri:
-		\begin{gather*}
-			C_1\colon \underbrace{x_1}_{\overline{AC}} \underbrace{(x_0-x_2)}_{\overline{BD}}=0 \\
-			C_2\colon \underbrace{x_2}_{\overline{AB}} \underbrace{(x_0-x_1)}_{\overline{CD}}=0
-		\end{gather*}
-	Abbiamo così dimostrato la prima affermazione.\\
-	Per la seconda affermazione esaminiamo cosa sono queste coppie di rette e ritroviamo le rette per i punti base come evidenziato sopra. Per riuscirci osserviamo ad esempio che i punti per cui la coordinata $x_1=0$ sono proprio $A$ e $C$, pertanto $x_1=0$ è proprio $\overline{AC}$. In questo modo abbiamo già trovato due coniche delle coniche degeneri del fascio e questo ci dice anche che i punti base sono solo $A,B,C,D$, perché queste due rette si intersecano solo lì, infatti:
-		\begin{gather*}
-			C_1\cap C_2 = (\overline{AC}\cup \overline{BD}) \cap (\overline{AB}\cup\overline{CD}) = (\overline{AC}\cap\overline{AB}) \cup (\overline{AC}\cap\overline{CD}) \cup (\overline{BD}\cap \overline{AB}) \cup (\overline{BD}\cap \overline{CD}) =\\ 
-			=\{A,B,C,D\}
-		\end{gather*}
-	Avremmo potuto evitare questo conto osservando che sono punti base perché per costruzione tutte le coniche passano per questi 4 punti, inoltre se sono finiti non possono essercene altri.
-	Per calcolare le coniche degeneri utilizziamo l'equazione della conica generica del fascio e scriviamo la matrice divisa per due perché tanto è determinata a meno di multipli e ne calcoliamo il determinante:
-		\begin{gather*}
-			M=\begin{pmatrix}
-				0 & a_{01} & a_{02} \\
-				a_{01} & 0 & -a_{01}-a_{02}\\
-				a_{02} & -a_{01}-a{02} & 0
-			\end{pmatrix}\\
-		\implies D=\det M= -a_{01}a_{02}(a_{01}+a_{02})+a_{02}a_{01}(-a_{01}-a_{02}) = -2a_{01}a_{02}(a_{01}+a_{02})
-		\end{gather*}
-	Osserviamo che è un polinomio omogeneo in $a_{01}$ e $a_{02}$ già fattorizzato in fattori lineari, pertanto si hanno esattamente 3 coniche degeneri: $a_{01}=0$ dà $C_2$, mentre $a_{02}=0$ dà $C_1$ e la terza si ottiene sostituendo nell'equazione del fascio $a_{02}=-a_{01}$, ottenendo $a_{01}x_0x_1-a_{01}x_0x_2=0$ dunque $x_0(x_1-x_2)=0$, a cui corrispondono $\overline{BC}$ e $\overline{AD}$.\\
-	Tutte e tre le coniche degeneri hanno rango 2 e quindi non ci sono rette doppie nel fascio.
-\end{demonstration}
-
-\begin{tips} \textsc{Scrittura fascio coniche per 4 punti in posizione generale} \label{fascio coniche per 4 pt pos gen} \\
-	Se dobbiamo scrivere un fascio di coniche per 4 punti procedere come nella dimostrazione può esser lungo, vediamo un metodo alternativo.\\
-	Supponiamo di aver dati 4 punti in posizione generale e di voler scrivere il fascio $\mathcal{F}$ delle coniche che passano per questi 4 punti.
-		\begin{itemize}
-			\item	Scriviamo 2 delle coniche riducibili: $l_1$ equazione della retta $\overline{AB}$, $l_2$ retta $\overline{CD}$, $l_3$ retta $\overline{AC}$ e $l_4$ retta $\overline{BD}$ 
-			\item	L'equazione del fascio è $\mathcal{F}\colon \lambda l_1 l_2 + \mu l_3 l_4 =0$
-		\end{itemize}
-\end{tips}
-
-Considerando un punto del piano proiettivo sappiamo che se è un punto base allora appartiene a tutte le coniche del fascio, ci chiediamo ora per quante coniche passa se \textit{non} è un punto base del fascio.
-\begin{proposition}
-	Sia $\mathcal{F}$ un fascio di coniche e sia $P\in \proj[2]{\ }$. Se $P$ \textit{non} è un punto base di $\mathcal{F}$, allora esiste ed è unica la conica del fascio che contiene $P$.
-\end{proposition}
-\begin{demonstration}
-	Supponiamo di avere 2 coniche quali $C_1, C_2$ che generano il fascio $\mathcal{F}$ con $C_i\colon f_i=0$. Pertanto il fascio avrà equazione $\mathcal{F}\colon \lambda F_1 +\mu F_2=0$. Il punto $P$ appartiene alla conica generale del fascio se e solo se l'equazione della conica è soddisfatta nel punto, ovvero 
-		\begin{equation*}
-			P\in C_{\lambda,\mu} \iff \lambda F_1(P) +\mu F_2(P)=0
-		\end{equation*}
-	Tale equazione può essere vista come un'equazione in $(\lambda \colon \mu)$.\\
-	Siccome $P$ non è un punto base, allora non appartiene all'intersezione, dunque non è possibile che entrambe le equazioni si annullino in P, ovvero $P\notin C_1\cap C_2 \implies (F_1(P), F_2(P)) \neq (0,0)$. Pertanto l'equazione ha un'unica soluzione in $\proj[1]{\ }$ che sarà proprio $(-F_2(P)\colon F_1(P))$, ottenendo così un'unica conica del fascio che contiene $P$.
-%sostituisco i valori di lamba e mu per trovare la soluzione /esempio in giallo
-\end{demonstration}
-
-Vedremo ora come 5 punti determinano una conica proiettiva.
-\begin{proposition}
-	Dati 5 punti distinti in $\proj[2]{\ }$ \textit{a 4 a 4 non allineati} \footnote{è una condizione più debole rispetto all'essere in posizione generale, perché potrebbero essercene 3 allineati ma non 4}, esiste ed è unica la conica $C$ che li contiene.
-\end{proposition}
-\begin{demonstration}
-	Possiamo scegliere 4 di questi punti che sono in posizione generale, infatti consideriamo i primi 4 quali $A,B,C,D$: se sono in posizione generale ok, altrimenti ce ne sono 3 allineati, per esempio $A,B,C$. Siccome per i potesi i 4 pt non sono allineati allora $D\notin r$ con $r$ retta per $A,B,C$ e sempre per ipotesi $E\notin r$. Tralasciamo $C$ e consideriamo $A,B,D,E$: di nuovo, se sono in posizione generale ok, altrimenti 3 sono allineati, però abbiamo già che $D,E \notin r$, dunque abbiamo 3 punti allineati che possono essere $A,D,E$ oppure $B,D,E$. Supponiamo $A,D,E$, allora $B,C,D,E$ sono in posizione generale (scartiamo $A$).
-	Troviamo quindi 4 punti fra	in posizione generale, dunque possiamo applicare la proposizione precedente, dunque sia $\mathcal{F}$ il fascio delle coniche passanti per $A,B,C,D$. Ma $E$ non è un punto base per $\mathcal{F}$ perché i punti base sono i 4 punti $A,B,C,D$, dunque esiste ed è unica la conica $C$ del fascio che passa per $E$, e dunque $C$ è l'unica conica che contiene i 5 punti
-\end{demonstration}
-
-Riassumendo, dati 5 punti esiste ed è unica la conica che passa per i 5 punti, e questa dimostrazione dà anche il metodo per trovare la conica che passa per tali 5 punti.
-
-\begin{tips}
-	Il metodo più semplice per trovare una conica $\mathcal{C}$ che passa per 5 punti dati $A,B,C,D,E$ in $\proj[2]{\ }$ è 
-		\begin{itemize}
-			\item	scegliere 4 punti in posizione generale quali $A,B,C,D$
-			\item	scrivere 4 rette e il fascio $\mathcal{F} $ come nel tip precedente quale \ref{fascio coniche per 4 pt pos gen} per prima 
-			\item	imporre il passaggio per il 5° punto $E$ in modo da trovare la conica $\mathcal{C}$
-		\end{itemize}
-	Altrimenti potremmo partire dalla conica generale e imporre il passaggio per 5 punti, ma è più lungo.
-\end{tips}
-
-\begin{observe}
-	Il passaggio per un punto dà equazioni lineari omogenee sui coefficienti della conica e possiamo pensarlo come un iperpiano nel $\proj[5]{\ }$, è ragionevole aspettarsi che con 5 punti ho 5 iperpiani che in posizione generale si intersecano in solo punto.\\
-	L'ipotesi sui punti a 4 a 4 non allineati serve a garantire che le condizioni lineari siano indipendenti, così da ottenere un punto nell'intersezione degli iperpiani.
-\end{observe}
-
-\begin{example}
-	Se abbiamo 5 punti di cui 4 allineati, allora per ogni retta $s$ che passa per $P$ la conica $r\cup s$ contiene i 5 punti, quindi ce ne cono $\infty$ avendo infinite rette $s$.
-\end{example}
-
-%PAUSA
-
-\begin{proposition}
-	Siano 3 punti \textit{non allineati} quali $A,B,C\in\proj[2]{\ }$, e sia una retta $r$ che passi per $A$ ma non per $B$ e $C$, ovvero $A\in r$ e $B,C\notin r$. La famiglia delle coniche che passano per $A,B,C$ e sono tangenti a $r$ in $A$ è un fascio $\mathcal{F}$. I punti base del fascio sono solo $A,B,C$ e il fascio $\mathcal{F}$ non contiene rette doppie e contiene 2 coniche degeneri che sono esattamente $\overline{AB}\cup\overline{AC}$ e $r\cup\overline{BC}$, \footnote{le due coppie di rette soddisfano le condizioni necessarie: nella prima si intersecano in $A$ e la molteplicità di intersezione è 2, conta 1 per ciascuna retta, pertanto la retta è tangente, dal punto di vista dei punti singolari invece la retta è singolare, e ogni retta per $A$ è tangente; mentre la seconda coppia passa per $A,B,C$ e contiene $r$, dunque siccome quando è contenuta è tangente si ha molteplicità infinita.}
-\end{proposition}
-\begin{demonstration}
-	Partiamo dalla conica generale e imponiamo le condizioni, ottenendo un fascio e osserviamo che vale quanto voluto.\\
-	Sia $P\in r$ un punto diverso da $A$ e $P\notin\overline{BC} \implies A,B,C,P$ sono in posizione generale (a tre a tre non allineati). Scegliamo le coordinate proiettive tali che $A,B,C$ siano i punti coordinati mentre $P$ il punto unità: $A=(1\colon 0\colon 0),B=(0\colon 1\colon 0),C=(0\colon 0\colon 0\colon1)$. Allora la retta $r=\overline{AP}$ ha equazione $x_1-x_2=0$.\\
-	Si consideri la conica generale $a_{00}x_0^2+2a_{01}x_0x_1+a_{11}x_1^2+2a_{02}x_0x_2+2a_{12}x_1x_2+a_{22}x_2^2=0$ e sappiamo già che il passaggio per i punti coordinati annulla la diagonale, ovvero il passaggio per $A$ implica $a_{00}=0$, per $B$ invece $a_{11}=0$ e per $C$ infine $a_{22}=0$, dunque $F=a_{01}x_0x_1+a_{12}x_1x_2+a_{02}x_0x_2$.\\
-	Vogliamo scrivere le derivate parziali siccome vogliamo imporre che la retta $r$ sia tangente in $A$. Intersechiamo semplicemente con $r\colon x_1=x_2$ sostituendo in $F$ e ottenendo $a_{01}x_0x_+a_{12}x_1^2+a_{02}x_0x_1=0\implies x_1((a_{01}+a_{02})x_0+a_{12}x_1)=0$. Il primo $x_1=0$ corrisponde al fatto che $A\in r\cap C$, vogliamo che $r$ sia tangente alla conica in $A \iff x_1=0$ è l'unica soluzione $\iff$ il coefficiente di $x_0$ deve essere nullo, ovvero $a_{01}+a_{02}=0$, per cui $a_{02}=-a_{01}$. Sostituendo nell'equazione si ottiene:
-		\begin{gather*}
-			a_{01}x_0x_1 -a_{01}x_0x_2 + a_{12}x_1x_2=0 \implies a_{01}x_0(x_1-x_2) + a_{12}x_1x_2=0
-		\end{gather*}
-	Sono tutte e sole le coniche per $A,B,C$ e tangenti a $r$ in $A$, in questo modo abbiamo verificato che è un fascio $\mathcal{F}$. Vediamo quali sono le coniche che lo generano: $C_1\colon \underbrace{x_0}_{\overline{BC}} \underbrace{(x_1-x_2)}_{r}$ e $C_2\colon \underbrace{x_1}_{\overline{AC}} \underbrace{x_2}_{\overline{AB}}$. Intersecando $C_1$ e $C_2$ otteniamo i punti base:
-		\begin{gather*}
-			C_1\cap C_2 = (\overline{BC}\cup r) \cap (\overline{AC}\cup\overline{AB})=(\overline{BC}\cap\overline{AC}) \cup (\overline{BC}\cap\overline{AB}) \cup (r\cap\overline{AC}) \cup (r\cap\overline{AB}) =\{ C,B,A \}
-		\end{gather*}
-	Scriviamo la matrice per verificare che non si sono altri punti base:
-		\begin{gather*}
-			M=\begin{pmatrix}
-				0 & a_{01} & -a_{01}\\
-				a_{01} & 0 & a_{12}\\
-				-a_{01} & a_{12} & 0
-			\end{pmatrix}\\
-			\implies D=\det M= -a_{01}(a_{01}a_{12}) -a_{01}(a_{01}a_{12}) = -2a_{01}^2 a_{12}
-		\end{gather*}
-	Siccome è un polinomio omogeneo di grado 3 si ha una radice doppia \footnote{i parametri nulli danno le coniche che generano il fascio}, dunque le uniche coniche degeneri sono solo $C_1$ e $C_2$.
-\end{demonstration}
-
-\begin{observe}
-	Un fascio di questo tipo è l'esempio 1 di \ref{esempi lez 35}, %della scorsa lezione: 
-	, ovvero consideriamo $C_1\colon x_0x_1=0$ e $C_2\colon (x_0-x_1)x_2=0$ e vediamo come sono posizionate le rette: la retta $x_0-x_1=0$ passa per il punto di intersezione delle prime 2 rette $x_0=0$ e $X_1=0$, quindi siamo nella situazione precedente: $A$ è il punto di intersezione, mentre $B$ e $C$ sono i punti di intersezione di $x_2=0$ con $x_0=0$ e $x_1=0$. Dunque $C_2$ diventa $r\cup \overline{BC}$, mentre $C_1$ è $\overline{AB}\cup \overline{AC}$.\\
-	Abbiamo già verificato che i punti base sono solo 3 quali $A,B,C$ e che $C_1$ e $C_2$ sono le uniche coniche degeneri di $\mathcal{F}$ ed ora osserviamo che la retta $r$ è tangente a tutte le coniche del fascio.
-\end{observe}
-%DISEGNO
-
-
-\begin{example} \textsc{Esercizio 4.3 FFP, risoluzione alternativa} \\
-	Nel piao proiettivo reale $\proj[2]{\realset}$ consideriamo i punti $A=(0\colon 1 \colon 2), B=(0\colon 0\colon 1), C=(2\colon1\colon2), D=(3\colon0\colon1)$. Determinare, se esiste l'equazione di una conica passante per $A,B,C,D$ e tangente in $C$ alla retta $r$ di equazione $x_0-x_2=0$ che passa per $C$.\\
-	\textit{Soluzione}\\
-	Verifichiamo se i 4 punti sono in posizione generale verificando che sono a 3 a 3 non allineati tramite i determinanti
-		\begin{gather*}
-			\begin{vmatrix}
-				0 & 0 & 2\\
-				1 & 0 & 1\\
-				2 & 1 & 2
-			\end{vmatrix} \neq 0 \implies A,B,C \text{ non allineati} 
-			\quad\begin{vmatrix}
-				0 & 0 & 3\\
-				1 & 0 & 0\\
-				2 & 1 & 1
-			\end{vmatrix} \neq 0 \implies A,B,D \text{ non allineati} \\
-			\begin{vmatrix}
-				0 & 2 & 3\\
-				0 & 1 & 0\\
-				1 & 2 & 1
-			\end{vmatrix} \neq 0 \implies B,C,D \text{ non allineati} 
-			\quad \begin{vmatrix}
-				0 & 2 & 3\\
-				1 & 1 & 0\\
-				2 & 2 & 1
-			\end{vmatrix} \neq 0 \implies A,C,D \text{ non allineati} \\
-		\end{gather*}
-	Dunque c'è un fascio $\mathcal{F}$ di coniche per $A,B,C,D$. Scriviamo l'equazione delle 4 rette con il determinante formale delle coordinate:
-		\begin{gather*}
-			\text{retta } \overline{AB} \colon \begin{vmatrix}
-				x_0 & x_1 & x_2 \\
-				0 & 1 & 2 \\
-				0 & 0 & 1 
-			\end{vmatrix} = x_0=0\\
-			\text{retta } \overline{CD} \colon \begin{vmatrix}
-				x_0 & x_1 & x_2 \\
-				2 & 1 & 2 \\
-				3 & 0 & 1 
-			\end{vmatrix} = x_0- x_1 (-4) + x_2(-3)=x_0 +4x_1-3x_2=0\\
-			\implies C_1\colon x_0(x_0+4x_1-3x_2)\\
-			\text{retta } \overline{BD} \colon x_1=0\\
-			\text{retta } \overline{AC} \colon \begin{vmatrix}
-				x_0 & x_1 & x_2 \\
-				0 & 1 & 2 \\
-				2 & 1 & 2 
-			\end{vmatrix} = -x_1(-4) +x_2(-2)= 4x_1 -2x_2=0 \implies 2x_1-x_2=0\\
-			\implies C_2 \colon x_1(2x_1-x_2) \\
-			\implies \text{fascio } \mathcal{F}\colon \lambda x_0(x_0+4x_1-3x_2) +\mu x_1(2x_1-x_2)=0
-		\end{gather*}
-	Queste sono tutte e sole le coniche che passano per $A,D$. Vogliamo la conica del fascio che è tangente alla retta $r\colon x_0-x_2=0$ in $C$. Intersechiamo la conica $C_{\lambda,\mu}$ con la retta $r$ sostituendo $x_2=x_0$ nell'equazione:
-		\begin{gather*}
-			\lambda x_0(x_0+4x_1-3x_0)+\mu x_1(2x_1-x_0)=0 \implies \lambda x_0(4x_1-2x_0)+ \mu x_1(2x_1-x_0)=0\\
-			2\lambda x_0(2x_1-x_0)+ \mu x_1(2x_1-x_0)=0 \implies (2x_1-x_0)(2\lambda x_0 +\mu x_1)=0
-		\end{gather*}
-	Interpretiamo quanto trovato: sostituendo $x_2=x_0$ stiamo parametrizzando la retta $r$ come $(x_0\colon x_1\colon x_0)$ e ricordiamo che $C=(2\colon1\colon2)$, che corrisponde esattamente a $x_0=2x_1$, che è il primo fattore, dunque corrisponde alla soluzione $C$.\\
-	La retta $r$ è tangente alla conica nel punto $C \iff$ anche l'altra soluzione corrisponde al punto $C \iff 2\lambda x_0 +\mu x_1$ e $-x_0+2x_1$ sono proporzionali $\iff \det \begin{pmatrix} 
-		2\lambda & \mu \\
-		-1 & 2
-	\end{pmatrix} =0 \iff 4\lambda +\mu=0 \implies \mu=-4\lambda$, ad esempio per $\lambda=1$ e $\mu=-4$ si ha $2\lambda x_0+\mu x_1=2x_0-4x_1$. L'equazione della conica sarà $\mathcal{C} \colon x_0(x_0+4x_1-3x_2) -4x_1(2x_1-x_2)=0 \implies \mathcal{C}\colon x_0^2 +4x_0x_1 -3x_0x_2 -8x_1^2 +4x_1x_2=0$, dunque esiste ed è unica la conica cercata.
-		\begin{gather*}
-			F(A)=F(0,1,2)=-8+8=0 \quad F(B)=F(0,0,1)=0 \\
-			F(C)=F(2,1,2)= 4+8-12-8+8 =0 \quad F(D)=F(3,0,1)=9-9=0
-		\end{gather*}
-%	Dunque è tangente alla conica nel punto $C=(\colon1\colon2)$
-%le coordinate d c perché C corrisponde al punto, ovvero a x_0=2x_1, ovvero x_0-2x_1=0, dunque il primo fattore corrisponde alla soluzione C
-%tutte le conche passano per C e r passa per C allora
-%vogliamo che anche l'altra soluzione sia il punto C, quindi imponimìamo che lambda e mu dinao la stessa sol, ovvero che le forme lineari siano proporzionali, ovvero imponiamo che \det =0, ovvero che i coeff dell'eq sono multipli, ovvero \mu=-4\lambda
-%poniamo \kambda=1 e \mu=-4
-	Controlliamo se la conica fa quello che deve fare: passare per i punti per cui deve passare e che sia tangente a $C$. Scriviamo direttamente la tangente alla conica nel punto $C=(2\colon1\colon2)$ con le derivate parziali:
-		\begin{gather*}
-			\frac{\partial{F}}{\partial{x_0}} = 2x_0+4x_1-3x_2 \quad \frac{\partial{F}}{\partial{x_1}} = 4x_0-16 x_1 +4x_2 \quad \frac{\partial{F}}{\partial{x_2}} = -3x_0 +ax_1\\
-			\frac{\partial{F}}{\partial{x_0}} (2,1,2) =4+4-6=2 \quad \frac{\partial{F}}{\partial{x_1}} (2,1,2) =8-16+6=0 \quad \frac{\partial{F}}{\partial{x_2}} (2,1,2) = -6+4=2\\
-			\implies 2x_0-2x_2=0 \implies x_0-x_2=0
-		\end{gather*}
-	che è proprio la retta $r$.
-\end{example} 
-			
-
-
-
-
-
-
-
-
-
