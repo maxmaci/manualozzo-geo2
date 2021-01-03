@@ -274,3 +274,45 @@ Si usa spesso l'\textit{M-test} assieme al \textbf{teorema del limite uniforme}.
 \begin{define}
 Sia $\left(f_n\right)_{n\in\naturalset}$ una successione di funzioni \textit{reali} o \textit{complesse} continue sullo spazio topologico $A$ nel quale sono definite; se la successione converge uniformemente su $A$ allora il limite converge ad una funzione continua. In particolare, lo stesso si ha nel caso di una serie.
 \end{define}
+\section{Capitolo 12: geometria proiettiva}
+\subsection{Regola di Cramer}\label{Cramerrimembriancor}
+\begin{theorema}\textsc{Regola di Cramer}.\\
+	Si consideri un sistema $A\mathbf{x}=\mathbf{b}$ di $n$ equazioni lineari in $n$ incognite, con $\det A \neq 0$. Il sistema ha un unica soluzione $\mathbf{x}$, le cui componenti sono:
+	\begin{equation}
+		x_i=\frac{\det A_i}{\det A}\quad i=1,\ \ldots,\ n
+	\end{equation}
+	Con $A_i$ la matrice ottenuta sostituendo la $i$-esima colonna di $A$ col vettore $\mathbf{b}$.
+\end{theorema}
+Ad esempio, dato il sistema lineare in 2 equazioni e 2 incognite (in cui $a_{11}a_{22}-a_{12}a_{21}\neq 0$):
+\begin{equation*}
+	\begin{cases}
+		a_{11}x_1+a_{12}x_2=b_1\\
+		a_{21}x_1+a_{22}x_2=b_2
+	\end{cases}\iff
+\left(\begin{array}{cc}
+	a_{11} & a_{12} \\
+	a_{21} & a_{22}
+\end{array}\right)\left(\begin{array}{c}
+x_1 \\
+x_2
+\end{array}\right)=\left(\begin{array}{c}
+\textcolor{redill}{b_1} \\
+\textcolor{redill}{b_2}
+\end{array}\right)
+\end{equation*}
+Possiamo trovare $x_1$ e $x_2$ con la regola di Cramer:
+\begin{equation*}
+	x_1=\frac{\left|\begin{array}{cc}
+			\textcolor{redill}{b_1} & a_{12} \\
+			\textcolor{redill}{b_2} & a_{22}
+		\end{array}\right|}{\left|\begin{array}{cc}
+		a_{11} & a_{12} \\
+		a_{21} & a_{22}
+	\end{array}\right|}\quad x_2=\frac{\left|\begin{array}{cc}
+	 a_{11} & \textcolor{redill}{b_1} \\
+	 a_{21} & \textcolor{redill}{b_2}
+\end{array}\right|}{\left|\begin{array}{cc}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{array}\right|}
+\end{equation*}

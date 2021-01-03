@@ -27,9 +27,10 @@ Analizziamo ora chi sono i suoi aperti: $\displaystyle A\subseteq Y \text{ apert
 \end{tips}
 Vediamo ora un esempio che giustifica la terminologia ‘‘topologia quoziente''.
 \begin{example}
-	Sia $X$ uno spazio topologico e $\sim$ una relazione di equivalenza su $X$. Posto $Y=\nicefrac{X}{\sim}$ insieme quoziente e $\funztot \pi X Y x {[x]_\sim}$ \textbf{proiezione al quoziente}\index{proiezione!al quoziente}, la topologia quoziente su $Y$ è quella che rende la proiezione continua.
+	Sia $X$ uno spazio topologico e $\sim$ una relazione di equivalenza su $X$. Posto $Y=\nicefrac{X}{\sim}$ insieme quoziente e $\funztot \pi X Y x {\left[x\right]_\sim}$ \textbf{proiezione al quoziente}\index{proiezione!al quoziente}, la topologia quoziente su $Y$ è quella che rende la proiezione continua.
 \end{example}
-Ricordiamo il primo Teorema fondamentale di isomorfismo per gli \textit{insiemi}, altresì chiamato \textit{decomposizione canonica}.\\
+Ricordiamo il primo Teorema fondamentale di isomorfismo per gli \textit{insiemi}, altresì chiamato \textit{decomposizione canonica}.
+\begin{remember}
 	\begin{minipage}[t]{0.83\textwidth}
 		Data una qualsiasi funzione suriettiva $\funz f X Y$ vi è la seguente relazione di equivalenza: $\displaystyle \forall x,y\in X, \ x\sim y \iff f(x)=f(y)$; inoltre, $\exists ! \funz h {\nicefrac{X}{\sim}} Y$ biunivoca tale che $f=h\circ\pi$, basta porre $h\left( [x] \right) \coloneqq f(x)$ in modo tale che il diagramma \textit{commuti}.
 	\end{minipage}
@@ -38,7 +39,8 @@ Ricordiamo il primo Teorema fondamentale di isomorfismo per gli \textit{insiemi}
 			X \arrow[r, "f"] \arrow[d, "\pi"']                                   & Y \\
 			\nicefrac{X}{\sim} \arrow[ru, "\exists !h"', dotted] &    
 		\end{tikzcd}
-	\end{minipage}\\
+	\end{minipage}
+\end{remember}
 Mostriamo che è ben definita e biunivoca.
 	\begin{gather*}
 		[x]=[y]\iff x\sim t\iff f(x)=f(y)\iff h([x])=h([y]) \implies h \text{ ben definita e iniettiva }\\
@@ -50,14 +52,13 @@ Tenendo a mente il concetto di immersione illustrato a pagina \pageref{immersion
 	Siano $X,Y$ spazi topologici e $\funz f X Y$ una funzione continua e suriettiva; $f$ si dice \textbf{identificazione}\index{identificazione} se $Y$ ha la topologia quoziente indotta da $f$.
 \end{define}
 In generale è difficile determinare quando una data funzione è un'identificazione, quindi ne cerchiamo una condizione \textit{sufficiente}. 
-\begin{theorema} \textsc{Manetti, 5.4}\\
+\begin{theorema} \textsc{Manetti, 5.4} \label{condizione sufficiente identificazione}\\
 	Sia $\funz f X Y$ continua, suriettiva e chiusa (o aperta), allora $f$ è un'identificazione chiusa (o aperta).
 \end{theorema}
 \begin{demonstration}
 	Supponiamo che $f$ sia aperta. Dimostrare che è un'identificazione è equivalente al mostrare che $\displaystyle A\subseteq Y \text{ aperto } \iff f^{-1}(A)\subseteq X$ aperto. L'implicazione $\Rightarrow)$ è garantita dalla continuità di $f$, per quanto riguarda l'implicazione opposta $\Leftarrow)$ invece siccome $f$ è suriettiva allora $f(f^{-1}(A))=A$ e siccome $f$ è aperta allora anche $A$ è aperto.
 \end{demonstration}
 Vediamo ora un esempio di identificazione chiusa e non aperta.
-
 \begin{example}
 	Si consideri la funzione:
 	\begin{equation*}
@@ -97,7 +98,7 @@ Vediamo ora che relazione c'è fra le identificazioni ed i quozienti dati da rel
 		\end{gather*}
 	Siccome $g$ è continua allora lo è anche $h$.
 \end{demonstration}
-\begin{minipage}[t]{0.83\textwidth}
+\begin{minipage}[t]{0.83\textwidth} \label{proprietà identificazione quoziente e mappa continua indotta}
 Come conseguenza si ha che, data $f$ continua, $\sim$ relazione di equivalenza e $\nicefrac{X}{\sim}$ spazio topologico con la topologia quoziente indotta dalla proiezione $\pi$, $\exists g$ continua $\iff \left( x\sim y \implies f(x)=f(y) \right)$, ovvero $\pi$ è costante sulle fibre di $f$.
 \end{minipage}
 \begin{minipage}[t]{0.16\textwidth}\vspace{-10pt}
@@ -239,7 +240,7 @@ Vogliamo definire una relazione di equivalenza che lasci ‘‘separate'' solo l
 \end{enumerate}
 \subsection{Quoziente Hausdroff}
 Cerchiamo ora delle condizioni per avere un \textit{quoziente Hausdorff}.
-\begin{theorema}
+\begin{theorema}\label{quozientehausdorff}
 	Sia $\funz f X Y$ continua e identificazione con $X$ compatto e di \textbf{Hausdorff}, allora sono equivalenti:
 		\begin{enumerate}
 			\item $Y$ è di \textbf{Hausdorff}.
