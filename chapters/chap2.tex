@@ -283,7 +283,7 @@ Sia $I\subseteq\realset$ e $U\subseteq\realset^n$, con $n\geq 2$. Se $I,\ U$ son
 \begin{demonstration}~{}\\
 	$\impliessx$ Si sfrutta la continuità delle proiezioni e che l'immagine continua di un connesos è connessa:
 		\begin{gather*}
-			\funz p {X\times Y} X \text{continua e suriettiva } \implies p(X)=X \text{ connesso} \\
+			\funz p {X\times Y} X \text{continua e suriettiva } \implies p(X)=X \text{ connesso}\\
 			\funz q {X\times Y} Y \text{continua e suriettiva } \implies q(Y)=Y \text{ connesso}	
 		\end{gather*}	
 	$\impliesdx$ Si vuole sfruttare il teorema sull'unione di connessi, prestando attenzione che la loro intersezione non sia vuota, quindi si scrive il prodotto come unione di connessi già noti:
@@ -441,7 +441,7 @@ Vediamo ora qualche proprietà delle componenti connesse, in particolare che son
 	Un \textbf{sottoricoprimento}\index{sottoricoprimento} $\mathcal{B}$ di un ricoprimento aperto $\mathcal{A}$ è una famiglia di aperti di $\mathcal{A}$ la cui unione è ancora tutto $X$.
 \end{define}		
 
-\begin{examples} \textsc{Esempi di ricoprimenti aperti.}
+\begin{examples}\textsc{Esempi di ricoprimenti aperti.}
 	\begin{itemize}
 		\item $\displaystyle \realset=(-\infty ,\ 2)\cup(0,\ +\infty)$ è un ricoprimento aperto
 		\item $\displaystyle \realset =\union_{n\in\naturalset}(n,\ -n)$ è un ricoprimento aperto
@@ -454,7 +454,7 @@ Vediamo ora qualche proprietà delle componenti connesse, in particolare che son
 \end{define}
 L'importanza della definizione risiede nel fatto che non si chiede che esista un ricoprimento $\mathcal{A}$ finito (basterebbe banalmente $X$ stesso che è aperto) bensì che da $\mathcal{A}$ si possa sempre estrarre un \textit{numero finito di aperti} che ricopra ancora $X$.
 
-\begin{examples} \textsc{Esempi di spazi non compatti.}
+\begin{examples}\textsc{Esempi di spazi non compatti.}
 	\begin{itemize}
 		\item $\realset$ con la topologia euclidea: se si considera il ricoprimento aperto $\displaystyle \realset=(-\infty , 2)\cup(0,+\infty)$, esso non ammette sottoricoprimento finito.
 		\item Gli intervalli aperti o semiaperti della forma $[a,\ b)$ hanno come ricoprimento aperto $\mathcal{A}=\left\{ \left[ a, \ b-\frac{1}{n}\right) \right\}$, che non ammette un sottoricoprimento finito.
@@ -540,7 +540,7 @@ Sia $\mathcal{A}=\left\{ A_x\right\}_{x\in X}, \ A_x\coloneqq \{x\}$, che è ape
 \end{observe}
 Vediamo ora che relazione c'è fra le due proprietà topologiche di essere uno spazio di \textbf{Hausdorff} (\textbf{T2}) e compatto.
 
-\begin{theorema}\textbf{Compatto in un Hausdorff è chiuso}\textsc{Manetti, 4.48} \label{compatto in hausdorff chiuso} \\
+\begin{theorema}\textbf{Compatto in un Hausdorff è chiuso; Manetti, 4.48}\\\label{compatto in hausdorff chiuso}
 Se $X$ è di Hausdorff e $K\subseteq X$ è compatto, allora $K$ è chiuso.
 \end{theorema}
 \begin{demonstration}
@@ -552,7 +552,7 @@ Se $X$ è di Hausdorff e $K\subseteq X$ è compatto, allora $K$ è chiuso.
 	Per poter sfruttare che $X$ è di \textbf{Hausdorff} scriviamo $A$ come intorno di $x_0$ e $K$ come intorno di $y$:
 		\begin{gather*}
 			x_0\in X\setminus K, y\in K \stackrel{X\ \textbf{T2}}{\implies} x\neq y\implies \exists U_y\in I(x_0), \ \exists V_y\in I(y) \colon U_y\cap V_y=\emptyset \\
-			\text{Sia } V=\union_{y\in K}V_y \implies V\supseteq K \stackrel{K\ compatto}{\Longrightarrow} V=V_{y_1}\cup\dots\cup V_{y_n} \\
+			\text{Sia } V=\union_{y\in K}V_y \implies V\supseteq K \stackrel{K\ compatto}{\Longrightarrow} V=V_{y_1}\cup\dots\cup V_{y_n}\\
 			\text{Sia } U=U_{y_1}\cap\dots\cap U_{y_n} \in I(x_0)\\
 			\implies V_{y_i}\cap U_{y_i}=\emptyset \implies V\cap K=\emptyset \implies U\subseteq X\setminus K
 		\end{gather*}
@@ -574,7 +574,7 @@ Se $X$ è di Hausdorff e $K\subseteq X$ è compatto, allora $K$ è chiuso.
 	Da notare che il teorema precedente non afferma he gli unici compatti di $\realset$ sono gli intervalli chiusi e limitati, ma anche una loro unione finita potrebbe esserlo.
 \end{observe}
 
-\begin{theorema} \textsc{Manetti, 4.43} \label{weierstrass} \\
+\begin{theorema}\textsc{Manetti, 4.43}\\ \label{weierstrass} 
 	Sia $\funz f X \realset$ con $X$ compatto e $\realset$ con la topologia euclidea. Se $f$ è continua allora ammette massimo e minimo.
 \end{theorema}
 \begin{demonstration}
@@ -625,7 +625,7 @@ Sfruttiamo ora che il prodotto di compatti è compatto per generalizzare il teor
 \begin{theorema} \label{compatto chiuso e limitato R^n}
 	$K\subseteq \realset^n$ compatto $\iff K$ chiuso e limitato.
 \end{theorema}
-\begin{demonstration} ~{} \\
+\begin{demonstration}~{}\\
 	$\impliesdx$ $K$ è compatto in $\realset^n$ che è un Hausdorff, quindi $K$ è chiuso per il teorema \ref{compatto in hausdorff chiuso}. Per dimostrare che è limitato  consideriamo un ricoprimento di palle aperte centrate nell'origine e si sfrutta subito che $K$ è compatto
 		\begin{gather*}
 			K\subseteq \union_{n\in\naturalset} B_n(\mathbf{0}) \implies K\subseteq B_{n_1}(\mathbf{0})\cup\dots\cup B_{n_m}(\mathbf{0}) \subseteq B_M (\mathbf{0})
@@ -646,7 +646,7 @@ Una palla di centro $\mathbf{0}$ e raggio $1$ come:
 \end{equation*}
 È chiusa e limitata, tuttavia in $	\mathcal{C}\left( [0, \ 1] \right)$ non è compatta.
 \end{digression}
-\begin{theorema}\textsc{Funzione continua da compatto ad Hausdorff è chiusa}. \textsc{(Manetti 4. 52)} \label{da compatto in T_2 è chiuso} \\
+\begin{theorema}\textsc{Funzione continua da compatto ad Hausdorff è chiusa (Manetti 4. 52)}\\ \label{da compatto in T_2 è chiuso}
 	Sia $\funz f X Y$ continua con $X$ è compatto e $Y$ di \textbf{Hausdorff}, allora $f$ è chiusa.
 \end{theorema}
 \begin{demonstration}
@@ -657,7 +657,7 @@ Una palla di centro $\mathbf{0}$ e raggio $1$ come:
 \end{demonstration}
 In generale vale il \textbf{teorema di Kuratowsi-Mròwka}: $Y$ è compatto se e solo se per qualsiasi spazio topologico $X$ la proiezione $\funz {p_X} {X\times Y} X$ è chiusa; noi ne dimostreremo una versione più debole.
 % LEZ 10
-\begin{theorema} \textsc{Manetti, 4.49.1} \\
+\begin{theorema}\textsc{Manetti, 4.49.1}\\
 	Siano $X,Y$ spazi topologici con $Y$ compatto, allora la proiezione $\funz p {X\times Y} X$ è chiusa.
 \end{theorema}
 \begin{demonstration}
