@@ -1,0 +1,66 @@
+% SVN info for this file
+\svnidlong
+{$HeadURL$}
+{$LastChangedDate$}
+{$LastChangedRevision$}
+{$LastChangedBy$}
+
+\chapter{Proprietà insiemistiche}
+\labelChapter{insiemistiche}
+
+\begin{introduction}
+‘‘BEEP BOOP INSERIRE CITAZIONE QUA BEEP BOOP.''
+\begin{flushright}
+	\textsc{NON UN ROBOT,} UN UMANO IN CARNE ED OSSA BEEP BOOP.
+\end{flushright}
+\end{introduction}
+
+\noindent Riportiamo alcune proprietà insiemistiche utili per il lettore.
+\section{Immagine e controimmagine}
+Data una funzione $\funz{f}{X}{Y}$, per ogni sottoinsieme $A\subseteq X$ e $B\subseteq Y$ valgono le seguenti proprietà:
+\begin{center}
+	\begin{tabular}{l|l}
+	\multicolumn{1}{c|}{\textbf{Immagine}} 	& \multicolumn{1}{c}{\textbf{Controimmagine}}\\ \hline
+	$f(X)\subseteq Y$				& $f^{-1}(Y) = X$ 	\\ 
+	$f(f^{-1}(Y)) = f(X)$			& $f^{-1}(f(X))= X$ \\
+	$f(f^{-1}(B)) \subseteq B$ \footnotemark	& $f^{-1}(f(A)) \supseteq A$ \footnotemark	\\
+	$f(f^{-1}(B)) = B \cap f(X)$	& $(f \mid_A)^{-1}(B) = A \cap f^{-1}(B)$											\\
+	$f(f^{-1}(f(A))) = f(A)$		& $f^{-1}(f(f^{-1}(B))) = f^{-1}(B)$											\\
+	$f(A) = \emptyset \iff A = \emptyset$	&  $f^{-1}(B) = \emptyset \iff B \subseteq Y \setminus f(X)$					\\
+	$f(A) \supseteq B \iff \exists C \subseteq A \colon f(C) = B$ & $f^{-1}(B) \supseteq A \iff f(A) \subseteq B$\\
+	$f(A) \supseteq f(X \setminus A) \iff f(A) = f(X)$ & $f^{-1}(B) \supseteq f^{-1}(Y \setminus B) \iff f^{-1}(B) = X$\\
+	$f(X \setminus A) \supseteq f(X) \setminus f(A)$ & $f^{-1}(Y \setminus B) = X \setminus f^{-1}(B)$ \\
+	$f(A \cup f^{-1}(B)) \subseteq f(A) \cup B$ & $f^{-1}(f(A) \cup B) \supseteq A \cup f^{-1}(B)$ \\
+	$f(A \cap f^{-1}(B)) = f(A) \cap B$ & $f^{-1}(f(A) \cap B) \supseteq A \cap f^{-1}(B)$ \\
+	\multicolumn{2}{c}{$f(A) \cap B = \emptyset \iff A \cap f^{-1}(B) = \emptyset$}
+\end{tabular}
+\footnotetext{Uguale se $B\subseteq f(X)$, cioè se $f$ \textit{suriettiva}.}
+\footnotetext{Uguale se $f$ \textit{iniettiva}.}	
+\end{center}
+
+Date le funzioni $\funz{f}{X}{Y}$ e $\funz{f}{Y}{Z}$, valgono le seguenti proprietà:
+\begin{itemize}
+	\item $(g \circ f)(A) = g(f(A))$
+	\item $(g \circ f)^{-1}(C) = f^{-1}(g^{-1}(C))$
+\end{itemize}
+Data una funzione $\funz{f}{X}{Y}$ e dati i sottoinsiemi $A_1,\ A_2\subseteq X$ e $B_1,\ B_2\subseteq Y$ valgono le seguenti proprietà:
+\begin{center}
+	\begin{tabular}{l|l}
+		\multicolumn{1}{c|}{\textbf{Immagine}} 	& \multicolumn{1}{c}{\textbf{Controimmagine}}\\ \hline
+		$A_1 \subseteq A_2 \implies f(A_1) \subseteq f(A_2)$	& $B_1 \subseteq B_2 \implies f^{-1}(B_1) \subseteq f^{-1}(B_2)$ 	\\ 
+		$f(A_1 \cup A_2) = f(A_1) \cup f(A_2)$ \footnotemark	& $f^{-1}(B_1 \cup B_2) = f^{-1}(B_1) \cup f^{-1}(B_2)$ \\
+		$f(A_1 \cap A_2) \subseteq f(A_1) \cap f(A_2)$ \footnotemark	& $f^{-1}(B_1 \cap B_2) = f^{-1}(B_1) \cap f^{-1}(B_2)$	\\
+		$f(A_1 \setminus A_2) \supseteq f(A_1) \setminus f(A_2)$ & $f^{-1}(B_1 \setminus B_2) = f^{-1}(B_1) \setminus f^{-1}(B_2)$
+	\end{tabular}
+\footnotetext{\label{note1}Uguale se $f$ \textit{iniettiva}.}
+\footnotetext{Si veda \ref{note1}.}
+\end{center}
+Data una funzione $\funz{f}{X}{Y}$ e date le famiglie di sottoinsiemi $\{A_i\}\subseteq\setpart{X}$ e $\{B_i\}\subseteq\setpart{Y}$ (con $I$ un insieme di indici anche \textit{infinito} o \textit{non numerabile}) valgono le seguenti proprietà:
+\begin{center}
+	\begin{tabular}{l|l}
+		\multicolumn{1}{c|}{\textbf{Immagine}} 	& \multicolumn{1}{c}{\textbf{Controimmagine}}\\ \hline
+		$\displaystyle f\left(\bigcup_{i\in I}A_i\right) = \bigcup_{i\in I} f(A_i)$	& $\displaystyle f^{-1}\left(\bigcup_{i\in I}B_i\right) = \bigcup_{i\in I} f^{-1}(B_i)$ 	\\ 
+		$\displaystyle f\left(\bigcap_{i\in I}A_i\right) \subseteq \bigcap_{i\in I} f(A_i)$\footnotemark	& $\displaystyle f^{-1}\left(\bigcap_{i\in I}B_i\right) = \bigcap_{i\in I} f^{-1}(B_i)$
+	\end{tabular}
+\footnotetext{Si veda \ref{note1}.}
+\end{center}

@@ -11,6 +11,8 @@
 *.cb
 *.cb2
 .*.lb
+*.define
+*.theorema
 
 ## Intermediate documents:
 *.dvi

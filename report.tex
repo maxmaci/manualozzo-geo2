@@ -23,20 +23,13 @@
   chapters/chap7,
   chapters/chap8,
   chapters/chap9,
-  %chapters/chap10,
+  chapters/chap10,
   chapters/chap11,
   chapters/chap12,
-  chapters/chap13,
-  %chapters/chap14,
-  %chapters/chap15,
-  %chapters/chap16,
-  %chapters/chap17,
-  %chapters/chap18,
   %appendix/appendix,
-  %appendix/chapA,
-  %appendix/chapB,  
-  %appendix/chapC,
   appendix/footnotes,
+  appendix/setprop,
+  appendix/list1,
   appendix/ringraziaments,  
   appendix/bibliography,
 }
@@ -46,7 +39,7 @@
 
 \frontmatter
 \include{introduction/titlepage}
-%\include{abstract}
+%\include{introduction/abstract}
 \include{introduction/toc}
 
 \mainmatter
@@ -66,27 +59,21 @@
 \part{Classificazione delle superfici topologiche}
 \labelPart{third}
 \include{chapters/chap9}
-%\include{chapters/chap10}
 \part{Approfondimenti di Algebra Lineare}
 \labelPart{fourth}
-\include{chapters/chap11}
+\include{chapters/chap10}
 \part{Geometria proiettiva}
 \labelPart{fifth}
+\include{chapters/chap11}
 \include{chapters/chap12}
-\include{chapters/chap13}
-%\include{chapters/chap14}
-%\include{chapters/chap15}
-%\include{chapters/chap16}
-%\include{chapters/chap17}
-%\include{chapters/chap18}
-%\appendix
+\appendix
 \part{Appendici}
-\labelPart{appendici}
+\labelPart{appendix}
 \include{appendix/footnotes}
-%\include{chapB}
-%\include{chapC}
-%\include{ringraziaments}
-%\include{appendix}
+\include{appendix/setprop}
+\include{appendix/list1}
+%\include{appendix/ringraziaments}
+%\include{appendix/appendix}
 %\printindex
 \backmatter
 \include{appendix/bibliography}

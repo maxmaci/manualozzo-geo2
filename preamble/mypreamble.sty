@@ -59,22 +59,29 @@
 %\RequirePackage{pgfplots}
 %\RequirePackage{pgf}
 %\RequirePackage{mathrsfs}
-%\RequirePackage{xparse}
+\RequirePackage{xparse}
 \RequirePackage[framemethod=default]{mdframed} % necessario per environments
 \RequirePackage{makeidx}
 \RequirePackage[thicklines]{cancel}
 %\RequirePackage{bm}
 \RequirePackage{multicol}
 %\usepackage[font=small,labelfont=bf]{caption}
-%\usepackage{tikz-3dplot}
 %\usepackage{wrapfig}
-%\RequirePackage{accents}
+\RequirePackage{nameref}
+\RequirePackage{thmtools}
+\RequirePackage{environ}
 \RequirePackage{tikz-cd}
 \RequirePackage{preamble/quiver}
 \RequirePackage{preamble/comment}
 % Load hyperref package last
 \RequirePackage{hyperref}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    GLOBAL TOGGLES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtoggle{noDefine}
+\newtoggle{noTheorema}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %    PACKAGE SETTINGS
@@ -654,6 +661,8 @@
 \newcommand{\labelChapter}[1]{%
   % #1 = label
   \label{chap:#1}%
+  \toggletrue{noDefine}
+  \toggletrue{noTheorema}
 }
 \newcommand{\refChapter}[1]{%
   % #1 = reference
@@ -1145,17 +1154,59 @@ linewidth=1pt]{neoncarrotBox}
 {0.25em}% Space after theorem head
 {\small\bfseries\color{venetian}\thmname{#1}}
 
-\newtheoremstyle{cinnamonnumbox}% % Theorem style name
-{0pt}% Space above
-{0pt}% Space below
-{\normalfont}% % Body font
-{}% Indent amount
-{\small\bfseries\color{cinnamon!75}}% % Theorem head font
-{\;}% Punctuation after theorem head
-{0.25em}% Space after theorem head
-{\small\bfseries\color{cinnamon}\thmname{#1}}
+\declaretheoremstyle[
+spaceabove=0pt,
+spacebelow=0pt,
+bodyfont=\normalfont,
+headindent=0pt,
+headfont=\small\bfseries\scshape\color{cinnamon},
+notebraces={ }{ },
+headpunct=\color{black},
+notefont=\scshape\color{black},
+postheadspace=0.25em,
+headformat={\NAME\, \NUMBER\small\bfseries\scshape\color{cinnamon}. \NOTE \addcontentsline{define}{section}{\small{\textbf{\NUMBER}.\ \, \textsc{\NOTE}}}}
+]{definesty}
 
-\newtheoremstyle{timberwolfnumbox}% % Theorem style name
+\declaretheoremstyle[
+spaceabove=0pt,
+spacebelow=0pt,
+bodyfont=\normalfont,
+headindent=0pt,
+headfont=\small\bfseries\scshape\color{black},
+notebraces={ }{ },
+notefont=\scshape\color{black},
+headpunct=\color{black},
+postheadspace=0.25em,
+headformat={\NAME\, \NUMBER\small\bfseries\scshape\color{black}. \NOTE \addcontentsline{theorema}{section}{\small{\textbf{\NAME\ \NUMBER}.\ \, \textsc{\NOTE}}}}
+]{theoremasty}
+
+\declaretheoremstyle[
+spaceabove=0pt,
+spacebelow=0pt,
+bodyfont=\normalfont,
+headindent=0pt,
+headfont=\small\bfseries\scshape\color{black},
+notebraces={ }{ },
+notefont=\scshape\color{black},
+headpunct=\color{black},
+postheadspace=0.25em,
+headformat={\NAME\, \NUMBER\small\bfseries\scshape\color{black}. \NOTE \addcontentsline{theorema}{section}{\small{\textbf{\NAME\ \NUMBER}.\ \, \textsc{\NOTE}}}}
+]{lemmingsty}
+
+\declaretheoremstyle[
+spaceabove=0pt,
+spacebelow=0pt,
+bodyfont=\normalfont,
+headindent=0pt,
+headfont=\small\bfseries\scshape\color{black},
+notebraces={ }{ },
+notefont=\scshape\color{black},
+headpunct=\color{black},
+postheadspace=0.25em,
+headformat={\NAME\, \NUMBER\small\bfseries\scshape\color{black}. \NOTE \addcontentsline{theorema}{section}{\small{\textbf{\NAME\ \NUMBER}.\ \, \textsc{\NOTE}}}}
+]{propositionsty}
+
+\newtheoremstyle{notatesty}% % Theorem style name
 {0pt}% Space above
 {0pt}% Space below
 {\normalfont}% % Body font
@@ -1165,7 +1216,20 @@ linewidth=1pt]{neoncarrotBox}
 {0.25em}% Space after theorem head
 {\small\bfseries\color{black}\thmname{#1}}
 
-\newtheoremstyle{neoncarrotnumbox}% % Theorem style name
+\declaretheoremstyle[
+spaceabove=0pt,
+spacebelow=0pt,
+bodyfont=\normalfont,
+headindent=0pt,
+headfont=\small\bfseries\scshape\color{black},
+notebraces={ }{ },
+headpunct=\color{burntorange},
+notefont=\scshape\color{burntorange},
+postheadspace=0.25em,
+headformat={\NAME\, \NUMBER\small\bfseries\scshape\color{black}. \NOTE \addcontentsline{theorema}{section}{\small{\textbf{\textcolor{black}{\NAME\ \NUMBER}}.\ \, \textsc{\NOTE}}}}
+]{corollarysty}
+
+\newtheoremstyle{remembersty}% % Theorem style name
 {0pt}% Space above
 {0pt}% Space below
 {\normalfont}% % Body font
@@ -1228,25 +1292,20 @@ linewidth=1pt]{neoncarrotBox}
 \newcounter{proposition}
 \newcounter{corollary}
 
-\theoremstyle{cinnamonnumbox}
-\newtheorem{defineT}{\textsc{Definizione \thedefine.}}[chapter]
+\declaretheorem[style=definesty,numberwithin=section,name=\textsc{Definizione}]{defineT}
 
-\theoremstyle{timberwolfnumbox}
-\newtheorem{theoremaT}{\textsc{Teorema \thetheorema.}}[chapter]
+\declaretheorem[style=theoremasty,numberwithin=section,name=\textsc{Teorema}]{theoremaT}
 
-\theoremstyle{timberwolfnumbox}
-\newtheorem{lemmingT}{\textsc{Lemma \thelemming.}}[chapter]
+\declaretheorem[style=lemmingsty,numberwithin=section,name=\textsc{Lemma}]{lemmingT}
 
-\theoremstyle{timberwolfnumbox}
-\newtheorem{propositionT}{\textsc{Proposizione \theproposition.}}[chapter]
+\declaretheorem[style=propositionsty,numberwithin=section,name=\textsc{Proposizione}]{propositionT}
 
-\theoremstyle{timberwolfnumbox}
+\theoremstyle{notatesty}
 \newtheorem{notateT}{\textsc{Notazione}}[chapter]
 
-\theoremstyle{neoncarrotnumbox}
-\newtheorem{corollaryT}{\textsc{Corollario \thecorollary.}}[chapter]
+\declaretheorem[style=corollarysty,numberwithin=section,name=\textsc{Corollario}]{corollaryT}
 
-\theoremstyle{neoncarrotnumbox}
+\theoremstyle{remembersty}
 \newtheorem{rememberT}{\textsc{Ricordiamo...}}[chapter]
 
 \theoremstyle{airforcebluenumbox}
@@ -1260,7 +1319,7 @@ linewidth=1pt]{neoncarrotBox}
 %%% esempio/esempi %%%
 
 \newenvironment{example}{\begin{eBox}\begin{exampleT}}{\hfill{\color{reddo}}\end{exampleT}\end{eBox}}
-\newenvironment{examples}{\begin{eBox}\begin{examplesT}~}{\hfill{\color{reddo}}	\end{examplesT}\end{eBox}}
+\newenvironment{examples}{\begin{eBox}\begin{examplesT}}{\hfill{\color{reddo}}	\end{examplesT}\end{eBox}}
 
 %%% esercizio %%%
 
@@ -1292,20 +1351,20 @@ linewidth=1pt]{neoncarrotBox}
 
 %%% definizione %%%
 
-\newenvironment{define}{\begin{cinBox}\begin{defineT}}{\refstepcounter{define}\hfill{\color{cinnamon}}	\end{defineT}\end{cinBox}}\numberwithin{define}{section}
+\newenvironment{define}{\begin{cinBox}\begin{defineT}}{\hfill{\color{cinnamon}}\end{defineT}\end{cinBox}}
 
 \newenvironment{defoe}{\begin{bBox}\begin{defoeT}}{\hfill{\color{gray}}	\end{defoeT}\end{bBox}}
 
 %%% teorema %%%
 
-\newenvironment{theorema}{\begin{tinBox}\begin{theoremaT}}{\refstepcounter{theorema}\hfill{\color{timberwolf}}\end{theoremaT}\end{tinBox}}\numberwithin{theorema}{section}
+\newenvironment{theorema}{\begin{tinBox}\begin{theoremaT}}{\hfill{\color{timberwolf}}\end{theoremaT}\end{tinBox}}
 
 %%% lemma %%%
-\newenvironment{lemming}{\begin{tinBox}\begin{lemmingT}}{\refstepcounter{lemming}\hfill{\color{timberwolf}}	\end{lemmingT}\end{tinBox}}\numberwithin{lemming}{section}
+\newenvironment{lemming}{\begin{tinBox}\begin{lemmingT}}{\hfill{\color{timberwolf}}\end{lemmingT}\end{tinBox}}
 
 %%% proposizione %%%
 
-\newenvironment{proposition}{\begin{tinBox}\begin{propositionT}}{\refstepcounter{proposition}\hfill{\color{timberwolf}}	\end{propositionT}\end{tinBox}}\numberwithin{proposition}{section}
+\newenvironment{proposition}{\begin{tinBox}\begin{propositionT}}{\hfill{\color{timberwolf}}\end{propositionT}\end{tinBox}}
 
 %%% notazione %%%
 
@@ -1313,15 +1372,15 @@ linewidth=1pt]{neoncarrotBox}
 
 %%% corollario %%%
 
-\newenvironment{corollary}{\begin{neoncarrotBox}\begin{corollaryT}}{\refstepcounter{corollary}\hfill{\color{neoncarrot}}	\end{corollaryT}\end{neoncarrotBox}}\numberwithin{corollary}{section}
+\newenvironment{corollary}{\begin{neoncarrotBox}\begin{corollaryT}}{\hfill{\color{neoncarrot}}\end{corollaryT}\end{neoncarrotBox}}
 
 %%% ricorda %%%
 
-\newenvironment{remember}{\begin{neoncarrotBox}\begin{rememberT}}{\hfill{\color{neoncarrot}}	\end{rememberT}\end{neoncarrotBox}}
+\newenvironment{remember}{\begin{neoncarrotBox}\begin{rememberT}}{\hfill{\color{neoncarrot}}\end{rememberT}\end{neoncarrotBox}}
 
 %%% intuitivamente %%%
 
-\newenvironment{intuit}{\begin{blueBox}\begin{intuitT}}{\hfill{\color{timberwolf}}	\end{intuitT}\end{blueBox}}
+\newenvironment{intuit}{\begin{blueBox}\begin{intuitT}}{\hfill{\color{timberwolf}}\end{intuitT}\end{blueBox}}
 
 %%% suggerimenti per gli esercizi %%%
 
@@ -1341,7 +1400,7 @@ linewidth=1pt]{neoncarrotBox}
 	\ensuremath{\impliedby)\quad}%
 }
 
-%%%%%%%%%%%%%%%%%%%%%%%% definizioni insiemistiche %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% definizioni insiemistiche %%%%%%%%%%%%%%%%%%%%%%%%%
 
 % insieme delle parti
 
@@ -1668,54 +1727,12 @@ linewidth=1pt]{neoncarrotBox}
 
 \newtcbox{\invis}{blank, on line, opacitytext=0}
 
-%%%%%%%%%%%%%% definizioni vecchie (da eliminare) %%%%%%%%%%%%%%%%%%%
-
-% \newcommand{\funzold}[3]{
-%	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
-%				#2&\rightarrow& #3\end{array}}}
-%	{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
-%				#1\colon& #2&\rightarrow& #3\end{array}}}}
-
-%\newcommand{\funztotold}[5]{
-%\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
-%			#2&\rightarrow& #3\\
-%			#4&\mapsto& #5
-%\end{array}}}
-%{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
-%			#1\colon& #2&\rightarrow& #3\\
-%			&#4&\mapsto& #5
-%\end{array}}}}
-
-%\newcommand{\inclold}[3]{
-%	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
-%				#2&\hookrightarrow& #3\end{array}}}
-%	{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
-%				#1\colon& #2&\hookrightarrow& #3\end{array}}}}
-
-%\newcommand{\incltotold}[5]{
-%	\IfEq{#1}{\ }{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{ccc}
-%				#2&\hookrightarrow& #3\\
-%				#4&\mapsto& #5
-%	\end{array}}}
-%	{\ensuremath{\arraycolsep=1.4pt\def\arraystretch{0.6}\begin{array}{cccc}
-%				#1\colon& #2&\hookrightarrow& #3\\
-%				&#4&\mapsto& #5
-%\end{array}}}}
 
 \newcommand{\minusD}{\hbox{\tikz{\draw[line width=0.6pt,line cap=round] (3pt,0) -- (0,6pt);}}}
 \newcommand{\minusT}{\minusD}
 \newcommand{\minusS}{\hbox{\tikz{\draw[line width=0.45pt,line cap=round] (2pt,0) -- (0,4pt);}}}
 \newcommand{\minusSS}{\hbox{\tikz{\draw[line width=0.4pt,line cap=round] (1.5pt,0) -- (0,3pt);}}}
 \newcommand{\minus}{\mathbin{\mathchoice{\minusD}{\minusT}{\minusS}{\minusSS}}}
-
-%\newcommand{\sse}{\Leftrightarrow}
-%\newcommand{\se}{\Rightarrow}
-%\newcommand{\sesx}{\Leftarrow}
-%\newcommand{\et}{\wedge}
-%\newcommand{\vel}{\vee}
-%\newcommand{\noth}{\varnothing}
-%\newcommand{\sset}{\subseteq}
-%\newcommand{\deq}{\coloneqq}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1850,3 +1867,55 @@ linewidth=1pt]{neoncarrotBox}
 \definecolor{redill}{RGB}{190, 30, 45 }
 \definecolor{blueill}{RGB}{46, 49, 146 }
 \definecolor{greenill}{RGB}{0, 161, 74 }
+
+%%%%%%%%%%%%%%%%%%%%%%%% tocs %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+% toc of definitions
+%\newcommand\definename{Definizione}
+\newcommand\listdefinename{Elenco delle definizioni}
+\newcommand\listofdefines{
+	\section*{\listdefinename}\@starttoc{define}}
+
+% toc of theoremas
+%\newcommand\definename{Definizione}
+\newcommand\listtheoremaname{Elenco dei teoremi}
+\newcommand\listoftheoremas{
+	\section*{\listtheoremaname}\@starttoc{theorema}}
+
+% gets chapter number
+\newcommand\getcurrentref[1]{%
+	\ifnumequal{\value{#1}}{0}
+	{??}
+	{\the\value{#1}}%
+}
+
+% gets chapter title
+\newcommand*\nowtitle{}
+
+\let\oldchaptermark=\chaptermark
+\renewcommand*\chaptermark[1]{%
+	\renewcommand*\nowtitle{#1}%
+	\oldchaptermark{#1}}
+
+% add chapter number and title to toc of definition
+\AtBeginEnvironment{defineT}{%
+	\iftoggle{noDefine}{
+		\addtocontents{define}{\noindent\textls{\textsc{\textcolor{reddo}{Capitolo \getcurrentref{chapter}:}
+		\nowtitle}}
+		}{}
+		\global\togglefalse{noDefine}
+	}{}
+}%
+
+% add chapter number and title to toc of theoremas
+\AtBeginEnvironment{defineT}{%
+	\iftoggle{noTheorema}{
+		\addtocontents{theorema}{\noindent\textls{\textsc{\textcolor{reddo}{Capitolo \getcurrentref{chapter}:}
+					\nowtitle}}
+		}{}
+		\global\togglefalse{noTheorema}
+	}{}
+}%
+
+\makeatother

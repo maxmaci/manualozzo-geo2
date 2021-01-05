@@ -18,7 +18,7 @@
 Il principale scopo della \textit{Topologia} è studiare proprio le proprietà che rimangono invariate da queste deformazioni continue. Per far ciò, è necessario dotare un insieme di una struttura, detta \textbf{topologia}, che permetta la definizione di \textbf{continuità} di una funzione e di \emph{omeomorfismo}, generalizzando così quello che abbiamo chiamato ‘‘deformazioni''.\\
 In questo capitolo ci occuperemo dunque di introdurre questi concetti fondamentali per poi studiare alcuni risultati che ne conseguono. Inoltre, affronteremo alcuni degli \emph{assiomi di separazione} e la nozione di \emph{distanza}.
 \section{Spazio topologico}
-\begin{define}\textsc{Spazio topologico e assiomi degli aperti.}\\
+\begin{define}[Spazio topologico e assiomi degli aperti.]~{}\\
 	Uno \textbf{spazio topologico}\index{spazio!topologico} $\left(X, \topo\right)$ è un insieme $X$ con una famiglia di sottoinsiemi $\topo\subseteq\setpart{X}$ detta \textbf{topologia}\index{topologia} che soddisfano i seguenti assiomi (detti \textbf{assiomi degli aperti}\index{assiomi topologici!degli aperti}):
 	\begin{enumerate}
 		\item \textit{Il vuoto e l'insieme stesso sono aperti della topologia}: $\emptyset,\ X\in\topo$ .
@@ -28,7 +28,7 @@ In questo capitolo ci occuperemo dunque di introdurre questi concetti fondamenta
 	Gli elementi di $\topo$ si dicono \textbf{aperti}\index{aperto} della topologia.
 \end{define}
 
-\begin{define}\textsc{Spazio topologico e assiomi dei chiusi.}\\
+\begin{define}[Spazio topologico e assiomi dei chiusi.]~{}\\
  Si può definire equivalentemente su X una topologia $\topo$ usando gli \textbf{assiomi dei chiusi}\index{assiomi topologici!dei chiusi}:
 	\begin{enumerate}
 		\item \textit{Il vuoto e l'insieme stesso sono chiusi della topologia}: $\emptyset,\ X\in\topo$.
@@ -50,7 +50,7 @@ In questo capitolo ci occuperemo dunque di introdurre questi concetti fondamenta
 \vspace{-3mm}
 \end{examples}
 \subsection{Distanza e spazi metrici}
-\begin{define}\textsc{Distanza.}\\
+\begin{define}[Distanza.]~{}\\
 	Su un insieme $X$ una funzione $\funz{d}{X\times X}{\realset}$ è una \textbf{distanza}\index{distanza} se:
 	\begin{enumerate}
 		\item \textbf{Positività della distanza}: $\forall x,\ y\in X\quad \mvf{d}{x}{y}\geq 0$ e $\mvf{d}{x}{y}=0\iff x=y$.
@@ -59,10 +59,10 @@ In questo capitolo ci occuperemo dunque di introdurre questi concetti fondamenta
 	\end{enumerate}
 \vspace{-3mm}
 \end{define}
-\begin{define}\textsc{Spazio metrico.}\\
+\begin{define}[Spazio metrico.]~{}\\
 	Uno \textbf{spazio metrico}\index{spazio!metrico} $\left(X, d\right)$ è un insieme su cui è definita una distanza.
 \end{define}
-\begin{define}\textsc{Palla aperta e topologia indotta dalla distanza.}\\
+\begin{define}[Palla aperta e topologia indotta dalla distanza.]~{}\\
 	Definita la \textbf{palla aperta di centro}\index{palla aperta} $x$ come l'insieme degli elementi di $X$ che soddisfano la seguente condizione:
 	\begin{equation}
 		B_{\epsilon}\left(x\right)=\left\{y\in X\mid \mvf{d}{x}{y}<\epsilon\right\}
@@ -177,7 +177,7 @@ Preso adesso $X=\mathcal{C}\left([0,\ 1]\right)=\left\{\funz{f}{[0,\ 1]}{\realse
 \noindent A differenza del caso su $\realset^n$, ogni norma genera in realtà una topologia distinta!
 \vspace{-3mm}
 \subsection{Finezza: confronto di topologia}
-\begin{define}\textsc{Finezza.}\index{finezza}\\
+\begin{define}[Finezza.]~{}\index{finezza}\\
 Sia $X$ un insieme e $\topo_1$, $\topo_2$ due topologie di $X$. Si dice che $\topo_1$ è \textbf{meno fine}\index{finezza!meno fine} di $\topo_2$ se tutti gli aperti della prima topologia sono aperti della seconda:
 \vspace{-2mm}
 \begin{equation}
@@ -202,7 +202,7 @@ Per $n$ punti gli $n+1$ intervalli ottenuti sono aperti della topologia euclidea
 	Se definiamo due topologie $\topo_1$ e $\topo_2$ sono due topologie di un insieme $X$, l'intersezione $\topo_1\cap\topo_2$ è anch'essa una topologia di $X$ e, per costruzione, è \textit{meno fine} di $\topo_1$ e $\topo_2$.
 \end{observe}
 \subsection{Base della topologia}
-\begin{define}\textsc{Base.}\\
+\begin{define}[Base.]~{}\\
 Sia $\left(X, \topo\right)$ uno spazio topologico. $\basis$ è una \textbf{base}\index{base} per $\topo$ se:
 \begin{enumerate}
 \item \textit{La base è costituita da paerti per la topologia $\topo$}: $A\in\basis\implies A\in\topo (\basis\subseteq\topo)$.
@@ -235,8 +235,9 @@ Dato $x\in\realset$, esiste sempre una successione $\left\{x_n\right\}\in\ration
 \end{equation*}
 Questa base con estremi razionali ha \textit{infiniti elementi}, ma in \textit{misura minore} rispetto a quella ad estremi reali.
 \end{itemize}
+\vspace{-3mm}
 \end{examples}
-\begin{theorema}\textsc{Teorema delle basi. (Manetti, 3.7)}\index{teorema!delle basi}\label{teoremabasi}\\
+\begin{theorema}[Teorema delle basi; Manetti, 3.7.]~{}\index{teorema!delle basi}\label{teoremabasi}\\
 Sia $X$ un insieme e $\basis\subseteq\setpart{X}$ una famiglia di sottoinsiemi di $X$. $\basis$ è la base di un'\textit{unica} topologia \textit{se e solo se}:
 \begin{enumerate}
 \item \textit{L'insieme} $X$ \textit{deve essere scritto come unione di elementi della famiglia}: $\displaystyle X=\union_{B\in \basis}B$.
@@ -284,7 +285,7 @@ Ricordiamo che, dato uno spazio topologico $\left(X,\ \topo\right)$ e un sottoin
 \begin{attention}
 Essere aperto oppure essere chiuso \textit{non si escludono a vicenda}! Un insieme può essere aperto, chiuso, entrambi o nessuno dei due. Ad esempio, il vuoto e l'insieme stesso sono aperti e chiusi allo stesso tempo, dato che per ipotesi sono aperti i loro complementari $\mathcal{C}\emptyset = X\setminus \emptyset = X$ e $\mathcal{C}X = X\setminus X = \emptyset$ sono anch'essi aperti.
 \end{attention}
-\begin{define}\textsc{Chiusura.}\\
+\begin{define}[Chiusura.]~{}\\
 Sia $X$ spazio topologico e $A\subseteq X$. La \textbf{chiusura}\index{chiusura} $\overline{A}$ di $A$ è il più piccolo chiuso contente $A$:
 \begin{equation}
 \overline{A}=\inter_{\substack{A\subseteq C\\ C\text{ chiuso}}}C
@@ -297,10 +298,10 @@ Sia $X$ spazio topologico e $A\subseteq X$. La \textbf{chiusura}\index{chiusura}
 \end{itemize}
 \vspace{-3mm}
 \end{define}
-\begin{define}\textsc{Punto aderente.}\\
+\begin{define}[Punto aderente.]~{}\\
 Un punto $x$ è \textbf{aderente}\index{aderenza} ad $A$ se $x\in\overline{A}$.
 \end{define}
-\begin{define}\textsc{Interno.}\\
+\begin{define}[Interno.]~{}\\
 Sia $X$ spazio topologico e $A\subseteq X$. L'\textbf{interno}\index{interno} $\interior{A}$ di $A$ è il più grande aperto contenuto in $A$:
 \begin{equation}
 	\interior{A}=\union_{\substack{B\subseteq A\\ B\text{ aperto}}}B
@@ -313,10 +314,10 @@ Sia $X$ spazio topologico e $A\subseteq X$. L'\textbf{interno}\index{interno} $\
 \end{itemize}
 \vspace{-3mm}
 \end{define}
-\begin{define}\textsc{Punto interno.}\\
+\begin{define}[Punto interno.]~{}\\
 	Un punto $x$ è \textbf{interno} ad $A$ se $x\in\interior{A}$.
 \end{define}
-\begin{define}\textsc{Frontiera.}\\
+\begin{define}[Frontiera.]~{}\\
 Sia $X$ spazio topologico e $A\subseteq X$. La \textbf{frontiera}\index{frontiera} $\partial A$ di $A$ sono i punti della chiusura di $A$ non contenuti nel suo interno o, in altri termini, i punti aderenti sia ad $A$ sia al suo complementare.
 \begin{equation}
 \partial A=\overline{A}\setminus \interior{A}=\overline{A}\cap\overline{X\setminus A}
@@ -328,14 +329,14 @@ Sia $X$ spazio topologico e $A\subseteq X$. La \textbf{frontiera}\index{frontier
 \end{itemize}
 \vspace{-3mm}
 \end{define}
-\begin{define}\textsc{Insieme denso.}\\
+\begin{define}[Insieme denso.]~{}\\
 Sia $X$ spazio topologico e $A\subseteq X$. A è \textbf{denso}\index{spazio!denso} è denso in $X$ se $\overline{A}=X$ o, in altri termini, tutti i punti di $X$ sono aderenti ad $A$.
 \end{define}
 \begin{example}
 Il più piccolo chiuso contenente $\rationalset$ è $\realset$, poiché ogni reale è aderente ai razionali. Dunque $\rationalset$ è denso in $\realset$.
 \end{example}
 \subsection{Intorni}
-\begin{define}\textsc{Intorno.}\\
+\begin{define}[Intorno.]~{}\\
 Sia $X$ spazio topologico e $x\in X$. $V$ è un \textbf{intorno}\index{intorno} di $x$ se $\exists A$ aperto tale che $x\in A\subseteq V$ o, in altri termini, se $x$ è interno ad $U$.
 Definiamo inoltre la \textbf{famiglia degli intorni} di $x$ $I\left(x\right)\subseteq\setpart{X}$:
 \begin{equation}
@@ -346,7 +347,7 @@ I\left(x\right)=\left\{V\subseteq X\mid V\text{ è intorno di }x \right\}
 \begin{observe}
 	Dato $A\subseteq X$, per ogni $x\in A$ tale che $A$ è intorno di $x$ si può definire un aperto $A_x\subseteq A$, con $x\in A_x$. L'unione arbitraria di questi $A_x$ risulta essere contenuta in $A$ e pari al suo interno. Dunque, si può definire l'interno di $A$ come $\interior{A}=\left\{x\in A\mid A\in I\left(x\right)\right\}$; segue che $A$ è \textit{aperto se e solo se} $A$ \textit{è intorno di ogni punto in} $A$.
 \end{observe}
-\begin{lemming}\textsc{Proprietà degli intorni. (Manetti, 3.20, 3.21)}
+\begin{lemming}[Proprietà degli intorni; Manetti, 3.20, 3.21.]~{}
 \begin{enumerate}
 \item \textit{Si possono estendere gli intorni}: $U\in I\left(x\right),\ U\subseteq V\implies V\in I\left(x\right)$
 \item \textit{Le intersezioni di intorni sono ancora intorni}: $U,\ V\in I\left(x\right)\implies U\cap V\in I\left(x\right)$
@@ -369,11 +370,11 @@ I\left(x\right)=\left\{V\subseteq X\mid V\text{ è intorno di }x \right\}
 \end{enumerate}
 \vspace{-6mm}
 \end{demonstration}
-\begin{define}\textsc{Sistema fondamentale di intorni.}\\
+\begin{define}[Sistema fondamentale di intorni.]~{}\\
 Sia $X$ spazio topologico, $x\in X$ e $I\left(x\right)$ la famiglia degli intorni di $x$. Una sottofamiglia $\mathcal{I}\subseteq I\left(x\right)$ è un \textbf{sistema fondamentale di intorni}\index{sistema fondamentale di intorni} di $x$ se $\forall U\in I\left(x\right)\exists V\in\mathcal{J}\ \colon V\subseteq U$.
 \end{define}
 \section{Funzioni continue}
-\begin{define}\textsc{Funzione continua.}\\
+\begin{define}[Funzione continua.]~{}\\
 Siano $X$, $Y$ spazi topologici. Una funzione $\funz{f}{X}{Y}$ si dice \textbf{continua}\index{continuità}\index{continuità!per aperti o chiusi}\seeonlyindex{funzione!continua}{continuità!per aperti o chiusi} se la controimmagine di aperti in $Y$ è un aperto in $X$:
 \begin{equation}
 \forall A\text{ aperto in } Y,\ f^{-1}\left(A\right) \text{ è aperto in } X
@@ -397,7 +398,7 @@ f^{-1}\left(\union_{i}A_i\right)=\union_{i}f^{-1}\left(A_i\right)
 \end{itemize}
 \vspace{-3mm}
 \end{observes}
-\begin{lemming}\textsc{(Manetti, 3.25)}\\
+\begin{lemming}[Continuità per chiusura; Manetti, 3.25.]~{}\\
 Siano $X$, $Y$ spazi topologici e $\funz{f}{X}{Y}$ funzione.
 $f$ è continua se e solo se:
 \begin{equation}
@@ -437,7 +438,7 @@ f\left(\overline{f^{-1}\left(C\right)}\right)\subseteq C\\
 \end{gather*}
 Dunque la controimmagine $A$ di un chiuso $C$ è un chiuso.
 \end{demonstration}
-\begin{theorema}\textsc{Manetti, 3.26}\\ \label{compfunzcont}
+\begin{theorema}[Composizione di funzioni continue; Manetti, 3.26.]~{}\\ \label{compfunzcont}
 La \textit{composizione} di funzioni continue è continua.
 \begin{equation}
 \funz{f}{Y}{Z},\ \funz{g}{X}{Y}\text{ continue}\implies \funz{f\circ g}{X}{Z}\text{ continua}
@@ -447,14 +448,14 @@ La \textit{composizione} di funzioni continue è continua.
 \begin{demonstration}
 La controimmagine della composizione di funzioni $f\circ g$ è definita come $f^{-1}\left(f\circ g\right)=g^{-1}\circ f^{-1}$. Allora $A$ aperto in $Z\implies f^{-1}\left(A\right)$ aperto $\implies g^{-1}\left(f^{-1}\left(A\right)\right)$ aperto.
 \end{demonstration}
-\begin{define}\textsc{Continuità per punti.} \textsc{(Manetti, 3.27)}\\
+\begin{define}[Continuità per punti; Manetti, 3.27.]~{}\\
 Siano $X$, $Y$ spazi topologici e $\funz{f}{X}{Y}$ funzione. Dato $x\in X$ $f$ è \textbf{continua}\index{continuità!per intorni} in $x$ se:
 \begin{equation}
 	\forall U\in I\left(f\left(x\right)\right)\exists V\in I\left(x\right)\ \colon f\left(V\right)\subseteq U
 \end{equation}
 Questa è la generalizzazione della definizione tradizionale della continuità affrontata in \textit{Analisi 1}.
 \end{define}
-\begin{theorema}\textsc{(Manetti, 3.28)}\\
+\begin{theorema}[Continuità per punti e per aperti; Manetti, 3.28.]~{}\\
 Siano $X$, $Y$ spazi topologici e $\funz{f}{X}{Y}$ funzione. $f$ è continua per aperti $\iff$ $f$ è continua in $x\ \forall x\in X$.
 \end{theorema}
 \begin{demonstration}~{}\\
@@ -463,7 +464,7 @@ Basta porre $V=f^{-1}\left(A\right)$: per continuità è aperto in $X$ e, dato c
 $\impliessx$ Sia $A\subseteq Y$ aperto. Dobbiamo dimostrare che $f^{-1}\left(A\right)$ sia aperto. Preso $x\in f^{-1}\left(A\right)$ si ha che $f\left(x\right)\in A$; dunque $A$ è, in quanto aperto, intorno di $f\left(x\right)$. Allora, poiché $f$ è continua in $x$, $\exists V\in I\left(x\right)$ tale che $f\left(V\right)\subseteq A$.\\
 Segue che $x\in V\subseteq f^{-1}\left(A\right)$, cioè $f^{-1}\left(A\right)$ è intorno di $x$ poiché contiene un intorno $V$ dello stesso punto. Dunque $f^{-1}\left(A\right)$ aperto perché è intorno di ogni suo punto.
 \end{demonstration}
-\begin{define}\textsc{Funzione aperte e funzione chiusa.}\\
+\begin{define}[Funzione aperte e funzione chiusa.]~{}\\
 Siano $X$, $Y$ spazi topologici e $\funz{f}{X}{Y}$ funzione.
 \begin{itemize}
 \item $f$ è \textbf{aperta}\index{funzione!aperta} se $\forall A$ aperto in $X$ $f\left(A\right)$ è aperto in $Y$.
@@ -489,7 +490,7 @@ Siano $X$, $Y$ spazi topologici e $\funz{f}{X}{Y}$ funzione.
 \vspace{-3mm}
 \end{attention}
 \section{Omeomorfismi}
-\begin{define}\textsc{Omeomorfismo.}\\
+\begin{define}[Omeomorfismo.]~{}\\
 Siano $X$, $Y$ spazi topologici e $\funz{f}{X}{Y}$ funzione. $f$ è un \textbf{omeomorfismo}\index{omeomorfismo} se è \textit{biunivoca}, \textit{continua} e la sua inversa è \textit{continua}; più precisamente, esiste $g\colon Y\rightarrow X$ continua tale per cui $g\circ f = Id_{X}$ e $f\circ g = Id_{Y}$.\\
 Due spazi topologici si dicono \textbf{omeomorfi} se esiste un omeomorfismo fra i due; in notazione $X\cong Y$.
 \end{define}
@@ -498,7 +499,7 @@ Due spazi topologici si dicono \textbf{omeomorfi} se esiste un omeomorfismo fra 
 	Si vede allora facilmente che un \textit{quadrato} ed un \textit{cerchio} sono omeomorfi, mentre una \textit{sfera} ed un \textit{toro} (la versione ‘‘topologica'' di una ciambella col buco, si veda sez. \ref{ciambella}, pag. \pageref{ciambella}) non lo sono, dato che non posso creare né far sparire quel buco; allo stesso modo una \textit{retta} non è omeomorfa ad un \textit{punto}, dato che non posso ‘‘accumulare'' tutti i punti della retta in uno solo!\\
 	Seppur questa ‘‘visualizzazione'' è una buona intuizione del funzionamento degli omeomorfismi, \textbf{non è completamente accurata}. Ad esempio, un \textit{nastro di Möbius} (per la definizione si veda sez. \ref{nastromobius}, pag. \pageref{nastromobius}) con un mezzo-giro ed uno con tre mezzi-giri sono omeomorfi, ma con la nostra intuizione non si arriva a dire perché.
 \end{intuit}
-\begin{lemming}\textsc{(Manetti, 3.31)}\\
+\begin{lemming}[Omeomorfismo è biezione aperta e chiusa; Manetti, 3.31.]~{}\\
 Siano $X$, $Y$ spazi topologici e $\funz{f}{X}{Y}$ funzione \textit{continua}. Allora vale:
 \begin{enumerate}
 \item $f$ omeomorfismo $\iff$ $f$ aperta e biettiva.
@@ -512,7 +513,7 @@ $\impliesdx$ Un omeomorfismo è biettiva per definizione. Dimostriamo dunque che
 $\impliessx$ $f$ è già biettiva e continua per ipotesi. Dobbiamo dimostrare che l'inversa $\funz{g}{Y}{X}$ sia continua, cioè $\forall A\in X$ aperto $g^{-1}\left(A\right)\in Y$ è aperto. Ma $g^{-1}\left(A\right)=f\left(A\right)$ che è aperto perché $f$ è aperta.
 \end{demonstration}
 \section{Topologia indotta}\index{topologia!indotta}
-\begin{define}\textsc{Topologia indotta.}\\
+\begin{define}[Topologia indotta.]~{}\\
 Dati:
 \begin{itemize}
 \item Uno spazio topologico $X$.
@@ -522,7 +523,7 @@ Dati:
 Allora su $Y$ si può definire la \textbf{topologia indotta}\index{topologia!indotta} come la topologia meno fine tra tutte quelle che rendono $f$ continua.
 \end{define}
 \section{Sottospazio topologico}\index{sottospazio!topologico} \label{sottospazi}
-\begin{define}\textsc{Topologia di sottospazio.}\\
+\begin{define}[Topologia di sottospazio.]~{}\\
 Sia $X$ uno spazio topologico $\left(X,\ \topo\right)$ e $Y\subseteq X$ un suo sottoinsieme. Su $Y$ si può definire la seguente \textbf{topologia di sottospazio}\index{topologia!di sottospazio}:
 \begin{equation}
 U\subseteq Y\text{ aperto in } Y \iff \exists V\subseteq X\text{ aperto in } X (V\in \topo)\ : U=V\cap Y
@@ -532,7 +533,7 @@ Definita l'\textbf{inclusione}\index{inclusione} $\incltot{i}{Y}{X}{y}{y}$, la t
 \begin{demonstration}
 Dimostriamo la continuità dell'inclusione. Se $A$ aperto in $X$, $i^{-1}\left(A\right)=A\cap Y$ (tutti gli elementi di $A$ contenuti in $Y$) è aperto in $Y$ per definizione.
 \end{demonstration}
-\begin{define}\textsc{Aperti, chiusi e basi del sottospazio topologico.}\\
+\begin{define}[Aperti, chiusi e basi del sottospazio topologico.]~{}\\
 	Sia $X$ uno spazio topologico $\left(X,\ \topo\right)$ e $Y\subseteq X$ un suo sottoinsieme. Allora:
 	\begin{itemize}
 		\item $A\subseteq Y$ \textbf{aperto} in $Y\iff A=U\cap Y$ con $U$ aperto in $X$.
@@ -552,7 +553,7 @@ Dimostriamo la continuità dell'inclusione. Se $A$ aperto in $X$, $i^{-1}\left(A
 	\end{itemize}
 \vspace{-3mm}
 \end{examples}
-\begin{lemming}\textsc{(Manetti, 3.55)}\\
+\begin{lemming}[Chiusura di un sottoinsieme di un sottospazio; Manetti, 3.55.]~{}\\
 Sia $A\subseteq Y\subseteq X$ con $X$ spazio topologico e $Y$ sottospazio topologico. Definiamo:
 \begin{itemize}
 \item $\mathcal{cl}_Y\left(A\right)=$ chiusura di $A$ in $Y$.
@@ -572,7 +573,7 @@ Ora sia $\mathcal{C}'=\left\{C\cap Y\mid C\in\mathcal{C}\right\}$. Allora, usand
 \end{demonstration}
 
 	\subsection{Immersione} \label{immersione}
-\begin{define}\textsc{Immersione.}\\
+\begin{define}[Immersione.]~{}\\
 Sia $\funz{f}{X}{Y}$ funzione tra $X,\ Y$ spazi topologici. Se:\begin{itemize}
 \item $f$ continua.
 \item $f$ iniettiva
@@ -591,9 +592,9 @@ B\subseteq X\text{ è aperto in }X\iff B=f^{-1}\left(A\right),\ A\text{ aperto i
 \end{equation*}
 \vspace{-6mm}
 \end{observe}
-\begin{example} \textsc{Esempio di \textit{non} immersione.}
+\begin{example} \textsc{Esempio di \underline{non} immersione.}
 	\begin{equation}
-		\substack{\left[0,\ 1\right)\rightarrow \realset^2\\t\mapsto \left(\cos 2\pi t,\ \sin 2\pi t\right)}
+		\funztot{\ }{\left[0,\ 1\right)}{\realset^2}{t}{\left(\cos 2\pi t,\ \sin 2\pi t\right)}
 	\end{equation}
 Notiamo innanzitutto che $f\left(\left[0,\ 1\right)\right)=S^{1}$. Si ha:
 \begin{itemize}
@@ -604,7 +605,7 @@ Notiamo innanzitutto che $f\left(\left[0,\ 1\right)\right)=S^{1}$. Si ha:
 Tuttavia $f_{\bullet}$ \textit{non} è immersione, dato che $f_{\bullet}^{-1}$ non è continua. Preso $P=\left(1,\ 0\right)\in S^1$, $f_{\bullet}^{-1}$ non è continua in $P$. Infatti, gli intorni di $0$ in $\left[0,\ 1\right)$ sono del tipo $U=[0,\ \epsilon)$, dunque dovrei trovare $\forall U$ un intorno $V$ di $P\in S^1\ \colon f_{\bullet}^{-1}\left(V\right)\subseteq U$.\\
 Tuttavia, solo la parte superiore di $V\in I\left(P\right)$ ha la controimmagine interna ad $U$: la parte inferiore, poiché sono le immagini di punti prossimi all'estremo $1$ del dominio, non hanno controimmagini in $U$. Pertanto, non abbiamo l'omeomorfismo di $f_{\bullet}$ e dunque l'immersione.
 \end{example}
-\begin{define}\textsc{Immersione aperta e chiusa.}\\
+\begin{define}[Immersione aperta e chiusa.]~{}\\
 Sia $\funz{f}{X}{Y}$ funzione tra $X,\ Y$ spazi topologici.
 \begin{itemize}
 \item $f$ si dice \textbf{immersione aperta}\index{immersione!aperta} se $f$ è aperta.
@@ -612,7 +613,7 @@ Sia $\funz{f}{X}{Y}$ funzione tra $X,\ Y$ spazi topologici.
 \end{itemize}
 \vspace{-3mm}
 \end{define}
-\begin{lemming}\textsc{(Manetti, 3.59)}\\
+\begin{lemming}[Funzione iniettiva aperta/chiusa è immersione aperta/chiusa; Manetti, 3.59.]
 Sia $\funz{f}{X}{Y}$ funzione \textit{continua} tra $X,\ Y$ spazi topologici.
 \begin{enumerate}
 \item $f$ iniettiva e aperta $\implies f$ è immersione (aperta)
@@ -631,7 +632,7 @@ Preso $C\subseteq X$ chiuso, sappiamo che $f\left(C\right)$ è chiuso in $Y$, ma
 $f_{\bullet}$ è dunque omeomorfismo ed $f$ è immersione (chiusa).
 \end{demonstration}
 \section{Prodotti topologici}
-\begin{define}\textsc{Topologia prodotto e proiezioni.}\\
+\begin{define}[Topologia prodotto e proiezioni.]~{}\\
 Siano $P,\ Q$ spazi topologici e $P\times Q$ il suo prodotto cartesiano. Definite le \textbf{proiezioni}\index{proiezione!al prodotto cartesiano}:
 \begin{gather}
 \funztot{p}{P\times Q}{P}{\left(x,\ y\right)}{x}\\
@@ -639,7 +640,7 @@ Siano $P,\ Q$ spazi topologici e $P\times Q$ il suo prodotto cartesiano. Definit
 \end{gather}
 La \textbf{topologia prodotto}\index{topologia!prodotto} $\mathcal{P}$ è la topologia \textit{meno fine} fra quelli che rendono $p$ e $q$ \textit{continue}. In particolare, ricordando l'osservazione \ref{intersezionetopo}, la topologia prodotto è l'intersezione di \textit{tutte} le topologia che rendono continue $p$ e $q$.
 \end{define}
-\begin{theorema}\textsc{(Manetti, 3.61)}\label{topprodotto}
+\begin{theorema}[Base della topologia prodotto; Manetti, 3.61.]\label{topprodotto}~{}
 \begin{enumerate}
 \item Una \textit{base} della topologia $\mathcal{P}$ è data dagli insiemi della forma $U\times V$ dove $U\subseteq P$ aperto, $V\subseteq Q$ aperto.
 \item $p,\ q$ sono aperte; inoltre $\forall \left(x,\ y\right)\in P\times Q$ le restrizioni:
@@ -658,13 +659,13 @@ f\text{ continua}\iff f_1=p\circ f,\ f_2=q\circ f\text{ continue}
 \begin{demonstration}~{}
 \begin{enumerate}[label=\Roman*]
 \item Dimostriamo che:
-\begin{enumerate}[label=\Alph*)]
+\begin{enumerate}[label=(\alph*)]
 \item La famiglia $\left\{U\times V\right\}$ è base per una topologia $\topo$.
 \item $\mathrm{P}$ è meno fine di $\topo$.
 \item $\topo$ è meno fine di $\mathrm{P}$.
 \end{enumerate}
 In questo modo avremo che la topologia $\topo$ è la topologia prodotto $\mathcal{P}$ e ne conosceremo una base.
-\begin{enumerate}[label=\alph*)]
+\begin{enumerate}[label=(\alph*)]
 \item Segue dal teorema delle basi (Teorema \ref{teoremabasi}, Manetti, 3.7). Infatti
 \begin{enumerate}
 \item $P\times Q$ appartiene alla famiglia $\left\{U\times V\right\}$, dato che per definizione gli insiemi stessi $P$ e $Q$ sono aperti.
@@ -709,8 +710,8 @@ f^{-1}\left(U\times V\right)=&f^{-1}\left(p^{-1}\left(U\right)\cap q^{-1}\left(V
 Per ipotesi $p\circ f$, $q\circ f$ sono continue, quindi le loro controimmagini di aperti sono ancora aperti; essendo la loro intersezione un aperto, segue l'implicazione.
 \end{enumerate}
 \end{demonstration}
-\begin{proposition}
-Siano $X,\ Y$ spazi topologici e $X\times Y$ il prodotto. Allora:
+\begin{proposition}[Proprietà del prodotto]
+Siano $X,\ Y$ spazi topologici e $X\times Y$ il prodotto.
 \begin{enumerate}
 \item Date le basi $\basis$ della topologia di $X$ e $\mathcal{C}$ della topologia di $Y$, allora:
 \begin{equation}
@@ -771,7 +772,7 @@ In particolare una base di aperti di $X_1\times \ldots \times X_n$ è data da:
 \vspace{-6mm}
 \end{observe}
 \section{Assiomi di separazione: T1 e Hausdorff}\index{assioma di separazione}
-\begin{define}\textsc{Spazio T1.}\label{T1}\\
+\begin{define}[Spazio T1.]~{}\label{T1}\\
 Uno spazio topologico $X$ si dice \textbf{T1}\index{assioma di separazione!T1}\index{spazio!T1} se ogni sottoinsieme finito è chiuso, in particolare se e solo se tutti i punti sono chiusi.\\
 In termini di intorni, $X$ è \textbf{T1} se presi due punti distinti $x$ e $y$ esiste un intorno per il punto $x$ che non contiene $y$ e viceversa:
 \begin{equation}
@@ -813,7 +814,7 @@ Per ipotesi, $\displaystyle \inter_{V\in I\left(y\right)}V=\left\{y\right\}$, du
 E per la proposizione precedente si ha che $X$ metrico è \textbf{T1}.
 \end{enumerate}
 \end{demonstration}
-\begin{define}\textbf{Spazio di Hausdorff.}\\
+\begin{define}[Spazio di Hausdorff.]~{}\\
 Uno spazio topologico $X$ si dice di \textbf{Hausdorff}\index{assioma di separazione!Hausdorff}\index{spazio!Hausdorff} o \textbf{T2}\seeonlyindex{spazio topologico!T2}{assioma di separazione!Hausdorff}\seeonlyindex{assioma di separazione!T2}{assioma di separazione!Hausdorff} se per ogni coppia di punti distinti esistono due intorni disgiunti:
 \begin{equation}
 	\forall x,\ y\in X\quad x\neq y\implies
@@ -849,8 +850,7 @@ B_{\nicefrac{d}{4}}\left(Y\right)\cap B_{\nicefrac{d}{4}}\left(Y\right)=\emptyse
 \end{enumerate}
 \vspace{-6mm}
 \end{demonstration}
-\begin{proposition}\label{prodottihause}\textsc{(Manetti, 3.6.8)}\\
-Sottospazi e prodotti di spazi di \textbf{Hausdorff} sono \textbf{Hausdorff}.
+\begin{proposition}[Sottospazi e prodotti di Hausdorff sono Hausdorff; Manetti, 3.6.8.]~{}\label{prodottihause}
 \end{proposition}
 \begin{demonstration}~{}
 \begin{itemize}
@@ -867,7 +867,7 @@ $X$ di \textbf{Hausdorff} implica che $\exists U,\ V\subseteq X$ intorni rispett
 \end{itemize}
 \vspace{-6mm}
 \end{demonstration}
-\begin{theorema}\textsc{(Manetti, 3.69)} \label{hausdorff diagonale chiusa}\\
+\begin{theorema}[$X$ di Hausdorff se e solo se diagonale di $X$ chiusa; Manetti, 3.69.]~{}\label{hausdorff diagonale chiusa}\\
 Sia $X$ spazio topologico. La \textbf{diagonale}\index{diagonale} $\Delta\subseteq X\times X$ è l'insieme delle coppie che hanno uguali componenti:
 \begin{equation}
 	\Delta=\left\{\left(x,\ x\right)\mid x\in X\right\}
@@ -878,10 +878,10 @@ X \text{ di \textbf{Hausdorff}} \iff \Delta \textsc{ chiuso in }X\times X
 \end{equation}
 \vspace{-6mm}
 \end{theorema}
-\begin{demonstration}~{}\\
-$\impliesdx$ Dobbiamo dimostrare che $\Delta$ è chiuso, cioè $X\times X\setminus \Delta$ aperto, ovvero $X\times X\setminus \Delta$ è intorno di ogni suo punto.\\
-Preso $\left(x,\ y\right)\in X\times X\setminus \Delta\implies x\neq y$ dato che \textit{non} appartiene alla diagonale. Essendo $X$ di \textbf{Hausdorff}, $\exists U,\ V:\ x\in U,\ y\in V$ (intorni) aperti  disgiunti. Allora $U\times V\cap \Delta =\emptyset$: se così non fosse, ci potrebbero essere dei valori della diagonale che appartengono ad $U\times V$, cioè esisterebbe almeno una coppia $\left(x',\ y'\right)$ tale che $x'=y'$, ovvero gli intorni non sarebbero disgiunti. Allora $\left(x,\ y\right)\in U\times V\subseteq X\times X\setminus \Delta$.\\
-$\impliessx$ Siano $x,\ y\in X,\ x\neq y$. Allora $\left(x,\ y\right)\in \subseteq X\times X\setminus \Delta$, che è aperto per ipotesi. Necessariamente esiste un aperto della base della topologia prodotto che contiene la coppia: $\left(x,\ y\right)\in U\times V\subseteq X\times X\setminus \Delta$. Per gli stessi ragionamenti dell'altra implicazione, si ha che $x\in U,\ y\in V$ con $U,\ V$ aperti (e dunque intorni) disgiunti. Segue che $X$ è di \textbf{Hausdorff}.
+\begin{demonstration}[Conseguenze degli spazi di Hausdorff.]~{}\\
+$\impliesdx$ Dobbiamo dimostrare che $\Delta$ è chiuso, cioè $\left(X\times X\right)\setminus \Delta$ aperto, ovvero $\left(X\times X\right)\setminus \Delta$ è intorno di ogni suo punto.\\
+Preso $\left(x,\ y\right)\in \left(X\times X\right)\setminus \Delta\implies x\neq y$ dato che \textit{non} appartiene alla diagonale. Essendo $X$ di \textbf{Hausdorff}, $\exists U,\ V:\ x\in U,\ y\in V$ (intorni) aperti  disgiunti. Allora $U\times V\cap \Delta =\emptyset$: se così non fosse, ci potrebbero essere dei valori della diagonale che appartengono ad $U\times V$, cioè esisterebbe almeno una coppia $\left(x',\ y'\right)$ tale che $x'=y'$, ovvero gli intorni non sarebbero disgiunti. Allora $\left(x,\ y\right)\in U\times V\subseteq \left(X\times X\right)\setminus \Delta$.\\
+$\impliessx$ Siano $x,\ y\in X,\ x\neq y$. Allora $\left(x,\ y\right)\in \left(X\times X\right)\setminus \Delta$, che è aperto per ipotesi. Necessariamente esiste un aperto della base della topologia prodotto che contiene la coppia: $\left(x,\ y\right)\in U\times V\subseteq \left(X\times X\right)\setminus \Delta$. Per gli stessi ragionamenti dell'altra implicazione, si ha che $x\in U,\ y\in V$ con $U,\ V$ aperti (e dunque intorni) disgiunti. Segue che $X$ è di \textbf{Hausdorff}.
 \end{demonstration}
 \begin{proposition}~{}
 \begin{enumerate}
@@ -920,7 +920,7 @@ Questo è vero in quanto $Y$ è di \textbf{Hausdorff} e la diagonale $\Delta_Y$ 
 \end{enumerate}
 \end{demonstration}
 \section{Proprietà topologica}
-\begin{define}\textsc{Proprietà topologica.}\\
+\begin{define}[Proprietà topologica.]~{}\\
 Una \textbf{proprietà topologica}\index{proprietà topologica} $P$ è una caratteristica degli spazi topologici per cui se ogni spazio $X$ che possiede quella proprietà $P$ è omeomorfo ad uno spazio $Y$, allora anche $Y$ ha quella proprietà (e viceversa):
 \begin{equation}
 X\cong Y\implies \left[ X\text{ ha }P\iff Y\text{ ha }P\right]
@@ -931,9 +931,9 @@ In altre parole, una proprietà topologica è \textbf{invariante}\index{invarian
 Per verificare che $P$ è una proprietà topologica dati due spazi omeomorfi $X\cong Y$, basta in realtà verificare solo che se $X$ ha la proprietà $P$ allora anche $Y$ la ha.\\
 Invece, si può verificare che due spazi \textbf{non} sono omeomorfi trovando una proprietà topologica che non condividono tra di loro.
 \end{observe}
-\begin{exercise}\label{hausexercise}\textsc{(Manetti, 3.56)}\\
+\begin{lemming}[Hausdorff è proprietà topologica; Manetti, esercizio 3.56.]~{}\\
 Siano $X,\ Y$ spazi topologici con $Y$ di \textbf{Hausdorff}. Se esiste $\funz{f}{X}{Y}$ continua e iniettiva, allora $X$ è di \textbf{Hausdorff}.
-\end{exercise}
+\end{lemming}
 \begin{demonstration}
 Siano $x,\ y\in X$ con $x\neq y$. Essendo $f$ iniettiva, $f\left(x\right)\neq f\left(y\right)\in Y$: in quanto $Y$ è di \textbf{Hausdorff}, $\exists U,\ V$ (intorni) aperti disgiunti in $Y$ che contengono rispettivamente $f\left(x\right)$ e $f\left(y\right)$.\\
 Per continuità di $f$ le controimmagini di questi intorni aperti sono aperti e per iniettività sono ancora disgiunti: $\exists f^{-1}\left(U\right),\ f^{-1}\left(V\right)$ (intorni) aperti disgiunti che contengono rispettivamente $x$ e $y$. Segue che $X$ è di \textbf{Hausdorff}.
@@ -948,7 +948,7 @@ Essere di \textbf{Hausdorff} è una proprietà topologica, ovvero:
 \begin{demonstration}
 Sia $\funz{f}{X}{Y}$ un omeomorfismo tra i due spazi. Allora $f$ è per definizione continua e iniettiva. Per l'esercizio \ref{hausexercise} \textsc{(Manetti, 3.56)} segue che $X$ di \textbf{Hausdorff}$\implies$ Y di \textbf{Hausdorff}.
 \end{demonstration}
-\begin{theorema}
+\begin{theorema}[Prodotto di Hausdorff è Hausdorff.]~{}\\
 $X,\ Y$ di \textbf{Hausdorff}$\iff X\times Y$ di \textbf{Hausdorff}.
 \end{theorema}
 \begin{demonstration}~{}\\

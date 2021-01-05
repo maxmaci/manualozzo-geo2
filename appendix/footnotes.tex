@@ -15,10 +15,10 @@
 \end{flushright}
 \end{introduction}
 
-\noindent Riportiamo alcune note e dimostrazioni aggiuntive che possono risultare utili al lettore.
-% mettere a posto bibliografia con autore e titolo - ordine preferibilmente alfabetico
+\noindent Riportiamo alcune note, precisazioni e dimostrazioni complementari agli argomenti dei capitoli principali che possono risultare utili al lettore
 \section{Capitolo 1: spazi topologici}
-Le seguenti dimostrazioni sulle continuità di funzioni sono tratte da \cite{munkres:2000topology}.
+\subsection{Alcune proprietà della continuità}
+Le seguenti dimostrazioni sulle continuità di funzioni sono da \cite{munkres:2000topology}.
 \begin{theorema}\textsc{(Munkres, 18.2b)}\\
 	Se $Z\subseteq X$ è sottospazio, l'inclusione $\incl{i}{Z}{X}$ è una funzione continua.
 \end{theorema}
@@ -47,10 +47,11 @@ Se $\funz{f}{X}{Y}$ è un omeomorfismo, allora $\funz{f_{\mid Z}}{Z}{f\left(Z\ri
 	Preso ad esempio $A=S^2\setminus\left\{(0,\ 0,\ 1),\ (0,\ 0,\ -1)\right\}$ e $B=S^1\times \realset$. Si ha che $A$ e $B$ sono \textit{omeomorfi} (per proiezione dall'origine), ma $\realset^3\setminus A$ è connesso per archi, mentre $\realset^3\setminus B$ non è \textit{neppure connesso}.
 \end{attention} 
 \section{Capitolo 6: assiomi di numerabilità e successioni}
-La seguente dimostrazione sulla non prima-numerabilità del quoziente $\nicefrac{\realset}{\integerset}$ è adattata da \cite{scott:nonum} su Mathematics Stack Exchange.
+\subsection{Non prima numerabilità del quoziente}
+La seguente dimostrazione sulla non prima numerabilità del quoziente $\nicefrac{\realset}{\integerset}$ è adattata da \cite{scott:nonum} su Mathematics Stack Exchange.
 \begin{demonstration}\label{dimostrazionenonnumerabilità}
 Si consideri la contrazione di $\integerset$ in $\realset$ ad un punto, cioè il quoziente $\nicefrac{\realset}{\integerset}$ e si definisca la classe di equivalenza degli interi come $[0]$.\\
-Sia $\left\{U_n:n\in\naturalset\right\}$ una famiglia di intorni aperti di $[0]$; cerchiamo un intorno aperto di $[0]$ che non ne contiene nessuno come sottoinsieme, mostrano in tal modo che non formano un sistema fondamentale di intorni di $[0]$ e pertanto che $\nicefrac{\realset}{\integerset}$ non è primo-numerabile per $[0]$.\\
+Sia $\left\{U_n:n\in\naturalset\right\}$ una famiglia di intorni aperti di $[0]$; cerchiamo un intorno aperto di $[0]$ che non ne contiene nessuno come sottoinsieme, mostrano in tal modo che non formano un sistema fondamentale di intorni di $[0]$ e pertanto che $\nicefrac{\realset}{\integerset}$ non è primo numerabile per $[0]$.\\
 Sia $\pi$ la mappa quoziente. Per ogni $n\in\naturalset$ e $k\in\integerset$ esiste un $\epsilon_{n,k}\in(0,1)$ tale che: 
 \begin{equation*}
 U_n\supseteq \pi\left[\inter_{k\in\integerset}(k-\epsilon_{n,k},k+\epsilon_{n,k})\right]\
@@ -61,7 +62,8 @@ V=\pi\left[\bigcup_{k\in\integerset}(k-\delta_k,k+\delta_k)\right]
 \end{equation*}
 Chiaramente $V$ è un intorno aperto di $[0]$, e vogliamo dimostrare che $U_n\nsubseteq V$ per ogni $n\in\naturalset$. Per mostrare ciò, fissiamo $n\in\naturalset$; si ha $\delta_n<\epsilon_{n,n}$, quindi possiamo sceglie un numero reale $x\in(n+\delta_n,n+\epsilon_{n,n})$. Ma allora $\pi(x)\in U_n\setminus V$, e dunque $U_n\nsubseteq V$.
 \end{demonstration}
-\section{Capitolo 11: forma canonica di Jordan}
+\section{Capitolo 10: approfondimenti di Algebra Lineare}
+\subsection{Determinante di una matrice a blocchi}
 La seguente dimostrazione sul determinante di una matrice a blocchi e del suo polinomio caratteristico si basa su integrazioni proprie da \cite{jeanmarie:blockdet} e da \cite{bengrossman:blockdet} su Mathematics Stack Exchange. \label{dimostrazionedeterminantematriceblocchi}
 \begin{demonstration}
 	Data una matrice quadrata $\left(
@@ -250,7 +252,7 @@ C_A\left(t\right)=\det\left(
 \right)=\det\left(\mathbf{B}-t I\right)\det\left(\mathbf{C}-t I\right)=C_B\left(t\right)C_C\left(t\right)
 \end{equation}
 \end{demonstration}
-\subsection{Convergenza}\label{convergenzauniforme}
+\subsection{Convergenza uniforme}\label{convergenzauniforme}
 Tutti i ragionamenti qui presenti si applicano anche alle successioni e serie di potenze.
 \begin{define}
 	Dato un insieme $E$ e un successione $\left(f_n\right)_{n\in\naturalset}$ con $\funz{f_n}{E}{X}$ con $X$ metrico, si dice che la successione è uniformemente convergente \index{convergenza!uniforme} su $E$ con limite $\funz{f}{E}{X}$ se:
@@ -274,7 +276,7 @@ Si usa spesso l'\textit{M-test} assieme al \textbf{teorema del limite uniforme}.
 \begin{define}
 Sia $\left(f_n\right)_{n\in\naturalset}$ una successione di funzioni \textit{reali} o \textit{complesse} continue sullo spazio topologico $A$ nel quale sono definite; se la successione converge uniformemente su $A$ allora il limite converge ad una funzione continua. In particolare, lo stesso si ha nel caso di una serie.
 \end{define}
-\section{Capitolo 12: geometria proiettiva}
+\section{Capitolo 11: geometria proiettiva}
 \subsection{Regola di Cramer}\label{Cramerrimembriancor}
 \begin{theorema}\textsc{Regola di Cramer}.\\
 	Si consideri un sistema $A\mathbf{x}=\mathbf{b}$ di $n$ equazioni lineari in $n$ incognite, con $\det A \neq 0$. Il sistema ha un unica soluzione $\mathbf{x}$, le cui componenti sono:

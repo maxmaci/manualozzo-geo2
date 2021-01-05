@@ -22,7 +22,7 @@
 \end{itemize}
 Vedremo che la \textbf{connessione} e la \textbf{compattezza} sono definite in modo abbastanza basilare, seppur non necessariamente siano intuitive a primo acchito. Tuttavia, proprio in virtù di questa semplicità, sono applicabili in tanti contesti diversi; in particolare, la compattezza come la definiremo ci permetterà di prendere informazioni note \textit{localmente} ed estenderle in modo che valgano globalmente in tutto lo spazio.
 \section{Connessione}
-\begin{define}\textsc{Spazio connesso e spazio sconnesso.}\\
+\begin{define}[Spazio connesso e spazio sconnesso.]
 Uno spazio topologico $X$ si dice \textbf{connesso}\index{connessione} se gli unici sottoinsiemi aperti e chiusi sono $\emptyset,\ X$.\\
 Uno spazio non \textit{connesso} si dice \textbf{sconnesso} oppure \textbf{non connesso}.
 \end{define}
@@ -51,7 +51,7 @@ $1\implies2)$ $A$ aperto, $B$ aperto $\implies A$ chiuso perché $A=\mathcal{C}X
 \vspace{-3mm}
 \end{examples}
 \begin{lemming}\textsc{(Manetti, 4.4)}\\
-Sia $X$ spazio topologico e $A\subseteq X$ con $A$ aperto e chiuso. Sia $Y\subseteq X,\ Y$ \textit{connesso}. Allora $Y\cap A=\emptyset$ (cioè $Y\subseteq Y\setminus A$) oppure $Y\subseteq A$. 
+Sia $X$ spazio topologico e $A\subseteq X$ con $A$ aperto e chiuso. Sia $Y\subseteq X,\ Y$ \textit{connesso}. Allora $Y\cap A=\emptyset$ (cioè $Y\subseteq Y\setminus A$) oppure $Y\subseteq A$.
 \end{lemming}
 \begin{demonstration}
 Consideriamo $Y\cap A$: esso è intersezione di due aperti e chiusi per ipotesi ($Y$ è aperto e chiuso perché \textit{connesso}), cioè è aperto e chiuso. Essendo $Y$ \textit{connesso}, un suo sottoinsieme aperto e chiuso o è l'insieme vuoto oppure è l'insieme stesso, cioè $Y\cap A=\emptyset$ (cioè $Y\subseteq Y\setminus A$) oppure $Y\cap A=Y$ (cioè $Y\subseteq A)$.
@@ -96,14 +96,14 @@ Segue che $f^{-1}\left(Z\right)$ è aperto e chiuso in $X$. Notiamo inoltre che,
 Dal teorema precedente segue che essere \textit{connesso} è una proprietà topologica! Infatti, se vale per una qualunque funzione continua $\funz{f}{X}{Y}$, allora varrà anche per omeomorfismi tra $X$ e $Y$; in particolare, si avrà per suriettività che $f\left(X\right)=Y$ connesso.
 \end{observe}
 \subsection{Connessione per archi}
-\begin{define}\textsc{Arco.}\\
+\begin{define}[Arco.]
 Un \textbf{arco}\seeonlyindex{arco}{cammino} o \textbf{cammino}\index{cammino} $\alpha$ da un punto $x$ a un punto $y$ in uno spazio topologico $X$ è una funzione continua che parametrizza un \textit{percorso} finito fra gli estremi $x$ e $y$:
 \begin{equation}
 \funz{\alpha}{\left[0,\ 1\right]}{X} \text{ continua}\ \colon \alpha\left(0\right)=x,\ \alpha\left(1\right)=y
 \end{equation}
 \vspace{-6mm}
 \end{define}
-\begin{define}\textsc{Connessione per archi.}\\
+\begin{define}[Connessione per archi.]
 Uno spazio topologico $X$ si dice \textbf{connesso per archi} o \textbf{c.p.a.}\index{connessione!per archi}\seeonlyindex{c.p.a.}{connessione!per archi} o \textit{path-connected} se per ogni coppia di punti in $X$ esiste un arco che li collega:
 \begin{equation}
 \forall x,\ y\in X\ \exists \funz{\alpha}{\left[0,\ 1\right]}{X} \text{ continua}\ \colon \alpha\left(0\right)=x,\ \alpha\left(1\right)=y
@@ -126,7 +126,7 @@ Poiché $\left[0,\ 1\right]$ è connesso, allora le controimmagini trovate non s
 \exists t\in \alpha^{-1}\left(A\right)\cap \alpha^{-1}\left(B\right)\implies \alpha\left(t\right)\alpha\left(\alpha^{-1}\left(A\right)\cap \alpha^{-1}\left(B\right)\right)\subset\alpha\left(\alpha^{-1}\left(A\right)\right)\cap\alpha\left(\alpha^{-1}\left(B\right)\right)=A\cap B
 \end{equation*}
 \end{demonstration}
-\begin{define}\textsc{Giunzione di cammini.}\\
+\begin{define}[Giunzione di cammini.]
 	Dati due cammini in uno spazio $X$:
 	\begin{gather*}
 		\funz{\alpha}{\left[0,\ 1\right]}{X}\quad \alpha\left(0\right)=x,\ \alpha\left(1\right)=y\\
@@ -171,21 +171,21 @@ Poiché $\left[0,\ 1\right]$ è connesso, allora le controimmagini trovate non s
 	\end{itemize}
 \vspace{-3mm}
 \end{observes}
-\begin{define}\textsc{Segmento.}\label{segmento}\\
+\begin{define}[Segmento.]\label{segmento}
 	In $\realset^n$, un \textbf{segmento}\index{segmento} $\overline{PQ}$ è la combinazione lineare tra i punti $P$ e $Q$, parametrizzato come:
 	\begin{equation}
 		\overline{PQ}=\left\{P+tQ\mid t\in\left[0,\ 1\right]\right\}
 	\end{equation}
 \vspace{-6mm}
 \end{define}
-\begin{define}\textsc{Sottoinsieme convesso.}\\
+\begin{define}[Sottoinsieme convesso.]
 	Un sottoinsieme $Y\subseteq\realset^n$ è \textbf{convesso}\index{convessità} se per ogni coppia di punti esiste un segmento che li collega contenuto interamente in $Y$.
 	\begin{equation}
 		\forall P,\ Q\in Y\quad \overline{PQ}\subseteq Y
 	\end{equation}
 \vspace{-6mm}
 \end{define}
-\begin{define}\textsc{Sottoinsieme stellato.}\\
+\begin{define}[Sottoinsieme stellato.]
 	Un sottoinsieme $Y\subseteq\realset^n$ è \textbf{stellato}\index{stellato} per $P$ se esiste un $P\in Y$ tale che per ogni altro punto esiste un segmento che li collega contenuto interamente in $Y$.
 	\begin{equation}
 		\exists P \in Y\ \colon \forall Q\in Y\quad \overline{PQ}\subseteq Y
@@ -216,7 +216,7 @@ Vediamo ora che conseguenze hanno questi teoremi in $\realset$ con la topologia 
 \begin{demonstration}~{}\\
 	$1) \implies 2)$ Siccome $I$ è convesso $\implies$ $I$ stellato $\implies$ $I$ \textbf{c.p.a.} $\implies$ $I$ connesso. \\
 	$2) \implies 3)$ Vale in generale che \textbf{c.p.a.} $\implies$ connesso.\\
-	$3) \implies 1)$ Per contronominale mostriamo che $I$ non intervallo $\implies$ $I$ sconnesso. $I$ non intervallo significa che 
+	$3) \implies 1)$ Per contronominale mostriamo che $I$ non intervallo $\implies$ $I$ sconnesso. $I$ non intervallo significa che
 		\begin{gather*}
 			\exists a<b<c,\ a,c\in I,\ b\notin I \\
 			b\notin I \implies I= \left(\underbrace{ I\cap \left(-\infty ,b\right)}_{\in a}\ \right) \cup \left( \underbrace{I\cap \left(b ,+\infty\right)}_{\in c}\ \right)
@@ -309,7 +309,7 @@ Approfondiamo ora la differenza fra essere spazio connesso o \textbf{c.p.a.}, mo
 		\begin{gather*}
 			\overline{A}=X\subseteq X\setminus V \implies V=\emptyset
 		\end{gather*}
-	Ne segue che l'unico aperto che non interseca $A$ è l'insieme vuoto. \newline 
+	Ne segue che l'unico aperto che non interseca $A$ è l'insieme vuoto. \newline
 	$\impliessx$ Consideriamo un chiuso $K\supseteq A$. Siccome è chiuso allora il suo complementare $X\setminus K$ è aperto. Per ipotesi dunque si ha che $V\cap A\neq \emptyset$ oppure $V=\emptyset$, passando al complementare si ottiene che:
 		\begin{equation*}
 			\begin{array}{l}
@@ -321,7 +321,7 @@ Approfondiamo ora la differenza fra essere spazio connesso o \textbf{c.p.a.}, mo
 \end{demonstration}
 
 \begin{theorema}\label{chiusuraconnessa}
-	Sia $X$ uno spazio topologico e $Y\subseteq X$ connesso, allora 
+	Sia $X$ uno spazio topologico e $Y\subseteq X$ connesso, allora
 		\begin{equation*}
 			\forall W \colon Y\subseteq W \subseteq \overline{Y} \implies W \text{ connesso}
 		\end{equation*}
@@ -343,7 +343,7 @@ Approfondiamo ora la differenza fra essere spazio connesso o \textbf{c.p.a.}, mo
 			Y \text{ denso in W, infatti  } \mathcal{cl}_W(Y)=\mathcal{cl}_X(Y)\cap W=\overline{Y}\cap W=W\\
 			Z \text{ aperto in } W \implies Z\cap Y \neq \emptyset \implies Z\cap Y=Y \implies Y\subseteq Z
 		\end{gather*}
-	Tuttavia $Y$ è denso in $W$ e $Z$ è chiuso in $W$ che contiene $Y$, quindi 
+	Tuttavia $Y$ è denso in $W$ e $Z$ è chiuso in $W$ che contiene $Y$, quindi
 		\begin{equation*}
 			\mathcal{cl}_W(Y)=W\subseteq Z \implies W=Z \implies W \text{ connesso}
 		\end{equation*}
@@ -365,7 +365,7 @@ Tuttavia $\overline{Y}$ non è \textbf{c.p.a.} in quanto $\overline{Y}=Y\cup \le
 			Y= \left\{ (x,\ 0) \mid 0\leq x\leq 1 \right\} \cup \union_{\stackrel{r\in\rationalset}{ 0\leq r\geq 1}} \left\{ (r,\ y) \mid 0\leq y \leq 1 \right\}
 		\end{equation*}
 \begin{minipage}{0.62\textwidth}
-Presi due punti su $Y$ si possono collegare fra loro scendendo alla base del pettine $\left[0,\ 1\right]$ e risalendo sui ‘‘denti'' di ascissa razionale. Quindi $Y$ è \textbf{c.p.a.}, allora $Y$ è connesso e $\overline{Y}=\left[0,\ 1\right]\times \left[0,\ 1\right]$.\newline 
+Presi due punti su $Y$ si possono collegare fra loro scendendo alla base del pettine $\left[0,\ 1\right]$ e risalendo sui ‘‘denti'' di ascissa razionale. Quindi $Y$ è \textbf{c.p.a.}, allora $Y$ è connesso e $\overline{Y}=\left[0,\ 1\right]\times \left[0,\ 1\right]$.\newline
 Si consideri ora la ‘‘pulce'', ovvero un punto $P$ di ascissa irrazionale ed ordinata 1, ad esempio $P=\left(\frac{\sqrt{2}}{2},\ 1\right)$. Sia $Z=Y\cup P$; per il teorema precedente segue che $Z$ è connesso, infatti:
 \begin{gather*}
 	Y\subseteq Z \subseteq \overline{Y}=\left[0,\ 1\right]\times \left[0,\ 1\right]	
@@ -389,8 +389,8 @@ Tuttavia $Z$ non è \textbf{c.p.a.}: preso un cammino $\funz \alpha {\left[0,\ 1
 \end{observe}
 \subsection{Componenti connesse}
 L'intuizione geometrica che ci ha portati alla definizione di connessione è stata ‘‘di quanti pezzi è fatto uno spazio?''. Se uno spazio è connesso è fatto di un solo ‘‘pezzo'', cerchiamo ora di definire cosa sono i ‘‘pezzi'' e come sono fatti.
-\begin{define}\textsc{Componente connessa.}\\
-	Sia $X$ uno spazio topologico e $C\subseteq X$. Si dice che $C$ è una \textbf{componente connessa}\index{componente!connessa} se: 
+\begin{define}[Componente connessa.]
+	Sia $X$ uno spazio topologico e $C\subseteq X$. Si dice che $C$ è una \textbf{componente connessa}\index{componente!connessa} se:
 		\begin{itemize}
 			\item $C$ è \textit{connesso}.
 			\item $C$ è \textbf{massimale}\index{massimale}, ovvero $C\subseteq A$, $A$ connesso $\implies C=A$.
@@ -436,7 +436,7 @@ Vediamo ora qualche proprietà delle componenti connesse, in particolare che son
 
 
 		\section{Compattezza}
-\begin{define} \textsc{Ricoprimento aperto e sottoricoprimento.}\\
+\begin{define}[Ricoprimento aperto e sottoricoprimento.]~{}\\
 	Sia $X$ uno spazio topologico. Un \textbf{ricoprimento aperto}\index{ricoprimento}\index{ricoprimento!aperto} di $X$ è una famiglia $\mathcal{A}=\{A_i \}_{i\in I}$ di aperti di $X$ tali che $X=\union_{i\in I} A_i$. \newline
 	Un \textbf{sottoricoprimento}\index{sottoricoprimento} $\mathcal{B}$ di un ricoprimento aperto $\mathcal{A}$ è una famiglia di aperti di $\mathcal{A}$ la cui unione è ancora tutto $X$.
 \end{define}		
@@ -449,7 +449,7 @@ Vediamo ora qualche proprietà delle componenti connesse, in particolare che son
 	\end{itemize}
 \end{examples}
 
-\begin{define} \textsc{Spazio compatto.}\\
+\begin{define}[Spazio compatto.]~{}\\
 	Uno spazio topologico $X$ si dice \textbf{compatto}\index{spazio!compatto} se dato un qualsiasi ricoprimento aperto $\mathcal{A}$ si può sempre estrarre un sottoricoprimento \textit{finito} $\mathcal{B}$.
 \end{define}
 L'importanza della definizione risiede nel fatto che non si chiede che esista un ricoprimento $\mathcal{A}$ finito (basterebbe banalmente $X$ stesso che è aperto) bensì che da $\mathcal{A}$ si possa sempre estrarre un \textit{numero finito di aperti} che ricopra ancora $X$.
@@ -461,8 +461,8 @@ L'importanza della definizione risiede nel fatto che non si chiede che esista un
 	\end{itemize}
 \end{examples}
 
-\begin{theorema}\label{immagine compatto}
-	L'immagine \textit{continua} di un compatto è un compatto: dati $X,Y$ spazi topologici, $\funz f X Y$ continua, allora
+\begin{theorema}[Immagine continua di un compatto è un compatto]\label{immagine compatto}
+	Dati $X,Y$ spazi topologici, $\funz f X Y$ continua, allora
 		\begin{gather*}
 			X \text{ compatto } \implies f(X) \text{ compatto }
 		\end{gather*}
@@ -483,7 +483,7 @@ Da questo teorema segue che essere compatti è una \textbf{proprietà topologica
 	L'intervallo $[0,\ 1]\subseteq\realset$ con la topologia euclidea è compatto.
 \end{theorema}
 \begin{demonstration}
-	Sia $\mathcal{A}=\{ A_i\}\}_{i\in I}$un ricoprimento aperto di $[0,\ 1]$ con $A_i$ aperti in $\realset$, quindi $\displaystyle [0,\ 1]\subseteq\union_{i\in I}A_i$.\newline 
+	Sia $\mathcal{A}=\{ A_i\}\}_{i\in I}$un ricoprimento aperto di $[0,\ 1]$ con $A_i$ aperti in $\realset$, quindi $\displaystyle [0,\ 1]\subseteq\union_{i\in I}A_i$.\newline
 	Sia $X=\{ t\in\realset \mid [0,t] \text{ è coperto da un numero finito di } A_i \}$. Mostriamo che non è vuoto
 		\begin{gather*}
 			t=0, [0,\ 0]=\{0\}\} \subseteq A_{i=0} \implies 0\in X\implies X\neq\emptyset
@@ -491,7 +491,7 @@ Da questo teorema segue che essere compatti è una \textbf{proprietà topologica
 	Siccome $X$ non è vuoto per la completezza dei reali ne posso considerare l'estremo superiore $b=\sup X$. Ci sono due casi: $b>1$  e $b\leq 1$, dimostriamo che il primo è possibile e che il secondo è assurdo sfruttando le proprietà dell'estremo superiore:
 		\begin{itemize}
 			\item $b>1 \implies \exists t\in X \colon 1<t<b \implies [0,\ 1]\subseteq [0,\ t] \subseteq A_1\cup \dots \cup A_n$
-			\item $b\leq 1 \implies b\in [0,\ 1] \implies \exists A_0\in\mathcal{A} \colon b\in A_0$, visto che $\mathcal{A}$ è un ricoprimento aperto $A_0$ è aperto, dunque contiene $b$ con tutto un suo intorno, ovvero \\ $\exists \delta >0 \colon B_\delta (b)=(b-\delta, \ b+\delta )\subseteq A_0$. Mostriamo ora che $A_0$ non copre solo $[0,\ b]$ ma va oltre, quindi si ottiene l'assurdo che $b\neq\sup X$. Sia dunque $0<h<\delta$, allora 
+			\item $b\leq 1 \implies b\in [0,\ 1] \implies \exists A_0\in\mathcal{A} \colon b\in A_0$, visto che $\mathcal{A}$ è un ricoprimento aperto $A_0$ è aperto, dunque contiene $b$ con tutto un suo intorno, ovvero \\ $\exists \delta >0 \colon B_\delta (b)=(b-\delta, \ b+\delta )\subseteq A_0$. Mostriamo ora che $A_0$ non copre solo $[0,\ b]$ ma va oltre, quindi si ottiene l'assurdo che $b\neq\sup X$. Sia dunque $0<h<\delta$, allora
 				\begin{gather*}
 					[0,\b+h]=[0,\ t]\cup [t,\ b+h]\subseteq \underbrace{A_1\cup\dots\cup A_n}_{t\in X}\cup \underbrace{A_0}_{B_\delta (b)\subseteq A_0}
 				\end{gather*}	
@@ -502,7 +502,7 @@ Da questo teorema segue che essere compatti è una \textbf{proprietà topologica
 Notiamo che questo teorema implica che un intervallo $[a,\ b]\subseteq\realset$ è compatto, infatti è omeomorfo a $[0,\ 1]$ e la compattezza è una proprietà topologica. \newline
 Vediamo ora un esempio di spazio compatto che non abbia la topologia euclidea.
 \begin{example}
-	Uno spazio $X$ con la topologia cofinita è compatto.\newline 
+	Uno spazio $X$ con la topologia cofinita è compatto.\newline
 	Ricordiamo che gli aperti nella topologia cofinita sono i sottoinsiemi il cui complementare è finito, quindi un ricoprimento aperto sarà della forma:
 		\begin{gather*}
 			\mathcal{A}=\{A_i\}, \ A_0=X\setminus\{x_1,\dots,x_n\}			
@@ -528,7 +528,7 @@ Sia $\mathcal{A}=\left\{ A_x\right\}_{x\in X}, \ A_x\coloneqq \{x\}$, che è ape
 \end{theorema}
 \begin{demonstration}
 	Sia $\mathcal{A}=\{A_i \}_{i\in I}$ un ricoprimento di $X$, sia $C\subseteq X$ chiuso, allora $A\coloneqq X\setminus C$ è aperto in $X$.\newline
-	Sia $\mathcal{A}'=\{A_i,\ A\}$ ricoprimento aperto di $X$. Siccome $X$ è compatto esiste un suo sottoricoprimento finito 
+	Sia $\mathcal{A}'=\{A_i,\ A\}$ ricoprimento aperto di $X$. Siccome $X$ è compatto esiste un suo sottoricoprimento finito
 		\begin{gather*}
 			X=A_1\cup\dots\cup A_n\cup A \implies C=X\setminus A=A_1\cup\dots\cup A_n
 		\end{gather*}
@@ -540,7 +540,7 @@ Sia $\mathcal{A}=\left\{ A_x\right\}_{x\in X}, \ A_x\coloneqq \{x\}$, che è ape
 \end{observe}
 Vediamo ora che relazione c'è fra le due proprietà topologiche di essere uno spazio di \textbf{Hausdorff} (\textbf{T2}) e compatto.
 
-\begin{theorema}\textbf{Compatto in un Hausdorff è chiuso}\textsc{Manetti, 4.48} \label{compatto in hausdorff chiuso} \\ 
+\begin{theorema}\textbf{Compatto in un Hausdorff è chiuso}\textsc{Manetti, 4.48} \label{compatto in hausdorff chiuso} \\
 Se $X$ è di Hausdorff e $K\subseteq X$ è compatto, allora $K$ è chiuso.
 \end{theorema}
 \begin{demonstration}
@@ -611,7 +611,7 @@ Vogliamo ora vedere come si comporta la compattezza rispetto al prodotto, prima 
 	$\impliessx $ Si considerino le proiezioni, che sono funzioni continue. Essendo $X\times Y$ compatto allora le immagini delle proiezioni saranno compatte, ed essendo le proiezioni suriettive allora $X,Y$ sono compatti. \newline
 	$\impliesdx $ Sia $\mathcal{A}=\{A_i\}$ un ricoprimento aperto di $X\times Y$, cerchiamo un sottoricoprimento finito.\newline
 	Per sfruttare la compattezza di $Y$ notiamo che $Y\cong \{x\}\times Y\subseteq A_{x_1}\cup\dots\cup A_{x_n}=A_x$, che possiamo pensare come sottoricoprimento ‘‘verticale'' finito. Notiamo inoltre che gli $A_{x_i}$ dipendono dalla $\{x\}$ scelta.\newline
-	Per il Tube Lemma dimostrato sopra allora 
+	Per il Tube Lemma dimostrato sopra allora
 		\begin{gather*}
 			\exists U_x\subseteq X \text{ aperto }\colon \{ x\}\times Y \subseteq U_x\times Y \subseteq A_x=A_{x_1}\cup\dots\cup A_{x_n}
 		\end{gather*}
@@ -635,7 +635,7 @@ Sfruttiamo ora che il prodotto di compatti è compatto per generalizzare il teor
 \end{demonstration}
 \begin{digression}
 In realtà vale un teorema più generale, che si dimostrerà poi nel corso di Istituzioni di Analisi.
-\textsc{Teorema:} Sia $X$ uno spazio metrico completo, allora $K\subseteq X$ compatto $\iff K$ chiuso e totalmente limitato, ovvero $\forall\epsilon >0, \ K$ è contenuto in un'unione finita di palle di raggio $\epsilon$.\\ 
+\textsc{Teorema:} Sia $X$ uno spazio metrico completo, allora $K\subseteq X$ compatto $\iff K$ chiuso e totalmente limitato, ovvero $\forall\epsilon >0, \ K$ è contenuto in un'unione finita di palle di raggio $\epsilon$.\\
 In $\realset^n$ vale limitato $\iff$ totalmente limitato, ma ad esempio consideriamo lo spazio metrico:
 	\begin{gather*}
 		\mathcal{C}\left( [0, \ 1] \right) \coloneqq \left\{ \funz f {[0,\ 1]} \realset \mid f \text{ continua } \right\},  \ \ \text{con } \mvf{d}{f}{g} =\sup_{x\in [0, \ 1]} |f(x)-g(x)|
@@ -664,7 +664,7 @@ In generale vale il \textbf{teorema di Kuratowsi-Mròwka}: $Y$ è compatto se e 
 	Per dimostrare che $p$ è chiusa mostriamo che preso un $C\subseteq X\times Y$ chiuso allora $p(C)\subseteq X$ è chiuso, ovvero che il suo complementare $X\setminus p(C)$ è intorno di ogni suo punto.\newline
 	Se $p(C)=X$ allora è già chiuso, se invece $p(C)\neq X$ allora $\exists x_0\in X\setminus p(C)$, dimostriamo che quest'ultimo insieme è intorno di $x_0$. Si consideri la fibra di $x_0$:
 		\begin{gather*}
-			p^{-1}(\{x_0\} )=\{x_0\}\times Y \subseteq (X\times Y)\setminus C=A 
+			p^{-1}(\{x_0\} )=\{x_0\}\times Y \subseteq (X\times Y)\setminus C=A
 		\end{gather*}
 	con $A$ aperto perché complementare di un chiuso. \newline
 	Si rientra dunque nelle ipotesi del Tube lemma e si ottiene che

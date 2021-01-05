@@ -1,0 +1,99 @@
+% SVN info for this file
+\svnidlong
+{$HeadURL$}
+{$LastChangedDate$}
+{$LastChangedRevision$}
+{$LastChangedBy$}
+
+\chapter{Elenchi}
+\labelChapter{elenchi}
+\begin{multicols}{2}
+	\listofdefines
+	\listoftheoremas
+\end{multicols}
+\begin{comment}
+
+\chapter{Elenchi ...}
+\labelChapter{elenchi}
+
+\begin{introduction}
+‘‘BEEP BOOP INSERIRE CITAZIONE QUA BEEP BOOP.''
+\begin{flushright}
+	\textsc{NON UN ROBOT,} UN UMANO IN CARNE ED OSSA BEEP BOOP.
+\end{flushright}
+\end{introduction}
+
+\noindent Elenchiamo, separati per capitoli, i principali teoremi e proposizioni.
+\section{Capitolo 1: spazi topologici}
+\textsc{\textbf{Teorema 1.1.0.}} \textsc{Teorema delle basi. (Manetti, 3.7)}\\
+	Sia $X$ un insieme e $\basis\subseteq\setpart{X}$ una famiglia di sottoinsiemi di $X$. $\basis$ è la base di un'\textit{unica} topologia \textit{se e solo se}:
+	\begin{enumerate}
+		\item \textit{L'insieme} $X$ \textit{deve essere scritto come unione di elementi della famiglia}: $\displaystyle X=\union_{B\in \basis}B$.
+		\item \textit{Per ogni punto dell'intersezione di elementi della famiglia deve esserci un'altro elemento di essa che contiene il punto ed è sottoinsieme dell'intersezione}:
+		\begin{equation}
+			\forall A, B\in\basis\ \forall x\in A\cap B\ \exists C\in \basis\ \colon x\in C\subseteq A\cap B
+		\end{equation}
+	\end{enumerate}
+\textsc{\textbf{Teorema 1.2.0.}} \textsc{Composizione di funzioni continue. (Manetti, 3.26)}\\
+	La \textit{composizione} di funzioni continue è continua.
+	\begin{equation}
+		\funz{f}{Y}{Z},\ \funz{g}{X}{Y}\text{ continue}\implies \funz{f\circ g}{X}{Z}\text{ continua}
+	\end{equation}
+	\vspace{-6mm}\\
+\textsc{\textbf{Teorema 1.2.1.}} \textsc{Continuità per punti. (Manetti, 3.28)}\\
+	Siano $X$, $Y$ spazi topologici e $\funz{f}{X}{Y}$ funzione. $f$ è continua per aperti $\iff$ $f$ è continua in $x\ \forall x\in X$.\\
+\textsc{\textbf{Teorema 1.2.1.}} \textsc{Continuità per punti. (Manetti, 3.28)}\\
+Siano $X$, $Y$ spazi topologici e $\funz{f}{X}{Y}$ funzione. $f$ è continua per aperti $\iff$ $f$ è continua in $x\ \forall x\in X$.\\
+\textsc{\textbf{Teorema 1.6.0.}} \textsc{Base della topologia prodotto.} \textsc{(Manetti, 3.61)}\\
+	\begin{enumerate}
+		\item Una \textit{base} della topologia $\mathcal{P}$ è data dagli insiemi della forma $U\times V$ dove $U\subseteq P$ aperto, $V\subseteq Q$ aperto.
+		\item $p,\ q$ sono aperte; inoltre $\forall \left(x,\ y\right)\in P\times Q$ le restrizioni:
+		\begin{gather}
+			\funztot{p_{\mid}}{P\times \left\{y\right\}}{P}{\left(x,\ y\right)}{x}\\
+			\funztot{q_{\mid}}{\left\{x\right\}\times Q}{Q}{\left(x,\ y\right)}{y}
+		\end{gather}
+		Sono \textit{omeomorfismi}.\\
+		\item Data $\funz{f}{X}{P\times Q}$ con $X$ spazio topologico, si ha che:
+		\begin{equation}
+			f\text{ continua}\iff f_1=p\circ f,\ f_2=q\circ f\text{ continue}
+		\end{equation}
+	\end{enumerate}
+\textsc{\textbf{Teorema 1.6.0.}} \textsc{Base della topologia prodotto.} \textsc{(Manetti, 3.61)}
+\begin{enumerate}
+	\item Una \textit{base} della topologia $\mathcal{P}$ è data dagli insiemi della forma $U\times V$ dove $U\subseteq P$ aperto, $V\subseteq Q$ aperto.
+	\item $p,\ q$ sono aperte; inoltre $\forall \left(x,\ y\right)\in P\times Q$ le restrizioni:
+	\begin{gather}
+		\funztot{p_{\mid}}{P\times \left\{y\right\}}{P}{\left(x,\ y\right)}{x}\\
+		\funztot{q_{\mid}}{\left\{x\right\}\times Q}{Q}{\left(x,\ y\right)}{y}
+	\end{gather}
+	Sono \textit{omeomorfismi}.\\
+	\item Data $\funz{f}{X}{P\times Q}$ con $X$ spazio topologico, si ha che:
+	\begin{equation}
+		f\text{ continua}\iff f_1=p\circ f,\ f_2=q\circ f\text{ continue}
+	\end{equation}
+\end{enumerate}
+\textsc{\textbf{Teorema 1.7.0.}} \textsc{Diagonale e Hausdorff.}  \textsc{(Manetti, 3.69)}\\
+	Sia $X$ spazio topologico. La \textbf{diagonale}\index{diagonale} $\Delta\subseteq X\times X$ è l'insieme delle coppie che hanno uguali componenti:
+	\begin{equation}
+		\Delta=\left\{\left(x,\ x\right)\mid x\in X\right\}
+	\end{equation}
+	Si ha:
+	\begin{equation}
+		X \text{ di \textbf{Hausdorff}} \iff \Delta \textsc{ chiuso in }X\times X
+	\end{equation}
+	\vspace{-6mm}\\
+\textsc{\textbf{Teorema 1.8.0.}} \textsc{Prodotto di Hausdorff.}\\
+	$X,\ Y$ di \textbf{Hausdorff}$\iff X\times Y$ di \textbf{Hausdorff}.
+\section{Capitolo 2: connessione e compattezza}
+\section{Capitolo 3: gruppi topologici}
+\section{Capitolo 4: topologia quoziente}
+\section{Capitolo 5: azioni di gruppo}
+\section{Capitolo 6: assiomi di numerabilità e successioni}
+\section{Capitolo 7: omotopia}
+\section{Capitolo 8: gruppo fondamentale}
+\section{Capitolo 9: varietà topologiche}
+\section{Capitolo 10: approfondimenti di Algebra Lineare}
+\section{Capitolo 11: geometria proiettiva}
+\section{Capitolo 12: coniche proiettive}
+	contenuto...
+\end{comment}
