@@ -82,6 +82,7 @@
 
 \newtoggle{noDefine}
 \newtoggle{noTheorema}
+\newtoggle{AppendixChapters}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %    PACKAGE SETTINGS
@@ -689,6 +690,7 @@
 \newcommand{\labelAppendix}[1]{%
   % #1 = label
   \label{appen:#1}%
+  \toggletrue{AppendixChapters}
 }
 \newcommand{\refAppendix}[1]{%
   % #1 = reference
@@ -1224,9 +1226,9 @@ headindent=0pt,
 headfont=\small\bfseries\scshape\color{burntorange},
 notebraces={ }{ },
 headpunct=\color{burntorange},
-notefont=\scshape\color{burntorange},
+notefont=\scshape,
 postheadspace=0.25em,
-headformat={\NAME\, \NUMBER\small\bfseries\scshape\color{burntorange}. \NOTE \addcontentsline{theorema}{section}{\small{\textbf{\textcolor{black}{C\NUMBER}}.\ \, \textsc{\NOTE}}}}
+headformat={\NAME\, \NUMBER\small\bfseries\scshape\textcolor{black}{. \NOTE} \addcontentsline{theorema}{section}{\small{\textbf{\textcolor{black}{C\NUMBER}}.\ \textsc{\textcolor{black}{\NOTE}}}}}
 ]{corollarysty}
 
 \newtheoremstyle{remembersty}% % Theorem style name
@@ -1900,6 +1902,10 @@ headformat={\NAME\, \NUMBER\small\bfseries\scshape\color{burntorange}. \NOTE \ad
 
 % add chapter number and title to toc of definition
 \AtBeginEnvironment{defineT}{%
+	\iftoggle{AppendixChapters}{
+		\global\togglefalse{noDefine}
+		\global\togglefalse{AppendixChapters}
+			}{}
 	\iftoggle{noDefine}{
 		\addtocontents{define}{\noindent\textls{\textsc{\textcolor{reddo}{Capitolo \getcurrentref{chapter}:}
 		\nowtitle}}
@@ -1909,7 +1915,50 @@ headformat={\NAME\, \NUMBER\small\bfseries\scshape\color{burntorange}. \NOTE \ad
 }%
 
 % add chapter number and title to toc of theoremas
-\AtBeginEnvironment{defineT}{%
+\AtBeginEnvironment{theorema}{%
+		\iftoggle{AppendixChapters}{
+		\global\togglefalse{noDefine}
+		\global\togglefalse{AppendixChapters}
+	}{}
+	\iftoggle{noTheorema}{
+		\addtocontents{theorema}{\noindent\textls{\textsc{\textcolor{reddo}{Capitolo \getcurrentref{chapter}:}
+					\nowtitle}}
+		}{}
+		\global\togglefalse{noTheorema}
+	}{}
+}%
+
+\AtBeginEnvironment{lemming}{%
+			\iftoggle{AppendixChapters}{
+		\global\togglefalse{noDefine}
+		\global\togglefalse{AppendixChapters}
+	}{}
+	\iftoggle{noTheorema}{
+		\addtocontents{theorema}{\noindent\textls{\textsc{\textcolor{reddo}{Capitolo \getcurrentref{chapter}:}
+					\nowtitle}}
+		}{}
+		\global\togglefalse{noTheorema}
+	}{}
+}%
+
+\AtBeginEnvironment{corollary}{%
+				\iftoggle{AppendixChapters}{
+		\global\togglefalse{noDefine}
+		\global\togglefalse{AppendixChapters}
+	}{}
+	\iftoggle{noTheorema}{
+		\addtocontents{theorema}{\noindent\textls{\textsc{\textcolor{reddo}{Capitolo \getcurrentref{chapter}:}
+					\nowtitle}}
+		}{}
+		\global\togglefalse{noTheorema}
+	}{}
+}%
+
+\AtBeginEnvironment{proposition}{%
+	\iftoggle{AppendixChapters}{
+	\global\togglefalse{noDefine}
+	\global\togglefalse{AppendixChapters}
+	}{}
 	\iftoggle{noTheorema}{
 		\addtocontents{theorema}{\noindent\textls{\textsc{\textcolor{reddo}{Capitolo \getcurrentref{chapter}:}
 					\nowtitle}}

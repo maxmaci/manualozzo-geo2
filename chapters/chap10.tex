@@ -41,7 +41,7 @@
 	\end{itemize}
 \vspace{-3mm}
 \end{remember}
-\begin{define}\textsc{Diagonalizzazione simultanea}.\\
+\begin{define}[Diagonalizzazione simultanea.]~{}\\
 	Siano $A,\ B\in\kamp^{n, m}$ due matrici \textit{diagonalizzabili}. Diciamo che $A$ e $B$ sono \textbf{simultaneamente diagonalizzabili}\index{diagonalizzazione!simultanea} se esiste una base di $\kamp^n$ composta di autovettori sia di $A$ che di $B$.\\
 	Equivalentemente, $A$ e $B$ sono \textbf{simultaneamente diagonalizzabili} se esiste una matrice invertibile $P$ tale che $P^{-1}AP$ e $P^{-1}BP$ sono \textit{entrambe diagonali}.
 \end{define}
@@ -54,11 +54,11 @@
 Non esiste alcun autovettore comune, dunque $A$ e $B$ \textit{non} sono simultaneamente diagonalizzabili.
 \end{example}
 Dalla sola definizione non è semplice capire quali matrici sono a tutti gli effetti simultaneamente diagonalizzabili. Tuttavia, il seguente teorema ci permetterà di trovare una condizione necessaria e sufficiente per la diagonalizzazione simultanea.
-\begin{theorema}\label{teoremasimdiag}
+\begin{theorema}[Diagonalizzazione simultanea se e solo se le matrici diagonalizzabili commutano.]~{}\\ \label{teoremasimdiag}
 	Siano $A,\ B\in\kamp^{n, n}$. Allora $A$ e $B$ sono simultaneamente diagonalizzabili se e solo se $A$ e $ B$ sono diagonalizzabili e $A,\ B$ commutano, cioè $AB=BA$.
 \end{theorema}
 Per dimostrare il teorema, abbiamo tuttavia bisogno del seguente lemma:
-\begin{lemming}
+\begin{lemming}[Matrici che commutano e autospazi.]~{}\\
 	Siano $A,\ B\in\kamp^{n, n}$ tale che $AB=BA$ e sia $W$ un autospazio di $B$. Allora, presa l'azione di $\gl\left(n,\ \kamp\right)$ su $\kamp^{n, n}$, si ha che $A\ldotp W\subseteq W$.
 \end{lemming}
 \begin{demonstration}
@@ -119,7 +119,7 @@ In questo modo, $f\left(A\right)\in\kamp^{n, n}$.
 Preso $f\left(t\right)=t^2-3$, il polinomio valutato nella matrice $A$ è $f\left(A\right)=A^2-3I$.
 \end{example}
 \begin{observe}
-	Dati $f,\ g\in\kamp\left[t\right]$ e $A\in\kamp^{n,\ n}$, si ha:
+	Dati $f,\ g\in\kamp\left[t\right]$ e $A\in\kamp^{n,n}$, si ha:
 	\begin{itemize}
 		\item $\left(f+g\right)\left(A\right)=f\left(A\right)+g\left(A\right)$.
 		\item $\left(fg\right)\left(A\right)=f\left(A\right)g\left(A\right)$
@@ -135,8 +135,8 @@ Preso $f\left(t\right)=t^2-3$, il polinomio valutato nella matrice $A$ è $f\lef
 \vspace{-3mm}
 \end{demonstration}
 \subsection{Ideale di una matrice}
-\begin{define}\textsc{Ideale di una matrice.}\\
-	Data $A\in\kamp^{n,\ n}$, definiamo l'\textbf{ideale della matrice}\index{ideale!di una matrice}:
+\begin{define}[Ideale di una matrice.]~{}\\
+	Data $A\in\kamp^{n,n}$, definiamo l'\textbf{ideale della matrice}\index{ideale!di una matrice}:
 	\begin{equation}
 		I_A\coloneqq\left\{f\in\kamp\left[t\right]\mid f\left(A\right)=O\right\}
 	\end{equation}
@@ -145,11 +145,11 @@ Preso $f\left(t\right)=t^2-3$, il polinomio valutato nella matrice $A$ è $f\lef
 \begin{observe}~{}
 	\begin{itemize}
 		\item $O\in I_A$.
-		\item $I_A\neq\left\{O\right\}$; infatti, se consideriamo le seguenti $n^2+1$ matrici in $\kamp^{n,\ n}$:
+		\item $I_A\neq\left\{O\right\}$; infatti, se consideriamo le seguenti $n^2+1$ matrici in $\kamp^{n,n}$:
 		\begin{equation*}
 			I,\ A,\ A^2,\ A^3,\ \ldots,\ A^{n^2}
 		\end{equation*}
-	Per il lemma di Steinitz queste matrici sono necessariamente \textit{linearmente dipendenti}, dato che superano in numero $\dim \kamp^{n,\ n}=n^2$, cioè esistono i coefficienti $a_0,\ \ldots,\ a_{n^2}\in\kamp$ \textit{non} tutti nulli tali che:
+	Per il lemma di Steinitz queste matrici sono necessariamente \textit{linearmente dipendenti}, dato che superano in numero $\dim \kamp^{n,n}=n^2$, cioè esistono i coefficienti $a_0,\ \ldots,\ a_{n^2}\in\kamp$ \textit{non} tutti nulli tali che:
 	\begin{equation*}
 		a_0I+a_1A+a_2A^2+\ldots+a_{n^2}A^{n^2}=O
 	\end{equation*}
@@ -169,7 +169,7 @@ Preso $f\left(t\right)=t^2-3$, il polinomio valutato nella matrice $A$ è $f\lef
 \vspace{-3mm}
 \end{observe}
 \subsection{Polinomio minimo}
-\begin{proposition}
+\begin{proposition}[Anello ${\kamp\left[t\right]}$ è ad ideali principali.]~{}\\
 	L'anello $\kamp\left[t\right]$ è ad \textit{ideali principali}: se $I\subseteq \kamp\left[t\right]$ è un ideale, $\exists p$ tale che $I=\left(p\right)$. Il generatore $p$ è \textit{unico} a meno di moltiplicazione per scalari \textit{non} nulli, se prendiamo $P$ \textbf{monico} allora è unico.
 \end{proposition}
 \begin{demonstration}
@@ -183,7 +183,7 @@ Prendiamo $f\in I$ e dividiamolo per $p$:
 Con $r\left(t\right)$ polinomio con $\deg r < \deg p$. Notiamo che anche $r\left(t\right)\in I$ per essere vera l'equazione di sopra; in particolare, per la minimalità del grado di $p$ non può esserci un polinomio in $I$ di grado minore di $p$, dunque $r\equiv 0$. Allora $p\mid f$ e dunque ogni polinomio in $I$ è generato da $p$: $I\equiv\left(p\right)$.\\
 Se $I=\left(p\right)=\left(\widetilde{p}\right)$, allora $p,\ \widetilde{p}\in I$ e dunque $p\mid \widetilde{p}$, $\widetilde{p}\mid p$, cioè $p=\lambda\widetilde{p}$ con $\lambda\in\kamp\setminus\left\{0\right\}$. Se $p$ è \textit{monico}, l'unico coefficiente $\lambda$ per cui si ha $p=\lambda\widetilde{p}$ è $1$, e dunque $p=\widetilde{p}$, cioè $p$ è unico.
 \end{demonstration}
-\begin{define}\textsc{Polinomio minimo.}\\
+\begin{define}[Polinomio minimo.]~{}\\
 	Sia $A\in\kamp^{n, n}$ e sia $I_A$ ideale dei polinomi che si annullano in $A$. Il \textbf{polinomio minimo}\index{polinomio!minimo} $m_A\left(t\right)$ di $A$ è il  \textit{generatore monico} di $I_A$, ovvero è il polinomio monico \textit{non} nullo di grado minimo tra i polinomi in $I_A$.
 \end{define}
 \begin{example} Cerchiamo il polinomio minimo della seguente matrice.
@@ -256,7 +256,7 @@ In particolare, il polinomio caratteristico è un polinomio \textit{monico}.
 \vspace{-3mm}
 \end{remember}
 \begin{observe}\label{polinomicoeffmatrisci}
-Una matrice i cui elementi sono polinomi in $\kamp\left[t\right]$ può essere scritta in modo unico come polinomio in $t$ con coefficienti delle matrici in $\kamp^{n,\ n}$.
+Una matrice i cui elementi sono polinomi in $\kamp\left[t\right]$ può essere scritta in modo unico come polinomio in $t$ con coefficienti delle matrici in $\kamp^{n,n}$.
 \end{observe}
 \begin{example}~{}
 	\begin{equation*}
@@ -275,8 +275,8 @@ Una matrice i cui elementi sono polinomi in $\kamp\left[t\right]$ può essere sc
 \end{array}\right)
 	\end{equation*}
 \end{example}
-\begin{theorema}\textsc{Teorema di Cayley-Hamilton}.\index{teorema!di Cayley-Hamilton}\\
-Sia $A\in \mathbb{K}^{n,\ n}$. Allora $C_A\left(t\right)\in I_A$, cioè $C_A\left(A\right)=0$. In altre parole, $m_A\left(t\right)\mid C_A\left(t\right)$.\\
+\begin{theorema}[Teorema di Cayley-Hamilton.]~{}\\ \index{teorema!di Cayley-Hamilton}
+Sia $A\in \mathbb{K}^{n,n}$. Allora $C_A\left(t\right)\in I_A$, cioè $C_A\left(A\right)=0$. In altre parole, $m_A\left(t\right)\mid C_A\left(t\right)$.\\
 In particolare $\deg m_A\left(t\right)\leq n$.
 \end{theorema}
 \begin{demonstration}
@@ -287,7 +287,7 @@ In particolare $\deg m_A\left(t\right)\leq n$.
 Consideriamo l'\textit{aggiunta} di $M$, $\mathrm{adj}\left(M\right)=\mathrm{adj}\left(tI-A\right)$.
 Poiché gli elementi di $tI-A$ sono polinomi in $\kamp\left[t\right]$ di grado minore o uguale di $1$ e gli elementi di $\mathrm{adj}\left(M\right)$ sono polinomi in $\kamp\left[t\right]$ di grado minore o uguale di $n-1$, $\mathrm{adj}\left(M\right)$ si scrive come polinomio di grado minore e uguale a $n-1$ con coefficienti in $\kamp^{n, n}$ (grazie all'osservazione di pag. \pageref{polinomicoeffmatrisci}).
 \begin{equation*}
-	\mathrm{adj}\left(M\right)=C_{n-1}t^{n-1}+C_{n-2}t^{n-2}+\ldots+C_1t+C_0,\ C_i\in\kamp^{n,\ n}
+	\mathrm{adj}\left(M\right)=C_{n-1}t^{n-1}+C_{n-2}t^{n-2}+\ldots+C_1t+C_0,\ C_i\in\kamp^{n,n}
 \end{equation*}
 Usando la regola di Laplace:
 \begin{equation*}
@@ -338,8 +338,8 @@ Abbiamo dunque ottenuto la tesi.
 	Si ha che $m_A\left(t\right)\mid C_A\left(t\right)\implies C_A\left(t\right)=m_A\left(t\right)q\left(t\right)$, con $q\left(t\right)\in\kamp\left[t\right]$. In altre parole, le \textit{radici} del \textit{polinomio minimo} sono \textit{autovalori}.
 \end{observe}
 Il seguente teorema afferma un legame ancora più forte tra polinomio minimo e autovalori di una matrice.
-\begin{theorema}
-	Sia $A\in \kamp^{n,\ n}$ e $m_A\left(t\right)$ il suo polinomio minimo. Allora, preso $\lambda\in\kamp$:
+\begin{theorema}[Radici del polinomio minimo sono autovalori di $A$ e viceversa.]~{}\\
+	Sia $A\in \kamp^{n,n}$ e $m_A\left(t\right)$ il suo polinomio minimo. Allora, preso $\lambda\in\kamp$:
 	\begin{equation}
 		m_A\left(\lambda\right)=0\iff \lambda\text{ è un autovalore di }A
 	\end{equation}
@@ -367,7 +367,7 @@ Consideriamo ora un polinomio $p\in I_A$. Per sua definizione $p\left(A\right)=0
 Ed essendo $v$ un autovettore, $v\neq 0$; dall'equazione sopra necessariamente segue $p\left(\lambda\right)=0$. In particolare, essendo $p\in I_A$ generato dal polinomio minimo $m_A$ (cioè $p\left(t\right)=m_A\left(t\right)q\left(t\right)$ con $q\left(t\right)\neq 0$), segue che $m_A\left(\lambda\right)=0$.
 \end{demonstration}
 \section{Forma canonica di Jordan}
-D'ora in poi, se non altresì specificato, considereremo $\kamp=\complexset$, cioè tratteremo di matrici $A\in \complexset^{n,\ n}$ e endomorfismi fra spazi vettoriali complessi.
+D'ora in poi, se non altresì specificato, considereremo $\kamp=\complexset$, cioè tratteremo di matrici $A\in \complexset^{n,n}$ e endomorfismi fra spazi vettoriali complessi.
 \begin{observe}\label{complessichiusi}
 Poichè $\complexset$ è \textbf{algebricamente chiuso}, ogni polinomio $p\in\complexset\left[t\right]$ si fattorizza completamente come prodotto di fattori lineari:
 \begin{equation}
@@ -379,8 +379,8 @@ Nel caso del polinomio minimo, si ha:
 \end{equation}
 Come altra conseguenza, ogni matrice $n\times n$ ammette $n$ autovalori complessi, contati con la loro molteplicità.
 \end{observe}
-Sia $A\in \complexset^{n,\ n}$ una matrice associata a un endomorfismo $\funz{f}{V}{V}$. Se $f$ è diagonalizzabile, esiste una base in cui la matrice di $f$ è diagonale. Anche quando tuttavia la matrice non è diagonalizzabile, vogliamo cercare una base in cui la matrice di $f$ è \textit{particolarmente semplice}.
-\begin{define}\textsc{Blocco di Jordan.}\\
+Sia $A\in \complexset^{n,n}$ una matrice associata a un endomorfismo $\funz{f}{V}{V}$. Se $f$ è diagonalizzabile, esiste una base in cui la matrice di $f$ è diagonale. Anche quando tuttavia la matrice non è diagonalizzabile, vogliamo cercare una base in cui la matrice di $f$ è \textit{particolarmente semplice}.
+\begin{define}[Blocco di Jordan.]~{}\\
 	Un \textbf{blocco di Jordan}\index{blocco di Jordan} $J=J_k\left(\lambda\right)$, di autovalore $\lambda\in\complexset$ e dimensione $K$, è una matrice quadrata $k\times k$ con sulla diagonale solo l'autovalore e sopra ogni elemento della diagonale $1$:
 	\begin{equation}
 		    J=J_k\left(\lambda\right) = \left(
@@ -484,7 +484,7 @@ Studiando l'immagine dell'applicazione associata ad $N$, essendo la base dell'im
 Come già affermato dunque, è $\mathbf{e}_k$ a determinare l'\textit{intera} base di $V$ tramite la moltiplicazione per $N$.\\
 Come ultima osservazione fondamentale, notiamo inoltre che $N^k=O$, cioè $N$ è una matrice \textbf{nilpotente}\index{matrice!nilpotente} di ordine $k$.
 \end{observe}
-\begin{define}\textsc{Forma di Jordan.}\\
+\begin{define}[Forma di Jordan.]~{}\\
 	Una matrice quadrata si dice in \textbf{forma di Jordan}\index{forma di Jordan} se ha solo blocchi di Jordan lungo la diagonale, mentre altrove è nulla.
 \end{define}
 \begin{example}
@@ -521,9 +521,9 @@ La seguente matrice $9\times 9$ è in forma di Jordan con $J_3\left(2\right)$, $
 	\end{equation}
 \vspace{-6mm}
 \end{observe}
-\begin{theorema}\textsc{Esistenza e unicità della forma di Jordan}\\
+\begin{theorema}[Esistenza e unicità della forma di Jordan.]~{}\\
 	Sia $V$ uno spazio vettoriale complesso di $\dim n$ e $f$ un endomorfismo di $V$. Allora \textit{esiste} una base di $V$ in cui la matrice di $f$ è in forma di Jordan. Inoltre, la forma di Jordan è \textit{unica} a meno dell'ordine dei blocchi.\\
-	\textit{In termini matriciali}, ogni $A\in\complexset^{n,\ n}$ è simile ad una matrice in forma di Jordan, unica a meno dell'ordine dei blocchi:
+	\textit{In termini matriciali}, ogni $A\in\complexset^{n,n}$ è simile ad una matrice in forma di Jordan, unica a meno dell'ordine dei blocchi:
 	\begin{equation}
 		J=P^{-1}AP
 	\end{equation}
@@ -531,7 +531,7 @@ La seguente matrice $9\times 9$ è in forma di Jordan con $J_3\left(2\right)$, $
 \end{theorema}
 \subsection{Autospazi generalizzati}
 Per dimostrare il teorema appena enunciato, faremo uso di un concetto nuovo: quello di \textit{autospazio generalizzato}. Prima di definirlo, ricordiamo alcune proprietà legate agli endomorfismi che ci torneranno utili.
-\begin{define}\textsc{Spazio vettoriale invariante.}\\
+\begin{define}[Spazio vettoriale invariante.]~{}\\
 Uno spazio vettoriale $V$ si dice \textbf{invariante}\index{spazio!invariante} per un endomorfismo $f$ se:
 \begin{equation}
 	f\left(V\right)\subseteq V
@@ -554,7 +554,7 @@ Supponiamo che $V=U\oplus W$, con $U$ e $W $sottospazi di $V$; supponiamo inoltr
 	\item $C$ è quadrata, di ordine $\dim W$ ed è la matrice associata a $\funz{f_{\mid W}}{W}{W}$ rispetto a $\basis_W$.
 \end{itemize}
 \end{observe}
-\begin{define}\textsc{Autospazio generalizzato.}\\
+\begin{define}[Autospazio generalizzato.]~{}\\
 Data una funzione $\funz{f}{V}{V}$ e $A$ una matrice associata ad $f$; sia $\lambda$ un autovalore di $f$ (di cui ne esiste almeno uno perché in $\complexset$), $V_{\lambda}=\ker \left(f-\lambda Id\right)=\ker \left(A-\lambda I\right)$ l'autospazio di $\lambda$ e $m_{\lambda}$ la molteplicità algebrica di $\lambda$.\\
 Allora l'\textbf{autospazio generalizzato}\index{autospazio!generalizzato} di $\lambda$ è:
 \begin{equation}
@@ -562,7 +562,7 @@ Allora l'\textbf{autospazio generalizzato}\index{autospazio!generalizzato} di $\
 \end{equation}
 \vspace{-6mm}
 \end{define}
-\begin{lemming}\textsc{Proprietà degli autospazi generalizzati}
+\begin{lemming}[Proprietà degli autospazi generalizzati.]~{}\\
 	\begin{enumerate}
 		\item $V_\lambda\subseteq \widetilde{V}_{\lambda}$.
 		\item $\widetilde{V}_{\lambda}$ è invariante per $A$, cioè $A\widetilde{V}_{\lambda}\subseteq \widetilde{V}_{\lambda}$.
@@ -589,7 +589,7 @@ Allora l'\textbf{autospazio generalizzato}\index{autospazio!generalizzato} di $\
 	\end{equation*}
 Al crescere di $h$:
 \begin{equation}
-\left\{0\right\}\subseteq \ker \left(A-\lambda I\right)\subseteq\ker \left(A-\lambda I\right)^2\subseteq\ldots \qquad\textcolor{red}{\circled{\ast}} 
+\left\{0\right\}\subseteq \ker \left(A-\lambda I\right)\subseteq\ker \left(A-\lambda I\right)^2\subseteq\ldots \qquad\textcolor{red}{\circled{\ast}}
 \end{equation}
 Cioè il nucleo della potenza $h$ è contenuto in tutti quelli successivi. In particolare:
 \begin{equation*}\label{kernelsucc}
@@ -606,7 +606,7 @@ Dimostrando così la prima proprietà.
 \end{equation*}
 Al crescere di $h$:
 \begin{equation}
-	V\supseteq \im \left(A-\lambda I\right)\supseteq\im \left(A-\lambda I\right)^2\supseteq\ldots \qquad\textcolor{green}{\circled{\ast}} 
+	V\supseteq \im \left(A-\lambda I\right)\supseteq\im \left(A-\lambda I\right)^2\supseteq\ldots \qquad\textcolor{green}{\circled{\ast}}
 \end{equation}
 Cioè l'immagine della potenza $h$ contiene tutte quelle successive.\\ Possiamo mostrare come tutti gli spazi finora visti (nuclei e immagini delle potenze $\left(A-\lambda I\right)^h$) sono invarianti:
 \begin{itemize}
@@ -759,7 +759,7 @@ Per calcolare l'autospazio generalizzato dovremmo calcolare $\widetilde{V}_{\lam
 Nella sezione seguente dimostreremo l'esistenza della base di $\widetilde{V}_{\lambda}$ che dà la forma di Jordan.
 \subsection{Esistenza della base dell'autospazio generalizzato che dà la forma di Jordan}
 Prima di procedere dimostriamo un lemma che servirà più avanti.
-\begin{lemming}\label{lemmadimjordan}
+\begin{lemming}[Dimensione dell'intersezione dell'immagine e del nucleo di due funzioni.]~{}\\ \label{lemmadimjordan}
 Siano $\funz{f}{U}{V}$ e $\funz{g}{V}{W}$ due applicazioni lineari. Si ha:
 \begin{equation}
 \dim\left(\im f\cap \ker g\right)=\dim\im f-\dim\im \left(g\circ f\right)=\dim \ker\left(g\circ f\right)-\dim\ker f
@@ -830,7 +830,7 @@ Innanzitutto, scegliamo una base $\left\{x_1^1,\ \ldots,\ x_r^1\right\}$ del sot
 \end{equation}
 % bibliografia albano
 Per capire meglio le relazioni fra questi vettori ed altri che vedremo successivamente nella dimostrazione, utilizziamo il seguente schema tratto da \cite{albano:2017jordan}:
-% https://q.uiver.app/?q=WzAsMjMsWzEsMSwieF9pXnAiXSxbMSwyLCJ4X2lee3AtMX0iXSxbMSwzLCJ4X2lee3AtMn0iXSxbMSw1LCJ4X2leMiJdLFsyLDddLFsxLDQsIlxcdmRvdHMiXSxbMiw1LCJ5X2peMiJdLFsyLDIsInlfal57cC0xfSJdLFsyLDMsInlfal57cC0yfSJdLFsyLDQsIlxcdmRvdHMiXSxbMyw1LCJ6X2teMiJdLFszLDMsInpfa157cC0yfSJdLFszLDQsIlxcdmRvdHMiXSxbNCw1LCJcXGRvdHMiXSxbNCw0LCJcXGRkb3RzIl0sWzUsNiwiYV90XjEiXSxbMSw2LCJ4X2leMSJdLFsyLDYsInlfal4yIl0sWzMsNiwiel9rXjEiXSxbNSw1LCJhX3ReMiJdLFs2LDYsImJfdV4xIl0sWzQsNiwiXFxkb3RzIl0sWzAsMF0sWzAsMSwiQS1cXGxhbWJkYSBJIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFsxLDIsIkEtXFxsYW1iZGEgSSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XSxbMiw1LCJBLVxcbGFtYmRhIEkiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtYXBzIHRvIn19fV0sWzUsMywiQS1cXGxhbWJkYSBJIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFs3LDgsIkEtXFxsYW1iZGEgSSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XSxbOCw5LCJBLVxcbGFtYmRhIEkiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtYXBzIHRvIn19fV0sWzksNiwiQS1cXGxhbWJkYSBJIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFsxMSwxMiwiQS1cXGxhbWJkYSBJIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFsxMiwxMCwiQS1cXGxhbWJkYSBJIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFszLDE2LCJBLVxcbGFtYmRhIEkiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtYXBzIHRvIn19fV0sWzYsMTcsIkEtXFxsYW1iZGEgSSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XSxbMTksMTUsIkEtXFxsYW1iZGEgSSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XSxbMTAsMTgsIkEtXFxsYW1iZGEgSSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XV0=
+% https://q.uiver.app/?q=WzAsMjMsWzEsMSwieF9pXnAiXSxbMSwyLCJ4X2lee3AtMX0iXSxbMSwzLCJ4X2lee3AtMn0iXSxbMSw1LCJ4X2leMiJdLFsyLDddLFsxLDQsIlxcdmRvdHMiXSxbMiw1LCJ5X2peMiJdLFsyLDIsInlfal57cC0xfSJdLFsyLDMsInlfal57cC0yfSJdLFsyLDQsIlxcdmRvdHMiXSxbMyw1LCJ6X2teMiJdLFszLDMsInpfa157cC0yfSJdLFszLDQsIlxcdmRvdHMiXSxbNCw1LCJcXGRvdHMiXSxbNCw0LCJcXGRkb3RzIl0sWzUsNiwiYV90XjEiXSxbMSw2LCJ4X2leMSJdLFsyLDYsInlfal4yIl0sWzMsNiwiel9rXjEiXSxbNSw1LCJhX3ReMiJdLFs2LDYsImJfdV4xIl0sWzQsNiwiXFxkb3RzIl0sWzAsMF0sWzAsMSwiQS1cXGxhbWJkYSBJIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFsxLDIsIkEtXFxsYW1iZGEgSSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XSxbMiw1LCJBLVxcbGFtYmRhIEkiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtYXBzIHRvIn19fV0sWzUsMywiQS1cXGxhbWJkYSBJIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dLFs3LDgsIkEtXFxsYW1iZGEgSSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XSxbOCw5LCJBLVxcbGFtYmRhIEkiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtYXBzIHRvIn19fV0sWzksNiwiQS1cXGxhbWJkYSBJIiwwLHs
 \begin{center}
 	\begin{tikzcd}
 		{} \\[-5pt]
@@ -906,7 +906,7 @@ Poichè $x_i^1$ al variare di $i$ sono \textit{linearmente indipendenti} (sono b
 	\sum_{i}\beta_ix_i^{p-1}+\ldots+\sum_{i}\gamma_{j}y_{j}^{p-1}+\ldots+\sum_{u}\delta_{u}b_{u}^1=0
 \end{equation*}
 Applicando $\left(A-\lambda I\right)^{p-2}$, nella combinazione lineare rimangono solo $x_i^{p-1}$ e $y_j^{p-1}$ al variare di $i$ e $j$ con i loro coefficienti. Complessivamente, i vettori formano la base già vista di $S_{p-1}$, dunque i coefficienti risultano nulli: $\beta_i=0,\ \gamma_j=0\ \forall i,\ j$.\\
-Allo stesso modo, applicando $\left(A-\lambda I\right)^{p-3},\ \ldots$ si vede che tutti i coefficienti della combinazione lineare sono nulli, ovvero i vettori dell'insieme sono \textbf{linearmente indipendenti}. 
+Allo stesso modo, applicando $\left(A-\lambda I\right)^{p-3},\ \ldots$ si vede che tutti i coefficienti della combinazione lineare sono nulli, ovvero i vettori dell'insieme sono \textbf{linearmente indipendenti}.
 \end{demonstration}
 \subsection{Unicità della forma di Jordan}
 \begin{demonstration}
@@ -915,11 +915,11 @@ Sulla sua diagonale compaiono, per definizione, gli \textit{autovalori con molte
 Per un dato autovalore $\lambda$, abbiamo ottenuto dei blocchi di Jordan corrispondenti agli spazi $S_k$ di dimensione $k$ e di numero pari ai vettori aggiunti per completare la base dello spazio $S_{k+1}$ passo per passo (ovvero $\dim S_{k-1}-\dim S_k$, dato che ogni vettore aggiunto $x_i^1$ genera la successione $x_i^1,\ \ldots,\ x_i^k$). Poiché il \textit{numero dei blocchi} dipende esclusivamente da $A-\lambda I$, dunque da $A$ stessa, e \textit{non} dal procedimento, la forma di Jordan di $A$ è unica.
 \end{demonstration}
 Il corollario seguente è immediato.
-\begin{corollary}
+\begin{corollary}[Similitudine di matrici e forma di Jordan.]~{}\\
 Due matrici in forma di Jordan sono simili se e solo se hanno gli stessi blocchi (a meno dell'ordine).
 \end{corollary}
 \subsection{Polinomio minimo e forma di Jordan}
-\begin{proposition}\label{polinomiominimojordan}
+\begin{proposition}[Molteplicità delle radici del polinomio minimo e blocchi di Jordan.]~{}\\ \label{polinomiominimojordan}
 Sia $A$ una matrice complessa $n\times n$ e siano $\lambda_1,\ \ldots,\ \lambda_r$ gli autovalore distinti di $A$ e, per ogni $i=1,\ \ldots,\ r$, sia $p_i$ l'ordine del più grande blocco di Jordan di $A$ relativo a $\lambda_i$. Allora il polinomio minimo di $A$ è:
 \begin{equation}
 m_A\left(t\right)=\left(t-\lambda_i\right)^{p_1}\ldots\left(t-\lambda\right)^{p_r}
@@ -990,8 +990,8 @@ Al posto $\left(1,\ s\right)$ otteniamo il valore $\ast\neq 0$, dunque il prodot
 \end{equation*}
 Segue che qualunque blocco di Jordan di ordine non massimo fa sì che il polinomio scritto sopra non appartenga all'ideale di $A$, e dunque il più piccolo polinomio che è diviso da $m_A\left(t\right)$ (al quale dunque deve coincidere necessariamente) è $f\left(t\right)$ visto sopra.
 \end{demonstration}
-\begin{corollary}
-Sia $A\in\complexset^{n,\ n}$. Allora $A$ è \textbf{diagonalizzabile} se e solo se il suo polinomio minimo ha tutte radici di molteplicità $1$.
+\begin{corollary}[Molteplicità delle radici del polinomio minimo e diagonalizzabilità.]~{}\\
+Sia $A\in\complexset^{n,n}$. Allora $A$ è \textbf{diagonalizzabile} se e solo se il suo polinomio minimo ha tutte radici di molteplicità $1$.
 \end{corollary}
 \begin{demonstration}
 Per la proposizione precedente, la molteplicità delle radici del polinomio minimo corrisponde alla dimensione del più grande blocco di Jordan di $A$ relativo a $\lambda_i$.\\ Segue chiaramente che se $m_{\lambda_i}=1\ \forall i$ l'ordine di tutti i blocchi è $1$, dunque $A$ è diagonalizzabile.\\
@@ -1046,7 +1046,7 @@ Queste due matrici hanno forme di Jordan \textit{diverse}, ma hanno entrambe:
 		\begin{equation}
 			\dim S_i-\dim S_{i+1}=\#\text{ blocchi di Jordan di dimensione }i
 		\end{equation}
-		\item L'autospazio $V_{\lambda}=S_1$ ha come base tutti i vettori aggiunti a partire dalla base di $S_p$, compresi i vettori di quest'ultima base; poiché per ognuno di questi vettori abbiamo, per costruzione, un blocco di Jordan relativo a $\lambda$, il numero di questi vettori corrisponde al \textit{numero totale di blocchi di Jordan, cioè la molteplicità geometrica di} $\lambda$: 
+		\item L'autospazio $V_{\lambda}=S_1$ ha come base tutti i vettori aggiunti a partire dalla base di $S_p$, compresi i vettori di quest'ultima base; poiché per ognuno di questi vettori abbiamo, per costruzione, un blocco di Jordan relativo a $\lambda$, il numero di questi vettori corrisponde al \textit{numero totale di blocchi di Jordan, cioè la molteplicità geometrica di} $\lambda$:
 		\begin{equation}
 		\dim V_{\lambda}=\#\text{ blocchi di Jordan relativi a }\lambda
 		\end{equation}
@@ -1142,7 +1142,7 @@ V_2=S_1\supseteq S_2=\im\left(A-2 I\right)
 Avendo un unico autovalore, nel caso $S_2$ non abbiamo bisogno di calcolare l'intersezione con l'autospazio. Dunque, cerchiamo una base di $S_2=\im\left(A-2 I\right)$. Sappiamo già che la sua base è di un solo vettore, dato che $\rk\left(A-2 I\right)=1=\dim\im\left(A-2 I\right)$. Essendo l'immagine, possiamo prendere un vettore colonna della matrice $A-2 I$, che definiremo $x_1^1$; ad esempio, prendiamo la prima colonna:
 \begin{equation*}
 x_1^1=\left(6,\ 0,\ 9\right)
-\end{equation*} 
+\end{equation*}
 Per la scelta effettuata, per costruire $x_1^2$ ci è sufficiente prendere il vettore $\left(1,\ 0,\ 0\right)$:
 \begin{equation*}
 	\begin{array}{l}
@@ -1238,7 +1238,7 @@ Oppure come il valore della serie di potenze:
 \end{equation*}
 Vogliamo ora definire una funzione analoga anche in campo complesso.
 \vspace{2mm}
-\begin{define}\textsc{Funzione esponenziale sui numeri complessi.}\\
+\begin{define}[Funzione esponenziale sui numeri complessi.]~{}\\
 Sia $z\in\complexset$. Definiamo come \textbf{funzione esponenziale sui numeri complessi}\index{funzione!esponeziale sui numeri complessi} la seguente serie:
 \begin{equation}
 	\exp\left(z\right)=e^z\coloneqq\sum_{n=0}^{+\infty}\frac{z^n}{n!}
@@ -1267,7 +1267,7 @@ Allora la funzione esponenziale converge uniformemente su $S$, dunque:
 È continua.
 \end{demonstration}
 \vspace{2mm}
-\begin{proposition}\label{proposizioneeWeZ=eW+Z}
+\begin{proposition}[Proprietà dell'esponenziale complesso.]~{}\\ \label{proposizioneeWeZ=eW+Z}
 L'esponenziale in campo complesso gode delle seguenti proprietà:
 \begin{enumerate}
 	\item $e^z\cdot e^w=e^{z+w}$.
@@ -1321,22 +1321,22 @@ L'esponenziale in campo complesso gode delle seguenti proprietà:
 \vspace{-6mm}
 \end{observes}
 \subsection{Esponenziale di una matrice quadrata complessa}
-\begin{define}\textsc{Esponenziale di una matrice quadrata complessa.}\\
-Sia $A\in\complexset^{n,\ n}$. Definiamo l'\textbf{esponenziale di una matrice quadrata complessa} come:
+\begin{define}[Esponenziale di una matrice quadrata complessa.]~{}\\
+Sia $A\in\complexset^{n,n}$. Definiamo l'\textbf{esponenziale di una matrice quadrata complessa} come:
 \begin{equation}
-	e^A\coloneqq \sum_{k=0}^{+\infty}\frac{A^k}{k!}=\lim_{n \to +\infty}\sum_{k=0}^{n}\underbrace{\frac{A^k}{k!}}_{\text{matrice }n\times n}\qquad e^A\in\complexset^{n,\ n}
+	e^A\coloneqq \sum_{k=0}^{+\infty}\frac{A^k}{k!}=\lim_{n \to +\infty}\sum_{k=0}^{n}\underbrace{\frac{A^k}{k!}}_{\text{matrice }n\times n}\qquad e^A\in\complexset^{n,n}
 \end{equation}
 \vspace{-6mm}
 \end{define}
 Questa serie di matrici converge se e solo se convergono \textit{tutte} le serie che danno origine ai suoi $n^2$ elementi. Per dimostrare la convergenza, usiamo una norma particolare.
-\begin{define}\textsc{Norma infinito di una matrice.}\\
-La \textbf{norma infinito di una matrice}\index{norma!infinito di una matrice} $A\in C^{n,\ n}$ è:
+\begin{define}[Norma infinito di una matrice.]~{}\\
+La \textbf{norma infinito di una matrice}\index{norma!infinito di una matrice} $A\in C^{n,n}$ è:
 \begin{equation}
 \labs A\rabs_{\infty}=\max_{i,\ j=1,\ \ldots,\ n}\lvert a_{ij}\rvert
 \end{equation}
 \vspace{-6mm}
 \end{define}
-\begin{lemming}\textsc{Proprietà della norma infinito di una matrice.}\\
+\begin{lemming}[Proprietà della norma infinito di una matrice.]~{}\\
 	Date le matrici $n\times n$ $A$ e $B$:
 	\begin{enumerate}
 		\item $\labs A+B \rabs_{\infty}\leq \labs A\rabs_{\infty}+\labs B\rabs_{\infty}$.
@@ -1353,7 +1353,7 @@ La \textbf{norma infinito di una matrice}\index{norma!infinito di una matrice} $
 			\begin{array}{rl}
 				\displaystyle c_{ij}&\displaystyle=\sum_{k=1}^{n}a_{ik}b_{kj}\\
 				\displaystyle\implies \lvert c_{ij}\rvert &\displaystyle\leq \sum_{k=1}^{n}\lvert a_{ik}\rvert \lvert b_{kj}\rvert\leq n\labs A \rabs_{\infty}\labs B \rabs_{\infty}\quad \forall i,\ j
-				\implies \labs C \rabs_{\infty}\leq n\labs A \rabs_{\infty}\labs B \rabs_{\infty}   
+				\implies \labs C \rabs_{\infty}\leq n\labs A \rabs_{\infty}\labs B \rabs_{\infty}
 			\end{array}
 		\end{equation*}
 	\end{enumerate}
@@ -1470,8 +1470,8 @@ D'altro canto, abbiamo che:
 \end{equation*}
 Verificheremo successivamente (pag. \pageref{esponenzialechenoncommutap2}), quando mostreremo come calcolare in generale l'esponenziale di una matrice, che $e^{A+B}\neq e^A\cdot e^B$.
 \end{example}
-\begin{lemming}
-	Se $A,\ B\in\complexset^{n,\ n}$ \textit{commutano}, cioè $AB=BA$, allora:
+\begin{lemming}[Esponenziale di matrici che commutano.]~{}\\ 
+	Se $A,\ B\in\complexset^{n,n}$ \textit{commutano}, cioè $AB=BA$, allora:
 	\begin{equation}
 		e^{A+B}=e^A\cdot e^B
 	\end{equation}
@@ -1502,7 +1502,7 @@ Per induzione in questo modo otteniamo:
 	\end{array}
 \end{equation*}
 \end{demonstration}
-\begin{theorema}
+\begin{theorema}[Determinante di un esponenziale matriciale.]~{}\\
 	Si ha:
 	\begin{equation}
 		\det\left(e^A\right)=e^{\tr\left(A\right)}
@@ -1547,7 +1547,7 @@ Il determinante di una matrice triangolare è il prodotto sulle colonne, dunque 
 \subsection{Calcolo dell'esponenziale di una matrice tramite la forma di Jordan}
 Abbiamo già calcolato alcuni esponenziali di matrici in diverse delle precedenti dimostrazioni, sfruttando tuttavia sempre matrici particolari:
 \begin{itemize}
-	\item \textbf{Matrice diagonale}: 
+	\item \textbf{Matrice diagonale}:
 \begin{equation}
 D=\left(\begin{array}{ccc}
 d_1 & \dots & 0 \\
@@ -1571,7 +1571,7 @@ In generale, tuttavia, come possiamo calcolare l'esponenziale di una generica ma
 	\begin{equation*}
 		A=PJP^{-1}
 	\end{equation*}
-	Con $P$ è la matrice del cambiamento di base che presenta, nelle colonne, la base che mette $A$ in forma di Jordan. Sappiamo allora che per la stessa matrice $P$ gli esponenziali sono simili: 
+	Con $P$ è la matrice del cambiamento di base che presenta, nelle colonne, la base che mette $A$ in forma di Jordan. Sappiamo allora che per la stessa matrice $P$ gli esponenziali sono simili:
 	\begin{equation*}
 		e^A=Pe^JP^{-1}
 	\end{equation*}
@@ -1644,7 +1644,7 @@ e^\mathbf{B}=e^{\lambda I+N}=e^{\lambda I}e^N
 \end{equation}
 Dunque basta calcolare $e^{\lambda I}$ e $e^N$, ma sono due matrici di sappiamo già come calcolare l'esponenziale:
 \begin{itemize}
-	\item $e^{\lambda I}$ è una \textit{matrice diagonale}: 
+	\item $e^{\lambda I}$ è una \textit{matrice diagonale}:
 	\begin{equation}
 		e^{\lambda I}=\left(\begin{array}{ccc}
 			e^{\lambda} & \dots & 0 \\
@@ -1652,7 +1652,7 @@ Dunque basta calcolare $e^{\lambda I}$ e $e^N$, ma sono due matrici di sappiamo 
 			0 & \dots & e^{\lambda}
 		\end{array}\right)=e^{\lambda}I
 	\end{equation}
-	\item $e^N$ è una \textit{matrice nilpotente} di ordine $p$: 
+	\item $e^N$ è una \textit{matrice nilpotente} di ordine $p$:
 	\begin{equation}
 		e^N=\sum_{k=0}^{p-1}\frac{N^{k}}{k!}=I+N+\ldots + \frac{N^{p-1}}{\left(p-1\right)!}
 	\end{equation}
@@ -1834,24 +1834,24 @@ In questo problema si può anche evitare il calcolo della forma di Jordan. Infat
 \vspace{-6mm}
 \end{solution}
 \section{Matrici reali e forma di Jordan}
-Abbiamo studiamo le forme di Jordan in $\complexset^{n,\ n}$, dato che abbiamo la sicurezza dell'esistenza di tutti gli autovalori e dunque anche della forma di Jordan. E se la matrice fosse a valori reali, possiamo parlare di forma di Jordan in $\realset^{n,\ n}$?\\
+Abbiamo studiamo le forme di Jordan in $\complexset^{n,n}$, dato che abbiamo la sicurezza dell'esistenza di tutti gli autovalori e dunque anche della forma di Jordan. E se la matrice fosse a valori reali, possiamo parlare di forma di Jordan in $\realset^{n,n}$?\\
 Dato che la forma di Jordan associata ad una matrice ha sulla diagonale gli autovalori di $A$ con molteplicità e al di fuori di essa o zero o uno, possiamo fare la seguente osservazione.
 \begin{observe}
-Sia $A\in\realset^{n,\ n}$ e $J$ la forma di Jordan di $A$. Allora $J$ è \textit{reale} se e solo se gli autovalori di $A$ sono \textit{reali}.
+Sia $A\in\realset^{n,n}$ e $J$ la forma di Jordan di $A$. Allora $J$ è \textit{reale} se e solo se gli autovalori di $A$ sono \textit{reali}.
 \end{observe}
 Supponiamo che $A$ abbia autovalori reali e $J$ sia la sua forma di Jordan. Allora $\exists P\in\gl\left(n,\ \complexset\right)$ tale che esse siano simili per $P$ in campo complesso: $A=PJP^{-1}$. In realtà, si può dimostrare come $A$ e $J$ siano simili come matrici reali, cioè $\exists Q\in\gl\left(n,\ \realset\right)$ tale che $A=QJQ^{-1}$
-\begin{theorema}
-Siano $A,\ B\in\realset^{n,\ n}$ tali che $\exists P\in\gl\left(n,\ \complexset\right)\ \colon A=PBP^{-1}$. Allora $\exists Q\in\gl\left(n,\ \realset\right)\ \colon A=QBQ^{-1}$.
+\begin{theorema}[Matrici reali simili in campo complesso lo sono in campo reale.]~{}\\
+Siano $A,\ B\in\realset^{n,n}$ tali che $\exists P\in\gl\left(n,\ \complexset\right)\ \colon A=PBP^{-1}$. Allora $\exists Q\in\gl\left(n,\ \realset\right)\ \colon A=QBQ^{-1}$.
 \end{theorema}
 \begin{demonstration}
 Innanzitutto, $A=PBP^{-1}$ se e solo se $AP=PB$. Consideriamo le soluzioni $X$, matrice $n\times n$ a coefficienti reali, del sistema lineare omogeneo in $n^2$ equazioni in $n^2$ incognite.
 \begin{equation*}
 	AX=XB
 \end{equation*}
-Sia $W\subseteq \complexset^{n,\ n}$ il sottospazio \textit{vettoriale} delle soluzioni (\textit{complesse}) del sistema. Sappiamo già che $P\in W$, dunque $W\ne\left\{O\right\}$.\\
+Sia $W\subseteq \complexset^{n,n}$ il sottospazio \textit{vettoriale} delle soluzioni (\textit{complesse}) del sistema. Sappiamo già che $P\in W$, dunque $W\ne\left\{O\right\}$.\\
 Sia allora $k=\dim W\geq 1$ e sia $C_1,\ \ldots,\ C_k\in\complexset^{k,\ k}$ una base di $W$. Esse sono matrici complesse, dunque possiamo scomporla nella sua parte reale e immaginaria.
 \begin{equation*}
-\forall j=1,\ \ldots,\ k\quad C_j=X_j+iY_j,\ X_j,\ Y_j\in\realset^{n,\ n}
+\forall j=1,\ \ldots,\ k\quad C_j=X_j+iY_j,\ X_j,\ Y_j\in\realset^{n,n}
 \end{equation*}
 Mostriamo che anche $X_j$ e $Y_j$ sono soluzioni del sistema. Dunque, presa $C_j$:
 \begin{equation*}
@@ -1863,22 +1863,22 @@ Mostriamo che anche $X_j$ e $Y_j$ sono soluzioni del sistema. Dunque, presa $C_j
 		AX_j+AY_j&&X_jB+iY_jB
 	\end{array}
 \end{equation*}
-Le matrici $AX_j,\ AY_j,\ X_jB$ e $Y_jB$ sono tutte in $\realset^{n,\ n}$. Due matrici complesse scomposte come in precedenza sono uguali se e solo se la parte reale e l'argomento sono uguali:
+Le matrici $AX_j,\ AY_j,\ X_jB$ e $Y_jB$ sono tutte in $\realset^{n,n}$. Due matrici complesse scomposte come in precedenza sono uguali se e solo se la parte reale e l'argomento sono uguali:
 \begin{gather*}
 	AX_j=X_jB\\
 	AY_j=Y_jB
 \end{gather*}
 Ma allora $X_j,\ Y_j\in W\ \forall j$; poiché $C_1,\ ldots, C_k$ è una base di $W$, allora lo generano. Per costruzione $C_j=X_j+iY_j$, dunque anche $X_1,\ \ldots, X_k,\ Y_1,\ \ldots Y_k$ generano $W$ (come spazio vettoriale \textit{complesso}).\\
-Sicuramente $\left\{X_1,\ \ldots, X_k,\ Y_1,\ \ldots Y_k\right\}$ contiene una base di $W$, cioè $\exists D_1,\ \ldots,\ D_k$ base $\mathcal{D}$ di $W$ con $D_j\in\realset^{n,\ n}\ \forall j$.\\
+Sicuramente $\left\{X_1,\ \ldots, X_k,\ Y_1,\ \ldots Y_k\right\}$ contiene una base di $W$, cioè $\exists D_1,\ \ldots,\ D_k$ base $\mathcal{D}$ di $W$ con $D_j\in\realset^{n,n}\ \forall j$.\\
 Dalle condizioni in cui ci siamo posti, la matrice $Q$ cercate deve soddisfare i seguenti requisiti:
 \begin{itemize}
 	\item $Q\in W$.
-	\item $Q\in\realset^{n,\ n}$.
+	\item $Q\in\realset^{n,n}$.
 	\item $Q$ invertibile.
 \end{itemize}
 Rispetto alla base $\mathcal{D}$,  Ogni $D\in W$ è della forma:
 \begin{equation*}
-	D=t_1D_1+\ldots +t_kD_k\quad\text{con }t_1,\ \ldots,\ t_k\in\complexset^{n,\ n}
+	D=t_1D_1+\ldots +t_kD_k\quad\text{con }t_1,\ \ldots,\ t_k\in\complexset^{n,n}
 \end{equation*}
 Nel caso di matrici reali, i coefficienti $t_1,\ \ldots,\ t_k$ saranno \textit{tutti reali}. Poniamo:
 \begin{equation*}

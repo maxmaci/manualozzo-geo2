@@ -19,7 +19,7 @@
 Ad esempio, si possono considerare \textit{equivalenti} figure con lo stesso numero di buchi. Sotto questo punto di vista, la figura corrispondente alla lettera \textsf{\textbf{O}} e quella corrispondente a \textsf{\textbf{P}} sono \textit{equivalenti}, dato che hanno entrambe un solo buco, mentre \textsf{\textbf{X}} non lo è perché non ne ha. Allo stesso tempo, nessuna di queste è \textit{omeomorfa} all'altra: infatti, se togliamo dalle tre lettera/figure un punto come il nodo di raccordo delle ‘‘stanghette'' (o per \textsf{\textbf{O}} un punto qualunque), otteniamo per \textsf{\textbf{O}} una componente connessa, per \textsf{\textbf{P}} due e per \textsf{\textbf{X}} ben quattro distinte.\\
 Preceduto da un'approfondimento delle componenti connesse (anche per archi), nel presente capitolo formalizzeremo questo tipo di equivalenza più debole e allo stesso tempo più ampia: l'\textbf{omotopia}.
 \section{Lemma di incollamento}
-\begin{lemming}\textsc{Lemma di incollamento}\label{lemmaincollamento}\\
+\begin{lemming}[Lemma di incollamento.]~{}\\ \label{lemmaincollamento}
 	Siano $X,\ Y$ spazi topologici e $X=A\cup B$. Siano $\funz{f}{A}{Y}$ e $\funz{g}{B}{Y}$ continue tali che $f\left(x\right)=g\left(x\right)\ \forall x\in A\cap B$, cioè $f_{\mid A\cap B}=g_{\mid A\cap B}$.\\
 	Consideriamo l'\textbf{incollamento}\index{incollamento} $\funz{h}{X}{Y}$ definito da:
 	\begin{equation}
@@ -37,14 +37,14 @@ Preceduto da un'approfondimento delle componenti connesse (anche per archi), nel
 	\end{equation*}
 Essendo $f,\ g$ continue, segue che $f^{-1}\left(U\right)$ è aperto in $A$ e $g^{-1}\left(U\right)$ è aperto in $B$.\\
 In quanto $A,\ B$ aperti, per definizione di aperto del sottospazio\footnote{Poichè un aperto del sottospazio è dato dall'intersezione del sottospazio con un aperto di $X$, se abbiamo che anche il sottospazio è aperto di $X$, l'intersezione è aperta: in questo caso ogni aperto del sottospazio è anche aperto di $X$.} $f^{-1}\left(U\right)$ e $g^{-1}\left(U\right)$ sono aperti su $X\implies h^{-1}\left(U\right)$ aperto.\\
-Il caso di $A$ e $B$ chiuso è esattamente analogo. 
+Il caso di $A$ e $B$ chiuso è esattamente analogo.
 \end{demonstration}
 \section{Componenti connesse e componenti c.p.a.}
 Riprendiamo la trattazione delle componenti connesse e \textbf{c.p.a.} introdotte nel \autoref{chap:Connessocompatto}.
-\begin{define}\textsc{Componente connessa.}\\
+\begin{define}[Componente connessa.]~{}\\
 	Una \textbf{componente connessa}\index{componente!connessa} di $X$ spazio topologico è uno spazio $C\subseteq X$ \textit{connesso} \textbf{massimale}, tale per cui:
 	\begin{equation}
-		C\subseteq A\subseteq X\text{ con }A\text{ connesso}\implies C=A 
+		C\subseteq A\subseteq X\text{ con }A\text{ connesso}\implies C=A
 	\end{equation}
 \vspace{-6mm}
 \end{define}
@@ -75,7 +75,7 @@ Consideriamo $C\cup T$. $C$ e $T$ sono connessi, $x\in C\cap T\implies C\cap T\n
 \end{itemize}
 \vspace{-3mm}
 \end{demonstration}
-\begin{define}\textsc{Componente c.p.a..}\\
+\begin{define}[Componente c.p.a..]~{}\\
 Una \textbf{componente c.p.a.}\index{componente!c.p.a.} di $X$ è una classe di equivalenza per la relazione $\sim_A$ così definita:
 	\begin{equation}
 	x,\ y\in X\qquad x\sim_A y\iff \exists \alpha\textsc{ cammino in }X\ \colon \alpha\left(0\right)=x,\ \alpha\left(1\right)=y
@@ -153,7 +153,7 @@ Questo spazio $X$ è connesso, non \textbf{c.p.a.}: infatti, le componenti \text
 	Dati due spazi topologici $X,\ Y$ e due funzioni $\funz{f,\ g}{X}{Y}$, si ha un'\textbf{omotopia} tra le due funzioni se una funzione può essere ‘‘\textit{deformata in modo continuo}'' nell'altra (e viceversa).\\
 	Per far ciò vogliamo trovare una famiglia di funzioni $\left\{f_t\right\}_{t\in\left[0,\ 1\right]}$ tale che ogni funzione $\funz{f_t}{X}{Y}$ sia continua e vari ‘‘\textit{con continuità}'' al variare di $t\in\left[0,\ 1\right]$ fra $f_0=f$ e $f_1=g$.
 \end{intuit}
-\begin{define}\textsc{Omotopia.}\\
+\begin{define}[Omotopia.]~{}\\
 	Due funzioni continue $\funz{f,\ g}{X}{Y}$ si dicono \textbf{omotope} se $\exists \funz{F}{X\times I}{Y}$ \textit{continua} tale che:
 	\begin{equation}
 		\mvf{F}{x}{0}=f\left(x\right)\qquad \mvf{F}{x}{1}=g\left(x\right)\ \forall x\in X
@@ -200,7 +200,7 @@ Ricordando la definizione di \textit{segmento} (\pageref{segmento}, \autoref{seg
 Nel parlare di omotopie è estremamente importante verificare che siano ben definite! Infatti, prendiamo ad esempio $Y=S^1\subseteq \realset^2$ e le funzioni costanti in $p$ e in $q$, rispettivamente $\funztot{f}{X}{S^1}{x}{p}$ e $\funztot{g}{X}{S^1}{x}{q}$.\\
 Considerata $\funz{F}{X\times I}{\realset^2}$ tale che $\mvf{F}{x}{y}=\left(1-t\right)f\left(x\right)+tg\left(x\right)=\left(1-t\right)p+tq$, essa non è ben definita in $Y$: presi due punti della sfera $S^1$ il segmento non è \textit{mai} contenuto in essa!
 \end{attention}
-\begin{lemming}
+\begin{lemming}[Omotopia è relazione di equivalenza.]~{}\\
 	Siano $X,\ Y$ due spazi topologici. L'omotopia è una \textit{relazione di equivalenza} sull'insieme delle funzioni continue da $X$ e $Y$.
 \end{lemming}
 \begin{demonstration}~{}
@@ -265,7 +265,7 @@ Allora $f\sim h$.
 \end{itemize}
 \vspace{-3mm}
 \end{demonstration}
-\begin{lemming}\textsc{Composizione di omotopie (Manetti 10.13)}\label{compomotop}\\
+\begin{lemming}[Composizione di omotopie; Manetti, 10.13.]~{}\\ \label{compomotop}
 	Siano $X,\ Y,\ Z$ spazi topologici e siano $\funz{f_1,\ f_2}{X}{Y}$ continue ed omotope, $\funz{g_1,\ g_2}{Y}{Z}$ continue ed omotope. Allora $\funz{g_1\circ f_1,  g_2\circ f_2}{X}{Z}$ sono omotope:
 	\begin{equation}
 		f_1\sim f_2,\ g_1\sim g_2\implies g_1\circ f_1\sim g_2\circ f_2
@@ -275,7 +275,7 @@ Allora $f\sim h$.
 \begin{demonstration}
 	Sappiamo che:
 	\begin{itemize}
-		\item $\exists \funz{F}{X\times I}{Y}$ continua tale che $\mvf{F}{x}{0}=f_1\left(x\right),\ \mvf{F}{x}{1}=f_2\left(x\right)\ \forall x\in X$. 
+		\item $\exists \funz{F}{X\times I}{Y}$ continua tale che $\mvf{F}{x}{0}=f_1\left(x\right),\ \mvf{F}{x}{1}=f_2\left(x\right)\ \forall x\in X$.
 		\item $\exists \funz{G}{Y\times I}{Z}$ continua tale che $\mvf{G}{y}{0}=g_1\left(y\right),\ \mvf{G}{y}{1}=g_2\left(y\right)\ \forall y\in Y$.
 	\end{itemize}
 Sia:
@@ -290,7 +290,7 @@ Sia:
 Allora $H$ è l'omotopia cercata.
 \end{demonstration}
 \section{Equivalenza omotopica}
-\begin{define}\textsc{Omotopicamente equivalenti.}\\
+\begin{define}[Omotopicamente equivalenti.]~{}\\
 	Siano $X,\ Y$ due spazi topologici. Diciamo che $X$ e $Y$ sono \textbf{omotopicamente equivalenti}\seeonlyindex{omotopicamente equivalenti}{tipo di omotopia}, o che hanno lo stesso \textbf{tipo di omotopia}\index{tipo di omotopia}, se esistono due applicazioni continue:
 	\begin{equation}
 		\funz{f}{X}{Y}\text{ e }\funz{g}{Y}{X}
@@ -328,7 +328,7 @@ In tal caso $f$ e $g$ si dicono \textbf{equivalenze omotopiche}\index{equivalenz
 $f$ e $g$ sono \textit{continue}, inoltre:
 	\begin{gather*}
 		\funz{f\circ g}{Y=\left\{1\text{ punto}\right\}}{Y=\left\{1\text{ punto}\right\}}\implies f\circ g= Id_Y\\
-		\funztot{g\circ f}{\realset^n}{\realset^n}{\mathbf{x}}{\mathbf{0}}\implies g\circ f=O_{\realset^n}\ \text{(applicazione nulla)} 
+		\funztot{g\circ f}{\realset^n}{\realset^n}{\mathbf{x}}{\mathbf{0}}\implies g\circ f=O_{\realset^n}\ \text{(applicazione nulla)}
 	\end{gather*}
 Per l'osservazione $1)$ dato che vale $f\circ g= Id_Y$ allora $f\circ g\sim Id_Y$.\\
 Abbiamo che $g\circ f=O_{\realset^n}$ è omotopa a $Id_{\realset^n}$, in quanto $\realset^n$ è \textit{convesso} e due applicazioni continue a valori in $\realset^n$ sono sempre omotope, come dimostrato nell'esempio \ref{convessoomotope} (pag. \pageref{convessoomotope}). Una di queste, ad esempio, è la seguente:
@@ -352,7 +352,7 @@ Abbiamo che $g\circ f=O_{\realset^n}$ è omotopa a $Id_{\realset^n}$, in quanto 
 \begin{demonstration}~{}
 	\begin{itemize}
 	\item \textsc{Riflessiva}: $X\sim X\iff \exists f,\ g$ continue per cui $g\circ f\sim Id_X,\ f\circ g\sim Id_X$. Ponendo $f\equiv Id_X\equiv g$ vale banalmente $g\circ f=f\circ g=Id_X\sim Id_X$.
-	\item \textsc{Simmetrica}: Da $X\sim Y$ sappiamo che $\exists \funz{f}{X}{Y},\ \funz{g}{Y}{X}$ continue per cui $g\circ f\sim Id_X,\ f\circ g\sim Id_Y$; se vogliamo mostrare $Y\sim X$ dobbiamo cercare $\funz{h}{Y}{X},\ \funz{k}{X}{Y}$ per cui $k\circ h\sim Id_Y,\ h\circ k\sim Id_X$. Ponendo $h\equiv g$ e $k\equiv h$, esse soddisfano la richiesta.  
+	\item \textsc{Simmetrica}: Da $X\sim Y$ sappiamo che $\exists \funz{f}{X}{Y},\ \funz{g}{Y}{X}$ continue per cui $g\circ f\sim Id_X,\ f\circ g\sim Id_Y$; se vogliamo mostrare $Y\sim X$ dobbiamo cercare $\funz{h}{Y}{X},\ \funz{k}{X}{Y}$ per cui $k\circ h\sim Id_Y,\ h\circ k\sim Id_X$. Ponendo $h\equiv g$ e $k\equiv h$, esse soddisfano la richiesta.
 	\item \textsc{Transitiva}: Da $X\sim Y$ e $Y\sim Z$:
 	\begin{itemize}
 		\item $\funz{f}{X}{Y},\ \funz{g}{Y}{X}$ continue tali che $g\circ f\sim Id_X,\ f\circ g\sim Id_Y$.
@@ -409,7 +409,7 @@ $\implies a\circ b\sim Id_Z$.
 \vspace{-3mm}
 \end{demonstration}
 \subsection{Spazi contraibili}
-\begin{define}\textsc{Spazio contraibile.}\\
+\begin{define}[Spazio contraibile.]~{}\\
 	Uno spazio topologico è \textbf{contraibile}\index{spazio!contraibile} o \textit{contrattile}\seeonlyindex{spazio!contrattile}{spazio!contraibile} se ha lo stesso tipo di omotopia di un punto.
 \end{define}
 \begin{examples}~{}
@@ -441,8 +441,7 @@ Ha senso definire ciò proprio perché su $X\subseteq \realset^n$ ci sono le ope
 \begin{example}
 $\realset^2\setminus\left\{\left(0,\ 0\right)\right\}$ non è nè convesso, nè stellato.
 \end{example}
-\begin{lemming}
-Se $X$ è contraibile, allora $X$ è \textbf{c.p.a.}.
+\begin{lemming}[$X$ contraibile implica $X$ c.p.a.]
 \end{lemming}
 \begin{demonstration} Con il seguente diagramma ricordiamo le funzioni in gioco con la comprimibilità.
 \begin{center}
@@ -507,7 +506,7 @@ Il viceversa è analogo.
 	Le sfere $S^n\ \forall n\geq 1$ sono spazi topologici \textbf{c.p.a.} \textit{non} contraibili.
 \end{example}
 \section{Retratti e retratti di deformazione}
-\begin{define}\textsc{Retratto.}\\
+\begin{define}[Retratto.]~{}\\
 	Sia $X$ uno spazio topologico e $A\subseteq X$ un suo sottospazio. Diciamo che $A$ è un \textbf{retratto}\index{retratto} di $X$ se:
 	\begin{equation}
 		\exists \funz{r}{X}{A}\text{ continua}\ \colon r_{\mid A}=Id_A,\ \text{cioè}\ \colon r\left(a\right)=a\ \forall a\in A
@@ -537,7 +536,7 @@ Se $r$ è una retrazione, per costruzione è suriettiva, dunque $A$ \textbf{ered
 \end{itemize}
 \vspace{-3mm}
 \end{example}
-\begin{define}\textsc{Retratto di deformazione.}\\
+\begin{define}[Retratto di deformazione.]~{}\\
 	Sia $X$ uno spazio topologico e $A\subseteq X$ un suo sottospazio. Diciamo che $A$ è un \textbf{retratto di deformazione}\index{retratto!di deformazione} se:
 		\begin{itemize}
 			\item $r_{\mid A}=Id_A$, cioè $r$ è un retratto.
@@ -579,7 +578,7 @@ Osserviamo che $\forall \mathbf{x}\in\realset^n\setminus\left\{\mathbf{0}\right\
 \end{equation*}
 Infatti $F$ è ben definita, continua e $\mvf{F}{\mathbf{x}}{0}=\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}=\widetilde{r}\left(\overline{x}\right),\ \mvf{F}{x}{1}=\overline{x}=Id_X\left(\overline{x}\right)$.
 \end{example}
-\begin{corollary}
+\begin{corollary}[$S^{n-1}$ omotopa a $\realset^n\setminus\left\{1\text{ punto}\right\}$.]~{}\\
 	In generale vale che $S^{n-1}$ è retratto di deformazione di $\realset^n\setminus\left\{1\text{ punto}\right\}$; in particolare hanno lo stesso tipo di omotopia.
 \end{corollary}
 \begin{intuit}
@@ -588,7 +587,7 @@ Infatti $F$ è ben definita, continua e $\mvf{F}{\mathbf{x}}{0}=\frac{\mathbf{x}
 	Dunque, sotto queste condizioni, posso rendere la \textit{retta} un \textit{punto}, mentre il \textit{piano} senza un punto si può trasformare un una \textit{circonferenza}. Allo stesso tempo però, non posso ‘‘concentrare'' la \textit{sfera} in uno solo \textit{punto}.\\
 	Ancor più che con il ragionamento intuitivo sull'omeomorfismo è necessario esercitare \textbf{estrema cautela} nell'applicare questa nozione euristica di omotopia.
 \end{intuit}
-\begin{define}\textsc{Bouquet di circonferenze.}\\ \label{bouquet}
+\begin{define}[Bouquet di circonferenze.]~{}\\ \label{bouquet}
 Un \textbf{bouquet}\index{bouquet di circonferenze} \textbf{di} $n$ \textbf{circonferenze} è uno spazio topologico ottenuto unendo in un punto $n$ copie di $S^1$.
 \vspace{-8mm}
 \begin{center}

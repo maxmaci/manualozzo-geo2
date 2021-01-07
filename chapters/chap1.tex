@@ -883,7 +883,7 @@ $\impliesdx$ Dobbiamo dimostrare che $\Delta$ è chiuso, cioè $\left(X\times X\
 Preso $\left(x,\ y\right)\in \left(X\times X\right)\setminus \Delta\implies x\neq y$ dato che \textit{non} appartiene alla diagonale. Essendo $X$ di \textbf{Hausdorff}, $\exists U,\ V:\ x\in U,\ y\in V$ (intorni) aperti  disgiunti. Allora $U\times V\cap \Delta =\emptyset$: se così non fosse, ci potrebbero essere dei valori della diagonale che appartengono ad $U\times V$, cioè esisterebbe almeno una coppia $\left(x',\ y'\right)$ tale che $x'=y'$, ovvero gli intorni non sarebbero disgiunti. Allora $\left(x,\ y\right)\in U\times V\subseteq \left(X\times X\right)\setminus \Delta$.\\
 $\impliessx$ Siano $x,\ y\in X,\ x\neq y$. Allora $\left(x,\ y\right)\in \left(X\times X\right)\setminus \Delta$, che è aperto per ipotesi. Necessariamente esiste un aperto della base della topologia prodotto che contiene la coppia: $\left(x,\ y\right)\in U\times V\subseteq \left(X\times X\right)\setminus \Delta$. Per gli stessi ragionamenti dell'altra implicazione, si ha che $x\in U,\ y\in V$ con $U,\ V$ aperti (e dunque intorni) disgiunti. Segue che $X$ è di \textbf{Hausdorff}.
 \end{demonstration}
-\begin{proposition}~{}
+\begin{proposition}[Varie proprietà legate ad Hausdorff.]~{}
 \begin{enumerate}
 \item Siano $\funz{f,\ g}{X}{Y}$ continue, $Y$ di \textbf{Hausdorff}. Sia $C$ il luogo dei punti dove $f$ e $g$ coincidono:
 \begin{equation}
@@ -931,14 +931,14 @@ In altre parole, una proprietà topologica è \textbf{invariante}\index{invarian
 Per verificare che $P$ è una proprietà topologica dati due spazi omeomorfi $X\cong Y$, basta in realtà verificare solo che se $X$ ha la proprietà $P$ allora anche $Y$ la ha.\\
 Invece, si può verificare che due spazi \textbf{non} sono omeomorfi trovando una proprietà topologica che non condividono tra di loro.
 \end{observe}
-\begin{lemming}[Hausdorff è proprietà topologica; Manetti, esercizio 3.56.]~{}\\
+\begin{lemming}[Hausdorff è proprietà topologica; Manetti, esercizio 3.56.]~{}\\ \label{hausexercise}
 Siano $X,\ Y$ spazi topologici con $Y$ di \textbf{Hausdorff}. Se esiste $\funz{f}{X}{Y}$ continua e iniettiva, allora $X$ è di \textbf{Hausdorff}.
 \end{lemming}
 \begin{demonstration}
 Siano $x,\ y\in X$ con $x\neq y$. Essendo $f$ iniettiva, $f\left(x\right)\neq f\left(y\right)\in Y$: in quanto $Y$ è di \textbf{Hausdorff}, $\exists U,\ V$ (intorni) aperti disgiunti in $Y$ che contengono rispettivamente $f\left(x\right)$ e $f\left(y\right)$.\\
 Per continuità di $f$ le controimmagini di questi intorni aperti sono aperti e per iniettività sono ancora disgiunti: $\exists f^{-1}\left(U\right),\ f^{-1}\left(V\right)$ (intorni) aperti disgiunti che contengono rispettivamente $x$ e $y$. Segue che $X$ è di \textbf{Hausdorff}.
 \end{demonstration}
-\begin{proposition}
+\begin{proposition}[Hausdorff è proprietà topologica.]~{}\\
 Essere di \textbf{Hausdorff} è una proprietà topologica, ovvero:
 \begin{equation}
 	X\cong Y\implies \left[ X\text{ è di \textbf{Hausdorff} }\implies Y\text{ è di \textbf{Hausdorff} }\right]

@@ -18,11 +18,11 @@
 \noindent La \textit{Terra} è piatta o sferica? Per un topologo, la risposta è: \textit{dipende} da come la si guarda. Sappiamo che vista nello spazio la Terra è una \textit{sfera}; tuttavia, se ci troviamo in una \textit{zona piana}, nei nostri dintorni appare sufficientemente piatta. In modo analogo, su un foglio i \textit{triangoli} sono quelli ben noti con somma degli angoli interni un angolo piatto, se prendiamo tre punti ben distanti sulla Terra il ‘‘triangolo'' che otteniamo ha somma maggiore! Com'è possibile?\\
 Le \textbf{varietà topologiche} sono la risposta formale a ciò: una varietà topologica è uno spazio che localmente ha le stesse proprietà di uno spazio Euclideo reale. In particolare, in questa trattazione ci occuperemo principalmente di varietà topologiche di \textit{dimensione 2} e di come poterle classificarle a meno di omeomorfismi.
 \section{Varietà topologiche}
-\begin{define}\textsc{Localmente euclideo.}\\
+\begin{define}[Localmente euclideo.]~{}\\
 	Uno spazio topologico $X$ si dice \textbf{localmente euclideo}\index{localmente euclideo} di dimensione $n$ se ogni punto di $X$ ammette un intorno aperto omeomorfo ad una palla aperta di $\realset^n$.
 \end{define}
 
-\begin{define}\textsc{Varietà topologica.}\\
+\begin{define}[Varietà topologica.]~{}\\
 	Uno spazio topologico $X$ si dice \textbf{varietà topologica}\index{varietà topologica} di dimensione $n$ se $X$ è di \textbf{Hausdorff}, connesso, a base numerabile e localmente euclideo di dimensione $n$.
 \end{define}
 
@@ -50,20 +50,20 @@ Le \textbf{varietà topologiche} sono la risposta formale a ciò: una varietà t
 	$T=S^1\times S^1$ è una varietà topologica di dimensione $2$.
 \end{example}
 
-\begin{theorema}\label{compattoconnessohausdorfflocalmenteuclideo}
+\begin{theorema}[Compatto, connesso, Hausdorff, localmente euclideo implica a base numerabile.]~{}\\ \label{compattoconnessohausdorfflocalmenteuclideo}
 	Sia $X$ uno spazio topologico compatto, connesso, \textbf{Hausdorff} e localmente euclideo di dimensione $n$. Allora $X$ è a \textit{base numerabile}, dunque $X$ è una varietà topologica di dimensione $n$.
 \end{theorema}
- 
+
 \subsection{Dimensione 1}
-Analizziamo il caso di varietà topologiche di dimensione $1$, per esempio $\realset$ e $S^1$.
-\begin{theorema}
+Analizziamo il caso delle varietà topologiche di dimensione $1$, per esempio $\realset$ e $S^1$.
+\begin{theorema}[Classificazione delle varietà topologiche di dimensione $1$.]~{}\\
 	Ogni varietà topologica di dimensione $1$ è omeomorfo a $\realset$ se \textit{non} è compatta, oppure a $S^1$ se compatta.
 \end{theorema}
-\begin{example} 
+\begin{example}
 Riconsideriamo l'esempio della \textbf{retta con 2 origini} (sez. \ref{retta 2 origini}, pag. \ref{retta 2 origini}): essa è un quoziente non \textbf{Hausdorff}, dunque \textit{non} è una varietà topologica.
 \end{example}
 	\subsection{Dimensione 2}
-\begin{define}\textsc{Superficie topologica.}\\
+\begin{define}[Superficie topologica.]~{}\\
 	Una varietà topologica di dimensione $2$ si dice \textbf{superficie topologica}\index{superficie!topologica}.
 \end{define}
 \begin{examples}
@@ -103,7 +103,7 @@ Vogliamo dare una classificazione delle superfici topologiche \textit{compatte}.
 				\item Se $p$ viene da un \textit{punto interno} al poligono, allora si sceglie un intorno aperto $U$ centrato in tale punto tale che $U\cap\partial{P}=\emptyset$, data la proiezione $\funz \pi P S$, $\pi(U)\cong U$ ed è un intorno aperto di $p$.
 				\item Se $p$ viene da un punto interno ad un \textit{lato}, grazie all'identificazione dei lati a due a due si ha che passando al quoziente, cioè un intorno aperto di $p$ omeomorfo ad un disco aperto.
 				\item Se $p$ viene da un \textit{vertice}, siccome i vertici vengono identificati con i vertici, analogamente al caso dei lati si ottiene un intorno aperto di $p$ in $S$ omeomorfo ad un disco aperto di $\realset^2$.
-			\end{itemize}  
+			\end{itemize}
 			\item $S$ è di \textbf{Hausdorff}.
 		\end{enumerate}
 	Nella relazione di equivalenza due lati vengono identificati nel modo seguente: poiché $l_i\cong\intv$, scelgo un omeomorfismo $\funz{\phi}{l_1}{l_2}$, in modo che $p_1\in l_1 \sim \phi(p)\in l_2$ e $\phi$ manda vertici in vertici.\\
@@ -159,14 +159,14 @@ Siano $S_1$ e $S_2$ superfici compatte e siano $x\in S_1$ e $y\in S_2$. Siano $D
 \end{center}
 \textit{Incolliamo} ora i due pezzi di $Y$ lungo i bordi dei dischi, cioè mettiamo su $Y$ la seguente relazione di equivalenza:
 \begin{equation*}
-	x_1\sim y_1 \iff x_1=y_1\text{ oppure } x_1\in\partial{D},\ y_1\in\partial{D}\text{ e } y_1=h(x_1)\text{ (o viceversa)} 
+	x_1\sim y_1 \iff x_1=y_1\text{ oppure } x_1\in\partial{D},\ y_1\in\partial{D}\text{ e } y_1=h(x_1)\text{ (o viceversa)}
 \end{equation*}
 \begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.4]{images/connectedsum3.pdf}
 \end{center}
 Vediamo ora qualche fatto che \textit{non} dimostriamo:
 	\begin{itemize}
-		\item Il quoziente è ancora una superficie topologica, che chiamiamo \textbf{somma connessa}\index{somma!connessa} $S_1\# S_2$  di $S_1$ e $S_2$. 
+		\item Il quoziente è ancora una superficie topologica, che chiamiamo \textbf{somma connessa}\index{somma!connessa} $S_1\# S_2$  di $S_1$ e $S_2$.
 		\item La somma connessa $S_1\# S_2$, a meno di omeomorfismo, \textit{non dipende} dalle scelte fatte come i punti $x$ e $y$, gli intorni $D_x$ e $D_y$, l'omeomorfismo $h$, ma soltanto da $S_1$ e da $S_2$!
 		\item La somma connessa di superfici compatte è, a meno di omeomorfismi, \textit{commutativa} e \textit{associativa}:
 		\begin{itemize}
@@ -182,7 +182,7 @@ Vediamo ora qualche fatto che \textit{non} dimostriamo:
 	\end{center}
 \vspace{-6mm}
 \end{observe}
-\begin{define}\textsc{Somma di tori.}\\
+\begin{define}[Somma di tori.]~{}\\
 	Indichiamo con $T_g$ la \textbf{somma connessa di }$g\geq 1$ \textbf{tori}:
 	\begin{equation}
 		T_g=\underbrace{T\# \ldots\# T}_{g\ \text{volte}}\quad g\geq 1\ \left(T_1=T\right)
@@ -233,7 +233,7 @@ a_1b_1a_1^{-1}b_1^{-1}a_2b_2a_2^{-1}b_2^{-1}\ldots a_gb_ga_g^{-1}b_g^{-1}
 \end{equation*}
 $T_g$ è un quoziente con $4g$ lati.
 \end{example}
-\begin{define}\textsc{Somma connessa di $n$ piani proiettivi}\\
+\begin{define}[Somma connessa di $n$ piani proiettivi]
 	Preso il \textit{piano proiettivo reale} $P=\proj[2]{\realset}$, definiamo la \textbf{somma connessa di} $n$ \textbf{piani proiettivi} come:
 	\begin{equation*}
 		P_n=\underbrace{P\# \ldots\# P}_{n\ \text{volte}}\quad n\geq 1\ \left(P_1=P\right)
@@ -275,7 +275,7 @@ Incolliamo lungo il lato $b$:
 \end{center}
 Infatti, otteniamo come modello $aaee$, che corrisponde a $P\# P$.
 \end{observe}
-\begin{lemming}
+\begin{lemming}[Somma connessa toro-piano proiettivo e bottiglia di Klein-piano proiettivo.]~{}\\
 	\begin{equation}
 		T\# P= K\# P=P\# P\# P
 	\end{equation}
@@ -300,7 +300,7 @@ Incolliamo lungo $\gamma$:
 \end{center}
 Otteniamo un modello piano di $K\# P$ che può essere descritto dalla parola $\delta \alpha \delta\beta\alpha\beta^{-1}$, che corrisponde lettera per lettera al modello $T\# P$.
 \end{demonstration}
-\begin{corollary}\label{toropiupiano}
+\begin{corollary}[Somma connessa tori-piani proiettivi.]~{}\\\label{toropiupiano}
 Se $g\geq 1$ e $n\geq 1$ si ha:
 \begin{equation}
 	T_g\# P_n=P_{n+2g}
@@ -318,7 +318,7 @@ Procediamo per induzione su $g$; se è vero per $g-1$, allora:
 \end{equation*}
 \end{demonstration}
 \section{Classificazione delle superfici topologiche compatte}
-\begin{theorema}\textsc{Classificazione delle superfici topologiche compatte.}\\ \label{classificazionesuperficicompatte}
+\begin{theorema}[Classificazione delle superfici topologiche compatte.]~{}\\ \label{classificazionesuperficicompatte}
 Ogni superfici topologica compatta è omeomorfa a $S^2$, $T_g$ per qualche $g\geq 1$ oppure $P_n$ per qualche $n\geq 1$.\\
 Inoltre, tali superfici sono tutte distinte, ovvero:
 \begin{itemize}
@@ -332,7 +332,7 @@ Inoltre, tali superfici sono tutte distinte, ovvero:
 \end{theorema}
 Per la dimostrazione del teorema abbiamo prima bisogno di definire e dimostrare dei risultati sulla triangolazione.
 \subsection{Triangolazione}
-\begin{define}\textsc{Triangolo geometrico.}\\
+\begin{define}[Triangolo geometrico.]~{}\\
 	Sia $S$ una superficie compatta. Un \textbf{triangolo geometrico}\index{triangolo geometrico} $T$ in $S$ è un'applicazione:
 	\begin{equation}
 		\funz{\phi}{T'}{T\subseteq S}
@@ -344,7 +344,7 @@ I vertici e i lati di $T$ sono le immagini tramite $\phi$ dei vertici dei lati d
 \end{center}
 \vspace{-6mm}
 \end{define}
-\begin{define}\textsc{Triangolazione.}\\
+\begin{define}[Triangolazione.]~{}\\
 	Sia $S$ una superficie compatta. Una \textbf{triangolazione}\index{triangolazione} di $S$ è una collezione \textit{finita} di triangoli geometrici $T_1,\ \ldots,\ T_r$ in $S$ tale che:
 	\begin{enumerate}
 		\item $S=T_1\cup \ldots \cup T_r$.
@@ -361,18 +361,17 @@ Una superficie compatta $S$ si dice \textbf{triangolabile}\index{triangolabilit�
 	Il \textbf{tetraedro} dà una triangolazione della sfera con $4$ triangoli.
 \end{example}
 Enunciamo ora un teorema (di cui \textit{non} daremo dimostrazione) che ci servirà successivamente per poter classificare le superfici compatte direttamente con i loro modelli piani associati.
-\begin{theorema}\textsc{Teorema di Radò, 1925.}\\
+\begin{theorema}[Teorema di Radò, 1925.]~{}\\
 	Ogni superficie compatta è triangolabile.
 \end{theorema}
-\begin{corollary}
-	Ogni superficie compatta $S$ ha un modello piano.
+\begin{corollary}[Ogni superficie compatta $S$ ha un modello piano.]
 \end{corollary}
 \begin{demonstration}
 	Per il teorema di Radò, $S$ ammette una triangolazione $T_1,\ \ldots,\ T_r$. Riportiamo gli $r$ triangoli nel piano, con i lati identificati. Incolliamo poi i lati uno ad uno fino ad ottenere un unico poligono con delle identificazioni sui lati.
 \end{demonstration}
 \subsection{Dimostrazione del teorema di classificazione: prima parte}
 La prima parte della dimostrazione del teorema di classificazione si occupa di dimostrare che \textit{tutte le superfici compatte sono omeomorfe a $S^2$, $T_g$ o $P_n$}. Grazie al corollario appena dimostrato, possiamo studiare direttamente il \textit{modello piano} associato alla superficie compatta $S$ in esame, cioè studieremo un \textit{poligono} con i lati identificati a $2$ a $2$. Diamo ora una nomenclatura utile.
-\begin{define}\textsc{Coppie di lati.}\\
+\begin{define}[Coppie di lati.]~{}\\
 	Nel modello piano, una \textit{coppia di lati} identificati tra di loro:
 	\begin{itemize}
 		\item È del \textbf{primo tipo} se, percorrendo il bordo del poligono, i due lati compaiono con \textit{orientazione opposta}.
@@ -431,7 +430,7 @@ Incolliamo i lati $a$ della coppia: in questo modo, otteniamo un nuovo modello p
 Ripetiamo il passo 1 finché eliminiamo tutte le coppie adiacenti del I tipo. Se alla fine abbiamo due soli lati, ricadiamo nel passo 0 e abbiamo già finito la dimostrazione.\\
 %PASSO 2
 \textsc{\underline{\textbf{Passo 2}}}: \textit{Riduzione dei vertici a un'unica classe di equivalenza}.\\
-Supponiamo che i vertici del poligono \textit{non} siano tutti equivalenti. Dunque, esisterà un lato $b$ i cui due vertici $P$ e $Q$ \textit{non} sono equivalenti! 
+Supponiamo che i vertici del poligono \textit{non} siano tutti equivalenti. Dunque, esisterà un lato $b$ i cui due vertici $P$ e $Q$ \textit{non} sono equivalenti!
 \begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep2-1.pdf}
 \end{center}
@@ -494,7 +493,7 @@ In queste operazioni incolliamo lungo coppie del I tipo, pertanto i tipi delle c
 	Si ottiene sempre un piano proiettivo se e solo nel modello iniziale c'è almeno una coppia di lati del II tipo (perché i passi mantengono il tipo).
 \end{observe}
 \section{Orientabilità}
-\begin{define}\textsc{Nastro di Möbius}.\\ \label{nastromobius}
+\begin{define}[Nastro di Möbius.]~{}\\ \label{nastromobius}
 	\begin{minipage}{.75\linewidth}
 Definiamo il \textbf{nastro di Möbius} (aperto) $N_0\subseteq \realset^3$ come lo spazio $\left[0,\ 1\right]\times (0,\ 1)$ (mentre si considera $\left[0,\ 1\right]\times [0,\ 1]$ nel caso chiuso $N$) con i lati quozientati come in figura.
 	\end{minipage}
@@ -516,7 +515,7 @@ Definiamo il \textbf{nastro di Möbius} (aperto) $N_0\subseteq \realset^3$ come 
 \end{intuit}
 I comportamenti sul nastro di Möbius che abbiamo appena osservato si presentano anche in superfici come il \textit{piano proiettivo reale} o la \textit{bottiglia di Klein}; in particolare, si ha questo proprio perché possiamo identificare su di esse un percorso esattamente \textit{analogo} a quello visto sul nastro di Möbius.\\
 Possiamo formalizzare l'\textit{orientabilità} utilizzando questo principio.
-\begin{define}\textsc{Orientabilità.}\\
+\begin{define}[Orientabilità.]~{}\\
 	Una superficie topologica si dice \textbf{orientabile}\index{orientabilità} se contiene un sottospazio omeomorfo al nastro di Möbius (aperto o chiuso). Altrimenti $S$ si dice \textbf{non orientabile}.
 \end{define}
 \begin{examples}~{}
@@ -549,14 +548,14 @@ Possiamo formalizzare l'\textit{orientabilità} utilizzando questo principio.
 \end{observe}
 \subsection{Dimostrazione del teorema di classificazione: seconda parte}
 Noto ciò, con il concetto di orientabilità possiamo fare un passettino avanti nella classificazione delle superfici.
-\begin{corollary}
+\begin{corollary}[Sfera, tori e piani proiettivi non sono omeomorfi.]
 	\begin{gather*}
 		S^2 \ncong P_n\ \forall n\geq 1\\
 		T_g \ncong P_n\ \forall n\geq 1,\ \forall g\geq 1
 	\end{gather*}
 \vspace{-6mm}
 \end{corollary}
-\begin{corollary}
+\begin{corollary}[Orientabile se e solo se il modello piano non ha coppie del II tipo.]~{}\\
 	Sia $S$ una superficie compatta con un suo modello piano. Allora $S$ è \textit{orientabile} se e solo se il modello \textit{non} contene coppie di lati del II tipo.
 \end{corollary}
 \begin{demonstration}~{}\\
@@ -564,7 +563,7 @@ $\impliesdx$ Se c'è una coppia di lati del II tipo, costruiamo facilmente un na
 $\impliessx$ Applicando l'algoritmo del taglia e incolla, se non ci sono lati del II tipo otteniamo una superficie omeomorfa a $S^2$ o a $T_g$, entrambe superfici orientabili.
 \end{demonstration}
 \section{Suddivisione di una superficie compatta}
-\begin{define}\textsc{Lato.}\\
+\begin{define}[Lato.]~{}\\
 	Un \textbf{lato}\index{lato} in $S$ superficie compatta è un sottospazio $L\subseteq S$ con un'applicazione continua $\funz{f}{\intv}{L}$ tale che valga una delle due proprietà seguenti:
 	\begin{itemize}
 		\item $f$ è omeomorfismo tra $\intv$ e $L$.
@@ -577,7 +576,7 @@ Definiamo come \textbf{vertici}\index{vertice} del lato, rispetto ai due casi so
 \end{itemize}
 \vspace{-3mm}
 \end{define}
-\begin{define}\textsc{Suddivisione di una superficie compatta.}\\
+\begin{define}[Suddivisione di una superficie compatta.]~{}\\
 	Una \textbf{suddivisione}\index{suddivisione} $\mathcal
 	S$ di una superficie compatta $S$ è data da:
 	\begin{itemize}
@@ -615,7 +614,7 @@ Pertanto, ogni superficie compatta ammetta almeno una suddivisione perché esist
 \vspace{-6mm}
 \end{examples}
 \section{Caratteristica di Eulero}
-\begin{define}\textsc{Caratteristica di Eulero.}\\
+\begin{define}[Caratteristica di Eulero di una suddivisione.]~{}\\
 	Data una suddivisione $\mathcal{S}$ di una superficie compatta $S$, essa avrà:
 	\begin{itemize}
 		\item $v$ vertici.
@@ -642,18 +641,17 @@ La \textbf{caratteristica di Eulero}\index{caratteristica di Eulero} di $\mathca
 \vspace{-3mm}
 \end{examples}
 Notiamo che, in questi esempi, suddivisioni diverse di una stessa superficie hanno stessa caratteristica di Eulero. Questo \textit{non} è un caso: il seguente teorema (che non dimostreremo) ci garantisce ciò.
-\begin{theorema}
+\begin{theorema}[Caratteristica di Eulero è indipendente dalla suddivisione.]~{}\\
 	Date due suddivisioni $\mathcal{S}_1$ e $\mathcal{S}_2$ della stessa superficie compatta $S$, si ha:
 	\begin{equation*}
 		\euler{S}{\mathcal{S}_1}=\euler{S}{\mathcal{S}_2}
 	\end{equation*}
 \vspace{-6mm}
 \end{theorema}
-\begin{define}\textsc{Caratteristica di Eulero.}\\
+\begin{define}[Caratteristica di Eulero di una superficie.]~{}\\
 	Sia $S$ una superficie compatta. La \textbf{caratteristica di Eulero} $\euler{S}{\ }\in \integerset$ è la caratteristica di Eulero di una qualsiasi suddivisione di $S$.
 \end{define}
-\begin{corollary}
-	La \textbf{caratteristica di Eulero è un'invariante per omeomorfismo.}
+\begin{corollary}[La caratteristica di Eulero è invariante per omeomorfismo.]
 \end{corollary}
 \begin{demonstration}
 	Siano $S_1$ e $S_2$ due superfici compatte omeomorfe tra di loro e siano $\mathcal{S}_1$ una suddivisione di $S_1$. Usando l'omeomorfismo, costruiamo una suddivisione $\mathcal{S}_2$ di $S_2$ con lo stesso numero di vertici, lati e facce di $\mathcal{S}_1$. Allora:
@@ -715,7 +713,7 @@ In altre parole, \textit{tutte} le superfici $T_g$ sono \textit{non} omeomorfe t
 \vspace{-3mm}
 \end{demonstration}
 \subsection{Somma connessa e caratteristica di Eulero}
-\begin{lemming}
+\begin{lemming}[Caratteristica di Eulero della somma connessa.]~{}\\
 	Siano $S_1,\ S_2$ due superfici compatte. Allora:
 	\begin{equation}
 		\euler{S_1\# S_2}{\ }=\euler{S_1}{\ }+\euler{S_2}{\ }-2

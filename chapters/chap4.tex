@@ -18,7 +18,7 @@
 La \textbf{topologia quoziente} formalizza questo concetto euristico di ‘‘incollare parti'' utilizzando le \textit{relazioni di equivalenza}; con il tipico approccio della Topologia Generale, faremo ciò dando delle semplici (seppur inizialmente poco intuitive) condizioni sulla continuità in modo da definire la topologia più adatta per l'\textit{insieme quoziente}.
 \section{Topologia quoziente}
 Accenniamo fin da subito che la situazione è \textit{duale} rispetto a quella dei sottospazi, analizzati nella sezione \ref{sottospazi}, pag. \pageref{sottospazi}.
-\begin{define}\textsc{Topologia quoziente.}\\
+\begin{define}[Topologia quoziente.]~{}\\
 	Dato $X$ uno spazio topologico, $Y$ un \textit{insieme} e $\funz f X Y$ funzione suriettiva, la \textbf{topologia quoziente}\index{topologia!quoziente} su $Y$ indotta da $f$ è la topologia \textit{più fine} che rende $f$ continua.
 \end{define}
 Analizziamo ora chi sono i suoi aperti: $\displaystyle A\subseteq Y \text{ aperto } \iff f^{-1}(A)\subseteq X$ aperto. Notiamo che l'implicazione $\Rightarrow)$ è necessaria perché $f$ sia continua, mentre l'implicazione $\Leftarrow)$ è quella che caratterizza la topologia quoziente: infatti, se si considera un insieme $B\subseteq Y$ che non è aperto, allora la sua controimmagine $f^{-1}(B)\subseteq X$ non sarà aperta, pertanto la topologia su $Y$ è la più fine.
@@ -30,14 +30,14 @@ Vediamo ora un esempio che giustifica la terminologia ‘‘topologia quoziente'
 	Sia $X$ uno spazio topologico e $\sim$ una relazione di equivalenza su $X$. Posto $Y=\nicefrac{X}{\sim}$ insieme quoziente e $\funztot \pi X Y x {\left[x\right]_\sim}$ \textbf{proiezione al quoziente}\index{proiezione!al quoziente}, la topologia quoziente su $Y$ è quella che rende la proiezione continua.
 \end{example}
 Ricordiamo il primo Teorema fondamentale di isomorfismo per gli \textit{insiemi}, altresì chiamato \textit{decomposizione canonica}.
-\begin{remember}
+\begin{remember}~{}\\
 	\begin{minipage}[t]{0.83\textwidth}
 		Data una qualsiasi funzione suriettiva $\funz f X Y$ vi è la seguente relazione di equivalenza: $\displaystyle \forall x,y\in X, \ x\sim y \iff f(x)=f(y)$; inoltre, $\exists ! \funz h {\nicefrac{X}{\sim}} Y$ biunivoca tale che $f=h\circ\pi$, basta porre $h\left( [x] \right) \coloneqq f(x)$ in modo tale che il diagramma \textit{commuti}.
 	\end{minipage}
 	\begin{minipage}[t]{0.13\textwidth}\vspace{-10pt}
 		\begin{tikzcd}
 			X \arrow[r, "f"] \arrow[d, "\pi"']                                   & Y \\
-			\nicefrac{X}{\sim} \arrow[ru, "\exists !h"', dotted] &    
+			\nicefrac{X}{\sim} \arrow[ru, "\exists !h"', dotted] &
 		\end{tikzcd}
 	\end{minipage}
 \end{remember}
@@ -48,11 +48,11 @@ Mostriamo che è ben definita e biunivoca.
 	\end{gather*}
 \subsection{Identificazione}
 Tenendo a mente il concetto di immersione illustrato a pagina \pageref{immersione} illustriamo il concetto duale di \textit{identificazione}.
-\begin{define}\textsc{Identificazione.}\\
+\begin{define}[Identificazione.]~{}\\
 	Siano $X,Y$ spazi topologici e $\funz f X Y$ una funzione continua e suriettiva; $f$ si dice \textbf{identificazione}\index{identificazione} se $Y$ ha la topologia quoziente indotta da $f$.
 \end{define}
-In generale è difficile determinare quando una data funzione è un'identificazione, quindi ne cerchiamo una condizione \textit{sufficiente}. 
-\begin{theorema} \textsc{Manetti, 5.4} \label{condizione sufficiente identificazione}\\
+In generale è difficile determinare quando una data funzione è un'identificazione, quindi ne cerchiamo una condizione \textit{sufficiente}.
+\begin{theorema}[Funzione continua, suriettiva, chiusa/aperta è identificazione chiusa/aperta; Manetti, 5.4.]~{}\\ \label{condizione sufficiente identificazione}
 	Sia $\funz f X Y$ continua, suriettiva e chiusa (o aperta), allora $f$ è un'identificazione chiusa (o aperta).
 \end{theorema}
 \begin{demonstration}
@@ -76,7 +76,7 @@ Vediamo ora un esempio di identificazione chiusa e non aperta.
 	Gli omeomorfismi sono identificazioni chiuse e aperte.
 \end{observe}
 Vediamo ora che relazione c'è fra le identificazioni ed i quozienti dati da relazioni di equivalenza.
-\begin{theorema} \textsc{proprietà universale delle identificazioni, Manetti, 5.6} \\
+\begin{theorema}[Proprietà universale delle identificazioni; Manetti, 5.6.]~{}\\ 
 	\begin{minipage}[t]{0.83\textwidth}
 		Dati $X,Y,Z$ spazi topologici, $g$ una qualsiasi funzione continua, \\
 		$f$ identificazione con le mappe come in figura, allora \\
@@ -86,7 +86,7 @@ Vediamo ora che relazione c'è fra le identificazioni ed i quozienti dati da rel
 	\begin{minipage}[t]{0.13\textwidth}\vspace{-10pt}
 		\begin{tikzcd}
 			X \arrow[r, "f"] \arrow[d, "g"'] & Y \arrow[ld, "\exists ! h", dotted] \\
-			Z  &    
+			Z  &
 		\end{tikzcd}
 	\end{minipage}
 \end{theorema}
@@ -104,12 +104,12 @@ Come conseguenza si ha che, data $f$ continua, $\sim$ relazione di equivalenza e
 \begin{minipage}[t]{0.16\textwidth}\vspace{-10pt}
  		\begin{tikzcd}
 		 	X \arrow[r, "f"] \arrow[d, "\pi"']                                   & Y \\
- 			\nicefrac{X}{\sim} \arrow[ur, "g"', dotted] &    
+ 			\nicefrac{X}{\sim} \arrow[ur, "g"', dotted] &
 		\end{tikzcd}
 	\end{minipage}\\
 \hspace{-1mm}
 \begin{minipage}[t]{0.83\textwidth}\vspace{2mm}
-In particolare, se $\sim$ è la relazione d'equivalenza indotta da $f$, e dunque si è nelle ipotesi del primo Teorema fondamentale di isomorfismo degli \textit{insiemi}, allora $\left( x\sim y \iff f(x)=f(y) \right) \implies \exists ! \overline{f}$ biettiva, continua. Dunque vale 
+In particolare, se $\sim$ è la relazione d'equivalenza indotta da $f$, e dunque si è nelle ipotesi del primo Teorema fondamentale di isomorfismo degli \textit{insiemi}, allora $\left( x\sim y \iff f(x)=f(y) \right) \implies \exists ! \overline{f}$ biettiva, continua. Dunque vale
 		\begin{equation}
 				\overline{f} \text{ omeomorfismo} \iff f \text{ identificazione}
 			\end{equation}
@@ -117,7 +117,7 @@ In particolare, se $\sim$ è la relazione d'equivalenza indotta da $f$, e dunque
 	\begin{minipage}[t]{0.16\textwidth}\vspace{1mm}
 			\begin{tikzcd}
 				X \arrow[r, "f"] \arrow[d, "\pi"']                                   & Y \\
-				\nicefrac{X}{\sim} \arrow[ur, "\overline{f}"', dotted] &    
+				\nicefrac{X}{\sim} \arrow[ur, "\overline{f}"', dotted] &
 			\end{tikzcd}
 	\end{minipage}\vspace{3mm}\\
 Riprendiamo l'esempio precedente ed esaminiamolo in termini di spazio quoziente.
@@ -126,9 +126,9 @@ Riprendiamo l'esempio precedente ed esaminiamolo in termini di spazio quoziente.
 	\begin{equation*}
 		\funztot f {D^1=[0, \ 2\pi]} {S^1} t {(\cos t, \ \sin t)}
 	\end{equation*}
-	La funzione $f$ è un identificazione, dunque $S^1\cong \nicefrac{[0, \ 2\pi]}{\sim}\cong \nicefrac{[0, \ 1]}{\sim}=\nicefrac{D^1}{\sim}$, con $\sim$ tale che sia costante sulle fibre di $f$: 
+	La funzione $f$ è un identificazione, dunque $S^1\cong \nicefrac{[0, \ 2\pi]}{\sim}\cong \nicefrac{[0, \ 1]}{\sim}=\nicefrac{D^1}{\sim}$, con $\sim$ tale che sia costante sulle fibre di $f$:
 	\begin{equation*}
-		 s\sim t \iff \begin{cases} 
+		 s\sim t \iff \begin{cases}
 			\cos s=\cos t \\
 			\sin s =\sin t
 		\end{cases} \iff s=t  \vee s=0,\ t=2\pi
@@ -152,7 +152,7 @@ Vedremo ora degli esempi di spazi quoziente usati frequentemente.
 	Ad esempio, prendendo il disco $D^2$ con la relazione di equivalenza $\sim$ che identifica i punti del bordo:
 	\begin{equation*}
 		(x_1,\ y_1) \sim (x_2,\ y_2)\iff (x_1,\ y_1)=(x_2,\ y_2) \text{ oppure } x_1^2 +y_1^2= x_2^2 +y_2^2=1
-	\end{equation*} 
+	\end{equation*}
 	I punti all'\textit{interno del disco} vengono tutti identificati in classi di equivalenza \textit{separate}, dunque passando allo spazio quoziente avremo una classe per \textit{ciascun} punto interno e un'\textit{unica} classe per tutti il bordo.\\
 	Lo spazio quoziente ottenuto è $S^2$: possiamo ottenerlo visualmente ‘‘gonfiando'' l'interno del disco per poi chiudere il ‘‘palloncino'' ottenuto lungo i punti del bordo, come in figura.
 	\begin{center}
@@ -172,14 +172,14 @@ Sia $X$ uno spazio topologico, $A\subseteq X$, $\forall x,y\in X \ x\sim y\iff x
 
 \begin{attention}
 	Anche se $X$ è di \textbf{Hausdorff} non è detto che $\nicefrac{X}{A}$ sia di \textbf{Hausdorff}!\newline
-	Se $A$ non è chiuso allora $\nicefrac{X}{A}$ non è neanche \textbf{T1}, infatti $\pi^{-1}([A])=A$ non chiuso implica che $[A]$ non lo è, quindi per la caratterizzazione degli spazi \textbf{T1} (definizione \ref{T1}, pag. \pageref{T1}) $\nicefrac{X}{A}$ non è \textbf{T1}.\newline 
+	Se $A$ non è chiuso allora $\nicefrac{X}{A}$ non è neanche \textbf{T1}, infatti $\pi^{-1}([A])=A$ non chiuso implica che $[A]$ non lo è, quindi per la caratterizzazione degli spazi \textbf{T1} (definizione \ref{T1}, pag. \pageref{T1}) $\nicefrac{X}{A}$ non è \textbf{T1}.\newline
 	Tuttavia se $X$ è di \textbf{Hausdorff}, $K\subseteq X$ è compatto allora $\nicefrac{X}{K}$ è di \textbf{Hausdorff}.
 \end{attention}
 \subsubsection{Cono su uno spazio}
-\begin{define}\textsc{Cilindro.}\\
+\begin{define}[Cilindro.]~{}\\
 	Dato $X$ spazio topologico, si definisce \textbf{cilindro}\index{cilindro} su $X$ lo spazio $X\times \intv$.
 \end{define}
-\begin{define}\textsc{Cono.}\\
+\begin{define}[Cono.]~{}\\
 	Il \textbf{cono}\index{cono} su $X$ spazio topologico è il quoziente $\displaystyle \nicefrac{X\times\intv}{X\times\{1\}}$ oppure $\displaystyle \nicefrac{X\times\intv}{X\times\{0\}}$.
 \end{define}
 \begin{intuit}
@@ -208,9 +208,9 @@ Sia $X$ uno spazio topologico, $A\subseteq X$, $\forall x,y\in X \ x\sim y\iff x
 	Essa è continua, suriettiva, chiusa (compatto in \textbf{Hausdorff}), dunque $f$ è identificazione.\\
 	Verifichiamo che la relazione di equivalenza indotta da $f$ è proprio quella di contrazione:
 		\begin{gather*}
-			(\mathbf{x}, \ t)\sim (\mathbf{y}, \ s) \iff f(\mathbf{x}, \ t)=f(\mathbf{y}, \ s) \iff t\mathbf{x}=s\mathbf{y} \iff \begin{cases} 
-				\mathbf{x=y}, t=s \\ 
-				t=s=0 
+			(\mathbf{x}, \ t)\sim (\mathbf{y}, \ s) \iff f(\mathbf{x}, \ t)=f(\mathbf{y}, \ s) \iff t\mathbf{x}=s\mathbf{y} \iff \begin{cases}
+				\mathbf{x=y}, t=s \\
+				t=s=0
 			\end{cases}\\
 			\text{Se } t\neq 0 \implies \mathbf{x}=\frac{s}{t}\mathbf{y}, \text{ ma } \labs\mathbf{x}\rabs=1 \implies \left| \frac{s}{t} \right| \underbrace{\labs\mathbf{y}\rabs}_{=1}=1 \implies \left| \frac{s}{t} \right| =1 \implies s=t \implies \mathbf{x=y}
 		\end{gather*}
@@ -225,7 +225,7 @@ Sia $X=\realset\times\{a,b\}$.
 \end{center}
 Vogliamo definire una relazione di equivalenza che lasci ‘‘separate'' solo le origini:
 	\begin{gather*}
-		(x, \ \alpha)\sim (y, \ \beta) \iff 
+		(x, \ \alpha)\sim (y, \ \beta) \iff
 			\begin{cases}
 				x=y,\ \alpha=\beta \\
 				x=y\neq 0
@@ -234,13 +234,13 @@ Vogliamo definire una relazione di equivalenza che lasci ‘‘separate'' solo l
 \textsc{Proprietà}:
 \begin{enumerate}
 	\item $Y\coloneqq \nicefrac{X}{\sim}$ è c.p.a., infatti se i punti $(x, \ \alpha)$ e $(y, \ \beta)$ sono tali che $x\neq 0 \neq y$ basta prendere il segmento $\overline{xy}$ sulla retta $\realset\times\{a\}$ e proiettarlo. Per unire $(0,\ a)$ e $(0, \ b)$ basta unire entrambi con un cammino al punto $(1, \ a)=(1, \ b)$
-	\item $Y$ non è di \textbf{Hausdorff}: tutti gli intorni di $(0, \ a)$ si intersecano con tutti gli 	intorni di $(0, \ b)$ 
+	\item $Y$ non è di \textbf{Hausdorff}: tutti gli intorni di $(0, \ a)$ si intersecano con tutti gli intorni di $(0, \ b)$
 	\item $Y$ è \textit{localmente omeomorfo} a $\realset$, infatti ogni punto ha un intorno omeomorfo ad un intervallo aperto di $\realset$
 	\item $\exists K_1, K_2\subseteq Y$ compatti tali per cui $K_1\cap K_2$ \textit{non} è compatto: basta prendere $K_1=\pi\left([-1, \ 1]\times \{a\} \right)$ e $K_1=\pi\left([-1, \ 1]\times \{a\} \right)$ compatti in $Y$, ma $K_1\cap K_2= [-1,\ 0) \cup (0,\ 1]$ \textit{non} è compatto in $Y$
 \end{enumerate}
-\subsection{Quoziente Hausdroff}
-Cerchiamo ora delle condizioni per avere un \textit{quoziente Hausdorff}.
-\begin{theorema}\label{quozientehausdorff}
+\subsection{Quoziente di Hausdroff}
+Cerchiamo ora delle condizioni per avere un \textit{quoziente di} \textbf{Hausdorff}.
+\begin{theorema}[Condizioni sufficienti per il quoziente di Hausdorff.]~{}\\ \label{quozientehausdorff}
 	Sia $\funz f X Y$ continua e identificazione con $X$ compatto e di \textbf{Hausdorff}, allora sono equivalenti:
 		\begin{enumerate}
 			\item $Y$ è di \textbf{Hausdorff}.
@@ -256,7 +256,7 @@ Cerchiamo ora delle condizioni per avere un \textit{quoziente Hausdorff}.
 				& X\times X \arrow[rr, "h=f\times f" ,dotted] \arrow[lu, two heads] \arrow[ld, two heads] &  & Y\times Y \arrow[ru, two heads] \arrow[rd, two heads] &   \\
 				X \arrow[rrrr, "f"] &                                                                          &  &                                                       & Y	
 			\end{tikzcd} \]	
-	$3\implies 2)$ Per dimostrare che $f$ è chiusa bisogna far vedere che $\forall C\subseteq X, C$ chiuso $\implies f(C)\subseteq Y$ chiuso, ma $f$ è identificazione $\iff f^{-1}\left( f(C) \right)\subseteq X$ chiuso. Notiamo che $f^{-1}\left( f(C) \right)= p_1(k\cap p_2^{-1}(C))$, infatti 
+	$3\implies 2)$ Per dimostrare che $f$ è chiusa bisogna far vedere che $\forall C\subseteq X, C$ chiuso $\implies f(C)\subseteq Y$ chiuso, ma $f$ è identificazione $\iff f^{-1}\left( f(C) \right)\subseteq X$ chiuso. Notiamo che $f^{-1}\left( f(C) \right)= p_1(k\cap p_2^{-1}(C))$, infatti
 		\begin{gather*}
 			p_2^{-1}(C)=X\times C \implies K\cap p_2^{-1}(C)= \left\{ (x_1,\ x_2)\in X\times X \mid f(x_2)\in C \right\}\\
 			p_2 \text{ continua e $C$ chiuso } \implies p_2^{-1}(C) \text{ chiuso} \\

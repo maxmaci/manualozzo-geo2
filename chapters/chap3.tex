@@ -19,7 +19,7 @@
 In questo capitolo studieremo il \textbf{gruppo topologico}, un oggetto matematico che è dotato contemporaneamente sia di una struttura di \textit{gruppo}, sia di una di \textit{spazio topologico}. In questo modo, potremo eseguire operazioni algebriche e parlare di continuità allo stesso tempo. Vedremo inoltre le relazioni fra alcune proprietà che abbiamo già visto e questo nuovo oggetto di studio.
 \section{Gruppi topologici}
 Conoscendo le strutture di \textit{gruppo} e \textit{spazio topologico} su un insieme, vogliamo vedere come possono essere \textit{compatibili} fra loro.
-\begin{define}\textsc{Gruppo topologico.}\\
+\begin{define}[Gruppo topologico.]~{}\\
 	Un insieme $G$ si dice \textbf{gruppo topologico}\index{gruppo topologico} se:
 		\begin{itemize}
 			\item $G$ è un \textit{gruppo}.
@@ -71,7 +71,7 @@ Ci sono delle operazioni sulle matrici che sono continue:
 	Infatti, basta porre $\phi=L_{hg^{-1}}$ oppure $\phi=R_{g^{-1}h}$.
 \end{observe}
 Il seguente teorema ci permette di caratterizzare i gruppi topologici di \textbf{Hausdorff} grazie alla chiusura dell'elemento neutro.
-\begin{theorema}
+\begin{theorema}[G un gruppo topologico di Hausdorff se e solo se il neutro è chiuso.]~{}\\
 	Sia $G$ un gruppo topologico, $e\in G$ il suo elemento neutro, si ha che:
 		\begin{gather*}
 			G \ \text{di \textbf{Hausdorff}} \iff \{e\} \text{ chiuso }
@@ -92,16 +92,15 @@ Il seguente teorema ci permette di caratterizzare i gruppi topologici di \textbf
 	$\gl(n,\realset)$ è sconnesso. Mostriamo che è unione di due aperti non vuoti disgiunti sfruttando la funzione determinante $\funz \det {\gl(n,\realset)} {\realset^*}$, infatti essendo continua  le controimmagini di aperti saranno aperti:
 		\begin{gather*}
 			\begin{array}{lcl}
-				\det^{-1} \left( (0,+\infty)\right) & = & \gl ^+ (n,\realset) \\ 
+				\det^{-1} \left( (0,+\infty)\right) & = & \gl ^+ (n,\realset) \\
 				\det^{-1} \left( (-\infty,0)\right) & = & \gl ^- (n,\realset) \\
 			\end{array}
-		\implies \gl(n,\realset)=\gl^+(n,\realset) \sqcup \gl^-(n,\realset)
+		\implies \gl(n,\realset)=\gl^+(n,\realset) \amalg \gl^-(n,\realset)
 		\end{gather*}
 	\vspace{-3mm}
 \end{observe}
- Dimostriamo un lemma che generalizza il teorema \ref{unione sottospazi connessi}
- e che ci sarà utile nella dimostrazione successiva sulla connessione di alcuni gruppi topologici.
-\begin{lemming} \textsc{Manetti 4.18} \\
+ Dimostriamo un lemma che generalizza il teorema \ref{unione sottospazi connessi} e che ci sarà utile nella dimostrazione successiva sulla connessione di alcuni gruppi topologici.
+\begin{lemming}[$Y$ connesso con fibre connesse tramite $f$ suriettiva aperta/chiusa implica $X$ connesso; Manetti, 4.18.]~{}\\
 	Sia $\funz f X Y$ continua. Se $f$ è suriettiva aperta o chiusa, $Y$ è connesso e le fibre sono connesse, ovvero se $\forall y\in Y \ f^{-1}(y)$ è connesso, allora $X$ è connesso.
 \end{lemming}
 \begin{demonstration}
@@ -110,9 +109,9 @@ Il seguente teorema ci permette di caratterizzare i gruppi topologici di \textbf
 			\begin{array}{lcl}
 				f \text{ aperta } & \implies & f(A_1), f(A_2) \text{ aperti}\\
 				f \text{ suriettiva} & \implies & f(X)=Y \implies f(A_1\cup A_2)=f(A_1)\cup f(A_2)=Y \\
-				Y \text{ connesso } & \implies & f(A_1)\cap f(A_2)\neq\emptyset \implies \exists y_0\in f(A_1)\cap f(A_2) \implies \begin{cases} 
+				Y \text{ connesso } & \implies & f(A_1)\cap f(A_2)\neq\emptyset \implies \exists y_0\in f(A_1)\cap f(A_2) \implies \begin{cases}
 					f^{-1}(y_0) \cap A_1\neq \emptyset \\
-					f^{-1}(y_0) \cap A_2\neq \emptyset 
+					f^{-1}(y_0) \cap A_2\neq \emptyset
 				\end{cases}
 			\end{array} \\
 				\begin{cases}
@@ -123,8 +122,7 @@ Il seguente teorema ci permette di caratterizzare i gruppi topologici di \textbf
 				 \implies A_1\cap A_2\neq\emptyset
 		\end{gather*}
 \end{demonstration}
-\begin{theorema}
-	$\forall n\geq 1, \gl^+(n,\realset)$ e $\gl(n,\complexset)$ sono connessi.
+\begin{theorema}[$\protect\forall n\geq 1, {\gl^+(n,\realset)}$ e ${\gl(n,\complexset)}$ sono connessi.]
 \end{theorema}
 \begin{demonstration}
 	Si procede per induzione su $n$ per $\gl^+(n,\realset)$, il caso $\gl(n,\complexset)$ è analogo.\newline
@@ -132,7 +130,7 @@ Il seguente teorema ci permette di caratterizzare i gruppi topologici di \textbf
 			\gl^+(1,\realset)=(0,+\infty) \\
 			\gl(n,\complexset)=\complexset\setminus\{0\}=\realset^2\setminus{0}
 		\end{cases}$ connessi.\newline
-	$n>1 \ )$ \ \ Supponiamo che $\gl^+(n-1,\realset)$ sia connesso e dimostriamo che lo è anche $\gl(n,\realset)$. Cerchiamo dunque una funzione continua da $\gl^+(n,\realset)$  a $\gl(n-1,\realset)$ che soddisfi le ipotesi del lemma precedente. Pertanto si considera la funzione prima colonna $\displaystyle \funztot p {\realset^{n,n}} {\realset^n} A {p(A)}$ che mappa la prima colonna di $A$. Siccome $\realset^{n,n}=\realset^n\times\realset^{n,n-1}$ allora $p$ è una proiezione, dunque per il punto 2 della proposizione \ref{topprodotto}	è aperta. Restringiamo ora $p$ a $\gl^+(n,\realset)$ nel modo seguente $\funz p {\gl^+(n,\realset)} {\realset^n\setminus\{\mathbf{0}\}}$ che è una funzione continua, suriettiva e aperta, inoltre $\realset^n\setminus\{\mathbf{0}\}$ è connesso per $n>1$. Calcoliamo ora le fibre e mostriamo che sono tutte omeomorfe fra loro e connesse, quindi prima ne troviamo una, mostriamo che è connessa poi dimostriamo che sono tutte omeomorfe. A questo scopo consideriamo il seguente vettore e la sua fibra
+	$n>1 \ )$ \ \ Supponiamo che $\gl^+(n-1,\realset)$ sia connesso e dimostriamo che lo è anche $\gl(n,\realset)$. Cerchiamo dunque una funzione continua da $\gl^+(n,\realset)$  a $\gl(n-1,\realset)$ che soddisfi le ipotesi del lemma precedente. Pertanto si considera la funzione prima colonna $\displaystyle \funztot p {\realset^{n,n}} {\realset^n} A {p(A)}$ che mappa la prima colonna di $A$. Siccome $\realset^{n,n}=\realset^n\times\realset^{n,n-1}$ allora $p$ è una proiezione, dunque per il punto 2 della proposizione \ref{topprodotto}	è aperta. Restringiamo ora $p$ a $\gl^+(n,\realset)$ nel modo seguente $\funz p {\gl^+(n,\realset)} {\realset^n\setminus\{\mathbf{0}\}}$ che è una funzione continua, suriettiva e aperta, inoltre $\realset^n\setminus\{\mathbf{0}\}$ è connesso per $n>1$. Calcoliamo ora le fibre e mostriamo che sono tutte omeomorfe fra loro e connesse, quindi prima ne troviamo una, mostriamo che è connessa poi dimostriamo che sono tutte omeomorfe. A questo scopo consider
 		\begin{gather*}
 			y_0=\begin{pmatrix}
 					1 \\ 0 \\ \vdots \\ 0
@@ -166,15 +164,14 @@ Poniamo allora $B=A^{-1}C$:
 					p(B)&=p(A^{-1}C)=A^{-1}p(C)=A^{-1}y=A^{-1}p(A)=\\
 					&=p(A^{-1}A)=p(I)=y_0
 				\end{array}
-			\end{equation*} 
+			\end{equation*}
 	Poiché $C=AB$, allora $B\in p^{-1}(y_0)$.\\
 	Quindi, siccome tutte le fibre sono tutte omeomorfe ad una fibra connessa, allora sono tutte connesse e valgono le ipotesi del lemma precedente, per cui $\gl^+(n,\realset)$ è connesso.
 \end{demonstration}
 %WELP LA FORMATTAZIONE DEL GATHER* è ORRIBILE MA NON SO COME MIGLIORARLA
 
 %\LEZ 11
-\begin{corollary}
-	$\Sl(n,\realset)$ e $\Sl(n,\complexset)$ sono connessi.
+\begin{corollary}[$\Sl{(n,\realset)}$ e $\Sl{(n,\complexset)}$ sono connessi.]
 \end{corollary}
 \begin{demonstration}
 	Siccome $\gl^+(n,\realset)$ e $\gl(n,\complexset)$ sono connessi, basta considerare la seguente funzione:
@@ -190,15 +187,13 @@ Poniamo allora $B=A^{-1}C$:
 	Siccome $f$ è continua e suriettiva e $\gl^+(n,\realset)$ è connesso allora $f(\gl^+)=\Sl$ è connesso.
 \end{demonstration}
 
-\begin{corollary}
-	$\Or$ \textit{non} è connesso.	
+\begin{corollary}[$\Or$ \textit{non} è connesso.]
 \end{corollary}
 \begin{demonstration}
 	Siccome $\Or$ è sottogruppo di $\gl$ e la connessione è una proprietà topologica allora $\Or$ non è connesso. In particolare si può dividere in base a $\det =+1$ e $\det =-1$.
 \end{demonstration}
 
-\begin{theorema}
-	$\So(n), \U(n)	$ e $\Su(n)$ sono compatti e connessi.
+\begin{theorema}[$\So{(n)}, \U{(n)}$ e $\Su{(n)}$ sono compatti e connessi.]
 \end{theorema}
 \begin{demonstration}
 	Per dimostrare che sono \textit{compatti} essendo sottospazi di $\realset^{n\times n}$ per il teorema \ref{compatto chiuso e limitato R^n} basta dimostrare che sono chiusi e limitati. In particolare essendo definiti tramite equazioni che sono luoghi di zeri di polinomi in $a_{ij}$ allora sono chiusi:

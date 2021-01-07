@@ -15,17 +15,17 @@
 \end{flushright}
 \end{introduction}
 % inserire citazione
-\noindent In questo capitolo studieremo uno strumento importante dell'algebra: l'\textbf{azione di un gruppo} $G$ su un insieme $X$. Grazie a ciò, possiamo dire che gli elementi del gruppo ‘‘\textit{spostano}'' gli elementi dell'insieme in altri, senza dotare l'insieme di alcuna particolare \textit{struttura} od operazione. Alcuni gruppi sono definiti proprio sulla base delle azioni, come il \textit{gruppo simmetrico}: gli elementi sono le \textit{permutazioni} sull'insieme!\\ 
+\noindent In questo capitolo studieremo uno strumento importante dell'algebra: l'\textbf{azione di un gruppo} $G$ su un insieme $X$. Grazie a ciò, possiamo dire che gli elementi del gruppo ‘‘\textit{spostano}'' gli elementi dell'insieme in altri, senza dotare l'insieme di alcuna particolare \textit{struttura} od operazione. Alcuni gruppi sono definiti proprio sulla base delle azioni, come il \textit{gruppo simmetrico}: gli elementi sono le \textit{permutazioni} sull'insieme!\\
 Per gli scopi della topologia, le azioni di gruppo hanno particolare importanza: se nel \autoref{chap:topologia quoziente} abbiamo visto diversi tipi di spazi quozienti, generalmente dando una \textit{relazione di equivalenza} su un sottoinsieme relativamente semplice, qui introdurremo \textit{quozienti topologici} indotti da queste azioni di gruppo. Fra questi preannunciamo il ruolo di primo piano svolto dallo \textit{spazio proiettivo reale}.
 \section{Azione di un gruppo su un insieme}
-\begin{define}\textsc{Gruppo simmetrico.}\\
+\begin{define}[Gruppo simmetrico.]~{}\\ 
 	Sia $X$ un insieme. Si definisce il \textbf{gruppo simmetrico} sull'insieme $X$ come:
 	\begin{equation}
 		S(X)\coloneqq \{\funz f X X \mid f \text{ biunivoca}\}
 	\end{equation}
 \vspace{-6mm}
 \end{define}
-\begin{define}\textsc{Azione di un gruppo su un insieme.}\\
+\begin{define}[Azione di un gruppo su un insieme.]~{}\\ 
 	Sia $G$ un gruppo e $X$ un insieme. Un'\textbf{azione}\index{azione} di $G$ su $X$ è, equivalentemente:
 		\begin{itemize}
 			\item  $\funz \Phi G {S(X)}$ morfismo di gruppi, ovvero $\Phi(g\ldotp h)=\Phi(g)\Phi(h)$.
@@ -35,7 +35,7 @@ Per gli scopi della topologia, le azioni di gruppo hanno particolare importanza:
 	Se ho $\phi$ definisco $\funztot {\Phi(g)} X X x {\phi(g,\ x)}$.
 \end{define}
 
-\begin{define}\textsc{Relazione di equivalenza dell'azione.}\\
+\begin{define}[Relazione di equivalenza dell'azione.]~{}\\ 
 	Su $X$ definiamo una \textit{relazione di equivalenza} dettata dall'azione di un gruppo $G$:
 	\begin{equation*}
 		x\sim y\iff \exists g\in G \colon y=g\ldotp x
@@ -51,7 +51,7 @@ Per gli scopi della topologia, le azioni di gruppo hanno particolare importanza:
 	\end{itemize}
 \vspace{-3mm}
 \end{demonstration}
-\begin{define}\textsc{Orbita.}\\
+\begin{define}[Orbita.]~{}\\ 
 	Le classi di equivalenza date da questa relazione sono dette \textbf{orbite}\index{orbita}:
 		\begin{equation*}
 			[x]=G\ldotp x=\{y\in X \mid \exists y \colon y=g\ldotp x\}=\{ g\ldotp x\in X\mid g\in G \}
@@ -65,7 +65,7 @@ Vediamo ora un esempio di azione e di orbite.
 		Quindi $\nicefrac{\realset^n}{\gl(n, \realset)}=\{ a,\ b\}$ con $a=[\mathbf{0}]$ e $b=[\mathbf{v}], \mathbf{v\neq 0}$
 \end{example}
 \section{Stabilizzatore di un elemento}
-\begin{define}\textsc{Stabilizzatore di un elemento.}\\
+\begin{define}[Stabilizzatore di un elemento.]~{}\\ 
 Lo \textbf{stabilizzatore di un elemento}\index{stabilizzatore di un elemento} è l'insieme degli elementi di $G$ che fissano $x$:
 \begin{equation}
 H_x\coloneqq \left\{g\in G\mid g\ldotp x = x\right\}
@@ -126,7 +126,7 @@ $\includesx$ Sia $h\in H_{x_1}$ e consideriamo $ghg^{-1}$. Se moltiplico (con l'
 Pertanto $\forall h\in H_{x_1}\ \left(ghg^{-1}\right)\ldotp x_2= x_2$ e per l'arbitrarietà di $h$ si ha $g\ldotp H_{x_1}\ldotp g^{-1}\subseteq H_{x_2}$
 \end{demonstration}
 \section{Azione per omeomorfismi}
-\begin{define}\textsc{Azione per omeomorfismi.}\\
+\begin{define}[Azione per omeomorfismi.]~{}\\ 
 Sia $X$ uno spazio topologico e $G$ un gruppo che agisce su $X$. Diciamo che $G$ \textbf{agisce per omeomorfismi}\index{azione!per omeomorfismi} se $\forall g\in G$ l'applicazione:
 \begin{equation}
 \funztot{\theta_g}{X}{X}{x}{g\ldotp x}
@@ -138,8 +138,7 @@ Questo è equivalente a chiedere che l'azione sia data da un \textit{omomorfismo
 \end{equation}
 \vspace{-6mm}
 \end{define}
-\begin{lemming}
-$G$ agisce per omeomorfismi se e solo se $\theta_g$ è \textit{continua}, $\forall g\in G$.
+\begin{lemming}[$G$ agisce per omeomorfismi se e solo se $\theta_g$ è continua, $\forall g\in G$.]
 \end{lemming}
 \begin{demonstration}~{}\\
 $\impliesdx$ $G$ agisce per omeomorfismi se $\theta_g$ è un omeomorfismo $\forall g$, dunque banalmente $\theta_g$ è continua.\\
@@ -157,7 +156,7 @@ Allora, consideriamo $\theta_{g^{-1}},\ \forall g\in G$, consideriamo la composi
 \end{equation*}
 Cioè l'inversa di $\theta_g$ è $\theta_{g^{-1}}$. Ma allora per ipotesi anche $\theta_{g^{-1}}$ è continua, dunque segue la tesi.
 \end{demonstration}
-\begin{proposition}~{} \label{proiezione azione gruppo aperta}
+\begin{proposition}[Proiezione a $\nicefrac{X}{G}$ con $G$ agente per omeomorfismi è aperta.] \label{proiezione azione gruppo aperta}
 \begin{enumerate}
 \item Sia $X$ uno spazio topologico e $G$ un gruppo che agisce su $X$ per omeomorfismo. Sia $\pi$ la proiezione dall'insieme allo spazio delle orbite $\nicefrac{X}{G}$:
 	\begin{equation}
@@ -169,7 +168,7 @@ Allora $\pi$ è aperta e, se $G$ è finito, $\pi$ è anche chiusa.
 \vspace{-3mm}
 \end{proposition}
 \begin{demonstration}~{}
-\begin{enumerate}[label=\Roman*] 
+\begin{enumerate}[label=\Roman*]
 \item Sia $A\subseteq X$ un aperto. Vogliamo dimostrare che $\pi\left(A\right)$ è aperto in $\nicefrac{X}{G}$. Un aperto della topologia quoziente è tale se la controimmagine dell'aperto nel quoziente è un aperto: si deve allora dimostrare che $\pi^{-1}\left(\pi\left(A\right)\right)$ è aperto in $X$.\\
 Ogni elemento di $A$ è contenuto in un orbita, dunque $\pi\left(A\right)$ contiene le orbite degli $x\in A$; la controimmagine $\pi^{-1}\left(\pi\left(A\right)\right)$ risulta dunque pari all'unione di \textit{tutte} le orbite in $X$ che intersecano l'insieme $A$:
 \begin{equation*}
@@ -179,7 +178,7 @@ Ma allora $g\ldotp A=\left\{g\ldotp x\mid x\in A\right\}$ è un aperto $\forall 
 Preso $C$ chiuso, dobbiamo allo stesso modo dimostrare $\pi\left(C\right)$ chiuso in $\nicefrac{X}{G}$, cioè $\pi^{-1}\left(\pi\left(C\right)\right)$ chiuso in $X$. Usando lo stesso ragionamento, otteniamo che:
 \begin{equation*}
 	\pi^{-1}\left(\pi\left(C\right)\right)=\union_{g\in G} g\ldotp C
-\end{equation*} 
+\end{equation*}
 Con $g\ldotp C=\left\{g\ldotp x\mid x\in C\right\}$ chiuso per omeomorfismo. In particolare, essendo $G$ finito, segue che l'unione dei $g\ldotp C$ è finita e dunque anch'essa è un chiuso. Segue dunque $\pi^{-1}\left(\pi\left(C\right)\right)$ chiuso in $X$ e $\pi\left(C\right)$ chiuso in $\nicefrac{X}{G}$.
 \item Siano $p,\ q\in \nicefrac{X}{G}$ distinti. Vogliamo dimostrare che esistono intorni di $p$ e $q$ disgiunti.\\
 Siano $x,\ y\in X$ tali che $\pi\left(x\right)=p$ e $\pi\left(y\right)=q$ e consideriamo il gruppo finito $G=\left\{g_1=1_G,\ g_2,\ \ldots,\ g_n\right\}$. Le orbite di $x$ e $y$ sono diverse: se così non fosse, si avrebbe $\pi\left(x\right)=\pi\left(y\right)$ e cioè $p=q$, il che è assurdo! Allora:
@@ -242,7 +241,7 @@ Allora la relazione di equivalenza indotta da $f$ è quella dell'azione di $\int
 \begin{minipage}[t]{0.13\textwidth}\vspace{-10pt}
 \begin{tikzcd}
 	\realset \arrow[r, "f"] \arrow[d, "\pi"']                                   & S^1 \\
-	\nicefrac{\realset}{\integerset} \arrow[ru, "\exists\overline{f}"', dotted] &    
+	\nicefrac{\realset}{\integerset} \arrow[ru, "\exists\overline{f}"', dotted] &
 \end{tikzcd}
 \end{minipage}\\
 Inoltre, essendo $\nicefrac{\realset}{\integerset}$ compatto ed $S^1$ di \textbf{Hausdorff}, $\overline{f}$ è chiusa e dunque $\overline{f}$ è l'\textit{omeomorfismo} cercato. Per questo motivo, si ha anche che $f$ è un'\textit{identificazione} aperta.
@@ -280,15 +279,14 @@ L'azione è per omeomorfismi, dato che fissato $\lambda\in G$: $\funztot{\theta_
 \end{itemize}
 \vspace{-3mm}
 \end{example}
-\begin{define}\textsc{Spazio proiettivo reale.}\\ \label{def spazio proiettivo}
+\begin{define}[Spazio proiettivo reale.]~{}\\  \label{def spazio proiettivo}
 	Lo \textbf{spazio proiettivo reale}\index{spazio!proiettivo!reale} $\proj[n]{\realset}$ (o $\realset\proj[n]{\ }$) di dimensione $n$ è lo spazio topologico delle rette vettoriali passanti origine in $\realset^{n+1}$, a cui son state tolte l'origine. È definito come lo spazio quoziente rispetto all'azione del gruppo moltiplicativo $\realset^{\ast}$:
 	\begin{equation}
 		\proj[n]{\realset}= \frac{\realset^{n+1}\setminus \left\{0\right\}}{\realset^{\ast}}
 	\end{equation}
 \vspace{-6mm}
 \end{define}
-\begin{proposition}\label{spazi proiettivi compatti connessi}
-$\proj[n]{\realset}$ è di \textbf{Hausdorff}, \textit{compatto} e \textbf{c.p.a.}.
+\begin{proposition}[${\proj[n]{\realset}}$ è di Hausdorff, compatto e c.p.a.] \label{spazi proiettivi compatti connessi}
 \end{proposition}
 \begin{demonstration}~{}
 \begin{enumerate}[label=\Roman*]

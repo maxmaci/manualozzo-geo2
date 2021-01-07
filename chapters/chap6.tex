@@ -19,14 +19,14 @@
 Prima fare tutto ciò, tuttavia, abbiamo bisogno di introdurre degli \textbf{assiomi di numerabilità}, in modo da garantire l'esistenza di insiemi \textit{numerabili} di oggetti topologici; la maggior parte degli spazi topologici più comuni soddisfano almeno uno di questi assiomi.\\
 Il capitolo si conclude con un approfondimento delle successioni negli spazi metrici.
 \section{Numerabilità}
-\begin{define}\textsc{Insieme numerabile.}\\
+\begin{define}[Insieme numerabile.]~{}\\
 Un insieme $X$ è \textbf{numerabile}\index{numerabile} o di \textit{cardinalità numerabile} se è finito oppure esiste una biezione tra l'insieme $X$ e i naturali $\naturalset$.
 \end{define}
-\begin{define}\textsc{Secondo assioma di numerabilità (A base numerabile).}\\
+\begin{define}[Secondo assioma di numerabilità (A base numerabile).]~{}\\
 Uno spazio topologico $X$ è \textbf{a base numerabile}\seeonlyindex{a base numerabile}{assioma di numerabilità!secondo} se esiste una base $\basis$ della topologia tale che $\basis$ sia di \textit{cardinalità numerabile}.
 Si dice anche che $X$ soddisfa il \textbf{{\small secondo assioma di numerabilità}}\index{assioma di numerabilità!secondo}.
 \end{define}
-\begin{define}\textsc{Primo assioma di numerabilità.}\\
+\begin{define}[Primo assioma di numerabilità.]~{}\\
 Uno spazio topologico $X$ è \textit{primo numerabile}\seeonlyindex{primo numerabile}{assioma di numerabilità!primo} se ogni punto ammette un sistema fondamentale di intorni che sia numerabile. Si dice anche che $X$ soddisfa il \textbf{primo assioma di numerabilità}\index{assioma di numerabilità!primo}.
 \end{define}
 \begin{observes}~{}
@@ -65,7 +65,7 @@ Uno spazio topologico $X$ è \textit{primo numerabile}\seeonlyindex{primo numera
 	\end{itemize}
 \vspace{-6mm}
 \end{example}
-\begin{proposition}
+\begin{proposition}[Ogni ricoprimento aperto ammette un sottoricoprimento numerabile in spazio a base numerabile.]~{}\\
 Sia $X$ \textit{a base numerabile}. Allora ogni ricoprimento aperto di $X$ ammette un sottoricoprimento numerabile.
 \end{proposition}
 \begin{demonstration}
@@ -86,17 +86,17 @@ Se consideriamo ora $\widetilde{\mathcal{A}}\coloneqq\left\{U_x\mid x\in E\right
 \end{itemize}
 Segue che $\widetilde{\mathcal{A}}$ è un sottoricoprimento numerabile di $A$.
 \end{demonstration}
-\begin{define}\textsc{Spazio separabile.}\\
+\begin{define}[Spazio separabile.]~{}\\
 Uno spazio topologico $X$ si dice \textbf{separabile}\index{spazio topologico!separabile} se contiene un sottoinsieme $E$ \textit{denso} e \textit{numerabile}.
 \end{define}
 \begin{examples}~{}
 	\begin{itemize}
 		\item Se $X$ è numerabile, allora è separabile perché l'insieme stesso è un sottoinsieme numerabile e denso.
-		\item $\realset^n$ con la topologia euclidea è separabile perché si ha $E=\rationalset^n$ denso in $\realset^n$.
+		\item $\realset^n$ con la topologia Euclidea è separabile perché si ha $E=\rationalset^n$ denso in $\realset^n$.
 	\end{itemize}
 \vspace{-3mm}
 \end{examples}
-\begin{lemming}\label{basenumseparabile}
+\begin{lemming}[Base numerabile implica separabile.]~{}\\ \label{basenumseparabile}
 Se $X$ è \textit{a base numerabile}, allora è \textit{separabile}.
 \end{lemming}
 \begin{demonstration}
@@ -110,7 +110,7 @@ Se $X$ è \textit{a base numerabile}, allora è \textit{separabile}.
 \end{itemize}
 \vspace{-3mm}
 \end{demonstration}
-\begin{proposition}
+\begin{proposition}[$X$ metrico a base numerabile se e solo se separabile.]~{}\\
 	Se $X$ è spazio metrico, $X$ è sempre primo numerabile ed è:
 	\begin{center}
 		\textit{a base numerabile} $\iff$ \textit{separabile}
@@ -191,11 +191,11 @@ Notiamo che se $x\neq y$, allora $U\left(x\right)\neq U\left(y\right)$: preso $y
 		\end{tikzcd}
 \end{center}
 \section{Successioni}
-\begin{define}\textsc{Successione.}\\
+\begin{define}[Successione.]~{}\\
 Una \textbf{successione}\index{successione} in uno spazio topologico $X$ è una funzione:
 $\funz{a}{\naturalset}{X}$ che indichiamo con $\left\{a_n\right\}_{n\in\naturalset}=\left\{a_n\right\}$.
 \end{define}
-\begin{define}\textsc{Convergenza di una successione.}\\
+\begin{define}[Convergenza di una successione.]~{}\\
 Sia $\left\{a_n\right\}$ una successione in $X$. Diciamo che $\left\{a_n\right\}$ \textbf{converge}\index{convergenza} a $p\in X$ se $\forall U\in I\left(p\right)\ \exists n_0\in \naturalset\ \colon a_n\in U,\ \forall n\geq n_0$.
 \end{define}
 \begin{observe}
@@ -213,7 +213,7 @@ Sia $\left\{a_n\right\}$ una successione in $X$. Diciamo che $\left\{a_n\right\}
 \end{equation*}
 L'ultima implicazione deriva dal fatto che $X$ è di \textbf{Hausdorff}. Infatti, se in \textbf{Hausdorff} $p\neq q\implies U\cap V = \emptyset$, vale anche la sua negazione: $U\cap V\neq \emptyset\implies p = q$.
 \end{demonstration}
-\begin{define}\textsc{Limite.}\\
+\begin{define}[Limite.]~{}\\
 Se $X$ è di \textbf{Hausdorff} e $\left\{a_n\right\}$ è convergente, ha senso parlare del \textbf{limite} della successione:
 \begin{equation}
 p=\lim_{n \to +\infty}a_n
@@ -239,7 +239,7 @@ Se $X$ spazio metrico:
 	$\impliessx$ Sia $U\in I\left(p\right)$. Allora $\exists \epsilon\ \colon B_{\epsilon}\left(p\right)\subseteq U$. Ma allora, dato che per le ipotesi $\exists n_0\ \colon \mvf{d}{p}{a_n}<\epsilon,\ \forall n\geq n_0$, cioè $a_n\in B_{\epsilon}\left(p\right)\subseteq U\implies a_n\in U\forall n\geq n_0$.
 \end{demonstration}
 \subsection{Punti di accumulazione}
-\begin{define}\textsc{Punto di accumulazione per la successione.}\\
+\begin{define}[Punto di accumulazione per la successione.]~{}\\
 	Un punto $p\in X$ è \textbf{punto di accumulazione per la successione}\index{punto!di accumulazione!per una successione} $\left\{a_n\right\}$ se:
 	\begin{equation}
 		\forall U\in I\left(p\right),\ \forall N\in\naturalset\ \exists n\geq N\ \colon a_n\in U
@@ -254,7 +254,7 @@ Se $X$ spazio metrico:
 \vspace{-6mm}
 \end{exercise}
 
-\begin{define}\textsc{Punto di accumulazione per il sottoinsieme e derivato.}\\
+\begin{define}[Punto di accumulazione per il sottoinsieme e derivato.]~{}\\
 	Un punto $p\in X$ è \textbf{punto di accumulazione per il sottoinsieme}\index{punto!di accumulazione!per un sottoinsieme} $B\subseteq X$ se:
 	\begin{equation}
 		\forall U\in I\left(p\right),\ \exists b\in B \colon b\in U\setminus \left\{ p\right\}
@@ -270,16 +270,17 @@ Data la successione $\left\{a_n\right\}$ in $X$ e definito $A\coloneqq \{a_n\mid
 \vspace{-3mm}
 \end{exercise}
 \subsection{Sottosuccessioni}
-\begin{define}\textsc{Sottosuccessione.}\\
+\begin{define}[Sottosuccessione.]~{}\\
 Una \textbf{sottosuccessione}\index{successione!sottosuccessione} di $\left\{a_n\right\}$ è la composizione di $\funz{a}{\naturalset}{X}$ con un'applicazione \textit{strettamente crescente} $\funztot{k}{\naturalset}{\naturalset}{n}{k\left(n\right)}$. Si indica con $\left\{a_{k_n}\right\}$.
 \end{define}
-\begin{lemming}\label{lemmatriangolino} $\textcolor{blue}{\circled{{\large \blacktriangle}}}$ 	Sia $\left\{a_n\right\}$ una successione su $X$ e $p\in X$. Valgono le seguenti implicazioni:
+\begin{lemming}[Lemma delle successioni.]~{}\\ \label{lemmatriangolino}
+${\textcolor{blue}{\circled{{\large \blacktriangle}}}}$ Sia $\left\{a_n\right\}$ una successione su $X$ e $p\in X$. Valgono le seguenti implicazioni:
 	\begin{equation}
 		\circled{1}\ \left\{a_n\right\}\text{ converge a }p
 	\end{equation}
 \begin{equation*}
 	\begin{array}{ll}
-	\Downarrow 
+	\Downarrow
 \end{array}
 \end{equation*}
 \begin{equation}
@@ -313,7 +314,7 @@ Se $a_{k\left(n\right)}$ converge a $p$ si ha che $\exists n_0\ \colon a_{k\left
 Abbiamo che $a_{k\left(n\right)}\in U,\ k\left(n\right)\geq N$.\footnote{L'intorno $U$ è arbitrario.} Segue che $p$ è punto di accumulazione per $\left\{a_n\right\}$.\\
 $\circled{3}\implies\circled{4}$ $p\in \overline{A}\iff \forall U\in I\left(p\right)\ A\cap U\neq \emptyset$. Allora sia $U$ intorno di $p$: voglia che $U\cap A\neq \emptyset$. Essendo $p$ punto di accumulazione per $\left\{a_n\right\}$, $\exists n\ a_n\in U\implies U\cap A\neq \emptyset$.
 \end{demonstration}
-\begin{lemming}\label{primonumesucc}
+\begin{lemming}[In $X$ primo numerabile $a_n$ ha una sottosuccessione convergente a $p$ se $p$ di accumulazione per $a_n$.]~{}\\ \label{primonumesucc}
 Sia $X$ \textit{primo numerabile}, $\left\{a_n\right\}$ successione in $X$ e $p\in X$. Allora vale anche il viceversa di $\textcolor{red}{\circled{\ast}}$, cioè:
 \begin{equation}
 	\left\{a_n\right\}\text{ ha una sottosuccessione convergente a }p\iff p\text{ è di accumulazione per }\left\{a_n\right\}
@@ -343,8 +344,7 @@ E così via: $\forall m\ \exists k\left(m\right)\geq k\left(m-1\right)+1$ tale c
 Mostriamo che $\left\{A_{k\left(n\right)}\right\}$ converge a $p$.\\
 Sia $V$ intorno di $p$. Dal sistema fondamentale di intorni $\exists m_0$ tale che $U_{m_0}\subseteq V$. Da $\textcolor{blue}{{\large \smiley{}}}$ si ha che $\forall m\geq m_0\ a_{k\left(m\right)}\in U_{m_0}\subseteq V$.
 \end{demonstration}
-\begin{proposition}
-	\textsc{Caratterizzazione della chiusura in termini di successioni.}\\
+\begin{proposition}[Caratterizzazione della chiusura in termini di successioni.]~{}\\
 	Sia $X$ uno spazio topologico \textit{primo numerabile}. Sia $Y\subseteq X$ e $p\in X$. Sono equivalenti
 	\begin{itemize}
 		\item Esiste una successione in $Y$ convergente a $p$.
@@ -368,8 +368,8 @@ Sia $V$ intorno di $p$. Dal sistema fondamentale di intorni $\exists n_0$ tale c
 	In $\realset$, ciò comporta che ogni \textit{reale} può essere approssimato da una successione di soli \textit{razionali}, dato che $\overline{\rationalset}=\realset$.
 \end{observe}
 \section{Successioni e compatti}
-\begin{proposition}\label{compattocontenuto}\textsc{(Manetti, 4.46)}\\
-Sia $X$ spazio topologico e sia $K_n\subseteq X\ \forall n\in\naturalset$ un sottospazio chiuso, \textit{compatto} e non vuoto. Supponiamo inoltre che:
+\begin{proposition}[‘‘Successione'' di compatti ; Manetti, 4.46.]~{}\\ \label{compattocontenuto}
+Sia $X$ spazio topologico e sia $K_n\subseteq X,\ \forall n\in\naturalset$ un sottospazio chiuso, \textit{compatto} e non vuoto. Supponiamo inoltre che:
 \begin{equation*}
 K_n\supseteq K_n+1\ \forall n\implies K_1\supseteq K_2\supseteq K_3\supseteq \ldots
 \end{equation*}
@@ -391,7 +391,7 @@ Allora nessuna unione \textit{finita} degli $A_n$ ricopre $K_1$, cioè $\display
 \end{equation*}
 \vspace{-6mm}
 \end{demonstration}
-\begin{lemming}
+\begin{lemming}[Ogni successione in un compatto ha punti di accumulazione.]~{}\\
 In uno spazio topologico \textit{compatto} $X$ ogni successione in $X$ ha punti di accumulazione.
 \end{lemming}
 \begin{demonstration}
@@ -419,16 +419,16 @@ Abbiamo trovato una successione di compatti contenuto l'uno nel successivo. Allo
 Segue che esiste un punto di accumulazione per la successione.
 \end{demonstration}
 \subsection{Compattezza per successioni}
-\begin{define}\textsc{Compatto per successioni.}\\
+\begin{define}[Compatto per successioni.]~{}\\
 Sia $X$ spazio topologico. $X$ si dice \textbf{compatto per successioni}\index{compatto!per successioni} se ogni successione ammette una sottosuccessione convergente.
 \end{define}
 \begin{observe}
 Per il lemma \ref{lemmatriangolino} $\textcolor{blue}{\circled{{\large \blacktriangle}}}$ (pag. \pageref{lemmatriangolino}), se $X$ è compatto per successioni allora ogni successione in $X$ ha un punto di accumulazione.
 \end{observe}
-\begin{lemming}
+\begin{lemming}[Compattezza e prima numerabilità.]~{}\\
 	Sia $X$ \textit{primo numerabile.} Allora:
 \begin{enumerate}
-	\item $X$ compatto per successioni $\iff $ Ogni successione in $X$ ha un punto di accumulazione.
+	\item $X$ compatto per successioni $\iff $ ogni successione in $X$ ha un punto di accumulazione.
 	\item $X$ compatto $\implies$ $X$ compatto per successioni.
 \end{enumerate}
 \vspace{-3mm}
@@ -441,7 +441,7 @@ $\impliessx$ Vale per il lemma \ref{primonumesucc}, pag. \pageref{primonumesucc}
 \end{enumerate}
 \vspace{-3mm}
 \end{demonstration}
-\begin{proposition}\textsc{Caratterizzazione della compattezza in termini di successioni}\\
+\begin{proposition}[Caratterizzazione della compattezza in termini di successioni]
 	Sia $X$ uno spazio topologico a base numerabile. Allora sono equivalenti:
 	\begin{enumerate}
 		\item $X$ compatto.
@@ -473,10 +473,10 @@ Mostriamo che $\left\{x_n\right\}$ non ha sottosuccessioni convergenti. Sia $\le
 	\item $\mathcal{A}$ è un (sotto)ricoprimento di $X\implies \exists N\ \colon p\in A_N$
 	\item Da $\textcolor{red}{{\large \frownie{}}}$ (pag. \pageref{notatriste}) abbiamo che $x_n \notin A_N \ \forall n\geq N$  (dato che $x_n \notin A_j \ \forall j\leq n$, in particolare in $A_N$ per ogni $n\geq N$); si ha allora $x_{k\left(n\right)}\notin A_n\ \forall n\ \colon k\left(n\right)\geq N$.
 \end{itemize}
-Essendo $k\left(n\right)$ crescente, $\exists n_0\ \colon k\left(n\right)\geq N\ \forall n\geq n_0$. Segue che se $n\geq n_0$ allora $x_k\left(n\right)\notin A_N$ 
+Essendo $k\left(n\right)$ crescente, $\exists n_0\ \colon k\left(n\right)\geq N\ \forall n\geq n_0$. Segue che se $n\geq n_0$ allora $x_k\left(n\right)\notin A_N$
 Poiché $A_N$ è intorno di $p$, segue che $\left\{x_{k\left(n\right)}\right\}$ non converge a $p$.
 \end{demonstration}
-\begin{theorema}
+\begin{theorema}[Spazio metrico compatto se e solo se compatto per successioni.]~{}\\
 Sia $X$ spazio metrico. Allora:
 \begin{equation}
 	X\text{ compatto}\iff X\text{ compatto per successioni}
@@ -491,18 +491,18 @@ Sia $X$ spazio metrico. Allora:
 	\text{Compatto} \arrow[rrd, shift left, ] &  &                                                                                                                                                 \\
 	&  & \begin{array}{c}
 		\text{Ogni successione ha}\\ \text{un punto di accumulazione}
-	\end{array} \arrow[color=red, uu, "\substack{\text{primo}\\\text{numerabile}}"' nine, shift right=4]                                     
+	\end{array} \arrow[color=red, uu, "\substack{\text{primo}\\\text{numerabile}}"' nine, shift right=4]
 \end{tikzcd}
 \end{center}
 \section{Spazi metrici completi}
-\begin{define}\textsc{Successione di Cauchy.}\\
+\begin{define}[Successione di Cauchy.]~{}\\
 	Sia $\left(X,\ d\right)$ uno spazio metrico. Una successione $\left\{a_n\right\}$ si dice \textbf{di Cauchy}\index{successione!di Cauchy} se:
 	\begin{equation}
 		\forall \epsilon>0\ \exists n_0\in\naturalset\ \colon \mvf{d}{a_n}{a_m}<\epsilon,\ \forall n,\ m\geq n_0
 	\end{equation}
 \vspace{-6mm}
 \end{define}
-\begin{define}\textsc{Spazio metrico completo.}\\
+\begin{define}[Spazio metrico completo.]~{}\\
 	Uno spazio metrico $\left(X,\ d\right)$ si dice \textbf{completo}\index{spazio topologico!metrico!completo} {\small se ogni successione di Cauchy è convergente.}
 \end{define}
 \begin{observes}~{}
@@ -535,12 +535,12 @@ Essendo $p$ di accumulazione, $\exists n_1\geq n_0$ tale per cui $\mvf{d}{p}{a_{
 Dunque $\left\{a_n\right\}$ converge a $p$.
 \item Poiché $X$ è metrico, $X$ è primo numerabile, dunque avere un punto di accumulazione è equivalente ad avere una sottosuccessione convergente.
 \item Se $X$ è compatto, ogni successione ha punti di accumulazione, in particolare quelle di Cauchy: per il punto $2)$ tutte le successioni di Cauchy risultano allora convergenti.
-\item Segue dal punto $4)$. Un controesempio del viceversa è $\mathbb{R}^n$, dato che è completo ma non è compatto (si veda il teorema seguente). 
+\item Segue dal punto $4)$. Un controesempio del viceversa è $\mathbb{R}^n$, dato che è completo ma non è compatto (si veda il teorema seguente).
 \end{enumerate}
 \vspace{-3mm}
 \end{demonstration}
-\begin{theorema}
-	$\realset^n$ in metrica euclidea è uno spazio metrico completo.
+\begin{theorema}[$\realset^n$ in top. Euclidea è spazio metrico completo.]~{}\\
+	$\realset^n$ in metrica Euclidea è uno spazio metrico completo.
 \end{theorema}
 \begin{demonstration}
 	Sia $\left\{a_n\right\}$ di Cauchy in $\realset^n$. Mostriamo che $\left\{a_n\right\}$ è eventualmente limitata\footnote{Supponendo chiaramente che la successione sia ben definita, ci interessa solamente che la successione sia limitata dopo un $n_0$: prima di ciò ho un numero finito di termini $a_0,\ \ldots,\ a_{n_0}<\infty$ e posso chiaramente prendere una palla (chiusa) che li contenga, ad esempio di raggio $M+1$ con $M$ definito come nella dimostrazione.}.\\
@@ -555,5 +555,5 @@ Sia $M\coloneqq \max_{n_0,\ \ldots,\ n_0}\labs a_n\rabs$. Se $n\geq n_0$ si ha:
 Questo significa che $\left\{a_n\right\}\subseteq\overline{B_{1+M}\left(0\right)}$. Questa palla chiusa è uno spazio metrico \textit{indotto} in $\realset^n$ e compatto, cioè è uno \textit{spazio metrico completo}. Allora la successione di Cauchy, trovandosi in uno spazio metrico completo, converge in esso, e dunque converge anche in $\realset^n$.
 \end{demonstration}
 \begin{attention}
-La \textbf{completezza} \textit{non} è una proprietà topologica! Per esempio, $\realset$ e $\left(0,\ 1\right)$ con metrica euclidea sono omeomorfi rispetto alla topologia indotta dalla metrica, ma $\realset$ abbiamo appena dimostrato che è completo, mentre $\left(0,\ 1\right)$ si può vedere che non lo è!
+La \textbf{completezza} \textit{non} è una proprietà topologica! Per esempio, $\realset$ e $\left(0,\ 1\right)$ con metrica Euclidea sono omeomorfi rispetto alla topologia indotta dalla metrica, ma $\realset$ abbiamo appena dimostrato che è completo, mentre $\left(0,\ 1\right)$ si può vedere che non lo è!
 \end{attention}
