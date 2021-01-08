@@ -24,20 +24,20 @@
 \section{Capitolo 1: spazi topologici}
 \subsection{Alcune proprietà della continuità}
 Le seguenti dimostrazioni sulle continuità di funzioni sono da \cite{munkres:2000topology}.
-\begin{theorema}\textsc{(Munkres, 18.2b)}\\
+\begin{theorema}[Inclusione è funzione continua; Munkres, 18.2b.]~{}\\
 	Se $Z\subseteq X$ è sottospazio, l'inclusione $\incl{i}{Z}{X}$ è una funzione continua.
 \end{theorema}
 \begin{demonstration}
 	Se $A$ è un aperto in $X$, allora $i^{-1}\left(A\right)=A\cap Z$ è un aperto in $Z$ per definizione della topologia di sottospazio.
 \end{demonstration}
-\begin{theorema}\textsc{(Munkres, 18.2d)}\\
+\begin{theorema}[Restrizione di una funzione continua è continua; Munkres, 18.2d.]~{}\\
 	Se $\funz{f}{X}{Y}$ è una funzione continua, allora $\funz{f_{\mid Z}}{Z}{Y}$ è continua per ogni sottospazio $Z\subseteq X$.
 \end{theorema}
 \begin{demonstration}
 	La funzione $f_{\mid Z}$ è la composizione dell'inclusione $\incl{i}{Z}{X}$ con la funzione $\funz{f}{X}{Y}$. Poiché la composizione di funzioni continue è continua (teorema \ref{compfunzcont}, pag. \pageref{compfunzcont}), segue la tesi.
 \end{demonstration}
 Le seguente dimostrazioni sulle restrizioni di omeomorfismi è un'elaborazione personale sulle basi dei teoremi precedenti.
-\begin{corollary}
+\begin{corollary}[Restrizione di un omeomorfismo è omeomorfismo.]~{}\\
 Se $\funz{f}{X}{Y}$ è un omeomorfismo, allora $\funz{f_{\mid Z}}{Z}{f\left(Z\right)}$ è omeomorfismo per ogni sottospazio $Z\subseteq X$. In particolare, $\funz{f_{X\setminus Z}}{X\setminus Z}{Y\setminus f\left(Z\right)}$.
 \end{corollary}
 \begin{demonstration}
@@ -259,14 +259,14 @@ C_A\left(t\right)=\det\left(
 \end{demonstration}
 \subsection{Convergenza uniforme}\label{convergenzauniforme}
 Tutti i ragionamenti qui presenti si applicano anche alle successioni e serie di potenze.
-\begin{define}
+\begin{define}[Convergenza uniforme.]~{}\\
 	Dato un insieme $E$ e un successione $\left(f_n\right)_{n\in\naturalset}$ con $\funz{f_n}{E}{X}$ con $X$ metrico, si dice che la successione è uniformemente convergente \index{convergenza!uniforme} su $E$ con limite $\funz{f}{E}{X}$ se:
 	\begin{equation}
 		\forall\epsilon>0\ \exists N\in\naturalset\ \colon \forall n\geq N,\ x\in E \mvf{d}{f_n\left(x\right)}{f\left(x\right)}<\epsilon
 	\end{equation}
 \vspace{-6mm}
 \end{define}
-\begin{define}\textsc{Criterio di Weierstrass o M-test}\\
+\begin{theorema}[Criterio di Weierstrass o M-test.]~{}\\
 	Sia $\left(f_n\right)_{n\in\naturalset}$ una successione di funzioni \textit{reali} o \textit{complesse} definite su un insieme $A$ e che esista una successione di numeri \textit{non negativi} $\left(M_n\right)_{n\in\naturalset}$ che soddisfino la seguente relazione:
 	\begin{equation}
 		\forall n\geq 1,\ x\in A\ \colon \lvert f_n\left(x\right)\rvert \leq M_n,\ \sum_{n=1}^{\infty}M_n<\infty
@@ -276,14 +276,14 @@ Allora la serie:
 	\sum_{n=1}^{\infty}f_n
 \end{equation}
 Converge \textit{assolutamente} e \textit{uniformemente} su $A$
-\end{define}
+\end{theorema}
 Si usa spesso l'\textit{M-test} assieme al \textbf{teorema del limite uniforme}.
-\begin{define}
+\begin{theorema}[Teorema del limite uniforme.]~{}\\
 Sia $\left(f_n\right)_{n\in\naturalset}$ una successione di funzioni \textit{reali} o \textit{complesse} continue sullo spazio topologico $A$ nel quale sono definite; se la successione converge uniformemente su $A$ allora il limite converge ad una funzione continua. In particolare, lo stesso si ha nel caso di una serie.
-\end{define}
+\end{theorema}
 \section{Capitolo 11: geometria proiettiva}
 \subsection{Regola di Cramer}\label{Cramerrimembriancor}
-\begin{theorema}\textsc{Regola di Cramer}.\\
+\begin{theorema}[Regola di Cramer.]~{}\\
 	Si consideri un sistema $A\mathbf{x}=\mathbf{b}$ di $n$ equazioni lineari in $n$ incognite, con $\det A \neq 0$. Il sistema ha un unica soluzione $\mathbf{x}$, le cui componenti sono:
 	\begin{equation}
 		x_i=\frac{\det A_i}{\det A}\quad i=1,\ \ldots,\ n
