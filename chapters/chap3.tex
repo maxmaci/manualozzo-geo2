@@ -32,7 +32,7 @@ Conoscendo le strutture di \textit{gruppo} e \textit{spazio topologico} su un in
 	\vspace{-3mm}
 \end{define}
 Vediamo ora degli esempi noti di gruppi topologici.
-\begin{examples}
+\begin{examples}~{}
 	\begin{itemize}
 		\item $\left( \realset^n, \ +, \ \mathcal{E_{ucl}} \right), \left( \complexset ^n, \ +, \ \mathcal{E_{ucl}} \right)$.
 		\item $\left( \realset^*, \ \cdot,\ \mathcal{E_{ucl}} \right), \left( \realset^*, \ \cdot, \ \mathcal{E_{ucl}} \right)$ con la topologia indotta di sottospazio.
@@ -213,12 +213,16 @@ Poniamo allora $B=A^{-1}C$:
 			A\in\So(n) \implies \sum_{i=1}^n a_{ij}^2=1, \forall i=1,\dots,n \implies \sum_{i=1}^n a_{ij}^2=n \implies \So(n)\subseteq S_{\sqrt{n}}\subseteq\realset^{n\times n}
 		\end{gather*}
 	dove $S_{\sqrt{n}}$ è la sfera di raggio $\sqrt{n}$, dunque $\So(n)$ è limitato. Ne segue che anche $\U(n)$ e $\Su(n)$ lo sono, dunque sono tutti chiusi e limitati in $\realset^{n\times n}$, quindi compatti. \newline
-	Per dimostrare che sono \textit{connessi} si procede analogamente al teorema precedente sfruttando il lemma che lo precede. Si consideri $\funz p {\So(n)} {S^{n-1}\subseteq \realset^n}$ funzione prima colonna, essa è continua, suriettiva e chiusa in quanto è un compatto (appena dimostrati) in un \textbf{Hausdorff}, e le sue fibra sono connesse $\displaystyle p^{-1}\left( \begin{psmallmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{psmallmatrix} \right) = \begin{psmallmatrix}
-		1      & 0 & \cdots & 0\\
-		0      &   &       &  \\
-		\vdots &   & A     &  \\
-		0      &   &       &
-	\end{psmallmatrix}$ con $A\in \So(n-1)$, dunque per il lemma precedente $\So(n)$ è connesso.
+	Per dimostrare che sono \textit{connessi} si procede analogamente al teorema precedente sfruttando il lemma che lo precede. Si consideri $\funz p {\So(n)} {S^{n-1}\subseteq \realset^n}$ funzione prima colonna, essa è continua, suriettiva e chiusa in quanto è un compatto in un \textbf{Hausdorff}, e le sue fibra sono connesse:
+	\begin{equation*}
+		p^{-1}\left( \begin{psmallmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{psmallmatrix} \right) = \begin{psmallmatrix}
+			1      & 0 & \cdots & 0\\
+			0      &   &       &  \\
+			\vdots &   & A     &  \\
+			0      &   &       &
+		\end{psmallmatrix}
+	\end{equation*}
+Con $A\in \So(n-1)$, dunque per il lemma precedente $\So(n)$ è connesso.
 \end{demonstration}
 
 \begin{observe}

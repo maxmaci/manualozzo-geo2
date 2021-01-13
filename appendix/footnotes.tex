@@ -67,6 +67,77 @@ V=\pi\left[\bigcup_{k\in\integerset}(k-\delta_k,k+\delta_k)\right]
 \end{equation*}
 Chiaramente $V$ è un intorno aperto di $[0]$, e vogliamo dimostrare che $U_n\nsubseteq V$ per ogni $n\in\naturalset$. Per mostrare ciò, fissiamo $n\in\naturalset$; si ha $\delta_n<\epsilon_{n,n}$, quindi possiamo sceglie un numero reale $x\in(n+\delta_n,n+\epsilon_{n,n})$. Ma allora $\pi(x)\in U_n\setminus V$, e dunque $U_n\nsubseteq V$.
 \end{demonstration}
+\section{Capitolo 8: gruppo fondamentale}
+\subsection{Funzioni iniettive e sottogruppi}\label{isomorfismosottogruppo}
+La seguente dimostrazione è adattata da \cite{HagenVonEitzen:injectivesubgroup} su Mathematics Stack Exchange.
+\begin{lemming}[Funzione iniettiva fra gruppi implica isomorfismo con sottogruppo.]~{}\\
+Dati due gruppi $G$ e $H$, se $\funz{f}{G}{H}$ è omomorfismo \textit{iniettivo} allora $G$ è \textit{isomorfo} al sottogruppo $K=f\left(G\right)$ di $H$.
+\end{lemming}
+\begin{demonstration}
+	Banalmente, preso $K=f\left(G\right)$ abbiamo ristretto l'omeomorfismo iniettivo alla sua immagine, rendendolo suriettivo e dunque biettivo.\\
+	Per verificare che $K$ è sottogruppo usiamo ora il criterio seguente: un sottoinsieme $K$ di $H$ è un sottogruppo se non è vuoto e $a,\ b\in K\implies ab^{-1}\in K$. Poiché $G$ è non vuoto, $K=f\left(G\right)$ non è vuoto. Presi allora $a,\ b\in K$, troviamo $x,\ y\in G$ tali che $f\left(x\right)=a,\ f\left(y\right)=b$. Allora:
+	\begin{equation*}
+		ab^{-1}=f\left(x\right)f\left(y\right)^{-1}f\left(xy^{-1}\right)\in K
+	\end{equation*}
+\vspace{-6mm}
+\end{demonstration}
+\subsection{Gruppi liberi}\label{gruppolibero}
+\begin{define}[Parola.]~{}\\
+	Dato un gruppo $G$, una \textbf{parola}\index{parola} è un qualunque prodotto di elementi del gruppo e dei loro inversi.
+\end{define}
+Se $a,\ b,\ c$ sono elementi del gruppo $G$, alcune possibili parole sono $ab$, $abca^{-1}$, $ccb^{-1}ab$.  Due parole sono considerate \textit{distinte} se non possiamo ricondurci dall'una all'altra attraverso gli assiomi di gruppi: ad esempio, $ab=acc^{-1}a$, ma $a\neq b^{-1}$. Una parola può essere semplificata in due modi differenti:
+\begin{itemize}
+	\item Togliendo l'elemento neutro $e$ o una coppia di elementi adiacenti $aa^{-1}$ o $a^{-1}a$.
+	\item Sostituendo ad una coppia $ab$ il loro prodotto $d$ in $G$ oppure ad una serie di $k$ termini $a\ldots a$ la potenza $a^k$.
+\end{itemize}
+Una parola che non può essere semplificata ulteriormente è detta \textbf{ridotta}\index{parola!ridotta}.
+\begin{define}[Gruppo libero.]~{}\\
+Il \textbf{gruppo libero}\index{gruppo!libero} $F_S$ su un insieme $S$ è il gruppo i cui elementi sono tutte le parole ridotte date dagli elementi di $S$; l'operazione è la \textbf{concatenazione}\index{concatenazione} di parole e l'elemento neutro è la \textit{parola vuota} (la parola senza alcun elemento di $S$).\\
+Gli elementi di $S$ sono detti \textbf{generatori}\index{generatori} e il numero di generatori è il \textbf{rango} del gruppo libero.\\
+Un gruppo $G$ è detto \textbf{libero} se isomorfo al gruppo libero $F_S$ generato dal sottoinsieme $S\subseteq G$.
+\end{define}
+\begin{example}
+	$\left(\integerset,\ +\right)$ è un gruppo libero di rango 1, generato da, ad esempio, $S=\{1\}$. Esso è un gruppo libero \textit{abeliano}.
+\end{example}
+\begin{observes}~{}
+	\begin{itemize}
+		\item Ogni gruppo finito di rango $\geq 2$ è \textit{non} abeliano.
+		\item Ogni gruppo non triviale \textit{finito} non può essere libero, in quanto gli elementi dell'insieme $S$ generante $F_S$ hanno ordine infinito. 
+	\end{itemize}
+\vspace{-3mm}
+\end{observes}
+\begin{define}[Prodotto libero.]~{}\\
+	Dati due gruppi $G$ e $H$, il \textbf{prodotto libero}\index{prodotto!libero} $G\ast H$ è il gruppo i cui elementi sono le parole ridotte date da generatori $g_i\in G$ e in $h_j\in H$, ad esempio $g_1h_1\ldots g_k h_k$.
+\end{define}
+\begin{example}~{}
+		\begin{itemize}
+		\item Se $G=\left<a\right>$ e $H=\left<b\right>$ sono gruppi ciclici infiniti, ogni elemento di $G\ast H$ è dato da prodotti alternati di potenze di $a$ e potenze di $b$, cioè $G\ast H\cong F_S$ con $S=\{x,\ y\}$. Alcune parole sono, ad esempio, $a^3b^5a^{-1}b$ o $b^{-2}ab^{-3}$.
+		\item Preso $\left(\integerset,\ +\right)$, $\integerset\ast\integerset$ è un gruppo libero di rango 2 come l'esempio precedente: infatti, ogni gruppo ciclico infinito è isomorfo a $\integerset$, dunque ci riconduciamo all'esempio precedente. Possiamo quindi scrivere $\integerset\ast\integerset=\left<a\right>\ast\left<b\right>$, indicando $\{a\}$ come il generatore $\{\textcolor{redill}{1}\}$ del primo $\integerset$ e $\{b\}$ come il generatore $\{\textcolor{blueill}{1}\}$ del secondo $\integerset$.\\
+		Alcune parole sono, ad esempio, $a^3b^5a^{-1}b=(\textcolor{redill}{3})(\textcolor{blueill}{5})(\textcolor{redill}{-1})(\textcolor{blueill}{1})$ o $b^{-2}ab^{-3}=(\textcolor{blueill}{-2})(\textcolor{redill}{1})(\textcolor{blueill}{-3})$.
+	\end{itemize}
+\vspace{-3mm}
+\end{example}
+\section{Somma wedge}
+\begin{define}[Somma wedge.]~{}\\
+	Se $\left(X,\ x_0\right)$ e $\left(X,\ y_0\right)$ sono due spazi topologici di cui prendiamo i punti $x_0\in X$ e $y_0\in Y$. La somma wedge di $X$ e $Y$ è lo spazio quoziente dell'unione disgiunta di $X$ e $Y$ in cui identifichiamo solo i due punti, cioè poniamo $x_0\sim y_0$:
+	\begin{equation}
+		X\vee Y=\frac{X\amalg Y}{\sim}
+	\end{equation}
+Nel caso di una famiglia di spazi $\left\{\left(X_i,\ x_i\right)\right\}_{i\in I}$, la relazione $\sim$ è tale per cui $\left\{x_i\right\}_{i\in I}$ sono tutti identificati fra di loro; la somma wedge della famiglia è definita come:
+\begin{equation*}
+	\bigvee_{i\in I} X_i = \frac{\coprod_{i\in I}X_i}{\sim}
+\end{equation*}
+\end{define}
+\begin{example}
+	Il \textit{bouquet} di $n$ circonferenze è una somma wedge di $n$ circonferenze.
+\end{example}
+In questa sede non approfondiamo ulteriormente, ma è interessante sapere come con certi spazi topologici che si comportano ‘‘bene'' il \textit{teorema di Van Kampen} ci dà condizioni per cui il gruppo fondamentale di $X\vee Y$ è il gruppo libero dei gruppi fondamentali di $X$ e $Y$:
+\begin{equation}
+	\gruf{X\vee Y}{\ }=\gruf{X}{\ }\ast\gruf{Y}{\ }
+\end{equation}
+\begin{example}
+	Il \textit{bouquet} di $2$ circonferenze $S^1\vee S^1$ ha gruppo fondamentale $\gruf{S^1\vee S^1}{\ }=\gruf{S^1}{\ }\ast\gruf{S^1}{\ }$  $\gruf{S^1\vee S^1}{\ }=\integerset\ast\integerset$.
+\end{example}
 \section{Capitolo 10: approfondimenti di Algebra Lineare}
 \subsection{Determinante di una matrice a blocchi}
 La seguente dimostrazione sul determinante di una matrice a blocchi e del suo polinomio caratteristico si basa su integrazioni proprie da \cite{jeanmarie:blockdet} e da \cite{bengrossman:blockdet} su Mathematics Stack Exchange. \label{dimostrazionedeterminantematriceblocchi}

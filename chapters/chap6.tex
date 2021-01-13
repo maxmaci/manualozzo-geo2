@@ -60,7 +60,7 @@ Uno spazio topologico $X$ è \textit{primo numerabile}\seeonlyindex{primo numera
 		\item È numerabile (è definita con i razionali $\rationalset$, che sono numerabili)
 		\item È una base perché, dati $x,\ y\in\realset,\ x<y$:
 		\begin{equation*}
-			\left(x,\ y\right)=\union_{\substack{a, b\in\rationalset\\ x<a<b<y}}\left(a,\ b\right)
+			\left(x,\ y\right)=\union_{\substack{a, b\in\rationalset\\x<a<b<y}}\left(a,\ b\right)
 		\end{equation*}
 	\end{itemize}
 \vspace{-6mm}
@@ -96,7 +96,7 @@ Uno spazio topologico $X$ si dice \textbf{separabile}\index{spazio topologico!se
 	\end{itemize}
 \vspace{-3mm}
 \end{examples}
-\begin{lemming}[Base numerabile implica separabile.]~{}\\ \label{basenumseparabile}
+\begin{lemming}[Base numerabile implica separabile.]~{}\label{basenumseparabile}\\
 Se $X$ è \textit{a base numerabile}, allora è \textit{separabile}.
 \end{lemming}
 \begin{demonstration}
@@ -273,7 +273,7 @@ Data la successione $\left\{a_n\right\}$ in $X$ e definito $A\coloneqq \{a_n\mid
 \begin{define}[Sottosuccessione.]~{}\\
 Una \textbf{sottosuccessione}\index{successione!sottosuccessione} di $\left\{a_n\right\}$ è la composizione di $\funz{a}{\naturalset}{X}$ con un'applicazione \textit{strettamente crescente} $\funztot{k}{\naturalset}{\naturalset}{n}{k\left(n\right)}$. Si indica con $\left\{a_{k_n}\right\}$.
 \end{define}
-\begin{lemming}[Lemma delle successioni.]~{}\\ \label{lemmatriangolino}
+\begin{lemming}[Lemma delle successioni.]~{}\label{lemmatriangolino}\\
 ${\textcolor{blue}{\circled{{\large \blacktriangle}}}}$ Sia $\left\{a_n\right\}$ una successione su $X$ e $p\in X$. Valgono le seguenti implicazioni:
 	\begin{equation}
 		\circled{1}\ \left\{a_n\right\}\text{ converge a }p
@@ -307,14 +307,14 @@ ${\textcolor{blue}{\circled{{\large \blacktriangle}}}}$ Sia $\left\{a_n\right\}$
 \begin{demonstration}~{}\\
 $\circled{1}\implies\circled{2}$ La sottosuccessione convergente è la successione stessa.\\
 $\circled{2}\implies\circled{3}$ Sia $\left\{a_{k\left(n\right)}\right\}$ una sottosuccessione convergente a $p$ e sia $U\in I\left(p\right)$. \\
-Se $a_{k\left(n\right)}$ converge a $p$ si ha che $\exists n_0\ \colon a_{k\left(n\right)}\in U,\ \forall n\geq n_0$. Poichè $k\left(n\right)$ è strettamente crescente, $\exists n_1\ \colon k\left(n\right)\geq N,\ \forall n\geq n_1$. Allora preso:
+Se $a_{k\left(n\right)}$ converge a $p$ si ha che $\exists n_0\ \colon a_{k\left(n\right)}\in U,\ \forall n\geq n_0$. Poiché $k\left(n\right)$ è strettamente crescente, $\exists n_1\ \colon k\left(n\right)\geq N,\ \forall n\geq n_1$. Allora preso:
 \begin{equation*}
 	n=\max\left\{n_0,\ n_1\right\}
 \end{equation*}
 Abbiamo che $a_{k\left(n\right)}\in U,\ k\left(n\right)\geq N$.\footnote{L'intorno $U$ è arbitrario.} Segue che $p$ è punto di accumulazione per $\left\{a_n\right\}$.\\
 $\circled{3}\implies\circled{4}$ $p\in \overline{A}\iff \forall U\in I\left(p\right)\ A\cap U\neq \emptyset$. Allora sia $U$ intorno di $p$: voglia che $U\cap A\neq \emptyset$. Essendo $p$ punto di accumulazione per $\left\{a_n\right\}$, $\exists n\ a_n\in U\implies U\cap A\neq \emptyset$.
 \end{demonstration}
-\begin{lemming}[In $X$ primo numerabile $a_n$ ha una sottosuccessione convergente a $p$ se $p$ di accumulazione per $a_n$.]~{}\\ \label{primonumesucc}
+\begin{lemming}[In $X$ primo numerabile $a_n$ ha una sottosuccessione convergente a $p$ se $p$ di accumulazione per $a_n$.]~{}\label{primonumesucc}\\
 Sia $X$ \textit{primo numerabile}, $\left\{a_n\right\}$ successione in $X$ e $p\in X$. Allora vale anche il viceversa di $\textcolor{red}{\circled{\ast}}$, cioè:
 \begin{equation}
 	\left\{a_n\right\}\text{ ha una sottosuccessione convergente a }p\iff p\text{ è di accumulazione per }\left\{a_n\right\}
@@ -368,7 +368,7 @@ Sia $V$ intorno di $p$. Dal sistema fondamentale di intorni $\exists n_0$ tale c
 	In $\realset$, ciò comporta che ogni \textit{reale} può essere approssimato da una successione di soli \textit{razionali}, dato che $\overline{\rationalset}=\realset$.
 \end{observe}
 \section{Successioni e compatti}
-\begin{proposition}[‘‘Successione'' di compatti ; Manetti, 4.46.]~{}\\ \label{compattocontenuto}
+\begin{proposition}[‘‘Successione'' di compatti ; Manetti, 4.46.]~{}\label{compattocontenuto}\\
 Sia $X$ spazio topologico e sia $K_n\subseteq X,\ \forall n\in\naturalset$ un sottospazio chiuso, \textit{compatto} e non vuoto. Supponiamo inoltre che:
 \begin{equation*}
 K_n\supseteq K_n+1\ \forall n\implies K_1\supseteq K_2\supseteq K_3\supseteq \ldots
@@ -486,11 +486,11 @@ Sia $X$ spazio metrico. Allora:
 \begin{center}
 \begin{tikzcd}
 	&  & \begin{array}{c}
-		\text{Compatto per}\\ \text{successioni}
+		\text{Compatto per}\\\text{successioni}
 	\end{array}  \arrow[color=red, lld, "X\text{ a base numerabile}"' sixslant2, shift right, shorten <= 0.5em] \arrow[dd] \arrow[color=red, lld, "X\text{ metrico}" sixslant1, shift right, below, shorten <= 0.5em] \\
 	\text{Compatto} \arrow[rrd, shift left, ] &  &                                                                                                                                                 \\
 	&  & \begin{array}{c}
-		\text{Ogni successione ha}\\ \text{un punto di accumulazione}
+		\text{Ogni successione ha}\\\text{un punto di accumulazione}
 	\end{array} \arrow[color=red, uu, "\substack{\text{primo}\\\text{numerabile}}"' nine, shift right=4]
 \end{tikzcd}
 \end{center}

@@ -18,14 +18,14 @@
 \noindent In questo capitolo studieremo uno strumento importante dell'algebra: l'\textbf{azione di un gruppo} $G$ su un insieme $X$. Grazie a ciò, possiamo dire che gli elementi del gruppo ‘‘\textit{spostano}'' gli elementi dell'insieme in altri, senza dotare l'insieme di alcuna particolare \textit{struttura} od operazione. Alcuni gruppi sono definiti proprio sulla base delle azioni, come il \textit{gruppo simmetrico}: gli elementi sono le \textit{permutazioni} sull'insieme!\\
 Per gli scopi della topologia, le azioni di gruppo hanno particolare importanza: se nel \autoref{chap:topologia quoziente} abbiamo visto diversi tipi di spazi quozienti, generalmente dando una \textit{relazione di equivalenza} su un sottoinsieme relativamente semplice, qui introdurremo \textit{quozienti topologici} indotti da queste azioni di gruppo. Fra questi preannunciamo il ruolo di primo piano svolto dallo \textit{spazio proiettivo reale}.
 \section{Azione di un gruppo su un insieme}
-\begin{define}[Gruppo simmetrico.]~{}\\ 
+\begin{define}[Gruppo simmetrico.]~{}\\
 	Sia $X$ un insieme. Si definisce il \textbf{gruppo simmetrico} sull'insieme $X$ come:
 	\begin{equation}
 		S(X)\coloneqq \{\funz f X X \mid f \text{ biunivoca}\}
 	\end{equation}
 \vspace{-6mm}
 \end{define}
-\begin{define}[Azione di un gruppo su un insieme.]~{}\\ 
+\begin{define}[Azione di un gruppo su un insieme.]~{}\\
 	Sia $G$ un gruppo e $X$ un insieme. Un'\textbf{azione}\index{azione} di $G$ su $X$ è, equivalentemente:
 		\begin{itemize}
 			\item  $\funz \Phi G {S(X)}$ morfismo di gruppi, ovvero $\Phi(g\ldotp h)=\Phi(g)\Phi(h)$.
@@ -35,7 +35,7 @@ Per gli scopi della topologia, le azioni di gruppo hanno particolare importanza:
 	Se ho $\phi$ definisco $\funztot {\Phi(g)} X X x {\phi(g,\ x)}$.
 \end{define}
 
-\begin{define}[Relazione di equivalenza dell'azione.]~{}\\ 
+\begin{define}[Relazione di equivalenza dell'azione.]~{}\\
 	Su $X$ definiamo una \textit{relazione di equivalenza} dettata dall'azione di un gruppo $G$:
 	\begin{equation*}
 		x\sim y\iff \exists g\in G \colon y=g\ldotp x
@@ -47,11 +47,11 @@ Per gli scopi della topologia, le azioni di gruppo hanno particolare importanza:
 	\begin{itemize}
 		\item \textsc{Riflessiva}: $x\sim x?$ Basta porre $g=e$, in quanto $x=e\ldotp x$.
 		\item \textsc{Simmetrica}: Per ipotesi $y=g\ldotp x$, allora $x=g^{-1}\ldotp y$ ($g^{-1}\in G$).
-		\item \textsc{Transitiva}: Poichè $y=g\ldotp x,\ z=h\ldotp y$, segue $z=h\ldotp \left(g\ldotp x\right)=(hg)\ldotp x$ e $hg\in G$.
+		\item \textsc{Transitiva}: Poiché $y=g\ldotp x,\ z=h\ldotp y$, segue $z=h\ldotp \left(g\ldotp x\right)=(hg)\ldotp x$ e $hg\in G$.
 	\end{itemize}
 \vspace{-3mm}
 \end{demonstration}
-\begin{define}[Orbita.]~{}\\ 
+\begin{define}[Orbita.]~{}\\
 	Le classi di equivalenza date da questa relazione sono dette \textbf{orbite}\index{orbita}:
 		\begin{equation*}
 			[x]=G\ldotp x=\{y\in X \mid \exists y \colon y=g\ldotp x\}=\{ g\ldotp x\in X\mid g\in G \}
@@ -65,7 +65,7 @@ Vediamo ora un esempio di azione e di orbite.
 		Quindi $\nicefrac{\realset^n}{\gl(n, \realset)}=\{ a,\ b\}$ con $a=[\mathbf{0}]$ e $b=[\mathbf{v}], \mathbf{v\neq 0}$
 \end{example}
 \section{Stabilizzatore di un elemento}
-\begin{define}[Stabilizzatore di un elemento.]~{}\\ 
+\begin{define}[Stabilizzatore di un elemento.]~{}\\
 Lo \textbf{stabilizzatore di un elemento}\index{stabilizzatore di un elemento} è l'insieme degli elementi di $G$ che fissano $x$:
 \begin{equation}
 H_x\coloneqq \left\{g\in G\mid g\ldotp x = x\right\}
@@ -126,7 +126,7 @@ $\includesx$ Sia $h\in H_{x_1}$ e consideriamo $ghg^{-1}$. Se moltiplico (con l'
 Pertanto $\forall h\in H_{x_1}\ \left(ghg^{-1}\right)\ldotp x_2= x_2$ e per l'arbitrarietà di $h$ si ha $g\ldotp H_{x_1}\ldotp g^{-1}\subseteq H_{x_2}$
 \end{demonstration}
 \section{Azione per omeomorfismi}
-\begin{define}[Azione per omeomorfismi.]~{}\\ 
+\begin{define}[Azione per omeomorfismi.]~{}\\
 Sia $X$ uno spazio topologico e $G$ un gruppo che agisce su $X$. Diciamo che $G$ \textbf{agisce per omeomorfismi}\index{azione!per omeomorfismi} se $\forall g\in G$ l'applicazione:
 \begin{equation}
 \funztot{\theta_g}{X}{X}{x}{g\ldotp x}
@@ -279,8 +279,8 @@ L'azione è per omeomorfismi, dato che fissato $\lambda\in G$: $\funztot{\theta_
 \end{itemize}
 \vspace{-3mm}
 \end{example}
-\begin{define}[Spazio proiettivo reale.]~{}\\  \label{def spazio proiettivo}
-	Lo \textbf{spazio proiettivo reale}\index{spazio!proiettivo!reale} $\proj[n]{\realset}$ (o $\realset\proj[n]{\ }$) di dimensione $n$ è lo spazio topologico delle rette vettoriali passanti origine in $\realset^{n+1}$, a cui son state tolte l'origine. È definito come lo spazio quoziente rispetto all'azione del gruppo moltiplicativo $\realset^{\ast}$:
+\begin{define}[Spazio proiettivo reale.]~{}\label{def spazio proiettivo}\\
+Lo \textbf{spazio proiettivo reale}\index{spazio!proiettivo!reale} $\proj[n]{\realset}$ (o $\realset\proj[n]{\ }$) di dimensione $n$ è lo spazio topologico delle rette vettoriali passanti origine in $\realset^{n+1}$, a cui son state tolte l'origine. È definito come lo spazio quoziente rispetto all'azione del gruppo moltiplicativo $\realset^{\ast}$:
 	\begin{equation}
 		\proj[n]{\realset}= \frac{\realset^{n+1}\setminus \left\{0\right\}}{\realset^{\ast}}
 	\end{equation}

@@ -26,7 +26,7 @@ Le \textbf{varietà topologiche} sono la risposta formale a ciò: una varietà t
 	Uno spazio topologico $X$ si dice \textbf{varietà topologica}\index{varietà topologica} di dimensione $n$ se $X$ è di \textbf{Hausdorff}, connesso, a base numerabile e localmente euclideo di dimensione $n$.
 \end{define}
 
-\begin{examples}
+\begin{examples}~{}
 	\begin{itemize}
 		\item $\realset^n$ è una varietà topologica di dimensione $n$.
 		\item $S^n$ è una varietà topologica compatta di dimensione $n$, infatti grazie alla proiezione stereografica si ha che $S\setminus\{*\}\cong \realset$.
@@ -49,11 +49,9 @@ Le \textbf{varietà topologiche} sono la risposta formale a ciò: una varietà t
 \begin{example}
 	$T=S^1\times S^1$ è una varietà topologica di dimensione $2$.
 \end{example}
-
-\begin{theorema}[Compatto, connesso, Hausdorff, localmente euclideo implica a base numerabile.]~{}\\ \label{compattoconnessohausdorfflocalmenteuclideo}
-	Sia $X$ uno spazio topologico compatto, connesso, \textbf{Hausdorff} e localmente euclideo di dimensione $n$. Allora $X$ è a \textit{base numerabile}, dunque $X$ è una varietà topologica di dimensione $n$.
+\begin{theorema}[Compatto, connesso, Hausdorff, localmente euclideo implica a base numerabile.]~{}\label{compattoconnessohausdorfflocalmenteuclideo}\\
+Sia $X$ uno spazio topologico compatto, connesso, \textbf{Hausdorff} e localmente euclideo di dimensione $n$. Allora $X$ è a \textit{base numerabile}, dunque $X$ è una varietà topologica di dimensione $n$.
 \end{theorema}
-
 \subsection{Dimensione 1}
 Analizziamo il caso delle varietà topologiche di dimensione $1$, per esempio $\realset$ e $S^1$.
 \begin{theorema}[Classificazione delle varietà topologiche di dimensione $1$.]~{}\\
@@ -66,7 +64,7 @@ Riconsideriamo l'esempio della \textbf{retta con 2 origini} (sez. \ref{retta 2 o
 \begin{define}[Superficie topologica.]~{}\\
 	Una varietà topologica di dimensione $2$ si dice \textbf{superficie topologica}\index{superficie!topologica}.
 \end{define}
-\begin{examples}
+\begin{examples}~{}
 	\begin{itemize}
 		\item Il \textit{piano} $\realset^2$ oppure $\realset^2\setminus \{n\text{ punti}\}$ sono superfici topologiche di dimensione $2$ \textit{non} compatte.
 		\item La \textbf{sfera} $S^2$ è una superficie topologica compatta.
@@ -114,7 +112,7 @@ Vogliamo dare una classificazione delle superfici topologiche \textit{compatte}.
  Inoltre, il modello piano di una superficie compatta \textit{non è unico}.
 \end{observe}
 
-\begin{examples}
+\begin{examples}~{}
 	\begin{itemize}
 		\item Abbiamo già visto il modello piano di $S^2$ sul \textit{quadrato}; per la costruzione effettuata, possiamo unire la sequenza di lati $ab$ in un unico lato $c$ in modo da ottenere un modello costituito da un poligono \textit{improprio a due lati}, con parola $cc^{-1}$:
 		\begin{center}
@@ -290,7 +288,8 @@ Incolliamo lungo $c$:
 \begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/torusplusproj2.pdf}
 \end{center}
-Otteniamo un modello piano di $T\# P$ che può essere descritto dalla parola $dadbab^{-1}$.\\ Prendiamo adesso $K\# P$, di parola $\underbrace{\delta\beta\delta^{-1}\beta}_{K}\underbrace{\gamma\gamma}_{P}$:
+Otteniamo un modello piano di $T\# P$ che può essere descritto dalla parola $dadbab^{-1}$.\\
+Prendiamo adesso $K\# P$, di parola $\underbrace{\delta\beta\delta^{-1}\beta}_{K}\underbrace{\gamma\gamma}_{P}$:
 \begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/kleinplusproj1.pdf}
 \end{center}
@@ -318,7 +317,7 @@ Procediamo per induzione su $g$; se è vero per $g-1$, allora:
 \end{equation*}
 \end{demonstration}
 \section{Classificazione delle superfici topologiche compatte}
-\begin{theorema}[Classificazione delle superfici topologiche compatte.]~{}\\ \label{classificazionesuperficicompatte}
+\begin{theorema}[Classificazione delle superfici topologiche compatte.]~{}\label{classificazionesuperficicompatte}\\
 Ogni superfici topologica compatta è omeomorfa a $S^2$, $T_g$ per qualche $g\geq 1$ oppure $P_n$ per qualche $n\geq 1$.\\
 Inoltre, tali superfici sono tutte distinte, ovvero:
 \begin{itemize}
@@ -493,8 +492,8 @@ In queste operazioni incolliamo lungo coppie del I tipo, pertanto i tipi delle c
 	Si ottiene sempre un piano proiettivo se e solo nel modello iniziale c'è almeno una coppia di lati del II tipo (perché i passi mantengono il tipo).
 \end{observe}
 \section{Orientabilità}
-\begin{define}[Nastro di Möbius.]~{}\\ \label{nastromobius}
-	\begin{minipage}{.75\linewidth}
+\begin{define}[Nastro di Möbius.]~{}\label{nastromobius}\\
+\begin{minipage}{.75\linewidth}
 Definiamo il \textbf{nastro di Möbius} (aperto) $N_0\subseteq \realset^3$ come lo spazio $\left[0,\ 1\right]\times (0,\ 1)$ (mentre si considera $\left[0,\ 1\right]\times [0,\ 1]$ nel caso chiuso $N$) con i lati quozientati come in figura.
 	\end{minipage}
 	\begin{minipage}{.14\linewidth}
@@ -668,7 +667,8 @@ Notiamo che, in questi esempi, suddivisioni diverse di una stessa superficie han
 \vspace{-3mm}
 \end{example}
 \subsection{Dimostrazione del teorema di classificazione: terza e ultima parte}
-Forti di questo nuovo invariante per omeomorfismi, possiamo concludere la dimostrazione del teorema di classificazione delle superfici compatte.\\ Innanzitutto, vediamo per bene che relazione c'è tra la caratteristica di Eulero e il modello piano di una superficie.
+Forti di questo nuovo invariante per omeomorfismi, possiamo concludere la dimostrazione del teorema di classificazione delle superfici compatte.\\
+Innanzitutto, vediamo per bene che relazione c'è tra la caratteristica di Eulero e il modello piano di una superficie.
 \begin{observe}
 	Sia $S$ una superficie compatta avente un modello piano con $2n$ lati identificati a coppie. Esso dà una suddivisione nativa di $S$ in cui:
 	\begin{itemize}

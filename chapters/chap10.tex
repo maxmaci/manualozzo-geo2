@@ -54,8 +54,8 @@
 Non esiste alcun autovettore comune, dunque $A$ e $B$ \textit{non} sono simultaneamente diagonalizzabili.
 \end{example}
 Dalla sola definizione non è semplice capire quali matrici sono a tutti gli effetti simultaneamente diagonalizzabili. Tuttavia, il seguente teorema ci permetterà di trovare una condizione necessaria e sufficiente per la diagonalizzazione simultanea.
-\begin{theorema}[Diagonalizzazione simultanea se e solo se le matrici diagonalizzabili commutano.]~{}\\ \label{teoremasimdiag}
-	Siano $A,\ B\in\kamp^{n, n}$. Allora $A$ e $B$ sono simultaneamente diagonalizzabili se e solo se $A$ e $ B$ sono diagonalizzabili e $A,\ B$ commutano, cioè $AB=BA$.
+\begin{theorema}[Diagonalizzazione simultanea se e solo se le matrici diagonalizzabili commutano.]~{}\label{teoremasimdiag}\\
+Siano $A,\ B\in\kamp^{n, n}$. Allora $A$ e $B$ sono simultaneamente diagonalizzabili se e solo se $A$ e $ B$ sono diagonalizzabili e $A,\ B$ commutano, cioè $AB=BA$.
 \end{theorema}
 Per dimostrare il teorema, abbiamo tuttavia bisogno del seguente lemma:
 \begin{lemming}[Matrici che commutano e autospazi.]~{}\\
@@ -110,7 +110,8 @@ In altre parole, $\left\{\mathbf{w}_{i,\ j}\right\}$ è un sistema di generatori
 	\end{equation}
 \vspace{-6mm}
 \end{remember}
-Finora abbiamo sempre \textit{valutato} i polinomi in valori del campo $\kamp$. Possiamo invece valutarli in una \textit{matrice} in $\kamp^{n, n}$? Dopotutto, la \textit{somma di matrici} e la \textit{moltiplicazione per uno scalare} sono operazioni \textit{interne} a $\kamp^{n, n}$ e pertanto potremmo pensare che sia lecito.\\ Tuttavia, presi i polinomi $p$ così come sono, non sarebbe \textit{ben definita} $p\left(A\right)$ a causa del \textbf{termine noto}; infatti, non possiamo sommare uno \textit{scalare ad una matrice}! Per ovviare a questo problema, quando valutiamo un polinomio in una matrice $A$ ‘‘\textit{correggiamo}'' il termine noto con la \textbf{matrice identità} $I$:
+Finora abbiamo sempre \textit{valutato} i polinomi in valori del campo $\kamp$. Possiamo invece valutarli in una \textit{matrice} in $\kamp^{n, n}$? Dopotutto, la \textit{somma di matrici} e la \textit{moltiplicazione per uno scalare} sono operazioni \textit{interne} a $\kamp^{n, n}$ e pertanto potremmo pensare che sia lecito.\\
+Tuttavia, presi i polinomi $p$ così come sono, non sarebbe \textit{ben definita} $p\left(A\right)$ a causa del \textbf{termine noto}; infatti, non possiamo sommare uno \textit{scalare ad una matrice}! Per ovviare a questo problema, quando valutiamo un polinomio in una matrice $A$ ‘‘\textit{correggiamo}'' il termine noto con la \textbf{matrice identità} $I$:
 \begin{equation}
 	f\left(A\right)\coloneqq b_nA^n+b_{n-1}A^{n-1}+\ldots+b_1A+b_0I\text{ con }b_i\in\kamp
 \end{equation}
@@ -275,7 +276,7 @@ Una matrice i cui elementi sono polinomi in $\kamp\left[t\right]$ può essere sc
 \end{array}\right)
 	\end{equation*}
 \end{example}
-\begin{theorema}[Teorema di Cayley-Hamilton.]~{}\\ \index{teorema!di Cayley-Hamilton}
+\begin{theorema}[Teorema di Cayley-Hamilton.]~{}\index{teorema!di Cayley-Hamilton}\\
 Sia $A\in \mathbb{K}^{n,n}$. Allora $C_A\left(t\right)\in I_A$, cioè $C_A\left(A\right)=0$. In altre parole, $m_A\left(t\right)\mid C_A\left(t\right)$.\\
 In particolare $\deg m_A\left(t\right)\leq n$.
 \end{theorema}
@@ -369,7 +370,7 @@ Ed essendo $v$ un autovettore, $v\neq 0$; dall'equazione sopra necessariamente s
 \section{Forma canonica di Jordan}
 D'ora in poi, se non altresì specificato, considereremo $\kamp=\complexset$, cioè tratteremo di matrici $A\in \complexset^{n,n}$ e endomorfismi fra spazi vettoriali complessi.
 \begin{observe}\label{complessichiusi}
-Poichè $\complexset$ è \textbf{algebricamente chiuso}, ogni polinomio $p\in\complexset\left[t\right]$ si fattorizza completamente come prodotto di fattori lineari:
+Poiché $\complexset$ è \textbf{algebricamente chiuso}, ogni polinomio $p\in\complexset\left[t\right]$ si fattorizza completamente come prodotto di fattori lineari:
 \begin{equation}
 	C_A\left(t\right)=\left(t-\lambda_1\right)^{m_1}\ldots\left(t-\lambda_r\right)^{m_r}\text{ con } m_i \text{ molteplicità algebrica di } \lambda_i
 \end{equation}
@@ -608,7 +609,8 @@ Al crescere di $h$:
 \begin{equation}
 	V\supseteq \im \left(A-\lambda I\right)\supseteq\im \left(A-\lambda I\right)^2\supseteq\ldots \qquad\textcolor{green}{\circled{\ast}}
 \end{equation}
-Cioè l'immagine della potenza $h$ contiene tutte quelle successive.\\ Possiamo mostrare come tutti gli spazi finora visti (nuclei e immagini delle potenze $\left(A-\lambda I\right)^h$) sono invarianti:
+Cioè l'immagine della potenza $h$ contiene tutte quelle successive.\\
+Possiamo mostrare come tutti gli spazi finora visti (nuclei e immagini delle potenze $\left(A-\lambda I\right)^h$) sono invarianti:
 \begin{itemize}
 \item Se $\mathbf{v}\in\ker\left(A-\lambda I\right)^h$:
 	\begin{equation*}
@@ -759,7 +761,7 @@ Per calcolare l'autospazio generalizzato dovremmo calcolare $\widetilde{V}_{\lam
 Nella sezione seguente dimostreremo l'esistenza della base di $\widetilde{V}_{\lambda}$ che dà la forma di Jordan.
 \subsection{Esistenza della base dell'autospazio generalizzato che dà la forma di Jordan}
 Prima di procedere dimostriamo un lemma che servirà più avanti.
-\begin{lemming}[Dimensione dell'intersezione dell'immagine e del nucleo di due funzioni.]~{}\\ \label{lemmadimjordan}
+\begin{lemming}[Dimensione dell'intersezione dell'immagine e del nucleo di due funzioni.]~{}\label{lemmadimjordan}\\
 Siano $\funz{f}{U}{V}$ e $\funz{g}{V}{W}$ due applicazioni lineari. Si ha:
 \begin{equation}
 \dim\left(\im f\cap \ker g\right)=\dim\im f-\dim\im \left(g\circ f\right)=\dim \ker\left(g\circ f\right)-\dim\ker f
@@ -901,7 +903,7 @@ Applicando $\left(A-\lambda I\right)^{p-1}$ tutti i termini si \textit{annullano
 \begin{equation*}
 \sum_{i}\alpha_i\left(A-\lambda I\right)x_i^p=0\implies \sum_{i}\alpha_ix_i^1=0
 \end{equation*}
-Poichè $x_i^1$ al variare di $i$ sono \textit{linearmente indipendenti} (sono base di $S_p$!), i loro coefficienti devono necessariamente \textit{tutti} nulli: $\alpha_i=0\forall i$. La combinazione lineare sopra diventa:
+Poiché $x_i^1$ al variare di $i$ sono \textit{linearmente indipendenti} (sono base di $S_p$!), i loro coefficienti devono necessariamente \textit{tutti} nulli: $\alpha_i=0\forall i$. La combinazione lineare sopra diventa:
 \begin{equation*}
 	\sum_{i}\beta_ix_i^{p-1}+\ldots+\sum_{i}\gamma_{j}y_{j}^{p-1}+\ldots+\sum_{u}\delta_{u}b_{u}^1=0
 \end{equation*}
@@ -919,7 +921,7 @@ Il corollario seguente è immediato.
 Due matrici in forma di Jordan sono simili se e solo se hanno gli stessi blocchi (a meno dell'ordine).
 \end{corollary}
 \subsection{Polinomio minimo e forma di Jordan}
-\begin{proposition}[Molteplicità delle radici del polinomio minimo e blocchi di Jordan.]~{}\\ \label{polinomiominimojordan}
+\begin{proposition}[Molteplicità delle radici del polinomio minimo e blocchi di Jordan.]~{}\label{polinomiominimojordan}\\
 Sia $A$ una matrice complessa $n\times n$ e siano $\lambda_1,\ \ldots,\ \lambda_r$ gli autovalore distinti di $A$ e, per ogni $i=1,\ \ldots,\ r$, sia $p_i$ l'ordine del più grande blocco di Jordan di $A$ relativo a $\lambda_i$. Allora il polinomio minimo di $A$ è:
 \begin{equation}
 m_A\left(t\right)=\left(t-\lambda_i\right)^{p_1}\ldots\left(t-\lambda\right)^{p_r}
@@ -936,7 +938,7 @@ L'osservazione che qui facciamo ci servirà nella dimostrazione della proposizio
 \end{observe}
 \begin{demonstration}
 	Possiamo supporre che $A$ sia già in forma di Jordan.\\
-	 Consideriamo $A-\lambda_1I$, rappresentata in figura: ha, nella parte rossa, dei blocchi di Jordan relativi all'autovalore zero. Poichè la parte rossa è una sottomatrice nilpotente di ordine $p_1$, ne consegue che $\left(A-\lambda_1I\right)^{p_1}$ ha la matrice nulla nella parte zero.\\
+	 Consideriamo $A-\lambda_1I$, rappresentata in figura: ha, nella parte rossa, dei blocchi di Jordan relativi all'autovalore zero. Poiché la parte rossa è una sottomatrice nilpotente di ordine $p_1$, ne consegue che $\left(A-\lambda_1I\right)^{p_1}$ ha la matrice nulla nella parte zero.\\
 	 In generale, $\left(A-\lambda_iI\right)^{p_i}$ è nullo nel blocco $m_i\times m_i$ corrispondente a $\lambda_i$.
 	 \begin{equation*}
 	 	\tikz[baseline]{
@@ -994,7 +996,8 @@ Segue che qualunque blocco di Jordan di ordine non massimo fa sì che il polinom
 Sia $A\in\complexset^{n,n}$. Allora $A$ è \textbf{diagonalizzabile} se e solo se il suo polinomio minimo ha tutte radici di molteplicità $1$.
 \end{corollary}
 \begin{demonstration}
-Per la proposizione precedente, la molteplicità delle radici del polinomio minimo corrisponde alla dimensione del più grande blocco di Jordan di $A$ relativo a $\lambda_i$.\\ Segue chiaramente che se $m_{\lambda_i}=1\ \forall i$ l'ordine di tutti i blocchi è $1$, dunque $A$ è diagonalizzabile.\\
+Per la proposizione precedente, la molteplicità delle radici del polinomio minimo corrisponde alla dimensione del più grande blocco di Jordan di $A$ relativo a $\lambda_i$.\\
+Segue chiaramente che se $m_{\lambda_i}=1\ \forall i$ l'ordine di tutti i blocchi è $1$, dunque $A$ è diagonalizzabile.\\
 Viceversa, se $A$ è diagonalizzabile, tutti i blocchi sono di dimensione $1$ e questa, per la stessa proposizione di prima, corrisponde alla molteplicità delle radici del polinomio caratteristico.
 \end{demonstration}
 \begin{observe}
@@ -1183,7 +1186,7 @@ Possiamo scegliere ad esempio $\left(-1,\ 1,\ 0\right)$, ottenendo allo stesso t
 			 	\&  	\& 2 \&   \&   \&  	\\
 			 	\&  	\&   \& 3 \& 1 \& 0	\\
 			 	\&  	\&   \& 0 \& 3 \& 1	\\
-				\&  	\&   \& 0 \& 0 \& 3	\\ 	
+				\&  	\&   \& 0 \& 0 \& 3	\\
 		};
 		\draw (M-1-1.north west) rectangle (M-1-1.south east);
 		\draw (M-1-1.south east) rectangle (M-2-2.south east);
@@ -1267,7 +1270,7 @@ Allora la funzione esponenziale converge uniformemente su $S$, dunque:
 È continua.
 \end{demonstration}
 \vspace{2mm}
-\begin{proposition}[Proprietà dell'esponenziale complesso.]~{}\\ \label{proposizioneeWeZ=eW+Z}
+\begin{proposition}[Proprietà dell'esponenziale complesso.]~{}\label{proposizioneeWeZ=eW+Z}\\
 L'esponenziale in campo complesso gode delle seguenti proprietà:
 \begin{enumerate}
 	\item $e^z\cdot e^w=e^{z+w}$.
@@ -1470,8 +1473,8 @@ D'altro canto, abbiamo che:
 \end{equation*}
 Verificheremo successivamente (pag. \pageref{esponenzialechenoncommutap2}), quando mostreremo come calcolare in generale l'esponenziale di una matrice, che $e^{A+B}\neq e^A\cdot e^B$.
 \end{example}
-\begin{lemming}[Esponenziale di matrici che commutano.]~{}\\ 
-	Se $A,\ B\in\complexset^{n,n}$ \textit{commutano}, cioè $AB=BA$, allora:
+\begin{lemming}[Esponenziale di matrici che commutano.]~{}\\
+Se $A,\ B\in\complexset^{n,n}$ \textit{commutano}, cioè $AB=BA$, allora:
 	\begin{equation}
 		e^{A+B}=e^A\cdot e^B
 	\end{equation}
@@ -1737,7 +1740,8 @@ Poiché $\dim V_{\lambda}=1$, segue che la forma di Jordan è un unico blocco di
 		0 & -1 \\
 	\end{array}\right)
 \end{equation*}
-Cerchiamo ora una matrice $P$, e dunque una base $\basis$, che mette $A$ in forma di Jordan ($A=PJP^{-1}$). Poichè abbiamo un unico autovalore, $\left(A-\lambda I\right)^2=O$ e $\im \left(A-\lambda I\right)\subseteq \ker \left(A-\lambda I\right)$.\\ Studiamo $S_2=\ker\left(A+I\right)\cap \im\left(A+I\right)^{p-1}=\im \left(A+I\right)$; esso ha $\dim S_2=1$ e per trovarne una base basta prendere una colonna di $A+I$:
+Cerchiamo ora una matrice $P$, e dunque una base $\basis$, che mette $A$ in forma di Jordan ($A=PJP^{-1}$). Poiché abbiamo un unico autovalore, $\left(A-\lambda I\right)^2=O$ e $\im \left(A-\lambda I\right)\subseteq \ker \left(A-\lambda I\right)$.\\
+Studiamo $S_2=\ker\left(A+I\right)\cap \im\left(A+I\right)^{p-1}=\im \left(A+I\right)$; esso ha $\dim S_2=1$ e per trovarne una base basta prendere una colonna di $A+I$:
 \begin{equation*}
 v_2 = \left(2,\ 1\right)=
 \end{equation*}
@@ -1809,7 +1813,7 @@ Cerchiamo dei vettori tali che:
 	v_1\in\ker\left(A+I\right)\\
 \end{array}
 \end{equation*}
-Poichè $v_2\in\ker\left(A+I\right)^2=V$, basta prendere un vettore della base canonica di $V$, ad esempio $e_1=\left(1,\ 0,\ 0\right)$, che non appartenga a $\ker\left(A+I\right)$. Allora:
+Poiché $v_2\in\ker\left(A+I\right)^2=V$, basta prendere un vettore della base canonica di $V$, ad esempio $e_1=\left(1,\ 0,\ 0\right)$, che non appartenga a $\ker\left(A+I\right)$. Allora:
 \begin{equation*}
 	\begin{array}{l}
 		v_2\coloneqq e_1=\left(1,\ 0\right)\\

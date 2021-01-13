@@ -62,7 +62,7 @@ $F$ è detta \textbf{omotopia di cammini}\index{omotopia!di cammini} o \textbf{o
 		\end{equation*}
 		Per avere $\beta\sim \alpha$, basta prendere $\mvf{\widetilde{F}}{t}{s}=\mvf{F}{t}{1-s}$: essa è ben definita, continua e:
 		\begin{gather*}
-			\mvf{\widetilde{F}}{t}{0}=\mvf{F}{t}{1}=\beta\left(t\right),\ \mvf{\widetilde{F}}{t}{1}=\mvf{F}{t}{0}=\alpha\left(t\right)\\ \mvf{\widetilde{F}}{0}{s}=\mvf{F}{0}{s}=a,\ \mvf{\widetilde{F}}{1}{s}=\mvf{F}{1}{s}=b
+			\mvf{\widetilde{F}}{t}{0}=\mvf{F}{t}{1}=\beta\left(t\right),\ \mvf{\widetilde{F}}{t}{1}=\mvf{F}{t}{0}=\alpha\left(t\right)\\\mvf{\widetilde{F}}{0}{s}=\mvf{F}{0}{s}=a,\ \mvf{\widetilde{F}}{1}{s}=\mvf{F}{1}{s}=b
 		\end{gather*}
 		Cioè è omotopia di cammini tra $\beta$ e $\alpha$.
 		\item \textsc{Transitiva}: Da $\alpha\sim \beta$ abbiamo:
@@ -123,8 +123,8 @@ Si ha $\overline{\overline{\alpha}}=\alpha$. Infatti:
 \end{equation*}
 \vspace{-6mm}
 \end{observe}
-\begin{lemming}[Composizioni di omotopie di cammini; Kosniowski, 14.2.]~{}\\ \label{compoomotopecammini}
-	Dati $\alpha,\ \alpha'\in\inscam{X}{a}{b}$ e $b,\ b'\in\inscam{X}{b}{c}$, parlando in termini di omotopie di cammini:
+\begin{lemming}[Composizioni di omotopie di cammini; Kosniowski, 14.2.]~{}\label{compoomotopecammini}\\
+Dati $\alpha,\ \alpha'\in\inscam{X}{a}{b}$ e $b,\ b'\in\inscam{X}{b}{c}$, parlando in termini di omotopie di cammini:
 	\begin{equation}
 		\alpha\sim \alpha'\text{ e }\beta\sim \beta'\implies \alpha\ast\beta\sim\alpha'\ast\beta'
 	\end{equation}
@@ -165,7 +165,7 @@ Consideriamo $\funz{H}{I\times I}{X}$ data da:
 \brackitem{c}{d}[$\forall s\in I$ ha estremi fissi]
 $H$ è l'omotopia a estremi fissi cercata.
 \end{demonstration}
-\begin{lemming}[Cambiamento di parametri; Manetti, 11.3.]~{}\\ \label{cambiamentodiparametri}
+\begin{lemming}[Cambiamento di parametri; Manetti, 11.3.]~{}\label{cambiamentodiparametri}\\
 	Sia $\funz{\alpha}{I}{X}$ un cammino e $\funz{\varphi}{I}{I}$ una funzione continua tale che $\varphi\left(0\right)=0$ e $\varphi\left(1\right)=1$. Allora $\alpha\circ \varphi\sim\alpha$.
 \end{lemming}
 \begin{demonstration}
@@ -190,8 +190,8 @@ $H$ è l'omotopia a estremi fissi cercata tra $\alpha$ e $\alpha\circ\varphi$.
 	\end{equation}
 \vspace{-6mm}
 \end{define}
-\begin{proposition}[Proprietà dell'omotopia di cammini; Manetti, 11.4 e 11.6.]~{}\\ \label{propcammini}
-	Sia $X$ spazio topologico e si considerino i cammini:
+\begin{proposition}[Proprietà dell'omotopia di cammini; Manetti, 11.4 e 11.6.]~{}\label{propcammini}\\
+Sia $X$ spazio topologico e si considerino i cammini:
 	\begin{equation*}
 	\alpha\in\inscam{X}{a}{b}\quad\beta\in\inscam{X}{b}{c}\quad\gamma\in\inscam{X}{c}{d}
 	\end{equation*}
@@ -360,9 +360,9 @@ Preso un laccio $\alpha$, indichiamo la sua classe di equivalenza in $\gruf{X}{x
 	Si chiama anche \textbf{primo gruppo fondamentale}\index{gruppo!fondamentale!primo} o \textbf{gruppo di Poincaré}\seeonlyindex{gruppo!di Poicaré}{gruppo!fondamentale}.
 \end{define}
 \subsection{Dipendenza dal punto base}
-\begin{theorema}[$\pi_1$ dipende dalla componente c.p.a.]~{}\\ \label{dipendenzaptobasegruf}
-	Il gruppo fondamentale dipende \textit{solo} dalla componente \textit{\textbf{c.p.a.}} contente il punto base $x$.\\
-	In altre parole, se $x,\ y\in X$ appartengono alla stessa componente \textbf{c.p.a.}, preso un arco $\gamma$ da $x$ a $y$ e costruito:
+\begin{theorema}[$\pi_1$ dipende dalla componente c.p.a.]~{}\label{dipendenzaptobasegruf}\\
+Il gruppo fondamentale dipende \textit{solo} dalla componente \textit{\textbf{c.p.a.}} contente il punto base $x$.\\
+In altre parole, se $x,\ y\in X$ appartengono alla stessa componente \textbf{c.p.a.}, preso un arco $\gamma$ da $x$ a $y$ e costruito:
 	\begin{equation}
 		\funztot{\gamma_{\#}}{\gruf{X}{x}}{\gruf{X}{y}}{\left[\alpha\right]}{\left[\overline{\gamma}\ast\alpha\ast\gamma\right]}
 	\end{equation}
@@ -665,7 +665,7 @@ Questo \textit{funtore controvariante} è chiamata \textbf{funzione trasposta}\i
 	& $\funz{F}{\nicecat{TOP}^{\ast}}{\nicecat{GR}}$\\
 	Oggetti:  &$\left(X,\ x_0\right)\mapsto \gruf{X}{x_0}$\\
 	Morfismi: &$\funz{f}{\left(X,\ x_0\right)}{\left(Y,\ y_0\right)}\mapsto\funztot{f_{\ast}}{\gruf{X}{x_0}}{\gruf{Y}{y_0}}{\left[\alpha\right]}{\left[f\circ \alpha\right]}$
-\end{tabular*}\\ \label{funtoretopstar}
+\end{tabular*}\label{funtoretopstar}\\
 Questo funtore \textit{covariante} si basa sull'omomorfismo tra gruppi fondamentali indotto da $\funz{f}{\left(X,\ x_0\right)}{\left(Y,\ y_0\right)}$.
 \end{enumerate}
 \vspace{-2mm}
@@ -687,7 +687,7 @@ Questo funtore \textit{covariante} si basa sull'omomorfismo tra gruppi fondament
 	\end{itemize}
 \vspace{-3mm}
 \end{demonstration}
-\section{Isomorfismi e gruppi fondamentali}
+\section{Omeomorfismi e gruppi fondamentali}
 \begin{corollary}[Omeomorfismo di spazi implica omeomorfismo di gruppi fondamentali.]~{}\\
 	Se $\funz{f}{X}{Y}$ è un omeomorfismo, allora:
 	\begin{center}
@@ -696,10 +696,10 @@ Questo funtore \textit{covariante} si basa sull'omomorfismo tra gruppi fondament
 \vspace{-3mm}
 \end{corollary}
 \begin{remember}
-	Se $g\circ f$ è una funzione biunivoca, allora $f$ è iniettiva e $g$ è suriettiva.
+	Se $g\circ f$ è una funzione \textit{biunivoca}, allora $f$ è \textit{iniettiva} e $g$ è \textit{suriettiva}.
 \end{remember}
-\begin{corollary}[Retratti e omomorfismi di gruppi fondamentali.]~{}\\ \label{grp fond iniettiva e suriettiva}
-	Sia $A\subseteq X$ un retratto con retrazione $\funz{r}{X}{A}$; si consideri inoltre la sua inclusione $\incl{i}{A}{X}$. Si ha che:
+\begin{corollary}[Retratti e omomorfismi di gruppi fondamentali.]~{}\label{grp fond iniettiva e suriettiva}\\
+Sia $A\subseteq X$ un retratto con retrazione $\funz{r}{X}{A}$ e inclusione $\incl{i}{A}{X}$. Si ha che:
 	\begin{itemize}
 		\item $\forall a\in A\ \funz{i_{\ast}}{\gruf{A}{a}}{\gruf{X}{a}}$ è un omomorfismo \textit{iniettivo}.
 		\item $\forall a\in A\ \funz{r_{\ast}}{\gruf{X}{a}}{\gruf{A}{a}}$ è un omomorfismo \textit{suriettivo}.
@@ -713,6 +713,15 @@ Questo funtore \textit{covariante} si basa sull'omomorfismo tra gruppi fondament
 		\end{tikzcd}
 	\end{center}
 Notiamo che $r_{\ast}\circ i_{\ast}=\left(r\circ i\right)_{\ast}=\left(Id_A\right)_{\ast}$, cioè $r_{\ast}\circ i_{\ast}$ è biettiva. In particolare, ne consegue, per quanto detto poco sopra, che $i_{\ast}$ è iniettiva e $r_{\ast}$ suriettiva.
+\end{demonstration}
+\begin{remember}
+\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{isomorfismosottogruppo}, si può trovare la dimostrazione di ciò.}
+\end{remember}
+\begin{corollary}[Il gruppo fondamentale di un retratto $A$ è isomorfo ad un sottogruppo dell'insieme $X$.]~{}\\
+Sia $A\subseteq X$ un retratto con retrazione $\funz{r}{X}{A}$ e inclusione $\incl{i}{A}{X}$. Allora $\gruf{A}{a}$ è isomorfo ad un sottogruppo di $\gruf{X}{a}$; in particolare, $\gruf{A}{a}$ è di ordine infinito, lo deve essere anche $\gruf{X}{a}$.
+\end{corollary}
+\begin{demonstration}
+Dal teorema precedente $\funz{i_{\ast}}{\gruf{A}{a}}{\gruf{X}{a}}$ è un omomorfismo \textit{iniettivo}, dal lemma \ref{isomorfismosottogruppolemma}, pag. \ref{isomorfismosottogruppolemma}, segue la tesi.
 \end{demonstration}
 \begin{theorema}[Isomorfismi tra gruppi fondamentali e funzioni; Kosniowski, 15.12.]~{}\\
 Siano $\funz{f,\ g}{X}{Y}$ continue, omotope e $x_0\in X$. Allora esiste un \textit{isomorfismo di gruppi}:
@@ -823,11 +832,11 @@ Applicando il ragionamento insiemistico ricordato in precedenza (pag. \pageref{b
 	\end{equation*}
 	Essendo $X$ contraibile, $X$ è anche \textbf{c.p.a.}, dunque vale la tesi.
 \end{demonstration}
-\begin{corollary}[Retratto di deformazione e isomorfismi di gruppi fondamentali.]~{}\\ \label{inclusione rdd isomorfismo}
-	Sia $\incl{i}{A}{X}$ un retratto di deformazione. Allora $\forall a\in A$:
-	\begin{equation}
-		\funz{i_{\ast}}{\gruf{A}{a}}{\gruf{X}{a}}\qquad\funz{r_{\ast}}{\gruf{X}{a}}{\gruf{A}{a}}
-	\end{equation}
+\begin{corollary}[Retratto di deformazione e isomorfismi di gruppi fondamentali.]~{}\label{inclusione rdd isomorfismo}\\
+Sia $\incl{i}{A}{X}$ un retratto di deformazione. Allora $\forall a\in A$:
+\begin{equation}
+	\funz{i_{\ast}}{\gruf{A}{a}}{\gruf{X}{a}}\qquad\funz{r_{\ast}}{\gruf{X}{a}}{\gruf{A}{a}}
+\end{equation}
 Sono \textbf{isomorfismi} di gruppi.
 \end{corollary}
 \section{Numero di Lebesgue}
@@ -887,8 +896,8 @@ Vediamo alcune proprietà.
 			y\in B \implies d(y,\ x_1)< \text{diam}B<\delta \leq d(x_1,\ C_j) \implies y\notin C_j \implies B\cap C_j=\emptyset
 		\end{equation*}
 \end{demonstration}
-\begin{corollary}[Un cammino è scomponibile negli aperti del ricoprimento.]~{}\\ \label{corollario suddivisione}
-	Sia $X$ uno spazio topologico, $\funz \alpha I X$ un cammino e $\mathcal{A}$ un ricoprimento di $X$. Allora esiste una suddivisione finita $0=t_0\leq t_1\leq \dots\leq t_k=1$ di $\intv$ tale che $\forall i=0,\ \dots,\ k-1 \ \exists U_i\in\mathcal{A} \colon \alpha([t_i,\ t_{i+1}])\subseteq U_i$, ovvero l'immagine di ogni \textit{intervallino} della suddivisione è contenuta nel corrispettivo aperto del ricoprimento.
+\begin{corollary}[Un cammino è scomponibile negli aperti del ricoprimento.]~{}\label{corollario suddivisione}\\
+Sia $X$ uno spazio topologico, $\funz \alpha I X$ un cammino e $\mathcal{A}$ un ricoprimento di $X$. Allora esiste una suddivisione finita $0=t_0\leq t_1\leq \dots\leq t_k=1$ di $\intv$ tale che $\forall i=0,\ \dots,\ k-1 \ \exists U_i\in\mathcal{A} \colon \alpha([t_i,\ t_{i+1}])\subseteq U_i$, ovvero l'immagine di ogni \textit{intervallino} della suddivisione è contenuta nel corrispettivo aperto del ricoprimento.
 \end{corollary}
 \begin{demonstration}
 	$I$ è uno spazio metrico compatto: sia $\widetilde{\mathcal{A}}\coloneqq \left\{ \alpha^{-1}(U)\mid U\in\mathcal{A}\right\}$ ricoprimento aperto di $I$ e $\delta$ il numero di Lebesgue del ricoprimento $\mathcal{A}$. Allora basta scegliere una partizione opportuna per poter applicare il lemma:
@@ -924,9 +933,9 @@ Ricordiamo, per il corollario \ref{inclusione rdd isomorfismo} (pag. \pageref{in
 	Sia $G$ un gruppo qualsiasi e $S\subseteq G$ sottoinsieme. Si dice che $S$ \textbf{genera il gruppo} $G$ se ogni $g\in G$ si può scrivere come \textit{prodotto finito} di elementi di $S$ e di loro inversi.
 \end{remember}
 Vediamo ora un risultato generale per poter avere qualche informazione in più sui gruppi fondamentali, sfruttando proprio la nozione di generatore. Si riuscirà a calcolare il gruppo fondamentale $\gruf{X}{x_0}$ di generici spazi $X$ nel corso di \textit{Geometria 4}.
-\begin{theorema}[Teorema di Van Kampen sui generatori; Manetti, 11.25.]~{}\\ \label{Van Kampen}\index{teorema!di Van Kampen}
-Sia $X$ uno spazio topologico e siano $A,\ B\subseteq X$ aperti tali che $A,\ B$ e $A\cap B$ siano \textbf{c.p.a.} e $A\cap B\neq\emptyset, X=A\cup B$\footnote{Per il teorema \ref{unione sottospazi connessi}, pag. \pageref{unione sottospazi connessi} questo implica che $X$ è \textbf{c.p.a.}}. \\
-	Sia $x_0\in A\cap B$; consideriamo le inclusioni $\incl i A X$ e $\incl j B X$ con i loro morfismi indotti:
+\begin{theorema}[Teorema di Van Kampen sui generatori; Manetti, 11.25.]~{}\label{Van Kampen}\index{teorema!di Van Kampen}\\
+Sia $X$ uno spazio topologico e siano $A,\ B\subseteq X$ aperti tali che $A,\ B$ e $A\cap B$ siano \textbf{c.p.a.} e $A\cap B\neq\emptyset, X=A\cup B$\footnote{Per il teorema \ref{unione sottospazi connessi}, pag. \pageref{unione sottospazi connessi} questo implica che $X$ è \textbf{c.p.a.}}.\\
+Sia $x_0\in A\cap B$; consideriamo le inclusioni $\incl i A X$ e $\incl j B X$ con i loro morfismi indotti:
 	\begin{equation}
 		\funz {i_\ast} {\gruf{A}{x_0}} {\gruf{X}{x_0}}\text{ e }\funz {j_\ast} {\gruf{B}{x_0}} {\gruf{X}{x_0}}
 	\end{equation}
@@ -972,8 +981,8 @@ Sia $X$ uno spazio topologico e siano $A,\ B\subseteq X$ aperti tali che $A,\ B$
 	\end{equation*}
 Pertanto $G_A\cup G_B$ generano $\gruf{X}{x_0}$.
 \end{demonstration}
-\begin{corollary}[$X$ dato da due aperti semplicemente connessi non disgiunti è semplicemente connesso; Manetti, 11.26.]~{}\\ \label{corollario Van Kampen}
-	Sia $X$ uno spazio topologico e siano $A,\ B\subseteq X$ aperti tali che
+\begin{corollary}[$X$ dato da due aperti semplicemente connessi non disgiunti è semplicemente connesso; Manetti, 11.26.]~{}\label{corollario Van Kampen}\\
+Sia $X$ uno spazio topologico e siano $A,\ B\subseteq X$ aperti tali che
 		\begin{enumerate}
 			\item $A$ e $B$ sono \textit{semplicemente connessi}.
 			\item $A\cap B\neq\emptyset$ è \textbf{c.p.a.}.
@@ -1023,7 +1032,7 @@ Pertanto $G_A\cup G_B$ generano $\gruf{X}{x_0}$.
 
 \section{Gruppo fondamentale della circonferenza}
 Nella sezione precedente abbiamo analizzato il gruppo fondamentale delle sfere $S^n$ per $n\geq 2$: ci domandiamo ora cosa succede per la circonferenza $S^1$. \\
-Siccome la dimostrazione sarà lunga e articolata, preannunciamo che il gruppo fondamentale che otterremo \textit{non} è banale, ma è $\gruf{S^1}{\ }\cong \integerset$: nello specifico, l'isomorfismo rappresenta il \textit{numero di giri} con \textit{segno} che un cammino chiuso fa \textit{intorno} alla circonferenza. \footnote{\textit{Nota}: per la dimostrazione del teorema seguiremo il capitolo 16 del libro ‘‘A first course in Algebraic Topology'' di Kosniowski.} \\
+Siccome la dimostrazione\footnote{Per la dimostrazione del teorema seguiremo il capitolo 16 di \cite{kosniowski:1980firstlook}.} sarà lunga e articolata, preannunciamo che il gruppo fondamentale che otterremo \textit{non} è banale, ma è $\gruf{S^1}{\ }\cong \integerset$: nello specifico, l'isomorfismo rappresenta il \textit{numero di giri} con \textit{segno} che un cammino chiuso fa \textit{intorno} alla circonferenza..\\
 %DA SISTEMARE IN BIBLIOGRAFIA
 Dunque, la nostra intenzione è di formalizzare il concetto che ogni intervallo fra due interi consecutivi ‘‘\textit{copre}'' la circonferenza.
 \begin{center}
@@ -1040,8 +1049,8 @@ Con questa notazione si considera $S^1\subseteq\complexset$, per cui $S^1=\{z\in
 Utilizzeremo come punto base per i nostri scopi il punto $(1,0) \in \realset^2$, equivalente a $1\in\complexset$.
 \subsubsection{Rivestimento}
 Vogliamo ora utilizzare questa proprietà per definire il numero di giri che fa un cammino chiuso intorno alla circonferenza.
-\begin{lemming}[Aperto uniformemente rivestito di $S^1$.]~{}\\ \label{teo uniformemente rivestito}
-	Sia $U\subsetneqq S^1$ aperto. Allora:
+\begin{lemming}[Aperto uniformemente rivestito di $S^1$.]~{}\label{teo uniformemente rivestito}\\
+Sia $U\subsetneqq S^1$ aperto. Allora:
 	\begin{equation}
 		e^{-1}(U) = \coprod_{n\in\integerset} V_n
 	\end{equation}
@@ -1104,8 +1113,8 @@ Dunque $2\pi\widetilde{\alpha}(t)$ è una \textit{determinazione dell'angolo} pe
 	Un sollevamento di $\gamma$ è dato da $\funz {\widetilde{y}} I {S^1}$ con $\gamma(t)=e(\widetilde{\gamma}(t))$. Poiché $\gamma$ è già scritto in forma esponenziale, si ha $\widetilde{\gamma}(t)=nt$.
 \end{example}
 Andiamo ora a verificare l'\textit{esistenza} di sollevamenti per cammini e vedere se e quando sono \textit{unici}.
-\begin{theorema}[Sollevamento di cammini.]~{}\\ \label{teo sollevamento cammini}
-	Ogni cammino $\funz \alpha I {S^1}$ ammette un sollevamento $\funz {\widetilde{\alpha}} I \realset$. Inoltre, fissato il punto iniziale, il sollevamento è \textit{unico}: fissato $x_0\in\realset \colon e(x_0)=\alpha(0)$ (ovvero $x_0\in e^{-1}(\alpha(0))$ fibra di $\alpha(0)\in S^1$),  $\exists ! \funz {\widetilde{\alpha}} I \realset$ sollevamento di $\alpha$ \textit{a partire da $x_0$}, cioè $\widetilde{\alpha}(0)=x_0$.
+\begin{theorema}[Sollevamento di cammini.]~{}\label{teo sollevamento cammini}\\
+Ogni cammino $\funz \alpha I {S^1}$ ammette un sollevamento $\funz {\widetilde{\alpha}} I \realset$. Inoltre, fissato il punto iniziale, il sollevamento è \textit{unico}: fissato $x_0\in\realset \colon e(x_0)=\alpha(0)$ (ovvero $x_0\in e^{-1}(\alpha(0))$ fibra di $\alpha(0)\in S^1$),  $\exists ! \funz {\widetilde{\alpha}} I \realset$ sollevamento di $\alpha$ \textit{a partire da $x_0$}, cioè $\widetilde{\alpha}(0)=x_0$.
 \end{theorema}
 \begin{demonstration}~{}
 	\begin{itemize}
@@ -1192,7 +1201,7 @@ Andiamo ora a verificare l'\textit{esistenza} di sollevamenti per cammini e vede
 	Il grado conta il \textbf{numero di giri} con \textit{segno} di $\alpha$ intorno a $S^1$, dove il segno è \textit{positivo} se gira in senso \textit{antiorario}, e \textit{negativo} se gira in senso \textit{orario}.
 \end{observe}
 Abbiamo così formalizzato il numero di giri con segno intorno a $S^1$.
-\begin{examples}
+\begin{examples}~{}
 	\begin{itemize}
 		\item Sia $\alpha(t)=e^{2\pi i t}$, con $t\in\intv$, e sia $\widetilde{\alpha}(t)=t$ il sollevamento di $\alpha$ a partire da $x_0=0$. Siccome $\widetilde{\alpha}(1)=1\implies \deg\alpha=1$, $\alpha$ percorre solo un giro in senso antiorario intorno a $S^1$.
 		\item Fissato $n\in\integerset$, sia $\displaystyle \funztot \gamma I {S^1} t {e^{2\pi i nt}}$: esso è un cammino chiuso con punto base $1$. Il sollevamento di $\gamma$ con punto base $x_0=0$ è dato da $\widetilde{\gamma}(t)=nt$, dunque $\deg\gamma=\widetilde{\gamma}(1)=n$.
@@ -1302,18 +1311,18 @@ Si ha che $X=A\cup B,\ A\cap B=\{(1,\ 0)\}\neq\emptyset$ e \textbf{c.p.a.}, ma $
 		\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.6]{images/notvankampen.pdf}
 	\end{minipage}
 \end{example}
-\begin{corollary}[La circonferenza non è retratto del disco; Manetti, 12.38.]~{}\\ \label{circonferenza non retratto disco}
+\begin{corollary}[La circonferenza non è retratto del disco; Manetti, 12.38.]~{}\label{circonferenza non retratto disco}\\
 Sia $D\subseteq\realset^2$ il \textit{disco unitario} e $A=\partial{D}$ il suo \textit{bordo}, ovvero $A=S^1$. Allora $A$ non è un retratto di $D$.
 \end{corollary}
 \begin{demonstration}
-	Se $A$ fosse un retratto, allora $\gruf{A}{\ }$ dovrebbe essere isomorfo ad un sottogruppo di $\gruf{D}{\ }$. Tuttavia, $\gruf{A}{\ }=\gruf{S^1}{\ }=\integerset$ e $D\subseteq\realset^2$ convesso $\implies \gruf{D}{\ }=\left\{1\right\}$, il che è un assurdo in quanto $\integerset\nless \left\{1\right\}$!.
+	Se $A$ fosse un retratto, allora $\gruf{A}{\ }$ dovrebbe essere isomorfo ad un sottogruppo di $\gruf{D}{\ }$ perché l'inclusione induce un omomorfismo iniettivo (per il corollario \ref{grp fond iniettiva e suriettiva}, pag. \pageref{grp fond iniettiva e suriettiva}). Tuttavia, $\gruf{A}{\ }=\gruf{S^1}{\ }=\integerset$ e $D\subseteq\realset^2$ convesso $\implies \gruf{D}{\ }=\left\{1\right\}$, il che è un assurdo in quanto $\integerset\nless \left\{1\right\}$!.
 \end{demonstration}
 \begin{observe}
 	Allo stesso modo, se $X$ è uno spazio topologico \textit{semplicemente connesso} e $A\subseteq X$ con $A\cong S^1$, allora $A$ \textit{non} può essere un retratto di $X$.
 \end{observe}
 
-\begin{corollary}[Teorema del punto fisso di Brouwer; Manetti, 12.39.]~{}\\ \label{punto fisso B} \index{punto fisso} \index{Brouwer}
-	Sia $D\subseteq \realset^2$ il disco unitario e sia $\funz f D D$ continua. Allora $f$ ha un punto fisso, ovvero $\exists x_0\in D \colon f(x_0)=x_0$.
+\begin{corollary}[Teorema del punto fisso di Brouwer; Manetti, 12.39.]~{}\label{punto fisso B}\index{punto fisso}\index{teorema!del punto fisso di Brouwer}\\
+Sia $D\subseteq \realset^2$ il disco unitario e sia $\funz f D D$ continua. Allora $f$ ha un punto fisso, ovvero $\exists x_0\in D \colon f(x_0)=x_0$.
 \end{corollary}
 \begin{demonstration}
 	Per \textit{assurdo}, supponiamo che $f$ \textit{non} abbia punti fissi, ovvero $f(x_0)\neq x_0,\ \forall x_0\in D$. Utilizziamo $f$ per costruire una retrazione che non può esistere per motivi topologici. Sia $\funz r D {\partial{D}}$ \textit{retrazione} continua con $r_{\partial{D}}=Id_{\partial{D}}$ definita nel modo seguente:\\
@@ -1329,8 +1338,8 @@ Se $x\in\partial{D}$, allora $x=r(x) \implies r_{\mid_{\partial{D}}}= Id_{\parti
 \end{demonstration}
 \subsubsection{Invarianza della dimensione}
 Grazie al calcolo del gruppo fondamentale della circonferenza si riescono anche a dimostrare dei casi particolari del \textit{teorema di invarianza della dimensione} (che verrà affrontato nel corso di \textit{Topologia Algebrica}).
-\begin{theorema}[Teorema di invarianza della dimensione.]~{}\\ \index{teorema!di invarianza della dimensione}
-	Siano $U\subseteq\realset^n$ e $V\subseteq \realset^m$ aperti. Se $U$ e $V$ sono omeomorfi allora $n=m$. Per contronominale, se $n\neq m$ allora $U$ e $V$ non sono omeomorfi.
+\begin{theorema}[Teorema di invarianza della dimensione.]~{}\index{teorema!di invarianza della dimensione}\\
+Siano $U\subseteq\realset^n$ e $V\subseteq \realset^m$ aperti. Se $U$ e $V$ sono omeomorfi allora $n=m$. Per contronominale, se $n\neq m$ allora $U$ e $V$ non sono omeomorfi.
 \end{theorema}
 \begin{example}
 	Sia $U\subseteq\realset^n$ aperto con $n\geq 2$. Allora $U$ \textit{non} è omeomorfo ad un aperto di $\realset$. Per dimostrarlo basta considerare una palla $B$ in $\realset^n$ ed un intervallo $I$ in $\realset$ e togliere ad entrambe un punto: nel primo caso si ottiene ancora un \textit{connesso}, mentre nel secondo uno \textit{sconnesso}, dunque \textit{non} possono essere \textit{omeomorfi}.
@@ -1340,7 +1349,8 @@ Grazie al calcolo del gruppo fondamentale della circonferenza si riescono anche 
 \end{theorema}
 \begin{demonstration}
 	Ragionando per assurdo, ipotizziamo che $U$ sia omeomorfo ad un aperto di $\realset^2$. Sia $B\subseteq U$ una palla aperta di centro $p$, allora $B$ è omeomorfo ad un aperto $A$ di $\realset^2$.\\
-	Sia $q\in A$ il punto corrispondente a $p$ tramite l'omeomorfismo, dunque $B\setminus\{p\}$ è omeomorfo a $A\setminus\{q\}$, ma $B\setminus\{p\}$ ha lo stesso tipo di omotopia di $S^{n-1}$.\\ Infatti, sia $S$ una sfera centrata in $p$ tale per cui $S\subset B$, si ha che $S\cong S^{n-1}$ e $S\subset B\setminus\{p\}$ è un \textit{retratto di deformazione}. Supponiamo per semplicità che $p=\mathbf{0}$; la retrazione è data da:
+	Sia $q\in A$ il punto corrispondente a $p$ tramite l'omeomorfismo, dunque $B\setminus\{p\}$ è omeomorfo a $A\setminus\{q\}$, ma $B\setminus\{p\}$ ha lo stesso tipo di omotopia di $S^{n-1}$.\\
+	Infatti, sia $S$ una sfera centrata in $p$ tale per cui $S\subset B$, si ha che $S\cong S^{n-1}$ e $S\subset B\setminus\{p\}$ è un \textit{retratto di deformazione}. Supponiamo per semplicità che $p=\mathbf{0}$; la retrazione è data da:
 	\begin{equation*}
 		\funztot r {B\setminus \{\mathbf{0}\}} S x {R\frac{x}{\| x \|}}
 	\end{equation*}
@@ -1380,8 +1390,8 @@ Essa è anche un morfismo di gruppi, dato che $\alpha\ast\beta = (\alpha_1\ast\b
 \end{demonstration}
 \section{Alcuni esempi di gruppi fondamentali}
 \subsection{Toro}
-\begin{define}[Toro.]~{}\\ \label{ciambella}
-	Il \textbf{toro}\index{toro} $T$ è lo spazio dato dal prodotto $S^1\times S^1$.
+\begin{define}[Toro.]~{}\label{ciambella}\\
+Il \textbf{toro}\index{toro} $T$ è lo spazio dato dal prodotto $S^1\times S^1$.
 \end{define}
 	Siccome $S^1\subset\realset^2$, si ha sicuramente che $T\subset \realset^4$; tuttavia, esso è \textit{omeomorfo} al sottospazio $X$ di $\realset^3$ che possiamo visualizzare come una ‘‘ciambella''.
 	In particolare, si può definire come effetto della \textit{rotazione} attorno all'asse $z$ di una \textit{circonferenza} ad esso disgiunto.\\
@@ -1412,8 +1422,7 @@ Per il toro, dunque, consideriamo i generatori corrispondenti a $(1,\ 0)$ e $(0,
 \end{minipage}
 \subsection{Un gruppo fondamentale non abeliano}
 %LEZ 21
-Sia $X$ l'unione ad un punto di due circonferenze in $\realset^2$, cioè il \textbf{bouquet di due circonferenze} che abbiamo trattato a pag. \pageref{bouquet}. Si ha che $\gruf{X}{x_0}$ è \textit{infinito}: presi i cammini $[\alpha]$ e $[\beta]$ per ciascuna delle due circonferenze, con punto base $x_0$ dato dall'intersezione delle due circonferenze, essi \textit{non} commutano, ovvero $[\alpha\ast\beta]\neq [\beta\ast\alpha]$.\\
-Inoltre $\gruf{X}{x_0}$ è generato da $[\alpha]$ e da $[\beta]$.
+Sia $X=S^1\vee S^1$ l'unione ad un punto di due circonferenze in $\realset^2$, cioè il \textbf{bouquet di due circonferenze} che abbiamo trattato a pag. \pageref{bouquet}. Il gruppo fondamentale $\gruf{X}{x_0}$ è il \textbf{gruppo libero}\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{gruppolibero}, si può trovare un approfondimento a riguardo.} $\integerset\ast\integerset$, i cui generatori sono due cammini $[\alpha]$ e $[\beta]$, uno per ciascuna circonferenza. Esso è \textit{infinito} e \textit{non abeliano} perché, preso ad esempio come punto base $x_0$, essi \textit{non} commutano, ovvero $[\alpha\ast\beta]\neq [\beta\ast\alpha]$.
 \subsection{Spazio proiettivo reale}
 Consideriamo ora il caso dello \textit{spazio proiettivo reale}, che abbiamo introdotto nel capitolo \autoref{chap:azionidigruppo}. \\
 Ricordiamo la definizione \ref{def spazio proiettivo}:
@@ -1431,8 +1440,8 @@ Tale relazione di equivalenza su $S^n$ è indotta dall'azione del gruppo $\{\pm 
 Da notare che, se $\pi_0$ è iniettiva su $U$, allora $U\subsetneqq S^n$, dunque se $p_0\in S^n\setminus\{p_0\}\cong\realset^n$ segue che $\pi_0(U)$ aperto in $\proj[n]{\realset}$ è omeomorfo ad un aperto di $\realset^n$.\\
 Analizziamo alcuni casi di dimensione \textit{bassa}:
 	\begin{itemize}
-		\item \underline{$n=1$}: \textbf{retta proiettiva reale} $\mathbb{P}^1(\realset)$.
-		\item \underline{$n=2$}: \textbf{piano proiettivo reale}. La sua descrizione geometrica esplicita può essere \textit{complicata}, tuttavia possiamo trovare un \textit{modello} che ci permetta di studiarlo comodamente. Data la mappa $\funz {\pi_0	} {S^2} {\proj[2]{\realset}}$ e considerata la \textit{calotta superiore} della sfera compreso l'\textit{equatore}, cioè $C\coloneqq S^2\cap\{z\geq 0\}$, si ha che $\pi_0(C)=\proj[2]{\realset}$. Dunque, $\funz {\pi_{0_{\mid_{C}}}} C {\proj[2]{\realset}}$ è ancora chiusa ed è ancora un'identificazione.\\
+		\item \underline{$n=1$}: \textbf{retta proiettiva reale} $\proj[1]{\realset}$.
+		\item \underline{$n=2$}: \textbf{piano proiettivo reale} $\proj[2]{\realset}$. La sua descrizione geometrica esplicita può essere \textit{complicata}, tuttavia possiamo trovare un \textit{modello} che ci permetta di studiarlo comodamente. Data la mappa $\funz {\pi_0	} {S^2} {\proj[2]{\realset}}$ e considerata la \textit{calotta superiore} della sfera compreso l'\textit{equatore}, cioè $C\coloneqq S^2\cap\{z\geq 0\}$, si ha che $\pi_0(C)=\proj[2]{\realset}$. Dunque, $\funz {\pi_{0_{\mid_{C}}}} C {\proj[2]{\realset}}$ è ancora chiusa ed è ancora un'identificazione. Il piano proiettivo si può vedere come la calotta superiore con i \textit{punti antipodali dell'equatore} identificati.\\
 \begin{minipage}{.23\linewidth}
 	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.75]{images/projdisc.pdf}
 \end{minipage}

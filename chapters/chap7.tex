@@ -19,9 +19,9 @@
 Ad esempio, si possono considerare \textit{equivalenti} figure con lo stesso numero di buchi. Sotto questo punto di vista, la figura corrispondente alla lettera \textsf{\textbf{O}} e quella corrispondente a \textsf{\textbf{P}} sono \textit{equivalenti}, dato che hanno entrambe un solo buco, mentre \textsf{\textbf{X}} non lo è perché non ne ha. Allo stesso tempo, nessuna di queste è \textit{omeomorfa} all'altra: infatti, se togliamo dalle tre lettera/figure un punto come il nodo di raccordo delle ‘‘stanghette'' (o per \textsf{\textbf{O}} un punto qualunque), otteniamo per \textsf{\textbf{O}} una componente connessa, per \textsf{\textbf{P}} due e per \textsf{\textbf{X}} ben quattro distinte.\\
 Preceduto da un'approfondimento delle componenti connesse (anche per archi), nel presente capitolo formalizzeremo questo tipo di equivalenza più debole e allo stesso tempo più ampia: l'\textbf{omotopia}.
 \section{Lemma di incollamento}
-\begin{lemming}[Lemma di incollamento.]~{}\\ \label{lemmaincollamento}
-	Siano $X,\ Y$ spazi topologici e $X=A\cup B$. Siano $\funz{f}{A}{Y}$ e $\funz{g}{B}{Y}$ continue tali che $f\left(x\right)=g\left(x\right)\ \forall x\in A\cap B$, cioè $f_{\mid A\cap B}=g_{\mid A\cap B}$.\\
-	Consideriamo l'\textbf{incollamento}\index{incollamento} $\funz{h}{X}{Y}$ definito da:
+\begin{lemming}[Lemma di incollamento.]~{}\label{lemmaincollamento}\\
+Siano $X,\ Y$ spazi topologici e $X=A\cup B$. Siano $\funz{f}{A}{Y}$ e $\funz{g}{B}{Y}$ continue tali che $f\left(x\right)=g\left(x\right)\ \forall x\in A\cap B$, cioè $f_{\mid A\cap B}=g_{\mid A\cap B}$.\\
+Consideriamo l'\textbf{incollamento}\index{incollamento} $\funz{h}{X}{Y}$ definito da:
 	\begin{equation}
 		h\left(x\right)=\begin{cases}
 			f\left(x\right)\ x\in A\\
@@ -33,11 +33,11 @@ Preceduto da un'approfondimento delle componenti connesse (anche per archi), nel
 \begin{demonstration}
 	Supponiamo $A$ e $B$ aperti. Sia $U\subseteq Y$ aperto. Allora:
 	\begin{equation*}
-		h^{-1}\left(U\right)=\underbrace{f^{-1}\left(U\right)}_{\subseteq B}\cap \underbrace{g^{-1}\left(U\right)}_{\subseteq B}
+		h^{-1}\left(U\right)=\underbrace{f^{-1}\left(U\right)}_{\subseteq A}\cap \underbrace{g^{-1}\left(U\right)}_{\subseteq B}
 	\end{equation*}
 Essendo $f,\ g$ continue, segue che $f^{-1}\left(U\right)$ è aperto in $A$ e $g^{-1}\left(U\right)$ è aperto in $B$.\\
-In quanto $A,\ B$ aperti, per definizione di aperto del sottospazio\footnote{Poichè un aperto del sottospazio è dato dall'intersezione del sottospazio con un aperto di $X$, se abbiamo che anche il sottospazio è aperto di $X$, l'intersezione è aperta: in questo caso ogni aperto del sottospazio è anche aperto di $X$.} $f^{-1}\left(U\right)$ e $g^{-1}\left(U\right)$ sono aperti su $X\implies h^{-1}\left(U\right)$ aperto.\\
-Il caso di $A$ e $B$ chiuso è esattamente analogo.
+In quanto $A,\ B$ aperti, per definizione di aperto del sottospazio\footnote{Poiché un aperto del sottospazio è dato dall'intersezione del sottospazio con un aperto di $X$, se abbiamo che anche il sottospazio è aperto di $X$, l'intersezione è aperta: in questo caso ogni aperto del sottospazio è anche aperto di $X$.} $f^{-1}\left(U\right)$ e $g^{-1}\left(U\right)$ sono aperti su $X\implies h^{-1}\left(U\right)$ aperto.\\
+Il caso di $A$ e $B$ chiusi è esattamente analogo.
 \end{demonstration}
 \section{Componenti connesse e componenti c.p.a.}
 Riprendiamo la trattazione delle componenti connesse e \textbf{c.p.a.} introdotte nel \autoref{chap:Connessocompatto}.
@@ -103,7 +103,7 @@ Una \textbf{componente c.p.a.}\index{componente!c.p.a.} di $X$ è una classe di 
 	\item $\overline{\alpha}\left(0\right)=\alpha\left(1\right)=y,\ \overline{\alpha}\left(1\right)=\alpha\left(0\right)=x$.
 	\end{itemize}
 Allora il cammino $\overline{\alpha}$ definisce $y\sim_A x$.
-		\item \textsc{Transitiva}: Supponiamo $x\sim_A y,\ y\sim_A z$. Allora $\exists \funz{\alpha,\ beta}{I}{X}$ tale che $\alpha\left(0\right)=x,\ \alpha\left(1\right)=y, \beta\left(0\right)=y,\ \beta\left(1\right)=z$. Usando la \textbf{giunzione di cammini}\index{cammino!giunzione di cammini}:
+		\item \textsc{Transitiva}: Supponiamo $x\sim_A y,\ y\sim_A z$. Allora $\exists \funz{\alpha,\ \beta}{I}{X}$ tale che $\alpha\left(0\right)=x,\ \alpha\left(1\right)=y, \beta\left(0\right)=y,\ \beta\left(1\right)=z$. Usando la \textbf{giunzione di cammini}\index{cammino!giunzione di cammini}:
 	\begin{equation}
 	\left(\alpha\ast\beta\right)\left(t\right)=\begin{cases}
 		\begin{array}{lc}
@@ -119,7 +119,7 @@ In particolare:
 	\left(\alpha\ast\beta\right)\left(1\right)=\beta\left(1\right)
 		\end{cases}
 \end{equation*}
-Poichè $\alpha\ast\beta$ soddisfa le ipotesi del lemma di incollamento, essa è continua e collega con un cammino unico $x$ e $z$, dunque vale $x\sim_A z$.
+Poiché $\alpha\ast\beta$ soddisfa le ipotesi del lemma di incollamento, essa è continua e collega con un cammino unico $x$ e $z$, dunque vale $x\sim_A z$.
 	\end{itemize}
 \end{demonstration}
 \begin{observes}~{}
@@ -217,7 +217,8 @@ Considerata $\funz{F}{X\times I}{\realset^2}$ tale che $\mvf{F}{x}{y}=\left(1-t\
 		\item \textsc{Simmetrica}: Supponiamo $f\sim g$, cioè $\exists \funz{F}{X\times I}{Y}$ tale che:
 		\begin{equation*}
 			\begin{cases}
-				\mvf{F}{x}{0}=f\left(x\right)\\ \mvf{F}{x}{1}=g\left(x\right)
+				\mvf{F}{x}{0}=f\left(x\right)\\
+				\mvf{F}{x}{1}=g\left(x\right)
 			\end{cases}
 			\forall x\in X
 		\end{equation*}
@@ -265,11 +266,11 @@ Allora $f\sim h$.
 \end{itemize}
 \vspace{-3mm}
 \end{demonstration}
-\begin{lemming}[Composizione di omotopie; Manetti, 10.13.]~{}\\ \label{compomotop}
-	Siano $X,\ Y,\ Z$ spazi topologici e siano $\funz{f_1,\ f_2}{X}{Y}$ continue ed omotope, $\funz{g_1,\ g_2}{Y}{Z}$ continue ed omotope. Allora $\funz{g_1\circ f_1,  g_2\circ f_2}{X}{Z}$ sono omotope:
-	\begin{equation}
-		f_1\sim f_2,\ g_1\sim g_2\implies g_1\circ f_1\sim g_2\circ f_2
-	\end{equation}
+\begin{lemming}[Composizione di omotopie; Manetti, 10.13.]~{}\label{compomotop}\\
+Siano $X,\ Y,\ Z$ spazi topologici e siano $\funz{f_1,\ f_2}{X}{Y}$ continue ed omotope, $\funz{g_1,\ g_2}{Y}{Z}$ continue ed omotope. Allora $\funz{g_1\circ f_1,  g_2\circ f_2}{X}{Z}$ sono omotope:
+\begin{equation}
+	f_1\sim f_2,\ g_1\sim g_2\implies g_1\circ f_1\sim g_2\circ f_2
+\end{equation}
 \vspace{-6mm}
 \end{lemming}
 \begin{demonstration}
@@ -280,7 +281,7 @@ Allora $f\sim h$.
 	\end{itemize}
 Sia:
 \begin{equation*}
-	\funz{H}{X\times I}{Z}{\left(x,\ t\right)}{\mvf{G}{\mvf{F}{x}{t}}{t}}
+	\funztot{H}{X\times I}{Z}{\left(x,\ t\right)}{\mvf{G}{\mvf{F}{x}{t}}{t}}
 \end{equation*}
 \begin{itemize}
 	\item $H$ è continua perché composizione di funzioni continue.
@@ -587,7 +588,7 @@ Infatti $F$ è ben definita, continua e $\mvf{F}{\mathbf{x}}{0}=\frac{\mathbf{x}
 	Dunque, sotto queste condizioni, posso rendere la \textit{retta} un \textit{punto}, mentre il \textit{piano} senza un punto si può trasformare un una \textit{circonferenza}. Allo stesso tempo però, non posso ‘‘concentrare'' la \textit{sfera} in uno solo \textit{punto}.\\
 	Ancor più che con il ragionamento intuitivo sull'omeomorfismo è necessario esercitare \textbf{estrema cautela} nell'applicare questa nozione euristica di omotopia.
 \end{intuit}
-\begin{define}[Bouquet di circonferenze.]~{}\\ \label{bouquet}
+\begin{define}[Bouquet di circonferenze.]~{}\label{bouquet}\\
 Un \textbf{bouquet}\index{bouquet di circonferenze} \textbf{di} $n$ \textbf{circonferenze} è uno spazio topologico ottenuto unendo in un punto $n$ copie di $S^1$.
 \vspace{-8mm}
 \begin{center}

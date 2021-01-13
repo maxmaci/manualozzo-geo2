@@ -52,8 +52,8 @@ Tenendo a mente il concetto di immersione illustrato a pagina \pageref{immersion
 	Siano $X,Y$ spazi topologici e $\funz f X Y$ una funzione continua e suriettiva; $f$ si dice \textbf{identificazione}\index{identificazione} se $Y$ ha la topologia quoziente indotta da $f$.
 \end{define}
 In generale è difficile determinare quando una data funzione è un'identificazione, quindi ne cerchiamo una condizione \textit{sufficiente}.
-\begin{theorema}[Funzione continua, suriettiva, chiusa/aperta è identificazione chiusa/aperta; Manetti, 5.4.]~{}\\ \label{condizione sufficiente identificazione}
-	Sia $\funz f X Y$ continua, suriettiva e chiusa (o aperta), allora $f$ è un'identificazione chiusa (o aperta).
+\begin{theorema}[Funzione continua, suriettiva, chiusa/aperta è identificazione chiusa/aperta; Manetti, 5.4.]~{}\label{condizione sufficiente identificazione}\\
+Sia $\funz f X Y$ continua, suriettiva e chiusa (o aperta), allora $f$ è un'identificazione chiusa (o aperta).
 \end{theorema}
 \begin{demonstration}
 	Supponiamo che $f$ sia aperta. Dimostrare che è un'identificazione è equivalente al mostrare che $\displaystyle A\subseteq Y \text{ aperto } \iff f^{-1}(A)\subseteq X$ aperto. L'implicazione $\Rightarrow)$ è garantita dalla continuità di $f$, per quanto riguarda l'implicazione opposta $\Leftarrow)$ invece siccome $f$ è suriettiva allora $f(f^{-1}(A))=A$ e siccome $f$ è aperta allora anche $A$ è aperto.
@@ -76,13 +76,14 @@ Vediamo ora un esempio di identificazione chiusa e non aperta.
 	Gli omeomorfismi sono identificazioni chiuse e aperte.
 \end{observe}
 Vediamo ora che relazione c'è fra le identificazioni ed i quozienti dati da relazioni di equivalenza.
-\begin{theorema}[Proprietà universale delle identificazioni; Manetti, 5.6.]~{}\\ 
-	\begin{minipage}[t]{0.83\textwidth}
-		Dati $X,Y,Z$ spazi topologici, $g$ una qualsiasi funzione continua, \\
-		$f$ identificazione con le mappe come in figura, allora \\
-		$\exists ! h \text{ continua } \colon g=h\circ f \iff \left( \forall x,y\in X, \ f(x)=f(y)\implies g(x)=g(y)  \right)$ \\
-		ovvero se e solo se $g$ è costante sulle fibre di $f$.
-	\end{minipage}
+\begin{theorema}[Proprietà universale delle identificazioni; Manetti, 5.6.]~{}\\
+\begin{minipage}[t]{0.83\textwidth}
+		Dati $X,Y,Z$ spazi topologici, $g$ una qualsiasi funzione continua, $f$ identificazione con le mappe come in figura, allora:
+		\begin{equation*}
+			\exists! h \text{ continua } \colon g=h\circ f \iff \left( \forall x,y\in X, \ f(x)=f(y)\implies g(x)=g(y)  \right)
+		\end{equation*}
+		Cioè se e solo se $g$ è costante sulle fibre di $f$.
+\end{minipage}
 	\begin{minipage}[t]{0.13\textwidth}\vspace{-10pt}
 		\begin{tikzcd}
 			X \arrow[r, "f"] \arrow[d, "g"'] & Y \arrow[ld, "\exists ! h", dotted] \\
@@ -240,8 +241,8 @@ Vogliamo definire una relazione di equivalenza che lasci ‘‘separate'' solo l
 \end{enumerate}
 \subsection{Quoziente di Hausdroff}
 Cerchiamo ora delle condizioni per avere un \textit{quoziente di} \textbf{Hausdorff}.
-\begin{theorema}[Condizioni sufficienti per il quoziente di Hausdorff.]~{}\\ \label{quozientehausdorff}
-	Sia $\funz f X Y$ continua e identificazione con $X$ compatto e di \textbf{Hausdorff}, allora sono equivalenti:
+\begin{theorema}[Condizioni sufficienti per il quoziente di Hausdorff.]~{}\label{quozientehausdorff}\\
+Sia $\funz f X Y$ continua e identificazione con $X$ compatto e di \textbf{Hausdorff}, allora sono equivalenti:
 		\begin{enumerate}
 			\item $Y$ è di \textbf{Hausdorff}.
 			\item $f$ chiusa.

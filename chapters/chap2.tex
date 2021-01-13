@@ -26,13 +26,13 @@ Vedremo che la \textbf{connessione} e la \textbf{compattezza} sono definite in m
 Uno spazio topologico $X$ si dice \textbf{connesso}\index{connessione} se gli unici sottoinsiemi aperti e chiusi sono $\emptyset,\ X$.\\
 Uno spazio non \textit{connesso} si dice \textbf{sconnesso} oppure \textbf{non connesso}.
 \end{define}
-\begin{lemming}[Condizioni equivalenti della sconnessione; Manetti, 4.2.]~{}\\ \label{sconnesso}
-	Sono condizioni equivalenti:
-	\begin{enumerate}
-		\item $X$ è \textit{sconnesso}.
-		\item $X=A\cup B$ con $A,\ B$ aperti, non vuoti, disgiunti.
-		\item $X=A\cup B$ con $A,\ B$ chiusi, non vuoti, disgiunti.
-	\end{enumerate}
+\begin{lemming}[Condizioni equivalenti della sconnessione; Manetti, 4.2.]~{}\label{sconnesso}\\
+Sono condizioni equivalenti:
+\begin{enumerate}
+	\item $X$ è \textit{sconnesso}.
+	\item $X=A\cup B$ con $A,\ B$ aperti, non vuoti, disgiunti.
+	\item $X=A\cup B$ con $A,\ B$ chiusi, non vuoti, disgiunti.
+\end{enumerate}
 \vspace{-3mm}
 \end{lemming}
 \begin{demonstration}~{}\\
@@ -170,8 +170,8 @@ Poiché $\left[0,\ 1\right]$ è connesso, allora le controimmagini trovate non s
 	\end{itemize}
 \vspace{-3mm}
 \end{observes}
-\begin{define}[Segmento.]~{}\\ \label{segmento}
-	In $\realset^n$, un \textbf{segmento}\index{segmento} $\overline{PQ}$ è la combinazione lineare tra i punti $P$ e $Q$, parametrizzato come:
+\begin{define}[Segmento.]~{}\label{segmento}\\
+In $\realset^n$, un \textbf{segmento}\index{segmento} $\overline{PQ}$ è la combinazione lineare tra i punti $P$ e $Q$, parametrizzato come:
 	\begin{equation}
 		\overline{PQ}=\left\{P+tQ\mid t\in\left[0,\ 1\right]\right\}
 	\end{equation}
@@ -230,8 +230,8 @@ Vediamo ora che conseguenze hanno questi teoremi in $\realset$ con la topologia 
 	\vspace{-3mm}
 \end{observe}
 Mostriamo un risultato per funzioni continue da $S^n$ in $\realset$.
-\begin{theorema}[Funzioni continue da continue da $S^n$ in $\realset$.]~{}\\ \label{non iniettività S^n in realset}
-	Sia $\funz f {S^n} \realset$ una funzione continua. Allora $\exists x\in S^n \ \colon f(x)=f(-x)$. In particolare $f$ non è iniettiva.
+\begin{theorema}[Funzioni continue da continue da $S^n$ in $\realset$.]~{}\label{non iniettività S^n in realset}\\
+Sia $\funz f {S^n} \realset$ una funzione continua. Allora $\exists x\in S^n \ \colon f(x)=f(-x)$. In particolare $f$ non è iniettiva.
 \end{theorema}
 \begin{demonstration}
 	Costruiamo una funzione $g(x)=f(x)-f(-x)$: essa è continua perché somma di funzioni continue. Siccome $S^n$ è connesso allora $g\left( S^n\right)\subseteq\realset$ è connesso $\implies$ per il teorema precedente $g\left(S^n\right)$ è un intervallo.\\
@@ -242,7 +242,7 @@ Mostriamo un risultato per funzioni continue da $S^n$ in $\realset$.
 		\end{gather*}
 \end{demonstration}
 Come conseguenza di questo teorema si ha che un aperto di $\realset$ non sarà mai omeomorfo ad un aperto di $\realset^n$.
-\begin{theorema}[Aperti di $\realset$ non omeomorfi ad aperti di $\realset^n$.]~{}\\ 
+\begin{theorema}[Aperti di $\realset$ non omeomorfi ad aperti di $\realset^n$.]~{}\\
 Sia $I\subseteq\realset$ e $U\subseteq\realset^n$, con $n\geq 2$. Se $I,\ U$ sono aperti allora $I$ non è omeomorfo a $U$.	
 \end{theorema}	
 \begin{demonstration}
@@ -254,8 +254,8 @@ Sia $I\subseteq\realset$ e $U\subseteq\realset^n$, con $n\geq 2$. Se $I,\ U$ son
 \end{observe}
 %LEZ 08
 \subsection{Intersezioni, unioni e prodotti di spazi connessi}
-\begin{theorema}[Unione arbitraria di sottospazi connessi è un connesso.]~{}\\ \label{unione sottospazi connessi}
-	Siano $\left\{ X_i \right\}_{i\in I}$ una famiglia di sottoinsiemi di uno spazio topologico $X$. Se ogni $X_i$ è connesso e $\displaystyle\inter_{i\in I}X_i\neq\emptyset$ allora $\displaystyle\union_{i\in I}X_i$ è connesso.	
+\begin{theorema}[Unione arbitraria di sottospazi connessi è un connesso.]~{}\label{unione sottospazi connessi}\\
+Siano $\left\{ X_i \right\}_{i\in I}$ una famiglia di sottoinsiemi di uno spazio topologico $X$. Se ogni $X_i$ è connesso e $\displaystyle\inter_{i\in I}X_i\neq\emptyset$ allora $\displaystyle\union_{i\in I}X_i$ è connesso.	
 \end{theorema}
 \begin{demonstration}
 	Sia $\displaystyle Z\subseteq Y\coloneqq \union_{i\in I}X_i$ un aperto, chiuso non vuoto. Vogliamo dimostrare che $Z=X$, cosicché $X$ risulti connesso. Basta l'inclusione $Y\subseteq Z$.\newline
@@ -276,8 +276,8 @@ Sia $I\subseteq\realset$ e $U\subseteq\realset^n$, con $n\geq 2$. Se $I,\ U$ son
 	Quindi per $\forall i, \ X_i\subseteq Z \implies Y\subseteq Z \implies Y=Z$, quindi $Y$ è connesso perché l'unico aperto e chiuso non vuoto è banale ($Y$).
 \end{demonstration}
 
-\begin{theorema}[Prodotto di connessi è connesso.]~{}\\ \label{prodotto connessi}
-	$X, Y$ sono spazi topologici connessi $\iff X\times Y$ è connesso.	
+\begin{theorema}[Prodotto di connessi è connesso.]~{}\label{prodotto connessi}\\
+$X, Y$ sono spazi topologici connessi $\iff X\times Y$ è connesso.	
 \end{theorema}
 \begin{demonstration}~{}\\
 	$\impliessx$ Si sfrutta la continuità delle proiezioni e che l'immagine continua di un connesos è connessa:
@@ -319,8 +319,8 @@ Approfondiamo ora la differenza fra essere spazio connesso o \textbf{c.p.a.}, mo
 	L'ultima implicazione è dovuta al fatto che ogni chiuso che contiene $A$ si è dimostrato essere solo $X$ per cui esso sarà la sua chiusura.
 \end{demonstration}
 
-\begin{theorema}[Chiusura e connessione.]~{}\\ \label{chiusuraconnessa}
-	Sia $X$ uno spazio topologico e $Y\subseteq X$ connesso, allora
+\begin{theorema}[Chiusura e connessione.]~{}\label{chiusuraconnessa}\\
+Sia $X$ uno spazio topologico e $Y\subseteq X$ connesso, allora
 		\begin{equation*}
 			\forall W \colon Y\subseteq W \subseteq \overline{Y} \implies W \text{ connesso}
 		\end{equation*}
@@ -470,7 +470,8 @@ L'importanza della definizione risiede nel fatto che non si chiede che esista un
 \begin{demonstration}
 	Considerato un ricoprimento aperto di $f(X)$, si vuole trovare un sottoricoprimento finito tramite le controimmagini di $f$ in modo da sfruttare così la compattezza di $X$. \newline
 	Sia  $\mathcal{A}=\{A_i\}$ ricoprimento di $f(X)$, allora $\forall i\in I, A_i\subseteq Y$ aperto e $\displaystyle \union_{i\in I}A_i \supseteq f(X)$. \newline
-	Si considerino ora le controimmagini, che saranno aperte perché $f$ è continua:\\ $\mathcal{B}=\left\{f^{-1}(A_i)\right\}$ è un ricoprimento aperto di $X$. Tuttavia $X$ è compatto, quindi posso estrarre un sottoricoprimento finito:
+	Si considerino ora le controimmagini, che saranno aperte perché $f$ è continua:\\
+	$\mathcal{B}=\left\{f^{-1}(A_i)\right\}$ è un ricoprimento aperto di $X$. Tuttavia $X$ è compatto, quindi posso estrarre un sottoricoprimento finito:
 		\begin{gather*}
 			X=f^{-1}(A_1) \cup	\dots \cup f^{-1}(A_n) \implies f(X)\subseteq A_1\cup \dots \cup A_n \implies f(X) \text{ compatto}
 		\end{gather*}
@@ -490,7 +491,7 @@ Da questo teorema segue che essere compatti è una \textbf{proprietà topologica
 	Siccome $X$ non è vuoto per la completezza dei reali ne posso considerare l'estremo superiore $b=\sup X$. Ci sono due casi: $b>1$  e $b\leq 1$, dimostriamo che il primo è possibile e che il secondo è assurdo sfruttando le proprietà dell'estremo superiore:
 		\begin{itemize}
 			\item $b>1 \implies \exists t\in X \colon 1<t<b \implies [0,\ 1]\subseteq [0,\ t] \subseteq A_1\cup \dots \cup A_n$
-			\item $b\leq 1 \implies b\in [0,\ 1] \implies \exists A_0\in\mathcal{A} \colon b\in A_0$, visto che $\mathcal{A}$ è un ricoprimento aperto $A_0$ è aperto, dunque contiene $b$ con tutto un suo intorno, ovvero \\ $\exists \delta >0 \colon B_\delta (b)=(b-\delta, \ b+\delta )\subseteq A_0$. Mostriamo ora che $A_0$ non copre solo $[0,\ b]$ ma va oltre, quindi si ottiene l'assurdo che $b\neq\sup X$. Sia dunque $0<h<\delta$, allora
+			\item $b\leq 1 \implies b\in [0,\ 1] \implies \exists A_0\in\mathcal{A} \colon b\in A_0$, visto che $\mathcal{A}$ è un ricoprimento aperto $A_0$ è aperto, dunque contiene $b$ con tutto un suo intorno, ovvero \\$\exists \delta >0 \colon B_\delta (b)=(b-\delta, \ b+\delta )\subseteq A_0$. Mostriamo ora che $A_0$ non copre solo $[0,\ b]$ ma va oltre, quindi si ottiene l'assurdo che $b\neq\sup X$. Sia dunque $0<h<\delta$, allora
 				\begin{gather*}
 					[0,\b+h]=[0,\ t]\cup [t,\ b+h]\subseteq \underbrace{A_1\cup\dots\cup A_n}_{t\in X}\cup \underbrace{A_0}_{B_\delta (b)\subseteq A_0}
 				\end{gather*}	
@@ -522,8 +523,8 @@ Inoltre, se $X$ ha la topologia discreta vale anche il viceversa:
 Sia $\mathcal{A}=\left\{ A_x\right\}_{x\in X}, \ A_x\coloneqq \{x\}$, che è aperto in quanto $X$ ha la topologia discreta. Siccome $X$ è compatto allora esiste un sottoricoprimento finito, ovvero un numero finito di aperti di $\mathcal{A}$ che lo ricopra, ossia $X=\{x_1\}\cup\{x_2\}\cup\dots\{x_n\}\implies X$ finito.
 \end{observe}
 \subsection{Relazioni fra compattezza e altre proprietà topologiche}
-\begin{theorema}[Chiuso in un compatto è compatto; Manetti, 4.41.1.]~{}\\ \label{chiuso in compatto}
-	Un chiuso in un compatto è un compatto, ovvero se $X$ è uno spazio topologico compatto, $C\subseteq X$ chiuso allora $C$ è compatto.
+\begin{theorema}[Chiuso in un compatto è compatto; Manetti, 4.41.1.]~{}\label{chiuso in compatto}\\
+Un chiuso in un compatto è un compatto, ovvero se $X$ è uno spazio topologico compatto, $C\subseteq X$ chiuso allora $C$ è compatto.
 \end{theorema}
 \begin{demonstration}
 	Sia $\mathcal{A}=\{A_i \}_{i\in I}$ un ricoprimento di $X$, sia $C\subseteq X$ chiuso, allora $A\coloneqq X\setminus C$ è aperto in $X$.\newline
@@ -539,7 +540,7 @@ Sia $\mathcal{A}=\left\{ A_x\right\}_{x\in X}, \ A_x\coloneqq \{x\}$, che è ape
 \end{observe}
 Vediamo ora che relazione c'è fra le due proprietà topologiche di essere uno spazio di \textbf{Hausdorff} (\textbf{T2}) e compatto.
 
-\begin{theorema}[Compatto in un Hausdorff è chiuso; Manetti, 4.48.]~{}\\ \label{compatto in hausdorff chiuso}
+\begin{theorema}[Compatto in un Hausdorff è chiuso; Manetti, 4.48.]~{}\label{compatto in hausdorff chiuso}\\
 Se $X$ è di Hausdorff e $K\subseteq X$ è compatto, allora $K$ è chiuso.
 \end{theorema}
 \begin{demonstration}
@@ -557,8 +558,8 @@ Se $X$ è di Hausdorff e $K\subseteq X$ è compatto, allora $K$ è chiuso.
 		\end{gather*}
 \end{demonstration}
 
-\begin{theorema}[Compatto in $\realset$ se e solo chiuso e limitato; Manetti, 4.42.]~{}\\ \label{compatto chiuso e limitato R}
-	Un sottospazio $K\subseteq \realset$ è compatto $\iff K$ chiuso e limitato.
+\begin{theorema}[Compatto in $\realset$ se e solo chiuso e limitato; Manetti, 4.42.]~{}\label{compatto chiuso e limitato R}\\
+Un sottospazio $K\subseteq \realset$ è compatto $\iff K$ chiuso e limitato.
 \end{theorema}
 \begin{demonstration}~{}\\
 	$\impliesdx$ Siccome $\realset$ è di \textbf{Hausdorff} e $K$ è compatto allora per il teorema precedente $K$ è chiuso.\newline
@@ -573,8 +574,8 @@ Se $X$ è di Hausdorff e $K\subseteq X$ è compatto, allora $K$ è chiuso.
 	Da notare che il teorema precedente non afferma he gli unici compatti di $\realset$ sono gli intervalli chiusi e limitati, ma anche una loro unione finita potrebbe esserlo.
 \end{observe}
 
-\begin{theorema}[Funzione su un compatto in $\realset$ ammette massimo e minimo; Manetti, 4.43.]~{}\\ \label{weierstrass}
-	Sia $\funz f X \realset$ con $X$ compatto e $\realset$ con la topologia euclidea. Se $f$ è continua allora ammette massimo e minimo.
+\begin{theorema}[Funzione su un compatto in $\realset$ ammette massimo e minimo; Manetti, 4.43.]~{}\label{weierstrass}\\
+Sia $\funz f X \realset$ con $X$ compatto e $\realset$ con la topologia euclidea. Se $f$ è continua allora ammette massimo e minimo.
 \end{theorema}
 \begin{demonstration}
 	$f$ continua e $X$ compatto $\implies f(X)$ compatto, e per il teorema precedente ciò equivale al fatto che $f(X)$ è chiuso e limitato.
@@ -594,8 +595,8 @@ Se $X$ è di Hausdorff e $K\subseteq X$ è compatto, allora $K$ è chiuso.
 	Per poter parlare di massimo e minimo c'è bisogno di un \textit{ordinamento} sul codominio, mentre il dominio $X$ potrebbe anche non averne uno!
 \end{observe}
 Vogliamo ora vedere come si comporta la compattezza rispetto al prodotto, prima però va dimostrato un lemma che ci tornerà utile nella dimostrazione del teorema.
-\begin{lemming}[Tube lemma.]~{}\\ \label{tube lemma}
-	Siano $X,Y$ spazi topologici con $Y$ compatto, $x_0\in X$, $A\subseteq X\times Y\colon A$ aperto e $\{x_0\}\times Y\subseteq A$. Allora $\exists U\subseteq X$ con $x_0\in U$, aperto tale che $\{x_0\}\times Y \subseteq U\times Y \subseteq A$
+\begin{lemming}[Tube lemma.]~{\label{tube lemma}}\\
+Siano $X,Y$ spazi topologici con $Y$ compatto, $x_0\in X$, $A\subseteq X\times Y\colon A$ aperto e $\{x_0\}\times Y\subseteq A$. Allora $\exists U\subseteq X$ con $x_0\in U$, aperto tale che $\{x_0\}\times Y \subseteq U\times Y \subseteq A$
 \end{lemming}
 \begin{demonstration}
 	$A$ aperto in $\displaystyle X\times Y \implies A=\union_{i\in I}\left( U_i\times V_i \right)$ aperti della base, quindi $\{U_i\times V_i\}$ è un ricoprimento aperto di $\{x_0\}\times Y \cong Y$ compatto, dunque esiste un sottoricoprimento finito $\{x_0\}\times Y\subseteq (U_1\times V_1)	\cup\dots\cup (U_n\times V_n)$. Se necessario si eliminano gli aperti che sono disgiunti da $\{x_0\}\times Y$ e poniamo $U=U_1\cap\dots\cap U_n$, allora
@@ -603,8 +604,8 @@ Vogliamo ora vedere come si comporta la compattezza rispetto al prodotto, prima 
 			\{x_0\}\times Y\subseteq U\times Y \subseteq (U_1\times V_1)	\cup\dots\cup (U_n\times V_n) \subseteq A
 		\end{equation*}
 \end{demonstration}
-\begin{theorema}[Prodotto di compatti è compatto; Manetti, 4.49.2.]~{}\\ \label{prodotto compatti}
-	$X,Y$ compatti $\iff X\times Y$ è compatto.
+\begin{theorema}[Prodotto di compatti è compatto; Manetti, 4.49.2.]~{}\label{prodotto compatti}\\
+$X,Y$ compatti $\iff X\times Y$ è compatto.
 \end{theorema}
 \begin{demonstration}~{}\\
 	$\impliessx $ Si considerino le proiezioni, che sono funzioni continue. Essendo $X\times Y$ compatto allora le immagini delle proiezioni saranno compatte, ed essendo le proiezioni suriettive allora $X,Y$ sono compatti. \newline
@@ -621,8 +622,8 @@ Vogliamo ora vedere come si comporta la compattezza rispetto al prodotto, prima 
 		\end{gather*}
 \end{demonstration}
 Sfruttiamo ora che il prodotto di compatti è compatto per generalizzare il teorema \ref{compatto chiuso e limitato R} allo spazio $\realset ^n$.
-\begin{theorema}[Compatto in $\realset^n$ se e solo chiuso e limitato; Manetti, 4.42.]~{}\\ \label{compatto chiuso e limitato R^n}
-	$K\subseteq \realset^n$ compatto $\iff K$ chiuso e limitato.
+\begin{theorema}[Compatto in $\realset^n$ se e solo chiuso e limitato; Manetti, 4.42.]~{}\label{compatto chiuso e limitato R^n}\\
+$K\subseteq \realset^n$ compatto $\iff K$ chiuso e limitato.
 \end{theorema}
 \begin{demonstration}~{}\\
 	$\impliesdx$ $K$ è compatto in $\realset^n$ che è un Hausdorff, quindi $K$ è chiuso per il teorema \ref{compatto in hausdorff chiuso}. Per dimostrare che è limitato  consideriamo un ricoprimento di palle aperte centrate nell'origine e si sfrutta subito che $K$ è compatto
@@ -645,8 +646,8 @@ Una palla di centro $\mathbf{0}$ e raggio $1$ come:
 \end{equation*}
 È chiusa e limitata, tuttavia in $	\mathcal{C}\left( [0, \ 1] \right)$ non è compatta.
 \end{digression}
-\begin{theorema}[Funzione continua da compatto ad Hausdorff è chiusa; Manetti, 4. 52.]~{}\\ \label{da compatto in T_2 è chiuso}
-	Sia $\funz f X Y$ continua con $X$ è compatto e $Y$ di \textbf{Hausdorff}, allora $f$ è chiusa.
+\begin{theorema}[Funzione continua da compatto ad Hausdorff è chiusa; Manetti, 4. 52.]~{}\label{da compatto in T_2 è chiuso}\\
+Se $\funz f X Y$ continua con $X$ è compatto e $Y$ di \textbf{Hausdorff}, allora $f$ è chiusa.
 \end{theorema}
 \begin{demonstration}
 	Per dimostrare che $f$ è chiusa consideriamo $C\subseteq X$ chiuso e mostriamo che $f(C)$ è chiuso sfruttando rispettivamente i teoremi \ref{chiuso in compatto}, \ref{immagine compatto} e \ref{compatto in hausdorff chiuso}:
@@ -656,8 +657,8 @@ Una palla di centro $\mathbf{0}$ e raggio $1$ come:
 \end{demonstration}
 In generale vale il \textbf{teorema di Kuratowsi-Mròwka}: $Y$ è compatto se e solo se per qualsiasi spazio topologico $X$ la proiezione $\funz {p_X} {X\times Y} X$ è chiusa; noi ne dimostreremo una versione più debole.
 % LEZ 10
-\begin{theorema}[Prodotto con un compatto implica una proiezione chiusa; Manetti, 4.49.1.]
-	Siano $X,\ Y$ spazi topologici con $Y$ compatto, allora la proiezione $\funz p {X\times Y} X$ è chiusa.
+\begin{theorema}[Prodotto con un compatto implica una proiezione chiusa; Manetti, 4.49.1.]~{}\\
+Siano $X,\ Y$ spazi topologici con $Y$ compatto, allora la proiezione $\funz p {X\times Y} X$ è chiusa.
 \end{theorema}
 \begin{demonstration}
 	Per dimostrare che $p$ è chiusa mostriamo che preso un $C\subseteq X\times Y$ chiuso allora $p(C)\subseteq X$ è chiuso, ovvero che il suo complementare $X\setminus p(C)$ è intorno di ogni suo punto.\newline

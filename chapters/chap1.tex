@@ -288,7 +288,7 @@ Essere aperto oppure essere chiuso \textit{non si escludono a vicenda}! Un insie
 \begin{define}[Chiusura.]~{}\\
 Sia $X$ spazio topologico e $A\subseteq X$. La \textbf{chiusura}\index{chiusura} $\overline{A}$ di $A$ è il più piccolo chiuso contente $A$:
 \begin{equation}
-\overline{A}=\inter_{\substack{A\subseteq C\\ C\text{ chiuso}}}C
+\overline{A}=\inter_{\substack{A\subseteq C\\C\text{ chiuso}}}C
 \end{equation}
 \textsc{Proprietà:}
 \begin{itemize}
@@ -304,7 +304,7 @@ Un punto $x$ è \textbf{aderente}\index{aderenza} ad $A$ se $x\in\overline{A}$.
 \begin{define}[Interno.]~{}\\
 Sia $X$ spazio topologico e $A\subseteq X$. L'\textbf{interno}\index{interno} $\interior{A}$ di $A$ è il più grande aperto contenuto in $A$:
 \begin{equation}
-	\interior{A}=\union_{\substack{B\subseteq A\\ B\text{ aperto}}}B
+	\interior{A}=\union_{\substack{B\subseteq A\\B\text{ aperto}}}B
 \end{equation}
 \textsc{Proprietà:}
 \begin{itemize}
@@ -438,7 +438,7 @@ f\left(\overline{f^{-1}\left(C\right)}\right)\subseteq C\\
 \end{gather*}
 Dunque la controimmagine $A$ di un chiuso $C$ è un chiuso.
 \end{demonstration}
-\begin{theorema}[Composizione di funzioni continue; Manetti, 3.26.]~{}\\ \label{compfunzcont}
+\begin{theorema}[Composizione di funzioni continue; Manetti, 3.26.]~{}\label{compfunzcont}\\
 La \textit{composizione} di funzioni continue è continua.
 \begin{equation}
 \funz{f}{Y}{Z},\ \funz{g}{X}{Y}\text{ continue}\implies \funz{f\circ g}{X}{Z}\text{ continua}
@@ -679,7 +679,7 @@ Presi $U\subseteq P$, $V\subseteq Q$ allora:
 \begin{equation*}
 U\times V=\left(U\cap P\right)\times\left(V\cap Q\right)=\left(U\times P\right)\cap \left(V\times Q\right)=p^{-1}\left(U\right)\cap q^{-1}\left(V\right)
 \end{equation*}
-Poichè $p,\ q$ sono continue e $U,\ V$ sono aperti, anche $p^{-1}\left(U\right),\ q^{-1}\left(V\right)$ sono aperti; segue che la loro intersezione è aperta e dunque $U\times V$ è aperto della topologia $\topo$.
+Poiché $p,\ q$ sono continue e $U,\ V$ sono aperti, anche $p^{-1}\left(U\right),\ q^{-1}\left(V\right)$ sono aperti; segue che la loro intersezione è aperta e dunque $U\times V$ è aperto della topologia $\topo$.
 \end{enumerate}
 \item Dimostriamo il caso con $p_{\mid}$, dato che il caso con $q_{\mid}$ è analogo. Preso un aperto della base $U\times V$, studiamo gli aperti del sottospazio $P\times\left\{ y\right\}$.
 \begin{equation*}
@@ -856,7 +856,8 @@ B_{\nicefrac{d}{4}}\left(Y\right)\cap B_{\nicefrac{d}{4}}\left(Y\right)=\emptyse
 \begin{itemize}
 \item Sia $Y\subseteq X$ con $X$ spazio topologico, $Y$ con la topologia di sottospazio. Prendiamo $x,\ y\in Y$ con $x\neq y$.\\
 $X$ di \textbf{Hausdorff} implica che $\exists U,\ V\subseteq X$ intorni rispettivamente di $x$ e $y$ tali che $U\cap V=\emptyset$. Basta prendere allora $U\cap Y,\ V\cap Y$: sono intorni sempre di $x$ e $y$ in $Y$ che restano comunque disgiunti.
-\item Sia $X\times Y$ con $X,\ Y$ spazi topologici. Prendiamo $\left(x_1,\ y_1\right)\neq\left(x_2,\ y_2\right)$. Questo significa che $x_1\neq x_2$ oppure $y_1\neq y_2$.\\ Scegliamo senza perdita di generalità $x_1\neq x_2$. Essendo $X$ di \textbf{Hausdorff}, $\exists U_1,\ U_2$ (intorni) aperti in $X$  tali che $x_1\in U_1,\ x_2\in U_2\ \colon U_1\cap U_2=\emptyset$. Allora:
+\item Sia $X\times Y$ con $X,\ Y$ spazi topologici. Prendiamo $\left(x_1,\ y_1\right)\neq\left(x_2,\ y_2\right)$. Questo significa che $x_1\neq x_2$ oppure $y_1\neq y_2$.\\
+Scegliamo senza perdita di generalità $x_1\neq x_2$. Essendo $X$ di \textbf{Hausdorff}, $\exists U_1,\ U_2$ (intorni) aperti in $X$  tali che $x_1\in U_1,\ x_2\in U_2\ \colon U_1\cap U_2=\emptyset$. Allora:
 \begin{equation*}
 \begin{array}{l}
 	U_1\times Y\text{ intorno di }\left(x_1,\ y_1\right)\\
@@ -931,7 +932,7 @@ In altre parole, una proprietà topologica è \textbf{invariante}\index{invarian
 Per verificare che $P$ è una proprietà topologica dati due spazi omeomorfi $X\cong Y$, basta in realtà verificare solo che se $X$ ha la proprietà $P$ allora anche $Y$ la ha.\\
 Invece, si può verificare che due spazi \textbf{non} sono omeomorfi trovando una proprietà topologica che non condividono tra di loro.
 \end{observe}
-\begin{lemming}[Hausdorff è proprietà topologica; Manetti, esercizio 3.56.]~{}\\ \label{hausexercise}
+\begin{lemming}[Hausdorff è proprietà topologica; Manetti, esercizio 3.56.]~{}\label{hausexercise}\\
 Siano $X,\ Y$ spazi topologici con $Y$ di \textbf{Hausdorff}. Se esiste $\funz{f}{X}{Y}$ continua e iniettiva, allora $X$ è di \textbf{Hausdorff}.
 \end{lemming}
 \begin{demonstration}

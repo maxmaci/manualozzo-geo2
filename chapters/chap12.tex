@@ -88,7 +88,7 @@ Siccome ogni fattore irriducibile $F_i$ è omogeneo, ognuno definisce una curva 
 Se $m_i>1$ diciamo che $C_i$ è una componente di \textbf{molteplicità}\index{molteplicità} $m_i$ in $C$
 \end{define}
 
-\begin{examples}
+\begin{examples}~{}
 	\begin{itemize}
 		\item Le rette, essendo curve di grado 1, sono \textit{sempre} \textbf{irriducibili}.\\
 		Le coniche sono curve di grado 2. Dunque, considerata una conica $C$ di equazione $F=0$, ci sono 3 possibilità:
@@ -138,7 +138,7 @@ Il \textbf{rango}\index{rango!di una conica} della conica $C$ è il rango della 
 \end{define}
 \begin{observe}
 Come già osservato, l'equazione della conica $C$ determina $F$ solo a meno di multipli, dunque anche la matrice $A$ è determinata \textit{a meno di multipli}.
-Tuttavia, il rango rimane ben definito in quanto $\rk(\lambda A)=\rk(A),\ \forall\lambda\neq 0$. Inoltre, il rango \textit{non} può essere $0$ perché essendo l'equazione di una conica il polinomio \textit{non} può essere nullo (non descriveremmo una conica!).
+Tuttavia, il rango rimane \textit{ben definito} in quanto $\rk(\lambda A)=\rk(A),\ \forall\lambda\neq 0$. Inoltre, il rango \textit{non} può essere $0$ perché essendo l'equazione di una conica il polinomio \textit{non} può essere nullo (non descriveremmo una conica!).
 \end{observe}
 Vogliamo studiare le coniche e le curve di grado maggiore a meno di equivalenza proiettiva, allo stesso modo in cui abbiamo classificato le coniche in $\realset^2$ a meno di rototraslazioni.\\
 Sia dunque $\funz f {\proj[2]{\ }} {\proj[2]{\ }}$ una proiettività, la cui matrice associata $M\in\gl(3,\kamp)$ è tale per cui $x'=Mx$. Allora $f$ porta la conica $C\colon F=0$ nella conica $\widetilde{C}\colon \widetilde{F}=0$, dove $\widetilde{F}$ si ottiene sostituendo in $f$ il vettore $x=M^{-1}x'$.
@@ -168,7 +168,8 @@ In sostanza abbiamo ottenuto l'espressione dell'inversa di $f$; quindi, la trasf
 Osserviamo che la proiettività manda il supporto della prima conica nel supporto della seconda conica e che, trasformando la conica tramite una proiettività, trasformiamo la forma quadratica $F$ tramite un cambiamento di coordinate di $\kamp^3$.\\
 Dunque, se $A$ è la matrice associata a $C$ e $\widetilde{A}$ è la matrice associata alla trasformata $\widetilde{C}$ tramite $f$, allora $A$ e $\widetilde{A}$ sono \textbf{congruenti}.
 Infatti, il \textit{cambiamento di coordinate} su uno spazio vettoriale per la forma quadratica è dato da $\widetilde{A}=M^tAM$ con $M\in\gl\left(3,\kamp\right)$ con $M$ una matrice associata della proiettività, interpretata come matrice del cambiamento di base.\\
-Viceversa, date due coniche $C_1$ e $C_2$ le cui matrici associate (simmetriche) $A_1$ e $A_2$ sono congruenti, allora $C_1$ e $C_2$ sono \textit{proiettivamente equivalenti}:  questo perché, in generale, forme quadratiche congruenti differiscono per un cambiamento di base.\\ Otteniamo così la seguente corrispondenza:
+Viceversa, date due coniche $C_1$ e $C_2$ le cui matrici associate (simmetriche) $A_1$ e $A_2$ sono congruenti, allora $C_1$ e $C_2$ sono \textit{proiettivamente equivalenti}:  questo perché, in generale, forme quadratiche congruenti differiscono per un cambiamento di base.\\
+Otteniamo così la seguente corrispondenza:
 \begin{equation*}
 \begin{array}{ccc}
 C_1\text{ e }C_2\text{ equivalenti}& \iff & A_1\text{ e }A_2\text{ congruenti}
@@ -235,7 +236,7 @@ Quindi, la segnatura di una conica è definita solo ‘‘a meno del segno'', ne
 				\text{Conica irriducibile a punti reali,} \\
 				\text{contiene infiniti punti in }\proj[2]{\realset}
 			\end{array}
-		\end{array}\\ \hline %ha un supporto? ci sono dei punti in P2R che hanno questa equazione? no perché escludiamo l'origine	conica irriducibile senza punti reali /tipo ellisse immaginario/ dunque il supporto è vuoto
+		\end{array}\\\hline %ha un supporto? ci sono dei punti in P2R che hanno questa equazione? no perché escludiamo l'origine	conica irriducibile senza punti reali /tipo ellisse immaginario/ dunque il supporto è vuoto
 		\underline{\rk 2} &\begin{array}{c}
 		(2,0)/(0,2) \\
 		\\
@@ -250,7 +251,7 @@ Quindi, la segnatura di una conica è definita solo ‘‘a meno del segno'', ne
 		\begin{array}{l}
 		\text{Coppia di rette non reali} \\
 		\text{con } 1 \text{ punto reale } (0\colon 0\colon 1)
-		\end{array} \\ %	perché si fattorizza ma a coeff complessi. Ha un unico punto reale (0\colon 0\colon 1) intersezione delle due rette complesse coniugate
+		\end{array} \\%	perché si fattorizza ma a coeff complessi. Ha un unico punto reale (0\colon 0\colon 1) intersezione delle due rette complesse coniugate
 		\begin{array}{l}
 		\text{Conica irriducibile a punti reali,} \\
 		\text{coppia di rette reali distinte}
@@ -331,7 +332,7 @@ Se $P=(1\colon x\colon y)\in U_0$  allora $f\left(x,\ y\right)=F\left(P\right)$ 
 	Se $C$ è una retta $ax+by+c=0$, allora la \textit{chiusura proiettiva} di $C$ è $ax_1+bx_2+cx_0=0$ ed il \textit{punto improprio} di $C$ è $(0\colon -b\colon a)$, che corrisponde alla direzione della retta $C$.
 \end{example}
 
-\begin{examples}
+\begin{examples}~{}
 	Consideriamo in $\realset^2$ le coniche:
 	\begin{equation*}
 		\begin{array}{cll}
@@ -410,21 +411,21 @@ Con $b\in\complexset^2$ e $A\in\gl(2,\complexset)$ ad una delle cinque coniche:
 	1. &	$x^2+y^2+1=0$ & \begin{tabular}{l}
 			${\scriptstyle \blacksquare}$ Rango 3.\\
 			${\scriptstyle \blacksquare}$ \textit{Due} punti impropri \textit{distinti}.
-		\end{tabular}   \\ \hline
+		\end{tabular}\\\hline
 	2. &	$y-x^2=0$ & \begin{tabular}{l}
 			${\scriptstyle \blacksquare}$ Rango 3.\\
 			${\scriptstyle \blacksquare}$ Un \textit{unico} punto improprio.
-		\end{tabular}  \\ \hline
+		\end{tabular}\\\hline
 	3. &	$x^2+y^2=(x+iy)(x-iy)=0$ & \begin{tabular}{l}
 			Coppia di rette distinte \textit{incidenti}:\\
 			${\scriptstyle \blacksquare}$ Rango 2.\\
 			${\scriptstyle \blacksquare}$ \textit{Due} punti impropri \textit{distinti}.
-		\end{tabular} \\ \hline
+		\end{tabular}\\\hline
 	4. &	$x(x+1)=0$ & \begin{tabular}{l}
 			Coppia di rette distinte \textit{parallele}:\\
 			${\scriptstyle \blacksquare}$ Rango 2.\\
 			${\scriptstyle \blacksquare}$ Un \textit{unico} punto improprio.
-		\end{tabular} \\ \hline
+		\end{tabular}\\\hline
 	\begin{tabular}{l}
 		\\[-3mm]
 		5.
@@ -463,7 +464,7 @@ Ricordiamo che vedendo $\left(x_0\colon x_1\right)\in\proj[1]{\ }$, allora $F$ h
 	Diciamo che $F$ si \textbf{annulla in } $P=(a\colon b)$ \textbf{all'ordine } $m$ se $(ax_1-bx_0)^m$\index{annullarsi in un punto} è la massima potenza di $ax_1-bx_0$ che divide $F$.
 \end{define}
 %		va letta ome la propr in 1 var come le radici /Ruffini!/
-\begin{proposition}[Proprietà dei polinomi omogenei in 2 variabili.]~{}\\ \label{teo polinomi omogenei 2 variabili}
+\begin{proposition}[Proprietà dei polinomi omogenei in 2 variabili.]~{}\label{teo polinomi omogenei 2 variabili}
 	\begin{enumerate}
 		\item	$F$ si annulla in un punto $P=(a\colon b)\in\proj[1]{\ } \iff ax_1-bx_0\mid F$.
 		\item 	Se $d=\deg F$, $F$ ha al più $d$ zeri su $\proj[1]{\ }$ contati con molteplicità. %/analogo degli zeri
@@ -739,8 +740,8 @@ Abbiamo visto prima che se $P$ è \textit{non singolare} esiste ed è unica la t
 Se invece $P$ è \textit{singolare} allora ogni retta per $P$ è tangente a $C$ in $P$.
 \subsubsection{Caso proiettivo}
 Vogliamo analizzare la tangenza nel \textit{caso proiettivo}. Tuttavia, prima di trattare di punti singolare o tangenti, ci servirà una proprietà dei polinomi omogenei, detta \textbf{relazione di Eulero} sui polinomi omogenei. Essa vale per un qualsiasi \textit{numero di variabili} a coefficienti in un campo \textit{qualsiasi} e mette in relazione un polinomio omogeneo con sue derivate parziali, che per costruzione sono polinomi omogenei di un \textit{grado inferiore}.
-\begin{theorema}[Relazione di Eulero.]~{}\\ \index{Relazione!di Eulero}
-	Sia $F\in\kamp[x_0,\ \ldots,\ x_n]$ polinomio omogeneo di grado $m$ e le sue derivate parziali $\frac{\partial{f}}{\partial{x_i}}\in\kamp[x_0,\ \ldots,\ x_n]$, polinomio omogenei di grado $m-1$. Si ha che:
+\begin{theorema}[Relazione di Eulero.]~{}\index{Relazione!di Eulero}\\
+Sia $F\in\kamp[x_0,\ \ldots,\ x_n]$ polinomio omogeneo di grado $m$ e le sue derivate parziali $\frac{\partial{f}}{\partial{x_i}}\in\kamp[x_0,\ \ldots,\ x_n]$, polinomio omogenei di grado $m-1$. Si ha che:
 		\begin{equation}
 			\sum_{i=0}^n x_i\frac{\partial{F}}{\partial{x_i}}=mF
 		\end{equation}
@@ -831,7 +832,7 @@ Nella relazione appena annunciata notiamo che moltiplichiamo ciascuna derivata p
 		\end{center}
 \end{observe}
 
-\begin{examples} \label{esempi lez 35}
+\begin{examples}~{} \label{esempi lez 35}
 	\begin{enumerate}
 		\item	Sia $C_0\colon x^2+x^3-y^2=0$ una curva affine e $C$ la chiusura proiettiva di $C_0$ con equazione $F=x_0x_1^2+x_1^3-x_0x_2^2$. Cerchiamo i punti singolari:
 			\begin{gather*}
@@ -915,7 +916,8 @@ Se $\kamp=\realset$, a meno di proiettività si hanno 2 casi in base alla segnat
 	\begin{equation*}
 		F=G\cdot H\text{ con }\deg G=1\text{ e }\deg H=2
 	\end{equation*}
-	Il luogo degli zeri di $F$ è \textit{unione} dei luoghi degli zeri di $G$ e $H$, dunque $C$ è unione di una retta e di una conica.\\ \hspace{-1mm}
+	Il luogo degli zeri di $F$ è \textit{unione} dei luoghi degli zeri di $G$ e $H$, dunque $C$ è unione di una retta e di una conica.\\
+	\hspace{-1mm}
 	\begin{minipage}{0.75\textwidth}
 	\vspace{2mm}
 	Supponiamo invece che $C$ sia \textit{irriducibile}: $C$ \textit{non} può contenere una retta, altrimenti l'equazione della retta \textit{dividerebbe} il polinomio $F$. Allora $C$ ha \textit{al più un punto singolare}.
@@ -939,7 +941,7 @@ Siano $C_1$ e $C_2$ due coniche \textit{distinte} nel piano proiettivo $\proj[2]
 \vspace{-6mm}
 \end{define}
 Notiamo che se moltiplichiamo $\lambda$ e $\mu$ per lo stesso scalare tutta l'equazione viene moltiplicata per lo stesso scalare, riottenendo la stessa conica di prima; $\lambda$ e $\mu$ vanno presi in $\proj[1]{\ }$ e non solo in $\kamp$.
-\begin{examples}
+\begin{examples}~{}
 	\begin{enumerate}
 		\item	Siano $C_1\colon x_0x_1=0$ e $C_2\colon (x_0-x_1)x_2=0$ due coniche, entrambe coppie di rette. Il fascio da loro generato è $C_{\lambda,\mu}\colon \lambda x_0x_1 + \mu (x_0-x_1)x_2=\lambda x_0x_1 + \mu x_0x_2 -\mu x_1x_2=0$.
 		\item	Siano $C_1\colon x_0x_1=0$ e $\widetilde{C_2}\colon x_0x_2=0$ due coniche. Il fascio da loro generato è $C_{\lambda,\mu}\colon \lambda x_0x_1 +\mu x_0x_2=x_0(\lambda x_1 + \mu x_2)=0$; siccome $x_0=0$ appartiene ad entrambe le coniche si può raccogliere.
@@ -965,7 +967,7 @@ Definiamo $D(\lambda,\mu)\coloneqq \det (\lambda A_1+\mu A_2)$, polinomio omogen
 \end{tips}
 Nel \textit{caso complesso} gli zeri (contati con molteplicità) sono pari al grado, dunque si ha sempre almeno una conica degenere. Lo stesso vale anche nel caso reale, essendo il grado del polinomio dispari.
 Ristudiamo con quest'ottica gli esempi precedenti.
-\begin{examples}
+\begin{examples}~{}
 	\begin{enumerate}
 		\item	Il fascio è $\mathcal{F}_1\colon 2(\lambda x_0x_1 +\mu x_0x_2 -\mu x_1x_2)=0$ ed ha matrice $A_{\lambda,\mu}=\begin{pmatrix}
 			0 & \lambda & \mu \\
@@ -990,7 +992,7 @@ Ristudiamo con quest'ottica gli esempi precedenti.
 Dunque, per ogni qualunque combinazione lineare presa in $P$ si annulla, dunque $P$ è punto comune a tutte le coniche del fascio, cioè un punto base.
 \end{observe}
 Vediamo i punti base degli esempi precedenti.
-\begin{examples}
+\begin{examples}~{}
 	\begin{enumerate}
 		\item	Per ottenere i punti base del fascio si intersecano le coniche che lo generano:
 			\begin{gather*}
@@ -1097,7 +1099,8 @@ Ci sono diversi tipi di \textit{rappresentazione geometrica} dei fasci di conich
 	% Osserviamo ora che i punti base con coordinata $x_1$ zero sono proprio $A$ e $C$, pertanto $x_1=0$ corrisponde alla retta $\overline{AC}$. In modo analogo $x_2=0$ corrisponde alla retta $\overline{AB}$.
 		\begin{equation*}
 			\begin{array}{ll}
-				C_1\cap C_2  & = (\overline{AC}\cup \overline{BD}) \cap (\overline{AB}\cup\overline{CD}) =\\ =(\overline{AC}\cap\overline{AB}) \cup (\overline{AC}\cap\overline{CD}) \cup (\overline{BD}\cap \overline{AB}) \cup (\overline{BD}\cap \overline{CD})=\\
+				C_1\cap C_2  & = (\overline{AC}\cup \overline{BD}) \cap (\overline{AB}\cup\overline{CD}) =\\
+				=(\overline{AC}\cap\overline{AB}) \cup (\overline{AC}\cap\overline{CD}) \cup (\overline{BD}\cap \overline{AB}) \cup (\overline{BD}\cap \overline{CD})=\\
 				&=\{A,\ B,\ C,\ D\}
 			\end{array}
 		\end{equation*}
