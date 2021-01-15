@@ -75,13 +75,14 @@ Vediamo ora un esempio di identificazione chiusa e non aperta.
 \begin{observe}
 	Gli omeomorfismi sono identificazioni chiuse e aperte.
 \end{observe}
-Vediamo ora che relazione c'è fra le identificazioni ed i quozienti dati da relazioni di equivalenza.
+Che relazione c'è fra le identificazioni ed i quozienti dati da relazioni di equivalenza?
 \begin{theorema}[Proprietà universale delle identificazioni; Manetti, 5.6.]~{}\\
 \begin{minipage}[t]{0.83\textwidth}
 		Dati $X,Y,Z$ spazi topologici, $g$ una qualsiasi funzione continua, $f$ identificazione con le mappe come in figura, allora:
 		\begin{equation*}
 			\exists! h \text{ continua } \colon g=h\circ f \iff \left( \forall x,y\in X, \ f(x)=f(y)\implies g(x)=g(y)  \right)
 		\end{equation*}
+	\vspace{-2mm}
 		Cioè se e solo se $g$ è costante sulle fibre di $f$.
 \end{minipage}
 	\begin{minipage}[t]{0.13\textwidth}\vspace{-10pt}
@@ -92,15 +93,15 @@ Vediamo ora che relazione c'è fra le identificazioni ed i quozienti dati da rel
 	\end{minipage}
 \end{theorema}
 \begin{demonstration}
-	Idealmente se $f$ fosse invertibile definiremmo $h=g\circ f^{-1}$. Tuttavia l'invertibilità di $f$ non è fra le ipotesi, quindi si sfrutta al meglio l'ipotesi della suriettività e si considera una controimmagine tramite $f$ e se ne fa l'immagine tramite $g$, ovvero $y\in Y, \ h(y)\coloneqq g(x)$ con $x\in f^{-1}(y)$. Con questa costruzione $h$ è ben definita siccome $g$ sarà costante sulle fibre di $f$. \\
-	Verifichiamo che $h$ è continua tramite la definizione:
+	Idealmente se $f$ fosse invertibile definiremmo $h=g\circ f^{-1}$. Tuttavia l'invertibilità di $f$ non è fra le ipotesi, quindi si sfrutta al meglio l'ipotesi della suriettività e si considera una controimmagine tramite $f$ e se ne fa l'immagine tramite $g$, ovvero $y\in Y, \ h(y)\coloneqq g(x)$ con $x\in f^{-1}(y)$. Con questa costruzione $h$ è ben definita siccome $g$ sarà costante sulle fibre di $f$. Verifichiamo che $h$ è continua tramite la definizione:
 		\begin{gather*}
 			U\subseteq Z \text{ aperto }, \ h^{-1}(U)\subseteq Y \iff f^{-1}(h^{-1}(U))\subseteq X \text{ aperto} \iff g^{-1}(U)\subseteq X \text{ aperto}
 		\end{gather*}
+	\vspace{-2mm}
 	Siccome $g$ è continua allora lo è anche $h$.
 \end{demonstration}
 \begin{minipage}[t]{0.83\textwidth} \label{proprietà identificazione quoziente e mappa continua indotta}
-Come conseguenza si ha che, data $f$ continua, $\sim$ relazione di equivalenza e $\nicefrac{X}{\sim}$ spazio topologico con la topologia quoziente indotta dalla proiezione $\pi$, $\exists g$ continua $\iff \left( x\sim y \implies f(x)=f(y) \right)$, ovvero $\pi$ è costante sulle fibre di $f$.
+Data allora $f$ continua, $\sim$ relazione di equivalenza e $\nicefrac{X}{\sim}$ spazio topologico con la topologia quoziente indotta dalla proiezione $\pi$, $\exists g$ continua $\iff \left( x\sim y \implies f(x)=f(y) \right)$, ovvero $\pi$ è costante sulle fibre di $f$.
 \end{minipage}
 \begin{minipage}[t]{0.16\textwidth}\vspace{-10pt}
  		\begin{tikzcd}
@@ -110,17 +111,18 @@ Come conseguenza si ha che, data $f$ continua, $\sim$ relazione di equivalenza e
 	\end{minipage}\\
 \hspace{-1mm}
 \begin{minipage}[t]{0.83\textwidth}\vspace{2mm}
-In particolare, se $\sim$ è la relazione d'equivalenza indotta da $f$, e dunque si è nelle ipotesi del primo Teorema fondamentale di isomorfismo degli \textit{insiemi}, allora $\left( x\sim y \iff f(x)=f(y) \right) \implies \exists ! \overline{f}$ biettiva, continua. Dunque vale
-		\begin{equation}
-				\overline{f} \text{ omeomorfismo} \iff f \text{ identificazione}
-			\end{equation}
+In particolare, se $\sim$ è la relazione d'equivalenza indotta da $f$, e dunque si è nelle ipotesi del primo Teorema fondamentale di isomorfismo degli \textit{insiemi}, allora $\left( x\sim y \iff f(x)=f(y) \right) \implies \exists ! \overline{f}$ biettiva, continua. Dunque vale:
 	 	\end{minipage}
-	\begin{minipage}[t]{0.16\textwidth}\vspace{1mm}
+	\begin{minipage}[t]{0.16\textwidth}\vspace{-1pt}
 			\begin{tikzcd}
 				X \arrow[r, "f"] \arrow[d, "\pi"']                                   & Y \\
 				\nicefrac{X}{\sim} \arrow[ur, "\overline{f}"', dotted] &
 			\end{tikzcd}
-	\end{minipage}\vspace{3mm}\\
+	\end{minipage}\vspace{-1.5mm}\\
+\begin{equation}
+	\overline{f} \text{ omeomorfismo} \iff f \text{ identificazione}
+\end{equation}
+\vspace{-1.5mm}
 Riprendiamo l'esempio precedente ed esaminiamolo in termini di spazio quoziente.
 \begin{example}~{$\nicefrac{D^n}{\sim}\cong S^n$}\\
 	Consideriamo il caso $n=1$:
