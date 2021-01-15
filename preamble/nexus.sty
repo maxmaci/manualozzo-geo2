@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{nexus}[2016/10/30 version 1.1]
+\ProvidesPackage{preamble/nexus}[2016/10/30 version 1.1]
 
 \RequirePackage{amsmath}
 \RequirePackage[absolute]{textpos}
@@ -8,12 +8,12 @@
 \RequirePackage{xkeyval}
 \RequirePackage{alphalph}
 \RequirePackage{ifthen}
-\RequirePackage{appendix}
+%\RequirePackage{appendix}
 \RequirePackage{titletoc}
 \RequirePackage{etoolbox}
-\AtBeginEnvironment{appendices}{%
-  \addtocontents{toc}{\protect\gdef\protect\@chapapp{\protect\appendixname}}%\appendixname
-}
+%\AtBeginEnvironment{appendices}{%
+%  \addtocontents{toc}{\protect\gdef\protect\@chapapp{\protect\appendixname}}%\appendixname
+%}
 \RequirePackage{assoccnt}
 \RequirePackage{totcount}
 \newtotcounter{totalchapters}

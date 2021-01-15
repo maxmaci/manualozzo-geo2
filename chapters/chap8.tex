@@ -14,8 +14,7 @@
 		\textsc{David Mumford,} assolutamente non un adepto della Geometria algebrica.
 	\end{flushright}
 \end{introduction}
-%inserire introduzione
-\noindent Nel \autoref{chap:omotopia}, abbiamo definito e studiato diverse proprietà legate all'\textit{omotopia}, mostrando alcuni esempi di spazi omotopicamente equivalenti. Tuttavia, non abbiamo ancora formalizzato un aspetto dell'intuizione iniziale: come contiamo i \textit{buchi} di una figura?\\
+\lettrine[findent=1pt, nindent=0pt]{N}{el} \autoref{chap:omotopia}, abbiamo definito e studiato diverse proprietà legate all'\textit{omotopia}, mostrando alcuni esempi di spazi omotopicamente equivalenti. Tuttavia, non abbiamo ancora formalizzato un aspetto dell'intuizione iniziale: come contiamo i \textit{buchi} di una figura?\\
 In questo capitolo proseguiamo la trattazione introducendo un \textit{oggetto algebrico} che associamo come invariante ad uno spazio topologico: il \textbf{gruppo fondamentale}. Definendo una versione dell'omotopia specifica dei cammini, utilizziamo questo gruppo formato dalle classi di equivalenza omotopica di \textit{cammini chiusi} per mostrare in termini rigorosi la presenza di buchi.\\
 Inoltre, largo spazio sarà lasciato alla dimostrazione del primo gruppo fondamentale non banale, quello della \textit{circonferenza}.
 \section{Omotopie fra cammini}
@@ -44,7 +43,7 @@ Se non specificato differentemente, useremo $I$ per indicare l'intervallo $\intv
 $F$ è detta \textbf{omotopia di cammini}\index{omotopia!di cammini} o \textbf{omotopia a estremi fissi} \seeonlyindex{omotopia!a estremi fissi}{omotopia!di cammini}.
 \end{define}
 \begin{define}[Insieme dei cammini.]~{}\\
-	Indichiamo con $\inscam{X}{a}{b}$ l'\textbf{insieme dei cammini}\index{cammino!insieme} in $X$ da $a$ a $b$.
+	Indichiamo con $\inscam{X}{a}{b}$ l'\textbf{insieme dei cammini}\index{cammino!insieme dei cammini} in $X$ da $a$ a $b$.
 \end{define}
 \begin{observe}
 	L'omotopia di cammini è una relazione di equivalenza su $\inscam{X}{a}{b}$.
@@ -357,7 +356,7 @@ Preso un laccio $\alpha$, indichiamo la sua classe di equivalenza in $\gruf{X}{x
 \end{attention}
 \begin{define}[Gruppo fondamentale.]~{}\\
 	Dato uno spazio topologico $X$ e fissato un punto (detto \textbf{punto base}\index{punto!base}) $x_0$, il \textbf{gruppo fondamentale}\index{gruppo!fondamentale} con punto base $x_0$ è il gruppo $\gruf{X}{x_0}$ definito nell'osservazione precedente.\\
-	Si chiama anche \textbf{primo gruppo fondamentale}\index{gruppo!fondamentale!primo} o \textbf{gruppo di Poincaré}\seeonlyindex{gruppo!di Poicaré}{gruppo!fondamentale}.
+	Si chiama anche \textbf{primo gruppo fondamentale} o \textbf{gruppo di Poincaré}\seeonlyindex{gruppo!di Poicaré}{gruppo!fondamentale}.
 \end{define}
 \subsection{Dipendenza dal punto base}
 \begin{theorema}[$\pi_1$ dipende dalla componente c.p.a.]~{}\label{dipendenzaptobasegruf}\\
@@ -377,7 +376,7 @@ In altre parole, se $x,\ y\in X$ appartengono alla stessa componente \textbf{c.p
 	\begin{gather*}
 		f\left(a\cdot_G b\right)=f\left(a\right)\cdot_H f\left(b\right)\quad \forall a,\ b\in G
 	\end{gather*}
-	Se $f$ è \textit{biettiva}, allora parliamo di \textbf{isomorfismo di gruppi}\index{isomorfismo di gruppi}.
+	Se $f$ è \textit{biettiva}, allora parliamo di \textbf{isomorfismo di gruppi}\index{isomorfismo!di gruppi}.
 \end{remember}
 \begin{demonstration}~{}
 	\begin{itemize}
@@ -511,7 +510,7 @@ Si dimostra che $Id_X$ è unico per ogni oggetto $X$.
 \vspace{-3mm}
 \end{define}
 \begin{define}[Isomorfismo.]~{}\\
-	Un morfismo $f\in\homo{\cat}{X}{Y}$ si dice \textbf{isomorfismo} se:
+	Un morfismo $f\in\homo{\cat}{X}{Y}$ si dice \textbf{isomorfismo}\index{isomorfismo!tra oggetti di $\cat$} se:
 	\begin{equation}
 		 \exists g\in \homo{\cat}{Y}{X} \text{ tale che } g\circ f=Id_X\qquad f\circ g=Id_Y
 	\end{equation}
@@ -1002,7 +1001,7 @@ Sia $X$ uno spazio topologico e siano $A,\ B\subseteq X$ aperti tali che
 \begin{observe} \textsc{Proiezione stereografica.} \\
 	Consideriamo la $S^n\subseteq \realset^{n+1}$ sfera $n$-dimensionale. Si ha che $\forall p\in S^n,\ S^n\setminus \{1\text{ punto}\}\cong \realset^n$\\
 	Ciò si verifica tramite la \textbf{proiezione stereografica}\index{proiezione!stereografica}.\\
-	Essa opera nel seguente modo: si consideri la \textit{sfera} $S^n$ centrata nell'origine e privata del punto $N=(0,\ 0,\ \ldots,\ 1)$, detto anche \textbf{polo Nord} \index{polo Nord}; la proiezione stereografica sarà::
+	Essa opera nel seguente modo: si consideri la \textit{sfera} $S^n$ centrata nell'origine e privata del punto $N=(0,\ 0,\ \ldots,\ 1)$, detto anche \textbf{polo Nord} \index{polo Nord}; la proiezione stereografica sarà:
 	\begin{equation}
 		\funz {\pi}{S^n\setminus\{N\}}{H=\left\{\left(x_0,\ \ldots,\ x_n\right)\in\realset^{n+1}\mid x_n=0\right\}}
 	\end{equation}
@@ -1010,7 +1009,7 @@ Sia $X$ uno spazio topologico e siano $A,\ B\subseteq X$ aperti tali che
 	\begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.8]{images/stereo.pdf}
 	\end{center}
-	 La proiezione stereografica è in particolare un \textit{omeomorfismo}\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{proiezionestereograficanote}, si può trovare la dimostrazione di ciò per $n=2$.} e, poiché $H\cong\realset^2$ (in quanto iperpiano di $\realset^{n+1}$), si ha $S^n\setminus \{1\text{ punto}\}\cong \realset^n$.
+	 La proiezione stereografica è in particolare un \textit{omeomorfismo} e, poiché $H\cong\realset^2$ (in quanto iperpiano di $\realset^{n+1}$), si ha $S^n\setminus \{1\text{ punto}\}\cong \realset^n$.\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{proiezionestereograficanote}, si può trovare la proiezione stereografica per $n=2$.}
 \end{observe}
 \begin{corollary}[La sfera $S^n$ è semplicemente connessa, $\forall n\geq 2$; Manetti, 11.27.] \label{sfere sempl. connesse}
 \end{corollary}
@@ -1019,7 +1018,7 @@ Sia $X$ uno spazio topologico e siano $A,\ B\subseteq X$ aperti tali che
 	Sia:
 	\begin{itemize}
 		\item $N=(0,\dots,0,\ 1)\in S^n$ il polo Nord.
-		\item $S=(0,\dots,\ -1)\in S^n$ il polo Sud.
+		\item $S=(0,\dots,\ -1)\in S^n$ il polo Sud\index{polo Sud}.
 	\end{itemize}
 	Definiamo $A\coloneqq S^n\setminus\{N\}$: esso è aperto, \textbf{c.p.a.}, omeomorfo a $\realset^n$ per la \textit{proiezione stereografica} e, siccome $\realset^n$ è contraibile, lo è anche $A$; dunque sarà \textit{semplicemente connesso}. Lo stesso è vero per $B\coloneqq S^n\setminus\{S\}$.\\
 	Si ha $A\cap B=S^n\setminus\{N, S\}$ \textbf{c.p.a.} se $n\geq 2$, $A\cap B$ \textit{non} vuoto e inoltre $S^n=A\cup B$; per il corollario \ref{corollario Van Kampen} si ha che $S^n$ è \textit{semplicemente connesso}.
@@ -1373,7 +1372,7 @@ Siano $U\subseteq\realset^n$ e $V\subseteq \realset^m$ aperti. Se $U$ e $V$ sono
 \vspace{-6mm}
 \end{theorema}
 \begin{attention}
-	Con $\oplus$ si intende la \textit{somma diretta} di gruppi, da intendersi come \textit{prodotto cartesiano} i cui morfismi sono \textit{componente per componente}. È diversa dalla \textit{somma diretta fra spazi vettoriali}, dato in quest'ultimo caso essa è \textit{interna}!
+	Con $\oplus$ si intende la \textit{somma diretta di gruppi}\index{somma!diretta di gruppi}, da intendersi nel caso di un numero \textit{finito} di gruppi come \textit{prodotto cartesiano}\index{prodotto!cartesiano} i cui morfismi sono \textit{componente per componente}. È diversa dalla \textit{somma diretta fra spazi vettoriali}, dato in quest'ultimo caso essa è un'operazione \textit{interna}!
 \end{attention}
 \begin{demonstration}
 	Un cammino $\funz \alpha I {X\times Y}$ è determinato dalle sue componenti $\alpha=(\alpha_1,\ \alpha_2)$ con $\funz {\alpha_1} I X$ e $\funz {\alpha_2} I Y$, dunque c'è la seguente corrispondenza biunivoca:

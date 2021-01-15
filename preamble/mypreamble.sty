@@ -33,7 +33,7 @@
 \RequirePackage{amsthm}
 \RequirePackage{pifont} % aggiunge dingbat per itemize
 \RequirePackage{array}
-%\RequirePackage{arydshln}
+\RequirePackage{afterpage}
 \RequirePackage{varioref}
 \RequirePackage{lettrine}
 %\RequirePackage{lipsum}
@@ -1976,3 +1976,9 @@ headformat={\NAME\, \NUMBER\small\bfseries\scshape\textcolor{black}{.\, - \NOTE}
 }%
 
 \makeatother
+
+\newcommand\blankpage{%
+	\null
+	\thispagestyle{empty}%
+	\addtocounter{page}{-1}%
+	\newpage}

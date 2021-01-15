@@ -14,7 +14,7 @@
 		\textsc{Felix Klein,} dopo aver studiato troppa Matematica.
 	\end{flushright}
 \end{introduction}
-Nella geometria Euclidea le \textbf{coniche} sono curve ottenute dall'intersezione di un \textit{cono} con un \textit{piano}. Nel piano affine $\mathcal{A}(\realset^2)$ si generalizzano (includendo anche casi degeneri) studiando le \textit{forme quadratiche} e classificandole \textit{a meno di rototraslazione}. Vogliamo estendere ulteriormente il al \textit{piano proiettivo} di queste coniche, tenendo dunque conto del ruolo svolto dalla \textit{retta all'infinito}.
+\lettrine[findent=1pt, nindent=0pt]{N}{ella} Geometria Euclidea le \textbf{coniche} sono curve ottenute dall'intersezione di un \textit{cono} con un \textit{piano}. Nel piano affine $\mathcal{A}(\realset^2)$ si generalizzano (includendo anche casi degeneri) studiando le \textit{forme quadratiche} e classificandole \textit{a meno di rototraslazione}. Vogliamo estendere ulteriormente il al \textit{piano proiettivo} di queste coniche, tenendo dunque conto del ruolo svolto dalla \textit{retta all'infinito}.
 \section{Curve algebriche piane proiettive}
 Consideriamo $\proj[2]{\kamp}$ con coordinate omogenee $(x_0\colon x_1\colon x_2)$. Indichiamo con $\kamp\left[x_0,\ x_1,\ x_2\right]$ l'\textit{anello dei polinomi} in $x_0,\ x_1,\ x_2$ a coefficienti in $\kamp$. Se $F\in\kamp\left[x_0,\ x_1,\ x_2\right]$ è un polinomio \textit{qualsiasi}, l'equazione $F(x_0,\ x_1,\ x_2)=0$ \textit{non} dà una condizione \textit{ben definita} in $\proj[2]{\kamp}$: ad esempio, $x_0+1=0$ non ha senso perché $x_0$ è determinato solo a meno di multipli. Cerchiamo dunque dei polinomi che ha senso studiare in $\proj[2]{\kamp}$.
 \begin{define}[Polinomio omogeneo.]~{}\\
@@ -739,7 +739,7 @@ Abbiamo visto prima che se $P$ è \textit{non singolare} esiste ed è unica la t
 Se invece $P$ è \textit{singolare} allora ogni retta per $P$ è tangente a $C$ in $P$.
 \subsubsection{Caso proiettivo}
 Vogliamo analizzare la tangenza nel \textit{caso proiettivo}. Tuttavia, prima di trattare di punti singolare o tangenti, ci servirà una proprietà dei polinomi omogenei, detta \textbf{relazione di Eulero} sui polinomi omogenei. Essa vale per un qualsiasi \textit{numero di variabili} a coefficienti in un campo \textit{qualsiasi} e mette in relazione un polinomio omogeneo con sue derivate parziali, che per costruzione sono polinomi omogenei di un \textit{grado inferiore}.
-\begin{theorema}[Relazione di Eulero.]~{}\index{Relazione!di Eulero}\\
+\begin{theorema}[Relazione di Eulero.]~{}\index{relazione!di Eulero}\\
 Sia $F\in\kamp[x_0,\ \ldots,\ x_n]$ polinomio omogeneo di grado $m$ e le sue derivate parziali $\frac{\partial{f}}{\partial{x_i}}\in\kamp[x_0,\ \ldots,\ x_n]$, polinomio omogenei di grado $m-1$. Si ha che:
 		\begin{equation}
 			\sum_{i=0}^n x_i\frac{\partial{F}}{\partial{x_i}}=mF
@@ -978,7 +978,7 @@ Ristudiamo con quest'ottica gli esempi precedenti.
 \end{examples}
 
 \begin{define}[Punti base di un fascio di coniche.]~{}\\
-	I \textbf{punti base}\index{punti!base} di un fascio di coniche sono i punti che appartengono a \textit{tutte} le coniche del fascio:
+	I \textbf{punti base}\index{punto!base di una conica} di un fascio di coniche sono i punti che appartengono a \textit{tutte} le coniche del fascio:
 		\begin{equation}
 			\{\text{punti base}\}=\inter_{C\in\mathcal{F}} C \subset \proj[2]{\ }
 		\end{equation}

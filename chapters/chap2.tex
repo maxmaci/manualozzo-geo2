@@ -17,7 +17,7 @@
 	\textsc{I Simpson,} La paura fa novanta VI.
 \end{flushright}
 \end{introduction}
-\noindent Le due proprietà che danno il nome a questo capitolo sono estremamente importanti, in quanto sono due dei principali \textit{invarianti} studiati in topologia. Entrambe rappresentano una \textit{generalizzazione} di alcuni aspetti affrontati più o meno esplicitamente durante lo studio dell'Analisi:
+\lettrine[findent=1pt, nindent=0pt]{L}{e} due proprietà che danno il nome a questo capitolo sono estremamente importanti, in quanto sono due dei principali \textit{invarianti} studiati in topologia. Entrambe rappresentano una \textit{generalizzazione} di alcuni aspetti affrontati più o meno esplicitamente durante lo studio dell'Analisi:
 \begin{itemize}
 	\item Ci sono sottoinsiemi del piano i cui punti possono essere \textit{connessi} da una linea arzigogolata, una spezzata o un segmento, mente
 	\item Ci sono sottoinsiemi \textit{limitati} le cui successioni di punti \textit{convergono} nel sottoinsieme.
@@ -25,7 +25,7 @@
 Vedremo che la \textbf{connessione} e la \textbf{compattezza} sono definite in modo abbastanza basilare, seppur non necessariamente siano intuitive a primo acchito. Tuttavia, proprio in virtù di questa semplicità, sono applicabili in tanti contesti diversi; in particolare, la compattezza come la definiremo ci permetterà di prendere informazioni note \textit{localmente} ed estenderle in modo che valgano globalmente in tutto lo spazio.
 \section{Connessione}
 \begin{define}[Spazio connesso e spazio sconnesso.]~{}\\
-Uno spazio topologico $X$ si dice \textbf{connesso}\index{connessione} se gli unici sottoinsiemi aperti e chiusi sono $\emptyset,\ X$.\\
+Uno spazio topologico $X$ si dice \textbf{connesso}\index{spazio!connesso} se gli unici sottoinsiemi aperti e chiusi sono $\emptyset,\ X$.\\
 Uno spazio non \textit{connesso} si dice \textbf{sconnesso} oppure \textbf{non connesso}.
 \end{define}
 \begin{lemming}[Condizioni equivalenti della sconnessione; Manetti, 4.2.]~{}\label{sconnesso}\\
@@ -106,7 +106,7 @@ Un \textbf{arco}\seeonlyindex{arco}{cammino} o \textbf{cammino}\index{cammino} $
 \vspace{-6mm}
 \end{define}
 \begin{define}[Connessione per archi.]~{}\\
-Uno spazio topologico $X$ si dice \textbf{connesso per archi} o \textbf{c.p.a.}\index{connessione!per archi}\seeonlyindex{c.p.a.}{connessione!per archi} o \textit{path-connected} se per ogni coppia di punti in $X$ esiste un arco che li collega:
+Uno spazio topologico $X$ si dice \textbf{connesso per archi} o \textbf{c.p.a.}\index{spazio!connesso per archi}\seeonlyindex{spazio!c.p.a.}{spazio!connesso per archi} o \textit{path-connected} se per ogni coppia di punti in $X$ esiste un arco che li collega:
 \begin{equation}
 \forall x,\ y\in X\ \exists \funz{\alpha}{\left[0,\ 1\right]}{X} \text{ continua}\ \colon \alpha\left(0\right)=x,\ \alpha\left(1\right)=y
 \end{equation}
@@ -180,14 +180,14 @@ In $\realset^n$, un \textbf{segmento}\index{segmento} $\overline{PQ}$ è la comb
 \vspace{-6mm}
 \end{define}
 \begin{define}[Sottoinsieme convesso.]~{}\\
-	Un sottoinsieme $Y\subseteq\realset^n$ è \textbf{convesso}\index{convessità} se per ogni coppia di punti esiste un segmento che li collega contenuto interamente in $Y$.
+	Un sottoinsieme $Y\subseteq\realset^n$ è \textbf{convesso}\index{sottoinsieme!convesso} se per ogni coppia di punti esiste un segmento che li collega contenuto interamente in $Y$.
 	\begin{equation}
 		\forall P,\ Q\in Y\quad \overline{PQ}\subseteq Y
 	\end{equation}
 \vspace{-6mm}
 \end{define}
 \begin{define}[Sottoinsieme stellato.]~{}\\
-	Un sottoinsieme $Y\subseteq\realset^n$ è \textbf{stellato}\index{stellato} per $P$ se esiste un $P\in Y$ tale che per ogni altro punto esiste un segmento che li collega contenuto interamente in $Y$.
+	Un sottoinsieme $Y\subseteq\realset^n$ è \textbf{stellato}\index{sottoinsieme!stellato} per $P$ se esiste un $P\in Y$ tale che per ogni altro punto esiste un segmento che li collega contenuto interamente in $Y$.
 	\begin{equation}
 		\exists P \in Y\ \colon \forall Q\in Y\quad \overline{PQ}\subseteq Y
 	\end{equation}
@@ -227,7 +227,7 @@ Vediamo ora che conseguenze hanno questi teoremi in $\realset$ con la topologia 
 \begin{observe}~{}\label{teorema esistenza zeri funzioni continue, s^n cpa}
 		\begin{itemize}
 	\item Come conseguenza immediata di questo teorema si ha il \textbf{teorema di esistenza degli zeri}\index{teorema! di esistenza degli zeri} per funzioni continue da $\realset$ in $\realset$, infatti se l'immagine continua di un connesso è un connesso, per tali funzioni vale che l'immagine continua di un intervallo è un intervallo.
-	\item Per $n\geq 1$ la sfera $\displaystyle S^n \coloneqq \left\{ \left(x_1,\dots,x_{n+1}\right) \mid \sum_{i=1}^{n+1}x_i^2=1 \right\}$ è \textbf{c.p.a.}, infatti $\forall x,y\in S^n$ si trova sempre un arco come intersezione di $S^n$ e del piano $H$ passante per il centro della sfera, $x$ e $y$.
+	\item Per $n\geq 1$ la \textbf{sfera}\index{sfera} $\displaystyle S^n \coloneqq \left\{ \left(x_1,\dots,x_{n+1}\right) \mid \sum_{i=1}^{n+1}x_i^2=1 \right\}$ è \textbf{c.p.a.}; infatti, $\forall x,y\in S^n$ si trova sempre un arco dato dall'intersezione di $S^n$ e del piano $H$ passante per il centro della sfera, $x$ e $y$.
 		\end{itemize}
 	\vspace{-3mm}
 \end{observe}

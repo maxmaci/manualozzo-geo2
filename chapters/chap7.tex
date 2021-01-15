@@ -16,7 +16,7 @@
 		\textsc{Henri Poincaré,} dopo aver finito di leggere il già citato libro di Topologia.
 	\end{flushright}
 \end{introduction}
-\noindent Finora abbiamo visto omeomorfismi tra spazi topologici sotto tanti aspetti diversi, definendo rigorosamente quella che era l'intuizione del magico materiale elastico. Possiamo osservare tuttavia delle ‘‘\textit{equivalenze di forma}'' che un omeomorfismo è troppo rigido per descriverle.\\
+\lettrine[findent=1pt, nindent=0pt]{F}{inora} abbiamo visto omeomorfismi tra spazi topologici sotto tanti aspetti diversi, definendo così rigorosamente quella che era l'intuizione del magico materiale elastico. Tuttavia, la definizione di omeomorfismo è molto rigida e possiamo osservare delle ‘‘\textit{equivalenze di forma}'' che non riesce pertanto a descrivere.\\
 Ad esempio, si possono considerare \textit{equivalenti} figure con lo stesso numero di buchi. Sotto questo punto di vista, la figura corrispondente alla lettera \textsf{\textbf{O}} e quella corrispondente a \textsf{\textbf{P}} sono \textit{equivalenti}, dato che hanno entrambe un solo buco, mentre \textsf{\textbf{X}} non lo è perché non ne ha. Allo stesso tempo, nessuna di queste è \textit{omeomorfa} all'altra: infatti, se togliamo dalle tre lettera/figure un punto come il nodo di raccordo delle ‘‘stanghette'' (o per \textsf{\textbf{O}} un punto qualunque), otteniamo per \textsf{\textbf{O}} una componente connessa, per \textsf{\textbf{P}} due e per \textsf{\textbf{X}} ben quattro distinte.\\
 Preceduto da un'approfondimento delle componenti connesse (anche per archi), nel presente capitolo formalizzeremo questo tipo di equivalenza più debole e allo stesso tempo più ampia: l'\textbf{omotopia}.
 \section{Lemma di incollamento}
@@ -513,7 +513,7 @@ Il viceversa è analogo.
 	\begin{equation}
 		\exists \funz{r}{X}{A}\text{ continua}\ \colon r_{\mid A}=Id_A,\ \text{cioè}\ \colon r\left(a\right)=a,\ \forall a\in A
 	\end{equation}
-In tal caso $r$ è detta \textbf{retrazione}\index{retratto}.
+In tal caso $r$ è detta \textbf{retrazione}\index{retrazione}.
 \end{define}
 \begin{observe}
 Se $r$ è una retrazione, per costruzione è suriettiva, dunque $A$ \textbf{eredita} da $X$ tutte le proprietà topologiche che si trasmettono per mappe continue (ad esempio connesso, \textbf{c.p.a.}, compatto).
@@ -521,7 +521,7 @@ Se $r$ è una retrazione, per costruzione è suriettiva, dunque $A$ \textbf{ered
 \begin{examples}~{}
 	\begin{itemize}
 		\item Dato $x_0\in X$, $\left\{x_0\right\}$ è sempre un retratto: infatti la mappa costante $\funz{\ }{X}{\left(x_0\right)}$ soddisfa banalmente le ipotesi di retrazione.
-		\item Presi $X=\left[0,\ 1\right]$, $A=\left(0,\ 1\right]$ \textit{non} è un retratto di $X$ (non è compatto!).
+		\item Presi $X=\left[0,\ 1\right]$, $A=\left(0,\ 1\right]$ \textit{non} è un retratto di $X$ (non è \textit{compatto}!).
 		\item Presi $X=\left[0, 1\right]$, $\widetilde{A}=\left\{0,\ 1\right\}$ \textit{non} è un retratto (non è \textit{connesso}!).
 	\end{itemize}
 \vspace{-3mm}
@@ -599,7 +599,7 @@ Un \textbf{bouquet}\index{bouquet di circonferenze} \textbf{di} $n$ \textbf{circ
 \end{define}
 \begin{examples}\textsc{Altri esempi di equivalenze omotopiche.}
 	\begin{enumerate}
-		\item $\realset^2\setminus\left\{2\text{ punti}\right\}$ ha lo stesso tipo di omotopia di un \textit{bouquet di due circonferenze}: si può ottenere attraverso una composizione (continua) di retrazioni \textit{radiali} e \textit{lineari}.
+		\item $\realset^2\setminus\left\{2\text{ punti}\right\}$ ha lo stesso tipo di omotopia di un \textit{bouquet di due circonferenze}: si può ottenere attraverso una composizione (continua) di retrazioni \textit{radiali} e \textit{lineari}\index{retrazione!lineare}.
 		\begin{center}
 						\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.75]{images/bouquetconstruction.pdf}
 		\end{center}	

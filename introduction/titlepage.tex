@@ -7,8 +7,8 @@
 
 % Remove header and footer
 \thispagestyle{empty}
+\addtocounter{page}{-1}
 
-\definecolor{plop}{HTML}{4D7186}
 \begin{textblock}{1}(0,0)
 	\noindent\textcolor{redill}{\rule{\paperwidth}{.55\paperheight}}
 \end{textblock}
@@ -19,15 +19,18 @@
 \end{textblock}
 
 
-\begin{textblock}{1}(.1,.09)
-	\noindent{\fontsize{30.88}{2}\selectfont
-		\bfseries\textcolor{white}{\textsc{Tutto quello che avreste\\
-		voluto sapere sulla Geometria*}}}
+\begin{textblock}{1}(.00,.13)
+	\begin{center}
+	\noindent{\fontsize{40.88}{2}\selectfont
+		\bfseries\textcolor{white}{\textsc{Tutto quello che\\[3mm] avreste voluto sapere\\[3mm] sulla Geometria*}}}
+	\end{center}
 \end{textblock}
 
-\begin{textblock}{1}(.1,.15)
-	\noindent {\fontsize{20.88}{2}\selectfont
+\begin{textblock}{1}(.00,.27)
+	\begin{center}
+	\noindent {\fontsize{25.88}{2}\selectfont
 		\bfseries\textcolor{white}{(\textsc{*ma non avete mai osato chiedere)}}}
+	\end{center}
 \end{textblock}
 
 % \begin{textblock}{1}(.1,.21)
@@ -35,9 +38,11 @@
 %         \bfseries\textcolor{white}{for \LaTeX}}
 % \end{textblock}
 
-\begin{textblock}{1}(.1,.45)
-	\noindent {\fontsize{20.74}{2}\selectfont
-		\bfseries\textcolor{white}{Elisa Antuca\\[2mm]Massimo Bertolotti}}
+\begin{textblock}{1}(.00,.06)
+	\begin{center}
+			\noindent {\fontsize{20.74}{2}\selectfont
+			\bfseries\textcolor{white}{Elisa Antuca\ \ \ Massimo Bertolotti}}
+	\end{center}
 \end{textblock}
 
 
@@ -45,7 +50,7 @@
 \begin{textblock}{.9}(.05,.56)
 	\begin{flushright}
 		\noindent {\fontsize{20.74}{2}\selectfont
-			\bfseries\textcolor{redill}{Manualozzo di Geometria 2}}
+			\bfseries\textcolor{white}{Manualozzo di Geometria 2}}
 	\end{flushright}
 \end{textblock}
 
@@ -62,14 +67,14 @@
 	\end{center}
 \end{textblock}
 
-\begin{textblock}{.4}(.61,.32)
+\begin{textblock}{.4}(.3,.35)
 	\begin{center}
-		\includegraphics[width=.25\paperwidth]{images/unitologo}
+		\includegraphics[width=.2\paperwidth]{images/unitologo}
 	\end{center}
 \end{textblock}
 
-\begin{textblock}{.6}(.05,.6)
-	\noindent {\fontsize{12.74}{18}%
+\begin{textblock}{.6}(.05,.59)
+	\noindent {\fontsize{14.74}{18}%
 		\textcolor{white}{$\displaystyle			\beta(P_1,\ P_2,\ P_3,\ P_4)=\frac{ \left| \begin{array}{cc}
 					\lambda_1 & \lambda_4 \\
 					\mu_1 & \mu_4
@@ -91,7 +96,7 @@
 		\textcolor{white!80}{$\displaystyle \gruf{S^1}{\ }=\integerset$}}
 \end{textblock}
 
-\begin{textblock}{.4}(.1,.925)
+\begin{textblock}{.4}(.05,.925)
 	\noindent {\fontsize{14.4}{18}%
 		\textcolor{white!50}{$\displaystyle e^A\coloneqq \sum_{k=0}^{+\infty}\frac{A^k}{k!}=I+A+\frac{A^2}{2!}+\frac{A^3}{3!}+\ldots$}}
 \end{textblock}
@@ -195,3 +200,4 @@
 	%  \end{minipage}
 	\end{center}	
 \end{comment}
+\afterpage{\blankpage}

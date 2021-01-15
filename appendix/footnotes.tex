@@ -20,7 +20,7 @@
 \end{flushright}
 \end{introduction}
 
-\noindent Riportiamo alcune note, precisazioni e dimostrazioni complementari agli argomenti dei capitoli principali che possono risultare utili al lettore
+Riportiamo alcune note, precisazioni e dimostrazioni complementari agli argomenti dei capitoli principali che possono risultare utili al lettore
 \section{Capitolo 1: spazi topologici}
 \subsection{Alcune proprietà della continuità}
 Le seguenti dimostrazioni sulle continuità di funzioni sono da \cite{munkres:2000topology}.
@@ -81,19 +81,67 @@ Dati due gruppi $G$ e $H$, se $\funz{f}{G}{H}$ è omomorfismo \textit{iniettivo}
 	\end{equation*}
 \vspace{-6mm}
 \end{demonstration}
+\subsection{Proiezione stereografica}\label{proiezionestereograficanote}
+Nel caso $n=2$, per creare la proiezione stereografica da un punto $p$ su $S^2\setminus N$ a $H=\{z=0\}\cong\realset^2$ prendiamo la retta passante per $p=\left(\overline{x},\ \overline{y},\ \overline{z}\right)$ e per $N=\left(0,\ 0,\ 1\right)$.
+\begin{equation*}
+\frac{x-0}{\overline{x}-0}=\frac{y-0}{\overline{y}-0}=\frac{z-1}{\overline{z}-1}\implies
+\begin{cases}
+\frac{x}{\overline{x}}=\frac{z-1}{\overline{z}-1}\\
+\frac{y}{\overline{y}}=\frac{z-1}{\overline{z}-1}
+\end{cases}
+\end{equation*}
+Intersechiamola con il piano $H$:
+\begin{equation*}
+\begin{cases}
+	z=0\\
+	\frac{x}{\overline{x}}=\frac{-1}{\overline{z}-1}\\
+	\frac{y}{\overline{y}}=\frac{-1}{\overline{z}-1}
+\end{cases}\implies
+\begin{cases}
+	x=-\frac{\overline{x}}{\overline{z}-1}\\
+	y=-\frac{\overline{y}}{\overline{z}-1}\\
+	z=0
+\end{cases}
+\end{equation*}
+Allora, la proiezione risulta:
+\begin{equation}
+	\funztot{f}{S^2\setminus N}{\realset^2}{p=\left(\overline{x},\ \overline{y},\ \overline{z}\right)}{\left(-\frac{\overline{x}}{\overline{z}-1},\ -\frac{\overline{y}}{\overline{z}-1}\right)}
+\end{equation}
+La funzione è ben definita e continua su $S^2\setminus N$; la sua inversa è definita creando la retta per $q=\left(\overline{x},\ \overline{y},\ 0\right)\in H\subseteq \realset^3$ e $N=\left(0,\ 0,\ 1\right)$:
+\begin{equation*}
+	\frac{x-0}{\overline{x}-0}=\frac{y-0}{\overline{y}-0}=\frac{z-1}{0-1}\implies
+	\begin{cases}
+		\frac{x}{\overline{x}}=1-z\\
+		\frac{y}{\overline{y}}=1-z
+	\end{cases}
+\end{equation*}
+E intersecandola con il piano $H$:
+\begin{gather*}
+	\begin{cases}
+		x=\left(1-z\right)\overline{x}\\
+		y=\left(1-z\right)\overline{y}\\
+		x^2+y^2+z^2=1
+	\end{cases}\\
+	\left(1-z\right)^2\overline{x}^2+\left(1-z\right)^2\overline{y}^2+z^2=1  \implies z^2\left(\overline{x}^2+\overline{y}^2+1\right)-2z\left(\overline{x}^2+\overline{y}^2\right)+\left(\overline{x}^2+\overline{y}^2-1\right)=0
+\end{gather*}
+Da cui abbiamo $z_{1,2}=1 \vee \frac{\overline{x}^2+\overline{y}^2-1}{\overline{x}^2+\overline{y}^2+1}$. Escludendo $z=1$ perché dà il Polo Nord, si ha:
+\begin{equation}
+	\funztot{f^{-1}}{\realset^2}{S^2\setminus N}{q=\left(\overline{x},\ \overline{y}\right)}{f^{-1}\left(q\right)=\left(\frac{2\overline{x}}{\overline{x}^2+\overline{y}^2+1},\ \frac{2\overline{y}}{\overline{x}^2+\overline{y}^2+1},\ \frac{\overline{x}^2+\overline{y}^2-1}{\overline{x}^2+\overline{y}^2+1}\right)}
+\end{equation}
+La funzione è ben definita e continua su $\realset^2$; si verifica più o meno facilmente che $f^{-1}\circ f=Id_{S^2\setminus N}$ e $f\circ f^{-1}=Id_\realset^{2}$, cioè $f$ è omeomorfismo tra $S^2\setminus N$ e $\realset^2$.
 \subsection{Gruppi liberi}\label{gruppolibero}
 \begin{define}[Parola.]~{}\\
 	Dato un gruppo $G$, una \textbf{parola}\index{parola} è un qualunque prodotto di elementi del gruppo e dei loro inversi.
 \end{define}
-Se $a,\ b,\ c$ sono elementi del gruppo $G$, alcune possibili parole sono $ab$, $abca^{-1}$, $ccb^{-1}ab$.  Due parole sono considerate \textit{distinte} se non possiamo ricondurci dall'una all'altra attraverso gli assiomi di gruppi: ad esempio, $ab=acc^{-1}a$, ma $a\neq b^{-1}$. Una parola può essere semplificata in due modi differenti:
+Se $a,\ b,\ c$ sono elementi del gruppo $G$, alcune possibili parole sono $ab$, $abca^{-1}$, $ccb^{-1}ab$.  Due parole sono considerate \textit{distinte} se non possiamo ricondurci dall'una all'altra attraverso gli assiomi di gruppi: ad esempio, $ab=acc^{-1}a$, ma $a\neq b^{-1}$. Una parola può essere \textit{semplificata} in due modi differenti:
 \begin{itemize}
 	\item Togliendo l'elemento neutro $e$ o una coppia di elementi adiacenti $aa^{-1}$ o $a^{-1}a$.
 	\item Sostituendo ad una coppia $ab$ il loro prodotto $d$ in $G$ oppure ad una serie di $k$ termini $a\ldots a$ la potenza $a^k$.
 \end{itemize}
 Una parola che non può essere semplificata ulteriormente è detta \textbf{ridotta}\index{parola!ridotta}.
 \begin{define}[Gruppo libero.]~{}\\
-Il \textbf{gruppo libero}\index{gruppo!libero} $F_S$ su un insieme $S$ è il gruppo i cui elementi sono tutte le parole ridotte date dagli elementi di $S$; l'operazione è la \textbf{concatenazione}\index{concatenazione} di parole e l'elemento neutro è la \textit{parola vuota} (la parola senza alcun elemento di $S$).\\
-Gli elementi di $S$ sono detti \textbf{generatori}\index{generatori} e il numero di generatori è il \textbf{rango} del gruppo libero.\\
+Il \textbf{gruppo libero}\index{gruppo!libero} $F_S$ su un insieme $S$ è il gruppo i cui elementi sono tutte le parole ridotte date dagli elementi di $S$; l'operazione è la \textbf{concatenazione}\index{concatenazione}\index{concatenazione} di parole e l'elemento neutro è la \textit{parola vuota} (la parola senza alcun elemento di $S$).\\
+Gli elementi di $S$ sono detti \textbf{generatori}\index{generatore} e il numero di generatori è il \textbf{rango}\index{rango!del gruppo libero} del gruppo libero.\\
 Un gruppo $G$ è detto \textbf{libero} se isomorfo al gruppo libero $F_S$ generato dal sottoinsieme $S\subseteq G$.
 \end{define}
 \begin{example}
@@ -353,7 +401,7 @@ Si usa spesso l'\textit{M-test} assieme al \textbf{teorema del limite uniforme}.
 Sia $\left(f_n\right)_{n\in\naturalset}$ una successione di funzioni \textit{reali} o \textit{complesse} continue sullo spazio topologico $A$ nel quale sono definite; se la successione converge uniformemente su $A$ allora il limite converge ad una funzione continua. In particolare, lo stesso si ha nel caso di una serie.
 \end{theorema}
 \section{Capitolo 11: geometria proiettiva}
-\subsection{Regola di Cramer}\label{Cramerrimembriancor}
+\subsection{Regola di Cramer}\label{Cramerrimembriancor}\index{regola!di Cramer}
 \begin{theorema}[Regola di Cramer.]~{}\\
 	Si consideri un sistema $A\mathbf{x}=\mathbf{b}$ di $n$ equazioni lineari in $n$ incognite, con $\det A \neq 0$. Il sistema ha un unica soluzione $\mathbf{x}$, le cui componenti sono:
 	\begin{equation}
