@@ -68,9 +68,9 @@ V=\pi\left[\bigcup_{k\in\integerset}(k-\delta_k,k+\delta_k)\right]
 Chiaramente $V$ è un intorno aperto di $[0]$, e vogliamo dimostrare che $U_n\nsubseteq V$ per ogni $n\in\naturalset$. Per mostrare ciò, fissiamo $n\in\naturalset$; si ha $\delta_n<\epsilon_{n,n}$, quindi possiamo sceglie un numero reale $x\in(n+\delta_n,n+\epsilon_{n,n})$. Ma allora $\pi(x)\in U_n\setminus V$, e dunque $U_n\nsubseteq V$.
 \end{demonstration}
 \section{Capitolo 8: gruppo fondamentale}
-\subsection{Funzioni iniettive e sottogruppi}\label{isomorfismosottogruppo}
+\subsection{Funzioni iniettive e sottogruppi fondamentali}
 La seguente dimostrazione è adattata da \cite{HagenVonEitzen:injectivesubgroup} su Mathematics Stack Exchange.
-\begin{lemming}[Funzione iniettiva fra gruppi implica isomorfismo con sottogruppo.]~{}\\
+\begin{lemming}[Funzione iniettiva fra gruppi implica isomorfismo con sottogruppo.]~{}\label{isomorfismosottogruppolemma}\\
 Dati due gruppi $G$ e $H$, se $\funz{f}{G}{H}$ è omomorfismo \textit{iniettivo} allora $G$ è \textit{isomorfo} al sottogruppo $K=f\left(G\right)$ di $H$.
 \end{lemming}
 \begin{demonstration}
@@ -81,7 +81,13 @@ Dati due gruppi $G$ e $H$, se $\funz{f}{G}{H}$ è omomorfismo \textit{iniettivo}
 	\end{equation*}
 \vspace{-6mm}
 \end{demonstration}
-\subsection{Proiezione stereografica}\label{proiezionestereograficanote}
+\begin{corollary}[Il gruppo fondamentale di un retratto $A$ è isomorfo ad un sottogruppo dell'insieme $X$.]~{}\\
+	Sia $A\subseteq X$ un retratto con retrazione $\funz{r}{X}{A}$ e inclusione $\incl{i}{A}{X}$. Allora $\gruf{A}{a}$ è isomorfo ad un sottogruppo di $\gruf{X}{a}$; in particolare, $\gruf{A}{a}$ è di ordine infinito, lo deve essere anche $\gruf{X}{a}$.
+\end{corollary}
+\begin{demonstration}
+	Dal corollario \ref{grp fond iniettiva e suriettiva}, pag. \pageref{grp fond iniettiva e suriettiva} $\funz{i_{\ast}}{\gruf{A}{a}}{\gruf{X}{a}}$ è un omomorfismo \textit{iniettivo}, dunque dal lemma \ref{isomorfismosottogruppolemma} segue la tesi.
+\end{demonstration}
+\subsection{Un caso di proiezione stereografica}\label{proiezionestereograficanote}
 Nel caso $n=2$, per creare la proiezione stereografica da un punto $p$ su $S^2\setminus N$ a $H=\{z=0\}\cong\realset^2$ prendiamo la retta passante per $p=\left(\overline{x},\ \overline{y},\ \overline{z}\right)$ e per $N=\left(0,\ 0,\ 1\right)$.
 \begin{equation*}
 \frac{x-0}{\overline{x}-0}=\frac{y-0}{\overline{y}-0}=\frac{z-1}{\overline{z}-1}\implies

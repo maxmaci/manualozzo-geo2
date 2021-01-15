@@ -170,7 +170,6 @@ $H$ è l'omotopia a estremi fissi cercata.
 \begin{demonstration}
 	Sia $\funz{F}{I\times I}{X}$ data da $\mvf{F}{t}{s}=\alpha\left(s\varphi\left(t\right)+\left(1-s\right)t\right)$.
 	\begin{itemize}
-		%controllare impaginazione qui
 		\item $s\varphi\left(t\right)+\left(1-s\right)t$ è una combinazione lineare che è contenuta in $I\subseteq \realset\ \forall t,\ s\in I$ per convessità dell'intervallo $I$, da cui segue che $F$ è ben definita.
 		\item $F$ continua perché composizione di funzioni continue.
 		\item \parbox[t]{0.38\textwidth}{$\mvf{F}{t}{0}=\alpha\left(t\right)$}\tikzmark{a}
@@ -713,15 +712,6 @@ Sia $A\subseteq X$ un retratto con retrazione $\funz{r}{X}{A}$ e inclusione $\in
 	\end{center}
 Notiamo che $r_{\ast}\circ i_{\ast}=\left(r\circ i\right)_{\ast}=\left(Id_A\right)_{\ast}$, cioè $r_{\ast}\circ i_{\ast}$ è biettiva. In particolare, ne consegue, per quanto detto poco sopra, che $i_{\ast}$ è iniettiva e $r_{\ast}$ suriettiva.
 \end{demonstration}
-\begin{remember}
-\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{isomorfismosottogruppo}, si può trovare la dimostrazione di ciò.}
-\end{remember}
-\begin{corollary}[Il gruppo fondamentale di un retratto $A$ è isomorfo ad un sottogruppo dell'insieme $X$.]~{}\\
-Sia $A\subseteq X$ un retratto con retrazione $\funz{r}{X}{A}$ e inclusione $\incl{i}{A}{X}$. Allora $\gruf{A}{a}$ è isomorfo ad un sottogruppo di $\gruf{X}{a}$; in particolare, $\gruf{A}{a}$ è di ordine infinito, lo deve essere anche $\gruf{X}{a}$.
-\end{corollary}
-\begin{demonstration}
-Dal teorema precedente $\funz{i_{\ast}}{\gruf{A}{a}}{\gruf{X}{a}}$ è un omomorfismo \textit{iniettivo}, dal lemma \ref{isomorfismosottogruppolemma}, pag. \ref{isomorfismosottogruppolemma}, segue la tesi.
-\end{demonstration}
 \begin{theorema}[Isomorfismi tra gruppi fondamentali e funzioni; Kosniowski, 15.12.]~{}\\
 Siano $\funz{f,\ g}{X}{Y}$ continue, omotope e $x_0\in X$. Allora esiste un \textit{isomorfismo di gruppi}:
 \begin{equation}
@@ -840,7 +830,6 @@ Sono \textbf{isomorfismi} di gruppi.
 \end{corollary}
 \section{Numero di Lebesgue}
 Per poter calcolare il \textit{gruppo fondamentale} delle \textit{sfere} $S^n$, con $n\geq 2$, abbiamo prima bisogno di qualche risultato preliminare.
-% rivedere intro
 \begin{define}[Distanza di un punto da un insieme in uno spazio metrico.]~{}\\
 Sia $\left(X, d\right)$ uno spazio metrico e $C\subseteq X$ un sottoinsieme non vuoto; preso $x\in X$, la \textbf{distanza di} $x$ \textbf{da} $C$\index{distanza!di un punto da un insieme in uno spazio metrico} è definita come:
 \begin{equation}
@@ -1009,7 +998,7 @@ Sia $X$ uno spazio topologico e siano $A,\ B\subseteq X$ aperti tali che
 	\begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.8]{images/stereo.pdf}
 	\end{center}
-	 La proiezione stereografica è in particolare un \textit{omeomorfismo} e, poiché $H\cong\realset^2$ (in quanto iperpiano di $\realset^{n+1}$), si ha $S^n\setminus \{1\text{ punto}\}\cong \realset^n$.\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{proiezionestereograficanote}, si può trovare la proiezione stereografica per $n=2$.}
+	 La proiezione stereografica\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{proiezionestereograficanote}, si può trovare la proiezione stereografica per $n=2$.} è in particolare un \textit{omeomorfismo} e, poiché $H\cong\realset^2$ (in quanto iperpiano di $\realset^{n+1}$), si ha $S^n\setminus \{1\text{ punto}\}\cong \realset^n$.
 \end{observe}
 \begin{corollary}[La sfera $S^n$ è semplicemente connessa, $\forall n\geq 2$; Manetti, 11.27.] \label{sfere sempl. connesse}
 \end{corollary}
@@ -1031,8 +1020,7 @@ Sia $X$ uno spazio topologico e siano $A,\ B\subseteq X$ aperti tali che
 
 \section{Gruppo fondamentale della circonferenza}
 Nella sezione precedente abbiamo analizzato il gruppo fondamentale delle sfere $S^n$ per $n\geq 2$: ci domandiamo ora cosa succede per la circonferenza $S^1$. \\
-Siccome la dimostrazione\footnote{Per la dimostrazione del teorema seguiremo il capitolo 16 di \cite{kosniowski:1980firstlook}.} sarà lunga e articolata, preannunciamo che il gruppo fondamentale che otterremo \textit{non} è banale, ma è $\gruf{S^1}{\ }\cong \integerset$: nello specifico, l'isomorfismo rappresenta il \textit{numero di giri} con \textit{segno} che un cammino chiuso fa \textit{intorno} alla circonferenza..\\
-%DA SISTEMARE IN BIBLIOGRAFIA
+Siccome la dimostrazione\footnote{Per la dimostrazione del teorema seguiremo il capitolo 16 di \cite{kosniowski:1980firstlook}.} sarà lunga e articolata, preannunciamo che il gruppo fondamentale che otterremo \textit{non} è banale, ma è $\gruf{S^1}{\ }\cong \integerset$: nello specifico, l'isomorfismo rappresenta il \textit{numero di giri} con \textit{segno} che un cammino chiuso fa \textit{intorno} alla circonferenza.\\
 Dunque, la nostra intenzione è di formalizzare il concetto che ogni intervallo fra due interi consecutivi ‘‘\textit{copre}'' la circonferenza.
 \begin{center}
 	\includegraphics[width=240pt]{images/slinky-eps-converted-to.pdf}
@@ -1159,7 +1147,7 @@ Ogni cammino $\funz \alpha I {S^1}$ ammette un sollevamento $\funz {\widetilde{\
 	Allora:
 	\begin{itemize}
 		\item $0\in Y \implies Y\neq\emptyset$ dato che $\widetilde{\alpha}(0)=\widehat{\alpha}(0)=x_0$.
-		\item $Y$ è chiuso per l'implicazione $1\Rightarrow 3)$ del teorema \ref{quoziente Hausdorff} (pag. \pageref{quoziente Hausdorff}), dato che si ha che, prese due mappe continue a valori in uno spazio di \textbf{Hausdorff}, l'insieme su cui coincidono è chiuso.
+		\item $Y$ è chiuso per l'implicazione $1\Rightarrow 3)$ del teorema \ref{quozientehausdorff} (pag. \pageref{quozientehausdorff}), dato che si ha che, prese due mappe continue a valori in uno spazio di \textbf{Hausdorff}, l'insieme su cui coincidono è chiuso.
 	\end{itemize}
 	Mostriamo che $Y$ è anche \textit{aperto}, così per la connessione di $I$ si ha che $Y=I$, il che implica $\widetilde{\alpha}=\widehat{\alpha}$. Per dimostrare che $Y$ è aperto dimostriamo che è intorno di ogni suo punto, usando gli intorni uniformemente rivestiti.\\
 	Sia $t_0\in Y$ e sia $\alpha(t_0)\in S^1$. Sia $U$ un intorno aperto di $\alpha(t_0)$ uniformemente rivestito; si ha $\displaystyle e^{-1}(U)=\coprod_{n\in\integerset}V_n$ e vale inoltre:
@@ -1420,7 +1408,7 @@ Per il toro, dunque, consideriamo i generatori corrispondenti a $(1,\ 0)$ e $(0,
 		\end{center}
 \end{minipage}
 \subsection{Un gruppo fondamentale non abeliano}
-%LEZ 21
+% LEZ 21
 Sia $X=S^1\vee S^1$ l'unione ad un punto di due circonferenze in $\realset^2$, cioè il \textbf{bouquet di due circonferenze} che abbiamo trattato a pag. \pageref{bouquet}. Il gruppo fondamentale $\gruf{X}{x_0}$ è il \textbf{gruppo libero}\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{gruppolibero}, si può trovare un approfondimento a riguardo.} $\integerset\ast\integerset$, i cui generatori sono due cammini $[\alpha]$ e $[\beta]$, uno per ciascuna circonferenza. Esso è \textit{infinito} e \textit{non abeliano} perché, preso ad esempio come punto base $x_0$, essi \textit{non} commutano, ovvero $[\alpha\ast\beta]\neq [\beta\ast\alpha]$.
 \subsection{Spazio proiettivo reale}
 Consideriamo ora il caso dello \textit{spazio proiettivo reale}, che abbiamo introdotto nel capitolo \autoref{chap:azionidigruppo}. \\
