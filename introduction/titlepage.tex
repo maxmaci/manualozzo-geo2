@@ -6,84 +6,198 @@
 {$LastChangedBy$}
 
 % Remove header and footer
-\thispagestyle{titlepage}
+\thispagestyle{empty}
+\addtocounter{page}{-1}
 
-\begin{center}
-  \newlength{\parSepLength}
-  \setlength{\parSepLength}{10ex}
+\begin{textblock}{1}(0,0)
+	\noindent\textcolor{redill}{\rule{\paperwidth}{.55\paperheight}}
+\end{textblock}
 
-  \Large
-  \centering
 
-  % Main title
-  \thinRule\par
-  \par\vspace{0.15\parSepLength}
-  \begin{minipage}{\textwidth}
-    \centering
-    \fontsize{40pt}{36pt}\selectfont\titleColor\scshape
-    Appunti di Geometria 2
-  \end{minipage}
-  \par\vspace{0.25\parSepLength}
-  \par\thinRule
+\begin{textblock}{1}(0,.55)
+	\noindent\textcolor{black}{\rule{\paperwidth}{.45\paperheight}}
+\end{textblock}
 
-  \vspace{0.125\parSepLength}
 
-  \begin{minipage}{\textwidth}
-    \centering
-    \small
-    Anno Accademico 2020/2021
-  \end{minipage}
+\begin{textblock}{1}(.00,.13)
+	\begin{center}
+	\noindent{\fontsize{40.88}{2}\selectfont
+		\bfseries\textcolor{white}{\textsc{Tutto quello che\\[3mm] avreste voluto sapere\\[3mm] sulla Geometria*}}}
+	\end{center}
+\end{textblock}
 
-  \vspace{0.225\parSepLength}
-  
-    \begin{minipage}{\textwidth}
-  	\centering
-  	‘‘Un matematico è una macchina per trasformare caffè in teoremi.''\\
-  	Alfréd Rényi
-  \end{minipage}
+\begin{textblock}{1}(.00,.27)
+	\begin{center}
+	\noindent {\fontsize{25.88}{2}\selectfont
+		\bfseries\textcolor{white}{(\textsc{*ma non avete mai osato chiedere)}}}
+	\end{center}
+\end{textblock}
 
-  \vfill
+% \begin{textblock}{1}(.1,.21)
+%     \noindent{\fontsize{30}{2}\selectfont
+%         \bfseries\textcolor{white}{for \LaTeX}}
+% \end{textblock}
 
-  % Author
-  \begin{minipage}{\textwidth}
-    \centering
-    %\Large
-\begin{center}
+\begin{textblock}{1}(.00,.06)
+	\begin{center}
+			\noindent {\fontsize{20.74}{2}\selectfont
+			\bfseries\textcolor{white}{Elisa Antuca\ \ \ Massimo Bertolotti}}
+	\end{center}
+\end{textblock}
+
+
+
+\begin{textblock}{.9}(.05,.56)
+	\begin{flushright}
+		\noindent {\fontsize{20.74}{2}\selectfont
+			\bfseries\textcolor{white}{Manualozzo di Geometria 2}}
+	\end{flushright}
+\end{textblock}
+
+
+\begin{textblock}{.45}(.5,.775)
+	\begin{center}
+		\includegraphics[width=.4\paperwidth]{images/frontpage2}
+	\end{center}
+\end{textblock}
+
+\begin{textblock}{.4}(.01,.675)
+	\begin{center}
+		\includegraphics[width=.2\paperwidth]{images/frontpage1}
+	\end{center}
+\end{textblock}
+
+\begin{textblock}{.4}(.3,.35)
+	\begin{center}
+		\includegraphics[width=.2\paperwidth]{images/unitologo}
+	\end{center}
+\end{textblock}
+
+\begin{textblock}{.6}(.05,.59)
+	\noindent {\fontsize{14.74}{18}%
+		\textcolor{white}{$\displaystyle			\beta(P_1,\ P_2,\ P_3,\ P_4)=\frac{ \left| \begin{array}{cc}
+					\lambda_1 & \lambda_4 \\
+					\mu_1 & \mu_4
+				\end{array} \right| \cdot \left| \begin{array}{cc}
+					\lambda_2 & \lambda_3 \\
+					\mu_2 & \mu_3
+				\end{array} \right| } { \left| \begin{array}{cc}
+					\lambda_2 & \lambda_3 \\
+					\mu_2 & \mu_3
+				\end{array} \right| \cdot \left| \begin{array}{cc}
+					\lambda_2 & \lambda_4 \\
+					\mu_2 & \mu_4
+				\end{array} \right| }$}}
+\end{textblock}
+
+
+\begin{textblock}{.4}(.375,.77)
+	\noindent {\fontsize{20.28}{18}%
+		\textcolor{white!80}{$\displaystyle \gruf{S^1}{\ }=\integerset$}}
+\end{textblock}
+
+\begin{textblock}{.4}(.05,.925)
+	\noindent {\fontsize{14.4}{18}%
+		\textcolor{white!50}{$\displaystyle e^A\coloneqq \sum_{k=0}^{+\infty}\frac{A^k}{k!}=I+A+\frac{A^2}{2!}+\frac{A^3}{3!}+\ldots$}}
+\end{textblock}
+
+
+\begin{textblock}{.6}(.525,.625)
+	\noindent {\fontsize{18.28}{18}%
+		\begin{tikzcd}
+				\textcolor{white!50}{X} \arrow[r, "\textcolor{white!50}{f}",white] \arrow[d, "\textcolor{white!50}{\pi}"',white]                                   & \textcolor{white!50}{Y} \\
+				\textcolor{white!50}{\nicefrac{X}{\sim}} \arrow[ur, "\textcolor{white!50}{\overline{f}}"', dotted,white] &
+	\end{tikzcd}}
+\end{textblock}
+
+
+\begin{textblock}{.3}(.725,.71)
+	\noindent {\fontsize{19.28}{18}%
+		\textcolor{white!10}{$\displaystyle \euler{S}{\ }=v-e+f$}}
+\end{textblock}
+
+
+
+\null\newpage
+\begin{comment}
+	\begin{center}
+	\newlength{\parSepLength}
+	\setlength{\parSepLength}{10ex}
+	
+	\Large
+	\centering
+	
+	% Main title
+	\thinRule\par
+	\par\vspace{0.15\parSepLength}
+	\begin{minipage}{\textwidth}
+	\centering
+	\fontsize{40pt}{36pt}\selectfont\titleColor\scshape
+	Appunti di Geometria 2
+	\end{minipage}
+	\par\vspace{0.25\parSepLength}
+	\par\thinRule
+	
+	\vspace{0.125\parSepLength}
+	
+	\begin{minipage}{\textwidth}
+	\centering
+	\small
+	Anno Accademico 2020/2021
+	\end{minipage}
+	
+	\vspace{0.225\parSepLength}
+	
+	\begin{minipage}{\textwidth}
+	\centering
+	‘‘Un matematico è una macchina per trasformare caffè in teoremi.''\\
+	Alfréd Rényi
+	\end{minipage}
+	
+	\vfill
+	
+	% Author
+	\begin{minipage}{\textwidth}
+	\centering
+	%\Large
+	\begin{center}
 	\includegraphics[width=0.25\linewidth]{images/Unito-logo}
-\end{center}
-
-  \end{minipage}
-
-  \vfill
-
-  % Logo and other info
- % \begin{minipage}{0.8\textwidth}
-%    \centering
-%    \small
-
-    % Examiner
-%    \begin{minipage}[t]{0.29\textwidth}
-%      \textsc{Titolari del corso} \\
- %     {\scriptsize Prof. Marco Costa\\
-%      Prof. Antonaldo Diaferio\\
-%       Università di Torino}
-%    \end{minipage}
- %   \hfill
-    % Supervisor
- %   \begin{minipage}[t]{0.26\textwidth}
-%      \begin{center}
- %     	\textsc{Adattamento \LaTeX} \\ 
- %     \textsc{e integrazioni discutibili} \\
- %     {\scriptsize Massimo Bertolotti\\
- %      Università di Torino}
- %     \end{center}
- %   \end{minipage}
-%	\hfill
-%	\begin{minipage}[t]{0.27\textwidth}
-%	\raggedleft
-%	\textsc{Revisione contenutistica} \\ 
-%	{\scriptsize Elisa Antuca\\
-%	 Università di Torino}
-%	\end{minipage}
-%  \end{minipage}
-\end{center}
+	\end{center}
+	
+	\end{minipage}
+	
+	\vfill
+	
+	% Logo and other info
+	% \begin{minipage}{0.8\textwidth}
+	%    \centering
+	%    \small
+	
+	% Examiner
+	%    \begin{minipage}[t]{0.29\textwidth}
+	%      \textsc{Titolari del corso} \\
+	%     {\scriptsize Prof. Marco Costa\\
+	%      Prof. Antonaldo Diaferio\\
+	%       Università di Torino}
+	%    \end{minipage}
+	%   \hfill
+	% Supervisor
+	%   \begin{minipage}[t]{0.26\textwidth}
+	%      \begin{center}
+	%     	\textsc{Adattamento \LaTeX} \\ 
+	%     \textsc{e integrazioni discutibili} \\
+	%     {\scriptsize Massimo Bertolotti\\
+	%      Università di Torino}
+	%     \end{center}
+	%   \end{minipage}
+	%	\hfill
+	%	\begin{minipage}[t]{0.27\textwidth}
+	%	\raggedleft
+	%	\textsc{Revisione contenutistica} \\ 
+	%	{\scriptsize Elisa Antuca\\
+	%	 Università di Torino}
+	%	\end{minipage}
+	%  \end{minipage}
+	\end{center}
+\end{comment}
+\afterpage{\blankpage}

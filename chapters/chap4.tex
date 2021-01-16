@@ -14,7 +14,7 @@
 	\textsc{David S. Richeson,} sarto topologico.
 \end{flushright}
 \end{introduction}
-\noindent Riprendiamo l'\textit{oggetto elasticamente magico} con cui abbiamo introdotto il \autoref{chap:spazitopologici}: fra tutte le deformazioni che potevamo fare, \textit{incollare} parti di esso \textit{non} era consentito. E se invece provassimo a farlo? Quello che otterremo non è più uno spazio ‘‘\textit{equivalente}'' per un topologo a quello originale, ma comunque con molte proprietà interessanti da studiare.\\
+\lettrine[findent=1pt, nindent=0pt]{R}{iprendiamo} l'\textit{oggetto elasticamente magico} con cui abbiamo introdotto il \autoref{chap:spazitopologici}: fra tutte le deformazioni che potevamo fare, \textit{incollare} parti di esso \textit{non} era consentito. E se invece provassimo a farlo? Quello che otterremo non è più uno spazio ‘‘\textit{equivalente}'' per un topologo a quello originale, ma comunque con molte proprietà interessanti da studiare.\\
 La \textbf{topologia quoziente} formalizza questo concetto euristico di ‘‘incollare parti'' utilizzando le \textit{relazioni di equivalenza}; con il tipico approccio della Topologia Generale, faremo ciò dando delle semplici (seppur inizialmente poco intuitive) condizioni sulla continuità in modo da definire la topologia più adatta per l'\textit{insieme quoziente}.
 \section{Topologia quoziente}
 Accenniamo fin da subito che la situazione è \textit{duale} rispetto a quella dei sottospazi, analizzati nella sezione \ref{sottospazi}, pag. \pageref{sottospazi}.
@@ -71,17 +71,17 @@ Vediamo ora un esempio di identificazione chiusa e non aperta.
 		\end{center}
 	\vspace{-6mm}
 \end{example}
-%riguardare come mettere l'immagine
 \begin{observe}
 	Gli omeomorfismi sono identificazioni chiuse e aperte.
 \end{observe}
-Vediamo ora che relazione c'è fra le identificazioni ed i quozienti dati da relazioni di equivalenza.
+Che relazione c'è fra le identificazioni ed i quozienti dati da relazioni di equivalenza?
 \begin{theorema}[Proprietà universale delle identificazioni; Manetti, 5.6.]~{}\\
 \begin{minipage}[t]{0.83\textwidth}
 		Dati $X,Y,Z$ spazi topologici, $g$ una qualsiasi funzione continua, $f$ identificazione con le mappe come in figura, allora:
 		\begin{equation*}
 			\exists! h \text{ continua } \colon g=h\circ f \iff \left( \forall x,y\in X, \ f(x)=f(y)\implies g(x)=g(y)  \right)
 		\end{equation*}
+	\vspace{-2mm}
 		Cioè se e solo se $g$ è costante sulle fibre di $f$.
 \end{minipage}
 	\begin{minipage}[t]{0.13\textwidth}\vspace{-10pt}
@@ -92,15 +92,15 @@ Vediamo ora che relazione c'è fra le identificazioni ed i quozienti dati da rel
 	\end{minipage}
 \end{theorema}
 \begin{demonstration}
-	Idealmente se $f$ fosse invertibile definiremmo $h=g\circ f^{-1}$. Tuttavia l'invertibilità di $f$ non è fra le ipotesi, quindi si sfrutta al meglio l'ipotesi della suriettività e si considera una controimmagine tramite $f$ e se ne fa l'immagine tramite $g$, ovvero $y\in Y, \ h(y)\coloneqq g(x)$ con $x\in f^{-1}(y)$. Con questa costruzione $h$ è ben definita siccome $g$ sarà costante sulle fibre di $f$. \\
-	Verifichiamo che $h$ è continua tramite la definizione:
+	Idealmente se $f$ fosse invertibile definiremmo $h=g\circ f^{-1}$. Tuttavia l'invertibilità di $f$ non è fra le ipotesi, quindi si sfrutta al meglio l'ipotesi della suriettività e si considera una controimmagine tramite $f$ e se ne fa l'immagine tramite $g$, ovvero $y\in Y, \ h(y)\coloneqq g(x)$ con $x\in f^{-1}(y)$. Con questa costruzione $h$ è ben definita siccome $g$ sarà costante sulle fibre di $f$. Verifichiamo che $h$ è continua tramite la definizione:
 		\begin{gather*}
 			U\subseteq Z \text{ aperto }, \ h^{-1}(U)\subseteq Y \iff f^{-1}(h^{-1}(U))\subseteq X \text{ aperto} \iff g^{-1}(U)\subseteq X \text{ aperto}
 		\end{gather*}
+	\vspace{-2mm}
 	Siccome $g$ è continua allora lo è anche $h$.
 \end{demonstration}
 \begin{minipage}[t]{0.83\textwidth} \label{proprietà identificazione quoziente e mappa continua indotta}
-Come conseguenza si ha che, data $f$ continua, $\sim$ relazione di equivalenza e $\nicefrac{X}{\sim}$ spazio topologico con la topologia quoziente indotta dalla proiezione $\pi$, $\exists g$ continua $\iff \left( x\sim y \implies f(x)=f(y) \right)$, ovvero $\pi$ è costante sulle fibre di $f$.
+Data allora $f$ continua, $\sim$ relazione di equivalenza e $\nicefrac{X}{\sim}$ spazio topologico con la topologia quoziente indotta dalla proiezione $\pi$, $\exists g$ continua $\iff \left( x\sim y \implies f(x)=f(y) \right)$, ovvero $\pi$ è costante sulle fibre di $f$.
 \end{minipage}
 \begin{minipage}[t]{0.16\textwidth}\vspace{-10pt}
  		\begin{tikzcd}
@@ -110,17 +110,18 @@ Come conseguenza si ha che, data $f$ continua, $\sim$ relazione di equivalenza e
 	\end{minipage}\\
 \hspace{-1mm}
 \begin{minipage}[t]{0.83\textwidth}\vspace{2mm}
-In particolare, se $\sim$ è la relazione d'equivalenza indotta da $f$, e dunque si è nelle ipotesi del primo Teorema fondamentale di isomorfismo degli \textit{insiemi}, allora $\left( x\sim y \iff f(x)=f(y) \right) \implies \exists ! \overline{f}$ biettiva, continua. Dunque vale
-		\begin{equation}
-				\overline{f} \text{ omeomorfismo} \iff f \text{ identificazione}
-			\end{equation}
+In particolare, se $\sim$ è la relazione d'equivalenza indotta da $f$, e dunque si è nelle ipotesi del primo Teorema fondamentale di isomorfismo degli \textit{insiemi}, allora $\left( x\sim y \iff f(x)=f(y) \right) \implies \exists ! \overline{f}$ biettiva, continua. Dunque vale:
 	 	\end{minipage}
-	\begin{minipage}[t]{0.16\textwidth}\vspace{1mm}
+	\begin{minipage}[t]{0.16\textwidth}\vspace{-1pt}
 			\begin{tikzcd}
 				X \arrow[r, "f"] \arrow[d, "\pi"']                                   & Y \\
 				\nicefrac{X}{\sim} \arrow[ur, "\overline{f}"', dotted] &
 			\end{tikzcd}
-	\end{minipage}\vspace{3mm}\\
+	\end{minipage}\vspace{-1.5mm}\\
+\begin{equation}
+	\overline{f} \text{ omeomorfismo} \iff f \text{ identificazione}
+\end{equation}
+\vspace{-1.5mm}
 Riprendiamo l'esempio precedente ed esaminiamolo in termini di spazio quoziente.
 \begin{example}~{$\nicefrac{D^n}{\sim}\cong S^n$}\\
 	Consideriamo il caso $n=1$:
@@ -145,7 +146,7 @@ Riprendiamo l'esempio precedente ed esaminiamolo in termini di spazio quoziente.
 	In altre parole, ogni punto interno è \textit{in relazione con sé stesso} e tutti i punti sul bordo sono \textit{identificati} in un unica classe.
 \end{example}
 	
-%LEZ 12
+% LEZ 12
 	\subsection{Quozienti tipici}
 Vedremo ora degli esempi di spazi quoziente usati frequentemente.
 \begin{intuit}
@@ -155,7 +156,7 @@ Vedremo ora degli esempi di spazi quoziente usati frequentemente.
 		(x_1,\ y_1) \sim (x_2,\ y_2)\iff (x_1,\ y_1)=(x_2,\ y_2) \text{ oppure } x_1^2 +y_1^2= x_2^2 +y_2^2=1
 	\end{equation*}
 	I punti all'\textit{interno del disco} vengono tutti identificati in classi di equivalenza \textit{separate}, dunque passando allo spazio quoziente avremo una classe per \textit{ciascun} punto interno e un'\textit{unica} classe per tutti il bordo.\\
-	Lo spazio quoziente ottenuto è $S^2$: possiamo ottenerlo visualmente ‘‘gonfiando'' l'interno del disco per poi chiudere il ‘‘palloncino'' ottenuto lungo i punti del bordo, come in figura.
+	Lo spazio quoziente ottenuto è $S^2$: possiamo ottenerlo visualmente ‘‘gonfiando'' l'interno del disco per poi chiudere il ‘‘palloncino'' ottenuto lungo i punti del bordo, come nella figura seguente.
 	\begin{center}
 		\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.4]{images/disctosphere.pdf}
 	\end{center}
@@ -218,9 +219,8 @@ Sia $X$ uno spazio topologico, $A\subseteq X$, $\forall x,y\in X \ x\sim y\iff x
 	\vspace{-6mm}
 \end{example}
 \subsubsection{Retta con 2 origini} \label{retta 2 origini}
-Analizziamo un particolare spazio topologico che spesso fungerà da controesempio, in particolare per le varietà topologiche (vedi sezione   ): \textbf{la retta con 2 origini}. \newline
+Analizziamo un particolare spazio topologico che spesso funge da controesempio, in particolare per le varietà topologiche (vedi ad esempio sez. \ref{retta2originivarietà}, pag. \pageref{retta2originivarietà}): \textbf{la retta con 2 origini}. \newline
 Sia $X=\realset\times\{a,b\}$.
-%AAA SEZIONE CERCASI
 \begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.95]{images/line2origins.pdf}
 \end{center}
@@ -239,7 +239,7 @@ Vogliamo definire una relazione di equivalenza che lasci ‘‘separate'' solo l
 	\item $Y$ è \textit{localmente omeomorfo} a $\realset$, infatti ogni punto ha un intorno omeomorfo ad un intervallo aperto di $\realset$
 	\item $\exists K_1, K_2\subseteq Y$ compatti tali per cui $K_1\cap K_2$ \textit{non} è compatto: basta prendere $K_1=\pi\left([-1, \ 1]\times \{a\} \right)$ e $K_1=\pi\left([-1, \ 1]\times \{a\} \right)$ compatti in $Y$, ma $K_1\cap K_2= [-1,\ 0) \cup (0,\ 1]$ \textit{non} è compatto in $Y$
 \end{enumerate}
-\subsection{Quoziente di Hausdroff}
+\subsection{Quoziente di Hausdorff}
 Cerchiamo ora delle condizioni per avere un \textit{quoziente di} \textbf{Hausdorff}.
 \begin{theorema}[Condizioni sufficienti per il quoziente di Hausdorff.]~{}\label{quozientehausdorff}\\
 Sia $\funz f X Y$ continua e identificazione con $X$ compatto e di \textbf{Hausdorff}, allora sono equivalenti:

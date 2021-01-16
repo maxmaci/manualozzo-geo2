@@ -14,12 +14,15 @@
 		\textsc{Simone Ramello,} studente con stress post-traumatico causato da Art Attack.
 	\end{flushright}
 \end{introduction}
-\noindent La \textit{Terra} è piatta o sferica? Per un topologo, la risposta è: \textit{dipende} da come la si guarda. Sappiamo che vista nello spazio la Terra è una \textit{sfera}; tuttavia, se ci troviamo in una \textit{zona piana}, nei nostri dintorni appare sufficientemente piatta. In modo analogo, su un foglio i \textit{triangoli} sono quelli ben noti con somma degli angoli interni un angolo piatto, se prendiamo tre punti ben distanti sulla Terra il ‘‘triangolo'' che otteniamo ha somma maggiore! Com'è possibile?\\
+\lettrine[findent=1pt, nindent=0pt]{L}{a} Terra è piatta o sferica? Per un topologo, la risposta è: \textit{dipende} da come la si guarda. Sappiamo che vista nello spazio la Terra è una \textit{sfera}; tuttavia, se ci troviamo in una \textit{zona piana}, nei nostri dintorni appare sufficientemente piatta. In modo analogo, su un foglio i \textit{triangoli} sono quelli ben noti con somma degli angoli interni un angolo piatto, se prendiamo tre punti ben distanti sulla Terra il ‘‘triangolo'' che otteniamo ha somma maggiore! Com'è possibile?\\
 Le \textbf{varietà topologiche} sono la risposta formale a ciò: una varietà topologica è uno spazio che localmente ha le stesse proprietà di uno spazio Euclideo reale. In particolare, in questa trattazione ci occuperemo principalmente di varietà topologiche di \textit{dimensione 2} e di come poterle classificarle a meno di omeomorfismi.
 \section{Varietà topologiche}
 \begin{define}[Localmente euclideo.]~{}\\
-	Uno spazio topologico $X$ si dice \textbf{localmente euclideo}\index{localmente euclideo} di dimensione $n$ se ogni punto di $X$ ammette un intorno aperto omeomorfo ad una palla aperta di $\realset^n$.
+	Uno spazio topologico $X$ si dice \textbf{localmente euclideo}\index{localmente euclideo} di dimensione $n$ se ogni punto di $X$ ammette un intorno aperto omeomorfo ad una palla aperta di $\realset^n$. Per ogni punto $x\in X$ si parla di \textbf{carta}\index{carta} $\left(U,\ \phi_x\right)$, cioè la coppia dell'intorno aperto $U\in I\left(x\right)$ omeomorfo a $\realset^n$ e dell'omeomorfismo $\funz{\phi_x}{U}{\realset^n}$.
 \end{define}
+\begin{observe}
+	Equivalentemente, $X$ è localmente euclideo se ogni punto di $X$ ammette un aperto omeomorfo a $\realset^n$. Questa definizione è lecita perché ogni palla aperta in $\realset^n$ è omeomorfo a $\realset^n$ e la composizione di omeomorfismi è un omeomorfismo.
+\end{observe}
 
 \begin{define}[Varietà topologica.]~{}\\
 	Uno spazio topologico $X$ si dice \textbf{varietà topologica}\index{varietà topologica} di dimensione $n$ se $X$ è di \textbf{Hausdorff}, connesso, a base numerabile e localmente euclideo di dimensione $n$.
@@ -38,13 +41,33 @@ Le \textbf{varietà topologiche} sono la risposta formale a ciò: una varietà t
 	La dimensione di una varietà topologica è \textit{ben definita} per l'\textit{invarianza della dimensione}.
 \end{observe}
 \begin{observes}~{}
-	\begin{itemize}
-		\item Una varietà topologica è \textbf{c.p.a.}.
+	\begin{enumerate}
+		\item Una varietà topologica è \textbf{c.p.a.}
 		\item Se $X$ è una varietà topologica di dimensione $n$ e $Y$ è una varietà topologica di dimensione $m$ allora $X\times Y$ è una varietà topologica di dimensione $n+m$.
 		\vspace{-3mm}
-	\end{itemize}
-%DIMOSTRAZIONE TUTORATO dei due punti precedenti
+	\end{enumerate}
 \end{observes}
+\begin{demonstration}~{}
+	\begin{enumerate}[label=\Roman*]
+		\item Consideriamo un punto $x_0\in X$ e la sua componente \textbf{c.p.a.}:
+		\begin{equation*}
+			C=\left\{y\in X\mid \exists \funz{\alpha}{I}{X},\ \alpha\left(0\right)=x_0,\ \alpha\left(1\right)=y\right\}
+		\end{equation*}
+		Vogliamo dimostrare che $C$ è aperto e chiuso. Notiamo che $\forall y\in C$, essendo $X$ localmente Euclideo, $\exists U\in I\left(y\right)$ aperto tale che $U\cong B_\epsilon$. Poiché $B_\epsilon$ è un aperto \textbf{c.p.a.} di $\realset^n$, con l'omeomorfismo fra $U$ e la palla, segue che anche $U$ è \textbf{c.p.a.}. Ma allora, per giunzione di cammini, esiste un cammino da $x_0$, passante per $y$ per ogni altro punto dell'intorno $U$, cioè $U\subseteq C$.\\
+		Poiché $\forall y\in C\ y\in U_i$, si ha che $\displaystyle \union_i U_i\subseteq C$ (dall'inclusione precedente) e  $\displaystyle\union_i U_i\supseteq C$ (perché ogni elemento di $C$ appartiene per ipotesi ad un $U_i$), cioè $\displaystyle C=\union_i U_i$. In particolare, $C$ è unione di aperti e dunque \textit{aperto}.
+		\begin{itemize}
+			\item Se $C=X$, ho finito.
+			\item Supponiamo per assurdo che $C\subsetneqq X$; consideriamo $X\setminus C$. $\forall y\in X\setminus C\ \exists U\in I\left(y\right)$ aperto con $U\cong B_\epsilon\subseteq \realset^n$. Notiamo che se $U\cap C\neq \emptyset$, essendo $U$ \textbf{c.p.a.} per i ragionamenti precedenti e $C$ \textbf{c.p.a.} per ovvi motivi, posso sempre creare un cammino passante per un punto in $U\cap C$ che connette $x_0$ con gli altri punti di $U$, dunque $U\subseteq C$. Necessariamente $\forall y\in X\setminus C\ U\cap C=\emptyset$, cioè $U\subseteq X\setminus C$: $X\setminus C$ è intorno di ogni suo punto, cioè è \textit{aperto} e pertanto $C$ è \textit{chiuso}.
+		\end{itemize}
+			Ne consegue che $C$ è un aperto e chiuso in $X$ connesso con $C\neq \emptyset$, dato che $x_0\in C$. Allora $C=X$ e $X$ è \textbf{c.p.a.}.
+		\item Sappiamo che $X\times Y$ è di Hausdorff, connesso e a base numerabile perché prodotto di spazi che lo sono. Consideriamo per ogni punto in $X$ e in $Y$ rispettivamente le carte $\left(U,\ \phi_x\right)$ e $\left(U,\ \phi_y\right)$ (con $\funz{\phi_x}{U}{\realset^n}$ e $\funz{\phi_y}{V}{\realset^m}$). Consideriamo, per ogni $\left(x,\ y\right)$:
+		\begin{equation*}
+			\funztot{\psi_{x,y}}{U\times V}{\realset^n\times\realset^m}{\left(x,\ y\right)}{\left(\phi_x\left(x\right),\ \phi_y\left(y\right)\right)}
+		\end{equation*}
+	Si vede che $\psi_{x,y}$ è continua, biettiva perché le sono le componenti e l'inversa $\psi_{x,y}^{-1}=\left(\phi_x^{-1},\ \phi_y^{-1}\right)$ è continua perché sono ovviamente continue le inverse degli omeomorfismi. Dunque, poiché vale per ogni $\left(x,\ y\right)\in X\times Y$, allora $X\times Y$ è localmente euclideo di $\dim n+m$ (perché $\realset^n\times \realset^m\cong\realset^{n+m}$).
+	\end{enumerate}
+\vspace{-3mm}
+\end{demonstration}
 \begin{example}
 	$T=S^1\times S^1$ è una varietà topologica di dimensione $2$.
 \end{example}
@@ -56,12 +79,12 @@ Analizziamo il caso delle varietà topologiche di dimensione $1$, per esempio $\
 \begin{theorema}[Classificazione delle varietà topologiche di dimensione $1$.]~{}\\
 	Ogni varietà topologica di dimensione $1$ è omeomorfo a $\realset$ se \textit{non} è compatta, oppure a $S^1$ se compatta.
 \end{theorema}
-\begin{example}
+\begin{example}\label{retta2originivarietà}
 Riconsideriamo l'esempio della \textbf{retta con 2 origini} (sez. \ref{retta 2 origini}, pag. \ref{retta 2 origini}): essa è un quoziente non \textbf{Hausdorff}, dunque \textit{non} è una varietà topologica.
 \end{example}
 	\subsection{Dimensione 2}
 \begin{define}[Superficie topologica.]~{}\\
-	Una varietà topologica di dimensione $2$ si dice \textbf{superficie topologica}\index{superficie!topologica}.
+	Una varietà topologica di dimensione $2$ si dice \textbf{superficie topologica}\index{superficie topologica}.
 \end{define}
 \begin{examples}~{}
 	\begin{itemize}
@@ -117,7 +140,7 @@ Vogliamo dare una classificazione delle superfici topologiche \textit{compatte}.
 		\begin{center}
 			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.375]{images/sphere2lines.pdf}
 		\end{center}
-		\item Anche il modello piano di $\mathbb{P}^2(\realset)$ sul \textit{quadrato} può essere trasformato in uno sul poligono a due lati, unificando $ba$ per ottenere un'unico lato $c$ e un modello con parola $cc$:
+		\item Anche il modello piano di $\mathbb{P}^2(\realset)$ sul \textit{quadrato} può essere trasformato in uno sul poligono a due lati, unificando $ba$ per ottenere un unico lato $c$ e un modello con parola $cc$:
 		\begin{center}
 			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.375]{images/proj2lines.pdf}
 		\end{center}
@@ -164,13 +187,13 @@ Siano $S_1$ e $S_2$ superfici compatte e siano $x\in S_1$ e $y\in S_2$. Siano $D
 Vediamo ora qualche fatto che \textit{non} dimostriamo:
 	\begin{itemize}
 		\item Il quoziente è ancora una superficie topologica, che chiamiamo \textbf{somma connessa}\index{somma!connessa} $S_1\# S_2$  di $S_1$ e $S_2$.
-		\item La somma connessa $S_1\# S_2$, a meno di omeomorfismo, \textit{non dipende} dalle scelte fatte come i punti $x$ e $y$, gli intorni $D_x$ e $D_y$, l'omeomorfismo $h$, ma soltanto da $S_1$ e da $S_2$!
+		\item La somma connessa $S_1\# S_2$, a meno di omeomorfismo, \textit{non dipende} dalle scelte fatte (i punti $x$ e $y$, gli intorni $D_x$ e $D_y$, l'omeomorfismo $h$) ma soltanto da $S_1$ e da $S_2$!
 		\item La somma connessa di superfici compatte è, a meno di omeomorfismi, \textit{commutativa} e \textit{associativa}:
 		\begin{itemize}
 			\item \textsc{Commutativa}: $S_1\# S_2\cong S_2\# S_1$.
 			\item \textsc{Associativa}: $\left(S_1\# S_2\right)\# S_3\cong S_1\#\left(S_2\# S_3\right)$.
 		\end{itemize}
-	\item Se $S_1,\ S_2$ sono superfici compatte, allora anche $S_1\# S_2$ è una superficie topologica compatta.
+	\item Se $S_1,\ S_2$ sono superfici compatte, allora $S_1\# S_2$ è una superficie compatta.
 	\end{itemize}
 \begin{observe}
 	Sia $X$ una superficie compatta. Allora $X\# S^2\cong X$. Infatti, $S^2\setminus D_y$ è omeomorfismo ad un \textit{disco chiuso} in $\realset^2$. Dato che stiamo togliendo un disco anche ad $X$ per poi aggiungerne un altro, ritroviamo $X$ a meno di omeomorfismi.
@@ -181,13 +204,15 @@ Vediamo ora qualche fatto che \textit{non} dimostriamo:
 \end{observe}
 \begin{define}[Somma di tori.]~{}\\
 	Indichiamo con $T_g$ la \textbf{somma connessa di }$g\geq 1$ \textbf{tori}:
+	\vspace{-1mm}
 	\begin{equation}
 		T_g=\underbrace{T\# \ldots\# T}_{g\ \text{volte}}\quad g\geq 1\ \left(T_1=T\right)
 	\end{equation}
-$T_g$ può essere visualizzato sia come ‘‘ciambella con $g$ buchi'' , sia come "sfera con $g$ manici''.
+$T_g$ può essere visualizzato sia come ‘‘ciambella con $g$ buchi'', sia come "sfera con $g$ manici''.
+\vspace{-3mm}
 \begin{center}
-	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.25]{images/toruschain.pdf}
-	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.25]{images/spherewithhandle.pdf}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.23]{images/toruschain.pdf}
+	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.23]{images/spherewithhandle.pdf}
 \end{center}
 \vspace{-3mm}
 \end{define}
@@ -219,16 +244,18 @@ Infine, \textit{incolliamo} lungo i due nuovi lati creati bucando le due superfi
  \begin{center}
  	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/torusmodelconnect4.pdf}
  \end{center}
+\vspace{-3mm}
 Il modello ottenuto è un modello piano per $S_1\# S_2$, la cui parola associata è ottenuta per \textit{concatenazione}:
 \begin{equation*}
 	\underbrace{a_1b_1a_1^{-1}b_1^{-1}}_{\text{modello piano di }S_1}\underbrace{a_2b_2a_2^{-1}b_2^{-1}}_{\text{modello piano di }S_2}
 \end{equation*}
+\vspace{-3mm}
 \begin{example}
-Il toro $T$ è dato dalla parola $aba^{-1}b^{-1}$. Allora $T_g=T\#\ldots\# T$ ha un modello piano dato dalla parola :
+Il toro $T$ è dato dalla parola $aba^{-1}b^{-1}$. Allora $T_g=T\#\ldots\# T$ è un quoziente con $4g$ lati e ha un modello piano dato dalla parola:
 \begin{equation*}
 a_1b_1a_1^{-1}b_1^{-1}a_2b_2a_2^{-1}b_2^{-1}\ldots a_gb_ga_g^{-1}b_g^{-1}
 \end{equation*}
-$T_g$ è un quoziente con $4g$ lati.
+\vspace{-3mm}
 \end{example}
 \begin{define}[Somma connessa di $n$ piani proiettivi]
 	Preso il \textit{piano proiettivo reale} $P=\proj[2]{\realset}$, definiamo la \textbf{somma connessa di} $n$ \textbf{piani proiettivi} come:
@@ -263,16 +290,20 @@ $T_g$ è un quoziente con $4g$ lati.
 	\end{center}
 \end{minipage}\\
 Vogliamo vedere che $aba^{-1}b$ e $ccdd$ danno la stessa superficie. Partiamo dal primo modello e tagliamo lungo la diagonale.
+\vspace{-3mm}
 \begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/kleintoprojdouble1.pdf}
 \end{center}
+\vspace{-3mm}
 Incolliamo lungo il lato $b$:
+\vspace{-3mm}
 \begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.3]{images/kleintoprojdouble2.pdf}
 \end{center}
+\vspace{-3mm}
 Infatti, otteniamo come modello $aaee$, che corrisponde a $P\# P$.
 \end{observe}
-\begin{lemming}[Somma connessa toro-piano proiettivo e bottiglia di Klein-piano proiettivo.]~{}\\
+\begin{lemming}[Somma connessa toro-piano proiettivo e bottiglia di Klein-piano proiettivo.]
 	\begin{equation}
 		T\# P= K\# P=P\# P\# P
 	\end{equation}
@@ -328,7 +359,7 @@ Inoltre, tali superfici sono tutte distinte, ovvero:
 \end{itemize}
 \vspace{-3mm}
 \end{theorema}
-Per la dimostrazione del teorema abbiamo prima bisogno di definire e dimostrare dei risultati sulla triangolazione.
+Per la dimostrazione del teorema abbiamo bisogno di definire cos'è una triangolazione.
 \subsection{Triangolazione}
 \begin{define}[Triangolo geometrico.]~{}\\
 	Sia $S$ una superficie compatta. Un \textbf{triangolo geometrico}\index{triangolo geometrico} $T$ in $S$ è un'applicazione:
@@ -382,7 +413,6 @@ La prima parte della dimostrazione del teorema di classificazione si occupa di d
 \end{example}
 La dimostrazione è \textit{costruttiva}: procederemo passo per passo, da un modello piano di una qualunque superficie compatta ad ottenere una delle superfici citate nel teorema con un \textbf{algoritmo di taglia e incolla}\index{algoritmo del taglia e incolla}.
 \begin{demonstration}~{}\\
-%PASSO 0
 \textsc{\underline{\textbf{Passo 0}}}: se nel modello piano ci sono \textit{solo} $2$ lati abbiamo finito. Infatti, abbiamo solo due superfici con un modello di questo tipo, che abbiamo già visto:
 \begin{center}
 	\vspace{-3mm}
@@ -415,7 +445,6 @@ La dimostrazione è \textit{costruttiva}: procederemo passo per passo, da un mod
 \vspace{-3mm}
 \end{center}
 Possiamo supporre che nel modello piano c'è un numero di lati maggiore di $4$.\\
-%PASSO 1
 \textsc{\underline{\textbf{Passo 1}}}: \textit{Eliminazione delle coppie adiacenti del I tipo}.\\
 Supponiamo che nel modello piano ci sia una coppia di lati \textit{adiacenti} del I tipo, come in figura.
 \begin{center}
@@ -426,7 +455,6 @@ Incolliamo i lati $a$ della coppia: in questo modo, otteniamo un nuovo modello p
 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep1-2.pdf}
 \end{center}
 Ripetiamo il passo 1 finché eliminiamo tutte le coppie adiacenti del I tipo. Se alla fine abbiamo due soli lati, ricadiamo nel passo 0 e abbiamo già finito la dimostrazione.\\
-%PASSO 2
 \textsc{\underline{\textbf{Passo 2}}}: \textit{Riduzione dei vertici a un'unica classe di equivalenza}.\\
 Supponiamo che i vertici del poligono \textit{non} siano tutti equivalenti. Dunque, esisterà un lato $b$ i cui due vertici $P$ e $Q$ \textit{non} sono equivalenti!
 \begin{center}
@@ -444,7 +472,6 @@ Alternando i passi 1 e 2 arriviamo ad un modello piano con tutti i vertici ident
 		\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep2-3.pdf}
 	\end{center}
 In altre parole, l'esistenza di \textit{almeno una} coppia di lati del II tipo è \textit{mantenuta} dal passo 2.\\
-%PASSO 3
 \textsc{\underline{\textbf{Passo 3}}}: \textit{Rendere adiacenti le coppie del II tipo}.\\
 Supponiamo che ci sia una coppia di lati $a$ \textit{non} adiacenti del II tipo. Operiamo un taglio $b$ tra gli estremi finali della coppia e incolliamo la coppia stessa.
 	\begin{center}
@@ -455,7 +482,6 @@ Se ci sono solo \textit{coppie del II tipo}, abbiamo ottenuto una parola della f
 \begin{equation}
 	a_1a_1a_2a_2\ldots a_na_n \implies \ovaled{S\cong P_n}
 \end{equation}
-%PASSO 4
 \textsc{\underline{\textbf{Passo 4}}}: \textit{Raggruppare le coppie del I tipo}.\\
 Supponiamo che nel modello piano ci sia almeno una coppia del primo tipo (non adiacente per i passi precedenti).
 	\begin{center}
@@ -473,9 +499,11 @@ Operiamo due taglia e incolla per raggruppare le due coppie.
 		\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep4-3.pdf}
 	\end{center}
 	\item[\underline{4.2}] Taglio un lato $d$ lungo gli estremi finali di $c$ nella stessa direzione di $a$ e incollo $a$.
+	\vspace{-3mm}
 	\begin{center}
 		\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep4-4.pdf}
 	\end{center}
+	\vspace{-3mm}
 \end{enumerate}
 In queste operazioni incolliamo lungo coppie del I tipo, pertanto i tipi delle coppie \textit{non cambiano!}\\
 \begin{itemize}
@@ -537,7 +565,7 @@ Possiamo formalizzare l'\textit{orientabilità} utilizzando questo principio.
 \begin{observes}~{}
 	\begin{enumerate}
 		\item $S^2$ e $T_g$ sono orientabili $\forall g\geq 1$.
-		\item Se una superficie \textit{compatta} è omeomorfa a un sottospazio di $\realset^3$, allora è \textit{orientabile} ed è rappresentabile. %io negli appunti ho "non" è rappresentabile, ma mi sembra strano.
+		\item Se una superficie \textit{compatta} è omeomorfa a un sottospazio di $\realset^3$, allora è \textit{orientabile} ed è rappresentabile.
 	\end{enumerate}
 \vspace{-3mm}
 \end{observes}
@@ -768,4 +796,3 @@ Su 10 vertici ho 2 classi di equivalenza, quindi $v=2$. Pertanto:
 \end{equation*}
 \vspace{-6mm}
 \end{solution}
-% AGGIUNGERE Note di Topologia Algebrica e Analisi Complessa http://www.science.unitn.it/~perotti/disgeoIII.pdf

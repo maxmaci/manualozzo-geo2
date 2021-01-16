@@ -14,13 +14,13 @@
 		\textsc{David Mumford,} assolutamente non un adepto della Geometria algebrica.
 	\end{flushright}
 \end{introduction}
-%inserire introduzione
-\noindent Nel \autoref{chap:omotopia}, abbiamo definito e studiato diverse proprietà legate all'\textit{omotopia}, mostrando alcuni esempi di spazi omotopicamente equivalenti. Tuttavia, non abbiamo ancora formalizzato un aspetto dell'intuizione iniziale: come contiamo i \textit{buchi} di una figura?\\
+\lettrine[findent=1pt, nindent=0pt]{N}{el} \autoref{chap:omotopia}, abbiamo studiato diverse proprietà legate all'\textit{omotopia}, mostrando alcuni esempi di spazi omotopicamente equivalenti. Tuttavia, non abbiamo ancora formalizzato un aspetto dell'intuizione iniziale: come contiamo i \textit{buchi} di una figura?\\
 In questo capitolo proseguiamo la trattazione introducendo un \textit{oggetto algebrico} che associamo come invariante ad uno spazio topologico: il \textbf{gruppo fondamentale}. Definendo una versione dell'omotopia specifica dei cammini, utilizziamo questo gruppo formato dalle classi di equivalenza omotopica di \textit{cammini chiusi} per mostrare in termini rigorosi la presenza di buchi.\\
 Inoltre, largo spazio sarà lasciato alla dimostrazione del primo gruppo fondamentale non banale, quello della \textit{circonferenza}.
 \section{Omotopie fra cammini}
 \begin{notate}
 Se non specificato differentemente, useremo $I$ per indicare l'intervallo $\intv$.
+\vspace{-4mm}
 \end{notate}
 \begin{define}[Omotopia di cammini.]~{}\\
 	Siano $\funz{\alpha,\ \beta}{I}{X}$ due cammini da $a$ a $b$, cioè con \textit{stessi estremi}. Allora $\alpha,\ \beta$ sono \textbf{cammini omotopi}\index{cammino!omotopo} se $\exists \funz{F}{I \times I}{X}$ tale che:
@@ -44,7 +44,7 @@ Se non specificato differentemente, useremo $I$ per indicare l'intervallo $\intv
 $F$ è detta \textbf{omotopia di cammini}\index{omotopia!di cammini} o \textbf{omotopia a estremi fissi} \seeonlyindex{omotopia!a estremi fissi}{omotopia!di cammini}.
 \end{define}
 \begin{define}[Insieme dei cammini.]~{}\\
-	Indichiamo con $\inscam{X}{a}{b}$ l'\textbf{insieme dei cammini}\index{cammino!insieme} in $X$ da $a$ a $b$.
+	Indichiamo con $\inscam{X}{a}{b}$ l'\textbf{insieme dei cammini}\index{cammino!insieme dei cammini} in $X$ da $a$ a $b$.
 \end{define}
 \begin{observe}
 	L'omotopia di cammini è una relazione di equivalenza su $\inscam{X}{a}{b}$.
@@ -171,7 +171,6 @@ $H$ è l'omotopia a estremi fissi cercata.
 \begin{demonstration}
 	Sia $\funz{F}{I\times I}{X}$ data da $\mvf{F}{t}{s}=\alpha\left(s\varphi\left(t\right)+\left(1-s\right)t\right)$.
 	\begin{itemize}
-		%controllare impaginazione qui
 		\item $s\varphi\left(t\right)+\left(1-s\right)t$ è una combinazione lineare che è contenuta in $I\subseteq \realset\ \forall t,\ s\in I$ per convessità dell'intervallo $I$, da cui segue che $F$ è ben definita.
 		\item $F$ continua perché composizione di funzioni continue.
 		\item \parbox[t]{0.38\textwidth}{$\mvf{F}{t}{0}=\alpha\left(t\right)$}\tikzmark{a}
@@ -357,7 +356,7 @@ Preso un laccio $\alpha$, indichiamo la sua classe di equivalenza in $\gruf{X}{x
 \end{attention}
 \begin{define}[Gruppo fondamentale.]~{}\\
 	Dato uno spazio topologico $X$ e fissato un punto (detto \textbf{punto base}\index{punto!base}) $x_0$, il \textbf{gruppo fondamentale}\index{gruppo!fondamentale} con punto base $x_0$ è il gruppo $\gruf{X}{x_0}$ definito nell'osservazione precedente.\\
-	Si chiama anche \textbf{primo gruppo fondamentale}\index{gruppo!fondamentale!primo} o \textbf{gruppo di Poincaré}\seeonlyindex{gruppo!di Poicaré}{gruppo!fondamentale}.
+	Si chiama anche \textbf{primo gruppo fondamentale} o \textbf{gruppo di Poincaré}\seeonlyindex{gruppo!di Poicaré}{gruppo!fondamentale}.
 \end{define}
 \subsection{Dipendenza dal punto base}
 \begin{theorema}[$\pi_1$ dipende dalla componente c.p.a.]~{}\label{dipendenzaptobasegruf}\\
@@ -377,7 +376,7 @@ In altre parole, se $x,\ y\in X$ appartengono alla stessa componente \textbf{c.p
 	\begin{gather*}
 		f\left(a\cdot_G b\right)=f\left(a\right)\cdot_H f\left(b\right)\quad \forall a,\ b\in G
 	\end{gather*}
-	Se $f$ è \textit{biettiva}, allora parliamo di \textbf{isomorfismo di gruppi}\index{isomorfismo di gruppi}.
+	Se $f$ è \textit{biettiva}, allora parliamo di \textbf{isomorfismo di gruppi}\index{isomorfismo!di gruppi}.
 \end{remember}
 \begin{demonstration}~{}
 	\begin{itemize}
@@ -511,7 +510,7 @@ Si dimostra che $Id_X$ è unico per ogni oggetto $X$.
 \vspace{-3mm}
 \end{define}
 \begin{define}[Isomorfismo.]~{}\\
-	Un morfismo $f\in\homo{\cat}{X}{Y}$ si dice \textbf{isomorfismo} se:
+	Un morfismo $f\in\homo{\cat}{X}{Y}$ si dice \textbf{isomorfismo}\index{isomorfismo!tra oggetti di $\cat$} se:
 	\begin{equation}
 		 \exists g\in \homo{\cat}{Y}{X} \text{ tale che } g\circ f=Id_X\qquad f\circ g=Id_Y
 	\end{equation}
@@ -714,15 +713,6 @@ Sia $A\subseteq X$ un retratto con retrazione $\funz{r}{X}{A}$ e inclusione $\in
 	\end{center}
 Notiamo che $r_{\ast}\circ i_{\ast}=\left(r\circ i\right)_{\ast}=\left(Id_A\right)_{\ast}$, cioè $r_{\ast}\circ i_{\ast}$ è biettiva. In particolare, ne consegue, per quanto detto poco sopra, che $i_{\ast}$ è iniettiva e $r_{\ast}$ suriettiva.
 \end{demonstration}
-\begin{remember}
-\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{isomorfismosottogruppo}, si può trovare la dimostrazione di ciò.}
-\end{remember}
-\begin{corollary}[Il gruppo fondamentale di un retratto $A$ è isomorfo ad un sottogruppo dell'insieme $X$.]~{}\\
-Sia $A\subseteq X$ un retratto con retrazione $\funz{r}{X}{A}$ e inclusione $\incl{i}{A}{X}$. Allora $\gruf{A}{a}$ è isomorfo ad un sottogruppo di $\gruf{X}{a}$; in particolare, $\gruf{A}{a}$ è di ordine infinito, lo deve essere anche $\gruf{X}{a}$.
-\end{corollary}
-\begin{demonstration}
-Dal teorema precedente $\funz{i_{\ast}}{\gruf{A}{a}}{\gruf{X}{a}}$ è un omomorfismo \textit{iniettivo}, dal lemma \ref{isomorfismosottogruppolemma}, pag. \ref{isomorfismosottogruppolemma}, segue la tesi.
-\end{demonstration}
 \begin{theorema}[Isomorfismi tra gruppi fondamentali e funzioni; Kosniowski, 15.12.]~{}\\
 Siano $\funz{f,\ g}{X}{Y}$ continue, omotope e $x_0\in X$. Allora esiste un \textit{isomorfismo di gruppi}:
 \begin{equation}
@@ -841,7 +831,6 @@ Sono \textbf{isomorfismi} di gruppi.
 \end{corollary}
 \section{Numero di Lebesgue}
 Per poter calcolare il \textit{gruppo fondamentale} delle \textit{sfere} $S^n$, con $n\geq 2$, abbiamo prima bisogno di qualche risultato preliminare.
-% rivedere intro
 \begin{define}[Distanza di un punto da un insieme in uno spazio metrico.]~{}\\
 Sia $\left(X, d\right)$ uno spazio metrico e $C\subseteq X$ un sottoinsieme non vuoto; preso $x\in X$, la \textbf{distanza di} $x$ \textbf{da} $C$\index{distanza!di un punto da un insieme in uno spazio metrico} è definita come:
 \begin{equation}
@@ -871,7 +860,7 @@ Vediamo alcune proprietà.
 	Sia $\left(X, d\right)$ uno spazio metrico compatto e sia $\mathcal{A}$ un ricoprimento aperto di $X$. Allora $\exists \delta >0$ tale che, per ogni palla aperta $B$ in $X$ di diametro minore di $\delta, \exists U\in\mathcal{A} \colon B\subseteq U$.	
 \end{lemming}
 \begin{define}[Numero di Lebesgue.]~{}\\
-	Il numero $\delta$ descritto nell'enunciato del lemma è detto \textit{numero di Lebesgue} \index{numero di Lebesgue} del ricoprimento $\mathcal{A}$
+	Il numero $\delta$ descritto nell'enunciato del lemma è detto \textit{numero di Lebesgue} \index{numero di Lebesgue} del ricoprimento $\mathcal{A}$.
 \end{define}
 \begin{demonstration}
 	Siccome $X$ è compatto, allora $\mathcal{A}$ ammette un sottoricoprimento finito $\left\{ U_1,\dots,U_n \right\}$ di aperti. Si considerano i complementari $C_j\coloneqq X\setminus U_j$, chiusi in $X$:
@@ -1002,7 +991,7 @@ Sia $X$ uno spazio topologico e siano $A,\ B\subseteq X$ aperti tali che
 \begin{observe} \textsc{Proiezione stereografica.} \\
 	Consideriamo la $S^n\subseteq \realset^{n+1}$ sfera $n$-dimensionale. Si ha che $\forall p\in S^n,\ S^n\setminus \{1\text{ punto}\}\cong \realset^n$\\
 	Ciò si verifica tramite la \textbf{proiezione stereografica}\index{proiezione!stereografica}.\\
-	Essa opera nel seguente modo: si consideri la \textit{sfera} $S^n$ centrata nell'origine e privata del punto $N=(0,\ 0,\ \ldots,\ 1)$, detto anche \textbf{polo Nord} \index{polo Nord}; la proiezione stereografica sarà::
+	Essa opera nel seguente modo: si consideri la \textit{sfera} $S^n$ centrata nell'origine e privata del punto $N=(0,\ 0,\ \ldots,\ 1)$, detto anche \textbf{polo Nord} \index{polo Nord}; la proiezione stereografica sarà:
 	\begin{equation}
 		\funz {\pi}{S^n\setminus\{N\}}{H=\left\{\left(x_0,\ \ldots,\ x_n\right)\in\realset^{n+1}\mid x_n=0\right\}}
 	\end{equation}
@@ -1010,7 +999,7 @@ Sia $X$ uno spazio topologico e siano $A,\ B\subseteq X$ aperti tali che
 	\begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.8]{images/stereo.pdf}
 	\end{center}
-	 La proiezione stereografica è in particolare un \textit{omeomorfismo}\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{proiezionestereograficanote}, si può trovare la dimostrazione di ciò per $n=2$.} e, poiché $H\cong\realset^2$ (in quanto iperpiano di $\realset^{n+1}$), si ha $S^n\setminus \{1\text{ punto}\}\cong \realset^n$.
+	 La proiezione stereografica\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{proiezionestereograficanote}, si può trovare la proiezione stereografica per $n=2$.} è in particolare un \textit{omeomorfismo} e, poiché $H\cong\realset^2$ (in quanto iperpiano di $\realset^{n+1}$), si ha $S^n\setminus \{1\text{ punto}\}\cong \realset^n$.
 \end{observe}
 \begin{corollary}[La sfera $S^n$ è semplicemente connessa, $\forall n\geq 2$; Manetti, 11.27.] \label{sfere sempl. connesse}
 \end{corollary}
@@ -1019,7 +1008,7 @@ Sia $X$ uno spazio topologico e siano $A,\ B\subseteq X$ aperti tali che
 	Sia:
 	\begin{itemize}
 		\item $N=(0,\dots,0,\ 1)\in S^n$ il polo Nord.
-		\item $S=(0,\dots,\ -1)\in S^n$ il polo Sud.
+		\item $S=(0,\dots,\ -1)\in S^n$ il polo Sud\index{polo Sud}.
 	\end{itemize}
 	Definiamo $A\coloneqq S^n\setminus\{N\}$: esso è aperto, \textbf{c.p.a.}, omeomorfo a $\realset^n$ per la \textit{proiezione stereografica} e, siccome $\realset^n$ è contraibile, lo è anche $A$; dunque sarà \textit{semplicemente connesso}. Lo stesso è vero per $B\coloneqq S^n\setminus\{S\}$.\\
 	Si ha $A\cap B=S^n\setminus\{N, S\}$ \textbf{c.p.a.} se $n\geq 2$, $A\cap B$ \textit{non} vuoto e inoltre $S^n=A\cup B$; per il corollario \ref{corollario Van Kampen} si ha che $S^n$ è \textit{semplicemente connesso}.
@@ -1032,8 +1021,7 @@ Sia $X$ uno spazio topologico e siano $A,\ B\subseteq X$ aperti tali che
 
 \section{Gruppo fondamentale della circonferenza}
 Nella sezione precedente abbiamo analizzato il gruppo fondamentale delle sfere $S^n$ per $n\geq 2$: ci domandiamo ora cosa succede per la circonferenza $S^1$. \\
-Siccome la dimostrazione\footnote{Per la dimostrazione del teorema seguiremo il capitolo 16 di \cite{kosniowski:1980firstlook}.} sarà lunga e articolata, preannunciamo che il gruppo fondamentale che otterremo \textit{non} è banale, ma è $\gruf{S^1}{\ }\cong \integerset$: nello specifico, l'isomorfismo rappresenta il \textit{numero di giri} con \textit{segno} che un cammino chiuso fa \textit{intorno} alla circonferenza..\\
-%DA SISTEMARE IN BIBLIOGRAFIA
+Siccome la dimostrazione\footnote{Per la dimostrazione del teorema seguiremo il capitolo 16 di \cite{kosniowski:1980firstlook}.} sarà lunga e articolata, preannunciamo che il gruppo fondamentale che otterremo \textit{non} è banale, ma è $\gruf{S^1}{\ }\cong \integerset$: nello specifico, l'isomorfismo rappresenta il \textit{numero di giri} con \textit{segno} che un cammino chiuso fa \textit{intorno} alla circonferenza.\\
 Dunque, la nostra intenzione è di formalizzare il concetto che ogni intervallo fra due interi consecutivi ‘‘\textit{copre}'' la circonferenza.
 \begin{center}
 	\includegraphics[width=240pt]{images/slinky-eps-converted-to.pdf}
@@ -1160,7 +1148,7 @@ Ogni cammino $\funz \alpha I {S^1}$ ammette un sollevamento $\funz {\widetilde{\
 	Allora:
 	\begin{itemize}
 		\item $0\in Y \implies Y\neq\emptyset$ dato che $\widetilde{\alpha}(0)=\widehat{\alpha}(0)=x_0$.
-		\item $Y$ è chiuso per l'implicazione $1\Rightarrow 3)$ del teorema \ref{quoziente Hausdorff} (pag. \pageref{quoziente Hausdorff}), dato che si ha che, prese due mappe continue a valori in uno spazio di \textbf{Hausdorff}, l'insieme su cui coincidono è chiuso.
+		\item $Y$ è chiuso per l'implicazione $1\Rightarrow 3)$ del teorema \ref{quozientehausdorff} (pag. \pageref{quozientehausdorff}), dato che si ha che, prese due mappe continue a valori in uno spazio di \textbf{Hausdorff}, l'insieme su cui coincidono è chiuso.
 	\end{itemize}
 	Mostriamo che $Y$ è anche \textit{aperto}, così per la connessione di $I$ si ha che $Y=I$, il che implica $\widetilde{\alpha}=\widehat{\alpha}$. Per dimostrare che $Y$ è aperto dimostriamo che è intorno di ogni suo punto, usando gli intorni uniformemente rivestiti.\\
 	Sia $t_0\in Y$ e sia $\alpha(t_0)\in S^1$. Sia $U$ un intorno aperto di $\alpha(t_0)$ uniformemente rivestito; si ha $\displaystyle e^{-1}(U)=\coprod_{n\in\integerset}V_n$ e vale inoltre:
@@ -1373,7 +1361,7 @@ Siano $U\subseteq\realset^n$ e $V\subseteq \realset^m$ aperti. Se $U$ e $V$ sono
 \vspace{-6mm}
 \end{theorema}
 \begin{attention}
-	Con $\oplus$ si intende la \textit{somma diretta} di gruppi, da intendersi come \textit{prodotto cartesiano} i cui morfismi sono \textit{componente per componente}. È diversa dalla \textit{somma diretta fra spazi vettoriali}, dato in quest'ultimo caso essa è \textit{interna}!
+	Con $\oplus$ si intende la \textit{somma diretta di gruppi}\index{somma!diretta di gruppi}, da intendersi nel caso di un numero \textit{finito} di gruppi come \textit{prodotto cartesiano}\index{prodotto!cartesiano} i cui morfismi sono \textit{componente per componente}. È diversa dalla \textit{somma diretta fra spazi vettoriali}, dato in quest'ultimo caso essa è un'operazione \textit{interna}!
 \end{attention}
 \begin{demonstration}
 	Un cammino $\funz \alpha I {X\times Y}$ è determinato dalle sue componenti $\alpha=(\alpha_1,\ \alpha_2)$ con $\funz {\alpha_1} I X$ e $\funz {\alpha_2} I Y$, dunque c'è la seguente corrispondenza biunivoca:
@@ -1421,7 +1409,7 @@ Per il toro, dunque, consideriamo i generatori corrispondenti a $(1,\ 0)$ e $(0,
 		\end{center}
 \end{minipage}
 \subsection{Un gruppo fondamentale non abeliano}
-%LEZ 21
+% LEZ 21
 Sia $X=S^1\vee S^1$ l'unione ad un punto di due circonferenze in $\realset^2$, cioè il \textbf{bouquet di due circonferenze} che abbiamo trattato a pag. \pageref{bouquet}. Il gruppo fondamentale $\gruf{X}{x_0}$ è il \textbf{gruppo libero}\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{gruppolibero}, si può trovare un approfondimento a riguardo.} $\integerset\ast\integerset$, i cui generatori sono due cammini $[\alpha]$ e $[\beta]$, uno per ciascuna circonferenza. Esso è \textit{infinito} e \textit{non abeliano} perché, preso ad esempio come punto base $x_0$, essi \textit{non} commutano, ovvero $[\alpha\ast\beta]\neq [\beta\ast\alpha]$.
 \subsection{Spazio proiettivo reale}
 Consideriamo ora il caso dello \textit{spazio proiettivo reale}, che abbiamo introdotto nel capitolo \autoref{chap:azionidigruppo}. \\
@@ -1458,7 +1446,7 @@ Analizziamo alcuni casi di dimensione \textit{bassa}:
 			\begin{center}
 				\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.95]{images/projdiscindisc.pdf}
 			\end{center}
-			\item Qualunque cappio che va ‘‘oltre il bordo'' \textit{una volta}, attraversando il cammino banale e torna indietro al punto base \textit{non} è banale. Infatti, non possiamo ridurre il cammino ad un cappio sul piano (dato che non avremmo più i punti sul bordo \textit{antipodali}), al più possiamo ‘‘ruotarlo'' attorno al punto base per ottenere un'altro cappio omotopico al primo che attraversa sempre il bordo\footnote{Per semplicità, nelle figure abbiamo preso come punto il centro del disco. Questi ragionamenti e quelli successivi si adattano facilmente anche nel caso di un \textit{punto generico}, ponendo una leggera \textit{deformazione} al cappio in modo da fare rotazioni ‘‘lecite'', cioè che mantengono i punti del cammino posti sul bordo \textit{antipodali}.}.
+			\item Qualunque cappio che va ‘‘oltre il bordo'' \textit{una volta}, attraversando il cammino banale e torna indietro al punto base \textit{non} è banale. Infatti, non possiamo ridurre il cammino ad un cappio sul piano (dato che non avremmo più i punti sul bordo \textit{antipodali}), al più possiamo ‘‘ruotarlo'' attorno al punto base per ottenere un altro cappio omotopico al primo che attraversa sempre il bordo\footnote{Per semplicità, nelle figure abbiamo preso come punto il centro del disco. Questi ragionamenti e quelli successivi si adattano facilmente anche nel caso di un \textit{punto generico}, ponendo una leggera \textit{deformazione} al cappio in modo da fare rotazioni ‘‘lecite'', cioè che mantengono i punti del cammino posti sul bordo \textit{antipodali}.}.
 						\begin{center}
 				\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.95]{images/projdiscoverborder1.pdf}
 				\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.95]{images/projdiscoverborder2.pdf}

@@ -14,7 +14,7 @@
 	\textsc{Jake "Joliet" Blues,} The Blues Brothers.
 \end{flushright}
 \end{introduction}
-\noindent Dallo studio dell'\textit{Analisi} sono ben note le \textit{successioni} a valori reali e le loro proprietà. In questo capitolo porremo la nostra attenzione sulle \textbf{successioni} con codominio uno \textit{spazio topologico}. Inoltre, riprenderemo dal \autoref{chap:Connessocompatto} la trattazione dei \textit{compatti} per studiare la relazione che hanno con le successioni.\\
+\lettrine[findent=1pt, nindent=0pt]{D}{allo}  studio dell'\textit{Analisi} sono ben note le \textit{successioni} a valori reali e le loro proprietà. In questo capitolo porremo la nostra attenzione sulle \textbf{successioni} con codominio uno \textit{spazio topologico}. Inoltre, riprenderemo dal \autoref{chap:Connessocompatto} la trattazione dei \textit{compatti} per studiare la relazione che hanno con le successioni.\\
 Prima fare tutto ciò, tuttavia, abbiamo bisogno di introdurre degli \textbf{assiomi di numerabilità}, in modo da garantire l'esistenza di insiemi \textit{numerabili} di oggetti topologici; la maggior parte degli spazi topologici più comuni soddisfano almeno uno di questi assiomi.\\
 Il capitolo si conclude con un approfondimento delle successioni negli spazi metrici.
 \section{Numerabilità}
@@ -46,7 +46,7 @@ Uno spazio topologico $X$ è \textit{primo numerabile}\seeonlyindex{primo numera
 	\item Preso $x\in X$, allora $\left\{B_{\nicefrac{1}{n}}\left(x\right)\right\}_{n\in\naturalset}$ è un sistema fondamentale di intorni ed è numerabile.
 	\item Se $\basis$ è una base numerabile per $X$, $\left\{A\cap Y\mid A\in \basis\right\}$ è base numerabile per $Y$.
 	\item Se $\basis_X$ è una base numerabile per $X$ e $\basis_Y$ base numerabile per $Y$, allora $\left\{A\times B\mid A\in \basis_X,\ B\in\basis_Y\right\}$ è base di $X\times Y$ numerabile: il prodotto cartesiano di due insiemi numerabili rimane numerabile.
-	\item La contrazione di $\integerset$ in $\realset$ ad un punto, cioè il quoziente $\nicefrac{\realset}{\integerset}$, non è primo numerabile nè tanto meno a base numerabile, pur essendo $\realset$ a base numerabile in quanto metrico\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{dimostrazionenonnumerabilità}, si può trovare la dimostrazione di ciò.}.
+	\item La contrazione di $\integerset$ in $\realset$ ad un punto, cioè il quoziente $\nicefrac{\realset}{\integerset}$, non è primo numerabile né tanto meno a base numerabile, pur essendo $\realset$ a base numerabile in quanto metrico\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{dimostrazionenonnumerabilità}, si può trovare la dimostrazione di ciò.}.
 \end{enumerate}
 \vspace{-3mm}
 \end{demonstration}
@@ -86,7 +86,7 @@ Se consideriamo ora $\widetilde{\mathcal{A}}\coloneqq\left\{U_x\mid x\in E\right
 Segue che $\widetilde{\mathcal{A}}$ è un sottoricoprimento numerabile di $A$.
 \end{demonstration}
 \begin{define}[Spazio separabile.]~{}\\
-Uno spazio topologico $X$ si dice \textbf{separabile}\index{spazio topologico!separabile} se contiene un sottoinsieme $E$ \textit{denso} e \textit{numerabile}.
+Uno spazio topologico $X$ si dice \textbf{separabile}\index{spazio!separabile} se contiene un sottoinsieme $E$ \textit{denso} e \textit{numerabile}.
 \end{define}
 \begin{examples}~{}
 	\begin{itemize}
@@ -146,7 +146,7 @@ Segue la tesi.
 Un insieme con una certa topologia può essere a base numerabile (o primo numerabile), ma non necessariamente rispetto ad un altra!
 \end{attention}
 \begin{example}
-\textsc{Retta di Sorgenfrey}\index{retta di Sorgenfrey}.\\
+\textsc{Retta di Sorgenfrey}\index{retta!di Sorgenfrey}.\\
 Consideriamo $X=\realset$ con la topologia avente come base:
 \begin{equation}
 \basis=\left\{\left[a,\ b\right)\mid a,\ b\in\realset,\ a<b\right\}
@@ -355,7 +355,7 @@ Sia $V$ intorno di $p$. Dal sistema fondamentale di intorni $\exists m_0$ tale c
 \begin{demonstration}~{}\\
 $\circled{1}\implies\circled{2}$ Non è necessario che $X$ sia primo numerabile, è immediato dal lemma \ref{lemmatriangolino} $\textcolor{blue}{\circled{{\large \blacktriangle}}}$ (pag. \pageref{lemmatriangolino}).\\
 $\circled{2}\implies\circled{3}$ Non è necessario che $X$ sia primo numerabile. Se $p$ di accumulazione per $\left\{a_n\right\}$ con $a_n\in y\ \forall n\implies A=\left\{a_n\mid n\in \naturalset\right\}\subseteq Y$. Allora segue dal lemma \ref{lemmatriangolino} $\textcolor{blue}{\circled{{\large \blacktriangle}}}$ (pag. \pageref{lemmatriangolino}) che $p\in A=\overline{\left\{a_n\mid n\in \naturalset\right\}}\subseteq \overline{Y}$ \\
-$\circled{3}\implies\circled{1}$ Sia $\left\{U_n\right\}$ un sistmea fondamentale di intorni di $p$ tale che $U_n\supseteq U_{n+1}\ \forall n$. Allora:
+$\circled{3}\implies\circled{1}$ Sia $\left\{U_n\right\}$ un sistema fondamentale di intorni di $p$ tale che $U_n\supseteq U_{n+1}\ \forall n$. Allora:
 \begin{equation*}
 	p\in \overline{Y}\implies \forall n\ Y\cap U_n\neq\emptyset\implies\forall n\ \exists y_n\in Y\cap U_n
 \end{equation*}
@@ -377,7 +377,7 @@ Allora: $\displaystyle\inter_{n\geq 1}K_n\neq\emptyset$.
 \begin{demonstration}
 Iniziamo in $K_1$. Consideriamo $A_n\coloneqq K_1\setminus K_n$:
 \begin{itemize}
-	\item $K_n$ chiuso in $X\implies K_n$ chiuso in $K_1$. Allora $A_n$ completementare di un chiuso, dunque aperto in $K_1\ \forall m\geq 1$.
+	\item $K_n$ chiuso in $X\implies K_n$ chiuso in $K_1$. Allora $A_n$ è complementare di un chiuso, dunque aperto in $K_1\ \forall m\geq 1$.
 	\item $K_n\supseteq K_{n+1}\implies A_n\subseteq A_{n+1}\ \forall n\geq 1$.
 \end{itemize}
 Sia allora $N\in\naturalset$.
@@ -419,7 +419,7 @@ Segue che esiste un punto di accumulazione per la successione.
 \end{demonstration}
 \subsection{Compattezza per successioni}
 \begin{define}[Compatto per successioni.]~{}\\
-Sia $X$ spazio topologico. $X$ si dice \textbf{compatto per successioni}\index{compatto!per successioni} se ogni successione ammette una sottosuccessione convergente.
+Sia $X$ spazio topologico. $X$ si dice \textbf{compatto per successioni}\index{spazio!compatto!per successioni} se ogni successione ammette una sottosuccessione convergente.
 \end{define}
 \begin{observe}
 Per il lemma \ref{lemmatriangolino} $\textcolor{blue}{\circled{{\large \blacktriangle}}}$ (pag. \pageref{lemmatriangolino}), se $X$ è compatto per successioni allora ogni successione in $X$ ha un punto di accumulazione.
@@ -502,7 +502,7 @@ Sia $X$ spazio metrico. Allora:
 \vspace{-6mm}
 \end{define}
 \begin{define}[Spazio metrico completo.]~{}\\
-	Uno spazio metrico $\left(X,\ d\right)$ si dice \textbf{completo}\index{spazio topologico!metrico!completo} {\small se ogni successione di Cauchy è convergente.}
+	Uno spazio metrico $\left(X,\ d\right)$ si dice \textbf{completo}\index{spazio!metrico!completo} {\small se ogni successione di Cauchy è convergente.}
 \end{define}
 \begin{observes}~{}
 	\begin{enumerate}
@@ -525,7 +525,7 @@ Sia $X$ spazio metrico. Allora:
 		\mvf{d}{a_n}{a_m}\leq \mvf{d}{a_n}{p}+\mvf{d}{p}{a_n}< 2\epsilon
 	\end{equation}
 Per l'arbitrarietà di $\epsilon$ vale la convergenza.
-\item $\impliesdx$ Sempre vera per  \ref{lemmatriangolino} $\textcolor{blue}{\circled{{\large \blacktriangle}}}$ (pag. \pageref{lemmatriangolino}).\\
+\item $\impliesdx$ Sempre vera per \ref{lemmatriangolino} $\textcolor{blue}{\circled{{\large \blacktriangle}}}$ (pag. \pageref{lemmatriangolino}).\\
 $\impliessx$ Sia $\left\{a_n\right\}$ una successione di Cauchy e sia $p$ un punto di accumulazione. Sia $\epsilon>0$: dalla definizione di successione di Cauchy $\exists n_0$ tale per cui $\mvf{d}{a_n}{a_m}<\epsilon\ \forall n,\ m\geq n_0$.\\
 Essendo $p$ di accumulazione, $\exists n_1\geq n_0$ tale per cui $\mvf{d}{p}{a_{n_1}}<\epsilon$. Allora, se $n\geq n_0$ si ha:
 	\begin{equation*}

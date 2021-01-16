@@ -17,7 +17,7 @@
 	\textsc{I Simpson,} La paura fa novanta VI.
 \end{flushright}
 \end{introduction}
-\noindent Le due proprietà che danno il nome a questo capitolo sono estremamente importanti, in quanto sono due dei principali \textit{invarianti} studiati in topologia. Entrambe rappresentano una \textit{generalizzazione} di alcuni aspetti affrontati più o meno esplicitamente durante lo studio dell'Analisi:
+\lettrine[findent=1pt, nindent=0pt]{L}{e} due proprietà che danno il nome a questo capitolo sono estremamente importanti, in quanto sono due dei principali \textit{invarianti} studiati in topologia. Entrambe rappresentano una \textit{generalizzazione} di alcuni aspetti affrontati più o meno esplicitamente durante lo studio dell'Analisi:
 \begin{itemize}
 	\item Ci sono sottoinsiemi del piano i cui punti possono essere \textit{connessi} da una linea arzigogolata, una spezzata o un segmento, mente
 	\item Ci sono sottoinsiemi \textit{limitati} le cui successioni di punti \textit{convergono} nel sottoinsieme.
@@ -25,7 +25,7 @@
 Vedremo che la \textbf{connessione} e la \textbf{compattezza} sono definite in modo abbastanza basilare, seppur non necessariamente siano intuitive a primo acchito. Tuttavia, proprio in virtù di questa semplicità, sono applicabili in tanti contesti diversi; in particolare, la compattezza come la definiremo ci permetterà di prendere informazioni note \textit{localmente} ed estenderle in modo che valgano globalmente in tutto lo spazio.
 \section{Connessione}
 \begin{define}[Spazio connesso e spazio sconnesso.]~{}\\
-Uno spazio topologico $X$ si dice \textbf{connesso}\index{connessione} se gli unici sottoinsiemi aperti e chiusi sono $\emptyset,\ X$.\\
+Uno spazio topologico $X$ si dice \textbf{connesso}\index{spazio!connesso} se gli unici sottoinsiemi aperti e chiusi sono $\emptyset,\ X$.\\
 Uno spazio non \textit{connesso} si dice \textbf{sconnesso} oppure \textbf{non connesso}.
 \end{define}
 \begin{lemming}[Condizioni equivalenti della sconnessione; Manetti, 4.2.]~{}\label{sconnesso}\\
@@ -106,7 +106,7 @@ Un \textbf{arco}\seeonlyindex{arco}{cammino} o \textbf{cammino}\index{cammino} $
 \vspace{-6mm}
 \end{define}
 \begin{define}[Connessione per archi.]~{}\\
-Uno spazio topologico $X$ si dice \textbf{connesso per archi} o \textbf{c.p.a.}\index{connessione!per archi}\seeonlyindex{c.p.a.}{connessione!per archi} o \textit{path-connected} se per ogni coppia di punti in $X$ esiste un arco che li collega:
+Uno spazio topologico $X$ si dice \textbf{connesso per archi} o \textbf{c.p.a.}\index{spazio!connesso per archi}\seeonlyindex{spazio!c.p.a.}{spazio!connesso per archi} o \textit{path-connected} se per ogni coppia di punti in $X$ esiste un arco che li collega:
 \begin{equation}
 \forall x,\ y\in X\ \exists \funz{\alpha}{\left[0,\ 1\right]}{X} \text{ continua}\ \colon \alpha\left(0\right)=x,\ \alpha\left(1\right)=y
 \end{equation}
@@ -180,14 +180,14 @@ In $\realset^n$, un \textbf{segmento}\index{segmento} $\overline{PQ}$ è la comb
 \vspace{-6mm}
 \end{define}
 \begin{define}[Sottoinsieme convesso.]~{}\\
-	Un sottoinsieme $Y\subseteq\realset^n$ è \textbf{convesso}\index{convessità} se per ogni coppia di punti esiste un segmento che li collega contenuto interamente in $Y$.
+	Un sottoinsieme $Y\subseteq\realset^n$ è \textbf{convesso}\index{sottoinsieme!convesso} se per ogni coppia di punti esiste un segmento che li collega contenuto interamente in $Y$.
 	\begin{equation}
 		\forall P,\ Q\in Y\quad \overline{PQ}\subseteq Y
 	\end{equation}
 \vspace{-6mm}
 \end{define}
 \begin{define}[Sottoinsieme stellato.]~{}\\
-	Un sottoinsieme $Y\subseteq\realset^n$ è \textbf{stellato}\index{stellato} per $P$ se esiste un $P\in Y$ tale che per ogni altro punto esiste un segmento che li collega contenuto interamente in $Y$.
+	Un sottoinsieme $Y\subseteq\realset^n$ è \textbf{stellato}\index{sottoinsieme!stellato} per $P$ se esiste un $P\in Y$ tale che per ogni altro punto esiste un segmento che li collega contenuto interamente in $Y$.
 	\begin{equation}
 		\exists P \in Y\ \colon \forall Q\in Y\quad \overline{PQ}\subseteq Y
 	\end{equation}
@@ -209,7 +209,7 @@ Vediamo ora che conseguenze hanno questi teoremi in $\realset$ con la topologia 
 	Sia $I\subseteq \realset$. Le seguenti affermazioni sono equivalenti:
 		\begin{enumerate}
 	\item $I$ è un intervallo, ovvero $I$ è \textit{convesso}.
-	\item $I$ è \textbf{c.p.a.}.
+	\item $I$ è \textbf{c.p.a.}
 	\item $I$ è connesso.
 		\end{enumerate}
 	\vspace{-3mm}
@@ -227,7 +227,7 @@ Vediamo ora che conseguenze hanno questi teoremi in $\realset$ con la topologia 
 \begin{observe}~{}\label{teorema esistenza zeri funzioni continue, s^n cpa}
 		\begin{itemize}
 	\item Come conseguenza immediata di questo teorema si ha il \textbf{teorema di esistenza degli zeri}\index{teorema! di esistenza degli zeri} per funzioni continue da $\realset$ in $\realset$, infatti se l'immagine continua di un connesso è un connesso, per tali funzioni vale che l'immagine continua di un intervallo è un intervallo.
-	\item Per $n\geq 1$ la sfera $\displaystyle S^n \coloneqq \left\{ \left(x_1,\dots,x_{n+1}\right) \mid \sum_{i=1}^{n+1}x_i^2=1 \right\}$ è \textbf{c.p.a.}, infatti $\forall x,y\in S^n$ si trova sempre un arco come intersezione di $S^n$ e del piano $H$ passante per il centro della sfera, $x$ e $y$.
+	\item Per $n\geq 1$ la \textbf{sfera}\index{sfera} $\displaystyle S^n \coloneqq \left\{ \left(x_1,\dots,x_{n+1}\right) \mid \sum_{i=1}^{n+1}x_i^2=1 \right\}$ è \textbf{c.p.a.}; infatti, $\forall x,y\in S^n$ si trova sempre un arco dato dall'intersezione di $S^n$ e del piano $H$ passante per il centro della sfera, $x$ e $y$.
 		\end{itemize}
 	\vspace{-3mm}
 \end{observe}
@@ -254,7 +254,7 @@ Sia $I\subseteq\realset$ e $U\subseteq\realset^n$, con $n\geq 2$. Se $I,\ U$ son
 \begin{observe}
 	Il teorema appena visto è un caso particolare del \textsc{teorema dell'invarianza della dimensione}\index{teorema!dell'invarianza della dimensione}: ‘‘Siano $U\subseteq\realset^n, V\subseteq\realset^m$ aperti. Se $U\cong V \implies n=m$. Equivalentemente $n\neq m\implies U\ncong V$''.
 \end{observe}
-%LEZ 08
+% LEZ 08
 \subsection{Intersezioni, unioni e prodotti di spazi connessi}
 \begin{theorema}[Unione arbitraria di sottospazi connessi è un connesso.]~{}\label{unione sottospazi connessi}\\
 Siano $\left\{ X_i \right\}_{i\in I}$ una famiglia di sottoinsiemi di uno spazio topologico $X$. Se ogni $X_i$ è connesso e $\displaystyle\inter_{i\in I}X_i\neq\emptyset$ allora $\displaystyle\union_{i\in I}X_i$ è connesso.	
@@ -282,7 +282,7 @@ Siano $\left\{ X_i \right\}_{i\in I}$ una famiglia di sottoinsiemi di uno spazio
 $X, Y$ sono spazi topologici connessi $\iff X\times Y$ è connesso.	
 \end{theorema}
 \begin{demonstration}~{}\\
-	$\impliessx$ Si sfrutta la continuità delle proiezioni e che l'immagine continua di un connesos è connessa:
+	$\impliessx$ Si sfrutta la continuità delle proiezioni e che l'immagine continua di un connesso è connessa:
 		\begin{gather*}
 			\funz p {X\times Y} X \text{continua e suriettiva } \implies p(X)=X \text{ connesso}\\
 			\funz q {X\times Y} Y \text{continua e suriettiva } \implies q(Y)=Y \text{ connesso}	
@@ -312,20 +312,22 @@ Approfondiamo ora la differenza fra essere spazio connesso o \textbf{c.p.a.}, mo
 		\end{gather*}
 	Ne segue che l'unico aperto che non interseca $A$ è l'insieme vuoto. \newline
 	$\impliessx$ Consideriamo un chiuso $K\supseteq A$. Siccome è chiuso allora il suo complementare $X\setminus K$ è aperto. Per ipotesi dunque si ha che $V\cap A\neq \emptyset$ oppure $V=\emptyset$, passando al complementare si ottiene che:
+	\vspace{-1mm}
 		\begin{equation*}
 			\begin{array}{l}
 				A\subseteq K \implies X\setminus K \subseteq X\setminus A \implies V\subseteq X\setminus A \implies \\
 				\implies V\cap A=\emptyset \implies V=\emptyset \implies K=X \implies \overline{A}=X
 			\end{array}
+		\vspace{-2mm}
 		\end{equation*}
 	L'ultima implicazione è dovuta al fatto che ogni chiuso che contiene $A$ si è dimostrato essere solo $X$ per cui esso sarà la sua chiusura.
 \end{demonstration}
 
 \begin{theorema}[Chiusura e connessione.]~{}\label{chiusuraconnessa}\\
-Sia $X$ uno spazio topologico e $Y\subseteq X$ connesso, allora
-		\begin{equation*}
+Sia $X$ uno spazio topologico e $Y\subseteq X$ connesso, allora:
+		\begin{equation}
 			\forall W \colon Y\subseteq W \subseteq \overline{Y} \implies W \text{ connesso}
-		\end{equation*}
+		\end{equation}
 	In particolare la chiusura di un connesso è connessa.
 \end{theorema}
 \begin{demonstration}
@@ -337,19 +339,19 @@ Sia $X$ uno spazio topologico e $Y\subseteq X$ connesso, allora
 	Si vuole sfruttare il fatto che $Y$ è connesso:
 		\begin{gather*}
 			Z\cap Y=A\cap W\cap Y \stackrel{!}{=} A\cap Y \text{ aperto in Y}
-			Z\cap Y=C\cap W\cap Y \stackrel{!}{=} C\cap Y \text{ aperto in Y}			
+			Z\cap Y=C\cap W\cap Y \stackrel{!}{=} C\cap Y \text{ aperto in Y}
 		\end{gather*}
 	Dove il passaggio indicato con (!) è dovuto al fatto che $Y\subseteq W$. Per poter sfruttare la connessione di $Y$ e dedurre che $Z\cap Y=Y$ dobbiamo prima provare che tale intersezione non è vuota e per farlo sfruttiamo il teorema precedente:
 		\begin{gather*}
 			Y \text{ denso in W, infatti  } \mathcal{cl}_W(Y)=\mathcal{cl}_X(Y)\cap W=\overline{Y}\cap W=W\\
 			Z \text{ aperto in } W \implies Z\cap Y \neq \emptyset \implies Z\cap Y=Y \implies Y\subseteq Z
 		\end{gather*}
-	Tuttavia $Y$ è denso in $W$ e $Z$ è chiuso in $W$ che contiene $Y$, quindi
+	Tuttavia $Y$ è denso in $W$ e $Z$ è chiuso in $W$ che contiene $Y$, quindi:
 		\begin{equation*}
 			\mathcal{cl}_W(Y)=W\subseteq Z \implies W=Z \implies W \text{ connesso}
 		\end{equation*}
 \end{demonstration}
-Vediamo ora degli esempi di spazi connessi ma non \textbf{c.p.a.}.
+Vediamo ora degli esempi di spazi connessi ma non \textbf{c.p.a.}
 \begin{example}\textsc{Seno del topologo.}\\
 \begin{minipage}{0.47\textwidth}
 Sia $Y\subseteq \realset^2$ con la topologia euclidea e $Y=\left\{ \left( x,\ \frac{1}{x} \right) \mid x>0 \right\}$, detto anche \textbf{seno del topologo}\index{seno del topologo}. Esso è \textbf{c.p.a.} perché per connettere due punti basta percorrere la curva stessa del grafico. Quindi $Y$ è connesso, dunque per il teorema \ref{chiusuraconnessa} (pag. \pageref{chiusuraconnessa}) $\overline{Y}$ è connesso.\\
@@ -375,11 +377,11 @@ Si consideri ora la ‘‘pulce'', ovvero un punto $P$ di ascissa irrazionale ed
 	\begin{minipage}{0.37\textwidth}
 		\includegraphics[trim=1.1cm 0.5cm 0.5cm 1.25cm,clip,scale=0.50]{images/comb.pdf}
 	\end{minipage}\\
-Tuttavia $Z$ non è \textbf{c.p.a.}: preso un cammino $\funz \alpha {\left[0,\ 1\right]} {Z\subseteq \realset^2}$ tale che $\alpha(t)= \left( x(t), y(t)\right)$ con $\alpha (0)=(0,0)$ e $\alpha(1)=P$, per continuità $y(t)\neq 0 \implies x(t)\in\rationalset$, ma è vero per $P$ che ha ascissa irrazionale, dunque non esiste un cammino continuo che colleghi l'origine e $P$. Ne consegue che $Z$ non è \textbf{c.p.a.}.
+Tuttavia $Z$ non è \textbf{c.p.a.}: preso un cammino $\funz \alpha {\left[0,\ 1\right]} {Z\subseteq \realset^2}$ tale che $\alpha(t)= \left( x(t), y(t)\right)$ con $\alpha (0)=(0,0)$ e $\alpha(1)=P$, per continuità $y(t)\neq 0 \implies x(t)\in\rationalset$, ma è vero per $P$ che ha ascissa irrazionale, dunque non esiste un cammino continuo che colleghi l'origine e $P$. Ne consegue che $Z$ non è \textbf{c.p.a.}
 \end{example}
 
 \begin{observe}
-	L'immagine continua di uno spazio \textbf{c.p.a.} è \textbf{c.p.a.}, ovvero dato $X$ \textbf{c.p.a.}, $\funz f X Y$ continua, allora $f(X)$ è \textbf{c.p.a.}.\newline
+	L'immagine continua di uno spazio \textbf{c.p.a.} è \textbf{c.p.a.}, ovvero dato $X$ \textbf{c.p.a.}, $\funz f X Y$ continua, allora $f(X)$ è \textbf{c.p.a.}\newline
 	Dati $a,b\in X$ si vuole trovare un cammino fra $f(a)$ e $f(b)$ in $f(X)$. Si consideri la composizione seguente fra il cammino $\alpha$ fra $a$ e $b$ con la funzione $f$ stessa. Siccome ha come dominio $\left[0,\ 1\right]$ ed è continua essendo composizione di funzione continue è in effetti un cammino fra le due immagini:
 \begin{center}
 \begin{tikzcd}
@@ -480,7 +482,7 @@ L'importanza della definizione risiede nel fatto che non si chiede che esista un
 	\vspace{-6mm}
 \end{demonstration}
 Da questo teorema segue che essere compatti è una \textbf{proprietà topologica}.
-%LEZ 09
+% LEZ 09
 \begin{theorema}[${[0,\ 1]}$ è un compatto.]~{}\\
 	L'intervallo $[0,\ 1]\subseteq\realset$ con la topologia euclidea è compatto.
 \end{theorema}
@@ -573,7 +575,7 @@ Un sottospazio $K\subseteq \realset$ è compatto $\iff K$ chiuso e limitato.
 	$\impliessx $ $K$ è limitato, quindi $K\subseteq [-n, \ n]$, che è compatto e $K$ è chiuso per ipotesi, dunque per il teorema \ref{chiuso in compatto} è compatto.
 \end{demonstration}
 \begin{observe}
-	Da notare che il teorema precedente non afferma he gli unici compatti di $\realset$ sono gli intervalli chiusi e limitati, ma anche una loro unione finita potrebbe esserlo.
+	Da notare che il teorema precedente non afferma che gli unici compatti di $\realset$ sono gli intervalli chiusi e limitati, ma anche una loro unione finita potrebbe esserlo.
 \end{observe}
 
 \begin{theorema}[Funzione su un compatto in $\realset$ ammette massimo e minimo; Manetti, 4.43.]~{}\label{weierstrass}\\

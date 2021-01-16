@@ -13,8 +13,8 @@
 	\begin{flushright}
 		\textsc{Arthur Cayley,} cercando di vendere i suoi appunti di Geometria proiettiva agli ignari studenti di Geometria uno.
 	\end{flushright}
-\end{introduction}
-\noindent Abbiamo già trattato lo \textit{spazio proiettivo reale} e le sue caratteristiche nel \autoref{chap:azionidigruppo} e \autoref{chap:varietà}. In questo, ci dedicheremo a generalizzare il concetto per un \textit{qualsiasi} spazio vettoriale su campo $\kamp$, utilizzando gli strumenti dell'algebra lineare.\\
+\end{introduction}]
+\lettrine[findent=1pt, nindent=0pt]{A}{bbiamo} già trattato lo \textit{spazio proiettivo reale} e le sue caratteristiche nel \autoref{chap:azionidigruppo} e \autoref{chap:varietà}. In questo, ci dedicheremo a generalizzare il concetto per un \textit{qualsiasi} spazio vettoriale su campo $\kamp$, utilizzando gli strumenti dell'algebra lineare.\\
 Parliamo dunque di \textbf{Geometria proiettiva}: come in topologia studiavamo le proprietà degli spazi topologici invarianti per omeomorfismi, lo scopo della geometria proiettiva è studiare quelle degli \textbf{spazi proiettivi} invarianti per \textbf{proiettività}.
 \section{Spazi proiettivi}
 \begin{define}[Spazio proiettivo.]~{}\\
@@ -76,7 +76,7 @@ Gli esempi più frequenti di spazi proiettivi si ottengono considerando $V=\kamp
 Essi sono spazi di dimensione $\dim\proj[n]{\ }=n$.
 \end{define}
 \section{Sottospazi proiettivi}
-Sia $W\subseteq V$ un sottospazio vettoriale. Allora $W\setminus\left\{0\right\}\subseteq V\setminus\left\{0\right\}$ è chiuso rispetto alla relazione di equivalenza $\sim$ precedentemente definita e $\proj{W}$ è naturalmente un sottoinsieme di $\proj{V}$.
+Sia $W\subseteq V$ un sottospazio vettoriale. Allora $W\setminus\left\{0\right\}\subseteq V\setminus\left\{0\right\}$ è chiuso rispetto alla relazione di equivalenza $\sim$ già definita e $\proj{W}$ è un sottoinsieme di $\proj{V}$.
 \begin{define}[Sottospazio proiettivo.]~{}\\
 	Se $W\subseteq V$ è un sottospazio vettoriale, allora $\proj{W}$ è detto \textbf{sottospazio proiettivo}\index{sottospazio!proiettivo}:
 	\begin{equation*}
@@ -90,8 +90,8 @@ La dimensione del sottospazio proiettivo è $\dim\proj{W}=\dim W-1$.
 	\begin{itemize}
 	\item Se $W=\left\{0\right\}$, allora $\proj{W}=\emptyset$.
 	\item Se $\dim W=1$, allora $\proj{W}$ è un punto, che indichiamo con $\left[w\right]$ per un $w\in W$.
-	\item Se $\dim W=2$ ($\dim\proj{W}=1$), allora $\proj{W}$ è \textbf{retta proiettiva}\index{retta!proiettiva} in $\proj{V}$.
-	\item Se $\dim W=3$ ($\dim\proj{W}=2$), allora $\proj{W}$ è \textbf{piano proiettivo}\index{piano!proiettivo} in $\proj{V}$.
+	\item Se $\dim W=2$ ($\dim\proj{W}=1$), allora $\proj{W}$ è \textbf{retta proiettiva} in $\proj{V}$.
+	\item Se $\dim W=3$ ($\dim\proj{W}=2$), allora $\proj{W}$ è \textbf{piano proiettivo} in $\proj{V}$.
 	\item Se $\dim\proj{W}=\dim \proj{V}-1$, allora $\proj{W}$ è \textbf{iperpiano (proiettivo)}\index{iperpiano!proiettivo} in $\proj{V}$.
 \end{itemize}
 \begin{define}[Codimensione.]~{}\\
@@ -372,7 +372,7 @@ Chiaramente, se $\dim T_1+\dim T_2\geq n$, allora $\dim \left(T_1\cap T_2\right)
 	\begin{equation*}
 		S=\underbrace{\proj{\lin{v_1,\ \ldots,\ v_m}}}_{\dim \mathcal{L} \leq m}
 	\end{equation*}
-\vspace{-6mm}
+\vspace{-3mm}
 \end{observe}
 \section{Punti linearmente indipendenti e in posizione generale}
 \begin{define}[Punti linearmente indipendenti.]~{}\\
@@ -546,7 +546,7 @@ Infatti, se $v_0,\ \ldots,\ v_n$ è una base (in quanto sono indipendenti), $v_0
 Inoltre, se $\basis'=\left\{f_0,\ \ldots,\ f_n\right\}$ è un'altra base di $V$ che soddisfa la condizione sopra, allora $\basis$ è proporzionale a $\basis$, cioè $\exists\lambda\in\kamp\setminus\left\{0\right\}\ \colon f_i=\lambda e_i\ \forall i=0,\ \ldots,\ n$.
 \end{theorema}
 \begin{demonstration}
-	Sia $P_i=\left[v_i\right]$ al variare di $i=0,\ \ldots,\ n+1$. I punti $P_0,\ \ldots,\ P_n$ sono indipendenti\footnote{Perchè se $N+2$ punti sono in posizione generale, presi $n+1$ punti fra di loro sono indipendenti.}, dunque per definizione $v_0,\ \ldots,\ v_n$ è una base di $V$. Definiamo:
+	Sia $P_i=\left[v_i\right]$ al variare di $i=0,\ \ldots,\ n+1$. I punti $P_0,\ \ldots,\ P_n$ sono indipendenti\footnote{Perché se $N+2$ punti sono in posizione generale, presi $n+1$ punti fra di loro sono indipendenti.}, dunque per definizione $v_0,\ \ldots,\ v_n$ è una base di $V$. Definiamo:
 	\begin{equation*}
 		v_{n+1}=\lambda_0v_0+\ldots+\lambda_nv_n\quad \lambda_i\in\kamp
 	\end{equation*}
@@ -572,7 +572,7 @@ $e_0,\ \ldots,\ e_n$ è una base: per l'unicità della scrittura deve essere $\m
 \end{demonstration}
 \section{Trasformazioni proiettive}
 \begin{define}[Trasformazione proiettiva e proiettività.]~{}\\
-	Un'applicazione $\funz{f}{\proj{V}}{\proj{V'}}$ tra spazi proiettivi si dice \textbf{trasformazione proiettiva}\index{trasformazione proiettiva} o \textbf{isomorfismo proiettivo}\seeonlyindex{isomorfismo!proiettivo}{trasformazione proiettiva} se $\exists \funz{\phi}{V}{V'}$ isomorfismo che induce un altro isomorfismo lineare:
+	Un'applicazione $\funz{f}{\proj{V}}{\proj{V'}}$ tra spazi proiettivi si dice \textbf{trasformazione proiettiva}\index{trasformazione!proiettiva} o \textbf{isomorfismo proiettivo}\seeonlyindex{isomorfismo!proiettivo}{trasformazione!proiettiva} se $\exists \funz{\phi}{V}{V'}$ isomorfismo che induce un altro isomorfismo lineare:
 	\begin{equation}
 		\begin{tikzcd}
 			\widetilde{\phi}\ \colon\\
@@ -964,7 +964,7 @@ Abbiamo già accennato all'esistenza di una relazione che intercorre fra \textit
 	\end{enumerate}
 \end{define}
 \begin{define}[Riferimento affine e coordinate affini.]~{}\\
-	Un \textbf{riferimento affine}\index{riferimento!affine} $\mathcal{R} = (O,\  e_1,\  e_2,\ \ldots,\  e_n)$ sullo spazio $\aff{V}$ è assegnato fissando un punto $O\in \aff{V}$ detta \textbf{origine}\index{origine!affine} ed una base $\basis = (e_1,\  e_2,\ \ldots,\  e_n)$ di $V$. Dunque, per ogni $P\in \aff{V}$ si ha la $n$-upla $(X_1,\  X_2,\ \ldots,\  X_n)$ dette \textit{coordinate affini}\index{coordinate!affini} del punto $P\in\aff{V}$ (uniche per riferimento affine fissato) tale per cui:
+	Un \textbf{riferimento affine}\index{riferimento!affine} $\mathcal{R} = (O,\  e_1,\  e_2,\ \ldots,\  e_n)$ sullo spazio $\aff{V}$ è assegnato fissando un punto $O\in \aff{V}$ detta \textbf{origine}\index{origine affine} ed una base $\basis = (e_1,\  e_2,\ \ldots,\  e_n)$ di $V$. Dunque, per ogni $P\in \aff{V}$ si ha la $n$-upla $(X_1,\  X_2,\ \ldots,\  X_n)$ dette \textit{coordinate affini}\index{coordinate!affini} del punto $P\in\aff{V}$ (uniche per riferimento affine fissato) tale per cui:
 	\begin{equation}
 		P=\overrightarrow{OV}=x_1e_1+\ldots+x_ne_n
 	\end{equation}
@@ -972,7 +972,7 @@ Abbiamo già accennato all'esistenza di una relazione che intercorre fra \textit
 \end{define}
 Per i nostri scopi, parleremo spesso degli spazi affini di dimensione $n$ su $\kamp$.
 \begin{define}[Affinità.]~{}\\
-	Un'\textbf{affinità}\index{affinità} o \textbf{trasformazione lineare affine}\seeonlyindex{trasformazione lineare affine}{affinità} di $\aff{\kamp^n}$ è un'applicazione:
+	Un'\textbf{affinità}\seeonlyindex{affinità}{trasformazione!lineare affine} o \textbf{trasformazione lineare affine}\index{trasformazione!lineare affine} di $\aff{\kamp^n}$ è un'applicazione:
 	\begin{equation}
 		\funz{\phi}{\aff{\kamp^n}}{\aff{\kamp^n}}
 	\end{equation}
@@ -992,7 +992,7 @@ Della forma $\phi\left(x\right)=Ax+b$ con $A\in\gl\left(n,\ \kamp\right)$ un'app
 		\item Una \textbf{retta affine}\index{retta!affine} $r$ in $\aff{\kamp^n}$ è un sottospazio affine di $\dim 1$: $W=\lin{v}$, cioè $r$ si può individuare assegnando un punto $P\in r$ e un qualsiasi vettore $v$ \textit{parallelo} alla retta $r$.
 		\item Un \textbf{piano affine}\index{piano!affine} $\pi$ in $\aff{\kamp^n}$ è un sottospazio affine di $\dim 2$: $W=\lin{v,\ w}$, cioè $\pi$ si può individuare assegnando un punto $P\in r$ e una coppia di vettori l.i. \textit{paralleli} al piano $\pi$.
 		\item Un \textbf{iperpiano affine}\index{iperpiano!affine} è un sottospazio di dimensione $n+1$.
-		\item Due sottospazi affini della stessa dimensione si dicono \textbf{paralleli}\index{parallelo} se hanno lo \textit{stesso} sottospazio direttore.
+		\item Due sottospazi affini della stessa dimensione si dicono \textbf{paralleli}\index{sottospazio!affine!parallelo} se hanno lo \textit{stesso} sottospazio direttore.
 	\end{itemize}
 \vspace{-3mm}
 \end{observes}
@@ -1219,9 +1219,9 @@ Se $r_1\neq r_2$ e $r_1$ e $r_2$ sono parallele, allora $r_1\cap r_2=\emptyset$ 
 \end{itemize}
 Infatti, si ha che $l+H_0$ è un sottospazio proiettivo che contiene strettamente $H_0$, dato che $l\nsubseteq H_0$, e usando la formula di Grassmann otteniamo:
 \begin{equation*}
-	\dim\left(l+H_0\right)=\dim l +\dim H_0-\dim \left(l\cap H_0\right)=1+n-1+0=n=\dim \proj[n]{\ }\implies l+H_0 = \proj[n]{\ }
+	\dim\left(l+H_0\right)=\dim l +\dim H_0-\dim \left(l\cap H_0\right)=1+n-1+0=n=\dim \proj[n]{\ }
 \end{equation*}
-Sempre dalla formula di Grassmann:
+Da cui ricaviamo che $l+H_0 = \proj[n]{\ }$. Sempre dalla formula di Grassmann:
 \begin{equation*}
 	\dim\left(l\cap H_0\right)=0\implies l\cap H_0=\left\{1 \text{punto}\right\}=\left\{Q\right\}
 \end{equation*}
@@ -1249,9 +1249,9 @@ Infatti, per $z=1$ si ottiene l'equazione di $r$, mentre ponendo $z=0$ (cioè il
 	\end{cases}\quad P_{\infty}=\left(-b\colon a\colon 0\right)
 \end{equation*}
 La direzione della retta $ax+by+c=0$ è data dal punto improprio $P_{\infty}$ e corrisponde al vettore $\left(-b, a\colon 0\right)$.
-	\end{enumerate}
+\end{enumerate}
 \end{observes}
-Generalizziamo ora il concetto di chiusura proiettiva a un generico sottospazio affine.
+Generalizziamo il concetto di chiusura proiettiva a un generico sottospazio affine.
 \begin{define}[Chiusura proiettiva di un sottospazio.]~{}\\
 	Dato $S\subseteq \aff{\kamp^n}$ un sottospazio affine con $S\neq \emptyset$, la \textbf{chiusura proiettiva}\index{chiusura!proiettiva} $\overline{S}\subseteq \proj[n]{\ }$ di $S$ è il sottospazio proiettivo generato da $S$. Esso ha dimensione $\dim \overline{S}=\dim S=m$.
 \end{define}
@@ -1362,23 +1362,20 @@ Vediamo un esempio di proiettività di $\proj[1]{\ }$.
 		\end{cases}
 	\end{equation*}
 	Dove per $t=-\frac{a}{b}$ si ottiene $f(-b\colon a)=(0\colon 1)=\infty$, mentre la prima equazione è detta \textit{trasformazione lineare fratta}, che è definita sulla retta affine tranne dove si annulla il denominatore. \newline
-	Notiamo che $F$ diventa un'affinità $\funztot F \kamp \kamp t {\alpha t+\beta}$ se e solo se il denominatore diventa una costante ponendo $b=0$, ovvero se è della forma $F(t)=\alpha$, il che significa che la proiettività fissa il punto all'infinito, ovvero $f(0\colon 1)=(0\colon 1)$, mentre la parte affine viene mandata in sè stessa.\newline
+	Notiamo che $F$ diventa un'affinità $\funztot F \kamp \kamp t {\alpha t+\beta}$ se e solo se il denominatore diventa una costante ponendo $b=0$, ovvero se è della forma $F(t)=\alpha$, il che significa che la proiettività fissa il punto all'infinito, ovvero $f(0\colon 1)=(0\colon 1)$, mentre la parte affine viene mandata in se stessa.\newline
 	Questo ragionamento si può vedere anche in dimensione superiore.
 \end{example}
 \subsection{Impratichiamoci! Geometria affine e geometria proiettiva}
 \begin{exercise}
-	Sia $\kamp=\realset$. Allora, preso $\realset^n$ con la topologia euclidea e $\proj[n]{\realset}$ con la topologia quoziente, mostrare che $U_0$ è un aperto di $\proj[n]{\realset}$ e che $\funz{j}{\realset^n}{U_0}$ è un omeomorfismo.
+	Sia $\kamp=\realset$. Allora, preso $\realset^n$ con la topologia Euclidea e $\proj[n]{\realset}$ con la topologia quoziente, mostrare che $U_0$ è un aperto di $\proj[n]{\realset}$ e che $\funz{j}{\realset^n}{U_0}$ è un omeomorfismo.
 \end{exercise}
-\begin{solution}
-	... % aggiungere soluzione
-\end{solution}
-%LEZ 31
+% aggiungere soluzione
 \section{Spazi proiettivi complessi}
 \begin{remember}
 	Nel caso di $\realset^n$ si è già visto che lo spazio proiettivo reale è un quoziente del tipo $\displaystyle \proj[n]{\realset}=\frac{\realset^{n+1}\setminus\{0\}}{\sim}$, dunque è dotato in maniera naturale di una topologia.\newline
 	Si può anche vedere come \textit{quoziente della sfera} $S^n$ dove si identificano i punti antipodali grazie alla \textit{suriezione} $\surr \pi {S^n} {\proj[n]{\realset}}$; è anche una \textit{varietà topologica compatta} di dimensione $n$. Inoltre $\proj[1]{\realset}\cong S^1$ e abbiamo analizzato il piano proiettivo reale $\proj[2]{\realset}$.
 \end{remember}
-Anche nel caso complesso per $\proj[n]{\complexset}=\frac{\complexset^{n+1}\setminus\{0\}}{\sim}$ si ha in maniera naturale una topologia quoziente data dalla topologia euclidea su $\complexset^{n+1}\setminus\{0\} \cong \realset^{n+1}\setminus\{0\}$.\newline
+Anche nel caso complesso per $\proj[n]{\complexset}=\frac{\complexset^{n+1}\setminus\{0\}}{\sim}$ si ha in maniera naturale una topologia quoziente data dalla topologia Euclidea su $\complexset^{n+1}\setminus\{0\} \cong \realset^{n+1}\setminus\{0\}$.\newline
 Vogliamo vedere che è una \textit{varietà topologica compatta} di dimensione $\mathbf{2n}$. Infatti, mentre $\proj[n]{\realset}$ è localmente euclideo di dimensione $n$, si ha che $\proj[n]{\complexset}$ localmente si comporta come $\complexset^n\cong\realset^{2n}$, dunque la dimensione topologica è $2n$.
 \begin{theorema}[${\proj[n]{\complexset}}$ è una varietà topologica di dimensione $2n$.]
 \end{theorema}
@@ -1481,9 +1478,7 @@ Siccome $S^{2n+1}$ è un compatto in un \textbf{Hausdorff} e $\pi_0$ è un'ident
 			\end{minipage}\\
 		 Entrambe sono \textit{continue}: la prima è la restrizione di una funzione continua e la seconda, essendo ben definita ($U_0=\{z_0\neq 0\}$), risulta banalmente continua: inoltre, quest'ultima lavora solo con vettori e non con classi di equivalenza!\\
 		Per dimostrare che $\oldphi$ è continua sfruttiamo le proprietà della topologia quoziente (vedasi \ref{proprietà identificazione quoziente e mappa continua indotta}), dimostrando che $p$ è un'\textit{identificazione}: è già \textit{continua} e \textit{suriettiva}, dunque basta solo che sia aperta o chiusa per il teorema \ref{condizione sufficiente identificazione}.\\
-		Osserviamo che $\funz \pi {\complexset^{n+1}\setminus\{0\}} {\proj[n]{\complexset}}$ è anch'essa un quoziente dato dall'azione del gruppo \footnote{Questo vale in generale per gli spazi proiettivi, si veda
-%AAA ESERCIZIO GIà DATO CERCASI	
-		.} $G=\complexset\setminus\{0\}$ rispetto al prodotto per la moltiplicazione su $\complexset^{n+1}\setminus\{0\}$. In particolare, è un'azione per omeomorfismi. Infatti, fissato  $\lambda\in\complexset\setminus\{0\}$:
+		Osserviamo che $\funz \pi {\complexset^{n+1}\setminus\{0\}} {\proj[n]{\complexset}}$ è anch'essa un quoziente dato dall'azione del gruppo $G=\complexset\setminus\{0\}$ rispetto al prodotto per la moltiplicazione su $\complexset^{n+1}\setminus\{0\}$. In particolare, è un'azione per omeomorfismi. Infatti, fissato  $\lambda\in\complexset\setminus\{0\}$:
 	\begin{equation*}
 		\funztot {\theta_\lambda} {\complexset^{n+1}\setminus\{0\}} {\complexset^{n+1}\setminus\{0\}} z {\lambda z}
 	\end{equation*}
@@ -1881,9 +1876,7 @@ Cioè se il birapporto delle quaterne è \textbf{invariante per proiettività}.
 	\end{equation}
 \vspace{-3mm}
 \end{exercise}
-\begin{solution}
-	... %aggiungere soluzione
-\end{solution}
+	% aggiungere soluzione
 		\section{Piano proiettivo duale}
 Una \textbf{retta} in $\proj[2]{\kamp}$ ha equazione:
 \begin{equation}

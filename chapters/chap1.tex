@@ -14,7 +14,7 @@
 	\textsc{Henri Poincaré,} dopo aver letto le prime pagine di un libro di Topologia.
 \end{flushright}
 \end{introduction}
-\noindent Immaginiamo di aver un oggetto costituito di un magico \emph{materiale elastico} che possiamo allungare, piegare, torcere e rimpicciolire a piacere, ma che non possiamo né strappare né incollarne parti. L'oggetto che otteniamo dopo queste deformazioni lo consideriamo ‘‘equivalente'' a quello iniziale. Che proprietà si mantengono prima e dopo?\\
+\lettrine[findent=1pt, nindent=0pt]{I}{mmaginiamo} di avere un oggetto costituito di un magico \emph{materiale elastico} che possiamo allungare, piegare, torcere e rimpicciolire a piacere, ma che non possiamo né strappare né incollarne parti. L'oggetto che otteniamo dopo queste deformazioni lo consideriamo ‘‘equivalente'' a quello iniziale. Che proprietà si mantengono prima e dopo?\\
 Il principale scopo della \textit{Topologia} è studiare proprio le proprietà che rimangono invariate da queste deformazioni continue. Per far ciò, è necessario dotare un insieme di una struttura, detta \textbf{topologia}, che permetta la definizione di \textbf{continuità} di una funzione e di \emph{omeomorfismo}, generalizzando così quello che abbiamo chiamato ‘‘deformazioni''.\\
 In questo capitolo ci occuperemo dunque di introdurre questi concetti fondamentali per poi studiare alcuni risultati che ne conseguono. Inoltre, affronteremo alcuni degli \emph{assiomi di separazione} e la nozione di \emph{distanza}.
 \section{Spazio topologico}
@@ -100,7 +100,7 @@ In questo capitolo ci occuperemo dunque di introdurre questi concetti fondamenta
 \vspace{-6mm}
 \end{examples}
 \begin{attention}
-	Non tutte le topologie sono indotte da una distanza! Definiamo la \textbf{topologia dei complementari finiti} sull'insieme $X$ nel modo seguente:
+	Non tutte le topologie sono indotte da una distanza! Definiamo la \textbf{topologia dei complementari finiti} o \textbf{topologia cofinita}\index{topologia!cofinita} sull'insieme $X$ nel modo seguente:
 	\begin{gather*}
 		A\subseteq \realset \text{ aperto } \left(A\in CF\right) \text{ se }  X\setminus A \text{ è finito.}\\
 		C\subseteq \realset \text{ chiuso } \left(C\in CF\right) \text{ se }  C \text{ è finito.}
@@ -165,12 +165,12 @@ Preso adesso $X=\mathcal{C}\left([0,\ 1]\right)=\left\{\funz{f}{[0,\ 1]}{\realse
 \begin{multicols}{2}
 	\begin{itemize}
 		\item \textbf{Norma infinito}:
-		\[\displaystyle\mvf{d_\infty}{f}{g}=\max_{x\in[0,\ 1]}{\left|f(\left(x\right)-\left(y\right)\right|}\]
-		\item \textbf{Norma uno}: \[\displaystyle\mvf{d_1}{f}{g}=\int_{0}^{1}\left|f(\left(x\right)-\left(y\right)\right|\]
+		\[\displaystyle\mvf{d_\infty}{f}{g}=\max_{x\in[0,\ 1]}{\left|f\left(x\right)-g\left(y\right)\right|}\]
+		\item \textbf{Norma uno}: \[\displaystyle\mvf{d_1}{f}{g}=\int_{0}^{1}\left|f\left(x\right)-g\left(y\right)\right|\]
 	\end{itemize}
 	\begin{itemize}
-		\item \textbf{Norma due}: \[\displaystyle\mvf{d_2}{f}{g}=\sqrt{\int_{0}^{1}\left|f(\left(x\right)-\left(y\right)\right|^2}\]
-		\item \textbf{Norma p}: \[\displaystyle\mvf{d_p}{f}{g}=\sqrt[\leftroot{1}\uproot{3}p]{\int_{0}^{1}\left|f(\left(x\right)-\left(y\right)\right|^p}\]
+		\item \textbf{Norma due}: \[\displaystyle\mvf{d_2}{f}{g}=\sqrt{\int_{0}^{1}\left|f\left(x\right)-g\left(y\right)\right|^2}\]
+		\item \textbf{Norma p}: \[\displaystyle\mvf{d_p}{f}{g}=\sqrt[\leftroot{1}\uproot{3}p]{\int_{0}^{1}\left|f\left(x\right)-g\left(y\right)\right|^p}\]
 	\end{itemize}
 \end{multicols}
 \vspace{-1mm}
@@ -205,14 +205,14 @@ Per $n$ punti gli $n+1$ intervalli ottenuti sono aperti della topologia euclidea
 \begin{define}[Base.]~{}\\
 Sia $\left(X, \topo\right)$ uno spazio topologico. $\basis$ è una \textbf{base}\index{base} per $\topo$ se:
 \begin{enumerate}
-\item \textit{La base è costituita da paerti per la topologia $\topo$}: $A\in\basis\implies A\in\topo (\basis\subseteq\topo)$.
+\item \textit{La base è costituita da aperti per la topologia $\topo$}: $A\in\basis\implies A\in\topo (\basis\subseteq\topo)$.
 \item \textit{Tutti gli aperti della topologia sono unioni degli aperti delle basi}:
 $A\in\topo\implies\exists B_i\in\basis,\ i\in I\colon A=\union_{i\in I}B_i$.
 \end{enumerate}
 \vspace{-3mm}
 \end{define}
 \begin{attention}
-La base $\basis$ non è detto che formi una topologia! Ad esempio, le unioni sono aperti della topologia, ma non è detto che siano interni alla base $\basis$.
+La base $\basis$ non è detto che sia una topologia! Ad esempio, le unioni sono aperti della topologia, ma non è detto che siano interni alla base $\basis$.
 \end{attention}
 \begin{examples}~{}
 \begin{itemize}
@@ -241,7 +241,7 @@ Questa base con estremi razionali ha \textit{infiniti elementi}, ma in \textit{m
 Sia $X$ un insieme e $\basis\subseteq\setpart{X}$ una famiglia di sottoinsiemi di $X$. $\basis$ è la base di un'\textit{unica} topologia \textit{se e solo se}:
 \begin{enumerate}
 \item \textit{L'insieme} $X$ \textit{deve essere scritto come unione di elementi della famiglia}: $\displaystyle X=\union_{B\in \basis}B$.
-\item \textit{Per ogni punto dell'intersezione di elementi della famiglia deve esserci un'altro elemento di essa che contiene il punto ed è sottoinsieme dell'intersezione}:
+\item \textit{Per ogni punto dell'intersezione di elementi della famiglia deve esserci un altro elemento di essa che contiene il punto ed è sottoinsieme dell'intersezione}:
 \begin{equation}
 	\forall A, B\in\basis\ \forall x\in A\cap B\ \exists C\in \basis\ \colon x\in C\subseteq A\cap B
 \end{equation}
@@ -337,7 +337,7 @@ Il più piccolo chiuso contenente $\rationalset$ è $\realset$, poiché ogni rea
 \end{example}
 \subsection{Intorni}
 \begin{define}[Intorno.]~{}\\
-Sia $X$ spazio topologico e $x\in X$. $V$ è un \textbf{intorno}\index{intorno} di $x$ se $\exists A$ aperto tale che $x\in A\subseteq V$ o, in altri termini, se $x$ è interno ad $U$.
+Sia $X$ spazio topologico e $x\in X$. $V$ è un \textbf{intorno}\index{intorno} di $x$ se $\exists A$ aperto tale che $x\in A\subseteq V$ o, in altri termini, se $x$ è interno ad $V$.
 Definiamo inoltre la \textbf{famiglia degli intorni} di $x$ $I\left(x\right)\subseteq\setpart{X}$:
 \begin{equation}
 I\left(x\right)=\left\{V\subseteq X\mid V\text{ è intorno di }x \right\}
@@ -391,7 +391,7 @@ Alternativamente, $f$ è \textbf{continua} se la controimmagine di chiusi in $Y$
 \begin{equation*}
 f^{-1}\left(Y\setminus A\right)=X\setminus f^{-1}\left(A\right)
 \end{equation*}
-\item È sufficiente verificare la definizione per gli aperti una base di $Y$ perché la controimmagine si ‘‘comporta bene'' con le unioni di insiemi:
+\item È sufficiente verificare la definizione per gli aperti di una base di $Y$ dato che la controimmagine si ‘‘comporta bene'' con le unioni di insiemi:
 \begin{equation*}
 f^{-1}\left(\union_{i}A_i\right)=\union_{i}f^{-1}\left(A_i\right)
 \end{equation*}
@@ -719,7 +719,7 @@ Siano $X,\ Y$ spazi topologici e $X\times Y$ il prodotto.
 \end{equation}
 è una base per la topologia prodotto.
 \item Dati $x\in X,\ y\in Y$, siano $\mathcal{U} = \left\{U_i\right\}_{i\in I}$ un
-sistema fondamentale di intorni di $x$ e $\mathcal{V} = \left\{V_j\right\}_{j\in J}$ un sistema fondamentale di intorni di $y$. Poniamo $Wij \coloneqq U_i \times V_j \subseteq X \times Y$ . Allora:
+sistema fondamentale di intorni di $x$ e $\mathcal{V} = \left\{V_j\right\}_{j\in J}$ un sistema fondamentale di intorni di $y$. Poniamo $W_{ij} \coloneqq U_i \times V_j \subseteq X \times Y$ . Allora:
 \begin{equation}
 \mathcal{W} = \left\{W_{ij}\right\}_{j\in J}
 \end{equation}

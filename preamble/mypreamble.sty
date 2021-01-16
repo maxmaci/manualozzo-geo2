@@ -33,7 +33,7 @@
 \RequirePackage{amsthm}
 \RequirePackage{pifont} % aggiunge dingbat per itemize
 \RequirePackage{array}
-%\RequirePackage{arydshln}
+\RequirePackage{afterpage}
 \RequirePackage{varioref}
 \RequirePackage{lettrine}
 %\RequirePackage{lipsum}
@@ -70,9 +70,14 @@
 \RequirePackage{nameref}
 \RequirePackage{thmtools}
 \RequirePackage{environ}
+\RequirePackage{xkeyval}
+\RequirePackage{alphalph}
 \RequirePackage{tikz-cd}
+\RequirePackage{fancyhdr}
+\RequirePackage[absolute]{textpos}
 \RequirePackage{preamble/quiver}
 \RequirePackage{preamble/comment}
+\RequirePackage{preamble/nexus}
 % Load hyperref package last
 \RequirePackage{hyperref}
 
@@ -817,7 +822,9 @@
 \addtolength{\cftpartnumwidth}{\cftNumWidthIncrease}
 \addtolength{\cftchapternumwidth}{\cftNumWidthIncrease}
 \addtolength{\cftsectionindent}{\cftNumWidthIncrease}
+\addtolength{\cftsectionnumwidth}{0.5em}
 \addtolength{\cftsubsectionindent}{\cftNumWidthIncrease}
+\addtolength{\cftsubsectionnumwidth}{0.5em}
 % No leader dots
 \renewcommand*{\cftpartdotsep}{\cftnodots}
 \renewcommand*{\cftchapterdotsep}{\cftnodots}
@@ -1969,3 +1976,9 @@ headformat={\NAME\, \NUMBER\small\bfseries\scshape\textcolor{black}{.\, - \NOTE}
 }%
 
 \makeatother
+
+\newcommand\blankpage{%
+	\null
+	\thispagestyle{empty}%
+	\addtocounter{page}{-1}%
+	\newpage}

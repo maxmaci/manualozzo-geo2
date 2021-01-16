@@ -16,9 +16,9 @@
 		\textsc{Henri Poincaré,} dopo aver finito di leggere il già citato libro di Topologia.
 	\end{flushright}
 \end{introduction}
-\noindent Finora abbiamo visto omeomorfismi tra spazi topologici sotto tanti aspetti diversi, definendo rigorosamente quella che era l'intuizione del magico materiale elastico. Possiamo osservare tuttavia delle ‘‘\textit{equivalenze di forma}'' che un omeomorfismo è troppo rigido per descriverle.\\
+\lettrine[findent=1pt, nindent=0pt]{F}{inora} abbiamo visto omeomorfismi tra spazi topologici sotto tanti aspetti diversi, definendo così rigorosamente quella che era l'intuizione del magico materiale elastico. Tuttavia, la definizione di omeomorfismo è molto rigida e possiamo osservare delle ‘‘\textit{equivalenze di forma}'' che non riesce pertanto a descrivere.\\
 Ad esempio, si possono considerare \textit{equivalenti} figure con lo stesso numero di buchi. Sotto questo punto di vista, la figura corrispondente alla lettera \textsf{\textbf{O}} e quella corrispondente a \textsf{\textbf{P}} sono \textit{equivalenti}, dato che hanno entrambe un solo buco, mentre \textsf{\textbf{X}} non lo è perché non ne ha. Allo stesso tempo, nessuna di queste è \textit{omeomorfa} all'altra: infatti, se togliamo dalle tre lettera/figure un punto come il nodo di raccordo delle ‘‘stanghette'' (o per \textsf{\textbf{O}} un punto qualunque), otteniamo per \textsf{\textbf{O}} una componente connessa, per \textsf{\textbf{P}} due e per \textsf{\textbf{X}} ben quattro distinte.\\
-Preceduto da un'approfondimento delle componenti connesse (anche per archi), nel presente capitolo formalizzeremo questo tipo di equivalenza più debole e allo stesso tempo più ampia: l'\textbf{omotopia}.
+Preceduto da un approfondimento delle componenti connesse (anche per archi), nel presente capitolo formalizzeremo questo tipo di equivalenza più debole e allo stesso tempo più ampia: l'\textbf{omotopia}.
 \section{Lemma di incollamento}
 \begin{lemming}[Lemma di incollamento.]~{}\label{lemmaincollamento}\\
 Siano $X,\ Y$ spazi topologici e $X=A\cup B$. Siano $\funz{f}{A}{Y}$ e $\funz{g}{B}{Y}$ continue tali che $f\left(x\right)=g\left(x\right)\ \forall x\in A\cap B$, cioè $f_{\mid A\cap B}=g_{\mid A\cap B}$.\\
@@ -132,7 +132,6 @@ Poiché $\alpha\ast\beta$ soddisfa le ipotesi del lemma di incollamento, essa è
 	\end{enumerate}
 \vspace{-3mm}
 \end{observes}
-% controllare dimostrare data per esercizio
 \begin{demonstration}
 	Dimostriamo il punto $2$. Supponiamo per assurdo che esista $z\in X\setminus C$ tale che esista un cammino $\alpha$ tra un punto $x\in C$ e $z$. Definiamo $A\coloneqq C\cup \im \alpha$, con $\im \alpha$ il percorso di $\alpha$ in $X$. Si ha che $A$ è \textbf{c.p.a.}, essendo esso unione di spazi \textbf{c.p.a.}: $C$ lo è per ipotesi e $\im \alpha$ lo è banalmente per definizione. In particolare $A\subseteq C$, dunque per ipotesi $A=C$. Ma allora:
 	\begin{equation*}
@@ -441,7 +440,7 @@ Ha senso definire ciò proprio perché su $X\subseteq \realset^n$ ci sono le ope
 \vspace{-3mm}
 \end{demonstration}
 \begin{example}
-$\realset^2\setminus\left\{\left(0,\ 0\right)\right\}$ non è nè convesso, nè stellato.
+$\realset^2\setminus\left\{\left(0,\ 0\right)\right\}$ non è né convesso, né stellato.
 \end{example}
 \begin{lemming}[$X$ contraibile implica $X$ c.p.a.]
 \end{lemming}
@@ -513,7 +512,7 @@ Il viceversa è analogo.
 	\begin{equation}
 		\exists \funz{r}{X}{A}\text{ continua}\ \colon r_{\mid A}=Id_A,\ \text{cioè}\ \colon r\left(a\right)=a,\ \forall a\in A
 	\end{equation}
-In tal caso $r$ è detta \textbf{retrazione}\index{retratto}.
+In tal caso $r$ è detta \textbf{retrazione}\index{retrazione}.
 \end{define}
 \begin{observe}
 Se $r$ è una retrazione, per costruzione è suriettiva, dunque $A$ \textbf{eredita} da $X$ tutte le proprietà topologiche che si trasmettono per mappe continue (ad esempio connesso, \textbf{c.p.a.}, compatto).
@@ -521,7 +520,7 @@ Se $r$ è una retrazione, per costruzione è suriettiva, dunque $A$ \textbf{ered
 \begin{examples}~{}
 	\begin{itemize}
 		\item Dato $x_0\in X$, $\left\{x_0\right\}$ è sempre un retratto: infatti la mappa costante $\funz{\ }{X}{\left(x_0\right)}$ soddisfa banalmente le ipotesi di retrazione.
-		\item Presi $X=\left[0,\ 1\right]$, $A=\left(0,\ 1\right]$ \textit{non} è un retratto di $X$ (non è compatto!).
+		\item Presi $X=\left[0,\ 1\right]$, $A=\left(0,\ 1\right]$ \textit{non} è un retratto di $X$ (non è \textit{compatto}!).
 		\item Presi $X=\left[0, 1\right]$, $\widetilde{A}=\left\{0,\ 1\right\}$ \textit{non} è un retratto (non è \textit{connesso}!).
 	\end{itemize}
 \vspace{-3mm}
@@ -563,15 +562,9 @@ Se $r$ è una retrazione, per costruzione è suriettiva, dunque $A$ \textbf{ered
 		\begin{equation*}
 		\funztot{r}{\realset^n\setminus\left\{\mathbf{0}\right\}}{S^{n-1}}{\mathbf{x}}{r\left(\mathbf{x}\right)=\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}}
 	\end{equation*}
-Considero ora l'inclusionee, definendo per comodità $X=\realset^n\setminus\left\{\mathbf{0}\right\}$:
+Considero ora l'inclusione, definendo per comodità $X=\realset^n\setminus\left\{\mathbf{0}\right\}$:
 \begin{equation*}
-	\funz{i}{S^{n-1}}{X}
-\end{equation*}
-	\begin{equation*}
-		\funztot{r}{X}{X}{\mathbf{x}}{\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}}
-	\end{equation*}
-			\begin{equation*}
-	\widetilde{r}\coloneqq\funztot{ i\circ r}{X}{X}{\mathbf{x}}{\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}}
+	\funz{i}{S^{n-1}}{X}\quad 		\funztot{r}{X}{X}{\mathbf{x}}{\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}}\implies \widetilde{r}\coloneqq\funztot{ i\circ r}{X}{X}{\mathbf{x}}{\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}}
 \end{equation*}
 Vogliamo che $\widetilde{r}$ sia omotopa a $Id_X$.
 Osserviamo che $\forall \mathbf{x}\in\realset^n\setminus\left\{\mathbf{0}\right\}=X$ il segmento da $\mathbf{x}$ a $\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}$ non contiene, per costruzione, l'origine: allora esso è interamente contenuto in $\realset^n\setminus \left\{\mathbf{0}\right\}=X$. Dunque, riprendendo l'osservazione di pag. \pageref{omotopiasegmento} definiamo l'omotopia:
@@ -593,13 +586,13 @@ Infatti $F$ è ben definita, continua e $\mvf{F}{\mathbf{x}}{0}=\frac{\mathbf{x}
 Un \textbf{bouquet}\index{bouquet di circonferenze} \textbf{di} $n$ \textbf{circonferenze} è uno spazio topologico ottenuto unendo in un punto $n$ copie di $S^1$.
 \vspace{-8mm}
 \begin{center}
-	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.75]{images/bouquet.pdf}
+	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.7]{images/bouquet.pdf}
 \end{center}
 \vspace{-8mm}
 \end{define}
 \begin{examples}\textsc{Altri esempi di equivalenze omotopiche.}
 	\begin{enumerate}
-		\item $\realset^2\setminus\left\{2\text{ punti}\right\}$ ha lo stesso tipo di omotopia di un \textit{bouquet di due circonferenze}: si può ottenere attraverso una composizione (continua) di retrazioni \textit{radiali} e \textit{lineari}.
+		\item $\realset^2\setminus\left\{2\text{ punti}\right\}$ ha lo stesso tipo di omotopia di un \textit{bouquet di due circonferenze}: si può ottenere attraverso una composizione (continua) di retrazioni \textit{radiali} e \textit{lineari}\index{retrazione!lineare}.
 		\begin{center}
 						\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.75]{images/bouquetconstruction.pdf}
 		\end{center}	
