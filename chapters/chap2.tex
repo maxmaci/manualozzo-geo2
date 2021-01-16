@@ -209,7 +209,7 @@ Vediamo ora che conseguenze hanno questi teoremi in $\realset$ con la topologia 
 	Sia $I\subseteq \realset$. Le seguenti affermazioni sono equivalenti:
 		\begin{enumerate}
 	\item $I$ è un intervallo, ovvero $I$ è \textit{convesso}.
-	\item $I$ è \textbf{c.p.a.}.
+	\item $I$ è \textbf{c.p.a.}
 	\item $I$ è connesso.
 		\end{enumerate}
 	\vspace{-3mm}
@@ -282,7 +282,7 @@ Siano $\left\{ X_i \right\}_{i\in I}$ una famiglia di sottoinsiemi di uno spazio
 $X, Y$ sono spazi topologici connessi $\iff X\times Y$ è connesso.	
 \end{theorema}
 \begin{demonstration}~{}\\
-	$\impliessx$ Si sfrutta la continuità delle proiezioni e che l'immagine continua di un connesos è connessa:
+	$\impliessx$ Si sfrutta la continuità delle proiezioni e che l'immagine continua di un connesso è connessa:
 		\begin{gather*}
 			\funz p {X\times Y} X \text{continua e suriettiva } \implies p(X)=X \text{ connesso}\\
 			\funz q {X\times Y} Y \text{continua e suriettiva } \implies q(Y)=Y \text{ connesso}	
@@ -312,20 +312,22 @@ Approfondiamo ora la differenza fra essere spazio connesso o \textbf{c.p.a.}, mo
 		\end{gather*}
 	Ne segue che l'unico aperto che non interseca $A$ è l'insieme vuoto. \newline
 	$\impliessx$ Consideriamo un chiuso $K\supseteq A$. Siccome è chiuso allora il suo complementare $X\setminus K$ è aperto. Per ipotesi dunque si ha che $V\cap A\neq \emptyset$ oppure $V=\emptyset$, passando al complementare si ottiene che:
+	\vspace{-1mm}
 		\begin{equation*}
 			\begin{array}{l}
 				A\subseteq K \implies X\setminus K \subseteq X\setminus A \implies V\subseteq X\setminus A \implies \\
 				\implies V\cap A=\emptyset \implies V=\emptyset \implies K=X \implies \overline{A}=X
 			\end{array}
+		\vspace{-2mm}
 		\end{equation*}
 	L'ultima implicazione è dovuta al fatto che ogni chiuso che contiene $A$ si è dimostrato essere solo $X$ per cui esso sarà la sua chiusura.
 \end{demonstration}
 
 \begin{theorema}[Chiusura e connessione.]~{}\label{chiusuraconnessa}\\
-Sia $X$ uno spazio topologico e $Y\subseteq X$ connesso, allora
-		\begin{equation*}
+Sia $X$ uno spazio topologico e $Y\subseteq X$ connesso, allora:
+		\begin{equation}
 			\forall W \colon Y\subseteq W \subseteq \overline{Y} \implies W \text{ connesso}
-		\end{equation*}
+		\end{equation}
 	In particolare la chiusura di un connesso è connessa.
 \end{theorema}
 \begin{demonstration}
@@ -337,19 +339,19 @@ Sia $X$ uno spazio topologico e $Y\subseteq X$ connesso, allora
 	Si vuole sfruttare il fatto che $Y$ è connesso:
 		\begin{gather*}
 			Z\cap Y=A\cap W\cap Y \stackrel{!}{=} A\cap Y \text{ aperto in Y}
-			Z\cap Y=C\cap W\cap Y \stackrel{!}{=} C\cap Y \text{ aperto in Y}			
+			Z\cap Y=C\cap W\cap Y \stackrel{!}{=} C\cap Y \text{ aperto in Y}
 		\end{gather*}
 	Dove il passaggio indicato con (!) è dovuto al fatto che $Y\subseteq W$. Per poter sfruttare la connessione di $Y$ e dedurre che $Z\cap Y=Y$ dobbiamo prima provare che tale intersezione non è vuota e per farlo sfruttiamo il teorema precedente:
 		\begin{gather*}
 			Y \text{ denso in W, infatti  } \mathcal{cl}_W(Y)=\mathcal{cl}_X(Y)\cap W=\overline{Y}\cap W=W\\
 			Z \text{ aperto in } W \implies Z\cap Y \neq \emptyset \implies Z\cap Y=Y \implies Y\subseteq Z
 		\end{gather*}
-	Tuttavia $Y$ è denso in $W$ e $Z$ è chiuso in $W$ che contiene $Y$, quindi
+	Tuttavia $Y$ è denso in $W$ e $Z$ è chiuso in $W$ che contiene $Y$, quindi:
 		\begin{equation*}
 			\mathcal{cl}_W(Y)=W\subseteq Z \implies W=Z \implies W \text{ connesso}
 		\end{equation*}
 \end{demonstration}
-Vediamo ora degli esempi di spazi connessi ma non \textbf{c.p.a.}.
+Vediamo ora degli esempi di spazi connessi ma non \textbf{c.p.a.}
 \begin{example}\textsc{Seno del topologo.}\\
 \begin{minipage}{0.47\textwidth}
 Sia $Y\subseteq \realset^2$ con la topologia euclidea e $Y=\left\{ \left( x,\ \frac{1}{x} \right) \mid x>0 \right\}$, detto anche \textbf{seno del topologo}\index{seno del topologo}. Esso è \textbf{c.p.a.} perché per connettere due punti basta percorrere la curva stessa del grafico. Quindi $Y$ è connesso, dunque per il teorema \ref{chiusuraconnessa} (pag. \pageref{chiusuraconnessa}) $\overline{Y}$ è connesso.\\
@@ -375,11 +377,11 @@ Si consideri ora la ‘‘pulce'', ovvero un punto $P$ di ascissa irrazionale ed
 	\begin{minipage}{0.37\textwidth}
 		\includegraphics[trim=1.1cm 0.5cm 0.5cm 1.25cm,clip,scale=0.50]{images/comb.pdf}
 	\end{minipage}\\
-Tuttavia $Z$ non è \textbf{c.p.a.}: preso un cammino $\funz \alpha {\left[0,\ 1\right]} {Z\subseteq \realset^2}$ tale che $\alpha(t)= \left( x(t), y(t)\right)$ con $\alpha (0)=(0,0)$ e $\alpha(1)=P$, per continuità $y(t)\neq 0 \implies x(t)\in\rationalset$, ma è vero per $P$ che ha ascissa irrazionale, dunque non esiste un cammino continuo che colleghi l'origine e $P$. Ne consegue che $Z$ non è \textbf{c.p.a.}.
+Tuttavia $Z$ non è \textbf{c.p.a.}: preso un cammino $\funz \alpha {\left[0,\ 1\right]} {Z\subseteq \realset^2}$ tale che $\alpha(t)= \left( x(t), y(t)\right)$ con $\alpha (0)=(0,0)$ e $\alpha(1)=P$, per continuità $y(t)\neq 0 \implies x(t)\in\rationalset$, ma è vero per $P$ che ha ascissa irrazionale, dunque non esiste un cammino continuo che colleghi l'origine e $P$. Ne consegue che $Z$ non è \textbf{c.p.a.}
 \end{example}
 
 \begin{observe}
-	L'immagine continua di uno spazio \textbf{c.p.a.} è \textbf{c.p.a.}, ovvero dato $X$ \textbf{c.p.a.}, $\funz f X Y$ continua, allora $f(X)$ è \textbf{c.p.a.}.\newline
+	L'immagine continua di uno spazio \textbf{c.p.a.} è \textbf{c.p.a.}, ovvero dato $X$ \textbf{c.p.a.}, $\funz f X Y$ continua, allora $f(X)$ è \textbf{c.p.a.}\newline
 	Dati $a,b\in X$ si vuole trovare un cammino fra $f(a)$ e $f(b)$ in $f(X)$. Si consideri la composizione seguente fra il cammino $\alpha$ fra $a$ e $b$ con la funzione $f$ stessa. Siccome ha come dominio $\left[0,\ 1\right]$ ed è continua essendo composizione di funzione continue è in effetti un cammino fra le due immagini:
 \begin{center}
 \begin{tikzcd}
@@ -573,7 +575,7 @@ Un sottospazio $K\subseteq \realset$ è compatto $\iff K$ chiuso e limitato.
 	$\impliessx $ $K$ è limitato, quindi $K\subseteq [-n, \ n]$, che è compatto e $K$ è chiuso per ipotesi, dunque per il teorema \ref{chiuso in compatto} è compatto.
 \end{demonstration}
 \begin{observe}
-	Da notare che il teorema precedente non afferma he gli unici compatti di $\realset$ sono gli intervalli chiusi e limitati, ma anche una loro unione finita potrebbe esserlo.
+	Da notare che il teorema precedente non afferma che gli unici compatti di $\realset$ sono gli intervalli chiusi e limitati, ma anche una loro unione finita potrebbe esserlo.
 \end{observe}
 
 \begin{theorema}[Funzione su un compatto in $\realset$ ammette massimo e minimo; Manetti, 4.43.]~{}\label{weierstrass}\\

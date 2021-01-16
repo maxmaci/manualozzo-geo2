@@ -76,7 +76,7 @@ Gli esempi più frequenti di spazi proiettivi si ottengono considerando $V=\kamp
 Essi sono spazi di dimensione $\dim\proj[n]{\ }=n$.
 \end{define}
 \section{Sottospazi proiettivi}
-Sia $W\subseteq V$ un sottospazio vettoriale. Allora $W\setminus\left\{0\right\}\subseteq V\setminus\left\{0\right\}$ è chiuso rispetto alla relazione di equivalenza $\sim$ precedentemente definita e $\proj{W}$ è naturalmente un sottoinsieme di $\proj{V}$.
+Sia $W\subseteq V$ un sottospazio vettoriale. Allora $W\setminus\left\{0\right\}\subseteq V\setminus\left\{0\right\}$ è chiuso rispetto alla relazione di equivalenza $\sim$ già definita e $\proj{W}$ è un sottoinsieme di $\proj{V}$.
 \begin{define}[Sottospazio proiettivo.]~{}\\
 	Se $W\subseteq V$ è un sottospazio vettoriale, allora $\proj{W}$ è detto \textbf{sottospazio proiettivo}\index{sottospazio!proiettivo}:
 	\begin{equation*}
@@ -372,7 +372,7 @@ Chiaramente, se $\dim T_1+\dim T_2\geq n$, allora $\dim \left(T_1\cap T_2\right)
 	\begin{equation*}
 		S=\underbrace{\proj{\lin{v_1,\ \ldots,\ v_m}}}_{\dim \mathcal{L} \leq m}
 	\end{equation*}
-\vspace{-6mm}
+\vspace{-3mm}
 \end{observe}
 \section{Punti linearmente indipendenti e in posizione generale}
 \begin{define}[Punti linearmente indipendenti.]~{}\\
@@ -546,7 +546,7 @@ Infatti, se $v_0,\ \ldots,\ v_n$ è una base (in quanto sono indipendenti), $v_0
 Inoltre, se $\basis'=\left\{f_0,\ \ldots,\ f_n\right\}$ è un'altra base di $V$ che soddisfa la condizione sopra, allora $\basis$ è proporzionale a $\basis$, cioè $\exists\lambda\in\kamp\setminus\left\{0\right\}\ \colon f_i=\lambda e_i\ \forall i=0,\ \ldots,\ n$.
 \end{theorema}
 \begin{demonstration}
-	Sia $P_i=\left[v_i\right]$ al variare di $i=0,\ \ldots,\ n+1$. I punti $P_0,\ \ldots,\ P_n$ sono indipendenti\footnote{Perchè se $N+2$ punti sono in posizione generale, presi $n+1$ punti fra di loro sono indipendenti.}, dunque per definizione $v_0,\ \ldots,\ v_n$ è una base di $V$. Definiamo:
+	Sia $P_i=\left[v_i\right]$ al variare di $i=0,\ \ldots,\ n+1$. I punti $P_0,\ \ldots,\ P_n$ sono indipendenti\footnote{Perché se $N+2$ punti sono in posizione generale, presi $n+1$ punti fra di loro sono indipendenti.}, dunque per definizione $v_0,\ \ldots,\ v_n$ è una base di $V$. Definiamo:
 	\begin{equation*}
 		v_{n+1}=\lambda_0v_0+\ldots+\lambda_nv_n\quad \lambda_i\in\kamp
 	\end{equation*}
@@ -1219,9 +1219,9 @@ Se $r_1\neq r_2$ e $r_1$ e $r_2$ sono parallele, allora $r_1\cap r_2=\emptyset$ 
 \end{itemize}
 Infatti, si ha che $l+H_0$ è un sottospazio proiettivo che contiene strettamente $H_0$, dato che $l\nsubseteq H_0$, e usando la formula di Grassmann otteniamo:
 \begin{equation*}
-	\dim\left(l+H_0\right)=\dim l +\dim H_0-\dim \left(l\cap H_0\right)=1+n-1+0=n=\dim \proj[n]{\ }\implies l+H_0 = \proj[n]{\ }
+	\dim\left(l+H_0\right)=\dim l +\dim H_0-\dim \left(l\cap H_0\right)=1+n-1+0=n=\dim \proj[n]{\ }
 \end{equation*}
-Sempre dalla formula di Grassmann:
+Da cui ricaviamo che $l+H_0 = \proj[n]{\ }$. Sempre dalla formula di Grassmann:
 \begin{equation*}
 	\dim\left(l\cap H_0\right)=0\implies l\cap H_0=\left\{1 \text{punto}\right\}=\left\{Q\right\}
 \end{equation*}
@@ -1249,9 +1249,9 @@ Infatti, per $z=1$ si ottiene l'equazione di $r$, mentre ponendo $z=0$ (cioè il
 	\end{cases}\quad P_{\infty}=\left(-b\colon a\colon 0\right)
 \end{equation*}
 La direzione della retta $ax+by+c=0$ è data dal punto improprio $P_{\infty}$ e corrisponde al vettore $\left(-b, a\colon 0\right)$.
-	\end{enumerate}
+\end{enumerate}
 \end{observes}
-Generalizziamo ora il concetto di chiusura proiettiva a un generico sottospazio affine.
+Generalizziamo il concetto di chiusura proiettiva a un generico sottospazio affine.
 \begin{define}[Chiusura proiettiva di un sottospazio.]~{}\\
 	Dato $S\subseteq \aff{\kamp^n}$ un sottospazio affine con $S\neq \emptyset$, la \textbf{chiusura proiettiva}\index{chiusura!proiettiva} $\overline{S}\subseteq \proj[n]{\ }$ di $S$ è il sottospazio proiettivo generato da $S$. Esso ha dimensione $\dim \overline{S}=\dim S=m$.
 \end{define}
@@ -1362,7 +1362,7 @@ Vediamo un esempio di proiettività di $\proj[1]{\ }$.
 		\end{cases}
 	\end{equation*}
 	Dove per $t=-\frac{a}{b}$ si ottiene $f(-b\colon a)=(0\colon 1)=\infty$, mentre la prima equazione è detta \textit{trasformazione lineare fratta}, che è definita sulla retta affine tranne dove si annulla il denominatore. \newline
-	Notiamo che $F$ diventa un'affinità $\funztot F \kamp \kamp t {\alpha t+\beta}$ se e solo se il denominatore diventa una costante ponendo $b=0$, ovvero se è della forma $F(t)=\alpha$, il che significa che la proiettività fissa il punto all'infinito, ovvero $f(0\colon 1)=(0\colon 1)$, mentre la parte affine viene mandata in sè stessa.\newline
+	Notiamo che $F$ diventa un'affinità $\funztot F \kamp \kamp t {\alpha t+\beta}$ se e solo se il denominatore diventa una costante ponendo $b=0$, ovvero se è della forma $F(t)=\alpha$, il che significa che la proiettività fissa il punto all'infinito, ovvero $f(0\colon 1)=(0\colon 1)$, mentre la parte affine viene mandata in se stessa.\newline
 	Questo ragionamento si può vedere anche in dimensione superiore.
 \end{example}
 \subsection{Impratichiamoci! Geometria affine e geometria proiettiva}
@@ -1876,7 +1876,7 @@ Cioè se il birapporto delle quaterne è \textbf{invariante per proiettività}.
 	\end{equation}
 \vspace{-3mm}
 \end{exercise}
-	... %aggiungere soluzione
+	% aggiungere soluzione
 		\section{Piano proiettivo duale}
 Una \textbf{retta} in $\proj[2]{\kamp}$ ha equazione:
 \begin{equation}

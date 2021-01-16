@@ -14,7 +14,7 @@
 	\textsc{Hermann Weyl,} esorcista topologico.
 \end{flushright}
 \end{introduction}
-\lettrine[findent=1pt, nindent=0pt]{A}{bbiamo} definito la struttura di \textit{spazio topologico} su un insieme con lo scopo principale di poter definire formalmente la \textit{continuità} di una funzione. Un'altro tipo di struttura fondamentale per la Matematica è quella di \textit{gruppo}, un insieme dotato di una \textit{operazione binaria} che soddisfa le condizioni di chiusura, associatività, identità ed invertibilità.\\
+\lettrine[findent=1pt, nindent=0pt]{A}{bbiamo} definito la struttura di \textit{spazio topologico} su un insieme con lo scopo principale di poter definire formalmente la \textit{continuità} di una funzione. Un altro tipo di struttura fondamentale per la Matematica è quella di \textit{gruppo}, un insieme dotato di una \textit{operazione binaria} che soddisfa le condizioni di chiusura, associatività, identità ed invertibilità.\\
 In questo capitolo studieremo il \textbf{gruppo topologico}, un oggetto matematico che è dotato contemporaneamente sia di una struttura di \textit{gruppo}, sia di una di \textit{spazio topologico}. In questo modo, potremo eseguire operazioni algebriche e parlare di continuità allo stesso tempo. Vedremo inoltre le relazioni fra alcune proprietà che abbiamo già visto e questo nuovo oggetto di studio.
 \section{Gruppi topologici}
 Conoscendo le strutture di \textit{gruppo} e \textit{spazio topologico} su un insieme, vogliamo vedere come possono essere \textit{compatibili} fra loro.
@@ -33,9 +33,9 @@ Conoscendo le strutture di \textit{gruppo} e \textit{spazio topologico} su un in
 Vediamo ora degli esempi noti di gruppi topologici.
 \begin{examples}~{}
 	\begin{itemize}
-		\item $\left( \realset^n, \ +, \ \mathcal{E_{ucl}} \right), \left( \complexset ^n, \ +, \ \mathcal{E_{ucl}} \right)$.
-		\item $\left( \realset^*, \ \cdot,\ \mathcal{E_{ucl}} \right), \left( \realset^*, \ \cdot, \ \mathcal{E_{ucl}} \right)$ con la topologia indotta di sottospazio.
-		\item $\left( M_{n,m}(\realset),\ \cdot, \mathcal{E_{ucl}} \right)$ con la topologia indotta di sottospazio di $\realset^{n,m}$, ad es. $\intv$.
+		\item $\left( \realset^n, \ +, \ \eucl \right), \left( \complexset ^n, \ +, \ \eucl \right)$.
+		\item $\left( \realset^*, \ \cdot,\ \eucl \right), \left( \realset^*, \ \cdot, \ \eucl \right)$ con la topologia indotta di sottospazio.
+		\item $\left( M_{n,m}(\realset),\ \cdot, \eucl \right)$ con la topologia indotta di sottospazio di $\realset^{n,m}$, ad es. $\intv$.
 	\end{itemize}
 \vspace{-3mm}
 \end{examples}
@@ -129,7 +129,7 @@ Il seguente teorema ci permette di caratterizzare i gruppi topologici di \textbf
 			\gl^+(1,\realset)=(0,+\infty) \\
 			\gl(n,\complexset)=\complexset\setminus\{0\}=\realset^2\setminus{0}
 		\end{cases}$ connessi.\newline
-	$n>1 \ )$ \ \ Supponiamo che $\gl^+(n-1,\realset)$ sia connesso e dimostriamo che lo è anche $\gl(n,\realset)$. Cerchiamo dunque una funzione continua da $\gl^+(n,\realset)$  a $\gl(n-1,\realset)$ che soddisfi le ipotesi del lemma precedente. Pertanto si considera la funzione prima colonna $\displaystyle \funztot p {\realset^{n,n}} {\realset^n} A {p(A)}$ che mappa la prima colonna di $A$. Siccome $\realset^{n,n}=\realset^n\times\realset^{n,n-1}$ allora $p$ è una proiezione, dunque per il punto 2 della proposizione \ref{topprodotto}	è aperta. Restringiamo ora $p$ a $\gl^+(n,\realset)$ nel modo seguente $\funz p {\gl^+(n,\realset)} {\realset^n\setminus\{\mathbf{0}\}}$ che è una funzione continua, suriettiva e aperta, inoltre $\realset^n\setminus\{\mathbf{0}\}$ è connesso per $n>1$. Calcoliamo ora le fibre e mostriamo che sono tutte omeomorfe fra loro e connesse, quindi prima ne troviamo una, mostriamo che è connessa poi dimostriamo che sono tutte omeomorfe. A questo scopo consider
+	$n>1 \ )$ \ \ Supponiamo che $\gl^+(n-1,\realset)$ sia connesso e dimostriamo che lo è anche $\gl(n,\realset)$. Cerchiamo dunque una funzione continua da $\gl^+(n,\realset)$  a $\gl(n-1,\realset)$ che soddisfi le ipotesi del lemma precedente. Pertanto si considera la funzione prima colonna $\displaystyle \funztot p {\realset^{n,n}} {\realset^n} A {p(A)}$ che mappa la prima colonna di $A$. Siccome $\realset^{n,n}=\realset^n\times\realset^{n,n-1}$ allora $p$ è una proiezione, dunque per il punto 2 della proposizione \ref{topprodotto}	è aperta. Restringiamo ora $p$ a $\gl^+(n,\realset)$ nel modo seguente $\funz p {\gl^+(n,\realset)} {\realset^n\setminus\{\mathbf{0}\}}$ che è una funzione continua, suriettiva e aperta, inoltre $\realset^n\setminus\{\mathbf{0}\}$ è connesso per $n>1$. Calcoliamo ora le fibre e mostriamo che sono tutte omeomorfe fra loro e connesse, quindi prima ne troviamo una, mostriamo che è connessa poi dimostriamo che sono tutte omeomorfe. A questo scopo consideriamo:
 		\begin{gather*}
 			y_0=\begin{pmatrix}
 					1 \\ 0 \\ \vdots \\ 0
@@ -140,7 +140,7 @@ Il seguente teorema ci permette di caratterizzare i gruppi topologici di \textbf
 						0      &   &       &
 					\end{pmatrix}
 		\end{gather*}
-	con $(*,\dots, *)\in\realset^{n-1}$ arbitrario in quanto non influisce nel calcolo del determinante e con $A\in\gl^+(n-1,\realset)$, da cui segue che $p^{-1}(y_0)=\realset^{n-1}\times\gl^+(n-1,\realset)$, dunque $p^{-1}(y_0)$ è conness visto che i due fattori lo sono per ipotesi.\newline
+	Con $(*,\dots, *)\in\realset^{n-1}$ arbitrario in quanto non influisce nel calcolo del determinante e con $A\in\gl^+(n-1,\realset)$, da cui segue che $p^{-1}(y_0)=\realset^{n-1}\times\gl^+(n-1,\realset)$, dunque $p^{-1}(y_0)$ è connesso visto che i due fattori lo sono per ipotesi.\newline
 	Mostriamo ora che tutte le fibre sono omeomorfe a $p^{-1}(y_0)$. Sia $y\in\realset^n\setminus\{\mathbf{0}\}$ e sia $A\in\gl^+(n,\realset)$ tale che $p(A)=y$, ovvero $y$ è la prima colonna di $A$. In generale vale la relazione $p(AB)=Ap(B)$ e la moltiplicazione sinistra $\displaystyle \funztot {L_A} {\gl^+(n,\realset)} {\gl^+(n,\realset)} B {AB}$ è un omeomorfismo. Dimostriamo che vale $p^{-1}(y)=L_A\left( p^{-1}(y_0)\right)=Ap^{-1}(y_0)$, in modo tale da avere tutte le fibre omeomorfe fra loro:
 	\begin{equation*}
 		\begin{array}{ll}

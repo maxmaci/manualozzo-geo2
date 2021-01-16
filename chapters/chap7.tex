@@ -18,7 +18,7 @@
 \end{introduction}
 \lettrine[findent=1pt, nindent=0pt]{F}{inora} abbiamo visto omeomorfismi tra spazi topologici sotto tanti aspetti diversi, definendo così rigorosamente quella che era l'intuizione del magico materiale elastico. Tuttavia, la definizione di omeomorfismo è molto rigida e possiamo osservare delle ‘‘\textit{equivalenze di forma}'' che non riesce pertanto a descrivere.\\
 Ad esempio, si possono considerare \textit{equivalenti} figure con lo stesso numero di buchi. Sotto questo punto di vista, la figura corrispondente alla lettera \textsf{\textbf{O}} e quella corrispondente a \textsf{\textbf{P}} sono \textit{equivalenti}, dato che hanno entrambe un solo buco, mentre \textsf{\textbf{X}} non lo è perché non ne ha. Allo stesso tempo, nessuna di queste è \textit{omeomorfa} all'altra: infatti, se togliamo dalle tre lettera/figure un punto come il nodo di raccordo delle ‘‘stanghette'' (o per \textsf{\textbf{O}} un punto qualunque), otteniamo per \textsf{\textbf{O}} una componente connessa, per \textsf{\textbf{P}} due e per \textsf{\textbf{X}} ben quattro distinte.\\
-Preceduto da un'approfondimento delle componenti connesse (anche per archi), nel presente capitolo formalizzeremo questo tipo di equivalenza più debole e allo stesso tempo più ampia: l'\textbf{omotopia}.
+Preceduto da un approfondimento delle componenti connesse (anche per archi), nel presente capitolo formalizzeremo questo tipo di equivalenza più debole e allo stesso tempo più ampia: l'\textbf{omotopia}.
 \section{Lemma di incollamento}
 \begin{lemming}[Lemma di incollamento.]~{}\label{lemmaincollamento}\\
 Siano $X,\ Y$ spazi topologici e $X=A\cup B$. Siano $\funz{f}{A}{Y}$ e $\funz{g}{B}{Y}$ continue tali che $f\left(x\right)=g\left(x\right)\ \forall x\in A\cap B$, cioè $f_{\mid A\cap B}=g_{\mid A\cap B}$.\\
@@ -440,7 +440,7 @@ Ha senso definire ciò proprio perché su $X\subseteq \realset^n$ ci sono le ope
 \vspace{-3mm}
 \end{demonstration}
 \begin{example}
-$\realset^2\setminus\left\{\left(0,\ 0\right)\right\}$ non è nè convesso, nè stellato.
+$\realset^2\setminus\left\{\left(0,\ 0\right)\right\}$ non è né convesso, né stellato.
 \end{example}
 \begin{lemming}[$X$ contraibile implica $X$ c.p.a.]
 \end{lemming}
@@ -562,15 +562,9 @@ Se $r$ è una retrazione, per costruzione è suriettiva, dunque $A$ \textbf{ered
 		\begin{equation*}
 		\funztot{r}{\realset^n\setminus\left\{\mathbf{0}\right\}}{S^{n-1}}{\mathbf{x}}{r\left(\mathbf{x}\right)=\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}}
 	\end{equation*}
-Considero ora l'inclusionee, definendo per comodità $X=\realset^n\setminus\left\{\mathbf{0}\right\}$:
+Considero ora l'inclusione, definendo per comodità $X=\realset^n\setminus\left\{\mathbf{0}\right\}$:
 \begin{equation*}
-	\funz{i}{S^{n-1}}{X}
-\end{equation*}
-	\begin{equation*}
-		\funztot{r}{X}{X}{\mathbf{x}}{\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}}
-	\end{equation*}
-			\begin{equation*}
-	\widetilde{r}\coloneqq\funztot{ i\circ r}{X}{X}{\mathbf{x}}{\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}}
+	\funz{i}{S^{n-1}}{X}\quad 		\funztot{r}{X}{X}{\mathbf{x}}{\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}}\implies \widetilde{r}\coloneqq\funztot{ i\circ r}{X}{X}{\mathbf{x}}{\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}}
 \end{equation*}
 Vogliamo che $\widetilde{r}$ sia omotopa a $Id_X$.
 Osserviamo che $\forall \mathbf{x}\in\realset^n\setminus\left\{\mathbf{0}\right\}=X$ il segmento da $\mathbf{x}$ a $\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}$ non contiene, per costruzione, l'origine: allora esso è interamente contenuto in $\realset^n\setminus \left\{\mathbf{0}\right\}=X$. Dunque, riprendendo l'osservazione di pag. \pageref{omotopiasegmento} definiamo l'omotopia:
@@ -592,7 +586,7 @@ Infatti $F$ è ben definita, continua e $\mvf{F}{\mathbf{x}}{0}=\frac{\mathbf{x}
 Un \textbf{bouquet}\index{bouquet di circonferenze} \textbf{di} $n$ \textbf{circonferenze} è uno spazio topologico ottenuto unendo in un punto $n$ copie di $S^1$.
 \vspace{-8mm}
 \begin{center}
-	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.75]{images/bouquet.pdf}
+	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.7]{images/bouquet.pdf}
 \end{center}
 \vspace{-8mm}
 \end{define}

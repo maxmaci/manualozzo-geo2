@@ -14,12 +14,13 @@
 		\textsc{David Mumford,} assolutamente non un adepto della Geometria algebrica.
 	\end{flushright}
 \end{introduction}
-\lettrine[findent=1pt, nindent=0pt]{N}{el} \autoref{chap:omotopia}, abbiamo definito e studiato diverse proprietà legate all'\textit{omotopia}, mostrando alcuni esempi di spazi omotopicamente equivalenti. Tuttavia, non abbiamo ancora formalizzato un aspetto dell'intuizione iniziale: come contiamo i \textit{buchi} di una figura?\\
+\lettrine[findent=1pt, nindent=0pt]{N}{el} \autoref{chap:omotopia}, abbiamo studiato diverse proprietà legate all'\textit{omotopia}, mostrando alcuni esempi di spazi omotopicamente equivalenti. Tuttavia, non abbiamo ancora formalizzato un aspetto dell'intuizione iniziale: come contiamo i \textit{buchi} di una figura?\\
 In questo capitolo proseguiamo la trattazione introducendo un \textit{oggetto algebrico} che associamo come invariante ad uno spazio topologico: il \textbf{gruppo fondamentale}. Definendo una versione dell'omotopia specifica dei cammini, utilizziamo questo gruppo formato dalle classi di equivalenza omotopica di \textit{cammini chiusi} per mostrare in termini rigorosi la presenza di buchi.\\
 Inoltre, largo spazio sarà lasciato alla dimostrazione del primo gruppo fondamentale non banale, quello della \textit{circonferenza}.
 \section{Omotopie fra cammini}
 \begin{notate}
 Se non specificato differentemente, useremo $I$ per indicare l'intervallo $\intv$.
+\vspace{-4mm}
 \end{notate}
 \begin{define}[Omotopia di cammini.]~{}\\
 	Siano $\funz{\alpha,\ \beta}{I}{X}$ due cammini da $a$ a $b$, cioè con \textit{stessi estremi}. Allora $\alpha,\ \beta$ sono \textbf{cammini omotopi}\index{cammino!omotopo} se $\exists \funz{F}{I \times I}{X}$ tale che:
@@ -859,7 +860,7 @@ Vediamo alcune proprietà.
 	Sia $\left(X, d\right)$ uno spazio metrico compatto e sia $\mathcal{A}$ un ricoprimento aperto di $X$. Allora $\exists \delta >0$ tale che, per ogni palla aperta $B$ in $X$ di diametro minore di $\delta, \exists U\in\mathcal{A} \colon B\subseteq U$.	
 \end{lemming}
 \begin{define}[Numero di Lebesgue.]~{}\\
-	Il numero $\delta$ descritto nell'enunciato del lemma è detto \textit{numero di Lebesgue} \index{numero di Lebesgue} del ricoprimento $\mathcal{A}$
+	Il numero $\delta$ descritto nell'enunciato del lemma è detto \textit{numero di Lebesgue} \index{numero di Lebesgue} del ricoprimento $\mathcal{A}$.
 \end{define}
 \begin{demonstration}
 	Siccome $X$ è compatto, allora $\mathcal{A}$ ammette un sottoricoprimento finito $\left\{ U_1,\dots,U_n \right\}$ di aperti. Si considerano i complementari $C_j\coloneqq X\setminus U_j$, chiusi in $X$:
@@ -1445,7 +1446,7 @@ Analizziamo alcuni casi di dimensione \textit{bassa}:
 			\begin{center}
 				\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.95]{images/projdiscindisc.pdf}
 			\end{center}
-			\item Qualunque cappio che va ‘‘oltre il bordo'' \textit{una volta}, attraversando il cammino banale e torna indietro al punto base \textit{non} è banale. Infatti, non possiamo ridurre il cammino ad un cappio sul piano (dato che non avremmo più i punti sul bordo \textit{antipodali}), al più possiamo ‘‘ruotarlo'' attorno al punto base per ottenere un'altro cappio omotopico al primo che attraversa sempre il bordo\footnote{Per semplicità, nelle figure abbiamo preso come punto il centro del disco. Questi ragionamenti e quelli successivi si adattano facilmente anche nel caso di un \textit{punto generico}, ponendo una leggera \textit{deformazione} al cappio in modo da fare rotazioni ‘‘lecite'', cioè che mantengono i punti del cammino posti sul bordo \textit{antipodali}.}.
+			\item Qualunque cappio che va ‘‘oltre il bordo'' \textit{una volta}, attraversando il cammino banale e torna indietro al punto base \textit{non} è banale. Infatti, non possiamo ridurre il cammino ad un cappio sul piano (dato che non avremmo più i punti sul bordo \textit{antipodali}), al più possiamo ‘‘ruotarlo'' attorno al punto base per ottenere un altro cappio omotopico al primo che attraversa sempre il bordo\footnote{Per semplicità, nelle figure abbiamo preso come punto il centro del disco. Questi ragionamenti e quelli successivi si adattano facilmente anche nel caso di un \textit{punto generico}, ponendo una leggera \textit{deformazione} al cappio in modo da fare rotazioni ‘‘lecite'', cioè che mantengono i punti del cammino posti sul bordo \textit{antipodali}.}.
 						\begin{center}
 				\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.95]{images/projdiscoverborder1.pdf}
 				\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.95]{images/projdiscoverborder2.pdf}
