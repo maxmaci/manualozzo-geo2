@@ -99,7 +99,7 @@ Il seguente teorema ci permette di caratterizzare i gruppi topologici di \textbf
 	\vspace{-3mm}
 \end{observe}
  Dimostriamo un lemma che generalizza il teorema \ref{unione sottospazi connessi} e che ci sarà utile nella dimostrazione successiva sulla connessione di alcuni gruppi topologici.
-\begin{lemming}[$Y$ connesso con fibre connesse tramite $f$ suriettiva aperta/chiusa implica $X$ connesso; Manetti, 4.18.]~{}\\
+\begin{lemming}[$Y$ connesso con fibre connesse tramite $f$ suriettiva aperta/chiusa implica $X$ connesso; Manetti, 4.18.]~{}\label{connessione e fibre}\\
 	Sia $\funz f X Y$ continua. Se $f$ è suriettiva aperta o chiusa, $Y$ è connesso e le fibre sono connesse, ovvero se $\forall y\in Y \ f^{-1}(y)$ è connesso, allora $X$ è connesso.
 \end{lemming}
 \begin{demonstration}
@@ -210,7 +210,7 @@ Poniamo allora $B=A^{-1}C$:
 			A\in\So(n) \implies \sum_{i=1}^n a_{ij}^2=1, \forall i=1,\dots,n \implies \sum_{i=1}^n a_{ij}^2=n \implies \So(n)\subseteq S_{\sqrt{n}}\subseteq\realset^{n\times n}
 		\end{gather*}
 	dove $S_{\sqrt{n}}$ è la sfera di raggio $\sqrt{n}$, dunque $\So(n)$ è limitato. Ne segue che anche $\U(n)$ e $\Su(n)$ lo sono, dunque sono tutti chiusi e limitati in $\realset^{n\times n}$, quindi compatti. \newline
-	Per dimostrare che sono \textit{connessi} si procede analogamente al teorema precedente sfruttando il lemma che lo precede. Si consideri $\funz p {\So(n)} {S^{n-1}\subseteq \realset^n}$ funzione prima colonna, essa è continua, suriettiva e chiusa in quanto è un compatto in un \textbf{Hausdorff}, e le sue fibra sono connesse:
+	Per dimostrare che sono \textit{connessi} si procede analogamente al teorema precedente sfruttando il lemma \ref{connessione e fibre}. Si consideri $\funz p {\So(n)} {S^{n-1}\subseteq \realset^n}$ funzione prima colonna, essa è continua, suriettiva e chiusa in quanto è un compatto in un \textbf{Hausdorff}, e le sue fibra sono connesse:
 	\begin{equation*}
 		p^{-1}\left( \begin{psmallmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{psmallmatrix} \right) = \begin{psmallmatrix}
 			1      & 0 & \cdots & 0\\

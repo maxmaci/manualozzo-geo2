@@ -42,9 +42,9 @@ $2\iff3)$ Sono equivalenti: se $A$ è aperto e disgiunto da $B$ tale che $X=A\cu
 $1\implies2)$ Esiste $\emptyset\subsetneqq A \subsetneqq X$ con $A$ aperto e chiuso. Allora basta porre $B=\mathcal{C}A=X\setminus A$: essendo il complementare di $A$ è aperto e chiuso, sono disgiunti e tali per cui $B\neq X,\ B\neq \emptyset$. $A$ e $B$ soddisfano la tesi.\\
 $1\implies2)$ $A$ aperto, $B$ aperto $\implies A$ chiuso perché $A=\mathcal{C}X=X\setminus B$. Inoltre $A$ non vuoto, $B$ non vuoto $\implies A\neq X$. Dunque $A$ è aperto, chiuso e $A\neq \emptyset,\ X$ e pertanto soddisfa la tesi: esiste un sottoinsieme aperto e chiuso che non il vuoto o l'insieme stesso.
 \end{demonstration}
-\begin{observe}
-	Il lemma \ref{sconnesso} \textsc{(Manetti, 4.2)} ci dice che è sufficiente trovare solo due aperti (o chiusi) che soddisfano la condizione di cui sopra per affermare la sconnessione. Viceversa, per dimostrare la connessione, dobbiamo dimostrare che per ogni coppia di aperti (o chiusi) non vuoti, la cui unione è $X$, essi non siano disgiunti.
-\end{observe}
+\begin{tips}
+	Il lemma \ref{sconnesso} (Manetti, 4.2) ci dice che è sufficiente trovare solo due aperti (o chiusi) che soddisfano la condizione di cui sopra per affermare la sconnessione. Viceversa, per dimostrare la connessione, dobbiamo dimostrare che per ogni coppia di aperti (o chiusi) non vuoti, la cui unione è $X$, essi non siano disgiunti.
+\end{tips}
 \begin{examples} Esempi di spazi topologici \textit{sconnessi} in topologia Euclidea:
 	\begin{itemize}
 		\item $X=\realset\setminus\left\{0\right\}=\left(-\infty,\ 0\right)\cup \left(0,\ +\infty\right)$.
@@ -52,7 +52,7 @@ $1\implies2)$ $A$ aperto, $B$ aperto $\implies A$ chiuso perché $A=\mathcal{C}X
 	\end{itemize}
 \vspace{-3mm}
 \end{examples}
-\begin{lemming}[Un connesso è disgiunto o sottoinsieme di un aperto e chiuso; Manetti, 4.4.]~{}\\
+\begin{lemming}[Connesso è disgiunto o sottoinsieme di un aperto/chiuso; Manetti, 4.4.]~{}\\
 Sia $X$ spazio topologico e $A\subseteq X$ con $A$ aperto e chiuso. Sia $Y\subseteq X,\ Y$ \textit{connesso}. Allora $Y\cap A=\emptyset$ (cioè $Y\subseteq Y\setminus A$) oppure $Y\subseteq A$.
 \end{lemming}
 \begin{demonstration}
@@ -569,7 +569,7 @@ Un sottospazio $K\subseteq \realset$ è compatto $\iff K$ chiuso e limitato.
 	$\impliesdx$ Siccome $\realset$ è di \textbf{Hausdorff} e $K$ è compatto allora per il teorema precedente $K$ è chiuso.\newline
 	Per vedere che è limitato consideriamo un ricoprimento aperto $\mathcal{A}=\left\{ (-n,\ n)\cap K\right\}_{n\in\naturalset}$ di $K$. Siccome è compatto allora esiste un sottoricoprimento finito, ovvero:
 	\begin{gather*}
-		K\subseteq (-n_1,\ n_1)\cup\dots\cup(-n_m,\ n_m) \implies K\subseteq (-M,\ M), \ M\coloneqq \max m_i
+		K\subseteq (-n_1,\ n_1)\cup\dots\cup(-n_m,\ n_m) \implies K\subseteq (-M,\ M), \ M\coloneqq \max n_i
 	\end{gather*}
 	quindi $K$ è limitato. \newline
 	$\impliessx $ $K$ è limitato, quindi $K\subseteq [-n, \ n]$, che è compatto e $K$ è chiuso per ipotesi, dunque per il teorema \ref{chiuso in compatto} è compatto.

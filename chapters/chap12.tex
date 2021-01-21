@@ -270,7 +270,7 @@ Quindi, la segnatura di una conica è definita solo ‘‘a meno del segno'', ne
 \section{Curve algebriche piane affini e chiusura proiettiva}
 Siccome abbiamo interpretato il piano proiettivo come un'\textit{estensione} di quello affine, possiamo confrontare la classificazione delle curve nel piano proiettivo con la \textit{classificazione nel caso affine}.
 \begin{define}[Curva algebrica piana affine.]~{}\\
-	Una \textbf{curva algebrica piana affine}\index{curva!algebrica!affine} $C$ di $\aff{\kamp^2}$ è il luoghi degli zeri dato da un polinomio omogeneo $f\in\kamp\left[x,\ y\right]$:
+	Una \textbf{curva algebrica piana affine}\index{curva!algebrica!affine} $C$ di $\aff{\kamp^2}$ è il luoghi degli zeri dato da un polinomio $f\in\kamp\left[x,\ y\right]$:
 \begin{equation}
 	C=\left\{\left(x,\ y\right)\in\proj[2]{\ }\mid f\left(x,\ y\right)=0\right\}
 \end{equation}
@@ -343,7 +343,7 @@ Se $P=(1\colon x\colon y)\in U_0$  allora $f\left(x,\ y\right)=F\left(P\right)$ 
 	Consideriamo ora le loro \textit{chiusure proiettive reali} tramite l'omogeneizzazione, cioè le coniche proiettive $\overline{C_i}$ in $\proj[2]{\realset}$:
 		\begin{equation*}
 		\begin{array}{cl}
-			\overline{C_1} \colon & x_0x_1=x_1^2\\[1mm]
+			\overline{C_1} \colon & x_0x_2=x_1^2\\[1mm]
 			\overline{C_2} \colon & x_1^2+x_2^2=x_0^2\\[1mm]
 			\overline{C_3} \colon & x_1^2-x_2^2=x_0^2
 		\end{array}
@@ -456,7 +456,7 @@ Con $b\in\complexset^2$ e $A\in\gl(2,\complexset)$ ad una delle cinque coniche:
 I polinomi omogenei in \textit{due variabili} si comportano per alcuni aspetti come polinomi in \textit{una sola variabile}.\\
 Sia $F\in\kamp[x_0x_1]$ un polinomio omogeneo di grado $d$, costituito da $d+1$ monomi:
 \begin{equation*}
-	F=a_0x_0^d+a_1x_0^{d-1}x_1+a_2x_0^{d-2}x_2^2+\ldots + a_{d-1}x_0x_1^{d-1}a_dx_1^d
+	F=a_0x_0^d+a_1x_0^{d-1}x_1+a_2x_0^{d-2}x_2^2+\ldots + a_{d-1}x_0x_1^{d-1}+a_dx_1^d
 \end{equation*}
 Ricordiamo che vedendo $\left(x_0\colon x_1\right)\in\proj[1]{\ }$, allora $F$ ha degli zeri su $\proj[1]{\ }$, ovvero $F\left(P\right)=0$ è ben posto per $P=(a\colon b)\in\proj[1]{\ }$.
 \begin{define}[Annullarsi in un punto.]~{}\\
@@ -1036,11 +1036,11 @@ Questo ci permette di dare alcune informazioni aggiuntive sui punti base:
 	Dato un fascio $\mathcal{F}$ di coniche, i punti base del fascio sono dati dall'intersezione di \textit{due qualsiasi coniche} del fascio purché siano \textit{distinte}, ovvero da $C\cap\widetilde{C}$ dove $C$ e $\widetilde{C}$ sono due coniche distinte del fascio.
 \end{tips}
 %così è molto più facile intersecare coppie di rette
-\begin{observe}
+\begin{tips}
 	Sia $\mathcal{F}$ un fascio di coniche. Esiste \textit{sempre} una conica $C$ degenere in $\mathcal{F}$, quindi usiamo $C$ per calcolare i punti base.\\
 	Siccome è degenere, $C$ è l'unione di due rette linearmente indipendenti: $C=l_1\cup l_2$. Scegliamo una qualsiasi altra conica $\widetilde{C}$ del fascio; i punti base del fascio sono dati da $C\cap\widetilde{C}=(l_1\cap\widetilde{C})\cup (l_2\cap \widetilde{C})$.\\
 	Ne deduciamo che il numero di punti base di un fascio di coniche, se sono finiti, sono 4: infatti, ciascuna delle due rette interseca $\widetilde{C}$ al più in 2 punti.
-\end{observe}
+\end{tips}
 
 \begin{corollary}[Intersezione di due coniche.]~{}\\
 	Se due coniche $C_1$ e $C_2$ \textit{non} hanno una retta in comune allora:

@@ -416,7 +416,7 @@ $\implies a\circ b\sim Id_Z$.
 \begin{examples}~{}
 	\begin{enumerate}
 		\item $\realset^n$ è contraibile: si veda l'osservazione precedente.
-		\item Dall'esempio seguente, per transitività del tipo di equivalenza, si può affermare che \textit{tutti} i $\realset^n$ sono tutti omotopicamente equivalenti tra di loro.
+		\item Dall'esercizio precedente, per transitività del tipo di equivalenza, si può affermare che \textit{tutti} i $\realset^n$ sono tutti omotopicamente equivalenti tra di loro.
 		\item Ogni sottospazio $X\subseteq \realset^n$ \textit{convesso} è contraibile.
 		\item Ogni sottospazio $X\subseteq \realset^n$ \textit{stellato} è contraibile.
 	\end{enumerate}
@@ -487,7 +487,7 @@ Se $X$ e $Y$ sono omotopicamente equivalenti, allora:
 		\end{equation*}
 		Possiamo usare $F$ per costruire, ad $y\in Y$ fissato, un arco in $Y$ che collega $y$ ad un punto di $f\left(X\right)\subseteq Y$. Infatti, consideriamo $\funz{\alpha}{I}{Y}$ dato da $\alpha\left(t\right)=\mvf{F}{y}{t}$:
 \begin{itemize}
-\item $\alpha$ è continua perché lo sono $f$ e $g$.
+\item $\alpha$ è continua perché lo è $F$.
 \item $\alpha\left(0\right)=\mvf{F}{y}{0}=f\left(g\left(y\right)\right)\in f\left(X\right)\subseteq Y,\ \alpha\left(1\right)=\mvf{F}{y}{1}=y$.
 \end{itemize}
 $\impliesdx$ Supponendo $X$ \textbf{c.p.a.}, allora $f\left(X\right)$ è \textbf{c.p.a.}. Per i ragionamenti appena fatti abbiamo che ogni punto di $Y$ ha un arco che lo collega ad un punto di $f\left(X\right)$, dunque per giunzione di cammini anche $Y$ è \textbf{c.p.a.}.\\
@@ -564,7 +564,7 @@ Se $r$ è una retrazione, per costruzione è suriettiva, dunque $A$ \textbf{ered
 	\end{equation*}
 Considero ora l'inclusione, definendo per comodità $X=\realset^n\setminus\left\{\mathbf{0}\right\}$:
 \begin{equation*}
-	\funz{i}{S^{n-1}}{X}\quad 		\funztot{r}{X}{X}{\mathbf{x}}{\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}}\implies \widetilde{r}\coloneqq\funztot{ i\circ r}{X}{X}{\mathbf{x}}{\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}}
+	\funz{i}{S^{n-1}}{X}\quad 		\funztot{r}{X}{S^{n-1}}{\mathbf{x}}{\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}}\implies \widetilde{r}\coloneqq\funztot{ i\circ r}{X}{X}{\mathbf{x}}{\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}}
 \end{equation*}
 Vogliamo che $\widetilde{r}$ sia omotopa a $Id_X$.
 Osserviamo che $\forall \mathbf{x}\in\realset^n\setminus\left\{\mathbf{0}\right\}=X$ il segmento da $\mathbf{x}$ a $\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}$ non contiene, per costruzione, l'origine: allora esso è interamente contenuto in $\realset^n\setminus \left\{\mathbf{0}\right\}=X$. Dunque, riprendendo l'osservazione di pag. \pageref{omotopiasegmento} definiamo l'omotopia:
@@ -615,7 +615,7 @@ Un \textbf{bouquet}\index{bouquet di circonferenze} \textbf{di} $n$ \textbf{circ
 		\end{equation*}
 		Infatti $F$ è banalmente ben definita continua, con $\mvf{F}{\mathbf{x}}{0}=\left(x,\ y,\ 0\right)=\widetilde{r}\left(\mathbf{x}\right)$ e $\mvf{F}{\mathbf{x}}{1}=\left(x,\ y,\ z\right)=Id_{\widetilde{X}}\left(\mathbf{x}\right)$.\\
 		Segue che $\widetilde{X}$, e dunque anche $X$ per omeomorfismo, ha la stessa omotopia di $\realset^2\setminus\left\{2\text{ punti}\right\}$ e di un \textit{bouquet di due circonferenze}.
-		\item Se le due rette sono \textbf{incidenti}, a meno di omeomorfismi si intersecano nell'origine. Consideriamo dunque $X=\realset^3\left\{r_1\cup r_2\right\}$ e lo spazio $A=S^2\setminus\left\{P_1,\ P_2,\ Q_1,\ Q_2\right\}$. Se prendiamo la retrazione:
+		\item Se le due rette sono \textbf{incidenti}, a meno di omeomorfismi si intersecano nell'origine. Consideriamo dunque $X=\realset^3\setminus\left\{r_1\cup r_2\right\}$ e lo spazio $A=S^2\setminus\left\{P_1,\ P_2,\ Q_1,\ Q_2\right\}$. Se prendiamo la retrazione:
 		\begin{equation*}
 			\funztot{r}{X}{A}{\mathbf{x}}{\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}}.
 		\end{equation*}

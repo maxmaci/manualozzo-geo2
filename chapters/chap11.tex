@@ -58,7 +58,7 @@ Si denota con $\funz{\pi}{V\setminus\left\{0\right\}}{\proj{V}}$ la \textbf{proi
 	\end{equation}
 In altre parole, possiamo pensare a $\proj{V}$ come l'insieme delle \textbf{rette vettoriali} in $V$.
 \end{observe}
-\begin{define}[Altre nomenclature proiettive.]~{}\\
+\begin{define}[Altre nomenclature proiettive.]~{}
 	\begin{itemize}
 		\item Se $\dim V=1$, allora $\proj{V}$ è un \textbf{punto}\index{punto!proiettivo} e $\dim\proj{V}=0$.
 		\item Se $\dim \proj{V}=1$, si parla di \textbf{retta proiettiva}\index{retta!proiettiva}.
@@ -236,7 +236,7 @@ Posto dunque $t$ come il numero delle \textit{equazioni}, notiamo che:
 	\shortparallel &  \\
 	\dim V-\dim W &=&\dim\proj{V}-\dim\proj{W}=\codim\proj{W}
 \end{array}\\
-	\implies t\geq \rk\left(A\right)=\codim\proj{W}
+	\implies t\geq \rk\left(A\right)=\codim\proj{W}\text{   e   }\dim\proj{W}=\proj{V}-\rk\left(A\right)
 	\end{array}
 \end{equation*}
 \textit{Scartando} delle equazioni possiamo sempre ricondurci ad un sistema in cui:
@@ -312,7 +312,7 @@ Come per i sottospazi vettoriali, in generale l'\textbf{unione} di due sottospaz
 \end{define}
 \begin{itemize}
 	\item $\left<S\right>=S\iff S$ è un sottospazio proiettivo.
-	\item Se $S=\left\{P_1,\ \ldots,\ P_m\right\}$ è finito, scriviamo $\left<P_1,\ \ldots,\ P_m\right>$ per il sottospazio generato da $P_1,\ \ldots,\ P_m$.
+	\item Se $S=\left\{P_1,\ \ldots,\ P_m\right\}$ è finito, scriviamo $\left<P_1,\ \ldots,\ P_m\right>$ per il sottospazio generato da $P_1,\ \ldots,\ P_m$; se, sono linearmente indipendenti, $\dim \left<P_1,\ \ldots,\ P_m\right>=m-1$.
 \end{itemize}
 \begin{define}[Sottospazio somma.]~{}\\
 	Dati due sottospazi proiettivi $T_1,\ T_2\subseteq \proj{V}$, cioè:
@@ -551,7 +551,7 @@ Inoltre, se $\basis'=\left\{f_0,\ \ldots,\ f_n\right\}$ è un'altra base di $V$ 
 		v_{n+1}=\lambda_0v_0+\ldots+\lambda_nv_n\quad \lambda_i\in\kamp
 	\end{equation*}
 	Ma allora, per l'osservazione precedente, $\lambda_i\neq 0\ \forall i$ perché i punti sono in posizione generale.\\
-	Consideriamo $_0=\lambda_0v_0,\ e_1=\lambda_1v_1,\ \ldots,\ e_n=\lambda_nv_n$. Si ha che $\basis=\left\{e_0,\ \ldots,\ e_n\right\}$ è una base di $V$ perché $\lambda_i\neq 0$\ $\forall i$. Segue che:
+	Consideriamo $e_0=\lambda_0v_0,\ e_1=\lambda_1v_1,\ \ldots,\ e_n=\lambda_nv_n$. Si ha che $\basis=\left\{e_0,\ \ldots,\ e_n\right\}$ è una base di $V$ perché $\lambda_i\neq 0$\ $\forall i$. Segue che:
 	\begin{gather*}
 		\left[e_i\right]=\left[v_i\right]=P_i\ \forall i=0,\ \ldots,\ n\\
 		\left[e_0+\ldots+e_n\right]=\left[\lambda_0v_0+\ldots+\lambda_nv_n\right]=\left[v_{n+1}\right]=P_{n+1}
@@ -587,7 +587,7 @@ $e_0,\ \ldots,\ e_n$ è una base: per l'unicità della scrittura deve essere $\m
 		\item $\widetilde{\phi}$ \textbf{è ben definita}:
 		\begin{enumerate}
 			\item $\phi\left(v\right)\neq 0$ perché $v\neq 0$ e $\phi$ è iniettiva, pertanto $\ker\phi=\left\{0\right\}$ e dunque l'unico vettore mappato a $0$ tramite $\phi$ è solo $0$.
-			\item Se $\left[v\right]=\left[w\right]$, allora $w\sim v$, cioè $w=\lambda v$ con $\lambda\in\kamp\setminus\left\{0\right\}$; segue che per linearità di $\phi$ $\phi\left(w\right)=\lambda \left(v\right)\implies \left[\phi\left(w\right)\right]=\left[\phi\left(v\right)\right]$
+			\item Se $\left[v\right]=\left[w\right]$, allora $w\sim v$, cioè $w=\lambda v$ con $\lambda\in\kamp\setminus\left\{0\right\}$; segue che per linearità di $\phi$ vale $\phi\left(w\right)=\lambda \phi\left(v\right)\implies \left[\phi\left(w\right)\right]=\left[\phi\left(v\right)\right]$
 		\end{enumerate}
 		\item $\widetilde{\phi}$ \textbf{è iniettiva}: se $\widetilde{\phi}\left(\left[v\right]\right)=\widetilde{\phi}\left(\left[w\right]\right)$, allora
 		\begin{equation*}
@@ -607,9 +607,9 @@ Dato che spazi \textit{vettoriali} della \textit{stessa dimensione} sono sempre 
 \vspace{-6mm}
 \end{lemming}
 \begin{demonstration}~{}\\
-$\impliessx$ Se $v\in\kamp\setminus\left\{0\right\}$, allora $\psi\left(v\right)=\lambda\psi\left(v\right)$. Segue:
+$\impliessx$ Se $v\in\kamp\setminus\left\{0\right\}$, allora $\psi\left(v\right)=\lambda\phi\left(v\right)$. Segue:
 \begin{equation*}
-	\implies \widetilde{\psi}\left(\left[v\right]\right)=\left[\psi\left(v\right)\right]=\left[\psi\left(v\right)\right]=\widetilde{\psi}\left(\left[v\right]\right)
+	\implies \widetilde{\phi}\left(\left[v\right]\right)=\left[\phi\left(v\right)\right]=\left[\psi\left(v\right)\right]=\widetilde{\psi}\left(\left[v\right]\right)
 \end{equation*}
 $\impliesdx$ Sia $h\coloneqq \funz{\phi^{-1}\circ \psi}{V}{V}$ automorfismo. Vogliamo mostrare che $h=\lambda Id_V$ con $\lambda\in\kamp\setminus\left\{0\right\}$. Se $v\in V\setminus\left\{0\right\}$, abbiamo:
 \begin{equation*}
@@ -1641,8 +1641,8 @@ Vogliamo ora scoprire come si calcola il birapporto non solo nel sistema di rife
 				\lambda_2 & \lambda_3 \\
 				\mu_2 & \mu_3
 			\end{array} \right| } { \left| \begin{array}{cc}
-			\lambda_2 & \lambda_3 \\
-			\mu_2 & \mu_3
+			\lambda_1 & \lambda_3 \\
+			\mu_1 & \mu_3
 		\end{array} \right| \cdot \left| \begin{array}{cc}
 		\lambda_2 & \lambda_4 \\
 		\mu_2 & \mu_4

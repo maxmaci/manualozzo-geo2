@@ -65,7 +65,7 @@ Vediamo ora un esempio di identificazione chiusa e non aperta.
 		\funztot f {[0, \ 2\pi]} {S^1} t {(\cos t, \ \sin t)}
 	\end{equation*}
 	È una funzione continua, suriettiva e chiusa (compatto in \textbf{Hausdorff}), dunque è un'identificazione chiusa. \\
-	Tuttavia $f$ non è aperta, infatti dato $A=[0, \ 1)\subseteq [0, \ 2\pi]$ aperto, ma $f(A)$ non è aperto in $S^1$.
+	Tuttavia $f$ non è aperta: preso l'aperto $A=[0, \ 1)\subseteq [0, \ 2\pi]$, $f(A)$ non è aperto in $S^1$.
 		\begin{center}
 			\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.9]{images/half_circle-eps-converted-to.pdf}
 		\end{center}
@@ -74,7 +74,7 @@ Vediamo ora un esempio di identificazione chiusa e non aperta.
 \begin{observe}
 	Gli omeomorfismi sono identificazioni chiuse e aperte.
 \end{observe}
-Che relazione c'è fra le identificazioni ed i quozienti dati da relazioni di equivalenza?
+Che relazione c'è fra identificazioni ed quozienti dati da relazioni di equivalenza?
 \begin{theorema}[Proprietà universale delle identificazioni; Manetti, 5.6.]~{}\\
 \begin{minipage}[t]{0.83\textwidth}
 		Dati $X,Y,Z$ spazi topologici, $g$ una qualsiasi funzione continua, $f$ identificazione con le mappe come in figura, allora:
@@ -121,8 +121,7 @@ In particolare, se $\sim$ è la relazione d'equivalenza indotta da $f$, e dunque
 \begin{equation}
 	\overline{f} \text{ omeomorfismo} \iff f \text{ identificazione}
 \end{equation}
-\vspace{-1.5mm}
-Riprendiamo l'esempio precedente ed esaminiamolo in termini di spazio quoziente.
+\vspace{-1.5mm}\noindent Riprendiamo l'esempio precedente ed esaminiamolo in termini di spazio quoziente.
 \begin{example}~{$\nicefrac{D^n}{\sim}\cong S^n$}\\
 	Consideriamo il caso $n=1$:
 	\begin{equation*}
@@ -137,11 +136,11 @@ Riprendiamo l'esempio precedente ed esaminiamolo in termini di spazio quoziente.
 	\end{equation*} \newline
 	Si può generalizzare in dimensione $n$ con l'identificazione:
 	\begin{equation*}
-		\funztot f {D^n} {S^n} x {\left( 2x\sqrt{1- \| \underline{x} \|^2}, \ 2\| \underline{x}\|^2 -1 \right)}
+		\funztot f {D^n} {S^n} {\mathbf{x}} {\left( 2\mathbf{x}\sqrt{1- \| \mathbf{x} \|^2}, \ 2\| \mathbf{x}\|^2 -1 \right)}
 	\end{equation*}
 	Dunque $\nicefrac{D^n}{\sim}\cong S^n$ per la relazione:
 \begin{equation*}
-	\underline{x}\sim \underline{y} \iff \underline{x}=\underline{y} \vee \labs \underline{x} \rabs ^2 = 1 = \| \underline{y} \| ^2
+	\mathbf{x}\sim \mathbf{y} \iff \mathbf{x}=\mathbf{y} \vee \labs \mathbf{x} \rabs ^2 = 1 = \| \mathbf{y} \| ^2
 \end{equation*}
 	In altre parole, ogni punto interno è \textit{in relazione con sé stesso} e tutti i punti sul bordo sono \textit{identificati} in un unica classe.
 \end{example}
@@ -234,10 +233,10 @@ Vogliamo definire una relazione di equivalenza che lasci ‘‘separate'' solo l
 	\end{gather*}
 \textsc{Proprietà}:
 \begin{enumerate}
-	\item $Y\coloneqq \nicefrac{X}{\sim}$ è c.p.a., infatti se i punti $(x, \ \alpha)$ e $(y, \ \beta)$ sono tali che $x\neq 0 \neq y$ basta prendere il segmento $\overline{xy}$ sulla retta $\realset\times\{a\}$ e proiettarlo. Per unire $(0,\ a)$ e $(0, \ b)$ basta unire entrambi con un cammino al punto $(1, \ a)=(1, \ b)$
-	\item $Y$ non è di \textbf{Hausdorff}: tutti gli intorni di $(0, \ a)$ si intersecano con tutti gli intorni di $(0, \ b)$
+	\item $Y\coloneqq \nicefrac{X}{\sim}$ è c.p.a., infatti se i punti $[(x, \ \alpha)]$ e $[(y, \ \beta)]$ sono tali che $x\neq 0 \neq y$ basta prendere il segmento $\overline{xy}$ sulla retta $\realset\times\{a\}$ e proiettarlo. Per unire $[(0,\ a)]$ e $[(0, \ b)]$ basta unire entrambi con un cammino al punto $[(1, \ a)]=[(1, \ b)]$
+	\item $Y$ non è di \textbf{Hausdorff}: tutti gli intorni di $[(0, \ a)]$ si intersecano con tutti gli intorni di $[(0, \ b)]$.
 	\item $Y$ è \textit{localmente omeomorfo} a $\realset$, infatti ogni punto ha un intorno omeomorfo ad un intervallo aperto di $\realset$
-	\item $\exists K_1, K_2\subseteq Y$ compatti tali per cui $K_1\cap K_2$ \textit{non} è compatto: basta prendere $K_1=\pi\left([-1, \ 1]\times \{a\} \right)$ e $K_1=\pi\left([-1, \ 1]\times \{a\} \right)$ compatti in $Y$, ma $K_1\cap K_2= [-1,\ 0) \cup (0,\ 1]$ \textit{non} è compatto in $Y$
+	\item $\exists K_1, K_2\subseteq Y$ compatti tali per cui $K_1\cap K_2$ \textit{non} è compatto: basta prendere $K_1=\pi\left([-1, \ 1]\times \{a\} \right)$ e $K_2=\pi\left([-1, \ 1]\times \{b\} \right)$ compatti in $Y$, ma $K_2\cap K_2= [-1,\ 0) \cup (0,\ 1]$ \textit{non} è compatto in $Y$.
 \end{enumerate}
 \subsection{Quoziente di Hausdorff}
 Cerchiamo ora delle condizioni per avere un \textit{quoziente di} \textbf{Hausdorff}.

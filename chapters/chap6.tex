@@ -79,11 +79,11 @@ Allora esiste in particolare $E\subseteq X$ numerabile tale che:
 \end{equation*}
 Se consideriamo ora $\widetilde{\mathcal{A}}\coloneqq\left\{U_x\mid x\in E\right\}$, notiamo che:
 \begin{itemize}
-	\item $\widetilde{A}\subseteq A$.
-	\item $\widetilde{A}$ è numerabile perché lo è $E$.
+	\item $\widetilde{\mathcal{A}}\subseteq \mathcal{A}$.
+	\item $\widetilde{\mathcal{A}}$ è numerabile perché lo è $E$.
 	\item $X=\union_{B_x\in\widetilde{\basis}}B_x=\union_{x\in E}B_x\subseteq \union_{x\in E}U_x $.
 \end{itemize}
-Segue che $\widetilde{\mathcal{A}}$ è un sottoricoprimento numerabile di $A$.
+Segue che $\widetilde{\mathcal{A}}$ è un sottoricoprimento numerabile di $\mathcal{A}$.
 \end{demonstration}
 \begin{define}[Spazio separabile.]~{}\\
 Uno spazio topologico $X$ si dice \textbf{separabile}\index{spazio!separabile} se contiene un sottoinsieme $E$ \textit{denso} e \textit{numerabile}.
@@ -123,14 +123,14 @@ $\impliessx$ Sia $E\subseteq X$ sottoinsieme numerabile e denso e consideriamo:
 	\basis=\left\{B_{\nicefrac{1}{n}}\left(e\right)\mid e\in E,\ n\in \naturalset\right\}
 \end{equation*}
 Questo insieme è numerabile: mostriamo che sia una base. Per far ciò fissiamo $U\subseteq X$ aperto e prendiamo $x\in U$: vogliamo trovare un aperto di $\basis$ contenuto in $U$ contenente $x$.\footnote{Gli elementi della base sono già aperti banalmente. Per l'arbitrarietà di $x$, troviamo un ricoprimento aperto di $U$ costituito da aperti di $\basis$ contenuto interamente in $U$, cioè $\displaystyle U=\union_{i\in I}B_i$.}\\
-Sia $n\in\naturalset$ tale che $B_{\nicefrac{1}{n}}\left(x\right)\subseteq$. Cerchiamo opportuni $e\in E,\ m\in\naturalset$ tale che:
+Sia $n\in\naturalset$ tale che $B_{\nicefrac{1}{n}}\left(x\right)\subseteq U$. Cerchiamo opportuni $e\in E,\ m\in\naturalset$ tale che:
 \begin{equation*}
 x\in B_{\nicefrac{1}{m}}\left(e\right)\subseteq B_{\nicefrac{1}{n}}\left(x\right)\subseteq U
 \end{equation*}
 Consideriamo la palla $B_{\nicefrac{1}{2n}}\left(x\right)$. Siccome $E$ è denso in $X$, $\exists e\in E\cap B_{\nicefrac{1}{2n}}\left(x\right)$.\\
 Prendiamo ora la balla $B_{\nicefrac{1}{2n}}\left(e\right)\in\basis$:
 \begin{itemize}
-	\item \textit{contiene} $x$ perché se $e\in B_{\nicefrac{1}{2n}}\left(x\right)\implies \mvf{d}{e}{y}<\frac{1}{2n}\implies x\in B_{\nicefrac{1}{2n}}\left(e\right)$
+	\item \textit{contiene} $x$ perché se $e\in B_{\nicefrac{1}{2n}}\left(x\right)\implies \mvf{d}{e}{x}<\frac{1}{2n}\implies x\in B_{\nicefrac{1}{2n}}\left(e\right)$
 	\item $B_{\nicefrac{1}{2n}}\left(e\right)\subseteq B_{\nicefrac{1}{n}}\left(x\right)\subseteq U$; infatti, preso $y\in B_{\nicefrac{1}{2n}}\left(e\right)$ si ha:
 	\begin{equation*}
 		\mvf{d}{x}{y}\leq \mvf{d}{x}{e}+\mvf{d}{e}{y}<\frac{1}{2n}+\frac{1}{2n}=\frac{1}{n}
@@ -153,7 +153,7 @@ Consideriamo $X=\realset$ con la topologia avente come base:
 \end{equation}
 Mostriamo $\basis$ è base per una topologia, è separabile, primo numerabile ma \textit{non} è a base numerabile.
 \begin{itemize}
-	\item \textit{Base per una topologia}: usiamo il teorema delle basi (Manetti, 3.7), pag. \pageref{teoremabasi}.
+	\item \textbf{Base per una topologia}: usiamo il teorema delle basi (Manetti, 3.7), pag. \pageref{teoremabasi}.
 	\begin{enumerate}[label=\Roman*]
 		\item $\displaystyle X=\union_{B\in \basis}B$ è ovvio.
 		\item Prendiamo $A=\left[a,\ b\right),\ B=\left[c,\ d\right)$ e consideriamo:
@@ -162,12 +162,12 @@ Mostriamo $\basis$ è base per una topologia, è separabile, primo numerabile ma
 		\end{equation*}
 	Allora basta prendere $C=A\cap B\in\basis$ per soddisfare $x\in C\subseteq A\cap B$.
 	\end{enumerate}
-\item \textit{Separabile}: $E=\integerset$ è numerabile ed è denso perché vale sempre $\left[a,\ b\right)\cap \integerset \neq \emptyset$, dunque ogni aperto non vuoto interseca $E$; segue che $X$ è separabile.
-\item \textit{primo numerabile}: s $a\in\realset$ allora $\left\{\left[a,\ a+\frac{1}{n}\right)\right\}_{n\in\naturalset}$ è un sistema fondamentale di intorni di $a$ numerabile. Preso $U$ intorno di $a$, $\exists b>a$ tale che $\left[a,\ b\right)\subseteq U$; inoltre, $\exists n\in\naturalset$ tale che $a+\frac{1}{n}<b$, cioè:
+\item \textbf{Separabile}: $E=\rationalset$ è numerabile ed è denso perché vale sempre $\left[a,\ b\right)\cap \rationalset \neq \emptyset$, dunque ogni aperto non vuoto interseca $E$; segue che $X$ è separabile.
+\item \textbf{Primo numerabile}: s $a\in\realset$ allora $\left\{\left[a,\ a+\frac{1}{n}\right)\right\}_{n\in\naturalset}$ è un sistema fondamentale di intorni di $a$ numerabile. Preso $U$ intorno di $a$, $\exists b>a$ tale che $\left[a,\ b\right)\subseteq U$; inoltre, $\exists n\in\naturalset$ tale che $a+\frac{1}{n}<b$, cioè:
 \begin{equation*}
 \left[a,\ a+\frac{1}{n}\right)\subseteq\left[a,\ b\right)\subseteq U
 \end{equation*}
-\item \textit{Non a base numerabile}: presa una base $\widetilde{\basis}$ per $X$, mostriamo che non è numerabile. Sia $x\in\realset$. Allora:
+\item \textbf{Non a base numerabile}: presa una base $\widetilde{\basis}$ per $X$, mostriamo che non è numerabile. Sia $x\in\realset$. Allora:
 \begin{equation*}
 \left[x,\ \infty\right)=\union_{y>x}\left[x,\ y\right)
 \end{equation*}
