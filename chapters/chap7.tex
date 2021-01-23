@@ -18,15 +18,15 @@
 \end{introduction}
 \lettrine[findent=1pt, nindent=0pt]{F}{inora} abbiamo visto omeomorfismi tra spazi topologici sotto tanti aspetti diversi, definendo così rigorosamente quella che era l'intuizione del magico materiale elastico. Tuttavia, la definizione di omeomorfismo è molto rigida e possiamo osservare delle ‘‘\textit{equivalenze di forma}'' che non riesce pertanto a descrivere.\\
 Ad esempio, si possono considerare \textit{equivalenti} figure con lo stesso numero di buchi. Sotto questo punto di vista, la figura corrispondente alla lettera \textsf{\textbf{O}} e quella corrispondente a \textsf{\textbf{P}} sono \textit{equivalenti}, dato che hanno entrambe un solo buco, mentre \textsf{\textbf{X}} non lo è perché non ne ha. Allo stesso tempo, nessuna di queste è \textit{omeomorfa} all'altra: infatti, se togliamo dalle tre lettera/figure un punto come il nodo di raccordo delle ‘‘stanghette'' (o per \textsf{\textbf{O}} un punto qualunque), otteniamo per \textsf{\textbf{O}} una componente connessa, per \textsf{\textbf{P}} due e per \textsf{\textbf{X}} ben quattro distinte.\\
-Preceduto da un approfondimento delle componenti connesse (anche per archi), nel presente capitolo formalizzeremo questo tipo di equivalenza più debole e allo stesso tempo più ampia: l'\textbf{omotopia}.
+Preceduto da un approfondimento sulle componenti connesse (anche per archi), nel presente capitolo formalizzeremo questo tipo di equivalenza più debole e allo stesso tempo più ampia: l'\textbf{omotopia}.
 \section{Lemma di incollamento}
 \begin{lemming}[Lemma di incollamento.]~{}\label{lemmaincollamento}\\
 Siano $X,\ Y$ spazi topologici e $X=A\cup B$. Siano $\funz{f}{A}{Y}$ e $\funz{g}{B}{Y}$ continue tali che $f\left(x\right)=g\left(x\right)\ \forall x\in A\cap B$, cioè $f_{\mid A\cap B}=g_{\mid A\cap B}$.\\
 Consideriamo l'\textbf{incollamento}\index{incollamento} $\funz{h}{X}{Y}$ definito da:
 	\begin{equation}
 		h\left(x\right)=\begin{cases}
-			f\left(x\right)\ x\in A\\
-			g\left(x\right)\ x\in B
+			f\left(x\right),\ x\in A\\
+			g\left(x\right),\ x\in B
 		\end{cases}
 	\end{equation}
 	Se $A$ e $B$ sono entrambi aperti in $X$ (o entrambi chiusi in $X$), allora $h$ è continua.
@@ -34,7 +34,7 @@ Consideriamo l'\textbf{incollamento}\index{incollamento} $\funz{h}{X}{Y}$ defini
 \begin{demonstration}
 	Supponiamo $A$ e $B$ aperti. Sia $U\subseteq Y$ aperto. Allora:
 	\begin{equation*}
-		h^{-1}\left(U\right)=\underbrace{f^{-1}\left(U\right)}_{\subseteq A}\cap \underbrace{g^{-1}\left(U\right)}_{\subseteq B}
+		h^{-1}\left(U\right)=\underbrace{f^{-1}\left(U\right)}_{\subseteq A}\cup \underbrace{g^{-1}\left(U\right)}_{\subseteq B}
 	\end{equation*}
 Essendo $f,\ g$ continue, segue che $f^{-1}\left(U\right)$ è aperto in $A$ e $g^{-1}\left(U\right)$ è aperto in $B$.\\
 In quanto $A,\ B$ aperti, per definizione di aperto del sottospazio\footnote{Poiché un aperto del sottospazio è dato dall'intersezione del sottospazio con un aperto di $X$, se abbiamo che anche il sottospazio è aperto di $X$, l'intersezione è aperta: in questo caso ogni aperto del sottospazio è anche aperto di $X$.} $f^{-1}\left(U\right)$ e $g^{-1}\left(U\right)$ sono aperti su $X\implies h^{-1}\left(U\right)$ aperto.\\
@@ -68,13 +68,13 @@ Innanzitutto mostriamo che la relazione è di equivalenza:
 \begin{itemize}
 \item \textsc{Riflessiva}: $x\sim_C x$ è vero, dato che $\left\{x\right\}$ è sempre un connesso.
 \item \textsc{Simmetrica}: ovvia dalla definizione.
-\item \textsc{Transitiva}: Supponiamo $x\sim_C y,\ y\sim_C z$. Allora $\exists C,\ D\subseteq X$ connessi tale che $x,\ y\in C$ e $y,\ z\in D$. Allora $C\cup D$ contiene sia $x$ che $z$. Inoltre, essendo $y\in C\cap D\implies C\cap D\neq \emptyset$, dunque $C\cup D$ è un connesso: vale $x\sim_C z$.\\
-Mostriamo che le classi di equivalenza sono le componenti connesse per $x$.\\
+\item \textsc{Transitiva}: Supponiamo $x\sim_C y,\ y\sim_C z$. Allora $\exists C,\ D\subseteq X$ connessi tale che $x,\ y\in C$ e $y,\ z\in D$. Allora $C\cup D$ contiene sia $x$ che $z$. Inoltre, essendo $y\in C\cap D\implies C\cap D\neq \emptyset$, dunque $C\cup D$ è un connesso: vale $x\sim_C z$.
+\end{itemize}
+Mostriamo che le classi di equivalenza sono le componenti connesse per $x$, ovvero $C=C_0$ con $C$ componente connessa e $C_0$ classe di equivalenza.\\
 $\includedx$ Se $C\subseteq X$ è una componente connessa, allora $\forall x, y\in C$ si ha $x\sim_C y$, cioè $C$ è interamente contenuta in $C_0=[x]=[y]$ classe di equivalenza per $\sim_C$: $C\subseteq C_0$.\\
 $\includesx$ Sia $z\in C_0$ classe di equivalenza e sia $x\in C$ componente connessa. Allora: $x\sim_C z\implies \exists T\subseteq X \text{ connesso}\ \colon x,\ z\in T$.\\
 Consideriamo $C\cup T$. $C$ e $T$ sono connessi, $x\in C\cap T\implies C\cap T\neq \emptyset$: $C\cup T$ è ancora connessa. In quanto $C$ è componente connessa, poiché $C\subseteq C\cup T$, per definizione segue che $C=C\cup T$, cioè $T\subseteq C$. Allora $z\in C$ e $C_0\subseteq C$.
-\end{itemize}
-\vspace{-3mm}
+%\vspace{-3mm}
 \end{demonstration}
 \begin{define}[Componente c.p.a..]~{}\\
 Una \textbf{componente c.p.a.}\index{componente!c.p.a.} di $X$ è una classe di equivalenza per la relazione $\sim_A$ così definita:
@@ -137,7 +137,7 @@ Poiché $\alpha\ast\beta$ soddisfa le ipotesi del lemma di incollamento, essa è
 	\begin{equation*}
 		z\in A=C\implies z\in C\implies\text{\textbf{Assurdo!}}
 	\end{equation*}
-	Segue che \textit{non} esiste alcun cammino con punti esterni a $C$. Dunque $C$ è componente connessa di $X$.
+	Segue che \textit{non} esiste alcun cammino con punti esterni a $C$. Dunque $C$ è componente c.p.a. di $X$.
 \end{demonstration}
 \begin{example}
 	Ricordiamo l'esempio della \textit{pulce e il pettine}, cioè lo spazio $X\subseteq \realset^2$ descritto da:
@@ -173,7 +173,7 @@ Ricordando la definizione di \textit{segmento} (\pageref{segmento}, \autoref{seg
 È biunivoca ed, in particolare, è omeomorfismo.
 \end{observe}
 \begin{example}\label{convessoomotope}
-	Dato un sottospazio $Y\subseteq \realset^n$ \textit{convesso}, allora spazio topologico $X$ e per ogni funzione $\funz{f,\ g}{X}{Y}$ continua, allora $f$ e $g$ sono \textit{omotope}.
+	Dato un sottospazio $Y\subseteq \realset^n$ \textit{convesso}, per ogni spazio topologico $X$ e per ogni funzione $\funz{f,\ g}{X}{Y}$ continua, allora $f$ e $g$ sono \textit{omotope}.
 \end{example}
 \begin{demonstration}
 	L'omotopia è:
@@ -189,7 +189,7 @@ Ricordando la definizione di \textit{segmento} (\pageref{segmento}, \autoref{seg
 			{\left(x,\ t\right)} \arrow[r, maps to] & {\left(f\left(x\right),\ g\left(x\right),\ t\right)} \arrow[r, maps to] & \left(1-t\right)f\left(x\right)+tg\left(x\right)
 		\end{tikzcd}
 	\end{center}
-\item $F\left(x,\ 0\right)=f\left(x\right),\ F\left(x,\ 1\right)=g\left(x\right)\ \forall x\in X$.
+\item $F\left(x,\ 0\right)=f\left(x\right),\ F\left(x,\ 1\right)=g\left(x\right),\ \forall x\in X$.
 \end{itemize}
 \vspace{-3mm}
 \end{demonstration}

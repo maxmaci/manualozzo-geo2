@@ -229,7 +229,7 @@ Se $X$ \textit{non} è di \textbf{Hausdorff}, la stessa successione può converg
 \begin{observe}
 Se $X$ spazio metrico:
 \begin{equation}
-	a_n\textsc{ converge a } p\iff \forall \epsilon>0\ \exists n_0\ \colon \mvf{d}{x}{y}<\epsilon,\ \forall n\geq n_0
+	a_n\textsc{ converge a } p\iff \forall \epsilon>0\ \exists n_0\ \colon \mvf{d}{a_n}{p}<\epsilon,\ \forall n\geq n_0
 \end{equation}
 \vspace{-6mm}
 \end{observe}
@@ -248,7 +248,7 @@ Se $X$ spazio metrico:
 \begin{exercise}
 	Se $X$ è spazio metrico, allora:
 	\begin{equation}
-		p\textsc{ punto di accumulazione per } a_n\iff \forall \epsilon>0\ \exists n_0\ \colon \mvf{d}{x}{y}<\epsilon,\ \forall n\geq n_0
+		p\textsc{ punto di accumulazione per } a_n\iff \forall \epsilon>0,\ \exists n_0\ \colon \mvf{d}{a_n}{p}<\epsilon,\ \forall n\geq n_0
 	\end{equation}
 \vspace{-6mm}
 \end{exercise}
@@ -412,7 +412,7 @@ Dunque $\displaystyle\left\{\text{punti di accumulazione di} \left\{a_n\right\}\
 \end{itemize}
 Poiché $A_N=\left\{a_n\mid n\geq N\right\}\supseteq A_ {N+1}=\left\{a_n\mid n\geq N+1\right\}$, si ha:
 \begin{equation*}
-C_N=\overline{A_N}\subseteq \overline{A_{N+1}}=C_{N+1}
+C_N=\overline{A_N}\supseteq \overline{A_{N+1}}=C_{N+1}
 \end{equation*}
 Abbiamo trovato una successione di compatti contenuto l'uno nel successivo. Allora per la proposizione \ref{compattocontenuto} (pag. \pageref{compattocontenuto}, \textsc{(Manetti, 4.46)}). si ha che $\displaystyle\inter_{n\geq 1}C_N\neq \emptyset$.
 Segue che esiste un punto di accumulazione per la successione.
