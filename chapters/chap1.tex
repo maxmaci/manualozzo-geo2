@@ -87,7 +87,7 @@ In questo capitolo ci occuperemo dunque di introdurre questi concetti fondamenta
 		\begin{equation}
 			B_{\epsilon}\left(x\right)=\left\{y\in \realset\mid \left|x-y\right|<\epsilon\right\}
 		\end{equation}
-		nel seguente modo:
+		Nel seguente modo:
 		\begin{equation*}
 			A\subseteq \realset \text{ aperto } \left(A\in\eucl\right) \text{ se } \forall x\in A,\ \exists \epsilon>0\ \colon B_{\epsilon}\left(x\right)\subseteq A.
 		\end{equation*}
@@ -100,7 +100,7 @@ In questo capitolo ci occuperemo dunque di introdurre questi concetti fondamenta
 \vspace{-6mm}
 \end{examples}
 \begin{attention}
-	Non tutte le topologie sono indotte da una distanza! Definiamo la \textbf{topologia dei complementari finiti} o \textbf{topologia cofinita}\index{topologia!cofinita} sull'insieme $X$ nel modo seguente:
+	Non tutte le topologie sono indotte da una distanza! Se esiste una palla $B_\epsilon\left(x\right)$ che \textit{non} è aperta per qualunque distanza $d$, allora la topologia non è indotta da una metrica. Ad esempio, definiamo la \textbf{topologia dei complementari finiti} o \textbf{topologia cofinita}\index{topologia!cofinita} sull'insieme $X$ nel modo seguente:
 	\begin{gather*}
 		A\subseteq X \text{ aperto } \left(A\in CF\right) \text{ se }  X\setminus A \text{ è finito.}\\
 		C\subseteq X \text{ chiuso } \left(C\in CF\right) \text{ se }  C \text{ è finito.}
@@ -114,9 +114,8 @@ In questo capitolo ci occuperemo dunque di introdurre questi concetti fondamenta
 		\item Se $X$ è finito, la topologia $CF$ coincide con la topologia discreta: ogni sottoinsieme di $X$ è finito e dunque un aperto.
 		\item Se $X$ è infinito, ad esempio $\realset$, la topologia \textit{non} è quella discreta: $[0,\ 1]$ per la topologia discreta è un chiuso ma per quella $CF$ non lo è in quanto \textit{non} è finito.
 	\end{itemize}
-\vspace{-3mm}
+In uno spazio $\left(X,\ CF\right)$ infinito gli aperti non possono essere finiti, pertanto le palle aperte non sono aperte! La cofinita \textit{non} è dunque una topologia indotta da un metrica.
 \end{attention}
-
 \subsubsection{Norme esotiche}
 Possiamo definire su $\realset^n$ una famiglia di distanze dette \textbf{norme}\index{norma}; qui di seguito ne elenchiamo alcune. Definiti i punti $x=\left(x_1,\ldots, x_n\right),\ y=\left(y_1,\ldots, y_n\right)\in\realset^n$ abbiamo:
 \begin{multicols}{2}
@@ -133,7 +132,7 @@ Possiamo definire su $\realset^n$ una famiglia di distanze dette \textbf{norme}\
 	\[\mvf{d_p}{x}{y}=\sqrt[\leftroot{1}\uproot{3}p]{\sum_{i=1}^{n}\left|x_i-y_i\right|^p}\]
 \end{itemize}
 \end{multicols}
-Si ha $\displaystyle \lim_{p \to +\infty}d_p=d_\infty$. Valgono inoltre le seguenti disuguaglianze:
+\noindent Si ha $\displaystyle \lim_{p \to +\infty}d_p=d_\infty$. Valgono inoltre le seguenti disuguaglianze:
 \begin{equation}
 \forall x,\ y\in\realset^n\quad \mvf{d_\infty}{x}{y}\leq\mvf{d_2}{x}{y}\leq\mvf{d_1}{x}{y}\leq n\mvf{d_\infty}{x}{y}
 \end{equation}
@@ -212,7 +211,7 @@ $A\in\topo\implies\exists B_i\in\basis,\ i\in I\colon A=\union_{i\in I}B_i$.
 \vspace{-3mm}
 \end{define}
 \begin{attention}
-La base $\basis$ non è detto che sia una topologia! Ad esempio, le unioni sono aperti della topologia, ma non è detto che siano interni alla base $\basis$.
+La base $\basis$ non è detto che sia una topologia! Ad esempio, le unioni sono aperti della topologia, ma non è detto che siano interne alla base $\basis$.
 \end{attention}
 \begin{examples}~{}
 \begin{itemize}
@@ -262,10 +261,10 @@ Verifichiamo gli assiomi degli aperti su $\topo$.
 \end{equation*}
 \item Sia $A, B\in\topo$, cioè $A=\union_{i}A_i$ e $B=\union_{j}B_j$ con $A_i, B_j\in\basis$. Allora:
 \begin{equation*}
-A\cap B=\left(\union_{i}A_i\right)\cap\left(\union_{j}B_j\right)=\union_{i,\ j}\left(\underbrace{A_i\cap B_j}_{\in\topo\text{ per l'ipotesi }2}\right)\in\topo 
+A\cap B=\left(\union_{i}A_i\right)\cap\left(\union_{j}B_j\right)=\union_{i,\ j}\left(A_i\cap B_j\right)\in\topo 
 \end{equation*}
 \end{enumerate}
-\vspace{-6mm}
+Infatti, per seconda ipotesi vale $A_i\cap B_j=\union\{C\mid C\in\basis,\ C\subseteq A_i\cap B_j\}\in \topo,\ \forall i,\ j$.
 \end{demonstration}
 \begin{example}
 Sia $X=\realset$ e $\basis=\left\{[a,\ b)\mid a,\ b\in\realset\right\}$. Verifichiamo che $\basis$ soddisfa il teorema appena enunciato.
@@ -371,7 +370,7 @@ I\left(x\right)=\left\{V\subseteq X\mid V\text{ è intorno di }x \right\}
 \vspace{-6mm}
 \end{demonstration}
 \begin{define}[Sistema fondamentale di intorni.]~{}\\
-Sia $X$ spazio topologico, $x\in X$ e $I\left(x\right)$ la famiglia degli intorni di $x$. Una sottofamiglia $\mathcal{I}\subseteq I\left(x\right)$ è un \textbf{sistema fondamentale di intorni}\index{sistema fondamentale di intorni} di $x$ se $\forall U\in I\left(x\right), \exists V\in\mathcal{J}\ \colon V\subseteq U$.
+Sia $X$ spazio topologico, $x\in X$ e $I\left(x\right)$ la famiglia degli intorni di $x$. Una sottofamiglia $\mathcal{I}\subseteq I\left(x\right)$ è un \textbf{sistema fondamentale di intorni}\index{sistema fondamentale di intorni} di $x$ se $\forall U\in I\left(x\right)\ \exists V\in\mathcal{J}\ \colon V\subseteq U$.
 \end{define}
 \section{Funzioni continue}
 \begin{define}[Funzione continua.]~{}\\
@@ -412,7 +411,7 @@ Ricordiamo che per ogni funzione si ha:
 \item $f\left(f^{-1}\left(C\right)\right)\subseteq C$
 \item $A\subseteq f^{-1}\left(f\left(A\right)\right)$
 \end{itemize} 
-$\impliesdx$ Sia $A\subseteq X$. Dobbiamo dimostrare che $f\left(\overline{A}\right)\overline{f\left(A\right)}$. Sappiamo che se un insieme è contenuto in un altro, lo stesso vale per le immagini e le controimmagini. Allora:
+$\impliesdx$ Sia $A\subseteq X$. Dobbiamo dimostrare che $f\left(\overline{A}\right)\subseteq\overline{f\left(A\right)}$. Sappiamo che se un insieme è contenuto in un altro, lo stesso vale per le immagini e le controimmagini. Allora:
 \begin{gather*}
 f\left(A\right)\subseteq \overline{f\left(A\right)}\\
 A\subseteq f^{-1}\left(f\left(A\right)\right)\subseteq f^{-1}\left(\overline{f\left(A\right)}\right)
@@ -421,7 +420,7 @@ $f^{-1}\left(\overline{f\left(A\right)}\right)$ è un chiuso (in $X$ in quanto c
 Ma allora anche la chiusura, che è il più piccolo chiuso contenente $A$, è contenuta in $f^{-1}\left(\overline{f\left(A\right)}\right)$. Segue quindi:
 \begin{gather*}
 	\overline{A}\subseteq f^{-1}\left(\overline{f\left(A\right)}\right)\\
-	f\left(\overline{A}\right)\subseteq f\left(f^{-1}\left(f\left(A\right)\right)\right)\subseteq\overline{f\left(A\right)}
+	f\left(\overline{A}\right)\subseteq f\left(f^{-1}\left(\overline{f\left(A\right)}\right)\right)\subseteq\overline{f\left(A\right)}
 \end{gather*}
 $\impliessx$ Sia $C\subseteq Y$ chiuso e sia $A=f^{-1}\left(C\right)$. Dobbiamo dimostrare che $A$ è chiuso in $X$.
 Poiché $A\subseteq \overline{A}$ è vero per definizione, dimostriamo che $\overline{A}\subseteq A$. Per ipotesi:
@@ -477,25 +476,14 @@ Siano $X$, $Y$ spazi topologici e $\funz{f}{X}{Y}$ funzione.
 	\begin{equation*}
 		f\left(\union_{i}A_i\right)=\union_{i}f\left(A_i\right)
 	\end{equation*}
-\vspace{-6mm}
 \end{observe}
-\begin{attention}
-	Una funzione $f$ aperta che non sia omeomorfismo \textit{non} è necessariamente una funzione chiusa. Si prenda $\funztot{f}{\realset^2}{\realset}{\left(x,\ y\right)}{x}$ (la proiezione sulla prima coordinata):
-	\begin{itemize}
-		\item $f$ è \textit{continua} per ovvi motivi.
-		\item $f$ è \textit{aperta}. Infatti, presa una base su $\realset^2$ come $\left\{B_{\epsilon}\left(x,\ y\right)\right\}$, si ha che $f\left(B_{\epsilon}\left(x,\ y\right)\right)=\left(x-\epsilon,\ x+\epsilon\right)$ che sono aperti in $\realset$.
-		\item $f$ \textit{non} è \textit{chiusa}. Prendiamo $C=\left\{\left(x,\ y\right)\in \realset^2\mid xy=1 \right\}$ e definiamo la funzione $\funztot{g}{\realset^2}{\realset}{\left(x,\ y\right)}{xy}$ continua; vediamo facilmente come $C=g^{-1}\left(\left\{1\right\}\right)$ e, essendo ${1}$ chiuso in $\mathrm{R}$, $C$ è controimmagine continua di un chiuso e dunque chiuso.\\
-		Si ha dunque $f\left(C\right)=\realset\setminus\left\{0\right\}$, che tuttavia non è un chiuso della topologia Euclidea in quanto non contiene infiniti punti (una base della $\eucl$ è formata da intervalli, che dunque contengono infiniti punti).
-	\end{itemize}
-\vspace{-3mm}
-\end{attention}
 \section{Omeomorfismi}
 \begin{define}[Omeomorfismo.]~{}\\
 Siano $X$, $Y$ spazi topologici e $\funz{f}{X}{Y}$ funzione. $f$ è un \textbf{omeomorfismo}\index{omeomorfismo} se è \textit{biunivoca}, \textit{continua} e la sua inversa è \textit{continua}; più precisamente, esiste $g\colon Y\rightarrow X$ continua tale per cui $g\circ f = Id_{X}$ e $f\circ g = Id_{Y}$.\\
 Due spazi topologici si dicono \textbf{omeomorfi} se esiste un omeomorfismo fra i due; in notazione $X\cong Y$.
 \end{define}
 \begin{intuit}
-	Possiamo immaginare l'omeomorfismo come una \textit{deformazione} che \textit{piega} e \textit{allunga} uno spazio senza formare \textit{strappi} ($f$ continua), creare \textit{nuovi punti} ($f$ iniettiva), \textit{sovrapposizioni} ($f$ suriettiva) o \textit{incollamenti} ($f^{-1}$ continua): in questo modo si può trasformare lo spazio in un altro che mantenga le stesse \textit{proprietà topologiche} dell'originale.\\
+	Possiamo immaginare l'omeomorfismo come una \textit{deformazione} che \textit{piega} e \textit{allunga} uno spazio topologico senza formare \textit{strappi} ($f$ continua), creare \textit{nuovi punti} ($f$ iniettiva), \textit{sovrapposizioni} ($f$ suriettiva) o \textit{incollamenti} ($f^{-1}$ continua): in questo modo si può trasformare lo spazio in un altro che mantenga le stesse \textit{proprietà topologiche} dell'originale.\\
 	Si vede allora facilmente che un \textit{quadrato} ed un \textit{cerchio} sono omeomorfi, mentre una \textit{sfera} ed un \textit{toro} (la versione ‘‘topologica'' di una ciambella col buco, si veda sez. \ref{ciambella}, pag. \pageref{ciambella}) non lo sono, dato che non posso creare né far sparire quel buco; allo stesso modo una \textit{retta} non è omeomorfa ad un \textit{punto}, dato che non posso ‘‘accumulare'' tutti i punti della retta in uno solo!\\
 	Seppur questa ‘‘visualizzazione'' è una buona intuizione del funzionamento degli omeomorfismi, \textbf{non è completamente accurata}. Ad esempio, un \textit{nastro di Möbius} (per la definizione si veda sez. \ref{nastromobius}, pag. \pageref{nastromobius}) con un mezzo-giro ed uno con tre mezzi-giri sono omeomorfi, ma con la nostra intuizione non si arriva a dire perché.
 \end{intuit}
@@ -512,15 +500,25 @@ Dimostriamo la prima condizione, la seconda è analoga.\\
 $\impliesdx$ Un omeomorfismo è biettiva per definizione. Dimostriamo dunque che $f$ sia aperta, cioè $\forall A\in X$ aperto $f\left(A\right)\in Y$ è aperto. Ma definita $\funz{g}{Y}{X}$ l'inversa continua dell'omeomorfismo $f$ (cioè $f^{-1}=g$), si ha che $\forall A\in X$ $g^{-1}\left(A\right)=f\left(A\right)$ è aperto.\\
 $\impliessx$ $f$ è già biettiva e continua per ipotesi. Dobbiamo dimostrare che l'inversa $\funz{g}{Y}{X}$ sia continua, cioè $\forall A\in X$ aperto $g^{-1}\left(A\right)\in Y$ è aperto. Ma $g^{-1}\left(A\right)=f\left(A\right)$ che è aperto perché $f$ è aperta.
 \end{demonstration}
+\begin{attention}
+	Una funzione $f$ aperta che non sia omeomorfismo \textit{non} è necessariamente una funzione chiusa. Si prenda $\funztot{f}{\realset^2}{\realset}{\left(x,\ y\right)}{x}$ (la proiezione sulla prima coordinata):
+	\begin{itemize}
+		\item $f$ è \textit{continua} per ovvi motivi.
+		\item $f$ è \textit{aperta}. Infatti, presa una base su $\realset^2$ come $\left\{B_{\epsilon}\left(x,\ y\right)\right\}$, si ha che $f\left(B_{\epsilon}\left(x,\ y\right)\right)=\left(x-\epsilon,\ x+\epsilon\right)$ che sono aperti in $\realset$.
+		\item $f$ \textit{non} è \textit{chiusa}. Prendiamo $C=\left\{\left(x,\ y\right)\in \realset^2\mid xy=1 \right\}$ e definiamo la funzione $\funztot{g}{\realset^2}{\realset}{\left(x,\ y\right)}{xy}$ continua; vediamo facilmente come $C=g^{-1}\left(\left\{1\right\}\right)$ e, essendo $\{1\}$ chiuso in $\mathrm{R}$, $C$ è controimmagine continua di un chiuso e dunque chiuso.\\
+		Si ha dunque $f\left(C\right)=\realset\setminus\left\{0\right\}$, che tuttavia non è un chiuso della topologia Euclidea in quanto la controimmagine non contiene infiniti punti (una base della $\eucl$ è formata da intervalli, che dunque contengono infiniti punti).
+	\end{itemize}
+	\vspace{-3mm}
+\end{attention}
 \section{Topologia indotta}\index{topologia!indotta}
 \begin{define}[Topologia indotta.]~{}\\
 Dati:
 \begin{itemize}
 \item Uno spazio topologico $X$.
 \item Un insieme $Y$.
-\item Una funzione $\funz{f}{Y}{X}$
+\item Una funzione $\funz{f}{Y}{X}$.
 \end{itemize}
-Allora su $Y$ si può definire la \textbf{topologia indotta}\index{topologia!indotta} come la topologia meno fine tra tutte quelle che rendono $f$ continua.
+Allora su $Y$ si può definire la \textbf{topologia indotta}\index{topologia!indotta} da $f$ come la topologia \textit{meno fine} tra tutte quelle che rendono $f$ continua.
 \end{define}
 \section{Sottospazio topologico}\index{sottospazio!topologico} \label{sottospazi}
 \begin{define}[Topologia di sottospazio.]~{}\\
@@ -568,8 +566,9 @@ Preso $\mathcal{C}=\left\{C\subseteq X\mid C\text{ chiuso in }X\text{ e } A\subs
 \end{equation*}
 Ora sia $\mathcal{C}'=\left\{C\cap Y\mid C\in\mathcal{C}\right\}$. Allora, usando i chiusi del sottospazio:
 \begin{equation*}
-\mathcal{cl}_Y\left(A\right)=\inter_{C\in\mathcal{C}}\left(C\cap Y\right)=\left(\inter_{C\in\mathcal{C}}C\right)\cap Y=\mathcal{cl}_Y\left(A\right)
+\mathcal{cl}_Y\left(A\right)=\inter_{C\in\mathcal{C}}\left(C\cap Y\right)=\left(\inter_{C\in\mathcal{C}}C\right)\cap Y=\mathcal{cl}_X\left(A\right)\cap Y
 \end{equation*}
+\vspace{-3mm}
 \end{demonstration}
 
 	\subsection{Immersione} \label{immersione}
