@@ -376,7 +376,7 @@ Il seguente teorema afferma un legame ancora più forte tra polinomio minimo e a
 	\end{gather*}
 Allo stesso modo si arriva a $A^k\mathbf{v}=\lambda^k\mathbf{v}$. Preso un generico polinomio $p\left(t\right)\in\kamp\left[t\right]$, esso si può esprimere come:
 \begin{equation*}
-	p=\sum_{i=0}^{d}c_i t^i\quad c_i\in\kamp
+	p\left(t\right)=\sum_{i=0}^{d}c_i t^i\quad c_i\in\kamp
 \end{equation*}
 Allora $\displaystyle p\left(A\right)=\sum_{i=0}^{d}c_i A^i$ e dunque:
 \begin{align*}
@@ -861,7 +861,7 @@ Per capire meglio le relazioni fra questi vettori ed altri che vedremo successiv
 		& {x_i^{p-2}} &[-15pt] {y_j^{p-2}} &[-15pt] {z_k^{p-2}} \\[-5pt]
 		& {\vdots} &[-15pt] {\vdots} &[-15pt] {\vdots} &[-15pt] {\ddots} \\[-5pt]
 		& {x_i^2} &[-15pt] {y_j^2} &[-15pt] {z_k^2} &[-15pt] {\dots} &[-15pt] {a_t^2} \\[-5pt]
-		& {x_i^1} &[-15pt] {y_j^2} &[-15pt] {z_k^1} &[-15pt] {\dots} &[-15pt] {a_t^1} &[-15pt] {b_u^1} \\[-5pt]
+		& {x_i^1} &[-15pt] {y_j^1} &[-15pt] {z_k^1} &[-15pt] {\dots} &[-15pt] {a_t^1} &[-15pt] {b_u^1} \\[-5pt]
 		&& {}
 		\arrow["{A-\lambda I}", from=2-2, to=3-2, maps to]
 		\arrow["{A-\lambda I}", from=3-2, to=4-2, maps to]
@@ -909,7 +909,7 @@ Usando il lemma \ref{lemmadimjordan} (pag. \pageref{lemmadimjordan}), otteniamo 
 	\end{array}\\
 \implies\\
 	\begin{array}{ll}
-	N=\sum_{i=1}^{p}\dim S_i&=\sum_{i=1}^{p}\left(\dim\ker\left(A-\lambda I\right)^i-\dim\ker\left(A-\lambda I\right)^{i-1}\right)=\\
+	\displaystyle N=\sum_{i=1}^{p}\dim S_i&=\sum_{i=1}^{p}\left(\dim\ker\left(A-\lambda I\right)^i-\dim\ker\left(A-\lambda I\right)^{i-1}\right)=\\
 	&=\dim\ker\left(A-\lambda I\right)^p-\dim\ker\left(A-\lambda I\right)^0=\\&
 	=\dim\ker\left(A-\lambda I\right)^p=\dim\widetilde{V}_{\lambda}
 \end{array}
@@ -983,7 +983,7 @@ Consideriamo ora $\left(A-\lambda_1I\right)^h$ con $h<p_1$: come abbiamo visto n
 Posto $d_i\geq 1$, $\left(A-\lambda_iI\right)^{d_i}$ nel posto $\left(1,\ 1\right)$ ha $\left(\lambda_1-\lambda_i\right)^{d_i}\neq 0$ se $i=2,\ \ldots, \ r$. Infatti, $A$ (presa in forma di Jordan) è triangolare superiore e ha $\lambda_1$ al posto $\left(1,\ 1\right)$; allo stesso modo $A-\lambda_i I$ è triangolare superiore e ha $\lambda_1-\lambda_i$ al posto $\left(1,\ 1\right)$.\\
 Ne consegue che $\displaystyle\prod_{i=2}^{r}\left(A-\lambda_iI\right)^{d_i}$ ha un numero $\neq 0$ nel posto $\left(1,\ 1\right)$. Allora, utilizzando l'osservazione ad inizio sezione che garantisce la commutatività del prodotto:
 \begin{equation*}
-\left(A-\lambda_1I\right)^h\prod_{i=2}^{r}\left(A-\lambda_iI\right)^{d_i}=\prod_{i=2}^{r}\left(A-\lambda_1I\right)^{d_i}\left(A-\lambda_iI\right)^h
+\left(A-\lambda_1I\right)^h\prod_{i=2}^{r}\left(A-\lambda_iI\right)^{d_i}=\prod_{i=2}^{r}\left(A-\lambda_iI\right)^{d_i}\left(A-\lambda_1I\right)^h
 \end{equation*}
 Rappresentando visivamente il prodotto di queste due matrici:
 	 \begin{equation*}
@@ -1324,9 +1324,9 @@ L'esponenziale in campo complesso gode delle seguenti proprietà:
 		\item $e^z=e^{x+iy}=e^x\cdot e^{iy}=e^x\left(\cos y+i\sin y\right)\implies \lvert e^z\rvert = e^x = e^{\Re z}$\\
 		L'argomento di $e^z$ è, per costruzione, $y=\Im z$.
 		\item $e^{2\pi i}=1$, mentre $e^{z+2\pi i}=e^z\cdot e^{2\pi i}=e^{z}$.
-		\item $e^z\neq 0$, dunque $\forall w\in \complexset\setminus \left\{0\right\}\ \exists z\in \complexset\ \colon e^z=w$, cioè $\funz{e^z}{\complexset}{\complexset\setminus\left\{0\right\}}$. Infatti, se $w=x+iy$ si può scrivere in forma polare come:
+		\item $e^z\neq 0$, dunque $\forall w\in \complexset\setminus \left\{0\right\}\ \exists z\in \complexset\ \colon e^z=w$, cioè $\funz{e^z}{\complexset}{\complexset\setminus\left\{0\right\}}$ è suriettiva. Infatti, se $w=x+iy$ si può scrivere in forma polare come:
 		\begin{equation*}
-			w=\lvert w\rvert\left(\cos y+i\sin y\right)
+			w=\lvert w\rvert\left(\cos x+i\sin y\right)
 		\end{equation*}
 		Notiamo che:
 		\begin{itemize}
@@ -1883,7 +1883,7 @@ Mostriamo che anche $X_j$ e $Y_j$ sono soluzioni del sistema. Dunque, presa $C_j
 		\shortparallel&&\shortparallel\\
 		A\left(X_j+iY_j\right)&&\left(X_j+iY_j\right)B\\
 		\shortparallel&&\shortparallel\\
-		AX_j+AY_j&&X_jB+iY_jB
+		AX_j+iAY_j&&X_jB+iY_jB
 	\end{array}
 \end{equation*}
 Le matrici $AX_j,\ AY_j,\ X_jB$ e $Y_jB$ sono tutte in $\realset^{n,n}$. Due matrici complesse scomposte come in precedenza sono uguali se e solo se la parte reale e l'argomento sono uguali:
