@@ -21,7 +21,7 @@ Il capitolo si conclude con un approfondimento delle successioni negli spazi met
 \begin{define}[Insieme numerabile.]~{}\\
 Un insieme $X$ è \textbf{numerabile}\index{numerabile} o di \textit{cardinalità numerabile} se è finito oppure esiste una biezione tra l'insieme $X$ e i naturali $\naturalset$.
 \end{define}
-\begin{define}[Secondo assioma di numerabilità (A base numerabile).]~{}\\
+\begin{define}[Secondo assioma di numerabilità {(A base numerabile)}.]~{}\\
 Uno spazio topologico $X$ è \textbf{a base numerabile}\seeonlyindex{a base numerabile}{assioma di numerabilità!secondo} se esiste una base $\basis$ della topologia tale che $\basis$ sia di \textit{cardinalità numerabile}.
 Si dice anche che $X$ soddisfa il \textbf{{\small secondo assioma di numerabilità}}\index{assioma di numerabilità!secondo}.
 \end{define}
@@ -59,7 +59,7 @@ Uno spazio topologico $X$ è \textit{primo numerabile}\seeonlyindex{primo numera
 		\item È numerabile (è definita con i razionali $\rationalset$, che sono numerabili)
 		\item È una base perché, dati $x,\ y\in\realset,\ x<y$:
 		\begin{equation*}
-			\left(x,\ y\right)=\union_{\substack{a, b\in\rationalset\\x<a<b<y}}\left(a,\ b\right)
+			\left(x,\ y\right)=\bigcup_{\substack{a, b\in\rationalset\\x<a<b<y}}\left(a,\ b\right)
 		\end{equation*}
 	\end{itemize}
 \vspace{-6mm}
@@ -81,7 +81,7 @@ Se consideriamo ora $\widetilde{\mathcal{A}}\coloneqq\left\{U_x\mid x\in E\right
 \begin{itemize}
 	\item $\widetilde{\mathcal{A}}\subseteq \mathcal{A}$.
 	\item $\widetilde{\mathcal{A}}$ è numerabile perché lo è $E$.
-	\item $X=\union_{B_x\in\widetilde{\basis}}B_x=\union_{x\in E}B_x\subseteq \union_{x\in E}U_x $.
+	\item $\displaystyle X=\bigcup_{B_x\in\widetilde{\basis}}B_x=\bigcup_{x\in E}B_x\subseteq \bigcup_{x\in E}U_x $.
 \end{itemize}
 Segue che $\widetilde{\mathcal{A}}$ è un sottoricoprimento numerabile di $\mathcal{A}$.
 \end{demonstration}
@@ -117,12 +117,12 @@ Se $X$ è \textit{a base numerabile}, allora è \textit{separabile}.
 \vspace{-6mm}
 \end{proposition}
 \begin{demonstration}~{}\\
-$\impliesdx$ Sempre vera per ogni spazio anche non metrico (lemma \ref{basenumseparabile}).\\
-$\impliessx$ Sia $E\subseteq X$ sottoinsieme numerabile e denso e consideriamo:
+$\impliesdx$Sempre vera per ogni spazio anche non metrico (lemma \ref{basenumseparabile}).\\
+$\impliessx$Sia $E\subseteq X$ sottoinsieme numerabile e denso e consideriamo:
 \begin{equation*}
 	\basis=\left\{B_{\nicefrac{1}{n}}\left(e\right)\mid e\in E,\ n\in \naturalset\right\}
 \end{equation*}
-Questo insieme è numerabile: mostriamo che sia una base. Per far ciò fissiamo $U\subseteq X$ aperto e prendiamo $x\in U$: vogliamo trovare un aperto di $\basis$ contenuto in $U$ contenente $x$.\footnote{Gli elementi della base sono già aperti banalmente. Per l'arbitrarietà di $x$, troviamo un ricoprimento aperto di $U$ costituito da aperti di $\basis$ contenuto interamente in $U$, cioè $\displaystyle U=\union_{i\in I}B_i$.}\\
+Questo insieme è numerabile: mostriamo che sia una base. Per far ciò fissiamo $U\subseteq X$ aperto e prendiamo $x\in U$: vogliamo trovare un aperto di $\basis$ contenuto in $U$ contenente $x$.\footnote{Gli elementi della base sono già aperti banalmente. Per l'arbitrarietà di $x$, troviamo un ricoprimento aperto di $U$ costituito da aperti di $\basis$ contenuto interamente in $U$, cioè $\displaystyle U=\bigcup_{i\in I}B_i$.}\\
 Sia $n\in\naturalset$ tale che $B_{\nicefrac{1}{n}}\left(x\right)\subseteq U$. Cerchiamo opportuni $e\in E,\ m\in\naturalset$ tale che:
 \begin{equation*}
 x\in B_{\nicefrac{1}{m}}\left(e\right)\subseteq B_{\nicefrac{1}{n}}\left(x\right)\subseteq U
@@ -155,7 +155,7 @@ Mostriamo $\basis$ è base per una topologia, è separabile, primo numerabile ma
 \begin{itemize}
 	\item \textbf{Base per una topologia}: usiamo il teorema delle basi (Manetti, 3.7), pag. \pageref{teoremabasi}.
 	\begin{enumerate}[label=\Roman*]
-		\item $\displaystyle X=\union_{B\in \basis}B$ è ovvio.
+		\item $\displaystyle X=\bigcup_{B\in \basis}B$ è ovvio.
 		\item Prendiamo $A=\left[a,\ b\right),\ B=\left[c,\ d\right)$ e consideriamo:
 		\begin{equation*}
 			\forall x\in A\cap B=\left[\max\left\{a,\ b\right\},\ \min\left\{c,\ d\right\}\right)
@@ -169,7 +169,7 @@ Mostriamo $\basis$ è base per una topologia, è separabile, primo numerabile ma
 \end{equation*}
 \item \textbf{Non a base numerabile}: presa una base $\widetilde{\basis}$ per $X$, mostriamo che non è numerabile. Sia $x\in\realset$. Allora:
 \begin{equation*}
-\left[x,\ \infty\right)=\union_{y>x}\left[x,\ y\right)
+\left[x,\ \infty\right)=\bigcup_{y>x}\left[x,\ y\right)
 \end{equation*}
 È aperto. In particolare, esiste un aperto dipendente dal punto $x$, cioè $U\left(x\right)=\left[x,\ b\right)\in\widetilde{\basis}$ (per un certo $b>x$) per cui $x\in U\left(x\right)\subseteq\left[x,\ \infty\right)$.\\
 Notiamo che se $x\neq y$, allora $U\left(x\right)\neq U\left(y\right)$: preso $y>x$, segue che $x\notin \left[y,\ \infty\right)\supseteq U\left(y\right)\implies x\notin U\left(y\right)\implies U\left(x\right)\neq U\left(y\right)$. L'applicazione:
@@ -177,7 +177,7 @@ Notiamo che se $x\neq y$, allora $U\left(x\right)\neq U\left(y\right)$: preso $y
 \funztot{\ }{\realset}{\widetilde{\basis}}{x}{U\left(x\right)}
 \end{equation}
 \end{itemize}
-è iniettiva, dunque $\widetilde{\basis}$ non è in iniezione con i naturali e pertanto $\widetilde{\basis}$ \textit{non} è numerabile.
+È iniettiva, dunque $\widetilde{\basis}$ non è in iniezione con i naturali e pertanto $\widetilde{\basis}$ \textit{non} è numerabile.
 \end{example}
 \begin{center}
 	\begin{tikzcd}
@@ -191,8 +191,7 @@ Notiamo che se $x\neq y$, allora $U\left(x\right)\neq U\left(y\right)$: preso $y
 \end{center}
 \section{Successioni}
 \begin{define}[Successione.]~{}\\
-Una \textbf{successione}\index{successione} in uno spazio topologico $X$ è una funzione:
-$\funz{a}{\naturalset}{X}$ che indichiamo con $\left\{a_n\right\}_{n\in\naturalset}=\left\{a_n\right\}$.
+Una \textbf{successione}\index{successione} in uno spazio topologico $X$ è una funzione $\funz{a}{\naturalset}{X}$; la indichiamo anche con $\left\{a_n\right\}_{n\in\naturalset}=\left\{a_n\right\}$.
 \end{define}
 \begin{define}[Convergenza di una successione.]~{}\\
 Sia $\left\{a_n\right\}$ una successione in $X$. Diciamo che $\left\{a_n\right\}$ \textbf{converge}\index{convergenza} a $p\in X$ se $\forall U\in I\left(p\right)\ \exists n_0\in \naturalset\ \colon a_n\in U,\ \forall n\geq n_0$.
@@ -207,9 +206,7 @@ Sia $\left\{a_n\right\}$ una successione in $X$. Diciamo che $\left\{a_n\right\}
 		\item Siccome $\left\{a_n\right\}$ converge a $p$, $\exists n_0$ tale che $a_n\in U,\ \forall n\geq n_0$.
 		\item Siccome $\left\{a_n\right\}$ converge a $1$, $\exists n_1$ tale che $a_n\in V,\ \forall n\geq n_1$.
 	\end{itemize}
-\begin{equation*}
-\text{Allora } a_n\in U\cap V\ \forall n\geq \max_{n_0,\ n_1}\implies U\cap V\neq \emptyset\implies p=q
-\end{equation*}
+Allora $a_n\in U\cap V\ \forall n\geq \max{n_0,\ n_1}\implies U\cap V\neq \emptyset\implies p=q$.\\
 L'ultima implicazione deriva dal fatto che $X$ è di \textbf{Hausdorff}. Infatti, se in \textbf{Hausdorff} $p\neq q\implies U\cap V = \emptyset$, vale anche la sua negazione: $U\cap V\neq \emptyset\implies p = q$.
 \end{demonstration}
 \begin{define}[Limite.]~{}\\
@@ -234,8 +231,8 @@ Se $X$ spazio metrico:
 \vspace{-6mm}
 \end{observe}
 \begin{demonstration}~{}\\
-	$\impliesdx$ $U=B_{\epsilon}\left(p\right)$ è l'intorno di convergenza che soddisfa l'implicazione.\\
-	$\impliessx$ Sia $U\in I\left(p\right)$. Allora $\exists \epsilon\ \colon B_{\epsilon}\left(p\right)\subseteq U$. Ma allora, dato che per le ipotesi $\exists n_0\ \colon \mvf{d}{p}{a_n}<\epsilon,\ \forall n\geq n_0$, cioè $a_n\in B_{\epsilon}\left(p\right)\subseteq U\implies a_n\in U\forall n\geq n_0$.
+	$\impliesdx$$U=B_{\epsilon}\left(p\right)$ è l'intorno di convergenza che soddisfa l'implicazione.\\
+	$\impliessx$Sia $U\in I\left(p\right)$. Allora $\exists \epsilon\ \colon B_{\epsilon}\left(p\right)\subseteq U$. Ma allora, dato che per le ipotesi $\exists n_0\ \colon \mvf{d}{p}{a_n}<\epsilon,\ \forall n\geq n_0$, cioè $a_n\in B_{\epsilon}\left(p\right)\subseteq U\implies a_n\in U\forall n\geq n_0$.
 \end{demonstration}
 \subsection{Punti di accumulazione}
 \begin{define}[Punto di accumulazione per la successione.]~{}\\
@@ -258,7 +255,7 @@ Se $X$ spazio metrico:
 	\begin{equation}
 		\forall U\in I\left(p\right),\ \exists b\in B \colon b\in U\setminus \left\{ p\right\}
 	\end{equation}
-L'insieme dei punti di accumulazione per il sottoinsieme $B$ è chiamato \textbf{derivato}\index{derivato} di $B$.
+L'insieme dei punti di accumulazione per il sottoinsieme $B$ è chiamato \textbf{derivato}\index{derivato} di $B$ e si indica con $B'$.
 \end{define}
 \begin{exercise}
 Data la successione $\left\{a_n\right\}$ in $X$ e definito $A\coloneqq \{a_n\mid n\in\naturalset\}$:
@@ -311,7 +308,7 @@ Se $a_{k\left(n\right)}$ converge a $p$ si ha che $\exists n_0\ \colon a_{k\left
 	n=\max\left\{n_0,\ n_1\right\}
 \end{equation*}
 Abbiamo che $a_{k\left(n\right)}\in U,\ k\left(n\right)\geq N$.\footnote{L'intorno $U$ è arbitrario.} Segue che $p$ è punto di accumulazione per $\left\{a_n\right\}$.\\
-$\circled{3}\implies\circled{4}$ $p\in \overline{A}\iff \forall U\in I\left(p\right)\ A\cap U\neq \emptyset$. Allora sia $U$ intorno di $p$: voglia che $U\cap A\neq \emptyset$. Essendo $p$ punto di accumulazione per $\left\{a_n\right\}$, $\exists n\ a_n\in U\implies U\cap A\neq \emptyset$.
+$\circled{3}\implies\circled{4}$ $p\in \overline{A}\iff \forall U\in I\left(p\right)\ A\cap U\neq \emptyset$. Allora sia $U$ intorno di $p$: vogliamo che $U\cap A\neq \emptyset$. Essendo $p$ punto di accumulazione per $\left\{a_n\right\}$, $\exists n\ a_n\in U\implies U\cap A\neq \emptyset$.
 \end{demonstration}
 \begin{lemming}[In $X$ primo numerabile $a_n$ ha una sottosuccessione convergente a $p$ se $p$ di accumulazione per $a_n$.]~{}\label{primonumesucc}\\
 Sia $X$ \textit{primo numerabile}, $\left\{a_n\right\}$ successione in $X$ e $p\in X$. Allora vale anche il viceversa di $\textcolor{red}{\circled{\ast}}$, cioè:
@@ -320,8 +317,8 @@ Sia $X$ \textit{primo numerabile}, $\left\{a_n\right\}$ successione in $X$ e $p\
 \end{equation}
 \end{lemming}
 \begin{demonstration}~{}\\
-	$\impliesdx$ Vale per $\textcolor{red}{\circled{\ast}}$.\\
-	$\impliessx$ Sia $\left\{U_m\right\}_{m\in\naturalset}$ sistema fondamentale di intorni di $p$ numerabile per ipotesi ($X$ primo numerabile). Consideriamo i seguenti insiemi:
+	$\impliesdx$Vale per $\textcolor{red}{\circled{\ast}}$.\\
+	$\impliessx$Sia $\left\{U_m\right\}_{m\in\naturalset}$ sistema fondamentale di intorni di $p$ numerabile per ipotesi ($X$ primo numerabile). Consideriamo i seguenti insiemi:
 	\begin{equation*}
 	\widetilde{U}_m\coloneqq U_1\cap\ldots \cap U_m,\quad \forall m\in \naturalset
 	\end{equation*}
@@ -334,13 +331,13 @@ A meno di sostituire $U_m$ con $\widetilde{U}_m$, possiamo supporre che $U_1\sup
 Costruiamo una sottosuccessione di $\left\{a_n\right\}$ convergente a $p$. Sicuramente:
 \begin{itemize}
 	\item $\exists k\left(1\right)\in \naturalset\ \colon a_{k\left(1\right)}\in U_1$.
-	\item $\exists k\left(2\right)\geq k\left(1\right)+1\ \colon A_{k\left(2\right)}\in U_2$.
+	\item $\exists k\left(2\right)\geq k\left(1\right)+1\ \colon a_{k\left(2\right)}\in U_2$.
 \end{itemize}
 E così via: $\forall m\ \exists k\left(m\right)\geq k\left(m-1\right)+1$ tale che $a_{k\left(m\right)}\in U_m$, ottenendo una sottosuccessione $\left\{a_{k\left(m\right)}\right\}$. Notiamo in particolare che:
 \begin{center}
 \label{notasorridente} $\textcolor{blue}{{\large \smiley{}}}$ Se $m_2\geq m_1$, allora $a_{k\left(m_2\right)}\in U_{m_2}\subseteq U_{m_1}$.
 \end{center}
-Mostriamo che $\left\{A_{k\left(n\right)}\right\}$ converge a $p$.\\
+Mostriamo che $\left\{a_{k\left(n\right)}\right\}$ converge a $p$.\\
 Sia $V$ intorno di $p$. Dal sistema fondamentale di intorni $\exists m_0$ tale che $U_{m_0}\subseteq V$. Da $\textcolor{blue}{{\large \smiley{}}}$ si ha che $\forall m\geq m_0\ a_{k\left(m\right)}\in U_{m_0}\subseteq V$.
 \end{demonstration}
 \begin{proposition}[Caratterizzazione della chiusura in termini di successioni.]~{}\\
@@ -363,16 +360,16 @@ In modo analogo a $\textcolor{blue}{{\large \smiley{}}}$ (pag. \pageref{notasorr
 Sia $V$ intorno di $p$. Dal sistema fondamentale di intorni $\exists n_0$ tale che $U_{n_0}\subseteq V$. Dal ragionamento analogo a $\textcolor{blue}{{\large \smiley{}}}$ si ha che $\forall n\geq n_0\ y_n\in U_{n_0}\subseteq V$.
 \end{demonstration}
 \begin{observe}\label{densitaesuccessioni}
-	Preso uno spazio topologico $X$ primo numerabile, se $Y\subseteq X$ è un sottoinsieme \textbf{denso} (cioè $\overline{Y}=X$) allora la proposizione precedente ogni elemento $p\in X$ ammette una successione in $Y$ convergente al punto $p$.\\
+	Preso uno spazio topologico $X$ primo numerabile, se $Y\subseteq X$ è un sottoinsieme \textbf{denso} (cioè $\overline{Y}=X$) allora per la proposizione precedente ogni elemento $p\in X$ ammette una successione in $Y$ convergente al punto $p$.\\
 	In $\realset$, ciò comporta che ogni \textit{reale} può essere approssimato da una successione di soli \textit{razionali}, dato che $\overline{\rationalset}=\realset$.
 \end{observe}
 \section{Successioni e compatti}
 \begin{proposition}[‘‘Successione'' di compatti ; Manetti, 4.46.]~{}\label{compattocontenuto}\\
 Sia $X$ spazio topologico e sia $K_n\subseteq X,\ \forall n\in\naturalset$ un sottospazio chiuso, \textit{compatto} e non vuoto. Supponiamo inoltre che:
 \begin{equation*}
-K_n\supseteq K_n+1\ \forall n\implies K_1\supseteq K_2\supseteq K_3\supseteq \ldots
+K_n\supseteq K_{n+1}\ \forall n\implies K_1\supseteq K_2\supseteq K_3\supseteq \ldots
 \end{equation*}
-Allora: $\displaystyle\inter_{n\geq 1}K_n\neq\emptyset$.
+Allora: $\displaystyle\bigcap_{n\geq 1}K_n\neq\emptyset$.
 \end{proposition}
 \begin{demonstration}
 Iniziamo in $K_1$. Consideriamo $A_n\coloneqq K_1\setminus K_n$:
@@ -382,11 +379,11 @@ Iniziamo in $K_1$. Consideriamo $A_n\coloneqq K_1\setminus K_n$:
 \end{itemize}
 Sia allora $N\in\naturalset$.
 \begin{equation*}
-	\union_{n=1}^{N}A_n=A_N=K_1\setminus \underbrace{K_N}_{\neq\emptyset}\subsetneqq K_1
+	\bigcup_{n=1}^{N}A_n=A_N=K_1\setminus \underbrace{K_N}_{\neq\emptyset}\subsetneqq K_1
 \end{equation*}
-Allora nessuna unione \textit{finita} degli $A_n$ ricopre $K_1$, cioè $\displaystyle \union_{n\in\naturalset}A_n\subsetneqq K_1$, altrimenti $\left\{A_n\right\}$ sarebbe un ricoprimento aperto di $K_1$ che \textit{non} ammette sottoricoprimento finito (assurdo, in quanto $K_1$ è \textit{compatto}!).
+Nessuna unione \textit{finita} degli $A_n$ ricopre $K_1$, cioè $\displaystyle \bigcup_{n\in\naturalset}A_n\subsetneqq K_1$. Allora anche l'unione arbitraria degli $A_n$ \textit{non} copre $X$, altrimenti $\left\{A_n\right\}$ sarebbe un ricoprimento aperto di $K_1$ che \textit{non} ammette sottoricoprimento finito (assurdo, in quanto $K_1$ è \textit{compatto}!). Pertanto:
 \begin{equation*}
-\union_{n\geq 1}A_n=\union_{n\geq 1}K_1\setminus K_n=K_1\setminus \left(\inter_{n\geq 1}K_n\right)\subsetneqq K_1\implies \inter_{n\geq 1}K_n\neq\emptyset
+\bigcup_{n\geq 1}A_n=\bigcup_{n\geq 1}K_1\setminus K_n=K_1\setminus \left(\bigcap_{n\geq 1}K_n\right)\subsetneqq K_1\implies \bigcap_{n\geq 1}K_n\neq\emptyset
 \end{equation*}
 \vspace{-6mm}
 \end{demonstration}
@@ -402,9 +399,9 @@ Per $N$ fissato sia $A_N\coloneqq \left\{a_n\mid n\geq N\right\}\subseteq X$. Al
 \begin{center}
 	$p\in X$ punto di accumulazione per $\displaystyle\left\{a_n\right\}\iff \forall U\in I\left(p\right),\ \forall N\in\naturalset\ U\cap A_N\neq\emptyset\iff \forall N\in\naturalset,\ p\in\overline{A}_N\coloneqq C_N$
 \end{center}
-Dunque $\displaystyle\left\{\text{punti di accumulazione di} \left\{a_n\right\}\right\}=\inter_{N\in\naturalset}C_N$ e:
+Dunque $\displaystyle\left\{\text{punti di accumulazione di} \left\{a_n\right\}\right\}=\bigcap_{N\in\naturalset}C_N$ e:
  \begin{center}
- 	$\left\{a_n\right\}$ ha punti di accumulazione $\iff \inter_{N\in\naturalset}C_N\neq\emptyset$
+ 	$\left\{a_n\right\}$ ha punti di accumulazione $\displaystyle\iff \bigcap_{N\in\naturalset}C_N\neq\emptyset$
  \end{center}
 \begin{itemize}
 	\item $A_B\neq \emptyset$ per definizione, dunque $C_N$ è un chiuso non vuoto.
@@ -414,7 +411,7 @@ Poiché $A_N=\left\{a_n\mid n\geq N\right\}\supseteq A_ {N+1}=\left\{a_n\mid n\g
 \begin{equation*}
 C_N=\overline{A_N}\supseteq \overline{A_{N+1}}=C_{N+1}
 \end{equation*}
-Abbiamo trovato una successione di compatti contenuto l'uno nel successivo. Allora per la proposizione \ref{compattocontenuto} (pag. \pageref{compattocontenuto}, \textsc{(Manetti, 4.46)}). si ha che $\displaystyle\inter_{n\geq 1}C_N\neq \emptyset$.
+Abbiamo trovato una successione di compatti contenuto l'uno nel successivo. Allora per la proposizione \ref{compattocontenuto} (pag. \pageref{compattocontenuto}, \textsc{(Manetti, 4.46)}). si ha che $\displaystyle\bigcap_{n\geq 1}C_N\neq \emptyset$.
 Segue che esiste un punto di accumulazione per la successione.
 \end{demonstration}
 \subsection{Compattezza per successioni}
@@ -434,8 +431,8 @@ Per il lemma \ref{lemmatriangolino} $\textcolor{blue}{\circled{{\large \blacktri
 \end{lemming}
 \begin{demonstration}~{}
 \begin{enumerate}[label=\Roman*]
-\item $\impliesdx$ Vale per l'osservazione precedente.\\
-$\impliessx$ Vale per il lemma \ref{primonumesucc}, pag. \pageref{primonumesucc}: se ogni successione ha un punto di accumulazione in $X$ primo numerabile, allora ogni sottosuccessione ammette una sottosuccessione convergente a $p$, cioè $X$ è compatto per successioni.
+\item $\impliesdx$Vale per l'osservazione precedente.\\
+$\impliessx$Vale per il lemma \ref{primonumesucc}, pag. \pageref{primonumesucc}: se ogni successione ha un punto di accumulazione in $X$ primo numerabile, allora ogni sottosuccessione ammette una sottosuccessione convergente a $p$, cioè $X$ è compatto per successioni.
 \item Se $X$ è compatto, allora ogni successione in $X$ ha dei punti di accumulazione e per il punto $1)$ segue che $X$ è compatto per successioni.
 \end{enumerate}
 \vspace{-3mm}
@@ -450,29 +447,26 @@ $\impliessx$ Vale per il lemma \ref{primonumesucc}, pag. \pageref{primonumesucc}
 \vspace{-3mm}
 \end{proposition}
 \begin{demonstration}
-Sappiamo già che $2)\iff 3)$ e $1)\implies 2)$ dal lemma precedente. Dobbiamo dimostrare $2)\implies 1)$. Dimostriamo per contronominale ($\neg 1)\implies \neg 2)$): se $X$ \textit{non} è compatto, allora $X$ non è compatto per successioni, cioè esiste una sottosuccessione in $X$ che \textit{non} ha alcuna sottosuccessione convergente.\\
+Sappiamo già che $2)\iff 3)$ e $1)\implies 2)$ dal lemma precedente. Dobbiamo dimostrare $2)\implies 1)$. Dimostriamo per contronominale ($\neg 1)\implies \neg 2)$): se $X$ \textit{non} è compatto, allora $X$ non è compatto per successioni, cioè esiste una sottosuccessione in $X$ che \textit{non} ha alcuna sottosuccessione convergente.
 \begin{itemize}
 	\item $X$ \textit{non} compatto$\implies \exists \widetilde{\mathcal{A}}$ ricoprimento aperto di $X$ che \textit{non} ha sottoricoprimenti finiti.
 	\item $X$ a \textit{base numerabile} $\implies\exists\mathcal{A}$ sottoricoprimento di $\widetilde{\mathcal{A}}$ che sia numerabile.
 \end{itemize}
-Poiché ogni sottoricoprimento di $\mathcal{A}$ è anche un sottoricoprimento di $\widetilde{\mathcal{A}}$, significa che $\mathcal{A}$ \textit{non} ha sottoricoprimenti finiti. Definiamo:
-\begin{equation*}
-\mathcal{A}\coloneqq\left\{A_n\right\}_{n\in\naturalset}
-\end{equation*}
+Poiché ogni sottoricoprimento di $\mathcal{A}$ è anche un sottoricoprimento di $\widetilde{\mathcal{A}}$, significa che $\mathcal{A}$ \textit{non} ha sottoricoprimenti finiti. Definiamo $\mathcal{A}\coloneqq\left\{A_n\right\}_{n\in\naturalset}$.
 Allora:
 \begin{equation*}
-\forall n\in\naturalset\quad \union_{j=1}^n A_j\subsetneqq X\implies \exists x_n\in X\setminus \union_{j=1}^n A_j
+\forall n\in\naturalset\quad \bigcup_{j=1}^n A_j\subsetneqq X\implies \exists x_n\in X\setminus \bigcup_{j=1}^n A_j
 \end{equation*}
-Costruisco così una successione $\left\{x_n\right\}$ successione in $X$ tale per cui:
+Costruisco così una successione $\left\{x_n\right\}$ in $X$ tale per cui:
 \begin{center}
-	\label{notatriste} $\textcolor{red}{{\large \frownie{}}}$ $x_n\notin A_j\ \forall j\leq n$.
+	$\textcolor{red}{{\large \frownie{}}}$ $x_n\notin A_j\ \forall j\leq n$.
 \end{center}
 Mostriamo che $\left\{x_n\right\}$ non ha sottosuccessioni convergenti. Sia $\left\{x_{k\left(n\right)}\right\}$ una sottosuccessione arbitraria di $\left\{x_n\right\}$ e sia $p\in X$, mostriamo che essa non converga ad un qualunque $p$.\\
 \begin{itemize}
-	\item $\mathcal{A}$ è un (sotto)ricoprimento di $X\implies \exists N\ \colon p\in A_N$
-	\item Da $\textcolor{red}{{\large \frownie{}}}$ (pag. \pageref{notatriste}) abbiamo che $x_n \notin A_N \ \forall n\geq N$  (dato che $x_n \notin A_j \ \forall j\leq n$, in particolare in $A_N$ per ogni $n\geq N$); si ha allora $x_{k\left(n\right)}\notin A_n\ \forall n\ \colon k\left(n\right)\geq N$.
+	\item $\mathcal{A}$ è un ricoprimento di $X\implies \exists N\ \colon p\in A_N$
+	\item Da $\textcolor{red}{{\large \frownie{}}}$ abbiamo che $x_n \notin A_N \ \forall n\geq N$  (dato che $x_n \notin A_j \ \forall j\leq n$, in particolare in $A_N$ per ogni $n\geq N$); si ha allora $x_{k\left(n\right)}\notin A_n\ \forall n\ \colon k\left(n\right)\geq N$.
 \end{itemize}
-Essendo $k\left(n\right)$ crescente, $\exists n_0\ \colon k\left(n\right)\geq N\ \forall n\geq n_0$. Segue che se $n\geq n_0$ allora $x_k\left(n\right)\notin A_N$
+Essendo $k\left(n\right)$ crescente, $\exists n_0\ \colon k\left(n\right)\geq N\ \forall n\geq n_0$. Segue che se $n\geq n_0$ allora $x_{k\left(n\right)}\notin A_N$
 Poiché $A_N$ è intorno di $p$, segue che $\left\{x_{k\left(n\right)}\right\}$ non converge a $p$.
 \end{demonstration}
 \begin{theorema}[Spazio metrico compatto se e solo se compatto per successioni.]~{}\\
@@ -525,8 +519,8 @@ Sia $X$ spazio metrico. Allora:
 		\mvf{d}{a_n}{a_m}\leq \mvf{d}{a_n}{p}+\mvf{d}{p}{a_n}< 2\epsilon
 	\end{equation}
 Per l'arbitrarietà di $\epsilon$ vale la convergenza.
-\item $\impliesdx$ Sempre vera per \ref{lemmatriangolino} $\textcolor{blue}{\circled{{\large \blacktriangle}}}$ (pag. \pageref{lemmatriangolino}).\\
-$\impliessx$ Sia $\left\{a_n\right\}$ una successione di Cauchy e sia $p$ un punto di accumulazione. Sia $\epsilon>0$: dalla definizione di successione di Cauchy $\exists n_0$ tale per cui $\mvf{d}{a_n}{a_m}<\epsilon\ \forall n,\ m\geq n_0$.\\
+\item $\impliesdx$Sempre vera per \ref{lemmatriangolino} $\textcolor{blue}{\circled{{\large \blacktriangle}}}$ (pag. \pageref{lemmatriangolino}).\\
+$\impliessx$Sia $\left\{a_n\right\}$ una successione di Cauchy e sia $p$ un punto di accumulazione. Sia $\epsilon>0$: dalla definizione di successione di Cauchy $\exists n_0$ tale per cui $\mvf{d}{a_n}{a_m}<\epsilon\ \forall n,\ m\geq n_0$.\\
 Essendo $p$ di accumulazione, $\exists n_1\geq n_0$ tale per cui $\mvf{d}{p}{a_{n_1}}<\epsilon$. Allora, se $n\geq n_0$ si ha:
 	\begin{equation*}
 	\mvf{d}{a_n}{p}\leq \mvf{d}{a_n}{a_{n_1}}+\mvf{d}{a_{n_1}}{p}< 2\epsilon

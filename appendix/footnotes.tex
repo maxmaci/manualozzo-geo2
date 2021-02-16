@@ -20,7 +20,7 @@
 \end{flushright}
 \end{introduction}
 
-Riportiamo alcune note, precisazioni e dimostrazioni complementari agli argomenti dei capitoli principali che possono risultare utili al lettore
+\noindent Riportiamo alcune note, precisazioni e dimostrazioni complementari agli argomenti dei capitoli principali che possono risultare utili al lettore
 \section{Capitolo 1: spazi topologici}
 \subsection{Alcune proprietà della continuità}
 Le seguenti dimostrazioni sulle continuità di funzioni sono da \cite{munkres:2000topology}.
@@ -50,7 +50,208 @@ Se $\funz{f}{X}{Y}$ è un omeomorfismo, allora $\funz{f_{\mid Z}}{Z}{f\left(Z\ri
 \begin{attention}
 	Non vale il viceversa del teorema precedente: \textit{non è vero} che se $A,\ B\subseteq X$ sono omeomorfi, allora $X\setminus A$ e $X\setminus B$ sono omeomorfi!\\
 	Preso ad esempio $A=S^2\setminus\left\{(0,\ 0,\ 1),\ (0,\ 0,\ -1)\right\}$ e $B=S^1\times \realset$. Si ha che $A$ e $B$ sono \textit{omeomorfi} (per proiezione dall'origine), ma $\realset^3\setminus A$ è connesso per archi, mentre $\realset^3\setminus B$ non è \textit{neppure connesso}.
-\end{attention} 
+\end{attention}
+\subsection{Strutture topologiche e unione/intersezione insiemistica}
+La seguente dimostrazione è adattata da \cite{shalop:interior} su Mathematics Stack Exchange.
+\begin{lemming}[Interno come complementare della chiusura del complementare.]~{}\\
+Sia $A\subseteq X$ con $X$ spazio topologico. Allora:
+\begin{equation}
+	\interior{A}=X\setminus\left(\overline{X\setminus A}\right)
+\end{equation}
+\vspace{-6mm}
+\end{lemming}
+\begin{demonstration}~{}\\
+$\includedx$ Dato che $X\setminus A\subseteq \overline{X\setminus A}$, segue che $X\setminus \left(\overline{X\setminus A}\right)\subseteq A$. Allora $X\setminus \left(\overline{X\setminus A}\right)$ è un aperto (perché complementare di un chiuso) contenuto in $A$, pertanto $X\setminus \left(\overline{X\setminus A}\right)\subseteq \interior A$.\\
+$\includesx$ Sappiamo che $\interior{A}\subseteq A$, dunque $X\setminus A\subseteq X\setminus \interior A$. Allora $X\setminus \interior A$ è un chiuso (perché complementare di un aperto) contenente $X\setminus A$, pertanto $\overline{X\setminus A}\subseteq X\setminus \interior{A}$, da cui $\interior{A}\subseteq X\setminus\left(\overline{X\setminus A}\right)$.
+\end{demonstration}
+La seguente dimostrazione è adatta da 
+\begin{proposition}[Strutture topologiche e unione/intersezione insiemistica.]~{}\\\label{chiusurainterno}
+Siano $\{A_i\}_{i\in I}$ una famiglia di sottoinsiemi di uno spazio topologico $X$. Allora:
+\begin{enumerate}
+	\item La chiusura dell'unione degli $A_i$ contiene l'unione delle chiusure degli $A_i$; se gli $A_i$ sono \textit{finiti} allora vale anche il viceversa, ma non necessariamente se $\left|I\right|=\infty$.
+	\begin{equation}
+		\overline{\bigcup_{i\in I}A_i}\supseteq\bigcup_{i\in I}\overline{A_i}\qquad\overline{\bigcup_{i\in I}A_i}=\bigcup_{i\in I}\overline{A_i}\text{ se }I\text{ finito}
+	\end{equation}
+	\item La chiusura dell'intersezione degli $A_i$ è contenuta nell'intersezione delle chiusure degli $A_i$; il viceversa non vale necessariamente.
+		\begin{equation}
+		\overline{\bigcap_{i\in I}A_i}\subseteq\bigcap_{i\in I}\overline{A_i}
+	\end{equation}
+	\item L'interno dell'unione degli $A_i$ contiene l'unione degli interni degli $A_i$; il viceversa non vale necessariamente.
+	\begin{equation}
+		\interior{\left(\bigcup_{i\in I}A_i\right)}\supseteq\bigcup_{i\in I}\interior{A_i}
+	\end{equation}
+	\item L'interno dell'intersezione degli $A_i$ è contenuta nell'intersezione degli interni degli $A_i$; se gli $A_i$ sono \textit{finiti} allora vale anche il viceversa, ma non necessariamente se $\left|I\right|=\infty$.
+	\begin{equation}
+		\interior{\left(\bigcap_{i\in I}A_i\right)}\subseteq\bigcap_{i\in I}\interior{A_i}\qquad\interior{\left(\bigcap_{i\in I}A_i\right)}=\bigcap_{i\in I}\interior{A_i}\text{ se }I\text{ finito}
+	\end{equation}
+\end{enumerate}
+\end{proposition}
+\begin{demonstration}~{}
+	\begin{enumerate}[label=\Roman*]
+	\item Poichè $A_i\subseteq \bigcup_{i\in I}A_i\ \forall i\in I$ e la chiusura mantiene l'ordine di inclusione, allora:
+	\begin{equation*}
+		\overline{A_i}\subseteq \overline{\bigcup_{i\in I}A_i}\forall i\in I
+	\end{equation*}
+	L'unione degli $A_i$ è il più piccolo insieme che contiene ogni $\overline{A_i}$, dunque è contenuto necessariamente in $\displaystyle \overline{\bigcup_{i\in I}A_i}$, pertanto vale il caso generale.\\
+	Ponendoci nel caso \textit{finito}, dobbiamo mostrare l'altra inclusione, cioè:
+	\begin{equation*}
+		\overline{\bigcup_{i\in I}A_i}\subseteq\bigcup_{i\in I}\overline{A_i}
+	\end{equation*}
+	Poichè gli $\overline{A_i}$ sono chiusi, la loro unione finita è ancora chiusa e pertanto:
+	\begin{equation*}
+		\overline{\bigcup_{i\in I}\overline{A_i}}=\bigcup_{i\in I}\overline{A_i}
+	\end{equation*}
+	Per definizione $A_i\subseteq\overline{A_i}\ \forall i$, dunque anche le unioni finite mantengono la relazione di inclusione:
+	\begin{equation*}
+		\bigcup_{i\in I}A_i\subseteq\bigcup_{i\in I}\overline{A_i}
+	\end{equation*}
+	Il passaggio alla chiusura mantiene le relazioni di inclusione:
+	\begin{equation*}
+			\overline{\bigcup_{i\in I}A_i}\subseteq\overline{\bigcup_{i\in I}\overline{A_i}}=\bigcup_{i\in I}\overline{A_i}
+	\end{equation*}
+	Segue così la tesi.\\
+	Come controesempio nel caso \textit{infinito}, si consideri $\realset$ con la topologia Euclidea e la famiglia di sottoinsiemi $\left\{A_n\right\}=\left\{\left[\frac{1}{n},\ 1\right]\mid n\geq 2,\ n\in \naturalset\right\}$. Essi sono chiusi, quindi $A_n=\overline{A_n}$. Allora:
+	\begin{equation*}
+		\bigcup_{n\geq 2}\overline{A_n}=\bigcup_{n\geq 2}A_n=\left(0,\ 1\right]
+	\end{equation*}
+Tuttavia, $\displaystyle \overline{\bigcup_{n\geq 2}A_n}=\overline{\left(0,\ 1\right]}=\left[0,\ 1\right]\supsetneqq\left(0,\ 1\right]=\bigcup_{n\geq 2}\overline{A_n}$.
+\item Poichè gli $\overline{A_i}$ sono chiusi, la loro intersezione arbitraria è ancora chiusa e pertanto:
+\begin{equation*}
+	\overline{\bigcap_{i\in I}\overline{A_i}}=\bigcap_{i\in I}\overline{A_i}
+\end{equation*}
+Per definizione $A_i\subseteq\overline{A_i}\ \forall i$, dunque anche le intersezioni mantengono la relazione di inclusione:
+\begin{equation*}
+	\bigcap_{i\in I}A_i\subseteq\bigcap_{i\in I}\overline{A_i}
+\end{equation*}
+Essendo la chiusura il più piccolo chiuso contenente un sottospazio, segue che:
+\begin{equation*}
+	\bigcap_{i\in I}A_i\subseteq\overline{\bigcap_{i\in I}A_i}\subseteq\bigcap_{i\in I}\overline{A_i}
+\end{equation*}
+Da cui segue la tesi.\\
+Come controesempio, si consideri $\realset$ con la topologia Euclidea. Presi i razionali $\rationalset$ e gli irrazionali $\irrationalset$, essi sono \textit{densi} e quindi $\overline{\rationalset}=\realset$, $\overline{\irrationalset}=\realset$. Allora:
+\begin{equation*}
+	\overline{\rationalset}\cap\overline{\irrationalset}=\realset
+\end{equation*}
+Tuttavia, $\rationalset$ e $\irrationalset$ sono disgiunti, pertanto:
+\begin{equation*}
+	\overline{\rationalset\cap\left(\irrationalset\right)}=\overline{\emptyset}=\emptyset
+\end{equation*}
+Pertanto \textit{non} vale l'altra inclusione.
+\item Passiamo al complementare della chiusura del complementare:
+\begin{equation*}
+\interior{\left(\bigcup_{i\in I}A_i\right)}=X\setminus\left(\overline{X\setminus \bigcup_{i\in I}A_i}\right)=X\setminus\left(\overline{\bigcap_{i\in I}X\setminus A_i}\right)
+\end{equation*}
+Poiché $\displaystyle \overline{\bigcap_{i\in I}X\setminus A_i}\subseteq \bigcap_{i\in I}\overline{X\setminus A_i}$, allora $\displaystyle X\setminus\left(\overline{\bigcap_{i\in I}X\setminus A_i}\right) \supseteq X\setminus\bigcap_{i\in I}\overline{X\setminus A_i}$. Pertanto:
+\begin{equation*}
+\interior{\left(\bigcup_{i\in I}A_i\right)}\supseteq X\setminus\bigcap_{i\in I}\overline{X\setminus A_i}=X\setminus\bigcap_{i\in I}X\setminus \interior{A_i}=X\setminus\left(X\setminus\bigcup_{i\in I}A_i \right)=\bigcup_{i\in I}\interior{A_i}
+\end{equation*}
+Come controesempio, si consideri $\realset$ con la topologia Euclidea e i sottoinsiemi $A_1=\left[0,\ \frac{1}{2}\right]$ e $A_2=\left[\frac{1}{2},\ 1\right]$. Allora:
+\begin{equation*}
+	\begin{array}{l}
+		\interior{\left(A_1\cup A_2\right)}=\interior{\left(\left[0,\ \frac{1}{2}\right]\cup\left[\frac{1}{2},\ 1\right]\right)}=\interior{\left[0,\ 1\right]}=\left(0,\ 1\right)\\
+		\interior{A_1}\cup \interior{A_2}=\interior{\left[0,\ \frac{1}{2}\right]}\cup\interior{\left[\frac{1}{2},\ 1\right]}=\interior{\left[0,\ 1\right]}=\left(0,\ \frac{1}{2}\right)\cup\left(\frac{1}{2},\ 1\right)
+	\end{array}
+\end{equation*}
+Dunque $\interior{A_1}\cup \interior{A_2}\subsetneqq\interior{\left(A_1\cup A_2\right)}$.
+\item Passiamo al complementare della chiusura del complementare:
+\begin{equation*}
+\interior{\left(\bigcap_{i\in I}A_i\right)}=X\setminus\left(\overline{X\setminus \bigcap_{i\in I}A_i}\right)=X\setminus\left(\overline{\bigcup_{i\in I}X\setminus A_i}\right)
+\end{equation*}
+Poiché $\displaystyle \overline{\bigcup_{i\in I}X\setminus A_i}\supseteq \bigcup_{i\in I}\overline{X\setminus A_i}$, allora $\displaystyle X\setminus\left(\overline{\bigcup_{i\in I}X\setminus A_i}\right) \subseteq X\setminus\bigcup_{i\in I}\overline{X\setminus A_i}$. Pertanto:
+\begin{equation*}
+		\interior{\left(\bigcap_{i\in I}A_i\right)}\stackrel{!}{\subseteq} X\setminus\bigcup_{i\in I}\overline{X\setminus A_i}=X\setminus\bigcup_{i\in I}X\setminus \interior{A_i} =X\setminus\left(X\setminus\bigcap_{i\in I}A_i \right)=\bigcap_{i\in I}\interior{A_i}
+\end{equation*}
+Ponendoci nel caso \textit{finito}, l'inclusione con (!) risulta un uguaglianza per il punto 1 della proposizione, da cui segue la tesi.\\
+Come controesempio nel caso \textit{infinito}, si consideri $\realset$ con la topologia Euclidea e la famiglia di sottoinsiemi $\left\{A_n\right\}=\left\{\left(1-\frac{1}{n},\ 1+\frac{1}{n}\right)\mid n> 0,\ n\in \naturalset\right\}$. Essi sono aperti, quindi $A_n=\interior{A_n}$. Allora:
+\begin{equation*}
+	\bigcap_{n>0}\interior{A_n}=\bigcap_{n>0}A_n=\{1\}
+\end{equation*}
+Tuttavia, $\displaystyle \interior{\left(\bigcap_{n>0}A_n\right)}=\interior{\{1\}}=\emptyset$.
+\end{enumerate}
+	\vspace{-3mm}
+\end{demonstration}
+\subsection{Strutture topologiche e prodotto cartesiano}
+La dimostrazione del terzo punto è adattata da \cite{Math1000:interior} su Mathematics Stack Exchange.
+\begin{proposition}[Strutture topologiche e prodotto cartesiano.]~{}\\\label{topologiaprodottostruttura}
+	Siano $X,\ Y$ spazi topologici e $X\times Y$ il loro prodotto.
+	\begin{enumerate}
+		\item Dati $x\in X,\ y\in Y$, siano $\mathcal{U} = \left\{U_i\right\}_{i\in I}$ un
+		sistema fondamentale di intorni di $x$ e $\mathcal{V} = \left\{V_j\right\}_{j\in J}$ un sistema fondamentale di intorni di $y$. Poniamo $W_{ij} \coloneqq U_i \times V_j \subseteq X \times Y$ . Allora:
+		\begin{equation}
+			\mathcal{W} = \left\{W_{ij}\right\}_{j\in J}
+		\end{equation}
+		è un sistema fondamentale di intorni di $\left(x,\ y\right) \in X \times Y$.
+		\item Se $A\subseteq X,\ B\subseteq Y$, allora $\overline{A\times B}=\overline{A}\times \overline{B}$. In particolare, il prodotto di chiusi è chiuso.
+		\item Se $A\subseteq X,\ B\subseteq Y$, allora $\interior{\left(A\times B\right)}=\interior{A}\times \interior{B}$. In particolare, il prodotto di aperti è aperti.
+	\end{enumerate}
+	\vspace{-3mm}
+\end{proposition}
+\begin{demonstration}~{}
+	\begin{enumerate}[label=\Roman*]
+		\item Per definizione di sistema fondamentale di intorni si ha:
+		\begin{gather*}
+			\forall U\in I\left(x\right)\ \exists U_i\in\mathcal{U}\ \colon U_i\in U\\
+			\forall V\in I\left(y\right)\ \exists V_i\in\mathcal{V}\ \colon V_j\in V
+		\end{gather*}
+		$\impliesdx$ Per ogni intorno $U\in I\left(x\right)$ e $V\in I\left(y\right)$, si ha $W\coloneqq U\times V\in I\left(\left(x,\ y\right)\right)$ per definizione di topologia prodotto. Inoltre, presi gli intorni $U_i$ e $V_j$ definiti come sopra, si ha che $W_{ij} = U_i \times V_j\in I\left(\left(x,\ y\right)\right)$ per definizione di topologia prodotto; segue che, per ogni intorno $W$ di questa forma esiste $W_{ij}$ tale che:
+		\begin{equation*}
+			W_{ij} = U_i \times V_j\subseteq U\times V= W
+		\end{equation*}
+		$\impliessx$ Prendiamo un intorno $W\in I\left(x,\ y\right)$, esiste un aperto $W'\subseteq W$. Poiché $W'$ appartiene al prodotto $X\times Y$, si ha che $\displaystyle W'=\bigcup_k A_k\times B_k$ con $A_k$ e $B_k$ aperti di $X$ e $Y$. Preso allora $\left(x,\ y\right)\in W'$, esistono degli aperti $A_k$ e $B_k$ che contengono rispettivamente $x$ e $y$.\\
+		Segue dunque che $A_k\in I\left(x\right)$ e $B_k\in I\left(y\right)$ e dunque dal sistema fondamentale di intorni si ha che $\exists U_i\in\mathcal{U},\ V_j\in\mathcal{V}$ tali che $U_i\in A_k,\  V_j\in B_k$. Allora definito $W_{ij} \coloneqq U_i \times V_j$, si ha per ogni intorno $W$ di $X\times Y$ esiste $W_{ij}$ tale che:
+		\begin{equation*}
+			W_{ij} = U_i \times V_j\subseteq A_k\times B_k\subseteq W'\subseteq W
+		\end{equation*}
+		\item Utilizziamo i risultati del punto 1 con la caratterizzazione per intorni della chiusura.
+		\begin{align*}
+			\left(x,\ y\right)\in \overline{A\times B}&\iff \forall W\in I\left(x,\ y\right)\quad W\cap\left(A\times B\right)\neq \emptyset\\
+			&\iff \forall U\in I\left(x\right),\ \forall V\in I\left(y\right)\quad \left(U\times V\right)\cap\left(A\times B\right)\neq \emptyset\\
+			&\iff \forall U\in I\left(x\right),\ \forall V\in I\left(y\right)\quad \left(U\cap A\right)\times\left(V\cap B\right)\neq \emptyset\\
+			&\iff \forall U\in I\left(x\right),\ \forall V\in I\left(y\right)\quad U\cap A\neq \emptyset ,\ V\cap B\neq \emptyset\\
+			&\iff \forall U\in I\left(x\right)\quad U\cap A\neq \emptyset ,\ \forall V\in I\left(y\right)\quad V\cap B\neq \emptyset\\
+			&\iff x\in\overline{A}\wedge y\in \overline{B}\iff\left(x,\ y\right)\in\overline{A}\times \overline{B}
+		\end{align*}
+		In particolare, se $A$ e $B$ sono chiusi, avendo che $A=\overline{A}$ e $B=\overline{B}$, otteniamo:
+		\begin{equation*}
+			A\times B=\overline{A}\times \overline{B}=\overline{A\times B}
+		\end{equation*}
+	\item$\impliessx$ Dato che $\interior{A}$ è aperto in $X$ e $\interior{B}$ è aperto in $Y$ e vale $\interior{A}\subseteq A$, $\interior{B}\subseteq{B}$, allora segue che $\interior{A}\times\interior{B}$ è aperto e $\interior{A}\times\interior{B}\subseteq A\times B$.\\
+	$\impliesdx$ Dato che $\interior{\left(A\times B\right)}$ è aperto in $X\times Y$, per definizione della topologia prodotto allora esistono aperti $U_i\subseteq X$ e $V_i\subseteq Y$:
+	\begin{equation*}
+		\interior{\left(A\times B\right)}=\bigcup_i\left(U_i\times V_i\right)
+	\end{equation*}
+	Poichè $U_i\subseteq A,\ V_i\subseteq B\ \forall i$, allora per definizione di intorno si ha $U_i\subseteq\interior{A},\ V_i\subseteq\interior{B}\ \forall i$, cioè:
+	\begin{equation*}
+		\bigcup_i\left(U_i\times V_i\right)\subseteq \interior{A}\times \interior{B}
+	\end{equation*}
+	\end{enumerate}
+	\vspace{-6mm}
+\end{demonstration}
+\section{Capitolo 4: topologia quoziente}
+\subsection{Quoziente Hausdorff da contrazione su compatto}
+La seguente dimostrazione è in parte adattata da \cite{user:hausdorff} su Mathematics Stack Exchange.
+\begin{lemming}[{$X$} Hausdorff e {$K$} compatto implica {$\nicefrac{X}{K}$} Hausdorff; Manetti, 5.11.]~{}\\
+	Dato $X$ spazio topologico di \textbf{Hausdorff} e $K\subseteq X$ compatto allora $\nicefrac{X}{K}$ è di \textbf{Hausdorff}.
+\end{lemming}
+\begin{demonstration}
+	Scegliamo $P\neq Q\in \nicefrac{X}{K}$, cioè $\exists x,\ y\in X$ tali per cui $P=[x]$, $Q=[y]$.
+	\begin{itemize}
+		\item Se $P,\ Q\neq \pi\left(K\right)$, allora $x,\ y\notin K$. Poiché $X$ è di Hausdorff, consideriamo degli intorni aperti disgiunti $U\in I\left(x\right)$ e $V\in I\left(y\right)$. Poichè $K$ è un compatto in $X$ di Hausdorff, allora $K$ è chiuso e il complementare $A\coloneqq X\setminus K$ è aperto. Definiamo:
+		\begin{equation*}
+			U'\coloneqq A\cap U\in I\left(x\right)\quad V'\coloneqq A\cap V\in I\left(y\right)
+		\end{equation*}
+		Essi sono ancora intorni aperti rispettivamente di $x$ e $y$ perché $A$ è intorno di entrambi i punti, inoltre sono tali per cui $U'\cap V'=\emptyset$, $U'\cap K=\emptyset$ e $V'\cap K=\emptyset$, cioè $U'$ e $V'$ sono intorni disgiunti di $x$ e $y$ che \textit{non} contengono alcun punto di $K$. Allora $\nicefrac{X}{K}$ risulta un quoziente di Hausdorff, poiché le immagini tramite $\pi$ di $U'$ e $V'$ sono intorni disgiunti dei punti $P$ e $Q$:
+		\begin{equation*}
+			\pi\left(U'\right)\in I\left(P\right),\ \pi\left(V'\right)\in I\left(Q\right),\ \pi\left(U'\right)\cap \pi\left(V'\right)=\emptyset
+		\end{equation*}
+		\item Supponiamo che $Q=\pi\left(K\right)$. Allora $y\in K$ e $x\notin K$. Con un procedimento simile a quello usato nella dimostrazione di ‘‘$K$ compatto in $X$ di Hausdorff implica $K$ chiuso'' (Teorema \ref{compatto in hausdorff chiuso}, pag. \pageref{compatto in hausdorff chiuso}) si può definire a partire da un ricoprimento aperto di $K$ un intorno aperto $U\in I\left(x\right)$ e uno $V\in \left(y\right)$ tale per cui $y\in K\subseteq V$ e $U\cap V=\emptyset$. Allora $\nicefrac{X}{K}$ risulta un quoziente di Hausdorff, poiché le immagini tramite $\pi$ di $U$ e $V$ sono intorni disgiunti dei punti $P$ e $Q=\pi\left(K\right)$:
+		\begin{equation*}
+			\pi\left(U\right)\in I\left(P\right),\ \pi\left(V\right)\in I\left(Q\right)=I\left(\pi\left(K\right)\right),\ \pi\left(U\right)\cap \pi\left(V\right)=\emptyset
+		\end{equation*}
+	\end{itemize}
+\vspace{-6mm}
+\end{demonstration}
+\label{quozientehausdorffsuspaziocompatto}
 \section{Capitolo 6: assiomi di numerabilità e successioni}
 \subsection{Non prima numerabilità del quoziente}
 La seguente dimostrazione sulla non prima numerabilità del quoziente $\nicefrac{\realset}{\integerset}$ è adattata da \cite{scott:nonum} su Mathematics Stack Exchange.
@@ -59,7 +260,7 @@ Si consideri la contrazione di $\integerset$ in $\realset$ ad un punto, cioè il
 Sia $\left\{U_n:n\in\naturalset\right\}$ una famiglia di intorni aperti di $[0]$; cerchiamo un intorno aperto di $[0]$ che non ne contiene nessuno come sottoinsieme, mostrano in tal modo che non formano un sistema fondamentale di intorni di $[0]$ e pertanto che $\nicefrac{\realset}{\integerset}$ non è primo numerabile per $[0]$.\\
 Sia $\pi$ la mappa quoziente. Per ogni $n\in\naturalset$ e $k\in\integerset$ esiste un $\epsilon_{n,k}\in(0,1)$ tale che: 
 \begin{equation*}
-U_n\supseteq \pi\left[\inter_{k\in\integerset}(k-\epsilon_{n,k},k+\epsilon_{n,k})\right]\
+U_n\supseteq \pi\left[\bigcap_{k\in\integerset}(k-\epsilon_{n,k},k+\epsilon_{n,k})\right]\
 \end{equation*}
 Per $k\in\integerset$ sia $\delta_k=\frac12\epsilon_{k,k}$, e sia:
 \begin{equation*}
@@ -171,7 +372,7 @@ Un gruppo $G$ è detto \textbf{libero} se isomorfo al gruppo libero $F_S$ genera
 	\end{itemize}
 \vspace{-3mm}
 \end{example}
-\section{Somma wedge}
+\subsection{Somma wedge}
 \begin{define}[Somma wedge.]~{}\\
 	Se $\left(X,\ x_0\right)$ e $\left(X,\ y_0\right)$ sono due spazi topologici di cui prendiamo i punti $x_0\in X$ e $y_0\in Y$. La somma wedge di $X$ e $Y$ è lo spazio quoziente dell'unione disgiunta di $X$ e $Y$ in cui identifichiamo solo i due punti, cioè poniamo $x_0\sim y_0$:
 	\begin{equation}
@@ -448,3 +649,18 @@ a_{11} & a_{12} \\
 a_{21} & a_{22}
 \end{array}\right|}
 \end{equation*}
+\section{Capitolo 12: coniche proiettive}
+\subsection{Regola di Cartesio}\label{Cartesioquellodeibidonidellacarta}\index{regola!di Cartesio}
+\begin{theorema}[Regola di Cartesio.]~{}\\
+	Dato un polinomio $f\left(x\right)$ in una sola variabile $x$, i cui termini non nulli sono in ordine decrescente rispetto all'esponente, allora il numero di \textit{radici positive} (contate con molteplicità) sono pari al numero di \textit{cambi di segno} tra due coefficienti consecutivi (trascurando eventuali coefficienti nulli).
+\end{theorema}
+\begin{tips}
+	Per trovare il numero di radici negative, è sufficiente applicare la regola di Cartesio al polinomio $f\left(-x\right)$: le radici positive di $f\left(-x\right)$ saranno le radici negative di $f\left(x\right)$.
+\end{tips}
+Ad esempio, consideriamo il polinomio $f\left(x\right)=x^3+x^2-x-1$: esso ha solo un cambio di segno fra il secondo e il terzo termine (sequenza di segni: $\left(+,\ +,\ -,\ -\right)$), dunque ha esattamente una radice reale positiva. Per le radici negative, notiamo che $f\left(-x\right)=-x^3+x^2+x-1$ ha due cambi di segno(sequenza di segni: $\left(-,\ +,\ +,\ -\right)$), ovvero $f$ ha due radici negative contate con molteplicità. Infatti, si fattorizza come:
+\begin{equation*}
+	f\left(x\right)=\left(x+1\right)^2\left(x-1\right)
+\end{equation*}
+Quindi una radice positiva e una negativa, quest'ultima con molteplicità 2.\\
+Nel caso di una matrice $A$, come quelle simmetriche che descrivono le coniche affini/proiettive, applicando al polinomio caratteristico $C_A\left(t\right)$ la regola di Cartesio si possono trovare gli autovalori positivi e negativi.
+In particolare, noto il rango della matrice, il numero delle radici nulle $z$ del polinomio caratteristico corrisponde alla differenza tra la dimensione delle matrice $n$ e il suo rango $\rk A$; allora è sufficiente applicare la regola di Cartesio solo una volta per trovare il numero $p$ delle radici positive: il numero $q$ di quelle negative è pari a $\rk A - p$, dato che $n=z+p+q$ e $z=n-\rk A$ dalle osservazioni precedenti.

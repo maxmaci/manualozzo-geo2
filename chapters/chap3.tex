@@ -33,29 +33,32 @@ Conoscendo le strutture di \textit{gruppo} e \textit{spazio topologico} su un in
 Vediamo ora degli esempi noti di gruppi topologici.
 \begin{examples}~{}
 	\begin{itemize}
-		\item $\left( \realset^n, \ +, \ \eucl \right), \left( \complexset ^n, \ +, \ \eucl \right)$.
-		\item $\left( \realset^*, \ \cdot,\ \eucl \right), \left( \realset^*, \ \cdot, \ \eucl \right)$ con la topologia indotta di sottospazio.
-		\item $\left( M_{n,m}(\realset),\ \cdot, \eucl \right)$ con la topologia indotta di sottospazio di $\realset^{n,m}$, ad es. $\intv$.
+		\item $\left( \realset^n, \ +\ , \ \eucl \right), \left( \complexset ^n, \ +\ , \ \eucl \right)$.
+		\item $\left( \realset^*, \ \cdot\ ,\ \eucl \right), \left( \realset^*, \ \cdot\ , \ \eucl \right)$ con la topologia indotta di sottospazio.
+		\item $\left( M_{n,m}(\realset),\ \cdot\ , \eucl \right)$ con la topologia indotta di sottospazio di $\realset^{n,m}$.
 	\end{itemize}
 \vspace{-3mm}
 \end{examples}
 \begin{observe}
-	I gruppi topologici $\gl (n,\realset )$ e $\gl (n, \complexset )$ sono aperti di $M_{n,n}$.\newline
-	Infatti, considerata la funzione del \textit{determinante} $\funz \det {\realset^{n,n}} \realset$ essa è continua in quanto per calcolare il determinante si opera solo con somme e prodotti.\\
-	Si ha che $\gl(n, \realset)$ è il complementare dell'insieme delle matrici che hanno determinante nullo, il quale è un chiuso in quanto controimmagine di un chiuso quale $\{0\}$ di una funzione continua. Dunque tale gruppo topologico è aperto, e analogamente vale per il caso con $\complexset$.
+	I gruppi topologici $\gl (n,\realset )$ e $\gl (n, \complexset )$ sono aperti di $M_{n,n}\left(\kamp\right)$.\\
+	Considerata la funzione del \textit{determinante} $\funz \det {\realset^{n,n}} \realset$, essa è continua in quanto per calcolare il determinante si opera solo con somme e prodotti.\\
+	Si ha che $\gl(n, \realset)$ è il complementare dell'insieme delle matrici che hanno determinante nullo, il quale è un chiuso in quanto controimmagine di $\{0\}$ (chiuso in $\realset$) tramite una funzione continua.
+	\begin{equation*}
+		\gl(n, \realset)=M_{n,n}(\realset)\setminus\det^{-1}\left(\left\{0\right\}\right)
+	\end{equation*}Dunque tale gruppo topologico è aperto; analogamente vale per il caso con $\complexset$.
 \end{observe}
-Vediamo ora altri sottoinsiemi di $M_{n,n}$:
+Vediamo ora altri sottogruppi (moltiplicativi) di $M_{n,n}$:
 	\begin{itemize}
 		\item $\Sl$, dato da $\{\det A=1\} $, è il \textit{gruppo speciale lineare}\index{gruppo!speciale lineare}.
 		\item $\Or$, determinato dall'equazione $A^{t}A=I$, è il \textit{gruppo ortogonale}\index{gruppo!ortogonale}.
 		\item $\So=\Or\cap\Sl$ è il \textit{gruppo speciale ortogonale}\index{gruppo!speciale ortogonale}.
-		\item $\U$, determinato dall'equazione $A^{t*}\overline{A}=I$, è il \textit{gruppo unitario}\index{gruppo!unitario}.
+		\item $\U$, determinato dall'equazione $A^{t}\overline{A}=I$, è il \textit{gruppo unitario}\index{gruppo!unitario}.
 		\item $\Su=\U\cap\Sl$ è il \textit{gruppo speciale unitario}\index{gruppo!speciale unitario}.
 	\end{itemize}
-Ci sono delle operazioni sulle matrici che sono continue:
+Tutti questi sono gruppi topologici, in quanto le operazioni sulle matrici sono continue:
 	\begin{itemize}
-		\item \textit{Moltiplicazione matriciale}: continua perché definita tramite somme e prodotti di elementi delle matrici
-		\item \textit{Inversa}: è una funzione che ad una matrice $A$ associa $\displaystyle \frac{1}{\det A}$ per prodotti e somme di elementi della matrice, in particolare è continua.
+		\item \textit{Moltiplicazione matriciale}: continua perché definita tramite somme e prodotti di elementi delle matrici.
+		\item \textit{Inverso}: è una funzione che ad una matrice $A$ associa la sua inversa $A^{-1}$, ottenuta moltiplicando $\displaystyle \frac{1}{\det A}$ per una matrice ottenuta con particolari prodotti e somme di elementi della matrice $A$; per questo motivo è continua.
 	\end{itemize}
 \begin{observe}
 	Per i gruppi topologici in generale vale la \textit{moltiplicazione destra} e \textit{sinistra}:
@@ -63,14 +66,14 @@ Ci sono delle operazioni sulle matrici che sono continue:
 			\funztot {L_h} G G g {hg} \text{   e   } \funztot {R_n}  G G g {gh} \\
 			(L_h)^{-1}=L_{h^{-1}} \text{   e   } (R_h)^{-1}=R_{h^{-1}}
 		\end{gather*}
-	In particolare sono omeomorfismi. Ne segue che un gruppo topologico è \textbf{omogeneo}, ovvero:
+	In particolare sono omeomorfismi. Ne segue che un gruppo topologico è \textbf{omogeneo}:
 		\begin{gather*}
-			\forall g,h\in G \ \exists \funz \phi G G \text{ omeomorfismo}\ \colon \phi(g)=h
+			\forall g,\ h\in G \ \exists \funz \phi G G \text{ omeomorfismo}\ \colon \phi(g)=h
 		\end{gather*}
 	Infatti, basta porre $\phi=L_{hg^{-1}}$ oppure $\phi=R_{g^{-1}h}$.
 \end{observe}
 Il seguente teorema ci permette di caratterizzare i gruppi topologici di \textbf{Hausdorff} grazie alla chiusura dell'elemento neutro.
-\begin{theorema}[G un gruppo topologico di Hausdorff se e solo se il neutro è chiuso.]~{}\\
+\begin{theorema}[Gruppo topologico di Hausdorff se e solo se il neutro è chiuso.]~{}\\
 	Sia $G$ un gruppo topologico, $e\in G$ il suo elemento neutro, si ha che:
 		\begin{gather*}
 			G \ \text{di \textbf{Hausdorff}} \iff \{e\} \text{ chiuso }
@@ -78,17 +81,20 @@ Il seguente teorema ci permette di caratterizzare i gruppi topologici di \textbf
 	\vspace{-6mm}
 \end{theorema}
 \begin{demonstration}~{}\\
-	$\impliesdx G$ di \textbf{Hausdorff} $\implies G \ T_1 \implies$ tutti i punti sono chiusi, in particolare anche $\{e\}$. \newline
-	$\impliessx$ Per dimostrare che $G$ è di \textbf{Hausdorff} si utilizza la caratterizzazione con la diagonale chiusa, sfruttando l'omogeneità dei gruppi topologici:
+	$\impliesdx G$ di \textbf{Hausdorff} $\implies G \ \mathbf{T_1} \implies$ tutti i punti sono chiusi, in particolare anche $\{e\}$. \\
+	$\impliessx$ Per dimostrare che $G$ è di \textbf{Hausdorff} si utilizza la caratterizzazione con la diagonale chiusa:
 		\begin{gather*}
-			\funztot \phi {G\times G} G {(g,h)} {gh^{-1}} \ \ , \ \ (g,h)=(h,g) \iff g=h\iff \phi\left( (g,h)\right)=gh^{-1}=e \\
-			\implies \Delta_G =\phi^{-1}\left(\{e\}\right)
+			\funztot \phi {G\times G} G {(g,h)} {gh^{-1}} \qquad \begin{array}{ll}
+				(g,h)\in\Delta_G &\iff g=h\iff \phi\left( (g,h)\right)=gh^{-1}=e \\
+				&\implies \Delta_G =\phi^{-1}\left(\{e\}\right)
+			\end{array}
 		\end{gather*}
-	Per ipotesi $\{e\}$ è chiusa, quindi $\Delta_G$ è chiuso e dunque $G$ è di \textbf{Hausdorff}.
+	Per ipotesi $\{e\}$ è chiuso, quindi $\Delta_G$ è chiuso e dunque $G$ è di \textbf{Hausdorff}.
 \end{demonstration}
 
 \begin{observe}
-	$\gl(n,\realset)$ è sconnesso. Mostriamo che è unione di due aperti non vuoti disgiunti sfruttando la funzione determinante $\funz \det {\gl(n,\realset)} {\realset^*}$, infatti essendo continua  le controimmagini di aperti saranno aperti:
+$\gl(n,\realset)$\textsc{ è sconnesso}.
+Esso è unione di due aperti non vuoti disgiunti; notando che le controimmagini di aperti tramite la funzione determinante $\funz \det {\gl(n,\realset)} {\realset\setminus\{0\}}$ saranno aperti in quanto $\det$ è continua, si ha:
 		\begin{gather*}
 			\begin{array}{lcl}
 				\det^{-1} \left( (0,+\infty)\right) & = & \gl ^+ (n,\realset) \\
@@ -103,7 +109,7 @@ Il seguente teorema ci permette di caratterizzare i gruppi topologici di \textbf
 	Sia $\funz f X Y$ continua. Se $f$ è suriettiva aperta o chiusa, $Y$ è connesso e le fibre sono connesse, ovvero se $\forall y\in Y \ f^{-1}(y)$ è connesso, allora $X$ è connesso.
 \end{lemming}
 \begin{demonstration}
-	Supponiamo che $f$ sia aperta e consideriamo $A_1\neq\emptyset\neq A_2$ aperti (per $f$ chiusa si considerano dei chiusi e si procede in modo analogo) t.c. $X=A_1\cup A_2$. Per dimostrare che $X$ è connesso mostriamo che $A_1\cap A_2\neq\emptyset$:
+	Supponiamo che $f$ sia aperta e consideriamo $A_1\neq\emptyset\neq A_2$ aperti (per $f$ chiusa si considerino dei chiusi e si procede in modo analogo) tale che $X=A_1\cup A_2$. Per dimostrare che $X$ è connesso mostriamo che $A_1\cap A_2\neq\emptyset$:
 		\begin{gather*}
 			\begin{array}{lcl}
 				f \text{ aperta } & \implies & f(A_1), f(A_2) \text{ aperti}\\
@@ -115,21 +121,32 @@ Il seguente teorema ci permette di caratterizzare i gruppi topologici di \textbf
 			\end{array} \\
 				\begin{cases}
 					\left( f^{-1}(y_0)\cap A_1 \right)\cup \left( f^{-1}(y_0)\cap A_2 \right)=f^{-1}(y_0) \\
-					\text{fibre connesse }
+					\text{Fibre connesse }
 				\end{cases}
-				 \implies  f^{-1}(y_0)\cap A_1\cap A_2\neq\emptyset\implies\\
-				 \implies A_1\cap A_2\neq\emptyset
+				 \begin{array}{ll}
+				 	\implies& f^{-1}(y_0)\cap A_1\cap A_2\neq\emptyset\implies\\
+				 	&\implies A_1\cap A_2\neq\emptyset
+				 \end{array}
 		\end{gather*}
+\vspace{-3mm}
 \end{demonstration}
 \begin{theorema}[$\protect\forall n\geq 1, {\gl^+(n,\realset)}$ e ${\gl(n,\complexset)}$ sono connessi.]
 \end{theorema}
 \begin{demonstration}
-	Si procede per induzione su $n$ per $\gl^+(n,\realset)$, il caso $\gl(n,\complexset)$ è analogo.\newline
-	$n=1 \ )$ \ \ $\begin{cases}
+	Si procede per induzione su $n$ per $\gl^+(n,\realset)$; il caso $\gl(n,\complexset)$ è analogo.\\
+	$\mathbf{n=1)}$ \ \ $\begin{cases}
 			\gl^+(1,\realset)=(0,+\infty) \\
 			\gl(n,\complexset)=\complexset\setminus\{0\}=\realset^2\setminus{0}
-		\end{cases}$ connessi.\newline
-	$n>1 \ )$ \ \ Supponiamo che $\gl^+(n-1,\realset)$ sia connesso e dimostriamo che lo è anche $\gl(n,\realset)$. Cerchiamo dunque una funzione continua da $\gl^+(n,\realset)$  a $\gl(n-1,\realset)$ che soddisfi le ipotesi del lemma precedente. Pertanto si considera la funzione prima colonna $\displaystyle \funztot p {\realset^{n,n}} {\realset^n} A {p(A)}$ che mappa la prima colonna di $A$. Siccome $\realset^{n,n}=\realset^n\times\realset^{n,n-1}$ allora $p$ è una proiezione, dunque per il punto 2 della proposizione \ref{topprodotto}	è aperta. Restringiamo ora $p$ a $\gl^+(n,\realset)$ nel modo seguente $\funz p {\gl^+(n,\realset)} {\realset^n\setminus\{\mathbf{0}\}}$ che è una funzione continua, suriettiva e aperta, inoltre $\realset^n\setminus\{\mathbf{0}\}$ è connesso per $n>1$. Calcoliamo ora le fibre e mostriamo che sono tutte omeomorfe fra loro e connesse, quindi prima ne troviamo una, mostriamo che è connessa poi dimostriamo che sono tutte omeomorfe. A questo scopo consideriamo:
+		\end{cases}$ connessi.\\
+	$\mathbf{n>1)}$ \ \ Supponiamo ora che $\gl^+(n-1,\realset)$ sia connesso. Per dimostrare che $\gl(n,\realset)$ è connesso, cerchiamo una funzione continua e suriettiva da $\gl^+(n,\realset)$ ad un connesso che soddisfi le ipotesi del lemma precedente. A tal scopo, si considera la \textit{funzione prima colonna} che mappa una matrice $n\times n$ alla sua prima colonna:
+	\begin{equation*}
+		\funztot p {\realset^{n,n}} {\realset^n} A {p(A)}
+	\end{equation*}
+	Siccome $\realset^{n,n}=\realset^n\times\realset^{n,n-1}$ allora $p$ è una \textit{proiezione}, dunque per il punto 2 della proposizione \ref{topprodotto} è aperta. Restringiamo ora $p$ a $\gl^+(n,\realset)$:
+	\begin{equation*}
+		\funz p {\gl^+(n,\realset)} {\realset^n\setminus\{\mathbf{0}\}}
+	\end{equation*}
+	Che è una funzione continua, suriettiva e aperta perché restrizione di una funzione che ha tutte e tre queste proprietà; inoltre $\realset^n\setminus\{\mathbf{0}\}$ è connesso per $n>1$. Rimane soltanto da mostrare che le fibre sono tutte connesse: per far ciò è sufficiente mostrare che siano tutte omeomorfe ad una fibra connessa. Consideriamo:
 		\begin{gather*}
 			y_0=\begin{pmatrix}
 					1 \\ 0 \\ \vdots \\ 0
@@ -140,8 +157,13 @@ Il seguente teorema ci permette di caratterizzare i gruppi topologici di \textbf
 						0      &   &       &
 					\end{pmatrix}
 		\end{gather*}
-	Con $(*,\dots, *)\in\realset^{n-1}$ arbitrario in quanto non influisce nel calcolo del determinante e con $A\in\gl^+(n-1,\realset)$, da cui segue che $p^{-1}(y_0)=\realset^{n-1}\times\gl^+(n-1,\realset)$, dunque $p^{-1}(y_0)$ è connesso visto che i due fattori lo sono per ipotesi.\newline
-	Mostriamo ora che tutte le fibre sono omeomorfe a $p^{-1}(y_0)$. Sia $y\in\realset^n\setminus\{\mathbf{0}\}$ e sia $A\in\gl^+(n,\realset)$ tale che $p(A)=y$, ovvero $y$ è la prima colonna di $A$. In generale vale la relazione $p(AB)=Ap(B)$ e la moltiplicazione sinistra $\displaystyle \funztot {L_A} {\gl^+(n,\realset)} {\gl^+(n,\realset)} B {AB}$ è un omeomorfismo. Dimostriamo che vale $p^{-1}(y)=L_A\left( p^{-1}(y_0)\right)=Ap^{-1}(y_0)$, in modo tale da avere tutte le fibre omeomorfe fra loro:
+	Con $(*,\dots, *)\in\realset^{n-1}$ arbitrario in quanto non influisce nel calcolo del determinante e con $A\in\gl^+(n-1,\realset)$. Segue che $p^{-1}(y_0)=\realset^{n-1}\times\gl^+(n-1,\realset)$, dunque $p^{-1}(y_0)$ è una fibra connessa visto che le due componenti lo sono per ipotesi.\\
+	Mostriamo ora che tutte le fibre sono omeomorfe a $p^{-1}(y_0)$. Sia $y\in\realset^n\setminus\{\mathbf{0}\}$ e sia $A\in\gl^+(n,\realset)$ tale per cui $p(A)=y$, cioè $y$ è la prima colonna di $A$.\\
+	In generale vale la relazione $p(AB)=Ap(B)$; inoltre, la moltiplicazione sinistra:
+	\begin{equation*}
+		\funztot {L_A} {\gl^+(n,\realset)} {\gl^+(n,\realset)} B {AB}
+	\end{equation*}
+	 Dimostriamo che vale $p^{-1}(y)=Ap^{-1}(y_0)=L_A\left( p^{-1}(y_0)\right)=$, in modo tale da avere tutte le fibre omeomorfe a $p^{-1}(y_0)$:
 	\begin{equation*}
 		\begin{array}{ll}
 			\includesx & \displaystyle \quad B\in p^{-1}(y_0) \implies B=\begin{pmatrix}
@@ -152,20 +174,19 @@ Il seguente teorema ci permette di caratterizzare i gruppi topologici di \textbf
 			\end{pmatrix} \implies	p(AB)=Ap(B)=A\begin{psmallmatrix}
 				1 \\ 0 \\ \vdots \\ 0
 			\end{psmallmatrix}= p(A)=y\\
+			& \implies AB\in p^{-1}\left(y\right)\\
 			\includedx & \displaystyle \quad C\in p^{-1}(y) \implies C=\begin{pmatrix}
 				y & * & \cdots & *
-			\end{pmatrix}
+			\end{pmatrix}\\
+		&\text{Poniamo allora }  B=A^{-1}C:\\
+		&\begin{array}{ll}
+		p(B)&=p(A^{-1}C)=A^{-1}p(C)=A^{-1}y=A^{-1}p(A)=\\
+		&=p(A^{-1}A)=p(I)=y_0
+		\end{array}\\
+		&\text{Poiché } B\in p^{-1}(y_0)\text{, allora }C\in Ap^{-1}(y_0).
 		\end{array}
-	\end{equation*}
-Poniamo allora $B=A^{-1}C$:
-			\begin{equation*}
-				\begin{array}{ll}
-					p(B)&=p(A^{-1}C)=A^{-1}p(C)=A^{-1}y=A^{-1}p(A)=\\
-					&=p(A^{-1}A)=p(I)=y_0
-				\end{array}
-			\end{equation*}
-	Poiché $C=AB$, allora $B\in p^{-1}(y_0)$.\\
-	Quindi, siccome tutte le fibre sono tutte omeomorfe ad una fibra connessa, allora sono tutte connesse e valgono le ipotesi del lemma precedente, per cui $\gl^+(n,\realset)$ è connesso.
+		\end{equation*}
+	Siccome tutte le fibre sono tutte omeomorfe ad una fibra connessa, allora sono tutte connesse e valgono le ipotesi del lemma precedente, per cui $\gl^+(n,\realset)$ è connesso.
 \end{demonstration}
 % LEZ 11
 \begin{corollary}[$\Sl{(n,\realset)}$ e $\Sl{(n,\complexset)}$ sono connessi.]
@@ -193,7 +214,7 @@ Poniamo allora $B=A^{-1}C$:
 \begin{theorema}[$\So{(n)}, \U{(n)}$ e $\Su{(n)}$ sono compatti e connessi.]
 \end{theorema}
 \begin{demonstration}
-	Per dimostrare che sono \textit{compatti} essendo sottospazi di $\realset^{n\times n}$ per il teorema \ref{compatto chiuso e limitato R^n} basta dimostrare che sono chiusi e limitati. In particolare essendo definiti tramite equazioni che sono luoghi di zeri di polinomi in $a_{ij}$ allora sono chiusi:
+	Per dimostrare che sono \textit{compatti} essendo sottospazi di $\realset^{n,n}$ per il teorema \ref{compatto chiuso e limitato R^n} basta dimostrare che sono chiusi e limitati. In particolare essendo definiti tramite equazioni che sono luoghi di zeri di polinomi in $a_{ij}$ allora sono chiusi:
 		\begin{gather*}
 			\So(n):\begin{cases}
 					A^{t}A=I\\
@@ -205,12 +226,12 @@ Poniamo allora $B=A^{-1}C$:
 				\det A=1
 			\end{cases}
 		\end{gather*}
-	Siccome $\Su(n)\subseteq \U(n)\subseteq \So(n)$ basta dimostrare che $\So(n)$ è limitato:
+	Siccome $\Su(n)\subseteq \U(n)\subseteq \So(n)$ basta dimostrare che $\So(n)$ è limitato, usando la norma Euclidea su $\realset^{n,n}$:\footnote{La norma Euclidea di matrici $\realset^{n,n}$ corrisponde a visualizzare la matrice $A\in\realset^{n,n}$ come un vettore in $\realset^{n^2}$ e usare la norma Euclidea ben nota degli spazi vettoriali reali.}
 		\begin{gather*}
-			A\in\So(n) \implies \sum_{i=1}^n a_{ij}^2=1, \forall i=1,\dots,n \implies \sum_{i=1}^n a_{ij}^2=n \implies \So(n)\subseteq S_{\sqrt{n}}\subseteq\realset^{n\times n}
+			A\in\So(n) \implies \sum_{i=1}^n a_{ij}^2=1, \forall j=1,\dots,n \implies \sum_{i,j=1}^n a_{ij}^2=n \implies \So(n)\subseteq S_{\sqrt{n}}\subseteq\realset^{n,n}
 		\end{gather*}
-	dove $S_{\sqrt{n}}$ è la sfera di raggio $\sqrt{n}$, dunque $\So(n)$ è limitato. Ne segue che anche $\U(n)$ e $\Su(n)$ lo sono, dunque sono tutti chiusi e limitati in $\realset^{n\times n}$, quindi compatti. \newline
-	Per dimostrare che sono \textit{connessi} si procede analogamente al teorema precedente sfruttando il lemma \ref{connessione e fibre}. Si consideri $\funz p {\So(n)} {S^{n-1}\subseteq \realset^n}$ funzione prima colonna, essa è continua, suriettiva e chiusa in quanto è un compatto in un \textbf{Hausdorff}, e le sue fibra sono connesse:
+	Dove $S_{\sqrt{n}}$ è la sfera di raggio $\sqrt{n}$: dunque, $\So(n)$ è limitato. Ne segue che anche $\U(n)$ e $\Su(n)$ lo sono, dunque sono tutti chiusi e limitati in $\realset^{n,n}$ e quindi compatti.\\
+	Per dimostrare che sono \textit{connessi} si procede analogamente al teorema precedente usando il lemma \ref{connessione e fibre}. Consideriamo la funzione \textit{prima colonna} $\funz p {\So(n)} {S^{n-1}\subseteq \realset^n}$; essa è continua, suriettiva e chiusa in quanto è funzione da un compatto in un \textbf{Hausdorff}, e le sue fibre sono connesse:
 	\begin{equation*}
 		p^{-1}\left( \begin{psmallmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{psmallmatrix} \right) = \begin{psmallmatrix}
 			1      & 0 & \cdots & 0\\
@@ -219,7 +240,7 @@ Poniamo allora $B=A^{-1}C$:
 			0      &   &       &
 		\end{psmallmatrix}
 	\end{equation*}
-Con $A\in \So(n-1)$, dunque per il lemma precedente $\So(n)$ è connesso.
+Con $A\in \So(n-1)$, dunque per il lemma \ref{connessione e fibre} $\So(n)$ è connesso.
 \end{demonstration}
 
 \begin{observe}

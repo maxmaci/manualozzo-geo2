@@ -149,12 +149,12 @@ Consideriamo $\funz{H}{I\times I}{X}$ data da:
 	\mvf{H}{t}{s})\begin{cases}
 				\begin{array}{lc}
 			\mvf{F}{2t}{s} & \text{se }0\leq t\leq \frac{1}{2}\\
-			\mvf{F}{2t-1}{s} & \text{se }\frac{1}{2}\leq t\leq 1	
+			\mvf{G}{2t-1}{s} & \text{se }\frac{1}{2}\leq t\leq 1	
 		\end{array}
 	\end{cases}
 \end{equation*}
 \begin{itemize}
-	\item $H$ è ben definita per $t=\frac{1}{2}$
+	\item $H$ è ben definita per $t=\frac{1}{2}$.
 	\item $H$ è continua per il lemma di incollamento, essendo definito sui chiusi $\left[0,\ \frac{1}{2}\right]\times I$ e $\left[\frac{1}{2},\ 1\right]\times I$ è continua su di essi.
 \item \parbox[t]{0.25\textwidth}{$\mvf{H}{t}{0}=\left(\alpha\ast\beta\right)\left(t\right)$}\tikzmark{a}
 \item \parbox[t]{0.25\textwidth}{$\mvf{H}{t}{1}=\left(\alpha'\ast\beta'\right)\left(t\right)\ $}\tikzmark{b}
@@ -213,7 +213,7 @@ Valgono le seguenti proprietà:
 		\gamma\left(2t-1\right)&t\in\left[\frac{1}{2},\ 1\right]
 	\end{array}
 \end{cases}\\
-\left(\left(\alpha\ast\left(\beta\gamma\right)\right)\right)\left(t\right)=\begin{cases}
+\left(\left(\alpha\ast\left(\beta\ast\gamma\right)\right)\right)\left(t\right)=\begin{cases}
 \begin{array}{ll}
 	\alpha\left(2t\right)&t\in\left[0,\ \frac{1}{2}\right]\\
 	\beta\left(4t-2\right)&t\in\left[\frac{1}{2},\ \frac{3}{4}\right]\\
@@ -226,13 +226,13 @@ I due cammini differiscono per una \textit{riparametrizzazione} $\funz{\oldphi}{
 	\begin{cases}
 		\begin{array}{l}
 			2s=4t\\
-			4s-2=4t-2\\
-			4s-3=4t-1
+			4s-2=4t-1\\
+			4s-3=2t-1
 		\end{array}
 \implies
 \begin{cases}
 \begin{array}{ll}
-	s=2t&t\in\left[0,\ \frac{1}{2}\right]\\
+	s=2t&t\in\left[0,\ \frac{1}{4}\right]\\
 	s=t+\frac{1}{4}&t\in\left[\frac{1}{4},\ \frac{1}{2}\right]\\
 	s=\frac{t}{2}+\frac{1}{2}&t\in\left[\frac{1}{2},\ 1\right]
 \end{array}
@@ -240,7 +240,7 @@ I due cammini differiscono per una \textit{riparametrizzazione} $\funz{\oldphi}{
 	\end{cases}\\
 \oldphi\left(t\right)=	\begin{cases}
 \begin{array}{ll}
-	2t&t\in\left[0,\ \frac{1}{2}\right]\\
+	2t&t\in\left[0,\ \frac{1}{4}\right]\\
 	t+\frac{1}{4}&t\in\left[\frac{1}{4},\ \frac{1}{2}\right]\\
 	\frac{t}{2}+\frac{1}{2}&t\in\left[\frac{1}{2},\ 1\right]
 \end{array}
@@ -475,7 +475,7 @@ Si ha che:
 		\item $f_{\ast}$ è ben definita: infatti, $f\circ\alpha\in\inscam{Y}{y_0}{y_0}$ e se $\left[a\right]=\left[a'\right]$, $\alpha\sim\alpha'$. Per il punto 3 dell'osservazione precedente, si ha $f\circ \alpha\sim f\circ\alpha'$, cioè $\left[f\circ \alpha\right]=\left[f\circ\alpha'\right]$.
 		\item $f_{\ast}$ è un omeomorfismo di gruppi: infatti, presi $\left[\alpha\right],\ \left[\beta\right]\in\gruf{X}{x_0}$, si ha:
 		\begin{align*}
-			f_{\ast}\left(\left[\alpha\right]\cdot\left[\beta\right]\right)&=f_{\ast}\left(\left[\alpha\ast\beta\right]\right)=\left[f\circ\left(\alpha\ast\beta\right)\right]\stackrel{1}{=}\left[\left(f\circ\alpha\right)\ast\left(f\circ\beta\right)\right]=\left[f\circ\alpha\right]\cdot\left[f\circ\beta\right]=\\&=f_{\ast}\left(\left[\alpha\right]\right)\cdot f_{\ast}\left(\left[\beta\right]\right)
+			f_{\ast}\left(\left[\alpha\right]\cdot\left[\beta\right]\right)&=f_{\ast}\left(\left[\alpha\ast\beta\right]\right)=\left[f\circ\left(\alpha\ast\beta\right)\right]=\left[\left(f\circ\alpha\right)\ast\left(f\circ\beta\right)\right]=\left[f\circ\alpha\right]\cdot\left[f\circ\beta\right]=\\&=f_{\ast}\left(\left[\alpha\right]\right)\cdot f_{\ast}\left(\left[\beta\right]\right)
 		\end{align*}
 	Inoltre: $f_{\ast}\left(\left[C_{x_0}\right]\right)=\left[f\circ C_{x_0}\right]=\left[C_{y_0}\right]$.
 	\end{itemize}
@@ -628,12 +628,12 @@ Che preserva i morfismi identità, mentre inverte la direzione della composizion
 		F\left(g\right)\circ F\left(f\right)=F\left(g\circ f\right)=F\left(Id_X\right)=Id_{F\left(X\right)}\\
 		F\left(f\right)\circ F\left(g\right)=F\left(f\circ g\right)=F\left(Id_Y\right)=Id_{F\left(Y\right)}
 	\end{gather*}
-$F\left(f\right)\in\homo{\mathcal{A}}{F\left(X\right)}{F\left(Y\right)}$ è isomorfismo con inversa $F\left(g\right)\in\homo{\mathcal{A}}{F\left(Y\right)}{F\left(X\right)}$. Se $F$ è controvariante:
+$F\left(f\right)\in\homo{\mathcal{A}}{F\left(X\right)}{F\left(Y\right)}$ è isomorfismo con inverso $F\left(g\right)\in\homo{\mathcal{A}}{F\left(Y\right)}{F\left(X\right)}$. Se $F$ è controvariante:
 \begin{gather*}
 	F\left(g\right)\circ F\left(f\right)=F\left(f\circ g\right)=F\left(Id_Y\right)=Id_{F\left(Y\right)}\\
 	F\left(f\right)\circ F\left(g\right)=F\left(g\circ f\right)=F\left(Id_X\right)=Id_{F\left(X\right)}
 \end{gather*}
-$F\left(f\right)\in\homo{\mathcal{A}}{F\left(Y\right)}{F\left(X\right)}$ è isomorfismo con inversa $F\left(g\right)\in\homo{\mathcal{A}}{F\left(X\right)}{F\left(Y\right)}$.
+$F\left(f\right)\in\homo{\mathcal{A}}{F\left(Y\right)}{F\left(X\right)}$ è isomorfismo con inverso $F\left(g\right)\in\homo{\mathcal{A}}{F\left(X\right)}{F\left(Y\right)}$.
 \end{demonstration}
 \begin{examples}~{}
 \begin{enumerate}
@@ -642,7 +642,7 @@ $F\left(f\right)\in\homo{\mathcal{A}}{F\left(Y\right)}{F\left(X\right)}$ è isom
 		Oggetti:  &${\left(G,\ \cdot\right)}\mapsto {G}$\\
 		Morfismi: &$\funz{f}{G}{H}\mapsto\funz{f}{G}{H}$
 	\end{tabular*}\\
-Questo \textit{funtore covariante} si chiama anche \textbf{funtore dimenticante}\index{funtore!dimenticamente}, in quanto associa un gruppo all'insieme su cui si base.\\
+Questo \textit{funtore covariante} si chiama anche \textbf{funtore dimenticante}\index{funtore!dimenticamente}, in quanto associa un gruppo all'insieme su cui si basa.\\
 \begin{tabular*}{6cm}[t]{>{\bfseries}lc}
 	& $\funz{F}{\nicecat{TOP}}{\nicecat{SET}}$\\
 	Oggetti:  &$\left(G,\ \topo\right)\mapsto {G}$\\
@@ -681,7 +681,7 @@ Questo funtore \textit{covariante} si basa sull'omomorfismo tra gruppi fondament
 		\end{tikzcd}\\
 		Vogliamo che $F\left(g\circ f\right)=\left(g\circ f\right)_{\ast}=g_{\ast}\circ f_{\ast}$:
 		\begin{equation*}
-			\left(g\circ f\right)_{\ast}\left(\left[\alpha\right]\right)=\left[g\circ f\circ\alpha\right]=g_{\ast}\left(\left[f\circ\alpha\right]\right)=g_{\ast}\left(g_{\ast}\left(\left[\alpha\right]\right)\right)=\left(g_{\ast}\circ f_{\ast}\right)\left(\left[\alpha\right]\right)
+			\left(g\circ f\right)_{\ast}\left(\left[\alpha\right]\right)=\left[g\circ f\circ\alpha\right]=g_{\ast}\left(\left[f\circ\alpha\right]\right)=g_{\ast}\left(f_{\ast}\left(\left[\alpha\right]\right)\right)=\left(g_{\ast}\circ f_{\ast}\right)\left(\left[\alpha\right]\right)
 		\end{equation*}
 	\end{itemize}
 \vspace{-3mm}
@@ -705,7 +705,7 @@ Sia $A\subseteq X$ un retratto con retrazione $\funz{r}{X}{A}$ e inclusione $\in
 	\end{itemize}
 \end{corollary}
 \begin{demonstration}
-	Sappiamo dalla definizione che $r_{\mid A}=Id_A$; poiché $\funztot{r\circ i}{A}{X}{x}{r\left(x\right)}$, si ha $r\circ i=r_{\mid A}=Id_A$. Allora, passando con il funtore all'omomorfismo di gruppi:
+	Sappiamo dalla definizione che $r_{\mid A}=Id_A$; poiché $\funztot{r\circ i}{A}{A}{x}{r\left(x\right)}$, si ha $r\circ i=r_{\mid A}=Id_A$. Allora, passando con il funtore all'omomorfismo di gruppi:
 	\begin{center}
 		\begin{tikzcd}
 			\gruf{A}{a} \arrow[r, "i_{\ast}"] \arrow[rr, "r_{\ast}\circ i_{\ast}"', bend right] & \gruf{X}{a} \arrow[r, "r_{\ast}"] & \gruf{A}{a}
@@ -728,7 +728,7 @@ Più precisamente, data l'omotopia $\funz{F}{X\times I}{Y}$ tra $f$ e $g$, allor
 \end{equation}
 È un arco da $\mvf{F}{x_0}{0}=f\left(x_0\right)$ a $\mvf{F}{x_0}{1}=g\left(x_0\right)$; dunque:
 \begin{equation}
-	\funztot{\gamma_{\#}}{\gruf{Y}{f\left(x_0\right)}}{\gruf{X}{g\left(x_0\right)}}{\left[\alpha\right]}{\left[\overline{\omega}\ast\alpha\ast\omega\right]}
+	\funztot{\gamma_{\#}}{\gruf{Y}{f\left(x_0\right)}}{\gruf{X}{g\left(x_0\right)}}{\left[\alpha\right]}{\left[\overline{\gamma}\ast\alpha\ast\gamma\right]}
 \end{equation}
 é un \textit{isomorfismo di gruppi} e si ha:
 \begin{equation}
@@ -753,7 +753,7 @@ Più precisamente, data l'omotopia $\funz{F}{X\times I}{Y}$ tra $f$ e $g$, allor
 	\begin{equation*}
 		\gamma\coloneqq \funz{\mvf{F}{x_0}{t}}{I}{Y}
 	\end{equation*}
-È un arco da $\mvf{F}{x_0}{0}=f\left(x_0\right)$ a $\mvf{F}{x_0}{1}=x_0$; dunque, per il teorema precedente segue che
+È un arco da $\mvf{F}{x_0}{0}=f\left(x_0\right)$ a $\mvf{F}{x_0}{1}=Id_{X}\left(x_0\right)=x_0$; dunque, per il teorema precedente segue che
 \begin{equation*}
 	\funz{\gamma_{\#}}{\gruf{X}{x_0}}{\gruf{X}{f\left(x_0\right)}}
 \end{equation*}
@@ -765,15 +765,19 @@ In particolare, ne segue che $f_{\ast}=\gamma_{\#}$ è isomorfismo.
 \end{demonstration}
 \begin{remember}\label{biettivitàinsiemi}
 	Siano $A,\ B,\ C,\ D$ degli insiemi e $f,\ g,\ h$ delle applicazioni come nel diagramma seguente:
-	\begin{center}
-		\begin{tikzcd}
-			A \arrow[r, "f"] & B \arrow[r, "g"] & C \arrow[r, "h"] & D
-		\end{tikzcd}
-	\end{center}
+	\[\begin{tikzcd}
+		A & B & C & D \\
+		& {}
+		\arrow["f", from=1-1, to=1-2]
+		\arrow["g", from=1-2, to=1-3]
+		\arrow["{g\circ f}", curve={height=-22pt}, from=1-1, to=1-3]
+		\arrow["h", from=1-3, to=1-4]
+		\arrow["{h\circ g}"', curve={height=22pt}, from=1-2, to=1-4]
+	\end{tikzcd}\]
 	Tali per cui $g\circ f,\ h\circ g$ sono biunivoche. Segue che $f$ è biunivoca.
 	\begin{itemize}
 		\item $f$ è iniettiva perché $g\circ f$ è iniettiva.
-		\item $f$ è suriettiva: preso $b\in B$ e il corrispettivo $g\left(b\right)\in C$, dal fatto che $g\circ f$ è biunivoca segue che $\exists a\in A\ \colon g\left(f\left(a\right)\right)\left(g\circ f\right)\left(a\right)=g\left(b\right)$. Essendo $h\circ g$ biunivoca, $g$ è iniettiva, dunque $b=f\left(a\right)\implies f$ suriettiva e segue allora la tesi.
+		\item $f$ è suriettiva: preso $b\in B$ e il corrispettivo $g\left(b\right)\in C$, dal fatto che $g\circ f$ è biunivoca segue che $\exists a\in A\ \colon g\left(f\left(a\right)\right)=\left(g\circ f\right)\left(a\right)=g\left(b\right)$. Essendo $h\circ g$ biunivoca, $g$ è iniettiva, dunque $b=f\left(a\right)\implies f$ suriettiva e segue allora la tesi.
 	\end{itemize}
 \vspace{-3mm}
 \end{remember}
@@ -792,18 +796,18 @@ g\circ f\sim Id_X\qquad f\circ g\sim Id_Y
 Su $g\circ f\sim Id_X$ applichiamo il teorema precedente.
 \begin{center}
 	\begin{tikzcd}
-		& \gruf{X}{x_0} \arrow[ld, "\left(g\circ f\right)_{\ast}"'] \arrow[rd, "\left(Id_X\right)_{\ast}=Id_{\gruf{X}{x_0}}\footnote{Si veda a pag. \pageref{funtoretopstar}.}"] &   \\
-		\gruf{X}{g\left(f_0\right)} \arrow[rr, "\gamma_{\#}", , "\text{isomorfismo di gruppi}"'] &                                                              & \gruf{X}{x_0}
+		& \gruf{X}{x_0} \arrow[ld, "\left(g\circ f\right)_{\ast}"'] \arrow[rd, "\left(Id_X\right)_{\ast}=Id_{\gruf{X}{x_0}}\footnote{Il funtore covariante manda l'identità $Id_X$ nell'identità $Id_{\gruf{X}{x_0}}$ (si veda pag. \pageref{funtoretopstar}).}"] &   \\
+		\gruf{X}{g\left(f\left(x_0\right)\right)} \arrow[rr, "\gamma_{\#}", , "\text{isomorfismo di gruppi}"'] &                                                              & \gruf{X}{x_0}
 	\end{tikzcd}
 \end{center}
 Per il corollario appena visto, poiché $g\circ f\sim Id_X$, segue che $\left(g\circ f\right)_{\ast}=g_\ast\circ f_\ast$ è isomorfismo di gruppi. Allora consideriamo lo schema seguente.
 \begin{center}
 	\begin{tikzcd}
-		\gruf{X}{x_0} \arrow[r, "f_\ast"'] \arrow[rr, "g_\ast\circ f_\ast=\left(g\circ f\right)_\ast", bend left] & \gruf{X}{f\left(x_0\right)} \arrow[r, "g_\ast"'] \arrow[rd, "\widetilde{f}_\ast\circ g_\ast"'] & \gruf{X}{g\left(f\left(x_0\right)\right)} \arrow[d, "\widetilde{f}_\ast"] \\
-		&                                                                                            & \gruf{X}{f\left(g\left(f\left(x_0\right)\right)\right)}
+		\gruf{X}{x_0} \arrow[r, "f_\ast"'] \arrow[rr, "g_\ast\circ f_\ast=\left(g\circ f\right)_\ast", bend left] & \gruf{X}{f\left(x_0\right)} \arrow[r, "g_\ast"'] \arrow[rd, "f_\ast\circ g_\ast"'] & \gruf{Y}{g\left(f\left(x_0\right)\right)} \arrow[d, "f_\ast"] \\
+		&                                                                                            & \gruf{Y}{f\left(g\left(f\left(x_0\right)\right)\right)}
 	\end{tikzcd}
 \end{center}
-Sapendo che $f\circ g\sim Id_Y$, possiamo dimostrare in modo analogo (usando come punto base $f\left(x_0\right)\in Y$) che $\widetilde{f}_\ast\circ g_\ast=\left(\widetilde{f}\circ g\right)$ è isomorfismo di gruppi.\\
+Sapendo che $f\circ g\sim Id_Y$, possiamo dimostrare in modo analogo (usando come punto base $f\left(x_0\right)\in Y$) che $f_\ast\circ g_\ast=\left(f\circ g\right)$ è isomorfismo di gruppi.\\
 Applicando il ragionamento insiemistico ricordato in precedenza (pag. \pageref{biettivitàinsiemi}) segue che $f_{\ast}$ è un omomorfismo biettivo, cioè un isomorfismo.
 \end{demonstration}
 \begin{corollary}[Gruppo fondamentale di spazi c.p.a. è proprietà omotopica.]~{}\\
@@ -863,11 +867,11 @@ Vediamo alcune proprietà.
 	Il numero $\delta$ descritto nell'enunciato del lemma è detto \textit{numero di Lebesgue} \index{numero di Lebesgue} del ricoprimento $\mathcal{A}$.
 \end{define}
 \begin{demonstration}
-	Siccome $X$ è compatto, allora $\mathcal{A}$ ammette un sottoricoprimento finito $\left\{ U_1,\dots,U_n \right\}$ di aperti. Si considerano i complementari $C_j\coloneqq X\setminus U_j$, chiusi in $X$:
+	Siccome $X$ è compatto, allora $\mathcal{A}$ ammette un sottoricoprimento finito $\left\{ U_1,\ \dots,\ U_n \right\}$ di aperti. Si considerano i complementari $C_j\coloneqq X\setminus U_j$, chiusi in $X$:
 		\begin{gather*}
 			 C_1\cap\cdots\cap C_n=(X\setminus U_1)\cap \cdots\cap(X\setminus U_n)=X\setminus(U_1\cup\cdots\cup U_n)=X\setminus X=\emptyset
 		\end{gather*}	
-	Per ogni $j=1,\dots,n$ sia $\funz {f_j} X \realset$ la funzione distanza da $C_j$: è continua, positiva $f_j\geq 0$ e si annulla su $C_j$ chiuso. Sia $F\coloneqq \max(f_1,\dots,f_n)$: essa è continua perché è il massimo di funzioni continue. Mostriamo che vale sempre $F>0$:
+	Per ogni $j=1,\ \dots,\ n$ sia $\funz {f_j} X \realset$ la funzione distanza da $C_j$: è continua, positiva $f_j\geq 0$ e si annulla su $C_j$ chiuso. Sia $F\coloneqq \max(f_1,\ \dots,\ f_n)$: essa è continua perché è il massimo di funzioni continue. Mostriamo che vale sempre $F>0$:
 		\begin{equation*}
 			\begin{array}{lll}
 				f_j\geq 0,\ \forall j & \implies F\geq 0 &\\
@@ -893,7 +897,7 @@ Sia $X$ uno spazio topologico, $\funz \alpha I X$ un cammino e $\mathcal{A}$ un 
 		\begin{equation*}
 			\begin{array}{lll}
 				|t_{i+1} - t_i|<\delta& \implies \forall i, \ \exists\epsilon \colon t_{i+1}-t_i+2\epsilon <\delta &\implies \text{diam}(t_i -\epsilon,\ t_{i+1}+\epsilon)<\delta\\
-				&\implies \exists U_i\in\mathcal{A}\colon [t-i,\ t_{i+1}]\subseteq \alpha^{-1}(U_1) &\implies \alpha([t_i,\ t_{i+1}])\subseteq U_i
+				&\implies \exists U_i\in\mathcal{A}\colon [t_i,\ t_{i+1}]\subseteq \alpha^{-1}(U_i) &\implies \alpha([t_i,\ t_{i+1}])\subseteq U_i
 			\end{array}
 		\end{equation*}
 \end{demonstration}
@@ -921,7 +925,7 @@ Ricordiamo, per il corollario \ref{inclusione rdd isomorfismo} (pag. \pageref{in
 \begin{remember}
 	Sia $G$ un gruppo qualsiasi e $S\subseteq G$ sottoinsieme. Si dice che $S$ \textbf{genera il gruppo} $G$ se ogni $g\in G$ si può scrivere come \textit{prodotto finito} di elementi di $S$ e di loro inversi.
 \end{remember}
-Vediamo ora un risultato generale per poter avere qualche informazione in più sui gruppi fondamentali, sfruttando proprio la nozione di generatore. Si riuscirà a calcolare il gruppo fondamentale $\gruf{X}{x_0}$ di generici spazi $X$ nel corso di \textit{Geometria 4}.
+Vediamo ora un risultato generale per poter avere qualche informazione in più sui gruppi fondamentali, partendo proprio la nozione di generatore. Si riuscirà a calcolare il gruppo fondamentale $\gruf{X}{x_0}$ di generici spazi $X$ nel corso di \textit{Geometria 4}.
 \begin{theorema}[Teorema di Van Kampen sui generatori; Manetti, 11.25.]~{}\label{Van Kampen}\index{teorema!di Van Kampen}\\
 Sia $X$ uno spazio topologico e siano $A,\ B\subseteq X$ aperti tali che $A,\ B$ e $A\cap B$ siano \textbf{c.p.a.} e $A\cap B\neq\emptyset, X=A\cup B$\footnote{Per il teorema \ref{unione sottospazi connessi}, pag. \pageref{unione sottospazi connessi} questo implica che $X$ è \textbf{c.p.a.}}.\\
 Sia $x_0\in A\cap B$; consideriamo le inclusioni $\incl i A X$ e $\incl j B X$ con i loro morfismi indotti:
@@ -932,16 +936,16 @@ Sia $x_0\in A\cap B$; consideriamo le inclusioni $\incl i A X$ e $\incl j B X$ c
 \end{theorema}
 \begin{demonstration}
 	Sia $[\alpha]\in\gruf{X}{x_0}$. Mostriamo che $[\alpha]$ si può scrivere come prodotto finito di elementi di $G_A\cup G_B$.\\
-	Siccome $\left\{A,\ B\right\}$ è un ricoprimento aperto di $X$, per il corollario \ref{corollario suddivisione} (pag. \pageref{corollario suddivisione}) esiste una partizione $0=t_0\leq t_i\leq\dots\leq t_k=1$ tale che $\forall i=0,\dots,k-1, \alpha([t_i,\ t_{i+1}]) \subseteq A$ oppure $\subseteq B$. \\
+	Siccome $\left\{A,\ B\right\}$ è un ricoprimento aperto di $X$, per il corollario \ref{corollario suddivisione} (pag. \pageref{corollario suddivisione}) esiste una partizione $0=t_0\leq t_i\leq\dots\leq t_k=1$ tale che $\forall i=0,\ \dots,\ k-1, \alpha([t_i,\ t_{i+1}]) \subseteq A$ oppure $\subseteq B$. \\
 	Si consideri ora:
 	\begin{equation*}
-		\funz {\alpha_1\coloneqq \alpha_{\mid_{[t_{i-1},\ t_i]}}} {[t_{i-1},\ t_i]} X,\ \forall i=1,\dots,k
+		\funz {\alpha_i\coloneqq \alpha_{\mid_{[t_{i-1},\ t_i]}}} {[t_{i-1},\ t_i]} X,\ \forall i=1,\ \dots,\ k
 	\end{equation*}
 	Si può pensare ad essa come un \textit{cammino} in $X$, se lo riparametrizziamo su $\intv$. Per il \textit{lemma  sul cambiamento di parametri} (pag. \pageref{cambiamentodiparametri}) si ottiene, usando anche la giunzione di cammini:
 	\begin{equation*}
 		\alpha\sim \left( \left( (\alpha_1 \ast \alpha_2)\ast \alpha_3 \right)\ast \ldots\right) \ast \alpha_k
 	\end{equation*}
-	Utilizziamo ora la \textit{connessione per archi}. Essendo $A,\ B,\ A\cap B$ \textbf{c.p.a.}, allora $\forall i=1,\dots,k-1$:
+	Utilizziamo ora la \textit{connessione per archi}. Essendo $A,\ B,\ A\cap B$ \textbf{c.p.a.}, allora $\forall i=0,\ \dots,\ k$:
 		\begin{itemize}
 			\item Se $\alpha(t_i)\in A\cap B$ si sceglie un arco $\funz {\gamma_i} I {A\cap B}$ da $x_0$ a $\alpha(t_i)$.
 			\item Se $\alpha(t_i)\in A\setminus B$ si sceglie un arco $\funz {\gamma_i} I {A}$ da $x_0$ a $\alpha(t_i)$.
@@ -951,13 +955,13 @@ Sia $x_0\in A\cap B$; consideriamo le inclusioni $\incl i A X$ e $\incl j B X$ c
 		\includegraphics[trim=0cm 0cm 0cm 0.2cm,clip,scale=0.8]{images/vankampenpaths.pdf}
 	\end{center}
 		\vspace{-6mm}
-	Grazie a $\gamma_i$ ora si può ottenere un \textit{cammino chiuso}: $\forall i=1,\dots,k$ sia $\beta_i\coloneqq (\gamma_{i-1}\ast \alpha_i)\ast\overline{\gamma_i}$:
+	Grazie a $\gamma_i$ ora si può ottenere un \textit{cammino chiuso}: $\forall i=1,\ \dots,\ k$ sia $\beta_i\coloneqq (\gamma_{i-1}\ast \alpha_i)\ast\overline{\gamma_i}$:
 	\begin{itemize}
 		\item $\beta_i$ è ben definito.
 		\item $\beta_i$ è, per costruzione, un cammino chiuso con \textit{punto base} $x_0$.
 	\end{itemize}
 	Segue che $[\beta_i]\in \gruf{X}{x_0}$.\\
-	Mostriamo ora che $\im \beta_i$ è contenuta o in $A$ o in $B$. Fissato $i\in\left\{1,\dots,k\right\}, \ \im\alpha_i=\alpha([t_{i-1},\ t_i])$ è contenuto o in $A$ o in $B$, supponiamo quanto segue:
+	Mostriamo ora che $\im \beta_i$ è contenuta o in $A$ o in $B$. Fissato $i\in\left\{1,\ \dots,\ k\right\}, \ \im\alpha_i=\alpha([t_{i-1},\ t_i])$ è contenuto o in $A$ o in $B$, supponiamo quanto segue:
 		\begin{equation*}
 			\begin{array}{llll}
 				&\im\alpha_i \subseteq A &\implies \alpha(t_{i-1})\in A,\ \alpha(t_i)\in A &\implies \gamma_{i-1} \text{ e } \gamma_i \text{ entrambi a valori in }A \\
@@ -980,10 +984,10 @@ Sia $X$ uno spazio topologico e siano $A,\ B\subseteq X$ aperti tali che
 	Allora $X$ è \textit{semplicemente connesso}.
 \end{corollary}
 \begin{demonstration}
-	Per il teorema \ref{unione sottospazi connessi} $X$ è connesso, essendo unione di \textbf{c.p.a.} con intersezione non vuota.\\
+	Per il teorema \ref{unionecpa} $X$ è \textbf{c.p.a.}, essendo unione di \textbf{c.p.a.} con intersezione non vuota.\\
 	Siccome l'intersezione non è vuota, sia $x_0\in A\cap B$: le ipotesi del \textit{teorema di Van Kampen} appena dimostrato sono soddisfatte, quindi $\gruf{X}{x_0}$ è generato da $G_A$ e $G_B$. Tuttavia $A$ è semplicemente connesso, dunque $\gruf{A}{x_0}=\left\{1\right\}$; considerando:
 	\begin{equation*}
-		\surr {L_\ast} {\gruf{A}{x_0}} {G_A}\text{ suriettiva}\implies G_A=\left\{1\right\}
+		\surr {i_\ast} {\gruf{A}{x_0}} {G_A}\text{ suriettiva}\implies G_A=\left\{1\right\}
 	\end{equation*}
 	Vale allo stesso modo per $G_B=\left\{1\right\}$. Siccome $\gruf{X}{x_0}$ è generato da $G_A\cup G_B=\left\{1\right\}$, allora $\gruf{X}{x_0}=\left\{1\right\}$.
 \end{demonstration}
@@ -1007,8 +1011,8 @@ Sia $X$ uno spazio topologico e siano $A,\ B\subseteq X$ aperti tali che
 	Applichiamo il \textit{teorema di Van Kampen}, scegliendo degli aperti adatti.\\
 	Sia:
 	\begin{itemize}
-		\item $N=(0,\dots,0,\ 1)\in S^n$ il polo Nord.
-		\item $S=(0,\dots,\ -1)\in S^n$ il polo Sud\index{polo Sud}.
+		\item $N=(0,\ \dots,\ 0,\ 1)\in S^n$ il polo Nord.
+		\item $S=(0,\ \dots,\ \ -1)\in S^n$ il polo Sud\index{polo Sud}.
 	\end{itemize}
 	Definiamo $A\coloneqq S^n\setminus\{N\}$: esso è aperto, \textbf{c.p.a.}, omeomorfo a $\realset^n$ per la \textit{proiezione stereografica} e, siccome $\realset^n$ è contraibile, lo è anche $A$; dunque sarà \textit{semplicemente connesso}. Lo stesso è vero per $B\coloneqq S^n\setminus\{S\}$.\\
 	Si ha $A\cap B=S^n\setminus\{N, S\}$ \textbf{c.p.a.} se $n\geq 2$, $A\cap B$ \textit{non} vuoto e inoltre $S^n=A\cup B$; per il corollario \ref{corollario Van Kampen} si ha che $S^n$ è \textit{semplicemente connesso}.
@@ -1063,7 +1067,7 @@ Con $V_n\subseteq\realset$ aperto e la restrizione $\funz {e_{\mid_{V_n}}} {V_n}
 Siccome $e$ è \textit{aperta}, la restrizione $\funz {e_{\mid_{V_0}}} {V_0} U$ è un \textit{omeomorfismo} in quanto è biunivoca, continua e aperta.\\
 Definiamo ora $V_n\coloneqq V_0 +n=\{ x+n \mid x\in V_0\},\ \forall n\in\integerset$. Allora:
 \begin{equation*}
-	e^{-1}(U)=\union_{n\in\integerset} V_n\text{ e }V_n\subseteq (n,\ n+1)
+	e^{-1}(U)=\bigcup_{n\in\integerset} V_n\text{ e }V_n\subseteq (n,\ n+1)
 \end{equation*}
 Quindi $V_n\cap V_m=\emptyset$ se $n\neq m$, che implica l'\textit{iniettività} della funzione $e_{\mid_{V_n}}$ e il fatto che la somma di sopra sia \textit{disgiunta}. Essendo $e(V_n)=U$, allora $\funz  {e_{\mid_{V_n}}} {V_n} U$ è un omeomorfismo.
 	\end{minipage}
@@ -1097,8 +1101,8 @@ Dunque $2\pi\widetilde{\alpha}(t)$ è una \textit{determinazione dell'angolo} pe
 	\begin{equation*}
 		\funztot \gamma I {S^1} t {e^{2\pi i nt}}
 	\end{equation*}
-	Ad esempio, per $n=1$ si percorre $1$ giro in senso \textit{antiorario}, con $n=2$ si percorrono $2$ giri in senso antiorario, con $n=-1$ si percorre $1$ un giro in senso \textit{orario}.\\
-	Un sollevamento di $\gamma$ è dato da $\funz {\widetilde{y}} I {S^1}$ con $\gamma(t)=e(\widetilde{\gamma}(t))$. Poiché $\gamma$ è già scritto in forma esponenziale, si ha $\widetilde{\gamma}(t)=nt$.
+	Ad esempio, per $n=1$ si percorre un giro in senso \textit{antiorario}, con $n=2$ si percorrono due giri in senso antiorario, con $n=-1$ si percorre un giro in senso \textit{orario}.\\
+	Un sollevamento di $\gamma$ è dato da $\funz {\widetilde{y}} I {\realset}$ con $\gamma(t)=e(\widetilde{\gamma}(t))$. Poiché $\gamma$ è già scritto in forma esponenziale, si ha $\widetilde{\gamma}(t)=nt$.
 \end{example}
 Andiamo ora a verificare l'\textit{esistenza} di sollevamenti per cammini e vedere se e quando sono \textit{unici}.
 \begin{theorema}[Sollevamento di cammini.]~{}\label{teo sollevamento cammini}\\
@@ -1106,13 +1110,13 @@ Ogni cammino $\funz \alpha I {S^1}$ ammette un sollevamento $\funz {\widetilde{\
 \end{theorema}
 \begin{demonstration}~{}
 	\begin{itemize}
-		\item \textbf{Esistenza}: Per dimostrare l'\textit{esistenza} si sfruttano gli aperti \textit{uniformemente rivestiti}, dividendo $I$ in modo tale da avere sottointervalli la cui immagine tramite $\alpha$ sia contenuta in un \textit{aperto rivestito}; costruiremo induttivamente il sollevamento ‘‘a pezzi'', componendo con le inverse locali dell'esponenziale.\\
-		$\forall p\in S^1$ punto della circonferenza, sia $U_p\subsetneqq S^1$ un intorno aperto \textit{connesso} di $p$. Allora $U_p$ è \textit{uniformemente rivestito}, quindi $\{U_p\}_{p\in S^1}$ è un ricoprimento aperto di $S^1$.\\
+		\item \textbf{Esistenza}: Per dimostrare l'\textit{esistenza} si considerano degli aperti \textit{uniformemente rivestiti}, dividendo $I$ in modo tale da avere sottointervalli la cui immagine tramite $\alpha$ sia contenuta in un \textit{aperto rivestito}; costruiremo induttivamente il sollevamento ‘‘a pezzi'', componendo con le inverse locali dell'esponenziale.\\
+		$\forall p\in S^1$ punto della circonferenza, sia $U_p\subsetneqq S^1$ un intorno aperto \textit{connesso} di $p$. Allora $U_p$ è \textit{uniformemente rivestito} e $\{U_p\}_{p\in S^1}$ è un ricoprimento aperto di $S^1$.\\
 		Sia $\funz \alpha I {S^1}$ un cammino; per il corollario \ref{corollario suddivisione} del \textit{teorema di Lebesgue} si ha che:
 		\begin{equation*}
 			\begin{array}{l}
 				\exists\ 0=t_0\leq t_1\leq\dots\leq t_k=1\text{ suddivisione }\colon \\
-				\forall i=1,\dots, k,\ \alpha([t_{i-1},\ t_i])\subseteq U_i\text{ aperto del ricoprimento.}
+				\forall i=1,\ \dots,\  k,\ \alpha([t_{i-1},\ t_i])\subseteq U_i\text{ aperto del ricoprimento.}
 			\end{array}
 		\end{equation*}
 		Costruiamo ora il sollevamento ‘‘a pezzi'' \textit{induttivamente} su ciascun intervallino $[0,\ t_i]$: prima si costruisce il passo base per $[0,\ t_1]$ poi, assumendo di aver già definito il sollevamento fino a $t_i$, lo si costruisce fino a $t_{i+1}$.\\
@@ -1148,14 +1152,14 @@ Ogni cammino $\funz \alpha I {S^1}$ ammette un sollevamento $\funz {\widetilde{\
 	Allora:
 	\begin{itemize}
 		\item $0\in Y \implies Y\neq\emptyset$ dato che $\widetilde{\alpha}(0)=\widehat{\alpha}(0)=x_0$.
-		\item $Y$ è chiuso per l'implicazione $1\Rightarrow 3)$ del teorema \ref{quozientehausdorff} (pag. \pageref{quozientehausdorff}), dato che si ha che, prese due mappe continue a valori in uno spazio di \textbf{Hausdorff}, l'insieme su cui coincidono è chiuso.
+		\item $Y$ è chiuso in quanto luogo dei punti su cui coincidono due mappe continue a valori in uno spazio di \textbf{Hausdorff}.
 	\end{itemize}
 	Mostriamo che $Y$ è anche \textit{aperto}, così per la connessione di $I$ si ha che $Y=I$, il che implica $\widetilde{\alpha}=\widehat{\alpha}$. Per dimostrare che $Y$ è aperto dimostriamo che è intorno di ogni suo punto, usando gli intorni uniformemente rivestiti.\\
 	Sia $t_0\in Y$ e sia $\alpha(t_0)\in S^1$. Sia $U$ un intorno aperto di $\alpha(t_0)$ uniformemente rivestito; si ha $\displaystyle e^{-1}(U)=\coprod_{n\in\integerset}V_n$ e vale inoltre:
 	\begin{equation*}
 		\widetilde{\alpha}(t_0)=\widehat{\alpha}(t_0)\in e^{-1} \left( \alpha(t_0) \right)\subseteq e^{-1}(U)
 	\end{equation*}
-	Per il lemma \ref{teo uniformemente rivestito} (pag. \ref{teo uniformemente rivestito}) $\exists ! \overline{n} \colon \widetilde{\alpha} (t_0)=\widehat{\alpha}(t_0)\in V_{\overline{n}}$ aperto in $\realset$. \\
+	Per il lemma \ref{teo uniformemente rivestito} (pag. \pageref{teo uniformemente rivestito}) $\exists ! \overline{n} \colon \widetilde{\alpha} (t_0)=\widehat{\alpha}(t_0)\in V_{\overline{n}}$ aperto in $\realset$.\\
 	Poniamo $A\coloneqq \widetilde{\alpha}^{-1}(V_{\overline{n}}) \cap \widehat{\alpha}^{-1}(V_{\overline{n}})$. Si ha:
 	\begin{itemize}
 		\item $A$ è aperto in $I$ in quanto intersezione di controimmagine tramite funzioni continue di aperti.
@@ -1205,7 +1209,7 @@ Abbiamo così formalizzato il numero di giri con segno intorno a $S^1$.
 			e\left( \widetilde{\alpha_n}(t) \right)= e^{2\pi i \widetilde{\alpha_n}(t)}= e^{2\pi i (\widetilde{\alpha_0}(t)+n)}=e^{2\pi i \widetilde{\alpha_0}(t)} e^{2\pi i n}=\alpha(t)
 		\end{equation*}
 	Il suo punto iniziale è $n$, infatti $\widetilde{\alpha_n}(0)=\widetilde{\alpha_0}(0)+n=n$.	Quindi $\widetilde{\alpha_n}$ è il sollevamento di $\alpha$ a partire da $x_0=n$.\\
-	Inoltre osserviamo che
+	Inoltre, osserviamo che:
 		\begin{equation*}
 			\widetilde{\alpha_n}(1)- \widetilde{\alpha_n}(0)=\widetilde{\alpha_0}(1)+n - (\underbrace{\widetilde{\alpha_0}(0)}_{=0}+n)= \widetilde{\alpha_0}(1)=\deg\alpha
 		\end{equation*}
@@ -1303,7 +1307,7 @@ Si ha che $X=A\cup B,\ A\cap B=\{(1,\ 0)\}\neq\emptyset$ e \textbf{c.p.a.}, ma $
 Sia $D\subseteq\realset^2$ il \textit{disco unitario} e $A=\partial{D}$ il suo \textit{bordo}, ovvero $A=S^1$. Allora $A$ non è un retratto di $D$.
 \end{corollary}
 \begin{demonstration}
-	Se $A$ fosse un retratto, allora $\gruf{A}{\ }$ dovrebbe essere isomorfo ad un sottogruppo di $\gruf{D}{\ }$ perché l'inclusione induce un omomorfismo iniettivo (per il corollario \ref{grp fond iniettiva e suriettiva}, pag. \pageref{grp fond iniettiva e suriettiva}). Tuttavia, $\gruf{A}{\ }=\gruf{S^1}{\ }=\integerset$ e $D\subseteq\realset^2$ convesso $\implies \gruf{D}{\ }=\left\{1\right\}$, il che è un assurdo in quanto $\integerset\nless \left\{1\right\}$!.
+	Se $A$ fosse un retratto, allora $\gruf{A}{\ }$ dovrebbe essere isomorfo ad un sottogruppo di $\gruf{D}{\ }$ perché l'inclusione induce un omomorfismo iniettivo (per il corollario \ref{grp fond iniettiva e suriettiva}, pag. \pageref{grp fond iniettiva e suriettiva}). Tuttavia, $\gruf{A}{\ }\cong\gruf{S^1}{\ }\cong\integerset$ e $D\subseteq\realset^2$ convesso $\implies \gruf{D}{\ }\cong\left\{1\right\}$, il che è un assurdo in quanto $\integerset\nleq \left\{1\right\}$!.
 \end{demonstration}
 \begin{observe}
 	Allo stesso modo, se $X$ è uno spazio topologico \textit{semplicemente connesso} e $A\subseteq X$ con $A\cong S^1$, allora $A$ \textit{non} può essere un retratto di $X$.
@@ -1332,7 +1336,7 @@ Siano $U\subseteq\realset^n$ e $V\subseteq \realset^m$ aperti. Se $U$ e $V$ sono
 \begin{example}
 	Sia $U\subseteq\realset^n$ aperto con $n\geq 2$. Allora $U$ \textit{non} è omeomorfo ad un aperto di $\realset$. Per dimostrarlo basta considerare una palla $B$ in $\realset^n$ ed un intervallo $I$ in $\realset$ e togliere ad entrambe un punto: nel primo caso si ottiene ancora un \textit{connesso}, mentre nel secondo uno \textit{sconnesso}, dunque \textit{non} possono essere \textit{omeomorfi}.
 \end{example}
-\begin{theorema}[Aperti di $\realset^n$ di $n\geq 3$ non sono omeomorfi ad aperti di $\realset^2$.]~{}\\
+\begin{theorema}[Aperti di $\realset^n$ di $n\geq 3$ non sono omeomorfi ad aperti di $\realset^2$.]~{}\\\label{invarianzadimensionen=2}
 	Sia $U\subseteq\realset^n$ aperto con $n\geq 3$. Allora $U$ \textit{non} è omeomorfo ad un aperto di $\realset^2$.
 \end{theorema}
 \begin{demonstration}
@@ -1347,7 +1351,7 @@ Siano $U\subseteq\realset^n$ e $V\subseteq \realset^m$ aperti. Se $U$ e $V$ sono
 	\begin{equation*}
 		\funztot f {A\setminus\{q\}} C {x=q+(x-q)} {q+r(C)\frac{x-q}{\| x-q \|}}
 	\end{equation*}
-	Con $r(C)$ raggio di $C$ e lo spostamento dovuto al fatto che $C$ è centrata in $q$. Se $x_0\in C\subset A\setminus\{q\}$, siccome esso è un retratto,  si ha che $\incl{\ }{\integerset\cong \gruf{C}{x_0}}{\gruf{A\setminus\{q\}}{x_0} )=\left\{1\right\}}$, da cui l'assurdo.
+	Con $r(C)$ raggio di $C$ e lo spostamento dovuto al fatto che $C$ è centrata in $q$. Se $x_0\in C\subset A\setminus\{q\}$, siccome esso è un retratto,  si ha che $\integerset\cong \gruf{C}{x_0}\leq\gruf{A\setminus\{q\}}{x_0}\cong\left\{1\right\}$, da cui l'assurdo.
 \end{demonstration}
 \begin{attention}
 	Non abbiamo potuto supporre che $A$ fosse una palla perché non sappiamo che ‘‘forma'' abbia dato l'omeomorfismo!
@@ -1425,7 +1429,7 @@ Si consideri dunque la funzione associata:
 	\funztot \phi {S^n} {S^n} p {-p}\text{ omeomorfismo di }S^n
 \end{equation}
 Tale relazione di equivalenza su $S^n$ è indotta dall'azione del gruppo $\{\pm 1\}$ per moltiplicazione, dunque $\funz {\pi_0} {S^n} {\proj[n]{\realset}}$ è sia chiusa, sia aperta. In particolare, se $U\subset S^n$ è un aperto su cui $\pi_0$ è \textit{iniettiva}, allora $\funz {\pi_{0_{\mid_{S^n}}}} U {\pi_0(U)}$ è un \textit{omeomorfismo} perché continua, biunivoca e aperta.\\
-Da notare che, se $\pi_0$ è iniettiva su $U$, allora $U\subsetneqq S^n$, dunque se $p_0\in S^n\setminus\{p_0\}\cong\realset^n$ segue che $\pi_0(U)$ aperto in $\proj[n]{\realset}$ è omeomorfo ad un aperto di $\realset^n$.\\
+Da notare che, se $\pi_0$ è iniettiva su $U$, allora $U\subsetneqq S^n$; preso $p_0\in S^n$, se $U\subseteq S^n\setminus\{p_0\}\cong\realset^n$ segue che $\pi_0(U)$ aperto in $\proj[n]{\realset}$ è omeomorfo ad un aperto di $\realset^n$.\\
 Analizziamo alcuni casi di dimensione \textit{bassa}:
 	\begin{itemize}
 		\item \underline{$n=1$}: \textbf{retta proiettiva reale} $\proj[1]{\realset}$.

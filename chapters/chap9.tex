@@ -54,7 +54,7 @@ Le \textbf{varietà topologiche} sono la risposta formale a ciò: una varietà t
 			C=\left\{y\in X\mid \exists \funz{\alpha}{I}{X},\ \alpha\left(0\right)=x_0,\ \alpha\left(1\right)=y\right\}
 		\end{equation*}
 		Vogliamo dimostrare che $C$ è aperto e chiuso. Notiamo che $\forall y\in C$, essendo $X$ localmente Euclideo, $\exists U\in I\left(y\right)$ aperto tale che $U\cong B_\epsilon$. Poiché $B_\epsilon$ è un aperto \textbf{c.p.a.} di $\realset^n$, con l'omeomorfismo fra $U$ e la palla, segue che anche $U$ è \textbf{c.p.a.}. Ma allora, per giunzione di cammini, esiste un cammino da $x_0$, passante per $y$ per ogni altro punto dell'intorno $U$, cioè $U\subseteq C$.\\
-		Poiché $\forall y\in C\ y\in U_i$, si ha che $\displaystyle \union_i U_i\subseteq C$ (dall'inclusione precedente) e  $\displaystyle\union_i U_i\supseteq C$ (perché ogni elemento di $C$ appartiene per ipotesi ad un $U_i$), cioè $\displaystyle C=\union_i U_i$. In particolare, $C$ è unione di aperti e dunque \textit{aperto}.
+		Poiché $\forall y\in C\ y\in U_i$, si ha dall'inclusione precedente che $\displaystyle \bigcup_i U_i\subseteq C$ e $\displaystyle\bigcup_i U_i\supseteq C$ perché ogni elemento di $C$ appartiene per ipotesi ad un $U_i$, cioè $\displaystyle C=\bigcup_i U_i$. In particolare, $C$ è unione di aperti e dunque \textit{aperto}.
 		\begin{itemize}
 			\item Se $C=X$, ho finito.
 			\item Supponiamo per assurdo che $C\subsetneqq X$; consideriamo $X\setminus C$. $\forall y\in X\setminus C\ \exists U\in I\left(y\right)$ aperto con $U\cong B_\epsilon\subseteq \realset^n$. Notiamo che se $U\cap C\neq \emptyset$, essendo $U$ \textbf{c.p.a.} per i ragionamenti precedenti e $C$ \textbf{c.p.a.} per ovvi motivi, posso sempre creare un cammino passante per un punto in $U\cap C$ che connette $x_0$ con gli altri punti di $U$, dunque $U\subseteq C$. Necessariamente $\forall y\in X\setminus C\ U\cap C=\emptyset$, cioè $U\subseteq X\setminus C$: $X\setminus C$ è intorno di ogni suo punto, cioè è \textit{aperto} e pertanto $C$ è \textit{chiuso}.
@@ -126,7 +126,7 @@ Vogliamo dare una classificazione delle superfici topologiche \textit{compatte}.
 			\end{itemize}
 			\item $S$ è di \textbf{Hausdorff}.
 		\end{enumerate}
-	Nella relazione di equivalenza due lati vengono identificati nel modo seguente: poiché $l_i\cong\intv$, scelgo un omeomorfismo $\funz{\phi}{l_1}{l_2}$, in modo che $p_1\in l_1 \sim \phi(p)\in l_2$ e $\phi$ manda vertici in vertici.\\
+	Poiché $l_i\cong\intv$, nella relazione di equivalenza, due lati vengono identificati scegliendo un omeomorfismo $\funz{\phi}{l_1}{l_2}$, in modo che $p_1\in l_1 \sim \phi(p)\in l_2$ e $\phi$ manda vertici in vertici.\\
 	Il poligono $P$ con la relazione di equivalenza sui lati è detto un \textbf{modello piano}\index{modello piano} della superficie $S$ e può essere schematizzato con una \textit{sequenza di lettere} detta \textbf{parola}\index{parola}. Ad esempio, per la parola $aba^{-1}cbc^{-1}$ si ottiene il modello piano seguente:
 		\begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.375]{images/modellopiano.pdf}
@@ -148,7 +148,7 @@ Vogliamo dare una classificazione delle superfici topologiche \textit{compatte}.
 				\begin{center}
 			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.375]{images/klein.pdf}
 		\end{center}
-		Confrontiamo la costruzione della bottiglia di Klein con la costruzione del \textit{toro}, vista precedentemente. Innanzitutto otteniamo in entrambi il cilindro $S^1\times I$ con la relazione di equivalenza sul \textit{bordo}; notiamo che nella bottiglia di Klein (il modello inferiore nella figura sotto) il ‘‘verso'' rispetto al quale \textit{incolleremo} i bordi sono uno l'opposto dell'altro.
+		Confrontiamo la costruzione della bottiglia di Klein con la costruzione del \textit{toro}, vista precedentemente. Innanzitutto otteniamo in entrambi il cilindro $S^1\times I$ con la relazione di equivalenza sul \textit{bordo}; notiamo che nella bottiglia di Klein (il modello inferiore nella figura sotto) il ‘‘verso'' rispetto al quale \textit{incolleremo} i bordi è uno l'opposto dell'altro.
 		\begin{center}
 			\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.375]{images/kleintorus.pdf}
 		\end{center}
@@ -196,7 +196,7 @@ Vediamo ora qualche fatto che \textit{non} dimostriamo:
 	\item Se $S_1,\ S_2$ sono superfici compatte, allora $S_1\# S_2$ è una superficie compatta.
 	\end{itemize}
 \begin{observe}
-	Sia $X$ una superficie compatta. Allora $X\# S^2\cong X$. Infatti, $S^2\setminus D_y$ è omeomorfismo ad un \textit{disco chiuso} in $\realset^2$. Dato che stiamo togliendo un disco anche ad $X$ per poi aggiungerne un altro, ritroviamo $X$ a meno di omeomorfismi.
+	Sia $X$ una superficie compatta. Allora $X\# S^2\cong X$. Infatti, $S^2\setminus \interior{D_y}$ è omeomorfismo ad un \textit{disco chiuso} in $\realset^2$. Dato che stiamo togliendo un disco anche ad $X$ per poi aggiungerne un altro, ritroviamo $X$ a meno di omeomorfismi.
 	\begin{center}
 		\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.4]{images/connectedsumsphere.pdf}
 	\end{center}
@@ -257,7 +257,7 @@ a_1b_1a_1^{-1}b_1^{-1}a_2b_2a_2^{-1}b_2^{-1}\ldots a_gb_ga_g^{-1}b_g^{-1}
 \end{equation*}
 \vspace{-3mm}
 \end{example}
-\begin{define}[Somma connessa di $n$ piani proiettivi]
+\begin{define}[Somma connessa di $n$ piani proiettivi.]~{}\\
 	Preso il \textit{piano proiettivo reale} $P=\proj[2]{\realset}$, definiamo la \textbf{somma connessa di} $n$ \textbf{piani proiettivi} come:
 	\begin{equation*}
 		P_n=\underbrace{P\# \ldots\# P}_{n\ \text{volte}}\quad n\geq 1\ \left(P_1=P\right)
@@ -471,13 +471,13 @@ Alternando i passi 1 e 2 arriviamo ad un modello piano con tutti i vertici ident
 	\begin{center}
 		\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep2-3.pdf}
 	\end{center}
-In altre parole, l'esistenza di \textit{almeno una} coppia di lati del II tipo è \textit{mantenuta} dal passo 2.\\
+In ogni caso, l'esistenza di \textit{almeno una} coppia di lati del II tipo è \textit{mantenuta} dal passo 2.\\
 \textsc{\underline{\textbf{Passo 3}}}: \textit{Rendere adiacenti le coppie del II tipo}.\\
 Supponiamo che ci sia una coppia di lati $a$ \textit{non} adiacenti del II tipo. Operiamo un taglio $b$ tra gli estremi finali della coppia e incolliamo la coppia stessa.
 	\begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm, clip, scale=0.35]{images/cutandpastealgorithmstep3.pdf}
 \end{center}
-In questo modo rendiamo adiacenti tutte le coppie dello stesso tipo.\\
+In questo modo rendiamo adiacenti tutte le coppie del II tipo.\\
 Se ci sono solo \textit{coppie del II tipo}, abbiamo ottenuto una parola della forma:
 \begin{equation}
 	a_1a_1a_2a_2\ldots a_na_n \implies \ovaled{S\cong P_n}
@@ -581,19 +581,19 @@ Noto ciò, con il concetto di orientabilità possiamo fare un passettino avanti 
 	\end{gather*}
 \vspace{-6mm}
 \end{corollary}
-\begin{corollary}[Orientabile se e solo se il modello piano non ha coppie del II tipo.]~{}\\
+\begin{corollary}[Orientabile se e solo se il modello piano non ha lati del II tipo.]~{}\\
 	Sia $S$ una superficie compatta con un suo modello piano. Allora $S$ è \textit{orientabile} se e solo se il modello \textit{non} contene coppie di lati del II tipo.
 \end{corollary}
 \begin{demonstration}~{}\\
-$\impliesdx$ Se c'è una coppia di lati del II tipo, costruiamo facilmente un nastro di Möbius collegandone gli estremi.\\
-$\impliessx$ Applicando l'algoritmo del taglia e incolla, se non ci sono lati del II tipo otteniamo una superficie omeomorfa a $S^2$ o a $T_g$, entrambe superfici orientabili.
+$\impliesdx$Se c'è una coppia di lati del II tipo, costruiamo facilmente un nastro di Möbius collegandone gli estremi.\\
+$\impliessx$Applicando l'algoritmo del taglia e incolla, se non ci sono lati del II tipo otteniamo una superficie omeomorfa a $S^2$ o a $T_g$, entrambe superfici orientabili.
 \end{demonstration}
 \section{Suddivisione di una superficie compatta}
 \begin{define}[Lato.]~{}\\
 	Un \textbf{lato}\index{lato} in $S$ superficie compatta è un sottospazio $L\subseteq S$ con un'applicazione continua $\funz{f}{\intv}{L}$ tale che valga una delle due proprietà seguenti:
 	\begin{itemize}
 		\item $f$ è omeomorfismo tra $\intv$ e $L$.
-		\item $f$ è iniettivo su $\left[0\, 1\right)$, $f\left(0\right)=f\left(1\right)$ e $f$ induce un omeomorfismo tra $L$ e $S^1$ (cioè $f$ è un'identificazione).
+		\item $f$ è iniettivo su $\left[0,\ 1\right)$, $f\left(0\right)=f\left(1\right)$ e $f$ induce un omeomorfismo tra $L$ e $S^1$ (cioè $f$ è un'identificazione).
 	\end{itemize}
 Definiamo come \textbf{vertici}\index{vertice} del lato, rispetto ai due casi sopra:
 \begin{itemize}
@@ -607,7 +607,7 @@ Definiamo come \textbf{vertici}\index{vertice} del lato, rispetto ai due casi so
 	S$ di una superficie compatta $S$ è data da:
 	\begin{itemize}
 		\item un sottoinsieme finito $V$ di $S$, i cui punti sono detti \textbf{vertici}.
-		\item un insieme finito $L_1,\ \ldots,\ L_m$ in $S$ di lati
+		\item un insieme finito $L_1,\ \ldots,\ L_m$ in $S$ di lati.
 	\end{itemize}
 Tali che:
 \begin{enumerate}
@@ -680,7 +680,7 @@ Notiamo che, in questi esempi, suddivisioni diverse di una stessa superficie han
 \begin{corollary}[La caratteristica di Eulero è invariante per omeomorfismo.]
 \end{corollary}
 \begin{demonstration}
-	Siano $S_1$ e $S_2$ due superfici compatte omeomorfe tra di loro e siano $\mathcal{S}_1$ una suddivisione di $S_1$. Usando l'omeomorfismo, costruiamo una suddivisione $\mathcal{S}_2$ di $S_2$ con lo stesso numero di vertici, lati e facce di $\mathcal{S}_1$. Allora:
+	Siano $S_1$ e $S_2$ due superfici compatte omeomorfe tra di loro e sia $\mathcal{S}_1$ una suddivisione di $S_1$. Usando l'omeomorfismo, costruiamo una suddivisione $\mathcal{S}_2$ di $S_2$ con lo stesso numero di vertici, lati e facce di $\mathcal{S}_1$. Allora:
 	\begin{equation*}
 		\euler{S_1}{\ }=\euler{S_1}{\mathcal{S}_1}=\euler{S_2}{\mathcal{S}_2}=\euler{S_2}{\ }
 	\end{equation*}
@@ -765,8 +765,8 @@ In altre parole, \textit{tutte} le superfici $T_g$ sono \textit{non} omeomorfe t
 	\begin{equation*}
 		\begin{array}{l}
 			\euler{P}{\ }=1\\
-			\euler{P_2}{\ }=\euler{P\# P}=1+1-2=0\\
-			\euler{P_n}{\ }=\euler{P\# P_{n-1}}=\euler{P_n}{\ }+\euler{P_{n-1}}{\ }-2=1+2-\left(n-1\right)-2=2-n
+			\euler{P_2}{\ }=\euler{P\# P}{\ }=1+1-2=0\\
+			\euler{P_n}{\ }=\euler{P\# P_{n-1}}{\ }=\euler{P_n}{\ }+\euler{P_{n-1}}{\ }-2=1+2-\left(n-1\right)-2=2-n
 		\end{array}
 	\end{equation*}
 In modo analogo per $T_g$:

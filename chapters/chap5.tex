@@ -50,10 +50,10 @@ Per gli scopi della topologia, le azioni di gruppo hanno particolare importanza:
 	\end{itemize}
 \vspace{-3mm}
 \end{demonstration}
-\begin{define}[Orbita.]~{}\\
+\begin{define}[Orbita di un elemento.]~{}\\
 	Le classi di equivalenza date da questa relazione sono dette \textbf{orbite}\index{orbita}:
 		\begin{equation*}
-			[x]=G\ldotp x=\{y\in X \mid \exists y \colon y=g\ldotp x\}=\{ g\ldotp x\in X\mid g\in G \}
+			[x]=O\left(x\right)=G\ldotp x=\{y\in X \mid \exists g\in G \colon y=g\ldotp x\}=\{ g\ldotp x\in X\mid g\in G \}
 		\end{equation*}
 	L'insieme quoziente è detto \textbf{spazio delle orbite}\index{spazio!delle orbite} e si scrive come $\nicefrac{X}{G}$.
 \end{define}
@@ -65,7 +65,7 @@ Vediamo ora un esempio di azione e di orbite.
 \end{example}
 \section{Stabilizzatore di un elemento}
 \begin{define}[Stabilizzatore di un elemento.]~{}\\
-Lo \textbf{stabilizzatore di un elemento}\index{stabilizzatore di un elemento} è l'insieme degli elementi di $G$ che fissano $x$:
+Lo \textbf{stabilizzatore di un elemento}\index{stabilizzatore di un elemento} $x$ è l'insieme degli elementi di $G$ che fissano $x$:
 \begin{equation}
 H_x\coloneqq \left\{g\in G\mid g\ldotp x = x\right\}
 \end{equation}
@@ -100,9 +100,8 @@ Mostriamo che $\alpha$ è ben definita e biunivoca.
  \end{align*}
 Ne segue che $\left(g_2^{-1} g_1\right)\in H_x\implies g_2^{-1} g_1=h\in H_x\implies g_1\ldotp H_x=g_2\ldotp H_x$.
 \item \textit{Suriettività}: se $y\in O\left(x\right)$, per definizione $\exists g\in G\ \colon y=g\ldotp x$, cioè $y=\alpha\left(g\ldotp H_x\right)$.
-Ne consegue, dal teorema di Lagrange, che $\lvert O\left(x\right)\rvert = \left[G\ \colon H_x\right]= \frac{\lvert G\rvert}{\lvert H_x\rvert}$.
 \end{enumerate}
-\vspace{-3mm}
+Dunque ne consegue, dal teorema di Lagrange, che $\lvert O\left(x\right)\rvert = \left[G\ \colon H_x\right]= \frac{\lvert G\rvert}{\lvert H_x\rvert}$.
 \end{demonstration}
 \begin{observe}
 Punti nella stessa orbita hanno stabilizzatori \textbf{coniugati}\index{coniugati}:
@@ -112,13 +111,13 @@ x_2=g\ldotp x_1\implies H_{x_2}=g\ldotp H_{x_1}\ldotp g^{-1}
 \vspace{-5mm}
 \end{observe}
 \begin{demonstration}~{}\\
-$\includedx$ Sia $h\in H_{x_2}$. Si ha:
+$\includedx$Sia $h\in H_{x_2}$. Poiché  per ipotesi $x_2=g\ldotp x_1$, si ha:
 \begin{equation*}
 h\ldotp x_2 = x_2\implies h\ldotp\left(g\ldotp x_1\right) = g\ldotp x_1 \implies \left(g^{-1} h g\right)\ldotp x_1 = x_1
 \end{equation*}
 Segue che $\forall h\in H_{x_2}\ g^{-1} h g\in H_{x_1}$, ma allora $h = g \left(g^{-1} h^{-1} g\right) g^{-1}\in g\ldotp H_{x_1}\ldotp g^{-1}$.
 Pertanto per l'arbitrarietà di $h$ si ha $H_{x_2} \subseteq g \ldotp H_{x_1}\ldotp g^{-1} $\\
-$\includesx$ Sia $h\in H_{x_1}$ e consideriamo $ghg^{-1}$. Se moltiplico (con l'azione $\ldotp$) per $x_2$:
+$\includesx$Sia $h\in H_{x_1}$ e consideriamo $ghg^{-1}$. Se moltiplico (con l'azione $\ldotp$) per $x_2$:
 \begin{equation*}
 \left(ghg^{-1}\right)\ldotp x_2=\left(ghg^{-1}\right)\ldotp g\ldotp x_1=\left(gh\right)\ldotp \left(g^{-1}g\right)\ldotp x_1=\left(gh\right)\ldotp x_1=g\ldotp\left(h\right)\ldotp x_1=g\ldotp x_1=x_2
 \end{equation*}
@@ -140,20 +139,20 @@ Questo è equivalente a chiedere che l'azione sia data da un \textit{omomorfismo
 \begin{lemming}[$G$ agisce per omeomorfismi se e solo se $\theta_g$ è continua, $\forall g\in G$.]
 \end{lemming}
 \begin{demonstration}~{}\\
-$\impliesdx$ $G$ agisce per omeomorfismi se $\theta_g$ è un omeomorfismo $\forall g$, dunque banalmente $\theta_g$ è continua.\\
-$\impliessx$ Dobbiamo dimostrare che $\theta_g$ è un omeomorfismo. Notiamo che $\forall g,\ h\in G$ vale $\theta_g\circ \theta_h = \theta_{gh}$:
+$\impliesdx$$G$ agisce per omeomorfismi se $\theta_g$ è un omeomorfismo $\forall g$, dunque banalmente $\theta_g$ è continua.\\
+$\impliessx$Dobbiamo dimostrare che $\theta_g$ è un omeomorfismo. Notiamo che $\forall g,\ h\in G$ vale $\theta_g\circ \theta_h = \theta_{gh}$:
 \begin{equation*}
 	\left(\theta_g\circ\theta_h\right)\left(x\right)=\theta_g\left(\theta_h\left(x\right)\right)=\theta_g\left(h\ldotp x\right)=g\ldotp\left(h\ldotp x\right)=\left(gh\right)\ldotp x=\theta_{gh}\left(x\right)\quad \forall x
 \end{equation*}
 Inoltre, vale $\theta_e=Id_X$:
 \begin{equation*}
-	\theta_e\left(x\right)=e\ldotp x=x=Id\left(x\right)=x\quad \forall x
+	\theta_e\left(x\right)=e\ldotp x=x=Id\left(x\right)\quad \forall x
 \end{equation*}
 Allora, consideriamo $\theta_{g^{-1}},\ \forall g\in G$, consideriamo la composizione seguente:
 \begin{equation*}
 	\left(\theta_{g^{-1}}\circ\theta_g\right)\left(x\right)=\theta_{g^{-1}g}\left(x\right)=\theta_e\left(x\right)=Id_X\left(x\right)=x
 \end{equation*}
-Cioè l'inversa di $\theta_g$ è $\theta_{g^{-1}}$. Ma allora per ipotesi anche $\theta_{g^{-1}}$ è continua, dunque segue la tesi.
+Cioè l'inversa di $\theta_g$ è $\theta_{g^{-1}}$. Ma allora per ipotesi, anche $\theta_{g^{-1}}$ è continua perché $g^{-1}\in G$, dunque segue la tesi.
 \end{demonstration}
 \begin{proposition}[Proiezione a $\nicefrac{X}{G}$ con $G$ agente per omeomorfismi è aperta.]\label{proiezione azione gruppo aperta}~{}\\
 \begin{enumerate}
@@ -169,14 +168,14 @@ Allora $\pi$ è aperta e, se $G$ è finito, $\pi$ è anche chiusa.
 \begin{demonstration}~{}
 \begin{enumerate}[label=\Roman*]
 \item Sia $A\subseteq X$ un aperto. Vogliamo dimostrare che $\pi\left(A\right)$ è aperto in $\nicefrac{X}{G}$. Un aperto della topologia quoziente è tale se la controimmagine dell'aperto nel quoziente è un aperto: si deve allora dimostrare che $\pi^{-1}\left(\pi\left(A\right)\right)$ è aperto in $X$.\\
-Ogni elemento di $A$ è contenuto in un orbita, dunque $\pi\left(A\right)$ contiene le orbite degli $x\in A$; la controimmagine $\pi^{-1}\left(\pi\left(A\right)\right)$ risulta dunque pari all'unione di \textit{tutte} le orbite in $X$ che intersecano l'insieme $A$:
+Ogni elemento di $A$ è contenuto in un orbita, dunque $\pi\left(A\right)$ contiene le orbite degli $x\in A$; la controimmagine $\pi^{-1}\left(\pi\left(A\right)\right)$ risulta dunque pari all'unione di \textit{tutte} le orbite in $X$ che intersecano l'insieme $A$, che indichiamo con $g\ldotp A$:
 \begin{equation*}
-\pi^{-1}\left(\pi\left(A\right)\right)=\union_{g\in G} g\ldotp A
+\pi^{-1}\left(\pi\left(A\right)\right)=\bigcup_{g\in G} g\ldotp A
 \end{equation*}
 Ma allora $g\ldotp A=\left\{g\ldotp x\mid x\in A\right\}$ è un aperto $\forall g\in G$ poiché un omeomorfismo porta aperti in aperti; l'unione di aperti è aperta, dunque $\pi^{-1}\left(\pi\left(A\right)\right)$ è aperto in $X$ cioè $\pi\left(A\right)$ è aperto in $\nicefrac{X}{G}$.\\
 Preso $C$ chiuso, dobbiamo allo stesso modo dimostrare $\pi\left(C\right)$ chiuso in $\nicefrac{X}{G}$, cioè $\pi^{-1}\left(\pi\left(C\right)\right)$ chiuso in $X$. Usando lo stesso ragionamento, otteniamo che:
 \begin{equation*}
-	\pi^{-1}\left(\pi\left(C\right)\right)=\union_{g\in G} g\ldotp C
+	\pi^{-1}\left(\pi\left(C\right)\right)=\bigcup_{g\in G} g\ldotp C
 \end{equation*}
 Con $g\ldotp C=\left\{g\ldotp x\mid x\in C\right\}$ chiuso per omeomorfismo. In particolare, essendo $G$ finito, segue che l'unione dei $g\ldotp C$ è finita e dunque anch'essa è un chiuso. Segue dunque $\pi^{-1}\left(\pi\left(C\right)\right)$ chiuso in $X$ e $\pi\left(C\right)$ chiuso in $\nicefrac{X}{G}$.
 \item Siano $p,\ q\in \nicefrac{X}{G}$ distinti. Vogliamo dimostrare che esistono intorni di $p$ e $q$ disgiunti.\\
@@ -184,16 +183,15 @@ Siano $x,\ y\in X$ tali che $\pi\left(x\right)=p$ e $\pi\left(y\right)=q$ e cons
 \begin{equation*}
 g_i\ldotp x\neq g_y\ldotp y\quad \forall i,\ j
 \end{equation*}
-Definiti gli (intorni) aperti $U\in I\left(x\right)$ e $V\in I\left(x\right)$ disgiunti (in quanto $X$ di \textbf{Hausdorff}), possiamo considerare gli altri (intorni) aperti disgiunti $g_i\ldotp U\in I\left(g_i\ldotp x\right),\ g_i\ldotp V\in I\left(g_i\ldotp y\right)$.\\
-Allora:
+Definiti gli (intorni) aperti $U\in I\left(x\right)$ e $V\in I\left(x\right)$ disgiunti (in quanto $X$ di \textbf{Hausdorff}), possiamo considerare gli altri (intorni) aperti disgiunti $g_i\ldotp U\in I\left(g_i\ldotp x\right),\ g_i\ldotp V\in I\left(g_i\ldotp y\right)$. Allora:
 \begin{equation}
-\widetilde{U}\coloneqq \union_{i}g_i\ldotp U\qquad \widetilde{V}\coloneqq \union_{i}g_i\ldotp V
+\widetilde{U}\coloneqq \bigcup_{i}g_i\ldotp U\qquad \widetilde{V}\coloneqq \bigcup_{i}g_i\ldotp V
 \end{equation}
-Sono entrambi aperti. Vogliamo costruire $U\in I\left(x\right)$ e $V\in I\left(x\right)$ in modo che siano (intorni) aperti disgiunti tali che, costruiti come sopra $\widetilde{U},\ \widetilde{V}$, si abbia $\widetilde{U}\cap \widetilde{V}=\emptyset$. Così, passando al quoziente con $\pi$, si otterranno degli intorni $\pi\left(\widetilde{U}\right)$ di $p$ e $\pi\left(\widetilde{V}\right)$ di $q$ che soddisfano $\pi\left(\widetilde{U}\right)\cap \pi\left(\widetilde{V}\right)=\emptyset$.\\
+Sono entrambi aperti. Vogliamo costruire $U\in I\left(x\right)$ e $V\in I\left(x\right)$ in modo che siano (intorni) aperti disgiunti tali che, costruiti come sopra $\widetilde{U},\ \widetilde{V}$, si abbia $\widetilde{U}\cap \widetilde{V}=\emptyset$. Così, passando al quoziente con $\pi$, si otterranno degli intorni $\pi\left(\widetilde{U}\right)$ di $p$ e $\pi\left(\widetilde{V}\right)$ di $q$ che soddisfano $\pi\left(\widetilde{U}\right)\cap \pi\left(\widetilde{V}\right)=\emptyset$.
 \begin{itemize}
-\item Costruiamo $U$ e $V$: $\forall i$ sappiamo che $x\neq g_i\ldotp y$ in $X$ (in quanto le orbite di $x$ e $y$ sono distinte. In quanto $X$ è di \textbf{Hausdorff}, si ha che $\forall i\ \exists U_i,\ V_i$ (intorni) aperti disgiunti tali che $x\in U_i$ e $g_i\ldotp y\in V_i$. Notiamo che $y\in g_i^{-1}\ldotp V_i$; allora definiamo
+\item Costruiamo $U$ e $V$: $\forall i$ sappiamo che $x\neq g_i\ldotp y$ in $X$ (in quanto le orbite di $x$ e $y$ sono distinte. In quanto $X$ è di \textbf{Hausdorff}, si ha che $\forall i\ \exists U_i,\ V_i$ (intorni) aperti disgiunti tali che $x\in U_i$ e $g_i\ldotp y\in V_i$. Notiamo che $y\in g_i^{-1}\ldotp V_i$; allora definiamo:
 \begin{equation*}
-U\coloneqq \inter_{i}^{n}U_i\in I\left(x\right)\qquad V\coloneqq \inter_{i=1}^{n}g_i^{-1}\ldotp V_i\in I\left(y\right)
+U\coloneqq \bigcap_{i}^{n}U_i\in I\left(x\right)\qquad V\coloneqq \bigcap_{i=1}^{n}g_i^{-1}\ldotp V_i\in I\left(y\right)
 \end{equation*}
 \item Ricaviamo $\widetilde{U}$ e $\widetilde{V}$, $\forall i$ (e quindi per ogni elemento di $G$) abbiamo:
 \begin{equation*}
@@ -206,7 +204,7 @@ Allora $\forall i,\ j$ abbiamo:
 Ma $g_i^{-1}g_j \in G$, dunque $U\cap \left(g_i^{-1}g_j\right)\ldotp V=\emptyset$. Segue che:
 \begin{equation*}
 	\left(g_i\ldotp U\right)\cap \left(g_j\ldotp V\right)=\emptyset\implies
-	\left(\union_{i}g_i\ldotp U\right)\cap \left(\union_{i}g_i\ldotp V\right)=\emptyset\implies \widetilde{U}\cap \widetilde{V}=\emptyset
+	\left(\bigcup_{i}g_i\ldotp U\right)\cap \left(\bigcup_{i}g_i\ldotp V\right)=\emptyset\implies \widetilde{U}\cap \widetilde{V}=\emptyset
 \end{equation*}	
 \end{itemize}
 \end{enumerate}
@@ -226,11 +224,11 @@ Se mettiamo ad $\realset$ la topologia Euclidea, allora l'azione è per omeomorf
 \vspace{-3mm}
 \end{example}
 \begin{demonstration}
-Consideriamo $\funztot{f}{R}{S^1\subseteq \realset}{t}{\left(\cos\left(2\pi t\right),\sin\left(2\pi t\right)\right)}$.
+Consideriamo $\funztot{f}{\realset}{S^1\subseteq \realset}{t}{\left(\cos\left(2\pi t\right),\sin\left(2\pi t\right)\right)}$.
 \begin{itemize}
 \item $f$ è continua.
 \item $f$ è suriettiva.
-\item $f\left(t_1\right)=f\left(t_2\right)\iff t_1-t_2\in \integerset \iff t_1,\ t_2$ nella stessa orbita$\iff \pi\left(t_1\right)=\pi\left(t_2\right)$
+\item $f\left(t_1\right)=f\left(t_2\right)\iff t_1-t_2\in \integerset \iff t_1,\ t_2$ nella stessa orbita$\iff \pi\left(t_1\right)=\pi\left(t_2\right)\iff t_1\sim t_2$
 \end{itemize}
 Allora la relazione di equivalenza indotta da $f$ è quella dell'azione di $\integerset$ su $\realset$.\\
 \begin{minipage}[t]{0.83\textwidth}

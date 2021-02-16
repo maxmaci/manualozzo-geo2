@@ -236,7 +236,7 @@ Posto dunque $t$ come il numero delle \textit{equazioni}, notiamo che:
 	\shortparallel &  \\
 	\dim V-\dim W &=&\dim\proj{V}-\dim\proj{W}=\codim\proj{W}
 \end{array}\\
-	\implies t\geq \rk\left(A\right)=\codim\proj{W}\text{   e   }\dim\proj{W}=\proj{V}-\rk\left(A\right)
+	\implies t\geq \rk\left(A\right)=\codim\proj{W}\text{   e   }\dim\proj{W}=\proj{V}-\rk\!\left(A\right)
 	\end{array}
 \end{equation*}
 \textit{Scartando} delle equazioni possiamo sempre ricondurci ad un sistema in cui:
@@ -252,7 +252,7 @@ Posto dunque $t$ come il numero delle \textit{equazioni}, notiamo che:
 			 \text{dai punti }\left(tx_0,\ \ldots,\ tx_n\right)\text{ al variare di t}\in\realset
 		\end{array}
 	\end{equation*}
-	Approfondiremo formalmente la relazione tra gli spazi affini e gli spazi proiettivi più avanti, a pag. \ref{spaziaffini}.
+	Approfondiremo formalmente la relazione tra gli spazi affini e gli spazi proiettivi più avanti, a pag. \pageref{spaziaffini}.
 \end{intuit}
 \begin{examples}~{}
 	\begin{itemize}
@@ -326,10 +326,10 @@ Come per i sottospazi vettoriali, in generale l'\textbf{unione} di due sottospaz
 \vspace{-6mm}
 \end{define}
 \begin{demonstration}~{}\\
-	$\includedx$ $\proj{W_1+W_2}$ è un sottospazio proiettivo che contiene, in quanto $W_1\subseteq W_1+W_2,\ W_2\subseteq W_1+W_2$ vettorialmente, sia $T_1=\proj{W_1}$ sia $T_2=\proj{W_2}$. In particolare, contiene la loro unione\footnote{Ricordiamo che non è essa un sottospazio, ma un sottoinsieme.}, dunque $\left<T_1,\ T_2\right>\left<T_1\cup T_2\right>\subseteq \proj{W_1+W_2}$.\\
-	$\includesx$ Abbiamo che $T_i\subseteq \left<T_1,\ T_2\right>=\proj{U}$, con $U$ un sottospazio vettoriale di $V$. In particolare, si ha che $W_1,\ W_2\subseteq U$, da cui $W_1+W_2\subseteq U$. Passando allo spazio proiettivo:
+	$\includedx$$\proj{W_1+W_2}$ è un sottospazio proiettivo che contiene, in quanto $W_1\subseteq W_1+W_2,\ W_2\subseteq W_1+W_2$ vettorialmente, sia $T_1=\proj{W_1}$ sia $T_2=\proj{W_2}$. In particolare, contiene la loro unione\footnote{Ricordiamo che non è essa un sottospazio, ma un sottoinsieme.}, dunque $\left<T_1,\ T_2\right>\left<T_1\cup T_2\right>\subseteq \proj{W_1+W_2}$.\\
+	$\includesx$Abbiamo che $T_i\subseteq \left<T_1,\ T_2\right>=\proj{U}$, con $U$ un sottospazio vettoriale di $V$. In particolare, si ha che $W_1,\ W_2\subseteq U$, da cui $W_1+W_2\subseteq U$. Passando allo spazio proiettivo:
 	\begin{equation*}
-		\left<T_1,\ T_2\right>=\proj{U}\subseteq \proj{W_1+W_2}
+		\left<T_1,\ T_2\right>=\proj{U}\supseteq \proj{W_1+W_2}
 	\end{equation*}
 \vspace{-6mm}
 \end{demonstration}
@@ -502,7 +502,7 @@ Allora, la rappresentazione parametrica del sottospazio $S$ con $\left(\lambda\c
 	\end{itemize}
 \vspace{-6mm}
 \end{observe}
-\begin{observe}
+\begin{attention}
 	Sia $\basis=\left\{e_0,\ \ldots,\ e_n\right\}$ una base che induce un \textit{riferimento proiettivo} su $\proj{V}$.\\
 	Per ogni $i$ sia $\lambda_i\in\kamp\setminus\left\{0\right\}$ e consideriamo $v_i=\lambda_i e_i$. Allora $\basis'=\left\{v_0,\ \ldots,\ v_n\right\}$ è ancora una base e i \textit{punti fondamentali} del riferimento indotto da $\basis'$ sono \textit{gli stessi} del riferimento indotto da $\basis$. Infatti:
 	\begin{equation*}
@@ -529,7 +529,7 @@ Allora, la rappresentazione parametrica del sottospazio $S$ con $\left(\lambda\c
 		\item \textit{Conoscere} i punti fondamentali \textit{non basta} a determinare la base $\basis$.
 		\item Riferimenti proiettivi \textit{diversi} possono avere gli \textit{stessi} punti fondamentali.
 	\end{itemize}
-\end{observe}
+\end{attention}
 \begin{observe}\label{puntigeneraleindipendentiosserva}
 	Supponiamo di avere $n+2$ punti $P_0,\ \ldots,\ P_{n+1}$ in $\proj{V}$, cioè $\forall i=0,\ \ldots,\ n+1\ \exists v_i\in V\ \colon P_i=\left[v_i\right]$. Allora:
 	\begin{gather*}
@@ -546,7 +546,7 @@ Infatti, se $v_0,\ \ldots,\ v_n$ è una base (in quanto sono indipendenti), $v_0
 Inoltre, se $\basis'=\left\{f_0,\ \ldots,\ f_n\right\}$ è un'altra base di $V$ che soddisfa la condizione sopra, allora $\basis$ è proporzionale a $\basis$, cioè $\exists\lambda\in\kamp\setminus\left\{0\right\}\ \colon f_i=\lambda e_i\ \forall i=0,\ \ldots,\ n$.
 \end{theorema}
 \begin{demonstration}
-	Sia $P_i=\left[v_i\right]$ al variare di $i=0,\ \ldots,\ n+1$. I punti $P_0,\ \ldots,\ P_n$ sono indipendenti\footnote{Perché se $N+2$ punti sono in posizione generale, presi $n+1$ punti fra di loro sono indipendenti.}, dunque per definizione $v_0,\ \ldots,\ v_n$ è una base di $V$. Definiamo:
+	Sia $P_i=\left[v_i\right]$ al variare di $i=0,\ \ldots,\ n+1$. I punti $P_0,\ \ldots,\ P_n$ sono indipendenti\footnote{Perché se $n+2$ punti sono in posizione generale, presi $n+1$ punti fra di loro sono indipendenti.}, dunque per definizione $v_0,\ \ldots,\ v_n$ è una base di $V$. Definiamo:
 	\begin{equation*}
 		v_{n+1}=\lambda_0v_0+\ldots+\lambda_nv_n\quad \lambda_i\in\kamp
 	\end{equation*}
@@ -556,7 +556,7 @@ Inoltre, se $\basis'=\left\{f_0,\ \ldots,\ f_n\right\}$ è un'altra base di $V$ 
 		\left[e_i\right]=\left[v_i\right]=P_i\ \forall i=0,\ \ldots,\ n\\
 		\left[e_0+\ldots+e_n\right]=\left[\lambda_0v_0+\ldots+\lambda_nv_n\right]=\left[v_{n+1}\right]=P_{n+1}
 	\end{gather*}
-Adesso, sia $\basis')\left\{f_0,\ \ldots,\ f_n\right\}$ come da ipotesi. Allora $\left[f_i\right]=P_i=\left[e_n\right]\ \forall i=0,\ \ldots,\ n$, cioè $\exists \mu_i\in\kamp\setminus\left\{0\right\}\ \colon f_i=\mu_i e_i\ \forall i=0,\ \ldots, n$. Inoltre, soddisfa anche $\left[f_0+\ldots+f_n\right]=P_{n+1}$, pertanto:
+Adesso, sia $\basis'=\left\{f_0,\ \ldots,\ f_n\right\}$ come da ipotesi. Allora $\left[f_i\right]=P_i=\left[e_i\right]\ \forall i=0,\ \ldots,\ n$, cioè $\exists \mu_i\in\kamp\setminus\left\{0\right\}\ \colon f_i=\mu_i e_i\ \forall i=0,\ \ldots, n$. Inoltre, soddisfa anche $\left[f_0+\ldots+f_n\right]=P_{n+1}$, pertanto:
 \begin{equation*}
 	\left[f_0+\ldots+f_n\right]=\left[e_0+\ldots+e_n\right]
 \end{equation*}
@@ -607,15 +607,15 @@ Dato che spazi \textit{vettoriali} della \textit{stessa dimensione} sono sempre 
 \vspace{-6mm}
 \end{lemming}
 \begin{demonstration}~{}\\
-$\impliessx$ Se $v\in\kamp\setminus\left\{0\right\}$, allora $\psi\left(v\right)=\lambda\phi\left(v\right)$. Segue:
+$\impliessx$Se $v\in\kamp\setminus\left\{0\right\}$, allora $\psi\left(v\right)=\lambda\phi\left(v\right)$. Segue:
 \begin{equation*}
 	\implies \widetilde{\phi}\left(\left[v\right]\right)=\left[\phi\left(v\right)\right]=\left[\psi\left(v\right)\right]=\widetilde{\psi}\left(\left[v\right]\right)
 \end{equation*}
-$\impliesdx$ Sia $h\coloneqq \funz{\phi^{-1}\circ \psi}{V}{V}$ automorfismo. Vogliamo mostrare che $h=\lambda Id_V$ con $\lambda\in\kamp\setminus\left\{0\right\}$. Se $v\in V\setminus\left\{0\right\}$, abbiamo:
+$\impliesdx$Sia $h\coloneqq \funz{\psi^{-1}\circ \phi}{V}{V}$ automorfismo. Vogliamo mostrare che $h=\lambda Id_V$ con $\lambda\in\kamp\setminus\left\{0\right\}$. Se $v\in V\setminus\left\{0\right\}$, abbiamo:
 \begin{equation*}
 	\begin{array}{c}
 \begin{array}{ccc}
-	\widetilde{\phi}\left(\left[v\right]\right)&=&\psi\left(\left[v\right]\right)\\
+	\widetilde{\phi}\left(\left[v\right]\right)&=&\widetilde{\psi}\left(\left[v\right]\right)\\
 	\shortparallel&&\shortparallel\\
 	\left[\phi\left(v\right)\right]&&\left[\psi\left(v\right)\right]
 \end{array}
@@ -663,7 +663,7 @@ E con il gruppo lineare proiettivo si può fare? Consideriamo:
 \begin{equation}
 	\funztot{\oldphi}{\gl\left(n+1,\ \kamp\right)}{\projgl[n+1]{\kamp}}{\phi_A}{\widetilde{\phi}_A}
 \end{equation}
- $\phi$ è \textit{omomorfismo} di gruppi \textit{suriettivo}, ma non iniettivo. Infatti, il nucleo non è \textit{triviale}:
+ $\oldphi$ è \textit{omomorfismo} di gruppi \textit{suriettivo}, ma non iniettivo. Infatti, il nucleo non è \textit{triviale}:
  \begin{equation*}
  	\ker \oldphi=\left\{\phi_A\mid \phi_A=Id_{\proj[n]{\kamp}}=\widetilde{Id}_{\kamp^{n+1}}\right\}=\left\{\phi_A\mid \phi=\lambda I,\ \lambda\in\kamp\setminus\left\{0\right\}\right\}=\left\{\phi_A\mid A=\lambda I,\ \lambda\in\kamp\setminus\left\{0\right\}\right\}
  \end{equation*}
@@ -708,9 +708,9 @@ Si può anche considerare l'isomorfismo tra $\left\{\lambda I\mid\lambda\in\kamp
 	\end{equation*}
 	E dunque $f$ si può anche scrivere come:
 	\begin{equation*}
-		\funztot{f}{\proj[1]{\realset}}{\proj[1]{\realset}}{\left[v\right]}{\left[Av\right]}
+		\funztot{f}{\projgl[2]{\kamp}}{\proj[1]{\realset}}{\left[v\right]}{\left[Av\right]}
 	\end{equation*}
-	Notiamo che se la matrice associata a $\phi$ fosse $2A$, per \textit{proporzionalità} si avrebbe comunque la proiettività $f$. In modo analogo, $\lambda\in\realset\setminus\left\{0\right\}$ induce la \textit{stessa proiettività} $f$ di $A$.
+	Notiamo che se la matrice associata a $\phi$ fosse $2A$, per \textit{proporzionalità} si avrebbe comunque la proiettività $f$. In modo analogo, $\lambda A$ con $\lambda\in\realset\setminus\left\{0\right\}$ induce la \textit{stessa proiettività} $f$ di $A$.
 	\vspace{-3mm}
 \end{example}
 \subsection{Altri aspetti delle trasformazioni proiettive}
@@ -734,7 +734,7 @@ Si può anche considerare l'isomorfismo tra $\left\{\lambda I\mid\lambda\in\kamp
 \begin{example}
 	Due sottospazi proiettivi di $\proj{V}$ della \textit{stessa} dimensione sono sempre \textit{proiettivamente equivalenti}.
 \end{example}
-\begin{theorema}[Esistenza e unicità di una proiettività dati $n+2$ punti in posizione generale.]~{}\label{puntigeneralitrasformazioni}\\
+\begin{theorema}[Esistenza e unicità di una trasformazione proiettiva dati $n+2$ punti in posizione generale.]~{}\label{puntigeneralitrasformazioni}\\
 Siano $\proj{V}$ e $\proj{V'}$ di dimensione $n$. Siano:
 	\begin{itemize}
 		\item $P_0,\ \ldots,\ P_{n+1}\in\proj{V}$ $n+2$ punti in posizione generale.
@@ -750,7 +750,7 @@ In particolare: se una proiettività fissa $n+2$ punti ($f\left(P_i\right)=P_i\ 
 			\item $P_i=\left[v_i\right]\ v_i\in V$.
 			\item $Q_i=\left[w_i\right]\ w_i\in V'$.
 		\end{itemize}
-	Sappiamo, dall'osservazione a pag. \ref{puntigeneraleindipendentiosserva}, che:
+	Sappiamo, dall'osservazione a pag. \pageref{puntigeneraleindipendentiosserva}, che:
 	\begin{itemize}
 		\item $v_0,\ \ldots,\ v_n$ è base di $V$, con $v_{n+1}=\lambda_0v_0+\ldots+\lambda_n v_n$ con $\lambda_i\neq 0\ \forall i$.
 		\item $w_0,\ \ldots,\ w_n$ è base di $V'$, con $w_{n+1}=\mu_0w_0+\ldots+\mu_n w_n$ con $\mu_i\neq 0\ \forall i$.
@@ -767,7 +767,7 @@ In particolare: se una proiettività fissa $n+2$ punti ($f\left(P_i\right)=P_i\ 
 Poiché $\im \phi$ contiene una base per costruzione, $\phi$ è suriettiva. In particolare, essendo endomorfismo ($\dim V=\dim V'$), $\phi$ è anche \textit{isomorfismo}.\\
 Allora $f\coloneqq\widetilde{\phi}\funz{\ }{\proj{V}}{\proj{V'}}$ è una \textit{trasformazione proiettiva} e:
 \begin{equation*}
-	f\left(P_i\right)=f\left(\left[v_i\right]\right)=\left[\phi\left(v_i\right)\right]=\left(w_i\right)=Q_i\ \forall i=0,\ \ldots,\ n+1
+	f\left(P_i\right)=f\left(\left[v_i\right]\right)=\left[\phi\left(v_i\right)\right]=\left[w_i\right]=Q_i\ \forall i=0,\ \ldots,\ n+1
 \end{equation*}
 \item \textbf{Unicità}: sia $\funz{g}{\proj{V}}{\proj{V'}}$ un'altra trasformazione proiettiva tale che $g\left(P_i\right)=Q_i\ \forall i=0,\ \ldots,\ n+1$. Per definizione, esiste $\funz{\psi}{V}{V'}$ isomorfismo per cui $g=\widetilde{\psi}$ e:
 \begin{equation*}
@@ -807,7 +807,7 @@ Poiché $w_0,\ \ldots,\ w_n$ è base, la scrittura è unica. Segue che $a_0=a_1=
 	Se invece $A$ e $B$ contengono $3$ punti, se i $3$ punti in $A$ \textit{sono allineati} mentre i $3$ punti in $B$ \textit{non} lo sono, allora $A$ e $B$ \textit{non} sono proiettivamente equivalenti.
 \end{example}
 \subsection{Trasformazioni proiettive in coordinate}
-Supponiamo di avere fissato dei \textit{riferimenti proiettivi} su $\proj{V}$ e $\proj{V'}$, dati da delle basi $\basis$ di $V$ e $\basis'$ di $V'$, e sia $\funz{f}{\proj{V}}{\proj{V}}$ una trasformazione proiettiva. Sappiamo che $f=\widetilde{\phi}$ con $\funz{\phi}{V}{V'}$ isomorfismo lineare.\\
+Supponiamo di avere fissato dei \textit{riferimenti proiettivi} su $\proj{V}$ e $\proj{V'}$, dati da delle basi $\basis$ di $V$ e $\basis'$ di $V'$, e sia $\funz{f}{\proj{V}}{\proj{V'}}$ una trasformazione proiettiva. Sappiamo che $f=\widetilde{\phi}$ con $\funz{\phi}{V}{V'}$ isomorfismo lineare.\\
 Sia $A\in\gl\left(n+1,\ \kamp\right)$ la matrice associata a $\phi$ rispetto alle basi $\basis$ e $\basis'$. Abbiamo visto che $\phi$ è determinata solo a meno di multipli: chiaramente, lo stesso è vero anche per $A$.\\
 Siano allora:
 \begin{gather*}
@@ -991,7 +991,7 @@ Della forma $\phi\left(x\right)=Ax+b$ con $A\in\gl\left(n,\ \kamp\right)$ un'app
 		\item Un punto in $\aff{\kamp^n}$ è un sottospazio affine di dimensione $0$ ($W=\left\{0\right\}$; dopotutto non ha particolarmente senso parlare di direzione del punto).
 		\item Una \textbf{retta affine}\index{retta!affine} $r$ in $\aff{\kamp^n}$ è un sottospazio affine di $\dim 1$: $W=\lin{v}$, cioè $r$ si può individuare assegnando un punto $P\in r$ e un qualsiasi vettore $v$ \textit{parallelo} alla retta $r$.
 		\item Un \textbf{piano affine}\index{piano!affine} $\pi$ in $\aff{\kamp^n}$ è un sottospazio affine di $\dim 2$: $W=\lin{v,\ w}$, cioè $\pi$ si può individuare assegnando un punto $P\in r$ e una coppia di vettori l.i. \textit{paralleli} al piano $\pi$.
-		\item Un \textbf{iperpiano affine}\index{iperpiano!affine} è un sottospazio di dimensione $n+1$.
+		\item Un \textbf{iperpiano affine}\index{iperpiano!affine} è un sottospazio di dimensione $n-1$.
 		\item Due sottospazi affini della stessa dimensione si dicono \textbf{paralleli}\index{sottospazio!affine!parallelo} se hanno lo \textit{stesso} sottospazio direttore.
 	\end{itemize}
 \vspace{-3mm}
@@ -999,7 +999,7 @@ Della forma $\phi\left(x\right)=Ax+b$ con $A\in\gl\left(n,\ \kamp\right)$ un'app
 \begin{example}
 Consideriamo $r=W+x_0$ retta affine, che ha dunque $\dim r=\dim W=1$. $W$ è la retta vettoriale in $\kamp^n$, mentre un qualunque $v\in W\setminus\left\{0\right\}$ è la \textit{direzione} della retta.
 \end{example}
-Un sottospazio affine $S\subseteq \kamp^n$ può essere descritti con equazioni cartesiane oppure in forma parametrica.\\
+Un sottospazio affine $S\subseteq \kamp^n$ può essere descritto con equazioni cartesiane oppure in forma parametrica.\\
 	\textbf{Equazioni cartesiane}. $S$ è visto come l'insieme delle \textit{soluzioni} del seguente sistema lineare:
 	\begin{equation}
 		Ax=b\qquad\left(\begin{array}{c}
@@ -1056,7 +1056,7 @@ Consideriamo il seguente sottoinsieme di $\proj[n]{\ }$:
 La condizione $x_0\neq 0$ è \textit{ben posta}; infatti, se $\lambda\in\kamp\setminus\left\{0\right\}$, allora $x_0\neq 0\iff\lambda x_0\neq 0$.\\
 Consideriamo anche il suo complementare, che è l'iperpiano coordinato rispetto alla prima coordinata omogenea:
 \begin{equation}
-	\proj[n]{\ }\setminus=H_0=\left\{P=\left(x_0\colon\ldots\colon x_n\right)\in \proj[n]{\ }\mid x_0= 0\right\}=\left\{P=\left(0\colon\ldots\colon x_n\right)\in \proj[n]{\ }\right\}
+	\proj[n]{\ }\setminus U_0=H_0=\left\{P=\left(x_0\colon\ldots\colon x_n\right)\in \proj[n]{\ }\mid x_0= 0\right\}=\left\{P=\left(0\colon\ldots\colon x_n\right)\in \proj[n]{\ }\right\}
 \end{equation}
 Sia $P\in U_0$: allora essendo $a_0\neq 0$ si ha $P=\left(a_0\colon\ldots\colon a_n\right)=\left(1\colon\frac{a_1}{a_0}\ldots\colon \frac{a_n}{a_0}\right)$. In particolare, $\frac{a_1}{a_0},\ \ldots,\ \frac{a_n}{a_0}$ sono univocamente determinate da $P$.
 \begin{example}
@@ -1071,7 +1071,7 @@ Sia $P\in U_0$: allora essendo $a_0\neq 0$ si ha $P=\left(a_0\colon\ldots\colon 
 \end{example}
 Possiamo identificare $U_0\subseteq\proj[n]{\ }$ con $\aff{\kamp^n}$. Consideriamo le due funzioni seguenti:\label{spaziaffinitoproiettivi}
 \begin{equation}
-	\funztot{j=j_0}{\aff{\kamp^n}}{U_0\subseteq \proj[n]{\ }}{\left(X_1,\ \ldots,\ X_n\right)}{\left(1\colon\ x_1\colon \ldots\colon X_n\right)}\\
+	\funztot{j=j_0}{\aff{\kamp^n}}{U_0\subseteq \proj[n]{\ }}{\left(X_1,\ \ldots,\ X_n\right)}{\left(1\colon\ X_1\colon \ldots\colon X_n\right)}\\
 	\funztot{\oldphi}{U_0\subseteq \proj[n]{\ }}{\aff{\kamp^n}}{\left(x_0\colon\ \ldots\colon X_n\right)}{\left(\frac{x_1}{x_0},\ \ldots,\ \frac{x_n}{x_0}\right)}
 \end{equation}
 \begin{itemize}
@@ -1117,7 +1117,7 @@ In molti casi, possiamo liberamente parlare di $\aff{\kamp^n}$ come lo spazio ve
 	 \end{equation*}
  Mentre invece l'insieme dei punti propri è:
  \begin{equation*}
- 	U_0=\left\{P=\left(x_0\colon x_1\right)\in \proj[1]{\ }\mid x_0\neq 0\right\}=\left\{\left(0\colon 1\right)\right\}
+ 	U_0=\left\{P=\left(x_0\colon x_1\right)\in \proj[1]{\ }\mid x_0\neq 0\right\}
  \end{equation*}
 In particolare, si ha la corrispondenza biunivoca $U_0\stackrel{1\colon1}{\leftrightarrow}\kamp$:
 \begin{equation*}
@@ -1173,7 +1173,7 @@ Consideriamo la retta proiettiva $R\subseteq\proj[n]{\ }$ con descrizione parame
 \end{equation*}
 $R$ è la retta proiettiva per i punti:
 \begin{equation*}
-	t=0\ \colon\ \left(1\colon w_1\colon\ldots\colon w_n\right)\quad t=1\ \colon\ \left(0\colon v_1\colon\ldots\colon v_n\right)=P_\infty
+	t=0\ \colon\ \left(1\colon w_1\colon\ldots\colon w_n\right)\quad s=0\ \colon\ \left(0\colon v_1\colon\ldots\colon v_n\right)=P_\infty
 \end{equation*}
 Ponendo $s=1$ otteniamo:
 \begin{equation*}
@@ -1190,7 +1190,7 @@ Al variare di $t\in\kamp$, questi sono tutti e soli i punti di $j\left(r\right)\
 \begin{equation*}
 	\begin{array}{ll}
 			R&=r\cup P_{\infty}\\
-			P_{\infty}&=R\cap H_0=\left\{\left(0\colon v_1\colon v_n\right)\right\}
+			P_{\infty}&=R\cap H_0=\left\{\left(0\colon v_1\colon \ldots \colon v_n\right)\right\}
 	\end{array}
 \end{equation*}
 $R$ è necessariamente il più piccolo sottospazio proiettivo contenente $r$, dato che è la retta più un solo punto. Pertanto, $R=\overline{r}$.
@@ -1230,7 +1230,7 @@ Cioè $l\cap U_0=l\setminus\left\{Q\right\}$. In altre parole, $l$ è una retta 
 \begin{equation}
 	ax+by+c=0\quad \left(a,\ b\right)\neq\left(0,\ 0\right)
 \end{equation}
-Con la corrispondenza biunivoca fra le coordinate $\left(x,\ y\right)$ vettoriali e $\left(X_1,\ X_2\right)$ affini. Abbiamo tuttavia anche la corrispondenza con le coordinate omogenee in $\proj[2]{\ }$, rispettivamente $\left(x\colon y\colon z\right)$ e $\left(_0\colon x_2\colon x_3\right)$.\\
+Con la corrispondenza biunivoca fra le coordinate $\left(x,\ y\right)$ vettoriali e $\left(X_1,\ X_2\right)$ affini. Abbiamo tuttavia anche la corrispondenza con le coordinate omogenee in $\proj[2]{\ }$, rispettivamente $\left(x\colon y\colon z\right)$ e $\left(x_0\colon x_1\colon x_2\right)$.\\
 Chiamiamo $\left(x\colon y\colon z\right)$ le coordinate omogenee su $\proj[2]{\ }$ con:
 \begin{equation*}
 	H_0=\left\{P=\left(x\colon y\colon z\right)\in \proj[2]{\ }\mid z=0\right\}=\left\{P=\left(x\colon y\colon0\right)\in \proj[2]{\ }\right\}
@@ -1248,7 +1248,7 @@ Infatti, per $z=1$ si ottiene l'equazione di $r$, mentre ponendo $z=0$ (cioè il
 		\end{array}
 	\end{cases}\quad P_{\infty}=\left(-b\colon a\colon 0\right)
 \end{equation*}
-La direzione della retta $ax+by+c=0$ è data dal punto improprio $P_{\infty}$ e corrisponde al vettore $\left(-b, a\colon 0\right)$.
+La direzione della retta $ax+by+c=0$ è data dal punto improprio $P_{\infty}$ e corrisponde al vettore $\left(-b\colon a\colon 0\right)$.
 \end{enumerate}
 \end{observes}
 Generalizziamo il concetto di chiusura proiettiva a un generico sottospazio affine.
@@ -1325,7 +1325,7 @@ Esso corrisponde al sistema lineare omogeneo in $\kamp^n$ $Ax=0$ associato al si
 Allora, $\overline{S}$ è il sottospazio generato dagli $m+1$ punti \textit{indipendenti}:
 \begin{equation}
 	\begin{array}{cc}
-		\left(0\colon v_{i,1}\colon\ldots\colon v_{in}\right)&i=1,\ \ldots,\ m
+		\left(0\colon v_{i,1}\colon\ldots\colon v_{i,n}\right)&i=1,\ \ldots,\ m,\ \text{ e }
 		\left(1\colon c_1\colon\ldots\colon c_n\right)
 	\end{array}
 \end{equation}
@@ -1334,9 +1334,9 @@ Pertanto, $\overline{S}$ ha descrizione parametrica:
 			\begin{cases}
 		\begin{array}{l}
 			x_0=t_0\\
-			x_1=t_1v_{1,1}+\ldots+t_mv_{m,1}+t_0C_1\\
+			x_1=t_1v_{1,1}+\ldots+t_mv_{m,1}+t_0c_1\\
 			\vdots\\
-			x_n=t_1v_{1,n}+\ldots+t_mv_{m,n}+t_0C_n\\			
+			x_n=t_1v_{1,n}+\ldots+t_mv_{m,n}+t_0c_n\\			
 		\end{array}
 	\end{cases}
 \end{equation*}
@@ -1370,41 +1370,45 @@ Vediamo un esempio di proiettività di $\proj[1]{\ }$.
 	Sia $\kamp=\realset$. Allora, preso $\realset^n$ con la topologia Euclidea e $\proj[n]{\realset}$ con la topologia quoziente, mostrare che $U_0$ è un aperto di $\proj[n]{\realset}$ e che $\funz{j}{\realset^n}{U_0}$ è un omeomorfismo.
 \end{exercise}
 % aggiungere soluzione
-\section{Spazi proiettivi complessi}
+\section{Digressione: spazi proiettivi complessi}
 \begin{remember}
 	Nel caso di $\realset^n$ si è già visto che lo spazio proiettivo reale è un quoziente del tipo $\displaystyle \proj[n]{\realset}=\frac{\realset^{n+1}\setminus\{0\}}{\sim}$, dunque è dotato in maniera naturale di una topologia.\newline
 	Si può anche vedere come \textit{quoziente della sfera} $S^n$ dove si identificano i punti antipodali grazie alla \textit{suriezione} $\surr \pi {S^n} {\proj[n]{\realset}}$; è anche una \textit{varietà topologica compatta} di dimensione $n$. Inoltre $\proj[1]{\realset}\cong S^1$ e abbiamo analizzato il piano proiettivo reale $\proj[2]{\realset}$.
 \end{remember}
 Anche nel caso complesso per $\proj[n]{\complexset}=\frac{\complexset^{n+1}\setminus\{0\}}{\sim}$ si ha in maniera naturale una topologia quoziente data dalla topologia Euclidea su $\complexset^{n+1}\setminus\{0\} \cong \realset^{n+1}\setminus\{0\}$.\newline
 Vogliamo vedere che è una \textit{varietà topologica compatta} di dimensione $\mathbf{2n}$. Infatti, mentre $\proj[n]{\realset}$ è localmente euclideo di dimensione $n$, si ha che $\proj[n]{\complexset}$ localmente si comporta come $\complexset^n\cong\realset^{2n}$, dunque la dimensione topologica è $2n$.
+\begin{remember}
+	 Ricordiamo la corrispondenza fra numeri complessi, reali e la norma:
+	\begin{gather*}
+		z_j=x_j+iy_j\implies  z=(z_1,\ \ldots,\ z_{n+1})\in\complexset^{n+1}\longleftrightarrow (x_1,\ y_1,\ \ldots,\ x_{n+1},\ y_{n+1})\in\realset^{2n+2}\\
+		\begin{array}{ccc}
+			\displaystyle \|z\|^2=\sum_{j=1}^{n+1} \lvert z_j\rvert ^2=\sum_{j=1}^{n+1}\left(\lvert x_j \rvert ^2 +\lvert y_j \rvert ^2\right) & \implies & \displaystyle \ \|\lambda z \| =\sqrt{\sum_{j=1}^{n+1}\lvert \lambda z_j \rvert ^2}=\lvert\lambda\rvert \| z\|,\ \lambda\in\complexset
+		\end{array}
+	\end{gather*}
+\vspace{-3mm}
+\end{remember}
 \begin{theorema}[${\proj[n]{\complexset}}$ è una varietà topologica di dimensione $2n$.]
 \end{theorema}
 \begin{demonstration}~{}
 	\begin{itemize}
-		\item $\proj[n]{\complexset}$ è \textbf{connesso}: è quoziente di $\complexset^{n+1}\setminus\{0\}$, che è connesso.
-		\item $\proj[n]{\complexset}$ è \textbf{compatto}: per avere la tesi, si vuole vedere lo spazio come \textit{quoziente di un compatto} o \textit{immagine tramite una funzione continua di un compatto}.
-		Ricordiamo la relazione di equivalenza:
+	\item $\proj[n]{\complexset}$ è \textbf{connesso}: è quoziente di $\complexset^{n+1}\setminus\{0\}$, che è connesso.
+	\item $\proj[n]{\complexset}$ è \textbf{compatto}: per avere la tesi, si vuole vedere lo spazio come \textit{quoziente di un compatto} o \textit{immagine tramite una funzione continua di un compatto}.
+	Ricordiamo la relazione di equivalenza:
 		\begin{equation*}
 			z\sim w\iff \exists\lambda\in\complexset\setminus\{0\}\colon w=\lambda z
 		\end{equation*}
-		Vogliamo ora \textit{restringerci alla sfera complessa} (la cui dimensione è data da $\complexset^{n+1}=\realset^{2n+2}\supset S^{2n+1}$) e dimostrare che ogni \textit{punto del quoziente} è equivalente ad un \textit{punto della sfera}. Per fare ciò si sfrutta la corrispondenza fra numeri complessi e reali e la norma:
-		\begin{gather*}
-			z_j=x_j+iy_j\implies  z=(z_1,\ \ldots,\ z_{n+1})\in\complexset^{n+1}\longleftrightarrow (x_1,\ y_1,\ \ldots,\ x_{n+1},\ y_{n+1})\in\realset^{2n+2}\\
-			\begin{array}{ccc}
-				\displaystyle \|z\|^2=\sum_{j=1}^{n+1} \lvert z_j\rvert ^2=\sum_{j=1}^{n+1}\left(\lvert x_j \rvert ^2 +\lvert y_j \rvert ^2\right) & \wedge & \displaystyle \ \|\lambda z \| =\sqrt{\sum_{j=1}^{n+1}\lvert \lambda z_j \rvert ^2}=\lvert\lambda\rvert \| z\|,\ \lambda\in\complexset
-			\end{array}
-		\end{gather*}
-	 Se $z\in\complexset^{n+1}\setminus\{0\}\implies \|z\|\neq 0$ e se $\lambda=\frac{1}{\| z\|}$ si ha $\underbrace{\frac{1}{\|z\|}\cdot z}_{\in S^{2n+1}}\sim z$. Notiamo allora che $\pi(S^{2n+1})=\proj[n]{\complexset}$, dunque $\proj[n]{\complexset}$ è compatto.
-	\item $\proj[n]{\complexset}$ è di \textbf{Hausdorff}: partiamo con una considerazione che segue dal punto precedente. Nel caso reale, i punti sulla sfera sono equivalenti solo se \textit{antipodali}, nel caso complesso $S^{2n+1}$ invece si ha, dati $z,w\in S^{2n+1}$:
+	Vogliamo dimostrare che un sistema completo di rappresentanti del piano proiettivo sono i \textit{punti della sfera complessa} $S^{2n+1}\subseteq \complexset^{n+1}=\realset^{2n+2}$.
+	Se $z\in\complexset^{n+1}\setminus\{0\}\implies \|z\|\neq 0$ e pertanto $\underbrace{\frac{1}{\|z\|}\cdot z}_{\in S^{2n+1}}\sim z$. Poiché un sistema completo di rappresentanti è la sfera, si ha $\pi(S^{2n+1})=\proj[n]{\complexset}$ e dunque $\proj[n]{\complexset}$ è compatto.
+	\item $\proj[n]{\complexset}$ è di \textbf{Hausdorff}: partiamo con una considerazione che segue dal punto precedente. Nel caso reale i punti sulla sfera sono equivalenti solo se \textit{antipodali}; nel caso complesso la questione è differente. Consideriamo $z,\ w\in S^{2n+1}$; per definizione del piano proiettivo:
 		\begin{equation*}
 			z\sim w\iff \exists \lambda\in\complexset\setminus\{0\} \colon w=\lambda z
 		\end{equation*}
-	Siccome $w,z\in S^{2n+1}$ hanno norma unitaria $1=\| w\|=\|\lambda z\|= \ \lambda | \|z\|=|\lambda|$. Essendoci \textit{infiniti} numeri di norma $1$ in $\complexset$, allora ci sono \textit{infiniti} numeri nella stessa classe, e quindi i punti $\lambda z\in S^{2n+1}$ sono tutti equivalenti.\\
-	Consideriamo ora $\funz{\pi_0=\pi_{\mid S^{2n+1}}}{S^{2n+1}}{\proj[n]{\complexset}}$. Per dimostrare che $\proj[n]{\complexset}$ è di Hausdorff, è sufficiente dimostrare che $\pi_0$ è un'identificazione \textit{chiusa} per il teorema \ref{quozientehausdorff} (pag. \pageref{quozientehausdorff}).\\
+	Siccome $w,\ z\in S^{2n+1}$ hanno norma unitaria $1=\| w\|=\|\lambda z\|= \ \lambda | \|z\|=|\lambda|$. Essendoci \textit{infiniti} numeri di norma $1$ in $\complexset$, allora ci sono \textit{infiniti} numeri nella stessa classe, e quindi i punti $\lambda z\in S^{2n+1}$ sono tutti equivalenti.\\
+	Consideriamo ora $\funz{\pi_0=\pi_{\mid S^{2n+1}}}{S^{2n+1}}{\proj[n]{\complexset}}$. Per dimostrare che $\proj[n]{\complexset}$ è di Hausdorff, è sufficiente dimostrare che $\pi_0$ è un'identificazione \textit{chiusa} per il teorema \ref{quozientehausdorff} (pag. \pageref{quozientehausdorff}), ovvero il piano proiettivo si ottiene come quoziente della sfera.\\
 	Sia $C\subset S^{2n+1}$ un chiuso. Allora $\pi_0(C)$ è chiuso in $\proj[n]{\complexset}\iff \pi_0^{-1}(\pi_0(C))$ è chiuso in $S^{2n+1}$.
-	Notiamo che:
+	Per le osservazioni precedenti che:
 	\begin{equation*}
-		\pi_0\left(z\right)\sim \pi_0\left(w\right)\iff \exists\lambda\in\complexset\text{ con }\lvert\lambda\rvert=1\colon w=\lambda z
+		\pi_0\left(z\right)= \pi_0\left(w\right)\iff \exists\lambda\in\complexset\text{ con }\lvert\lambda\rvert=1\colon w=\lambda z
 	\end{equation*}
 	In effetti la relazione di equivalenza su $S^{2n+1}$ viene da un'azione del gruppo $S^1=\{\lambda\in\complexset \mid |\lambda |=1\}$ rispetto al prodotto con elemento neutro $1$:
 	\begin{equation*}
@@ -1415,15 +1419,14 @@ Vogliamo vedere che è una \textit{varietà topologica compatta} di dimensione $
 		\item $S^1\times S^{2n+1}$ è compatto e \textbf{Hausdorff}.
 	\end{itemize}
 	$F$ è \textit{chiusa} in quanto funzione continua da un compatto in \textbf{Hausdorff}.\\
-	Dato un chiuso $C\subseteq S^{2n+1}$, prendendo la controimmagine dell'immagine agisco sui punti di $C$ con tutti gli elementi di $S^1$, cioè prendo tutte le orbite che intersecano $C$, ottenendo quanto segue:
+	Dato un chiuso $C\subseteq S^{2n+1}$, prendendo la controimmagine dell'immagine agisco sui punti di $C$ con tutti gli elementi di $S^1$, cioè prendo tutte le orbite che intersecano $C$:
 	\begin{equation*}
-		\pi_0^{-1}(\pi_0(C))=F(\underbrace{S^1\times C}_{\stackrel{\text{chiuso in}}{S^1\times S^{2n+1}}})\subseteq S^{2n+1}
+		\pi_0^{-1}(\pi_0(C))=F(\underbrace{S^1\times C}_{\stackrel{\text{chiuso in}}{S^1\times S^{2n+1}}})\subseteq S^{2n+1}\vspace{-2mm}
 	\end{equation*}
-\vspace{-1mm}
-Segue che $\pi_0^{-1}(\pi_0(C))$ chiuso  e $\pi_0(C)$ chiuso in $\proj[n]{\complexset}$, cioè $\pi_0$ è applicazione chiusa e $\pi_0$ identificazione per il teorema \ref{condizione sufficiente identificazione} (Manetti 5.4, \pageref{condizione sufficiente identificazione}).\\
+Segue che $\pi_0^{-1}(\pi_0(C))$ chiuso e $\pi_0(C)$ chiuso in $\proj[n]{\complexset}$, cioè $\pi_0$ è applicazione chiusa e $\pi_0$ identificazione per il teorema \ref{condizione sufficiente identificazione} (Manetti 5.4), pag. \pageref{condizione sufficiente identificazione}.\\
 Pertanto $\proj[n]{\complexset}$ è anche quoziente di $S^{2n+1}$.
-Siccome $S^{2n+1}$ è un compatto in un \textbf{Hausdorff} e $\pi_0$ è un'identificazione \textit{chiusa} allora $\proj[n]{\complexset}$ è \textbf{Hausdorff} per il teorema già citato in precedenza.
-\item $\proj[n]{\complexset}$ è \textbf{localmente euclideo di dimensione} $2n$: per dimostrarlo sfruttiamo le costruzioni introdotte a pag. \pageref{spaziaffinitoproiettivi}. Consideriamo la famiglia di insiemi:
+Siccome $S^{2n+1}$ è un compatto in un \textbf{Hausdorff} e $\pi_0$ è un'identificazione \textit{chiusa} allora $\proj[n]{\complexset}$ è \textbf{Hausdorff} per il teorema citato in precedenza.
+\item $\proj[n]{\complexset}$ è \textbf{localmente euclideo di dimensione} $2n$: per dimostrarlo riprendiamo le costruzioni introdotte a pag. \pageref{spaziaffinitoproiettivi}. Consideriamo la famiglia di insiemi:
 		\begin{equation*}
 			U_j\coloneqq\{z_j\neq 0\}=\proj[n]{\complexset}\setminus H_j\text{, con }H_j\ j\text{-esimo iperpiano coordinato.}
 		\end{equation*}
@@ -1434,7 +1437,7 @@ Siccome $S^{2n+1}$ è un compatto in un \textbf{Hausdorff} e $\pi_0$ è un'ident
 		\end{equation*}
 		Mostriamo che $j$ e $\oldphi$ siano omeomorfismi; siccome sono già biunivoche e una inversa dell'altra basta dimostrare che sono entrambe \textit{continue}.\\
 			\begin{minipage}[t]{0.51\textwidth}\vspace{1pt}
-				Per mostrare che $j$ è continua sfruttiamo il diagramma a lato, ovvero la fattorizzazione di $j$ in $\complexset^{n+1}\setminus\{0\}$ tramite:
+				Per mostrare che $j$ è continua consideriamo il diagramma a lato, che rappresenta la fattorizzazione di $j$ in $\complexset^{n+1}\setminus\{0\}$ tramite:
 					\begin{equation*}
 						\widetilde{j}((z_1,\ \ldots,\ z_n))=(1,\ z_1\ldots,\ z_n)
 					\end{equation*}
@@ -1456,7 +1459,7 @@ Siccome $S^{2n+1}$ è un compatto in un \textbf{Hausdorff} e $\pi_0$ è un'ident
 				\end{tikzcd}\]
 			\end{minipage}\\
 			\begin{minipage}[t]{0.51\textwidth}\vspace{10pt}
-				Per la continuità dell'inversa $\oldphi$ si procede con la fattorizzazione della controimmagine $\pi^{-1}$ tramite una restrizione dell'inversa di $\pi$ a $\pi^{-1}U_0$:
+				Per la continuità dell'inversa $\oldphi$ si procede con la fattorizzazione tramite una restrizione dell'inversa di $\pi$ a $\pi^{-1}U_0$:
 				\begin{equation*}
 					\funz {p\coloneqq \pi_{\mid_{\pi^{-1}(U_0)}}} {\pi^{-1}(U_0)} {U_0}
 				\end{equation*}
@@ -1477,12 +1480,12 @@ Siccome $S^{2n+1}$ è un compatto in un \textbf{Hausdorff} e $\pi_0$ è un'ident
 				\end{tikzcd}\]
 			\end{minipage}\\
 		 Entrambe sono \textit{continue}: la prima è la restrizione di una funzione continua e la seconda, essendo ben definita ($U_0=\{z_0\neq 0\}$), risulta banalmente continua: inoltre, quest'ultima lavora solo con vettori e non con classi di equivalenza!\\
-		Per dimostrare che $\oldphi$ è continua sfruttiamo le proprietà della topologia quoziente (vedasi \ref{proprietà identificazione quoziente e mappa continua indotta}), dimostrando che $p$ è un'\textit{identificazione}: è già \textit{continua} e \textit{suriettiva}, dunque basta solo che sia aperta o chiusa per il teorema \ref{condizione sufficiente identificazione}.\\
+		Per dimostrare che $\oldphi$ è continua utilizzeremo le proprietà della topologia quoziente (vedasi \pageref{proprietà identificazione quoziente e mappa continua indotta}), dimostrando che $p$ è un'\textit{identificazione}: è già \textit{continua} e \textit{suriettiva}, dunque basta solo che sia aperta o chiusa per il teorema \ref{condizione sufficiente identificazione}.\\
 		Osserviamo che $\funz \pi {\complexset^{n+1}\setminus\{0\}} {\proj[n]{\complexset}}$ è anch'essa un quoziente dato dall'azione del gruppo $G=\complexset\setminus\{0\}$ rispetto al prodotto per la moltiplicazione su $\complexset^{n+1}\setminus\{0\}$. In particolare, è un'azione per omeomorfismi. Infatti, fissato  $\lambda\in\complexset\setminus\{0\}$:
 	\begin{equation*}
 		\funztot {\theta_\lambda} {\complexset^{n+1}\setminus\{0\}} {\complexset^{n+1}\setminus\{0\}} z {\lambda z}
 	\end{equation*}
-	È continua: per la proposizione \ref{proiezione azione gruppo aperta} si ha che $\funz \pi {\complexset^{n+1}\setminus\{0\}} {\proj[n]{\complexset}}$ è un'applicazione aperta, pertanto anche $p$ che è una sua restrizione ad un aperto è aperta. %(verifica per esercizio)
+	È continua: per la proposizione \ref{proiezione azione gruppo aperta} si ha che $\funz \pi {\complexset^{n+1}\setminus\{0\}} {\proj[n]{\complexset}}$ è un'applicazione aperta, pertanto anche $p$ che è una sua restrizione è aperta.
 	Dalle considerazioni di cui sopra $p$ è un'identificazione. Ne segue che $U_0$ è un aperto di $\proj[n]{\complexset}$ omeomorfo a $\complexset^n$ e quindi a $\realset^{2n}$.\\
 	Allo stesso modo, $\forall j\in\{0,\ \ldots,\ n\},\ U_j$ è un aperto di $\proj[n]{\complexset}$ omeomorfo a $\complexset^n$ tramite la mappa-.
 	\begin{equation*}
@@ -1490,7 +1493,7 @@ Siccome $S^{2n+1}$ è un compatto in un \textbf{Hausdorff} e $\pi_0$ è un'ident
 	\end{equation*}
 	Siccome in \textit{coordinate omogenee} c'è sempre un elemento \textit{non} nullo (si lavora su $\complexset^{n+1}\setminus\{0\}$) allora ogni punto sta in uno degli aperti $U_j$, cioè:
 	\begin{equation*}
-		\proj[n]{\complexset}=U_0\cup\ldots\cup U_n\implies \proj[n]{\complexset}
+		\proj[n]{\complexset}=U_0\cup\ldots\cup U_n
 	\end{equation*}
 	 $\proj[n]{\complexset}$ è \textit{localmente euclideo} di dimensione $2n$, dunque è una \textit{varietà topologica compatta}.
 	\end{itemize}
@@ -1500,7 +1503,7 @@ Siccome $S^{2n+1}$ è un compatto in un \textbf{Hausdorff} e $\pi_0$ è un'ident
 	\begin{itemize}
 		\item Su un campo $\kamp$ qualsiasi si ha sempre la mappa $\oldphi_j$, una corrispondenza biunivoca fra i sottoinsiemi $U_j$ (complementari di un iperpiano coordinato) e $\kamp^n$ (senza aspetto topologico): vale sempre che lo spazio proiettivo è unione di tali $U_j$.\\
 		In particolare, nel caso reale, tali $U_j$ sono \textit{aperti} ed il ragionamento è \textit{analogo} a quello fatto poc'anzi nel caso complesso.
-		\item Non abbiamo dimostrato che è a base numerabile perché, essendo compatto, segue dal teorema \ref{compattoconnessohausdorfflocalmenteuclideo} (pag. \pageref{compattoconnessohausdorfflocalmenteuclideo}), inoltre si potrebbe dimostrare facilmente ‘‘a mano'' sfruttando che gli aperti $U_j$ sono a base numerabile, dunque anche la loro unione finita lo è.
+		\item Non abbiamo dimostrato che è a base numerabile perché, essendo compatto, segue dal teorema \ref{compattoconnessohausdorfflocalmenteuclideo} (pag. \pageref{compattoconnessohausdorfflocalmenteuclideo}), inoltre si potrebbe dimostrare facilmente ‘‘a mano'' mostrando che gli aperti $U_j$ sono a base numerabile, dunque anche la loro unione finita lo è.
 	\end{itemize}
 \vspace{-3mm}
 \end{observes}
@@ -1508,7 +1511,7 @@ Siccome $S^{2n+1}$ è un compatto in un \textbf{Hausdorff} e $\pi_0$ è un'ident
 	\subsection{Retta proiettiva complessa}
 Cosa succede per la \textit{retta proiettiva complessa}? Essa è una varietà topologica compatta di dimensione $2$ (dunque una \textit{superficie topologica compatta}) che abbiamo già classificato! Scopriamo di che superficie si tratta. Si ha:
 \begin{equation}
-	\proj[n]{\complexset}=U_0\cup\{(0\colon 1)\}\text{ con } U_0\cong\complexset\cong\realset^2
+	\proj[1]{\complexset}=U_0\cup\{(0\colon 1)\}\text{ con } U_0\cong\complexset\cong\realset^2
 \end{equation}
 In altre parole, la retta proiettiva complessa è un \textit{piano} unito ad un \textit{punto}. Dimostriamo ora che è omeomorfa a $S^2$, detta anche \textbf{sfera di Riemann} \index{sfera!di Riemann}, e analizziamo poi la differenza con il piano proiettivo reale.
 \begin{theorema}[${\proj[1]{\complexset}\cong S^2}$.]~{}\\
@@ -1517,7 +1520,7 @@ In altre parole, la retta proiettiva complessa è un \textit{piano} unito ad un 
 	Per ottenere la sfera si può pensare di \textit{richiudere} il piano $\realset^2$ su se stesso, aggiungendo il punto all'infinito $\{(0\colon 1)\}$.
 \end{intuit}
 \begin{demonstration}
-	Costruiamo l'omeomorfismo con $S^2\subset\realset^3$ sfruttando la \textit{proiezione stereografica}. Consideriamo:
+	Costruiamo l'omeomorfismo con $S^2\subset\realset^3$ attraverso la \textit{proiezione stereografica}. Consideriamo:
 		%https://q.uiver.app/?q=WzAsNCxbMCwwLCJTXjJcXHNldG1pbnVzXFx7TlxcfSJdLFsyLDAsIlxccmVhbHNldF4yIl0sWzQsMCwiXFxjb21wbGV4c2V0Il0sWzYsMCwiVV8wIl0sWzAsMSwicF9OIl0sWzEsMiwiayJdLFsyLDMsImoiXSxbMCwzLCJGX3t8X3tTXjJcXHNldG1pbnVzXFx7TlxcfX19IiwyLHsiY3VydmUiOjV9XV0=
 		\[\begin{tikzcd}
 			{S^2\setminus\{N\}} && {\realset^2} && {\complexset} && {U_0}
@@ -1531,10 +1534,10 @@ In altre parole, la retta proiettiva complessa è un \textit{piano} unito ad un 
 	\begin{equation*}
 		F_{\mid_{S^2\setminus\{N\}}}\coloneqq j\circ k\circ p
 	\end{equation*}
-	Poniamo $F(N)\coloneqq (0\colon 1)$ in quanto sono gli unici punti rimasti da dover ‘‘mappare'', ricordando che $\proj[1]{\complexset}=U_0\cup\{(0\colon 1)\}$. \\
+	Poniamo $F(N)\coloneqq (0\colon 1)$ in quanto è l'unico punto rimasto da dover ‘‘mappare'', ricordando che $\proj[1]{\complexset}=U_0\cup\{(0\colon 1)\}$. \\
 	Siccome $j\ ,\ k,\ p$ sono \textit{tutti} omeomorfismi, allora la loro composizione $F_{\mid_{S^2\setminus\{N\}}}$ è biunivoca e continua su $S^2\setminus\{N\}$.\\
 	Perché $F$ sia continua in tutti i suoi punti basta verificarla che lo sia in un intorno (aperto) contenente $N$ perché valga il lemma di incollamento. % è l'unico motivo per cui secondo me ha senso questo: si crea F incollando le due proiezioni stereografiche sulle due sfere bucate.
-	Sfruttiamo la proiezione stereografica dal polo sud $S=(0,\ 0,\ -1)$ scegliamo l'aperto $S^2\setminus\{S\}$, intorno di $N$. Dobbiamo mostrare la continuità di $F_{\mid_{S^2\setminus\{S\}}}$.\\
+	Considieriamo la proiezione stereografica dal polo sud $S=(0,\ 0,\ -1)$ scegliamo l'aperto $S^2\setminus\{S\}$, intorno di $N$. Dobbiamo mostrare la continuità di $F_{\mid_{S^2\setminus\{S\}}}$.\\
 	Scriviamo le due proiezioni stereografiche, sia da $N$, sia da $S$: fissato un punto $P_0=(x_0,\ y_0,\ z_0)$ sulla sfera, allora consideriamo le semirette uscenti da $N$ e da $S$ che passano per $P_0$ \footnote{Le equazioni sono scritte in \textit{forma parametrica}, pertanto abbiamo evidenziato il punto per cui passano e la direzione.}:
 		\begin{gather*}
 			\begin{array}{ccc}
@@ -1566,7 +1569,7 @@ In altre parole, la retta proiettiva complessa è un \textit{piano} unito ad un 
 		\begin{gather*}
 			\frac{1}{\overline{u}} = \frac{1}{ \frac{x_0}{1+z_0} -i\frac{y_0}{1+z_0} } = \frac{1+z_0}{x_0-iy_0} \stackrel{!}{=} \frac{(x_0+iy_0)(1+z_0)}{x_0^2+y_0^2} \stackrel{!!}{=} \frac{(x_0+iy_0)(1+z_0)}{1-z_0^2}=\frac{x_0+iy_0}{1-z_0}=w
 		\end{gather*}
-	dove l'uguaglianza (!) vale perché, in quanto $P_0\neq N,\ S$ allora $x_0+iy_0\neq 0$, mentre quella (!!) segue dal fatto che il punto sta sulla sfera, per cui $x_0^2+y_0^2+z_0^2=1\implies x_0^2+y_0^2=1-z_0^2$.\\
+	L'uguaglianza (!) vale perché, in quanto $P_0\neq N,\ S$ allora $x_0+iy_0\neq 0$, mentre quella (!!) segue dal fatto che il punto sta sulla sfera, quindi $x_0^2+y_0^2+z_0^2=1\implies x_0^2+y_0^2=1-z_0^2$.\\
 	Abbiamo dunque ottenuto $F_{\mid_{S^2\setminus\{N,S\}}}$ come una composizione di mappe:
 		% https://q.uiver.app/?q=WzAsNCxbMCwwLCJTXjJcXHNldG1pbnVzXFx7TixTXFx9Il0sWzIsMCwiXFxyZWFsc2V0XjIiXSxbNCwwLCJcXGNvbXBsZXhzZXQiXSxbNiwwLCJVXzAiXSxbMCwxLCJwX04iXSxbMSwyLCJrIl0sWzIsMywiaiJdLFswLDMsIkZfe3xfe1NeMlxcc2V0bWludXNcXHtOLFNcXH19fSIsMix7ImN1cnZlIjo1fV1d
 		\[\begin{tikzcd}
@@ -1715,7 +1718,7 @@ Vogliamo ora scoprire come si calcola il birapporto non solo nel sistema di rife
 			\end{array} \right| }{ \left| \begin{array}{cc}
 				\delta_{32}\lambda_1 & \delta_{13}\lambda_2 \\
 				\delta_{32}\mu_1 & \delta_{13}\mu_2
-			\end{array} \right|  } = \frac{ \cancel{ \delta_{12} } \cancel{\delta_{13}} \delta_{42} }{ \delta_{32} \cancel{\delta_{13}}\cancel{\delta_{12}} } = \frac{-\delta_{24} }{\delta_{23} }=\frac{\delta_{24}}{\delta_{23}} \\
+			\end{array} \right|  } = \frac{ \cancel{ \delta_{12} } \cancel{\delta_{13}} \delta_{42} }{ \delta_{32} \cancel{\delta_{13}}\cancel{\delta_{12}} } = \frac{-\delta_{24} }{-\delta_{23} }=\frac{\delta_{24}}{\delta_{23}} \\
 			\\
 			d=\frac{ \left| \begin{array}{cc}
 				\delta_{32}\lambda_1 & \delta_{12}\lambda_4 \\
@@ -1752,7 +1755,7 @@ Procedendo allo stesso modo con gli altri determinanti e applicando la definizio
 %LEZ 32
 \subsection{Birapporto e trasformazioni proiettive}
 \begin{remember}
-	Date due rette proiettive $\proj[1]{V}$ e $\proj[1]{V'}$ ($\dim \proj[1]{V}=1=\dim \proj[1]{V'}$), e $P_1,\ P_2,\ P_3 \in \proj[1]{V}$ distinti e $Q_1,\ Q_2,\ Q_3 \in \proj[1]{V'}$ distinti, esiste sempre ed è unica una trasformazione proiettiva $\funz d {\proj[1]{V}} {\proj[1]{V'}}$ tale che $f(P_i)=Q_i, \ i=1,2,3$ grazie al il teorema \ref{puntigeneralitrasformazioni}, pag. \pageref{puntigeneralitrasformazioni}.
+	Date due rette proiettive $\proj[1]{V}$ e $\proj[1]{V'}$ ($\dim \proj[1]{V}=1=\dim \proj[1]{V'}$), e $P_1,\ P_2,\ P_3 \in \proj[1]{V}$ distinti e $Q_1,\ Q_2,\ Q_3 \in \proj[1]{V'}$ distinti, esiste sempre ed è unica una trasformazione proiettiva $\funz f {\proj[1]{V}} {\proj[1]{V'}}$ tale che $f(P_i)=Q_i, \ i=1,2,3$ grazie al il teorema \ref{puntigeneralitrasformazioni}, pag. \pageref{puntigeneralitrasformazioni}.
 \end{remember}
 Ci interessa ora provare un risultato più generale: l'esistenza di una proiettività con $4$ punti \textit{non tutti in posizione generale}.
 \begin{theorema}[Esistenza di una proiettività tra rette proiettive con 4 punti {(di cui 3 distinti)}.]~{}\\
@@ -1765,7 +1768,7 @@ Ci interessa ora provare un risultato più generale: l'esistenza di una proietti
 	\begin{equation}
 		f(P_i)=Q_i,\ \forall i=1,\ \ldots,\ 4  \iff \beta(P_1,\ P_2,\ P_3,\ P_4)=\beta(Q_1,\ Q_2,\ Q_3,\ Q_4)
 	\end{equation}
-Cioè se il birapporto delle quaterne è \textbf{invariante per proiettività}.
+\vspace{-3mm}
 \end{theorema}
 \begin{observe}
 	Consideriamo i primi 3 punti e scegliamone dei rappresentanti per cui:
@@ -1782,8 +1785,8 @@ Cioè se il birapporto delle quaterne è \textbf{invariante per proiettività}.
 	$ f(P_4)=[\phi(v_4)]=(a\colon b)$ nel riferimento in $\proj[1]{V'}$.
 \end{observe}
 \begin{demonstration}~{}\\
-	$\impliesdx$ Siccome $f$ è unica e $f(P_4)=Q_4 \implies Q_4=(a\colon b)$ nel riferimento in cui $Q_1=(1\colon 0),\ Q_2=(0\colon 1),\ Q_3=(1\colon 1) \implies \beta(Q_1,\ Q_2,\ Q_3,\ Q_4)=\frac{b}{a}=\beta(P_1,\ P_2,\ P_3,\ P_4)$.\\
-	$\impliessx$ Se $\beta(Q_1,\ Q_2,\ Q_3,\ Q_4)=\frac{b}{a}$, allora distinguiamo i casi in cui il birapporto è in $\kamp$ o \textit{infinito}:
+	$\impliesdx$Siccome $f$ è unica e $f(P_4)=Q_4 \implies Q_4=(a\colon b)$ nel riferimento in cui $Q_1=(1\colon 0),\ Q_2=(0\colon 1),\ Q_3=(1\colon 1) \implies \beta(Q_1,\ Q_2,\ Q_3,\ Q_4)=\frac{b}{a}=\beta(P_1,\ P_2,\ P_3,\ P_4)$.\\
+	$\impliessx$Se $\beta(Q_1,\ Q_2,\ Q_3,\ Q_4)=\frac{b}{a}$, allora distinguiamo i casi in cui il birapporto è in $\kamp$ o \textit{infinito}:
 	\begin{itemize}
 		\item $\begin{array}{lllll}
 			\frac{b}{a}\in\kamp & \implies & Q_4=\left(1\colon \frac{b}{a} \right)=(a\colon b)=f(P_4) &  &
@@ -1813,9 +1816,9 @@ Cioè se il birapporto delle quaterne è \textbf{invariante per proiettività}.
 \end{observe}
 %"il birapporto misura l'equivalenza proiettiva su punti di una retta proiettiva"
 
-\begin{observe}
+\begin{attention}
 	In dimensione maggiore generalmente il birapporto \textit{non è definito}, a meno che i $4$ punti non siano \textit{allineati} su una retta proiettiva $r$.
-\end{observe}
+\end{attention}
 
 
 \begin{example}~{}\\
@@ -1836,13 +1839,13 @@ Cioè se il birapporto delle quaterne è \textbf{invariante per proiettività}.
 	\end{itemize}
 	Se i punti $P_i$ sono proiettivamente equivalenti ai punti $Q_i$, allora tali posizioni \textit{devono essere mantenute}: le proiettività mandano \textit{rette in rette}, \textit{posizioni generali in posizioni generali}. Per contronominale, se si verificano casi diversi per le due quaterne possiamo affermare che \textit{non} sono proiettivamente equivalenti.
 	\begin{enumerate}
-		\item Sia $P_i$, sia $Q_i$ sono in \textit{posizione generale}. Siccome abbiamo 4 punti e $4=\dim\proj[2]{\kamp}+2$, allora $\exists !$ proiettività $f$ di $\proj[2]{\kamp}$ tale che $f(P_1)=Q_i, i=1,\ \ldots,\ 4$, dunque hanno lo stesso \textit{birapporto} e sono sempre \textit{proiettivamente equivalenti}.
+		\item Sia $P_i$, sia $Q_i$ sono in \textit{posizione generale}. Siccome abbiamo 4 punti e $4=\dim\proj[2]{\kamp}+2$, allora $\exists !$ proiettività $f$ di $\proj[2]{\kamp}$ tale che $f(P_1)=Q_i, i=1,\ \ldots,\ 4$.
 		\item $P_1,\ P_2,\ P_3$ \textbf{allineati ma non} $P_4$, \textbf{e lo stesso per i} $Q_i$; in altre parole, $P_1,\ P_2,\ P_3\in r$ retta proiettiva e $Q_1,\ Q_2,\ Q_3\in s$ retta proiettiva.
 		\begin{center}
 		\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.50]{images/fourpointseq1.pdf}
 		\end{center}
 		Vogliamo dimostrare che anche in questo caso le quaterne sono proiettivamente equivalenti, estendendo la proiettività fra i tre punti  al quarto.\\
-		Scegliamo dei rappresentanti $P_i=[v_i],\ i=1,\ 2,\ 3,\ 4, v_i\in\kamp^3$ tale che $v_3=v_1+v_2$, lecito in quando i punti non sono allineati. Si ha che $\{v_1,\ v_2,\ v_4\}$ è una base di $\kamp^3$: $P_4\notin r$ significa che $v_4$ non è linearmente dipendente da $v_1,\ v_2$. Allo stesso modo sia $Q_i=[w_i],\ i=1,\ 2,\ 3,\ 4, w_i\in\kamp^3$ tale che $w_3=w_1+w_2$ con $\{w_1,\ w_2,\ w_4\}$ base di $\kamp^3$. Definiamo $\funz \phi {\kamp^3} {\kamp^3}$ lineare tale che:
+		Scegliamo dei rappresentanti $P_i=[v_i],\ i=1,\ 2,\ 3,\ 4, v_i\in\kamp^3$ tale che $v_3=v_1+v_2$, lecito in quando i punti sono allineati. Si ha che $\{v_1,\ v_2,\ v_4\}$ è una base di $\kamp^3$: $P_4\notin r$ significa che $v_4$ non è linearmente dipendente da $v_1,\ v_2$. Allo stesso modo sia $Q_i=[w_i],\ i=1,\ 2,\ 3,\ 4, w_i\in\kamp^3$ tale che $w_3=w_1+w_2$ con $\{w_1,\ w_2,\ w_4\}$ base di $\kamp^3$. Definiamo $\funz \phi {\kamp^3} {\kamp^3}$ lineare tale che:
 		\begin{equation*}
 			\phi(v_1)=w_1,\ \phi(v_2)=w_2,\ \phi(v_4)=w_4
 		\end{equation*}
@@ -1858,7 +1861,7 @@ Cioè se il birapporto delle quaterne è \textbf{invariante per proiettività}.
 			\item $r=\proj{U},\ U\subset \kamp^3$.
 			\item $s=\proj{W},\ W\subset\kamp^3$.
 		\end{itemize}
-		Con $U$ e $W$ piani vettoriali, si ha che $g=\widetilde{\psi}$ con $\funz \psi U W$ è un isomorfismo lineare. Vogliamo estenderla ad un \textit{automorfismo lineare} $\funz \phi {\kamp^3} {\kamp^3}$ scegliendo basi con due vettori nel piano ed uno esterno, ovvero $u_1,\ u_2\in U$ base di $U$ e $u_3\notin U$. Dunque $\{\psi(u_1),\psi(u_2)\}$ è una base di $W$ e $w_3\notin W \implies \{u_1,u_2,u_3\}$ base di $\kamp^3$ e $\{\psi(u_1),\psi(u_2),\psi(u_3)\}$ un'altra base. Ponendo $\funz \phi {\kamp^3} {\kamp^3}$ tale che:
+		Con $U$ e $W$ piani vettoriali, si ha che $g=\widetilde{\psi}$ con $\funz \psi U W$ è un isomorfismo lineare. Vogliamo estenderla ad un \textit{automorfismo lineare} $\funz \phi {\kamp^3} {\kamp^3}$ scegliendo basi con due vettori nel piano ed uno esterno, ovvero $u_1,\ u_2\in U$ base di $U$ e $u_3\notin U$. Dunque $\{\psi(u_1),\psi(u_2)\}$ è una base di $W$ e $w_3\notin W \implies \{u_1,u_2,u_3\}$ base di $\kamp^3$ e $\{\psi(u_1),\psi(u_2),w_3\}$ un'altra base. Ponendo $\funz \phi {\kamp^3} {\kamp^3}$ tale che:
 		\begin{itemize}
 			\item $\phi(u_1)\coloneqq \psi(u_1)$.
 			\item $\phi(u_2)\coloneqq \psi(u_2)$.
@@ -1886,7 +1889,7 @@ Essa è un'\textbf{equazione lineare omogenea} in coordinate omogenee, dunque è
 \begin{equation}
 	(a_0\colon a_1\colon a_2)\in\proj[2]{\kamp}
 \end{equation}
-Si ha una \textit{corrispondenza biunivoca} fra le rette in $\proj[2]{\kamp}$ e $\proj[2]{\kamp}$:
+Si ha una \textit{corrispondenza biunivoca} fra le rette in $\proj[2]{\kamp}$ e lo spazio proiettivo in sè:
 	% https://q.uiver.app/?q=WzAsNCxbMCwwLCJcXHtcXHRleHR7cmV0dGUgaW4gfSBcXHByb2pbMl17XFxrYW1wfVxcfSJdLFszLDAsIlxccHJvalsyXXtcXGthbXB9Il0sWzAsMSwiclxcY29sb24gYV8weF8wK2FfMXhfMSthXzJ4XzI9MCJdLFszLDEsIihhXzBcXGNvbG9uIGFfMVxcY29sb24gYV8yKSJdLFswLDEsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsyLDMsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dXQ==
 	\[\begin{tikzcd}
 		{\{\text{rette in } \proj[2]{\kamp}\}} &&& {\proj[2]{\kamp}} \\[-25pt]
@@ -1944,7 +1947,7 @@ In prima istanza, questo significa semplicemente che si interpreta un punto del 
 	Prendiamo:
 		\begin{gather*}
 			\begin{array}{l}
-				l_1 \longleftrightarrow (1\colon 1\colon 2)=Q_1\\
+				l_1\colon x_0+x_1+2x_2=0 \longleftrightarrow (1\colon 1\colon 2)=Q_1\\
 				l_2\colon 3x_0-2x_1+4x_2=0 \longleftrightarrow (3\colon -2\colon 4)=Q_2\\
 			\end{array}
 			\mathcal{F} \longleftrightarrow (\lambda+3\mu \colon \lambda-2\mu \colon 2(\lambda+2\mu))

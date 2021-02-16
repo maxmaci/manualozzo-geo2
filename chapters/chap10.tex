@@ -45,11 +45,33 @@
 	Equivalentemente, $A$ e $B$ sono \textbf{simultaneamente diagonalizzabili} se esiste una matrice invertibile $P$ tale che $P^{-1}AP$ e $P^{-1}BP$ sono \textit{entrambe diagonali}.
 \end{define}
 \begin{example}
-	Non tutte le matrici diagonalizzabili lo sono simultaneamente. Prendiamo $\realset^2$; si consideri:
-	\begin{itemize}
-		\item $A$ diagonalizzabile con $2$ autovalori diversi, i cui autospazi sono le rette $y=x$ e $y=-x$.
-		\item $B$ diagonalizzabile con $2$ autovalori diversi, i cui autospazi sono le rette $y=0$ e $y=2x$.
-	\end{itemize}
+	Non tutte le matrici diagonalizzabili lo sono simultaneamente. Prendiamo $\realset^2$; si consideri:\\
+	\begin{minipage}{.79\linewidth}
+		\begin{itemize}
+			\item $A$ diagonalizzabile con $2$ autovalori diversi, i cui autospazi sono le rette $y=x$ e $y=-x$.
+		\end{itemize}
+	\end{minipage}%\vspace{3mm}
+	\begin{minipage}{.21\linewidth}\vspace{-5mm}
+		\begin{equation*}
+			A=\left(\begin{array}{cc}
+				0 & 1 \\
+				1 & 0
+			\end{array}\right)
+		\end{equation*}
+	\end{minipage}	\\
+	\begin{minipage}{.79\linewidth}
+		\begin{itemize}
+			\item $B$ diagonalizzabile con $2$ autovalori diversi, i cui autospazi sono le rette $y=0$ e $y=2x$.
+		\end{itemize}
+		\end{minipage}
+	\begin{minipage}{.21\linewidth}\vspace{-4mm}
+	\begin{equation*}
+				B=\left(\begin{array}{cc}
+					1 & -1 \\
+					0 & -1
+				\end{array}\right)
+	\end{equation*}	
+	\end{minipage}\\
 Non esiste alcun autovettore comune, dunque $A$ e $B$ \textit{non} sono simultaneamente diagonalizzabili.
 \end{example}
 Dalla sola definizione non è semplice capire quali matrici sono a tutti gli effetti simultaneamente diagonalizzabili. Tuttavia, il seguente teorema ci permetterà di trovare una condizione necessaria e sufficiente per la diagonalizzazione simultanea.
@@ -72,11 +94,11 @@ Sia $\mathbf{w}\in W$. Vogliamo mostrare che $A\ldotp \mathbf{w}\in W$.
 $A\ldotp \mathbf{w}$ è autovettore rispetto a $\lambda$, pertanto $A\ldotp \mathbf{w}\in W,\ \forall \mathbf{w}$ e dunque segue la tesi.
 \end{demonstration}
 \begin{demonstration} \textsc{Dimostrazione del teorema} \ref{teoremasimdiag}.\\
-	$\impliesdx$ Per ipotesi, $\exists P\in \gl\left(n,\ \kamp\right)$ tale che $D_1=P^{-1}AP$ e $D_2=P^{-1}BP$ sono diagonali; in particolare, in quanto matrici diagonali, esse commutano: $D_1D_2=D_2D_1$. Allora $A=PD_1P^{-1}$ e $B=PD_2P^{-1}$.
+	$\impliesdx$Per ipotesi, $\exists P\in \gl\left(n,\ \kamp\right)$ tale che $D_1=P^{-1}AP$ e $D_2=P^{-1}BP$ sono diagonali; in particolare, in quanto matrici diagonali, esse commutano: $D_1D_2=D_2D_1$. Allora $A=PD_1P^{-1}$ e $B=PD_2P^{-1}$.
 	\begin{equation*}
 		AB=\left(PD_1P^{-1}\right)\left(PD_2P^{-1}\right)=PD_1D_2P^{-1}=PD_2D_1P^{-1}=\left(PD_2P^{-1}\right)\left(PD_1P^{-1}\right)=BA
 	\end{equation*}
-$\impliessx$ Procediamo con una \textit{dimostrazione costruttiva}. Sappiamo che:
+$\impliessx$Procediamo con una \textit{dimostrazione costruttiva}. Sappiamo che:
 \begin{itemize}
 	\item $A$ diagonalizzabile $\implies \exists \mathbf{v}_1,\ \ldots,\ \mathbf{v}_n$ base di $V$ composta da \textit{autovettori} di $A$.
 	\item $B$ diagonalizzabile $\implies V=W_1\oplus\ldots\oplus W_r$ con $W_j$ \textit{autospazi} di $B$
@@ -144,8 +166,8 @@ Preso $f\left(t\right)=t^2-3$, il polinomio valutato nella matrice $A$ è $f\lef
 \end{define}
 \begin{observe}~{}
 	\begin{itemize}
-		\item $O\in I_A$.
-		\item $I_A\neq\left\{O\right\}$; infatti, se consideriamo le seguenti $n^2+1$ matrici in $\kamp^{n,n}$:
+		\item $0\in I_A$.
+		\item $I_A\neq\left\{0\right\}$; infatti, se consideriamo le seguenti $n^2+1$ matrici in $\kamp^{n,n}$:
 		\begin{equation*}
 			I,\ A,\ A^2,\ A^3,\ \ldots,\ A^{n^2}
 		\end{equation*}
@@ -170,7 +192,7 @@ Preso $f\left(t\right)=t^2-3$, il polinomio valutato nella matrice $A$ è $f\lef
 \end{observe}
 \subsection{Polinomio minimo}
 \begin{proposition}[Anello ${\kamp\left[t\right]}$ è ad ideali principali.]~{}\\
-	L'anello $\kamp\left[t\right]$ è ad \textit{ideali principali}: se $I\subseteq \kamp\left[t\right]$ è un ideale, $\exists p$ tale che $I=\left(p\right)$. Il generatore $p$ è \textit{unico} a meno di moltiplicazione per scalari \textit{non} nulli, se prendiamo $P$ \textbf{monico} allora è unico.
+	L'anello $\kamp\left[t\right]$ è ad \textit{ideali principali}: se $I\subseteq \kamp\left[t\right]$ è un ideale, $\exists p$ tale che $I=\left(p\right)$. Il generatore $p$ è \textit{unico} a meno di moltiplicazione per scalari \textit{non} nulli, se prendiamo $p$ \textbf{monico} allora è unico.
 \end{proposition}
 \begin{demonstration}
 Sia $p\in I$ un polinomio \textit{non} nullo di grado \textit{minimo} tra i polinomi in $I_A$.\\
@@ -346,15 +368,15 @@ Il seguente teorema afferma un legame ancora più forte tra polinomio minimo e a
 \vspace{-6mm}
 \end{theorema}
 \begin{demonstration}~{}\\
-	$\impliesdx$ Segue dal teorema di Cayley-Hamilton perché $m_A\left(\lambda\right)=0\implies C_A\left(\lambda\right)=0\implies \lambda$ autovalore.\\
-	$\impliessx$ Sia $\lambda$ un autovalore di $A$ con autovettore associato $\mathbf{v}$. Si ha:
+	$\impliesdx$Segue dal teorema di Cayley-Hamilton perché $m_A\left(\lambda\right)=0\implies C_A\left(\lambda\right)=0\implies \lambda$ autovalore.\\
+	$\impliessx$Sia $\lambda$ un autovalore di $A$ con autovettore associato $\mathbf{v}$. Si ha:
 	\begin{gather*}
 		A\mathbf{v}=\lambda \mathbf{v}\\
 		A^2\mathbf{v}=A\left(A\mathbf{v}\right)=A\left(\lambda \mathbf{v}\right)=\lambda A\mathbf{v}=\lambda^2 \mathbf{v}\\
 	\end{gather*}
-Allo stesso modo si arriva a $A^k\mathbf{v}=\lambda^n\mathbf{v}$. Preso un generico polinomio $p\left(t\right)\in\kamp\left[t\right]$, esso si può esprimere come:
+Allo stesso modo si arriva a $A^k\mathbf{v}=\lambda^k\mathbf{v}$. Preso un generico polinomio $p\left(t\right)\in\kamp\left[t\right]$, esso si può esprimere come:
 \begin{equation*}
-	p=\sum_{i=0}^{d}c_i t_i\quad c_i\in\kamp
+	p=\sum_{i=0}^{d}c_i t^i\quad c_i\in\kamp
 \end{equation*}
 Allora $\displaystyle p\left(A\right)=\sum_{i=0}^{d}c_i A^i$ e dunque:
 \begin{align*}
@@ -381,7 +403,7 @@ Come altra conseguenza, ogni matrice $n\times n$ ammette $n$ autovalori compless
 \end{observe}
 Sia $A\in \complexset^{n,n}$ una matrice associata a un endomorfismo $\funz{f}{V}{V}$. Se $f$ è diagonalizzabile, esiste una base in cui la matrice di $f$ è diagonale. Anche quando tuttavia la matrice non è diagonalizzabile, vogliamo cercare una base in cui la matrice di $f$ è \textit{particolarmente semplice}.
 \begin{define}[Blocco di Jordan.]~{}\\
-	Un \textbf{blocco di Jordan}\index{blocco di Jordan} $J=J_k\left(\lambda\right)$, di autovalore $\lambda\in\complexset$ e dimensione $K$, è una matrice quadrata $k\times k$ con sulla diagonale solo l'autovalore e sopra ogni elemento della diagonale $1$:
+	Un \textbf{blocco di Jordan}\index{blocco di Jordan} $J=J_k\left(\lambda\right)$, di autovalore $\lambda\in\complexset$ e dimensione $k$, è una matrice quadrata $k\times k$ con sulla diagonale solo l'autovalore e sopra ogni elemento della diagonale $1$:
 	\begin{equation}
 		    J=J_k\left(\lambda\right) = \left(
 		\begin{array}{ccccc}
@@ -445,7 +467,7 @@ Ad esempio, con $N^2$ si ha:
 		N^2\mathbf{e}_1=\mathbf{0}\\
 		N^2\mathbf{e}_2=N\left(N\mathbf{e}_2\right)=N\mathbf{e}_1=\mathbf{0}\\
 		\ldots\\
-		N^2\mathbf{e}_k=N\left(N\mathbf{e}_k\right)=N\mathbf{e}_{k-1}=\mathbf{0}
+		N^2\mathbf{e}_k=N\left(N\mathbf{e}_k\right)=N\mathbf{e}_{k-1}=\mathbf{e}_{k-2}
 	\end{cases}
 \end{equation*}
 Infatti, se guardiamo la matrice $N^2$, si ha:
@@ -455,7 +477,7 @@ Infatti, se guardiamo la matrice $N^2$, si ha:
 		0		& 0 		&  1		& \ldots 	& 0 \\
 		\vdots	& \ddots 	& 0			& 1			& \vdots\\
 				&  			& \ddots	& 0 		& 1\\
-		\vdots	& 			&   		& 0 		& 0\\
+		\vdots	& 			&   		& \ddots 		& 0\\
 		0		&  \dots  	&  \dots 	& \dots 		& 0
 	\end{array}
 	\right)
@@ -480,7 +502,7 @@ E in questo caso si ha la relazione con i vettori della base:
 		N^{k-1}\mathbf{e}_k=\mathbf{e}_1
 	\end{cases}
 \end{equation*}
-Studiando l'immagine dell'applicazione associata ad $N$, essendo la base dell'immagine i vettori colonna l.i., si ha $\im N^{k-1}=\mathcal{L}\left(e_1\right)$.\\
+Studiando l'immagine dell'applicazione associata ad $N$, poiché la base dell'immagine sono i vettori colonna linearmente indipendenti, si ha $\im N^{k-1}=\mathcal{L}\left(e_1\right)$.\\
 Come già affermato dunque, è $\mathbf{e}_k$ a determinare l'\textit{intera} base di $V$ tramite la moltiplicazione per $N$.\\
 Come ultima osservazione fondamentale, notiamo inoltre che $N^k=O$, cioè $N$ è una matrice \textbf{nilpotente}\index{matrice!nilpotente} di ordine $k$.
 \end{observe}
@@ -714,7 +736,7 @@ Conseguentemente, se supponiamo di avere $\mu$ come altro autovalore di $\phi$, 
 	\implies \mathbf{v}\in\ker\left(A-\lambda I\right)^p\cap\im\left(A-\lambda I\right)^p=\left\{0\right\}
 	\end{array}
 \end{equation*}
-Ma sapendo che $\ker\left(A-\lambda I\right)^p\cap\im\left(A-\lambda I\right)^p=\left\{0\right\}=\left\{0\right\}$, si ha $\mathbf{v}=\mathbf{0}$, dunque \textit{non} può $\lambda$ autovalore di $\psi$.
+Sapendo dunque che $\ker\left(A-\lambda I\right)^p\cap\im\left(A-\lambda I\right)^p=\left\{0\right\}$, si ha $\mathbf{v}=\mathbf{0}$, pertanto $\lambda$ \textit{non} può essere autovalore di $\psi$.
 \end{itemize}
 Riprendendo l'osservazione a pag. \pageref{observejordan}, scelte delle opportune basi, definiamo $\mathbf{B}$ la matrice associata a $\phi$ e $\mathbf{A}$ la matrice associata a $\psi$ in modo da avere la matrice $A$ associata a $f$ a blocchi.
 \begin{equation*}
@@ -731,7 +753,7 @@ Usiamo questa matrice per calcolare il polinomio caratteristico:\footnote{Nelle 
 C_A\left(t\right)=C_B\left(t\right)C_C\left(t\right)
 \end{equation*}
 \begin{itemize}
-	\item $C_B\left(t\right)$ è il polinomio caratteristico di $\mathbf{B}$, il cui unico autovalore è $\lambda$; grazie all'osservazione a pag. \ref{complessichiusi}, possiamo dire che la molteplicità algebrica di $\lambda$ come autovalore di $\mathbf{B}$ è esattamente la dimensione dello spazio $\mathbf{B}$. Il polinomio caratteristico risulta:
+	\item $C_B\left(t\right)$ è il polinomio caratteristico di $\mathbf{B}$, il cui unico autovalore è $\lambda$; grazie all'osservazione a pag. \pageref{complessichiusi}, possiamo dire che la molteplicità algebrica di $\lambda$ come autovalore di $\mathbf{B}$ è esattamente la dimensione dello spazio $\mathbf{B}$. Il polinomio caratteristico risulta:
 	\begin{equation*}
 		\left(t-\lambda\right)^{\dim\ker\left(A-\lambda I\right)^p}
 	\end{equation*}
@@ -746,7 +768,7 @@ Da cui segue:
 	\ker\left(A-\lambda I\right)^p=\ker\left(A-\lambda I\right)^{m_\lambda}=\widetilde{V}_{\lambda}
 \end{equation*}
 Dunque, sapendo che $\dim \widetilde{V}_{\lambda} = \dim \ker\left(A-\lambda I\right)^p=m_{\lambda}$, segue la proprietà $3$.
-\item Notiamo che l'endomorfismo $\phi$ definito nella dimostrazione precedente altro non è che $f_{\mid\widetilde V_{\lambda}}\ \colon\funz{\ }{\widetilde{V}_{\lambda}}{\widetilde{V}_{\lambda}}$, e abbiamo visto come il suo polinomio caratteristico debba essere $\left(t-\lambda\right)^m_{\lambda}$. Si conclude il punto $4$.
+\item Notiamo che l'endomorfismo $\phi$ definito nella dimostrazione precedente altro non è che $f_{\mid\widetilde V_{\lambda}}\ \colon\funz{\ }{\widetilde{V}_{\lambda}}{\widetilde{V}_{\lambda}}$, e abbiamo visto come il suo polinomio caratteristico debba essere $\left(t-\lambda\right)^{m_{\lambda}}$. Si conclude il punto $4$.
 \item Non dimostreremo quest'ultimo punto.
 \end{enumerate}
 \vspace{-3mm}
@@ -867,7 +889,7 @@ Per costruzione, $y_j^1\in S_{p-1}\subseteq \im\left(A-\lambda I\right)^{p-2}$, 
 	\forall j=1,\ \ldots,\ s\ \exists y_1^{p-1}\in V\quad y_j^1=\left(A-\lambda I\right)^{p-2}y_j^{p-1}
 \end{equation*}
 Per ogni $j$ otteniamo $p-1$ vettori  $\left\{y_j^1,\ \ldots,\ y_j^{p-1}\right\}$ tali che $y^s_j\in V_{\lambda}$ e $y_j^{i-1}\coloneqq\left(A-\lambda I\right)y_j^i$ $\forall i=2,\ \ldots,\ p-1$. Analogamente al caso precedente, questo gruppo di vettori dà origine ad un \textit{blocco di Jordan} di ordine $p-1$.\\
-Procediamo in questo modo: prendiamo la base ottenuta per $S_{i}$ e la completiamo ad una di $S_{i-1}\supseteq S_{i}$; poiché ogni vettore aggiunto appartiene a $\im\left(A-\lambda I\right)^{i-2}$, applicando $i-2$ volte la matrice $A_\lambda I$ al vettore $z_k^{i-1}$ (fino ad ottenere $z_k^1$) otteniamo un'insieme di vettori che generano un blocco di Jordan di dimensioni $i$ e di autovalore $\lambda$.\\
+Procediamo in questo modo: prendiamo la base ottenuta per $S_{i}$ e la completiamo ad una di $S_{i-1}\supseteq S_{i}$; poiché ogni vettore aggiunto appartiene a $\im\left(A-\lambda I\right)^{i-2}$, applicando $i-2$ volte la matrice $A-\lambda I$ al vettore $z_k^{i-1}$ (fino ad ottenere $z_k^1$) otteniamo un'insieme di vettori che generano un blocco di Jordan di dimensioni $i$ e di autovalore $\lambda$.\\
 Chiaramente, poiché potrebbe anche accadere che $S_{i-1}= S_{i}$, si prosegue senza aggiungere vettori alla base e si passa al sottospazio successivo.\\
 Arriviamo con queste iterazioni fino a $S_2=V_\lambda\cap \im \left(A-\lambda I\right)$: completiamo la base da $S_3$ ad una di $S_2$ aggiungendo i vettori $\left\{a_1^1,\ \ldots,\ a_t^1\right\}$. Sappiamo che $\exists a_t^2\ \colon a_t^1=\left(A-\lambda I\right)^{p-2}a_t^2$, dunque abbiamo i due vettori che formano il blocco di Jordan di dimensione $2$.\\
 Infine, completiamo ad una base di $S_1$ aggiungendo i vettori $\left\{b_1^1,\ \ldots,\ b_u^1\right\}$. In questo caso, non abbiamo bisogno di calcolare altri vettori $b_u^i\ \forall u$ (al variare di $i$) come prima, in quanto i vettori, per definizione di $S_1$, appartengono anche a $\ker\left(A-\lambda I\right)$. Allora, $\forall u\ b_u^1$ generano blocchi di Jordan di dimensione $1$.\\
@@ -889,7 +911,7 @@ Usando il lemma \ref{lemmadimjordan} (pag. \pageref{lemmadimjordan}), otteniamo 
 	\begin{array}{ll}
 	N=\sum_{i=1}^{p}\dim S_i&=\sum_{i=1}^{p}\left(\dim\ker\left(A-\lambda I\right)^i-\dim\ker\left(A-\lambda I\right)^{i-1}\right)=\\
 	&=\dim\ker\left(A-\lambda I\right)^p-\dim\ker\left(A-\lambda I\right)^0=\\&
-	=\dim\ker\left(A-\lambda I\right)^p=\widetilde{V}_{\lambda}
+	=\dim\ker\left(A-\lambda I\right)^p=\dim\widetilde{V}_{\lambda}
 \end{array}
 \end{gather*}
 L'insieme dei vettori, che ricordiamo essere tutti contenuti in $\widetilde{V}_{\lambda}$, ha \textit{cardinalità} pari alla \textit{dimensione dell'autospazio generalizzato}. Ci resta dunque da dimostrare che i vettori siano \textit{linearmente indipendenti} per verificare che essi siano a tutti gli effetti la base cercata di $\widetilde{V}_{\lambda}$.\\
@@ -936,7 +958,7 @@ L'osservazione che qui facciamo ci servirà nella dimostrazione della proposizio
 \end{observe}
 \begin{demonstration}
 	Possiamo supporre che $A$ sia già in forma di Jordan.\\
-	 Consideriamo $A-\lambda_1I$, rappresentata in figura: ha, nella parte rossa, dei blocchi di Jordan relativi all'autovalore zero. Poiché la parte rossa è una sottomatrice nilpotente di ordine $p_1$, ne consegue che $\left(A-\lambda_1I\right)^{p_1}$ ha la matrice nulla in quella parte.\\
+	 Consideriamo $A-\lambda_1I$, rappresentata in figura: ha, nella parte rossa, dei blocchi di Jordan relativi all'autovalore zero. Poiché essa è una sottomatrice nilpotente di ordine $p_1$, ne consegue che $\left(A-\lambda_1I\right)^{p_1}$ ha la matrice nulla in quella parte.\\
 	 In generale, $\left(A-\lambda_iI\right)^{p_i}$ è nullo nel blocco $m_i\times m_i$ corrispondente a $\lambda_i$.
 	 \begin{equation*}
 	 	\tikz[baseline]{
@@ -993,10 +1015,9 @@ Segue che qualunque blocco di Jordan di ordine non massimo fa sì che il polinom
 \begin{corollary}[Molteplicità delle radici del polinomio minimo e diagonalizzabilità.]~{}\\
 Sia $A\in\complexset^{n,n}$. Allora $A$ è \textbf{diagonalizzabile} se e solo se il suo polinomio minimo ha tutte radici di molteplicità $1$.
 \end{corollary}
-\begin{demonstration}
-Per la proposizione precedente, la molteplicità delle radici del polinomio minimo corrisponde alla dimensione del più grande blocco di Jordan di $A$ relativo a $\lambda_i$.\\
-Segue chiaramente che se $m_{\lambda_i}=1\ \forall i$ l'ordine di tutti i blocchi è $1$, dunque $A$ è diagonalizzabile.\\
-Viceversa, se $A$ è diagonalizzabile, tutti i blocchi sono di dimensione $1$ e questa, per la stessa proposizione di prima, corrisponde alla molteplicità delle radici del polinomio caratteristico.
+\begin{demonstration}~{}\\
+$\impliesdx$Se $A$ è diagonalizzabile, tutti i blocchi sono di dimensione $1$ e questa, per la stessa proposizione di prima, corrisponde alla molteplicità delle radici del polinomio caratteristico.\\
+$\impliessx$Per la proposizione precedente, la molteplicità delle radici del polinomio minimo corrisponde alla dimensione del più grande blocco di Jordan di $A$ relativo a $\lambda_i$. Segue chiaramente che se $m_{\lambda_i}=1\ \forall i$ l'ordine di tutti i blocchi è $1$, dunque $A$ è diagonalizzabile.
 \end{demonstration}
 \begin{observe}
 La forma di Jordan determina il polinomio minimo e il polinomio caratteristico, ma \textit{non} vale il viceversa. Per esempio, prendiamo le seguenti matrici:
@@ -1070,7 +1091,7 @@ Queste due matrici hanno forme di Jordan \textit{diverse}, ma hanno entrambe:
 		\item Se $A$ ha un'\textit{unico} autovalore $\lambda$, allora $V=\widetilde{V}_{\lambda}$ e $\left(A-\lambda I\right)^p=0$. In particolare segue che:
 		\begin{equation*}
 			\begin{array}{l}
-				\forall \mathbf{v}\in\im\left(A-\lambda I\right)^{p-1}\ \exists\mathbf{u}\in\left(A-\lambda I\right)^{p-1}\ \colon \left(A-\lambda I\right)^{p-1}\mathbf{u}=\mathbf{v}\\
+				\forall \mathbf{v}\in\im\left(A-\lambda I\right)^{p-1}\ \exists\mathbf{u}\in V\ \colon \left(A-\lambda I\right)^{p-1}\mathbf{u}=\mathbf{v}\\
 				\implies \mathbf{0}=\left(A-\lambda I\right)^{p}\mathbf{u}=\left(A-\lambda I\right)\mathbf{v}\\
 				\implies\mathbf{v}\in\ker\left(A-\lambda I\right)\\
 				\implies \im\left(A-\lambda I\right)^{p-1}\subseteq \ker\left(A-\lambda I\right)\\
@@ -1175,7 +1196,7 @@ Possiamo scegliere ad esempio $\left(-1,\ 1,\ 0\right)$, ottenendo allo stesso t
 \begin{enumerate}[label=\Roman*]
 \item $A$ ha un unico autovalore $2$, di \textit{molteplicità algebrica} $6$, dunque il \textit{più grande} blocco di Jordan nella forma di Jordan di $A$ ha dimensione $5$; poiché la dimensione dell'autospazio relativo a $2$ è la molteplicità geometrica, segue che il numero di blocchi relativi a $2$ sono $3$.\\
 \textit{Non si può dunque verificare}, in quanto con la condizione di avere un blocco di dimensione $5$ non ci può essere più di un solo blocco di dimensione $1$.
-\item  $A$ ha autovalori $2$ e $3$, di \textit{molteplicità algebrica} rispettivamente $1$ e $3$, dunque il \textit{più grande} blocco di Jordan nella forma di Jordan di $A$ riferito a $2$ ha dimensione $1$, mentre quello riferito a $3$ è $3$; poiché la dimensione dell'autospazio relativo a $2$ è la molteplicità geometrica, segue che il numero di blocchi relativi a $2$ sono $3$.
+\item  $A$ ha autovalori $2$ e $3$, di \textit{molteplicità nel polinomio minimo} rispettivamente $1$ e $3$, dunque il \textit{più grande} blocco di Jordan nella forma di Jordan di $A$ riferito a $2$ ha dimensione $1$, mentre quello riferito a $3$ è $3$; poiché la dimensione dell'autospazio relativo a $2$ è la molteplicità geometrica, segue che il numero di blocchi relativi a $2$ sono $3$.
 \begin{equation*}
 	\tikz[baseline]{
 		\node[matrix of math nodes,matrix anchor=west,left delimiter=(,right delimiter=),ampersand replacement=\&] (M) {
@@ -1214,7 +1235,7 @@ Notiamo che:
 Poiché $\lambda=2$ è l'unico autovalore di $A$ ed $f\in I_A$, si avrebbe $f\left(2\right)=0$, cioè abbiamo un assurdo.
 \item Si ha $f\left(t\right)=t^2-t-1\in I_A$:
 \begin{equation*}
-	\lambda_{1,\ 2}=\frac{1\pm \sqrt{1+4}}{2}=\frac{1\pm\sqrt{5}}{2}\text{ sono entrambe \textit{non} reali.}
+	\lambda_{1,\ 2}=\frac{1\pm \sqrt{1+4}}{2}=\frac{1\pm\sqrt{5}}{2}\text{ sono entrambe reali.}
 \end{equation*}
 Allora $f\left(t\right)=\left(t-\lambda_1\right)\left(t-\lambda_1\right)$ e, per le osservazioni del punto precedente:
 \begin{equation*}
@@ -1224,7 +1245,7 @@ Allora $f\left(t\right)=\left(t-\lambda_1\right)\left(t-\lambda_1\right)$ e, per
 		f\left(t\right)
 	\end{cases}
 \end{equation*}
-Allora, gli autovalori di $A$ possono essere solo $\frac{1\pm\sqrt{5}}{2}$, dunque $A$ non può avere autovalori complessi.
+Allora, gli autovalori di $A$ possono essere solo $\frac{1\pm\sqrt{5}}{2}$, dunque $A$ non può avere autovalori complessi \textit{non} reali.
 \end{enumerate}
 \vspace{-3mm}
 \end{solution}
@@ -1250,16 +1271,16 @@ Essa è una funzione continua.
 \begin{demonstration}
 	Dimostriamo che sia ben definita la funzione mostrando la convergenza della serie. In realtà possiamo mostrare che la serie \textbf{converge assolutamente}\index{convergenza!assoluta}\footnote{Si può parlare di convergenza assoluta in spazi topologici dotati di una \textit{norma}; si ha che la convergenza implica la convergenza ‘‘classica'' se lo spazio è completo rispetto alla metrica indotta dalla norma.} Dunque, con i complessi consideriamo il \textit{modulo} $\lvert\cdot\rvert$:
 	\begin{equation}
-		\lvert \frac{z^n}{n!}\rvert =\frac{\lvert z \rvert^n}{n!}\in\realset\implies\sum_{n=0}^{+\infty}\frac{\lvert z \rvert^n}{n!}
+		\left\| \frac{z^n}{n!}\right\| =\frac{\lvert z \rvert^n}{n!}\in\realset\implies\sum_{n=0}^{+\infty}\frac{\lvert z \rvert^n}{n!}
 	\end{equation}
 Questa serie nei reali converge ad $e^{\lvert z\rvert}$: la serie pertanto converge assolutamente e dunque la funzione è ben definita; se $z\in \realset$ allora l'esponenziale è in tutto e per tutto quello noto nei reali.\\
 Studiamo ora la continuità, dimostrando che \textbf{converga uniformemente}\footnote{Nelle ‘‘Note aggiuntive'', a pag. \pageref{convergenzauniforme}, si può trovare la definizione della convergenza uniforme e alcune osservazioni a riguardo.} in qualunque sottoinsieme limitato, utilizzando l'M-test di Weierstrass. Se $S\subseteq \complexset$ è un sottoinsieme limitato, sicuramente esso è sottoinsieme di un disco nel piano complesso di centro l'origine e raggio $\epsilon$. Dunque, $\exists\epsilon\in\realset\ \colon \lvert z\rvert<\epsilon\ \forall z\in S$. Allora varrà:
 \begin{equation*}
-\lvert\frac{z^n}{n!}\rvert=\frac{\lvert z\rvert^n}{n!}\leq\frac{a^n}{n!}
+\left\| \frac{z^n}{n!}\right\|=\frac{\lvert z\rvert^n}{n!}\leq\frac{\epsilon^n}{n!}
 \end{equation*}
 Passando alle serie:
 \begin{equation*}
-\sum_{n=0}^{+\infty}\frac{a^n}{n!}<\infty
+\sum_{n=0}^{+\infty}\frac{\epsilon^n}{n!}<\infty
 \end{equation*}
 Allora la funzione esponenziale converge uniformemente su $S$, dunque:
 \begin{equation*}
@@ -1287,7 +1308,7 @@ L'esponenziale in campo complesso gode delle seguenti proprietà:
 				&\displaystyle \implies  e^z\cdot e^w=e^{z+w}
 			\end{array}
 		\end{equation*}
-	\item $e^z\cdot e^{-z}=e^{z-z}=e^0=1$.
+	\item $\forall z\ e^z\cdot e^{-z}=e^{z-z}=e^0=1$.
 	\item Si ha:
 	\begin{equation*}
 		\begin{array}{ll}
@@ -1378,7 +1399,7 @@ Per induzione in questo modo otteniamo:
 		\displaystyle\labs A^k\rabs_{\infty}&\leq n^{k-1}\labs A\rabs^k_{\infty}\\
 	\end{array}\\
 	\begin{array}{ll}
-		\displaystyle\implies \labs \sum_{k=0}^{N}\frac{A^k}{k!}\rabs_{\infty}&\displaystyle\leq\sum_{k=0}^{N}\frac{\labs A^k\rabs_{\infty}}{k!}\leq\sum_{k=0}^{N}\frac{n^{k-1}\labs A\rabs^k_{\infty}}{k!}=\\
+		\displaystyle\implies  \sum_{k=0}^{N}\labs\frac{A^k}{k!}\rabs_{\infty}&\displaystyle=\sum_{k=0}^{N}\frac{\labs A^k\rabs_{\infty}}{k!}\leq\sum_{k=0}^{N}\frac{n^{k-1}\labs A\rabs^k_{\infty}}{k!}=\\
 		&\displaystyle=\frac{1}{n}\sum_{k=0}^{N}\frac{\left(n\labs A\rabs_{\infty}\right)^k}{k!}\stackrel{\longrightarrow}{N\to \infty} \frac{1}{n}\sum_{k=0}^{\infty}\frac{\left(n\labs A\rabs_{\infty}\right)^k}{k!}=\frac{1}{n}e^{n\labs A\rabs_{\infty}}
 	\end{array}
 \end{gather*}
@@ -1546,7 +1567,7 @@ Allora è sufficiente dimostrare che $\det\left(e^J\right)=e^{\lambda_1+\ldots+\
 Il determinante di una matrice triangolare è il prodotto sulle colonne, dunque vale $\det\left(e^J\right)=e^{\lambda_1}\ldots e^{\lambda_n}$ come cercato. In particolare, questo prodotto, in quanto \textit{prodotto di esponenziali}, \textit{non è mai null}o e dunque il determinante è \textit{diverso da zero}.
 \end{demonstration}
 \subsection{Calcolo dell'esponenziale di una matrice tramite la forma di Jordan}
-Abbiamo già calcolato alcuni esponenziali di matrici in diverse delle precedenti dimostrazioni, sfruttando tuttavia sempre matrici particolari:
+Abbiamo già calcolato alcuni esponenziali di matrici in diverse delle precedenti dimostrazioni, considerando tuttavia sempre matrici particolari:
 \begin{itemize}
 	\item \textbf{Matrice diagonale}:
 \begin{equation}
@@ -1870,7 +1891,7 @@ Le matrici $AX_j,\ AY_j,\ X_jB$ e $Y_jB$ sono tutte in $\realset^{n,n}$. Due mat
 	AX_j=X_jB\\
 	AY_j=Y_jB
 \end{gather*}
-Ma allora $X_j,\ Y_j\in W\ \forall j$; poiché $C_1,\ ldots, C_k$ è una base di $W$, allora lo generano. Per costruzione $C_j=X_j+iY_j$, dunque anche $X_1,\ \ldots, X_k,\ Y_1,\ \ldots Y_k$ generano $W$ (come spazio vettoriale \textit{complesso}).\\
+Ma allora $X_j,\ Y_j\in W\ \forall j$; poiché $C_1,\ \ldots,\ C_k$ è una base di $W$, allora lo generano. Per costruzione $C_j=X_j+iY_j$, dunque anche $X_1,\ \ldots, X_k,\ Y_1,\ \ldots Y_k$ generano $W$ (come spazio vettoriale \textit{complesso}).\\
 Sicuramente $\left\{X_1,\ \ldots, X_k,\ Y_1,\ \ldots Y_k\right\}$ contiene una base di $W$, cioè $\exists D_1,\ \ldots,\ D_k$ base $\mathcal{D}$ di $W$ con $D_j\in\realset^{n,n}\ \forall j$.\\
 Dalle condizioni in cui ci siamo posti, la matrice $Q$ cercate deve soddisfare i seguenti requisiti:
 \begin{itemize}

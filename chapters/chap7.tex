@@ -54,7 +54,7 @@ Riprendiamo la trattazione delle componenti connesse e \textbf{c.p.a.} introdott
 	\item Le componenti connesse formano una \textit{partizione} di $X$.
 	\item Se $x\in X$ si può definire la componente connessa che contiene $x$:
 	\begin{equation}
-		C\left(x\right)=\union\left\{C\subseteq X\mid x\in C,\ C\text{ connesso}\right\}
+		C\left(x\right)=\bigcup\left\{C\subseteq X\mid x\in C,\ C\text{ connesso}\right\}
 	\end{equation}
 \item Le componenti connesse possono essere viste come classi di equivalenza per la seguente relazione di equivalenza su $ X $:
 	\begin{equation}
@@ -71,8 +71,8 @@ Innanzitutto mostriamo che la relazione è di equivalenza:
 \item \textsc{Transitiva}: Supponiamo $x\sim_C y,\ y\sim_C z$. Allora $\exists C,\ D\subseteq X$ connessi tale che $x,\ y\in C$ e $y,\ z\in D$. Allora $C\cup D$ contiene sia $x$ che $z$. Inoltre, essendo $y\in C\cap D\implies C\cap D\neq \emptyset$, dunque $C\cup D$ è un connesso: vale $x\sim_C z$.
 \end{itemize}
 Mostriamo che le classi di equivalenza sono le componenti connesse per $x$, ovvero $C=C_0$ con $C$ componente connessa e $C_0$ classe di equivalenza.\\
-$\includedx$ Se $C\subseteq X$ è una componente connessa, allora $\forall x, y\in C$ si ha $x\sim_C y$, cioè $C$ è interamente contenuta in $C_0=[x]=[y]$ classe di equivalenza per $\sim_C$: $C\subseteq C_0$.\\
-$\includesx$ Sia $z\in C_0$ classe di equivalenza e sia $x\in C$ componente connessa. Allora: $x\sim_C z\implies \exists T\subseteq X \text{ connesso}\ \colon x,\ z\in T$.\\
+$\includedx$Se $C\subseteq X$ è una componente connessa, allora $\forall x, y\in C$ si ha $x\sim_C y$, cioè $C$ è interamente contenuta in $C_0=[x]=[y]$ classe di equivalenza per $\sim_C$: $C\subseteq C_0$.\\
+$\includesx$Sia $z\in C_0$ classe di equivalenza e sia $x\in C$ componente connessa. Allora: $x\sim_C z\implies \exists T\subseteq X \text{ connesso}\ \colon x,\ z\in T$.\\
 Consideriamo $C\cup T$. $C$ e $T$ sono connessi, $x\in C\cap T\implies C\cap T\neq \emptyset$: $C\cup T$ è ancora connessa. In quanto $C$ è componente connessa, poiché $C\subseteq C\cup T$, per definizione segue che $C=C\cup T$, cioè $T\subseteq C$. Allora $z\in C$ e $C_0\subseteq C$.
 %\vspace{-3mm}
 \end{demonstration}
@@ -116,8 +116,8 @@ Allora il cammino $\overline{\alpha}$ definisce $y\sim_A x$.
 In particolare:
 \begin{equation*}
 	\begin{cases}
-	\left(\alpha\ast\beta\right)\left(0\right)=\alpha\left(0\right)\\
-	\left(\alpha\ast\beta\right)\left(1\right)=\beta\left(1\right)
+	\left(\alpha\ast\beta\right)\left(0\right)=\alpha\left(0\right)=x\\
+	\left(\alpha\ast\beta\right)\left(1\right)=\beta\left(1\right)=z
 		\end{cases}
 \end{equation*}
 Poiché $\alpha\ast\beta$ soddisfa le ipotesi del lemma di incollamento, essa è continua e collega con un cammino unico $x$ e $z$, dunque vale $x\sim_A z$.
@@ -143,7 +143,7 @@ Poiché $\alpha\ast\beta$ soddisfa le ipotesi del lemma di incollamento, essa è
 	Ricordiamo l'esempio della \textit{pulce e il pettine}, cioè lo spazio $X\subseteq \realset^2$ descritto da:
 	\begin{gather*}
 		X=Y\cup \left\{p\right\}\\
-		Y=\left(I\times \left\{0\right\}\right)\cup \union_{r\in\integerset}\left(\left\{r\right\}\times I\right)\\
+		Y=\left(I\times \left\{0\right\}\right)\cup \bigcup_{r\in\integerset}\left(\left\{r\right\}\times I\right)\\
 		p=\left(\frac{\sqrt{2}}{2},\ 1\right)
 	\end{gather*}
 Questo spazio $X$ è connesso, non \textbf{c.p.a.}: infatti, le componenti \textbf{c.p.a.} sono due, $Y$ e $\left\{p\right\}$.
@@ -166,14 +166,14 @@ Inoltre, definiamo gli elementi della famiglia di funzioni $\left\{f_t\right\}_{
 \vspace{-6mm}
 \end{define}
 \begin{observe}
-Ricordando la definizione di \textit{segmento} (\pageref{segmento}, \autoref{segmento}), la funzione:
+Ricordando la definizione di \textit{segmento} (\autoref{segmento}, pag. \pageref{segmento}), la funzione:
 \begin{center}
 	\funztot{\ }{I}{\overline{PQ}}{t}{tA+\left(1-t\right)B}
 \end{center}
 È biunivoca ed, in particolare, è omeomorfismo.
 \end{observe}
 \begin{example}\label{convessoomotope}
-	Dato un sottospazio $Y\subseteq \realset^n$ \textit{convesso}, per ogni spazio topologico $X$ e per ogni funzione $\funz{f,\ g}{X}{Y}$ continua, allora $f$ e $g$ sono \textit{omotope}.
+	Dato un sottospazio $Y\subseteq \realset^n$ \textit{convesso}, per ogni spazio topologico $X$ e per ogni coppia di funzioni $\funz{f,\ g}{X}{Y}$ continue, allora $f$ e $g$ sono \textit{omotope}.
 \end{example}
 \begin{demonstration}
 	L'omotopia è:
@@ -311,7 +311,7 @@ In tal caso $f$ e $g$ si dicono \textbf{equivalenze omotopiche}\index{equivalenz
 \end{observes}
 \begin{demonstration}~{}
 	\begin{enumerate}[label=\Roman*]
-		\item L'omotopia è una relazione riflessiva, dunque se abbiamo $h=k$ e $h\sim h$, allora si ha $h\sim k$. Nel caso di un isomorfismo, preso $f$ e la sua inversa $g$, possiamo affermare:
+		\item L'omotopia è una relazione riflessiva, dunque se abbiamo $h=k$ e $h\sim h$, allora si ha $h\sim k$. Nel caso di un omeomorfismo, preso $f$ e la sua inversa $g$, possiamo affermare:
 		\begin{equation*}
 			\begin{cases}
 				g\circ f=Id_X\\
@@ -332,14 +332,14 @@ $f$ e $g$ sono \textit{continue}, inoltre:
 		\funztot{g\circ f}{\realset^n}{\realset^n}{\mathbf{x}}{\mathbf{0}}\implies g\circ f=O_{\realset^n}\ \text{(applicazione nulla)}
 	\end{gather*}
 Per l'osservazione $1)$ dato che vale $f\circ g= Id_Y$ allora $f\circ g\sim Id_Y$.\\
-Abbiamo che $g\circ f=O_{\realset^n}$ è omotopa a $Id_{\realset^n}$, in quanto $\realset^n$ è \textit{convesso} e due applicazioni continue a valori in $\realset^n$ sono sempre omotope, come dimostrato nell'esempio \ref{convessoomotope} (pag. \pageref{convessoomotope}). Una di queste, ad esempio, è la seguente:
+Abbiamo che $g\circ f=O_{\realset^n}$ è omotopa a $Id_{\realset^n}$, in quanto $\realset^n$ è \textit{convesso} e due applicazioni continue a valori in $\realset^n$ sono sempre omotope, come dimostrato nell'esempio a pag. \pageref{convessoomotope}. Una di queste, ad esempio, è la seguente:
 \begin{equation*}
-\funz{F}{\realset^n\times I}{\realset^n},\ \mvf{F}{\overline{x}}{t}=t\cdot \overline{x}
+\funz{F}{\realset^n\times I}{\realset^n},\ \mvf{F}{\mathbf{x}}{t}=t\cdot \mathbf{x}
 \end{equation*}
 \begin{itemize}
 	\item $F$ è continua.
-	\item $\mvf{F}{\overline{x}}{0}=\overline{0}=\left(g\circ f\right)\left(x\right)$.
-	\item $\mvf{F}{\overline{x}}{1}=\overline{x}=Id_\realset^n\left(\overline{x}\right)$.
+	\item $\mvf{F}{\mathbf{x}}{0}=\overline{0}=\left(g\circ f\right)\left(x\right)$.
+	\item $\mvf{F}{\mathbf{x}}{1}=\mathbf{x}=Id_{\realset^n}\left(\mathbf{x}\right)$.
 \end{itemize}
 \end{enumerate}
 \vspace{-3mm}
@@ -347,9 +347,9 @@ Abbiamo che $g\circ f=O_{\realset^n}$ è omotopa a $Id_{\realset^n}$, in quanto 
 \begin{attention}
 	Se $n>0$, $\realset^n$ e $\left\{1\text{ punto}\right\}$ \textit{non} sono omeomorfi, dato che \textit{non} possono essere in corrispondenza biunivoca.
 \end{attention}
-\begin{exercise}
+\begin{example}
 	\textit{Essere omotopicamente equivalenti} è una relazione di equivalenza sull'insieme degli spazi topologici.
-\end{exercise}
+\end{example}
 \begin{demonstration}~{}
 	\begin{itemize}
 	\item \textsc{Riflessiva}: $X\sim X\iff \exists f,\ g$ continue per cui $g\circ f\sim Id_X,\ f\circ g\sim Id_X$. Ponendo $f\equiv Id_X\equiv g$ vale banalmente $g\circ f=f\circ g=Id_X\sim Id_X$.
@@ -416,7 +416,7 @@ $\implies a\circ b\sim Id_Z$.
 \begin{examples}~{}
 	\begin{enumerate}
 		\item $\realset^n$ è contraibile: si veda l'osservazione precedente.
-		\item Dall'esercizio precedente, per transitività del tipo di equivalenza, si può affermare che \textit{tutti} i $\realset^n$ sono tutti omotopicamente equivalenti tra di loro.
+		\item Dall'esempio precedente, per transitività del tipo di equivalenza, si può affermare che \textit{tutti} i $\realset^n$ sono tutti omotopicamente equivalenti tra di loro.
 		\item Ogni sottospazio $X\subseteq \realset^n$ \textit{convesso} è contraibile.
 		\item Ogni sottospazio $X\subseteq \realset^n$ \textit{stellato} è contraibile.
 	\end{enumerate}
@@ -444,7 +444,7 @@ $\realset^2\setminus\left\{\left(0,\ 0\right)\right\}$ non è né convesso, né 
 \end{example}
 \begin{lemming}[$X$ contraibile implica $X$ c.p.a.]
 \end{lemming}
-\begin{demonstration} Con il seguente diagramma ricordiamo le funzioni in gioco con la comprimibilità.
+\begin{demonstration} Con il seguente diagramma ricordiamo le funzioni in gioco con la contraibilità.
 \begin{center}
 	\begin{tikzcd}
 		\left\{1\text{ punto}\right\} \arrow[r, "g", bend left] & X \arrow[l, "f\text{ (costante)}", bend left]
@@ -481,25 +481,23 @@ Se $X$ e $Y$ sono omotopicamente equivalenti, allora:
 		\end{tikzcd}
 	\end{center}
 	\begin{enumerate}[label=\Roman*]
-		\item Se consideriamo $f\circ g\sim Id_Y$, l'omotopia che la definisce è:
-		\begin{equation*}
-			\funz{F}{Y\times I}{Y}\ \colon \mvf{F}{y}{0}=f\left(g\left(y\right)\right), \mvf{F}{y}{1}=y\ \forall y\in Y
-		\end{equation*}
-		Possiamo usare $F$ per costruire, ad $y\in Y$ fissato, un arco in $Y$ che collega $y$ ad un punto di $f\left(X\right)\subseteq Y$. Infatti, consideriamo $\funz{\alpha}{I}{Y}$ dato da $\alpha\left(t\right)=\mvf{F}{y}{t}$:
-\begin{itemize}
-\item $\alpha$ è continua perché lo è $F$.
-\item $\alpha\left(0\right)=\mvf{F}{y}{0}=f\left(g\left(y\right)\right)\in f\left(X\right)\subseteq Y,\ \alpha\left(1\right)=\mvf{F}{y}{1}=y$.
-\end{itemize}
-$\impliesdx$ Supponendo $X$ \textbf{c.p.a.}, allora $f\left(X\right)$ è \textbf{c.p.a.}. Per i ragionamenti appena fatti abbiamo che ogni punto di $Y$ ha un arco che lo collega ad un punto di $f\left(X\right)$, dunque per giunzione di cammini anche $Y$ è \textbf{c.p.a.}.\\
-$\impliessx$ Supponendo che $Y$ sia \textbf{c.p.a.}, applicando all'equivalenza omotopica $\funz{g}{Y}{X}$ un procedimento analogo a $\impliesdx$ si ha che $X$ è \textbf{c.p.a.}\footnote{In realtà è sufficiente, per i ragionamenti visti sopra, dire che se $X$ e $Y$ sono omotopicamente equivalenti, allora $X$ è \textbf{c.p.a.} $\iff$ $f\left(X\right)$ è \textbf{c.p.a.}.}.
-\item Sia $X$ connesso (ma non \textbf{c.p.a.}, altrimenti ricadiamo nel punto $1)$ dell'esercizio), mentre supponiamo che $Y$ si può scrivere come unione disgiunta di due aperti $A$ e $B$: $Y=A\cup B$.
-Ma allora:
+		\item 
+$\impliesdx$Considerato $f\circ g\sim Id_Y$, l'omotopia tra le due funzioni è tale per cui:
 \begin{equation*}
-	X=f^{-1}\left(Y\right)=f^{-1}\left(A\cup B\right)=f^{-1}\left(A\right)\cup f^{-1}\left(B\right)
+	\funz{F}{Y\times I}{Y}\ \colon \mvf{F}{y}{0}=f\left(g\left(y\right)\right), \mvf{F}{y}{1}=y\ \forall y\in Y
 \end{equation*}
-Per continuità di $f$ anche $f^{-1}\left(A\right)$ e $f^{-1}\left(B\right)$ sono aperti disgiunti in $X$ connesso. Segue che necessariamente uno dei due deve essere vuoto\footnote{In quanto se non fosse così, $X$ non sarebbe connesso.}, ad esempio $f^{-1}\left(A\right)=\emptyset$, cosicché $X=f^{-1}\left(B\right)$. \\
-Per i ragionamenti visti nel punto $1)$ possiamo trovare un arco che collega un qualsiasi punto $y\in Y$ con $f\left(g\left(y\right)\right)\in f\left(X\right)$. In particolare, dato che $f\circ g$ mappa $Y$ in $B$, si avrà $f\left(g\left(y\right)\right)\in B$: ma allora $y\in B$ necessariamente, dato che se fosse in $A$ i due aperti non sarebbero disgiunti! Per l'arbitrarietà di $y$ segue che $A=\emptyset$ e dunque anche $Y$ è connesso.\\
-Il viceversa è analogo.
+Possiamo usare $F$ per costruire, ad $y\in Y$ fissato, un arco in $Y$ che collega $y$ ad un punto di $f\left(X\right)\subseteq Y$. Infatti, consideriamo $\funz{\alpha}{I}{Y}$ dato da $\alpha\left(t\right)=\mvf{F}{y}{t}$:
+\begin{itemize}
+	\item $\alpha$ è continua perché lo è $F$.
+	\item $\alpha\left(0\right)=\mvf{F}{y}{0}=f\left(g\left(y\right)\right)\in f\left(X\right),\ \alpha\left(1\right)=\mvf{F}{y}{1}=y$.
+\end{itemize}
+Supponendo $X$ \textbf{c.p.a.}, allora $f\left(X\right)$ è \textbf{c.p.a.} Per i ragionamenti appena fatti abbiamo che ogni punto di $Y$ ha un arco che lo collega ad un punto di $f\left(X\right)$; presi due punti di $Y$ possiamo ricondurci sempre a due punti (\textit{non} necessariamente distinti) in $f\left(X\right)$ che possiamo collegare con un cammino $\gamma$ opportuno in quanto $f\left(X\right)$ \textbf{c.p.a.}\\
+Per giunzione di cammini possiamo collegare con un cammino in $Y$ i due punti di $Y$, pertanto per arbitrarietà dei punti scelti $Y$ è \textbf{c.p.a.}.\\
+$\impliessx$Supponendo che $Y$ sia \textbf{c.p.a.}, applicando all'equivalenza omotopica $g\circ f\sim Id_X$ un procedimento analogo a $\impliesdx$si ha che $X$ è \textbf{c.p.a.}
+%\footnote{In realtà è sufficiente, per i ragionamenti visti sopra, dire che se $X$ e $Y$ sono omotopicamente equivalenti, allora $X$ è \textbf{c.p.a.} $\iff$ $f\left(X\right)$ è \textbf{c.p.a.}.}. (siamo sicuri?)
+\item $\impliesdx$Sia $X$ connesso. Sia $Y=\bigcup_i Y_i$ la scomposizione di $X$ in componenti connesse. Poiché $X$ è connesso, allora $f\left(X\right)\subseteq Y_i$ per un certo $i$. Allora $\left(f\circ g\right)\left(Y\right)\subseteq Y_i$.\\
+Consideriamo l'omotopia $\funz{F}{Y\times I}{Y}$ associata a $f\circ g\sim Id_Y$. Come nel punto I possiamo definire per ogni punto di $Y$ un cammino $\alpha\left(t\right)=\mvf{F}{y}{t}$ tra $y$ e un punto $f\left(X\right)$. Poichè per ogni $y\in Y$ abbiamo $\alpha\left(0\right)\subseteq X_i$ per un certo $i$ e $I$ è \textbf{c.p.a.}, allora $\alpha\left(I\right)\subseteq X_i$. Pertanto, anche $F\left(X\times I\right)\subseteq X_i$, ma $F\left(X\times\{1\}\right)=X$, il che significa che $X_i=X$, cioè $X$ è connesso.\\ 
+$\impliessx$Supponendo che $Y$ sia connesso, applicando all'equivalenza omotopica $g\circ f\sim Id_X$ un procedimento analogo a $\impliesdx$si ha che $X$ è connesso.
 \end{enumerate}
 \vspace{-6mm}
 	\end{demonstration}
@@ -515,7 +513,7 @@ Il viceversa è analogo.
 In tal caso $r$ è detta \textbf{retrazione}\index{retrazione}.
 \end{define}
 \begin{observe}
-Se $r$ è una retrazione, per costruzione è suriettiva, dunque $A$ \textbf{eredita} da $X$ tutte le proprietà topologiche che si trasmettono per mappe continue (ad esempio connesso, \textbf{c.p.a.}, compatto).
+Se $r$ è una retrazione, per costruzione è \textit{suriettiva}, dunque $A$ eredita da $X$ tutte le proprietà topologiche che si trasmettono per mappe continue alle \textit{immagini} (ad esempio connesso, \textbf{c.p.a.}, compatto), nonché le proprietà \textit{ereditarie} (ad esempio Hausdorff, base numerabile).
 \end{observe}
 \begin{examples}~{}
 	\begin{itemize}
@@ -525,7 +523,7 @@ Se $r$ è una retrazione, per costruzione è suriettiva, dunque $A$ \textbf{ered
 	\end{itemize}
 \vspace{-3mm}
 \end{examples}
-\begin{example}\textsc{La retrazione radiale.}\label{retrazioneradiale}\\
+\begin{example}\textsc{Retrazione radiale.}\label{retrazioneradiale}\\
 	Sia $X=\realset^n\setminus \left\{\mathbf{0}\right\}$ e $A=S^{n-1}\subseteq X$. Vogliamo definire una retrazione di $X$ su $A$, cioè una funzione continua $\funz{r}{\realset^n\setminus\left\{\mathbf{0}\right\}}{A=S^{n-1}}$ tale che $r_{\mid S^{n-1}}=Id_{S^{n-1}}$. Definiamo allora la \textbf{retrazione radiale}\index{retrazione!radiale}:
 	\begin{equation}
 		\funztot{r}{\realset^n\setminus\left\{\mathbf{0}\right\}}{S^{n-1}}{\mathbf{x}}{r\left(\mathbf{x}\right)=\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}}
@@ -537,11 +535,23 @@ Se $r$ è una retrazione, per costruzione è suriettiva, dunque $A$ \textbf{ered
 \end{itemize}
 \vspace{-3mm}
 \end{example}
+\begin{example}\textsc{Retrazione lineare.}\label{retrazionelineare}\\
+	Sia $X=S^1\times I$ e $A=S^1\times \{0\}$. Vogliamo definire una retrazione di $X$ su $A$, cioè una funzione continua $\funz{r}{X=S^1\times I}{A=S^1\times \{0\}}$ tale che $r_{\mid S^1\times \{0\}}=Id_{S^1\times \{0\}}$. Definiamo allora la \textbf{retrazione lineare}\index{retrazione!lineare}:
+	\begin{equation}
+		\funztot{r}{S^1\times I}{S^{1}\times \{0\}}{(\mathbf{x},\ t)=(x,\ y,\ t)}{r((\mathbf{x},\ t))=(x,\ y,\ 0)}
+	\end{equation}
+	\begin{itemize}
+		\item $r$ è ben definita.
+		\item $r$ continua.
+		\item Se $\mathbf{x}\in S^{1}\times \{0\}$, allora $t=0$, cioè $\forall \left(\mathbf{x},\ t\right)\in S^{1}\times \{0\}\ r\left(\left(\mathbf{x},\ t\right)\right)=\left(\mathbf{x},\ 0\right)=\left(\mathbf{x},\ t\right)$.
+	\end{itemize}
+	\vspace{-3mm}
+\end{example}
 \begin{define}[Retratto di deformazione.]~{}\\
 	Sia $X$ uno spazio topologico e $A\subseteq X$ un suo sottospazio. Diciamo che $A$ è un \textbf{retratto di deformazione}\index{retratto!di deformazione} se:
 		\begin{itemize}
 			\item $r_{\mid A}=Id_A$, cioè $r$ è un retratto.
-			\item Se $\incl{i}{A}{X}$ è l'inclusione di $A$ in $X$, allora $\funz{i\circ r}{X}{X}$ è omotopa all'identità di $X$ ($i\circ f\sim Id_X$).
+			\item Se $\incl{i}{A}{X}$ è l'inclusione di $A$ in $X$, allora $\funz{i\circ r}{X}{X}$ è omotopa all'identità di $X$ ($i\circ r\sim Id_X$).
 		\end{itemize}
 	\vspace{-3mm}
 \end{define}
@@ -558,7 +568,7 @@ Se $r$ è una retrazione, per costruzione è suriettiva, dunque $A$ \textbf{ered
 \end{demonstration}
 \begin{example}
 	\label{retrattosfera}
-	Mostriamo che $S^{n-1}\subseteq \realset^n\setminus\left\{\mathbf{0}\right\}$ è un retratto di deformazione. Sfruttiamo la retrazione radiale definita a pag. \pageref{retrazioneradiale}:
+	Mostriamo che $S^{n-1}\subseteq \realset^n\setminus\left\{\mathbf{0}\right\}$ è un retratto di deformazione. Utilizziamo la retrazione radiale definita a pag. \pageref{retrazioneradiale}:
 		\begin{equation*}
 		\funztot{r}{\realset^n\setminus\left\{\mathbf{0}\right\}}{S^{n-1}}{\mathbf{x}}{r\left(\mathbf{x}\right)=\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}}
 	\end{equation*}
@@ -571,7 +581,7 @@ Osserviamo che $\forall \mathbf{x}\in\realset^n\setminus\left\{\mathbf{0}\right\
 \begin{equation*}
 	\funztot{F}{X\times I}{X}{\left(\mathbf{x},\ t\right)}{\left(1-t\right)\mathbf{x}+t\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}}
 \end{equation*}
-Infatti $F$ è ben definita, continua e $\mvf{F}{\mathbf{x}}{0}=\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}=\widetilde{r}\left(\overline{x}\right),\ \mvf{F}{x}{1}=\overline{x}=Id_X\left(\overline{x}\right)$.
+Infatti $F$ è ben definita, continua e $\mvf{F}{\mathbf{x}}{0}=\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}=\widetilde{r}\left(\mathbf{x}\right),\ \mvf{F}{x}{1}=\mathbf{x}=Id_X\left(\mathbf{x}\right)$.
 \end{example}
 \begin{corollary}[$S^{n-1}$ omotopa a $\realset^n\setminus\left\{1\text{ punto}\right\}$.]~{}\\
 	In generale vale che $S^{n-1}$ è retratto di deformazione di $\realset^n\setminus\left\{1\text{ punto}\right\}$; in particolare hanno lo stesso tipo di omotopia.
@@ -604,7 +614,7 @@ Un \textbf{bouquet}\index{bouquet di circonferenze} \textbf{di} $n$ \textbf{circ
 			\begin{equation*}
 				\realset^3\setminus\left\{\text{asse z}\right\}\setminus\left\{x=y=1\right\}=\widetilde{X}
 			\end{equation*}
-		Cioè lo spazio $\realset^3$ privato di due rette perpendicolari al piano e distinte.\\
+		Cioè lo spazio $\realset^3$ privato di due rette perpendicolari al piano $xy$ e distinte.\\
 			Considerato ora il piano $Y=\left\{\text{piano xy}\right\}\setminus\left\{\left(0,0\right),\ \left(1,1\right)\right\}$, questo risulta un retratto di deformazione di $\widetilde{X}$ con retrazione:
 			\begin{equation*}
 				\funztot{r}{\widetilde{X}}{Y}{\left(x,\ y,\ z\right)}{\left(x,\ y, 0\right)}
@@ -623,7 +633,7 @@ Un \textbf{bouquet}\index{bouquet di circonferenze} \textbf{di} $n$ \textbf{circ
 		\begin{equation*}
 			\widetilde{r}\coloneqq\funztot{ i\circ r}{X}{X}{\mathbf{x}}{\frac{\mathbf{x}}{\labs \mathbf{x}\rabs}}
 		\end{equation*}
-	Si verifica in modo analogo a come visto nel caso della sfera e dello spazio privato dell'origine (esempio a pagina \ref{retrattosfera}), trattando con una \textit{retrazione radiale} ben definita e la sua omotopia nota, che $A$ è retratto di deformazione di $X$. Segue allora che hanno lo stesso tipo di omotopia.
+	Si verifica in modo analogo a come visto nel caso della sfera e dello spazio privato dell'origine (esempio a pag. \pageref{retrattosfera}), trattando con una \textit{retrazione radiale} ben definita e la sua omotopia nota, che $A$ è retratto di deformazione di $X$. Segue allora che hanno lo stesso tipo di omotopia.
 		\end{itemize}
 	\end{enumerate}
 	\vspace{-3mm}
