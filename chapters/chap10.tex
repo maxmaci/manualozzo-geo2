@@ -958,7 +958,7 @@ L'osservazione che qui facciamo ci servirà nella dimostrazione della proposizio
 \end{observe}
 \begin{demonstration}
 	Possiamo supporre che $A$ sia già in forma di Jordan.\\
-	 Consideriamo $A-\lambda_1I$, rappresentata in figura: ha, nella parte rossa, dei blocchi di Jordan relativi all'autovalore zero. Poiché essa è una sottomatrice nilpotente di ordine $p_1$, ne consegue che $\left(A-\lambda_1I\right)^{p_1}$ ha la matrice nulla in quella parte.\\
+	 Consideriamo $A-\lambda_1I$, rappresentata in figura: ha, nella parte rossa, dei blocchi di Jordan relativi all'autovalore zero. Poiché essa è una sottomatrice nilpotente di ordine $p_1$, ne consegue che $\left(A-\lambda_1I\right)^{p_1}$ ha la matrice nulla nella parte rossa.\\
 	 In generale, $\left(A-\lambda_iI\right)^{p_i}$ è nullo nel blocco $m_i\times m_i$ corrispondente a $\lambda_i$.
 	 \begin{equation*}
 	 	\tikz[baseline]{
@@ -1218,7 +1218,7 @@ Possiamo scegliere ad esempio $\left(-1,\ 1,\ 0\right)$, ottenendo allo stesso t
 	\item \parbox[t]{0.18\textwidth}{$f\left(t\right)=t^2-t-1$}\tikzmark{a}
 	\item \parbox[t]{0.18\textwidth}{$f\left(A\right)=O$}\tikzmark{b}
 \end{itemize}
-\brackitem{a}{b}[$f\left(t\right)\in I_A$]
+\brackitem{a}{b}[$\negthickspace \negthickspace \negthickspace \negthickspace =f\left(t\right)\in I_A$]
 Tuttavia $f\left(t\right)=\left(t-\lambda_1\right)\left(t-\lambda_1\right)$. Dunque, consideriamo:
 \begin{equation*}
 	m_A\left(t\right)\mid f\left(t\right)\implies m_A\left(t\right)=\begin{cases}
@@ -1324,7 +1324,7 @@ L'esponenziale in campo complesso gode delle seguenti proprietà:
 		\item $e^z=e^{x+iy}=e^x\cdot e^{iy}=e^x\left(\cos y+i\sin y\right)\implies \lvert e^z\rvert = e^x = e^{\Re z}$\\
 		L'argomento di $e^z$ è, per costruzione, $y=\Im z$.
 		\item $e^{2\pi i}=1$, mentre $e^{z+2\pi i}=e^z\cdot e^{2\pi i}=e^{z}$.
-		\item $e^z\neq 0$, dunque $\forall w\in \complexset\setminus \left\{0\right\}\ \exists z\in \complexset\ \colon e^z=w$, cioè $\funz{e^z}{\complexset}{\complexset\setminus\left\{0\right\}}$ è suriettiva. Infatti, se $w=x+iy$ si può scrivere in forma polare come:
+		\item $e^z\neq 0$, dunque $\forall w\in \complexset\setminus \left\{0\right\},\ \exists z\in \complexset\ \colon e^z=w$, cioè $\funz{e^z}{\complexset}{\complexset\setminus\left\{0\right\}}$ è suriettiva. Infatti, se $w=x+iy$ si può scrivere in forma polare come:
 		\begin{equation*}
 			w=\lvert w\rvert\left(\cos x+i\sin y\right)
 		\end{equation*}
@@ -1390,6 +1390,7 @@ Si ha:
 \begin{equation*}
 	\begin{array}{l}
 			\labs A^2\rabs_{\infty}\leq n\labs A\rabs^2_{\infty}\\
+			\\
 			\labs A^3\rabs_{\infty}\leq n\labs A^2\cdot A\rabs_{\infty}\leq n\labs A\rabs^2_{\infty}\labs A\rabs_{\infty}\leq n^2\labs A\rabs^3_{\infty}\\
 	\end{array}
 \end{equation*}

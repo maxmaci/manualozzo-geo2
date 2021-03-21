@@ -1700,7 +1700,7 @@ headformat={\NAME\, \NUMBER\small\bfseries\scshape\textcolor{black}{.\, - \NOTE}
 	\NewDocumentCommand\brackitem{mmo}{%
 	\IfValueTF {#3}{%
 	\begin{tikzpicture}[overlay, remember picture,decoration={brace,amplitude=1ex}]
-	\draw[decorate,thick] (#1.north east) -- (#2.south east) node[midway, right=0.1cm] {$=$}node[midway, right=0.5cm,text=black,text width = 2in,] {{#3}};
+	\draw[decorate,thick] (#1.north east) -- (#2.south east) node[midway, right=0.5cm,text=black,text width = 2in,] {{#3}};
 	\end{tikzpicture}%
 	}%
 	{%

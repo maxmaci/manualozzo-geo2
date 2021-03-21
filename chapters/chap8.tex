@@ -124,7 +124,7 @@ Si ha $\overline{\overline{\alpha}}=\alpha$. Infatti:
 \vspace{-6mm}
 \end{observe}
 \begin{lemming}[Composizioni di omotopie di cammini; Kosniowski, 14.2.]~{}\label{compoomotopecammini}\\
-Dati $\alpha,\ \alpha'\in\inscam{X}{a}{b}$ e $b,\ b'\in\inscam{X}{b}{c}$, parlando in termini di omotopie di cammini:
+Dati $\alpha,\ \alpha'\in\inscam{X}{a}{b}$ e $\beta,\ \beta '\in\inscam{X}{b}{c}$, parlando in termini di omotopie di cammini:
 	\begin{equation}
 		\alpha\sim \alpha'\text{ e }\beta\sim \beta'\implies \alpha\ast\beta\sim\alpha'\ast\beta'
 	\end{equation}
@@ -137,16 +137,16 @@ Dati $\alpha,\ \alpha'\in\inscam{X}{a}{b}$ e $b,\ b'\in\inscam{X}{b}{c}$, parlan
 			\mvf{F}{t}{0}=\alpha\left(t\right)&\mvf{F}{0}{s}=a\\
 			\mvf{F}{t}{1}=\alpha'\left(t\right)&\mvf{F}{1}{s}=b
 		\end{array}
-	\forall t,\ s\in I\\
+	,\forall t,\ s\in I\\
 		\begin{array}{ll}
 	\mvf{G}{t}{0}=\beta\left(t\right)&\mvf{G}{0}{s}=b\\
 	\mvf{G}{t}{1}=\beta'\left(t\right)&\mvf{G}{1}{s}=c
 \end{array}	
-	\forall t,\ s\in I
+	,\forall t,\ s\in I
 	\end{gather*}
 Consideriamo $\funz{H}{I\times I}{X}$ data da:
 \begin{equation*}
-	\mvf{H}{t}{s})\begin{cases}
+	\mvf{H}{t}{s}=\begin{cases}
 				\begin{array}{lc}
 			\mvf{F}{2t}{s} & \text{se }0\leq t\leq \frac{1}{2}\\
 			\mvf{G}{2t-1}{s} & \text{se }\frac{1}{2}\leq t\leq 1	
@@ -163,7 +163,7 @@ Consideriamo $\funz{H}{I\times I}{X}$ data da:
 \end{itemize}
 \brackitem{a}{b}[$\forall t\in I$ è omotopia]
 \brackitem{c}{d}[$\forall s\in I$ ha estremi fissi]
-$H$ è l'omotopia a estremi fissi cercata.
+$F$ è l'omotopia a estremi fissi cercata.
 \end{demonstration}
 \begin{lemming}[Cambiamento di parametri; Manetti, 11.3.]~{}\label{cambiamentodiparametri}\\
 	Sia $\funz{\alpha}{I}{X}$ un cammino e $\funz{\varphi}{I}{I}$ una funzione continua tale che $\varphi\left(0\right)=0$ e $\varphi\left(1\right)=1$. Allora $\alpha\circ \varphi\sim\alpha$.
@@ -360,7 +360,7 @@ Preso un laccio $\alpha$, indichiamo la sua classe di equivalenza in $\gruf{X}{x
 \end{define}
 \subsection{Dipendenza dal punto base}
 \begin{theorema}[$\pi_1$ dipende dalla componente c.p.a.]~{}\label{dipendenzaptobasegruf}\\
-Il gruppo fondamentale dipende \textit{solo} dalla componente \textit{\textbf{c.p.a.}} contente il punto base $x$.\\
+Il gruppo fondamentale dipende \textit{solo} dalla componente \textit{\textbf{c.p.a.}} contente il punto base $x_0$.\\
 In altre parole, se $x,\ y\in X$ appartengono alla stessa componente \textbf{c.p.a.}, preso un arco $\gamma$ da $x$ a $y$ e costruito:
 	\begin{equation}
 		\funztot{\gamma_{\#}}{\gruf{X}{x}}{\gruf{X}{y}}{\left[\alpha\right]}{\left[\overline{\gamma}\ast\alpha\ast\gamma\right]}
@@ -384,7 +384,7 @@ In altre parole, se $x,\ y\in X$ appartengono alla stessa componente \textbf{c.p
 		\item $\gamma_{\#}$ è un omomorfismo di gruppi:
 		\begin{equation*}
 			\begin{array}{lll}
-				\gamma_{\#}\left(\left[\alpha\right]\ast\left[\beta\right]\right)&=\gamma_{\#}\left(\left[\alpha\ast\beta\right]\right)=\left[\overline{\gamma}\ast\alpha\ast\beta\ast\gamma\right]=\left[\overline{\gamma}\ast\alpha\ast C_x\ast\beta\ast\gamma\right]\\
+				\gamma_{\#}\left(\left[\alpha\right]\cdot\left[\beta\right]\right)&=\gamma_{\#}\left(\left[\alpha\ast\beta\right]\right)=\left[\overline{\gamma}\ast\alpha\ast\beta\ast\gamma\right]=\left[\overline{\gamma}\ast\alpha\ast C_x\ast\beta\ast\gamma\right]=\\
 				&=\left[\overline{\gamma}\ast\alpha\ast \gamma\ast\overline{\gamma}\ast\beta\ast\gamma\right]=\left[\overline{\gamma}\ast\alpha\ast\gamma\right]\cdot\left[\overline{\gamma}\ast\beta\ast\gamma\right]=\gamma_{\#}\left(\left[\alpha\right]\right)\cdot \gamma_{\#}\left(\left[\beta\right]\right)
 			\end{array}
 		\end{equation*}
@@ -424,12 +424,12 @@ Segue che allora $\gamma_{\#}$ è biettiva.
 		\mvf{F}{t}{s}=s\left(\alpha\left(t\right)\right)+\left(1-s\right)y_0
 	\end{equation*}
 \begin{itemize}
-	\item $F$ risulta ben definita: è una combinazione convessa al variare di $s\in\intv$ tra $\alpha\left(t\right)\in Y$ (per $t$ fissato) e $y_0\in Y$.
+	\item $F$ risulta ben definita: è una combinazione convessa al variare di $s\in\intv$ tra $\alpha\left(t\right)\in Y$ (per $t$ fissato) e $y_0\in Y$ che è un sottospazio convesso.
 	\item $F$ è continua perché composizione di applicazioni continue.
 	\item $\mvf{F}{t}{0}=y_0=C_{y_0}\left(t\right),\ \mvf{F}{t}{1}=\alpha\left(t\right)$.
 	\item $\mvf{F}{0}{s}=s\alpha\left(0\right)+\left(1-s\right)y_0=sy_0+\left(1-s\right)y_0=y_0,\ \mvf{F}{1}{s}=s\alpha\left(1\right)+\left(1-s\right)y_0=sy_0+\left(1-s\right)y_0=y_0$.
 \end{itemize}
-Segue che $F$ è un omotopia tra $C_{y_0}$ e $\alpha$, dunque segue la tesi.
+Segue che $F$ è un omotopia di cammini tra $C_{y_0}$ e $\alpha$, dunque segue la tesi.
 \end{demonstration}
 \begin{define}[Spazio semplicemente connesso.]~{}\\
 	Uno spazio topologico $X$ è \textbf{semplicemente connesso}\index{semplicemente connesso} se è \textbf{c.p.a.} e ha gruppo fondamentale \textbf{banale}.
@@ -446,7 +446,7 @@ Segue che $F$ è un omotopia tra $C_{y_0}$ e $\alpha$, dunque segue la tesi.
 	$\funz{f}{\left(X,\ x_0\right)}{\left(Y,\ y_0\right)}$ è una funzione continua $\funz{f}{X}{Y}$ tale che $f\left(x_0\right)=y_0$.
 \end{notate}
 \begin{observe}
-Consideriamo $\funz{f}{X}{Y}$ continua e due cammini $\alpha$ in $X$ da $a$ a $b$ e $\beta$ in $X$ da $b$ a $c$.
+Consideriamo $\funz{f_\ast}{X}{Y}$ continua e due cammini $\alpha$ in $X$ da $a$ a $b$ e $\beta$ in $X$ da $b$ a $c$.
 \begin{center}
 	\begin{tikzcd}
 		I \arrow[r, "\alpha"] \arrow[rr, "f\circ \alpha"', bend right] & X \arrow[r, "f"] & Y
@@ -536,7 +536,7 @@ $\nicecat{TOP}$ & Oggetti:  & spazi topologici. \\
 &Morfismi: & applicazioni continue.
 \end{tabular*}
 \item \begin{tabular*}{6cm}[t]{p{1cm}>{\bfseries}ll}
-$\nicecat{TOP*}$ & Oggetti:  & spazi topologici con punto base $(X,\ x_0)$. \\
+$\nicecat{TOP*}$ & Oggetti:  & spazi topologici con punto base quali $(X,\ x_0)$. \\
 &Morfismi: & applicazione continue $\funz{f}{(X,\ x_0)}{(Y,\ y_0)}$.
 \end{tabular*}
 \item \begin{tabular*}{6cm}[t]{p{1cm}>{\bfseries}ll}
@@ -659,7 +659,7 @@ In modo analogo, si definisce il funtore dimenticante fra \nicecat{TOP} e \nicec
 		V \arrow[r, "f"] & W \arrow[r, "\phi"] & \kamp
 	\end{tikzcd}
 \end{center}
-Questo \textit{funtore controvariante} è chiamata \textbf{funzione trasposta}\index{funzione!trasposta}.
+Questo \textit{funtore controvariante} è chiamato \textbf{funzione trasposta}\index{funzione!trasposta}.
 \item \begin{tabular*}{6cm}[t]{>{\bfseries}lc}
 	& $\funz{F}{\nicecat{TOP}^{\ast}}{\nicecat{GR}}$\\
 	Oggetti:  &$\left(X,\ x_0\right)\mapsto \gruf{X}{x_0}$\\
@@ -674,20 +674,20 @@ Questo funtore \textit{covariante} si basa sull'omomorfismo tra gruppi fondament
 	\begin{itemize}
 		\item \textsc{Identità}: $\forall \left(X,\ x_0\right)\in \mathrm{Ob}\left(\nicecat{TOP}^{\ast}\right)$:
 		\begin{equation*}
-			F\left(Id_X\right)=\funztot{\left(Id_X\right)_{\ast}}{\gruf{X}{x_0}}{\gruf{X}{x_0}}{\left[\alpha\right]}{\left[Id_X\circ\alpha\right]=\left[\alpha\right]}\implies Id_{\gruf{X}{x_0}}
+			F\left(Id_X\right)=\funztot{\left(Id_X\right)_{\ast}}{\gruf{X}{x_0}}{\gruf{X}{x_0}}{\left[\alpha\right]}{\left[Id_X\circ\alpha\right]=\left[\alpha\right]}\implies \left( Id_X \right)_\ast= Id_{\gruf{X}{x_0}}
 		\end{equation*}
 		\item \textsc{Composizione}: \begin{tikzcd}
 			{\left(X,\ x_0\right)} \arrow[r, "f"] & {\left(Y,\ y_0\right)} \arrow[r, "g"] & {\left(Z,\ z_0\right)}
 		\end{tikzcd}\\
 		Vogliamo che $F\left(g\circ f\right)=\left(g\circ f\right)_{\ast}=g_{\ast}\circ f_{\ast}$:
 		\begin{equation*}
-			\left(g\circ f\right)_{\ast}\left(\left[\alpha\right]\right)=\left[g\circ f\circ\alpha\right]=g_{\ast}\left(\left[f\circ\alpha\right]\right)=g_{\ast}\left(f_{\ast}\left(\left[\alpha\right]\right)\right)=\left(g_{\ast}\circ f_{\ast}\right)\left(\left[\alpha\right]\right)
+			F\left( (g\circ f)(\alpha) \right)=\left(g\circ f\right)_{\ast}\left(\left[\alpha\right]\right)=\left[g\circ f\circ\alpha\right]=g_{\ast}\left(\left[f\circ\alpha\right]\right)=g_{\ast}\left(f_{\ast}\left(\left[\alpha\right]\right)\right)=\left(g_{\ast}\circ f_{\ast}\right)\left(\left[\alpha\right]\right)
 		\end{equation*}
 	\end{itemize}
 \vspace{-3mm}
 \end{demonstration}
 \section{Omeomorfismi e gruppi fondamentali}
-\begin{corollary}[Omeomorfismo di spazi implica omeomorfismo di gruppi fondamentali.]~{}\\
+\begin{corollary}[Omeomorfismo di spazi implica isomorfismo di gruppi fondamentali.]~{}\\
 	Se $\funz{f}{X}{Y}$ è un omeomorfismo, allora:
 	\begin{center}
 		$\funz{f_{\ast}}{\gruf{X}{x_0}}{\gruf{Y}{y_0}}$ è isomorfismo di gruppi, $\forall x_0\in X$.
@@ -700,8 +700,8 @@ Questo funtore \textit{covariante} si basa sull'omomorfismo tra gruppi fondament
 \begin{corollary}[Retratti e omomorfismi di gruppi fondamentali.]~{}\label{grp fond iniettiva e suriettiva}\\
 Sia $A\subseteq X$ un retratto con retrazione $\funz{r}{X}{A}$ e inclusione $\incl{i}{A}{X}$. Si ha che:
 	\begin{itemize}
-		\item $\forall a\in A\ \funz{i_{\ast}}{\gruf{A}{a}}{\gruf{X}{a}}$ è un omomorfismo \textit{iniettivo}.
-		\item $\forall a\in A\ \funz{r_{\ast}}{\gruf{X}{a}}{\gruf{A}{a}}$ è un omomorfismo \textit{suriettivo}.
+		\item $\forall a\in A,\ \funz{i_{\ast}}{\gruf{A}{a}}{\gruf{X}{a}}$ è un omomorfismo \textit{iniettivo}.
+		\item $\forall a\in A,\ \funz{r_{\ast}}{\gruf{X}{a}}{\gruf{A}{a}}$ è un omomorfismo \textit{suriettivo}.
 	\end{itemize}
 \end{corollary}
 \begin{demonstration}
@@ -730,14 +730,14 @@ Più precisamente, data l'omotopia $\funz{F}{X\times I}{Y}$ tra $f$ e $g$, allor
 \begin{equation}
 	\funztot{\gamma_{\#}}{\gruf{Y}{f\left(x_0\right)}}{\gruf{X}{g\left(x_0\right)}}{\left[\alpha\right]}{\left[\overline{\gamma}\ast\alpha\ast\gamma\right]}
 \end{equation}
-é un \textit{isomorfismo di gruppi} e si ha:
+è un \textit{isomorfismo di gruppi} e si ha:
 \begin{equation}
 	g_{\ast}=\gamma_{\#}\circ f_{\ast}
 \end{equation}
 \begin{center}
 	\begin{tikzcd}
 		& \gruf{X}{x_0} \arrow[ld, "f_{\ast}"'] \arrow[rd, "g_{\ast}"] &   \\
-		\gruf{Y}{y_0} \arrow[rr, "\gamma_{\#}"'] &                                                              & \gruf{X}{g\left(x_0\right)}
+		\gruf{Y}{f(x_0)} \arrow[rr, "\gamma_{\#}"'] &                                                              & \gruf{X}{g\left(x_0\right)}
 	\end{tikzcd}
 \end{center}
 \vspace{-6mm}
@@ -784,7 +784,7 @@ In particolare, ne segue che $f_{\ast}=\gamma_{\#}$ è isomorfismo.
 \begin{theorema}[Invarianza omotopica del gruppo fondamentale; Manetti, 11.22.]~{}\\
 Siano $X,\ Y$ spazi topologici e $\funz{f}{X}{Y}$ un'equivalenza omotopica. Allora $\forall x_0\in X$ si ha che:
 \begin{equation}
-	\funz{f}{\gruf{X}{x_0}}{\gruf{Y}{f\left(x_0\right)}}
+	\funz{f_\ast}{\gruf{X}{x_0}}{\gruf{Y}{f\left(x_0\right)}}
 \end{equation}
 È isomorfismo di gruppi.
 \end{theorema}
@@ -999,7 +999,7 @@ Sia $X$ uno spazio topologico e siano $A,\ B\subseteq X$ aperti tali che
 	\begin{equation}
 		\funz {\pi}{S^n\setminus\{N\}}{H=\left\{\left(x_0,\ \ldots,\ x_n\right)\in\realset^{n+1}\mid x_n=0\right\}}
 	\end{equation}
-	 Che, al punto $Q\in S^n$, associa il punto di intersezione $\pi\left(Q\right)$ di intersezione della \textit{retta} passante per $N$ e $Q$ con l'iperpiano $H$.
+	 Che, al punto $Q\in S^n$, associa il punto $\pi\left(Q\right)$ di intersezione della \textit{retta} passante per $N$ e $Q$ con l'iperpiano $H$.
 	\begin{center}
 	\includegraphics[trim=0cm 0cm 0cm 0cm,clip,scale=0.8]{images/stereo.pdf}
 	\end{center}
@@ -1213,7 +1213,7 @@ Abbiamo così formalizzato il numero di giri con segno intorno a $S^1$.
 		\begin{equation*}
 			\widetilde{\alpha_n}(1)- \widetilde{\alpha_n}(0)=\widetilde{\alpha_0}(1)+n - (\underbrace{\widetilde{\alpha_0}(0)}_{=0}+n)= \widetilde{\alpha_0}(1)=\deg\alpha
 		\end{equation*}
-	Pertanto $\deg\alpha= \widetilde{\alpha}(1)-\widetilde{\alpha}(0)$ con $\widetilde{\alpha}$ è un sollevamento qualsiasi.\\
+	Pertanto $\deg\alpha= \widetilde{\alpha}(1)-\widetilde{\alpha}(0)$ con $\widetilde{\alpha}$ un sollevamento qualsiasi.\\
 	Si può quindi riformulare la definizione di grado di un cammino chiuso $\alpha$ in $S^1$ con \textit{punto base qualsiasi} come la differenza fra il punto finale e quello iniziale di un sollevamento $\widetilde{\alpha}$ \textit{qualsiasi} del cammino:
 	\begin{equation}
 		\deg (\alpha)\coloneqq \widetilde{\alpha}(1)-\widetilde{\alpha}(0)
@@ -1231,7 +1231,7 @@ Vediamo ora come si comporta il grado rispetto al prodotto di cammini.
 \begin{demonstration}
 	Sia $\widetilde{\alpha}$ il sollevamento di $\alpha$ a partire da $x_0=0$. Allora definiamo $a\coloneqq \widetilde{\alpha}(1)=\deg\alpha\in\integerset$. Sia $\widehat{\beta}$ il sollevamento di $\beta$ a partire da $a$; si ha:
 	\begin{equation*}
-		\deg\beta=\widehat{\beta}(1)-\widehat{\beta}(0)=\widehat{\beta}-a
+		\deg\beta=\widehat{\beta}(1)-\widehat{\beta}(0)=\widehat{\beta}(1)-a
 	\end{equation*}
 	Siccome $\funz {\widetilde{\alpha},\ \widehat{\beta}} I \realset$ e $\widetilde{\alpha}(1)=\widehat{\beta}(0)$ si può considerare il cammino prodotto $\funz {\widetilde{\alpha}\ast\widehat{\beta}} I \realset$. Dimostriamo che è un sollevamento di $\alpha\ast\beta$:
 		\begin{gather*}
@@ -1273,7 +1273,7 @@ Si può dimostrare, anche se in questa sede non lo faremo, che il grado è \text
 				\begin{cases}
 					F(t,0)=\widetilde{\alpha}(t)\\
 					F(t,1)=0
-				\end{cases}\forall t\in I\quad
+				\end{cases},\forall t\in I\ \ \text{e}\ \
 				F(0,s)=F(1,s)=0,\ \forall s\in I
 			\end{equation*}
 				Sia $\funz {G\coloneqq e\circ F} {I\times I} {S^1}$; $G$ è continua e vale che:
@@ -1281,7 +1281,7 @@ Si può dimostrare, anche se in questa sede non lo faremo, che il grado è \text
 					\begin{cases}
 						G(t,0)=e(F(t,0))=e(\widetilde{\alpha}(t))=\alpha(t)\\
 						G(t,1)=e(F(t,1))=e(0)=1
-					\end{cases}\forall t\in I\quad
+					\end{cases},\forall t\in I\ \ \text{e}\ \ 
 					G(0,s)=G(1,s)=1,\ \forall s\in I
 				\end{equation*}
 			$G$ è un'omotopia di cammini fra $\alpha$ e $C_1$ in $S^1$, pertanto $\Phi$ iniettiva.

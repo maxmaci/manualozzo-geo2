@@ -82,7 +82,7 @@ Sia $W\subseteq V$ un sottospazio vettoriale. Allora $W\setminus\left\{0\right\}
 	\begin{equation*}
 		\begin{array}{rl}
 			\proj{W}&=\pi\left(W\setminus\left\{0\right\}\right)=\left\{\left[w\right]\in\proj{V}\mid w\in W\right\}\\
-			&=\left\{\text{sottospazi vettoriale }1\text{-dimensione di }V\text{ contenuti in }W\right\}
+			&=\left\{\text{sottospazi vettoriali }1\text{-dimensionali di }V\text{ contenuti in }W\right\}
 		\end{array}
 	\end{equation*}
 La dimensione del sottospazio proiettivo è $\dim\proj{W}=\dim W-1$.
@@ -124,14 +124,14 @@ Consideriamo $\proj[n]{\kamp}=\proj{\kamp^{n+1}}$. Se $v=\left(x_0,\ \ldots,\ x_
 	In $\proj[2]{\realset}$:
 	\begin{gather*}
 		\left(1\colon1\colon2\right) = \left(-2\colon-2\colon-4\right)\\
-		\left(1\colon0\colon2\right) = \left(\frac{1}{3}\colon0\colon\frac{1}{3}\right)
+		\left(1\colon0\colon2\right) = \left(\frac{1}{3}\colon0\colon\frac{2}{3}\right)
 	\end{gather*}
 \vspace{-6mm}
 \end{examples}
 \begin{define}[Riferimento proiettivo e coordinate omogenee.]~{}\\
 	Sia $\basis=\left\{e_0,\ \ldots,\ e_n\right\}$ una base di $V$, con $\dim V=n+1$. Se $v\in V\setminus\left\{0\right\}$, si ha:
 	\begin{equation*}
-		v=x_0e_0+\ldots+x_ee_n,\ \text{con}\ x_i\in\kamp
+		v=x_0e_0+\ldots+x_n e_n,\ \text{con}\ x_i\in\kamp
 	\end{equation*}
 Diciamo che $\left(x_0\colon\ldots\colon x_n\right)$ sono le \textbf{coordinate omogenee}\index{coordinate omogenee} di $\left[v\right]\in\proj{V}$ definite dalla base $\basis$ e scriviamo:
 \begin{equation}
@@ -259,7 +259,7 @@ Posto dunque $t$ come il numero delle \textit{equazioni}, notiamo che:
 		\item Il piano proiettivo $\proj[2]{\kamp}$ ha, come sottospazi \textit{non banali}, i punti e le rette.
 		\begin{itemize}
 			\item Una \textit{retta proiettiva} viene da un \textit{piano}, che nel riferimento \textit{affine} possiamo prendere passante per l'origine: $a_0x_0+a_1x_0+a_2x_2=0$.
-			\item Un \textit{punto} servono due equazioni, in sostanza vedendolo come \textit{intersezione di due rette proiettive}; ad esempio, $\left(1\colon0\colon0\right)$ ha equazioni $x_1=x_2=0$, mentre $\left(1\colon2\colon3\right)$ ha equazioni $\begin{cases}
+			\item Per determinare un \textit{punto} servono due equazioni, in sostanza vedendolo come \textit{intersezione di due rette proiettive}; ad esempio, $\left(1\colon0\colon0\right)$ ha equazioni $x_1=x_2=0$, mentre $\left(1\colon2\colon3\right)$ ha equazioni $\begin{cases}
 				x_1=2x_0\\
 				x_2=3x_0
 			\end{cases}$

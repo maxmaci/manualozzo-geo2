@@ -98,7 +98,7 @@ Una \textbf{componente c.p.a.}\index{componente!c.p.a.} di $X$ è una classe di 
 		\begin{center}
 			\begin{tikzcd}
 				I \arrow[r]          & I \arrow[r, "\alpha"]  & X                      \\[-25pt]
-				t \arrow[r, maps to] & 1+t \arrow[r, maps to] & \alpha\left(1-t\right)
+				t \arrow[r, maps to] & 1-t \arrow[r, maps to] & \alpha\left(1-t\right)
 			\end{tikzcd}
 		\end{center}
 	\item $\overline{\alpha}\left(0\right)=\alpha\left(1\right)=y,\ \overline{\alpha}\left(1\right)=\alpha\left(0\right)=x$.
@@ -291,6 +291,7 @@ Sia:
 Allora $H$ è l'omotopia cercata.
 \end{demonstration}
 \section{Equivalenza omotopica}
+Dati due spazi topologici, diciamo che essi sono omeomorfi se esistono due omeomorfismi l'uno l'inverso dell'altro. Proviamo ora ad analizzare il caso in cui indeboliamo la relazione tramite l'omotopia.
 \begin{define}[Omotopicamente equivalenti.]~{}\\
 	Siano $X,\ Y$ due spazi topologici. Diciamo che $X$ e $Y$ sono \textbf{omotopicamente equivalenti}\seeonlyindex{omotopicamente equivalenti}{tipo di omotopia}, o che hanno lo stesso \textbf{tipo di omotopia}\index{tipo di omotopia}, se esistono due applicazioni continue:
 	\begin{equation}
@@ -461,7 +462,7 @@ In quanto $f$ e $g$ sono in equivalenza omotopica, si ha che $\phi\sim Id_X$, ci
 \end{equation*}
 Fissato $x\in X$ sia $\funz{\alpha}{I}{X}$ dato da $\alpha\left(t\right)=\mvf{F}{x}{t}$:
 \begin{itemize}
-	\item $\alpha$ è continua perché lo è $f$.
+	\item $\alpha$ è continua perché lo è $F$.
 	\item $\alpha\left(0\right)=\mvf{F}{x}{0}=x_0$, $\alpha\left(1\right)=\mvf{F}{x}{1}=x$.
 \end{itemize}
 Segue che $\alpha$ è un cammino da $x_0$ a un qualunque punto $x$ in $X$, dunque $X$ è \textbf{c.p.a.}.
