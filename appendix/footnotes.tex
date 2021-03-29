@@ -268,15 +268,52 @@ V=\pi\left[\bigcup_{k\in\integerset}(k-\delta_k,k+\delta_k)\right]
 \end{equation*}
 Chiaramente $V$ è un intorno aperto di $[0]$, e vogliamo dimostrare che $U_n\nsubseteq V$ per ogni $n\in\naturalset$. Per mostrare ciò, fissiamo $n\in\naturalset$; si ha $\delta_n<\epsilon_{n,n}$, quindi possiamo sceglie un numero reale $x\in(n+\delta_n,n+\epsilon_{n,n})$. Ma allora $\pi(x)\in U_n\setminus V$, e dunque $U_n\nsubseteq V$.
 \end{demonstration}
-
-%\section{Capitolo 7: Omotopia}
-%\subsection{La categoria $\nicecat{KTOP}$}
-%Siano $X$ e $Y$ due spazi topologici. Mostrare che $X$ e $Y$ sono omotopicamente equivalenti se e solo se $X$ e $Y$ sono isomorfi nella categoria $\nicecat{KTOP}$ avente per oggetti gli spazi topologici e per morfismi le classi di omotopia di mappe continue.
-%
-%
-%RICKROLLED
-
 \section{Capitolo 8: gruppo fondamentale}
+\subsection{La categoria KTOP}
+\begin{exercise}
+	Siano $X$ e $Y$ due spazi topologici. Mostrare che $X$ e $Y$ sono \textit{omotopicamente equivalenti} se e solo se $X$ e $Y$ sono isomorfi nella categoria $\nicecat{KTOP}$ avente per oggetti gli spazi topologici e per morfismi le classi di omotopia di mappe continue.
+\end{exercise}
+\begin{solution}~{}\\
+	$\impliesdx$ Per ipotesi esistono due funzioni $\funz{f}{X}{Y},\ \funz{g}{Y}{X}$ tali che:
+	\begin{equation*}
+		\begin{array}{l}
+			f\circ g\sim Id_Y\\
+			g\circ f\sim Id_X
+		\end{array}
+	\end{equation*}
+	Vogliamo trovare un isomorfismo in $\nicecat{KTOP}$ tra $X$ e $Y$, cioè cerchiamo due morfismi $h\in \homo{\scriptscriptstyle{\nicecat{KTOP}}}{X}{Y}$, $k\in \homo{\scriptscriptstyle{\nicecat{KTOP}}}{Y}{X}$ tali che:
+	\begin{equation*}
+		\begin{array}{l}
+			h\circ k=Id_Y^{\scriptscriptstyle{\nicecat{KTOP}}}\\
+			k\circ h=Id_X^{\scriptscriptstyle{\nicecat{KTOP}}}
+		\end{array}
+	\end{equation*}
+	Noto che $Id_X^{\scriptscriptstyle\nicecat{KTOP}}=\left[Id_X\right]$ e $Id_Y^{\scriptscriptstyle\nicecat{KTOP}}=\left[Id_Y\right]$, poniamo $h\coloneqq\left[f\right],\ k\coloneqq\left[g\right]$. Allora:
+	\begin{equation*}
+		\begin{cases}\begin{array}{l}
+			h\circ k=\left[f\right]\circ\left[g\right]=\left[f\circ g\right]=\left[Id_Y\right]=Id_Y^{\scriptscriptstyle{\nicecat{KTOP}}}\\
+			k\circ h=\left[g\right]\circ\left[f\right]=\left[g\circ f\right]=\left[Id_X\right]=Id_X^{\scriptscriptstyle{\nicecat{KTOP}}}
+		\end{array}
+		\end{cases}
+	\end{equation*}
+	$h$ e $k$ così definiti danno un isomorfismo tra $X$ e $Y$ in $\nicecat{KTOP}$.\\
+	$\impliessx$ Per ipotesi $X\simeq_{\scriptscriptstyle{\nicecat{KTOP}}} Y$, cioè esistono due morfismi $h\in \homo{\scriptscriptstyle{\nicecat{KTOP}}}{X}{Y}$, $ k\in \homo{\scriptscriptstyle{\nicecat{KTOP}}}{Y}{X}$ tali che:
+	\begin{equation*}
+		\begin{array}{l}
+			h\circ k=Id_Y^{\scriptscriptstyle{\nicecat{KTOP}}}\\
+			k\circ h=Id_X^{\scriptscriptstyle{\nicecat{KTOP}}}
+		\end{array}
+	\end{equation*}
+	Sia $\funz{f}{X}{Y}$ un rappresentante di $h$ e $\funz{g}{Y}{X}$ un rappresentante di $k$. Allora:
+	\begin{equation*}
+		\begin{cases}
+		\begin{array}{l}
+			h\circ k=\left[f\circ g\right]=Id_Y^{\scriptscriptstyle{\nicecat{KTOP}}}=\left[Id_Y\right]\implies f\circ g \sim Id_Y\\
+			k\circ h=\left[g\circ f\right]=Id_X^{\scriptscriptstyle{\nicecat{KTOP}}}=\left[Id_X\right]\implies g\circ f \sim Id_X
+		\end{array}
+		\end{cases}
+	\end{equation*}
+\end{solution}
 \subsection{Funzioni iniettive e sottogruppi fondamentali}
 La seguente dimostrazione è adattata da \cite{HagenVonEitzen:injectivesubgroup} su Mathematics Stack Exchange.
 \begin{lemming}[Funzione iniettiva fra gruppi implica isomorfismo con sottogruppo.]~{}\label{isomorfismosottogruppolemma}\\
