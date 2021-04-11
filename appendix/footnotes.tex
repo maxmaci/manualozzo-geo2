@@ -20,7 +20,7 @@
 \end{flushright}
 \end{introduction}
 
-\noindent Riportiamo alcune note, precisazioni e dimostrazioni complementari agli argomenti dei capitoli principali che possono risultare utili al lettore
+\noindent Riportiamo alcune note, precisazioni e dimostrazioni complementari agli argomenti dei capitoli principali che possono risultare utili al lettore.
 \section{Capitolo 1: spazi topologici}
 \subsection{Alcune proprietà della continuità}
 Le seguenti dimostrazioni sulle continuità di funzioni sono da \cite{munkres:2000topology}.
@@ -269,6 +269,7 @@ Chiaramente $V$ è un intorno aperto di $[0]$, e vogliamo dimostrare che $U_n\ns
 \end{demonstration}
 \section{Capitolo 8: gruppo fondamentale}
 \subsection{La categoria KTOP}
+Notando la somiglianza fra definizione di isomorfismo e di equivalenza omotopica, si può costruire la categoria $\nicecat{KTOP}$ in cui due oggetti sono isomorfi se e solo se sono omotopicamente equivalenti, come mostreremo nel seguente esercizio.
 \begin{exercise}
 	Siano $X$ e $Y$ due spazi topologici. Mostrare che $X$ e $Y$ sono \textit{omotopicamente equivalenti} se e solo se $X$ e $Y$ sono isomorfi nella categoria $\nicecat{KTOP}$ avente per oggetti gli spazi topologici e per morfismi le classi di omotopia di mappe continue.
 \end{exercise}
@@ -280,7 +281,7 @@ Chiaramente $V$ è un intorno aperto di $[0]$, e vogliamo dimostrare che $U_n\ns
 			g\circ f\sim Id_X
 		\end{array}
 	\end{equation*}
-	Vogliamo trovare un isomorfismo in $\nicecat{KTOP}$ tra $X$ e $Y$, cioè cerchiamo due morfismi $h\in \homo{\scriptscriptstyle{\nicecat{KTOP}}}{X}{Y}$, $k\in \homo{\scriptscriptstyle{\nicecat{KTOP}}}{Y}{X}$ tali che:
+	Vogliamo trovare un isomorfismo in $\nicecat{KTOP}$ tra $X$ e $Y$, cioé cerchiamo due morfismi $h\in \homo{\scriptscriptstyle{\nicecat{KTOP}}}{X}{Y}$, $k\in \homo{\scriptscriptstyle{\nicecat{KTOP}}}{Y}{X}$ tali che:
 	\begin{equation*}
 		\begin{array}{l}
 			h\circ k=Id_Y^{\scriptscriptstyle{\nicecat{KTOP}}}\\
