@@ -633,7 +633,7 @@ $f_{\bullet}$ è dunque omeomorfismo ed $f$ è immersione (chiusa).
 \end{demonstration}
 \section{Topologia prodotto}
 \begin{define}[Topologia prodotto e proiezioni.]~{}\\
-Siano $P,\ Q$ spazi topologici e $P\times Q$ il suo prodotto cartesiano. Definite le \textbf{proiezioni}\index{proiezione!al prodotto cartesiano}:
+Siano $P,\ Q$ spazi topologici e $P\times Q$ il loro prodotto cartesiano. Definite le \textbf{proiezioni}\index{proiezione!al prodotto cartesiano}:
 \begin{gather}
 \funztot{p}{P\times Q}{P}{\left(x,\ y\right)}{x}\\
 \funztot{q}{P\times Q}{Q}{\left(x,\ y\right)}{y}
@@ -672,7 +672,7 @@ In questo modo avremo che la topologia $\topo$ è la topologia prodotto $\mathca
 \item L'intersezione di due elementi della famiglia appartiene alla famiglia:
 $\left(U_1\times V_1\right)\cap\left(U_2\times V_2\right)=\left(U_1\cap U_2\right)\times \left(V_1\cap V_2\right)$.
 \end{enumerate}
-\item Per definizione $\mathcal{P}$ è la meno fine fra tutte le topologie sul prodotto. Per dimostrare B) basta vedere che $p,\ q$ sono continue rispetto alla topologia $\topo_{box}$.\\
+\item Per definizione $\mathcal{P}$ è la meno fine fra tutte le topologie sul prodotto che rendono $p$ e $q$ continue. Per dimostrare B) basta vedere che $p,\ q$ sono continue rispetto alla topologia $\topo_{box}$.\\
 Presa la proiezione $p$, sia $U\subseteq P$ aperto. Si ha che $p^{-1}\left(U\right)=U\times Q$ è aperto in $\topo_{box}$ in quanto è prodotto di aperti; in particolare sta nella base! Dunque $p$ è continua, e un ragionamento analogo vale per $q$.
 \item Dobbiamo dimostrare che ogni aperto di $\topo_{box}$ è anche aperto di $\mathcal{P}$.\\
 Presi $U\subseteq P$, $V\subseteq Q$ allora:
@@ -874,9 +874,9 @@ F_{ix}\left(f\right)=\left\{x\in X\mid f\left(x\right)=x\right\}
 Allora $F_{ix}\left(f\right)$ è chiuso.
 \item Siano $\funz{f,\ g}{X}{Y}$ continue, $Y$ di \textbf{Hausdorff} e $A\subseteq X$ \textit{denso} in $X$. Allora:
 \begin{equation}
-\forall x\in A\quad f\left(x\right)=g\left(x\right)\implies \forall x\in X\quad f\left(x\right)=g\left(x\right)
+\forall x\in A,\quad f\left(x\right)=g\left(x\right)\implies \forall x\in X\quad f\left(x\right)=g\left(x\right)
 \end{equation}
-\item Sia $\funz{f}{X}{Y}$ continua, $Y$ di \textbf{Hausdorff}. Sia $\Gamma_f$ il \textbf{grafico}\index{grafico} di $f$ le insieme delle coppie $(x,f\left(x\right))$ formate dai punti del dominio e le corrispettive immagini tramite $f$.
+\item Sia $\funz{f}{X}{Y}$ continua, $Y$ di \textbf{Hausdorff}. Sia $\Gamma_f$ il \textbf{grafico}\index{grafico} di $f$, ovvero l'insieme delle coppie $(x,f\left(x\right))$ formate dai punti del dominio e le corrispettive immagini tramite $f$.
 \begin{equation}
 \Gamma_f=\left\{\left(x,\ y\right)\in X\times Y\mid y=f\left(x\right)\right\}
 \end{equation}

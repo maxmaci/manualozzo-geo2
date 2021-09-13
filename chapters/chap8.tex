@@ -19,7 +19,7 @@ In questo capitolo proseguiamo la trattazione introducendo un \textit{oggetto al
 Inoltre, largo spazio sarà lasciato alla dimostrazione del primo gruppo fondamentale non banale, quello della \textit{circonferenza}.
 \section{Omotopie fra cammini}
 \begin{notate}
-Se non specificato differentemente, useremo $I$ per indicare l'intervallo $\intv$.
+Se non specificato differentemente, useremo $I$ per indicare l'intervallo $\intv$ con la topologia euclidea.
 \vspace{-4mm}
 \end{notate}
 \begin{define}[Omotopia di cammini.]~{}\\
@@ -472,7 +472,7 @@ Si ha che:
 \end{proposition}
 \begin{demonstration}~{}
 	\begin{itemize}
-		\item $f_{\ast}$ è ben definita: infatti, $f\circ\alpha\in\inscam{Y}{y_0}{y_0}$ e se $\left[a\right]=\left[a'\right]$, $\alpha\sim\alpha'$. Per il punto 3 dell'osservazione precedente, si ha $f\circ \alpha\sim f\circ\alpha'$, cioè $\left[f\circ \alpha\right]=\left[f\circ\alpha'\right]$.
+		\item $f_{\ast}$ è ben definita: infatti, $f\circ\alpha\in\inscam{Y}{y_0}{y_0}$ e se $\left[\alpha\right]=\left[\alpha'\right]$, $\alpha\sim\alpha'$. Per il punto 3 dell'osservazione precedente, si ha $f\circ \alpha\sim f\circ\alpha'$, cioè $\left[f\circ \alpha\right]=\left[f\circ\alpha'\right]$.
 		\item $f_{\ast}$ è un omeomorfismo di gruppi: infatti, presi $\left[\alpha\right],\ \left[\beta\right]\in\gruf{X}{x_0}$, si ha:
 		\begin{align*}
 			f_{\ast}\left(\left[\alpha\right]\cdot\left[\beta\right]\right)&=f_{\ast}\left(\left[\alpha\ast\beta\right]\right)=\left[f\circ\left(\alpha\ast\beta\right)\right]=\left[\left(f\circ\alpha\right)\ast\left(f\circ\beta\right)\right]=\left[f\circ\alpha\right]\cdot\left[f\circ\beta\right]=\\&=f_{\ast}\left(\left[\alpha\right]\right)\cdot f_{\ast}\left(\left[\beta\right]\right)
@@ -827,7 +827,7 @@ Applicando il ragionamento insiemistico ricordato in precedenza (pag. \pageref{b
 	Essendo $X$ contraibile, $X$ è anche \textbf{c.p.a.}, dunque vale la tesi.
 \end{demonstration}
 \begin{corollary}[Retratto di deformazione e isomorfismi di gruppi fondamentali.]~{}\label{inclusione rdd isomorfismo}\\
-Sia $\incl{i}{A}{X}$ un retratto di deformazione. Allora $\forall a\in A$:
+Sia $A\subseteq X$ un retratto di deformazione. Allora $\forall a\in A$:
 \begin{equation}
 	\funz{i_{\ast}}{\gruf{A}{a}}{\gruf{X}{a}}\qquad\funz{r_{\ast}}{\gruf{X}{a}}{\gruf{A}{a}}
 \end{equation}
@@ -970,7 +970,7 @@ Sia $x_0\in A\cap B$; consideriamo le inclusioni $\incl i A X$ e $\incl j B X$ c
 		\end{equation*}
 	In modo analogo si può mostrare da $\im\alpha_i \subseteq B$ che $[\beta_i]\in G_B$. Quindi $[\beta_i]\in G_A\cup G_B,\ \forall i$ e:
 	\begin{equation*}
-		[\alpha]=[\alpha_1 \ast \dots \ast\alpha_k]=[\beta_1\ast\dots\ast\beta_k]=[\beta_1]\dots [\beta_k]
+		[\alpha]=[\alpha_1 \ast \dots \ast\alpha_k]=[\beta_1\ast\dots\ast\beta_k]=[\beta_1]\cdots [\beta_k]
 	\end{equation*}
 Pertanto $G_A\cup G_B$ generano $\gruf{X}{x_0}$.
 \end{demonstration}

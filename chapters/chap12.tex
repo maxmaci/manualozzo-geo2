@@ -279,7 +279,7 @@ Diciamo che la curva $C$ è \textbf{reale} se $\kamp=\realset$ (e quindi $C\in\a
 L'\textbf{equazione}\index{equazione!di una curva} di una curva $C$ è il polinomio $f$ (a meno di multipli) che la descrive.
 \end{define}
 \begin{define}[Supporto di una curva.]~{}\\
-Il \textbf{supporto}\index{supporto} di una curva $C$ descritta da un polinomio $f$ (a a meno di multipli) è l'insieme dove il polinomio si annulla.\\
+Il \textbf{supporto}\index{supporto} di una curva $C$ descritta da un polinomio $f$ (a meno di multipli) è l'insieme dove il polinomio si annulla.\\
 L'equazione determina il supporto, ma in generale non vale il contrario.
 \end{define}
 \begin{define}[Grado di una curva.]~{}\\
@@ -301,7 +301,7 @@ Il \textbf{grado}\index{grado!di una curva} della curva $C$ è il grado dell'equ
 	\vspace{-3mm}
 \end{define}
 \subsubsection{Omogeneizzazione di un polinomio}
-Vediamo ora qual è il legame fra curve affini e proiettive utilizzando la \textit{chiusura proiettiva}. Ricordiamo che $\kamp^2=U_0\subset \proj[2]{\kamp}$ con $\left(x,\ y\right)\in\kamp^2$ che corrispondono a $\displaystyle x=\frac{x_1}{x_0}$ e $\displaystyle y=\frac{x_2}{x_0}$, dato $(x_0\colon x_1\colon x_2)\in\proj[2]{\kamp}$.\\
+Vediamo ora qual è il legame fra curve affini e proiettive utilizzando la \textit{chiusura proiettiva}. Ricordiamo che $\aff{\kamp^2}=U_0\subset \proj[2]{\kamp}$ con $\left(x,\ y\right)\in\kamp^2$ che corrispondono a $\displaystyle x=\frac{x_1}{x_0}$ e $\displaystyle y=\frac{x_2}{x_0}$, dato $(x_0\colon x_1\colon x_2)\in\proj[2]{\kamp}$.\\
 Sia $C$ una curva affine di equazione $f\left(x,\ y\right)=0$. Vogliamo associare a $f$ un polinomio omogeneo nelle coordinate $x_0,\ x_1,\ x_2$ dello stesso grado di $f$.
 Consideriamo dunque il polinomio $F\in\kamp\left[x_0,\ x_1,\ x_2\right]$ così definito: se $d=\deg f$, allora:
 \begin{equation}
@@ -381,7 +381,7 @@ Se $P=(1\colon x\colon y)\in U_0$  allora $f\left(x,\ y\right)=F\left(P\right)$ 
 \end{examples}
 \begin{example}
 	In $\aff{\realset^2}$ consideriamo la coppia di \textit{rette parallele} distinte $x(x+1)=0$ e la coppia di \textit{rette incidenti} distinte $xy=0$.\\
-	Prendendo le le chiusure proiettive si ottiene $x_1(x_1+x_0)=0$ e $x_1x_2=0$, entrambe coppie di rette distinte reali in $\proj[2]{\realset}$ con segnatura (1,1). \\
+	Prendendo le chiusure proiettive si ottiene $x_1(x_1+x_0)=0$ e $x_1x_2=0$, entrambe coppie di rette distinte reali in $\proj[2]{\realset}$ con segnatura (1,1). \\
 	Dunque sono proiettivamente equivalenti fra loro ma hanno posizione diversa rispetto alla retta impropria.
 	\begin{itemize}
 		\item La prima ha un solo punto improprio $(0\colon 0\colon 1)$, che è la \textit{direzione comune} delle due rette parallele nel piano affine.
@@ -495,7 +495,7 @@ Sia $C$ una curva in $\proj[2]{\ }$ di grado $d$ ed equazione $F(x_0,\ x_1,\ x_2
 	Per studiare l'intersezione di due sottoinsiemi può essere comodo esprimere uno dei due sottoinsiemi in \textit{forma parametrica} e sostituire i risultati trovati nelle equazioni dell'altro.
 \end{tips}
 %Di uno ho le equazioni, mentre so come scrivere in forma parametrica la retta
-Scriviamo una parametrizzazione per $r$; per farlo sono necessari servono 2 punti distinti $a,\ b\in r$. In questo modo, ogni punto di $r$ si scrive come combinazione lineare di altri due punti noti della retta e dei loro vettori:
+Scriviamo una parametrizzazione per $r$; per farlo sono necessari 2 punti distinti $a,\ b\in r$. In questo modo, ogni punto di $r$ si scrive come combinazione lineare di altri due punti noti della retta e dei loro vettori:
 \begin{equation}
 	P=\lambda A+\mu B=\left[\lambda v+\mu w\right]
 \end{equation}
@@ -584,7 +584,7 @@ In modo analogo al caso proiettivo, le radici di $g$ corrispondono ai \textit{pu
 		\begin{enumerate}
 		\item	La molteplicità di intersezione non dipende dalla scelta di parametrizzazione della retta $r$.
 		\item	La molteplicità di intersezione è \textbf{invariante} per \textit{affinità}.
-		\item	La \textit{molteplicità affine} è pari a quella proiettiva. Per precisare, sia $P\in C\cap r$, $\overline{C}$ la chiusura proiettiva di $C$ in $\proj[2]{\ }\supset\kamp^2$ ed $\overline{r}$ la chiusura proiettiva di $r$ in $\proj[2]{\ }$; allora la molteplicità di intersezione tra $C$ e $r$ in $P$ è uguale alla molteplicità di intersezione fra $\overline{C}$ e $\overline{r}$ in $P$.
+		\item	La \textit{molteplicità affine} è pari a quella proiettiva. Per precisare, sia $P\in C\cap r$, $\overline{C}$ la chiusura proiettiva di $C$ in $\proj[2]{\ }\supset\aff{\kamp^2}$ ed $\overline{r}$ la chiusura proiettiva di $r$ in $\proj[2]{\ }$; allora la molteplicità di intersezione tra $C$ e $r$ in $P$ è uguale alla molteplicità di intersezione fra $\overline{C}$ e $\overline{r}$ in $P$.
 	\end{enumerate}
 \vspace{-3mm}
 \end{observes}

@@ -112,7 +112,7 @@ Consideriamo $\proj[n]{\kamp}=\proj{\kamp^{n+1}}$. Se $v=\left(x_0,\ \ldots,\ x_
 \begin{observes}~{}
 	\begin{enumerate}
 		\item Le $x_i$ non possono mai essere tutte nulle, dato che $v\neq 0$.
-		\item Due classi sono uguali se le componenti sono tutte in proporzione per uno scalare $\lambda\in\kamp$.\footnote{La notazione con i $\colon$ viene utilizzata per mettere in evidenza che la relazione fra classi e vettori è di proporzione.}
+		\item Due classi sono uguali se e solo se le componenti sono tutte in proporzione per uno scalare $\lambda\in\kamp$.\footnote{La notazione con i $\colon$ viene utilizzata per mettere in evidenza che la relazione fra classi e vettori è di proporzione.}
 		\begin{equation*}
 			\begin{array}{ccc}
 			\left(x_0:\ldots:x_n\right)=\left(y_0:\ldots:y_n\right)&\iff&\left(x_0,\ \ldots,\ x_n\right)\sim\left(y_0,\ \ldots,\ y_n\right)\\&\iff& \exists \lambda\in\kamp\setminus\left\{0\right\}\ \colon y_0=\lambda x_0,\ \ldots,\ y_n=\lambda x_n
@@ -364,7 +364,7 @@ Chiaramente, se $\dim T_1+\dim T_2\geq n$, allora $\dim \left(T_1\cap T_2\right)
 	Nel piano proiettivo, due rette sono \textit{sempre incidenti}. Infatti, le rette hanno dimensione $1$, mentre $\dim\proj[2]{\kamp}=2$, dunque vale $1+1\leq 2$, pertanto due rette si incontrano sempre.
 \end{example}
 \begin{observe}
-	Se consideriamo l'insieme \textit{finito di punti}, possiamo considerare lo spazio $S$ \textit{generato} da $P_1,\ \ldots,\ P_m$, cioè $S=\left<P_1,\ \ldots,\ P_m\right>$; inoltre, si ha:
+	Se consideriamo un insieme \textit{finito di punti}, possiamo considerare lo spazio $S$ \textit{generato} da $P_1,\ \ldots,\ P_m$, cioè $S=\left<P_1,\ \ldots,\ P_m\right>$; inoltre, si ha:
 	\begin{equation*}
 		\dim S\leq m-1
 	\end{equation*}
@@ -395,7 +395,7 @@ Chiaramente, se $\dim T_1+\dim T_2\geq n$, allora $\dim \left(T_1\cap T_2\right)
 		\begin{equation*}
 			P\text{ e }Q\text{ sono indipendenti}\iff v\text{ e }w\text{ sono indipendenti}\iff v\nsim w\iff P\neq Q
 		\end{equation*}
-		In tal caso $\left<P,\ Q\right>$ è l'unico \textit{retta} contenente $P$ e $Q$, che indicheremo anche con $\overline{PQ}$.
+		In tal caso $\left<P,\ Q\right>$ è l'unica \textit{retta} contenente $P$ e $Q$, che indicheremo anche con $\overline{PQ}$.
 		\item \textit{Tre} punti $P_1,\ P_2,\ P_3$ sono indipendenti se e solo se sono \textit{distinti} e \textit{non} sono \textit{allineati}, cioè appartenenti alla stessa retta. In tal caso $\left<P_1,\ P_2,\ P_3\right>$ è l'unico \textit{piano} contenente i tre punti.
 	\end{itemize}
 \vspace{-3mm}
@@ -436,7 +436,7 @@ Verifichiamolo la dipendenza con il determinante.
 			2 & -1 & 2
 		\end{array}\right|=0
 	\end{equation*}
-L'equazione della retta è data dall'equazione del piano vettoriale in $\realset^3$ generate da $2$ dei $3$ vettori:
+L'equazione della retta è data dall'equazione del piano vettoriale in $\realset^3$ generato da $2$ dei $3$ vettori:
 \begin{equation*}
 	0=\left|\begin{array}{ccc}
 		x_0 & x_1 & x_2\\
@@ -478,7 +478,7 @@ Anche i punti di $S$ sono date da queste coordinate, dunque questa viene definit
 	\begin{equation*}
 		A=\left(1\colon 0\colon -1\colon 4\right)\quad B=\left(2\colon 3\colon 0\colon 5\right)
 	\end{equation*}
-Allora, la rappresentazione parametrica del sottospazio $S$ con $\left(\lambda\colon \mu\right)$ è:
+Allora, la rappresentazione parametrica del sottospazio $S=\left< A,\ B\right>$ con $\left(\lambda\colon \mu\right)$ è:
 \begin{equation*}
 	\begin{cases}
 		x_0=\lambda+2\mu\\
@@ -543,7 +543,7 @@ Infatti, se $v_0,\ \ldots,\ v_n$ è una base (in quanto sono indipendenti), $v_0
 	\begin{equation}
 		P_0=\left[e_0\right],\ \ldots,\ P_n=\left[e_n\right],\ P_{n+1}=\left[e_0+\ldots+e_n\right]
 	\end{equation}
-Inoltre, se $\basis'=\left\{f_0,\ \ldots,\ f_n\right\}$ è un'altra base di $V$ che soddisfa la condizione sopra, allora $\basis'$ è proporzionale a $\basis$, cioè $\exists\lambda\in\kamp\setminus\left\{0\right\}\ \colon f_i=\lambda e_i\ \forall i=0,\ \ldots,\ n$.
+Inoltre, se $\basis'=\left\{f_0,\ \ldots,\ f_n\right\}$ è un'altra base di $V$ che soddisfa la condizione sopra, allora $\basis'$ è proporzionale a $\basis$, cioè $\exists\mu\in\kamp\setminus\left\{0\right\}\ \colon f_i=\mu e_i\ \forall i=0,\ \ldots,\ n$.
 \end{theorema}
 \begin{demonstration}
 	Sia $P_i=\left[v_i\right]$ al variare di $i=0,\ \ldots,\ n+1$. I punti $P_0,\ \ldots,\ P_n$ sono indipendenti\footnote{Perché se $n+2$ punti sono in posizione generale, presi $n+1$ punti fra di loro sono indipendenti.}, dunque per definizione $v_0,\ \ldots,\ v_n$ è una base di $V$. Definiamo:
@@ -665,7 +665,7 @@ E con il gruppo lineare proiettivo si può fare? Consideriamo:
 \end{equation}
  $\oldphi$ è \textit{omomorfismo} di gruppi \textit{suriettivo}, ma non iniettivo. Infatti, il nucleo non è \textit{triviale}:
  \begin{equation*}
- 	\ker \oldphi=\left\{\phi_A\mid \phi_A=Id_{\proj[n]{\kamp}}=\widetilde{Id}_{\kamp^{n+1}}\right\}=\left\{\phi_A\mid \phi=\lambda I,\ \lambda\in\kamp\setminus\left\{0\right\}\right\}=\left\{\phi_A\mid A=\lambda I,\ \lambda\in\kamp\setminus\left\{0\right\}\right\}
+ 	\ker \oldphi = \left\{\phi_A\mid \phi_A=Id_{\proj[n]{\kamp}}=\widetilde{Id}_{\kamp^{n+1}}\right\} = \left\{\phi_A\mid \phi_A=\lambda Id_{\mathbb{K}^{n+1}},\ \lambda\in\kamp\setminus\left\{0\right\}\right\} = \left\{\phi_A\mid A=\lambda I,\ \lambda\in\kamp\setminus\left\{0\right\}\right\}
  \end{equation*}
 Tuttavia, possiamo per il Teorema dell'isomorfismo per i gruppi considerare il seguente diagramma commutativo:
 \[\begin{tikzcd}
@@ -1635,7 +1635,7 @@ Questo concetto, approfondito e generalizzato (separandolo completamente dalla \
 \end{observes}
 Vogliamo ora scoprire come si calcola il birapporto non solo nel sistema di riferimento della definizione, ma in uno qualunque.
 \begin{theorema}[Birapporto di quattro punti.]~{}\\
-	Siano $P_1,\ P_2,\ P_3,\ P_4\in\proj[1]{V}$ dei punti nella retta proiettiva con $P_1,\ P_2,\ P_3$ distinti. Supponiamo che $P_i=(\lambda_1\colon \mu_i), i=1,\ \ldots,\ 4$. Allora:
+	Siano $P_1,\ P_2,\ P_3,\ P_4\in\proj[1]{V}$ dei punti nella retta proiettiva con $P_1,\ P_2,\ P_3$ distinti. Supponiamo che $P_i=(\lambda_i\colon \mu_i), i=1,\ \ldots,\ 4$. Allora:
 		\begin{equation}
 			\beta(P_1,\ P_2,\ P_3,\ P_4)=\frac{ \left| \begin{array}{cc}
 					\lambda_1 & \lambda_4 \\
@@ -1861,7 +1861,7 @@ Cioè se il birapporto delle quaterne è \textbf{invariante per proiettività}.
 			\item $r=\proj{U},\ U\subset \kamp^3$.
 			\item $s=\proj{W},\ W\subset\kamp^3$.
 		\end{itemize}
-		Con $U$ e $W$ piani vettoriali, si ha che $g=\widetilde{\psi}$ con $\funz \psi U W$ è un isomorfismo lineare. Vogliamo estenderla ad un \textit{automorfismo lineare} $\funz \phi {\kamp^3} {\kamp^3}$ scegliendo basi con due vettori nel piano ed uno esterno, ovvero $u_1,\ u_2\in U$ base di $U$ e $u_3\notin U$. Dunque $\{\psi(u_1),\psi(u_2)\}$ è una base di $W$ e $w_3\notin W \implies \{u_1,u_2,u_3\}$ base di $\kamp^3$ e $\{\psi(u_1),\psi(u_2),w_3\}$ un'altra base. Ponendo $\funz \phi {\kamp^3} {\kamp^3}$ tale che:
+		Con $U$ e $W$ piani vettoriali, si ha che $g=\widetilde{\psi}$ con $\funz \psi U W$ isomorfismo lineare. Vogliamo estenderla ad un \textit{automorfismo lineare} $\funz \phi {\kamp^3} {\kamp^3}$ scegliendo basi con due vettori nel piano ed uno esterno, ovvero $u_1,\ u_2\in U$ base di $U$ e $u_3\notin U$. Dunque $\{\psi(u_1),\psi(u_2)\}$ è una base di $W$ e $w_3\notin W \implies \{u_1,u_2,u_3\}$ base di $\kamp^3$ e $\{\psi(u_1),\psi(u_2),w_3\}$ un'altra base. Ponendo $\funz \phi {\kamp^3} {\kamp^3}$ tale che:
 		\begin{itemize}
 			\item $\phi(u_1)\coloneqq \psi(u_1)$.
 			\item $\phi(u_2)\coloneqq \psi(u_2)$.
