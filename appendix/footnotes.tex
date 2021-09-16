@@ -226,6 +226,30 @@ La dimostrazione del terzo punto è adattata da \cite{Math1000:interior} su Math
 	\end{enumerate}
 	\vspace{-6mm}
 \end{demonstration}
+\section{Capitolo 2: connessione e compattezza}
+\subsection{Prodotto di c.p.a.}
+La seguente dimostrazione è adattata da \cite{hagen:productCPA} e \cite{scott:CPAfromproduct} su Mathematics Stack Exchange.
+\begin{lemming}[Prodotto di c.p.a. se e solo se ogni spazio è c.p.a.]~{}\label{prodottocpa}\\
+	$\displaystyle X=\prod_{i\in I}X_i$ è \textbf{c.p.a.}$\iff X_i$ sono \textbf{c.p.a} $\forall i\in I$.
+\end{lemming}
+\begin{demonstration}~{}\\
+	$\impliessx$ Poichè $\funz{\pi_i}{X}{X_i}$ sono funzioni continue e poiché le funzioni continue mantengono la \textbf{c.p.a.}, segue che $X_i$ è \textbf{c.p.a.}
+	$\impliesdx$ Sia $x=\left(x_i\right)_{i\in I}$ e $y=\left(y_i\right)_{i\in I}$ due punti arbitrari in $X$.\footnote{Con $\left(\ \cdot\ \right)_{i\in I}$ indichiamo un elemento dello spazio $X$, visto quindi come una tupla ordinata di elementi di $X_i$ indicizzati rispetto a $I$.} Essendo $X_i$ \textbf{c.p.a}, per ogni $i$ esistono dei cammini continui $\funz{\gamma_i}{\left[0, 1\right]}{X_i}$ tali che $\gamma_i\left(0\right)=x_i$ e $\gamma_i\left(1\right)=y_i$. Per definizione del prodotto cartesiano, c'è un unica funzione continua $\funz{\gamma}{\left[0, 1\right]}{X}$ tale che $\pi_i\circ\gamma=\gamma_i\ \forall i\in I$, dove $\funz{\pi_i}{X}{X_i}$ è la proiezione all'$i$-esimo spazio. Allora $\gamma$ è un cammino fra $x$ e $y$.\\
+\end{demonstration}
+\subsection{Intersezione di compatti}
+La seguente dimostrazione è in parte adattata da \cite{user45861:intersectioncompact} su Mathematics Stack Exchange.
+\begin{lemming}[Intersezione di compatti in Hausdorff è compatta.]~{}\label{intersezione di compatti in hausdorff chiusa}
+\end{lemming}
+\begin{demonstration}
+	I compatti in \textbf{Hausdorff} sono chiusi, dunque l'intersezione di due compatti in \textbf{Hausdorff} è l'intersezione di due chiusi e quindi è ancora un chiuso; essendo un chiuso in un compatto segue che l'intersezione è compatta.
+\end{demonstration}
+\begin{attention}
+	Se non vale l'ipotesi di $X$ \textbf{Hausdorff} \textit{non è in generale vero} che l'intersezione di compatti è compatta! Ad esempio, consideriamo $\naturalset$ con la \textit{topologia discreta} a cui aggiungiamo due punti $x_1$ e $x_2$ e costruiamo una topologia $\topo$ su $X=\left\{x_1,\ x_2\right\}\cup\naturalset$ definita nel seguente modo:
+	\begin{equation*}
+		A\in\topo \text{ se } A\in\setpart{\naturalset}\ \vee\  A=\left\{x_1\right\}\cup\naturalset\ \vee\  A=\left\{x_2\right\}\cup\naturalset\ \vee\  A=\left\{x_1,\ x_2\right\}\cup\naturalset.
+	\end{equation*}
+	Osserviamo che $\left\{x_i\right\}\cup\naturalset$ è compatto $\forall i=1,\ 2$, dato che ogni ricoprimento aperto deve necessariamente contenere o l'insieme $\left\{x_i\right\}\cup\naturalset$ o l'insieme $\left\{x_1,\ x_2\right\}\cup\naturalset$. Tuttavia, l'intersezione fra $\left\{x_1\right\}\cup\naturalset$ e $\left\{x_2\right\}\cup\naturalset$ è $\naturalset$, che è infinito e discreto e quindi certamente non compatto.
+\end{attention}
 \section{Capitolo 4: topologia quoziente}
 \subsection{Quoziente Hausdorff da contrazione su compatto}
 La seguente dimostrazione è in parte adattata da \cite{user:hausdorff} su Mathematics Stack Exchange.
@@ -267,6 +291,26 @@ V=\pi\left[\bigcup_{k\in\integerset}(k-\delta_k,k+\delta_k)\right]
 \end{equation*}
 Chiaramente $V$ è un intorno aperto di $[0]$, e vogliamo dimostrare che $U_n\nsubseteq V$ per ogni $n\in\naturalset$. Per mostrare ciò, fissiamo $n\in\naturalset$; si ha $\delta_n<\epsilon_{n,n}$, quindi possiamo sceglie un numero reale $x\in(n+\delta_n,n+\epsilon_{n,n})$. Ma allora $\pi(x)\in U_n\setminus V$, e dunque $U_n\nsubseteq V$.
 \end{demonstration}
+\section{Capitolo 7: omotopia}
+\subsection{Retratto di uno spazio di Hausdorff}
+La seguente dimostrazione è adattata da \cite{freakish:retract} su Mathematics Stack Exchange.
+\begin{lemming}[Retratto di uno spazio di Hausdorff è chiuso]~{}\\
+Dato $X$ spazio topologico di \textbf{Hausdorff} e $C\subseteq X$ un retratto di $X$, allora $C$ è di \textbf{Hausdorff}.
+\end{lemming}
+\begin{demonstration}
+	Essendo $C$ un retratto di $X$, sappiamo che esiste una funzione continua $\funz{r}{X}{C\subseteq X}$ tale che $r_{\mid C}=Id_C$. È lecito pensare alla funzione $r$ come la funzione $\funz{r}{X}{X}$ per cui $r_{\mid C}=Id_C$e la sua immagine è $C$. Allora, ricordando che l'equalizzatore è definito come:
+	\begin{equation*}
+		eq\left(f,\ g\right)=\left\{x\in X\mid f\left(x\right)=g\left(x\right)\right\}
+	\end{equation*}
+	Se poniamo $f=\funz{r}{X}{X}$ e $g=\funz{id_X}{X}{X}$, allora:
+	\begin{equation*}
+		eq\left(r,\ id_X\right)=\left\{x\in X\mid r\left(x\right)=Id_X\left(x\right)=x\right\}=C
+	\end{equation*}
+	Pertanto $eq\left(r,\ id_X\right)=C$. Inoltre, essendo $id_X$ e $r$ due funzioni continue con codominio uno spazio di Hausdorff, l'equalizzatore è un sottospazio chiuso di $X$ e pertanto segue la tesi.
+\end{demonstration}
+\begin{examples}
+	$\realset$ e $\left(a,\ b\right)$ con $-\infty < a < b < \infty$ sono omeomorfi; tuttavia, $\left(a,\ b\right)$ non è un retratto di $\realset$ in quanto $\realset$ è Hausdorff, ma $\left(a,\ b\right)$ non è chiuso.
+\end{examples}
 \section{Capitolo 8: gruppo fondamentale}
 \subsection{La categoria KTOP}
 Notando la somiglianza fra definizione di isomorfismo e di equivalenza omotopica, si può costruire la categoria $\nicecat{KTOP}$ in cui due oggetti sono isomorfi se e solo se sono omotopicamente equivalenti, come mostreremo nel seguente esercizio.
@@ -412,8 +456,8 @@ Un gruppo $G$ è detto \textbf{libero} se isomorfo al gruppo libero $F_S$ genera
 \begin{example}~{}
 		\begin{itemize}
 		\item Se $G=\left<a\right>$ e $H=\left<b\right>$ sono gruppi ciclici infiniti, ogni elemento di $G\ast H$ è dato da prodotti alternati di potenze di $a$ e potenze di $b$, cioè $G\ast H\cong F_S$ con $S=\{x,\ y\}$. Alcune parole sono, ad esempio, $a^3b^5a^{-1}b$ o $b^{-2}ab^{-3}$.
-		\item Preso $\left(\integerset,\ +\right)$, $\integerset\ast\integerset$ è un gruppo libero di rango 2 come l'esempio precedente: infatti, ogni gruppo ciclico infinito è isomorfo a $\integerset$, dunque ci riconduciamo all'esempio precedente. Possiamo quindi scrivere $\integerset\ast\integerset=\left<a\right>\ast\left<b\right>$, indicando $\{a\}$ come il generatore $\{\textcolor{redill}{1}\}$ del primo $\integerset$ e $\{b\}$ come il generatore $\{\textcolor{blueill}{1}\}$ del secondo $\integerset$.\\
-		Alcune parole sono, ad esempio, $a^3b^5a^{-1}b=(\textcolor{redill}{3})(\textcolor{blueill}{5})(\textcolor{redill}{-1})(\textcolor{blueill}{1})$ o $b^{-2}ab^{-3}=(\textcolor{blueill}{-2})(\textcolor{redill}{1})(\textcolor{blueill}{-3})$.
+		\item Preso $\left(\integerset,\ +\right)$, $\integerset\ast\integerset$ è un gruppo libero di rango 2 come l'esempio precedente: infatti, ogni gruppo ciclico infinito è isomorfo a $\integerset$, dunque ci riconduciamo all'esempio precedente. Possiamo quindi scrivere $\integerset\ast\integerset=\left<a\right>\ast\left<b\right>$, indicando $\{a\}$ come il generatore rosso $\{\textcolor{redill}{\textbf{1}}\}$ del primo $\integerset$ e $\{b\}$ come il generatore blu $\{\textcolor{blueill}{1}\}$ del secondo $\integerset$.\\
+		Alcune parole sono, ad esempio, $a^3b^5a^{-1}b=(\textcolor{redill}{\textbf{3}})(\textcolor{blueill}{5})(\textcolor{redill}{\textbf{-1}})(\textcolor{blueill}{1})$ o $b^{-2}ab^{-3}=(\textcolor{blueill}{-2})(\textcolor{redill}{\textbf{1}})(\textcolor{blueill}{-3})$.
 	\end{itemize}
 \vspace{-3mm}
 \end{example}
@@ -707,5 +751,5 @@ Ad esempio, consideriamo il polinomio $f\left(x\right)=x^3+x^2-x-1$: esso ha sol
 	f\left(x\right)=\left(x+1\right)^2\left(x-1\right)
 \end{equation*}
 Quindi una radice positiva e una negativa, quest'ultima con molteplicità 2.\\
-Nel caso di una matrice $A$, come quelle simmetriche che descrivono le coniche affini/proiettive, applicando al polinomio caratteristico $C_A\left(t\right)$ la regola di Cartesio si possono trovare gli autovalori positivi e negativi.
+Nel caso di una matrice $A$, come quelle simmetriche che descrivono le coniche affini e le coniche proiettive, applicando al polinomio caratteristico $C_A\left(t\right)$ la regola di Cartesio si possono trovare gli autovalori positivi e negativi.
 In particolare, noto il rango della matrice, il numero delle radici nulle $z$ del polinomio caratteristico corrisponde alla differenza tra la dimensione delle matrice $n$ e il suo rango $\rk A$; allora è sufficiente applicare la regola di Cartesio solo una volta per trovare il numero $p$ delle radici positive: il numero $q$ di quelle negative è pari a $\rk A - p$, dato che $n=z+p+q$ e $z=n-\rk A$ dalle osservazioni precedenti.

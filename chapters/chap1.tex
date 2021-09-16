@@ -101,10 +101,10 @@ In questo capitolo ci occuperemo dunque di introdurre questi concetti fondamenta
 \end{examples}
 \begin{attention}
 	Non tutte le topologie sono indotte da una distanza! Se esiste una palla $B_\epsilon\left(x\right)$ che \textit{non} è aperta per qualunque distanza $d$, allora la topologia non è indotta da una metrica. Ad esempio, definiamo la \textbf{topologia dei complementari finiti} o \textbf{topologia cofinita}\index{topologia!cofinita} sull'insieme $X$ nel modo seguente:
-	\begin{gather*}
-		A\subseteq X \text{ aperto } \left(A\in CF\right) \text{ se }  X\setminus A \text{ è finito.}\\
+	\begin{equation*}
+		A\subseteq X \text{ aperto } \left(A\in CF\right) \text{ se }  X\setminus A \text{ è finito.}\qquad
 		C\subseteq X \text{ chiuso } \left(C\in CF\right) \text{ se }  C \text{ è finito.}
-	\end{gather*}
+	\end{equation*}
 	\begin{itemize}
 		\item Se un aperto $A$ è tale se il suo complementare $\mathcal{C}A$ è finito, si ha che:
 		\begin{equation}
@@ -114,7 +114,8 @@ In questo capitolo ci occuperemo dunque di introdurre questi concetti fondamenta
 		\item Se $X$ è finito, la topologia $CF$ coincide con la topologia discreta: ogni sottoinsieme di $X$ è finito e dunque un aperto.
 		\item Se $X$ è infinito, ad esempio $\realset$, la topologia \textit{non} è quella discreta: $[0,\ 1]$ per la topologia discreta è un chiuso ma per quella $CF$ non lo è in quanto \textit{non} è finito.
 	\end{itemize}
-In uno spazio $\left(X,\ CF\right)$ infinito gli aperti non possono essere finiti, pertanto le palle aperte non sono aperte! La cofinita \textit{non} è dunque una topologia indotta da un metrica.
+Sia $X$ infinito con topologia cofinita e supponiamo per assurdo che essa sia indotta da una metrica $d$. Consideriamo $x,\ y\in X$ distinti e definiamo $\epsilon \coloneqq \mvf{d}{x}{y} >0$.\\
+Prendiamo le palle aperte $U=B_{\epsilon/2}\left(x\right)$ e $V=B_{\epsilon/2}\left(y\right)$: esse per \textit{disuguaglianza triangolare} hanno intersezione aperta e vuota $U\cap V=\emptyset$. Tuttavia, essendo degli aperti devono essere della forma $U=X\setminus \{\text{un numero finito di punti}\}$ e $V=X\setminus \{\text{un numero finito di punti}\}$, dunque l'intersezione è non vuota. Ma allora abbiamo un assurdo: $U\cap V$ risulta essere contemporaneamente vuoto e non vuoto. La cofinita pertanto \textit{non} è dunque una topologia indotta da una metrica.
 \end{attention}
 \subsubsection{Norme esotiche}
 Possiamo definire su $\realset^n$ una famiglia di distanze dette \textbf{norme}\index{norma}; qui di seguito ne elenchiamo alcune. Definiti i punti $x=\left(x_1,\ldots, x_n\right),\ y=\left(y_1,\ldots, y_n\right)\in\realset^n$ abbiamo:
@@ -862,11 +863,11 @@ $\impliessx$Siano $x,\ y\in X,\ x\neq y$. Allora $\left(x,\ y\right)\in \left(X\
 \end{demonstration}
 \begin{proposition}[Varie proprietà legate ad Hausdorff.]~{}
 \begin{enumerate}
-\item Siano $\funz{f,\ g}{X}{Y}$ continue, $Y$ di \textbf{Hausdorff}. Sia $C$ il luogo dei punti dove $f$ e $g$ coincidono:
+\item Siano $\funz{f,\ g}{X}{Y}$ continue, $Y$ di \textbf{Hausdorff}. Sia $C$ il luogo dei punti dove $f$ e $g$ coincidono (detto anche \textbf{equalizzatore}\index{equalizzatore}):
 \begin{equation}
-C=\left\{x\in X\mid f\left(x\right)=g\left(x\right)\right\}
+eq\left(f,\ g\right)=\left\{x\in X\mid f\left(x\right)=g\left(x\right)\right\}
 \end{equation}
-Allora $C$ è chiuso.
+Allora $eq\left(f,\ g\right)$ è chiuso.
 \item  Sia $\funz{f}{X}{X}$ continua, $X$ di \textbf{Hausdorff}.  Sia $F_{ix}\left(f\right)$ il luogo dei \textbf{punti fissi}\index{punto!fisso} di $f$:
 \begin{equation}
 F_{ix}\left(f\right)=\left\{x\in X\mid f\left(x\right)=x\right\}
@@ -886,7 +887,7 @@ Allora $\Gamma_f$ è chiuso in $X\times Y$.
 \end{proposition}
 \begin{demonstration}~{}
 \begin{enumerate}[label=\Roman*]
-\item Definiamo la funzione $\funztot{h}{X}{Y\times Y}{x}{\left(f\left(x\right),\ g\left(x\right)\right)}$. Essa è continua perché le componenti sono continue; considerata la diagonale $\Delta_{Y}$ di $Y\times Y$, si ha che $C=h^{-1}\left(\Delta_Y\right)$ è la controimmagine tramite una funzione continua di un chiuso e quindi chiuso.
+\item Definiamo la funzione $\funztot{h}{X}{Y\times Y}{x}{\left(f\left(x\right),\ g\left(x\right)\right)}$. Essa è continua perché le componenti sono continue; considerata la diagonale $\Delta_{Y}$ di $Y\times Y$, si ha che $eq\left(f,\ g\right)=h^{-1}\left(\Delta_Y\right)$ è la controimmagine tramite una funzione continua di un chiuso e quindi chiuso.
 \item Basta porre al punto 1 $g=Id_{X}$.
 \item Per ipotesi $A\subseteq h^{-1}\left(\Delta_Y\right)$. In quanto $A$ è denso in $X$, $\overline{A}=X$. Dunque:
 \begin{equation*}

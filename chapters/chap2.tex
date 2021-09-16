@@ -43,7 +43,7 @@ $1\implies2)$ Esiste $\emptyset\subsetneqq A \subsetneqq X$ con $A$ aperto e chi
 $2\implies1)$ $A$ aperto, $B$ aperto $\implies A$ chiuso perché $A=\mathcal{C}X=X\setminus B$. Inoltre $A$ non vuoto, $B$ non vuoto $\implies A\neq X$. Dunque $A$ è aperto, chiuso e $A\neq \emptyset,\ X$ e pertanto soddisfa la tesi: esiste un sottoinsieme aperto e chiuso che non il vuoto o l'insieme stesso.
 \end{demonstration}
 \begin{tips}
-	Il lemma \ref{sconnesso} (Manetti, 4.2) ci dice che è sufficiente trovare solo due aperti (o chiusi) che soddisfano la condizione di cui sopra per affermare la sconnessione. Viceversa, per dimostrare la connessione, dobbiamo dimostrare che per ogni coppia di aperti (o chiusi) non vuoti, la cui unione è $X$, essi non siano disgiunti.
+	Il lemma \ref{sconnesso} (Manetti, 4.2) ci dice che è sufficiente trovare \textit{solo due} aperti (o chiusi) che soddisfano la condizione di cui sopra per affermare la sconnessione. Viceversa, per dimostrare la connessione, dobbiamo dimostrare che \textit{per ogni coppia} di aperti (o chiusi) non vuoti, la cui unione è $X$, essi non siano disgiunti.
 \end{tips}
 \begin{examples} Esempi di spazi topologici \textit{sconnessi} in topologia Euclidea:
 	\begin{itemize}
@@ -122,8 +122,32 @@ Poiché $\left[0,\ 1\right]$ è connesso, allora le controimmagini trovate \text
 \begin{equation*}
 \alpha\left(t\right)\in\alpha\left(\alpha^{-1}\left(A\right)\cap \alpha^{-1}\left(B\right)\right)\subseteq\alpha\left(\alpha^{-1}\left(A\right)\right)\cap\alpha\left(\alpha^{-1}\left(B\right)\right)=A\cap B
 \end{equation*}
-\vspace{-3mm}
 \end{demonstration}
+\vspace{-3mm}
+\begin{theorema}[Immagine continua di uno spazio c.p.a. è un c.p.a.]~{}\\
+	L'immagine continua di uno spazio \textbf{c.p.a.} è \textbf{c.p.a.}:
+	\begin{equation}
+		\funz{f}{X}{Y}\text{ continua},\ X\textbf{ c.p.a.}\implies f\left(X\right)\textbf{ c.p.a.}
+	\end{equation}
+	\vspace{-6mm}
+\end{theorema}
+\begin{demonstration}
+	Considerati $y,\ z\in f\left(X\right)$, vogliamo trovare un cammino tra i due punti. Poiché $y,\ z\in f\left(X\right)$, consideriamo $a,\ b\in X$ tali che $y=f(a)$ e $z=f(b)$. Poichè $a,\ b\in X$ \textbf{c.p.a.}, esiste un cammino $\alpha$ tale per cui $\alpha\left(0\right)=a$ e $\alpha\left(1\right)=b$; componiamolo ora con la funzione $f$.
+	\[
+	\begin{tikzcd}
+		{f\circ \alpha\ \colon \left[0,\ 1\right]} \arrow[r, "\alpha"] & X \arrow[r, "f"] & Y
+	\end{tikzcd}
+	\]
+	La composizione $f\circ \alpha$ è continua perché composizione di funzioni continue, inoltre:
+	\begin{gather*}
+		\left(f\circ \alpha\right)\left(0\right)=f\left(\alpha\left(0\right)\right)=f\left(a\right)=y\\
+		\left(f\circ \alpha\right)\left(1\right)=f\left(\alpha\left(1\right)\right)=f\left(b\right)=z
+	\end{gather*}
+	Dunque $f\circ \alpha$ è un cammino fra due punti $y,\ z$ arbitrari in $f\left(X\right)$ e pertanto $f\left(X\right)$ è \textbf{c.p.a.}
+\end{demonstration}
+\begin{observe}
+	Essere \textbf{c.p.a.} è invariante topologico.
+\end{observe}
 \begin{define}[Giunzione di cammini.]~{}\\
 	Dati due cammini in uno spazio $X$:
 	\begin{gather*}
@@ -137,7 +161,7 @@ Poiché $\left[0,\ 1\right]$ è connesso, allora le controimmagini trovate \text
 			\beta\left(2t-1\right)\quad\text{se }\frac{1}{2}\leq t\leq 1\\	
 		\end{cases}
 	\end{equation}
-\vspace{-6mm}
+%\vspace{-6mm}
 \end{define}
 \begin{lemming}[Unione di c.p.a. non disgiunta è c.p.a.]~{}\label{unionecpa}\\
 	Sia $A,\ B$ \textbf{c.p.a}, $A\cap B\neq \emptyset\implies A\cup B$ \textbf{c.p.a.}
@@ -214,9 +238,9 @@ Vediamo ora che conseguenze hanno questi teoremi in $\realset$ con la topologia 
 \begin{demonstration}~{}\\
 	$1) \implies 2)$ Siccome $I$ è convesso $\implies$ $I$ stellato $\implies$ $I$ \textbf{c.p.a.} $\implies$ $I$ connesso. \\
 	$2) \implies 3)$ Vale in generale che \textbf{c.p.a.} $\implies$ connesso.\\
-	$3) \implies 1)$ Per contronominale mostriamo che $I$ non intervallo $\implies$ $I$ sconnesso. $I$ non intervallo significa che
+	$3) \implies 1)$ Per \textit{contronominale} mostriamo che $I$ non intervallo $\implies$ $I$ sconnesso. $I$ non intervallo significa che
 		\begin{gather*}
-			\exists a<b<c,\ a,c\in I,\ b\notin I \\
+			\exists\ a<b<c,\ a,\ c\in I,\ b\notin I \\
 			b\notin I \implies I= \left(\underbrace{ I\cap \left(-\infty ,b\right)}_{\in a}\ \right) \cup \left( \underbrace{I\cap \left(b ,+\infty\right)}_{\in c}\ \right)
 		\end{gather*}
 	ovvero $I$ è unione di aperti, non vuoti e disgiunti $\implies$ $I$ sconnesso.	
@@ -360,6 +384,7 @@ Tuttavia $\overline{Y}$ non è \textbf{c.p.a.} in quanto $\overline{Y}=Y\cup \le
 	\includegraphics[trim=0cm 0.5cm 0.5cm 1.25cm,clip,scale=0.50]{images/topologistsine.pdf}
 \end{minipage}
 \end{example}
+\vspace{6mm}
 \begin{example}\textsc{La pulce ed il pettine.}\\
 	Si consideri il ‘‘pettine'' come il seguente sottospazio di $\realset ^2$ con la topologia euclidea:
 		\begin{equation*}
@@ -377,28 +402,6 @@ Si consideri ora la ‘‘pulce'', ovvero un punto $P$ di ascissa irrazionale ed
 	\end{minipage}\\
 Tuttavia $Z$ non è \textbf{c.p.a.}: preso un cammino $\funz \alpha {\left[0,\ 1\right]} {Z\subseteq \realset^2}$ tale che $\alpha(t)= \left( x(t), y(t)\right)$ con $\alpha (0)=(0,0)$ e $\alpha(1)=P$, per continuità $y(t)\neq 0 \implies x(t)\in\rationalset$, ma \textit{non} è vero per $P$ che ha ascissa irrazionale, dunque non esiste un cammino continuo che colleghi l'origine e $P$. Ne consegue che $Z$ non è \textbf{c.p.a.}
 \end{example}
-
-\begin{theorema}[Immagine continua di uno spazio c.p.a. è un c.p.a.]~{}\\
-L'immagine continua di uno spazio \textbf{c.p.a.} è \textbf{c.p.a.}:
-	\begin{equation}
-		\funz{f}{X}{Y}\text{ continua},\ X\textbf{ c.p.a.}\implies f\left(X\right)\textbf{ c.p.a.}
-		\end{equation}
-		\vspace{-6mm}
-	\end{theorema}
-\begin{demonstration}
-	Considerati $y,\ z\in f\left(X\right)$, vogliamo trovare un cammino tra i due punti. Poiché $y,\ z\in f\left(X\right)$, consideriamo $a,\ b\in X$ tali che $y=f(a)$ e $z=f(b)$. Poichè $a,\ b\in X$ \textbf{c.p.a.}, esiste un cammino $\alpha$ tale per cui $\alpha\left(0\right)=a$ e $\alpha\left(1\right)=b$; componiamolo ora con la funzione $f$.
-\[
-\begin{tikzcd}
-	{f\circ \alpha\ \colon \left[0,\ 1\right]} \arrow[r, "\alpha"] & X \arrow[r, "f"] & Y
-\end{tikzcd}
-\]
-La composizione $f\circ \alpha$ è continua perché composizione di funzioni continue, inoltre:
-\begin{gather*}
-	\left(f\circ \alpha\right)\left(0\right)=f\left(\alpha\left(0\right)\right)=f\left(a\right)=y\\
-	\left(f\circ \alpha\right)\left(1\right)=f\left(\alpha\left(1\right)\right)=f\left(b\right)=z
-\end{gather*}
-Dunque $f\circ \alpha$ è un cammino fra due punti $y,\ z$ arbitrari in $f\left(X\right)$ e pertanto $f\left(X\right)$ è \textbf{c.p.a.}
-\end{demonstration}
 \subsection{Componenti connesse}
 L'intuizione geometrica che ci ha portati alla definizione di connessione è stata ‘‘di quanti pezzi è fatto uno spazio?''. Se uno spazio è connesso è fatto di un solo ‘‘pezzo'', cerchiamo ora di definire cosa sono i ‘‘pezzi'' e come sono fatti.
 \begin{define}[Componente connessa.]~{}\\
@@ -439,7 +442,7 @@ Vediamo ora qualche proprietà delle componenti connesse, in particolare che son
 \vspace{-6mm}
 \end{demonstration}
 \begin{example}
-	Sia $\rationalset\subseteq\realset$ con la topologia Euclidea. La componenti connesse di $\rationalset$ sono i punti, quindi i punti sono chiusi in $\rationalset$, il che è una riconferma dato che sappiamo che $\rationalset$ è Hausdorff. Tuttavia non possono essere aperti altrimenti avremmo la topologia discreta!\\
+	Sia $\rationalset\subseteq\realset$ con la topologia Euclidea. La componenti connesse di $\rationalset$ sono i punti, quindi i punti sono chiusi in $\rationalset$, il che è una riconferma dato che sappiamo che $\rationalset$ è \textbf{Hausdorff}. Tuttavia non possono essere aperti altrimenti avremmo la topologia discreta!\\
 	Inoltre siccome $\rationalset$ ha più di una componente connessa significa che non è connesso! Invece $\realset$ è connesso grazie all'assioma di completezza.
 \end{example}
 \begin{observe}
@@ -449,7 +452,7 @@ Vediamo ora qualche proprietà delle componenti connesse, in particolare che son
 
 		\section{Compattezza}
 \begin{define}[Ricoprimento aperto e sottoricoprimento.]~{}\\
-	Sia $X$ uno spazio topologico. Un \textbf{ricoprimento aperto}\index{ricoprimento}\index{ricoprimento!aperto} di $X$ è una famiglia $\mathcal{A}=\{A_i \}_{i\in I}$ di aperti di $X$ tali che $X=\bigcup_{i\in I} A_i$. \\
+	Sia $X$ uno spazio topologico. Un \textbf{ricoprimento aperto}\index{ricoprimento}\index{ricoprimento!aperto} di $X$ è una famiglia $\mathcal{A}=\{A_i \}_{i\in I}$ di aperti di $X$ tali che $\displaystyle X=\bigcup_{i\in I} A_i$. \\
 	Un \textbf{sottoricoprimento}\index{sottoricoprimento} $\mathcal{B}$ di un ricoprimento aperto $\mathcal{A}$ è una famiglia di aperti di $\mathcal{A}$ la cui unione è ancora tutto $X$.
 \end{define}		
 
@@ -579,7 +582,6 @@ Se $X$ è di Hausdorff e $K\subseteq X$ è compatto, allora $K$ è chiuso.
 	\end{equation*}
 	Gli aperti $V$ e $U$ per costruzione \textit{non} si intersecano ($V\cap U=\emptyset$), in particolare $V\cap K=\emptyset$ perché $K\subseteq V$. Allora, per le osservazioni iniziali $U\subseteq X\setminus K$, cioè $X\setminus K$ è intorno di $x_0$. Per l'arbitrarietà di $x_0$, segue che $X\setminus K$ è aperto e quindi $K$ chiuso.
 \end{demonstration}
-
 \begin{theorema}[Compatto in $\realset$ se e solo chiuso e limitato; Manetti, 4.42.]~{}\label{compatto chiuso e limitato R}\\
 Un sottospazio $K\subseteq \realset$ è compatto $\iff K$ chiuso e limitato.
 \end{theorema}
@@ -595,7 +597,6 @@ Un sottospazio $K\subseteq \realset$ è compatto $\iff K$ chiuso e limitato.
 \begin{attention}
 	Il teorema precedente \textit{non} afferma che gli unici compatti di $\realset$ sono gli intervalli chiusi e limitati! Anche una loro \textit{unione finita} (anche disgiunta) potrebbe esserlo.
 \end{attention}
-
 \begin{theorema}[Funzione su compatto in $\realset$ ammette massimo/minimo; Manetti, 4.43.]~{}\label{weierstrass}\\
 Sia $\funz f X \realset$ con $X$ compatto e $\realset$ con la topologia euclidea. Se $f$ è continua allora ammette massimo e minimo.
 \end{theorema}
