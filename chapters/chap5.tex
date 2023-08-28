@@ -17,292 +17,289 @@
 \lettrine[findent=1pt, nindent=0pt]{S}{tudieremo} ora uno strumento importante dell'Algebra: l'\textbf{azione di un gruppo} $G$ su un insieme $X$. Grazie a ciò, possiamo dire che gli elementi del gruppo ‘‘\textit{spostano}'' gli elementi dell'insieme in altri, senza dotare l'insieme di alcuna particolare \textit{struttura} od operazione. Alcuni gruppi sono definiti proprio sulla base delle azioni, come il \textit{gruppo simmetrico}: gli elementi sono le \textit{permutazioni} sull'insieme!\\
 Per gli scopi della topologia, le azioni di gruppo hanno particolare importanza: se nel \autoref{chap:topologia quoziente} abbiamo visto diversi tipi di spazi quozienti, generalmente dando una \textit{relazione di equivalenza} su un sottoinsieme relativamente semplice, qui introdurremo \textit{quozienti topologici} indotti da queste azioni di gruppo. Fra questi preannunciamo il ruolo di primo piano svolto dallo \textit{spazio proiettivo reale}.
 \section{Azione di un gruppo su un insieme}
-\begin{define}[Gruppo simmetrico.]~{}\\
+\begin{definition}{}[Gruppo simmetrico]
 	Sia $X$ un insieme. Si definisce il \textbf{gruppo simmetrico} sull'insieme $X$ come:
-	\begin{equation}
-		S(X)\coloneqq \{\funz f X X \mid f \text{ biunivoca}\}
-	\end{equation}
-\vspace{-6mm}
-\end{define}
-\begin{define}[Azione di un gruppo su un insieme.]~{}\\
+	\begin{equation*}
+		S(X)\coloneqq \Set{\funct{}[f]{X}{X} | f \text{ biunivoca}}
+	\end{equation*}
+\end{definition}
+\begin{definition}{}[Azione di un gruppo su un insieme]
 	Sia $G$ un gruppo e $X$ un insieme. Un'\textbf{azione}\index{azione} di $G$ su $X$ è, equivalentemente:
 		\begin{itemize}
-			\item  $\funz \Phi G {S(X)}$ morfismo di gruppi, ovvero $\Phi(g\ldotp h)=\Phi(g)\Phi(h)$.
-			\item $\funztot \phi {G\times X} X {(g,\ x)} {g\ldotp x}$ tale che $e\ldotp x=x, \forall x\in X$ e $g\ldotp (h\ldotp x)=(gh)\ldotp x$.
+			\item un morfismo di gruppi $\funct{}[\Phi]{G}{S(X)}$, cioè $\Phi$ soddisfa $\Phi(gh)=\Phi(g)\Phi(h)$.
+			\item un applicazione $\funct{}[\phi]{G\times X}{X}[(g,\ x)][g\ldotp x]$ tale che $e\ldotp x=x, \forall x\in X$ e $g\ldotp (h\ldotp x)=(gh)\ldotp x$.
 		\end{itemize}
-	Se ho $\Phi$ definisco $\phi(g,\ x)=\underbrace{\Phi(g)}_{\in S(X)}(x)$.\newline
-	Se ho $\phi$ definisco $\funztot {\Phi(g)} X X x {\phi(g,\ x)}$.
-\end{define}
-
-\begin{define}[Relazione di equivalenza dell'azione.]~{}\\
-	Su $X$ definiamo una \textit{relazione di equivalenza} dettata dall'azione di un gruppo $G$:
+\end{definition}
+	Le due definizioni sono effettivamente equivalenti:
+	\begin{itemize}
+		\item Se l'azione è definita come morfismo di gruppi $\Phi$, si pone $\phi(g,\ x)\coloneqq\Phi(g)(x)$, dove $\Phi(g)\in S(X)$.
+		\item Se l'azione è definita come applicazione $\phi$, si pone 
+		\begin{equation*}
+			\funct{}[\Phi(g)]{X}{X}[x][\phi(g,\ x)].
+		\end{equation*}
+	\end{itemize}
+\begin{definition}{}[Relazione di equivalenza dell'azione]
+	Su $X$ si definisce una \textit{relazione di equivalenza} dettata dall'azione di un gruppo $G$:
 	\begin{equation*}
 		x\sim y\iff \exists g\in G \colon y=g\ldotp x
 	\end{equation*}
-\vspace{-6mm}
-\end{define}
-\begin{demonstration}
+\end{definition}
+\begin{proof}{n}
 	Dimostriamo che è una relazione di equivalenza:
 	\begin{itemize}
-		\item \textsc{Riflessiva}: $x\sim x?$ Basta porre $g=e$, in quanto $x=e\ldotp x$.
-		\item \textsc{Simmetrica}: Per ipotesi $y=g\ldotp x$, allora $x=g^{-1}\ldotp y$ ($g^{-1}\in G$).
-		\item \textsc{Transitiva}: Poiché $y=g\ldotp x,\ z=h\ldotp y$, segue $z=h\ldotp \left(g\ldotp x\right)=(hg)\ldotp x$ e $hg\in G$.
+		\item \textit{Riflessività}: $x\sim x$ in quanto $x=e\ldotp x$.
+		\item \textit{Simmetria}: poiché $y=g\ldotp x$, allora $x=g^{-1}\ldotp y$ ($g^{-1}\in G$).
+		\item \textit{Transitività}: poiché $y=g\ldotp x,\ z=h\ldotp y$, allora $z=h\ldotp \left(g\ldotp x\right)=(hg)\ldotp x$ e $hg\in G$.\qedhere
 	\end{itemize}
-\vspace{-3mm}
-\end{demonstration}
-\begin{define}[Orbita di un elemento.]~{}\\
+\end{proof}
+\begin{definition}{}[Orbita di un elemento]
 	Le classi di equivalenza date da questa relazione sono dette \textbf{orbite}\index{orbita}:
 		\begin{equation*}
-			[x]=O\left(x\right)=G\ldotp x=\{y\in X \mid \exists g\in G \colon y=g\ldotp x\}=\{ g\ldotp x\in X\mid g\in G \}
+			[x]=O\left(x\right)=G\ldotp x\coloneqq\Set{y\in X | \exists g\in G \colon y=g\ldotp x}=\Set{ g\ldotp x\in X\mid g\in G}
 		\end{equation*}
-	L'insieme quoziente è detto \textbf{spazio delle orbite}\index{spazio!delle orbite} e si scrive come $\nicefrac{X}{G}$.
-\end{define}
-Vediamo ora un esempio di azione e di orbite.
-\begin{example}
-	 $X=\realset^n,\ G=\gl(n,\ \realset), \ \phi(A,\mathbf{v})=A\mathbf{v}$ è la moltiplicazione matrice per vettore.\newline
-		Analizziamo le orbite: $G\ldotp\mathbf{0}=\{\mathbf{0}\}$, ovvero il vettore nullo è un'orbita. Siano ora $\mathbf{v\neq 0\neq w}$. Esiste $A\in\gl(n,\ \realset) \colon \mathbf{w}=A\mathbf{v}$? Sì, se $\mathbf{v\neq 0}, G\ldotp\mathbf{v}=\realset^n\setminus\{\mathbf{0}\}$.
-		Quindi $\nicefrac{\realset^n}{\gl(n, \realset)}=\{ a,\ b\}$ con $a=[\mathbf{0}]$ e $b=[\mathbf{v}], \mathbf{v\neq 0}$
+	L'insieme quoziente è detto \textbf{spazio delle orbite}\index{spazio!delle orbite} e si denota $X/G$.
+\end{definition}
+\begin{example}{n}
+	Il gruppo $\GL(n,\R)$ agisce con l'insieme $\R^n$ con la moltiplicazione matrice per vettore $\phi(A,\mathbf{v})=A\mathbf{v}$. Analizziamo le orbite:
+	\begin{itemize}
+		\item Per ogni $A\in\GL(n,\R)$, $A\mathbf{0}=\mathbf{0}$; dunque $G\ldotp\mathbf{0}=\{\mathbf{0}\}$.
+		\item Fissato $\mathbf{v}\neq \mathbf{0}$, per ogni vettore $\mathbf{w}\neq\mathbf{0}$ esiste sempre $A\in\GL(n,\R)$ tale che $\mathbf{w}=A\mathbf{v}$, dunque $G\ldotp\mathbf{v}=\R^n\setminus\{\mathbf{0}\}$.
+	\end{itemize}
+	Quindi $\R^n/\GL(n, \R)=\{ a,\ b\}$ con $a=[\mathbf{0}]$ e $b=[\mathbf{v}], \mathbf{v\neq 0}$.
 \end{example}
 \section{Stabilizzatore di un elemento}
-\begin{define}[Stabilizzatore di un elemento.]~{}\\
+\begin{definition}{}[Stabilizzatore di un elemento]
 Lo \textbf{stabilizzatore di un elemento}\index{stabilizzatore di un elemento} $x$ è l'insieme degli elementi di $G$ che fissano $x$:
-\begin{equation}
-H_x\coloneqq \left\{g\in G\mid g\ldotp x = x\right\}
-\end{equation}
-$H_x$ è un \textit{sottogruppo di isotropia} di $x$. Inoltre, se $H_x$ è banale, allora l'azione è \textbf{libera}\index{azione!libera}.
-\end{define}
-\begin{demonstration} $H_x$ è chiuso rispetto all'azione:
-	\begin{itemize}
-		\item $1_G\in H_x$ per definizione dell'azione $g\ldotp$ ($1_G\ldotp x=x\ \forall x$).
-		\item $\forall g,\ h\in H_x$, allora $\left(gh\right)\ldotp x=g\ldotp \left(h\ldotp x\right)=g\ldotp x=x$.
-	\end{itemize}
-\vspace{-3mm}
-\end{demonstration}
-\begin{observe}
-L'insieme $\nicefrac{G}{H_x}$ dei laterali sinistri di $H_x$ in $G$ è in corrispondenza biunivoca con l'\textit{orbita} $O\left(x\right)$. Inoltre, se $G$ è finito, la cardinalità dell'orbita è pari all'indice di $H_x$ in $G$.
-\end{observe}
-\begin{demonstration}
-Sia data:
 \begin{equation*}
-	\funztot{\alpha}{\nicefrac{G}{H_x}}{O\left(x\right)}{g\ldotp H_x}{g\ldotp x}
+H_x\coloneqq \left\{g\in G\mid g\ldotp x = x\right\}
+\end{equation*}
+$H_x$ è un \textit{sottogruppo di isotropia} di $x$. Se $H_x$ è banale, allora l'azione è detta \textbf{libera}\index{azione!libera}.
+\end{definition}
+\begin{proof}{n}
+$H_x$ è chiuso rispetto all'azione:
+	\begin{itemize}
+		\item $1_G\in H_x$ per definizione dell'azione $g\ldotp$, in quanto $1_G\ldotp x=x, \forall x$.
+		\item Per ogni $g,\ h\in H_x$, allora $\left(gh\right)\ldotp x=g\ldotp \left(h\ldotp x\right)=g\ldotp x=x$.\qedhere
+	\end{itemize}
+\end{proof}
+\begin{remark}{n}
+L'insieme $G/H_x$ dei laterali sinistri di $H_x$ in $G$ è in corrispondenza biunivoca con l'orbita $O\left(x\right)$. Se $G$ è finito, la cardinalità dell'orbita è l'indice di $H_x$ in $G$.
+\end{remark}
+\begin{proof}{n}
+Sia data
+\begin{equation*}
+	\funct{}[\alpha]{G/H_x}{O\left(x\right)}[g\ldotp H_x][g\ldotp x].
 \end{equation*}
 Mostriamo che $\alpha$ è ben definita e biunivoca.
 \begin{enumerate}
-	\item \textit{Ben definizione}: se $g\ldotp H_x=\widetilde{g}\ldotp H_x$ allora $g^{-1}\widetilde{g}=h\in H_x\implies\widetilde{g}=gh\in H_x$. Si ha:
+	\item \textit{Ben definizione}: se $g\ldotp H_x=\widetilde{g}\ldotp H_x$ allora $g^{-1}\widetilde{g}=h\in H_x$, dunque $\widetilde{g}=gh\in H_x$. Si ha:
 	\begin{equation*}
 		\alpha\left(\widetilde{g}\ldotp H_x\right)=\widetilde{g}\ldotp x = \left(gh\right)\ldotp x = g \ldotp\left( h\ldotp x\right)=g\ldotp x=\alpha\left(g\ldotp H_x\right)
 	\end{equation*}
- Poiché $g\ldotp H_x=\widetilde{g}\ldotp H_x\implies g\ldotp x=\widetilde{g}\ldotp x$ la funzione è ben definita.
- \item \textit{Iniettività}:
+ Poiché $g\ldotp H_x=\widetilde{g}\ldotp H_x$ si ha $g\ldotp x=\widetilde{g}\ldotp x$ e la funzione è ben definita.
+ \item \textit{Iniettività}: vale la seguente catena di implicazioni:
  \begin{align*}
- 	\alpha\left(g_1\ldotp H_x\right)=\alpha\left(g_2\ldotp H_x\right)&\implies g_1\ldotp x=g_2\ldotp x\implies g_2^{-1}\ldotp\left(g_1\ldotp x\right)=g_2^{-1}\ldotp\left(g_2\ldotp x\right)\\
+ 	\alpha\left(g_1\ldotp H_x\right)&=\alpha\left(g_2\ldotp H_x\right)&\implies g_1\ldotp x=g_2\ldotp x\implies g_2^{-1}\ldotp\left(g_1\ldotp x\right)=g_2^{-1}\ldotp\left(g_2\ldotp x\right)\\
  	&\implies \left(g_2^{-1}\ldotp g_1\right)\ldotp x=1_G\ldotp x=x
  \end{align*}
-Ne segue che $\left(g_2^{-1} g_1\right)\in H_x\implies g_2^{-1} g_1=h\in H_x\implies g_1\ldotp H_x=g_2\ldotp H_x$.
+Ne segue che $\left(g_2^{-1} g_1\right)\in H_x$, dunque $g_2^{-1} g_1=h\in H_x$ e $g_1\ldotp H_x=g_2\ldotp H_x$.
 \item \textit{Suriettività}: se $y\in O\left(x\right)$, per definizione $\exists g\in G\ \colon y=g\ldotp x$, cioè $y=\alpha\left(g\ldotp H_x\right)$.
 \end{enumerate}
-Dunque ne consegue, dal teorema di Lagrange, che $\lvert O\left(x\right)\rvert = \left[G\ \colon H_x\right]= \frac{\lvert G\rvert}{\lvert H_x\rvert}$.
-\end{demonstration}
-\begin{observe}
-Punti nella stessa orbita hanno stabilizzatori \textbf{coniugati}\index{coniugati}:
-\begin{equation}
-x_2=g\ldotp x_1\implies H_{x_2}=g\ldotp H_{x_1}\ldotp g^{-1}
-\end{equation}
-\vspace{-5mm}
-\end{observe}
-\begin{demonstration}~{}\\
-$\includedx$Sia $h\in H_{x_2}$. Poiché  per ipotesi $x_2=g\ldotp x_1$, si ha:
+Segue, dal teorema di Lagrange, che
 \begin{equation*}
-h\ldotp x_2 = x_2\implies h\ldotp\left(g\ldotp x_1\right) = g\ldotp x_1 \implies \left(g^{-1} h g\right)\ldotp x_1 = x_1
+	\lvert O\left(x\right)\rvert = \left[G\ \colon H_x\right]= \frac{\lvert G\rvert}{\lvert H_x\rvert}.\qedhere
 \end{equation*}
-Segue che $\forall h\in H_{x_2}\ g^{-1} h g\in H_{x_1}$, ma allora $h = g \left(g^{-1} h^{-1} g\right) g^{-1}\in g\ldotp H_{x_1}\ldotp g^{-1}$.
-Pertanto per l'arbitrarietà di $h$ si ha $H_{x_2} \subseteq g \ldotp H_{x_1}\ldotp g^{-1} $\\
-$\includesx$Sia $h\in H_{x_1}$ e consideriamo $ghg^{-1}$. Se moltiplico (con l'azione $\ldotp$) per $x_2$:
+\end{proof}
+\begin{remark}{n}
+Punti nella stessa orbita hanno stabilizzatori \textbf{coniugati}\index{coniugati}:
+\begin{equation*}
+x_2=g\ldotp x_1\implies H_{x_2}=g\ldotp H_{x_1}\ldotp g^{-1}
+\end{equation*}
+\end{remark}
+\begin{proof}{n}~{}\\
+$\rightinclude$Sia $h\in H_{x_2}$. Poiché  per ipotesi $x_2=g\ldotp x_1$, si ha
+\begin{equation*}
+h\ldotp x_2 = x_2\implies h\ldotp\left(g\ldotp x_1\right) = g\ldotp x_1 \implies \left(g^{-1} h g\right)\ldotp x_1 = x_1.
+\end{equation*}
+Segue che per ogni $h\in H_{x_2}$ si ha $g^{-1} h g\in H_{x_1}$, ma allora $h = g \left(g^{-1} h^{-1} g\right) g^{-1}\in g\ldotp H_{x_1}\ldotp g^{-1}$. Pertanto, per l'arbitrarietà di $h$ si ha $H_{x_2} \subseteq g \ldotp H_{x_1}\ldotp g^{-1}$.
+$\leftinclude$Sia $h\in H_{x_1}$ e consideriamo $ghg^{-1}$. Se applico $ghg^{-1}$ all'elemento $x_2$:
 \begin{equation*}
 \left(ghg^{-1}\right)\ldotp x_2=\left(ghg^{-1}\right)\ldotp g\ldotp x_1=\left(gh\right)\ldotp \left(g^{-1}g\right)\ldotp x_1=\left(gh\right)\ldotp x_1=g\ldotp\left(h\right)\ldotp x_1=g\ldotp x_1=x_2
 \end{equation*}
-Pertanto $\forall h\in H_{x_1}\ \left(ghg^{-1}\right)\ldotp x_2= x_2$ e per l'arbitrarietà di $h$ si ha $g\ldotp H_{x_1}\ldotp g^{-1}\subseteq H_{x_2}$
-\end{demonstration}
+Pertanto, per ogni $h\in H_{x_1}$ si ha $\left(ghg^{-1}\right)\ldotp x_2= x_2$ e per l'arbitrarietà di $h$ segue $g\ldotp H_{x_1}\ldotp g^{-1}\subseteq H_{x_2}$
+\end{proof}
 \section{Azione per omeomorfismi}
-\begin{define}[Azione per omeomorfismi.]~{}\\
-Sia $X$ uno spazio topologico e $G$ un gruppo che agisce su $X$. Diciamo che $G$ \textbf{agisce per omeomorfismi}\index{azione!per omeomorfismi} se $\forall g\in G$ l'applicazione:
-\begin{equation}
-\funztot{\theta_g}{X}{X}{x}{g\ldotp x}
-\end{equation}
-è un \textit{omeomorfismo}.\\
-Questo è equivalente a chiedere che l'azione sia data da un \textit{omomorfismo} di gruppi:
-\begin{equation}
-\funz{\Phi}{G}{\left\{\text{omeomorfismi } X\rightarrow X\right\}}\leq S\left(x\right)
-\end{equation}
-\vspace{-6mm}
-\end{define}
-\begin{lemming}[$G$ agisce per omeomorfismi se e solo se $\theta_g$ è continua, $\forall g\in G$.]
-\end{lemming}
-\begin{demonstration}~{}\\
-$\impliesdx$$G$ agisce per omeomorfismi se $\theta_g$ è un omeomorfismo $\forall g$, dunque banalmente $\theta_g$ è continua.\\
-$\impliessx$Dobbiamo dimostrare che $\theta_g$ è un omeomorfismo. Notiamo che $\forall g,\ h\in G$ vale $\theta_g\circ \theta_h = \theta_{gh}$:
+\begin{definition}{}[Azione per omeomorfismi]
+Sia $X$ uno spazio topologico e $G$ un gruppo che agisce su $X$. Diciamo che $G$ \textbf{agisce per omeomorfismi}\index{azione!per omeomorfismi} se per ogni $g\in G$ l'applicazione
 \begin{equation*}
-	\left(\theta_g\circ\theta_h\right)\left(x\right)=\theta_g\left(\theta_h\left(x\right)\right)=\theta_g\left(h\ldotp x\right)=g\ldotp\left(h\ldotp x\right)=\left(gh\right)\ldotp x=\theta_{gh}\left(x\right)\quad \forall x
+\funct{}[\theta_g]{X}{X}[x][g\ldotp x]
+\end{equation*}
+è un \textit{omeomorfismo}. Questo è equivalente a chiedere che l'azione sia data da un \textit{omomorfismo di gruppi}
+\begin{equation*}
+\funct{}[\Phi]{G}{\left\{\text{omeomorfismi}\ X\rightarrow X\right\}\leq S\left(x\right)}.
+\end{equation*}
+\end{definition}
+\begin{lemma}{n}[{$G$} agisce per omeomorfismi se e solo se {$\theta_g$} è continua, {$\forall g\in G$}]
+\end{lemma}
+\begin{proof}{n}~{}\\
+$\rightimplies$$G$ agisce per omeomorfismi se $\theta_g$ è un omeomorfismo per ogni $g$, dunque banalmente $\theta_g$ è continua.\\
+$\leftimplies$Dobbiamo dimostrare che $\theta_g$ è un omeomorfismo. Notiamo che per ogni $g,\ h\in G$ vale $\theta_g\circ \theta_h = \theta_{gh}$:
+\begin{equation*}
+	\left(\theta_g\circ\theta_h\right)\left(x\right)=\theta_g\left(\theta_h\left(x\right)\right)=\theta_g\left(h\ldotp x\right)=g\ldotp\left(h\ldotp x\right)=\left(gh\right)\ldotp x=\theta_{gh}\left(x\right),\ \forall x\in X.
 \end{equation*}
 Inoltre, vale $\theta_e=Id_X$:
 \begin{equation*}
-	\theta_e\left(x\right)=e\ldotp x=x=Id\left(x\right)\quad \forall x
+	\theta_e\left(x\right)=e\ldotp x=x=Id\left(x\right),\ \forall x\in X.
 \end{equation*}
-Allora, consideriamo $\theta_{g^{-1}},\ \forall g\in G$, consideriamo la composizione seguente:
+Allora, si verifica che
 \begin{equation*}
-	\left(\theta_{g^{-1}}\circ\theta_g\right)\left(x\right)=\theta_{g^{-1}g}\left(x\right)=\theta_e\left(x\right)=Id_X\left(x\right)=x
+	\left(\theta_{g^{-1}}\circ\theta_g\right)\left(x\right)=\theta_{g^{-1}g}\left(x\right)=\theta_e\left(x\right)=Id_X\left(x\right)=x,\ \forall x\in X,\ \forall g\in G,
 \end{equation*}
-Cioè l'inversa di $\theta_g$ è $\theta_{g^{-1}}$. Ma allora per ipotesi, anche $\theta_{g^{-1}}$ è continua perché $g^{-1}\in G$, dunque segue la tesi.
-\end{demonstration}
-\begin{proposition}[Proiezione a $\nicefrac{X}{G}$ con $G$ agente per omeomorfismi è aperta.]\label{proiezione azione gruppo aperta}~{}\\
+cioè l'inversa di $\theta_g$ è $\theta_{g^{-1}}$. Di conseguenza, anche $\left(\theta_{g}\right)^{-1}=\theta_{g^{-1}}$ è continua per ipotesi perché $g^{-1}\in G$, dunque segue la tesi.\qedhere
+\end{proof}
+\begin{proposition}{n}[Azione per omeomorfismi e proiezione aperta]\label{proiezione azione gruppo aperta}~{}
 \begin{enumerate}
-\item Sia $X$ uno spazio topologico e $G$ un gruppo che agisce su $X$ per omeomorfismo. Sia $\pi$ la proiezione dall'insieme allo spazio delle orbite $\nicefrac{X}{G}$:
-	\begin{equation}
-		\funz{\pi}{X}{\nicefrac{X}{G}}
-	\end{equation}
-Allora $\pi$ è aperta e, se $G$ è finito, $\pi$ è anche chiusa.
-\item Sia $X$ di \textbf{Hausdorff} e $G$ gruppo finito che agisce su $X$ per omeomorfismi. Allora $\nicefrac{X}{G}$ è di Hausdorff.
+\item Sia $X$ uno spazio topologico e $G$ un gruppo che agisce su $X$ per omeomorfismo. La proiezione $\funct{}[\pi]{X}{X/G}$ dall'insieme allo spazio delle orbite $X/G$ è aperta e, se $G$ è finito, $\pi$ è anche chiusa.
+\item Sia $X$ uno spazio topologico di Hausdorff e $G$ gruppo finito che agisce su $X$ per omeomorfismi. Allora $X/G$ è di Hausdorff.
 \end{enumerate}
-\vspace{-3mm}
 \end{proposition}
-\begin{demonstration}~{}
+\begin{proof}{n}~{}
 \begin{enumerate}[label=\Roman*]
-\item Sia $A\subseteq X$ un aperto. Vogliamo dimostrare che $\pi\left(A\right)$ è aperto in $\nicefrac{X}{G}$. Un aperto della topologia quoziente è tale se la controimmagine dell'aperto nel quoziente è un aperto: si deve allora dimostrare che $\pi^{-1}\left(\pi\left(A\right)\right)$ è aperto in $X$.\\
-Ogni elemento di $A$ è contenuto in un orbita, dunque $\pi\left(A\right)$ contiene le orbite degli $x\in A$; la controimmagine $\pi^{-1}\left(\pi\left(A\right)\right)$ risulta dunque pari all'unione di \textit{tutte} le orbite in $X$ che intersecano l'insieme $A$, che indichiamo con $g\ldotp A$:
+\item Dato $A\subseteq X$ aperto, vogliamo dimostrare che $\pi\left(A\right)$ è aperto in $X/G$ e quindi, per definizione di topologia quoziente, che $\pi^{-1}\left(\pi\left(A\right)\right)$ è aperto in $X$. Ogni elemento di $A$ è contenuto in un orbita, dunque $\pi\left(A\right)$ contiene le orbite degli $x\in A$; la controimmagine $\pi^{-1}\left(\pi\left(A\right)\right)$ risulta dunque pari all'unione di \textit{tutte} le orbite in $X$ che intersecano l'insieme $A$, che indichiamo con $g\ldotp A$:
 \begin{equation*}
-\pi^{-1}\left(\pi\left(A\right)\right)=\bigcup_{g\in G} g\ldotp A
+\pi^{-1}\left(\pi\left(A\right)\right)=\bigcup_{g\in G} g\ldotp A.
 \end{equation*}
-Ma allora $g\ldotp A=\left\{g\ldotp x\mid x\in A\right\}$ è un aperto $\forall g\in G$ poiché un omeomorfismo porta aperti in aperti; l'unione di aperti è aperta, dunque $\pi^{-1}\left(\pi\left(A\right)\right)$ è aperto in $X$ cioè $\pi\left(A\right)$ è aperto in $\nicefrac{X}{G}$.\\
-Preso $C$ chiuso, dobbiamo allo stesso modo dimostrare $\pi\left(C\right)$ chiuso in $\nicefrac{X}{G}$, cioè $\pi^{-1}\left(\pi\left(C\right)\right)$ chiuso in $X$. Usando lo stesso ragionamento, otteniamo che:
+Ma allora $g\ldotp A=\left\{g\ldotp x\mid x\in A\right\}$ è un aperto al variare di $g\in G$ poiché un omeomorfismo porta aperti in aperti; l'unione di aperti è aperta, dunque $\pi^{-1}\left(\pi\left(A\right)\right)$ è aperto in $X$ e, come desiderato, $\pi\left(A\right)$ è aperto in $X/G$. In modo analogo con $C\subseteq X$ chiuso otteniamo che
 \begin{equation*}
-	\pi^{-1}\left(\pi\left(C\right)\right)=\bigcup_{g\in G} g\ldotp C
+	\pi^{-1}\left(\pi\left(C\right)\right)=\bigcup_{g\in G} g\ldotp C,
 \end{equation*}
-Con $g\ldotp C=\left\{g\ldotp x\mid x\in C\right\}$ chiuso per omeomorfismo. In particolare, essendo $G$ finito, segue che l'unione dei $g\ldotp C$ è finita e dunque anch'essa è un chiuso. Segue dunque $\pi^{-1}\left(\pi\left(C\right)\right)$ chiuso in $X$ e $\pi\left(C\right)$ chiuso in $\nicefrac{X}{G}$.
-\item Siano $p,\ q\in \nicefrac{X}{G}$ distinti. Vogliamo dimostrare che esistono intorni di $p$ e $q$ disgiunti.\\
-Siano $x,\ y\in X$ tali che $\pi\left(x\right)=p$ e $\pi\left(y\right)=q$ e consideriamo il gruppo finito $G=\left\{g_1=1_G,\ g_2,\ \ldots,\ g_n\right\}$. Le orbite di $x$ e $y$ sono diverse: se così non fosse, si avrebbe $\pi\left(x\right)=\pi\left(y\right)$ e cioè $p=q$, il che è assurdo! Allora:
+con $g\ldotp C$ chiuso per omeomorfismo. In particolare, essendo $G$ finito, segue che l'unione dei $g\ldotp C$ è finita e dunque anch'essa è un chiuso in $X$ e, come desiderato, $\pi\left(C\right)$ chiuso in $X/G$.
+\item Siano $p,\ q\in X/G$ distinti; vogliamo dimostrare che esistono intorni di $p$ e $q$ disgiunti. Siano $x,\ y\in X$ tali che $\pi\left(x\right)=p$ e $\pi\left(y\right)=q$ e consideriamo il gruppo finito $G=\left\{g_1=1_G,\ g_2,\ \ldots,\ g_n\right\}$. Le orbite di $x$ e $y$ sono distinte: se così non fosse, si avrebbe $\pi\left(x\right)=\pi\left(y\right)$ e cioè $p=q$, il che è assurdo! Allora $g_i\ldotp x\neq g_y\ldotp y\quad, \forall i,\ j$. Definiti in $X$ due intorni aperti $U\in I\left(x\right)$ e $V\in I\left(y\right)$ disgiunti per Hausdorff, possiamo considerare altri intorni aperti disgiunti $g_i\ldotp U\in I\left(g_i\ldotp x\right),\ g_i\ldotp V\in I\left(g_i\ldotp y\right)$. Allora
 \begin{equation*}
-g_i\ldotp x\neq g_y\ldotp y\quad \forall i,\ j
-\end{equation*}
-Definiti gli (intorni) aperti $U\in I\left(x\right)$ e $V\in I\left(x\right)$ disgiunti (in quanto $X$ di \textbf{Hausdorff}), possiamo considerare gli altri (intorni) aperti disgiunti $g_i\ldotp U\in I\left(g_i\ldotp x\right),\ g_i\ldotp V\in I\left(g_i\ldotp y\right)$. Allora:
-\begin{equation}
 \widetilde{U}\coloneqq \bigcup_{i}g_i\ldotp U\qquad \widetilde{V}\coloneqq \bigcup_{i}g_i\ldotp V
-\end{equation}
-Sono entrambi aperti. Vogliamo costruire $U\in I\left(x\right)$ e $V\in I\left(x\right)$ in modo che siano (intorni) aperti disgiunti tali che, costruiti come sopra $\widetilde{U},\ \widetilde{V}$, si abbia $\widetilde{U}\cap \widetilde{V}=\emptyset$. Così, passando al quoziente con $\pi$, si otterranno degli intorni $\pi\left(\widetilde{U}\right)$ di $p$ e $\pi\left(\widetilde{V}\right)$ di $q$ che soddisfano $\pi\left(\widetilde{U}\right)\cap \pi\left(\widetilde{V}\right)=\emptyset$.
+\end{equation*}
+sono entrambi aperti. Vogliamo costruire degli opportuni $U\in I\left(x\right)$ e $V\in I\left(y\right)$ in modo che siano intorni aperti disgiunti tali che, costruiti come sopra $\widetilde{U},\ \widetilde{V}$, si abbia $\widetilde{U}\cap \widetilde{V}=\emptyset$. In questo modo, passando al quoziente con $\pi$, si otterranno degli intorni $\pi\left(\widetilde{U}\right)$ di $p$ e $\pi\left(\widetilde{V}\right)$ di $q$ che soddisfano $\pi\left(\widetilde{U}\right)\cap \pi\left(\widetilde{V}\right)=\emptyset$.
 \begin{itemize}
-\item Costruiamo $U$ e $V$: $\forall i$ sappiamo che $x\neq g_i\ldotp y$ in $X$ (in quanto le orbite di $x$ e $y$ sono distinte. In quanto $X$ è di \textbf{Hausdorff}, si ha che $\forall i\ \exists U_i,\ V_i$ (intorni) aperti disgiunti tali che $x\in U_i$ e $g_i\ldotp y\in V_i$. Notiamo che $y\in g_i^{-1}\ldotp V_i$; allora definiamo:
+\item Costruiamo $U$ e $V$: per ogni $i$ sappiamo che $x\neq g_i\ldotp y$ in $X$ in quanto le orbite di $x$ e $y$ sono distinte. In quanto $X$ è di Hausdorff, si ha che per ogni $i$ $\exists U_i,\ V_i$ intorni aperti disgiunti tali che $x\in U_i$ e $g_i\ldotp y\in V_i$. Notiamo che $y\in g_i^{-1}\ldotp V_i$; allora definiamo
 \begin{equation*}
-U\coloneqq \bigcap_{i}^{n}U_i\in I\left(x\right)\qquad V\coloneqq \bigcap_{i=1}^{n}g_i^{-1}\ldotp V_i\in I\left(y\right)
+U\coloneqq \bigcap_{i}^{n}U_i\in I\left(x\right)\qquad V\coloneqq \bigcap_{i=1}^{n}g_i^{-1}\ldotp V_i\in I\left(y\right).
 \end{equation*}
-\item Ricaviamo $\widetilde{U}$ e $\widetilde{V}$, $\forall i$ (e quindi per ogni elemento di $G$) abbiamo:
+\item Ricaviamo $\widetilde{U}$ e $\widetilde{V}$: per ogni elemento di $G$, ossia per per ogni $i$, abbiamo
 \begin{equation*}
-U\cap \left(g_i\ldotp V\right)\subseteq U_i \cap \left(g_i\ldotp g_i^{-1}\ldotp V_i\right)=U_i\cap V_i=\emptyset\implies U\cap \left(g_i\ldotp V\right)=\emptyset
+U\cap \left(g_i\ldotp V\right)\subseteq U_i \cap \left(g_i\ldotp g_i^{-1}\ldotp V_i\right)=U_i\cap V_i=\emptyset\implies U\cap \left(g_i\ldotp V\right)=\emptyset.
 \end{equation*}
-Allora $\forall i,\ j$ abbiamo:
+Allora per ogni $ i,\ j$ abbiamo
 \begin{equation*}
-	\left(g_i\ldotp U\right)\cap \left(g_j\ldotp V\right)=\left(g_i\ldotp U\right)\cap \left(g_ig_i^{-1}g_j\ldotp V\right)= g_i\ldotp \left(U\cap \left(g_i^{-1}g_j\right)\ldotp V\right)
+	\left(g_i\ldotp U\right)\cap \left(g_j\ldotp V\right)=\left(g_i\ldotp U\right)\cap \left(g_ig_i^{-1}g_j\ldotp V\right)= g_i\ldotp \left(U\cap \left(g_i^{-1}g_j\right)\ldotp V\right),
 \end{equation*}
-Ma $g_i^{-1}g_j \in G$, dunque $U\cap \left(g_i^{-1}g_j\right)\ldotp V=\emptyset$. Segue che:
+ma $g_i^{-1}g_j \in G$, dunque $U\cap \left(g_i^{-1}g_j\right)\ldotp V=\emptyset$. Segue che
 \begin{equation*}
 	\left(g_i\ldotp U\right)\cap \left(g_j\ldotp V\right)=\emptyset\implies
-	\left(\bigcup_{i}g_i\ldotp U\right)\cap \left(\bigcup_{i}g_i\ldotp V\right)=\emptyset\implies \widetilde{U}\cap \widetilde{V}=\emptyset
+	\left(\bigcup_{i}g_i\ldotp U\right)\cap \left(\bigcup_{i}g_i\ldotp V\right)=\emptyset\implies \widetilde{U}\cap \widetilde{V}=\emptyset.\qedhere
 \end{equation*}	
 \end{itemize}
 \end{enumerate}
-\vspace{-6mm}
-\end{demonstration}
-\begin{example}
-	$\left(\integerset,\ +\right)$ agisce in $\realset$ per \textbf{traslazione}\index{traslazione}:
-	\begin{equation}
+\end{proof}
+\begin{example}{n}
+	$\left(\Z,\ +\right)$ agisce in $\R$ per \textbf{traslazione}\index{traslazione}:
+	\begin{equation*}
 		m\ldotp x = x+m
-	\end{equation}
-Se mettiamo ad $\realset$ la topologia Euclidea, allora l'azione è per omeomorfismi, dato che fissato $m\in \integerset$: $\funztot{\theta_m}{\realset}{\realset}{x}{x+m}$ è continua.
+	\end{equation*}
+Se mettiamo su $\R$ la topologia Euclidea, allora l'azione è per omeomorfismi, dato che per ogni scelta di $m\in \Z$
+\begin{equation*}
+	\funct{}[\theta_m]{\R}{\R}[x][x+m]
+\end{equation*}
+è continua.
 \begin{itemize}
-	\item \textit{Orbite}: $O\left(x\right)=\left\{x+m\mid m\in \integerset\right\}$ rappresenta tutti i numeri che hanno mantissa uguale (ad esempio, preso $x=1.5$, nella sua orbita abbiamo $1.5,\ 2.5,\ -1.5,\ \ldots$).
+	\item \textit{Orbite}: $O\left(x\right)=\left\{x+m\mid m\in \Z\right\}$ rappresenta tutti i numeri che hanno mantissa uguale. Ad esempio, l'orbita di $x=1.5$ continue $1.5,\ 2.5,\ -1.5,\ \ldots$.
 	\item \textit{Stabilizzatore}: $H_x=\left\{m\in Z\mid x+m=x\right\}=\left\{0\right\}$ è banale, dunque l'azione è libera.
-	\item \textit{Spazio delle orbite}: $\nicefrac{\realset}{\integerset}$ è insiemisticamente in corrispondenza biunivoca con $\left[0,\ 1\right)$, in particolare un sistema di rappresentanti di $\nicefrac{\realset}{\integerset}$ sono le orbite al variare di $x\in[0,1)$. Inoltre, lo spazio delle orbite è compatto essendo immagine continua di un compatto ($\pi\left(\left[0,\ 1\right]\right)=\nicefrac{\realset}{\integerset}$). Si può dimostrare che è omeomorfo a $S^1$.
+	\item \textit{Spazio delle orbite}: $\R/\Z$ è insiemisticamente in corrispondenza biunivoca con $\left[0,\ 1\right)$, in particolare un sistema di rappresentanti di $\R/\Z$ sono le orbite al variare di $x\in[0,1)$. In termini topologici, lo spazio delle orbite è compatto poiché
+	\begin{equation*}
+		\pi\left(\left[0,\ 1\right]\right)=\R/\Z
+	\end{equation*}
+	ed è omeomorfo a $S^1$.
 \end{itemize}
-\vspace{-3mm}
 \end{example}
-\begin{demonstration}
-Consideriamo $\funztot{f}{\realset}{S^1\subseteq \realset}{t}{\left(\cos\left(2\pi t\right),\sin\left(2\pi t\right)\right)}$.
+\begin{proof}{n}
+Consideriamo
+\begin{equation*}
+	\funct{}[f]{\R}{S^1\subseteq \R}[t][\left(\cos\left(2\pi t\right),\sin\left(2\pi t\right)\right)].
+\end{equation*}
 \begin{itemize}
 \item $f$ è continua.
 \item $f$ è suriettiva.
-\item $f\left(t_1\right)=f\left(t_2\right)\iff t_1-t_2\in \integerset \iff t_1,\ t_2$ nella stessa orbita$\iff \pi\left(t_1\right)=\pi\left(t_2\right)\iff t_1\sim t_2$
+\item Si ha $f\left(t_1\right)=f\left(t_2\right)\iff t_1-t_2\in \Z \iff t_1,\ t_2$ nella stessa orbita $\iff \pi\left(t_1\right)=\pi\left(t_2\right)\iff t_1\sim t_2$
 \end{itemize}
-Allora la relazione di equivalenza indotta da $f$ è quella dell'azione di $\integerset$ su $\realset$.\\
+Allora la relazione di equivalenza indotta da $f$ è quella dell'azione di $\Z$ su $\R$.\\
 \begin{minipage}[t]{0.83\textwidth}
- Inoltre, $f$ induce $\funz{\overline{f}}{\nicefrac{\realset}{\integerset}}{S^1}$ continua per le proprietà della topologia quoziente e che rende commutativo il diagramma a lato.
- Infatti $\overline{f}$ è biunivoca in quanto suriettiva (lo è $f$) ed iniettiva (per conseguenza del sistema di rappresentanti che si ha su $\nicefrac{\realset}{\integerset}$).
+ Inoltre, $f$ induce $\funct{}[\overline{f}]{\R/\Z}{S^1}$ continua per le proprietà della topologia quoziente e che rende commutativo il diagramma a lato.
+ Infatti $\overline{f}$ è biunivoca in quanto suriettiva - essendolo è $f$ - e iniettiva - per conseguenza del sistema di rappresentanti che si ha su $\R/\Z$.
 \end{minipage}
 \begin{minipage}[t]{0.13\textwidth}\vspace{-10pt}
 \begin{tikzcd}
-	\realset \arrow[r, "f"] \arrow[d, "\pi"']                                   & S^1 \\
-	\nicefrac{\realset}{\integerset} \arrow[ru, "\exists\overline{f}"', dotted] &
+	\R \arrow[r, "f"] \arrow[d, "\pi"']                                   & S^1 \\
+	\R/\Z \arrow[ru, "\exists\overline{f}"', dotted] &
 \end{tikzcd}
 \end{minipage}\\
-Inoltre, essendo $\nicefrac{\realset}{\integerset}$ compatto ed $S^1$ di \textbf{Hausdorff}, $\overline{f}$ è chiusa e dunque $\overline{f}$ è l'\textit{omeomorfismo} cercato. Per questo motivo, si ha anche che $f$ è un'\textit{identificazione} aperta.
-\end{demonstration}
-\begin{digression}\label{complessir2}
-	Si può sempre vedere $\realset^2$ come lo spazio dei complessi $\complexset$. Allora $S^1\in \complexset\implies S^1=\left\{z\mid \lvert z\rvert=1\right\}$. La funzione di prima si può anche riscrivere come:
+Inoltre, essendo $\R/\Z$ compatto ed $S^1$ di Hausdorff, $\overline{f}$ è chiusa e dunque $\overline{f}$ è l'\textit{omeomorfismo} cercato. Per questo motivo, si ha anche che $f$ è un'\textit{identificazione} aperta.\qedhere
+\end{proof}
+\begin{digression}{n}\label{complessir2}
+	Si può sempre vedere $\R^2$ come lo spazio dei complessi $\C$. Allora
+	\begin{equation*}
+		 S^1=\left\{z\mid \lvert z\rvert=1\right\}\subset\C
+	\end{equation*}
+	e la funzione di prima si può anche riscrivere equivalentemente nelle forme
 	\begin{gather}
-		\left(\cos\left(2\pi t\right),\sin\left(2\pi t\right)\right)\leftrightarrow \cos\left(2\pi t\right)+i\sin\left(2\pi t\right)\leftrightarrow e^{2\pi i t}
+		\left(\cos\left(2\pi t\right),\sin\left(2\pi t\right)\right)\leftrightarrow \cos\left(2\pi t\right)+i\sin\left(2\pi t\right)\leftrightarrow e^{2\pi i t}.
 	\end{gather}
-	\vspace{-6mm}
 \end{digression}
-\begin{example}
-$G=GL\left(n,\ \realset\right)$ agisce su $\realset^n$ con l'azione di moltiplicazione matrice per vettore:
-\begin{equation}
-	A\ldotp \mathbf{v} = A\mathbf{v}
-\end{equation}
-L'azione è per omeomorfismi, dato che fissato $A\in G$: $\funztot{\theta_A}{\realset^n}{\realset^n}{\mathbf{v}}{A\mathbf{v}}$ è continua.
-\begin{itemize}
-	\item \textit{Orbite}: definite $O\left(\mathbf{v}\right)=\left\{A\mathbf{v}\mid A\in G\right\}$ ci sono solo due orbite, $\left[\mathbf{0}\right]$ e $\left[\mathbf{v}\right]$ con $\mathbf{v}\neq\mathbf{0}$, dato che ogni vettore può essere scritto come prodotto di un vettore per un'opportuna matrice di cambiamento di base.
-	\item \textit{Spazio delle orbite}: $\nicefrac{\realset^n}{G}=\left\{\left[\mathbf{0}\right],\ \left[\mathbf{v}\right]\right\}$. Considerando la proiezione al quoziente $\funz{\pi}{\realset^n}{\nicefrac{\realset^n}{G}}$, si ha che $\pi^{-1}\left(\left[\mathbf{v}\right]\right)=\realset^n\setminus\left\{0\right\}$, che è un aperto ma \textit{non} è un chiuso. Per definizione di aperto della topologia quoziente $\left\{\left[\mathbf{v}\right]\right\}$ è aperto ma non chiuso in $\nicefrac{\realset^n}{G}$, dunque non tutti i punti nello spazio delle orbite son chiusi. Segue che $\nicefrac{\realset^n}{G}$ non è \textbf{T1} e tanto meno è di \textbf{Hausdorff}.
-\end{itemize}
-\vspace{-3mm}
+\begin{example}{n}
+Ricordiamo che il gruppo $\GL(n,\R)$ agisce con l'insieme $\R^n$ con la moltiplicazione matrice per vettore $\phi(A,\mathbf{v})=A\mathbf{v}$. Sappiamo che ci sono solo due orbite, dunque lo spazio delle orbite è $\R^n/\GL(n,\R)=\left\{\left[\mathbf{0}\right],\ \left[\mathbf{v}\right]\right\}$. L'azione è per omeomorfismi, dato che, fissato $A\in G$,
+\begin{equation*}
+	\funct{}[\theta_A]{\R^n}{\R^n}[\mathbf{v}][A\mathbf{v}],
+\end{equation*}
+è continua. Tuttavia, $\R^n/\GL(n,\R)$ non è di Hausdorff. Infatti, $\left\{\left[\mathbf{v}\right]\right\}$ è aperto ma non chiuso in $\R^n/G$ in quanto $\pi^{-1}\left(\left[\mathbf{v}\right]\right)=\R^n\setminus\left\{0\right\}$, che è un aperto ma \textit{non} è un chiuso di $\R^n$: $\R^n/G$ non è T1 e tanto meno è di Hausdorff.
 \end{example}
 \subsection{Spazio proiettivo reale}
-In questa sezione introduciamo uno spazio topologico molto importante per i nostri studi, lo \textbf{spazio proiettivo reale}. Nel \autoref{chap:varietà} guarderemo il suo comportamento come \textit{varietà topologica}, mentre nel \autoref{chap:geoproiettiva} tratteremo una sua \textit{generalizzazione} su un qualunque campo $\kamp$ con gli strumenti dell'\textit{algebra lineare}, oltre a discutere topologicamente lo \textit{spazio proiettivo complesso}.
-\begin{example}
-	$G=\realset^{\ast}=\realset\setminus\left\{0\right\}$, inteso come gruppo moltiplicativo, agisce su $X=\realset^{n+1}\setminus\left\{0\right\}$ con l'azione di moltiplicazione per uno scalare:
-	\begin{equation}
-		\lambda\ldotp \mathbf{x} = \lambda\mathbf{x}
-	\end{equation}
-L'azione è per omeomorfismi, dato che fissato $\lambda\in G$: $\funztot{\theta_\lambda}{\realset^{n+1}\setminus\left\{0\right\}}{\realset^{n+1}\setminus\left\{0\right\}}{\mathbf{x}}{\lambda \mathbf{x}}$ è continua.
+In questa sezione introduciamo uno spazio topologico molto importante per i nostri studi, lo \textbf{spazio proiettivo reale}. Nel \autoref{chap:varietà} guarderemo il suo comportamento come \textit{varietà topologica}, mentre nel \autoref{chap:geoproiettiva} tratteremo una sua \textit{generalizzazione} su un qualunque campo $\K$ con gli strumenti dell'\textit{algebra lineare}, oltre a discutere topologicamente lo \textit{spazio proiettivo complesso}.
+\begin{example}{n}
+	Il gruppo moltiplicativo $\R^{\ast}=\R\setminus\left\{0\right\}$ agisce su $\R^{n+1}\setminus\left\{0\right\}$ con l'azione di moltiplicazione per uno scalare $\lambda\ldotp \mathbf{x} \coloneqq \lambda\mathbf{x}$. L'azione è per omeomorfismi in quanto, fissato $\lambda\in G$,
+\begin{equation*}
+	\funct{}[\theta_\lambda]{\R^{n+1}\setminus\left\{0\right\}}{\R^{n+1}\setminus\left\{0\right\}}[\mathbf{x}][\lambda \mathbf{x}]
+\end{equation*}
+è continua.
 \begin{itemize}
-	\item \textit{Orbite}: $O\left(\mathbf{x}\right)=\left\{\lambda \mathbf{x}\mid \lambda\in G\right\}$ rappresentano tutte le rette vettoriali passanti per l'origine in $\realset^{n+1}$ a cui son state tolte l'origine.
-	\item \textit{Spazio delle orbite}: $\frac{\realset^{n+1}\setminus\left\{0\right\}}{G}=\proj[n]{\realset}$ è lo \textbf{spazio proiettivo reale}, spazio topologico rispetto alla topologia quoziente indotta dall'azione. $\proj[n]{\realset}$ è di \textbf{Hausdorff} e \textit{compatto}.
+	\item \textit{Orbite}: le orbite
+	\begin{equation*}
+		O\left(\mathbf{x}\right)=\left\{\lambda \mathbf{x}\mid \lambda\in G\right\}
+	\end{equation*}
+	rappresentano tutte le rette vettoriali passanti per l'origine in $\R^{n+1}$ private dell'origine.
+	\item \textit{Spazio delle orbite}: $\Proj^n\left(\R\right)\coloneqq\left(\R^{n+1}\setminus\left\{0\right\}\right)/\left(\R^{n+1}\setminus\left\{0\right\}\right)$ è lo \textbf{spazio proiettivo reale}, spazio topologico rispetto alla topologia quoziente indotta dall'azione.
 \end{itemize}
-\vspace{-3mm}
 \end{example}
-\begin{define}[Spazio proiettivo reale.]~{}\label{def spazio proiettivo}\\
-Lo \textbf{spazio proiettivo reale}\index{spazio!proiettivo!reale} $\proj[n]{\realset}$ (o $\realset\proj[n]{\ }$) di dimensione $n$ è lo spazio topologico delle rette vettoriali passanti origine in $\realset^{n+1}$, a cui son state tolte l'origine. È definito come lo spazio quoziente rispetto all'azione del gruppo moltiplicativo $\realset^{\ast}$:
-	\begin{equation}
-		\proj[n]{\realset}= \frac{\realset^{n+1}\setminus \left\{0\right\}}{\realset^{\ast}}
-	\end{equation}
-\vspace{-6mm}
-\end{define}
-\begin{proposition}[${\proj[n]{\realset}}$ è di Hausdorff, compatto e c.p.a.] \label{spazi proiettivi compatti connessi}
+\begin{definition}{}[Spazio proiettivo reale]\label{def spazio proiettivo}
+Lo \textbf{spazio proiettivo reale}\index{spazio!proiettivo!reale} $\Proj^n\left(\R\right)$ o $\R\Proj^n$ di dimensione $n$ è lo spazio topologico delle rette vettoriali passanti l'origine in $\R^{n+1}$, a cui son state tolte l'origine. È definito come lo spazio quoziente rispetto all'azione del gruppo moltiplicativo $\R^{\ast}=\R\setminus\left\{0\right\}$:
+	\begin{equation*}
+		\Proj^n\left(\R\right)= \left(\R^{n+1}\setminus \left\{0\right\}\right)/\left(\R^{\ast}=\R\setminus\left\{0\right\}\right).
+	\end{equation*}
+\end{definition}
+\begin{proposition}{n}[${\Proj^n\left(\R\right)}$ è di Hausdorff, compatto e c.p.a.] \label{spazi proiettivi compatti connessi}
 \end{proposition}
-\begin{demonstration}~{}
+\begin{proof}{n}~{}
 \begin{enumerate}[label=\Roman*]
-\item Dati $p,\ q\in\proj[n]{\realset}$, $p\neq q$ essi sono della forma $p=\left[\mathbf{x}\right]$ e $q=\left[\mathbf{y}\right]$. Allora:
+\item Dati $p,\ q\in\Proj^n\left(\R\right)$, $p\neq q$, sono della forma $p=\left[\mathbf{x}\right]$ e $q=\left[\mathbf{y}\right]$. Allora
 \begin{equation*}
-\left[\mathbf{x}\right]\neq\left[\mathbf{y}\right]\implies\mathcal{L}_0\left(\mathbf{x}\right)\neq\mathcal{L}_0\left(\mathbf{y}\right)
+\left[\mathbf{x}\right]\neq\left[\mathbf{y}\right]\implies\mathcal{L}_0\left(\mathbf{x}\right)\neq\mathcal{L}_0\left(\mathbf{y}\right),
 \end{equation*}
-Con $\mathcal{L}_0\left(\mathbf{x}\right),\ \mathcal{L}_0\left(\mathbf{y}\right)$ le rette vettoriali descritte da $\mathbf{x}$ e $\mathbf{y}$.\\
-Prendiamo gli (intorni) aperti disgiunti $U\setminus\left\{0\right\}\in I\left(\mathbf{x}\right)$, $V\setminus\left\{0\right\}\in I\left(\mathbf{y}\right)$ in $\realset^{n+1}\setminus\left\{0\right\}$. Allora, passando al quoziente, $\pi\left(U\setminus\left\{0\right\}\right)$ e $\pi\left(V\setminus\left\{0\right\}\right)$ formano due fasci di rette a forma di ‘‘doppio cono infinito'' con vertice nell'origine; questi due coni sono (intorni) aperti in quanto
+con $\mathcal{L}_0\left(\mathbf{x}\right),\ \mathcal{L}_0\left(\mathbf{y}\right)$ le rette vettoriali descritte da $\mathbf{x}$ e $\mathbf{y}$. Prendiamo gli intorni aperti disgiunti $U\setminus\left\{0\right\}\in I\left(\mathbf{x}\right)$, $V\setminus\left\{0\right\}\in I\left(\mathbf{y}\right)$ in $\R^{n+1}\setminus\left\{0\right\}$. Allora, passando al quoziente, $\pi\left(U\setminus\left\{0\right\}\right)$ e $\pi\left(V\setminus\left\{0\right\}\right)$ formano due fasci di rette a forma di ‘‘doppio cono infinito'' con vertice nell'origine; questi due coni sono intorni aperti in quanto
 \begin{equation*}
-\pi^{-1}\left(\pi\left(U\setminus\left\{0\right\}\right)\right)=U\setminus\left\{0\right\}\qquad\pi^{-1}\left(\pi\left(V\setminus\left\{0\right\}\right)\right)=V\setminus\left\{0\right\}
+\pi^{-1}\left(\pi\left(U\setminus\left\{0\right\}\right)\right)=U\setminus\left\{0\right\}\qquad\pi^{-1}\left(\pi\left(V\setminus\left\{0\right\}\right)\right)=V\setminus\left\{0\right\}.
 \end{equation*}
-Inoltre sono intorni disgiunti di $p$ e $q$, dunque $\proj[n]{\realset}$ è di \textbf{Hausdorff}.
-\item Per dimostrare che $\proj[n]{\realset}$ è compatto, mostreremo che $\pi\left(S^n\right)=\proj[n]{\realset}$, dato che $S^n\subseteq R^{n+1}\setminus\left\{0\right\}$ è compatto.\\
-Notiamo che, presa l'orbita di un vettore $\mathbf{v}$, si ha:
-\begin{equation*}
-\left[\mathbf{v}\right]=\left\{\lambda \mathbf{v}\mid \lambda\in \realset^{\ast}\right\}=\left\{\underbrace{\lambda \labs\mathbf{v}\rabs}_{=\mu\in \realset^{\ast}}\underbrace{\frac{\mathbf{v}}{\labs\mathbf{v}\rabs}}_{\in S^1}\mid \lambda\in \realset^{\ast}\right\}=\left\{\mu \mathbf{x}\mid \mu\in \realset^{\ast}\right\}=\left[\mathbf{x}\right]
+e inoltre sono intorni disgiunti di $p$ e $q$, dunque $\Proj^n\left(\R\right)$ è di Hausdorff.
+\item Per dimostrare che $\Proj^n\left(\R\right)$ è compatto, dimostriamo che $\pi\left(S^n\right)=\Proj^n\left(\R\right)$, dato che $S^n\subseteq R^{n+1}\setminus\left\{0\right\}$ è compatto. Notiamo che, presa l'orbita di un vettore $\mathbf{v}$, si ha
+\begin{equation*}	
+\left[\mathbf{v}\right]=\left\{\lambda \mathbf{v}\mid \lambda\in \R^{\ast}\right\}=\Set{\lambda \norm{\mathbf{v}}\frac{\mathbf{v}}{\norm{\mathbf{v}}} | \lambda\in \R^{\ast}}=\left\{\mu \mathbf{x}\mid \mu\in \R^{\ast}\right\}=\left[\mathbf{x}\right]
 \end{equation*}
-Dunque ogni orbita dello spazio proiettivo reale si può scrivere come l'orbita di un vettore appartenente alla sfera $S^n$. Segue che non solo $\pi$ è suriettiva, ma anche $\pi_{\mid S^n}$ è suriettiva, cioè $\pi_{\mid S^n}\left(S^n\right)=\proj[n]{\realset}$; segue dunque che $\pi\left(S^n\right)=\proj[n]{\realset}$. Dato che $S^n$ è compatto e \textbf{c.p.a.}, segue che anche lo spazio proiettivo reale è compatto e \textbf{c.p.a.} (in quanto immagine continua tramite $\pi$ di $S^n$).
+dove $\mu\coloneqq\lambda \norm{\mathbf{v}}\in \R^{\ast}$ e  $\mathbf{x}\coloneqq\mathbf{v}/\norm{\mathbf{v}}\in S^1$; ogni orbita dello spazio proiettivo reale si può scrivere come l'orbita di un vettore appartenente alla sfera $S^n$. Segue che $\pi_{\mid S^n}$ è suriettiva, cioè $\pi_{\mid S^n}\left(S^n\right)=\Proj^n\left(\R\right)$ e dunque $\pi\left(S^n\right)=\Proj^n\left(\R\right)$. Dato che $S^n$ è compatto e c.p.a., segue che anche lo spazio proiettivo reale è compatto e c.p.a. in quanto immagine continua di $S^n$.\qedhere
 \end{enumerate}
-\vspace{-3mm}
-\end{demonstration}
+\end{proof}

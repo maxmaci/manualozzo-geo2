@@ -1,16 +1,16 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{preamble/nexus}[2016/10/30 version 1.1]
 
-\RequirePackage{amsmath}
-\RequirePackage[absolute]{textpos}
-\RequirePackage{tikz}
-\RequirePackage{fancyhdr}
-\RequirePackage{xkeyval}
-\RequirePackage{alphalph}
-\RequirePackage{ifthen}
+%%\RequirePackage{amsmath}
+%%\RequirePackage[absolute]{textpos}
+%%\RequirePackage{tikz}
+%%\RequirePackage{fancyhdr}
+%%\RequirePackage{xkeyval}
+%%\RequirePackage{alphalph}
+%%\RequirePackage{ifthen}
 %\RequirePackage{appendix}
 \RequirePackage{titletoc}
-\RequirePackage{etoolbox}
+%%\RequirePackage{etoolbox}
 %\AtBeginEnvironment{appendices}{%
 %  \addtocontents{toc}{\protect\gdef\protect\@chapapp{\protect\appendixname}}%\appendixname
 %}
@@ -444,158 +444,3 @@
         \end{tikzpicture}
     \end{textblock}
     }
-
-\begin{comment}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Nexus page style %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\fancypagestyle{plain}{\fancyhf{}}
-% \renewcommand\chaptermark[1]{bla\markboth{\textcolor{white}{#1}}{}}
-\@ifundefinedcolor{chapa}{%
-    \fancypagestyle{nexus}{%
-        \fancyfoot{\draw@emptyfooter}%
-        \fancyhead{\draw@emptyheader}{\leftmark}%
-    }%
-}%
-{%
-    \fancypagestyle{nexus}{%
-        \fancyfoot{\draw@footer}%
-        \fancyhead{\draw@header}%
-    }%
-}%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTER HEAD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\@ifundefinedcolor{chapa}{%
-    \def\@makechapterhead#1{%
-        \parindent 0pt%
-        \draw@chapteremptyheader{#1}%
-        \draw@emptyfooter%
-    }%
-}%
-{%
-    \def\@makechapterhead#1{%
-        \hypertarget{chapter \thetotalchapters}{}%
-        \parindent 0pt%
-        \draw@chapterheader{#1}%
-        \draw@footer%
-    }%
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTER HEAD - STARRED VERSION (TOC) %%%%%%%%%%%%%%%%%%%%%%%
-\@ifundefinedcolor{chapa}{%
-    \def\@makeschapterhead#1{%
-        \parindent 0pt%
-        \draw@chaptersemptyheader{#1}%
-        \draw@emptyfooter%
-        }%
-}%
-{%
-    \def\@makeschapterhead#1{%
-        \parindent 0pt%
-        \draw@chaptersheader{#1}%
-        \draw@chaptersfooter%
-        }%
-}
-
-\pagestyle{nexus}
-
-%%%%%%%%%%%%%%%%% TOC
-
-\begin{comment}
-
-
-
-\renewcommand\chaptermark[1]{\markboth{\textcolor{white}{#1}}{}}
-
-\renewcommand{\@pnumwidth}{3em}% To avoid a badbox for documents with more than 100 pages
-\contentsmargin{-1.5cm}%
-
-
-\@ifundefinedcolor{chapa}{% if colormap doesn't exist : fast compilation enabled
-% Chapter style in the TOC
-\titlecontents{chapter}[4pc]
-{\addvspace{30pt}%
-\begin{tikzpicture}[remember picture, overlay]%
-    \draw[black] (-4.2,-.1) rectangle (-.8,.5);%
-    \pgftext[left,x=-3.5cm,y=0.2cm]{\color{black}\large\bfseries\sc\ \thecontentslabel};%
-\end{tikzpicture}%
-}%
-{}
-{}
-{\;\titlerule\;\large\bfseries Page 
-\thecontentspage
-\begin{tikzpicture}[remember picture, overlay]
-    \draw[black] (2pt,0) rectangle (6,0.1pt);
-\end{tikzpicture}%
-}%
-[\addvspace{.2cm}]%
-% Section style in the TOC
-\titlecontents{section}[0pc]
-{\addvspace{5pt}}
-{
-\contentslabel[\thecontentslabel]{2pc}\color{black}}
-{}
-{\hfill\small\thecontentspage\color{black}}
-[\addvspace{3pt}]
-% Subsection style in the TOC
-\titlecontents*{subsection}[1pc]
-{\addvspace{-1pt}\small\contentsmargin{-1cm}\normalfont\sffamily\footnotesize}
-{}
-{}
-{}
-[~{–}\ ][]
-}{% If colormap exists (fast compilation disabled)
-% Counter to build the TOC with the appropriate colors. Useless after TOC creation.
-\newcounter{charpitre}%
-% Chapter style in the TOC
-\titlecontents{chapter}[4pc]
-{\addvspace{30pt}%
-\stepcounter{charpitre}
-\ch@ngecolors{\thecharpitre}%
-\begin{tikzpicture}[remember picture, overlay]%
-    \draw[toc rectangle] (-4.2,-.1) rectangle (-.8,.5);%
-    \node at (-2.5,0.2) {\hyperlink{chapter \thecharpitre}{\XeTeXLinkBox{\phantom{\rule{3.4cm}{.6cm}}}}}; %Hidden hyperlink    
-%     \hyperlink{chapter \thecharpitre}{\tikz\draw[toc rectangle] (-4.2,-.1) rectangle (-.8,.5);}
-    \pgftext[left,x=-3.5cm,y=0.2cm]{\color{white}\large\bfseries\sc\@chapapp\ %
-    \thecontentslabel};%
-\end{tikzpicture}%
-\large\bfseries\color{\ch@p!80!black}}%
-{}
-{}
-{\;\titlerule\;\large\bfseries Page 
-\thecontentspage
-\begin{tikzpicture}[remember picture, overlay]
-    \draw[toc rectangle] (2pt,0) rectangle (6,0.1pt);
-\end{tikzpicture}%
-}%
-[\addvspace{.2cm}]%
-
-
-% Section style in the TOC
-\titlecontents{section}[0pc]
-{\addvspace{5pt}}
-{%
-\ch@ngecolors{\thecharpitre}%
-\color{\ch@p!80!black}\contentslabel[\thecontentslabel]{2pc}\color{black}}
-{}
-{\hfill\small\color{\ch@p!80!black}\thecontentspage\color{black}}
-[\addvspace{3pt}]
-
-
-% Subsection style in the TOC
-\titlecontents*{subsection}[1pc]
-{\addvspace{-1pt}\small\contentsmargin{-1cm}\normalfont\sffamily\footnotesize}
-{}
-{}
-{}
-[~{–}\ ][]
-}
-% Correct spacing between page header and TOC
-\renewcommand{\tableofcontents}{%
-\chapter*{\contentsname}%
-\markboth{\contentsname}{}
-% \def\@leftmark{\contentsname}%
-\vspace{-30pt}%
-\@starttoc{toc}}
-
-% \hyperlink{chapter \x}{\XeTeXLinkBox{\phantom{\rule{\reclength}{1.145\reclength}}}}
-\end{comment}

@@ -8,9 +8,11 @@
 % Remove header and footer
 \thispagestyle{empty}
 \addtocounter{page}{-1}
-
+\includepdf{images/titlepage}
+\begin{comment}
+	
 \begin{textblock}{1}(0,0)
-	\noindent\textcolor{redill}{\rule{\paperwidth}{.55\paperheight}}
+	\noindent\textcolor{reddo}{\rule{\paperwidth}{.55\paperheight}}
 \end{textblock}
 
 
@@ -93,7 +95,7 @@
 
 \begin{textblock}{.4}(.375,.77)
 	\noindent {\fontsize{20.28}{18}%
-		\textcolor{white!80}{$\displaystyle \gruf{S^1}{\ }=\integerset$}}
+		\textcolor{white!80}{$\displaystyle \homotopy[1]{S^1}=\Z$}}
 \end{textblock}
 
 \begin{textblock}{.4}(.05,.925)
@@ -116,88 +118,5 @@
 		\textcolor{white!10}{$\displaystyle \euler{S}{\ }=v-e+f$}}
 \end{textblock}
 
-
-
-\null\newpage
-\begin{comment}
-	\begin{center}
-	\newlength{\parSepLength}
-	\setlength{\parSepLength}{10ex}
-	
-	\Large
-	\centering
-	
-	% Main title
-	\thinRule\par
-	\par\vspace{0.15\parSepLength}
-	\begin{minipage}{\textwidth}
-	\centering
-	\fontsize{40pt}{36pt}\selectfont\titleColor\scshape
-	Appunti di Geometria 2
-	\end{minipage}
-	\par\vspace{0.25\parSepLength}
-	\par\thinRule
-	
-	\vspace{0.125\parSepLength}
-	
-	\begin{minipage}{\textwidth}
-	\centering
-	\small
-	Anno Accademico 2020/2021
-	\end{minipage}
-	
-	\vspace{0.225\parSepLength}
-	
-	\begin{minipage}{\textwidth}
-	\centering
-	‘‘Un matematico è una macchina per trasformare caffè in teoremi.''\\
-	Alfréd Rényi
-	\end{minipage}
-	
-	\vfill
-	
-	% Author
-	\begin{minipage}{\textwidth}
-	\centering
-	%\Large
-	\begin{center}
-	\includegraphics[width=0.25\linewidth]{images/Unito-logo}
-	\end{center}
-	
-	\end{minipage}
-	
-	\vfill
-	
-	% Logo and other info
-	% \begin{minipage}{0.8\textwidth}
-	%    \centering
-	%    \small
-	
-	% Examiner
-	%    \begin{minipage}[t]{0.29\textwidth}
-	%      \textsc{Titolari del corso} \\
-	%     {\scriptsize Prof. Marco Costa\\
-	%      Prof. Antonaldo Diaferio\\
-	%       Università di Torino}
-	%    \end{minipage}
-	%   \hfill
-	% Supervisor
-	%   \begin{minipage}[t]{0.26\textwidth}
-	%      \begin{center}
-	%     	\textsc{Adattamento \LaTeX} \\ 
-	%     \textsc{e integrazioni discutibili} \\
-	%     {\scriptsize Massimo Bertolotti\\
-	%      Università di Torino}
-	%     \end{center}
-	%   \end{minipage}
-	%	\hfill
-	%	\begin{minipage}[t]{0.27\textwidth}
-	%	\raggedleft
-	%	\textsc{Revisione contenutistica} \\ 
-	%	{\scriptsize Elisa Antuca\\
-	%	 Università di Torino}
-	%	\end{minipage}
-	%  \end{minipage}
-	\end{center}
 \end{comment}
 \afterpage{\blankpage}

@@ -7,10 +7,10 @@
 
 \chapter{Note aggiuntive}
 \labelAppendix{footnotes}
-\addtocontents{define}{\noindent\textls{\textsc{\textcolor{reddo}{Appendice A:}
+\addtocontents{definition}{\noindent\textls{\textsc{\textcolor{reddo}{Appendice A:}
 \nowtitle}}
 }{}
-\addtocontents{theorema}{\noindent\textls{\textsc{\textcolor{reddo}{Appendice A:}
+\addtocontents{theorem}{\noindent\textls{\textsc{\textcolor{reddo}{Appendice A:}
 			\nowtitle}}
 }{}
 \begin{introduction}
@@ -24,361 +24,367 @@
 \section{Capitolo 1: spazi topologici}
 \subsection{Alcune proprietà della continuità}
 Le seguenti dimostrazioni sulle continuità di funzioni sono da \cite{munkres:2000topology}.
-\begin{theorema}[Inclusione è funzione continua; Munkres, 18.2b.]~{}\\
-	Se $Z\subseteq X$ è sottospazio, l'inclusione $\incl{i}{Z}{X}$ è una funzione continua.
-\end{theorema}
-\begin{demonstration}
-	Se $A$ è un aperto in $X$, allora $i^{-1}\left(A\right)=A\cap Z$ è un aperto in $Z$ per definizione della topologia di sottospazio.
-\end{demonstration}
-\begin{theorema}[Restrizione di una funzione continua è continua; Munkres, 18.2d.]~{}\\
-	Se $\funz{f}{X}{Y}$ è una funzione continua, allora $\funz{f_{\mid Z}}{Z}{Y}$ è continua per ogni sottospazio $Z\subseteq X$.
-\end{theorema}
-\begin{demonstration}
-	La funzione $f_{\mid Z}$ è la composizione dell'inclusione $\incl{i}{Z}{X}$ con la funzione $\funz{f}{X}{Y}$. Poiché la composizione di funzioni continue è continua (teorema \ref{compfunzcont}, pag. \pageref{compfunzcont}), segue la tesi.
-\end{demonstration}
+\begin{theorem}{}[Continuità dell'inclusione; Munkres, 18.2b]
+	Se $Z\subseteq X$ è sottospazio, l'inclusione $\funct{i}[i]{Z}{X}$ è una funzione continua.
+\end{theorem}
+\begin{proof}{n}
+	Se $A$ è un aperto in $X$, allora $i^{-1}\left(A\right)=A\cap Z$ è un aperto in $Z$ per definizione della topologia di sottospazio.\qedhere
+\end{proof}
+\begin{theorem}{}[Restrizione di una funzione continua; Munkres, 18.2d]
+	Se $\funct{}[f]{X}{Y}$ è una funzione continua, allora $\funct{}[f_{\mid Z}]{Z}{Y}$ è continua per ogni sottospazio $Z\subseteq X$.
+\end{theorem}
+\begin{proof}{n}
+	La funzione $f_{\mid Z}$ è la composizione dell'inclusione $\funct{i}[i]{Z}{X}$ con la funzione $\funct{}[f]{X}{Y}$. Poiché la composizione di funzioni continue è continua (teorema \ref{compfunzcont}, pag. \pageref{compfunzcont}), segue la tesi.\qedhere
+\end{proof}
 La seguente dimostrazione sulle restrizioni di omeomorfismi è un'elaborazione personale sulla base dei teoremi precedenti.
-\begin{corollary}[Restrizione di un omeomorfismo è omeomorfismo.]~{}\\
-Se $\funz{f}{X}{Y}$ è un omeomorfismo, allora $\funz{f_{\mid Z}}{Z}{f\left(Z\right)}$ è omeomorfismo per ogni sottospazio $Z\subseteq X$. In particolare, $\funz{f_{X\setminus Z}}{X\setminus Z}{Y\setminus f\left(Z\right)}$.
+\begin{corollary}{}[Restrizione di un omeomorfismo]
+Se $\funct{}[f]{X}{Y}$ è un omeomorfismo, allora $\funct{}[f_{\mid Z}]{Z}{f(z)}$ è omeomorfismo per ogni sottospazio $Z\subseteq X$. In particolare, $\funct{}[f_{X\setminus Z}]{X\setminus Z}{Y\setminus f(z)}$.
 \end{corollary}
-\begin{demonstration}
-	La restrizione di una funzione è sempre una biezione e, per il teorema precedente, è anche continua. Ciò vale sia per $f$, sia per l'inversa $f^{-1}$ e segue dunque la prima tesi. La seconda parte del corollario vale perché, se $f$ è biettiva, allora:
+\begin{proof}{n}
+	La restrizione di una funzione è sempre una biezione e, per il teorema precedente, è anche continua. Ciò vale sia per $f$, sia per l'inversa $f^{-1}$; segue dunque la prima tesi. La seconda parte del corollario vale perché, se $f$ è biettiva, allora
 	\begin{equation*}
-		f\left(X\setminus Z\right)=f\left(X\right)\setminus f\left(Z\right)=Y\setminus f\left(Z\right)
+		f\left(X\setminus Z\right)=f(x)\setminus f(z)=Y\setminus f(z).\qedhere
 	\end{equation*}
-\vspace{-3mm}
-\end{demonstration}
-\begin{attention}
-	Non vale il viceversa del teorema precedente: \textit{non è vero} che se $A,\ B\subseteq X$ sono omeomorfi, allora $X\setminus A$ e $X\setminus B$ sono omeomorfi!\\
-	Preso ad esempio $A=S^2\setminus\left\{(0,\ 0,\ 1),\ (0,\ 0,\ -1)\right\}$ e $B=S^1\times \realset$. Si ha che $A$ e $B$ sono \textit{omeomorfi} (per proiezione dall'origine), ma $\realset^3\setminus A$ è connesso per archi, mentre $\realset^3\setminus B$ non è \textit{neppure connesso}.
-\end{attention}
+\end{proof}
+\begin{warning}{n}
+	Non vale il viceversa del teorema precedente: \textit{non è vero} che se $A,\ B\subseteq X$ sono omeomorfi, allora $X\setminus A$ e $X\setminus B$ sono omeomorfi Come controesempio, si consideri $A=S^2\setminus\left\{(0,\ 0,\ 1),\ (0,\ 0,\ -1)\right\}$ e $B=S^1\times \R$: si ha che $A$ e $B$ sono \textit{omeomorfi} per proiezione dall'origine, ma $\R^3\setminus A$ è c.p.a., mentre $\R^3\setminus B$ non è \textit{neppure connesso}.
+\end{warning}
 \subsection{Strutture topologiche e unione/intersezione insiemistica}
 La seguente dimostrazione è adattata da \cite{shalop:interior} su Mathematics Stack Exchange.
-\begin{lemming}[Interno come complementare della chiusura del complementare.]~{}\\
-Sia $A\subseteq X$ con $X$ spazio topologico. Allora:
-\begin{equation}
-	\interior{A}=X\setminus\left(\overline{X\setminus A}\right)
-\end{equation}
-\vspace{-6mm}
-\end{lemming}
-\begin{demonstration}~{}\\
-$\includedx$ Dato che $X\setminus A\subseteq \overline{X\setminus A}$, segue che $X\setminus \left(\overline{X\setminus A}\right)\subseteq A$. Allora $X\setminus \left(\overline{X\setminus A}\right)$ è un aperto (perché complementare di un chiuso) contenuto in $A$, pertanto $X\setminus \left(\overline{X\setminus A}\right)\subseteq \interior A$.\\
-$\includesx$ Sappiamo che $\interior{A}\subseteq A$, dunque $X\setminus A\subseteq X\setminus \interior A$. Allora $X\setminus \interior A$ è un chiuso (perché complementare di un aperto) contenente $X\setminus A$, pertanto $\overline{X\setminus A}\subseteq X\setminus \interior{A}$, da cui $\interior{A}\subseteq X\setminus\left(\overline{X\setminus A}\right)$.
-\end{demonstration}
-\begin{proposition}[Strutture topologiche e unione/intersezione insiemistica.]~{}\\\label{chiusurainterno}
+\begin{lemma}{}[Interno come complementare della chiusura del complementare]
+Sia $A\subseteq X$ con $X$ spazio topologico. Allora
+\begin{equation*}
+	\interior{A}=X\setminus\left(\overline{X\setminus A}\right).
+\end{equation*}
+\end{lemma}
+\begin{proof}{n}~{}\\
+$\rightinclude$ Dato che $X\setminus A\subseteq \overline{X\setminus A}$, segue che $X\setminus \left(\overline{X\setminus A}\right)\subseteq A$. Allora $X\setminus \left(\overline{X\setminus A}\right)$ è un aperto perché complementare di un chiuso contenuto in $A$, pertanto $X\setminus \left(\overline{X\setminus A}\right)\subseteq \interior A$.\\
+$\leftinclude$ Sappiamo che $\interior{A}\subseteq A$, dunque $X\setminus A\subseteq X\setminus \interior A$. Allora $X\setminus \interior A$ è un chiuso perché complementare di un aperto contenente $X\setminus A$, pertanto $\overline{X\setminus A}\subseteq X\setminus \interior{A}$, da cui $\interior{A}\subseteq X\setminus\left(\overline{X\setminus A}\right)$.\qedhere
+\end{proof}
+\begin{proposition}{}[Strutture topologiche e unione/intersezione insiemistica]\label{chiusurainterno}
 Siano $\{A_i\}_{i\in I}$ una famiglia di sottoinsiemi di uno spazio topologico $X$. Allora:
 \begin{enumerate}
 	\item La chiusura dell'unione degli $A_i$ contiene l'unione delle chiusure degli $A_i$; se gli $A_i$ sono \textit{finiti} allora vale anche il viceversa, ma non necessariamente se $\left|I\right|=\infty$.
-	\begin{equation}
-		\overline{\bigcup_{i\in I}A_i}\supseteq\bigcup_{i\in I}\overline{A_i}\qquad\overline{\bigcup_{i\in I}A_i}=\bigcup_{i\in I}\overline{A_i}\text{ se }I\text{ finito}
-	\end{equation}
+	\begin{equation*}
+		\overline{\bigcup_{i\in I}A_i}\supseteq\bigcup_{i\in I}\overline{A_i}\qquad\overline{\bigcup_{i\in I}A_i}=\bigcup_{i\in I}\overline{A_i}\text{ se }|I|<\infty
+	\end{equation*}
 	\item La chiusura dell'intersezione degli $A_i$ è contenuta nell'intersezione delle chiusure degli $A_i$; il viceversa non vale necessariamente.
-		\begin{equation}
+		\begin{equation*}
 		\overline{\bigcap_{i\in I}A_i}\subseteq\bigcap_{i\in I}\overline{A_i}
-	\end{equation}
+	\end{equation*}
 	\item L'interno dell'unione degli $A_i$ contiene l'unione degli interni degli $A_i$; il viceversa non vale necessariamente.
-	\begin{equation}
+	\begin{equation*}
 		\interior{\left(\bigcup_{i\in I}A_i\right)}\supseteq\bigcup_{i\in I}\interior{A_i}
-	\end{equation}
+	\end{equation*}
 	\item L'interno dell'intersezione degli $A_i$ è contenuta nell'intersezione degli interni degli $A_i$; se gli $A_i$ sono \textit{finiti} allora vale anche il viceversa, ma non necessariamente se $\left|I\right|=\infty$.
-	\begin{equation}
-		\interior{\left(\bigcap_{i\in I}A_i\right)}\subseteq\bigcap_{i\in I}\interior{A_i}\qquad\interior{\left(\bigcap_{i\in I}A_i\right)}=\bigcap_{i\in I}\interior{A_i}\text{ se }I\text{ finito}
-	\end{equation}
+	\begin{equation*}
+		\interior{\left(\bigcap_{i\in I}A_i\right)}\subseteq\bigcap_{i\in I}\interior{A_i}\qquad\interior{\left(\bigcap_{i\in I}A_i\right)}=\bigcap_{i\in I}\interior{A_i}\text{ se }|I|<\infty
+	\end{equation*}
 \end{enumerate}
 \end{proposition}
-\begin{demonstration}~{}
+\begin{proof}{n}~{}
 	\begin{enumerate}[label=\Roman*]
-	\item Poichè $A_i\subseteq \bigcup_{i\in I}A_i\ \forall i\in I$ e la chiusura mantiene l'ordine di inclusione, allora:
+	\item Poichè
 	\begin{equation*}
-		\overline{A_i}\subseteq \overline{\bigcup_{i\in I}A_i}\forall i\in I
+		A_i\subseteq \bigcup_{i\in I}A_i\ \forall i\in I
 	\end{equation*}
-	L'unione degli $A_i$ è il più piccolo insieme che contiene ogni $\overline{A_i}$, dunque è contenuto necessariamente in $\displaystyle \overline{\bigcup_{i\in I}A_i}$, pertanto vale il caso generale.\\
-	Ponendoci nel caso \textit{finito}, dobbiamo mostrare l'altra inclusione, cioè:
+	e la chiusura mantiene l'ordine di inclusione, allora
 	\begin{equation*}
-		\overline{\bigcup_{i\in I}A_i}\subseteq\bigcup_{i\in I}\overline{A_i}
+		\overline{A_i}\subseteq \overline{\bigcup_{i\in I}A_i}\forall i\in I.
 	\end{equation*}
-	Poichè gli $\overline{A_i}$ sono chiusi, la loro unione finita è ancora chiusa e pertanto:
+	L'unione degli $A_i$ è il più piccolo insieme che contiene ogni $\overline{A_i}$, dunque è contenuto necessariamente in $\displaystyle \overline{\bigcup_{i\in I}A_i}$, pertanto vale il caso generale. Ponendoci nel caso \textit{finito}, dobbiamo mostrare l'altra inclusione, cioè
 	\begin{equation*}
-		\overline{\bigcup_{i\in I}\overline{A_i}}=\bigcup_{i\in I}\overline{A_i}
+		\overline{\bigcup_{i\in I}A_i}\subseteq\bigcup_{i\in I}\overline{A_i}.
+	\end{equation*}
+	Poichè gli $\overline{A_i}$ sono chiusi, la loro unione finita è ancora chiusa e pertanto
+	\begin{equation*}
+		\overline{\bigcup_{i\in I}\overline{A_i}}=\bigcup_{i\in I}\overline{A_i}.
 	\end{equation*}
 	Per definizione $A_i\subseteq\overline{A_i}\ \forall i$, dunque anche le unioni finite mantengono la relazione di inclusione:
 	\begin{equation*}
-		\bigcup_{i\in I}A_i\subseteq\bigcup_{i\in I}\overline{A_i}
+		\bigcup_{i\in I}A_i\subseteq\bigcup_{i\in I}\overline{A_i}.
 	\end{equation*}
 	Il passaggio alla chiusura mantiene le relazioni di inclusione:
 	\begin{equation*}
-			\overline{\bigcup_{i\in I}A_i}\subseteq\overline{\bigcup_{i\in I}\overline{A_i}}=\bigcup_{i\in I}\overline{A_i}
+			\overline{\bigcup_{i\in I}A_i}\subseteq\overline{\bigcup_{i\in I}\overline{A_i}}=\bigcup_{i\in I}\overline{A_i}.
 	\end{equation*}
-	Segue così la tesi.\\
-	Come controesempio nel caso \textit{infinito}, si consideri $\realset$ con la topologia Euclidea e la famiglia di sottoinsiemi $\left\{A_n\right\}=\left\{\left[\frac{1}{n},\ 1\right]\mid n\geq 2,\ n\in \naturalset\right\}$. Essi sono chiusi, quindi $A_n=\overline{A_n}$. Allora:
+	Segue così la tesi.	Come controesempio nel caso \textit{infinito}, si consideri $\R$ con la topologia Euclidea e la famiglia di sottoinsiemi
 	\begin{equation*}
-		\bigcup_{n\geq 2}\overline{A_n}=\bigcup_{n\geq 2}A_n=\left(0,\ 1\right]
+		\left\{A_n\right\}=\left\{\left[\frac{1}{n},\ 1\right]\mid n\geq 2,\ n\in \N\right\}.
 	\end{equation*}
-Tuttavia, $\displaystyle \overline{\bigcup_{n\geq 2}A_n}=\overline{\left(0,\ 1\right]}=\left[0,\ 1\right]\supsetneqq\left(0,\ 1\right]=\bigcup_{n\geq 2}\overline{A_n}$.
-\item Poichè gli $\overline{A_i}$ sono chiusi, la loro intersezione arbitraria è ancora chiusa e pertanto:
+	Essi sono chiusi, quindi $A_n=\overline{A_n}$. Allora
+	\begin{equation*}
+		\bigcup_{n\geq 2}\overline{A_n}=\bigcup_{n\geq 2}A_n=\left(0,\ 1\right].
+	\end{equation*}
+Tuttavia,
 \begin{equation*}
-	\overline{\bigcap_{i\in I}\overline{A_i}}=\bigcap_{i\in I}\overline{A_i}
+	\overline{\bigcup_{n\geq 2}A_n}=\overline{\left(0,\ 1\right]}=\left[0,\ 1\right]\supsetneqq\left(0,\ 1\right]=\bigcup_{n\geq 2}\overline{A_n}.
+\end{equation*}
+\item Poichè gli $\overline{A_i}$ sono chiusi, la loro intersezione arbitraria è ancora chiusa e pertanto
+\begin{equation*}
+	\overline{\bigcap_{i\in I}\overline{A_i}}=\bigcap_{i\in I}\overline{A_i}.
 \end{equation*}
 Per definizione $A_i\subseteq\overline{A_i}\ \forall i$, dunque anche le intersezioni mantengono la relazione di inclusione:
 \begin{equation*}
-	\bigcap_{i\in I}A_i\subseteq\bigcap_{i\in I}\overline{A_i}
+	\bigcap_{i\in I}A_i\subseteq\bigcap_{i\in I}\overline{A_i}.
 \end{equation*}
-Essendo la chiusura il più piccolo chiuso contenente un sottospazio, segue che:
+Essendo la chiusura il più piccolo chiuso contenente un sottospazio, segue che
 \begin{equation*}
-	\bigcap_{i\in I}A_i\subseteq\overline{\bigcap_{i\in I}A_i}\subseteq\bigcap_{i\in I}\overline{A_i}
+	\bigcap_{i\in I}A_i\subseteq\overline{\bigcap_{i\in I}A_i}\subseteq\bigcap_{i\in I}\overline{A_i},
 \end{equation*}
-Da cui segue la tesi.\\
-Come controesempio, si consideri $\realset$ con la topologia Euclidea. Presi i razionali $\rationalset$ e gli irrazionali $\irrationalset$, essi sono \textit{densi} e quindi $\overline{\rationalset}=\realset$, $\overline{\irrationalset}=\realset$. Allora:
+da cui segue la tesi. Come controesempio, si consideri $\R$ con la topologia Euclidea. Presi i razionali $\Q$ e gli irrazionali $\Irr$, essi sono \textit{densi} e quindi $\overline{\Q}=\R$, $\overline{\Irr}=\R$; allora
 \begin{equation*}
-	\overline{\rationalset}\cap\overline{\irrationalset}=\realset
+	\overline{\Q}\cap\overline{\Irr}=\R.
 \end{equation*}
-Tuttavia, $\rationalset$ e $\irrationalset$ sono disgiunti, pertanto:
+Tuttavia, $\Q$ e $\Irr$ sono disgiunti, pertanto
 \begin{equation*}
-	\overline{\rationalset\cap\left(\irrationalset\right)}=\overline{\emptyset}=\emptyset
+	\overline{\Q\cap\left(\Irr\right)}=\overline{\emptyset}=\emptyset
 \end{equation*}
-Pertanto \textit{non} vale l'altra inclusione.
+e quindi \textit{non} vale l'altra inclusione.
 \item Passiamo al complementare della chiusura del complementare:
 \begin{equation*}
-\interior{\left(\bigcup_{i\in I}A_i\right)}=X\setminus\left(\overline{X\setminus \bigcup_{i\in I}A_i}\right)=X\setminus\left(\overline{\bigcap_{i\in I}X\setminus A_i}\right)
+\interior{\left(\bigcup_{i\in I}A_i\right)}=X\setminus\left(\overline{X\setminus \bigcup_{i\in I}A_i}\right)=X\setminus\left(\overline{\bigcap_{i\in I}X\setminus A_i}\right).
 \end{equation*}
-Poiché $\displaystyle \overline{\bigcap_{i\in I}X\setminus A_i}\subseteq \bigcap_{i\in I}\overline{X\setminus A_i}$, allora $\displaystyle X\setminus\left(\overline{\bigcap_{i\in I}X\setminus A_i}\right) \supseteq X\setminus\bigcap_{i\in I}\overline{X\setminus A_i}$. Pertanto:
+Poiché
 \begin{equation*}
-\interior{\left(\bigcup_{i\in I}A_i\right)}\supseteq X\setminus\bigcap_{i\in I}\overline{X\setminus A_i}=X\setminus\bigcap_{i\in I}X\setminus \interior{A_i}=X\setminus\left(X\setminus\bigcup_{i\in I}A_i \right)=\bigcup_{i\in I}\interior{A_i}
+	\overline{\bigcap_{i\in I}X\setminus A_i}\subseteq \bigcap_{i\in I}\overline{X\setminus A_i},
 \end{equation*}
-Come controesempio, si consideri $\realset$ con la topologia Euclidea e i sottoinsiemi $A_1=\left[0,\ \frac{1}{2}\right]$ e $A_2=\left[\frac{1}{2},\ 1\right]$. Allora:
+allora
 \begin{equation*}
-	\begin{array}{l}
-		\interior{\left(A_1\cup A_2\right)}=\interior{\left(\left[0,\ \frac{1}{2}\right]\cup\left[\frac{1}{2},\ 1\right]\right)}=\interior{\left[0,\ 1\right]}=\left(0,\ 1\right)\\
-		\interior{A_1}\cup \interior{A_2}=\interior{\left[0,\ \frac{1}{2}\right]}\cup\interior{\left[\frac{1}{2},\ 1\right]}=\interior{\left[0,\ 1\right]}=\left(0,\ \frac{1}{2}\right)\cup\left(\frac{1}{2},\ 1\right)
-	\end{array}
+	X\setminus\left(\overline{\bigcap_{i\in I}X\setminus A_i}\right) \supseteq X\setminus\bigcap_{i\in I}\overline{X\setminus A_i}.
 \end{equation*}
+Pertanto,
+\begin{equation*}
+\interior{\left(\bigcup_{i\in I}A_i\right)}\supseteq X\setminus\bigcap_{i\in I}\overline{X\setminus A_i}=X\setminus\bigcap_{i\in I}X\setminus \interior{A_i}=X\setminus\left(X\setminus\bigcup_{i\in I}A_i \right)=\bigcup_{i\in I}\interior{A_i}.
+\end{equation*}
+Come controesempio, si consideri $\R$ con la topologia Euclidea e i sottoinsiemi $A_1=\left[0,\ \frac{1}{2}\right]$ e $A_2=\left[\frac{1}{2},\ 1\right]$. Allora
+\begin{align*}
+		\interior{\left(A_1\cup A_2\right)}&=\interior{\left(\left[0,\ \frac{1}{2}\right]\cup\left[\frac{1}{2},\ 1\right]\right)}=\interior{\left[0,\ 1\right]}=\left(0,\ 1\right)\\
+		\interior{A_1}\cup \interior{A_2}&=\interior{\left[0,\ \frac{1}{2}\right]}\cup\interior{\left[\frac{1}{2},\ 1\right]}=\interior{\left[0,\ 1\right]}=\left(0,\ \frac{1}{2}\right)\cup\left(\frac{1}{2},\ 1\right)
+\end{align*}
 Dunque $\interior{A_1}\cup \interior{A_2}\subsetneqq\interior{\left(A_1\cup A_2\right)}$.
 \item Passiamo al complementare della chiusura del complementare:
 \begin{equation*}
 \interior{\left(\bigcap_{i\in I}A_i\right)}=X\setminus\left(\overline{X\setminus \bigcap_{i\in I}A_i}\right)=X\setminus\left(\overline{\bigcup_{i\in I}X\setminus A_i}\right)
 \end{equation*}
-Poiché $\displaystyle \overline{\bigcup_{i\in I}X\setminus A_i}\supseteq \bigcup_{i\in I}\overline{X\setminus A_i}$, allora $\displaystyle X\setminus\left(\overline{\bigcup_{i\in I}X\setminus A_i}\right) \subseteq X\setminus\bigcup_{i\in I}\overline{X\setminus A_i}$. Pertanto:
+Poiché
+\begin{equation*}
+	\overline{\bigcup_{i\in I}X\setminus A_i}\supseteq \bigcup_{i\in I}\overline{X\setminus A_i},
+\end{equation*}
+allora
+\begin{equation*}
+	X\setminus\left(\overline{\bigcup_{i\in I}X\setminus A_i}\right) \subseteq X\setminus\bigcup_{i\in I}\overline{X\setminus A_i}
+\end{equation*}
+Pertanto
 \begin{equation*}
 		\interior{\left(\bigcap_{i\in I}A_i\right)}\stackrel{!}{\subseteq} X\setminus\bigcup_{i\in I}\overline{X\setminus A_i}=X\setminus\bigcup_{i\in I}X\setminus \interior{A_i} =X\setminus\left(X\setminus\bigcap_{i\in I}A_i \right)=\bigcap_{i\in I}\interior{A_i}
 \end{equation*}
-Ponendoci nel caso \textit{finito}, l'inclusione con (!) risulta un uguaglianza per il punto 1 della proposizione, da cui segue la tesi.\\
-Come controesempio nel caso \textit{infinito}, si consideri $\realset$ con la topologia Euclidea e la famiglia di sottoinsiemi $\left\{A_n\right\}=\left\{\left(1-\frac{1}{n},\ 1+\frac{1}{n}\right)\mid n> 0,\ n\in \naturalset\right\}$. Essi sono aperti, quindi $A_n=\interior{A_n}$. Allora:
+Ponendoci nel caso \textit{finito}, l'inclusione (!) risulta un uguaglianza per il punto 1. della proposizione, da cui segue la tesi. Come controesempio nel caso \textit{infinito}, si consideri $\R$ con la topologia Euclidea e la famiglia di sottoinsiemi $\left\{A_n\right\}=\left\{\left(1-\frac{1}{n},\ 1+\frac{1}{n}\right)\mid n> 0,\ n\in \N\right\}$. Essi sono aperti, quindi $A_n=\interior{A_n}$. Allora
 \begin{equation*}
 	\bigcap_{n>0}\interior{A_n}=\bigcap_{n>0}A_n=\{1\}
 \end{equation*}
-Tuttavia, $\displaystyle \interior{\left(\bigcap_{n>0}A_n\right)}=\interior{\{1\}}=\emptyset$.
+Tuttavia, 
+\begin{equation*}
+	\interior{\left(\bigcap_{n>0}A_n\right)}=\interior{\{1\}}=\emptyset.\qedhere
+\end{equation*}
 \end{enumerate}
-	\vspace{-3mm}
-\end{demonstration}
+\end{proof}
 \subsection{Strutture topologiche e prodotto cartesiano}
 La dimostrazione del terzo punto è adattata da \cite{Math1000:interior} su Mathematics Stack Exchange.
-\begin{proposition}[Strutture topologiche e prodotto cartesiano.]~{}\\\label{topologiaprodottostruttura}
-	Siano $X,\ Y$ spazi topologici e $X\times Y$ il loro prodotto.
+\begin{proposition}{}[Strutture topologiche e prodotto cartesiano.]\label{topologiaprodottostruttura}
+	Siano $X,\ Y$ due spazi topologici e $X\times Y$ il loro prodotto.
 	\begin{enumerate}
 		\item Dati $x\in X,\ y\in Y$, siano $\mathcal{U} = \left\{U_i\right\}_{i\in I}$ un
-		sistema fondamentale di intorni di $x$ e $\mathcal{V} = \left\{V_j\right\}_{j\in J}$ un sistema fondamentale di intorni di $y$. Poniamo $W_{ij} \coloneqq U_i \times V_j \subseteq X \times Y$ . Allora:
-		\begin{equation}
+		sistema fondamentale di intorni di $x$ e $\mathcal{V} = \left\{V_j\right\}_{j\in J}$ un sistema fondamentale di intorni di $y$. Poniamo $W_{ij} \coloneqq U_i \times V_j \subseteq X \times Y$ . Allora
+		\begin{equation*}
 			\mathcal{W} = \left\{W_{ij}\right\}_{j\in J}
-		\end{equation}
-		è un sistema fondamentale di intorni di $\left(x,\ y\right) \in X \times Y$.
+		\end{equation*}
+		è un sistema fondamentale di intorni di $(x,y) \in X \times Y$.
 		\item Se $A\subseteq X,\ B\subseteq Y$, allora $\overline{A\times B}=\overline{A}\times \overline{B}$. In particolare, il prodotto di chiusi è chiuso.
 		\item Se $A\subseteq X,\ B\subseteq Y$, allora $\interior{\left(A\times B\right)}=\interior{A}\times \interior{B}$. In particolare, il prodotto di aperti è aperti.
 	\end{enumerate}
-	\vspace{-3mm}
 \end{proposition}
-\begin{demonstration}~{}
+\begin{proof}{n}~{}
 	\begin{enumerate}[label=\Roman*]
-		\item Per definizione di sistema fondamentale di intorni si ha:
-		\begin{gather*}
-			\forall U\in I\left(x\right)\ \exists U_i\in\mathcal{U}\ \colon U_i\in U\\
-			\forall V\in I\left(y\right)\ \exists V_i\in\mathcal{V}\ \colon V_j\in V
-		\end{gather*}
-		$\impliesdx$ Per ogni intorno $U\in I\left(x\right)$ e $V\in I\left(y\right)$, si ha $W\coloneqq U\times V\in I\left(\left(x,\ y\right)\right)$ per definizione di topologia prodotto. Inoltre, presi gli intorni $U_i$ e $V_j$ definiti come sopra, si ha che $W_{ij} = U_i \times V_j\in I\left(\left(x,\ y\right)\right)$ per definizione di topologia prodotto; segue che, per ogni intorno $W$ di questa forma esiste $W_{ij}$ tale che:
+		\item Per definizione di sistema fondamentale di intorni si ha
 		\begin{equation*}
-			W_{ij} = U_i \times V_j\subseteq U\times V= W
+			\forall U\in I(x)\ \exists U_i\in\mathcal{U}\ \colon U_i\in U\qquad
+			\forall V\in I(y)\ \exists V_i\in\mathcal{V}\ \colon V_j\in V
 		\end{equation*}
-		$\impliessx$ Prendiamo un intorno $W\in I\left(x,\ y\right)$, esiste un aperto $W'\subseteq W$. Poiché $W'$ appartiene al prodotto $X\times Y$, si ha che $\displaystyle W'=\bigcup_k A_k\times B_k$ con $A_k$ e $B_k$ aperti di $X$ e $Y$. Preso allora $\left(x,\ y\right)\in W'$, esistono degli aperti $A_k$ e $B_k$ che contengono rispettivamente $x$ e $y$.\\
-		Segue dunque che $A_k\in I\left(x\right)$ e $B_k\in I\left(y\right)$ e dunque dal sistema fondamentale di intorni si ha che $\exists U_i\in\mathcal{U},\ V_j\in\mathcal{V}$ tali che $U_i\in A_k,\  V_j\in B_k$. Allora definito $W_{ij} \coloneqq U_i \times V_j$, si ha per ogni intorno $W$ di $X\times Y$ esiste $W_{ij}$ tale che:
+		$\rightimplies$ Per ogni intorno $U\in I(x)$ e $V\in I(y)$, si ha $W\coloneqq U\times V\in I\left((x,y)\right)$ per definizione di topologia prodotto. Inoltre, presi gli intorni $U_i$ e $V_j$ definiti come sopra, si ha che $W_{ij} = U_i \times V_j\in I\left((x,y)\right)$ per definizione di topologia prodotto; segue che, per ogni intorno $W$ di questa forma esiste un $W_{ij}$ tale che
 		\begin{equation*}
-			W_{ij} = U_i \times V_j\subseteq A_k\times B_k\subseteq W'\subseteq W
+			W_{ij} = U_i \times V_j\subseteq U\times V= W.
 		\end{equation*}
-		\item Utilizziamo i risultati del punto 1 con la caratterizzazione per intorni della chiusura.
+		$\leftimplies$ Prendiamo un intorno $W\in I(x,y)$: esiste un aperto $W'\subseteq W$. Poiché $W'$ appartiene al prodotto $X\times Y$, si ha che
+		\begin{equation*}
+			W'=\bigcup_k A_k\times B_k
+		\end{equation*}
+		con $A_k$ e $B_k$ aperti di $X$ e $Y$. Preso allora $(x,y)\in W'$, esistono degli aperti $A_k$ e $B_k$ che contengono rispettivamente $x$ e $y$.	Segue dunque che $A_k\in I(x)$ e $B_k\in I(y)$ e dunque dal sistema fondamentale di intorni si ha che esistono $ U_i\in\mathcal{U},\ V_j\in\mathcal{V}$ tali che $U_i\in A_k,\ V_j\in B_k$. Allora definito $W_{ij} \coloneqq U_i \times V_j$, si ha per ogni intorno $W$ di $X\times Y$ esiste un $W_{ij}$ tale che
+		\begin{equation*}
+			W_{ij} = U_i \times V_j\subseteq A_k\times B_k\subseteq W'\subseteq W.
+		\end{equation*}
+		\item Utilizziamo i risultati del punto 1. con la caratterizzazione per intorni della chiusura:
 		\begin{align*}
-			\left(x,\ y\right)\in \overline{A\times B}&\iff \forall W\in I\left(x,\ y\right)\quad W\cap\left(A\times B\right)\neq \emptyset\\
-			&\iff \forall U\in I\left(x\right),\ \forall V\in I\left(y\right)\quad \left(U\times V\right)\cap\left(A\times B\right)\neq \emptyset\\
-			&\iff \forall U\in I\left(x\right),\ \forall V\in I\left(y\right)\quad \left(U\cap A\right)\times\left(V\cap B\right)\neq \emptyset\\
-			&\iff \forall U\in I\left(x\right),\ \forall V\in I\left(y\right)\quad U\cap A\neq \emptyset ,\ V\cap B\neq \emptyset\\
-			&\iff \forall U\in I\left(x\right)\quad U\cap A\neq \emptyset ,\ \forall V\in I\left(y\right)\quad V\cap B\neq \emptyset\\
-			&\iff x\in\overline{A}\wedge y\in \overline{B}\iff\left(x,\ y\right)\in\overline{A}\times \overline{B}
+			(x,y)\in \overline{A\times B}&\iff \forall W\in I(x,y)\quad W\cap\left(A\times B\right)\neq \emptyset\\
+			&\iff \forall U\in I(x),\ \forall V\in I(y)\quad \left(U\times V\right)\cap\left(A\times B\right)\neq \emptyset\\
+			&\iff \forall U\in I(x),\ \forall V\in I(y)\quad \left(U\cap A\right)\times\left(V\cap B\right)\neq \emptyset\\
+			&\iff \forall U\in I(x),\ \forall V\in I(y)\quad U\cap A\neq \emptyset ,\ V\cap B\neq \emptyset\\
+			&\iff \forall U\in I(x)\quad U\cap A\neq \emptyset ,\ \forall V\in I(y)\quad V\cap B\neq \emptyset\\
+			&\iff x\in\overline{A}\wedge y\in \overline{B}\iff(x,y)\in\overline{A}\times \overline{B}.
 		\end{align*}
-		In particolare, se $A$ e $B$ sono chiusi, avendo che $A=\overline{A}$ e $B=\overline{B}$, otteniamo:
+		In particolare, se $A$ e $B$ sono chiusi, avendo che $A=\overline{A}$ e $B=\overline{B}$, otteniamo
 		\begin{equation*}
-			A\times B=\overline{A}\times \overline{B}=\overline{A\times B}
+			A\times B=\overline{A}\times \overline{B}=\overline{A\times B}.
 		\end{equation*}
-	\item$\impliessx$ Dato che $\interior{A}$ è aperto in $X$ e $\interior{B}$ è aperto in $Y$ e vale $\interior{A}\subseteq A$, $\interior{B}\subseteq{B}$, allora segue che $\interior{A}\times\interior{B}$ è aperto e $\interior{A}\times\interior{B}\subseteq A\times B$.\\
-	$\impliesdx$ Dato che $\interior{\left(A\times B\right)}$ è aperto in $X\times Y$, per definizione della topologia prodotto allora esistono aperti $U_i\subseteq X$ e $V_i\subseteq Y$:
+	\item$\leftimplies$ Dato che $\interior{A}$ è aperto in $X$ e $\interior{B}$ è aperto in $Y$ e vale $\interior{A}\subseteq A$, $\interior{B}\subseteq{B}$, allora segue che $\interior{A}\times\interior{B}$ è aperto e $\interior{A}\times\interior{B}\subseteq A\times B$.\\
+	$\rightimplies$ Dato che $\interior{\left(A\times B\right)}$ è aperto in $X\times Y$, per definizione della topologia prodotto allora esistono aperti $U_i\subseteq X$ e $V_i\subseteq Y$ tali che
 	\begin{equation*}
-		\interior{\left(A\times B\right)}=\bigcup_i\left(U_i\times V_i\right)
+		\interior{\left(A\times B\right)}=\bigcup_i\left(U_i\times V_i\right).
 	\end{equation*}
-	Poichè $U_i\subseteq A,\ V_i\subseteq B\ \forall i$, allora per definizione di intorno si ha $U_i\subseteq\interior{A},\ V_i\subseteq\interior{B}\ \forall i$, cioè:
+	Poichè $U_i\subseteq A,\ V_i\subseteq B\ \forall i$, allora per definizione di intorno si ha $U_i\subseteq\interior{A},\ V_i\subseteq\interior{B}\ \forall i$, e quindi
 	\begin{equation*}
-		\bigcup_i\left(U_i\times V_i\right)\subseteq \interior{A}\times \interior{B}
+		\bigcup_i\left(U_i\times V_i\right)\subseteq \interior{A}\times \interior{B}\qedhere
 	\end{equation*}
 	\end{enumerate}
-	\vspace{-6mm}
-\end{demonstration}
+\end{proof}
 \section{Capitolo 2: connessione e compattezza}
 \subsection{Prodotto di c.p.a.}
 La seguente dimostrazione è adattata da \cite{hagen:productCPA} e \cite{scott:CPAfromproduct} su Mathematics Stack Exchange.
-\begin{lemming}[Prodotto di c.p.a. se e solo se ogni spazio è c.p.a.]~{}\label{prodottocpa}\\
-	$\displaystyle X=\prod_{i\in I}X_i$ è \textbf{c.p.a.}$\iff X_i$ sono \textbf{c.p.a} $\forall i\in I$.
-\end{lemming}
-\begin{demonstration}~{}\\
-	$\impliessx$ Poichè $\funz{\pi_i}{X}{X_i}$ sono funzioni continue e poiché le funzioni continue mantengono la \textbf{c.p.a.}, segue che $X_i$ è \textbf{c.p.a.}
-	$\impliesdx$ Sia $x=\left(x_i\right)_{i\in I}$ e $y=\left(y_i\right)_{i\in I}$ due punti arbitrari in $X$.\footnote{Con $\left(\ \cdot\ \right)_{i\in I}$ indichiamo un elemento dello spazio $X$, visto quindi come una tupla ordinata di elementi di $X_i$ indicizzati rispetto a $I$.} Essendo $X_i$ \textbf{c.p.a}, per ogni $i$ esistono dei cammini continui $\funz{\gamma_i}{\left[0, 1\right]}{X_i}$ tali che $\gamma_i\left(0\right)=x_i$ e $\gamma_i\left(1\right)=y_i$. Per definizione del prodotto cartesiano, c'è un unica funzione continua $\funz{\gamma}{\left[0, 1\right]}{X}$ tale che $\pi_i\circ\gamma=\gamma_i\ \forall i\in I$, dove $\funz{\pi_i}{X}{X_i}$ è la proiezione all'$i$-esimo spazio. Allora $\gamma$ è un cammino fra $x$ e $y$.\\
-\end{demonstration}
+\begin{lemma}{}[Prodotto di c.p.a. se e solo se ogni spazio è c.p.a.]\label{prodottocpa}
+	$X=\prod_{i\in I}X_i$ è c.p.a. se e solo se gli $X_i$ sono c.p.a. per ogni $ i\in I$.
+\end{lemma}
+\begin{proof}{n}~{}\\
+	$\leftimplies$ Poichè le proiezioni $\funct{}[\pi_i]{X}{X_i}$ sono suriezioni continue e in quanto tale continue passano la c.p.a. all'immagine, segue che $X_i$ è c.p.a.\\
+	$\rightimplies$ Sia $x=\left(x_i\right)_{i\in I}$ e $y=\left(y_i\right)_{i\in I}$ due punti arbitrari in $X$.\footnote{Con $\left(\ \cdot\ \right)_{i\in I}$ indichiamo un elemento dello spazio $X$, visto quindi come una tupla ordinata di elementi di $X_i$ indicizzati rispetto a $I$.} Essendo $X_i$ c.p.a., per ogni $i$ esistono dei cammini continui $\funct{}[\gamma_i]{\left[0, 1\right]}{X_i}$ tali che $\gamma_i\left(0\right)=x_i$ e $\gamma_i\left(1\right)=y_i$. Per definizione del prodotto cartesiano, c'è un unica funzione continua $\funct{}[\gamma]{\left[0, 1\right]}{X}$ tale che $\pi_i\circ\gamma=\gamma_i\ \forall i\in I$. Allora $\gamma$ è un cammino fra $x$ e $y$.\qedhere
+\end{proof}
 \subsection{Intersezione di compatti}
 La seguente dimostrazione è in parte adattata da \cite{user45861:intersectioncompact} su Mathematics Stack Exchange.
-\begin{lemming}[Intersezione di compatti in Hausdorff è compatta.]~{}\label{intersezione di compatti in hausdorff chiusa}
-\end{lemming}
-\begin{demonstration}
-	I compatti in \textbf{Hausdorff} sono chiusi, dunque l'intersezione di due compatti in \textbf{Hausdorff} è l'intersezione di due chiusi e quindi è ancora un chiuso; essendo un chiuso in un compatto segue che l'intersezione è compatta.
-\end{demonstration}
-\begin{attention}
-	Se non vale l'ipotesi di $X$ \textbf{Hausdorff} \textit{non è in generale vero} che l'intersezione di compatti è compatta! Ad esempio, consideriamo $\naturalset$ con la \textit{topologia discreta} a cui aggiungiamo due punti $x_1$ e $x_2$ e costruiamo una topologia $\topo$ su $X=\left\{x_1,\ x_2\right\}\cup\naturalset$ definita nel seguente modo:
+\begin{lemma}{n}[Intersezione di compatti in Hausdorff è compatta]\label{intersezione di compatti in hausdorff chiusa}
+\end{lemma}
+\begin{proof}{n}
+	I compatti in Hausdorff sono chiusi, dunque l'intersezione di due compatti in Hausdorff è l'intersezione di due chiusi e quindi è ancora un chiuso; essendo un chiuso in un compatto segue che l'intersezione è compatta.\qedhere
+\end{proof}
+\begin{warning}{n}
+	Se non vale l'ipotesi di $X$ Hausdorff \textit{non è in generale vero} che l'intersezione di compatti è compatta! Ad esempio, consideriamo $\N$ con la \textit{topologia discreta} a cui aggiungiamo due punti $x_1$ e $x_2$ e costruiamo una topologia $\topo$ su $X=\left\{x_1,\ x_2\right\}\cup\N$ definita nel seguente modo:
 	\begin{equation*}
-		A\in\topo \text{ se } A\in\setpart{\naturalset}\ \vee\  A=\left\{x_1\right\}\cup\naturalset\ \vee\  A=\left\{x_2\right\}\cup\naturalset\ \vee\  A=\left\{x_1,\ x_2\right\}\cup\naturalset.
+		A\in\topo \text{ se } A\in\powerset{\N}\ \vee\  A=\left\{x_1\right\}\cup\N\ \vee\  A=\left\{x_2\right\}\cup\N\ \vee\  A=\left\{x_1,\ x_2\right\}\cup\N.
 	\end{equation*}
-	Osserviamo che $\left\{x_i\right\}\cup\naturalset$ è compatto $\forall i=1,\ 2$, dato che ogni ricoprimento aperto deve necessariamente contenere o l'insieme $\left\{x_i\right\}\cup\naturalset$ o l'insieme $\left\{x_1,\ x_2\right\}\cup\naturalset$. Tuttavia, l'intersezione fra $\left\{x_1\right\}\cup\naturalset$ e $\left\{x_2\right\}\cup\naturalset$ è $\naturalset$, che è infinito e discreto e quindi certamente non compatto.
-\end{attention}
+	Osserviamo che $\left\{x_i\right\}\cup\N$ è compatto $\forall i=1,\ 2$, dato che ogni ricoprimento aperto deve necessariamente contenere o l'insieme $\left\{x_i\right\}\cup\N$ o l'insieme $\left\{x_1,\ x_2\right\}\cup\N$. Tuttavia, l'intersezione fra $\left\{x_1\right\}\cup\N$ e $\left\{x_2\right\}\cup\N$ è $\N$, che è infinito e discreto e quindi certamente non compatto.
+\end{warning}
 \section{Capitolo 4: topologia quoziente}
 \subsection{Quoziente Hausdorff da contrazione su compatto}
 La seguente dimostrazione è in parte adattata da \cite{user:hausdorff} su Mathematics Stack Exchange.
-\begin{lemming}[{$X$} Hausdorff e {$K$} compatto implica {$\nicefrac{X}{K}$} Hausdorff; Manetti, 5.11.]~{}\\
-	Dato $X$ spazio topologico di \textbf{Hausdorff} e $K\subseteq X$ compatto allora $\nicefrac{X}{K}$ è di \textbf{Hausdorff}.
-\end{lemming}
-\begin{demonstration}
-	Scegliamo $P\neq Q\in \nicefrac{X}{K}$, cioè $\exists x,\ y\in X$ tali per cui $P=[x]$, $Q=[y]$.
+\begin{lemma}{}[Hausdorff quozientato su compatto per contrazione è Hausdorff; Manetti, 5.11]
+	Dato $X$ spazio topologico di Hausdorff e $K\subseteq X$ compatto, allora $X/K$ è di Hausdorff.
+\end{lemma}
+\begin{proof}{n}
+	Scegliamo $P\neq Q\in X/K$, cioè esistono $x,\ y\in X$ tali per cui $P=[x]$, $Q=[y]$.
 	\begin{itemize}
-		\item Se $P,\ Q\neq \pi\left(K\right)$, allora $x,\ y\notin K$. Poiché $X$ è di Hausdorff, consideriamo degli intorni aperti disgiunti $U\in I\left(x\right)$ e $V\in I\left(y\right)$. Poichè $K$ è un compatto in $X$ di Hausdorff, allora $K$ è chiuso e il complementare $A\coloneqq X\setminus K$ è aperto. Definiamo:
+		\item Se $P,\ Q\neq \pi\left(K\right)$, allora $x,\ y\notin K$. Poiché $X$ è di Hausdorff, consideriamo degli intorni aperti disgiunti $U\in I(x)$ e $V\in I(y)$. Poichè $K$ è un compatto in $X$ di Hausdorff, allora $K$ è chiuso e il complementare $A\coloneqq X\setminus K$ è aperto. Definiamo
 		\begin{equation*}
-			U'\coloneqq A\cap U\in I\left(x\right)\quad V'\coloneqq A\cap V\in I\left(y\right)
+			U'\coloneqq A\cap U\in I(x)\quad V'\coloneqq A\cap V\in I(y).
 		\end{equation*}
-		Essi sono ancora intorni aperti rispettivamente di $x$ e $y$ perché $A$ è intorno di entrambi i punti, inoltre sono tali per cui $U'\cap V'=\emptyset$, $U'\cap K=\emptyset$ e $V'\cap K=\emptyset$, cioè $U'$ e $V'$ sono intorni disgiunti di $x$ e $y$ che \textit{non} contengono alcun punto di $K$. Allora $\nicefrac{X}{K}$ risulta un quoziente di Hausdorff, poiché le immagini tramite $\pi$ di $U'$ e $V'$ sono intorni disgiunti dei punti $P$ e $Q$:
+		Essi sono ancora intorni aperti rispettivamente di $x$ e $y$ perché $A$ è intorno di entrambi i punti; inoltre, sono tali per cui $U'\cap V'=\emptyset$, $U'\cap K=\emptyset$ e $V'\cap K=\emptyset$, cioè $U'$ e $V'$ sono intorni disgiunti di $x$ e $y$ che \textit{non} contengono alcun punto di $K$. Allora $X/K$ risulta un quoziente di Hausdorff, poiché le immagini tramite $\pi$ di $U'$ e $V'$ sono intorni disgiunti dei punti $P$ e $Q$:
 		\begin{equation*}
-			\pi\left(U'\right)\in I\left(P\right),\ \pi\left(V'\right)\in I\left(Q\right),\ \pi\left(U'\right)\cap \pi\left(V'\right)=\emptyset
+			\pi\left(U'\right)\in I\left(P\right),\ \pi\left(V'\right)\in I\left(Q\right),\ \pi\left(U'\right)\cap \pi\left(V'\right)=\emptyset.
 		\end{equation*}
-		\item Supponiamo che $Q=\pi\left(K\right)$. Allora $y\in K$ e $x\notin K$. Con un procedimento simile a quello usato nella dimostrazione di ‘‘$K$ compatto in $X$ di Hausdorff implica $K$ chiuso'' (Teorema \ref{compatto in hausdorff chiuso}, pag. \pageref{compatto in hausdorff chiuso}) si può definire a partire da un ricoprimento aperto di $K$ un intorno aperto $U\in I\left(x\right)$ e uno $V\in I\left(y\right)$ tale per cui $y\in K\subseteq V$ e $U\cap V=\emptyset$. Allora $\nicefrac{X}{K}$ risulta un quoziente di Hausdorff, poiché le immagini tramite $\pi$ di $U$ e $V$ sono intorni disgiunti dei punti $P$ e $Q=\pi\left(K\right)$:
+		\item Supponiamo che $Q=\pi\left(K\right)$. Allora $y\in K$ e $x\notin K$. Con un procedimento simile a quello usato nella dimostrazione di ‘‘$K$ \textit{compatto in} $X$ \textit{di Hausdorff implica} $K$ \textit{chiuso}'' (Teorema \ref{compatto in hausdorff chiuso}, pag. \pageref{compatto in hausdorff chiuso}) si può definire a partire da un ricoprimento aperto di $K$ un intorno aperto $U\in I(x)$ e uno $V\in I(y)$ tale per cui $y\in K\subseteq V$ e $U\cap V=\emptyset$. Allora $X/K$ risulta un quoziente di Hausdorff, poiché le immagini tramite $\pi$ di $U$ e $V$ sono intorni disgiunti dei punti $P$ e $Q=\pi\left(K\right)$:
 		\begin{equation*}
-			\pi\left(U\right)\in I\left(P\right),\ \pi\left(V\right)\in I\left(Q\right)=I\left(\pi\left(K\right)\right),\ \pi\left(U\right)\cap \pi\left(V\right)=\emptyset
+			\pi\left(U\right)\in I\left(P\right),\ \pi\left(V\right)\in I\left(Q\right)=I\left(\pi\left(K\right)\right),\ \pi\left(U\right)\cap \pi\left(V\right)=\emptyset\qedhere
 		\end{equation*}
 	\end{itemize}
-\vspace{-6mm}
-\end{demonstration}
+\end{proof}
 \label{quozientehausdorffsuspaziocompatto}
 \section{Capitolo 6: assiomi di numerabilità e successioni}
 \subsection{Non prima numerabilità del quoziente}
-La seguente dimostrazione sulla non prima numerabilità del quoziente $\nicefrac{\realset}{\integerset}$ è adattata da \cite{scott:nonum} su Mathematics Stack Exchange.
-\begin{demonstration}\label{dimostrazionenonnumerabilità}
-Si consideri la contrazione di $\integerset$ in $\realset$ ad un punto, cioè il quoziente $\nicefrac{\realset}{\integerset}$ e si definisca la classe di equivalenza degli interi come $[0]$.\\
-Sia $\left\{U_n:n\in\naturalset\right\}$ una famiglia di intorni aperti di $[0]$; cerchiamo un intorno aperto di $[0]$ che non ne contiene nessuno come sottoinsieme, mostrano in tal modo che non formano un sistema fondamentale di intorni di $[0]$ e pertanto che $\nicefrac{\realset}{\integerset}$ non è primo numerabile per $[0]$.\\
-Sia $\pi$ la mappa quoziente. Per ogni $n\in\naturalset$ e $k\in\integerset$ esiste un $\epsilon_{n,k}\in(0,1)$ tale che: 
+La seguente dimostrazione sulla non prima numerabilità del quoziente $\R/\Z$ è adattata da \cite{scott:nonum} su Mathematics Stack Exchange.
+\begin{proof}{n}\label{dimostrazionenonnumerabilità}
+Si consideri la contrazione di $\Z$ in $\R$ ad un punto, cioè il quoziente $\R/\Z$ e si definisca la classe di equivalenza degli interi come $[0]$.\\
+Sia $\left\{U_n\right\}_{n\in\N}$ una famiglia di intorni aperti di $[0]$; cerchiamo un intorno aperto di $[0]$ che non ne contiene nessuno come sottoinsieme, mostrano in tal modo che non formano un sistema fondamentale di intorni di $[0]$ e pertanto che $\R/\Z$ non è primo numerabile per $[0]$.\\
+Sia $\pi$ la mappa quoziente. Per ogni $n\in\N$ e $k\in\Z$ esiste un $\epsilon_{n,k}\in(0,1)$ tale che: 
 \begin{equation*}
-U_n\supseteq \pi\left[\bigcap_{k\in\integerset}(k-\epsilon_{n,k},k+\epsilon_{n,k})\right]\
+U_n\supseteq \pi\left[\bigcap_{k\in\Z}(k-\epsilon_{n,k},k+\epsilon_{n,k})\right]\
 \end{equation*}
-Per $k\in\integerset$ sia $\delta_k=\frac12\epsilon_{k,k}$, e sia:
+Per $k\in\Z$ sia $\delta_k=\frac12\epsilon_{k,k}$, e sia:
 \begin{equation*}
-V=\pi\left[\bigcup_{k\in\integerset}(k-\delta_k,k+\delta_k)\right]
+V=\pi\left[\bigcup_{k\in\Z}(k-\delta_k,k+\delta_k)\right]
 \end{equation*}
-Chiaramente $V$ è un intorno aperto di $[0]$, e vogliamo dimostrare che $U_n\nsubseteq V$ per ogni $n\in\naturalset$. Per mostrare ciò, fissiamo $n\in\naturalset$; si ha $\delta_n<\epsilon_{n,n}$, quindi possiamo sceglie un numero reale $x\in(n+\delta_n,n+\epsilon_{n,n})$. Ma allora $\pi(x)\in U_n\setminus V$, e dunque $U_n\nsubseteq V$.
-\end{demonstration}
+Chiaramente $V$ è un intorno aperto di $[0]$, e vogliamo dimostrare che $U_n\nsubseteq V$ per ogni $n\in\N$. Per mostrare ciò, fissiamo $n\in\N$; si ha $\delta_n<\epsilon_{n,n}$, quindi possiamo sceglie un numero reale $x\in(n+\delta_n,n+\epsilon_{n,n})$. Ma allora $\pi(x)\in U_n\setminus V$, e dunque $U_n\nsubseteq V$.\qedhere
+\end{proof}
 \section{Capitolo 7: omotopia}
 \subsection{Retratto di uno spazio di Hausdorff}
 La seguente dimostrazione è adattata da \cite{freakish:retract} su Mathematics Stack Exchange.
-\begin{lemming}[Retratto di uno spazio di Hausdorff è chiuso]~{}\\
-Dato $X$ spazio topologico di \textbf{Hausdorff} e $C\subseteq X$ un retratto di $X$, allora $C$ è di \textbf{Hausdorff}.
-\end{lemming}
-\begin{demonstration}
-	Essendo $C$ un retratto di $X$, sappiamo che esiste una funzione continua $\funz{r}{X}{C\subseteq X}$ tale che $r_{\mid C}=Id_C$. È lecito pensare alla funzione $r$ come la funzione $\funz{r}{X}{X}$ per cui $r_{\mid C}=Id_C$e la sua immagine è $C$. Allora, ricordando che l'equalizzatore è definito come:
+\begin{lemma}{}[Retratto di uno spazio di Hausdorff è chiuso]
+Dato $X$ spazio topologico di Hausdorff e $C\subseteq X$ un retratto di $X$, allora $C$ è chiuso.
+\end{lemma}
+\begin{proof}{n}
+	Essendo $C$ un retratto di $X$, sappiamo che esiste una funzione continua $\funct{}[r]{X}{C\subseteq X}$ tale che $r_{\mid C}=Id_C$. È lecito pensare alla funzione $r$ come la funzione $\funct{}[r]{X}{X}$: in questi termini, $r_{\mid C}=Id_C$ e la sua immagine è $C$. Allora, ricordando che l'equalizzatore è definito come
 	\begin{equation*}
-		eq\left(f,\ g\right)=\left\{x\in X\mid f\left(x\right)=g\left(x\right)\right\}
+		eq\left(f,\ g\right)=\left\{x\in X\mid f(x)=g(x)\right\},
 	\end{equation*}
-	Se poniamo $f=\funz{r}{X}{X}$ e $g=\funz{id_X}{X}{X}$, allora:
+	se poniamo $\funct{}[f=r]{X}{X}$ e $\funct{}[g=id_X]{X}{X}$ si ha
 	\begin{equation*}
-		eq\left(r,\ id_X\right)=\left\{x\in X\mid r\left(x\right)=Id_X\left(x\right)=x\right\}=C
+		eq\left(r,\ id_X\right)=\left\{x\in X\mid r(x)=Id_X(x)=x\right\}=C.
 	\end{equation*}
-	Pertanto $eq\left(r,\ id_X\right)=C$. Inoltre, essendo $id_X$ e $r$ due funzioni continue con codominio uno spazio di Hausdorff, l'equalizzatore è un sottospazio chiuso di $X$ e pertanto segue la tesi.
-\end{demonstration}
-\begin{examples}
-	$\realset$ e $\left(a,\ b\right)$ con $-\infty < a < b < \infty$ sono omeomorfi; tuttavia, $\left(a,\ b\right)$ non è un retratto di $\realset$ in quanto $\realset$ è Hausdorff, ma $\left(a,\ b\right)$ non è chiuso.
-\end{examples}
+	Pertanto $eq\left(r,\ id_X\right)=C$. Inoltre, $id_X$ e $r$ sono due funzioni continue con codominio uno spazio di Hausdorff, quindi l'equalizzatore è un sottospazio chiuso di $X$; segue la tesi.\qedhere
+\end{proof}
+\begin{example}{n}
+	$\R$ e $\left(a,\ b\right)$ con $-\infty < a < b < \infty$ sono omeomorfi; tuttavia, $\left(a,\ b\right)$ \textit{non} è un retratto di $\R$ in quanto $\R$ è Hausdorff, ma $\left(a,\ b\right)$ non è chiuso.
+\end{example}
 \section{Capitolo 8: gruppo fondamentale}
-\subsection{La categoria KTOP}
-Notando la somiglianza fra definizione di isomorfismo e di equivalenza omotopica, si può costruire la categoria $\nicecat{KTOP}$ in cui due oggetti sono isomorfi se e solo se sono omotopicamente equivalenti, come mostreremo nel seguente esercizio.
-\begin{exercise}
-	Siano $X$ e $Y$ due spazi topologici. Mostrare che $X$ e $Y$ sono \textit{omotopicamente equivalenti} se e solo se $X$ e $Y$ sono isomorfi nella categoria $\nicecat{KTOP}$ avente per oggetti gli spazi topologici e per morfismi le classi di omotopia di mappe continue.
+\subsection{La categoria Ktop}
+Notando la somiglianza fra definizione di isomorfismo e di equivalenza omotopica, si può costruire la categoria $\underbfsf{Ktop}$ in cui due oggetti sono isomorfi se e solo se sono omotopicamente equivalenti, come mostreremo nel seguente esercizio.
+\begin{exercise}{n}
+	Siano $X$ e $Y$ due spazi topologici. Mostrare che $X$ e $Y$ sono \textit{omotopicamente equivalenti} se e solo se $X$ e $Y$ sono isomorfi nella categoria $\underbfsf{Ktop}$ avente per oggetti gli spazi topologici e per morfismi le classi di omotopia di mappe continue.
 \end{exercise}
-\begin{solution}~{}\\
-	$\impliesdx$ Per ipotesi esistono due funzioni $\funz{f}{X}{Y},\ \funz{g}{Y}{X}$ tali che:
+\begin{solution}{n}~{}\\
+	$\rightimplies$ Per ipotesi esistono due funzioni $\funct{}[f]{X}{Y},\ \funct{}[g]{Y}{X}$ tali che:
 	\begin{equation*}
-		\begin{array}{l}
-			f\circ g\sim Id_Y\\
-			g\circ f\sim Id_X
-		\end{array}
+			f\circ g\sim Id_Y\qquad g\circ f\sim Id_X
 	\end{equation*}
-	Vogliamo trovare un isomorfismo in $\nicecat{KTOP}$ tra $X$ e $Y$, cioé cerchiamo due morfismi $h\in \homo{\scriptscriptstyle{\nicecat{KTOP}}}{X}{Y}$, $k\in \homo{\scriptscriptstyle{\nicecat{KTOP}}}{Y}{X}$ tali che:
+	Vogliamo trovare un isomorfismo in $\underbfsf{Ktop}$ tra $X$ e $Y$, cioé cerchiamo due morfismi $h\in \homo[\underbfsf{Ktop}]{X,Y}$, $k\in \homo[\underbfsf{Ktop}]{Y,X}$ tali che:
 	\begin{equation*}
-		\begin{array}{l}
-			h\circ k=Id_Y^{\scriptscriptstyle{\nicecat{KTOP}}}\\
-			k\circ h=Id_X^{\scriptscriptstyle{\nicecat{KTOP}}}
-		\end{array}
+			h\circ k=Id_Y^{\scriptscriptstyle{\underbfsf{Ktop}}}\qquad k\circ h=Id_X^{\scriptscriptstyle{\underbfsf{Ktop}}}
 	\end{equation*}
-	Noto che $Id_X^{\scriptscriptstyle\nicecat{KTOP}}=\left[Id_X\right]$ e $Id_Y^{\scriptscriptstyle\nicecat{KTOP}}=\left[Id_Y\right]$, poniamo $h\coloneqq\left[f\right],\ k\coloneqq\left[g\right]$. Allora:
-	\begin{equation*}
-		\begin{cases}\begin{array}{l}
-			h\circ k=\left[f\right]\circ\left[g\right]=\left[f\circ g\right]=\left[Id_Y\right]=Id_Y^{\scriptscriptstyle{\nicecat{KTOP}}}\\
-			k\circ h=\left[g\right]\circ\left[f\right]=\left[g\circ f\right]=\left[Id_X\right]=Id_X^{\scriptscriptstyle{\nicecat{KTOP}}}
-		\end{array}
-		\end{cases}
-	\end{equation*}
-	$h$ e $k$ così definiti danno un isomorfismo tra $X$ e $Y$ in $\nicecat{KTOP}$.\\
-	$\impliessx$ Per ipotesi $X\simeq_{\scriptscriptstyle{\nicecat{KTOP}}} Y$, cioè esistono due morfismi $h\in \homo{\scriptscriptstyle{\nicecat{KTOP}}}{X}{Y}$, $ k\in \homo{\scriptscriptstyle{\nicecat{KTOP}}}{Y}{X}$ tali che:
-	\begin{equation*}
-		\begin{array}{l}
-			h\circ k=Id_Y^{\scriptscriptstyle{\nicecat{KTOP}}}\\
-			k\circ h=Id_X^{\scriptscriptstyle{\nicecat{KTOP}}}
-		\end{array}
-	\end{equation*}
-	Sia $\funz{f}{X}{Y}$ un rappresentante di $h$ e $\funz{g}{Y}{X}$ un rappresentante di $k$. Allora:
+	Noto che $Id_X^{\scriptscriptstyle\underbfsf{Ktop}}=\left[Id_X\right]$ e $Id_Y^{\scriptscriptstyle\underbfsf{Ktop}}=\left[Id_Y\right]$, poniamo $h\coloneqq\left[f\right],\ k\coloneqq\left[g\right]$. Allora:
 	\begin{equation*}
 		\begin{cases}
-		\begin{array}{l}
-			h\circ k=\left[f\circ g\right]=Id_Y^{\scriptscriptstyle{\nicecat{KTOP}}}=\left[Id_Y\right]\implies f\circ g \sim Id_Y\\
-			k\circ h=\left[g\circ f\right]=Id_X^{\scriptscriptstyle{\nicecat{KTOP}}}=\left[Id_X\right]\implies g\circ f \sim Id_X
-		\end{array}
+			h\circ k&=\left[f\right]\circ\left[g\right]=\left[f\circ g\right]=\left[Id_Y\right]=Id_Y^{\scriptscriptstyle{\underbfsf{Ktop}}}\\
+			k\circ h&=\left[g\right]\circ\left[f\right]=\left[g\circ f\right]=\left[Id_X\right]=Id_X^{\scriptscriptstyle{\underbfsf{Ktop}}}
+		\end{cases}
+	\end{equation*}
+	$h$ e $k$ così definiti danno un isomorfismo tra $X$ e $Y$ in $\underbfsf{Ktop}$.\\
+	$\leftimplies$ Per ipotesi $X\simeq_{\scriptscriptstyle{\underbfsf{Ktop}}} Y$, cioè esistono due morfismi $h\in \homo{\scriptscriptstyle{\underbfsf{Ktop}}}{X}{Y}$, $ k\in \homo{\scriptscriptstyle{\underbfsf{Ktop}}}{Y}{X}$ tali che:
+	\begin{equation*}
+			h\circ k=Id_Y^{\scriptscriptstyle{\underbfsf{Ktop}}}\qquad k\circ h=Id_X^{\scriptscriptstyle{\underbfsf{Ktop}}}
+	\end{equation*}
+	Sia $\funct{}[f]{X}{Y}$ un rappresentante di $h$ e $\funct{}[g]{Y}{X}$ un rappresentante di $k$. Allora:
+	\begin{equation*}
+		\begin{cases}
+			h\circ k&=\left[f\circ g\right]=Id_Y^{\scriptscriptstyle{\underbfsf{Ktop}}}=\left[Id_Y\right]\implies f\circ g \sim Id_Y\\
+			k\circ h&=\left[g\circ f\right]=Id_X^{\scriptscriptstyle{\underbfsf{Ktop}}}=\left[Id_X\right]\implies g\circ f \sim Id_X 
 		\end{cases}
 	\end{equation*}
 \end{solution}
 \subsection{Funzioni iniettive e sottogruppi fondamentali}
 La seguente dimostrazione è adattata da \cite{HagenVonEitzen:injectivesubgroup} su Mathematics Stack Exchange.
-\begin{lemming}[Funzione iniettiva fra gruppi implica isomorfismo con sottogruppo.]~{}\label{isomorfismosottogruppolemma}\\
-Dati due gruppi $G$ e $H$, se $\funz{f}{G}{H}$ è omomorfismo \textit{iniettivo} allora $G$ è \textit{isomorfo} al sottogruppo $K=f\left(G\right)$ di $H$.
-\end{lemming}
-\begin{demonstration}
-	Banalmente, preso $K=f\left(G\right)$ abbiamo ristretto l'omeomorfismo iniettivo alla sua immagine, rendendolo suriettivo e dunque biettivo.\\
-	Per verificare che $K$ è sottogruppo usiamo ora il criterio seguente: un sottoinsieme $K$ di $H$ è un sottogruppo se non è vuoto e $a,\ b\in K\implies ab^{-1}\in K$. Poiché $G$ è non vuoto, $K=f\left(G\right)$ non è vuoto. Presi allora $a,\ b\in K$, troviamo $x,\ y\in G$ tali che $f\left(x\right)=a,\ f\left(y\right)=b$. Allora:
+\begin{lemma}{}[Funzione iniettiva fra gruppi implica isomorfismo con sottogruppo.]~{}\label{isomorfismosottogruppolemma}
+Dati due gruppi $G$ e $H$, se $\funct{}[f]{G}{H}$ è omomorfismo \textit{iniettivo} allora $G$ è \textit{isomorfo} al sottogruppo $K=f\left(G\right)$ di $H$.
+\end{lemma}
+\begin{proof}{n}
+	Banalmente, preso $K=f\left(G\right)$ abbiamo ristretto l'omomorfismo iniettivo alla sua immagine, rendendolo suriettivo e dunque biettivo. Per verificare che $K$ è sottogruppo usiamo ora il criterio seguente: un sottoinsieme $K$ di $H$ è un sottogruppo se non è vuoto e $a,\ b\in K\implies ab^{-1}\in K$. Poiché $G$ è non vuoto, $K=f\left(G\right)$ non è vuoto. Presi $a,\ b\in K$, troviamo $x,\ y\in G$ tali che $f(x)=a,\ f(y)=b$. Allora
 	\begin{equation*}
-		ab^{-1}=f\left(x\right)f\left(y\right)^{-1}f\left(xy^{-1}\right)\in K
+		ab^{-1}=f(x)f(y)^{-1}f\left(xy^{-1}\right)\in K.\qedhere
 	\end{equation*}
-\vspace{-6mm}
-\end{demonstration}
-\begin{corollary}[Il gruppo fondamentale di un retratto $A$ è isomorfo ad un sottogruppo dell'insieme $X$.]~{}\\
-	Sia $A\subseteq X$ un retratto con retrazione $\funz{r}{X}{A}$ e inclusione $\incl{i}{A}{X}$. Allora $\gruf{A}{a}$ è isomorfo ad un sottogruppo di $\gruf{X}{a}$; in particolare, $\gruf{A}{a}$ è di ordine infinito, lo deve essere anche $\gruf{X}{a}$.
+\end{proof}
+\begin{corollary}{}[Gruppo fondamentale di un retratto]
+	Sia $A\subseteq X$ un retratto con retrazione $\funct{}[r]{X}{A}$ e inclusione $\funct{i}[i]{A}{X}$. Allora $\homotopy[1]{A,a}$ è isomorfo ad un sottogruppo di $\homotopy[1]{X,a}$; in particolare, se $\homotopy[1]{A,a}$ è di ordine infinito, lo deve essere anche $\homotopy[1]{X,a}$.
 \end{corollary}
-\begin{demonstration}
-	Dal corollario \ref{grp fond iniettiva e suriettiva}, pag. \pageref{grp fond iniettiva e suriettiva} $\funz{i_{\ast}}{\gruf{A}{a}}{\gruf{X}{a}}$ è un omomorfismo \textit{iniettivo}, dunque dal lemma \ref{isomorfismosottogruppolemma} segue la tesi.
-\end{demonstration}
+\begin{proof}{n}
+	Dal corollario \ref{grp fond iniettiva e suriettiva}, pag. \pageref{grp fond iniettiva e suriettiva} $\funct{i}[i_{\ast}]{\homotopy[1]{A,a}}{\homotopy[1]{X,a}}$ è un omomorfismo \textit{iniettivo}, dunque dal lemma \ref{isomorfismosottogruppolemma} segue la tesi.\qedhere
+\end{proof}
 \subsection{Un caso di proiezione stereografica}\label{proiezionestereograficanote}
-Nel caso $n=2$, per creare la proiezione stereografica da un punto $p$ su $S^2\setminus N$ a $H=\{z=0\}\cong\realset^2$ prendiamo la retta passante per $p=\left(\overline{x},\ \overline{y},\ \overline{z}\right)$ e per $N=\left(0,\ 0,\ 1\right)$.
+Nel caso $n=2$, per scrivere la proiezione stereografica da un punto $p$ su $S^2\setminus N$ a $H=\{z=0\}\cong\R^2$ prendiamo la retta passante per $p=\left(\overline{x},\ \overline{y},\ \overline{z}\right)$ e per $N=\left(0,\ 0,\ 1\right)$.
 \begin{equation*}
 \frac{x-0}{\overline{x}-0}=\frac{y-0}{\overline{y}-0}=\frac{z-1}{\overline{z}-1}\implies
 \begin{cases}
@@ -399,11 +405,11 @@ Intersechiamola con il piano $H$:
 	z=0
 \end{cases}
 \end{equation*}
-Allora, la proiezione risulta:
-\begin{equation}
-	\funztot{f}{S^2\setminus N}{\realset^2}{p=\left(\overline{x},\ \overline{y},\ \overline{z}\right)}{\left(-\frac{\overline{x}}{\overline{z}-1},\ -\frac{\overline{y}}{\overline{z}-1}\right)}
-\end{equation}
-La funzione è ben definita e continua su $S^2\setminus N$; la sua inversa è definita creando la retta per $q=\left(\overline{x},\ \overline{y},\ 0\right)\in H\subseteq \realset^3$ e $N=\left(0,\ 0,\ 1\right)$:
+Allora, la proiezione risulta
+\begin{equation*}
+	\funct{}[f]{S^2\setminus N}{\R^2}[p=\left(\overline{x},\ \overline{y},\ \overline{z}\right)][\left(-\frac{\overline{x}}{\overline{z}-1},\ -\frac{\overline{y}}{\overline{z}-1}\right)].
+\end{equation*}
+La funzione è ben definita e continua su $S^2\setminus N$; la sua inversa è definita creando la retta per $q=\left(\overline{x},\ \overline{y},\ 0\right)\in H\subseteq \R^3$ e $N=\left(0,\ 0,\ 1\right)$:
 \begin{equation*}
 	\frac{x-0}{\overline{x}-0}=\frac{y-0}{\overline{y}-0}=\frac{z-1}{0-1}\implies
 	\begin{cases}
@@ -420,72 +426,88 @@ E intersecandola con il piano $H$:
 	\end{cases}\\
 	\left(1-z\right)^2\overline{x}^2+\left(1-z\right)^2\overline{y}^2+z^2=1  \implies z^2\left(\overline{x}^2+\overline{y}^2+1\right)-2z\left(\overline{x}^2+\overline{y}^2\right)+\left(\overline{x}^2+\overline{y}^2-1\right)=0
 \end{gather*}
-Da cui abbiamo $z_{1,2}=1 \vee \frac{\overline{x}^2+\overline{y}^2-1}{\overline{x}^2+\overline{y}^2+1}$. Escludendo $z=1$ perché dà il Polo Nord, si ha:
-\begin{equation}
-	\funztot{f^{-1}}{\realset^2}{S^2\setminus N}{q=\left(\overline{x},\ \overline{y}\right)}{f^{-1}\left(q\right)=\left(\frac{2\overline{x}}{\overline{x}^2+\overline{y}^2+1},\ \frac{2\overline{y}}{\overline{x}^2+\overline{y}^2+1},\ \frac{\overline{x}^2+\overline{y}^2-1}{\overline{x}^2+\overline{y}^2+1}\right)}
-\end{equation}
-La funzione è ben definita e continua su $\realset^2$; si verifica più o meno facilmente che $f^{-1}\circ f=Id_{S^2\setminus N}$ e $f\circ f^{-1}=Id_\realset^{2}$, cioè $f$ è omeomorfismo tra $S^2\setminus N$ e $\realset^2$.
+Da cui abbiamo $z_{1,2}=1$ o $\frac{\overline{x}^2+\overline{y}^2-1}{\overline{x}^2+\overline{y}^2+1}$. Escludendo $z=1$ perché dà il Polo Nord, si ha
+\begin{equation*}
+	\funct{}[f^{-1}]{\R^2}{S^2\setminus N}[q=\left(\overline{x},\ \overline{y}\right)][f^{-1}\left(q\right)=\left(\frac{2\overline{x}}{\overline{x}^2+\overline{y}^2+1},\ \frac{2\overline{y}}{\overline{x}^2+\overline{y}^2+1},\ \frac{\overline{x}^2+\overline{y}^2-1}{\overline{x}^2+\overline{y}^2+1}\right)].
+\end{equation*}
+La funzione è ben definita e continua su $\R^2$; si verifica relativamente facilmente che $f^{-1}\circ f=Id_{S^2\setminus N}$ e $f\circ f^{-1}=Id_{\R}^{2}$, cioè $f$ è omeomorfismo tra $S^2\setminus N$ e $\R^2$.
 \subsection{Gruppi liberi}\label{gruppolibero}
-\begin{define}[Parola.]~{}\\
+\begin{definition}{}[Parola]
 	Dato un gruppo $G$, una \textbf{parola}\index{parola} è un qualunque prodotto di elementi del gruppo e dei loro inversi.
-\end{define}
+\end{definition}
 Se $a,\ b,\ c$ sono elementi del gruppo $G$, alcune possibili parole sono $ab$, $abca^{-1}$, $ccb^{-1}ab$.  Due parole sono considerate \textit{distinte} se non possiamo ricondurci dall'una all'altra attraverso gli assiomi di gruppi: ad esempio, $ab=acc^{-1}a$, ma $a\neq b^{-1}$. Una parola può essere \textit{semplificata} in due modi differenti:
 \begin{itemize}
-	\item Togliendo l'elemento neutro $e$ o una coppia di elementi adiacenti $aa^{-1}$ o $a^{-1}a$.
-	\item Sostituendo ad una coppia $ab$ il loro prodotto $d$ in $G$ oppure ad una serie di $k$ termini $a\ldots a$ la potenza $a^k$.
+	\item togliendo l'elemento neutro $e$ o una coppia di elementi adiacenti $aa^{-1}$ o $a^{-1}a$;
+	\item sostituendo ad una coppia $ab$ il loro prodotto $d$ in $G$ oppure ad una serie di $k$ termini $a\ldots a$ la potenza $a^k$.
 \end{itemize}
 Una parola che non può essere semplificata ulteriormente è detta \textbf{ridotta}\index{parola!ridotta}.
-\begin{define}[Gruppo libero.]~{}\\
-Il \textbf{gruppo libero}\index{gruppo!libero} $F_S$ su un insieme $S$ è il gruppo i cui elementi sono tutte le parole ridotte date dagli elementi di $S$; l'operazione è la \textbf{concatenazione}\index{concatenazione}\index{concatenazione} di parole e l'elemento neutro è la \textit{parola vuota} (la parola senza alcun elemento di $S$).\\
-Gli elementi di $S$ sono detti \textbf{generatori}\index{generatore} e il numero di generatori è il \textbf{rango}\index{rango!del gruppo libero} del gruppo libero.\\
+\begin{definition}{}[Gruppo libero]
+Il \textbf{gruppo libero}\index{gruppo!libero} $F_S$ su un insieme $S$ è il gruppo i cui elementi sono tutte le parole ridotte date dagli elementi di $S$; l'operazione è la \textbf{concatenazione}\index{concatenazione}\index{concatenazione} di parole e l'elemento neutro è la \textit{parola vuota}, la parola senza alcun elemento di $S$). Gli elementi di $S$ sono detti \textbf{generatori}\index{generatore} e il numero di generatori è il \textbf{rango}\index{rango!del gruppo libero} del gruppo libero.\\
 Un gruppo $G$ è detto \textbf{libero} se isomorfo al gruppo libero $F_S$ generato dal sottoinsieme $S\subseteq G$.
-\end{define}
-\begin{example}
-	$\left(\integerset,\ +\right)$ è un gruppo libero di rango 1, generato da, ad esempio, $S=\{1\}$. Esso è un gruppo libero \textit{abeliano}.
+\end{definition}
+\begin{example}{n}
+	$\left(\Z,\ +\right)$ è un gruppo libero di rango $1$, generato da, ad esempio, $S=\{1\}$. Esso è un gruppo libero \textit{abeliano}.
 \end{example}
-\begin{observes}~{}
+\begin{remark}{pn}~{}
 	\begin{itemize}
 		\item Ogni gruppo finito di rango $\geq 2$ è \textit{non} abeliano.
 		\item Ogni gruppo non triviale \textit{finito} non può essere libero, in quanto gli elementi dell'insieme $S$ generante $F_S$ hanno ordine infinito. 
 	\end{itemize}
-\vspace{-3mm}
-\end{observes}
-\begin{define}[Prodotto libero.]~{}\\
+\end{remark}
+\begin{definition}{}[Prodotto libero]
 	Dati due gruppi $G$ e $H$, il \textbf{prodotto libero}\index{prodotto!libero} $G\ast H$ è il gruppo i cui elementi sono le parole ridotte date da generatori $g_i\in G$ e in $h_j\in H$, ad esempio $g_1h_1\ldots g_k h_k$.
-\end{define}
-\begin{example}~{}
+\end{definition}
+\begin{example}{n}~{}
 		\begin{itemize}
 		\item Se $G=\left<a\right>$ e $H=\left<b\right>$ sono gruppi ciclici infiniti, ogni elemento di $G\ast H$ è dato da prodotti alternati di potenze di $a$ e potenze di $b$, cioè $G\ast H\cong F_S$ con $S=\{x,\ y\}$. Alcune parole sono, ad esempio, $a^3b^5a^{-1}b$ o $b^{-2}ab^{-3}$.
-		\item Preso $\left(\integerset,\ +\right)$, $\integerset\ast\integerset$ è un gruppo libero di rango 2 come l'esempio precedente: infatti, ogni gruppo ciclico infinito è isomorfo a $\integerset$, dunque ci riconduciamo all'esempio precedente. Possiamo quindi scrivere $\integerset\ast\integerset=\left<a\right>\ast\left<b\right>$, indicando $\{a\}$ come il generatore rosso $\{\textcolor{redill}{\textbf{1}}\}$ del primo $\integerset$ e $\{b\}$ come il generatore blu $\{\textcolor{blueill}{1}\}$ del secondo $\integerset$.\\
-		Alcune parole sono, ad esempio, $a^3b^5a^{-1}b=(\textcolor{redill}{\textbf{3}})(\textcolor{blueill}{5})(\textcolor{redill}{\textbf{-1}})(\textcolor{blueill}{1})$ o $b^{-2}ab^{-3}=(\textcolor{blueill}{-2})(\textcolor{redill}{\textbf{1}})(\textcolor{blueill}{-3})$.
+		\item Preso $\left(\Z,\ +\right)$, $\Z\ast\Z$ è un gruppo libero di rango 2 come l'esempio precedente: infatti, ogni gruppo ciclico infinito è isomorfo a $\Z$, dunque ci riconduciamo all'esempio precedente. Possiamo quindi scrivere $\Z\ast\Z=\left<a\right>\ast\left<b\right>$, indicando $\{a\}$ come il generatore $\{\textcolor{redill}{\textbf{1}}\}$ del primo $\Z$ e $\{b\}$ come il generatore $\{\textcolor{blueill}{1}\}$ del secondo $\Z$. Alcune parole sono, ad esempio, $a^3b^5a^{-1}b=(\textcolor{redill}{\mathbf{3}})(\textcolor{blueill}{5})(\textcolor{reddo}{\mathbf{-1}})(\textcolor{blueill}{1})$ o $b^{-2}ab^{-3}=(\textcolor{blueill}{-2})(\textcolor{redill}{\mathbf{1}})(\textcolor{blueill}{-3})$.
 	\end{itemize}
-\vspace{-3mm}
 \end{example}
 \subsection{Somma wedge}
-\begin{define}[Somma wedge.]~{}\\
-	Se $\left(X,\ x_0\right)$ e $\left(X,\ y_0\right)$ sono due spazi topologici di cui prendiamo i punti $x_0\in X$ e $y_0\in Y$. La somma wedge di $X$ e $Y$ è lo spazio quoziente dell'unione disgiunta di $X$ e $Y$ in cui identifichiamo solo i due punti, cioè poniamo $x_0\sim y_0$:
-	\begin{equation}
-		X\vee Y=\frac{X\amalg Y}{\sim}
-	\end{equation}
+\begin{definition}{}[Somma wedge]
+	Se $\left(X,\ x_0\right)$ e $\left(X,\ y_0\right)$ sono due spazi topologici puntati, la somma wedge di $X$ e $Y$ rispetto a $x_0$ e $y_0$ è lo spazio quoziente dell'unione disgiunta di $X$ e $Y$ in cui identifichiamo solo i due punti, cioè poniamo $x_0\sim y_0$:
+	\begin{equation*}
+		X\vee Y\coloneqq \left(X\amalg Y\right)/\sim
+	\end{equation*}
 Nel caso di una famiglia di spazi $\left\{\left(X_i,\ x_i\right)\right\}_{i\in I}$, la relazione $\sim$ è tale per cui $\left\{x_i\right\}_{i\in I}$ sono tutti identificati fra di loro; la somma wedge della famiglia è definita come:
 \begin{equation*}
-	\bigvee_{i\in I} X_i = \frac{\coprod_{i\in I}X_i}{\sim}
+	\bigvee_{i\in I} X_i \coloneqq \left(\coprod_{i\in I}X_i\right)/\sim
 \end{equation*}
-\end{define}
-\begin{example}
+\end{definition}
+\begin{example}{n}
 	Il \textit{bouquet} di $n$ circonferenze è una somma wedge di $n$ circonferenze.
 \end{example}
 In questa sede non approfondiamo ulteriormente, ma è interessante sapere come con certi spazi topologici che si comportano ‘‘bene'' il \textit{teorema di Van Kampen} ci dà condizioni per cui il gruppo fondamentale di $X\vee Y$ è il gruppo libero dei gruppi fondamentali di $X$ e $Y$:
-\begin{equation}
-	\gruf{X\vee Y}{\ }=\gruf{X}{\ }\ast\gruf{Y}{\ }
-\end{equation}
-\begin{example}
-	Il \textit{bouquet} di $2$ circonferenze $S^1\vee S^1$ ha gruppo fondamentale $\gruf{S^1\vee S^1}{\ }=\gruf{S^1}{\ }\ast\gruf{S^1}{\ }$  $\gruf{S^1\vee S^1}{\ }=\integerset\ast\integerset$.
+\begin{equation*}
+	\homotopy[1]{X\vee Y}=\homotopy[1]{X}\ast\homotopy[1]{Y}.
+\end{equation*}
+\begin{example}{n}
+	Il \textit{bouquet} di $2$ circonferenze $S^1\vee S^1$ ha gruppo fondamentale
+	\begin{equation*}
+	\homotopy[1]{S^1\vee S^1}=\homotopy[1]{S^1}\ast\homotopy[1]{S^1}=\Z\ast\Z.
+	\end{equation*}
 \end{example}
 \section{Capitolo 10: approfondimenti di Algebra Lineare}
 \subsection{Determinante di una matrice a blocchi}
 La seguente dimostrazione sul determinante di una matrice a blocchi e del suo polinomio caratteristico si basa su integrazioni proprie da \cite{jeanmarie:blockdet} e da \cite{bengrossman:blockdet} su Mathematics Stack Exchange. \label{dimostrazionedeterminantematriceblocchi}
-\begin{demonstration}
+\begin{proposition}{}[Polinomio caratteristico di una matrice diagonale a blocchi]
+	Data una matrice quadrata a blocchi
+	\begin{equation*}
+		A=\left(
+		\begin{array}{c|c}
+			\mathbf{B} & \mathbf{O}\\
+			\hline
+			\mathbf{O} & \mathbf{C}
+		\end{array}
+		\right),
+	\end{equation*}
+	il polinomio caratteristico associato $C_A(t)$ si può scomporre come
+	\begin{equation*}
+		C_A(t)=C_B(t)C_C(t).
+	\end{equation*}
+	dove $C_B(t)$ e $C_C(t)$ sono i polinomi caratteristici associati a $B$ e $C$, rispettivamente.
+\end{proposition}
+\begin{proof}{n}
 	Data una matrice quadrata $\left(
 	\begin{array}{c|c}
 		\mathbf{A} & \mathbf{B}\\
@@ -493,8 +515,8 @@ La seguente dimostrazione sul determinante di una matrice a blocchi e del suo po
 		\mathbf{C} & \mathbf{D}
 	\end{array}
 	\right)$
-	definita dai blocchi $\mathbf{A}$ di dimensione $n\times n$, $\mathbf{B}$ di dimensione $n\times m$, $\mathbf{C}$ di dimensione $m\times n$ e $\mathbf{D}$ di dimensione $m\times m$. Supponendo $\mathbf{A}$ blocco invertibile, si può scomporre la matrice nel seguente modo:
-	\begin{equation}
+	definita dai blocchi $\mathbf{A}$ di dimensione $n\times n$, $\mathbf{B}$ di dimensione $n\times m$, $\mathbf{C}$ di dimensione $m\times n$ e $\mathbf{D}$ di dimensione $m\times m$. Supponendo $\mathbf{A}$ un blocco invertibile, si può scomporre la matrice nel seguente modo:
+	\begin{equation*}
 		\left(
 		\begin{array}{c|c}
 			\mathbf{A} & \mathbf{B}\\
@@ -503,25 +525,25 @@ La seguente dimostrazione sul determinante di una matrice a blocchi e del suo po
 		\end{array}
 		\right)=\left(
 		\begin{array}{c|c}
-			\mathbf{I_n} & \mathbf{0}\\
+			\mathbf{I_n} & \mathbf{O}\\
 			\hline
-			\mathbf{CA^{-1}} & \mathbf{I_m}
+			\mathbf{CA}^{-1} & \mathbf{I_m}
 		\end{array}
 		\right)\left(
 		\begin{array}{c|c}
-			\mathbf{A} & \mathbf{0}\\
+			\mathbf{A} & \mathbf{O}\\
 			\hline
-			\mathbf{0} & \mathbf{D-CA^{-1}B}
+			\mathbf{O} & \mathbf{D-CA}^{-1}\mathbf{B}
 		\end{array}
 		\right)
 		\left(
 		\begin{array}{c|c}
-			\mathbf{I_n} & \mathbf{A^{-1}B}\\
+			\mathbf{I_n} & \mathbf{A}^{-1}\mathbf{B}\\
 			\hline
-			\mathbf{0} & \mathbf{I_m}
+			\mathbf{O} & \mathbf{I_m}
 		\end{array}
 		\right)
-	\end{equation}
+	\end{equation*}
 	Calcoliamo il determinante di $\left(
 	\begin{array}{c|c}
 		\mathbf{A} & \mathbf{B}\\
@@ -530,181 +552,170 @@ La seguente dimostrazione sul determinante di una matrice a blocchi e del suo po
 	\end{array}
 	\right)$, notando che $\left(
 	\begin{array}{c|c}
-		\mathbf{I_n} & \mathbf{0}\\
+		\mathbf{I_n} & \mathbf{O}\\
 		\hline
-		\mathbf{CA^{-1}} & \mathbf{I_m}
+		\mathbf{CA}^{-1} & \mathbf{I_m}
 	\end{array}
 	\right)$ e $\left(
 	\begin{array}{c|c}
-		\mathbf{I_n} & \mathbf{A^{-1}B}\\
+		\mathbf{I_n} & \mathbf{A}^{-1}\mathbf{B}\\
 		\hline
-		\mathbf{0} & \mathbf{I_m}
+		\mathbf{O} & \mathbf{I_m}
 	\end{array}
-	\right)$ sono triangolari con diagonale di $1$.
-	\begin{equation*}
-		\begin{array}{ll}
-			\det\left(\begin{array}{c|c}
-				\mathbf{A} & \mathbf{B}\\
-				\hline
-				\mathbf{C} & \mathbf{D}
-			\end{array}\right)&=\det\left(\left(
+	\right)$ sono triangolari con diagonale tutti $1$.
+	\begin{align*}
+		\det\left(\begin{array}{c|c}
+			\mathbf{A} & \mathbf{B}\\
+			\hline
+			\mathbf{C} & \mathbf{D}
+		\end{array}\right)&=
+		\det\left(\left(
 		\begin{array}{c|c}
-		\mathbf{I_n} & \mathbf{0}\\
+		\mathbf{I_n} & \mathbf{O}\\
 		\hline
-		\mathbf{CA^{-1}} & \mathbf{I_m}
-	\end{array}
-\right)\left(
-\begin{array}{c|c}
-\mathbf{A} & \mathbf{0}\\
-\hline
-\mathbf{0} & \mathbf{D-CA^{-1}B}
-\end{array}
-\right)
-\left(
-\begin{array}{c|c}
-\mathbf{I_n} & \mathbf{A^{-1}B}\\
-\hline
-\mathbf{0} & \mathbf{I_m}
-\end{array}
-\right)\right)=\\&=
-			\det\left(
-			\begin{array}{c|c}
-				\mathbf{I_n} & \mathbf{0}\\
-				\hline
-				\mathbf{CA^{-1}} & \mathbf{I_m}
-			\end{array}
-			\right)\det\left(
-			\begin{array}{c|c}
-				\mathbf{A} & \mathbf{0}\\
-				\hline
-				\mathbf{0} & \mathbf{D-CA^{-1}B}
-			\end{array}
-			\right)
-			\det\left(
-			\begin{array}{c|c}
-				\mathbf{I_n} & \mathbf{A^{-1}B}\\
-				\hline
-				\mathbf{0} & \mathbf{I_m}
-			\end{array}
-			\right)=\\&=
-\det\left(
-\begin{array}{c|c}
-	\mathbf{A} & \mathbf{0}\\
-	\hline
-	\mathbf{0} & \mathbf{D-CA^{-1}B}
-\end{array}
-\right)
-		\end{array}
-	\end{equation*}
-Ci serve calcolare il determinante di una \textit{matrice diagonale a blocchi}. Presa allora:
+		\mathbf{CA}^{-1} & \mathbf{I_m}
+		\end{array}\right)\left(
+		\begin{array}{c|c}
+			\mathbf{A} & \mathbf{O}\\
+			\hline
+			\mathbf{O} & \mathbf{D-CA}^{-1}\mathbf{B}
+		\end{array}\right)\left(
+		\begin{array}{c|c}
+			\mathbf{I_n} & \mathbf{A}^{-1}\mathbf{B}\\
+			\hline
+			\mathbf{O} & \mathbf{I_m}
+		\end{array}\right)\right)=\\
+		&=\det\left(
+		\begin{array}{c|c}
+			\mathbf{I_n} & \mathbf{O}\\
+			\hline
+			\mathbf{CA}^{-1} & \mathbf{I_m}
+		\end{array}\right)\det\left(
+		\begin{array}{c|c}
+			\mathbf{A} & \mathbf{O}\\
+			\hline
+			\mathbf{O} & \mathbf{D-CA}^{-1}\mathbf{B}
+		\end{array}\right)\det\left(
+		\begin{array}{c|c}
+			\mathbf{I_n} & \mathbf{A}^{-1}\mathbf{B}\\
+			\hline
+			\mathbf{O} & \mathbf{I_m}
+		\end{array}\right)=\\
+		&=\det\left(
+		\begin{array}{c|c}
+			\mathbf{A} & \mathbf{O}\\
+			\hline
+			\mathbf{O} & \mathbf{D-CA}^{-1}\mathbf{B}
+		\end{array}\right)
+\end{align*}
+Ci serve calcolare il determinante di una \textit{matrice diagonale a blocchi}. Presa allora
 \begin{equation*}
 	\left(
 	\begin{array}{c|c}
-		\mathbf{P} & \mathbf{0}\\
+		\mathbf{P} & \mathbf{O}\\
 		\hline
-		\mathbf{0} & \mathbf{Q}
+		\mathbf{O} & \mathbf{Q}
 	\end{array}
 	\right)
 \end{equation*}
-Possiamo riscriverla come:
+possiamo riscriverla come
 \begin{equation*}
 	\left(
 	\begin{array}{c|c}
-		\mathbf{P} & \mathbf{0}\\
+		\mathbf{P} & \mathbf{O}\\
 		\hline
-		\mathbf{0} & \mathbf{I_m}
+		\mathbf{O} & \mathbf{I_m}
 	\end{array}
 	\right)\left(
 	\begin{array}{c|c}
-		\mathbf{I_n} & \mathbf{0}\\
+		\mathbf{I_n} & \mathbf{O}\\
 		\hline
-		\mathbf{0} & \mathbf{Q}
+		\mathbf{O} & \mathbf{Q}
 	\end{array}
-	\right)
+	\right).
 \end{equation*}
-Grazie alle formule di Laplace, possiamo calcolare il determinante delle due matrici sfruttando le matrici identità presenti. Ad esempio, sviluppando rispetto le righe o le colonne sulla seconda:
+Grazie alle formule di Laplace, possiamo calcolare il determinante delle due matrici sfruttando le matrici identità presenti. Ad esempio, sviluppando rispetto le righe o le colonne sulla seconda,
 \begin{equation*}
 \det\left(
 \begin{array}{c|c}
-	\mathbf{I_n} & \mathbf{0}\\
+	\mathbf{I_n} & \mathbf{O}\\
 	\hline
-	\mathbf{0} & \mathbf{Q}
+	\mathbf{O} & \mathbf{Q}
 \end{array}
 \right)=1\cdot \det\left(
 \begin{array}{c|c}
-	\mathbf{I_{n-1}} & \mathbf{0}\\
+	\mathbf{I_{n-1}} & \mathbf{O}\\
 	\hline
-	\mathbf{0} & \mathbf{Q}
+	\mathbf{O} & \mathbf{Q}
 \end{array}
 \right)=1\cdot 1\cdot \det\left(
 \begin{array}{c|c}
-	\mathbf{I_{n-2}} & \mathbf{0}\\
+	\mathbf{I_{n-2}} & \mathbf{O}\\
 	\hline
-	\mathbf{0} & \mathbf{Q}
+	\mathbf{O} & \mathbf{Q}
 \end{array}
-\right)=\ldots = 1^n\cdot \det \mathbf{Q} =\det \mathbf{Q}
+\right)=\ldots = 1^n\cdot \det \mathbf{Q} =\det \mathbf{Q}.
 \end{equation*}
 Il risultato è analogo per la prima. Dunque, concludendo:
-\begin{gather}
+\begin{align*}
 \det\left(
 \begin{array}{c|c}
 	\mathbf{A} & \mathbf{B}\\
 	\hline
 	\mathbf{C} & \mathbf{D}
 \end{array}
-\right)=\det\left(\mathbf{A}\right)\det\left(\mathbf{D-CA^{-1}B}\right)\\
+\right)&=\det\left(\mathbf{A}\right)\det\left(\mathbf{D-CA^{-1}B}\right)\\
 \det\left(
 \begin{array}{c|c}
-	\mathbf{A} & \mathbf{0}\\
+	\mathbf{A} & \mathbf{O}\\
 	\hline
-	\mathbf{0} & \mathbf{D}
+	\mathbf{O} & \mathbf{D}
 \end{array}
 \right)=\det\left(\mathbf{A}\right)\det\left(\mathbf{D}\right)
-\end{gather}
-Come ultima conseguenza, se vogliamo studiare il polinomio caratteristico $C_A\left(t\right)$ di una matrice $A$ a blocchi diagonali $\mathbf{B}$ e $\mathbf{C}$, abbiamo che:
-\begin{equation}
+\end{align*}
+Pertanto, se vogliamo studiare il polinomio caratteristico $C_A\left(t\right)$ di una matrice diagonale $A$ a blocchi $\mathbf{B}$ e $\mathbf{C}$, abbiamo che
+\begin{equation*}
 C_A\left(t\right)=\det\left(
 \begin{array}{c|c}
-	\mathbf{B}-t I & \mathbf{0}\\
+	\mathbf{B}-t\mathbf{I} & \mathbf{O}\\
 	\hline
-	\mathbf{0} & \mathbf{C}-t I
+	\mathbf{O} & \mathbf{C}-t\mathbf{I}
 \end{array}
-\right)=\det\left(\mathbf{B}-t I\right)\det\left(\mathbf{C}-t I\right)=C_B\left(t\right)C_C\left(t\right)
-\end{equation}
-\end{demonstration}
+\right)=\det\left(\mathbf{B}-t I\right)\det\left(\mathbf{C}-t I\right)=C_B\left(t\right)C_C\left(t\right).\qedhere
+\end{equation*}
+\end{proof}
 \subsection{Convergenza uniforme}\label{convergenzauniforme}
 Tutti i ragionamenti qui presenti si applicano anche alle successioni e serie di potenze.
-\begin{define}[Convergenza uniforme.]~{}\\
-	Dato un insieme $E$ e un successione $\left(f_n\right)_{n\in\naturalset}$ con $\funz{f_n}{E}{X}$ con $X$ metrico, si dice che la successione è uniformemente convergente \index{convergenza!uniforme} su $E$ con limite $\funz{f}{E}{X}$ se:
-	\begin{equation}
-		\forall\epsilon>0\ \exists N\in\naturalset\ \colon \forall n\geq N,\ x\in E \mvf{d}{f_n\left(x\right)}{f\left(x\right)}<\epsilon
-	\end{equation}
-\vspace{-6mm}
-\end{define}
-\begin{theorema}[Criterio di Weierstrass o M-test.]~{}\\
-	Sia $\left(f_n\right)_{n\in\naturalset}$ una successione di funzioni \textit{reali} o \textit{complesse} definite su un insieme $A$ e che esista una successione di numeri \textit{non negativi} $\left(M_n\right)_{n\in\naturalset}$ che soddisfino la seguente relazione:
-	\begin{equation}
-		\forall n\geq 1,\ x\in A\ \colon \lvert f_n\left(x\right)\rvert \leq M_n,\ \sum_{n=1}^{\infty}M_n<\infty
-	\end{equation}
-Allora la serie:
-\begin{equation}
+\begin{definition}{}[Convergenza uniforme]
+	Dato un insieme $E$ e un spazio metrico $X$, una successione di funzioni $\left(\funct{}[f_n]{E}{X}\right)_{n\in\N}$ è \textbf{uniformemente convergente} \index{convergenza!uniforme} su $E$ con limite $\funct{}[f]{E}{X}$ se
+	\begin{equation*}
+		\forall\epsilon>0\ \exists N\in\N\ \colon \forall n\geq N,\ x\in E\ d(f_n(x),f(x))<\epsilon.
+	\end{equation*}
+\end{definition}
+\begin{theorem}{q}[Criterio di Weierstrass o M-test]
+	Sia $\left(f_n\right)_{n\in\N}$ una successione di funzioni \textit{reali} o \textit{complesse} definite su un insieme $A$ e che esista una successione di numeri \textit{non negativi} $\left(M_n\right)_{n\in\N}$ che soddisfino la seguente relazione:
+	\begin{equation*}
+		\forall n\geq 1,\ x\in A\ \colon \lvert f_n(x)\rvert \leq M_n,\ \sum_{n=1}^{\infty}M_n<\infty.
+	\end{equation*}
+Allora la serie
+\begin{equation*}
 	\sum_{n=1}^{\infty}f_n
-\end{equation}
-Converge \textit{assolutamente} e \textit{uniformemente} su $A$
-\end{theorema}
+\end{equation*}
+converge \textit{assolutamente} e \textit{uniformemente} su $A$.\qedhere
+\end{theorem}
 Si usa spesso l'\textit{M-test} assieme al \textbf{teorema del limite uniforme}.
-\begin{theorema}[Teorema del limite uniforme.]~{}\\
-Sia $\left(f_n\right)_{n\in\naturalset}$ una successione di funzioni \textit{reali} o \textit{complesse} continue sullo spazio topologico $A$ nel quale sono definite; se la successione converge uniformemente su $A$ allora il limite converge ad una funzione continua. In particolare, lo stesso si ha nel caso di una serie.
-\end{theorema}
+\begin{theorem}{q}[Teorema del limite uniforme]
+Sia $\left(f_n\right)_{n\in\N}$ una successione di funzioni \textit{reali} o \textit{complesse} continue sullo spazio topologico $A$ nel quale sono definite. Se la successione converge uniformemente su $A$ allora il limite converge ad una funzione continua; in particolare, lo stesso si ha nel caso di una serie.\qedhere
+\end{theorem}
 \section{Capitolo 11: geometria proiettiva}
 \subsection{Regola di Cramer}\label{Cramerrimembriancor}\index{regola!di Cramer}
-\begin{theorema}[Regola di Cramer.]~{}\\
-	Si consideri un sistema $A\mathbf{x}=\mathbf{b}$ di $n$ equazioni lineari in $n$ incognite, con $\det A \neq 0$. Il sistema ha un unica soluzione $\mathbf{x}$, le cui componenti sono:
-	\begin{equation}
-		x_i=\frac{\det A_i}{\det A}\quad i=1,\ \ldots,\ n
-	\end{equation}
-	Con $A_i$ la matrice ottenuta sostituendo la $i$-esima colonna di $A$ col vettore $\mathbf{b}$.
-\end{theorema}
+\begin{theorem}{q}[Regola di Cramer]
+	Si consideri un sistema $A\mathbf{x}=\mathbf{b}$ di $n$ equazioni lineari in $n$ incognite, con $\det A \neq 0$. Il sistema ha un unica soluzione $\mathbf{x}$, le cui componenti sono
+	\begin{equation*}
+		x_i=\frac{\det A_i}{\det A}\quad i=1,\ \ldots,\ n,
+	\end{equation*}
+	con $A_i$ la matrice ottenuta sostituendo la $i$-esima colonna di $A$ col vettore $\mathbf{b}$.\qedhere
+\end{theorem}
 Ad esempio, dato il sistema lineare in 2 equazioni e 2 incognite (in cui $a_{11}a_{22}-a_{12}a_{21}\neq 0$):
 \begin{equation*}
 	\begin{cases}
@@ -718,21 +729,21 @@ Ad esempio, dato il sistema lineare in 2 equazioni e 2 incognite (in cui $a_{11}
 x_1 \\
 x_2
 \end{array}\right)=\left(\begin{array}{c}
-\textcolor{redill}{b_1} \\
-\textcolor{redill}{b_2}
+\textcolor{reddo}{b_1} \\
+\textcolor{reddo}{b_2}
 \end{array}\right)
 \end{equation*}
 Possiamo trovare $x_1$ e $x_2$ con la regola di Cramer:
 \begin{equation*}
 	x_1=\frac{\left|\begin{array}{cc}
-			\textcolor{redill}{b_1} & a_{12} \\
-			\textcolor{redill}{b_2} & a_{22}
+			\textcolor{reddo}{b_1} & a_{12} \\
+			\textcolor{reddo}{b_2} & a_{22}
 		\end{array}\right|}{\left|\begin{array}{cc}
 		a_{11} & a_{12} \\
 		a_{21} & a_{22}
 	\end{array}\right|}\quad x_2=\frac{\left|\begin{array}{cc}
-	 a_{11} & \textcolor{redill}{b_1} \\
-	 a_{21} & \textcolor{redill}{b_2}
+	 a_{11} & \textcolor{reddo}{b_1} \\
+	 a_{21} & \textcolor{reddo}{b_2}
 \end{array}\right|}{\left|\begin{array}{cc}
 a_{11} & a_{12} \\
 a_{21} & a_{22}
@@ -740,16 +751,18 @@ a_{21} & a_{22}
 \end{equation*}
 \section{Capitolo 12: coniche proiettive}
 \subsection{Regola di Cartesio}\label{Cartesioquellodeibidonidellacarta}\index{regola!di Cartesio}
-\begin{theorema}[Regola di Cartesio.]~{}\\
-	Dato un polinomio $f\left(x\right)$ in una sola variabile $x$, i cui termini non nulli sono in ordine decrescente rispetto all'esponente, allora il numero di \textit{radici positive} (contate con molteplicità) sono pari al numero di \textit{cambi di segno} tra due coefficienti consecutivi (trascurando eventuali coefficienti nulli).
-\end{theorema}
-\begin{tips}
-	Per trovare il numero di radici negative, è sufficiente applicare la regola di Cartesio al polinomio $f\left(-x\right)$: le radici positive di $f\left(-x\right)$ saranno le radici negative di $f\left(x\right)$.
-\end{tips}
-Ad esempio, consideriamo il polinomio $f\left(x\right)=x^3+x^2-x-1$: esso ha solo un cambio di segno fra il secondo e il terzo termine (sequenza di segni: $\left(+,\ +,\ -,\ -\right)$), dunque ha esattamente una radice reale positiva. Per le radici negative, notiamo che $f\left(-x\right)=-x^3+x^2+x-1$ ha due cambi di segno(sequenza di segni: $\left(-,\ +,\ +,\ -\right)$), ovvero $f$ ha due radici negative contate con molteplicità. Infatti, si fattorizza come:
-\begin{equation*}
-	f\left(x\right)=\left(x+1\right)^2\left(x-1\right)
-\end{equation*}
-Quindi una radice positiva e una negativa, quest'ultima con molteplicità 2.\\
+\begin{theorem}{q}[Regola di Cartesio]
+	Dato un polinomio $f(x)$ in una sola variabile $x$, i cui termini non nulli sono in ordine decrescente rispetto all'esponente, allora il numero di \textit{radici positive}, contate con molteplicità, sono pari al numero di \textit{cambi di segno} tra due coefficienti consecutivi, trascurando eventuali coefficienti nulli.
+\end{theorem}
+\begin{tipsandtricks}{n}
+	Per trovare il numero di radici negative, basta applicare la regola di Cartesio al polinomio $f\left(-x\right)$: le radici positive di $f\left(-x\right)$ saranno le radici negative di $f(x)$.
+\end{tipsandtricks}
+\begin{example}{n}
+	Consideriamo il polinomio $f(x)=x^3+x^2-x-1$: esso ha solo un cambio di segno fra il secondo e il terzo termine (sequenza di segni: $\left(+,\ +,\ -,\ -\right)$), dunque ha esattamente una radice reale positiva. Per le radici negative, notiamo che $f\left(-x\right)=-x^3+x^2+x-1$ ha due cambi di segno(sequenza di segni: $\left(-,\ +,\ +,\ -\right)$), ovvero $f$ ha due radici negative contate con molteplicità. Infatti, si fattorizza come:
+	\begin{equation*}
+		f(x)=\left(x+1\right)^2\left(x-1\right)
+	\end{equation*}
+	Quindi una radice positiva e una negativa, quest'ultima con molteplicità $2$.
+\end{example}
 Nel caso di una matrice $A$, come quelle simmetriche che descrivono le coniche affini e le coniche proiettive, applicando al polinomio caratteristico $C_A\left(t\right)$ la regola di Cartesio si possono trovare gli autovalori positivi e negativi.
 In particolare, noto il rango della matrice, il numero delle radici nulle $z$ del polinomio caratteristico corrisponde alla differenza tra la dimensione delle matrice $n$ e il suo rango $\rk A$; allora è sufficiente applicare la regola di Cartesio solo una volta per trovare il numero $p$ delle radici positive: il numero $q$ di quelle negative è pari a $\rk A - p$, dato che $n=z+p+q$ e $z=n-\rk A$ dalle osservazioni precedenti.

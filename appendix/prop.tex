@@ -15,9 +15,9 @@
 \end{flushright}
 \end{introduction}
 
-Riportiamo alcune proprietà utili per il lettore.
+\noindent Riportiamo alcune proprietà utili per il lettore.
 \section{Immagine e controimmagine}
-Data una funzione $\funz{f}{X}{Y}$, per ogni sottoinsieme $A\subseteq X$ e $B\subseteq Y$ valgono le seguenti proprietà:
+Data una funzione $\funct{}[f]{X}{Y}$, per ogni sottoinsieme $A\subseteq X$ e $B\subseteq Y$ valgono le seguenti proprietà:
 \begin{center}
 	\begin{tabular}{l|l}
 	\multicolumn{1}{c|}{\textbf{Immagine}} 	& \multicolumn{1}{c}{\textbf{Controimmagine}}\\ \hline
@@ -39,12 +39,12 @@ Data una funzione $\funz{f}{X}{Y}$, per ogni sottoinsieme $A\subseteq X$ e $B\su
 \stepcounter{footnote}\footnotetext{Uguale se $f$ \textit{iniettiva}.}	
 \end{center}
 
-Date le funzioni $\funz{f}{X}{Y}$ e $\funz{f}{Y}{Z}$, valgono le seguenti proprietà:
+Date le funzioni $\funct{}[f]{X}{Y}$ e $\funct{}[g]{Y}{Z}$, valgono le seguenti proprietà:
 \begin{itemize}
 	\item $(g \circ f)(A) = g(f(A))$
 	\item $(g \circ f)^{-1}(C) = f^{-1}(g^{-1}(C))$
 \end{itemize}
-Data una funzione $\funz{f}{X}{Y}$ e dati i sottoinsiemi $A_1,\ A_2\subseteq X$ e $B_1,\ B_2\subseteq Y$ valgono le seguenti proprietà:
+Data una funzione $\funct{}[f]{X}{Y}$ e dati i sottoinsiemi $A_1,\ A_2\subseteq X$ e $B_1,\ B_2\subseteq Y$ valgono le seguenti proprietà:
 \begin{center}
 	\begin{tabular}{l|l}
 		\multicolumn{1}{c|}{\textbf{Immagine}} 	& \multicolumn{1}{c}{\textbf{Controimmagine}}\\ \hline
@@ -57,7 +57,7 @@ Data una funzione $\funz{f}{X}{Y}$ e dati i sottoinsiemi $A_1,\ A_2\subseteq X$ 
 \stepcounter{footnote}\footnotetext{\label{note1}Uguale se $f$ \textit{iniettiva}.}
 \stepcounter{footnote}\footnotetext{Si veda \ref{note1}.}
 \end{center}
-Data una funzione $\funz{f}{X}{Y}$ e date le famiglie di sottoinsiemi $\{A_i\}\subseteq\setpart{X}$ e $\{B_i\}\subseteq\setpart{Y}$ (con $I$ un insieme di indici anche \textit{infinito} o \textit{non numerabile}) valgono le seguenti proprietà:
+Data una funzione $\funct{}[f]{X}{Y}$ e date le famiglie di sottoinsiemi $\{A_i\}\subseteq\powerset{X}$ e $\{B_i\}\subseteq\powerset{Y}$ (con $I$ un insieme di indici anche \textit{infinito} o \textit{non numerabile}) valgono le seguenti proprietà:
 \begin{center}
 	\begin{tabular}{l|l}
 		\multicolumn{1}{c|}{\textbf{Immagine}} 	& \multicolumn{1}{c}{\textbf{Controimmagine}}\\ \hline
@@ -92,7 +92,7 @@ Con $\det A\neq 0$, la sua inversa è:
 \textls{\textsc{\textcolor{reddo}{Assiomi di separazione}}}
 \begin{itemize}
 	\item \textbf{T1}: per ogni coppia di punti distinti $x$ e $y$ c'è un intorno aperto contenente $x$ ma non $y$; alternativamente, tutti i punti sono chiusi.
-	\item \textbf{T2} o \textbf{Hausdorff}: per ogni coppia di punti distinti $x$ e $y$ esistono due intorni disgiunti. Spazi di \textbf{Hausdorff} sono sempre \textbf{T1}.
+	\item \textbf{T2} o \textbf{Hausdorff}: per ogni coppia di punti distinti $x$ e $y$ esistono due intorni disgiunti. Spazi di Hausdorff sono sempreT1.
 	\item \textbf{Discreta}: ogni sottoinsieme è aperto.
 \end{itemize}
 \textls{\textsc{\textcolor{reddo}{Assiomi di numerabilità}}}
@@ -104,8 +104,8 @@ Con $\det A\neq 0$, la sua inversa è:
 \textls{\textsc{\textcolor{reddo}{Connessione}}}
 \begin{itemize}
 	\item \textbf{Connesso}: gli unici aperti e chiusi sono il vuoto e lo spazio stesso; alternativamente, lo spazio \textit{non} è l'unione di una coppia di aperti/chiusi non vuoti e disgiunti.
-	\item \textbf{Connesso per archi}: per ogni coppia di punti $x,\ y$ c'è un cammino $\funz{\alpha}{\left[0,\ 1\right]}{X}$ (con $\alpha\left(0\right)=x$ e $\alpha\left(1\right)=y$). Spazi \textbf{c.p.a.} sono sempre connessi.
-	\item \textbf{Semplicemente connesso}: spazio \textbf{c.p.a.} il cui gruppo fondamentale è banale.
+	\item \textbf{Connesso per archi}: per ogni coppia di punti $x,\ y$ c'è un cammino $\funct{}[\alpha]{\left[0,\ 1\right]}{X}$ (con $\alpha\left(0\right)=x$ e $\alpha\left(1\right)=y$). Spazi c.p.a. sono sempre connessi.
+	\item \textbf{Semplicemente connesso}: spazio c.p.a. il cui gruppo fondamentale è banale.
 	\item \textbf{Contraibile}: spazio con tipo di omotopia di un punto; alternativamente, l'identità $Id_X$ è omotopica ad una funzione costante. Ogni spazio contraibile è semplicemente connesso.
 \end{itemize}
 \textls{\textsc{\textcolor{reddo}{Compattezza}}}
@@ -124,7 +124,7 @@ Tutti gli invarianti omotopici sono anche invarianti per omeomorfismi.
 \begin{itemize}
 	\item \textbf{Connesso per archi}.
 	\item \textbf{Semplicemente connesso}.
-	\item Se gli spazi sono \textbf{c.p.a.}, i \textbf{gruppi fondamentali} sono \textit{isomorfi}. Se non sono \textit{c.p.a.}, $\gruf{X}{x_0}$ è omeomorfo a $\gruf{Y}{y_0}$ con $\funz{f}{\left(X,\ x_0\right)}{\left(Y,\ f\left(x_0\right)\right)}$ equivalenza omotopica.
+	\item Se gli spazi sonoc.p.a., i \textbf{gruppi fondamentali} sono \textit{isomorfi}. Se non sono c.p.a., $\homotopy{1}{X,x_0}$ è omeomorfo a $\homotopy{1}{Y,y_0}$ con $\funct{}[f]{\left(X,\ x_0\right)}{\left(Y,\ f\left(x_0\right)\right)}$ equivalenza omotopica.
 \end{itemize}
 \end{multicols}
 \section{Invarianti proiettivi}

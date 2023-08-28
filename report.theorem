@@ -1,0 +1,157 @@
+\noindent \textls {\textsc {\textcolor {reddo}{Capitolo 1:} }} 
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {1.1.1}\egroup }. \ \unskip \textsc {\ Teorema delle basi; Manetti, 3.7}.}}{8}{theoremT.1.1.1}%
+\contentsline {section}{\small {\textbf {PRT\bgroup \textup {1.1.1}\egroup }. \ \unskip \textsc {\ Proprietà degli intorni; Manetti, 3.20, 3.21}.}}{11}{propertynonewlineT.1.1.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {1.2.1}\egroup }. \ \unskip \textsc {\ Continuità per chiusura; Manetti, 3.25}.}}{12}{lemmaT.1.2.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {1.2.1}\egroup }. \ \unskip \textsc {\ Composizione di funzioni continue; Manetti, 3.26}.}}{12}{theoremT.1.2.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {1.2.2}\egroup }. \ \unskip \textsc {\ Continuità per punti e per aperti; Manetti, 3.28}.}}{13}{theoremT.1.2.2}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {1.4.1}\egroup }. \ \unskip \textsc {\ Omeomorfismo è biezione aperta e chiusa; Manetti, 3.31}.}}{14}{lemmaT.1.4.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {1.6.1}\egroup }. \ \unskip \textsc {\ Chiusura di un sottoinsieme di un sottospazio; Manetti, 3.55}.}}{16}{lemmaT.1.6.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {1.6.2}\egroup }. \ \unskip \textsc {\ Funzione iniettiva aperta/chiusa è immersione aperta/chiusa; Manetti, 3.59.}.}}{17}{lemmaT.1.6.2}%
+\contentsline {section}{\small {\textbf {PRT\bgroup \textup {1.7.1}\egroup }. \ \unskip \textsc {\ Proprietà della topologia prodotto; Manetti, 3.61.}.}}{18}{propertynonewlineT.1.7.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {1.8.1}\egroup }. \ \unskip \textsc {\ $X$ di Hausdorff se e solo se diagonale di $X$ chiusa; Manetti, 3.69}.}}{23}{theoremT.1.8.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {1.9.1}\egroup }. \ \unskip \textsc {\ Se la funzione è iniettiva codominio Hausdorff implica dominio Hausdorff; Manetti, esercizio 3.56}.}}{25}{lemmaT.1.9.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {1.9.1}\egroup }. \ \unskip \textsc {\ Prodotto Hausdorff ha fattori Hausdorff}.}}{25}{theoremT.1.9.1}%
+\noindent \textls {\textsc {\textcolor {reddo}{Capitolo 2:} }} 
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {2.1.1}\egroup }. \ \unskip \textsc {\ Condizioni equivalenti della sconnessione; Manetti, 4.2}.}}{28}{lemmaT.2.1.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {2.1.2}\egroup }. \ \unskip \textsc {\ Connesso è disgiunto o sottoinsieme di un aperto/chiuso; Manetti, 4.4}.}}{28}{lemmaT.2.1.2}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {2.1.1}\egroup }. \ \unskip \textsc {\ Connessione di ${\ensuremath {\left [0, 1\right ]}}$; Manetti, 4.6}.}}{28}{theoremT.2.1.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {2.1.2}\egroup }. \ \unskip \textsc {\ Immagine continua di un connesso è un connesso; Manetti, 4.7}.}}{29}{theoremT.2.1.2}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {2.1.3}\egroup }. \ \unskip \textsc {\ $X$ c.p.a. implica $X$ connesso; Manetti, 4.7}.}}{29}{theoremnonewlineT.2.1.3}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {2.1.4}\egroup }. \ \unskip \textsc {\ Immagine continua di uno spazio c.p.a. è un c.p.a.}.}}{30}{theoremT.2.1.4}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {2.1.3}\egroup }. \ \unskip \textsc {\ Unione di c.p.a. non disgiunta è c.p.a.}.}}{30}{lemmaT.2.1.3}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {2.1.5}\egroup }. \ \unskip \textsc {\ Caratterizzazione della connessione su $\symbb {R}$}.}}{32}{theoremT.2.1.5}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {2.1.6}\egroup }. \ \unskip \textsc {\ Funzioni continue da continue da $S^n$ in $\symbb {R}$}.}}{32}{theoremT.2.1.6}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {2.1.7}\egroup }. \ \unskip \textsc {\ Aperti di $\symbb {R}$ non omeomorfi ad aperti di $\symbb {R}^n$}.}}{33}{theoremT.2.1.7}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {2.1.8}\egroup }. \ \unskip \textsc {\ Teorema dell'invarianza della dimensione}.}}{33}{theoremqedT.2.1.8}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {2.1.9}\egroup }. \ \unskip \textsc {\ Unione arbitraria di sottospazi connessi è un connesso}.}}{33}{theoremT.2.1.9}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {2.1.10}\egroup }. \ \unskip \textsc {\ Prodotto di connessi se e solo se fattori connessi}.}}{34}{theoremT.2.1.10}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {2.1.11}\egroup }. \ \unskip \textsc {\ Caratterizzazione di un insieme denso}.}}{35}{theoremT.2.1.11}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {2.1.12}\egroup }. \ \unskip \textsc {\ Chiusura e connessione}.}}{35}{theoremT.2.1.12}%
+\contentsline {section}{\small {\textbf {PRT\bgroup \textup {2.1.1}\egroup }. \ \unskip \textsc {\ Proprietà delle componenti connesse}.}}{37}{propertyT.2.1.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {2.2.1}\egroup }. \ \unskip \textsc {\ Immagine continua di un compatto è compatta}.}}{38}{theoremT.2.2.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {2.2.2}\egroup }. \ \unskip \textsc {\ {$\ensuremath {\left [0, 1\right ]}$} è compatto}.}}{39}{theoremT.2.2.2}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {2.2.3}\egroup }. \ \unskip \textsc {\ Chiuso in un compatto è compatto; Manetti, 4.41.1}.}}{40}{theoremT.2.2.3}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {2.2.1}\egroup }. \ \unskip \textsc {\ Unione finita di compatti è un compatto; Manetti, 4.41.2}.}}{40}{lemmanonewlineT.2.2.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {2.2.4}\egroup }. \ \unskip \textsc {\ Compatto in un Hausdorff è chiuso; Manetti, 4.48}.}}{40}{theoremT.2.2.4}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {2.2.5}\egroup }. \ \unskip \textsc {\ Teorema di Heine-Borel in {$\symbb {R}$}; Manetti, 4.42}.}}{41}{theoremT.2.2.5}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {2.2.6}\egroup }. \ \unskip \textsc {\ Funzione su compatto in $\symbb {R}$ ha massimo/minimo; Manetti, 4.43}.}}{41}{theoremT.2.2.6}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {2.2.2}\egroup }. \ \unskip \textsc {\ Tube lemma}.}}{42}{lemmaT.2.2.2}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {2.2.7}\egroup }. \ \unskip \textsc {\ Prodotto di compatti se e solo se fattori compatti; Manetti, 4.49.2}.}}{42}{theoremT.2.2.7}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {2.2.8}\egroup }. \ \unskip \textsc {\ Teorema di Heine-Borel in {$\symbb {R}^n$}; Manetti, 4.42}.}}{43}{theoremT.2.2.8}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {2.2.9}\egroup }. \ \unskip \textsc {\ Funzione continua da compatto ad Hausdorff è chiusa; Manetti, 4.52}.}}{43}{theoremT.2.2.9}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {2.2.10}\egroup }. \ \unskip \textsc {\ Kuratowski-Mròwka}.}}{44}{theoremqedT.2.2.10}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {2.2.11}\egroup }. \ \unskip \textsc {\ Prodotto con compatto implica proiezione chiusa; Manetti, 4.49.1}.}}{44}{theoremT.2.2.11}%
+\noindent \textls {\textsc {\textcolor {reddo}{Capitolo 3:} }} 
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {3.1.1}\egroup }. \ \unskip \textsc {\ Caratterizzazione dei gruppi topologici di Hausdorff}.}}{46}{theoremT.3.1.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {3.1.1}\egroup }. \ \unskip \textsc {\ Connessione per fibre; Manetti, 4.18}.}}{47}{lemmaT.3.1.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {3.1.2}\egroup }. \ \unskip \textsc {\ {$\GL ^+(n,\symbb {R})$} e {$\GL (n,\symbb {C})$} sono connessi}.}}{48}{theoremnonewlineT.3.1.2}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {3.1.1}\egroup }. \ \unskip \textsc {\ $\SL {(n,\symbb {R})}$ e $\SL {(n,\symbb {C})}$ sono connessi}.}}{49}{corollarynonewlineT.3.1.1}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {3.1.2}\egroup }. \ \unskip \textsc {\ $\Or $ \textit {non} è connesso.}.}}{49}{corollarynonewlineT.3.1.2}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {3.1.3}\egroup }. \ \unskip \textsc {\ $\SO {(n)}, \U {(n)}$ e $\SU {(n)}$ sono compatti e connessi}.}}{49}{theoremnonewlineT.3.1.3}%
+\noindent \textls {\textsc {\textcolor {reddo}{Capitolo 4:} }} 
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {4.2.1}\egroup }. \ \unskip \textsc {\ Funzione continua, suriettiva, chiusa/aperta è identificazione chiusa/aperta; Manetti, 5.4}.}}{52}{theoremT.4.2.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {4.2.2}\egroup }. \ \unskip \textsc {\ Proprietà universale delle identificazioni; Manetti, 5.6}.}}{53}{theoremnonewlineT.4.2.2}%
+\contentsline {section}{\small {\textbf {PRT\bgroup \textup {4.4.1}\egroup }. \ \unskip \textsc {\ Retta con due origini}.}}{57}{propertynonewlineT.4.4.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {4.4.1}\egroup }. \ \unskip \textsc {\ Condizioni sufficienti per il quoziente di Hausdorff}.}}{58}{theoremT.4.4.1}%
+\noindent \textls {\textsc {\textcolor {reddo}{Capitolo 5:} }} 
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {5.3.1}\egroup }. \ \unskip \textsc {\ {$G$} agisce per omeomorfismi se e solo se {$\mittheta _g$} è continua, {$\forall g\in G$}}.}}{64}{lemmanonewlineT.5.3.1}%
+\noindent \textls {\textsc {\textcolor {reddo}{Capitolo 6:} }} 
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {6.1.1}\egroup }. \ \unskip \textsc {\ Base numerabile implica separabile}.}}{71}{lemmaT.6.1.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {6.2.1}\egroup }. \ \unskip \textsc {\ Lemma delle successioni}.}}{75}{lemmaT.6.2.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {6.2.2}\egroup }. \ \unskip \textsc {\ In $X$ primo numerabile $a_n$ ha una sottosuccessione convergente a $p$ se $p$ di accumulazione per $a_n$}.}}{76}{lemmaT.6.2.2}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {6.3.1}\egroup }. \ \unskip \textsc {\ Ogni successione in un compatto ha punti di accumulazione}.}}{77}{lemmaT.6.3.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {6.3.2}\egroup }. \ \unskip \textsc {\ Compattezza e prima numerabilità}.}}{78}{lemmaT.6.3.2}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {6.3.1}\egroup }. \ \unskip \textsc {\ Equivalenza della compattezza per spazi metrici}.}}{79}{theoremqedT.6.3.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {6.4.1}\egroup }. \ \unskip \textsc {\ $\symbb {R}^n$ in top. Euclidea è spazio metrico completo}.}}{80}{theoremT.6.4.1}%
+\noindent \textls {\textsc {\textcolor {reddo}{Capitolo 7:} }} 
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {7.1.1}\egroup }. \ \unskip \textsc {\ Lemma di incollamento}.}}{85}{lemmaT.7.1.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {7.4.1}\egroup }. \ \unskip \textsc {\ Omotopia è relazione di equivalenza}.}}{89}{lemmaT.7.4.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {7.4.2}\egroup }. \ \unskip \textsc {\ Composizione di omotopie; Manetti, 10.13}.}}{90}{lemmaT.7.4.2}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {7.5.1}\egroup }. \ \unskip \textsc {\ $X$ contraibile implica $X$ c.p.a.}.}}{93}{lemmanonewlineT.7.5.1}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {7.6.1}\egroup }. \ \unskip \textsc {\ $S^{n-1}$ omotopa a $\symbb {R}^n\setminus \left \{1\ \text {punto}\right \}$}.}}{96}{corollaryT.7.6.1}%
+\noindent \textls {\textsc {\textcolor {reddo}{Capitolo 8:} }} 
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {8.2.1}\egroup }. \ \unskip \textsc {\ Composizioni di omotopie di cammini; Kosniowski, 14.2}.}}{103}{lemmaT.8.2.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {8.2.2}\egroup }. \ \unskip \textsc {\ Cambiamento di parametri; Manetti, 11.3}.}}{104}{lemmaT.8.2.2}%
+\contentsline {section}{\small {\textbf {PRT\bgroup \textup {8.2.1}\egroup }. \ \unskip \textsc {\ Proprietà dell'omotopia di cammini; Manetti, 11.4 e 11.6}.}}{104}{propertyT.8.2.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {8.3.1}\egroup }. \ \unskip \textsc {\ $\mitpi _1$ dipende dalla componente c.p.a.}.}}{107}{theoremT.8.3.1}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {8.6.1}\egroup }. \ \unskip \textsc {\ Omeomorfismo di spazi implica isomorfismo di gruppi fondamentali}.}}{114}{corollaryT.8.6.1}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {8.7.1}\egroup }. \ \unskip \textsc {\ Retratti e omomorfismi di gruppi fondamentali}.}}{114}{corollaryT.8.7.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {8.7.1}\egroup }. \ \unskip \textsc {\ Isomorfismo tra gruppi fondamentali; Kosniowski, 15.12}.}}{114}{theoremqedT.8.7.1}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {8.7.2}\egroup }. \ \unskip \textsc {\ Funzione omotopa all'identità e isomorfismo di gruppi}.}}{115}{corollaryT.8.7.2}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {8.8.1}\egroup }. \ \unskip \textsc {\ Invarianza omotopica del gruppo fondamentale; Manetti, 11.22}.}}{116}{theoremT.8.8.1}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {8.8.1}\egroup }. \ \unskip \textsc {\ Gruppo fondamentale di c.p.a. è proprietà omotopica}.}}{116}{corollaryT.8.8.1}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {8.8.2}\egroup }. \ \unskip \textsc {\ Spazio contraibile è semplicemente connesso}.}}{117}{corollaryT.8.8.2}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {8.8.3}\egroup }. \ \unskip \textsc {\ Retratto di deformazione e isomorfismi di gruppi fondamentali}.}}{117}{corollaryqedT.8.8.3}%
+\contentsline {section}{\small {\textbf {PRT\bgroup \textup {8.9.1}\egroup }. \ \unskip \textsc {\ Proprietà della distanza da un insieme}.}}{117}{propertynonewlineT.8.9.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {8.9.1}\egroup }. \ \unskip \textsc {\ Lemma del numero di Lebesgue; Kosniowski, teorema 23.4}.}}{118}{lemmaT.8.9.1}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {8.9.1}\egroup }. \ \unskip \textsc {\ Un cammino si suddivide negli aperti del ricoprimento}.}}{118}{corollaryT.8.9.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {8.11.1}\egroup }. \ \unskip \textsc {\ Teorema di Van Kampen sui generatori; Manetti, 11.25}.}}{119}{theoremT.8.11.1}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {8.11.1}\egroup }. \ \unskip \textsc {\ $X$ dato da due aperti semplicemente connessi non disgiunti è semplicemente connesso; Manetti, 11.26}.}}{121}{corollaryT.8.11.1}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {8.12.1}\egroup }. \ \unskip \textsc {\ $S^n$ è semplicemente connessa, $\forall n\geq 2$; Manetti, 11.27}.}}{121}{corollarynonewlineT.8.12.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {8.13.1}\egroup }. \ \unskip \textsc {\ Aperto uniformemente rivestito di $S^1$}.}}{123}{lemmaT.8.13.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {8.13.1}\egroup }. \ \unskip \textsc {\ Sollevamento di cammini}.}}{124}{theoremT.8.13.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {8.13.2}\egroup }. \ \unskip \textsc {\ Grado del prodotto di cammini è somma dei gradi}.}}{127}{theoremT.8.13.2}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {8.13.3}\egroup }. \ \unskip \textsc {\ Teorema di monodromia}.}}{127}{theoremqedT.8.13.3}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {8.13.4}\egroup }. \ \unskip \textsc {\ Gruppo fondamentale di $S^1$}.}}{127}{theoremT.8.13.4}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {8.13.1}\egroup }. \ \unskip \textsc {\ Circonferenza non è retratto del disco; Manetti, 12.38}.}}{128}{corollaryT.8.13.1}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {8.13.2}\egroup }. \ \unskip \textsc {\ Teorema del punto fisso di Brouwer; Manetti, 12.39}.}}{129}{corollaryT.8.13.2}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {8.13.5}\egroup }. \ \unskip \textsc {\ Teorema di invarianza della dimensione}.}}{129}{theoremqedT.8.13.5}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {8.13.6}\egroup }. \ \unskip \textsc {\ Aperti di $\symbb {R}^n$ di $n\geq 3$ non sono omeomorfi ad aperti di $\symbb {R}^2$}.}}{129}{theoremT.8.13.6}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {8.13.7}\egroup }. \ \unskip \textsc {\ Gruppo fondamentale del prodotto; Manetti, 11.17}.}}{130}{theoremT.8.13.7}%
+\noindent \textls {\textsc {\textcolor {reddo}{Capitolo 9:} }} 
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {9.1.1}\egroup }. \ \unskip \textsc {\ Compatto, connesso, Hausdorff, localmente euclideo implica a base numerabile}.}}{139}{theoremqedT.9.1.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {9.1.2}\egroup }. \ \unskip \textsc {\ Classificazione delle varietà topologiche di dimensione $1$}.}}{139}{theoremqedT.9.1.2}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {9.2.1}\egroup }. \ \unskip \textsc {\ Somma connessa toro-piano proiettivo e bottiglia di Klein-piano proiettivo.}.}}{147}{lemmanonewlineT.9.2.1}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {9.2.1}\egroup }. \ \unskip \textsc {\ Somma connessa tori-piani proiettivi}.}}{148}{corollaryT.9.2.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {9.3.1}\egroup }. \ \unskip \textsc {\ Classificazione delle superfici topologiche compatte}.}}{148}{theoremT.9.3.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {9.3.2}\egroup }. \ \unskip \textsc {\ Teorema di Radò, 1925}.}}{149}{theoremqedT.9.3.2}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {9.3.1}\egroup }. \ \unskip \textsc {\ Ogni superficie compatta $S$ ha un modello piano}.}}{149}{corollarynonewlineT.9.3.1}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {9.5.1}\egroup }. \ \unskip \textsc {\ Sfera, tori e piani proiettivi non sono omeomorfi}.}}{155}{corollarynonewlineqedT.9.5.1}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {9.5.2}\egroup }. \ \unskip \textsc {\ Orientabile se e solo se il modello piano non ha lati del II tipo}.}}{155}{corollaryT.9.5.2}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {9.7.1}\egroup }. \ \unskip \textsc {\ Caratteristica di Eulero indipendente dalla suddivisione}.}}{158}{theoremqedT.9.7.1}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {9.7.1}\egroup }. \ \unskip \textsc {\ La caratteristica di Eulero è proprietà topologica}.}}{158}{corollarynonewlineT.9.7.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {9.7.1}\egroup }. \ \unskip \textsc {\ Caratteristica di Eulero della somma connessa}.}}{159}{lemmaT.9.7.1}%
+\noindent \textls {\textsc {\textcolor {reddo}{Capitolo 10:} }} 
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {10.2.1}\egroup }. \ \unskip \textsc {\ Caratterizzazione della diagonalizzazione simultanea}.}}{164}{theoremT.10.2.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {10.2.1}\egroup }. \ \unskip \textsc {\ Matrici che commutano e autospazi}.}}{164}{lemmaT.10.2.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {10.6.1}\egroup }. \ \unskip \textsc {\ Teorema di Cayley-Hamilton}.}}{168}{theoremT.10.6.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {10.6.2}\egroup }. \ \unskip \textsc {\ Radici del polinomio minimo sono autovalori di $A$ e viceversa}.}}{169}{theoremT.10.6.2}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {10.7.1}\egroup }. \ \unskip \textsc {\ Esistenza e unicità della forma di Jordan}.}}{173}{theoremT.10.7.1}%
+\contentsline {section}{\small {\textbf {PRT\bgroup \textup {10.7.1}\egroup }. \ \unskip \textsc {\ Proprietà degli autospazi generalizzati}.}}{174}{propertynonewlineT.10.7.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {10.7.1}\egroup }. \ \unskip \textsc {\ Dimensione intersezione immagine-nucleo di due funzioni}.}}{178}{lemmaT.10.7.1}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {10.7.1}\egroup }. \ \unskip \textsc {\ Similitudine di matrici e forma di Jordan}.}}{182}{corollaryqedT.10.7.1}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {10.7.2}\egroup }. \ \unskip \textsc {\ Molteplicità delle radici del polinomio minimo e diagonalizzabilità}.}}{183}{corollaryT.10.7.2}%
+\contentsline {section}{\small {\textbf {PRT\bgroup \textup {10.8.1}\egroup }. \ \unskip \textsc {\ Proprietà della norma infinito di una matrice}.}}{190}{propertyT.10.8.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {10.8.1}\egroup }. \ \unskip \textsc {\ Esponenziale di matrici che commutano}.}}{191}{lemmaT.10.8.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {10.8.1}\egroup }. \ \unskip \textsc {\ Determinante di un esponenziale matriciale}.}}{192}{theoremT.10.8.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {10.9.1}\egroup }. \ \unskip \textsc {\ Matrici reali simili nei complessi lo sono nei reali}.}}{196}{theoremT.10.9.1}%
+\noindent \textls {\textsc {\textcolor {reddo}{Capitolo 11:} }} 
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {11.5.1}\egroup }. \ \unskip \textsc {\ Condizioni sulla dimensione dell'intersezione}.}}{208}{corollaryT.11.5.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {11.7.1}\egroup }. \ \unskip \textsc {\ Esistenza di una base dati $n+2$ punti in posizione generale}.}}{212}{theoremnonewlineT.11.7.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {11.8.1}\egroup }. \ \unskip \textsc {\ Uguaglianza di proiettività}.}}{213}{lemmaT.11.8.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {11.8.1}\egroup }. \ \unskip \textsc {\ Esistenza e unicità di una trasformazione proiettiva dati $n+2$ punti in posizione generale}.}}{215}{theoremT.11.8.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {11.13.1}\egroup }. \ \unskip \textsc {\ ${\symbb {P}^n\left (\symbb {C}\right )}$ è una varietà topologica di dimensione $2n$}.}}{228}{theoremnonewlineT.11.13.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {11.13.2}\egroup }. \ \unskip \textsc {\ ${\symbb {P}^1\left (\symbb {C}\right )\cong S^2}$}.}}{231}{theoremnonewlineT.11.13.2}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {11.15.1}\egroup }. \ \unskip \textsc {\ Birapporto di quattro punti}.}}{234}{theoremT.11.15.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {11.16.1}\egroup }. \ \unskip \textsc {\ Esistenza di una proiettività tra rette proiettive con 4 punti di cui 3 distinti}.}}{236}{theoremT.11.16.1}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {11.16.1}\egroup }. \ \unskip \textsc {\ Birapporto è invariante proiettivo}.}}{237}{corollaryT.11.16.1}%
+\noindent \textls {\textsc {\textcolor {reddo}{Capitolo 12:} }} 
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {12.3.1}\egroup }. \ \unskip \textsc {\ Classificazione delle coniche proiettive complesse}.}}{247}{theoremnonewlineT.12.3.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {12.3.2}\egroup }. \ \unskip \textsc {\ Classificazione delle coniche proiettive reali}.}}{247}{theoremnonewlineT.12.3.2}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {12.8.1}\egroup }. \ \unskip \textsc {\ Relazione di Eulero}.}}{258}{theoremT.12.8.1}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {12.10.1}\egroup }. \ \unskip \textsc {\ Intersezione di due coniche}.}}{266}{corollaryT.12.10.1}%
+\noindent \textls {\textsc {\textcolor {reddo}{Appendice A:} }} 
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {A.1.1}\egroup }. \ \unskip \textsc {\ Continuità dell'inclusione; Munkres, 18.2b}.}}{275}{theoremT.Alph1.1.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {A.1.2}\egroup }. \ \unskip \textsc {\ Restrizione di una funzione continua; Munkres, 18.2d}.}}{275}{theoremT.Alph1.1.2}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {A.1.1}\egroup }. \ \unskip \textsc {\ Restrizione di un omeomorfismo}.}}{276}{corollaryT.Alph1.1.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {A.1.1}\egroup }. \ \unskip \textsc {\ Interno come complementare della chiusura del complementare}.}}{276}{lemmaT.Alph1.1.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {A.2.1}\egroup }. \ \unskip \textsc {\ Prodotto di c.p.a. se e solo se ogni spazio è c.p.a.}.}}{281}{lemmaT.Alph1.2.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {A.2.2}\egroup }. \ \unskip \textsc {\ Intersezione di compatti in Hausdorff è compatta}.}}{281}{lemmanonewlineT.Alph1.2.2}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {A.3.1}\egroup }. \ \unskip \textsc {\ Hausdorff quozientato su compatto per contrazione è Hausdorff; Manetti, 5.11}.}}{282}{lemmaT.Alph1.3.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {A.5.1}\egroup }. \ \unskip \textsc {\ Retratto di uno spazio di Hausdorff è chiuso}.}}{283}{lemmaT.Alph1.5.1}%
+\contentsline {section}{\small {\textbf {LEM\bgroup \textup {A.6.1}\egroup }. \ \unskip \textsc {\ Funzione iniettiva fra gruppi implica isomorfismo con sottogruppo.}.}}{284}{lemmaT.Alph1.6.1}%
+\contentsline {section}{\small {\textbf {COR\bgroup \textup {A.6.1}\egroup }. \ \unskip \textsc {\ Gruppo fondamentale di un retratto}.}}{285}{corollaryT.Alph1.6.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {A.7.1}\egroup }. \ \unskip \textsc {\ Criterio di Weierstrass o M-test}.}}{289}{theoremqedT.Alph1.7.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {A.7.2}\egroup }. \ \unskip \textsc {\ Teorema del limite uniforme}.}}{289}{theoremqedT.Alph1.7.2}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {A.8.1}\egroup }. \ \unskip \textsc {\ Regola di Cramer}.}}{289}{theoremqedT.Alph1.8.1}%
+\contentsline {section}{\small {\textbf {THM\bgroup \textup {A.9.1}\egroup }. \ \unskip \textsc {\ Regola di Cartesio}.}}{290}{theoremqedT.Alph1.9.1}%

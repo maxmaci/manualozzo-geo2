@@ -8,86 +8,281 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{preamble/mypreamble}
 
+% NOTE: the document needs to be compiled with LuaLaTeX, which is more often than not a better alternative than pdfLaTeX.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %    PACKAGES TO LOAD
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%% Geometry %%%
+
+% Provides an easy and flexible user interface to customize page layout, implementing auto-centering and auto-balancing mechanisms so that the users have only to give the least description for the page layout
 \RequirePackage[margin=3cm]{geometry}
+%\usepackage{layout}
+
 \newcommand\hmmax{0}
 \newcommand\bmmax{0}
-\RequirePackage[T1]{fontenc}
-\RequirePackage[utf8]{inputenc}
-\RequirePackage[sorting=none, style=alphabetic, citestyle=authortitle, backend=bibtex]{biblatex}
-\RequirePackage[italian]{babel}
-\RequirePackage{csquotes}
-\RequirePackage[oldstylenums]{kpfonts}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Language & Bibliography %%%
+
+% Manages culturally-determined typographical (and other) rules for a wide range of languages.
+\RequirePackage[italian]{babel} %italian
+
+% Provides a complete reimplementation of the bibliographic facilities provided by LaTeX.
+\RequirePackage[backend=biber,
+sorting=ynt,
+citestyle=apa,
+style=alphabetic]{biblatex} %, backend=bibtex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% American Mathematical Society packages %%%
+
+% Provides a slew of new math-display environment, e.g. multiline equations, aligned equations and non-numbered equation of packages.
+\RequirePackage{amsmath}
+% Provides a slew of new useful symbols for math and non-math uses.
+\RequirePackage{amssymb}
+% Provides a better version of \newtheorem for creating theorem-like environments.
+\RequirePackage{amsthm}
+%provides a series of packages designed to enhance the appearance of documents containing a lot of mathematics. 
+\RequirePackage{mathtools}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Fonts %%%
+
+% Provides an automatic and unified interface to feature-rich AAT and OpenType fonts
+\usepackage{fontspec}
+	% A fontspec option. It *might* be need for speeding up font search memory and loading for fontspec. To be removed in a future version of this Templetozzo:tm:
+%\ExplSyntaxOn
+%\cs_set:Nn \__fontspec_load_external_fontoptions:Nn
+%{}
+%\ExplSyntaxOff
+
+\setmainfont[Path = preamble/fonts/,
+	Extension = .ttf,
+	UprightFont = *-Regular,
+	BoldFont = *-Bold,
+	ItalicFont = *-Italic,
+	BoldItalicFont = *-BoldItalic,
+	RawFeature=+liga
+]{Vollkorn}
+\setmonofont[Path = preamble/fonts/,
+	Extension = .ttf,
+	UprightFont = *-Regular,
+	BoldFont = *-Bold,
+	ItalicFont = *-Italic,
+	BoldItalicFont = *-BoldItalic,
+	Scale=MatchLowercase
+]{AnonymousPro}
+
+\usepackage{unicode-math}
+\setmathfont{Asana Math}
+\mathitalicsmode=1
+ 
+%\everydisplay{\Umathoperatorsize\displaystyle=5ex}
+\setmathfont[range={it/{Latin,num}, bbit/{Latin,num}}]{Libertinus Math} 
+\setmathfont{TeX Gyre Schola Math}[range={up/{latin,Latin,num}, bfup/{latin,Latin,num}, bb}] %, it/{latin,Latin,num} 
+\setmathfont[range={\mathit/greek, \cap, \cup, \sum, \prod, \coprod},Scale=MatchLowercase]{XITS Math}
+\setmathfont{TeX Gyre Pagella Math}[range=\int]
+
+\usepackage{lualatex-math}
+
+\newfontfamily{\texgyreschola}{TeX Gyre Schola}
+\newfontfamily{\AnonymousPro}{AnonymousPro}
+\DeclareTextFontCommand{\texgyrescholafont}{\texgyreschola}
+\DeclareTextFontCommand{\AnonymousProfont}{\AnonymousPro}
+\DeclareTextFontCommand{\texttt}{\AnonymousPro}
+\renewcommand*{\ttfamily}{\AnonymousPro}
+
+% solves a manualozzo breaking bug related to this following bit. I don't know *why* it solves it, but all it matters that it does.
+\RequirePackage{zref}
+\zref@require@unique
+
+%\makeatletter
+\DeclareFontEncoding{LS1}{}{}
+\DeclareFontSubstitution{LS1}{stix}{m}{n}
+\DeclareMathAlphabet{\mathcal}{LS1}{stixscr}{m}{n}
+\DeclareSymbolFont{topology}{OMS}{cmsy}{m}{n} 
+%\makeatother
+
+\usepackage{newunicodechar}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Typesetting %%%
+
+% Brings to LaTeX micro-typographic extensions that were introduced by pdfTEX, e.g. character protrusion and font expansion.
 \RequirePackage{microtype}
+
+% Provides commands for case conversion ignoring mathematics sections
 \RequirePackage{textcase}
+% Provides a "multicols" environment which typesets text in multiple columns.
+\RequirePackage{multicol}
+
+% Provides extra tools for typesetting page headers and footers
+\RequirePackage{fancyhdr}
+
+\RequirePackage[absolute]{textpos}
+
+% allows the to user select any font size; it might be Useful to resolve some font size issues.
+\RequirePackage{anyfontsize}
+
+% Set the font size relative to the current font size
+\RequirePackage{relsize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \RequirePackage[inline]{enumitem}
 \RequirePackage{xspace}
 \RequirePackage{graphicx}
 \RequirePackage{ifthen}
-\RequirePackage{amsmath}
-\RequirePackage{amssymb}
-\RequirePackage{wasysym}
-\RequirePackage{amsthm}
+%\RequirePackage{wasysym}
 \RequirePackage{pifont} % aggiunge dingbat per itemize
 \RequirePackage{array}
 \RequirePackage{afterpage}
 \RequirePackage{varioref}
 \RequirePackage{lettrine}
-%\RequirePackage{lipsum}
-\RequirePackage{relsize}
-\RequirePackage{svn-multi}
-%\RequirePackage{siunitx}
+
 \RequirePackage[bottom]{footmisc}
-\RequirePackage{xstring}
+
 \RequirePackage{multirow}
 \RequirePackage{datetime}
-\RequirePackage{etoolbox}
+
 \RequirePackage{ragged2e}
 \RequirePackage{nicefrac}
-\RequirePackage{listings}
 \RequirePackage{tabularx}
-\RequirePackage{enumitem}
-\RequirePackage{mathtools}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% LaTeX programming %%%
+
+% Provides programming facilities geared primarily towards LATEX class and package authors. (Theoremozzo)
+\RequirePackage{etoolbox}
+% Provides a high-level interface for producing document-level commands and parsing
+\RequirePackage{xparse}
+% Provides macros manipulating strings of tokens
+\RequirePackage{xstring}
+% Serves as a wrapper for other packages that make up the LATEX3
+\RequirePackage{expl3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Graphics, diagrams and color %%%
+
+% Provides easy driver-independent access to several kinds of color tints, shades, tones, and mixes of arbitrary colors
 \RequirePackage[rgb,hyperref,dvipsnames]{xcolor}
-\RequirePackage[most]{tcolorbox}
+
 \RequirePackage{tikz}
 \usetikzlibrary{calc,angles,positioning,intersections,quotes,arrows,decorations.pathreplacing,graphs,decorations.pathmorphing,decorations.markings,fit,matrix,bending}
-%\RequirePackage{venndiagram}
-%\RequirePackage{pgfplots}
-%\RequirePackage{pgf}
-%\RequirePackage{mathrsfs}
-\RequirePackage{xparse}
-\RequirePackage[framemethod=default]{mdframed} % necessario per environments
-\RequirePackage{makeidx}
+
+% Provides tools for drawing high-quality function plots in normal or logarithmic scaling with a user-friendly interface directly in TeX.
+\usepackage{pgfplots}
+
+%\RequirePackage{parskip}
+
+%\setlength{\parskip}{0.75ex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Physics stuff %%%
+\RequirePackage{letltxmacro}
+\RequirePackage{siunitx} % provides SI units
+\LetLtxMacro{\svqty}{\qty}
+%\RequirePackage[arrowdel]{physics} %diffcoef instead? % provides bold vector with arrow above
+\LetLtxMacro{\qty}{\svqty}
+
+\sisetup{output-decimal-marker = {,}}
+
+\usepackage{animate}
+
+\usepackage[americanvoltages]{circuitikz}
+
+\RequirePackage{empheq}
+
+% Provides a "cancel" command to create an handwritten diagonal strikethrough text.
 \RequirePackage[thicklines]{cancel}
-%\RequirePackage{bm}
-\RequirePackage{multicol}
-%\usepackage[font=small,labelfont=bf]{caption}
-%\usepackage{wrapfig}
+
 \RequirePackage{nameref}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Environment and theorems %%%
+
+% Provides an environment for coloured and framed text boxes with a heading line. (theoremozzo)
+\RequirePackage[most]{tcolorbox}
+% Provides framed environments that can split at page boundaries. (theoremozzo)
+\RequirePackage[framemethod=default]{mdframed}
+% Provides several packages for commonly-needed support for typesetting theorems. (theoremozzo)
 \RequirePackage{thmtools}
+% Enables the user to typeset programs (programming code)
+\RequirePackage{listings}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{makeidx}
+
 \RequirePackage{environ}
 \RequirePackage{xkeyval}
-\RequirePackage{alphalph}
+%\RequirePackage{alphalph}
 \RequirePackage{tikz-cd}
-\RequirePackage{fancyhdr}
-\RequirePackage[absolute]{textpos}
+
+% Provides expressions to perform arithmetic on the arguments of the LaTeX commands \setcounter, \addtocounter, \setlength, and \addtolength
+\RequirePackage{calc}
+
+\RequirePackage{pdfpages}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Quote packages %%%
+
+% Provides advanced functions for inline and display quotations
+\RequirePackage{csquotes} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% OTHERS %%%
+
+% This package lets you typeset keywords of the version control system Subversion inside your LATEX files anywhere you like. Unlike the otherwise similar package svn the use of multiple files for one LATEX document is well supported.
+\RequirePackage{svn-multi}
+
+% provides some neat stuff for commutative diagrams (contains several packages inside); to be used with https://q.uiver.app "Export to LaTeX".
 \RequirePackage{preamble/quiver}
+
+% provides the comment environment for multiline comments.
 \RequirePackage{preamble/comment}
+
+% Provides 
 \RequirePackage{preamble/nexus}
-% Load hyperref package last
+
+\RequirePackage{float}
+
+% generates dummy text (lorem ipsum) to demonstrate the visual form of a document without relying on meaningful content
+\usepackage{lipsum}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Handwritten packages %%%
+
+\usepackage{preamble/theoremozzo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Hyperlinks %%%
+
+% Handle cross-referencing commands in LaTeX to produce hypertext links in the document
+% NOTE: Always load hyperref package last
 \RequirePackage{hyperref}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %    GLOBAL TOGGLES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newtoggle{noDefine}
-\newtoggle{noTheorema}
-\newtoggle{AppendixChapters}
+%\newtoggle{noDefinition}
+%\newtoggle{noTheorem}
+%\newtoggle{AppendixChapters}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %    PACKAGE SETTINGS
@@ -98,7 +293,17 @@
 \defbibheading{appendix/bibliography.bib}{\bibsection} % Fix header problem
 
 % Hyperref: settings
-\hypersetup{pdfborder={0 0 0}, colorlinks=false}
+\hypersetup{
+	pdfborder={0 0 0},
+	colorlinks=true,
+	linkcolor=reddo,
+	anchorcolor=reddo,
+	citecolor=reddo,
+	filecolor=reddo,
+	menucolor=reddo,
+	runcolor=reddo,
+	urlcolor=reddo
+}
 
 % Memoir
 \abstractnum   % Format heading as chapter
@@ -106,262 +311,9 @@
 \newsubfloat{figure} % Creates commands for subfigures
 \newsubfloat{table} % Creates commands for subtables
 
-% Listings
-% Register listings
-\begingroup%
-\makeatletter%
-\let\newcounter\@gobble\let\setcounter\@gobbletwo%
-  \globaldefs\@ne \let\c@loldepth\@ne%
-  \newlistof{listings}{lol}{\lstlistlistingname}%
-  \newlistentry{lstlisting}{lol}{0}%
-\endgroup%
-\makeatletter%
-\g@addto@macro\insertchapterspace%
-  {\addtocontents{lol}{\protect\addvspace{10pt}}}%
-\makeatother%
-\makeatletter%
-\AtBeginDocument{\addtocontents{lol}{\protect\addvspace{10\p@}}}%
-\makeatother
-
-% Tell xspace to add space before hyphen
-\xspaceremoveexception{-}
-\makeatletter
-\renewcommand*\@xspace@hook{%
-  \ifx\@let@token-%
-    \expandafter\@xspace@dash@i
-  \fi
-}
-\def\@xspace@dash@i-{\futurelet\@let@token\@xspace@dash@ii}
-\def\@xspace@dash@ii{%
-  \ifx\@let@token-%
-  \else
-    \unskip
-  \fi
-  -%
-}
-\makeatother
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%    NEW COMMANDS AND ENVIRONMENTS
+%    LENGTHS AND PAGES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Commands for producing theorems
-\newtheoremstyle{mystyle}%
-  {\baselineskip}% Space above
-  {\baselineskip}% Space below
-  {}% Body font
-  {}% Indent amount
-  {\scshape}% Theorem head font
-  { -- }% Punctuation after theorem head
-  {0pt}% Space after theorem head
-  {}% Theorem head spec (empty means normal)
-\theoremstyle{mystyle}
-\newtheorem{theorem}{Theorem}[chapter]
-\newtheorem{definition}{Definition}[chapter]
-
-% Commands for producing superscripts and subscripts in text
-\newcommand{\superscript}[1]{\ensuremath{^{\textrm{#1}}}}
-\newcommand{\subscript}[1]{\ensuremath{_{\textrm{#1}}}}
-
-% Style-changing commands in text (may also do more stuff)
-\newcommand{\keyword}[1]{%
-  \emph{#1}%
-}
-
-% Environment for including notes within the text
-\newenvironment{notes}
-{%
-  \vspace{0.25\baselineskip plus 0.1\baselineskip minus 0.1\baselineskip}%
-
-  \footnotesize\itshape%
-}
-{%
-  \vspace{0.25\baselineskip plus 0.1\baselineskip minus 0.1\baselineskip}%
-}
-
-% Text strings not set in small caps
-\newcommand{\etal}{et~al.\xspace}
-\newcommand{\eg}{e.g.\xspace}
-\newcommand{\ie}{i.e.\xspace}
-\newcommand{\etc}{etc.\xspace}
-\newcommand{\st}{\superscript{st}\xspace}
-\newcommand{\nd}{\superscript{nd}\xspace}
-\newcommand{\rd}{\superscript{rd}\xspace}
-\newcommand{\msc}{M.Sc.\xspace}
-\renewcommand{\th}{\superscript{th}\xspace}
-\newcommand{\phd}{PhD\xspace}
-\newcommand{\geforce}{GeForce\xspace}
-\newcommand{\directCompute}{DirectCompute\xspace}
-\newcommand{\obsidian}{Obsidian\xspace}
-\newcommand{\cudaGlobal}{\dataElement{\_\_global\_\_}\xspace}
-\newcommand{\cudaDevice}{\dataElement{\_\_device\_\_}\xspace}
-\newcommand{\cudaHost}{\dataElement{\_\_host\_\_}\xspace}
-\newcommand{\cudaShared}{\dataElement{\_\_shared\_\_}\xspace}
-\newcommand{\cudaThreadfence}{\dataElement{\_\_threadfence()}\xspace}
-\newcommand{\forsyde}{ForSyDe\xspace}
-
-% Text strings set in small caps (these should not be used in headings or
-% captions which will be used in the ToC)
-\newcommand{\nvidia}{\setInSC{NVIDIA}\xspace}
-\newcommand{\Nvidia}{\setInSCCF{NVIDIA}\xspace}
-\newcommand{\cuda}{\setInSC{CUDA}\xspace}
-\newcommand{\Cuda}{\setInSCCF{CUDA}\xspace}
-\newcommand{\cpu}{\setInSC{CPU}\xspace}
-\newcommand{\cpus}{\setInSC{CPU}s\xspace}
-\newcommand{\gpu}{\setInSC{GPU}\xspace}
-\newcommand{\Gpu}{\setInSCCF{GPU}\xspace}
-\newcommand{\gpus}{\setInSC{GPU}s\xspace}
-\newcommand{\Gpus}{\setInSCCF{GPU}s\xspace}
-\newcommand{\gpgpu}{\setInSC{GPGPU}\xspace}
-\newcommand{\gpgpus}{\setInSC{GPGPU}s\xspace}
-\newcommand{\ieee}{\setInSC{IEEE}\xspace}
-\newcommand{\Ieee}{\setInSCCF{IEEE}\xspace}
-\newcommand{\sigplan}{\setInSC{SIGPLAN}\xspace}
-\newcommand{\Sigplan}{\setInSCCF{SIGPLAN}\xspace}
-\newcommand{\acm}{\setInSC{ACM}\xspace}
-\newcommand{\Acm}{\setInSCCF{ACM}\xspace}
-\newcommand{\vhdl}{\setInSC{VHDL}\xspace}
-\newcommand{\Vhdl}{\setInSCCF{VHDL}\xspace}
-\newcommand{\simd}{\setInSC{SIMD}\xspace}
-\newcommand{\simt}{\setInSC{SIMT}\xspace}
-\newcommand{\dram}{\setInSC{DRAM}\xspace}
-\newcommand{\sm}{\setInSC{SM}\xspace}
-\newcommand{\sms}{\setInSC{SM}s\xspace}
-\newcommand{\spSC}{\setInSC{SP}\xspace} % \sp was already defined
-\newcommand{\sps}{\setInSC{SP}s\xspace}
-\newcommand{\sfu}{\setInSC{SFU}\xspace}
-\newcommand{\sfus}{\setInSC{SFU}s\xspace}
-\newcommand{\pj}{pJ\xspace}
-\newcommand{\kb}{\setInSC{KB}\xspace}
-\newcommand{\mb}{\setInSC{MB}\xspace}
-\newcommand{\gb}{\setInSC{GB}\xspace}
-\newcommand{\mhz}{\setInSC{MHz}\xspace}
-\newcommand{\ghz}{\setInSC{GHz}\xspace}
-\newcommand{\spfp}{\setInSC{SPFP}\xspace}
-\newcommand{\dpfp}{\setInSC{DPFP}\xspace}
-\newcommand{\ilp}{\setInSC{ILP}\xspace}
-\newcommand{\xml}{\setInSC{XML}\xspace}
-\newcommand{\kth}{\setInSC{KTH}\xspace}
-\newcommand{\ict}{\setInSC{ICT}\xspace}
-\newcommand{\es}{\setInSC{ES}\xspace}
-\newcommand{\cSC}{C\xspace} % \c was already defined
-\newcommand{\cpp}{C++\xspace}
-\newcommand{\systemc}{SystemC\xspace}
-\newcommand{\opencl}{Open\setInSC{CL}\xspace}
-\newcommand{\directx}{DirectX\xspace}
-\newcommand{\openmp}{Open\setInSC{MP}\xspace}
-\newcommand{\skepu}{Ske\setInSC{PU}\xspace}
-\newcommand{\starpu}{Star\setInSC{PU}\xspace}
-\newcommand{\graphml}{Graph\setInSC{ML}\xspace}
-\newcommand{\xaarjet}{XaarJet~\setInSC{AB}\xspace}
-\newcommand{\dph}{\setInSC{DPH}\xspace}
-\newcommand{\bfs}{\setInSC{BFS}\xspace}
-\newcommand{\dfs}{\setInSC{DFS}\xspace}
-\newcommand{\fifo}{\setInSC{FIFO}\xspace}
-\newcommand{\ticpp}{Tiny\setInSC{XML}++\xspace}
-\newcommand{\id}{\setInSC{ID}\xspace}
-\newcommand{\ids}{\setInSC{ID}s\xspace}
-\newcommand{\astSC}{\setInSC{AST}\xspace} % \ast was already defined
-\newcommand{\fpu}{\setInSC{FPU}\xspace}
-\newcommand{\fpus}{\setInSC{FPU}s\xspace}
-\newcommand{\ram}{\setInSC{RAM}\xspace}
-\newcommand{\api}{\setInSC{API}\xspace}
-\newcommand{\sdk}{\setInSC{SDK}\xspace}
-\newcommand{\dsl}{\setInSC{DSL}\xspace}
-% Sets a string in small caps, but it is only set in small caps if the
-% current font is roman or italics (where fake small caps are used) - otherwise
-% the string is set in upper case
-\makeatletter
-\DeclareRobustCommand{\setInSC}[1]{%
-  \ifx\f@shape\code@Roman
-    \expandafter\textsc{\MakeTextLowercase{#1}}%
-  \else
-    \ifdim\fontdimen\@ne\font>\z@
-      \begingroup
-      \check@mathfonts
-      \fontsize\sf@size\z@\selectfont
-      \let\MakeTextLowercase\@firstofone
-      \expandafter\MakeUppercase{#1}%
-      \endgroup
-    \else
-      \expandafter\MakeTextUppercase{#1}%
-    \fi
-  \fi
-}
-\newcommand*{\code@Roman}{n}
-\newcommand*{\code@Italics}{it}
-\makeatother
-% The next command performs the same as \setInSC, but will always capitalize the
-% first letter ("Small Caps, Capitalize First"), and set the remainder in small 
-% caps
-\DeclareRobustCommand{\setInSCCF}[1]{%
-  \StrLeft{#1}{1}[\first]%
-  \StrGobbleLeft{#1}{1}[\remainder]%
-  \MakeTextUppercase{\first}\setInSC{\remainder}%
-}
-
-% Command for converting a month number into corresponding month name
-\newcommand{\monthName}[1]{%
-  \ifcase #1%
-  \or January%
-  \or February%
-  \or March%
-  \or April%
-  \or May%
-  \or June%
-  \or July%
-  \or August%
-  \or September%
-  \or October%
-  \or November%
-  \or December%
-\fi%
-}
-
-% Other text strings
-\newcommand{\thesisNumber}{TRITA-ICT-EX-2012:13}
-\newcommand{\appModel}{%
-  \ifnum\currentgrouptype = 6 %
-    \ifnum\lastnodetype = 0 %
-    \else
-      \ifnum\lastnodetype = 7 %
-      \else
-        \relax
-      \fi
-    \fi
-  \fi
-  \ifmmode
-    \mathcal{LSM}%
-  \else
-    $\mathcal{LSM}$\xspace%
-  \fi
-}
-% Schedule Finding Methods
-\newcommand{\sfmEp}{\textsc{sfm-ep}\xspace}
-\newcommand{\sfmFps}{\textsc{sfm-fps}\xspace}
-\newcommand{\sfmBps}{\textsc{sfm-bps}\xspace}
-% When citing sources in figures and tables
-\newcommand{\source}[2][]{%
-  % #1 = prefix text (optional)
-  % #2 = citation(s)
-  \ifthenelse{\equal{#1}{}}{%
-    Source: #2%
-  }{%
-    Source: #1 #2%
-  }%
-}
-\newcommand{\sources}[2][]{%
-  % #1 = prefix text (optional)
-  % #2 = citation(s)
-  \ifthenelse{\equal{#1}{}}{%
-    Sources: #2%
-  }{%
-    Sources: #1 #2%
-  }%  
-}
-
-
-% Lists
 % Lengths
 \newlength{\listAllLeftMarginI}
 \setlength{\listAllLeftMarginI}{2\parindent}
@@ -392,1593 +344,109 @@
 \newcommand{\listInlineEnumerateLabel}{({\roman*})}
 % Global list settings
 \setlist{%
-  noitemsep,
-  topsep=\listTopSep,
-  parsep=\listParSep,
-  leftmargin=\listAllLeftMarginI,
-  labelsep=\listLabelSep,
+	noitemsep,
+	topsep=\listTopSep,
+	parsep=\listParSep,
+	leftmargin=\listAllLeftMarginI,
+	labelsep=\listLabelSep,
 }
 \setlist[itemize, 1]{%
-  label=\listItemizeLabelI,
+	label=\listItemizeLabelI,
 }
 \setlist[itemize, 2]{%
-  label=\listItemizeLabelII,
-  leftmargin=\listItemizeLeftMarginII,
+	label=\listItemizeLabelII,
+	leftmargin=\listItemizeLeftMarginII,
 }
 \setlist[enumerate, 1]{%
-  label=\listEnumerateLabelI,
-  ref=\listEnumerateRefI,
+	label=\listEnumerateLabelI,
+	ref=\listEnumerateRefI,
 }
 \setlist[enumerate, 2]{%
-  label=\listEnumerateLabelII,
-  ref=\listEnumerateRefII,
-  leftmargin=\listEnumerateLeftMarginII,
+	label=\listEnumerateLabelII,
+	ref=\listEnumerateRefII,
+	leftmargin=\listEnumerateLeftMarginII,
 }
-\newenvironment{inlineEnumerate}
-{%
-  \begin{enumerate*}[%
-      label=\listInlineEnumerateLabel,
-    ]%
-}
-{%
-  \end{enumerate*}
-}
-
-% Timeline
-\newlength{\timelineTopSkip}
-\newlength{\timelineBottomSkip}
-\newlength{\timelineItemWidth}
-\newlength{\timelineDescWidth}
-\setlength{\timelineTopSkip}{0.25\baselineskip}
-\setlength{\timelineBottomSkip}{\timelineTopSkip}
-\setlength{\timelineItemWidth}{6em}
-\setlength{\timelineDescWidth}{\textwidth}
-\addtolength{\timelineDescWidth}{-\timelineItemWidth}
-\addtolength{\timelineDescWidth}{-1em}
-\addtolength{\timelineDescWidth}{-3.5em}
-\newenvironment{timeline}
-{%
-  \par\addvspace{\timelineTopSkip}%
-  \hfill%
-  \begin{tabular}{p{\timelineItemWidth}@{\quad}p{\timelineDescWidth}}%
-}
-{%
-  \end{tabular}%
-  \par\addvspace{\timelineBottomSkip}%
-}
-\newcommand{\milestone}[3]{%
-  % #1 = Start week
-  % #2 = End week (leave empty if this only spans one week)
-  % #3 = Mile stone
-  \ifthenelse{\equal{#2}{}}{%
-    \raggedleft Week #1: & #3 \\
-  }{%
-    \raggedleft Weeks #1--#2: & #3 \\
-  }
-}
-
-% Objectives
-\newenvironment{objectives}
-{%
-  \begin{enumerate}%
-}
-{%
-  \end{enumerate}%
-}
-\newenvironment{subobjectives}
-{%
-  \begin{itemize}[label=\listEnumerateLabelII]%
-}
-{%
-  \end{itemize}%
-}
-
-% Challenges
-\newenvironment{challenges}
-{%
-  \begin{itemize}[itemsep=\listItemSep]
-}
-{%
-  \end{itemize}
-}
-\newenvironment{challenge_category}[1]
-  % #1 = category
-{%
-  \item #1
-    \begin{itemize}[itemsep=\listItemSep]
-}
-{%
-    \end{itemize}
-}
-\newcommand{\priorityLevel}[1]{\textsc{#1}}
-\newcommand{\challenge}[3]{%
-  % #1 = problem
-  % #2 = description
-  % #3 = priority (Critical, High, Medium, Low)
-  \item \textit{#1} (\priorityLevel{#3}) \\ #2
-}
-
-% Command options
-\newenvironment{componentOptions}
-{%
-  \begin{trivlist}
-}
-{%
-  \end{trivlist}
-}
-\newcommand{\option}[2]{%
-  \item[] \hspace{\parindent}{\ttfamily #1}
-  \begin{itemize}
-    \item[] #2
-  \end{itemize}
-}
-
-% List of Abbreviations
-\newlength{\abbrItemWidth}
-\newlength{\abbrDescWidth}
-\setlength{\abbrItemWidth}{6em}
-\setlength{\abbrDescWidth}{\textwidth}
-\addtolength{\abbrDescWidth}{-\abbrItemWidth}
-\addtolength{\abbrDescWidth}{-3em}
-\newenvironment{abbreviations}
-{%
-  \begin{tabular}{p{\abbrItemWidth}p{\abbrDescWidth}}
-}
-{%
-  \end{tabular}
-}
-\newcommand{\abbrItem}[2]{%
-  % #1 = Abbreviation
-  % #2 = Description
-  #1 & #2 \\
-}
-
-
-
 % Texts
 \newenvironment{introduction}
 {%
-  \begin{minipage}{\textwidth}%
-   \itshape%
+	\begin{minipage}{\textwidth}%
+		\itshape%
+	}
+	{%
+	\end{minipage}%
+	\par\addvspace{2\baselineskip plus 0.2\baselineskip minus 0.2\baselineskip}%
 }
-{%
-  \end{minipage}%
-  \par\addvspace{2\baselineskip plus 0.2\baselineskip minus 0.2\baselineskip}%
-}
-\newenvironment{warning}
-{%
-  {\warningColor\scshape Warning!}
-  \par\addvspace{0.5\baselineskip}
-  \begin{minipage}{\textwidth}%
-   \itshape%
-}
-{%
-  \end{minipage}%
-  \par\addvspace{2\baselineskip}%
-}
-
-% TODO command (for drafting only)
-\newcommand{\todo}[1]{{\todoColor\textsc{todo}: \textit{#1}}}
-
-
-
-% Referencing
-% Path "varioref" to remove "... on the facing page", "... on the
-% next page", etc., and only use "... on page XX" when necessary.
-\makeatletter
-\AtBeginDocument{%
-  \patchcmd{\NR@@vpageref}{\reftextfacebefore}{\unskip}%
-           {\typeout{*** SUCCESS ***}}{\typeout{*** FAIL ***}}%
-  \patchcmd{\NR@@vpageref}{\reftextfaceafter}{\unskip}%
-           {\typeout{*** SUCCESS ***}}{\typeout{*** FAIL ***}}%
-  \patchcmd{\NR@@vpageref}{\reftextbefore}{\unskip}%
-           {\typeout{*** SUCCESS ***}}{\typeout{*** FAIL ***}}%
-  \patchcmd{\NR@@vpageref}{\reftextbefore}{\unskip}%
-           {\typeout{*** SUCCESS ***}}{\typeout{*** FAIL ***}}%
-  \patchcmd{\NR@@vpageref}{\reftextafter}{\unskip}%
-           {\typeout{*** SUCCESS ***}}{\typeout{*** FAIL ***}}%
-  \patchcmd{\NR@@vpageref}{\reftextafter}{\unskip}%
-           {\typeout{*** SUCCESS ***}}{\typeout{*** FAIL ***}}%
-}
-\makeatother
-% Figures
-\newcommand{\labelFigure}[1]{%
-  % #1 = label
-  \label{fig:#1}%
-}
-\newcommand{\refFigure}[1]{%
-  % #1 = reference
-  \figurename~\vref{fig:#1}\xspace%
-}
-\newcommand{\refFigureOnly}[1]{%
-  % #1 = reference
-  \figurename~\ref{fig:#1}\xspace%
-}
-\newcommand{\refSubfigureOnly}[1]{%
-  % #1 = reference
-  \subcaptionref{fig:#1}\xspace%
-}
-% Tables
-\newcommand{\labelTable}[1]{%
-  % #1 = label
-  \label{tab:#1}%
-}
-\newcommand{\refTable}[1]{%
-  % #1 = reference
-  \tablename~\vref{tab:#1}\xspace%
-}
-\newcommand{\refTableOnly}[1]{%
-  % #1 = reference
-  \tablename~\ref{tab:#1}\xspace%
-}
-\newcommand{\refSubtableOnly}[1]{%
-  % #1 = reference
-  \subcaptionref{tab:#1}\xspace%
-}
-% Code
-\newcommand{\refListing}[1]{%
-  % #1 = reference
-  \lstlistingname~\vref{lst:#1}\xspace%
-}
-\newcommand{\refListingOnly}[1]{%
-  % #1 = reference
-  \lstlistingname~\ref{lst:#1}\xspace%
-}
-% Lists
-\newcommand{\labelList}[1]{%
-  % #1 = label
-  \label{list:#1}%
-}
-\newcommand{\refList}[1]{%
-  % #1 = reference
-  List~\vref{list:#1}\xspace%
-}
-\newcommand{\refListOnly}[1]{%
-  % #1 = reference
-  List~\ref{list:#1}\xspace%
-}
-% List items
-\newcommand{\labelListItem}[1]{%
-  % #1 = label
-  \label{list:item:#1}%
-}
-\newcommand{\refListItem}[1]{%
-  % #1 = reference
-  \vref{list:item:#1}\xspace%
-}
-\newcommand{\refListItemOnly}[1]{%
-  % #1 = reference
-  \ref{list:item:#1}\xspace%
-}
-% Parts
+%% Parts
 \newcommand{\labelPart}[1]{%
-  % #1 = label
-  \label{chap:#1}%
+	% #1 = label
+	\label{chap:#1}%
 }
 \newcommand{\refPart}[1]{%
-  % #1 = reference
-  Part~\vref{chap:#1}\xspace%
+	% #1 = reference
+	Part~\vref{chap:#1}\xspace%
 }
 \newcommand{\refPartOnly}[1]{% Doesn't include the page referencing
-  % #1 = reference
-  Part~\ref{chap:#1}\xspace%
+	% #1 = reference
+	Part~\ref{chap:#1}\xspace%
 }
-% Chapters
-\newcommand{\labelChapter}[1]{%
-  % #1 = label
-  \label{chap:#1}%
-  \toggletrue{noDefine}
-  \toggletrue{noTheorema}
-}
+%% Chapters
+%\newcommand{\labelChapter}[1]{%
+%	% #1 = label
+%	\label{chap:#1}%
+%	\toggletrue{noDefinition}
+%	\toggletrue{noTheorem}
+%}
 \newcommand{\refChapter}[1]{%
-  % #1 = reference
-  Chapter~\vref{chap:#1}\xspace%
+	% #1 = reference
+	Capitolo~\vref{chap:#1}\xspace%
 }
 \newcommand{\refChapterOnly}[1]{% Doesn't include the page referencing
-  % #1 = reference
-  Chapter~\ref{chap:#1}\xspace%
+	% #1 = reference
+	Capitolo~\ref{chap:#1}\xspace%
 }
-% Sections
+%% Sections
 \newcommand{\labelSection}[1]{%
-  % #1 = label
-  \label{sec:#1}%
+	% #1 = label
+	\label{sec:#1}%
 }
 \newcommand{\refSection}[1]{%
-  % #1 = reference
-  Section~\vref{sec:#1}\xspace%
+	% #1 = reference
+	Section~\vref{sec:#1}\xspace%
 }
 \newcommand{\refSectionOnly}[1]{% Doesn't include the page referencing
-  % #1 = reference
-  Section~\ref{sec:#1}\xspace%
+	% #1 = reference
+	Section~\ref{sec:#1}\xspace%
 }
-% Appendices
-\newcommand{\labelAppendix}[1]{%
-  % #1 = label
-  \label{appen:#1}%
-  \toggletrue{AppendixChapters}
-}
+%% Appendices
+%\newcommand{\labelAppendix}[1]{%
+%	% #1 = label
+%	\label{appen:#1}%
+%	\toggletrue{AppendixChapters}
+%}
 \newcommand{\refAppendix}[1]{%
-  % #1 = reference
-  Appendix~\vref{appen:#1}\xspace%
+	% #1 = reference
+	Appendix~\vref{appen:#1}\xspace%
 }
 \newcommand{\refAppendixOnly}[1]{% Doesn't include the page referencing
-  % #1 = reference
-  Appendix~\ref{appen:#1}\xspace%
+	% #1 = reference
+	Appendix~\ref{appen:#1}\xspace%
 }
-
-% Command for reverting to normal number style
-\newcommand\normalNumberStyle{%
-  \renewcommand{\rmdefault}{jkp}%
-  \renewcommand{\sfdefault}{jkpss}%
-  \normalfont
-}
-
-% Command for getting current time stamp
-\newcommand{\getTimestamp}{%
-  \dashdate\today~\currenttime%
-}
-
-% Command for writing out email addresses
-\newcommand{\email}[1]{\url{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %    DOCUMENT CUSTOMIZATIONS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Set left and right margins to equal ratio
-\setlrmargins{*}{*}{1}
-\checkandfixthelayout
-
-% Rules
-\newcommand{\thinRule}{\rule{\textwidth}{0.25pt}}
-
-% Customize heading appearances
-% Define styles
-\newcommand{\partSize}{\Huge}
-\newcommand{\partStyle}{\lsstyle\scshape}
-\newcommand{\chapterSize}{\Huge}
-\newcommand{\chapterStyle}{\lsstyle\scshape}
-\newcommand{\chapterAfter}{\vspace*{3ex}\thinRule}
-\newcommand{\sectionSize}{\large}
-\newcommand{\sectionStyle}{\lsstyle\scshape\MakeTextLowercase}
-\newcommand{\subsectionSize}{\normalfont}
-\newcommand{\subsectionStyle}{\itshape}
-\newcommand{\subsubsectionSize}{\normalfont}
-\newcommand{\subsubsectionStyle}{}
-\newlength{\partNumSizePt}
-\setlength{\partNumSizePt}{60pt}
-\newlength{\chapterNumSizePt}
-\setlength{\chapterNumSizePt}{60pt}
-\newcommand{\partNumSize}{%
-  \fontsize{\partNumSizePt}{1.2\partNumSizePt}\selectfont%
-}
-\newcommand{\partNumStyle}{\partChapterNumColor}
-\newcommand{\chapterNumSize}{%
-  \fontsize{\chapterNumSizePt}{1.2\chapterNumSizePt}\selectfont%
-}
-\newcommand{\chapterNumStyle}{\partChapterNumColor}
-% Customize parts
-\renewcommand{\partnamefont}{\partSize\partStyle}
-\renewcommand{\partnumfont}{\partNumSize\partNumStyle}
-\renewcommand{\printpartname}{}
-\renewcommand{\printparttitle}[1]{%
-  \normalfont\normalcolor\partnamefont #1
-}
-% Customize chapters
-\makeatletter
-\setlength{\beforechapskip}{30pt}
-\renewcommand*{\chapterheadstart}{\vspace*{\beforechapskip}}
-\setlength{\afterchapskip}{3ex}
-\setlength{\midchapskip}{3ex}
-\renewcommand*{\chapnamefont}{%
-  \Large\flushright\chapterStyle\partChapterNumColor%
-}
-\renewcommand*{\chapnumfont}{\chapterNumSize\chapterNumStyle}
-\renewcommand*{\chaptitlefont}{%
-  \normalfont\flushleft\normalcolor\chapterSize\chapterStyle%
-}
-\renewcommand*{\printchaptername}{%
-  \chapnamefont\MakeTextLowercase{\@chapapp}%
-}
-\renewcommand*{\chapternamenum}{\quad}
-\renewcommand*{\printchapternum}{%
-  \chapnumfont\textls[-75]{\classicstylenums{\thechapter}}%
-}
-\renewcommand*{\printchaptertitle}[1]{%
-  \chaptitlefont #1
-  \chapterAfter
-}
-\makeatother
-% Customize sections and subsections
-\setsecnumformat{\csname my#1\endcsname\quad}
-\setsecheadstyle{\sectionSize\sectionStyle}
-\newcommand{\mysection}{{\thesection}}
-\setsubsecheadstyle{\subsectionSize\subsectionStyle}
-\newcommand{\mysubsection}{{\normalfont\subsectionSize\thesubsection}}
-\setsubsubsecheadstyle{\subsubsectionSize\subsubsectionStyle}
-\newcommand{\mysubsubsection}{{\normalfont\subsubsectionSize\thesubsubsection}}
-
-% Customize "Table of ..." appearance
-% Customize headings
-\newcommand{\renewPrintXTitle}[1]{%
-  \renewcommand{#1}[1]{%
-    \printchaptertitle{##1}%
-  }%
-}
-\renewPrintXTitle{\printtoctitle}
-\renewPrintXTitle{\printlottitle}
-\renewPrintXTitle{\printloftitle}
-% Customize ToC headings
-\renewcommand{\cftpartfont}{\partChapterNumColor\partStyle}
-\renewcommand{\cftchapterfont}{\chapterStyle}
-\renewcommand{\cftsectionfont}{}
-\renewcommand{\cftsubsectionfont}{}
-\renewcommand{\cftfigurefont}{}
-\renewcommand{\cfttablefont}{}
-\renewcommand{\cftlstlistingfont}{}
-% Increase number width
-\newlength{\cftNumWidthIncrease}
-\setlength{\cftNumWidthIncrease}{0.25em}
-\addtolength{\cftpartnumwidth}{\cftNumWidthIncrease}
-\addtolength{\cftchapternumwidth}{\cftNumWidthIncrease}
-\addtolength{\cftsectionindent}{\cftNumWidthIncrease}
-\addtolength{\cftsectionnumwidth}{0.5em}
-\addtolength{\cftsubsectionindent}{\cftNumWidthIncrease}
-\addtolength{\cftsubsectionnumwidth}{0.5em}
-% No leader dots
-\renewcommand*{\cftpartdotsep}{\cftnodots}
-\renewcommand*{\cftchapterdotsep}{\cftnodots}
-\renewcommand*{\cftsectiondotsep}{\cftnodots}
-\renewcommand*{\cftsubsectiondotsep}{\cftnodots}
-\renewcommand*{\cftfiguredotsep}{\cftnodots}
-\renewcommand*{\cfttabledotsep}{\cftnodots}
-\renewcommand*{\cftlstlistingdotsep}{\cftnodots}
-% Set page numbers immediately after entry text
-\newcommand{\tocEntryPageSep}{\hspace{1em}}
-\renewcommand{\cftpartleader}{\tocEntryPageSep}
-\renewcommand{\cftpartafterpnum}{\cftparfillskip}
-\renewcommand{\cftchapterleader}{\tocEntryPageSep}
-\renewcommand{\cftchapterafterpnum}{\cftparfillskip}
-\renewcommand{\cftsectionleader}{\tocEntryPageSep}
-\renewcommand{\cftsectionafterpnum}{\cftparfillskip}
-\renewcommand{\cftsubsectionleader}{\tocEntryPageSep}
-\renewcommand{\cftsubsectionafterpnum}{\cftparfillskip}
-\renewcommand{\cftfigureleader}{\tocEntryPageSep}
-\renewcommand{\cftfigureafterpnum}{\cftparfillskip}
-\renewcommand{\cfttableleader}{\tocEntryPageSep}
-\renewcommand{\cfttableafterpnum}{\cftparfillskip}
-\renewcommand{\cftlstlistingleader}{\tocEntryPageSep}
-\renewcommand{\cftlstlistingafterpnum}{\cftparfillskip}
-% Customize page numbers
-\newcommand{\tocPageStyle}{\tocPageColor}
-\renewcommand{\cftpartpagefont}{\tocPageStyle}
-\renewcommand{\cftchapterpagefont}{\tocPageStyle}
-\renewcommand{\cftsectionpagefont}{\tocPageStyle}
-\renewcommand{\cftsubsectionpagefont}{\tocPageStyle}
-\renewcommand{\cftfigurepagefont}{\tocPageStyle}
-\renewcommand{\cfttablepagefont}{\tocPageStyle}
-\renewcommand{\cftlstlistingpagefont}{\tocPageStyle}
-
-% Fix "List of Listings" appearance (make it coherent with other listings)
-\renewcommand{\lstlistlistingname}{List of Listings}
-
-% Abstract
-% Remove indents around abstract text
-\setlength{\absleftindent}{0pt}
-\setlength{\absrightindent}{0pt}
-% Change font size to conform with the rest of the document text
-\renewcommand{\abstracttextfont}{\normalsize}
-
-% Customize headers and footers
-\newcommand{\hfTextSize}{\footnotesize}
-\newcommand{\headTextStyle}{\lsstyle\scshape\MakeTextLowercase}
-\nouppercaseheads
-\makeevenhead{headings}%
-             {\hfTextSize\thepage}%
-             {}%
-             {\hfTextSize\headTextStyle\leftmark}
-\makeoddhead{headings}%
-            {\hfTextSize\headTextStyle\rightmark}%
-            {}%
-            {\hfTextSize\thepage}
-% Add SVN date and revision to footer (remove in final version)
-%\newcommand{\svnInfo}{\$ Revision: \svnrev ~ Date: \svndate~\$}
-%\makeevenfoot{headings}{}{\tiny \svnInfo}{}
-%\makeoddfoot{headings}{}{\tiny \svnInfo}{}
-%\makeevenhead{plain}{}{\tiny \svnInfo}{}
-%\makeoddhead{plain}{}{\tiny \svnInfo}{}
-% Set 'headings' as page style
-\pagestyle{headings}
-% Clear style for title page (no header nor footer)
-\makepagestyle{titlepage}
-
-% Use numbering down until and including subsubsections
-\setsecnumdepth{subsubsection}
-
-% Set ToC to include subsections
-\setcounter{tocdepth}{2}
-
-% Customize captions
-\newcommand{\captionSize}{\small}
-\newcommand{\captionStyle}{\scshape}
-\newcommand{\captionWidthRatio}{0.9}
-\captionnamefont{\captionSize\captionStyle}
-\captiontitlefont{\captionSize}
-\captiondelim{ -- }
-\captiontitlefinal{.}
-\changecaptionwidth
-\captionwidth{\captionWidthRatio\textwidth}
-
-% Customize drop caps
-\setcounter{DefaultLines}{2}
-\renewcommand{\LettrineFontHook}{\dropCapColor}
-\renewcommand{\DefaultFindent}{0pt}
-\renewcommand{\DefaultNindent}{0pt}
-
-% Do not use old-style numbers for typewriter fonts
-\renewcommand{\ttdefault}{jkptt}
-\normalfont
-
-% Redefine date/time format
-\newdateformat{dashdate}{%
-  \THEYEAR-\twodigit{\THEMONTH}-\twodigit{\THEDAY}%
-}
-\renewcommand{\timeseparator}{:}
-\settimeformat{hhmmsstime}
-
-% Make URLs in bibliography entries smaller
-\AtBeginBibliography{\def\UrlFont{\small\ttfamily}}
-
-% Define colors
-\newcommand{\titleColor}{\color[rgb]{0.616, 0.0627, 0.176}}
-\newcommand{\partChapterNumColor}{\titleColor}
-\newcommand{\dropCapColor}{\titleColor}
-\newcommand{\tocPageColor}{\color[rgb]{0.0980, 0.329, 0.651}}
-\definecolor{reddo}{rgb}{0.616, 0.0627, 0.176 }
-\definecolor{shade0}{rgb}{1.0 , 1.0 , 1.0 }
-\definecolor{shade1}{rgb}{0.9 , 0.9 , 0.9 }
-\definecolor{shade2}{rgb}{0.8 , 0.8 , 0.8 }
-\definecolor{shade3}{rgb}{0.65, 0.65, 0.65}
-\definecolor{shade4}{rgb}{0.45, 0.45, 0.45}
-\definecolor{shade5}{rgb}{0.0 , 0.0 , 0.0 }
-\definecolor{nodeColor}{named}{shade1}
-\definecolor{nodeInnerColor}{named}{shade5}
-\definecolor{portColor}{named}{shade5}
-\definecolor{processColor}{named}{shade1}
-\definecolor{networkColor}{named}{shade0}
-\newcommand{\codeBackgroundColor}{\color[rgb]{0.95, 0.95, 0.95}}
-\newcommand{\codeKeywordsColor}{\color[rgb]{0.498, 0.557, 0.167}}
-\newcommand{\codeCommentsColor}{\color[rgb]{0.251, 0.275, 0.086}}
-\newcommand{\warningColor}{\color[rgb]{1.0, 0.0, 0.0}}
-\newcommand{\todoColor}{\color[rgb]{1.0, 0.0, 0.0}}
+\usepackage{preamble/documentcustomization}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%    CUSTOM ENVIRONMENT, PT. 2: THEOREMS ETC.
+%    CUSTOM ENVIRONMENTS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Define colors
-
-\definecolor{venetian}{RGB}{114, 1, 15}
-\definecolor{green}{RGB}{0, 128, 0}
-\definecolor{plum}{RGB}{132, 49, 121}
-\definecolor{cinnamon}{rgb}{0.82, 0.41, 0.12}
-\definecolor{timberwolf}{rgb}{0.86, 0.84, 0.82}
-\definecolor{battleshipgrey}{rgb}{0.52, 0.52, 0.51}
-\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
-\definecolor{coolblack}{rgb}{0.0, 0.18, 0.39}
-\definecolor{neoncarrot}{rgb}{1.0, 0.64, 0.26}
-\definecolor{burntorange}{rgb}{0.8, 0.33, 0.0}
-
-% Define boxes
-
-\newmdenv[skipabove=7pt,
-skipbelow=7pt,
-rightline=false,
-leftline=true,
-topline=false,
-bottomline=false,
-backgroundcolor=reddo!5,
-linecolor=reddo,
-innerleftmargin=5pt,
-innerrightmargin=5pt,
-innertopmargin=5pt,
-innerbottommargin=5pt,
-leftmargin=0cm,
-rightmargin=0cm,
-linewidth=1pt]{eBox}
-
-\newmdenv[skipabove=7pt,
-skipbelow=7pt,
-rightline=false,
-leftline=true,
-topline=false,
-bottomline=false,
-backgroundcolor=black!5,
-linecolor=black,
-innerleftmargin=5pt,
-innerrightmargin=5pt,
-innertopmargin=5pt,
-innerbottommargin=5pt,
-leftmargin=0cm,
-rightmargin=0cm,
-linewidth=1pt]{bBox}
-
-\newmdenv[skipabove=7pt,
-skipbelow=7pt,
-rightline=false,
-leftline=true,
-topline=false,
-bottomline=false,
-backgroundcolor=venetian!5,
-linecolor=venetian,
-innerleftmargin=5pt,
-innerrightmargin=5pt,
-innertopmargin=5pt,
-innerbottommargin=5pt,
-leftmargin=0cm,
-rightmargin=0cm,
-linewidth=1pt]{sBox}
-
-\newmdenv[skipabove=7pt,
-skipbelow=7pt,
-rightline=false,
-leftline=true,
-topline=false,
-bottomline=false,
-backgroundcolor=green!5,
-linecolor=green,
-innerleftmargin=5pt,
-innerrightmargin=5pt,
-innertopmargin=5pt,
-innerbottommargin=5pt,
-leftmargin=0cm,
-rightmargin=0cm,
-linewidth=1pt]{gBox}
-
-\newmdenv[skipabove=7pt,
-skipbelow=7pt,
-rightline=false,
-leftline=true,
-topline=false,
-bottomline=false,
-backgroundcolor=BurntOrange!5,
-linecolor=BurntOrange,
-innerleftmargin=5pt,
-innerrightmargin=5pt,
-innertopmargin=5pt,
-innerbottommargin=5pt,
-leftmargin=0cm,
-rightmargin=0cm,
-linewidth=1pt]{yBox}
-
-\newmdenv[skipabove=7pt,
-skipbelow=7pt,
-rightline=false,
-leftline=true,
-topline=false,
-bottomline=false,
-backgroundcolor=plum!15,
-linecolor=plum,
-innerleftmargin=5pt,
-innerrightmargin=5pt,
-innertopmargin=5pt,
-innerbottommargin=5pt,
-leftmargin=0cm,
-rightmargin=0cm,
-linewidth=1pt]{pBox}
-
-\newmdenv[skipabove=7pt,
-skipbelow=7pt,
-rightline=false,
-leftline=true,
-topline=false,
-bottomline=false,
-backgroundcolor=cinnamon!15,
-linecolor=cinnamon,
-innerleftmargin=5pt,
-innerrightmargin=5pt,
-innertopmargin=5pt,
-innerbottommargin=5pt,
-leftmargin=0cm,
-rightmargin=0cm,
-linewidth=1pt]{cinBox}
-
-\newmdenv[skipabove=7pt,
-skipbelow=7pt,
-rightline=false,
-leftline=true,
-topline=false,
-bottomline=false,
-backgroundcolor=timberwolf!15,
-linecolor=timberwolf,
-innerleftmargin=5pt,
-innerrightmargin=5pt,
-innertopmargin=5pt,
-innerbottommargin=5pt,
-leftmargin=0cm,
-rightmargin=0cm,
-linewidth=1pt]{tinBox}
-
-\newmdenv[skipabove=7pt,
-skipbelow=7pt,
-rightline=false,
-leftline=true,
-topline=false,
-bottomline=false,
-backgroundcolor=airforceblue!15,
-linecolor=airforceblue,
-innerleftmargin=5pt,
-innerrightmargin=5pt,
-innertopmargin=5pt,
-innerbottommargin=5pt,
-leftmargin=0cm,
-rightmargin=0cm,
-linewidth=1pt]{blueBox}
-
-\newmdenv[skipabove=7pt,
-skipbelow=7pt,
-rightline=false,
-leftline=true,
-topline=false,
-bottomline=false,
-backgroundcolor=neoncarrot!15,
-linecolor=neoncarrot,
-innerleftmargin=5pt,
-innerrightmargin=5pt,
-innertopmargin=5pt,
-innerbottommargin=5pt,
-leftmargin=0cm,
-rightmargin=0cm,
-linewidth=1pt]{neoncarrotBox}
-
-% Define theorem styles from color
-
-\newtheoremstyle{rednumbox}% % Theorem style name
-{0pt}% Space above
-{0pt}% Space below
-{\normalfont}% % Body font
-{}% Indent amount
-{\small\bfseries\color{reddo}}% % Theorem head font
-{\;}% Punctuation after theorem head
-{0.25em}% Space after theorem head
-{\small\bfseries\color{reddo}\thmname{#1}}
-
-\newtheoremstyle{blacknumbox}% % Theorem style name
-{0pt}% Space above
-{0pt}% Space below
-{\normalfont}% % Body font
-{}% Indent amount
-{\small\bfseries\color{black!75}}% % Theorem head font
-{\;}% Punctuation after theorem head
-{0.25em}% Space after theorem head
-{\small\bfseries\color{black}\thmname{#1}}
-
-\newtheoremstyle{venetiannumbox}% % Theorem style name
-{0pt}% Space above
-{0pt}% Space below
-{\normalfont}% % Body font
-{}% Indent amount
-{\small\bfseries\color{venetian!75}}% % Theorem head font
-{\;}% Punctuation after theorem head
-{0.25em}% Space after theorem head
-{\small\bfseries\color{venetian}\thmname{#1}}
-
-\declaretheoremstyle[
-spaceabove=0pt,
-spacebelow=0pt,
-bodyfont=\normalfont,
-headindent=0pt,
-headfont=\bfseries\scshape\color{cinnamon},
-notebraces={ }{ },
-headpunct=\color{black},
-notefont=\scshape\color{black},
-postheadspace=0.25em,
-headformat={\NAME\, \NUMBER\small\bfseries\scshape\textcolor{cinnamon}{.}\, \textcolor{black}{- \NOTE}
-\addcontentsline{define}{section}{\small{\textbf{\NUMBER}.\ \textsc{\NOTE}}}}
-]{definesty}
-
-\declaretheoremstyle[
-spaceabove=0pt,
-spacebelow=0pt,
-bodyfont=\normalfont,
-headindent=0pt,
-headfont=\bfseries\scshape\color{black},
-notebraces={ }{ },
-notefont=\scshape\color{black},
-headpunct=\color{black},
-postheadspace=0.25em,
-headformat={\NAME\, \NUMBER\small\bfseries\scshape\color{black}.\, - \NOTE \addcontentsline{theorema}{section}{\small{\textbf{T\NUMBER}.\ \textsc{\NOTE}}}}
-]{theoremasty}
-
-\declaretheoremstyle[
-spaceabove=0pt,
-spacebelow=0pt,
-bodyfont=\normalfont,
-headindent=0pt,
-headfont=\bfseries\scshape\color{black},
-notebraces={ }{ },
-notefont=\scshape\color{black},
-headpunct=\color{black},
-postheadspace=0.25em,
-headformat={\NAME\, \NUMBER\small\bfseries\scshape\color{black}.\, - \NOTE \addcontentsline{theorema}{section}{\small{\textbf{L\NUMBER}.\ \textsc{\NOTE}}}}
-]{lemmingsty}
-
-\declaretheoremstyle[
-spaceabove=0pt,
-spacebelow=0pt,
-bodyfont=\normalfont,
-headindent=0pt,
-headfont=\bfseries\scshape\color{black},
-notebraces={ }{ },
-notefont=\scshape\color{black},
-headpunct=\color{black},
-postheadspace=0.25em,
-headformat={\NAME\, \NUMBER\small\bfseries\scshape\color{black}.\, - \NOTE \addcontentsline{theorema}{section}{\small{\textbf{P\NUMBER}.\ \textsc{\NOTE}}}}
-]{propositionsty}
-
-\newtheoremstyle{notatesty}% % Theorem style name
-{0pt}% Space above
-{0pt}% Space below
-{\normalfont}% % Body font
-{}% Indent amount
-{\small\bfseries\color{timberwolf!75}}% % Theorem head font
-{\;}% Punctuation after theorem head
-{0.25em}% Space after theorem head
-{\small\bfseries\color{black}\thmname{#1}}
-
-\declaretheoremstyle[
-spaceabove=0pt,
-spacebelow=0pt,
-bodyfont=\normalfont,
-headindent=0pt,
-headfont=\bfseries\scshape\color{burntorange},
-notebraces={ }{ },
-headpunct=\color{burntorange},
-notefont=\scshape,
-postheadspace=0.25em,
-headformat={\NAME\, \NUMBER\small\bfseries\scshape\textcolor{black}{.\, - \NOTE} \addcontentsline{theorema}{section}{\small{\textbf{\textcolor{black}{C\NUMBER}}.\ \textsc{\textcolor{black}{\NOTE}}}}}
-]{corollarysty}
-
-\newtheoremstyle{remembersty}% % Theorem style name
-{0pt}% Space above
-{0pt}% Space below
-{\normalfont}% % Body font
-{}% Indent amount
-{\small\bfseries\color{neoncarrot!75}}% % Theorem head font
-{\;}% Punctuation after theorem head
-{0.25em}% Space after theorem head
-{\small\bfseries\color{burntorange}\thmname{#1}}
-
-\newtheoremstyle{airforcebluenumbox}% % Theorem style name
-{0pt}% Space above
-{0pt}% Space below
-{\normalfont}% % Body font
-{}% Indent amount
-{\small\bfseries\color{airforceblue!75}}% % Theorem head font
-{\;}% Punctuation after theorem head
-{0.25em}% Space after theorem head
-{\small\bfseries\color{coolblack}\thmname{#1}}
-
-% Define theorem styles from color
-
-\newcounter{dummy} 
-\numberwithin{dummy}{section}
-
-\theoremstyle{rednumbox}
-\newtheorem{exampleT}{\textsc{Esempio.}}[chapter]
-
-\theoremstyle{rednumbox}
-\newtheorem{examplesT}{\textsc{Esempi.}}[chapter]
-
-\theoremstyle{rednumbox}
-\newtheorem{exerciseT}{\textsc{Esercizio.}}[chapter]
-
-\theoremstyle{blacknumbox}
-\newtheorem{solutionT}{\textsc{Soluzione.}}[chapter]
-
-\theoremstyle{blacknumbox}
-\newtheorem{digressionT}{\textsc{Digressione.}}[chapter]
-
-\theoremstyle{blacknumbox}
-\newtheorem{demonstrationT}{\textsc{Dimostrazione.}}[chapter]
-
-\theoremstyle{blacknumbox}
-\newtheorem{attentionT}{\textsc{Attenzione!}}[chapter]
-
-\theoremstyle{blacknumbox}
-\newtheorem{defoeT}{\textsc{Definizione.}}[chapter]
-
-\theoremstyle{venetiannumbox}
-\newtheorem{observeT}{\textsc{Osservazione.}}[chapter]
-
-\theoremstyle{venetiannumbox}
-\newtheorem{observesT}{\textsc{Osservazioni.}}[chapter]
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-\newcounter{define}
-\newcounter{theorema}
-\newcounter{lemming}
-\newcounter{proposition}
-\newcounter{corollary}
-
-\declaretheorem[style=definesty,numberwithin=section,name=\textsc{Definizione}]{defineT}
-
-\declaretheorem[style=theoremasty,numberwithin=section,name=\textsc{Teorema}]{theoremaT}
-
-\declaretheorem[style=lemmingsty,numberwithin=section,name=\textsc{Lemma}]{lemmingT}
-
-\declaretheorem[style=propositionsty,numberwithin=section,name=\textsc{Proposizione}]{propositionT}
-
-\theoremstyle{notatesty}
-\newtheorem{notateT}{\textsc{Notazione}}[chapter]
-
-\declaretheorem[style=corollarysty,numberwithin=section,name=\textsc{Corollario}]{corollaryT}
-
-\theoremstyle{remembersty}
-\newtheorem{rememberT}{\textsc{Ricordiamo...}}[chapter]
-
-\theoremstyle{airforcebluenumbox}
-\newtheorem{intuitT}{\textsc{Intuitivamente...}}[chapter]
-
-\theoremstyle{blacknumbox}
-\newtheorem{tipsT}{\textsc{Tips \& Tricks!}}[chapter]
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%% esempio/esempi %%%
-
-\newenvironment{example}{\begin{eBox}\begin{exampleT}}{\hfill{\color{reddo}}\end{exampleT}\end{eBox}}
-\newenvironment{examples}{\begin{eBox}\begin{examplesT}}{\hfill{\color{reddo}}	\end{examplesT}\end{eBox}}
-
-%%% esercizio %%%
-
-\newenvironment{exercise}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{reddo}}	\end{exerciseT}\end{eBox}}
-
-%%% soluzione %%%
-
-\newenvironment{solution}{\begin{bBox}\begin{solutionT}}{\hfill{\color{gray}}	\end{solutionT}\end{bBox}}
-
-%%% digressione %%%
-
-\newenvironment{digression}{\begin{gBox}\begin{digressionT}}{\hfill{\color{green}}	\end{digressionT}\end{gBox}}
-
-%%% attenzione %%%
-
-\newenvironment{attention}{\begin{pBox}\begin{attentionT}}{\hfill{\color{plum}}	\end{attentionT}\end{pBox}}
-
-\newenvironment{attentioncaput}{\begin{pBox}\begin{attentioncaputT}~}{\hfill{\color{plum}}\end{attentioncaputT}\end{pBox}}
-
-%%% osservazione %%%
-
-\newenvironment{observe}{\begin{sBox}\begin{observeT}}{\hfill{\color{venetian}}	\end{observeT}\end{sBox}}
-
-\newenvironment{observes}{\begin{sBox}\begin{observesT}}{\hfill{\color{venetian}}	\end{observesT}\end{sBox}}
-
-%%% dimostrazione %%%
-
-\newenvironment{demonstration}{\begin{yBox}\begin{demonstrationT}}{\hfill{\color{BurntOrange}}\qed\end{demonstrationT}\end{yBox}}
-
-%%% definizione %%%
-
-\newenvironment{define}{\begin{cinBox}\begin{defineT}}{\hfill{\color{cinnamon}}\end{defineT}\end{cinBox}}
-
-\newenvironment{defoe}{\begin{bBox}\begin{defoeT}}{\hfill{\color{gray}}	\end{defoeT}\end{bBox}}
-
-%%% teorema %%%
-
-\newenvironment{theorema}{\begin{tinBox}\begin{theoremaT}}{\hfill{\color{timberwolf}}\end{theoremaT}\end{tinBox}}
-
-%%% lemma %%%
-\newenvironment{lemming}{\begin{tinBox}\begin{lemmingT}}{\hfill{\color{timberwolf}}\end{lemmingT}\end{tinBox}}
-
-%%% proposizione %%%
-
-\newenvironment{proposition}{\begin{tinBox}\begin{propositionT}}{\hfill{\color{timberwolf}}\end{propositionT}\end{tinBox}}
-
-%%% notazione %%%
-
-\newenvironment{notate}{\begin{tinBox}\begin{notateT}}{\hfill{\color{timberwolf}}\end{notateT}\end{tinBox}}
-
-%%% corollario %%%
-
-\newenvironment{corollary}{\begin{neoncarrotBox}\begin{corollaryT}}{\hfill{\color{neoncarrot}}\end{corollaryT}\end{neoncarrotBox}}
-
-%%% ricorda %%%
-
-\newenvironment{remember}{\begin{neoncarrotBox}\begin{rememberT}}{\hfill{\color{neoncarrot}}\end{rememberT}\end{neoncarrotBox}}
-
-%%% intuitivamente %%%
-
-\newenvironment{intuit}{\begin{blueBox}\begin{intuitT}}{\hfill{\color{timberwolf}}\end{intuitT}\end{blueBox}}
-
-%%% suggerimenti per gli esercizi %%%
-
-\newenvironment{tips}{\begin{gBox}\begin{tipsT}}{\hfill{\color{green}}	\end{tipsT}\end{gBox}}
-
-%%%%%%%%%%%%%%%%%%%%%%%% definizioni logiche %%%%%%%%%%%%%%%%%%%%%%%%%
-
-% implicazione destra
-
-\newcommand{\impliesdx}{%
-	\ensuremath{\implies)\quad}%
-}
-
-% implicazione sinistra
-
-\newcommand{\impliessx}{%
-	\ensuremath{\impliedby)\quad}%
-}
-
-%%%%%%%%%%%%%%%%%%%%%% definizioni insiemistiche %%%%%%%%%%%%%%%%%%%%%%%%%
-
-% insieme delle parti
-
-\newcommand{\setpart}[1]{%
-	\ensuremath{\mathcal{P}\left(#1\right)}%
-}
-
-% insieme vuoto
-
-\let\oldemptyset\emptyset
-\let\emptyset\varnothing
-
-% unioni/intersezioni arbitrarie
-
-\newcommand{\inter}{\mathop{{\bigcap}}\displaylimits}
-\newcommand{\union}{\mathop{{\bigcup}}\displaylimits}
-
-% naturali, interi, razionali, irrazionali, reali, complessi
-
-\newcommand{\naturalset}{\mathbb{N}}
-\newcommand{\integerset}{\mathbb{Z}}
-\newcommand{\rationalset}{\mathbb{Q}}
-\newcommand{\realset}{\mathbb{R}}
-\newcommand{\irrationalset}{\realset\setminus\rationalset}
-\newcommand{\complexset}{\mathbb{C}}
-
-% campo generico
-
-\newcommand{\kamp}{\mathbb{K}}
-
-% inclusione sinistra
-
-\newcommand{\includedx}{%
-	\ensuremath{\subseteq)\quad}%
-}
-
-% inclusione sinistra
-
-\newcommand{\includesx}{%
-	\ensuremath{\supseteq)\quad}%
-}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%% definizioni topologiche %%%%%%%%%%%%%%%%%%%%%%%%%
-
-% topo
-
-\DeclareSymbolFont{topology}{OMS}{cmsy}{m}{n} 
-\DeclareMathSymbol{\topo}{\mathord}{topology}{`T}
-
-% topologia euclidea
-
-\newcommand{\eucl}{\mathcal{E\! u\! c\! l}}
-
-% base
-
-\newcommand{\basis}{\mathcal{B}}
-
-% interno
-
-\newcommand{\interior}[1]{%
-	{\kern0pt#1}^{\mathrm{o}}%
-}
-
-% intervallo [0, 1]
-
-\newcommand{\intv}{\ensuremath{\left[0,\ 1\right]}}
-
-% valore assoluto (parentesi destra e sinistra)
-
-\newcommand{\labs}{\ensuremath{\left|\left|}}
-
-\newcommand{\rabs}{\ensuremath{\right|\right|}}
-
-%%%%%%%%%%%%%%%%%%%%%%%% definizioni gruppi %%%%%%%%%%%%%%%%%%%%%%%%%
-
-% gruppo lineare GL
-
-\DeclareMathOperator{\gl}{GL}
-
-%gruppo speciale lineare
-
-\DeclareMathOperator{\Sl}{SL}
-
-% gruppo ortogonale O
-
-\DeclareMathOperator{\Or}{O}
-
-% gruppo speciale ortogonale
-
-\DeclareMathOperator{\So}{SO}
-
-% gruppo unitario
-
-\DeclareMathOperator{\U}{U}
-
-% gruppo speciale unitario
-
-\DeclareMathOperator{\Su}{SU}
-
-%%%%%%%%%%%%%%%%%%%%%%%% definizioni funzioni %%%%%%%%%%%%%%%%%%%%%%%%%
-
-% funzioni a due variabili
-
-\newcommand{\mvf}[3]{%
-	\ensuremath{#1\left(#2,\ #3\right)}%
-}
-
-% epsilon
-
-\let\oldepsilon\epsilon
-\let\epsilon\varepsilon
-
-% phi
-
-\let\oldphi\phi
-\let\phi\varphi
-
-% definizione di funzione (solo domini)
-
-\newcommand{\funz}[3]{
-	\IfEq{#1}{\ }{\begin{tikzcd}[ampersand replacement=\&]
-			#2 \arrow[r] \& #3
-	\end{tikzcd}}
-	{\begin{tikzcd}[ampersand replacement=\&]
-			#1\ \colon \&[-36.21pt] #2 \arrow[r] \& #3
-\end{tikzcd}}}
-
-% definizione di funzione (completa)
-
-\newcommand{\funztot}[5]{
-	\IfEq{#1}{\ }{\begin{tikzcd}[ampersand replacement=\&]
-			#2 \arrow[r]          \& #3 \\[-25pt]
-			#4 \arrow[r, maps to] \& #5
-	\end{tikzcd}}
-	{\begin{tikzcd}[ampersand replacement=\&]
-			#1\ \colon \&[-36.21pt] #2 \arrow[r]          \& #3 \\[-25pt]
-			\& #4 \arrow[r, maps to] \& #5
-\end{tikzcd}}}
-
-% inclusione (solo domini)
-
-\newcommand{\incl}[3]{
-	\IfEq{#1}{\ }{\begin{tikzcd}[ampersand replacement=\&]
-			#2 \arrow[r, hook] \& #3
-	\end{tikzcd}}
-	{\begin{tikzcd}[ampersand replacement=\&]
-			#1\ \colon \&[-36.21pt] #2 \arrow[r, hook] \& #3
-\end{tikzcd}}}
-
-% inclusione (completa)
-
-\newcommand{\incltot}[5]{
-	\IfEq{#1}{\ }{\begin{tikzcd}[ampersand replacement=\&]
-			#2 \arrow[r, hook]          \& #3 \\[-25pt]
-			#4 \arrow[r, maps to] \& #5
-	\end{tikzcd}}
-	{\begin{tikzcd}[ampersand replacement=\&]
-			#1\ \colon \&[-36.21pt] #2 \arrow[r, hook]          \& #3 \\[-25pt]
-			\& #4 \arrow[r, maps to] \& #5
-\end{tikzcd}}}
-
-% suriettiva
-
-\newcommand{\surr}[3]{
-	\IfEq{#1}{\ }{\begin{tikzcd}[ampersand replacement=\&]
-			#2 \arrow[r, two heads] \& #3
-	\end{tikzcd}}
-	{\begin{tikzcd}[ampersand replacement=\&]
-			#1\ \colon \&[-36.21pt] #2 \arrow[r, two heads] \& #3
-\end{tikzcd}}}
-
-% suriettiva (completa)
-
-\newcommand{\surrtot}[5]{
-	\IfEq{#1}{\ }{\begin{tikzcd}[ampersand replacement=\&]
-			#2 \arrow[r, two heads]          \& #3 \\[-25pt]
-			#4 \arrow[r, maps to] \& #5
-	\end{tikzcd}}
-	{\begin{tikzcd}[ampersand replacement=\&]
-			#1\ \colon \&[-36.21pt] #2 \arrow[r, two heads]          \& #3 \\[-25pt]
-			\& #4 \arrow[r, maps to] \& #5
-\end{tikzcd}}}
-
-%%%%%%%%%%%%%%%%%%%%%%%% definizioni omotopia %%%%%%%%%%%%%%%%%%%%%%%%%
-
-% insieme dei cammini
-
-\newcommand{\inscam}[3]{%
-	\ensuremath{\Omega\left(#1;\ #2,\ #3\right)}%
-}
-
-% gruppo fondamentale
-
-\newcommand{\gruf}[2]{%
-		\IfEq{#2}{\ }{\ensuremath{\pi_{1}\left(#1\right)}}
-		{\ensuremath{\pi_{1}\left(#1,\ #2\right)}}%
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%% definizioni varietà %%%%%%%%%%%%%%%%%%%%%%%%%
-
-% caratteristica di Eulero
-
-\newcommand{\euler}[2]{%
-	\IfEq{#2}{\ }{\ensuremath{\chi\left(#1\right)}}
-	{\ensuremath{\chi\left(#1,\ #2\right)}}%
-}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%% definizioni categoria %%%%%%%%%%%%%%%%%%%%%%%%%
-
-% categoria in generale
-
-\newcommand{\cat}{\mathcal{C}}
-
-% omomorfismi
-
-\newcommand{\homo}[3]{%
-	\ensuremath{\mathrm{Hom}_{#1}\left(#2,\ #3\right)}%
-}
-
-% categoria sottolineata bella
-
-\newcommand{\nicecato}[1]{%
-	\ensuremath{\mathbf{\textsc{\underline{#1}}}}%
-}
-
-\newcommand{\nicecat}[1]{%
-	\ensuremath{\textbf{\textsc{\underline{#1}}}}%
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%% definizioni jordan  %%%%%%%%%%%%%%%%%%%%%%%%%
-
-% rango
-
-\newcommand{\rk}{%
-	\ensuremath{\mathrm{rk}\ }%
-}
-
-% traccia
-
-\newcommand{\tr}{\ensuremath{\mathrm{tr}}}
-
-% immagine
-
-\DeclareMathOperator{\im}{Im}
-
-%\let\Im\Im
-%\let\Im\im
-
-%%%%%%%%%%%%%%%%%%%%%%%% definizioni proiettiva  %%%%%%%%%%%%%%%%%%%%%%%%%
-
-% spazio proiettivo associato a V
-
-\newcommand{\proj}[2][]{
-	\IfEq{#2}{\ }{\ensuremath{\mathbb{P}^{#1}}}
-		{\ensuremath{\mathbb{P}^{#1}\left(#2\right)}}
-}
-
-% gruppo lineare proiettivo a V
-
-\newcommand{\projgl}[2][n]{
-	\IfEq{#2}{\ }{\ensuremath{\mathbb{P}\mathrm{GL}_{#1}}}
-	{\ensuremath{\mathbb{P}\mathrm{GL}_{#1}\left(#2\right)}}
-}
-
-% combinazione lineare di v
-
-\newcommand{\lin}[1]{\ensuremath{\mathcal{L}\left(#1\right)}}
-
-% codimensione
-
-\DeclareMathOperator{\codim}{Codim}
-
-% spazio affine di V
-
-\newcommand{\aff}[1]{
-	{\ensuremath{\mathcal{A}\left(#1\right)}}
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%% altre definizioni  %%%%%%%%%%%%%%%%%%%%%%%%%
-
-% parentesi attorno ad elementi di itemize: indicare la riga in fondo con \tikzmark{...} e poi infine, dopo \endd{itemize}, usare \brackitem
-
-	\newcommand{\tikzmark}[1]{\tikz[baseline={(#1.base)},overlay,remember picture] \node[outer sep=0pt, inner sep=0pt] (#1) {\phantom{A}};}
-	
-	\NewDocumentCommand\brackitem{mmo}{%
-	\IfValueTF {#3}{%
-	\begin{tikzpicture}[overlay, remember picture,decoration={brace,amplitude=1ex}]
-	\draw[decorate,thick] (#1.north east) -- (#2.south east) node[midway, right=0.5cm,text=black,text width = 2in,] {{#3}};
-	\end{tikzpicture}%
-	}%
-	{%
-	\begin{tikzpicture}[overlay, remember picture,decoration={brace,amplitude=1ex}]
-	\draw[decorate,thick] (#1.north east) -- (#2.south east);
-	\end{tikzpicture}%
-	}%
-	}%
-
-% parentesi graffa per sottolineare testo sotto
-
-\newcommand{\textunderbrace}[2]{%
-	\ensuremath{\underbrace{\text{#1}}_{\text{#2}}}%
-}
-
-% parentesi graffa per sottolineare testo sopra
-
-\newcommand{\textoverbrace}[2]{%
-	\ensuremath{\overbrace{\text{#1}}^{\text{#2}}}%
-}
-
-% testo cerchiato
-
-\newcommand{\circled}[1]{\tikz[baseline=(char.base)]{
-		\node[shape=circle,draw,inner sep=2pt] (char) {\ensuremath{#1}};}}
-
-% testo in un riquadro ad angoli smussati
-
-\newcommand{\ovaled}[1]{%
-	\tikz[baseline=(char.base)]\node[anchor=south west, draw,rectangle, rounded corners, inner sep=2pt, minimum size=7mm,
-	text height=2mm](char){\ensuremath{#1}} ;}
-
-% testo trasparente
-
-\newtcbox{\invis}{blank, on line, opacitytext=0}
-
-
-\newcommand{\minusD}{\hbox{\tikz{\draw[line width=0.6pt,line cap=round] (3pt,0) -- (0,6pt);}}}
-\newcommand{\minusT}{\minusD}
-\newcommand{\minusS}{\hbox{\tikz{\draw[line width=0.45pt,line cap=round] (2pt,0) -- (0,4pt);}}}
-\newcommand{\minusSS}{\hbox{\tikz{\draw[line width=0.4pt,line cap=round] (1.5pt,0) -- (0,3pt);}}}
-\newcommand{\minus}{\mathbin{\mathchoice{\minusD}{\minusT}{\minusS}{\minusSS}}}
+%\input{preamble/theoremenvironment.sty}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\definecolor{uququq}{rgb}{0.25098039215686274,0.25098039215686274,0.25098039215686274}
-
-% font
-
-\makeatletter
-\DeclareFontEncoding{LS1}{}{}
-\DeclareFontSubstitution{LS1}{stix}{m}{n}
-\DeclareMathAlphabet{\mathcal}{LS1}{stixscr}{m}{n}
-\makeatother
-
-%%%%%%%%%%%%%%%%%%%%%%%%%% index commands %%%%%%%%%%%%%%%%%%%%%%%%%
-
-\newcommand\gobbleone[1]{}
-\newcommand{\seeonly}[2]{\ (\emph{\seename} #1)}
-\newcommand{\also}[2]{\unskip(\emph{\alsoname} #1)}
-\newcommand{\Also}[2]{\unskip\emph{Si veda anche} #1}
-\let\oldindex\index
-\renewcommand{\index}[1]{\def\exptoindex{#1}\expandafter\oldindex\expandafter{\exptoindex}}
-
-\newcommand{\seeonlyindex}[2]{\index{#1@#1\protect\gobbleone|seeonly{#2}}}
-\newcommand{\alsoindex}[2]{\index{#1!zzzz@\protect\gobbleone|also{#2}}}
-\newcommand{\Alsoindex}[2]{\index{#1!zzzz@\protect\gobbleone|Also{#2}}}
-
+%    CUSTOM COMMANDS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\newcommand\myeq{\stackrel{\mathclap{\normalfont\mbox{def}}}{=}}
-
-\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
-\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
-
-% Swap the definition of \abs* and \norm*, so that \abs
-% and \norm resizes the size of the brackets, and the 
-% starred version does not.
-\makeatletter
-\let\oldabs\abs
-\def\abs{\@ifstar{\oldabs}{\oldabs*}}
-%
-\let\oldnorm\norm
-\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
-\makeatother
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\usepackage{scalerel,stackengine}
-\stackMath
-\newcommand\what[1]{%
-	\savestack{\tmpbox}{\stretchto{%
-			\scaleto{%
-				\scalerel*[\widthof{\ensuremath{#1}}]{\kern.1pt\mathchar"0362\kern.1pt}%
-				{\rule{0ex}{\textheight}}%WIDTH-LIMITED CIRCUMFLEX
-			}{\textheight}% 
-		}{2.0ex}}%
-	\stackon[-6.9pt]{#1}{\tmpbox}%
-}
-
-\newcommand*{\vv}[1]{\vec{\mkern0mu#1}}
-
-
-\makeatletter
-\newcommand{\vect}[1]{%
-	\vbox{\m@th \ialign {##\crcr
-			\vectfill\crcr\noalign{\kern-\p@ \nointerlineskip}
-			$\hfil\displaystyle{#1}\hfil$\crcr}}}
-\def\vectfill{%
-	$\m@th\smash-\mkern-7mu%
-	\cleaders\hbox{$\mkern-1.8mu\smash-\mkern-2mu$}\hfill
-	\mkern-7mu\raisebox{-3.81pt}[\p@][\p@]{$\mathord\mathchar"017E$}$}
-
-\newcommand{\amsvect}{%
-	\mathpalette {\overarrow@\vectfill@}}
-\def\vectfill@{\arrowfill@\relbar\relbar{\raisebox{-3.81pt}[\p@][\p@]{\scalebox{0.99}{$\mathord\mathchar"017E$}}}}
-
-\newcommand{\amsvectb}{%
-	\mathpalette {\overarrow@\vectfillb@}}
-\newcommand{\vecbar}{%
-	\scalebox{0.8}{$\relbar$}}
-\def\vectfillb@{\arrowfill@\vecbar\vecbar{\raisebox{-4.564pt}[\p@][\p@]{\scalebox{0.95}{$\mathord\mathchar"017E$}}}}
-\makeatother
-
-
-\newcommand{\bvo}[1]{\overrightarrow{\bm{#1}}}
-\newcommand{\vers}[1]{\what{\mathbf{#1}}}
-\newcommand{\bv}[1]{\amsvectb{\bm{\mathrm{#1}}}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\newcommand\Ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\makeatletter
-\def\smallunderbrace#1{\mathop{\vtop{\m@th\ialign{##\crcr
-				$\hfil\displaystyle{#1}\hfil$\crcr
-				\noalign{\kern3\p@\nointerlineskip}%
-				\tiny\upbracefill\crcr\noalign{\kern3\p@}}}}\limits}
-\makeatother
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\newcommand{\para}{\mathbin{\!{\scriptscriptstyle/}\mkern-2mu{\scriptscriptstyle/}\!}}
-\newcommand{\parallelo}{\mathbin{\!{/}\mkern-2mu{/}\!}}
-
-
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
-%\pgfplotsset{compat=1.16}
-%\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
-%\definecolor{lightgray}{RGB}{93,93,93}
-
-\newsavebox{\barra}
-\newsavebox{\somma}
-\newsavebox{\diffe}
-
-\newcommand{\tabitem}{~~\llap{\textbullet}~~}
-
-%\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
-
-%%%%%%%%%%%%%%%%%%%%%%%% stili tikzcd %%%%%%%%%%%%%%%%%%%%%%%%%
-
-% stile inclinato di 60
-\tikzcdset{%arrow style=tikz, diagrams={>={Stealth[round,length=4pt,width=4.95pt,inset=2.75pt]}},
-	six/.style={anchor=south, rotate=23, inner sep=.5mm, yshift=1mm},
-	nine/.style={anchor=south, rotate=90, inner sep=.5mm, yshift=-6.5mm},
-	sixslant1/.style={anchor=south, rotate=17, inner sep=.5mm, yshift=-4mm},
-		sixslant2/.style={anchor=south, rotate=17, inner sep=.5mm, yshift=1mm}		
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%% altri colori %%%%%%%%%%%%%%%%%%%%%%%%%
-
-\definecolor{redill}{RGB}{190, 30, 45 }
-\definecolor{blueill}{RGB}{46, 49, 146 }
-\definecolor{greenill}{RGB}{0, 161, 74 }
-
-%%%%%%%%%%%%%%%%%%%%%%%% tocs %%%%%%%%%%%%%%%%%%%%%%%%%
-
-\makeatletter
-% toc of definitions
-%\newcommand\definename{Definizione}
-\newcommand\listdefinename{Elenco delle definizioni}
-\newcommand\listofdefines{
-	\section*{\listdefinename}\@starttoc{define}}
-
-% toc of theoremas
-%\newcommand\definename{Definizione}
-\newcommand\listtheoremaname{Elenco dei teoremi}
-\newcommand\listoftheoremas{
-	\section*{\listtheoremaname}\@starttoc{theorema}}
-
-% gets chapter number
-\newcommand\getcurrentref[1]{%
-	\ifnumequal{\value{#1}}{0}
-	{??}
-	{\the\value{#1}}%
-}
-
-% gets chapter title
-\newcommand*\nowtitle{}
-
-\let\oldchaptermark=\chaptermark
-\renewcommand*\chaptermark[1]{%
-	\renewcommand*\nowtitle{#1}%
-	\oldchaptermark{#1}}
-
-% add chapter number and title to toc of definition
-\AtBeginEnvironment{defineT}{%
-	\iftoggle{AppendixChapters}{
-		\global\togglefalse{noDefine}
-		\global\togglefalse{AppendixChapters}
-			}{}
-	\iftoggle{noDefine}{
-		\addtocontents{define}{\noindent\textls{\textsc{\textcolor{reddo}{Capitolo \getcurrentref{chapter}:}
-		\nowtitle}}
-		}{}
-		\global\togglefalse{noDefine}
-	}{}
-}%
-
-% add chapter number and title to toc of theoremas
-\AtBeginEnvironment{theorema}{%
-		\iftoggle{AppendixChapters}{
-		\global\togglefalse{noDefine}
-		\global\togglefalse{AppendixChapters}
-	}{}
-	\iftoggle{noTheorema}{
-		\addtocontents{theorema}{\noindent\textls{\textsc{\textcolor{reddo}{Capitolo \getcurrentref{chapter}:}
-					\nowtitle}}
-		}{}
-		\global\togglefalse{noTheorema}
-	}{}
-}%
-
-\AtBeginEnvironment{lemming}{%
-			\iftoggle{AppendixChapters}{
-		\global\togglefalse{noDefine}
-		\global\togglefalse{AppendixChapters}
-	}{}
-	\iftoggle{noTheorema}{
-		\addtocontents{theorema}{\noindent\textls{\textsc{\textcolor{reddo}{Capitolo \getcurrentref{chapter}:}
-					\nowtitle}}
-		}{}
-		\global\togglefalse{noTheorema}
-	}{}
-}%
-
-\AtBeginEnvironment{corollary}{%
-				\iftoggle{AppendixChapters}{
-		\global\togglefalse{noDefine}
-		\global\togglefalse{AppendixChapters}
-	}{}
-	\iftoggle{noTheorema}{
-		\addtocontents{theorema}{\noindent\textls{\textsc{\textcolor{reddo}{Capitolo \getcurrentref{chapter}:}
-					\nowtitle}}
-		}{}
-		\global\togglefalse{noTheorema}
-	}{}
-}%
-
-\AtBeginEnvironment{proposition}{%
-	\iftoggle{AppendixChapters}{
-	\global\togglefalse{noDefine}
-	\global\togglefalse{AppendixChapters}
-	}{}
-	\iftoggle{noTheorema}{
-		\addtocontents{theorema}{\noindent\textls{\textsc{\textcolor{reddo}{Capitolo \getcurrentref{chapter}:}
-					\nowtitle}}
-		}{}
-		\global\togglefalse{noTheorema}
-	}{}
-}%
-
-\makeatother
-
-\newcommand\blankpage{%
-	\null
-	\thispagestyle{empty}%
-	\addtocounter{page}{-1}%
-	\newpage}
+\usepackage{preamble/commandozzo}
+\usepackage{preamble/othercommands}
